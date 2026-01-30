@@ -1,6 +1,6 @@
 {
   "header": "Next F1 race weekend",
-  "generatedAtUtc": "2026-01-30T22:47:57.672Z",
+  "generatedAtUtc": "2026-01-30T22:54:05.644Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics",
@@ -13,16 +13,167 @@
     "location": "Australia"
   },
   "trackMap": {
-    "found": false,
-    "source": "github-contents",
-    "note": "No confident SVG filename match found. bestScore=0",
-    "bestGuess": {
+    "found": true,
+    "note": "Low-confidence match; if wrong, add FILE_OVERRIDES for this GP.",
+    "picked": {
       "style": "white-outline",
       "file": "adelaide-1.svg",
-      "score": 0
+      "score": 0,
+      "source": "filename-match"
     },
-    "svgUrl": null,
-    "pngUrl": null
+    "svgUrl": "https://raw.githubusercontent.com/julesr0y/f1-circuits-svg/main/circuits/white-outline/adelaide-1.svg",
+    "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/adelaide-1.png",
+    "debug": {
+      "ctx": {
+        "gpName": "F1 Qatar Airways Australian GP 2026",
+        "city": "Australia",
+        "country": null
+      },
+      "triedStyles": [
+        "white-outline",
+        "white",
+        "black-outline",
+        "black"
+      ],
+      "topCandidatesByStyle": {
+        "white-outline": [
+          {
+            "file": "adelaide-1.svg",
+            "score": 0
+          },
+          {
+            "file": "aida-1.svg",
+            "score": 0
+          },
+          {
+            "file": "ain-diab-1.svg",
+            "score": 0
+          },
+          {
+            "file": "aintree-1.svg",
+            "score": 0
+          },
+          {
+            "file": "anderstorp-1.svg",
+            "score": 0
+          },
+          {
+            "file": "austin-1.svg",
+            "score": 0
+          },
+          {
+            "file": "avus-1.svg",
+            "score": 0
+          },
+          {
+            "file": "bahrain-1.svg",
+            "score": 0
+          }
+        ],
+        "white": [
+          {
+            "file": "adelaide-1.svg",
+            "score": 0
+          },
+          {
+            "file": "aida-1.svg",
+            "score": 0
+          },
+          {
+            "file": "ain-diab-1.svg",
+            "score": 0
+          },
+          {
+            "file": "aintree-1.svg",
+            "score": 0
+          },
+          {
+            "file": "anderstorp-1.svg",
+            "score": 0
+          },
+          {
+            "file": "austin-1.svg",
+            "score": 0
+          },
+          {
+            "file": "avus-1.svg",
+            "score": 0
+          },
+          {
+            "file": "bahrain-1.svg",
+            "score": 0
+          }
+        ],
+        "black-outline": [
+          {
+            "file": "adelaide-1.svg",
+            "score": 0
+          },
+          {
+            "file": "aida-1.svg",
+            "score": 0
+          },
+          {
+            "file": "ain-diab-1.svg",
+            "score": 0
+          },
+          {
+            "file": "aintree-1.svg",
+            "score": 0
+          },
+          {
+            "file": "anderstorp-1.svg",
+            "score": 0
+          },
+          {
+            "file": "austin-1.svg",
+            "score": 0
+          },
+          {
+            "file": "avus-1.svg",
+            "score": 0
+          },
+          {
+            "file": "bahrain-1.svg",
+            "score": 0
+          }
+        ],
+        "black": [
+          {
+            "file": "adelaide-1.svg",
+            "score": 0
+          },
+          {
+            "file": "aida-1.svg",
+            "score": 0
+          },
+          {
+            "file": "ain-diab-1.svg",
+            "score": 0
+          },
+          {
+            "file": "aintree-1.svg",
+            "score": 0
+          },
+          {
+            "file": "anderstorp-1.svg",
+            "score": 0
+          },
+          {
+            "file": "austin-1.svg",
+            "score": 0
+          },
+          {
+            "file": "avus-1.svg",
+            "score": 0
+          },
+          {
+            "file": "bahrain-1.svg",
+            "score": 0
+          }
+        ]
+      }
+    }
   },
   "countdowns": {
     "weekendStartsInDays": 35,
@@ -82,5 +233,5 @@
       "startLocalDateTimeShort": "Sat, Mar 07 21:00"
     }
   ],
-  "notes": "Track map PNG is generated and committed under /trackmaps for Widgy. Bind Widgy image to trackMap.pngUrl. If not found, check TRACKMAP DEBUG bestGuess in Actions logs."
+  "notes": "Track map is rendered to PNG and committed under /trackmaps. If the match is wrong, set FILE_OVERRIDES using trackMap.debug.topCandidatesByStyle to choose the right SVG filename."
 }
