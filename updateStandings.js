@@ -12,16 +12,9 @@ async function getJson(url) {
     }
   });
 
-  const contentType = res.headers.get("content-type") || "";
-
   if (!res.ok) {
     const text = await res.text();
-    throw new Error(`HTTP ${res.status} for ${url}\n${text.slice(0, 500)}`);
-  }
-
-  if (!contentType.includes("application/json")) {
-    const text = await res.text();
-    throw new Error(`Non-JSON response for ${url}\n${text.slice(0, 500)}`);
+    throw new Error(`HTTP ${res.status} for ${url}\n${text.slice(0, 300)}`);
   }
 
   return res.json();
@@ -33,41 +26,45 @@ async function updateStandings() {
     getJson(DRIVERS_URL)
   ]);
 
-  // Build driver lookup by number
   const byNumber = new Map();
   for (const d of driverRows) {
-    // OpenF1 "drivers" includes fields like full_name, team_name, etc.
     byNumber.set(d.driver_number, d);
   }
 
-  // champRows fields: driver_number, points_current, position_current, session_key, meeting_key, ...
+  const season = new Date().getFullYear(); // fallback
   const session_key = champRows?.[0]?.session_key ?? "latest";
-  const meeting_key = champRows?.[0]?.meeting_key ?? null;
 
   const drivers = champRows
     .slice()
-    .sort((a, b) => (a.position_current ?? 999) - (b.position_current ?? 999))
-    .map((row) => {
+    .sort((a, b) => a.position_current - b.position_current)
+    .map(row => {
       const info = byNumber.get(row.driver_number) || {};
+      const full = info.full_name || "";
+      const [first_name, ...rest] = full.split(" ");
+      const last_name = rest.join(" ");
+
       return {
         position: row.position_current,
         driver_number: row.driver_number,
-        driver: info.full_name ?? null,
+        first_name,
+        last_name,
         team: info.team_name ?? null,
         points: row.points_current
       };
     });
 
   const output = {
-    source: "openf1",
+    header: `${season} Driver Standings`,
+    season,
     session_key,
-    meeting_key,
     updated_at: new Date().toISOString(),
     drivers
   };
 
-  fs.writeFileSync("f1_driver_standings.json", JSON.stringify(output, null, 2));
-  console.log(`Wrote f1_driver_standings.json (${drivers.length} drivers)`);
+  fs.writeFileSync(
+    "f1_driver_standings.json",
+    JSON.stringify(output, null, 2)
+  );
 }
 
 updateStandings();
