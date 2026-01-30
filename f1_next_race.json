@@ -1,6 +1,6 @@
 {
   "header": "Next F1 race weekend",
-  "generatedAtUtc": "2026-01-30T19:47:51.693Z",
+  "generatedAtUtc": "2026-01-30T20:23:08.713Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics",
@@ -20,18 +20,18 @@
     "startUtc": "2026-03-06T01:30:00.000Z",
     "endUtc": "2026-03-08T06:00:00.000Z",
     "startLocalDateShort": "Thu, Mar 05",
-    "startLocalTimeShort": "6:30 p.m.",
-    "startLocalDateTimeShort": "Thu, Mar 05 6:30 p.m.",
+    "startLocalTimeShort": "18:30",
+    "startLocalDateTimeShort": "Thu, Mar 05 18:30",
     "endLocalDateShort": "Sat, Mar 07",
-    "endLocalTimeShort": "11:00 p.m.",
-    "endLocalDateTimeShort": "Sat, Mar 07 11:00 p.m."
+    "endLocalTimeShort": "23:00",
+    "endLocalDateTimeShort": "Sat, Mar 07 23:00"
   },
   "race": {
     "startUtc": "2026-03-08T04:00:00.000Z",
     "endUtc": "2026-03-08T06:00:00.000Z",
     "startLocalDateShort": "Sat, Mar 07",
-    "startLocalTimeShort": "9:00 p.m.",
-    "startLocalDateTimeShort": "Sat, Mar 07 9:00 p.m."
+    "startLocalTimeShort": "21:00",
+    "startLocalDateTimeShort": "Sat, Mar 07 21:00"
   },
   "sessions": [
     {
@@ -39,56 +39,56 @@
       "startUtc": "2026-03-06T01:30:00.000Z",
       "endUtc": "2026-03-06T02:30:00.000Z",
       "startLocalDateShort": "Thu, Mar 05",
-      "startLocalTimeShort": "6:30 p.m.",
-      "startLocalDateTimeShort": "Thu, Mar 05 6:30 p.m.",
+      "startLocalTimeShort": "18:30",
+      "startLocalDateTimeShort": "Thu, Mar 05 18:30",
       "endLocalDateShort": "Thu, Mar 05",
-      "endLocalTimeShort": "7:30 p.m.",
-      "endLocalDateTimeShort": "Thu, Mar 05 7:30 p.m."
+      "endLocalTimeShort": "19:30",
+      "endLocalDateTimeShort": "Thu, Mar 05 19:30"
     },
     {
       "type": "FP2",
       "startUtc": "2026-03-06T05:00:00.000Z",
       "endUtc": "2026-03-06T06:00:00.000Z",
       "startLocalDateShort": "Thu, Mar 05",
-      "startLocalTimeShort": "10:00 p.m.",
-      "startLocalDateTimeShort": "Thu, Mar 05 10:00 p.m.",
+      "startLocalTimeShort": "22:00",
+      "startLocalDateTimeShort": "Thu, Mar 05 22:00",
       "endLocalDateShort": "Thu, Mar 05",
-      "endLocalTimeShort": "11:00 p.m.",
-      "endLocalDateTimeShort": "Thu, Mar 05 11:00 p.m."
+      "endLocalTimeShort": "23:00",
+      "endLocalDateTimeShort": "Thu, Mar 05 23:00"
     },
     {
       "type": "FP3",
       "startUtc": "2026-03-07T01:30:00.000Z",
       "endUtc": "2026-03-07T02:30:00.000Z",
       "startLocalDateShort": "Fri, Mar 06",
-      "startLocalTimeShort": "6:30 p.m.",
-      "startLocalDateTimeShort": "Fri, Mar 06 6:30 p.m.",
+      "startLocalTimeShort": "18:30",
+      "startLocalDateTimeShort": "Fri, Mar 06 18:30",
       "endLocalDateShort": "Fri, Mar 06",
-      "endLocalTimeShort": "7:30 p.m.",
-      "endLocalDateTimeShort": "Fri, Mar 06 7:30 p.m."
+      "endLocalTimeShort": "19:30",
+      "endLocalDateTimeShort": "Fri, Mar 06 19:30"
     },
     {
       "type": "Qualifying",
       "startUtc": "2026-03-07T05:00:00.000Z",
       "endUtc": "2026-03-07T06:00:00.000Z",
       "startLocalDateShort": "Fri, Mar 06",
-      "startLocalTimeShort": "10:00 p.m.",
-      "startLocalDateTimeShort": "Fri, Mar 06 10:00 p.m.",
+      "startLocalTimeShort": "22:00",
+      "startLocalDateTimeShort": "Fri, Mar 06 22:00",
       "endLocalDateShort": "Fri, Mar 06",
-      "endLocalTimeShort": "11:00 p.m.",
-      "endLocalDateTimeShort": "Fri, Mar 06 11:00 p.m."
+      "endLocalTimeShort": "23:00",
+      "endLocalDateTimeShort": "Fri, Mar 06 23:00"
     },
     {
       "type": "Race",
       "startUtc": "2026-03-08T04:00:00.000Z",
       "endUtc": "2026-03-08T06:00:00.000Z",
       "startLocalDateShort": "Sat, Mar 07",
-      "startLocalTimeShort": "9:00 p.m.",
-      "startLocalDateTimeShort": "Sat, Mar 07 9:00 p.m.",
+      "startLocalTimeShort": "21:00",
+      "startLocalDateTimeShort": "Sat, Mar 07 21:00",
       "endLocalDateShort": "Sat, Mar 07",
-      "endLocalTimeShort": "11:00 p.m.",
-      "endLocalDateTimeShort": "Sat, Mar 07 11:00 p.m."
+      "endLocalTimeShort": "23:00",
+      "endLocalDateTimeShort": "Sat, Mar 07 23:00"
     }
   ],
-  "notes": "Times are provided as UTC (startUtc/endUtc) plus pre-formatted short local strings for Widgy (startLocalDateShort/startLocalTimeShort). If you share this endpoint with others, the 'local' strings will be Edmonton time unless you change USER_TZ."
+  "notes": "Times are provided as UTC (startUtc/endUtc) plus pre-formatted short local strings for Widgy (startLocalDateShort/startLocalTimeShort). Local time strings are formatted in 24-hour time. If you share this endpoint with others, the 'local' strings will be Edmonton time unless you change USER_TZ."
 }
