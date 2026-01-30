@@ -3,7 +3,11 @@ import fs from "fs";
 const URL = "https://ergast.com/api/f1/current/driverStandings.json";
 
 async function updateStandings() {
-  const res = await fetch(URL);
+  const res = await fetch(URL, {
+    headers: {
+      "User-Agent": "f1-standings-bot/1.0 (GitHub Actions)"
+    }
+  });
 
   if (!res.ok) {
     throw new Error(`HTTP error ${res.status}`);
@@ -13,6 +17,10 @@ async function updateStandings() {
 
   const standingsList =
     data.MRData.StandingsTable.StandingsLists[0];
+
+  if (!standingsList) {
+    throw new Error("No standings data returned");
+  }
 
   const drivers = standingsList.DriverStandings.map(d => ({
     position: Number(d.position),
