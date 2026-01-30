@@ -1,5 +1,7 @@
 {
   "name": "f1-standings",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "node-ical": "^0.16.1"
+  }
 }
-npm i node-ical
