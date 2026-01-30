@@ -6,34 +6,33 @@ import { Resvg } from "@resvg/resvg-js";
 
 const ICS_URL = "https://better-f1-calendar.vercel.app/api/calendar.ics";
 
-// Widgy-friendly local strings
 const USER_TZ = "America/Edmonton";
 const LOCALE = "en-CA";
 
-// Your GitHub Pages base URL (used for PNG URL in JSON)
+// Your GitHub Pages base URL
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 
-// Track map source
+// Track SVG repo
 const CIRCUIT_REPO_OWNER = "julesr0y";
 const CIRCUIT_REPO_NAME = "f1-circuits-svg";
 const CIRCUIT_REPO_REF = "main";
 
-// Try these styles in order (folder names in the repo)
+// Try styles in order
 const TRACK_STYLES = ["white-outline", "white", "black-outline", "black"];
 
-// Output folder in your repo (committed)
+// Output folder (committed)
 const TRACKMAP_DIR = "trackmaps";
+
+// OPTIONAL: if auto-pick is wrong for one GP, set it here once and forget it.
+// match = substring of gpName lowercased.
+const FILE_OVERRIDES = [
+  // { match: "bahrain", style: "white-outline", file: "bahrain-3.svg" },
+  // { match: "monaco", style: "white-outline", file: "monaco-1.svg" },
+];
 
 const UA = "f1-standings-bot/1.0 (GitHub Actions)";
 
-// Optional: emergency overrides if you ever need them.
-// You can leave empty.
-// Example: { match: "monaco", file: "monaco-1.svg", style: "white-outline" }
-const FILE_OVERRIDES = [
-  // { match: "monaco", file: "monaco-1.svg", style: "white-outline" },
-];
-
-// ---------- Date/time helpers ----------
+// ---------- Time helpers ----------
 function daysUntil(date, now = new Date()) {
   const ms = date.getTime() - now.getTime();
   return Math.ceil(ms / (1000 * 60 * 60 * 24));
@@ -48,7 +47,6 @@ function shortDateInTZ(dateObj, timeZone = USER_TZ) {
   });
 }
 
-// 24-hour time
 function shortTimeInTZ(dateObj, timeZone = USER_TZ) {
   return dateObj.toLocaleTimeString(LOCALE, {
     timeZone,
@@ -68,7 +66,7 @@ function splitLocation(location) {
   return { city: parts[0] || null, country: parts[1] || null };
 }
 
-// ---------- Calendar parsing helpers ----------
+// ---------- Calendar helpers ----------
 function getSessionType(summary) {
   const s = (summary || "").toLowerCase();
   if (s.includes("practice 1") || s.includes("fp1")) return "FP1";
@@ -87,26 +85,39 @@ function getGpName(summary) {
 }
 
 // ---------- Network helpers ----------
-async function fetchJson(url) {
+function githubHeaders() {
+  const headers = {
+    "User-Agent": UA,
+    "Accept": "application/vnd.github+json",
+  };
+
+  // IMPORTANT: authenticate in Actions to avoid rate limits
+  if (process.env.GITHUB_TOKEN) {
+    headers["Authorization"] = `Bearer ${process.env.GITHUB_TOKEN}`;
+  }
+  return headers;
+}
+
+async function fetchJson(url, headers = {}) {
   const res = await fetch(url, {
-    headers: { "User-Agent": UA, Accept: "application/json" },
+    headers: { ...githubHeaders(), ...headers },
     redirect: "follow",
   });
   if (!res.ok) {
     const text = await res.text().catch(() => "");
-    throw new Error(`HTTP ${res.status} fetching ${url}\n${text.slice(0, 200)}`);
+    throw new Error(`HTTP ${res.status} fetching ${url}\n${text.slice(0, 300)}`);
   }
   return res.json();
 }
 
-async function fetchText(url) {
+async function fetchText(url, headers = {}) {
   const res = await fetch(url, {
-    headers: { "User-Agent": UA, Accept: "*/*" },
+    headers: { "User-Agent": UA, ...headers },
     redirect: "follow",
   });
   if (!res.ok) {
     const text = await res.text().catch(() => "");
-    throw new Error(`HTTP ${res.status} fetching ${url}\n${text.slice(0, 200)}`);
+    throw new Error(`HTTP ${res.status} fetching ${url}\n${text.slice(0, 300)}`);
   }
   return res.text();
 }
@@ -125,7 +136,7 @@ function normalize(s) {
     .trim();
 }
 
-function tokenizeForMatch(s) {
+function tokenize(s) {
   return normalize(s)
     .replace(/\bgrand prix\b/g, "")
     .replace(/\bgp\b/g, "")
@@ -134,25 +145,22 @@ function tokenizeForMatch(s) {
     .filter((t) => t.length > 2);
 }
 
-function scoreFilename(filename, ctx) {
+function scoreFilename(filename, { gpName, city, country }) {
   const base = normalize(filename.replace(/\.svg$/i, ""));
-  const gpTokens = tokenizeForMatch(ctx.gpName);
-  const cityTokens = tokenizeForMatch(ctx.city);
-  const countryTokens = tokenizeForMatch(ctx.country);
+  const gpTokens = tokenize(gpName);
+  const cityTokens = tokenize(city);
+  const countryTokens = tokenize(country);
 
   let score = 0;
 
-  // City tokens are strongest
+  // City strongest if present
   for (const t of cityTokens) if (base.includes(t)) score += 8;
 
-  // GP tokens next
+  // GP name tokens
   for (const t of gpTokens) if (base.includes(t)) score += 4;
 
-  // Country tokens help break ties
+  // Country tokens
   for (const t of countryTokens) if (base.includes(t)) score += 2;
-
-  // Slight bias for simpler IDs (often better)
-  if (/^\w+-\d+$/.test(base.replace(/\s+/g, ""))) score += 1;
 
   return score;
 }
@@ -162,110 +170,106 @@ function githubContentsUrl(style) {
 }
 
 function githubRawUrl(style, file) {
-  // raw github is stable for file fetch
   return `https://raw.githubusercontent.com/${CIRCUIT_REPO_OWNER}/${CIRCUIT_REPO_NAME}/${CIRCUIT_REPO_REF}/circuits/${style}/${file}`;
 }
 
-function makePngUrl(layoutId) {
+function pngUrlFor(layoutId) {
   return `${PAGES_BASE}/${TRACKMAP_DIR}/${encodeURIComponent(layoutId)}.png`;
 }
 
-// Render SVG string to PNG buffer
 function renderSvgToPng(svgString, widthPx = 900) {
   const resvg = new Resvg(svgString, { fitTo: { mode: "width", value: widthPx } });
   return resvg.render().asPng();
 }
 
-// Core: find a track SVG by listing filenames in style folders
-async function findBestTrackSvgFile({ gpName, city, country }) {
-  // 0) manual override (if you ever need it)
+async function listSvgFiles(style) {
+  const url = githubContentsUrl(style);
+  const items = await fetchJson(url);
+  return (items || [])
+    .filter((x) => x?.type === "file" && typeof x?.name === "string" && x.name.toLowerCase().endsWith(".svg"))
+    .map((x) => x.name);
+}
+
+async function pickBestSvg({ gpName, city, country }) {
+  const ctx = { gpName, city, country };
   const gpLower = (gpName || "").toLowerCase();
-  const override = FILE_OVERRIDES.find((o) => gpLower.includes(o.match));
-  if (override?.file && override?.style) {
-    return { found: true, style: override.style, file: override.file, source: "override" };
+
+  // 0) override
+  const ov = FILE_OVERRIDES.find((o) => gpLower.includes(o.match));
+  if (ov?.style && ov?.file) {
+    return {
+      picked: { style: ov.style, file: ov.file, score: 999, source: "override" },
+      debug: { ctx, triedStyles: TRACK_STYLES, topCandidatesByStyle: {} },
+    };
   }
 
-  const ctx = { gpName, city, country };
-
-  // Try styles in order; pick best scoring within first style that yields a good score,
-  // otherwise keep best global.
-  let best = { score: -1, style: null, file: null };
+  const topCandidatesByStyle = {};
+  let best = null;
 
   for (const style of TRACK_STYLES) {
-    const listUrl = githubContentsUrl(style);
-    const items = await fetchJson(listUrl);
+    let files;
+    try {
+      files = await listSvgFiles(style);
+    } catch (e) {
+      topCandidatesByStyle[style] = { error: e.message };
+      continue;
+    }
 
-    const svgs = (items || [])
-      .filter((x) => x?.type === "file" && typeof x?.name === "string" && x.name.toLowerCase().endsWith(".svg"))
-      .map((x) => x.name);
-
-    if (!svgs.length) continue;
-
-    // Score all filenames
-    const scored = svgs
+    const scored = files
       .map((file) => ({ file, score: scoreFilename(file, ctx) }))
       .sort((a, b) => b.score - a.score);
 
-    // Log top candidates to actions output (super useful)
-    console.log(
-      `Track candidates (${style}) top5:`,
-      scored.slice(0, 5).map((x) => ({ file: x.file, score: x.score }))
-    );
+    topCandidatesByStyle[style] = scored.slice(0, 8);
 
+    // Keep global best
     const top = scored[0];
-    if (top && top.score > best.score) {
-      best = { score: top.score, style, file: top.file };
+    if (top && (!best || top.score > best.score)) {
+      best = { style, file: top.file, score: top.score, source: "filename-match" };
     }
 
-    // If we get a strong match, stop early
-    if (top?.score >= 10) break;
+    // If we got a strong match, stop early
+    if (top?.score >= 12) break;
   }
 
-  if (!best.file || !best.style || best.score < 4) {
-    return {
-      found: false,
-      note: `No confident SVG filename match found. bestScore=${best.score}`,
-      bestGuess: best.file ? { style: best.style, file: best.file, score: best.score } : null,
-    };
-  }
-
-  return { found: true, style: best.style, file: best.file, score: best.score, source: "filename-match" };
+  return {
+    picked: best, // may be low score; we will still use it
+    debug: { ctx, triedStyles: TRACK_STYLES, topCandidatesByStyle },
+  };
 }
 
-async function renderTrackMapPng({ gpName, city, country }) {
-  const match = await findBestTrackSvgFile({ gpName, city, country });
+async function renderTrackPng({ gpName, city, country }) {
+  const { picked, debug } = await pickBestSvg({ gpName, city, country });
 
-  if (!match.found) {
+  if (!picked?.style || !picked?.file) {
     return {
       found: false,
-      source: "github-contents",
-      note: match.note || "No match",
-      bestGuess: match.bestGuess || null,
-      svgUrl: null,
+      note: "Could not list any SVG files from the repo styles (API blocked or empty).",
       pngUrl: null,
+      svgUrl: null,
+      picked: null,
+      debug,
     };
   }
 
-  const svgUrl = githubRawUrl(match.style, match.file);
+  // Fetch svg & render
+  const svgUrl = githubRawUrl(picked.style, picked.file);
   const svgText = await fetchText(svgUrl);
 
   await ensureDir(TRACKMAP_DIR);
 
-  const layoutId = match.file.replace(/\.svg$/i, "");
+  const layoutId = picked.file.replace(/\.svg$/i, "");
   const pngPath = path.join(TRACKMAP_DIR, `${layoutId}.png`);
-  const pngBuffer = renderSvgToPng(svgText, 900);
 
-  await fs.writeFile(pngPath, pngBuffer);
+  const png = renderSvgToPng(svgText, 900);
+  await fs.writeFile(pngPath, png);
 
   return {
     found: true,
-    source: "github-contents",
-    matchSource: match.source,
-    style: match.style,
-    file: match.file,
+    note: picked.score < 8 ? "Low-confidence match; if wrong, add FILE_OVERRIDES for this GP." : null,
+    picked,
     svgUrl,
-    pngUrl: makePngUrl(layoutId),
-    note: null,
+    pngUrl: pngUrlFor(layoutId),
+    debug,
   };
 }
 
@@ -273,10 +277,7 @@ async function renderTrackMapPng({ gpName, city, country }) {
 async function updateNextRace() {
   const now = new Date();
 
-  const data = await ical.async.fromURL(ICS_URL, {
-    headers: { "User-Agent": UA },
-  });
-
+  const data = await ical.async.fromURL(ICS_URL, { headers: { "User-Agent": UA } });
   const events = Object.values(data).filter((x) => x?.type === "VEVENT");
 
   const sessions = events
@@ -312,16 +313,8 @@ async function updateNextRace() {
 
   const { city, country } = splitLocation(nextRace.location);
 
-  console.log("GP DEBUG:", {
-    gpName,
-    location: nextRace.location,
-    city,
-    country,
-  });
-
-  // Track map render
-  const trackMap = await renderTrackMapPng({ gpName, city, country });
-  console.log("TRACKMAP DEBUG:", trackMap);
+  // Track map (PNG)
+  const trackMap = await renderTrackPng({ gpName, city, country });
 
   const sessionOrder = ["FP1", "FP2", "FP3", "Qualifying", "Sprint Qualifying", "Sprint", "Race"];
   const sessionsOut = sessionOrder
@@ -352,7 +345,7 @@ async function updateNextRace() {
       location: nextRace.location,
     },
 
-    trackMap, // bind Widgy image to trackMap.pngUrl
+    trackMap, // Widgy binds to trackMap.pngUrl
 
     countdowns: {
       weekendStartsInDays: daysUntil(weekendStart, now),
@@ -376,7 +369,7 @@ async function updateNextRace() {
     sessions: sessionsOut,
 
     notes:
-      "Track map PNG is generated and committed under /trackmaps for Widgy. Bind Widgy image to trackMap.pngUrl. If not found, check TRACKMAP DEBUG bestGuess in Actions logs.",
+      "Track map is rendered to PNG and committed under /trackmaps. If the match is wrong, set FILE_OVERRIDES using trackMap.debug.topCandidatesByStyle to choose the right SVG filename.",
   };
 
   await fs.writeFile("f1_next_race.json", JSON.stringify(out, null, 2), "utf8");
