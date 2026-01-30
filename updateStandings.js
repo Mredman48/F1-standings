@@ -1,10 +1,14 @@
-import fetch from "node-fetch";
 import fs from "fs";
 
-const URL = "http://ergast.com/api/f1/current/driverStandings.json";
+const URL = "https://ergast.com/api/f1/current/driverStandings.json";
 
 async function updateStandings() {
   const res = await fetch(URL);
+
+  if (!res.ok) {
+    throw new Error(`HTTP error ${res.status}`);
+  }
+
   const data = await res.json();
 
   const standingsList =
