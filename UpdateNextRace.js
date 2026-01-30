@@ -1,5 +1,3 @@
-js
-
 import fs from "fs";
 
 const UA = "f1-next-race-bot/1.0 (GitHub Actions)";
