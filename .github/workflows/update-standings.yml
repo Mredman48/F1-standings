@@ -18,9 +18,6 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
-        run: npm install
-
       - name: Update standings
         run: node updateStandings.js
 
