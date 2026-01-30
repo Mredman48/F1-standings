@@ -18,7 +18,7 @@ const CIRCUIT_REPO_NAME = "f1-circuits-svg";
 const CIRCUIT_REPO_REF = "main";
 
 // Try styles in order
-const TRACK_STYLES = ["black-outline", "black", "white-outline", "white"];
+const TRACK_STYLES = ["black-outline"];
 
 // Output folder (committed)
 const TRACKMAP_DIR = "trackmaps";
