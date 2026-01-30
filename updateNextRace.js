@@ -6,22 +6,30 @@ import { Resvg } from "@resvg/resvg-js";
 
 const ICS_URL = "https://better-f1-calendar.vercel.app/api/calendar.ics";
 
+// Widgy-friendly local strings
 const USER_TZ = "America/Edmonton";
 const LOCALE = "en-CA";
 
 // Your GitHub Pages base URL (used for PNG URL in JSON)
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 
-// Circuit SVG source (MIT)
+// Circuit SVG source (MIT): julesr0y/f1-circuits-svg
 const CIRCUIT_REPO_OWNER = "julesr0y";
 const CIRCUIT_REPO_NAME = "f1-circuits-svg";
 const CIRCUIT_REPO_REF = "main";
 
-// Try these styles in order until an SVG exists
+// Try multiple styles until we find an SVG that exists
 const TRACK_STYLES = ["white-outline", "white", "black-outline", "black"];
 
 // Where rendered PNGs go in your repo
 const TRACKMAP_DIR = "trackmaps";
+
+// Optional: bulletproof overrides (leave empty if you want auto-only)
+// Add entries ONLY if a specific GP won't match reliably.
+const GP_LAYOUT_OVERRIDES = [
+  // { match: "monaco", layoutId: "monaco-1" },
+  // { match: "italian", layoutId: "monza-1" },
+];
 
 const UA = "f1-standings-bot/1.0 (GitHub Actions)";
 
@@ -43,6 +51,7 @@ function shortDateInTZ(dateObj, timeZone = USER_TZ) {
   });
 }
 
+// 24-hour time like "18:30"
 function shortTimeInTZ(dateObj, timeZone = USER_TZ) {
   return dateObj.toLocaleTimeString(LOCALE, {
     timeZone,
@@ -62,6 +71,7 @@ function splitLocation(location) {
   return { city: parts[0] || null, country: parts[1] || null };
 }
 
+// ---- Calendar parsing helpers ----
 function getSessionType(summary) {
   const s = (summary || "").toLowerCase();
   if (s.includes("practice 1") || s.includes("fp1")) return "FP1";
@@ -79,6 +89,7 @@ function getGpName(summary) {
   return (parts[0] || summary || "").trim();
 }
 
+// ---- Networking helpers ----
 async function fetchJson(url) {
   const res = await fetch(url, {
     headers: { "User-Agent": UA, Accept: "application/json" },
@@ -104,8 +115,11 @@ async function fetchText(url) {
 }
 
 async function urlExists(url) {
-  // jsDelivr supports HEAD
-  const res = await fetch(url, { method: "HEAD", headers: { "User-Agent": UA }, redirect: "follow" });
+  const res = await fetch(url, {
+    method: "HEAD",
+    headers: { "User-Agent": UA },
+    redirect: "follow",
+  });
   return res.ok;
 }
 
@@ -113,7 +127,7 @@ function normalize(s) {
   return (s || "")
     .toLowerCase()
     .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[\u0300-\u036f]/g, "") // remove accents
     .replace(/[^a-z0-9]+/g, " ")
     .trim();
 }
@@ -143,15 +157,17 @@ function parseSeasons(seasonStr) {
 function pickLayoutForYear(layouts, year) {
   if (!Array.isArray(layouts) || layouts.length === 0) return null;
 
-  // Try exact year match first
+  // Prefer exact year match if seasons are provided
   for (const lay of layouts) {
     const seasons = parseSeasons(lay?.seasons || lay?.season || "");
     if (seasons.includes(year)) return lay;
   }
-  // Otherwise pick newest-looking (last)
+
+  // Otherwise pick the last layout (often most current)
   return layouts[layouts.length - 1];
 }
 
+// Strong scoring that still works if city/country are missing
 function scoreCircuit(c, { gpName, city, country }) {
   const gpN = normalize(gpName);
   const cityN = normalize(city);
@@ -163,33 +179,46 @@ function scoreCircuit(c, { gpName, city, country }) {
 
   let score = 0;
 
-  // City and country are strong signals
-  if (cityN && (cityCN === cityN || nameN.includes(cityN))) score += 8;
-  if (countryN && (countryCN === countryN || nameN.includes(countryN))) score += 4;
+  // Strong if we have city/country
+  if (cityN && (cityCN === cityN || nameN.includes(cityN))) score += 10;
+  if (countryN && (countryCN === countryN || nameN.includes(countryN))) score += 5;
 
-  // GP name token overlap
+  // GP name token overlap ALWAYS counts
   if (gpN) {
-    const tokens = gpN.split(" ").filter((t) => t.length > 2 && t !== "grand" && t !== "prix" && t !== "gp");
-    for (const t of tokens) if (nameN.includes(t)) score += 2;
+    const tokens = gpN
+      .replace(/\bgrand prix\b/g, "")
+      .replace(/\bgp\b/g, "")
+      .split(" ")
+      .map((t) => t.trim())
+      .filter((t) => t.length > 2);
+
+    for (const t of tokens) {
+      if (nameN.includes(t)) score += 3;
+      if (cityCN.includes(t)) score += 2;
+      if (countryCN.includes(t)) score += 1;
+    }
   }
 
   return score;
 }
 
 function bestCircuitMatch(circuits, ctx) {
-  let best = null;
-  let bestScore = -1;
+  const scored = circuits
+    .map((c) => ({ c, score: scoreCircuit(c, ctx) }))
+    .sort((a, b) => b.score - a.score);
 
-  for (const c of circuits) {
-    const sc = scoreCircuit(c, ctx);
-    if (sc > bestScore) {
-      bestScore = sc;
-      best = c;
-    }
-  }
+  // Helpful debug in Actions logs
+  console.log(
+    "Circuit match top5:",
+    scored.slice(0, 5).map((x) => ({
+      score: x.score,
+      name: x.c?.name,
+      city: x.c?.city,
+      country: x.c?.country,
+    }))
+  );
 
-  // Lower threshold so we still get *something* and then validate via svg existence
-  return best;
+  return scored[0]?.c || null;
 }
 
 function renderSvgToPng(svgString, widthPx = 900) {
@@ -202,6 +231,41 @@ async function ensureDir(dir) {
 }
 
 async function getTrackMapPng({ gpName, city, country, year }) {
+  // 0) Manual override (guaranteed)
+  const gpLower = (gpName || "").toLowerCase();
+  const override = GP_LAYOUT_OVERRIDES.find((o) => gpLower.includes(o.match));
+  if (override?.layoutId) {
+    const layoutId = override.layoutId;
+    for (const style of TRACK_STYLES) {
+      const svgUrl = jsDelivrUrl(`circuits/${style}/${layoutId}.svg`);
+      if (await urlExists(svgUrl)) {
+        const svgText = await fetchText(svgUrl);
+        await ensureDir(TRACKMAP_DIR);
+        const pngBuffer = renderSvgToPng(svgText, 900);
+        const pngFilename = `${layoutId}.png`;
+        await fs.writeFile(path.join(TRACKMAP_DIR, pngFilename), pngBuffer);
+        return {
+          found: true,
+          source: "override",
+          style,
+          circuitName: null,
+          layout: { id: layoutId, seasons: null },
+          svgUrl,
+          pngUrl: `${PAGES_BASE}/${TRACKMAP_DIR}/${encodeURIComponent(pngFilename)}`,
+          note: null,
+        };
+      }
+    }
+    return {
+      found: false,
+      source: "override",
+      note: `Override layoutId '${layoutId}' set, but no SVG exists in repo for any style.`,
+      pngUrl: null,
+      svgUrl: null,
+    };
+  }
+
+  // 1) Auto match from circuits.json
   const circuitsJsonUrl = jsDelivrUrl("circuits.json");
   const circuitsObj = await fetchJson(circuitsJsonUrl);
   const circuits = extractCircuits(circuitsObj);
@@ -210,8 +274,9 @@ async function getTrackMapPng({ gpName, city, country, year }) {
   if (!circuit) {
     return {
       found: false,
+      source: "repo",
       circuitsJsonUrl,
-      note: "No circuits available in circuits.json (unexpected).",
+      note: "Could not match any circuit entry.",
       pngUrl: null,
       svgUrl: null,
     };
@@ -226,15 +291,16 @@ async function getTrackMapPng({ gpName, city, country, year }) {
   if (!layoutId) {
     return {
       found: false,
+      source: "repo",
       circuitsJsonUrl,
       circuitName: circuit?.name ?? null,
-      note: "Matched a circuit but no layout id found.",
+      note: "Matched circuit but could not determine layout id.",
       pngUrl: null,
       svgUrl: null,
     };
   }
 
-  // Find an SVG that actually exists by trying styles
+  // 2) Validate an SVG exists by trying styles
   let chosenStyle = null;
   let svgUrl = null;
 
@@ -250,6 +316,7 @@ async function getTrackMapPng({ gpName, city, country, year }) {
   if (!svgUrl) {
     return {
       found: false,
+      source: "repo",
       circuitsJsonUrl,
       circuitName: circuit?.name ?? null,
       layout: { id: layoutId, seasons: layout?.seasons ?? null },
@@ -259,18 +326,17 @@ async function getTrackMapPng({ gpName, city, country, year }) {
     };
   }
 
-  // Render PNG and write it
-  await ensureDir(TRACKMAP_DIR);
-
+  // 3) Render and write PNG
   const svgText = await fetchText(svgUrl);
+  await ensureDir(TRACKMAP_DIR);
   const pngBuffer = renderSvgToPng(svgText, 900);
 
   const pngFilename = `${layoutId}.png`;
-  const pngPath = path.join(TRACKMAP_DIR, pngFilename);
-  await fs.writeFile(pngPath, pngBuffer);
+  await fs.writeFile(path.join(TRACKMAP_DIR, pngFilename), pngBuffer);
 
   return {
     found: true,
+    source: "repo",
     circuitsJsonUrl,
     circuitName: circuit?.name ?? null,
     layout: { id: layoutId, seasons: layout?.seasons ?? null },
@@ -284,9 +350,7 @@ async function getTrackMapPng({ gpName, city, country, year }) {
 async function updateNextRace() {
   const now = new Date();
 
-  const data = await ical.async.fromURL(ICS_URL, {
-    headers: { "User-Agent": UA },
-  });
+  const data = await ical.async.fromURL(ICS_URL, { headers: { "User-Agent": UA } });
 
   const events = Object.values(data).filter((x) => x?.type === "VEVENT");
 
@@ -310,4 +374,94 @@ async function updateNextRace() {
       };
     })
     .filter(Boolean)
-    .sort((
+    .sort((a, b) => a.start - b.start);
+
+  const nextRace = sessions.find((s) => s.sessionType === "Race" && s.start > now);
+  if (!nextRace) throw new Error("Could not find upcoming Race session in calendar feed.");
+
+  const gpName = nextRace.gpName;
+  const gpSessions = sessions.filter((s) => s.gpName === gpName).sort((a, b) => a.start - b.start);
+
+  const weekendStart = gpSessions[0].start;
+  const weekendEnd = gpSessions[gpSessions.length - 1].end;
+
+  const { city, country } = splitLocation(nextRace.location);
+
+  // Debug what the calendar is giving us
+  console.log("GP DEBUG:", {
+    gpName,
+    location: nextRace.location,
+    city,
+    country,
+  });
+
+  // Track map lookup + PNG render
+  const year = now.getUTCFullYear();
+  const trackMap = await getTrackMapPng({ gpName, city, country, year });
+
+  console.log("Track map result:", trackMap);
+
+  const sessionOrder = ["FP1", "FP2", "FP3", "Qualifying", "Sprint Qualifying", "Sprint", "Race"];
+  const sessionsOut = sessionOrder
+    .map((type) => {
+      const s = gpSessions.find((x) => x.sessionType === type);
+      if (!s) return null;
+      return {
+        type,
+        startUtc: s.start.toISOString(),
+        endUtc: s.end.toISOString(),
+        startLocalDateShort: shortDateInTZ(s.start),
+        startLocalTimeShort: shortTimeInTZ(s.start),
+        startLocalDateTimeShort: shortDateTimeInTZ(s.start),
+      };
+    })
+    .filter(Boolean);
+
+  const out = {
+    header: `Next F1 race weekend`,
+    generatedAtUtc: now.toISOString(),
+    displayTimeZone: USER_TZ,
+    source: { kind: "ics", url: ICS_URL },
+
+    grandPrix: {
+      name: gpName,
+      city,
+      country,
+      location: nextRace.location,
+    },
+
+    trackMap, // Widgy image should bind to trackMap.pngUrl
+
+    countdowns: {
+      weekendStartsInDays: daysUntil(weekendStart, now),
+      raceStartsInDays: daysUntil(nextRace.start, now),
+    },
+
+    weekend: {
+      startUtc: weekendStart.toISOString(),
+      endUtc: weekendEnd.toISOString(),
+      startLocalDateShort: shortDateInTZ(weekendStart),
+      startLocalTimeShort: shortTimeInTZ(weekendStart),
+    },
+
+    race: {
+      startUtc: nextRace.start.toISOString(),
+      endUtc: nextRace.end.toISOString(),
+      startLocalDateShort: shortDateInTZ(nextRace.start),
+      startLocalTimeShort: shortTimeInTZ(nextRace.start),
+    },
+
+    sessions: sessionsOut,
+
+    notes:
+      "Track map PNG is generated and committed under /trackmaps for Widgy. Bind Widgy image to trackMap.pngUrl. If trackMap.found is false, use GP_LAYOUT_OVERRIDES for a guaranteed layout id.",
+  };
+
+  await fs.writeFile("f1_next_race.json", JSON.stringify(out, null, 2), "utf8");
+  console.log(`Wrote f1_next_race.json for ${gpName}`);
+}
+
+updateNextRace().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
