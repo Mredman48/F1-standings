@@ -6,7 +6,7 @@ const ICS_URL = "https://better-f1-calendar.vercel.app/api/calendar.ics";
 
 // Set this to YOUR timezone for Widgy display
 const USER_TZ = "America/Edmonton";
-const LOCALE = "en-CA"; // swap to "en-US" if you prefer
+const LOCALE = "en-CA"; // en-CA pairs nicely with 24h time
 
 function daysUntil(date, now = new Date()) {
   const ms = date.getTime() - now.getTime();
@@ -23,15 +23,17 @@ function shortDateInTZ(dateObj, timeZone = USER_TZ) {
   });
 }
 
-// Short time like: "10:30 AM"
+// 24-hour short time like: "18:30"
 function shortTimeInTZ(dateObj, timeZone = USER_TZ) {
   return dateObj.toLocaleTimeString(LOCALE, {
     timeZone,
-    hour: "numeric",
+    hour: "2-digit",
     minute: "2-digit",
+    hour12: false,
   });
 }
 
+// "Fri, Mar 07 18:30"
 function shortDateTimeInTZ(dateObj, timeZone = USER_TZ) {
   return `${shortDateInTZ(dateObj, timeZone)} ${shortTimeInTZ(dateObj, timeZone)}`;
 }
@@ -40,7 +42,6 @@ function shortDateTimeInTZ(dateObj, timeZone = USER_TZ) {
 function splitLocation(location) {
   if (!location || typeof location !== "string") return { city: null, country: null };
 
-  // Some feeds include extra commas. We take the first two parts as city/country best-effort.
   const parts = location.split(",").map((p) => p.trim()).filter(Boolean);
   return {
     city: parts[0] || null,
@@ -72,17 +73,14 @@ function getGpName(summary) {
 async function updateNextRace() {
   const now = new Date();
 
-  // node-ical can fetch and parse the ICS for you
   const data = await ical.async.fromURL(ICS_URL, {
     headers: {
       "User-Agent": "f1-standings-bot/1.0",
     },
   });
 
-  // Pull VEVENTs only
   const events = Object.values(data).filter((x) => x?.type === "VEVENT");
 
-  // Keep only session events we recognize
   const sessions = events
     .map((ev) => {
       const summary = (ev.summary || "").trim();
@@ -106,27 +104,22 @@ async function updateNextRace() {
     .filter(Boolean)
     .sort((a, b) => a.start - b.start);
 
-  // Find the next Race session in the future
   const nextRace = sessions.find((s) => s.sessionType === "Race" && s.start > now);
   if (!nextRace) {
     throw new Error("Could not find upcoming Race session in calendar feed.");
   }
 
-  // Group all sessions with same gpName
   const gpName = nextRace.gpName;
 
   const gpSessions = sessions
     .filter((s) => s.gpName === gpName)
     .sort((a, b) => a.start - b.start);
 
-  // Weekend boundaries
   const weekendStart = gpSessions[0].start;
   const weekendEnd = gpSessions[gpSessions.length - 1].end;
 
-  // Parse city/country
   const { city, country } = splitLocation(nextRace.location);
 
-  // Build a predictable output structure
   const sessionOrder = ["FP1", "FP2", "FP3", "Qualifying", "Sprint Qualifying", "Sprint", "Race"];
   const sessionsOut = sessionOrder
     .map((type) => {
@@ -140,7 +133,7 @@ async function updateNextRace() {
         startUtc: s.start.toISOString(),
         endUtc: s.end.toISOString(),
 
-        // Widgy-friendly (your local timezone)
+        // Widgy-friendly (your local timezone) — now 24h time
         startLocalDateShort: shortDateInTZ(s.start),
         startLocalTimeShort: shortTimeInTZ(s.start),
         startLocalDateTimeShort: shortDateTimeInTZ(s.start),
@@ -155,8 +148,6 @@ async function updateNextRace() {
   const out = {
     header: `Next F1 race weekend`,
     generatedAtUtc: now.toISOString(),
-
-    // This tells you what timezone the "Local" strings are in
     displayTimeZone: USER_TZ,
 
     source: {
@@ -201,7 +192,7 @@ async function updateNextRace() {
     sessions: sessionsOut,
 
     notes:
-      "Times are provided as UTC (startUtc/endUtc) plus pre-formatted short local strings for Widgy (startLocalDateShort/startLocalTimeShort). If you share this endpoint with others, the 'local' strings will be Edmonton time unless you change USER_TZ.",
+      "Times are provided as UTC (startUtc/endUtc) plus pre-formatted short local strings for Widgy (startLocalDateShort/startLocalTimeShort). Local time strings are formatted in 24-hour time. If you share this endpoint with others, the 'local' strings will be Edmonton time unless you change USER_TZ.",
   };
 
   await fs.writeFile("f1_next_race.json", JSON.stringify(out, null, 2), "utf8");
