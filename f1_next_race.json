@@ -1,0 +1,48 @@
+{
+  "header": "Next F1 race weekend",
+  "generatedAtUtc": "2026-01-30T18:57:06.919Z",
+  "source": {
+    "kind": "ics",
+    "url": "https://better-f1-calendar.vercel.app/api/calendar.ics"
+  },
+  "grandPrix": {
+    "name": "F1 Qatar Airways Australian GP 2026",
+    "location": "Australia"
+  },
+  "countdowns": {
+    "weekendStartsInDays": 35,
+    "raceStartsInDays": 37
+  },
+  "weekend": {
+    "startUtc": "2026-03-06T01:30:00.000Z",
+    "endUtc": "2026-03-08T06:00:00.000Z"
+  },
+  "sessions": [
+    {
+      "type": "FP1",
+      "startUtc": "2026-03-06T01:30:00.000Z",
+      "endUtc": "2026-03-06T02:30:00.000Z"
+    },
+    {
+      "type": "FP2",
+      "startUtc": "2026-03-06T05:00:00.000Z",
+      "endUtc": "2026-03-06T06:00:00.000Z"
+    },
+    {
+      "type": "FP3",
+      "startUtc": "2026-03-07T01:30:00.000Z",
+      "endUtc": "2026-03-07T02:30:00.000Z"
+    },
+    {
+      "type": "Qualifying",
+      "startUtc": "2026-03-07T05:00:00.000Z",
+      "endUtc": "2026-03-07T06:00:00.000Z"
+    },
+    {
+      "type": "Race",
+      "startUtc": "2026-03-08T04:00:00.000Z",
+      "endUtc": "2026-03-08T06:00:00.000Z"
+    }
+  ],
+  "notes": "All times are UTC. Render in local time in the client (e.g., new Date(startUtc).toLocaleString())."
+}
