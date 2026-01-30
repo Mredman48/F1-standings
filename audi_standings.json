@@ -1,0 +1,39 @@
+{
+  "header": "2026 Audi Standings",
+  "updated_at_utc": "2026-01-30T21:39:17.755Z",
+  "source": "openf1",
+  "team_match_rules": [
+    "audi",
+    "sauber",
+    "kick sauber"
+  ],
+  "drivers": [
+    {
+      "driver_number": 27,
+      "first_name": "Nico",
+      "last_name": "Hulkenberg",
+      "team_name": "Kick Sauber",
+      "position": 11,
+      "positionLabel": "P11",
+      "points": 51
+    },
+    {
+      "driver_number": 5,
+      "first_name": "Gabriel",
+      "last_name": "Bortoleto",
+      "team_name": "Kick Sauber",
+      "position": 19,
+      "positionLabel": "P19",
+      "points": 19
+    }
+  ],
+  "constructors": [
+    {
+      "team_name": "Kick Sauber",
+      "position": 9,
+      "positionLabel": "P9",
+      "points": 70
+    }
+  ],
+  "notes": "Drivers are filtered by team_name from /v1/drivers?session_key=latest. Adjust TEAM_MATCH if OpenF1 uses a different Audi naming in a given season."
+}
