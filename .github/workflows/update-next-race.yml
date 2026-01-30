@@ -1,32 +1,59 @@
-name: Update next race JSON
+name: Update Next Race JSON + Track Map
 
 on:
-  schedule:
-    - cron: "15 */1 * * *" # every 6 hours
   workflow_dispatch:
+  schedule:
+    # every 6 hours
+    - cron: "17 */1 * * *"
 
 permissions:
   contents: write
 
+concurrency:
+  group: update-next-race
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - run: npm install
+      - name: Install dependencies
+        run: npm install
 
-      - run: node updateNextRace.js
+      - name: Run next race updater
+        env:
+          # lets the script authenticate to GitHub API if it uses it
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node updateNextRace.js
+
+      - name: Debug generated files
+        run: |
+          echo "Repo root:"
+          ls -la
+          echo "Trackmaps:"
+          ls -la trackmaps || true
+          echo "Git status:"
+          git status
 
       - name: Commit and push if changed
-  run: |
-    git config user.name "f1-bot"
-    git config user.email "f1-bot@users.noreply.github.com"
-    git add f1_next_race.json trackmaps
-    git status
-    git diff --staged --quiet || git commit -m "Update next race JSON + track map"
-    git push
+        run: |
+          git config user.name "f1-bot"
+          git config user.email "f1-bot@users.noreply.github.com"
+
+          # IMPORTANT: include trackmaps so PNGs are committed
+          git add f1_next_race.json trackmaps
+
+          # Commit only if something changed
+          git diff --staged --quiet || git commit -m "Update next race JSON + track map"
+
+          # Push back to the same branch (default: main)
+          git push
