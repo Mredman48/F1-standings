@@ -1,6 +1,6 @@
 {
   "header": "Next F1 race weekend",
-  "generatedAtUtc": "2026-01-30T22:30:09.131Z",
+  "generatedAtUtc": "2026-01-30T22:32:30.926Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics",
@@ -13,13 +13,14 @@
     "location": "Australia"
   },
   "trackMap": {
-    "query": "F1 Qatar Airways Australian GP 2026 Australia circuit map OR track map OR circuit diagram",
-    "fileTitle": "File:Circuit diagram.png",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Circuit_diagram.png",
-    "thumbUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Circuit_diagram.png",
-    "licenseShortName": "CC BY-SA 4.0",
-    "attribution": "<a href=\"//commons.wikimedia.org/wiki/User:Alexey000035\" title=\"User:Alexey000035\">Alexey000035</a>",
-    "sourceUrl": "https://commons.wikimedia.org/wiki/File%3ACircuit_diagram.png"
+    "source": "github:julesr0y/f1-circuits-svg",
+    "found": false,
+    "note": "Could not match next GP to a circuit entry in circuits.json.",
+    "circuitsJsonUrl": "https://cdn.jsdelivr.net/gh/julesr0y/f1-circuits-svg@main/circuits.json",
+    "svgUrl": null,
+    "layoutId": null,
+    "circuitName": null,
+    "pngUrl": null
   },
   "countdowns": {
     "weekendStartsInDays": 35,
@@ -79,5 +80,5 @@
       "startLocalDateTimeShort": "Sat, Mar 07 21:00"
     }
   ],
-  "notes": "Track map is best-effort via Wikimedia Commons search. Use trackMap.thumbUrl for widgets; imageUrl may be large. Licenses/attribution vary per file."
+  "notes": "Track map is rendered to PNG and committed under /trackmaps so Widgy can display it. Use trackMap.pngUrl in Widgy Image layers."
 }
