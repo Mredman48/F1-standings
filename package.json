@@ -1,7 +1,19 @@
 {
   "name": "f1-standings",
+  "version": "1.0.0",
+  "description": "Automated F1 JSON endpoints for standings, next race info, and widgets",
   "type": "module",
+  "private": true,
+  "scripts": {
+    "update:next-race": "node updateNextRace.js",
+    "update:standings": "node updateStandings.js",
+    "update:audi": "node updateAudiStandings.js"
+  },
   "dependencies": {
-    "node-ical": "^0.16.1"
+    "node-ical": "^0.16.1",
+    "@resvg/resvg-js": "^2.6.0"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }
