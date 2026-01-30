@@ -1,0 +1,32 @@
+name: Update Next Race JSON
+
+on:
+  schedule:
+    - cron: "15 * * * *" # hourly at :15
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate next_race.json
+        run: node updateNextRace.js
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "f1-bot"
+          git config user.email "f1-bot@users.noreply.github.com"
+          git add next_race.json
+          git commit -m "Update next race details" || exit 0
+          git push
