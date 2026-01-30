@@ -1,6 +1,6 @@
 {
   "header": "Next F1 race weekend",
-  "generatedAtUtc": "2026-01-30T22:32:30.926Z",
+  "generatedAtUtc": "2026-01-30T22:42:58.242Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics",
@@ -13,14 +13,13 @@
     "location": "Australia"
   },
   "trackMap": {
-    "source": "github:julesr0y/f1-circuits-svg",
     "found": false,
-    "note": "Could not match next GP to a circuit entry in circuits.json.",
+    "source": "repo",
     "circuitsJsonUrl": "https://cdn.jsdelivr.net/gh/julesr0y/f1-circuits-svg@main/circuits.json",
-    "svgUrl": null,
-    "layoutId": null,
-    "circuitName": null,
-    "pngUrl": null
+    "circuitName": "Adelaide Street Circuit",
+    "note": "Matched circuit but could not determine layout id.",
+    "pngUrl": null,
+    "svgUrl": null
   },
   "countdowns": {
     "weekendStartsInDays": 35,
@@ -80,5 +79,5 @@
       "startLocalDateTimeShort": "Sat, Mar 07 21:00"
     }
   ],
-  "notes": "Track map is rendered to PNG and committed under /trackmaps so Widgy can display it. Use trackMap.pngUrl in Widgy Image layers."
+  "notes": "Track map PNG is generated and committed under /trackmaps for Widgy. Bind Widgy image to trackMap.pngUrl. If trackMap.found is false, use GP_LAYOUT_OVERRIDES for a guaranteed layout id."
 }
