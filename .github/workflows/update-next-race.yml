@@ -2,7 +2,7 @@ name: Update next race JSON
 
 on:
   schedule:
-    - cron: "15 */6 * * *" # every 6 hours
+    - cron: "15 */1 * * *" # every 6 hours
   workflow_dispatch:
 
 permissions:
