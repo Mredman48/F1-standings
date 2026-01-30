@@ -1,6 +1,8 @@
 // updateNextRace.js
 import fs from "node:fs/promises";
+import path from "node:path";
 import ical from "node-ical";
+import { Resvg } from "@resvg/resvg-js";
 
 const ICS_URL = "https://better-f1-calendar.vercel.app/api/calendar.ics";
 
@@ -8,8 +10,24 @@ const ICS_URL = "https://better-f1-calendar.vercel.app/api/calendar.ics";
 const USER_TZ = "America/Edmonton";
 const LOCALE = "en-CA";
 
-// Wikimedia Commons API
-const COMMONS_API = "https://commons.wikimedia.org/w/api.php";
+// GitHub Pages base for your repo
+const PAGES_BASE = "https://mredman48.github.io/F1-standings";
+
+// Track map source: julesr0y/f1-circuits-svg (MIT)
+const CIRCUIT_REPO_OWNER = "julesr0y";
+const CIRCUIT_REPO_NAME = "f1-circuits-svg";
+const CIRCUIT_REPO_REF = "main";
+
+// Choose style folder: "black" | "black-outline" | "white" | "white-outline"
+const TRACK_STYLE = "white-outline";
+
+// Where to store generated PNGs in your repo
+const TRACKMAP_DIR = "trackmaps"; // committed folder
+
+function jsDelivrUrl(repoPath) {
+  return `https://cdn.jsdelivr.net/gh/${CIRCUIT_REPO_OWNER}/${CIRCUIT_REPO_NAME}@${CIRCUIT_REPO_REF}/${repoPath}`;
+}
+
 const UA = "f1-standings-bot/1.0 (GitHub Actions)";
 
 function daysUntil(date, now = new Date()) {
@@ -40,13 +58,13 @@ function shortDateTimeInTZ(dateObj, timeZone = USER_TZ) {
   return `${shortDateInTZ(dateObj, timeZone)} ${shortTimeInTZ(dateObj, timeZone)}`;
 }
 
-// Parse "Barcelona, Spain" → { city: "Barcelona", country: "Spain" }
 function splitLocation(location) {
   if (!location || typeof location !== "string") return { city: null, country: null };
   const parts = location.split(",").map((p) => p.trim()).filter(Boolean);
   return { city: parts[0] || null, country: parts[1] || null };
 }
 
+// ---- Calendar parsing helpers ----
 function getSessionType(summary) {
   const s = (summary || "").toLowerCase();
   if (s.includes("practice 1") || s.includes("fp1")) return "FP1";
@@ -64,12 +82,10 @@ function getGpName(summary) {
   return (parts[0] || summary || "").trim();
 }
 
-// ---- Wikimedia Commons helpers ----
-
-// Basic fetch JSON with origin=* (required for some clients; harmless in Actions)
+// ---- Networking helpers ----
 async function fetchJson(url) {
   const res = await fetch(url, {
-    headers: { "User-Agent": UA, "Accept": "application/json" },
+    headers: { "User-Agent": UA, Accept: "application/json" },
     redirect: "follow",
   });
   if (!res.ok) {
@@ -79,78 +95,159 @@ async function fetchJson(url) {
   return res.json();
 }
 
-function buildCommonsSearchQuery({ gpName, city, country }) {
-  // We bias toward typical file names on Commons:
-  // "2020 Monaco Grand Prix circuit map", "Circuit de Monaco map", etc.
-  // We search for SVG first (usually clean), but accept others too.
-  const bits = [gpName, city, country].filter(Boolean);
-  const base = bits.join(" ");
-  return `${base} circuit map OR track map OR circuit diagram`;
+async function fetchText(url) {
+  const res = await fetch(url, {
+    headers: { "User-Agent": UA, Accept: "text/plain,*/*" },
+    redirect: "follow",
+  });
+  if (!res.ok) {
+    const text = await res.text().catch(() => "");
+    throw new Error(`HTTP ${res.status} fetching ${url}\n${text.slice(0, 200)}`);
+  }
+  return res.text();
 }
 
-async function findTrackMapOnCommons({ gpName, city, country }) {
-  const srsearch = buildCommonsSearchQuery({ gpName, city, country });
+function normalize(s) {
+  return (s || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
 
-  // 1) Search files (namespace 6 is File:)
-  const searchUrl =
-    `${COMMONS_API}?action=query&format=json&origin=*` +
-    `&list=search&srnamespace=6&srlimit=5` +
-    `&srsearch=${encodeURIComponent(srsearch)}`;
+function parseSeasons(seasonStr) {
+  if (!seasonStr || typeof seasonStr !== "string") return [];
+  const out = new Set();
 
-  const searchJson = await fetchJson(searchUrl);
-  const hits = searchJson?.query?.search || [];
-  if (!hits.length) {
+  for (const part of seasonStr.split(",").map((p) => p.trim()).filter(Boolean)) {
+    if (part.includes("-")) {
+      const [a, b] = part.split("-").map((x) => parseInt(x.trim(), 10));
+      if (Number.isFinite(a) && Number.isFinite(b)) {
+        for (let y = a; y <= b; y++) out.add(y);
+      }
+    } else {
+      const y = parseInt(part, 10);
+      if (Number.isFinite(y)) out.add(y);
+    }
+  }
+  return [...out].sort((a, b) => a - b);
+}
+
+function extractCircuits(obj) {
+  if (Array.isArray(obj)) return obj;
+  if (Array.isArray(obj?.circuits)) return obj.circuits;
+  if (Array.isArray(obj?.data)) return obj.data;
+  return [];
+}
+
+function pickLayoutForYear(layouts, year) {
+  if (!Array.isArray(layouts) || layouts.length === 0) return null;
+
+  for (const lay of layouts) {
+    const seasons = parseSeasons(lay?.seasons || lay?.season || "");
+    if (seasons.includes(year)) return lay;
+  }
+  return layouts[layouts.length - 1];
+}
+
+function bestCircuitMatch(circuits, { gpName, city, country }) {
+  const gpN = normalize(gpName);
+  const cityN = normalize(city);
+  const countryN = normalize(country);
+
+  let best = null;
+  let bestScore = -1;
+
+  for (const c of circuits) {
+    const nameN = normalize(c?.name || "");
+    const cityCN = normalize(c?.city || c?.location || "");
+    const countryCN = normalize(c?.country || "");
+
+    let score = 0;
+
+    if (cityN && (cityCN === cityN || nameN.includes(cityN))) score += 6;
+    if (countryN && (countryCN === countryN || nameN.includes(countryN))) score += 2;
+
+    if (gpN) {
+      const gpTokens = gpN.split(" ").filter((t) => t.length > 2);
+      for (const t of gpTokens) if (nameN.includes(t)) score += 1;
+    }
+
+    if (score > bestScore) {
+      bestScore = score;
+      best = c;
+    }
+  }
+
+  return bestScore >= 3 ? best : null;
+}
+
+async function getTrackMapSvgFromRepo({ gpName, city, country, year }) {
+  const circuitsJsonUrl = jsDelivrUrl("circuits.json");
+  const circuitsObj = await fetchJson(circuitsJsonUrl);
+  const circuits = extractCircuits(circuitsObj);
+
+  const circuit = bestCircuitMatch(circuits, { gpName, city, country });
+  if (!circuit) {
     return {
-      query: srsearch,
-      fileTitle: null,
-      imageUrl: null,
-      thumbUrl: null,
-      licenseShortName: null,
-      attribution: null,
-      sourceUrl: null,
-      note: "No matching track map files found on Wikimedia Commons.",
+      found: false,
+      note: "Could not match next GP to a circuit entry in circuits.json.",
+      circuitsJsonUrl,
+      svgUrl: null,
+      layoutId: null,
+      circuitName: null,
     };
   }
 
-  // Prefer SVG first, then PNG
-  const pick =
-    hits.find((h) => (h.title || "").toLowerCase().endsWith(".svg")) ||
-    hits.find((h) => (h.title || "").toLowerCase().endsWith(".png")) ||
-    hits[0];
+  const layout =
+    pickLayoutForYear(circuit.layouts, year) ||
+    pickLayoutForYear(circuit?.layoutsList, year) ||
+    null;
 
-  const fileTitle = pick.title; // e.g., "File:Monaco Grand Prix circuit map.svg"
+  const layoutId = layout?.id || layout?.layout_id || layout?.name || null;
+  if (!layoutId) {
+    return {
+      found: false,
+      note: "Matched circuit but could not determine layout id.",
+      circuitsJsonUrl,
+      svgUrl: null,
+      layoutId: null,
+      circuitName: circuit?.name ?? null,
+    };
+  }
 
-  // 2) Get direct URL + license metadata
-  const infoUrl =
-    `${COMMONS_API}?action=query&format=json&origin=*` +
-    `&prop=imageinfo&titles=${encodeURIComponent(fileTitle)}` +
-    `&iiprop=url|extmetadata&iiurlwidth=800`;
-
-  const infoJson = await fetchJson(infoUrl);
-  const pages = infoJson?.query?.pages || {};
-  const page = Object.values(pages)[0];
-  const ii = page?.imageinfo?.[0];
-
-  const imageUrl = ii?.url || null;
-  const thumbUrl = ii?.thumburl || null;
-
-  const ext = ii?.extmetadata || {};
-  const licenseShortName = ext?.LicenseShortName?.value || null;
-  const attribution = ext?.Attribution?.value || ext?.Artist?.value || null;
-
-  const sourceUrl = fileTitle
-    ? `https://commons.wikimedia.org/wiki/${encodeURIComponent(fileTitle.replace(/ /g, "_"))}`
-    : null;
+  const svgPath = `circuits/${TRACK_STYLE}/${layoutId}.svg`;
+  const svgUrl = jsDelivrUrl(svgPath);
 
   return {
-    query: srsearch,
-    fileTitle,
-    imageUrl,
-    thumbUrl,
-    licenseShortName,
-    attribution,
-    sourceUrl,
+    found: true,
+    note: null,
+    circuitsJsonUrl,
+    svgUrl,
+    layoutId,
+    circuitName: circuit?.name ?? null,
+    layoutSeasons: layout?.seasons ?? null,
+    style: TRACK_STYLE,
   };
+}
+
+// Render SVG string to PNG buffer
+function renderSvgToPng(svgString, widthPx = 900) {
+  const resvg = new Resvg(svgString, {
+    fitTo: { mode: "width", value: widthPx },
+    // background: "transparent" is default
+  });
+  const rendered = resvg.render();
+  return rendered.asPng();
+}
+
+async function ensureDir(dir) {
+  try {
+    await fs.mkdir(dir, { recursive: true });
+  } catch {
+    // ignore
+  }
 }
 
 async function updateNextRace() {
@@ -195,20 +292,53 @@ async function updateNextRace() {
 
   const { city, country } = splitLocation(nextRace.location);
 
-  // --- NEW: track map lookup from Wikimedia Commons
+  // ---- Track map: SVG lookup + PNG render ----
+  const year = now.getUTCFullYear();
   let trackMap = null;
+
   try {
-    trackMap = await findTrackMapOnCommons({ gpName, city, country });
+    const svgInfo = await getTrackMapSvgFromRepo({ gpName, city, country, year });
+
+    if (!svgInfo.found || !svgInfo.svgUrl || !svgInfo.layoutId) {
+      trackMap = {
+        source: "github:julesr0y/f1-circuits-svg",
+        ...svgInfo,
+        pngUrl: null,
+      };
+    } else {
+      // Fetch SVG content
+      const svgText = await fetchText(svgInfo.svgUrl);
+
+      // Render PNG and save to repo folder
+      await ensureDir(TRACKMAP_DIR);
+      const pngBuffer = renderSvgToPng(svgText, 900);
+
+      const pngFilename = `${svgInfo.layoutId}.png`;
+      const pngPath = path.join(TRACKMAP_DIR, pngFilename);
+      await fs.writeFile(pngPath, pngBuffer);
+
+      // Public URL via GitHub Pages
+      const pngUrl = `${PAGES_BASE}/${TRACKMAP_DIR}/${encodeURIComponent(pngFilename)}`;
+
+      trackMap = {
+        source: "github:julesr0y/f1-circuits-svg",
+        found: true,
+        style: svgInfo.style,
+        circuitsJsonUrl: svgInfo.circuitsJsonUrl,
+        circuitName: svgInfo.circuitName,
+        layout: { id: svgInfo.layoutId, seasons: svgInfo.layoutSeasons },
+        svgUrl: svgInfo.svgUrl,
+        pngUrl,
+        note: null,
+      };
+    }
   } catch (e) {
     trackMap = {
-      query: buildCommonsSearchQuery({ gpName, city, country }),
-      fileTitle: null,
-      imageUrl: null,
-      thumbUrl: null,
-      licenseShortName: null,
-      attribution: null,
-      sourceUrl: null,
-      note: `Track map lookup failed: ${e?.message || String(e)}`,
+      source: "github:julesr0y/f1-circuits-svg",
+      found: false,
+      pngUrl: null,
+      svgUrl: null,
+      note: `Track map render failed: ${e?.message || String(e)}`,
     };
   }
 
@@ -222,8 +352,6 @@ async function updateNextRace() {
         type,
         startUtc: s.start.toISOString(),
         endUtc: s.end.toISOString(),
-
-        // Widgy-friendly local strings (24h)
         startLocalDateShort: shortDateInTZ(s.start),
         startLocalTimeShort: shortTimeInTZ(s.start),
         startLocalDateTimeShort: shortDateTimeInTZ(s.start),
@@ -235,7 +363,6 @@ async function updateNextRace() {
     header: `Next F1 race weekend`,
     generatedAtUtc: now.toISOString(),
     displayTimeZone: USER_TZ,
-
     source: { kind: "ics", url: ICS_URL },
 
     grandPrix: {
@@ -245,8 +372,7 @@ async function updateNextRace() {
       location: nextRace.location,
     },
 
-    // NEW FIELD
-    trackMap, // includes imageUrl + credit/license when found
+    trackMap, // <-- bind Widgy Image to trackMap.pngUrl
 
     countdowns: {
       weekendStartsInDays: daysUntil(weekendStart, now),
@@ -270,7 +396,7 @@ async function updateNextRace() {
     sessions: sessionsOut,
 
     notes:
-      "Track map is best-effort via Wikimedia Commons search. Use trackMap.thumbUrl for widgets; imageUrl may be large. Licenses/attribution vary per file.",
+      "Track map is rendered to PNG and committed under /trackmaps so Widgy can display it. Use trackMap.pngUrl in Widgy Image layers.",
   };
 
   await fs.writeFile("f1_next_race.json", JSON.stringify(out, null, 2), "utf8");
