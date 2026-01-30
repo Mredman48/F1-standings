@@ -1,30 +1,73 @@
 import fs from "fs";
 
 const UA = "f1-next-race-bot/1.0 (GitHub Actions)";
-const API = "https://api.openf1.org/v1";
+const CALENDAR_LANDING = "https://calendar.formula1.com/";
 
-async function getJson(url) {
+// ---------- helpers ----------
+async function fetchText(url, accept = "*/*") {
   const res = await fetch(url, {
+    redirect: "follow",
     headers: {
       "User-Agent": UA,
-      "Accept": "application/json"
+      "Accept": accept,
     },
-    redirect: "follow"
   });
 
-  if (!res.ok) {
-    const txt = await res.text();
-    throw new Error(`HTTP ${res.status} for ${url}\n${txt.slice(0, 400)}`);
+  const text = await res.text();
+  return { ok: res.ok, status: res.status, headers: res.headers, text, finalUrl: res.url };
+}
+
+// Unfold ICS lines (RFC: lines can be folded with CRLF + space)
+function unfoldIcs(ics) {
+  return ics.replace(/\r?\n[ \t]/g, "");
+}
+
+function parseIcsEvents(icsRaw) {
+  const ics = unfoldIcs(icsRaw);
+  const lines = ics.split(/\r?\n/);
+
+  const events = [];
+  let cur = null;
+
+  for (const line of lines) {
+    if (line === "BEGIN:VEVENT") cur = {};
+    else if (line === "END:VEVENT") {
+      if (cur) events.push(cur);
+      cur = null;
+    } else if (cur) {
+      const idx = line.indexOf(":");
+      if (idx === -1) continue;
+
+      const left = line.slice(0, idx);
+      const value = line.slice(idx + 1);
+
+      // left can be like DTSTART;TZID=Europe/London or DTSTART
+      const [key] = left.split(";");
+      cur[key] = value;
+    }
   }
 
-  return res.json();
+  return events;
+}
+
+function icsDateToIso(dt) {
+  // Common formats:
+  // 20260308T060000Z  (UTC)
+  // 20260308T060000   (floating / local; treat as UTC to be consistent)
+  if (!dt) return null;
+  const m = dt.match(/^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})(Z)?$/);
+  if (!m) return null;
+
+  const [, y, mo, d, hh, mm, ss] = m;
+  const z = m[7] ? "Z" : "Z";
+  return `${y}-${mo}-${d}T${hh}:${mm}:${ss}${z}`;
 }
 
 function toUnixSeconds(iso) {
-  return Math.floor(new Date(iso).getTime() / 1000);
+  return iso ? Math.floor(new Date(iso).getTime() / 1000) : null;
 }
 
-function buildCountdownParts(targetUnix) {
+function countdownParts(targetUnix) {
   const now = Math.floor(Date.now() / 1000);
   const diff = Math.max(0, targetUnix - now);
 
@@ -35,129 +78,182 @@ function buildCountdownParts(targetUnix) {
   return { days, hours, minutes };
 }
 
-// Convert a UTC ISO string to "track-local" ISO-like string using meeting gmt_offset like "08:00:00" or "-03:00:00"
-function toTrackLocalIso(utcIso, gmtOffset) {
-  if (!utcIso || !gmtOffset) return null;
-
-  const sign = gmtOffset.startsWith("-") ? -1 : 1;
-  const [hh, mm, ss] = gmtOffset.replace("-", "").split(":").map(Number);
-  const offsetMs = sign * ((hh * 3600 + mm * 60 + (ss || 0)) * 1000);
-
-  const t = new Date(utcIso).getTime() + offsetMs;
-  const d = new Date(t);
-
-  const pad = (n) => String(n).padStart(2, "0");
-  return `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getUTCDate())}T${pad(d.getUTCHours())}:${pad(d.getUTCMinutes())}:${pad(d.getUTCSeconds())}`;
+function normalizeSummary(s) {
+  return (s || "").replace(/\s+/g, " ").trim();
 }
 
-function pickWeekendStartSession(sessions) {
-  // Choose the earliest session by date_start — robust across Sprint/format changes
-  if (!sessions.length) return null;
-  return sessions.slice().sort((a, b) => new Date(a.date_start) - new Date(b.date_start))[0];
+// Try to extract a “weekend name” and session label from SUMMARY.
+// Examples we handle:
+// "FORMULA 1 AUSTRALIAN GRAND PRIX 2026 - Practice 1"
+// "Formula 1: Australian Grand Prix - Qualifying"
+// "Australian Grand Prix - Race"
+function splitWeekendAndSession(summary) {
+  const s = normalizeSummary(summary);
+
+  // If it has " - " assume last part is session name
+  const parts = s.split(" - ");
+  if (parts.length >= 2) {
+    const session = parts[parts.length - 1].trim();
+    const weekend = parts.slice(0, -1).join(" - ").trim();
+    return { weekend, session };
+  }
+
+  // Fallback: if contains ":" (some calendars do)
+  const colonParts = s.split(":");
+  if (colonParts.length >= 2) {
+    return { weekend: colonParts.slice(1).join(":").trim(), session: null };
+  }
+
+  return { weekend: s, session: null };
 }
 
-function pickRaceSession(sessions) {
-  // Prefer explicit "Race" session_name; fallback to session_type
-  return (
-    sessions.find(s => (s.session_name || "").toLowerCase() === "race") ||
-    sessions.find(s => (s.session_type || "").toLowerCase() === "race") ||
-    null
-  );
+function isRaceSession(sessionName) {
+  const s = (sessionName || "").toLowerCase();
+  return s === "race" || s.includes("grand prix") && s.includes("race") || s.includes("race");
 }
 
+// ---------- main ----------
 async function updateNextRace() {
-  const nowIso = new Date().toISOString();
-  const year = new Date().getUTCFullYear();
+  const generatedAt = new Date().toISOString();
 
-  // Find next upcoming meeting (race weekend)
-  const meetings = await getJson(
-    `${API}/meetings?year=${year}&date_start>=${encodeURIComponent(nowIso)}`
-  );
+  // 1) Try to fetch ICS directly (some servers respond with calendar when Accept asks for it)
+  let icsText = null;
 
-  if (!Array.isArray(meetings) || meetings.length === 0) {
-    throw new Error(`No upcoming meetings found for year ${year} after ${nowIso}`);
+  const direct = await fetchText(CALENDAR_LANDING, "text/calendar,*/*");
+  if (direct.ok && /BEGIN:VCALENDAR/.test(direct.text)) {
+    icsText = direct.text;
+  } else {
+    // 2) Otherwise: scrape for an .ics URL in the landing HTML
+    // (calendar.formula1.com is JS-heavy, but it often still embeds/redirects to an ICS link)
+    const html = direct.text || "";
+    const icsUrlMatch =
+      html.match(/https?:\/\/[^"' ]+\.ics[^"' ]*/i) ||
+      html.match(/webcal:\/\/[^"' ]+\.ics[^"' ]*/i);
+
+    if (!icsUrlMatch) {
+      throw new Error(
+        `Could not locate an ICS feed from ${CALENDAR_LANDING}. Status=${direct.status}`
+      );
+    }
+
+    const rawUrl = icsUrlMatch[0].replace(/^webcal:\/\//i, "https://");
+    const icsRes = await fetchText(rawUrl, "text/calendar,*/*");
+
+    if (!icsRes.ok || !/BEGIN:VCALENDAR/.test(icsRes.text)) {
+      throw new Error(
+        `ICS fetch failed. url=${rawUrl} status=${icsRes.status} body=${icsRes.text.slice(0, 200)}`
+      );
+    }
+
+    icsText = icsRes.text;
   }
 
-  meetings.sort((a, b) => new Date(a.date_start) - new Date(b.date_start));
-  const next = meetings[0];
+  // Parse ICS events
+  const vevents = parseIcsEvents(icsText);
 
-  // Fetch all sessions for that meeting
-  const sessions = await getJson(`${API}/sessions?meeting_key=${next.meeting_key}`);
-  if (!Array.isArray(sessions) || sessions.length === 0) {
-    throw new Error(`No sessions found for meeting_key ${next.meeting_key}`);
+  // Convert to normalized session objects
+  const sessions = vevents
+    .map(ev => {
+      const isoStart = icsDateToIso(ev.DTSTART);
+      const isoEnd = icsDateToIso(ev.DTEND);
+      const startUnix = toUnixSeconds(isoStart);
+
+      return {
+        summary: normalizeSummary(ev.SUMMARY),
+        location: ev.LOCATION ? normalizeSummary(ev.LOCATION) : null,
+        description: ev.DESCRIPTION ? normalizeSummary(ev.DESCRIPTION) : null,
+        start_utc: isoStart,
+        end_utc: isoEnd,
+        start_unix: startUnix,
+        end_unix: toUnixSeconds(isoEnd),
+      };
+    })
+    .filter(s => s.start_unix && s.start_unix > Math.floor(Date.now() / 1000) - 3600) // keep upcoming (with 1h grace)
+    .sort((a, b) => a.start_unix - b.start_unix);
+
+  if (sessions.length === 0) {
+    throw new Error("No upcoming sessions found in calendar feed.");
   }
 
-  sessions.sort((a, b) => new Date(a.date_start) - new Date(b.date_start));
+  // Identify the next weekend by taking the first upcoming session and grouping by its "weekend" token
+  const first = sessions[0];
+  const firstParts = splitWeekendAndSession(first.summary);
+  const weekendKey = firstParts.weekend;
 
-  const weekendStart = pickWeekendStartSession(sessions);
-  const race = pickRaceSession(sessions);
+  const weekendSessions = sessions
+    .filter(s => splitWeekendAndSession(s.summary).weekend === weekendKey)
+    .sort((a, b) => a.start_unix - b.start_unix);
 
-  if (!weekendStart) throw new Error("Could not determine weekend start session");
-  if (!race) throw new Error("Could not find Race session");
+  const weekendStart = weekendSessions[0];
 
-  const weekendStartUnix = toUnixSeconds(weekendStart.date_start);
-  const raceStartUnix = toUnixSeconds(race.date_start);
+  // Find race session within the weekend group
+  let race = weekendSessions.find(s => isRaceSession(splitWeekendAndSession(s.summary).session));
+  if (!race) {
+    // fallback: look for "Race" in summary
+    race = weekendSessions.find(s => (s.summary || "").toLowerCase().includes("race"));
+  }
+  if (!race) {
+    // Don’t hard fail—still publish weekend info. Race sometimes appears later in some feeds.
+    // But provide countdowns if/when it exists.
+    race = null;
+  }
 
-  const weekendCountdown = buildCountdownParts(weekendStartUnix);
-  const raceCountdown = buildCountdownParts(raceStartUnix);
+  const weekendStartCountdown = countdownParts(weekendStart.start_unix);
+  const raceCountdown = race ? countdownParts(race.start_unix) : null;
 
   const output = {
-    header: `Next F1 Race – ${next.meeting_name}`,
-    generated_at_utc: nowIso,
-
-    meeting: {
-      year: next.year,
-      meeting_key: next.meeting_key,
-      meeting_name: next.meeting_name,
-      meeting_official_name: next.meeting_official_name ?? null,
-      country_name: next.country_name,
-      location: next.location,
-      circuit_short_name: next.circuit_short_name,
-      gmt_offset: next.gmt_offset,
-      date_start_utc: next.date_start,
-      date_end_utc: next.date_end
-    },
+    header: `Next F1 Weekend – ${weekendKey}`,
+    generated_at_utc: generatedAt,
 
     countdowns: {
       race_weekend: {
         target: "weekend_start",
-        weekend_start_session_name: weekendStart.session_name,
-        weekend_start_utc: weekendStart.date_start,
-        weekend_start_unix: weekendStartUnix,
-        days: weekendCountdown.days,
-        hours: weekendCountdown.hours,
-        minutes: weekendCountdown.minutes
+        weekend_start_utc: weekendStart.start_utc,
+        weekend_start_unix: weekendStart.start_unix,
+        days: weekendStartCountdown.days,
+        hours: weekendStartCountdown.hours,
+        minutes: weekendStartCountdown.minutes,
       },
-      race: {
-        target: "race_start",
-        race_start_utc: race.date_start,
-        race_start_unix: raceStartUnix,
-        days: raceCountdown.days,
-        hours: raceCountdown.hours,
-        minutes: raceCountdown.minutes
-      },
+      race: race
+        ? {
+            target: "race_start",
+            race_start_utc: race.start_utc,
+            race_start_unix: race.start_unix,
+            days: raceCountdown.days,
+            hours: raceCountdown.hours,
+            minutes: raceCountdown.minutes,
+          }
+        : {
+            target: "race_start",
+            race_start_utc: null,
+            race_start_unix: null,
+            days: null,
+            hours: null,
+            minutes: null,
+            note:
+              "Race session not yet present in the calendar feed for this weekend (it may appear closer to the event). Weekend countdown and session list are still valid.",
+          },
       note:
-        "Countdown values are computed at build time. For a live ticking countdown, use the *_unix timestamps in your client and recompute."
+        "Countdown values are computed at build time. For a live ticking countdown, recompute using *_unix in your client.",
     },
 
-    sessions: sessions.map(s => ({
-      session_key: s.session_key,
-      session_name: s.session_name,
-      session_type: s.session_type,
-
-      date_start_utc: s.date_start,
-      date_end_utc: s.date_end,
-      date_start_unix: toUnixSeconds(s.date_start),
-      date_end_unix: toUnixSeconds(s.date_end),
-
-      // Track-local time derived from gmt_offset (not end-user local)
-      date_start_track_local: toTrackLocalIso(s.date_start, next.gmt_offset),
-      date_end_track_local: toTrackLocalIso(s.date_end, next.gmt_offset)
-    }))
+    sessions: weekendSessions.map(s => {
+      const parts = splitWeekendAndSession(s.summary);
+      return {
+        weekend: parts.weekend,
+        session: parts.session, // e.g., Practice 1 / Qualifying / Sprint / Race (best effort)
+        summary: s.summary,
+        location: s.location,
+        start_utc: s.start_utc,
+        end_utc: s.end_utc,
+        start_unix: s.start_unix,
+        end_unix: s.end_unix,
+      };
+    }),
   };
 
   fs.writeFileSync("next_race.json", JSON.stringify(output, null, 2));
-  console.log(`Wrote next_race.json for ${next.meeting_name}`);
+  console.log(`Wrote next_race.json for weekend: ${weekendKey}`);
 }
 
 updateNextRace();
