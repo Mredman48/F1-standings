@@ -72,9 +72,9 @@ function getSessionType(summary) {
   if (s.includes("practice 1") || s.includes("fp1")) return "FP1";
   if (s.includes("practice 2") || s.includes("fp2")) return "FP2";
   if (s.includes("practice 3") || s.includes("fp3")) return "FP3";
-  if (s.includes("sprint qualifying")) return "Sprint Qualifying";
+  if (s.includes("sprint qualifying")) return "Sprint Quali";
   if (s.includes("sprint")) return "Sprint";
-  if (s.includes("qualifying") || s.includes("quali")) return "Qualifying";
+  if (s.includes("qualifying") || s.includes("quali")) return "Quali";
   if (s.includes("race")) return "Race";
   return null;
 }
