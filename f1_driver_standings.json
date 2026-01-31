@@ -1,13 +1,484 @@
 {
-  "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-01-31T22:53:39.043Z",
+  "header": "2025 Driver Standings (fallback)",
+  "generatedAtUtc": "2026-01-31T22:55:07.488Z",
+  "season": "2025",
+  "round": "24",
   "source": {
     "kind": "jolpica ergast-compatible",
-    "url": "https://api.jolpi.ca/ergast/f1/current/driverstandings.json"
+    "url": "https://api.jolpi.ca/ergast/f1/2025/last/driverstandings.json",
+    "note": "Current season standings were empty; using last season final standings."
   },
-  "season": "2026",
-  "round": null,
-  "totalDriversInResponse": 0,
-  "note": "No driver standings are available yet for the current season. This will populate after the first classified session/race with standings.",
-  "drivers": []
+  "enrichment": {
+    "openf1DriversUrl": "https://api.openf1.org/v1/drivers?session_key=latest",
+    "openf1RowsSeen": 20,
+    "note": "Driver headshots + team hex colours come from OpenF1 drivers endpoint (joined by name)."
+  },
+  "fallback": {
+    "seasonRequested": "2026",
+    "fallbackSeason": 2025
+  },
+  "drivers": [
+    {
+      "position": "P1",
+      "positionNumber": 1,
+      "points": 423,
+      "wins": 7,
+      "driver": {
+        "code": "NOR",
+        "firstName": "Lando",
+        "lastName": "Norris",
+        "fullName": "Lando Norris",
+        "nationality": "British",
+        "driverNumber": 4,
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LANNOR01_Lando_Norris/lannor01.png.transform/1col/image.png",
+        "nameAcronym": "NOR"
+      },
+      "constructor": {
+        "name": "McLaren",
+        "fullName": "McLaren",
+        "nationality": "British",
+        "teamHex": "#F47600"
+      }
+    },
+    {
+      "position": "P2",
+      "positionNumber": 2,
+      "points": 421,
+      "wins": 8,
+      "driver": {
+        "code": "VER",
+        "firstName": "Max",
+        "lastName": "Verstappen",
+        "fullName": "Max Verstappen",
+        "nationality": "Dutch",
+        "driverNumber": 1,
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/M/MAXVER01_Max_Verstappen/maxver01.png.transform/1col/image.png",
+        "nameAcronym": "VER"
+      },
+      "constructor": {
+        "name": "Red Bull",
+        "fullName": "Red Bull",
+        "nationality": "Austrian",
+        "teamHex": "#4781D7"
+      }
+    },
+    {
+      "position": "P3",
+      "positionNumber": 3,
+      "points": 410,
+      "wins": 7,
+      "driver": {
+        "code": "PIA",
+        "firstName": "Oscar",
+        "lastName": "Piastri",
+        "fullName": "Oscar Piastri",
+        "nationality": "Australian",
+        "driverNumber": 81,
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/O/OSCPIA01_Oscar_Piastri/oscpia01.png.transform/1col/image.png",
+        "nameAcronym": "PIA"
+      },
+      "constructor": {
+        "name": "McLaren",
+        "fullName": "McLaren",
+        "nationality": "British",
+        "teamHex": "#F47600"
+      }
+    },
+    {
+      "position": "P4",
+      "positionNumber": 4,
+      "points": 319,
+      "wins": 2,
+      "driver": {
+        "code": "RUS",
+        "firstName": "George",
+        "lastName": "Russell",
+        "fullName": "George Russell",
+        "nationality": "British",
+        "driverNumber": 63,
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/G/GEORUS01_George_Russell/georus01.png.transform/1col/image.png",
+        "nameAcronym": "RUS"
+      },
+      "constructor": {
+        "name": "Mercedes",
+        "fullName": "Mercedes",
+        "nationality": "German",
+        "teamHex": "#00D7B6"
+      }
+    },
+    {
+      "position": "P5",
+      "positionNumber": 5,
+      "points": 242,
+      "wins": 0,
+      "driver": {
+        "code": "LEC",
+        "firstName": "Charles",
+        "lastName": "Leclerc",
+        "fullName": "Charles Leclerc",
+        "nationality": "Monegasque",
+        "driverNumber": 16,
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/C/CHALEC01_Charles_Leclerc/chalec01.png.transform/1col/image.png",
+        "nameAcronym": "LEC"
+      },
+      "constructor": {
+        "name": "Ferrari",
+        "fullName": "Ferrari",
+        "nationality": "Italian",
+        "teamHex": "#ED1131"
+      }
+    },
+    {
+      "position": "P6",
+      "positionNumber": 6,
+      "points": 156,
+      "wins": 0,
+      "driver": {
+        "code": "HAM",
+        "firstName": "Lewis",
+        "lastName": "Hamilton",
+        "fullName": "Lewis Hamilton",
+        "nationality": "British",
+        "driverNumber": 44,
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LEWHAM01_Lewis_Hamilton/lewham01.png.transform/1col/image.png",
+        "nameAcronym": "HAM"
+      },
+      "constructor": {
+        "name": "Ferrari",
+        "fullName": "Ferrari",
+        "nationality": "Italian",
+        "teamHex": "#ED1131"
+      }
+    },
+    {
+      "position": "P7",
+      "positionNumber": 7,
+      "points": 150,
+      "wins": 0,
+      "driver": {
+        "code": "ANT",
+        "firstName": "Andrea Kimi",
+        "lastName": "Antonelli",
+        "fullName": "Andrea Kimi Antonelli",
+        "nationality": "Italian",
+        "driverNumber": 12,
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/A/ANDANT01_Andrea%20Kimi_Antonelli/andant01.png.transform/1col/image.png",
+        "nameAcronym": "ANT"
+      },
+      "constructor": {
+        "name": "Mercedes",
+        "fullName": "Mercedes",
+        "nationality": "German",
+        "teamHex": "#00D7B6"
+      }
+    },
+    {
+      "position": "P8",
+      "positionNumber": 8,
+      "points": 73,
+      "wins": 0,
+      "driver": {
+        "code": "ALB",
+        "firstName": "Alexander",
+        "lastName": "Albon",
+        "fullName": "Alexander Albon",
+        "nationality": "Thai",
+        "driverNumber": 23,
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/A/ALEALB01_Alexander_Albon/alealb01.png.transform/1col/image.png",
+        "nameAcronym": "ALB"
+      },
+      "constructor": {
+        "name": "Williams",
+        "fullName": "Williams",
+        "nationality": "British",
+        "teamHex": "#1868DB"
+      }
+    },
+    {
+      "position": "P9",
+      "positionNumber": 9,
+      "points": 64,
+      "wins": 0,
+      "driver": {
+        "code": "SAI",
+        "firstName": "Carlos",
+        "lastName": "Sainz",
+        "fullName": "Carlos Sainz",
+        "nationality": "Spanish",
+        "driverNumber": 55,
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/C/CARSAI01_Carlos_Sainz/carsai01.png.transform/1col/image.png",
+        "nameAcronym": "SAI"
+      },
+      "constructor": {
+        "name": "Williams",
+        "fullName": "Williams",
+        "nationality": "British",
+        "teamHex": "#1868DB"
+      }
+    },
+    {
+      "position": "P10",
+      "positionNumber": 10,
+      "points": 56,
+      "wins": 0,
+      "driver": {
+        "code": "ALO",
+        "firstName": "Fernando",
+        "lastName": "Alonso",
+        "fullName": "Fernando Alonso",
+        "nationality": "Spanish",
+        "driverNumber": 14,
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/F/FERALO01_Fernando_Alonso/feralo01.png.transform/1col/image.png",
+        "nameAcronym": "ALO"
+      },
+      "constructor": {
+        "name": "Aston Martin",
+        "fullName": "Aston Martin",
+        "nationality": "British",
+        "teamHex": "#229971"
+      }
+    },
+    {
+      "position": "P11",
+      "positionNumber": 11,
+      "points": 51,
+      "wins": 0,
+      "driver": {
+        "code": "HUL",
+        "firstName": "Nico",
+        "lastName": "Hülkenberg",
+        "fullName": "Nico Hülkenberg",
+        "nationality": "German",
+        "driverNumber": null,
+        "headshotUrl": null,
+        "nameAcronym": null
+      },
+      "constructor": {
+        "name": "Sauber",
+        "fullName": "Sauber",
+        "nationality": "Swiss",
+        "teamHex": null
+      }
+    },
+    {
+      "position": "P12",
+      "positionNumber": 12,
+      "points": 51,
+      "wins": 0,
+      "driver": {
+        "code": "HAD",
+        "firstName": "Isack",
+        "lastName": "Hadjar",
+        "fullName": "Isack Hadjar",
+        "nationality": "French",
+        "driverNumber": 6,
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/I/ISAHAD01_Isack_Hadjar/isahad01.png.transform/1col/image.png",
+        "nameAcronym": "HAD"
+      },
+      "constructor": {
+        "name": "VCARB",
+        "fullName": "RB F1 Team",
+        "nationality": "Italian",
+        "teamHex": "#6C98FF"
+      }
+    },
+    {
+      "position": "P13",
+      "positionNumber": 13,
+      "points": 41,
+      "wins": 0,
+      "driver": {
+        "code": "BEA",
+        "firstName": "Oliver",
+        "lastName": "Bearman",
+        "fullName": "Oliver Bearman",
+        "nationality": "British",
+        "driverNumber": 87,
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/O/OLIBEA01_Oliver_Bearman/olibea01.png.transform/1col/image.png",
+        "nameAcronym": "BEA"
+      },
+      "constructor": {
+        "name": "Haas F1 Team",
+        "fullName": "Haas F1 Team",
+        "nationality": "American",
+        "teamHex": "#9C9FA2"
+      }
+    },
+    {
+      "position": "P14",
+      "positionNumber": 14,
+      "points": 38,
+      "wins": 0,
+      "driver": {
+        "code": "LAW",
+        "firstName": "Liam",
+        "lastName": "Lawson",
+        "fullName": "Liam Lawson",
+        "nationality": "New Zealander",
+        "driverNumber": 30,
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LIALAW01_Liam_Lawson/lialaw01.png.transform/1col/image.png",
+        "nameAcronym": "LAW"
+      },
+      "constructor": {
+        "name": "Red Bull",
+        "fullName": "Red Bull",
+        "nationality": "Austrian",
+        "teamHex": "#6C98FF"
+      }
+    },
+    {
+      "position": "P15",
+      "positionNumber": 15,
+      "points": 38,
+      "wins": 0,
+      "driver": {
+        "code": "OCO",
+        "firstName": "Esteban",
+        "lastName": "Ocon",
+        "fullName": "Esteban Ocon",
+        "nationality": "French",
+        "driverNumber": 31,
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/E/ESTOCO01_Esteban_Ocon/estoco01.png.transform/1col/image.png",
+        "nameAcronym": "OCO"
+      },
+      "constructor": {
+        "name": "Haas F1 Team",
+        "fullName": "Haas F1 Team",
+        "nationality": "American",
+        "teamHex": "#9C9FA2"
+      }
+    },
+    {
+      "position": "P16",
+      "positionNumber": 16,
+      "points": 33,
+      "wins": 0,
+      "driver": {
+        "code": "STR",
+        "firstName": "Lance",
+        "lastName": "Stroll",
+        "fullName": "Lance Stroll",
+        "nationality": "Canadian",
+        "driverNumber": 18,
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LANSTR01_Lance_Stroll/lanstr01.png.transform/1col/image.png",
+        "nameAcronym": "STR"
+      },
+      "constructor": {
+        "name": "Aston Martin",
+        "fullName": "Aston Martin",
+        "nationality": "British",
+        "teamHex": "#229971"
+      }
+    },
+    {
+      "position": "P17",
+      "positionNumber": 17,
+      "points": 33,
+      "wins": 0,
+      "driver": {
+        "code": "TSU",
+        "firstName": "Yuki",
+        "lastName": "Tsunoda",
+        "fullName": "Yuki Tsunoda",
+        "nationality": "Japanese",
+        "driverNumber": 22,
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/Y/YUKTSU01_Yuki_Tsunoda/yuktsu01.png.transform/1col/image.png",
+        "nameAcronym": "TSU"
+      },
+      "constructor": {
+        "name": "VCARB",
+        "fullName": "RB F1 Team",
+        "nationality": "Italian",
+        "teamHex": "#4781D7"
+      }
+    },
+    {
+      "position": "P18",
+      "positionNumber": 18,
+      "points": 22,
+      "wins": 0,
+      "driver": {
+        "code": "GAS",
+        "firstName": "Pierre",
+        "lastName": "Gasly",
+        "fullName": "Pierre Gasly",
+        "nationality": "French",
+        "driverNumber": 10,
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/P/PIEGAS01_Pierre_Gasly/piegas01.png.transform/1col/image.png",
+        "nameAcronym": "GAS"
+      },
+      "constructor": {
+        "name": "Alpine F1 Team",
+        "fullName": "Alpine F1 Team",
+        "nationality": "French",
+        "teamHex": "#00A1E8"
+      }
+    },
+    {
+      "position": "P19",
+      "positionNumber": 19,
+      "points": 19,
+      "wins": 0,
+      "driver": {
+        "code": "BOR",
+        "firstName": "Gabriel",
+        "lastName": "Bortoleto",
+        "fullName": "Gabriel Bortoleto",
+        "nationality": "Brazilian",
+        "driverNumber": 5,
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/G/GABBOR01_Gabriel_Bortoleto/gabbor01.png.transform/1col/image.png",
+        "nameAcronym": "BOR"
+      },
+      "constructor": {
+        "name": "Sauber",
+        "fullName": "Sauber",
+        "nationality": "Swiss",
+        "teamHex": "#01C00E"
+      }
+    },
+    {
+      "position": "P20",
+      "positionNumber": 20,
+      "points": 0,
+      "wins": 0,
+      "driver": {
+        "code": "COL",
+        "firstName": "Franco",
+        "lastName": "Colapinto",
+        "fullName": "Franco Colapinto",
+        "nationality": "Argentine",
+        "driverNumber": 43,
+        "headshotUrl": null,
+        "nameAcronym": "COL"
+      },
+      "constructor": {
+        "name": "Alpine F1 Team",
+        "fullName": "Alpine F1 Team",
+        "nationality": "French",
+        "teamHex": "#00A1E8"
+      }
+    },
+    {
+      "position": "P21",
+      "positionNumber": 21,
+      "points": 0,
+      "wins": 0,
+      "driver": {
+        "code": "DOO",
+        "firstName": "Jack",
+        "lastName": "Doohan",
+        "fullName": "Jack Doohan",
+        "nationality": "Australian",
+        "driverNumber": null,
+        "headshotUrl": null,
+        "nameAcronym": null
+      },
+      "constructor": {
+        "name": "Alpine F1 Team",
+        "fullName": "Alpine F1 Team",
+        "nationality": "French",
+        "teamHex": null
+      }
+    }
+  ]
 }
