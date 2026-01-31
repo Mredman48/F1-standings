@@ -2,12 +2,7 @@
 import fs from "node:fs/promises";
 
 const BASE_URL = "https://api.jolpi.ca/ergast/f1";
-
-// Jolpica often behaves best with lowercase endpoints
-const STANDINGS_URLS = [
-  `${BASE_URL}/current/driverstandings.json`,   // preferred
-  `${BASE_URL}/current/driverStandings.json`,   // fallback
-];
+const STANDINGS_URL = `${BASE_URL}/current/driverstandings.json`;
 
 // Long constructor names → short display names
 const TEAM_NAME_MAP = {
@@ -34,14 +29,8 @@ function normalizeTeamName(name) {
   return TEAM_NAME_MAP[name] || name;
 }
 
-function extractDriverStandings(payload) {
-  // Ergast-compatible shape:
-  // MRData.StandingsTable.StandingsLists[0].DriverStandings
-  return payload?.MRData?.StandingsTable?.StandingsLists?.[0]?.DriverStandings ?? null;
-}
-
-async function fetchJson(url) {
-  const res = await fetch(url, {
+async function fetchStandingsPayload() {
+  const res = await fetch(STANDINGS_URL, {
     headers: {
       "User-Agent": "f1-standings-bot/1.0",
       "Accept": "application/json",
@@ -49,45 +38,30 @@ async function fetchJson(url) {
     redirect: "follow",
   });
 
-  const text = await res.text(); // read once (works for debug + parse)
-  let json = null;
+  const text = await res.text();
+  if (!res.ok) {
+    throw new Error(`Failed to fetch standings: HTTP ${res.status}\n${text.slice(0, 200)}`);
+  }
+
   try {
-    json = JSON.parse(text);
+    return JSON.parse(text);
   } catch {
-    throw new Error(`Non-JSON response from ${url}: ${text.slice(0, 120)}`);
+    throw new Error(`Non-JSON response from standings endpoint: ${text.slice(0, 200)}`);
   }
-
-  return { ok: res.ok, status: res.status, url, json, rawSnippet: text.slice(0, 200) };
-}
-
-async function fetchStandings() {
-  const attempts = [];
-
-  for (const url of STANDINGS_URLS) {
-    const r = await fetchJson(url);
-    attempts.push({ url: r.url, status: r.status, ok: r.ok });
-
-    if (!r.ok) continue;
-
-    const standings = extractDriverStandings(r.json);
-    if (standings && Array.isArray(standings) && standings.length > 0) {
-      return { data: r.json, sourceUrl: r.url, attempts };
-    }
-  }
-
-  // If we got here, none matched expected structure
-  throw new Error(
-    `No standings data found. Attempts: ${JSON.stringify(attempts)}`
-  );
 }
 
 async function updateStandings() {
-  const { data, sourceUrl, attempts } = await fetchStandings();
+  const data = await fetchStandingsPayload();
 
-  const standingsList =
-    data?.MRData?.StandingsTable?.StandingsLists?.[0]?.DriverStandings;
+  const standingsLists = data?.MRData?.StandingsTable?.StandingsLists ?? [];
+  const season = data?.MRData?.StandingsTable?.season ?? null;
+  const round = data?.MRData?.StandingsTable?.round ?? null;
+  const total = Number(data?.MRData?.total ?? 0);
 
-  const drivers = standingsList.map((d) => {
+  const driverStandings = standingsLists?.[0]?.DriverStandings ?? [];
+
+  // If there are no standings yet (common pre-season), write an empty file and exit cleanly.
+  const drivers = (driverStandings || []).map((d) => {
     const constructor = d.Constructors?.[0];
 
     return {
@@ -113,20 +87,24 @@ async function updateStandings() {
   });
 
   const out = {
-    header: "F1 Driver Standings",
-    season: data?.MRData?.StandingsTable?.season || null,
-    round: data?.MRData?.StandingsTable?.round || null,
+    header: `${season ?? ""} Driver Standings`.trim() || "F1 Driver Standings",
     generatedAtUtc: new Date().toISOString(),
     source: {
       kind: "jolpica ergast-compatible",
-      url: sourceUrl,
-      attempts,
+      url: STANDINGS_URL,
     },
+    season,
+    round,
+    totalDriversInResponse: total,
+    note:
+      drivers.length === 0
+        ? "No driver standings are available yet for the current season. This will populate after the first classified session/race with standings."
+        : null,
     drivers,
   };
 
   await fs.writeFile("f1_driver_standings.json", JSON.stringify(out, null, 2), "utf8");
-  console.log("Updated f1_driver_standings.json");
+  console.log(`Wrote f1_driver_standings.json (season=${season}, drivers=${drivers.length})`);
 }
 
 updateStandings().catch((err) => {
