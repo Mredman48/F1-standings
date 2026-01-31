@@ -1,6 +1,6 @@
 {
   "header": "Next F1 race weekend",
-  "generatedAtUtc": "2026-01-31T01:22:24.173Z",
+  "generatedAtUtc": "2026-01-31T01:28:56.320Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics",
@@ -9,17 +9,17 @@
   "grandPrix": {
     "name": "F1 Qatar Airways Australian GP 2026",
     "city": "Australia",
-    "country": null,
+    "country": "Australia",
     "location": "Australia"
   },
   "flag": {
-    "found": false,
-    "country": null,
-    "countryCode": null,
-    "pngUrl": null,
-    "svgUrl": null,
-    "source": null,
-    "note": "No country name available from calendar location."
+    "found": true,
+    "country": "Australia",
+    "countryCode": "AU",
+    "pngUrl": "https://flagcdn.com/w80/au.png",
+    "svgUrl": "https://flagcdn.com/au.svg",
+    "source": "restcountries.com + flagcdn.com",
+    "note": null
   },
   "trackMap": {
     "found": true,
@@ -230,5 +230,5 @@
       "startLocalDateTimeShort": "Sat, Mar 07 21:00"
     }
   ],
-  "notes": "Use flag.pngUrl for country flag images (PNG) and trackMap.pngUrl for the circuit map (PNG). Track map prefers black-outline style."
+  "notes": "Use flag.pngUrl for the country flag (PNG) and trackMap.pngUrl for the circuit map (PNG). Track map prefers black-outline style. If flag.found is false, add an entry in FLAG_OVERRIDES or expand inferCountryFromGpName()."
 }
