@@ -1,7 +1,8 @@
 // updateStandings.js
 import fs from "node:fs/promises";
 
-const ERGAST_URL = "https://ergast.com/api/f1/current/driverStandings.json";
+const BASE_URL = "https://api.jolpi.ca/ergast/f1";
+const STANDINGS_URL = `${BASE_URL}/current/driverStandings.json`;
 
 // Long constructor names → short display names
 const TEAM_NAME_MAP = {
@@ -28,25 +29,33 @@ function normalizeTeamName(name) {
   return TEAM_NAME_MAP[name] || name;
 }
 
-async function updateStandings() {
-  const res = await fetch(ERGAST_URL, {
+async function fetchStandingsJson() {
+  const res = await fetch(STANDINGS_URL, {
     headers: {
       "User-Agent": "f1-standings-bot/1.0",
       "Accept": "application/json",
     },
+    redirect: "follow",
   });
 
   if (!res.ok) {
-    throw new Error(`Failed to fetch standings: HTTP ${res.status}`);
+    const body = await res.text().catch(() => "");
+    throw new Error(
+      `Failed to fetch standings: HTTP ${res.status}\n${body.slice(0, 200)}`
+    );
   }
 
-  const data = await res.json();
+  return res.json();
+}
+
+async function updateStandings() {
+  const data = await fetchStandingsJson();
 
   const standingsList =
     data?.MRData?.StandingsTable?.StandingsLists?.[0]?.DriverStandings;
 
   if (!standingsList) {
-    throw new Error("No standings data found in Ergast response");
+    throw new Error("No standings data found in API response");
   }
 
   const drivers = standingsList.map((d) => {
@@ -79,10 +88,19 @@ async function updateStandings() {
     season: data?.MRData?.StandingsTable?.season || null,
     round: data?.MRData?.StandingsTable?.round || null,
     generatedAtUtc: new Date().toISOString(),
+    source: {
+      kind: "jolpica ergast-compatible",
+      url: STANDINGS_URL,
+    },
     drivers,
   };
 
-  await fs.writeFile("f1_driver_standings.json", JSON.stringify(out, null, 2), "utf8");
+  await fs.writeFile(
+    "f1_driver_standings.json",
+    JSON.stringify(out, null, 2),
+    "utf8"
+  );
+
   console.log("Updated f1_driver_standings.json");
 }
 
