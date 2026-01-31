@@ -2,7 +2,12 @@
 import fs from "node:fs/promises";
 
 const BASE_URL = "https://api.jolpi.ca/ergast/f1";
-const STANDINGS_URL = `${BASE_URL}/current/driverStandings.json`;
+
+// Jolpica often behaves best with lowercase endpoints
+const STANDINGS_URLS = [
+  `${BASE_URL}/current/driverstandings.json`,   // preferred
+  `${BASE_URL}/current/driverStandings.json`,   // fallback
+];
 
 // Long constructor names → short display names
 const TEAM_NAME_MAP = {
@@ -29,8 +34,14 @@ function normalizeTeamName(name) {
   return TEAM_NAME_MAP[name] || name;
 }
 
-async function fetchStandingsJson() {
-  const res = await fetch(STANDINGS_URL, {
+function extractDriverStandings(payload) {
+  // Ergast-compatible shape:
+  // MRData.StandingsTable.StandingsLists[0].DriverStandings
+  return payload?.MRData?.StandingsTable?.StandingsLists?.[0]?.DriverStandings ?? null;
+}
+
+async function fetchJson(url) {
+  const res = await fetch(url, {
     headers: {
       "User-Agent": "f1-standings-bot/1.0",
       "Accept": "application/json",
@@ -38,25 +49,43 @@ async function fetchStandingsJson() {
     redirect: "follow",
   });
 
-  if (!res.ok) {
-    const body = await res.text().catch(() => "");
-    throw new Error(
-      `Failed to fetch standings: HTTP ${res.status}\n${body.slice(0, 200)}`
-    );
+  const text = await res.text(); // read once (works for debug + parse)
+  let json = null;
+  try {
+    json = JSON.parse(text);
+  } catch {
+    throw new Error(`Non-JSON response from ${url}: ${text.slice(0, 120)}`);
   }
 
-  return res.json();
+  return { ok: res.ok, status: res.status, url, json, rawSnippet: text.slice(0, 200) };
+}
+
+async function fetchStandings() {
+  const attempts = [];
+
+  for (const url of STANDINGS_URLS) {
+    const r = await fetchJson(url);
+    attempts.push({ url: r.url, status: r.status, ok: r.ok });
+
+    if (!r.ok) continue;
+
+    const standings = extractDriverStandings(r.json);
+    if (standings && Array.isArray(standings) && standings.length > 0) {
+      return { data: r.json, sourceUrl: r.url, attempts };
+    }
+  }
+
+  // If we got here, none matched expected structure
+  throw new Error(
+    `No standings data found. Attempts: ${JSON.stringify(attempts)}`
+  );
 }
 
 async function updateStandings() {
-  const data = await fetchStandingsJson();
+  const { data, sourceUrl, attempts } = await fetchStandings();
 
   const standingsList =
     data?.MRData?.StandingsTable?.StandingsLists?.[0]?.DriverStandings;
-
-  if (!standingsList) {
-    throw new Error("No standings data found in API response");
-  }
 
   const drivers = standingsList.map((d) => {
     const constructor = d.Constructors?.[0];
@@ -90,17 +119,13 @@ async function updateStandings() {
     generatedAtUtc: new Date().toISOString(),
     source: {
       kind: "jolpica ergast-compatible",
-      url: STANDINGS_URL,
+      url: sourceUrl,
+      attempts,
     },
     drivers,
   };
 
-  await fs.writeFile(
-    "f1_driver_standings.json",
-    JSON.stringify(out, null, 2),
-    "utf8"
-  );
-
+  await fs.writeFile("f1_driver_standings.json", JSON.stringify(out, null, 2), "utf8");
   console.log("Updated f1_driver_standings.json");
 }
 
