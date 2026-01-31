@@ -6,33 +6,33 @@ import { Resvg } from "@resvg/resvg-js";
 
 const ICS_URL = "https://better-f1-calendar.vercel.app/api/calendar.ics";
 
+// Widgy-friendly local strings
 const USER_TZ = "America/Edmonton";
 const LOCALE = "en-CA";
 
 // Your GitHub Pages base URL
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 
-// Track SVG repo
+// Track map source repo
 const CIRCUIT_REPO_OWNER = "julesr0y";
 const CIRCUIT_REPO_NAME = "f1-circuits-svg";
 const CIRCUIT_REPO_REF = "main";
 
-// Try styles in order
-const TRACK_STYLES = ["black-outline"];
+// Prefer black outline
+const TRACK_STYLES = ["black-outline", "black", "white-outline", "white"];
 
-// Output folder (committed)
+// Output folder for PNGs (committed)
 const TRACKMAP_DIR = "trackmaps";
-
-// OPTIONAL: if auto-pick is wrong for one GP, set it here once and forget it.
-// match = substring of gpName lowercased.
-const FILE_OVERRIDES = [
-  // { match: "bahrain", style: "white-outline", file: "bahrain-3.svg" },
-  // { match: "monaco", style: "white-outline", file: "monaco-1.svg" },
-];
 
 const UA = "f1-standings-bot/1.0 (GitHub Actions)";
 
-// ---------- Time helpers ----------
+// Optional: emergency overrides if you ever need them.
+// Example: { match: "monaco", file: "monaco-1.svg", style: "black-outline" }
+const FILE_OVERRIDES = [
+  // { match: "monaco", file: "monaco-1.svg", style: "black-outline" },
+];
+
+// ---------- Date/time helpers ----------
 function daysUntil(date, now = new Date()) {
   const ms = date.getTime() - now.getTime();
   return Math.ceil(ms / (1000 * 60 * 60 * 24));
@@ -47,6 +47,7 @@ function shortDateInTZ(dateObj, timeZone = USER_TZ) {
   });
 }
 
+// 24-hour time
 function shortTimeInTZ(dateObj, timeZone = USER_TZ) {
   return dateObj.toLocaleTimeString(LOCALE, {
     timeZone,
@@ -66,7 +67,7 @@ function splitLocation(location) {
   return { city: parts[0] || null, country: parts[1] || null };
 }
 
-// ---------- Calendar helpers ----------
+// ---------- Calendar parsing helpers ----------
 function getSessionType(summary) {
   const s = (summary || "").toLowerCase();
   if (s.includes("practice 1") || s.includes("fp1")) return "FP1";
@@ -90,8 +91,6 @@ function githubHeaders() {
     "User-Agent": UA,
     "Accept": "application/vnd.github+json",
   };
-
-  // IMPORTANT: authenticate in Actions to avoid rate limits
   if (process.env.GITHUB_TOKEN) {
     headers["Authorization"] = `Bearer ${process.env.GITHUB_TOKEN}`;
   }
@@ -126,7 +125,78 @@ async function ensureDir(dir) {
   await fs.mkdir(dir, { recursive: true });
 }
 
-// ---------- Matching helpers ----------
+// ---------- Flag helpers ----------
+async function getCountryCodeAndFlag(countryName) {
+  if (!countryName) {
+    return {
+      found: false,
+      country: null,
+      countryCode: null,
+      pngUrl: null,
+      svgUrl: null,
+      source: null,
+      note: "No country name available from calendar location.",
+    };
+  }
+
+  // REST Countries: get ISO2 (cca2)
+  // Try fullText first, then fallback to name search.
+  const base = "https://restcountries.com/v3.1/name/";
+  const q = encodeURIComponent(countryName);
+
+  let data = null;
+  let usedUrl = null;
+
+  try {
+    usedUrl = `${base}${q}?fullText=true&fields=name,cca2`;
+    data = await fetchJson(usedUrl, { Accept: "application/json" });
+  } catch {
+    // fallback
+    usedUrl = `${base}${q}?fields=name,cca2`;
+    try {
+      data = await fetchJson(usedUrl, { Accept: "application/json" });
+    } catch (e) {
+      return {
+        found: false,
+        country: countryName,
+        countryCode: null,
+        pngUrl: null,
+        svgUrl: null,
+        source: usedUrl,
+        note: `REST Countries lookup failed: ${e?.message || String(e)}`,
+      };
+    }
+  }
+
+  const first = Array.isArray(data) ? data[0] : null;
+  const cca2 = first?.cca2 ? String(first.cca2).toLowerCase() : null;
+
+  if (!cca2) {
+    return {
+      found: false,
+      country: countryName,
+      countryCode: null,
+      pngUrl: null,
+      svgUrl: null,
+      source: usedUrl,
+      note: "Could not determine ISO country code (cca2).",
+    };
+  }
+
+  // FlagCDN uses lowercase ISO2
+  return {
+    found: true,
+    country: countryName,
+    countryCode: cca2.toUpperCase(),
+    // Small widget-friendly sizes: w40/w80/w160
+    pngUrl: `https://flagcdn.com/w80/${cca2}.png`,
+    svgUrl: `https://flagcdn.com/${cca2}.svg`,
+    source: "restcountries.com + flagcdn.com",
+    note: null,
+  };
+}
+
+// ---------- Track map matching ----------
 function normalize(s) {
   return (s || "")
     .toLowerCase()
@@ -136,7 +206,7 @@ function normalize(s) {
     .trim();
 }
 
-function tokenize(s) {
+function tokenizeForMatch(s) {
   return normalize(s)
     .replace(/\bgrand prix\b/g, "")
     .replace(/\bgp\b/g, "")
@@ -145,21 +215,15 @@ function tokenize(s) {
     .filter((t) => t.length > 2);
 }
 
-function scoreFilename(filename, { gpName, city, country }) {
+function scoreFilename(filename, ctx) {
   const base = normalize(filename.replace(/\.svg$/i, ""));
-  const gpTokens = tokenize(gpName);
-  const cityTokens = tokenize(city);
-  const countryTokens = tokenize(country);
+  const gpTokens = tokenizeForMatch(ctx.gpName);
+  const cityTokens = tokenizeForMatch(ctx.city);
+  const countryTokens = tokenizeForMatch(ctx.country);
 
   let score = 0;
-
-  // City strongest if present
   for (const t of cityTokens) if (base.includes(t)) score += 8;
-
-  // GP name tokens
   for (const t of gpTokens) if (base.includes(t)) score += 4;
-
-  // Country tokens
   for (const t of countryTokens) if (base.includes(t)) score += 2;
 
   return score;
@@ -173,7 +237,7 @@ function githubRawUrl(style, file) {
   return `https://raw.githubusercontent.com/${CIRCUIT_REPO_OWNER}/${CIRCUIT_REPO_NAME}/${CIRCUIT_REPO_REF}/circuits/${style}/${file}`;
 }
 
-function pngUrlFor(layoutId) {
+function makePngUrl(layoutId) {
   return `${PAGES_BASE}/${TRACKMAP_DIR}/${encodeURIComponent(layoutId)}.png`;
 }
 
@@ -190,86 +254,94 @@ async function listSvgFiles(style) {
     .map((x) => x.name);
 }
 
-async function pickBestSvg({ gpName, city, country }) {
-  const ctx = { gpName, city, country };
+async function findBestTrackSvgFile({ gpName, city, country }) {
+  // manual override if needed
   const gpLower = (gpName || "").toLowerCase();
-
-  // 0) override
-  const ov = FILE_OVERRIDES.find((o) => gpLower.includes(o.match));
-  if (ov?.style && ov?.file) {
-    return {
-      picked: { style: ov.style, file: ov.file, score: 999, source: "override" },
-      debug: { ctx, triedStyles: TRACK_STYLES, topCandidatesByStyle: {} },
-    };
+  const override = FILE_OVERRIDES.find((o) => gpLower.includes(o.match));
+  if (override?.file && override?.style) {
+    return { found: true, style: override.style, file: override.file, source: "override" };
   }
 
+  const ctx = { gpName, city, country };
+  let best = { score: -1, style: null, file: null };
   const topCandidatesByStyle = {};
-  let best = null;
 
   for (const style of TRACK_STYLES) {
-    let files;
+    let svgs = [];
     try {
-      files = await listSvgFiles(style);
+      svgs = await listSvgFiles(style);
     } catch (e) {
-      topCandidatesByStyle[style] = { error: e.message };
+      topCandidatesByStyle[style] = { error: e?.message || String(e) };
       continue;
     }
 
-    const scored = files
+    const scored = svgs
       .map((file) => ({ file, score: scoreFilename(file, ctx) }))
       .sort((a, b) => b.score - a.score);
 
     topCandidatesByStyle[style] = scored.slice(0, 8);
 
-    // Keep global best
     const top = scored[0];
-    if (top && (!best || top.score > best.score)) {
-      best = { style, file: top.file, score: top.score, source: "filename-match" };
+    if (top && top.score > best.score) {
+      best = { score: top.score, style, file: top.file };
     }
 
-    // If we got a strong match, stop early
-    if (top?.score >= 12) break;
+    // stop early on strong matches
+    if (top?.score >= 10) break;
   }
 
+  if (!best.file || !best.style) {
+    return { found: false, note: "No SVG files could be listed from any style folder.", debug: { topCandidatesByStyle } };
+  }
+
+  // We allow low scores, because we still want a map; you can override if it’s wrong
   return {
-    picked: best, // may be low score; we will still use it
-    debug: { ctx, triedStyles: TRACK_STYLES, topCandidatesByStyle },
+    found: true,
+    style: best.style,
+    file: best.file,
+    score: best.score,
+    source: "filename-match",
+    debug: { topCandidatesByStyle },
   };
 }
 
-async function renderTrackPng({ gpName, city, country }) {
-  const { picked, debug } = await pickBestSvg({ gpName, city, country });
+async function renderTrackMapPng({ gpName, city, country }) {
+  const match = await findBestTrackSvgFile({ gpName, city, country });
 
-  if (!picked?.style || !picked?.file) {
+  if (!match.found) {
     return {
       found: false,
-      note: "Could not list any SVG files from the repo styles (API blocked or empty).",
-      pngUrl: null,
+      source: "github-contents",
+      note: match.note || "No match",
+      bestGuess: null,
       svgUrl: null,
-      picked: null,
-      debug,
+      pngUrl: null,
+      debug: match.debug || null,
     };
   }
 
-  // Fetch svg & render
-  const svgUrl = githubRawUrl(picked.style, picked.file);
+  const svgUrl = githubRawUrl(match.style, match.file);
   const svgText = await fetchText(svgUrl);
 
   await ensureDir(TRACKMAP_DIR);
 
-  const layoutId = picked.file.replace(/\.svg$/i, "");
+  const layoutId = match.file.replace(/\.svg$/i, "");
   const pngPath = path.join(TRACKMAP_DIR, `${layoutId}.png`);
+  const pngBuffer = renderSvgToPng(svgText, 900);
 
-  const png = renderSvgToPng(svgText, 900);
-  await fs.writeFile(pngPath, png);
+  await fs.writeFile(pngPath, pngBuffer);
 
   return {
     found: true,
-    note: picked.score < 8 ? "Low-confidence match; if wrong, add FILE_OVERRIDES for this GP." : null,
-    picked,
+    source: "github-contents",
+    matchSource: match.source,
+    style: match.style,
+    file: match.file,
     svgUrl,
-    pngUrl: pngUrlFor(layoutId),
-    debug,
+    pngUrl: makePngUrl(layoutId),
+    score: match.score ?? null,
+    note: match.score != null && match.score < 8 ? "Low-confidence match; add FILE_OVERRIDES if wrong." : null,
+    debug: match.debug || null,
   };
 }
 
@@ -277,7 +349,10 @@ async function renderTrackPng({ gpName, city, country }) {
 async function updateNextRace() {
   const now = new Date();
 
-  const data = await ical.async.fromURL(ICS_URL, { headers: { "User-Agent": UA } });
+  const data = await ical.async.fromURL(ICS_URL, {
+    headers: { "User-Agent": UA },
+  });
+
   const events = Object.values(data).filter((x) => x?.type === "VEVENT");
 
   const sessions = events
@@ -314,7 +389,10 @@ async function updateNextRace() {
   const { city, country } = splitLocation(nextRace.location);
 
   // Track map (PNG)
-  const trackMap = await renderTrackPng({ gpName, city, country });
+  const trackMap = await renderTrackMapPng({ gpName, city, country });
+
+  // Country flag (PNG/SVG)
+  const flag = await getCountryCodeAndFlag(country);
 
   const sessionOrder = ["FP1", "FP2", "FP3", "Qualifying", "Sprint Qualifying", "Sprint", "Race"];
   const sessionsOut = sessionOrder
@@ -345,7 +423,10 @@ async function updateNextRace() {
       location: nextRace.location,
     },
 
-    trackMap, // Widgy binds to trackMap.pngUrl
+    // NEW:
+    flag, // Widgy image can bind to flag.pngUrl
+
+    trackMap, // Widgy image can bind to trackMap.pngUrl
 
     countdowns: {
       weekendStartsInDays: daysUntil(weekendStart, now),
@@ -369,7 +450,7 @@ async function updateNextRace() {
     sessions: sessionsOut,
 
     notes:
-      "Track map is rendered to PNG and committed under /trackmaps. If the match is wrong, set FILE_OVERRIDES using trackMap.debug.topCandidatesByStyle to choose the right SVG filename.",
+      "Use flag.pngUrl for country flag images (PNG) and trackMap.pngUrl for the circuit map (PNG). Track map prefers black-outline style.",
   };
 
   await fs.writeFile("f1_next_race.json", JSON.stringify(out, null, 2), "utf8");
