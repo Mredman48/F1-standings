@@ -1,6 +1,8 @@
 // updateStandings.js
 import fs from "node:fs/promises";
 
+const OUTPUT_FILE = "f1_driver_standings.json";
+
 const JOLPICA_BASE = "https://api.jolpi.ca/ergast/f1";
 const OPENF1_DRIVERS_URL = "https://api.openf1.org/v1/drivers?session_key=latest";
 
@@ -60,15 +62,17 @@ async function fetchJson(url) {
 
 function extractStandings(payload) {
   const season = payload?.MRData?.StandingsTable?.season ?? null;
-  const round = payload?.MRData?.StandingsTable?.StandingsLists?.[0]?.round ?? payload?.MRData?.StandingsTable?.round ?? null;
+  const round =
+    payload?.MRData?.StandingsTable?.StandingsLists?.[0]?.round ??
+    payload?.MRData?.StandingsTable?.round ??
+    null;
+
   const lists = payload?.MRData?.StandingsTable?.StandingsLists ?? [];
   const driverStandings = lists?.[0]?.DriverStandings ?? [];
-  const total = Number(payload?.MRData?.total ?? 0);
 
-  return { season, round, total, driverStandings };
+  return { season, round, driverStandings };
 }
 
-// Jolpica tends to work best with lowercase endpoints
 async function fetchCurrentStandings() {
   const urls = [
     `${JOLPICA_BASE}/current/driverstandings.json`,
@@ -78,24 +82,19 @@ async function fetchCurrentStandings() {
   for (const url of urls) {
     const data = await fetchJson(url);
     const parsed = extractStandings(data);
-    // return even if empty; caller decides on fallback
     return { data, parsed, sourceUrl: url };
   }
 
-  // practically unreachable because we return on first success, but kept for safety
   throw new Error("Could not fetch current standings from Jolpica.");
 }
 
-// Fallback: last season final standings
 async function fetchLastSeasonFinalStandings(seasonYear) {
   const y = Number(seasonYear);
   const lastSeason = Number.isFinite(y) ? y - 1 : new Date().getUTCFullYear() - 1;
 
   const urls = [
-    // Ergast pattern: /{season}/last/driverStandings.json (try both cases + lowercase)
     `${JOLPICA_BASE}/${lastSeason}/last/driverstandings.json`,
     `${JOLPICA_BASE}/${lastSeason}/last/driverStandings.json`,
-    // Some mirrors also support /{season}/driverStandings/last.json (try variants)
     `${JOLPICA_BASE}/${lastSeason}/driverstandings/last.json`,
     `${JOLPICA_BASE}/${lastSeason}/driverStandings/last.json`,
   ];
@@ -123,8 +122,6 @@ async function fetchOpenF1DriverMeta() {
   const arr = await fetchJson(OPENF1_DRIVERS_URL);
   if (!Array.isArray(arr)) return { byName: new Map(), rawCount: 0 };
 
-  // OpenF1 can return multiple entries per driver_number across meetings/sessions.
-  // We'll keep the most recent-ish occurrence (the array is typically recent-first, but not guaranteed).
   const byName = new Map();
 
   for (const d of arr) {
@@ -145,12 +142,10 @@ async function fetchOpenF1DriverMeta() {
 }
 
 function matchOpenF1Meta(byName, first, last) {
-  // exact match
   const exact = byName.get(nameKey(first, last));
   if (exact) return exact;
 
-  // fallback: sometimes first names differ (e.g. "Alex" vs "Alexander")
-  // try last-name-only unique match
+  // fallback: last-name-only unique match
   const lastLower = (last || "").trim().toLowerCase();
   if (!lastLower) return null;
 
@@ -167,11 +162,79 @@ function matchOpenF1Meta(byName, first, last) {
   return found;
 }
 
+// ----- previous standings for arrows -----
+async function readPreviousPositions() {
+  try {
+    const raw = await fs.readFile(OUTPUT_FILE, "utf8");
+    const prev = JSON.parse(raw);
+
+    const map = new Map();
+
+    for (const d of prev?.drivers ?? []) {
+      const code = d?.driver?.code ?? null;
+      const first = d?.driver?.firstName ?? null;
+      const last = d?.driver?.lastName ?? null;
+
+      const pos = Number(d?.positionNumber);
+      if (!Number.isFinite(pos)) continue;
+
+      if (code) map.set(`code:${code}`, pos);
+      if (first && last) map.set(`name:${nameKey(first, last)}`, pos);
+    }
+
+    return map;
+  } catch {
+    return new Map();
+  }
+}
+
+function computePositionDelta(prevPos, currentPos) {
+  if (!Number.isFinite(prevPos)) {
+    return {
+      previousPositionNumber: null,
+      positionChange: null,
+      positionDirection: "NEW", // text-based
+      arrowSymbol: "NEW",       // optional, for display
+      positionChangeText: "NEW",
+    };
+  }
+
+  const delta = prevPos - currentPos; // + means moved UP
+  if (delta > 0) {
+    return {
+      previousPositionNumber: prevPos,
+      positionChange: delta,
+      positionDirection: "UP",
+      arrowSymbol: "^",
+      positionChangeText: `+${delta}`,
+    };
+  }
+  if (delta < 0) {
+    return {
+      previousPositionNumber: prevPos,
+      positionChange: delta,
+      positionDirection: "DOWN",
+      arrowSymbol: "v",
+      positionChangeText: `${delta}`,
+    };
+  }
+  return {
+    previousPositionNumber: prevPos,
+    positionChange: 0,
+    positionDirection: "SAME",
+    arrowSymbol: "-",
+    positionChangeText: "0",
+  };
+}
+
 // ---------- main ----------
 async function updateStandings() {
   const nowIso = new Date().toISOString();
 
-  // 1) Get current standings
+  // Previous file (for direction)
+  const prevPosMap = await readPreviousPositions();
+
+  // 1) Current standings
   const current = await fetchCurrentStandings();
   let { season, round, driverStandings } = current.parsed;
 
@@ -179,7 +242,7 @@ async function updateStandings() {
   let standingsSourceUrl = current.sourceUrl;
   let fallbackInfo = null;
 
-  // 2) If empty, fallback to last season final
+  // 2) Fallback if empty
   if (!Array.isArray(driverStandings) || driverStandings.length === 0) {
     const fallback = await fetchLastSeasonFinalStandings(season);
     usedFallback = true;
@@ -190,38 +253,48 @@ async function updateStandings() {
     driverStandings = fallback.parsed.driverStandings;
   }
 
-  // 3) Fetch OpenF1 meta for headshots + team colours
+  // 3) OpenF1 metadata
   const openf1 = await fetchOpenF1DriverMeta();
 
-  // 4) Build driver list
+  // 4) Build drivers with text arrows
   const drivers = (driverStandings || []).map((d) => {
     const ctor = d.Constructors?.[0] ?? null;
 
     const firstName = d?.Driver?.givenName ?? null;
     const lastName = d?.Driver?.familyName ?? null;
+    const driverCode = d?.Driver?.code ?? null;
 
     const meta = matchOpenF1Meta(openf1.byName, firstName, lastName);
 
     const constructorFull = ctor?.name ?? null;
     const constructorShort = normalizeTeamName(constructorFull);
 
-    // Prefer OpenF1 team colour if present; else null (you can add manual team color fallback if you want)
-    const teamHex = meta?.teamColour ?? null;
+    const currentPos = Number(d.position);
+    const prevPos =
+      (driverCode && prevPosMap.get(`code:${driverCode}`)) ??
+      (firstName && lastName ? prevPosMap.get(`name:${nameKey(firstName, lastName)}`) : undefined);
+
+    const delta = computePositionDelta(
+      Number.isFinite(prevPos) ? Number(prevPos) : NaN,
+      currentPos
+    );
 
     return {
       position: `P${d.position}`,
-      positionNumber: Number(d.position),
+      positionNumber: currentPos,
       points: Number(d.points),
       wins: Number(d.wins),
 
+      // NEW: text-based direction + optional symbol
+      ...delta,
+
       driver: {
-        code: d?.Driver?.code ?? null,
+        code: driverCode,
         firstName,
         lastName,
         fullName: firstName && lastName ? `${firstName} ${lastName}` : null,
         nationality: d?.Driver?.nationality ?? null,
 
-        // NEW:
         driverNumber: meta?.driverNumber ?? null,
         headshotUrl: meta?.headshotUrl ?? null,
         nameAcronym: meta?.nameAcronym ?? null,
@@ -231,45 +304,38 @@ async function updateStandings() {
         name: constructorShort,
         fullName: constructorFull,
         nationality: ctor?.nationality ?? null,
-
-        // NEW:
-        teamHex, // e.g. "#3671C6"
+        teamHex: meta?.teamColour ?? null,
       },
     };
   });
 
   const out = {
-    header: usedFallback
-      ? `${season} Driver Standings (fallback)`
-      : `${season} Driver Standings`,
+    header: usedFallback ? `${season} Driver Standings (fallback)` : `${season} Driver Standings`,
     generatedAtUtc: nowIso,
-
     season: season ?? null,
     round: round ?? null,
 
     source: {
       kind: "jolpica ergast-compatible",
       url: standingsSourceUrl,
-      note: usedFallback
-        ? "Current season standings were empty; using last season final standings."
-        : null,
+      note: usedFallback ? "Current season standings were empty; using last season final standings." : null,
     },
 
     enrichment: {
       openf1DriversUrl: OPENF1_DRIVERS_URL,
       openf1RowsSeen: openf1.rawCount,
-      note:
-        "Driver headshots + team hex colours come from OpenF1 drivers endpoint (joined by name).",
+      note: "Driver headshots + team hex colours come from OpenF1 drivers endpoint (joined by name).",
     },
 
     fallback: fallbackInfo,
+
+    positionDeltaNotes:
+      "positionDirection is one of UP/DOWN/SAME/NEW. positionChange = previousPosition - currentPosition.",
     drivers,
   };
 
-  await fs.writeFile("f1_driver_standings.json", JSON.stringify(out, null, 2), "utf8");
-  console.log(
-    `Wrote f1_driver_standings.json season=${out.season} drivers=${drivers.length} fallback=${usedFallback}`
-  );
+  await fs.writeFile(OUTPUT_FILE, JSON.stringify(out, null, 2), "utf8");
+  console.log(`Wrote ${OUTPUT_FILE} season=${out.season} drivers=${drivers.length} fallback=${usedFallback}`);
 }
 
 updateStandings().catch((err) => {
