@@ -1,6 +1,6 @@
 {
   "header": "Next F1 race weekend",
-  "generatedAtUtc": "2026-01-31T01:11:52.556Z",
+  "generatedAtUtc": "2026-01-31T01:22:24.173Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics",
@@ -12,28 +12,130 @@
     "country": null,
     "location": "Australia"
   },
+  "flag": {
+    "found": false,
+    "country": null,
+    "countryCode": null,
+    "pngUrl": null,
+    "svgUrl": null,
+    "source": null,
+    "note": "No country name available from calendar location."
+  },
   "trackMap": {
     "found": true,
-    "note": "Low-confidence match; if wrong, add FILE_OVERRIDES for this GP.",
-    "picked": {
-      "style": "black-outline",
-      "file": "adelaide-1.svg",
-      "score": 0,
-      "source": "filename-match"
-    },
+    "source": "github-contents",
+    "matchSource": "filename-match",
+    "style": "black-outline",
+    "file": "adelaide-1.svg",
     "svgUrl": "https://raw.githubusercontent.com/julesr0y/f1-circuits-svg/main/circuits/black-outline/adelaide-1.svg",
     "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/adelaide-1.png",
+    "score": 0,
+    "note": "Low-confidence match; add FILE_OVERRIDES if wrong.",
     "debug": {
-      "ctx": {
-        "gpName": "F1 Qatar Airways Australian GP 2026",
-        "city": "Australia",
-        "country": null
-      },
-      "triedStyles": [
-        "black-outline"
-      ],
       "topCandidatesByStyle": {
         "black-outline": [
+          {
+            "file": "adelaide-1.svg",
+            "score": 0
+          },
+          {
+            "file": "aida-1.svg",
+            "score": 0
+          },
+          {
+            "file": "ain-diab-1.svg",
+            "score": 0
+          },
+          {
+            "file": "aintree-1.svg",
+            "score": 0
+          },
+          {
+            "file": "anderstorp-1.svg",
+            "score": 0
+          },
+          {
+            "file": "austin-1.svg",
+            "score": 0
+          },
+          {
+            "file": "avus-1.svg",
+            "score": 0
+          },
+          {
+            "file": "bahrain-1.svg",
+            "score": 0
+          }
+        ],
+        "black": [
+          {
+            "file": "adelaide-1.svg",
+            "score": 0
+          },
+          {
+            "file": "aida-1.svg",
+            "score": 0
+          },
+          {
+            "file": "ain-diab-1.svg",
+            "score": 0
+          },
+          {
+            "file": "aintree-1.svg",
+            "score": 0
+          },
+          {
+            "file": "anderstorp-1.svg",
+            "score": 0
+          },
+          {
+            "file": "austin-1.svg",
+            "score": 0
+          },
+          {
+            "file": "avus-1.svg",
+            "score": 0
+          },
+          {
+            "file": "bahrain-1.svg",
+            "score": 0
+          }
+        ],
+        "white-outline": [
+          {
+            "file": "adelaide-1.svg",
+            "score": 0
+          },
+          {
+            "file": "aida-1.svg",
+            "score": 0
+          },
+          {
+            "file": "ain-diab-1.svg",
+            "score": 0
+          },
+          {
+            "file": "aintree-1.svg",
+            "score": 0
+          },
+          {
+            "file": "anderstorp-1.svg",
+            "score": 0
+          },
+          {
+            "file": "austin-1.svg",
+            "score": 0
+          },
+          {
+            "file": "avus-1.svg",
+            "score": 0
+          },
+          {
+            "file": "bahrain-1.svg",
+            "score": 0
+          }
+        ],
+        "white": [
           {
             "file": "adelaide-1.svg",
             "score": 0
@@ -128,5 +230,5 @@
       "startLocalDateTimeShort": "Sat, Mar 07 21:00"
     }
   ],
-  "notes": "Track map is rendered to PNG and committed under /trackmaps. If the match is wrong, set FILE_OVERRIDES using trackMap.debug.topCandidatesByStyle to choose the right SVG filename."
+  "notes": "Use flag.pngUrl for country flag images (PNG) and trackMap.pngUrl for the circuit map (PNG). Track map prefers black-outline style."
 }
