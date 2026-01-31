@@ -1,9 +1,9 @@
 name: Update F1 Driver Standings
 
 on:
-  schedule:
-    - cron: "0 * * * *"   # every 4 hours
   workflow_dispatch:
+  schedule:
+    - cron: "05 * * * *"
 
 jobs:
   update:
