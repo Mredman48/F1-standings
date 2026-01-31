@@ -26,10 +26,16 @@ const TRACKMAP_DIR = "trackmaps";
 
 const UA = "f1-standings-bot/1.0 (GitHub Actions)";
 
-// Optional: emergency overrides if you ever need them.
+// Optional: emergency overrides for track SVG filename
 // Example: { match: "monaco", file: "monaco-1.svg", style: "black-outline" }
 const FILE_OVERRIDES = [
   // { match: "monaco", file: "monaco-1.svg", style: "black-outline" },
+];
+
+// Optional: emergency overrides for flag ISO2 if you ever need it
+// Example: { match: "abu dhabi", iso2: "AE" }
+const FLAG_OVERRIDES = [
+  // { match: "abu dhabi", iso2: "AE" },
 ];
 
 // ---------- Date/time helpers ----------
@@ -61,10 +67,19 @@ function shortDateTimeInTZ(dateObj, timeZone = USER_TZ) {
   return `${shortDateInTZ(dateObj, timeZone)} ${shortTimeInTZ(dateObj, timeZone)}`;
 }
 
+// More robust than before: last comma-separated token is treated as country
 function splitLocation(location) {
   if (!location || typeof location !== "string") return { city: null, country: null };
+
   const parts = location.split(",").map((p) => p.trim()).filter(Boolean);
-  return { city: parts[0] || null, country: parts[1] || null };
+
+  if (parts.length === 0) return { city: null, country: null };
+  if (parts.length === 1) return { city: parts[0] || null, country: null };
+
+  const country = parts[parts.length - 1] || null;
+  const city = parts[0] || null;
+
+  return { city, country };
 }
 
 // ---------- Calendar parsing helpers ----------
@@ -126,8 +141,90 @@ async function ensureDir(dir) {
 }
 
 // ---------- Flag helpers ----------
-async function getCountryCodeAndFlag(countryName) {
-  if (!countryName) {
+function inferCountryFromGpName(gpName) {
+  const s = (gpName || "").toLowerCase();
+
+  const rules = [
+    ["bahrain", "Bahrain"],
+    ["saudi", "Saudi Arabia"],
+    ["australian", "Australia"],
+    ["japanese", "Japan"],
+    ["chinese", "China"],
+    ["miami", "United States"],
+    ["las vegas", "United States"],
+    ["united states", "United States"],
+    ["canadian", "Canada"],
+    ["mexico", "Mexico"],
+    ["mexican", "Mexico"],
+    ["brazil", "Brazil"],
+    ["brazilian", "Brazil"],
+    ["british", "United Kingdom"],
+    ["hungarian", "Hungary"],
+    ["belgian", "Belgium"],
+    ["dutch", "Netherlands"],
+    ["italian", "Italy"],
+    ["monaco", "Monaco"],
+    ["spanish", "Spain"],
+    ["french", "France"],
+    ["austrian", "Austria"],
+    ["azerbaijan", "Azerbaijan"],
+    ["singapore", "Singapore"],
+    ["qatar", "Qatar"],
+    ["abu dhabi", "United Arab Emirates"],
+    ["emilia romagna", "Italy"],
+  ];
+
+  for (const [key, country] of rules) {
+    if (s.includes(key)) return country;
+  }
+  return null;
+}
+
+const ISO_FALLBACK = {
+  "united kingdom": "GB",
+  "uk": "GB",
+  "great britain": "GB",
+  "england": "GB",
+  "scotland": "GB",
+  "wales": "GB",
+  "united states": "US",
+  "usa": "US",
+  "u.s.a.": "US",
+  "united arab emirates": "AE",
+  "uae": "AE",
+  "south korea": "KR",
+  "korea": "KR",
+  "czechia": "CZ",
+};
+
+function iso2ToFlagUrls(iso2Upper) {
+  const iso2 = iso2Upper.toLowerCase();
+  return {
+    pngUrl: `https://flagcdn.com/w80/${iso2}.png`,
+    svgUrl: `https://flagcdn.com/${iso2}.svg`,
+  };
+}
+
+async function getCountryCodeAndFlag(countryName, gpName) {
+  // 0) manual override by gpName keyword
+  const gpLower = (gpName || "").toLowerCase();
+  const override = FLAG_OVERRIDES.find((o) => gpLower.includes(o.match));
+  if (override?.iso2 && /^[A-Z]{2}$/.test(override.iso2)) {
+    const urls = iso2ToFlagUrls(override.iso2);
+    return {
+      found: true,
+      country: countryName || inferCountryFromGpName(gpName) || null,
+      countryCode: override.iso2,
+      ...urls,
+      source: "override + flagcdn.com",
+      note: null,
+    };
+  }
+
+  // 1) If missing, infer
+  let country = countryName || inferCountryFromGpName(gpName);
+
+  if (!country) {
     return {
       found: false,
       country: null,
@@ -135,73 +232,77 @@ async function getCountryCodeAndFlag(countryName) {
       pngUrl: null,
       svgUrl: null,
       source: null,
-      note: "No country name available from calendar location.",
+      note: "No country found from location, and could not infer from gpName.",
     };
   }
 
-  // REST Countries: get ISO2 (cca2)
-  // Try fullText first, then fallback to name search.
+  const norm = country.trim();
+  const normKey = norm.toLowerCase();
+
+  // 2) fallback iso mapping
+  if (ISO_FALLBACK[normKey]) {
+    const iso2Upper = ISO_FALLBACK[normKey];
+    const urls = iso2ToFlagUrls(iso2Upper);
+    return {
+      found: true,
+      country: norm,
+      countryCode: iso2Upper,
+      ...urls,
+      source: "fallback-map + flagcdn.com",
+      note: null,
+    };
+  }
+
+  // 3) REST Countries lookup for ISO2
   const base = "https://restcountries.com/v3.1/name/";
-  const q = encodeURIComponent(countryName);
+  const q = encodeURIComponent(norm);
 
-  let data = null;
-  let usedUrl = null;
+  const tryUrls = [
+    `${base}${q}?fullText=true&fields=name,cca2`,
+    `${base}${q}?fields=name,cca2`,
+  ];
 
-  try {
-    usedUrl = `${base}${q}?fullText=true&fields=name,cca2`;
-    data = await fetchJson(usedUrl, { Accept: "application/json" });
-  } catch {
-    // fallback
-    usedUrl = `${base}${q}?fields=name,cca2`;
+  for (const url of tryUrls) {
     try {
-      data = await fetchJson(usedUrl, { Accept: "application/json" });
-    } catch (e) {
+      const res = await fetch(url, { headers: { "User-Agent": UA } });
+      if (!res.ok) continue;
+
+      const data = await res.json();
+      const first = Array.isArray(data) ? data[0] : null;
+      const cca2 = first?.cca2 ? String(first.cca2).toUpperCase() : null;
+      if (!cca2 || !/^[A-Z]{2}$/.test(cca2)) continue;
+
+      const urls = iso2ToFlagUrls(cca2);
       return {
-        found: false,
-        country: countryName,
-        countryCode: null,
-        pngUrl: null,
-        svgUrl: null,
-        source: usedUrl,
-        note: `REST Countries lookup failed: ${e?.message || String(e)}`,
+        found: true,
+        country: norm,
+        countryCode: cca2,
+        ...urls,
+        source: "restcountries.com + flagcdn.com",
+        note: null,
       };
+    } catch {
+      // try next
     }
   }
 
-  const first = Array.isArray(data) ? data[0] : null;
-  const cca2 = first?.cca2 ? String(first.cca2).toLowerCase() : null;
-
-  if (!cca2) {
-    return {
-      found: false,
-      country: countryName,
-      countryCode: null,
-      pngUrl: null,
-      svgUrl: null,
-      source: usedUrl,
-      note: "Could not determine ISO country code (cca2).",
-    };
-  }
-
-  // FlagCDN uses lowercase ISO2
   return {
-    found: true,
-    country: countryName,
-    countryCode: cca2.toUpperCase(),
-    // Small widget-friendly sizes: w40/w80/w160
-    pngUrl: `https://flagcdn.com/w80/${cca2}.png`,
-    svgUrl: `https://flagcdn.com/${cca2}.svg`,
-    source: "restcountries.com + flagcdn.com",
-    note: null,
+    found: false,
+    country: norm,
+    countryCode: null,
+    pngUrl: null,
+    svgUrl: null,
+    source: "restcountries.com",
+    note: "REST Countries lookup failed and no fallback ISO mapping matched.",
   };
 }
 
-// ---------- Track map matching ----------
+// ---------- Track map helpers ----------
 function normalize(s) {
   return (s || "")
     .toLowerCase()
     .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "") // strip accents
+    .replace(/[\u0300-\u036f]/g, "")
     .replace(/[^a-z0-9]+/g, " ")
     .trim();
 }
@@ -237,7 +338,7 @@ function githubRawUrl(style, file) {
   return `https://raw.githubusercontent.com/${CIRCUIT_REPO_OWNER}/${CIRCUIT_REPO_NAME}/${CIRCUIT_REPO_REF}/circuits/${style}/${file}`;
 }
 
-function makePngUrl(layoutId) {
+function makeTrackPngUrl(layoutId) {
   return `${PAGES_BASE}/${TRACKMAP_DIR}/${encodeURIComponent(layoutId)}.png`;
 }
 
@@ -286,15 +387,17 @@ async function findBestTrackSvgFile({ gpName, city, country }) {
       best = { score: top.score, style, file: top.file };
     }
 
-    // stop early on strong matches
     if (top?.score >= 10) break;
   }
 
   if (!best.file || !best.style) {
-    return { found: false, note: "No SVG files could be listed from any style folder.", debug: { topCandidatesByStyle } };
+    return {
+      found: false,
+      note: "No SVG files could be listed from any style folder.",
+      debug: { topCandidatesByStyle },
+    };
   }
 
-  // We allow low scores, because we still want a map; you can override if it’s wrong
   return {
     found: true,
     style: best.style,
@@ -313,7 +416,6 @@ async function renderTrackMapPng({ gpName, city, country }) {
       found: false,
       source: "github-contents",
       note: match.note || "No match",
-      bestGuess: null,
       svgUrl: null,
       pngUrl: null,
       debug: match.debug || null,
@@ -338,7 +440,7 @@ async function renderTrackMapPng({ gpName, city, country }) {
     style: match.style,
     file: match.file,
     svgUrl,
-    pngUrl: makePngUrl(layoutId),
+    pngUrl: makeTrackPngUrl(layoutId),
     score: match.score ?? null,
     note: match.score != null && match.score < 8 ? "Low-confidence match; add FILE_OVERRIDES if wrong." : null,
     debug: match.debug || null,
@@ -391,8 +493,8 @@ async function updateNextRace() {
   // Track map (PNG)
   const trackMap = await renderTrackMapPng({ gpName, city, country });
 
-  // Country flag (PNG/SVG)
-  const flag = await getCountryCodeAndFlag(country);
+  // Flag (PNG/SVG)
+  const flag = await getCountryCodeAndFlag(country, gpName);
 
   const sessionOrder = ["FP1", "FP2", "FP3", "Qualifying", "Sprint Qualifying", "Sprint", "Race"];
   const sessionsOut = sessionOrder
@@ -419,14 +521,12 @@ async function updateNextRace() {
     grandPrix: {
       name: gpName,
       city,
-      country,
+      country: flag?.found ? flag.country : country, // prefer inferred/normalized
       location: nextRace.location,
     },
 
-    // NEW:
-    flag, // Widgy image can bind to flag.pngUrl
-
-    trackMap, // Widgy image can bind to trackMap.pngUrl
+    flag, // Widgy Image -> flag.pngUrl
+    trackMap, // Widgy Image -> trackMap.pngUrl
 
     countdowns: {
       weekendStartsInDays: daysUntil(weekendStart, now),
@@ -450,7 +550,7 @@ async function updateNextRace() {
     sessions: sessionsOut,
 
     notes:
-      "Use flag.pngUrl for country flag images (PNG) and trackMap.pngUrl for the circuit map (PNG). Track map prefers black-outline style.",
+      "Use flag.pngUrl for the country flag (PNG) and trackMap.pngUrl for the circuit map (PNG). Track map prefers black-outline style. If flag.found is false, add an entry in FLAG_OVERRIDES or expand inferCountryFromGpName().",
   };
 
   await fs.writeFile("f1_next_race.json", JSON.stringify(out, null, 2), "utf8");
