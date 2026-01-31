@@ -1,9 +1,7 @@
 // updateStandings.js
 import fs from "node:fs/promises";
-import fetch from "node-fetch";
 
-const ERGAST_URL =
-  "https://ergast.com/api/f1/current/driverStandings.json";
+const ERGAST_URL = "https://ergast.com/api/f1/current/driverStandings.json";
 
 // Long constructor names → short display names
 const TEAM_NAME_MAP = {
@@ -22,7 +20,7 @@ const TEAM_NAME_MAP = {
   "Williams": "Williams",
   "Haas F1 Team": "Haas",
   "Alfa Romeo": "Alfa Romeo",
-  "Kick Sauber": "Sauber"
+  "Kick Sauber": "Sauber",
 };
 
 function normalizeTeamName(name) {
@@ -31,7 +29,12 @@ function normalizeTeamName(name) {
 }
 
 async function updateStandings() {
-  const res = await fetch(ERGAST_URL);
+  const res = await fetch(ERGAST_URL, {
+    headers: {
+      "User-Agent": "f1-standings-bot/1.0",
+      "Accept": "application/json",
+    },
+  });
 
   if (!res.ok) {
     throw new Error(`Failed to fetch standings: HTTP ${res.status}`);
@@ -65,7 +68,7 @@ async function updateStandings() {
 
       constructor: {
         name: normalizeTeamName(constructor?.name),
-        fullName: constructor?.name,
+        fullName: constructor?.name || null,
         nationality: constructor?.nationality || null,
       },
     };
@@ -73,18 +76,13 @@ async function updateStandings() {
 
   const out = {
     header: "F1 Driver Standings",
-    season: data?.MRData?.StandingsTable?.season,
-    round: data?.MRData?.StandingsTable?.round,
+    season: data?.MRData?.StandingsTable?.season || null,
+    round: data?.MRData?.StandingsTable?.round || null,
     generatedAtUtc: new Date().toISOString(),
     drivers,
   };
 
-  await fs.writeFile(
-    "f1_driver_standings.json",
-    JSON.stringify(out, null, 2),
-    "utf8"
-  );
-
+  await fs.writeFile("f1_driver_standings.json", JSON.stringify(out, null, 2), "utf8");
   console.log("Updated f1_driver_standings.json");
 }
 
