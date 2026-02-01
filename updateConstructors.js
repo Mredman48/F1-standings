@@ -9,21 +9,17 @@ const BASES = ["https://api.jolpi.ca/ergast/f1"];
 // Your GitHub Pages base
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 
-// Folder where we’ll store PNGs in the repo (commit this folder)
+// Folder where we store team logo PNGs (committed to repo)
 const TEAMLOGO_DIR = "teamlogos";
 
-function cleanTeamName(name) {
-  const n = (name || "").trim();
+// Bump this any time you want to force-regenerate logos
+const LOGO_VERSION = "v3";
 
-  // Your naming rules:
-  if (/red bull racing/i.test(n)) return "Red Bull";
-  if (/RB F1 Team/i.test(n)) return "VCARB";
+// Force super hi-res from F1 CDN (you can lower to 1024 if file size bothers you)
+const LOGO_HEIGHT = 2048;
+const LOGO_QUALITY = 100;
 
-  return n;
-}
-
-// team -> formula1.com team page slug
-// (these are used only to locate official logowhite.webp on F1 pages)
+// Team -> Formula1.com team page slug (official site)
 const TEAM_F1_PAGE_SLUG = {
   "Red Bull": "red-bull-racing",
   "Ferrari": "ferrari",
@@ -33,12 +29,13 @@ const TEAM_F1_PAGE_SLUG = {
   "Alpine F1 Team": "alpine",
   "Williams": "williams",
   "Haas F1 Team": "haas",
+  // update if needed based on your standings naming:
   "Sauber": "kick-sauber",
   "VCARB": "racing-bulls",
   "Audi": "audi",
 };
 
-// Team hex colors (tweak anytime)
+// Team hex colors (edit anytime)
 const TEAM_HEX = {
   "Red Bull": "#1E41FF",
   "Ferrari": "#DC0000",
@@ -53,12 +50,35 @@ const TEAM_HEX = {
   "Audi": "#000000",
 };
 
+function cleanTeamName(name) {
+  const n = (name || "").trim();
+
+  // Your naming rules:
+  if (/red bull racing/i.test(n)) return "Red Bull";
+  if (/RB F1 Team/i.test(n)) return "VCARB";
+
+  return n;
+}
+
+/* -------------------- utils -------------------- */
+
 async function ensureDir(dir) {
   await fs.mkdir(dir, { recursive: true });
 }
 
 function makePagesUrl(relPath) {
   return `${PAGES_BASE}/${relPath.split(path.sep).join("/")}`;
+}
+
+function safeFileSlug(s) {
+  return (s || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+function safeGet(obj, pathArr) {
+  return pathArr.reduce((acc, k) => (acc && acc[k] !== undefined ? acc[k] : undefined), obj);
 }
 
 async function fetchText(url) {
@@ -90,7 +110,7 @@ async function fetchJson(url) {
   try {
     data = JSON.parse(text);
   } catch {
-    throw new Error(`Non-JSON from ${url}: ${text.slice(0, 120)}`);
+    throw new Error(`Non-JSON from ${url}: ${text.slice(0, 160)}`);
   }
 
   if (!res.ok) throw new Error(`HTTP ${res.status} from ${url}`);
@@ -113,84 +133,75 @@ async function fetchWithFallback(paths) {
   throw new Error(`All fetch attempts failed: ${JSON.stringify(attempts, null, 2)}`);
 }
 
-function safeGet(obj, pathArr) {
-  return pathArr.reduce((acc, k) => (acc && acc[k] !== undefined ? acc[k] : undefined), obj);
-}
+/* -------------------- standings parsing -------------------- */
 
-/**
- * Find the official "logowhite" image on the F1 team page.
- * We DO NOT guess version numbers; we scrape the page for the actual media URL.
- */
-function extractOfficialLogoWebp(html, season) {
-  const re = new RegExp(
-    `https://media\\.formula1\\.com/image/upload[^"']+/common/f1/${season}/[^"']+?logowhite\\.webp`,
-    "i"
-  );
+function parseConstructorStandingsPayload(payload) {
+  const mr = payload?.MRData || {};
+  const season = mr?.StandingsTable?.season || null;
+  const round = mr?.StandingsTable?.round ?? null;
 
-  const m = html.match(re);
-  if (!m) return null;
+  const list =
+    safeGet(payload, ["MRData", "StandingsTable", "StandingsLists", 0, "ConstructorStandings"]) || [];
 
-  // upgrade resolution: h_64 → h_512
-  return m[0].replace(/h_\d+/i, "h_512");
-  
-}
-
-/**
- * Download official webp and convert to PNG (transparent) using sharp.
- * Returns a GitHub Pages URL to the PNG in your repo.
- */
-async function getOrBuildTeamLogoPng({ team, season }) {
-  const slug = TEAM_F1_PAGE_SLUG[team];
-  if (!slug) return null;
-
-  // Output filename you will commit
-  const outRel = `${TEAMLOGO_DIR}/${season}_${safeFileSlug(team)}.png`;
-  const outPath = path.join(outRel);
-
-  // If already exists, reuse (faster + less network)
-  try {
-    await fs.access(outPath);
-    return makePagesUrl(outRel);
-  } catch {
-    // continue
-  }
-
-  const teamPageUrl = `https://www.formula1.com/en/teams/${slug}`;
-  const html = await fetchText(teamPageUrl);
-
-  const webpUrl = extractOfficialLogoWebp(html, season);
-  if (!webpUrl) {
-    // Nothing found on page for that season
-    return null;
-  }
-
-  const buf = await fetchBuffer(webpUrl);
-
-  await ensureDir(TEAMLOGO_DIR);
-
-  // Convert webp -> png
-  const png = await sharp(buf).png().toBuffer();
-  await fs.writeFile(outPath, png);
-
-  return makePagesUrl(outRel);
-}
-
-function mapConstructorStanding(cs, { season }) {
-  const ctor = cs?.Constructor || {};
-  const team = cleanTeamName(ctor?.name || ctor?.Name || "");
+  const total = Number(mr.total || 0);
 
   return {
-    position: cs.position ? Number(cs.position) : null,
-    positionText: cs.position ? `P${cs.position}` : null,
-    points: cs.points ? Number(cs.points) : null,
-    wins: cs.wins ? Number(cs.wins) : null,
-    team: team || null,
-    teamHex: TEAM_HEX[team] || null,
-    // filled later (async) as a PNG URL hosted on *your* GitHub Pages
-    teamLogoPng: null,
-    _teamKey: team, // internal helper for logo lookup; removed before write
-    _season: season, // internal helper; removed before write
+    season,
+    round,
+    total,
+    raw: Array.isArray(list) ? list : [],
   };
+}
+
+async function getStandingsWithFallback(now) {
+  const utcYear = now.getUTCFullYear();
+
+  // 1) try current
+  const currentRes = await fetchWithFallback([
+    "/current/constructorstandings.json",
+    "/current/constructorStandings.json",
+  ]);
+  const currentParsed = parseConstructorStandingsPayload(currentRes.data);
+
+  const inferredCurrentSeason = currentParsed.season ? Number(currentParsed.season) : null;
+  const fallbackSeason = inferredCurrentSeason ? String(inferredCurrentSeason - 1) : String(utcYear - 1);
+
+  let used = {
+    tag: "current",
+    url: currentRes.url,
+    season: currentParsed.season,
+    round: currentParsed.round,
+    total: currentParsed.total,
+    raw: currentParsed.raw,
+    usedFallback: false,
+    note: null,
+  };
+
+  // 2) fallback if empty
+  if (used.total === 0 || used.raw.length === 0) {
+    const prevRes = await fetchWithFallback([
+      `/${fallbackSeason}/constructorstandings.json`,
+      `/${fallbackSeason}/constructorStandings.json`,
+    ]);
+    const prevParsed = parseConstructorStandingsPayload(prevRes.data);
+
+    if (prevParsed.total > 0 && prevParsed.raw.length > 0) {
+      used = {
+        tag: fallbackSeason,
+        url: prevRes.url,
+        season: prevParsed.season || fallbackSeason,
+        round: prevParsed.round,
+        total: prevParsed.total,
+        raw: prevParsed.raw,
+        usedFallback: true,
+        note: `No constructor standings available for current season yet; showing ${fallbackSeason} season instead.`,
+      };
+    } else {
+      used.note = "No constructor standings available yet (season not started or standings not published).";
+    }
+  }
+
+  return used;
 }
 
 async function getLastRaceForSeason(seasonTag) {
@@ -228,107 +239,168 @@ async function getLastRaceForSeason(seasonTag) {
   }
 }
 
-function parseConstructorStandingsPayload(payload) {
-  const mr = payload?.MRData || {};
-  const season = mr?.StandingsTable?.season || null;
-  const round = mr?.StandingsTable?.round ?? null;
-
-  const list =
-    safeGet(payload, ["MRData", "StandingsTable", "StandingsLists", 0, "ConstructorStandings"]) || [];
-
-  const total = Number(mr.total || 0);
-
-  return {
-    season,
-    round,
-    total,
-    raw: Array.isArray(list) ? list : [],
-  };
-}
+/* -------------------- official F1 logos: scrape + upgrade + convert -------------------- */
 
 /**
- * Return standings for current season; if empty, fallback to previous season.
+ * Pull a "logowhite.webp" media URL from the team page HTML.
+ * We then upgrade its transforms to higher height and higher quality.
  */
-async function getStandingsWithFallback(now) {
-  const utcYear = now.getUTCFullYear();
+function extractLogoWebpFromTeamPage(html, season) {
+  // Example:
+  // https://media.formula1.com/image/upload/c_fit,h_64/q_auto/v1740000000/common/f1/2025/alpine/2025alpinelogowhite.webp
+  // We search for any common/f1/{season}/{team}/...logowhite.webp
+  const re = new RegExp(
+    `https://media\\.formula1\\.com/image/upload[^"']+/common/f1/${season}/[^"']+?logowhite\\.webp`,
+    "i"
+  );
+  const m = html.match(re);
+  return m ? m[0] : null;
+}
 
-  // current
-  const currentRes = await fetchWithFallback([
-    "/current/constructorstandings.json",
-    "/current/constructorStandings.json",
-  ]);
-  const currentParsed = parseConstructorStandingsPayload(currentRes.data);
+function upgradeF1MediaUrl(webpUrl) {
+  if (!webpUrl) return null;
 
-  const inferredCurrentSeason = currentParsed.season ? Number(currentParsed.season) : null;
-  const fallbackSeason = inferredCurrentSeason ? String(inferredCurrentSeason - 1) : String(utcYear - 1);
-
-  let used = {
-    tag: "current",
-    url: currentRes.url,
-    season: currentParsed.season,
-    round: currentParsed.round,
-    total: currentParsed.total,
-    raw: currentParsed.raw,
-    usedFallback: false,
-    note: null,
-  };
-
-  // If empty, fallback
-  if (used.total === 0 || used.raw.length === 0) {
-    const prevRes = await fetchWithFallback([
-      `/${fallbackSeason}/constructorstandings.json`,
-      `/${fallbackSeason}/constructorStandings.json`,
-    ]);
-    const prevParsed = parseConstructorStandingsPayload(prevRes.data);
-
-    if (prevParsed.total > 0 && prevParsed.raw.length > 0) {
-      used = {
-        tag: fallbackSeason,
-        url: prevRes.url,
-        season: prevParsed.season || fallbackSeason,
-        round: prevParsed.round,
-        total: prevParsed.total,
-        raw: prevParsed.raw,
-        usedFallback: true,
-        note: `No constructor standings available for current season yet; showing ${fallbackSeason} season instead.`,
-      };
-    } else {
-      used.note = "No constructor standings available yet (season not started or standings not published).";
-    }
+  // Some URLs are percent-encoded in HTML attributes; decode safely.
+  let u = webpUrl;
+  try {
+    u = decodeURIComponent(webpUrl);
+  } catch {
+    // keep original
   }
 
-  return used;
+  // Force high-res height + max quality (keep crop/fit mode as is)
+  u = u
+    .replace(/h_\d+/i, `h_${LOGO_HEIGHT}`)
+    .replace(/q_auto/i, `q_${LOGO_QUALITY}`);
+
+  // If there is no q_ transform, inject one
+  if (!/\/q_\d+/.test(u) && /\/image\/upload\//.test(u)) {
+    u = u.replace("/image/upload/", `/image/upload/q_${LOGO_QUALITY}/`);
+  }
+
+  return u;
 }
+
+async function buildTeamLogoPng({ team, season }) {
+  const pageSlug = TEAM_F1_PAGE_SLUG[team];
+  if (!pageSlug) return { ok: false, pngUrl: null, note: "No F1 team page slug mapping for this team." };
+
+  // We write a versioned filename so old cached logos don't stick around
+  const outRel = `${TEAMLOGO_DIR}/${season}_${safeFileSlug(team)}_${LOGO_VERSION}.png`;
+  const outPath = path.join(outRel);
+
+  // If it already exists, reuse
+  try {
+    await fs.access(outPath);
+    return { ok: true, pngUrl: makePagesUrl(outRel), note: "Reused cached PNG in repo." };
+  } catch {
+    // continue
+  }
+
+  const teamPageUrl = `https://www.formula1.com/en/teams/${pageSlug}`;
+  const html = await fetchText(teamPageUrl);
+
+  const webpUrl = extractLogoWebpFromTeamPage(html, season);
+  if (!webpUrl) return { ok: false, pngUrl: null, note: "No logowhite.webp found on F1 team page." };
+
+  const hiResUrl = upgradeF1MediaUrl(webpUrl);
+
+  // Download + convert to PNG (preserves transparency)
+  const buf = await fetchBuffer(hiResUrl);
+
+  await ensureDir(TEAMLOGO_DIR);
+
+  // Convert WEBP->PNG with best quality
+  const pngBuf = await sharp(buf)
+    .png({ quality: 100, compressionLevel: 9 })
+    .toBuffer();
+
+  await fs.writeFile(outPath, pngBuf);
+
+  return { ok: true, pngUrl: makePagesUrl(outRel), note: "Downloaded from official F1 CDN and converted to PNG." };
+}
+
+/* -------------------- mapping output -------------------- */
+
+function mapConstructorStanding(cs) {
+  const ctor = cs?.Constructor || {};
+  const team = cleanTeamName(ctor?.name || ctor?.Name || "");
+
+  return {
+    position: cs.position ? Number(cs.position) : null,
+    positionText: cs.position ? `P${cs.position}` : null,
+    points: cs.points ? Number(cs.points) : null,
+    wins: cs.wins ? Number(cs.wins) : null,
+    team: team || null,
+    teamHex: TEAM_HEX[team] || null,
+    teamLogoPng: null, // filled later
+    _teamKey: team, // internal
+  };
+}
+
+async function ensureDummyLogo() {
+  await ensureDir(TEAMLOGO_DIR);
+  const rel = `${TEAMLOGO_DIR}/dummy_team_${LOGO_VERSION}.png`;
+  const filePath = path.join(rel);
+
+  try {
+    await fs.access(filePath);
+  } catch {
+    // simple transparent placeholder 512x512 with a faint gray ring (still transparent background)
+    const size = 512;
+    const svg = `
+      <svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="${size / 2}" cy="${size / 2}" r="${size / 2 - 20}"
+                fill="none" stroke="rgba(0,0,0,0.20)" stroke-width="18"/>
+        <text x="50%" y="52%" text-anchor="middle" dominant-baseline="middle"
+              font-family="Arial" font-size="90" fill="rgba(0,0,0,0.35)">P11</text>
+      </svg>
+    `;
+    const png = await sharp(Buffer.from(svg)).png().toBuffer();
+    await fs.writeFile(filePath, png);
+  }
+
+  return makePagesUrl(rel);
+}
+
+/* -------------------- main -------------------- */
 
 async function updateConstructors() {
   const now = new Date();
+
+  // standings + fallback
   const used = await getStandingsWithFallback(now);
 
+  // Determine season string for logo scraping:
+  // If we used fallback, used.tag is the year string; otherwise use API season or UTC year.
   const seasonNum = used.season ? Number(used.season) : null;
-  const seasonStr = seasonNum ? String(seasonNum) : (used.tag === "current" ? String(now.getUTCFullYear()) : String(used.tag));
+  const seasonStr =
+    seasonNum ? String(seasonNum) : used.tag === "current" ? String(now.getUTCFullYear()) : String(used.tag);
 
-  // Build base array
-  let constructors = used.raw.map((cs) => mapConstructorStanding(cs, { season: seasonStr }));
+  // last race info for same season tag we used
+  const lastRace = await getLastRaceForSeason(used.tag);
 
-  // Fill official logos (download -> convert -> serve from your GitHub Pages)
+  // Build constructors list
+  let constructors = used.raw.map(mapConstructorStanding);
+
+  // Build logos from official site (converted & hosted by you)
   for (const c of constructors) {
     const team = c._teamKey;
-    const season = c._season;
 
     try {
-      c.teamLogoPng = await getOrBuildTeamLogoPng({ team, season });
+      const result = await buildTeamLogoPng({ team, season: seasonStr });
+      c.teamLogoPng = result.pngUrl;
+      c.logoNote = result.ok ? null : result.note; // optional debug note
     } catch (e) {
-      // If something goes wrong, keep null (don’t fail workflow)
       c.teamLogoPng = null;
-      console.log(`Logo error for ${team}:`, e?.message || String(e));
+      c.logoNote = e?.message || String(e);
     }
 
-    // remove internal helpers
     delete c._teamKey;
-    delete c._season;
   }
 
-  // ✅ Add dummy 11th-place team (for widget layout building)
+  // Add dummy P11 team
+  const dummyLogoUrl = await ensureDummyLogo();
   constructors.push({
     position: 11,
     positionText: "P11",
@@ -336,50 +408,37 @@ async function updateConstructors() {
     wins: 0,
     team: "Dummy Team",
     teamHex: "#999999",
-    teamLogoPng: makePagesUrl(`${TEAMLOGO_DIR}/dummy_team.png`),
-    dummy: true
+    teamLogoPng: dummyLogoUrl,
+    dummy: true,
   });
 
-  // Ensure dummy logo exists (transparent PNG) if not already
-  // (Creates a simple transparent placeholder, 256x256)
-  await ensureDir(TEAMLOGO_DIR);
-  const dummyPath = path.join(TEAMLOGO_DIR, "dummy_team.png");
-  try {
-    await fs.access(dummyPath);
-  } catch {
-    const blank = await sharp({
-      create: { width: 256, height: 256, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } }
-    })
-      .png()
-      .toBuffer();
-    await fs.writeFile(dummyPath, blank);
-  }
-
-  const lastRace = await getLastRaceForSeason(used.tag);
-
+  // Output JSON
   const out = {
     header: `${now.getUTCFullYear()} constructors standings`,
     generatedAtUtc: now.toISOString(),
     source: { constructors: used.url },
     meta: {
-      usedSeasonTag: used.tag,
+      usedSeasonTag: used.tag, // "current" or "2025" etc.
       season: seasonNum ? seasonNum : null,
       round: used.round !== null && used.round !== undefined ? Number(used.round) : null,
       total: used.total,
       usedFallback: used.usedFallback,
       note: used.note,
       logos: {
-        kind: "official_f1_site",
-        storedAs: "png_in_repo",
-        folder: TEAMLOGO_DIR
-      }
+        source: "formula1.com official CDN",
+        format: "png",
+        heightRequested: LOGO_HEIGHT,
+        qualityRequested: LOGO_QUALITY,
+        folder: TEAMLOGO_DIR,
+        version: LOGO_VERSION,
+      },
     },
     lastRace,
-    constructors
+    constructors,
   };
 
   await fs.writeFile("f1_constructor_standings.json", JSON.stringify(out, null, 2), "utf8");
-  console.log(`Wrote f1_constructor_standings.json (seasonTag=${used.tag})`);
+  console.log(`Wrote f1_constructor_standings.json (seasonTag=${used.tag}, season=${seasonStr})`);
 }
 
 updateConstructors().catch((err) => {
