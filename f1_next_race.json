@@ -1,6 +1,6 @@
 {
   "header": "Next F1 event",
-  "generatedAtUtc": "2026-02-01T00:52:00.802Z",
+  "generatedAtUtc": "2026-02-01T00:58:55.200Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics",
@@ -14,6 +14,14 @@
     "startLocalTimeShort": "18:30",
     "startsInDays": 34
   },
+  "testing": {
+    "found": false,
+    "sourceUrl": "https://www.formula1.com/en/racing/2026",
+    "next": null,
+    "all": [],
+    "note": "No testing blocks found on F1 season page.",
+    "trackMap": null
+  },
   "grandPrix": {
     "name": "F1 Qatar Airways Australian GP 2026",
     "location": "Australia",
@@ -21,10 +29,10 @@
   },
   "trackMap": {
     "found": true,
-    "source": "media.formula1.com (scraped from race page)",
-    "racePageUrl": "https://www.formula1.com/en/racing/2026/qatar",
+    "pageUrl": "https://www.formula1.com/en/racing/2026/qatar",
     "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000000/common/f1/2026/track/2026tracklusaildetailed.webp",
-    "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_qatar_detailed.png"
+    "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_qatar_detailed.png",
+    "note": null
   },
   "countdowns": {
     "weekendStartsInDays": 34,
@@ -84,11 +92,5 @@
       "startLocalDateTimeShort": "Sat, Mar 07 21:00"
     }
   ],
-  "testing": {
-    "found": false,
-    "sourceUrl": "https://www.formula1.com/en/racing/2026",
-    "all": [],
-    "note": "No testing blocks matched on F1 season page."
-  },
-  "notes": "Testing blocks come from the official F1 season listing; race weekend sessions/times come from the ICS feed."
+  "notes": "testing.* comes from formula1.com season page; testing.trackMap attempts formula1.com testing page map. race trackMap comes from the next GP race page."
 }
