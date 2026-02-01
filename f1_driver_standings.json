@@ -1,16 +1,34 @@
 {
   "header": "2025 Driver Standings (fallback)",
-  "generatedAtUtc": "2026-02-01T00:21:30.395Z",
+  "generatedAtUtc": "2026-02-01T00:28:19.856Z",
   "season": "2025",
-  "lastRace": null,
+  "lastRace": {
+    "season": "2025",
+    "round": 24,
+    "raceName": "Abu Dhabi Grand Prix",
+    "date": "2025-12-07",
+    "time": "13:00:00Z",
+    "circuit": {
+      "name": "Yas Marina Circuit",
+      "location": {
+        "locality": "Abu Dhabi",
+        "country": "UAE"
+      }
+    }
+  },
+  "lastRaceSource": {
+    "found": true,
+    "urlUsed": "https://api.jolpi.ca/ergast/f1/2025/last/results.json",
+    "urlsTried": [
+      "https://api.jolpi.ca/ergast/f1/2025/last/results.json",
+      "https://api.jolpi.ca/ergast/f1/2025/last/results/",
+      "https://api.jolpi.ca/ergast/f1/2025/last/results"
+    ]
+  },
   "source": {
     "kind": "jolpica ergast-compatible",
     "url": "https://api.jolpi.ca/ergast/f1/2025/last/driverstandings.json",
     "note": "Current season standings were empty; using last season final standings."
-  },
-  "lastRaceSource": {
-    "url": "https://api.jolpi.ca/ergast/f1/current/last/results.json",
-    "found": false
   },
   "enrichment": {
     "openf1DriversUrl": "https://api.openf1.org/v1/drivers?session_key=latest",
