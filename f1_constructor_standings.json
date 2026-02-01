@@ -1,6 +1,6 @@
 {
   "header": "2026 constructors standings",
-  "generatedAtUtc": "2026-02-01T15:29:01.969Z",
+  "generatedAtUtc": "2026-02-01T15:35:42.418Z",
   "source": {
     "constructors": "https://api.jolpi.ca/ergast/f1/2025/constructorstandings.json"
   },
@@ -12,9 +12,12 @@
     "usedFallback": true,
     "note": "No constructor standings available for current season yet; showing 2025 season instead.",
     "logos": {
-      "kind": "official_f1_site",
-      "storedAs": "png_in_repo",
-      "folder": "teamlogos"
+      "source": "formula1.com official CDN",
+      "format": "png",
+      "heightRequested": 2048,
+      "qualityRequested": 100,
+      "folder": "teamlogos",
+      "version": "v3"
     }
   },
   "lastRace": {
@@ -36,7 +39,8 @@
       "wins": 14,
       "team": "McLaren",
       "teamHex": "#FF8700",
-      "teamLogoPng": null
+      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_mclaren_v3.png",
+      "logoNote": null
     },
     {
       "position": 2,
@@ -45,7 +49,8 @@
       "wins": 2,
       "team": "Mercedes",
       "teamHex": "#00D2BE",
-      "teamLogoPng": null
+      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_mercedes_v3.png",
+      "logoNote": null
     },
     {
       "position": 3,
@@ -54,7 +59,8 @@
       "wins": 8,
       "team": "Red Bull",
       "teamHex": "#1E41FF",
-      "teamLogoPng": null
+      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_red-bull_v3.png",
+      "logoNote": null
     },
     {
       "position": 4,
@@ -63,7 +69,8 @@
       "wins": 0,
       "team": "Ferrari",
       "teamHex": "#DC0000",
-      "teamLogoPng": null
+      "teamLogoPng": null,
+      "logoNote": "No logowhite.webp found on F1 team page."
     },
     {
       "position": 5,
@@ -72,7 +79,8 @@
       "wins": 0,
       "team": "Williams",
       "teamHex": "#005AFF",
-      "teamLogoPng": null
+      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_williams_v3.png",
+      "logoNote": null
     },
     {
       "position": 6,
@@ -81,7 +89,8 @@
       "wins": 0,
       "team": "VCARB",
       "teamHex": "#2B4562",
-      "teamLogoPng": null
+      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_vcarb_v3.png",
+      "logoNote": null
     },
     {
       "position": 7,
@@ -90,7 +99,8 @@
       "wins": 0,
       "team": "Aston Martin",
       "teamHex": "#006F62",
-      "teamLogoPng": null
+      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_aston-martin_v3.png",
+      "logoNote": null
     },
     {
       "position": 8,
@@ -99,7 +109,8 @@
       "wins": 0,
       "team": "Haas F1 Team",
       "teamHex": "#B6BABD",
-      "teamLogoPng": null
+      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_haas-f1-team_v3.png",
+      "logoNote": null
     },
     {
       "position": 9,
@@ -108,7 +119,8 @@
       "wins": 0,
       "team": "Sauber",
       "teamHex": "#00E701",
-      "teamLogoPng": null
+      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_sauber_v3.png",
+      "logoNote": null
     },
     {
       "position": 10,
@@ -117,7 +129,8 @@
       "wins": 0,
       "team": "Alpine F1 Team",
       "teamHex": "#0090FF",
-      "teamLogoPng": null
+      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_alpine-f1-team_v3.png",
+      "logoNote": null
     },
     {
       "position": 11,
@@ -126,7 +139,7 @@
       "wins": 0,
       "team": "Dummy Team",
       "teamHex": "#999999",
-      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/dummy_team.png",
+      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/dummy_team_v3.png",
       "dummy": true
     }
   ]
