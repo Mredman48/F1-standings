@@ -11,8 +11,8 @@
   },
   "dependencies": {
     "node-ical": "^0.16.1",
-    "@resvg/resvg-js": "^2.6.0"
-    npm i sharp
+    "@resvg/resvg-js": "^2.6.0",
+    "sharp": "^0.33.0"
   },
   "engines": {
     "node": ">=20"
