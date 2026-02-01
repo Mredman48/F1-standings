@@ -16,7 +16,7 @@ const TEAM_NAME_MAP = {
   "Visa Cash App RB F1 Team": "VCARB",
 };
 
-// If OpenF1 team_name differs from Ergast/Jolpica constructor name, normalize it here
+// If OpenF1 team_name differs from Ergast/Jolpica constructor name
 const OPENF1_TEAM_NAME_MAP = {
   "Red Bull Racing": "Red Bull",
   "RB": "VCARB",
@@ -24,7 +24,6 @@ const OPENF1_TEAM_NAME_MAP = {
   "Visa Cash App RB": "VCARB",
 };
 
-// ---------- helpers ----------
 function normalizeTeamName(name) {
   if (!name) return null;
   return TEAM_NAME_MAP[name] || name;
@@ -49,9 +48,7 @@ async function fetchJson(url) {
   });
 
   const text = await res.text();
-  if (!res.ok) {
-    throw new Error(`HTTP ${res.status} from ${url}\n${text.slice(0, 200)}`);
-  }
+  if (!res.ok) throw new Error(`HTTP ${res.status} from ${url}\n${text.slice(0, 200)}`);
 
   try {
     return JSON.parse(text);
@@ -94,7 +91,6 @@ async function fetchLastSeasonFinalStandings(seasonYear) {
   ];
 
   let lastError = null;
-
   for (const url of urls) {
     try {
       const data = await fetchJson(url);
@@ -111,50 +107,55 @@ async function fetchLastSeasonFinalStandings(seasonYear) {
   throw lastError || new Error("Could not fetch last season final standings.");
 }
 
-// NEW: last race info (current season)
-async function fetchLastRaceInfo() {
+// -------- FIXED: lastRace matches the season we publish --------
+function parseLastRace(payload) {
+  const race = payload?.MRData?.RaceTable?.Races?.[0] ?? null;
+  if (!race) return null;
+
+  return {
+    season: race.season ?? null,
+    round: race.round ? Number(race.round) : null,
+    raceName: race.raceName ?? null,
+    date: race.date ?? null,
+    time: race.time ?? null,
+    circuit: {
+      name: race?.Circuit?.circuitName ?? null,
+      location: {
+        locality: race?.Circuit?.Location?.locality ?? null,
+        country: race?.Circuit?.Location?.country ?? null,
+      },
+    },
+  };
+}
+
+async function fetchLastRaceForSeason(season) {
+  if (!season) return { found: false, lastRace: null, sourceUrlTried: [] };
+
   const urls = [
-    `${JOLPICA_BASE}/current/last/results.json`,
-    `${JOLPICA_BASE}/current/last/results.json`, // same; kept for symmetry if you ever add variants
+    `${JOLPICA_BASE}/${season}/last/results.json`,
+    `${JOLPICA_BASE}/${season}/last/results/`,
+    `${JOLPICA_BASE}/${season}/last/results`,
   ];
 
   for (const url of urls) {
     try {
       const data = await fetchJson(url);
-      const race = data?.MRData?.RaceTable?.Races?.[0] ?? null;
-      if (!race) return { found: false, sourceUrl: url, lastRace: null };
-
-      const out = {
-        season: race.season ?? null,
-        round: race.round ? Number(race.round) : null,
-        raceName: race.raceName ?? null,
-        date: race.date ?? null,  // YYYY-MM-DD
-        time: race.time ?? null,  // HH:MM:SSZ (often)
-        circuit: {
-          name: race?.Circuit?.circuitName ?? null,
-          location: {
-            locality: race?.Circuit?.Location?.locality ?? null,
-            country: race?.Circuit?.Location?.country ?? null,
-          },
-        },
-      };
-
-      return { found: true, sourceUrl: url, lastRace: out };
+      const lastRace = parseLastRace(data);
+      if (lastRace) return { found: true, lastRace, sourceUrl: url, sourceUrlTried: urls };
     } catch {
       // try next
     }
   }
 
-  return { found: false, sourceUrl: urls[0], lastRace: null };
+  return { found: false, lastRace: null, sourceUrlTried: urls };
 }
 
-// OpenF1 driver metadata: headshot + team_colour
+// -------- OpenF1 enrichment --------
 async function fetchOpenF1DriverMeta() {
   const arr = await fetchJson(OPENF1_DRIVERS_URL);
   if (!Array.isArray(arr)) return { byName: new Map(), rawCount: 0 };
 
   const byName = new Map();
-
   for (const d of arr) {
     const first = d?.first_name ?? null;
     const last = d?.last_name ?? null;
@@ -176,7 +177,6 @@ function matchOpenF1Meta(byName, first, last) {
   const exact = byName.get(nameKey(first, last));
   if (exact) return exact;
 
-  // fallback: last-name-only unique match
   const lastLower = (last || "").trim().toLowerCase();
   if (!lastLower) return null;
 
@@ -187,7 +187,7 @@ function matchOpenF1Meta(byName, first, last) {
     if (kLast === lastLower) {
       found = v;
       count += 1;
-      if (count > 1) return null; // ambiguous
+      if (count > 1) return null;
     }
   }
   return found;
@@ -198,7 +198,6 @@ async function readPreviousPositions() {
   try {
     const raw = await fs.readFile(OUTPUT_FILE, "utf8");
     const prev = JSON.parse(raw);
-
     const map = new Map();
 
     for (const d of prev?.drivers ?? []) {
@@ -263,31 +262,30 @@ async function updateStandings() {
   const nowIso = new Date().toISOString();
   const prevPosMap = await readPreviousPositions();
 
-  // Fetch last race info (best-effort; don’t fail the job if this is empty pre-season)
-  const lastRaceInfo = await fetchLastRaceInfo();
-
-  // 1) Current standings
+  // 1) Current standings (or fallback)
   const current = await fetchCurrentStandings();
   let { season, driverStandings } = current.parsed;
 
-  let usedFallback = false;
+  let usedStandingsFallback = false;
   let standingsSourceUrl = current.sourceUrl;
   let fallbackInfo = null;
 
-  // 2) Fallback if empty (pre-season)
   if (!Array.isArray(driverStandings) || driverStandings.length === 0) {
     const fallback = await fetchLastSeasonFinalStandings(season);
-    usedFallback = true;
+    usedStandingsFallback = true;
     standingsSourceUrl = fallback.sourceUrl;
     fallbackInfo = { seasonRequested: season, fallbackSeason: fallback.lastSeason };
     season = String(fallback.lastSeason);
     driverStandings = fallback.parsed.driverStandings;
   }
 
-  // 3) OpenF1 metadata
+  // ✅ lastRace pulled for the SAME season we publish
+  const lastRaceInfo = await fetchLastRaceForSeason(season);
+
+  // 2) OpenF1 metadata
   const openf1 = await fetchOpenF1DriverMeta();
 
-  // 4) Build drivers with text arrows
+  // 3) Build drivers
   const drivers = (driverStandings || []).map((d) => {
     const ctor = d.Constructors?.[0] ?? null;
 
@@ -324,7 +322,6 @@ async function updateStandings() {
         lastName,
         fullName: firstName && lastName ? `${firstName} ${lastName}` : null,
         nationality: d?.Driver?.nationality ?? null,
-
         driverNumber: meta?.driverNumber ?? null,
         headshotUrl: meta?.headshotUrl ?? null,
         nameAcronym: meta?.nameAcronym ?? null,
@@ -340,23 +337,23 @@ async function updateStandings() {
   });
 
   const out = {
-    header: usedFallback ? `${season} Driver Standings (fallback)` : `${season} Driver Standings`,
+    header: usedStandingsFallback ? `${season} Driver Standings (fallback)` : `${season} Driver Standings`,
     generatedAtUtc: nowIso,
-
     season: season ?? null,
 
-    // ✅ NEW: replaces the old "round" field
     lastRace: lastRaceInfo.found ? lastRaceInfo.lastRace : null,
+    lastRaceSource: {
+      found: lastRaceInfo.found,
+      urlUsed: lastRaceInfo.sourceUrl ?? null,
+      urlsTried: lastRaceInfo.sourceUrlTried ?? [],
+    },
 
     source: {
       kind: "jolpica ergast-compatible",
       url: standingsSourceUrl,
-      note: usedFallback ? "Current season standings were empty; using last season final standings." : null,
-    },
-
-    lastRaceSource: {
-      url: lastRaceInfo.sourceUrl,
-      found: lastRaceInfo.found,
+      note: usedStandingsFallback
+        ? "Current season standings were empty; using last season final standings."
+        : null,
     },
 
     enrichment: {
@@ -373,7 +370,7 @@ async function updateStandings() {
   };
 
   await fs.writeFile(OUTPUT_FILE, JSON.stringify(out, null, 2), "utf8");
-  console.log(`Wrote ${OUTPUT_FILE} season=${out.season} drivers=${drivers.length} fallback=${usedFallback}`);
+  console.log(`Wrote ${OUTPUT_FILE} season=${out.season} drivers=${drivers.length}`);
 }
 
 updateStandings().catch((err) => {
