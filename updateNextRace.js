@@ -323,7 +323,7 @@ function buildSessionsForRaceWeekend(gpSessions) {
       if (!s) return null;
 
       return {
-        type: displayType(type), // 👈 renamed here
+        type: displayType(type),
         startUtc: s.start.toISOString(),
         endUtc: s.end.toISOString(),
         startLocalDateShort: shortDateInTZ(s.start),
@@ -332,7 +332,6 @@ function buildSessionsForRaceWeekend(gpSessions) {
       };
     })
     .filter(Boolean);
-}
 }
 
 function computeWindowFromSessions(sessions) {
