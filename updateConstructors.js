@@ -399,11 +399,12 @@ async function updateConstructors() {
     delete c._teamKey;
   }
 
-  // Add dummy P11 team
+  // Add dummy only if the API returned fewer than 11 teams
+if (constructors.length < 11) {
   const dummyLogoUrl = await ensureDummyLogo();
   constructors.push({
-    position: 11,
-    positionText: "P11",
+    position: constructors.length + 1,
+    positionText: `P${constructors.length + 1}`,
     points: 0,
     wins: 0,
     team: "Dummy Team",
@@ -411,6 +412,7 @@ async function updateConstructors() {
     teamLogoPng: dummyLogoUrl,
     dummy: true,
   });
+}
 
   // Output JSON
   const out = {
