@@ -62,15 +62,9 @@ async function fetchJson(url) {
 
 function extractStandings(payload) {
   const season = payload?.MRData?.StandingsTable?.season ?? null;
-  const round =
-    payload?.MRData?.StandingsTable?.StandingsLists?.[0]?.round ??
-    payload?.MRData?.StandingsTable?.round ??
-    null;
-
   const lists = payload?.MRData?.StandingsTable?.StandingsLists ?? [];
   const driverStandings = lists?.[0]?.DriverStandings ?? [];
-
-  return { season, round, driverStandings };
+  return { season, driverStandings };
 }
 
 async function fetchCurrentStandings() {
@@ -82,7 +76,7 @@ async function fetchCurrentStandings() {
   for (const url of urls) {
     const data = await fetchJson(url);
     const parsed = extractStandings(data);
-    return { data, parsed, sourceUrl: url };
+    return { parsed, sourceUrl: url };
   }
 
   throw new Error("Could not fetch current standings from Jolpica.");
@@ -106,7 +100,7 @@ async function fetchLastSeasonFinalStandings(seasonYear) {
       const data = await fetchJson(url);
       const parsed = extractStandings(data);
       if (Array.isArray(parsed.driverStandings) && parsed.driverStandings.length > 0) {
-        return { data, parsed, sourceUrl: url, lastSeason };
+        return { parsed, sourceUrl: url, lastSeason };
       }
       lastError = new Error(`Fetched but empty standings from ${url}`);
     } catch (e) {
@@ -115,6 +109,43 @@ async function fetchLastSeasonFinalStandings(seasonYear) {
   }
 
   throw lastError || new Error("Could not fetch last season final standings.");
+}
+
+// NEW: last race info (current season)
+async function fetchLastRaceInfo() {
+  const urls = [
+    `${JOLPICA_BASE}/current/last/results.json`,
+    `${JOLPICA_BASE}/current/last/results.json`, // same; kept for symmetry if you ever add variants
+  ];
+
+  for (const url of urls) {
+    try {
+      const data = await fetchJson(url);
+      const race = data?.MRData?.RaceTable?.Races?.[0] ?? null;
+      if (!race) return { found: false, sourceUrl: url, lastRace: null };
+
+      const out = {
+        season: race.season ?? null,
+        round: race.round ? Number(race.round) : null,
+        raceName: race.raceName ?? null,
+        date: race.date ?? null,  // YYYY-MM-DD
+        time: race.time ?? null,  // HH:MM:SSZ (often)
+        circuit: {
+          name: race?.Circuit?.circuitName ?? null,
+          location: {
+            locality: race?.Circuit?.Location?.locality ?? null,
+            country: race?.Circuit?.Location?.country ?? null,
+          },
+        },
+      };
+
+      return { found: true, sourceUrl: url, lastRace: out };
+    } catch {
+      // try next
+    }
+  }
+
+  return { found: false, sourceUrl: urls[0], lastRace: null };
 }
 
 // OpenF1 driver metadata: headshot + team_colour
@@ -193,8 +224,8 @@ function computePositionDelta(prevPos, currentPos) {
     return {
       previousPositionNumber: null,
       positionChange: null,
-      positionDirection: "NEW", // text-based
-      arrowSymbol: "NEW",       // optional, for display
+      positionDirection: "NEW",
+      arrowSymbol: "NEW",
       positionChangeText: "NEW",
     };
   }
@@ -230,26 +261,26 @@ function computePositionDelta(prevPos, currentPos) {
 // ---------- main ----------
 async function updateStandings() {
   const nowIso = new Date().toISOString();
-
-  // Previous file (for direction)
   const prevPosMap = await readPreviousPositions();
+
+  // Fetch last race info (best-effort; don’t fail the job if this is empty pre-season)
+  const lastRaceInfo = await fetchLastRaceInfo();
 
   // 1) Current standings
   const current = await fetchCurrentStandings();
-  let { season, round, driverStandings } = current.parsed;
+  let { season, driverStandings } = current.parsed;
 
   let usedFallback = false;
   let standingsSourceUrl = current.sourceUrl;
   let fallbackInfo = null;
 
-  // 2) Fallback if empty
+  // 2) Fallback if empty (pre-season)
   if (!Array.isArray(driverStandings) || driverStandings.length === 0) {
     const fallback = await fetchLastSeasonFinalStandings(season);
     usedFallback = true;
     standingsSourceUrl = fallback.sourceUrl;
     fallbackInfo = { seasonRequested: season, fallbackSeason: fallback.lastSeason };
     season = String(fallback.lastSeason);
-    round = fallback.parsed.round ?? "last";
     driverStandings = fallback.parsed.driverStandings;
   }
 
@@ -285,7 +316,6 @@ async function updateStandings() {
       points: Number(d.points),
       wins: Number(d.wins),
 
-      // NEW: text-based direction + optional symbol
       ...delta,
 
       driver: {
@@ -312,13 +342,21 @@ async function updateStandings() {
   const out = {
     header: usedFallback ? `${season} Driver Standings (fallback)` : `${season} Driver Standings`,
     generatedAtUtc: nowIso,
+
     season: season ?? null,
-    round: round ?? null,
+
+    // ✅ NEW: replaces the old "round" field
+    lastRace: lastRaceInfo.found ? lastRaceInfo.lastRace : null,
 
     source: {
       kind: "jolpica ergast-compatible",
       url: standingsSourceUrl,
       note: usedFallback ? "Current season standings were empty; using last season final standings." : null,
+    },
+
+    lastRaceSource: {
+      url: lastRaceInfo.sourceUrl,
+      found: lastRaceInfo.found,
     },
 
     enrichment: {
