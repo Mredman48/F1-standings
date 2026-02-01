@@ -1,6 +1,6 @@
 {
   "header": "Next F1 event",
-  "generatedAtUtc": "2026-02-01T00:58:55.200Z",
+  "generatedAtUtc": "2026-02-01T01:04:46.828Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics",
@@ -15,23 +15,80 @@
     "startsInDays": 34
   },
   "testing": {
-    "found": false,
-    "sourceUrl": "https://www.formula1.com/en/racing/2026",
+    "found": true,
     "next": null,
-    "all": [],
-    "note": "No testing blocks found on F1 season page.",
-    "trackMap": null
+    "all": [
+      {
+        "type": "TESTING",
+        "slug": "pre-season-testing-1",
+        "title": "FORMULA 1 ARAMCO PRE-SEASON TESTING 1 2026",
+        "pageUrl": "https://www.formula1.com/en/racing/2026/pre-season-testing-1",
+        "schedule": [],
+        "startDate": null,
+        "endDate": null,
+        "trackMap": {
+          "found": false,
+          "pageUrl": "https://www.formula1.com/en/racing/2026/pre-season-testing-1",
+          "mediaUrl": null,
+          "pngUrl": null,
+          "note": "No detailed track image found on page."
+        }
+      },
+      {
+        "type": "TESTING",
+        "slug": "pre-season-testing-2",
+        "title": "FORMULA 1 ARAMCO PRE-SEASON TESTING 2 2026",
+        "pageUrl": "https://www.formula1.com/en/racing/2026/pre-season-testing-2",
+        "schedule": [],
+        "startDate": null,
+        "endDate": null,
+        "trackMap": {
+          "found": false,
+          "pageUrl": "https://www.formula1.com/en/racing/2026/pre-season-testing-2",
+          "mediaUrl": null,
+          "pngUrl": null,
+          "note": "No detailed track image found on page."
+        }
+      }
+    ],
+    "note": null
   },
   "grandPrix": {
     "name": "F1 Qatar Airways Australian GP 2026",
     "location": "Australia",
-    "season": "2026"
+    "city": "Australia",
+    "country": null,
+    "season": "2026",
+    "f1RacePageUrl": "https://www.formula1.com/en/racing/2026/australia",
+    "f1RacePageSource": "season-scan-location-first",
+    "racePageDebugTop": [
+      {
+        "href": "/en/racing/2026/australia",
+        "score": 1001
+      },
+      {
+        "href": "/en/racing/2026/pre-season-testing-1",
+        "score": 1
+      },
+      {
+        "href": "/en/racing/2026/pre-season-testing-2",
+        "score": 1
+      },
+      {
+        "href": "/en/racing/2026/china",
+        "score": 1
+      },
+      {
+        "href": "/en/racing/2026/japan",
+        "score": 1
+      }
+    ]
   },
   "trackMap": {
     "found": true,
-    "pageUrl": "https://www.formula1.com/en/racing/2026/qatar",
-    "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000000/common/f1/2026/track/2026tracklusaildetailed.webp",
-    "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_qatar_detailed.png",
+    "pageUrl": "https://www.formula1.com/en/racing/2026/australia",
+    "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000000/common/f1/2026/track/2026trackmelbournedetailed.webp",
+    "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_australia_detailed.png",
     "note": null
   },
   "countdowns": {
@@ -92,5 +149,5 @@
       "startLocalDateTimeShort": "Sat, Mar 07 21:00"
     }
   ],
-  "notes": "testing.* comes from formula1.com season page; testing.trackMap attempts formula1.com testing page map. race trackMap comes from the next GP race page."
+  "notes": "Testing comes from dedicated formula1.com testing pages (more reliable than scraping the season grid). Race page is resolved using location-first matching to avoid sponsor words like 'Qatar Airways' causing a wrong slug."
 }
