@@ -122,21 +122,17 @@ function safeGet(obj, pathArr) {
  * We DO NOT guess version numbers; we scrape the page for the actual media URL.
  */
 function extractOfficialLogoWebp(html, season) {
-  // Examples resemble:
-  // https://media.formula1.com/image/upload/.../common/f1/2025/alpine/2025alpinelogowhite.webp
   const re = new RegExp(
     `https://media\\.formula1\\.com/image/upload[^"']+/common/f1/${season}/[^"']+?logowhite\\.webp`,
     "i"
   );
-  const m = html.match(re);
-  return m ? m[0] : null;
-}
 
-function safeFileSlug(s) {
-  return (s || "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
+  const m = html.match(re);
+  if (!m) return null;
+
+  // upgrade resolution: h_64 → h_512
+  return m[0].replace(/h_\d+/i, "h_512");
+  
 }
 
 /**
