@@ -1,0 +1,696 @@
+{
+  "header": "F1 results (smart mode)",
+  "generatedAtUtc": "2026-02-01T22:17:14.840Z",
+  "source": {
+    "ics": "https://better-f1-calendar.vercel.app/api/calendar.ics",
+    "schedule": "https://api.jolpi.ca/ergast/f1/current.json",
+    "ergastBases": [
+      "https://api.jolpi.ca/ergast/f1",
+      "https://ergast.com/api/f1"
+    ],
+    "openf1": "https://api.openf1.org/v1"
+  },
+  "mode": "PRE_WEEKEND_SHOW_PREVIOUS_FALLBACK_SEASON",
+  "nextWeekendMeta": {
+    "gpName": "F1 Qatar Airways Australian GP 2026",
+    "weekendStartUtc": "2026-03-06T01:30:00.000Z",
+    "weekendEndUtc": "2026-03-08T06:00:00.000Z",
+    "raceStartUtc": "2026-03-08T04:00:00.000Z",
+    "raceEndUtc": "2026-03-08T06:00:00.000Z",
+    "qualifyingEndUtc": "2026-03-07T06:00:00.000Z",
+    "matchedErgast": {
+      "season": "2026",
+      "round": "1",
+      "raceName": "Australian Grand Prix"
+    }
+  },
+  "weekend": {
+    "type": "PREVIOUS_COMPLETED_RACE",
+    "season": "2025",
+    "round": "24",
+    "raceName": "Abu Dhabi Grand Prix",
+    "date": "2025-12-07",
+    "timeUtc": "13:00:00Z",
+    "circuit": {
+      "name": "Yas Marina Circuit",
+      "locality": "Abu Dhabi",
+      "country": "UAE"
+    },
+    "meta": {
+      "usedFallbackSeason": "2025",
+      "source": "https://api.jolpi.ca/ergast/f1/2025/last/results.json"
+    }
+  },
+  "qualifying": [
+    {
+      "position": "P1",
+      "q1": "1:22.877",
+      "q2": "1:22.752",
+      "q3": "1:22.207",
+      "driver": {
+        "driverId": "max_verstappen",
+        "code": "VER",
+        "permanentNumber": 3,
+        "givenName": "Max",
+        "familyName": "Verstappen",
+        "headshotUrl": null,
+        "constructor": "Red Bull"
+      }
+    },
+    {
+      "position": "P2",
+      "q1": "1:23.178",
+      "q2": "1:22.804",
+      "q3": "1:22.408",
+      "driver": {
+        "driverId": "norris",
+        "code": "NOR",
+        "permanentNumber": 4,
+        "givenName": "Lando",
+        "familyName": "Norris",
+        "headshotUrl": null,
+        "constructor": "McLaren"
+      }
+    },
+    {
+      "position": "P3",
+      "q1": "1:22.605",
+      "q2": "1:23.021",
+      "q3": "1:22.437",
+      "driver": {
+        "driverId": "piastri",
+        "code": "PIA",
+        "permanentNumber": 81,
+        "givenName": "Oscar",
+        "familyName": "Piastri",
+        "headshotUrl": null,
+        "constructor": "McLaren"
+      }
+    },
+    {
+      "position": "P4",
+      "q1": "1:23.247",
+      "q2": "1:22.730",
+      "q3": "1:22.645",
+      "driver": {
+        "driverId": "russell",
+        "code": "RUS",
+        "permanentNumber": 63,
+        "givenName": "George",
+        "familyName": "Russell",
+        "headshotUrl": null,
+        "constructor": "Mercedes"
+      }
+    },
+    {
+      "position": "P5",
+      "q1": "1:23.163",
+      "q2": "1:22.948",
+      "q3": "1:22.730",
+      "driver": {
+        "driverId": "leclerc",
+        "code": "LEC",
+        "permanentNumber": 16,
+        "givenName": "Charles",
+        "familyName": "Leclerc",
+        "headshotUrl": null,
+        "constructor": "Ferrari"
+      }
+    },
+    {
+      "position": "P6",
+      "q1": "1:23.071",
+      "q2": "1:22.861",
+      "q3": "1:22.902",
+      "driver": {
+        "driverId": "alonso",
+        "code": "ALO",
+        "permanentNumber": 14,
+        "givenName": "Fernando",
+        "familyName": "Alonso",
+        "headshotUrl": null,
+        "constructor": "Aston Martin"
+      }
+    },
+    {
+      "position": "P7",
+      "q1": "1:23.374",
+      "q2": "1:22.874",
+      "q3": "1:22.904",
+      "driver": {
+        "driverId": "bortoleto",
+        "code": "BOR",
+        "permanentNumber": 5,
+        "givenName": "Gabriel",
+        "familyName": "Bortoleto",
+        "headshotUrl": null,
+        "constructor": "Sauber"
+      }
+    },
+    {
+      "position": "P8",
+      "q1": "1:23.334",
+      "q2": "1:23.023",
+      "q3": "1:22.913",
+      "driver": {
+        "driverId": "ocon",
+        "code": "OCO",
+        "permanentNumber": 31,
+        "givenName": "Esteban",
+        "familyName": "Ocon",
+        "headshotUrl": null,
+        "constructor": "Haas F1 Team"
+      }
+    },
+    {
+      "position": "P9",
+      "q1": "1:23.373",
+      "q2": "1:22.997",
+      "q3": "1:23.072",
+      "driver": {
+        "driverId": "hadjar",
+        "code": "HAD",
+        "permanentNumber": 6,
+        "givenName": "Isack",
+        "familyName": "Hadjar",
+        "headshotUrl": null,
+        "constructor": "RB F1 Team"
+      }
+    },
+    {
+      "position": "P10",
+      "q1": "1:23.386",
+      "q2": "1:23.034",
+      "q3": null,
+      "driver": {
+        "driverId": "tsunoda",
+        "code": "TSU",
+        "permanentNumber": 22,
+        "givenName": "Yuki",
+        "familyName": "Tsunoda",
+        "headshotUrl": null,
+        "constructor": "Red Bull"
+      }
+    },
+    {
+      "position": "P11",
+      "q1": "1:23.254",
+      "q2": "1:23.041",
+      "q3": null,
+      "driver": {
+        "driverId": "bearman",
+        "code": "BEA",
+        "permanentNumber": 87,
+        "givenName": "Oliver",
+        "familyName": "Bearman",
+        "headshotUrl": null,
+        "constructor": "Haas F1 Team"
+      }
+    },
+    {
+      "position": "P12",
+      "q1": "1:23.187",
+      "q2": "1:23.042",
+      "q3": null,
+      "driver": {
+        "driverId": "sainz",
+        "code": "SAI",
+        "permanentNumber": 55,
+        "givenName": "Carlos",
+        "familyName": "Sainz",
+        "headshotUrl": null,
+        "constructor": "Williams"
+      }
+    },
+    {
+      "position": "P13",
+      "q1": "1:23.265",
+      "q2": "1:23.077",
+      "q3": null,
+      "driver": {
+        "driverId": "lawson",
+        "code": "LAW",
+        "permanentNumber": 30,
+        "givenName": "Liam",
+        "familyName": "Lawson",
+        "headshotUrl": null,
+        "constructor": "RB F1 Team"
+      }
+    },
+    {
+      "position": "P14",
+      "q1": "1:22.894",
+      "q2": "1:23.080",
+      "q3": null,
+      "driver": {
+        "driverId": "antonelli",
+        "code": "ANT",
+        "permanentNumber": 12,
+        "givenName": "Andrea Kimi",
+        "familyName": "Antonelli",
+        "headshotUrl": null,
+        "constructor": "Mercedes"
+      }
+    },
+    {
+      "position": "P15",
+      "q1": "1:23.316",
+      "q2": "1:23.097",
+      "q3": null,
+      "driver": {
+        "driverId": "stroll",
+        "code": "STR",
+        "permanentNumber": 18,
+        "givenName": "Lance",
+        "familyName": "Stroll",
+        "headshotUrl": null,
+        "constructor": "Aston Martin"
+      }
+    },
+    {
+      "position": "P16",
+      "q1": "1:23.394",
+      "q2": null,
+      "q3": null,
+      "driver": {
+        "driverId": "hamilton",
+        "code": "HAM",
+        "permanentNumber": 44,
+        "givenName": "Lewis",
+        "familyName": "Hamilton",
+        "headshotUrl": null,
+        "constructor": "Ferrari"
+      }
+    },
+    {
+      "position": "P17",
+      "q1": "1:23.416",
+      "q2": null,
+      "q3": null,
+      "driver": {
+        "driverId": "albon",
+        "code": "ALB",
+        "permanentNumber": 23,
+        "givenName": "Alexander",
+        "familyName": "Albon",
+        "headshotUrl": null,
+        "constructor": "Williams"
+      }
+    },
+    {
+      "position": "P18",
+      "q1": "1:23.450",
+      "q2": null,
+      "q3": null,
+      "driver": {
+        "driverId": "hulkenberg",
+        "code": "HUL",
+        "permanentNumber": 27,
+        "givenName": "Nico",
+        "familyName": "Hülkenberg",
+        "headshotUrl": null,
+        "constructor": "Sauber"
+      }
+    },
+    {
+      "position": "P19",
+      "q1": "1:23.468",
+      "q2": null,
+      "q3": null,
+      "driver": {
+        "driverId": "gasly",
+        "code": "GAS",
+        "permanentNumber": 10,
+        "givenName": "Pierre",
+        "familyName": "Gasly",
+        "headshotUrl": null,
+        "constructor": "Alpine F1 Team"
+      }
+    },
+    {
+      "position": "P20",
+      "q1": "1:23.890",
+      "q2": null,
+      "q3": null,
+      "driver": {
+        "driverId": "colapinto",
+        "code": "COL",
+        "permanentNumber": 43,
+        "givenName": "Franco",
+        "familyName": "Colapinto",
+        "headshotUrl": null,
+        "constructor": "Alpine F1 Team"
+      }
+    }
+  ],
+  "podium": [
+    {
+      "position": "P1",
+      "points": 25,
+      "status": "Finished",
+      "time": "1:26:07.469",
+      "driver": {
+        "driverId": "max_verstappen",
+        "code": "VER",
+        "permanentNumber": 3,
+        "givenName": "Max",
+        "familyName": "Verstappen",
+        "headshotUrl": null,
+        "constructor": "Red Bull"
+      }
+    },
+    {
+      "position": "P2",
+      "points": 18,
+      "status": "Finished",
+      "time": "+12.594",
+      "driver": {
+        "driverId": "piastri",
+        "code": "PIA",
+        "permanentNumber": 81,
+        "givenName": "Oscar",
+        "familyName": "Piastri",
+        "headshotUrl": null,
+        "constructor": "McLaren"
+      }
+    },
+    {
+      "position": "P3",
+      "points": 15,
+      "status": "Finished",
+      "time": "+16.572",
+      "driver": {
+        "driverId": "norris",
+        "code": "NOR",
+        "permanentNumber": 4,
+        "givenName": "Lando",
+        "familyName": "Norris",
+        "headshotUrl": null,
+        "constructor": "McLaren"
+      }
+    }
+  ],
+  "raceResultsTimes": [
+    {
+      "position": "P1",
+      "points": 25,
+      "status": "Finished",
+      "time": "1:26:07.469",
+      "driver": {
+        "driverId": "max_verstappen",
+        "code": "VER",
+        "permanentNumber": 3,
+        "givenName": "Max",
+        "familyName": "Verstappen",
+        "headshotUrl": null,
+        "constructor": "Red Bull"
+      }
+    },
+    {
+      "position": "P2",
+      "points": 18,
+      "status": "Finished",
+      "time": "+12.594",
+      "driver": {
+        "driverId": "piastri",
+        "code": "PIA",
+        "permanentNumber": 81,
+        "givenName": "Oscar",
+        "familyName": "Piastri",
+        "headshotUrl": null,
+        "constructor": "McLaren"
+      }
+    },
+    {
+      "position": "P3",
+      "points": 15,
+      "status": "Finished",
+      "time": "+16.572",
+      "driver": {
+        "driverId": "norris",
+        "code": "NOR",
+        "permanentNumber": 4,
+        "givenName": "Lando",
+        "familyName": "Norris",
+        "headshotUrl": null,
+        "constructor": "McLaren"
+      }
+    },
+    {
+      "position": "P4",
+      "points": 12,
+      "status": "Finished",
+      "time": "+23.279",
+      "driver": {
+        "driverId": "leclerc",
+        "code": "LEC",
+        "permanentNumber": 16,
+        "givenName": "Charles",
+        "familyName": "Leclerc",
+        "headshotUrl": null,
+        "constructor": "Ferrari"
+      }
+    },
+    {
+      "position": "P5",
+      "points": 10,
+      "status": "Finished",
+      "time": "+48.563",
+      "driver": {
+        "driverId": "russell",
+        "code": "RUS",
+        "permanentNumber": 63,
+        "givenName": "George",
+        "familyName": "Russell",
+        "headshotUrl": null,
+        "constructor": "Mercedes"
+      }
+    },
+    {
+      "position": "P6",
+      "points": 8,
+      "status": "Finished",
+      "time": "+1:07.562",
+      "driver": {
+        "driverId": "alonso",
+        "code": "ALO",
+        "permanentNumber": 14,
+        "givenName": "Fernando",
+        "familyName": "Alonso",
+        "headshotUrl": null,
+        "constructor": "Aston Martin"
+      }
+    },
+    {
+      "position": "P7",
+      "points": 6,
+      "status": "Finished",
+      "time": "+1:09.876",
+      "driver": {
+        "driverId": "ocon",
+        "code": "OCO",
+        "permanentNumber": 31,
+        "givenName": "Esteban",
+        "familyName": "Ocon",
+        "headshotUrl": null,
+        "constructor": "Haas F1 Team"
+      }
+    },
+    {
+      "position": "P8",
+      "points": 4,
+      "status": "Finished",
+      "time": "+1:12.670",
+      "driver": {
+        "driverId": "hamilton",
+        "code": "HAM",
+        "permanentNumber": 44,
+        "givenName": "Lewis",
+        "familyName": "Hamilton",
+        "headshotUrl": null,
+        "constructor": "Ferrari"
+      }
+    },
+    {
+      "position": "P9",
+      "points": 2,
+      "status": "Finished",
+      "time": "+1:19.014",
+      "driver": {
+        "driverId": "hulkenberg",
+        "code": "HUL",
+        "permanentNumber": 27,
+        "givenName": "Nico",
+        "familyName": "Hülkenberg",
+        "headshotUrl": null,
+        "constructor": "Sauber"
+      }
+    },
+    {
+      "position": "P10",
+      "points": 1,
+      "status": "Finished",
+      "time": "+1:19.523",
+      "driver": {
+        "driverId": "stroll",
+        "code": "STR",
+        "permanentNumber": 18,
+        "givenName": "Lance",
+        "familyName": "Stroll",
+        "headshotUrl": null,
+        "constructor": "Aston Martin"
+      }
+    },
+    {
+      "position": "P11",
+      "points": 0,
+      "status": "Finished",
+      "time": "+1:21.043",
+      "driver": {
+        "driverId": "bortoleto",
+        "code": "BOR",
+        "permanentNumber": 5,
+        "givenName": "Gabriel",
+        "familyName": "Bortoleto",
+        "headshotUrl": null,
+        "constructor": "Sauber"
+      }
+    },
+    {
+      "position": "P12",
+      "points": 0,
+      "status": "Finished",
+      "time": "+1:21.166",
+      "driver": {
+        "driverId": "bearman",
+        "code": "BEA",
+        "permanentNumber": 87,
+        "givenName": "Oliver",
+        "familyName": "Bearman",
+        "headshotUrl": null,
+        "constructor": "Haas F1 Team"
+      }
+    },
+    {
+      "position": "P13",
+      "points": 0,
+      "status": "Finished",
+      "time": "+1:22.158",
+      "driver": {
+        "driverId": "sainz",
+        "code": "SAI",
+        "permanentNumber": 55,
+        "givenName": "Carlos",
+        "familyName": "Sainz",
+        "headshotUrl": null,
+        "constructor": "Williams"
+      }
+    },
+    {
+      "position": "P14",
+      "points": 0,
+      "status": "Finished",
+      "time": "+1:23.794",
+      "driver": {
+        "driverId": "tsunoda",
+        "code": "TSU",
+        "permanentNumber": 22,
+        "givenName": "Yuki",
+        "familyName": "Tsunoda",
+        "headshotUrl": null,
+        "constructor": "Red Bull"
+      }
+    },
+    {
+      "position": "P15",
+      "points": 0,
+      "status": "Finished",
+      "time": "+1:24.399",
+      "driver": {
+        "driverId": "antonelli",
+        "code": "ANT",
+        "permanentNumber": 12,
+        "givenName": "Andrea Kimi",
+        "familyName": "Antonelli",
+        "headshotUrl": null,
+        "constructor": "Mercedes"
+      }
+    },
+    {
+      "position": "P16",
+      "points": 0,
+      "status": "Finished",
+      "time": "+1:30.327",
+      "driver": {
+        "driverId": "albon",
+        "code": "ALB",
+        "permanentNumber": 23,
+        "givenName": "Alexander",
+        "familyName": "Albon",
+        "headshotUrl": null,
+        "constructor": "Williams"
+      }
+    },
+    {
+      "position": "P17",
+      "points": 0,
+      "status": "Lapped",
+      "time": "+1.327",
+      "driver": {
+        "driverId": "hadjar",
+        "code": "HAD",
+        "permanentNumber": 6,
+        "givenName": "Isack",
+        "familyName": "Hadjar",
+        "headshotUrl": null,
+        "constructor": "RB F1 Team"
+      }
+    },
+    {
+      "position": "P18",
+      "points": 0,
+      "status": "Lapped",
+      "time": "+4.659",
+      "driver": {
+        "driverId": "lawson",
+        "code": "LAW",
+        "permanentNumber": 30,
+        "givenName": "Liam",
+        "familyName": "Lawson",
+        "headshotUrl": null,
+        "constructor": "RB F1 Team"
+      }
+    },
+    {
+      "position": "P19",
+      "points": 0,
+      "status": "Lapped",
+      "time": "+11.908",
+      "driver": {
+        "driverId": "gasly",
+        "code": "GAS",
+        "permanentNumber": 10,
+        "givenName": "Pierre",
+        "familyName": "Gasly",
+        "headshotUrl": null,
+        "constructor": "Alpine F1 Team"
+      }
+    },
+    {
+      "position": "P20",
+      "points": 0,
+      "status": "Lapped",
+      "time": "+14.003",
+      "driver": {
+        "driverId": "colapinto",
+        "code": "COL",
+        "permanentNumber": 43,
+        "givenName": "Franco",
+        "familyName": "Colapinto",
+        "headshotUrl": null,
+        "constructor": "Alpine F1 Team"
+      }
+    }
+  ],
+  "notes": "Rule: before weekendStart show previous completed race (fallback to last season if needed). After weekendStart, switch to current weekend but keep qualifying/race fields null until their session end times pass (from ICS)."
+}
