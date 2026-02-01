@@ -1,6 +1,6 @@
 {
   "header": "Next F1 race weekend",
-  "generatedAtUtc": "2026-01-31T23:55:31.787Z",
+  "generatedAtUtc": "2026-02-01T00:34:15.087Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics",
@@ -230,5 +230,5 @@
       "startLocalDateTimeShort": "Sat, Mar 07 21:00"
     }
   ],
-  "notes": "Use flag.pngUrl for the country flag (PNG) and trackMap.pngUrl for the circuit map (PNG). Track map prefers black-outline style. If flag.found is false, add an entry in FLAG_OVERRIDES or expand inferCountryFromGpName()."
+  "notes": "Use flag.pngUrl for the country flag (PNG) and trackMap.pngUrl for the circuit map (PNG). Local date/time strings are rendered for America/Edmonton."
 }
