@@ -1,6 +1,6 @@
 {
   "header": "Next F1 event",
-  "generatedAtUtc": "2026-02-01T01:37:53.305Z",
+  "generatedAtUtc": "2026-02-01T01:54:03.035Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics",
@@ -12,15 +12,15 @@
     "season": "2026",
     "location": {
       "raw": "Australia",
-      "city": "Australia",
+      "city": null,
       "country": null
     },
     "trackMap": {
-      "found": true,
-      "pageUrl": "https://www.formula1.com/en/racing/2026/australia",
-      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000000/common/f1/2026/track/2026trackmelbournedetailed.webp",
-      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_australia_detailed.png",
-      "note": null
+      "found": false,
+      "pageUrl": "https://www.formula1.com/en/racing/2026/pre-season-testing-1",
+      "mediaUrl": null,
+      "pngUrl": null,
+      "note": "No detailed track image found on page."
     },
     "countdowns": {
       "startsInDays": 33
