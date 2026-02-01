@@ -6,18 +6,17 @@ import sharp from "sharp";
 
 const ICS_URL = "https://better-f1-calendar.vercel.app/api/calendar.ics";
 
-// Widgy-friendly local strings
+// Local strings for your widget
 const USER_TZ = "America/Edmonton";
 const LOCALE = "en-CA";
 
 // Your GitHub Pages base URL
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
-
-// Where we save the downloaded+converted track images (commit this folder)
 const TRACKMAP_DIR = "trackmaps";
+
 const UA = "f1-standings-bot/1.0 (GitHub Actions)";
 
-// ---------------------- Date/time helpers ----------------------
+// ---------------------- date helpers ----------------------
 function daysUntil(date, now = new Date()) {
   const ms = date.getTime() - now.getTime();
   return Math.ceil(ms / (1000 * 60 * 60 * 24));
@@ -37,12 +36,21 @@ function shortTimeInTZ(dateObj, timeZone = USER_TZ) {
     timeZone,
     hour: "2-digit",
     minute: "2-digit",
-    hour12: false,
+    hour12: false, // 24h
   });
 }
 
 function shortDateTimeInTZ(dateObj, timeZone = USER_TZ) {
   return `${shortDateInTZ(dateObj, timeZone)} ${shortTimeInTZ(dateObj, timeZone)}`;
+}
+
+function parseMonthShort(mon) {
+  const m = (mon || "").toLowerCase();
+  const map = {
+    jan: 0, feb: 1, mar: 2, apr: 3, may: 4, jun: 5,
+    jul: 6, aug: 7, sep: 8, oct: 9, nov: 10, dec: 11,
+  };
+  return map[m] ?? null;
 }
 
 async function ensureDir(dir) {
@@ -53,7 +61,7 @@ function makeTrackPngUrl(filename) {
   return `${PAGES_BASE}/${TRACKMAP_DIR}/${encodeURIComponent(filename)}`;
 }
 
-// ---------------------- Calendar parsing helpers ----------------------
+// ---------------------- calendar parsing helpers ----------------------
 function getSessionType(summary) {
   const s = (summary || "").toLowerCase();
   if (s.includes("practice 1") || s.includes("fp1")) return "FP1";
@@ -71,7 +79,7 @@ function getGpName(summary) {
   return (parts[0] || summary || "").trim();
 }
 
-// ---------------------- Networking helpers ----------------------
+// ---------------------- networking helpers ----------------------
 async function fetchText(url) {
   const res = await fetch(url, {
     headers: { "User-Agent": UA, "Accept": "text/html,*/*" },
@@ -101,7 +109,6 @@ function normalize(s) {
 }
 
 function slugifyFromGpName(gpName) {
-  // e.g. "Australian GP" -> "australia", "Mexico City GP" -> "mexico-city"
   const n = normalize(gpName);
   if (!n) return null;
   return n.split(" ").join("-");
@@ -115,8 +122,9 @@ function scoreHref(href, gpName) {
   return score;
 }
 
+// ---------------------- F1 detailed track image ----------------------
 async function resolveF1RaceSlug(season, gpName) {
-  // Try direct slug from gpName first
+  // Try direct slug first
   const candidate = slugifyFromGpName(gpName);
   if (candidate) {
     const url = `https://www.formula1.com/en/racing/${season}/${candidate}`;
@@ -128,7 +136,7 @@ async function resolveF1RaceSlug(season, gpName) {
     }
   }
 
-  // Fallback: scrape season page for race links and pick best match
+  // Fallback: scrape season page for race links
   const seasonUrl = `https://www.formula1.com/en/racing/${season}.html`;
   const html = await fetchText(seasonUrl);
 
@@ -156,7 +164,7 @@ async function resolveF1RaceSlug(season, gpName) {
 }
 
 function extractDetailedTrackMediaUrl(html, season) {
-  // Look for: https://media.formula1.com/image/upload/.../common/f1/2026/track/...detailed.webp
+  // e.g. https://media.formula1.com/image/upload/.../common/f1/2026/track/...detailed.webp
   const re = new RegExp(
     `https://media\\.formula1\\.com/image/upload[^"']+/common/f1/${season}/track/[^"']+detailed\\.(webp|png)`,
     "i"
@@ -181,14 +189,12 @@ async function fetchF1DetailedTrackPng({ season, gpName }) {
     };
   }
 
-  // Download (webp/png) and ensure PNG output
   await ensureDir(TRACKMAP_DIR);
 
   const inputBuf = await fetchBuffer(mediaUrl);
   const outputName = `f1_${season}_${resolved.slug}_detailed.png`;
   const outputPath = path.join(TRACKMAP_DIR, outputName);
 
-  // Convert to PNG (if already png, sharp just rewrites as png)
   const pngBuf = await sharp(inputBuf).png().toBuffer();
   await fs.writeFile(outputPath, pngBuf);
 
@@ -201,15 +207,96 @@ async function fetchF1DetailedTrackPng({ season, gpName }) {
   };
 }
 
+// ---------------------- NEW: Testing blocks from F1 schedule page ----------------------
+async function fetchTestingBlocks(season) {
+  // This page lists testing blocks like:
+  // "TESTING ... Bahrain ... PRE-SEASON TESTING 1 2026 11 - 13 Feb"
+  // "TESTING ... Bahrain ... PRE-SEASON TESTING 2 2026 18 - 20 Feb"
+  // Source: formula1.com racing season listing
+  const url = `https://www.formula1.com/en/racing/${season}`;
+  const html = await fetchText(url);
+
+  // Make parsing more stable by flattening whitespace
+  const flat = html.replace(/\s+/g, " ");
+
+  // Capture location + title + date range (best-effort regex)
+  // Groups:
+  // 1) location token (e.g., Bahrain)
+  // 2) testing title (e.g., FORMULA 1 ARAMCO PRE-SEASON TESTING 1 2026)
+  // 3) start day (e.g., 11)
+  // 4) end day (e.g., 13)
+  // 5) month short (e.g., Feb)
+  const re = new RegExp(
+    `TESTING[^]*?Flag[^]*?([A-Za-z’'\\- ]+?)\\s+([A-Z0-9 \\-’'\\.]+PRE-SEASON TESTING\\s+[0-9]+\\s+${season})\\s+([0-9]{2})\\s*-\\s*([0-9]{2})\\s+([A-Za-z]{3})`,
+    "g"
+  );
+
+  const matches = [...flat.matchAll(re)];
+  if (matches.length === 0) {
+    return { found: false, sourceUrl: url, blocks: [], note: "No testing blocks matched on F1 season page." };
+  }
+
+  const blocks = matches.map((m) => {
+    const location = (m[1] || "").trim();
+    const title = (m[2] || "").trim();
+    const startDay = Number(m[3]);
+    const endDay = Number(m[4]);
+    const monthShort = (m[5] || "").trim();
+
+    const monthIdx = parseMonthShort(monthShort);
+    let startUtc = null;
+    let endUtc = null;
+
+    if (Number.isFinite(startDay) && Number.isFinite(endDay) && monthIdx != null) {
+      // Dates only (no official time on this page) — set to 00:00Z
+      startUtc = new Date(Date.UTC(Number(season), monthIdx, startDay, 0, 0, 0)).toISOString();
+      endUtc = new Date(Date.UTC(Number(season), monthIdx, endDay, 23, 59, 59)).toISOString();
+    }
+
+    return {
+      type: "TESTING",
+      title,
+      location,
+      startUtc,
+      endUtc,
+      startDateLabel: startUtc ? shortDateInTZ(new Date(startUtc)) : null,
+      endDateLabel: endUtc ? shortDateInTZ(new Date(endUtc)) : null,
+    };
+  });
+
+  // de-dupe by title+dates
+  const uniq = [];
+  const seen = new Set();
+  for (const b of blocks) {
+    const key = `${b.title}|${b.startUtc}|${b.endUtc}`;
+    if (!seen.has(key)) {
+      seen.add(key);
+      uniq.push(b);
+    }
+  }
+
+  // Determine next upcoming testing block
+  const now = new Date();
+  const upcoming = uniq
+    .filter((b) => b.startUtc && new Date(b.startUtc) > now)
+    .sort((a, b) => new Date(a.startUtc) - new Date(b.startUtc));
+
+  return {
+    found: true,
+    sourceUrl: url,
+    blocks: uniq,
+    next: upcoming[0] || null,
+    note: null,
+  };
+}
+
 // ---------------------- Main ----------------------
 async function updateNextRace() {
   const now = new Date();
 
-  const data = await ical.async.fromURL(ICS_URL, {
-    headers: { "User-Agent": UA },
-  });
-
-  const events = Object.values(data).filter((x) => x?.type === "VEVENT");
+  // ICS sessions (race weekend)
+  const ics = await ical.async.fromURL(ICS_URL, { headers: { "User-Agent": UA } });
+  const events = Object.values(ics).filter((x) => x?.type === "VEVENT");
 
   const sessions = events
     .map((ev) => {
@@ -238,15 +325,41 @@ async function updateNextRace() {
   const gpName = nextRace.gpName;
   const season = String(nextRace.start.getUTCFullYear());
 
-  const gpSessions = sessions
-    .filter((s) => s.gpName === gpName)
-    .sort((a, b) => a.start - b.start);
-
+  const gpSessions = sessions.filter((s) => s.gpName === gpName).sort((a, b) => a.start - b.start);
   const weekendStart = gpSessions[0].start;
   const weekendEnd = gpSessions[gpSessions.length - 1].end;
 
-  // ✅ F1 official detailed map (PNG saved + served via GitHub Pages)
+  // NEW: Testing blocks (from official F1 season listing)
+  const testing = await fetchTestingBlocks(season);
+
+  // Official detailed map for the NEXT GP race weekend
   const trackMap = await fetchF1DetailedTrackPng({ season, gpName });
+
+  // Determine "nextEvent" between testing and race weekend
+  const nextTestingStart = testing?.next?.startUtc ? new Date(testing.next.startUtc) : null;
+  const nextRaceWeekendStart = weekendStart;
+
+  let nextEvent = {
+    type: "RACE_WEEKEND",
+    name: gpName,
+    startUtc: weekendStart.toISOString(),
+    startLocalDateShort: shortDateInTZ(weekendStart),
+    startLocalTimeShort: shortTimeInTZ(weekendStart),
+    startsInDays: daysUntil(weekendStart, now),
+  };
+
+  if (nextTestingStart && nextTestingStart < nextRaceWeekendStart) {
+    nextEvent = {
+      type: "TESTING",
+      name: testing.next.title,
+      location: testing.next.location,
+      startUtc: testing.next.startUtc,
+      endUtc: testing.next.endUtc,
+      startDateLabel: testing.next.startDateLabel,
+      endDateLabel: testing.next.endDateLabel,
+      startsInDays: daysUntil(nextTestingStart, now),
+    };
+  }
 
   const sessionOrder = ["FP1", "FP2", "FP3", "Qualifying", "Sprint Qualifying", "Sprint", "Race"];
   const sessionsOut = sessionOrder
@@ -265,18 +378,21 @@ async function updateNextRace() {
     .filter(Boolean);
 
   const out = {
-    header: "Next F1 race weekend",
+    header: "Next F1 event",
     generatedAtUtc: now.toISOString(),
     displayTimeZone: USER_TZ,
     source: { kind: "ics", url: ICS_URL },
 
+    nextEvent, // either TESTING or RACE_WEEKEND
+
+    // Race weekend (still included even if testing comes first)
     grandPrix: {
       name: gpName,
       location: nextRace.location,
       season,
     },
 
-    trackMap, // Widgy image -> trackMap.pngUrl
+    trackMap, // Widgy Image -> trackMap.pngUrl
 
     countdowns: {
       weekendStartsInDays: daysUntil(weekendStart, now),
@@ -299,12 +415,21 @@ async function updateNextRace() {
 
     sessions: sessionsOut,
 
+    // NEW: Testing section
+    testing: {
+      found: testing.found,
+      sourceUrl: testing.sourceUrl,
+      next: testing.next,
+      all: testing.blocks,
+      note: testing.note,
+    },
+
     notes:
-      "trackMap.pngUrl is a GitHub Pages PNG created from the official F1 detailed track image (scraped from the race page).",
+      "Testing blocks come from the official F1 season listing; race weekend sessions/times come from the ICS feed.",
   };
 
   await fs.writeFile("f1_next_race.json", JSON.stringify(out, null, 2), "utf8");
-  console.log(`Wrote f1_next_race.json for ${gpName}`);
+  console.log(`Wrote f1_next_race.json for ${gpName} (season ${season})`);
 }
 
 updateNextRace().catch((err) => {
