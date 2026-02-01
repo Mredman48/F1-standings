@@ -245,28 +245,26 @@ async function getLastRaceForSeason(seasonTag) {
  * Pull a "logowhite.webp" media URL from the team page HTML.
  * We then upgrade its transforms to higher height and higher quality.
  */
-function extractLogoWebpFromTeamPage(html, season) {
-  // Example:
-  // https://media.formula1.com/image/upload/c_fit,h_64/q_auto/v1740000000/common/f1/2025/alpine/2025alpinelogowhite.webp
-  // We search for any common/f1/{season}/{team}/...logowhite.webp
+function extractLogoWebpFromTeamPage(html, season, team) {
+  // Match either ...logowhite.webp or ...logolight.webp (Ferrari uses logolight)
   const re = new RegExp(
-    `https://media\\.formula1\\.com/image/upload[^"']+/common/f1/${season}/[^"']+?logowhite\\.webp`,
-    "i"
+    `https://media\\.formula1\\.com/image/upload[^"']+/common/f1/${season}/[^"']+?logo(?:white|light)\\.webp`,
+    "ig"
   );
-  const m = html.match(re);
-  return m ? m[0] : null;
-}
 
-function upgradeF1MediaUrl(webpUrl) {
-  if (!webpUrl) return null;
+  const matches = html.match(re) || [];
+  if (matches.length === 0) return null;
 
-  // Some URLs are percent-encoded in HTML attributes; decode safely.
-  let u = webpUrl;
-  try {
-    u = decodeURIComponent(webpUrl);
-  } catch {
-    // keep original
+  // Prefer Ferrari "logolight" (full colour) if available
+  if (team === "Ferrari") {
+    const light = matches.find((u) => /logolight\.webp/i.test(u));
+    if (light) return light;
   }
+
+  // Otherwise prefer logowhite if present
+  const white = matches.find((u) => /logowhite\.webp/i.test(u));
+  return white || matches[0];
+}
 
   // Force high-res height + max quality (keep crop/fit mode as is)
   u = u
