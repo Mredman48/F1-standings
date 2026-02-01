@@ -185,25 +185,49 @@ async function getLastCompletedRaceWithFallback() {
   return { race: null, source: null, usedFallback: true, fallbackSeason: prevYear };
 }
 
-// OpenF1 headshot map (best-effort)
+// OpenF1 headshot map (best-effort, with "latest" fallback)
 async function getOpenF1DriverHeadshotsByYear(year) {
-  try {
-    const sessions = await fetchJson(
-      `${OPENF1_BASE}/sessions?year=${encodeURIComponent(year)}&session_name=Race`
+  const mapFromSessionKey = async (sessionKey) => {
+    const drivers = await fetchJson(
+      `${OPENF1_BASE}/drivers?session_key=${encodeURIComponent(sessionKey)}`
     );
-    if (!Array.isArray(sessions) || sessions.length === 0) return new Map();
-    sessions.sort((a, b) => String(b.date_start).localeCompare(String(a.date_start)));
-    const sessionKey = sessions[0]?.session_key;
-    if (!sessionKey) return new Map();
-
-    const drivers = await fetchJson(`${OPENF1_BASE}/drivers?session_key=${encodeURIComponent(sessionKey)}`);
     const map = new Map();
     if (Array.isArray(drivers)) {
       for (const d of drivers) {
-        if (d?.driver_number != null) map.set(Number(d.driver_number), d.headshot_url || null);
+        if (d?.driver_number != null) {
+          map.set(Number(d.driver_number), d.headshot_url || null);
+        }
       }
     }
     return map;
+  };
+
+  try {
+    // 1) Prefer Race sessions for that year (most accurate for current grid)
+    const sessions = await fetchJson(
+      `${OPENF1_BASE}/sessions?year=${encodeURIComponent(year)}&session_name=Race`
+    );
+
+    if (Array.isArray(sessions) && sessions.length > 0) {
+      sessions.sort((a, b) => String(b.date_start).localeCompare(String(a.date_start)));
+      const sessionKey = sessions[0]?.session_key;
+      if (sessionKey) {
+        const m = await mapFromSessionKey(sessionKey);
+        if (m.size > 0) return m;
+      }
+    }
+
+    // 2) Fallback: use OpenF1 "latest" session (works in off-season / before first race)
+    // Many dashboards rely on this behavior.  [oai_citation:1‡Home Assistant Community](https://community.home-assistant.io/t/formula-one-card/476902?page=15&utm_source=chatgpt.com)
+    const latestSessions = await fetchJson(`${OPENF1_BASE}/sessions?session_key=latest`);
+    const latestSessionKey = Array.isArray(latestSessions) ? latestSessions[0]?.session_key : null;
+
+    if (latestSessionKey) {
+      const m = await mapFromSessionKey(latestSessionKey);
+      return m;
+    }
+
+    return new Map();
   } catch {
     return new Map();
   }
