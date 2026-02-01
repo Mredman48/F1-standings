@@ -6,11 +6,9 @@ import sharp from "sharp";
 
 const ICS_URL = "https://better-f1-calendar.vercel.app/api/calendar.ics";
 
-// Local strings for your widget
 const USER_TZ = "America/Edmonton";
 const LOCALE = "en-CA";
 
-// Your GitHub Pages base URL
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 const TRACKMAP_DIR = "trackmaps";
 
@@ -36,7 +34,7 @@ function shortTimeInTZ(dateObj, timeZone = USER_TZ) {
     timeZone,
     hour: "2-digit",
     minute: "2-digit",
-    hour12: false, // 24h
+    hour12: false,
   });
 }
 
@@ -44,7 +42,7 @@ function shortDateTimeInTZ(dateObj, timeZone = USER_TZ) {
   return `${shortDateInTZ(dateObj, timeZone)} ${shortTimeInTZ(dateObj, timeZone)}`;
 }
 
-function parseMonthShort(mon) {
+function monthIndexFromShort(mon) {
   const m = (mon || "").toLowerCase();
   const map = {
     jan: 0, feb: 1, mar: 2, apr: 3, may: 4, jun: 5,
@@ -61,7 +59,7 @@ function makeTrackPngUrl(filename) {
   return `${PAGES_BASE}/${TRACKMAP_DIR}/${encodeURIComponent(filename)}`;
 }
 
-// ---------------------- calendar parsing helpers ----------------------
+// ---------------------- calendar helpers ----------------------
 function getSessionType(summary) {
   const s = (summary || "").toLowerCase();
   if (s.includes("practice 1") || s.includes("fp1")) return "FP1";
@@ -79,7 +77,7 @@ function getGpName(summary) {
   return (parts[0] || summary || "").trim();
 }
 
-// ---------------------- networking helpers ----------------------
+// ---------------------- networking ----------------------
 async function fetchText(url) {
   const res = await fetch(url, {
     headers: { "User-Agent": UA, "Accept": "text/html,*/*" },
@@ -97,6 +95,27 @@ async function fetchBuffer(url) {
   if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${url}`);
   const ab = await res.arrayBuffer();
   return Buffer.from(ab);
+}
+
+// ---------------------- F1 detailed track image extraction ----------------------
+function extractDetailedTrackMediaUrl(html, season) {
+  // Example:
+  // https://media.formula1.com/image/upload/.../common/f1/2026/track/2026trackmelbournedetailed.webp
+  const re = new RegExp(
+    `https://media\\.formula1\\.com/image/upload[^"']+/common/f1/${season}/track/[^"']+detailed\\.(webp|png)`,
+    "i"
+  );
+  const m = html.match(re);
+  return m ? m[0] : null;
+}
+
+async function downloadWebpToPng({ mediaUrl, outName }) {
+  await ensureDir(TRACKMAP_DIR);
+  const inputBuf = await fetchBuffer(mediaUrl);
+  const outPath = path.join(TRACKMAP_DIR, outName);
+  const pngBuf = await sharp(inputBuf).png().toBuffer();
+  await fs.writeFile(outPath, pngBuf);
+  return makeTrackPngUrl(outName);
 }
 
 function normalize(s) {
@@ -122,9 +141,7 @@ function scoreHref(href, gpName) {
   return score;
 }
 
-// ---------------------- F1 detailed track image ----------------------
 async function resolveF1RaceSlug(season, gpName) {
-  // Try direct slug first
   const candidate = slugifyFromGpName(gpName);
   if (candidate) {
     const url = `https://www.formula1.com/en/racing/${season}/${candidate}`;
@@ -136,13 +153,11 @@ async function resolveF1RaceSlug(season, gpName) {
     }
   }
 
-  // Fallback: scrape season page for race links
+  // Fallback: scan season page for race links
   const seasonUrl = `https://www.formula1.com/en/racing/${season}.html`;
   const html = await fetchText(seasonUrl);
 
-  const hrefs = Array.from(
-    html.matchAll(new RegExp(`/en/racing/${season}/[a-z0-9-]+`, "g"))
-  )
+  const hrefs = Array.from(html.matchAll(new RegExp(`/en/racing/${season}/[a-z0-9-]+`, "g")))
     .map((m) => m[0])
     .filter(Boolean);
 
@@ -153,118 +168,81 @@ async function resolveF1RaceSlug(season, gpName) {
     .map((href) => ({ href, score: scoreHref(href, gpName) }))
     .sort((a, b) => b.score - a.score)[0];
 
-  if (!best || best.score === 0) {
-    throw new Error(`Could not match gpName="${gpName}" to a race link on formula1.com`);
-  }
+  if (!best || best.score === 0) throw new Error(`Could not match gpName="${gpName}" to a race link.`);
 
   const fullUrl = `https://www.formula1.com${best.href}`;
   const slug = best.href.split(`/en/racing/${season}/`)[1];
-
   return { slug, url: fullUrl, source: "season-page-scan" };
 }
 
-function extractDetailedTrackMediaUrl(html, season) {
-  // e.g. https://media.formula1.com/image/upload/.../common/f1/2026/track/...detailed.webp
-  const re = new RegExp(
-    `https://media\\.formula1\\.com/image/upload[^"']+/common/f1/${season}/track/[^"']+detailed\\.(webp|png)`,
-    "i"
-  );
-  const m = html.match(re);
-  return m ? m[0] : null;
-}
-
-async function fetchF1DetailedTrackPng({ season, gpName }) {
-  const resolved = await resolveF1RaceSlug(season, gpName);
-  const html = await fetchText(resolved.url);
-
+async function fetchTrackMapFromPage({ pageUrl, season, outFileBase }) {
+  const html = await fetchText(pageUrl);
   const mediaUrl = extractDetailedTrackMediaUrl(html, season);
   if (!mediaUrl) {
     return {
       found: false,
-      source: "formula1.com race page",
-      racePageUrl: resolved.url,
-      note: "Could not find a '...track/...detailed.webp' image on the race page.",
+      pageUrl,
       mediaUrl: null,
       pngUrl: null,
+      note: "No .../track/...detailed.(webp|png) found on this page.",
     };
   }
-
-  await ensureDir(TRACKMAP_DIR);
-
-  const inputBuf = await fetchBuffer(mediaUrl);
-  const outputName = `f1_${season}_${resolved.slug}_detailed.png`;
-  const outputPath = path.join(TRACKMAP_DIR, outputName);
-
-  const pngBuf = await sharp(inputBuf).png().toBuffer();
-  await fs.writeFile(outputPath, pngBuf);
-
-  return {
-    found: true,
-    source: "media.formula1.com (scraped from race page)",
-    racePageUrl: resolved.url,
-    mediaUrl,
-    pngUrl: makeTrackPngUrl(outputName),
-  };
+  const outName = `${outFileBase}.png`;
+  const pngUrl = await downloadWebpToPng({ mediaUrl, outName });
+  return { found: true, pageUrl, mediaUrl, pngUrl, note: null };
 }
 
-// ---------------------- NEW: Testing blocks from F1 schedule page ----------------------
-async function fetchTestingBlocks(season) {
-  // This page lists testing blocks like:
+// ---------------------- Testing: parse from F1 season page + use testing pages ----------------------
+function extractTestingBlocksFromSeasonPage(html, season) {
+  // The season page includes lines like:
   // "TESTING ... Bahrain ... PRE-SEASON TESTING 1 2026 11 - 13 Feb"
-  // "TESTING ... Bahrain ... PRE-SEASON TESTING 2 2026 18 - 20 Feb"
-  // Source: formula1.com racing season listing
-  const url = `https://www.formula1.com/en/racing/${season}`;
-  const html = await fetchText(url);
-
-  // Make parsing more stable by flattening whitespace
+  // We'll use a looser regex that doesn't depend on UI tokens.
   const flat = html.replace(/\s+/g, " ");
 
-  // Capture location + title + date range (best-effort regex)
-  // Groups:
-  // 1) location token (e.g., Bahrain)
-  // 2) testing title (e.g., FORMULA 1 ARAMCO PRE-SEASON TESTING 1 2026)
-  // 3) start day (e.g., 11)
-  // 4) end day (e.g., 13)
-  // 5) month short (e.g., Feb)
   const re = new RegExp(
-    `TESTING[^]*?Flag[^]*?([A-Za-z’'\\- ]+?)\\s+([A-Z0-9 \\-’'\\.]+PRE-SEASON TESTING\\s+[0-9]+\\s+${season})\\s+([0-9]{2})\\s*-\\s*([0-9]{2})\\s+([A-Za-z]{3})`,
+    `(TESTING)\\s+.*?\\b([A-Za-z][A-Za-z’'\\- ]+?)\\b\\s+(FORMULA 1 .*? PRE-SEASON TESTING\\s+([0-9])\\s+${season})\\s+([0-9]{2})\\s*-\\s*([0-9]{2})\\s+([A-Za-z]{3})`,
     "g"
   );
 
-  const matches = [...flat.matchAll(re)];
-  if (matches.length === 0) {
-    return { found: false, sourceUrl: url, blocks: [], note: "No testing blocks matched on F1 season page." };
-  }
+  const blocks = [];
+  for (const m of flat.matchAll(re)) {
+    const location = (m[2] || "").trim();
+    const title = (m[3] || "").trim();
+    const testNo = Number(m[4]);
+    const startDay = Number(m[5]);
+    const endDay = Number(m[6]);
+    const mon = (m[7] || "").trim();
 
-  const blocks = matches.map((m) => {
-    const location = (m[1] || "").trim();
-    const title = (m[2] || "").trim();
-    const startDay = Number(m[3]);
-    const endDay = Number(m[4]);
-    const monthShort = (m[5] || "").trim();
+    const monthIdx = monthIndexFromShort(mon);
+    const startUtc =
+      monthIdx != null && Number.isFinite(startDay)
+        ? new Date(Date.UTC(Number(season), monthIdx, startDay, 0, 0, 0)).toISOString()
+        : null;
+    const endUtc =
+      monthIdx != null && Number.isFinite(endDay)
+        ? new Date(Date.UTC(Number(season), monthIdx, endDay, 23, 59, 59)).toISOString()
+        : null;
 
-    const monthIdx = parseMonthShort(monthShort);
-    let startUtc = null;
-    let endUtc = null;
+    // F1 testing pages use slugs:
+    // /en/racing/2026/pre-season-testing-1
+    // /en/racing/2026/pre-season-testing-2
+    const slug = Number.isFinite(testNo) ? `pre-season-testing-${testNo}` : null;
+    const pageUrl = slug ? `https://www.formula1.com/en/racing/${season}/${slug}` : null;
 
-    if (Number.isFinite(startDay) && Number.isFinite(endDay) && monthIdx != null) {
-      // Dates only (no official time on this page) — set to 00:00Z
-      startUtc = new Date(Date.UTC(Number(season), monthIdx, startDay, 0, 0, 0)).toISOString();
-      endUtc = new Date(Date.UTC(Number(season), monthIdx, endDay, 23, 59, 59)).toISOString();
-    }
-
-    return {
+    blocks.push({
       type: "TESTING",
       title,
       location,
+      testNumber: Number.isFinite(testNo) ? testNo : null,
       startUtc,
       endUtc,
       startDateLabel: startUtc ? shortDateInTZ(new Date(startUtc)) : null,
       endDateLabel: endUtc ? shortDateInTZ(new Date(endUtc)) : null,
-    };
-  });
+      pageUrl,
+    });
+  }
 
-  // de-dupe by title+dates
+  // de-dupe
   const uniq = [];
   const seen = new Set();
   for (const b of blocks) {
@@ -274,19 +252,26 @@ async function fetchTestingBlocks(season) {
       uniq.push(b);
     }
   }
+  return uniq;
+}
 
-  // Determine next upcoming testing block
+async function fetchTesting(season) {
+  const seasonUrl = `https://www.formula1.com/en/racing/${season}`;
+  const html = await fetchText(seasonUrl);
+
+  const blocks = extractTestingBlocksFromSeasonPage(html, season);
+
   const now = new Date();
-  const upcoming = uniq
+  const upcoming = blocks
     .filter((b) => b.startUtc && new Date(b.startUtc) > now)
     .sort((a, b) => new Date(a.startUtc) - new Date(b.startUtc));
 
   return {
-    found: true,
-    sourceUrl: url,
-    blocks: uniq,
+    found: blocks.length > 0,
+    sourceUrl: seasonUrl,
+    all: blocks,
     next: upcoming[0] || null,
-    note: null,
+    note: blocks.length > 0 ? null : "No testing blocks found on F1 season page.",
   };
 }
 
@@ -325,19 +310,50 @@ async function updateNextRace() {
   const gpName = nextRace.gpName;
   const season = String(nextRace.start.getUTCFullYear());
 
+  // Pull testing blocks from F1 season page
+  const testing = await fetchTesting(season);
+
+  // Race weekend grouping
   const gpSessions = sessions.filter((s) => s.gpName === gpName).sort((a, b) => a.start - b.start);
   const weekendStart = gpSessions[0].start;
   const weekendEnd = gpSessions[gpSessions.length - 1].end;
 
-  // NEW: Testing blocks (from official F1 season listing)
-  const testing = await fetchTestingBlocks(season);
+  // --- Track maps ---
+  // Always fetch the next GP's detailed track map (for your normal widget)
+  const raceResolved = await resolveF1RaceSlug(season, gpName);
+  const raceTrackMap = await fetchTrackMapFromPage({
+    pageUrl: raceResolved.url,
+    season,
+    outFileBase: `f1_${season}_${raceResolved.slug}_detailed`,
+  });
 
-  // Official detailed map for the NEXT GP race weekend
-  const trackMap = await fetchF1DetailedTrackPng({ season, gpName });
+  // NEW: if next event is testing, fetch the testing page map too
+  let testingTrackMap = null;
+  if (testing?.next?.pageUrl) {
+    // store as: f1_2026_pre-season-testing-1_detailed.png etc
+    const slug = `pre-season-testing-${testing.next.testNumber ?? "x"}`;
+    testingTrackMap = await fetchTrackMapFromPage({
+      pageUrl: testing.next.pageUrl,
+      season,
+      outFileBase: `f1_${season}_${slug}_detailed`,
+    });
 
-  // Determine "nextEvent" between testing and race weekend
+    // If testing page doesn't have a map, fall back to Bahrain GP map if testing location is Bahrain.
+    if (!testingTrackMap.found && (testing.next.location || "").toLowerCase().includes("bahrain")) {
+      // Bahrain GP is round 4 in 2026; the page exists and usually has the same circuit detailed map.
+      // We try it as a practical fallback.
+      const bahrainUrl = `https://www.formula1.com/en/racing/${season}/bahrain`;
+      const bahrainFallback = await fetchTrackMapFromPage({
+        pageUrl: bahrainUrl,
+        season,
+        outFileBase: `f1_${season}_bahrain_detailed`,
+      });
+      if (bahrainFallback.found) testingTrackMap = bahrainFallback;
+    }
+  }
+
+  // Determine nextEvent (testing vs race weekend)
   const nextTestingStart = testing?.next?.startUtc ? new Date(testing.next.startUtc) : null;
-  const nextRaceWeekendStart = weekendStart;
 
   let nextEvent = {
     type: "RACE_WEEKEND",
@@ -348,7 +364,7 @@ async function updateNextRace() {
     startsInDays: daysUntil(weekendStart, now),
   };
 
-  if (nextTestingStart && nextTestingStart < nextRaceWeekendStart) {
+  if (nextTestingStart && nextTestingStart < weekendStart) {
     nextEvent = {
       type: "TESTING",
       name: testing.next.title,
@@ -383,16 +399,26 @@ async function updateNextRace() {
     displayTimeZone: USER_TZ,
     source: { kind: "ics", url: ICS_URL },
 
-    nextEvent, // either TESTING or RACE_WEEKEND
+    nextEvent,
 
-    // Race weekend (still included even if testing comes first)
+    // Testing block info
+    testing: {
+      found: testing.found,
+      sourceUrl: testing.sourceUrl,
+      next: testing.next,
+      all: testing.all,
+      note: testing.note,
+      trackMap: testingTrackMap, // <-- NEW: testing map result
+    },
+
+    // Race weekend info
     grandPrix: {
       name: gpName,
       location: nextRace.location,
       season,
     },
 
-    trackMap, // Widgy Image -> trackMap.pngUrl
+    trackMap: raceTrackMap, // <-- race weekend map result
 
     countdowns: {
       weekendStartsInDays: daysUntil(weekendStart, now),
@@ -415,21 +441,12 @@ async function updateNextRace() {
 
     sessions: sessionsOut,
 
-    // NEW: Testing section
-    testing: {
-      found: testing.found,
-      sourceUrl: testing.sourceUrl,
-      next: testing.next,
-      all: testing.blocks,
-      note: testing.note,
-    },
-
     notes:
-      "Testing blocks come from the official F1 season listing; race weekend sessions/times come from the ICS feed.",
+      "testing.* comes from formula1.com season page; testing.trackMap attempts formula1.com testing page map. race trackMap comes from the next GP race page.",
   };
 
   await fs.writeFile("f1_next_race.json", JSON.stringify(out, null, 2), "utf8");
-  console.log(`Wrote f1_next_race.json for ${gpName} (season ${season})`);
+  console.log(`Wrote f1_next_race.json season=${season} gp=${gpName} testingFound=${testing.found}`);
 }
 
 updateNextRace().catch((err) => {
