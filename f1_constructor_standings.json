@@ -1,6 +1,6 @@
 {
   "header": "2026 constructors standings",
-  "generatedAtUtc": "2026-02-01T15:01:01.502Z",
+  "generatedAtUtc": "2026-02-01T15:12:52.781Z",
   "source": {
     "constructors": "https://api.jolpi.ca/ergast/f1/2025/constructorstandings.json"
   },
@@ -10,7 +10,12 @@
     "round": 24,
     "total": 10,
     "usedFallback": true,
-    "note": "No constructor standings available for current season yet; showing 2025 season instead."
+    "note": "No constructor standings available for current season yet; showing 2025 season instead.",
+    "logos": {
+      "kind": "official_f1_site",
+      "storedAs": "png_in_repo",
+      "folder": "teamlogos"
+    }
   },
   "lastRace": {
     "source": "https://api.jolpi.ca/ergast/f1/2025/last/results.json",
@@ -31,7 +36,7 @@
       "wins": 14,
       "team": "McLaren",
       "teamHex": "#FF8700",
-      "teamLogoPng": "https://upload.wikimedia.org/wikipedia/en/thumb/6/66/McLaren_Racing_logo.svg/512px-McLaren_Racing_logo.svg.png"
+      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_mclaren.png"
     },
     {
       "position": 2,
@@ -40,7 +45,7 @@
       "wins": 2,
       "team": "Mercedes",
       "teamHex": "#00D2BE",
-      "teamLogoPng": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Mercedes-Benz_in_Motorsport.svg/512px-Mercedes-Benz_in_Motorsport.svg.png"
+      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_mercedes.png"
     },
     {
       "position": 3,
@@ -49,7 +54,7 @@
       "wins": 8,
       "team": "Red Bull",
       "teamHex": "#1E41FF",
-      "teamLogoPng": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6e/Red_Bull_Racing_logo.svg/512px-Red_Bull_Racing_logo.svg.png"
+      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_red-bull.png"
     },
     {
       "position": 4,
@@ -58,7 +63,7 @@
       "wins": 0,
       "team": "Ferrari",
       "teamHex": "#DC0000",
-      "teamLogoPng": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d1/Scuderia_Ferrari_Logo.svg/512px-Scuderia_Ferrari_Logo.svg.png"
+      "teamLogoPng": null
     },
     {
       "position": 5,
@@ -67,7 +72,7 @@
       "wins": 0,
       "team": "Williams",
       "teamHex": "#005AFF",
-      "teamLogoPng": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9c/Williams_Grand_Prix_Engineering_logo.svg/512px-Williams_Grand_Prix_Engineering_logo.svg.png"
+      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_williams.png"
     },
     {
       "position": 6,
@@ -76,7 +81,7 @@
       "wins": 0,
       "team": "VCARB",
       "teamHex": "#2B4562",
-      "teamLogoPng": "https://upload.wikimedia.org/wikipedia/en/thumb/8/86/Racing_Bulls_logo.svg/512px-Racing_Bulls_logo.svg.png"
+      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_vcarb.png"
     },
     {
       "position": 7,
@@ -85,7 +90,7 @@
       "wins": 0,
       "team": "Aston Martin",
       "teamHex": "#006F62",
-      "teamLogoPng": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1a/Aston_Martin_F1_Team_logo.svg/512px-Aston_Martin_F1_Team_logo.svg.png"
+      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_aston-martin.png"
     },
     {
       "position": 8,
@@ -94,7 +99,7 @@
       "wins": 0,
       "team": "Haas F1 Team",
       "teamHex": "#B6BABD",
-      "teamLogoPng": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e4/Haas_F1_Team_logo.svg/512px-Haas_F1_Team_logo.svg.png"
+      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_haas-f1-team.png"
     },
     {
       "position": 9,
@@ -103,7 +108,7 @@
       "wins": 0,
       "team": "Sauber",
       "teamHex": "#00E701",
-      "teamLogoPng": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Stake_F1_Team_Kick_Sauber_logo.svg/512px-Stake_F1_Team_Kick_Sauber_logo.svg.png"
+      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_sauber.png"
     },
     {
       "position": 10,
@@ -112,7 +117,17 @@
       "wins": 0,
       "team": "Alpine F1 Team",
       "teamHex": "#0090FF",
-      "teamLogoPng": "https://upload.wikimedia.org/wikipedia/en/thumb/2/2e/Alpine_F1_Team_Logo.svg/512px-Alpine_F1_Team_Logo.svg.png"
+      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_alpine-f1-team.png"
+    },
+    {
+      "position": 11,
+      "positionText": "P11",
+      "points": 0,
+      "wins": 0,
+      "team": "Dummy Team",
+      "teamHex": "#999999",
+      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/dummy_team.png",
+      "dummy": true
     }
   ]
 }
