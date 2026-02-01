@@ -1,0 +1,47 @@
+name: Update F1 Weekend Results (Hourly)
+
+on:
+  schedule:
+    # Runs at the top of every hour (UTC)
+    - cron: "0 * * * *"
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-weekend-results:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - name: Install dependencies
+        run: |
+          npm ci || npm install
+
+      - name: Run weekend results updater
+        run: |
+          node updateWeekendResults.js
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "f1-bot"
+          git config user.email "f1-bot@users.noreply.github.com"
+
+          git add f1_results_smart.json
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update F1 weekend results"
+            git push
+          fi
