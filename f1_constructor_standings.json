@@ -1,6 +1,6 @@
 {
   "header": "2026 constructors standings",
-  "generatedAtUtc": "2026-02-01T15:38:25.333Z",
+  "generatedAtUtc": "2026-02-01T15:44:22.872Z",
   "source": {
     "constructors": "https://api.jolpi.ca/ergast/f1/2025/constructorstandings.json"
   },
@@ -70,7 +70,7 @@
       "team": "Ferrari",
       "teamHex": "#DC0000",
       "teamLogoPng": null,
-      "logoNote": "No logowhite.webp found on F1 team page."
+      "logoNote": "TEAM_F1_LOGO_FALLBACK is not defined"
     },
     {
       "position": 5,
