@@ -1,12 +1,16 @@
 {
   "header": "2025 Driver Standings (fallback)",
-  "generatedAtUtc": "2026-01-31T23:48:32.728Z",
+  "generatedAtUtc": "2026-02-01T00:15:55.212Z",
   "season": "2025",
-  "round": "24",
+  "lastRace": null,
   "source": {
     "kind": "jolpica ergast-compatible",
     "url": "https://api.jolpi.ca/ergast/f1/2025/last/driverstandings.json",
     "note": "Current season standings were empty; using last season final standings."
+  },
+  "lastRaceSource": {
+    "url": "https://api.jolpi.ca/ergast/f1/current/last/results.json",
+    "found": false
   },
   "enrichment": {
     "openf1DriversUrl": "https://api.openf1.org/v1/drivers?session_key=latest",
