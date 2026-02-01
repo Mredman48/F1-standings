@@ -310,12 +310,20 @@ function buildFlagUrls(iso2) {
 
 function buildSessionsForRaceWeekend(gpSessions) {
   const order = ["FP1", "FP2", "FP3", "Qualifying", "Sprint Qualifying", "Sprint", "Race"];
+
+  function displayType(type) {
+    if (type === "Qualifying") return "Quali";
+    if (type === "Sprint Qualifying") return "Sprint Quali";
+    return type;
+  }
+
   return order
     .map((type) => {
       const s = gpSessions.find((x) => x.sessionType === type);
       if (!s) return null;
+
       return {
-        type,
+        type: displayType(type), // 👈 renamed here
         startUtc: s.start.toISOString(),
         endUtc: s.end.toISOString(),
         startLocalDateShort: shortDateInTZ(s.start),
@@ -324,6 +332,7 @@ function buildSessionsForRaceWeekend(gpSessions) {
       };
     })
     .filter(Boolean);
+}
 }
 
 function computeWindowFromSessions(sessions) {
