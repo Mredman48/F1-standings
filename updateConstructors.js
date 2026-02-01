@@ -300,8 +300,16 @@ async function buildTeamLogoPng({ team, season }) {
   const teamPageUrl = `https://www.formula1.com/en/teams/${pageSlug}`;
   const html = await fetchText(teamPageUrl);
 
-  const webpUrl = extractLogoWebpFromTeamPage(html, season);
-  if (!webpUrl) return { ok: false, pngUrl: null, note: "No logowhite.webp found on F1 team page." };
+  let webpUrl = extractLogoWebpFromTeamPage(html, season);
+
+// Ferrari special case (official fallback)
+if (!webpUrl && TEAM_F1_LOGO_FALLBACK[team]) {
+  webpUrl = TEAM_F1_LOGO_FALLBACK[team];
+}
+
+if (!webpUrl) {
+  return { ok: false, pngUrl: null, note: "No logo found on F1 page or fallback." };
+}
 
   const hiResUrl = upgradeF1MediaUrl(webpUrl);
 
