@@ -6,10 +6,15 @@ import sharp from "sharp";
 
 const ICS_URL = "https://better-f1-calendar.vercel.app/api/calendar.ics";
 
+// These are only used for the pre-formatted local strings we include in sessions.
+// Widgy can also convert from startUtc itself, but this keeps your JSON widget-ready.
 const USER_TZ = "America/Edmonton";
 const LOCALE = "en-CA";
 
+// Your GitHub Pages base for this repo
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
+
+// Where track PNGs are written (commit this folder)
 const TRACKMAP_DIR = "trackmaps";
 
 const UA = "f1-standings-bot/1.0 (GitHub Actions)";
@@ -108,6 +113,15 @@ function tokens(s) {
   return normalize(s).split(" ").filter(Boolean);
 }
 
+function titleCaseWords(s) {
+  if (!s) return null;
+  return String(s)
+    .trim()
+    .split(/\s+/)
+    .map((w) => (w ? w[0].toUpperCase() + w.slice(1).toLowerCase() : w))
+    .join(" ");
+}
+
 function titleCaseFromSlug(slug) {
   if (!slug) return null;
   return slug
@@ -152,7 +166,13 @@ async function fetchTrackMapFromF1RacePage({ pageUrl, season, outFileBase }) {
   const html = await fetchText(pageUrl);
   const mediaUrl = extractDetailedTrackMediaUrl(html, season);
   if (!mediaUrl) {
-    return { found: false, pageUrl, mediaUrl: null, pngUrl: null, note: "No detailed track image found on race page." };
+    return {
+      found: false,
+      pageUrl,
+      mediaUrl: null,
+      pngUrl: null,
+      note: "No detailed track image found on race page.",
+    };
   }
   const outName = `${outFileBase}.png`;
   const pngUrl = await downloadToPng({ mediaUrl, outName });
@@ -209,10 +229,81 @@ async function resolveRacePage({ season, gpName, locationRaw }) {
     .sort((a, b) => b.score - a.score);
 
   const best = ranked[0];
-
-  // If score is suspiciously low, it still might work, but log it.
   const pageUrl = `https://www.formula1.com/en/racing/${season}/${best.slug}`;
   return { slug: best.slug, pageUrl, rankedTop: ranked.slice(0, 8) };
+}
+
+/* -------------------- country -> ISO2 -> flag URL -------------------- */
+
+function normalizeCountryName(s) {
+  return (s || "")
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/\./g, "")
+    .replace(/[^a-z\s-]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+// Minimal mapping; add as needed when you hit an unmapped country string.
+function countryToIso2(countryName) {
+  const c = normalizeCountryName(countryName);
+
+  const map = {
+    // Oceania / Asia / Middle East
+    australia: "au",
+    bahrain: "bh",
+    china: "cn",
+    japan: "jp",
+    "saudi arabia": "sa",
+    qatar: "qa",
+    singapore: "sg",
+    "united arab emirates": "ae",
+    uae: "ae",
+
+    // Americas
+    canada: "ca",
+    mexico: "mx",
+    brazil: "br",
+    argentina: "ar",
+    "united states": "us",
+    "united states of america": "us",
+    usa: "us",
+
+    // Europe
+    "united kingdom": "gb",
+    "great britain": "gb",
+    britain: "gb",
+    monaco: "mc",
+    italy: "it",
+    spain: "es",
+    france: "fr",
+    belgium: "be",
+    netherlands: "nl",
+    austria: "at",
+    hungary: "hu",
+    germany: "de",
+    portugal: "pt",
+    sweden: "se",
+    finland: "fi",
+    denmark: "dk",
+    norway: "no",
+    poland: "pl",
+    turkey: "tr",
+    switzerland: "ch",
+  };
+
+  return map[c] || null;
+}
+
+function buildFlagUrls(iso2) {
+  if (!iso2) return { iso2: null, png: null, svg: null };
+  const code = iso2.toLowerCase();
+  return {
+    iso2: code,
+    png: `https://flagcdn.com/w160/${code}.png`,
+    svg: `https://flagcdn.com/${code}.svg`,
+  };
 }
 
 /* -------------------- sessions + windows -------------------- */
@@ -297,8 +388,12 @@ async function updateNextRace() {
   // city from the detailed track image filename (melbourne, etc.)
   const city = getCityFromTrackMediaUrl(trackMap.mediaUrl);
 
-  // country: best available from ICS raw (your example: "Australia")
-  const country = locationRaw ? titleCaseFromSlug(locationRaw) : null;
+  // country from ICS raw (your feed commonly returns "Australia")
+  const country = locationRaw ? titleCaseWords(locationRaw) : null;
+
+  // flag URLs from country ISO2
+  const iso2 = countryToIso2(country);
+  const flag = buildFlagUrls(iso2);
 
   const sessionsOut = buildSessionsForRaceWeekend(gpSessions);
   const window = computeWindowFromSessions(sessionsOut);
@@ -316,6 +411,7 @@ async function updateNextRace() {
         raw: locationRaw || null,
         city: city || null,
         country: country || null,
+        flag, // { iso2, png, svg }
       },
       racePage: {
         slug: racePage.slug,
@@ -330,12 +426,14 @@ async function updateNextRace() {
 
   await fs.writeFile("f1_next_race.json", JSON.stringify(out, null, 2), "utf8");
 
-  // helpful logs
+  // Helpful logs for Actions debugging
   console.log("Resolved race slug:", racePage.slug);
   console.log("Race page url:", racePage.pageUrl);
   console.log("Ranked slugs (top):", racePage.rankedTop);
   console.log("Location raw:", locationRaw);
+  console.log("Country:", country, "ISO2:", iso2);
   console.log("City inferred:", city);
+  console.log("Flag:", flag);
   console.log("Track map:", trackMap);
   console.log("Wrote f1_next_race.json");
 }
