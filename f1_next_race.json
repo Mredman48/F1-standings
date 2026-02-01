@@ -1,6 +1,6 @@
 {
   "header": "Next F1 race weekend",
-  "generatedAtUtc": "2026-02-01T00:34:15.087Z",
+  "generatedAtUtc": "2026-02-01T00:45:14.280Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics",
@@ -8,169 +8,15 @@
   },
   "grandPrix": {
     "name": "F1 Qatar Airways Australian GP 2026",
-    "city": "Australia",
-    "country": "Australia",
-    "location": "Australia"
-  },
-  "flag": {
-    "found": true,
-    "country": "Australia",
-    "countryCode": "AU",
-    "pngUrl": "https://flagcdn.com/w80/au.png",
-    "svgUrl": "https://flagcdn.com/au.svg",
-    "source": "restcountries.com + flagcdn.com",
-    "note": null
+    "location": "Australia",
+    "season": "2026"
   },
   "trackMap": {
     "found": true,
-    "source": "github-contents",
-    "matchSource": "filename-match",
-    "style": "black-outline",
-    "file": "adelaide-1.svg",
-    "svgUrl": "https://raw.githubusercontent.com/julesr0y/f1-circuits-svg/main/circuits/black-outline/adelaide-1.svg",
-    "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/adelaide-1.png",
-    "score": 0,
-    "note": "Low-confidence match; add FILE_OVERRIDES if wrong.",
-    "debug": {
-      "topCandidatesByStyle": {
-        "black-outline": [
-          {
-            "file": "adelaide-1.svg",
-            "score": 0
-          },
-          {
-            "file": "aida-1.svg",
-            "score": 0
-          },
-          {
-            "file": "ain-diab-1.svg",
-            "score": 0
-          },
-          {
-            "file": "aintree-1.svg",
-            "score": 0
-          },
-          {
-            "file": "anderstorp-1.svg",
-            "score": 0
-          },
-          {
-            "file": "austin-1.svg",
-            "score": 0
-          },
-          {
-            "file": "avus-1.svg",
-            "score": 0
-          },
-          {
-            "file": "bahrain-1.svg",
-            "score": 0
-          }
-        ],
-        "black": [
-          {
-            "file": "adelaide-1.svg",
-            "score": 0
-          },
-          {
-            "file": "aida-1.svg",
-            "score": 0
-          },
-          {
-            "file": "ain-diab-1.svg",
-            "score": 0
-          },
-          {
-            "file": "aintree-1.svg",
-            "score": 0
-          },
-          {
-            "file": "anderstorp-1.svg",
-            "score": 0
-          },
-          {
-            "file": "austin-1.svg",
-            "score": 0
-          },
-          {
-            "file": "avus-1.svg",
-            "score": 0
-          },
-          {
-            "file": "bahrain-1.svg",
-            "score": 0
-          }
-        ],
-        "white-outline": [
-          {
-            "file": "adelaide-1.svg",
-            "score": 0
-          },
-          {
-            "file": "aida-1.svg",
-            "score": 0
-          },
-          {
-            "file": "ain-diab-1.svg",
-            "score": 0
-          },
-          {
-            "file": "aintree-1.svg",
-            "score": 0
-          },
-          {
-            "file": "anderstorp-1.svg",
-            "score": 0
-          },
-          {
-            "file": "austin-1.svg",
-            "score": 0
-          },
-          {
-            "file": "avus-1.svg",
-            "score": 0
-          },
-          {
-            "file": "bahrain-1.svg",
-            "score": 0
-          }
-        ],
-        "white": [
-          {
-            "file": "adelaide-1.svg",
-            "score": 0
-          },
-          {
-            "file": "aida-1.svg",
-            "score": 0
-          },
-          {
-            "file": "ain-diab-1.svg",
-            "score": 0
-          },
-          {
-            "file": "aintree-1.svg",
-            "score": 0
-          },
-          {
-            "file": "anderstorp-1.svg",
-            "score": 0
-          },
-          {
-            "file": "austin-1.svg",
-            "score": 0
-          },
-          {
-            "file": "avus-1.svg",
-            "score": 0
-          },
-          {
-            "file": "bahrain-1.svg",
-            "score": 0
-          }
-        ]
-      }
-    }
+    "source": "media.formula1.com (scraped from race page)",
+    "racePageUrl": "https://www.formula1.com/en/racing/2026/qatar",
+    "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000000/common/f1/2026/track/2026tracklusaildetailed.webp",
+    "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_qatar_detailed.png"
   },
   "countdowns": {
     "weekendStartsInDays": 34,
@@ -230,5 +76,5 @@
       "startLocalDateTimeShort": "Sat, Mar 07 21:00"
     }
   ],
-  "notes": "Use flag.pngUrl for the country flag (PNG) and trackMap.pngUrl for the circuit map (PNG). Local date/time strings are rendered for America/Edmonton."
+  "notes": "trackMap.pngUrl is a GitHub Pages PNG created from the official F1 detailed track image (scraped from the race page)."
 }
