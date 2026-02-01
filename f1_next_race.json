@@ -1,6 +1,6 @@
 {
   "header": "Next F1 event",
-  "generatedAtUtc": "2026-02-01T01:04:46.828Z",
+  "generatedAtUtc": "2026-02-01T01:12:46.703Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics",
@@ -8,146 +8,68 @@
   },
   "nextEvent": {
     "type": "RACE_WEEKEND",
-    "name": "F1 Qatar Airways Australian GP 2026",
-    "startUtc": "2026-03-06T01:30:00.000Z",
-    "startLocalDateShort": "Thu, Mar 05",
-    "startLocalTimeShort": "18:30",
-    "startsInDays": 34
-  },
-  "testing": {
-    "found": true,
-    "next": null,
-    "all": [
-      {
-        "type": "TESTING",
-        "slug": "pre-season-testing-1",
-        "title": "FORMULA 1 ARAMCO PRE-SEASON TESTING 1 2026",
-        "pageUrl": "https://www.formula1.com/en/racing/2026/pre-season-testing-1",
-        "schedule": [],
-        "startDate": null,
-        "endDate": null,
-        "trackMap": {
-          "found": false,
-          "pageUrl": "https://www.formula1.com/en/racing/2026/pre-season-testing-1",
-          "mediaUrl": null,
-          "pngUrl": null,
-          "note": "No detailed track image found on page."
-        }
-      },
-      {
-        "type": "TESTING",
-        "slug": "pre-season-testing-2",
-        "title": "FORMULA 1 ARAMCO PRE-SEASON TESTING 2 2026",
-        "pageUrl": "https://www.formula1.com/en/racing/2026/pre-season-testing-2",
-        "schedule": [],
-        "startDate": null,
-        "endDate": null,
-        "trackMap": {
-          "found": false,
-          "pageUrl": "https://www.formula1.com/en/racing/2026/pre-season-testing-2",
-          "mediaUrl": null,
-          "pngUrl": null,
-          "note": "No detailed track image found on page."
-        }
-      }
-    ],
-    "note": null
-  },
-  "grandPrix": {
-    "name": "F1 Qatar Airways Australian GP 2026",
-    "location": "Australia",
-    "city": "Australia",
-    "country": null,
+    "title": "F1 Qatar Airways Australian GP 2026",
     "season": "2026",
-    "f1RacePageUrl": "https://www.formula1.com/en/racing/2026/australia",
-    "f1RacePageSource": "season-scan-location-first",
-    "racePageDebugTop": [
+    "location": {
+      "raw": "Australia",
+      "city": "Australia",
+      "country": null
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2026/australia",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000000/common/f1/2026/track/2026trackmelbournedetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_australia_detailed.png",
+      "note": null
+    },
+    "countdowns": {
+      "startsInDays": 34
+    },
+    "weekend": {
+      "startUtc": "2026-03-06T01:30:00.000Z",
+      "endUtc": "2026-03-08T06:00:00.000Z"
+    },
+    "sessions": [
       {
-        "href": "/en/racing/2026/australia",
-        "score": 1001
+        "type": "FP1",
+        "startUtc": "2026-03-06T01:30:00.000Z",
+        "endUtc": "2026-03-06T02:30:00.000Z",
+        "startLocalDateShort": "Thu, Mar 05",
+        "startLocalTimeShort": "18:30",
+        "startLocalDateTimeShort": "Thu, Mar 05 18:30"
       },
       {
-        "href": "/en/racing/2026/pre-season-testing-1",
-        "score": 1
+        "type": "FP2",
+        "startUtc": "2026-03-06T05:00:00.000Z",
+        "endUtc": "2026-03-06T06:00:00.000Z",
+        "startLocalDateShort": "Thu, Mar 05",
+        "startLocalTimeShort": "22:00",
+        "startLocalDateTimeShort": "Thu, Mar 05 22:00"
       },
       {
-        "href": "/en/racing/2026/pre-season-testing-2",
-        "score": 1
+        "type": "FP3",
+        "startUtc": "2026-03-07T01:30:00.000Z",
+        "endUtc": "2026-03-07T02:30:00.000Z",
+        "startLocalDateShort": "Fri, Mar 06",
+        "startLocalTimeShort": "18:30",
+        "startLocalDateTimeShort": "Fri, Mar 06 18:30"
       },
       {
-        "href": "/en/racing/2026/china",
-        "score": 1
+        "type": "Qualifying",
+        "startUtc": "2026-03-07T05:00:00.000Z",
+        "endUtc": "2026-03-07T06:00:00.000Z",
+        "startLocalDateShort": "Fri, Mar 06",
+        "startLocalTimeShort": "22:00",
+        "startLocalDateTimeShort": "Fri, Mar 06 22:00"
       },
       {
-        "href": "/en/racing/2026/japan",
-        "score": 1
+        "type": "Race",
+        "startUtc": "2026-03-08T04:00:00.000Z",
+        "endUtc": "2026-03-08T06:00:00.000Z",
+        "startLocalDateShort": "Sat, Mar 07",
+        "startLocalTimeShort": "21:00",
+        "startLocalDateTimeShort": "Sat, Mar 07 21:00"
       }
     ]
-  },
-  "trackMap": {
-    "found": true,
-    "pageUrl": "https://www.formula1.com/en/racing/2026/australia",
-    "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000000/common/f1/2026/track/2026trackmelbournedetailed.webp",
-    "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_australia_detailed.png",
-    "note": null
-  },
-  "countdowns": {
-    "weekendStartsInDays": 34,
-    "raceStartsInDays": 36
-  },
-  "weekend": {
-    "startUtc": "2026-03-06T01:30:00.000Z",
-    "endUtc": "2026-03-08T06:00:00.000Z",
-    "startLocalDateShort": "Thu, Mar 05",
-    "startLocalTimeShort": "18:30"
-  },
-  "race": {
-    "startUtc": "2026-03-08T04:00:00.000Z",
-    "endUtc": "2026-03-08T06:00:00.000Z",
-    "startLocalDateShort": "Sat, Mar 07",
-    "startLocalTimeShort": "21:00"
-  },
-  "sessions": [
-    {
-      "type": "FP1",
-      "startUtc": "2026-03-06T01:30:00.000Z",
-      "endUtc": "2026-03-06T02:30:00.000Z",
-      "startLocalDateShort": "Thu, Mar 05",
-      "startLocalTimeShort": "18:30",
-      "startLocalDateTimeShort": "Thu, Mar 05 18:30"
-    },
-    {
-      "type": "FP2",
-      "startUtc": "2026-03-06T05:00:00.000Z",
-      "endUtc": "2026-03-06T06:00:00.000Z",
-      "startLocalDateShort": "Thu, Mar 05",
-      "startLocalTimeShort": "22:00",
-      "startLocalDateTimeShort": "Thu, Mar 05 22:00"
-    },
-    {
-      "type": "FP3",
-      "startUtc": "2026-03-07T01:30:00.000Z",
-      "endUtc": "2026-03-07T02:30:00.000Z",
-      "startLocalDateShort": "Fri, Mar 06",
-      "startLocalTimeShort": "18:30",
-      "startLocalDateTimeShort": "Fri, Mar 06 18:30"
-    },
-    {
-      "type": "Qualifying",
-      "startUtc": "2026-03-07T05:00:00.000Z",
-      "endUtc": "2026-03-07T06:00:00.000Z",
-      "startLocalDateShort": "Fri, Mar 06",
-      "startLocalTimeShort": "22:00",
-      "startLocalDateTimeShort": "Fri, Mar 06 22:00"
-    },
-    {
-      "type": "Race",
-      "startUtc": "2026-03-08T04:00:00.000Z",
-      "endUtc": "2026-03-08T06:00:00.000Z",
-      "startLocalDateShort": "Sat, Mar 07",
-      "startLocalTimeShort": "21:00",
-      "startLocalDateTimeShort": "Sat, Mar 07 21:00"
-    }
-  ],
-  "notes": "Testing comes from dedicated formula1.com testing pages (more reliable than scraping the season grid). Race page is resolved using location-first matching to avoid sponsor words like 'Qatar Airways' causing a wrong slug."
+  }
 }
