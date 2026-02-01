@@ -1,10 +1,18 @@
 {
-  "header": "Next F1 race weekend",
-  "generatedAtUtc": "2026-02-01T00:45:14.280Z",
+  "header": "Next F1 event",
+  "generatedAtUtc": "2026-02-01T00:52:00.802Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics",
     "url": "https://better-f1-calendar.vercel.app/api/calendar.ics"
+  },
+  "nextEvent": {
+    "type": "RACE_WEEKEND",
+    "name": "F1 Qatar Airways Australian GP 2026",
+    "startUtc": "2026-03-06T01:30:00.000Z",
+    "startLocalDateShort": "Thu, Mar 05",
+    "startLocalTimeShort": "18:30",
+    "startsInDays": 34
   },
   "grandPrix": {
     "name": "F1 Qatar Airways Australian GP 2026",
@@ -76,5 +84,11 @@
       "startLocalDateTimeShort": "Sat, Mar 07 21:00"
     }
   ],
-  "notes": "trackMap.pngUrl is a GitHub Pages PNG created from the official F1 detailed track image (scraped from the race page)."
+  "testing": {
+    "found": false,
+    "sourceUrl": "https://www.formula1.com/en/racing/2026",
+    "all": [],
+    "note": "No testing blocks matched on F1 season page."
+  },
+  "notes": "Testing blocks come from the official F1 season listing; race weekend sessions/times come from the ICS feed."
 }
