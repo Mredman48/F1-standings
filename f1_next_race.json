@@ -1,6 +1,6 @@
 {
   "header": "Next F1 event",
-  "generatedAtUtc": "2026-02-01T02:03:23.847Z",
+  "generatedAtUtc": "2026-02-01T02:40:15.483Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics",
@@ -13,7 +13,12 @@
     "location": {
       "raw": "Australia",
       "city": "Melbourne",
-      "country": "Australia"
+      "country": "Australia",
+      "flag": {
+        "iso2": "au",
+        "png": "https://flagcdn.com/w160/au.png",
+        "svg": "https://flagcdn.com/au.svg"
+      }
     },
     "racePage": {
       "slug": "australia",
