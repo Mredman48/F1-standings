@@ -31,7 +31,7 @@ const SAUBER_MATCHERS = [
   "stake f1 team",
   "stake",
   "sauber",
-  "alfa romeo", // just in case older naming shows up
+  "alfa romeo",
 ];
 
 function safeGet(obj, pathArr) {
@@ -90,10 +90,19 @@ async function fetchErgastWithFallback(p) {
   throw new Error(`All Ergast fetch attempts failed: ${JSON.stringify(attempts, null, 2)}`);
 }
 
+function teamMatchesAny(teamName, matchers) {
+  const t = String(teamName || "").toLowerCase();
+  return matchers.some((m) => t.includes(String(m).toLowerCase()));
+}
+
+function teamNameFromDriverStandingRow(d) {
+  const constructors = Array.isArray(d.Constructors) ? d.Constructors : [];
+  return constructors[0]?.name || "";
+}
+
 /* -------------------- Audi logo: ensure it exists as PNG in repo -------------------- */
 
 async function buildAudiLogoPngIfMissing() {
-  // If already saved, reuse (stable URL for Widgy)
   try {
     await fs.access(OUT_LOGO_PNG);
     return { ok: true, pngUrl: makePagesUrl(OUT_LOGO_PNG), note: "cached" };
@@ -103,7 +112,6 @@ async function buildAudiLogoPngIfMissing() {
 
   await ensureDir(TEAMLOGO_DIR);
 
-  // Download the PNG and save it directly (no conversion needed)
   const pngBuf = await fetchBuffer(STATIC_AUDI_LOGO_PNG);
   await fs.writeFile(OUT_LOGO_PNG, pngBuf);
 
@@ -137,7 +145,7 @@ async function getOpenF1HeadshotMap() {
   }
 }
 
-/* -------------------- Ergast standings helpers -------------------- */
+/* -------------------- Ergast helpers -------------------- */
 
 function parseDriverStandings(payload) {
   const list =
@@ -145,7 +153,6 @@ function parseDriverStandings(payload) {
   const season = safeGet(payload, ["MRData", "StandingsTable", "season"]) || null;
   const round = safeGet(payload, ["MRData", "StandingsTable", "round"]) || null;
   const total = Number(payload?.MRData?.total || 0);
-
   return { list: Array.isArray(list) ? list : [], season, round, total };
 }
 
@@ -155,22 +162,76 @@ async function getDriverStandingsForSeason(seasonTag) {
   return { ...parsed, source: url, seasonTag: String(seasonTag) };
 }
 
-function teamNameFromStandingRow(d) {
-  const constructors = Array.isArray(d.Constructors) ? d.Constructors : [];
-  return constructors[0]?.name || "";
+function parseConstructorStandings(payload) {
+  const list =
+    safeGet(payload, ["MRData", "StandingsTable", "StandingsLists", 0, "ConstructorStandings"]) ||
+    [];
+  const season = safeGet(payload, ["MRData", "StandingsTable", "season"]) || null;
+  const round = safeGet(payload, ["MRData", "StandingsTable", "round"]) || null;
+  const total = Number(payload?.MRData?.total || 0);
+  return { list: Array.isArray(list) ? list : [], season, round, total };
 }
 
-function teamMatchesAny(teamName, matchers) {
-  const t = String(teamName || "").toLowerCase();
-  return matchers.some((m) => t.includes(String(m).toLowerCase()));
+async function getConstructorStandingsForSeason(seasonTag) {
+  const { data, url } = await fetchErgastWithFallback(`/${seasonTag}/constructorstandings.json`);
+  const parsed = parseConstructorStandings(data);
+  return { ...parsed, source: url, seasonTag: String(seasonTag) };
+}
+
+async function getLastRaceForSeason(seasonTag) {
+  // returns null if no races
+  const { data, url } = await fetchErgastWithFallback(`/${seasonTag}/last/results.json`);
+  const race = safeGet(data, ["MRData", "RaceTable", "Races", 0]) || null;
+  return { race, source: url };
+}
+
+function mapLastRaceInfo(race) {
+  if (!race) return null;
+  return {
+    season: race.season || null,
+    round: race.round || null,
+    raceName: race.raceName || null,
+    date: race.date || null,
+    timeUtc: race.time || null,
+    circuit: {
+      name: race?.Circuit?.circuitName || null,
+      locality: race?.Circuit?.Location?.locality || null,
+      country: race?.Circuit?.Location?.country || null,
+    },
+  };
+}
+
+async function getDriverBestFinish(seasonTag, driverId) {
+  // Best finishing position (lowest numeric position) across completed races in the season.
+  // We fetch all results for that driver in the season and find min position.
+  try {
+    const { data } = await fetchErgastWithFallback(`/${seasonTag}/drivers/${driverId}/results.json?limit=500`);
+    const races = safeGet(data, ["MRData", "RaceTable", "Races"]) || [];
+    let best = null;
+
+    for (const r of races) {
+      const result = r?.Results?.[0];
+      if (!result) continue;
+
+      const pos = Number(result.position);
+      if (!Number.isFinite(pos)) continue;
+
+      if (best === null || pos < best) best = pos;
+    }
+
+    return best !== null ? `P${best}` : null;
+  } catch {
+    return null;
+  }
 }
 
 function mapDriverStanding(d, headshotMap, options = {}) {
   const driver = d.Driver || {};
-  const originalTeam = teamNameFromStandingRow(d) || null;
+  const originalTeam = teamNameFromDriverStandingRow(d) || null;
   const num = driver.permanentNumber ? Number(driver.permanentNumber) : null;
 
   const obj = {
+    driverId: driver.driverId || null, // keep for best-finish lookup
     position: d.position ? `P${d.position}` : null,
     points: d.points ? Number(d.points) : null,
     wins: d.wins ? Number(d.wins) : null,
@@ -187,93 +248,146 @@ function mapDriverStanding(d, headshotMap, options = {}) {
   return obj;
 }
 
+function findConstructorRow(list, matchers) {
+  // Find the constructor row that matches any substring matcher in Constructor.name
+  const row = (list || []).find((c) => {
+    const name = c?.Constructor?.name || "";
+    return teamMatchesAny(name, matchers);
+  });
+  return row || null;
+}
+
+function mapConstructorRow(row, forcedTeamName = "Audi") {
+  if (!row) return null;
+  return {
+    team: forcedTeamName,
+    position: row.position ? `P${row.position}` : null,
+    points: row.points ? Number(row.points) : null,
+    wins: row.wins ? Number(row.wins) : null,
+    originalTeam: row?.Constructor?.name || null,
+  };
+}
+
 /* -------------------- main -------------------- */
 
 async function updateAudiStandings() {
   const now = new Date();
   const prevYear = String(now.getUTCFullYear() - 1);
 
-  // 1) Ensure Audi logo exists as PNG in repo
+  // Ensure logo exists
   const audiLogo = await buildAudiLogoPngIfMissing();
 
-  // 2) Headshots
+  // Headshots
   const headshotMap = await getOpenF1HeadshotMap();
 
-  // 3) Pull current season standings
-  const current = await getDriverStandingsForSeason("current");
+  // Pull current season driver standings
+  const currentDrivers = await getDriverStandingsForSeason("current");
 
-  // 4) If Audi exists in current standings, use Audi drivers
-  const audiDriversCurrent = current.list
-    .filter((d) => teamMatchesAny(teamNameFromStandingRow(d), ["audi"]))
+  // Do we have Audi in current standings?
+  const audiDriversCurrent = currentDrivers.list
+    .filter((d) => teamMatchesAny(teamNameFromDriverStandingRow(d), ["audi"]))
     .map((d) => mapDriverStanding(d, headshotMap, { teamOverride: "Audi" }));
 
   let driversOut;
-  let meta;
+  let seasonUsed;
+  let roundUsed;
+  let mode;
+  let driverStandingsSource;
 
   if (audiDriversCurrent.length > 0) {
     driversOut = audiDriversCurrent;
-    meta = {
-      season: current.season ? String(current.season) : null,
-      round: current.round ? String(current.round) : null,
-      mode: "AUDI_LIVE_FROM_CURRENT_SEASON",
-      note: null,
-      sources: { driverStandings: current.source },
-    };
+    seasonUsed = currentDrivers.seasonTag; // "current"
+    roundUsed = currentDrivers.round ? String(currentDrivers.round) : null;
+    mode = "AUDI_LIVE_FROM_CURRENT_SEASON";
+    driverStandingsSource = currentDrivers.source;
   } else {
-    // 5) Otherwise use Kick Sauber drivers from last year as placeholders
-    const last = await getDriverStandingsForSeason(prevYear);
+    // Use Kick Sauber drivers from last year as placeholders
+    const lastYearDrivers = await getDriverStandingsForSeason(prevYear);
 
-    const sauberDriversLastYear = last.list
-      .filter((d) => teamMatchesAny(teamNameFromStandingRow(d), SAUBER_MATCHERS))
+    const sauberDrivers = lastYearDrivers.list
+      .filter((d) => teamMatchesAny(teamNameFromDriverStandingRow(d), SAUBER_MATCHERS))
       .map((d) =>
         mapDriverStanding(d, headshotMap, {
-          teamOverride: "Audi", // Force display team to Audi
+          teamOverride: "Audi",
           includeOriginalTeam: true,
           placeholder: true,
         })
       );
 
-    driversOut =
-      sauberDriversLastYear.length > 0
-        ? sauberDriversLastYear
-        : [
-            {
-              position: "P?",
-              points: 0,
-              wins: 0,
-              firstName: "Audi",
-              lastName: "Driver 1",
-              code: null,
-              driverNumber: null,
-              team: "Audi",
-              headshotUrl: null,
-              placeholder: true,
-              originalTeam: null,
-            },
-            {
-              position: "P?",
-              points: 0,
-              wins: 0,
-              firstName: "Audi",
-              lastName: "Driver 2",
-              code: null,
-              driverNumber: null,
-              team: "Audi",
-              headshotUrl: null,
-              placeholder: true,
-              originalTeam: null,
-            },
-          ];
+    driversOut = sauberDrivers;
+    seasonUsed = prevYear;
+    roundUsed = lastYearDrivers.round ? String(lastYearDrivers.round) : null;
+    mode = "AUDI_PLACEHOLDERS_FROM_KICK_SAUBER_LAST_YEAR";
+    driverStandingsSource = lastYearDrivers.source;
 
-    meta = {
-      season: last.season ? String(last.season) : prevYear,
-      round: last.round ? String(last.round) : null,
-      mode: "AUDI_PLACEHOLDERS_FROM_KICK_SAUBER_LAST_YEAR",
-      note:
-        "Audi not present in current standings yet; showing Kick Sauber drivers from last year as placeholders (team label forced to Audi, Audi colored logo used).",
-      sources: { driverStandings: last.source },
-    };
+    // Ultra fallback if nothing matched
+    if (!driversOut || driversOut.length === 0) {
+      driversOut = [
+        {
+          driverId: null,
+          position: "P?",
+          points: 0,
+          wins: 0,
+          firstName: "Audi",
+          lastName: "Driver 1",
+          code: null,
+          driverNumber: null,
+          team: "Audi",
+          headshotUrl: null,
+          placeholder: true,
+          originalTeam: null,
+          bestFinish: null,
+        },
+        {
+          driverId: null,
+          position: "P?",
+          points: 0,
+          wins: 0,
+          firstName: "Audi",
+          lastName: "Driver 2",
+          code: null,
+          driverNumber: null,
+          team: "Audi",
+          headshotUrl: null,
+          placeholder: true,
+          originalTeam: null,
+          bestFinish: null,
+        },
+      ];
+    }
   }
+
+  // Constructor standings for seasonUsed:
+  // If Audi live: match "audi"
+  // Else placeholder mode: match Sauber-ish names, but force display as Audi.
+  const ctor = await getConstructorStandingsForSeason(seasonUsed);
+  const ctorRow = mode === "AUDI_LIVE_FROM_CURRENT_SEASON"
+    ? findConstructorRow(ctor.list, ["audi"])
+    : findConstructorRow(ctor.list, SAUBER_MATCHERS);
+
+  const teamStanding = mapConstructorRow(ctorRow, "Audi");
+
+  // Last race info for seasonUsed (may be null if no races)
+  const lastRace = await getLastRaceForSeason(seasonUsed);
+  const lastRaceInfo = mapLastRaceInfo(lastRace.race);
+
+  // Best finish for each driver in seasonUsed (only if we have driverId)
+  // Two drivers only → safe to do sequentially
+  for (const d of driversOut) {
+    if (d?.driverId) {
+      d.bestFinish = await getDriverBestFinish(seasonUsed, d.driverId);
+    } else {
+      d.bestFinish = null;
+    }
+  }
+
+  // Remove driverId from output if you don’t want it in Widgy (optional)
+  const driversClean = driversOut.map((d) => {
+    const copy = { ...d };
+    // keep driverId internal? If you want it hidden, uncomment next line:
+    // delete copy.driverId;
+    return copy;
+  });
 
   const out = {
     header: "Audi standings",
@@ -282,19 +396,31 @@ async function updateAudiStandings() {
       openf1: OPENF1_BASE,
       audiLogoSourcePng: STATIC_AUDI_LOGO_PNG,
       ergastBases: ERGAST_BASES,
-      driverStandings: meta.sources.driverStandings,
+      driverStandings: driverStandingsSource,
+      constructorStandings: ctor.source,
+      lastRace: lastRace.source,
     },
-    meta,
+    meta: {
+      mode,
+      seasonUsed: String(seasonUsed),
+      roundUsed,
+      note:
+        mode === "AUDI_PLACEHOLDERS_FROM_KICK_SAUBER_LAST_YEAR"
+          ? "Audi not present in current standings yet; using Kick Sauber drivers + constructor data from last year as placeholders (team label forced to Audi)."
+          : null,
+    },
     audi: {
       team: "Audi",
       teamLogoPng: audiLogo.ok ? audiLogo.pngUrl : null,
       teamLogoLocalPath: OUT_LOGO_PNG,
+      teamStanding, // ✅ team position + points
     },
-    drivers: driversOut,
+    lastRace: lastRaceInfo, // ✅ last race details
+    drivers: driversClean, // ✅ includes bestFinish per driver
   };
 
   await fs.writeFile(OUT_JSON, JSON.stringify(out, null, 2), "utf8");
-  console.log(`Wrote ${OUT_JSON} (${meta.mode})`);
+  console.log(`Wrote ${OUT_JSON} (${mode})`);
 }
 
 updateAudiStandings().catch((err) => {
