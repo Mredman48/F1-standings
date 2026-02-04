@@ -1,31 +1,47 @@
-name: Update Audi standings JSON
+name: Update Audi Standings (Hourly)
 
 on:
   schedule:
-    - cron: "20 */6 * * *" # every 6 hours
+    - cron: "0 * * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  build:
+  update-audi:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - run: npm install
+      - name: Install dependencies
+        run: npm install
 
-      - run: node updateAudiStandings.js
+      - name: Run updater
+        run: node updateAudiStandings.js
+
+      - name: Show generated files
+        run: |
+          ls -la
+          ls -la teamlogos || true
 
       - name: Commit and push if changed
         run: |
           git config user.name "f1-bot"
           git config user.email "f1-bot@users.noreply.github.com"
-          git add audi_standings.json
-          git diff --staged --quiet || git commit -m "Update Audi standings"
-          git push
+
+          git add f1_audi_standings.json teamlogos || true
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update Audi standings"
+            git push
+          fi
