@@ -4,6 +4,41 @@ import fs from "node:fs/promises";
 const UA = "f1-standings-bot/1.0 (GitHub Actions)";
 const OPENF1_BASE = "https://api.openf1.org/v1";
 
+const UA = "f1-standings-bot/1.0 (GitHub Actions)";
+
+async function fetchHtml(url) {
+  const res = await fetch(url, { headers: { "User-Agent": UA }, redirect: "follow" });
+  if (!res.ok) throw new Error(`HTTP ${res.status} from ${url}`);
+  return await res.text();
+}
+
+/**
+ * Pull the official F1 driver cutout from the driver profile page and upscale it.
+ * Returns a media.formula1.com image URL (webp) at your desired width.
+ */
+async function getF1DriverCutoutUrl(slug, width = 1400) {
+  const pageUrl = `https://www.formula1.com/en/drivers/${slug}`;
+  const html = await fetchHtml(pageUrl);
+
+  // Find the first "media.formula1.com/image/upload/....webp" on the page (driver cutout)
+  const m = html.match(/https:\/\/media\.formula1\.com\/image\/upload\/[^"']+?\.(?:webp|png|jpg|jpeg)/i);
+  if (!m) throw new Error(`Could not find driver image on ${pageUrl}`);
+
+  let imgUrl = m[0];
+
+  // If URL already has w_###, replace it; else inject w_WIDTH after c_fill,
+  if (imgUrl.match(/w_\d+/)) {
+    imgUrl = imgUrl.replace(/w_\d+/, `w_${width}`);
+  } else if (imgUrl.includes("c_fill")) {
+    imgUrl = imgUrl.replace("c_fill", `c_fill,w_${width}`);
+  } else {
+    // fallback: just prepend a width transform segment after /upload/
+    imgUrl = imgUrl.replace("/image/upload/", `/image/upload/w_${width}/`);
+  }
+
+  return imgUrl;
+}
+
 // ✅ Your exact logo URL (raw GitHub)
 const REDBULL_LOGO_PNG =
   "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/2025_red-bull_color_v2.png";
