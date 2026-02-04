@@ -1,6 +1,6 @@
 {
   "header": "Audi standings",
-  "generatedAtUtc": "2026-02-04T06:19:22.949Z",
+  "generatedAtUtc": "2026-02-04T06:21:16.421Z",
   "sources": {
     "openf1": "https://api.openf1.org/v1",
     "audiLogoSourcePng": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Audif1.com_logo17_%28cropped%29.svg/1920px-Audif1.com_logo17_%28cropped%29.svg.png",
@@ -8,24 +8,43 @@
       "https://api.jolpi.ca/ergast/f1",
       "https://ergast.com/api/f1"
     ],
-    "driverStandings": "https://api.jolpi.ca/ergast/f1/2025/driverstandings.json"
+    "driverStandings": "https://api.jolpi.ca/ergast/f1/2025/driverstandings.json",
+    "constructorStandings": "https://api.jolpi.ca/ergast/f1/2025/constructorstandings.json",
+    "lastRace": "https://api.jolpi.ca/ergast/f1/2025/last/results.json"
   },
   "meta": {
-    "season": "2025",
-    "round": "24",
     "mode": "AUDI_PLACEHOLDERS_FROM_KICK_SAUBER_LAST_YEAR",
-    "note": "Audi not present in current standings yet; showing Kick Sauber drivers from last year as placeholders (team label forced to Audi, Audi colored logo used).",
-    "sources": {
-      "driverStandings": "https://api.jolpi.ca/ergast/f1/2025/driverstandings.json"
-    }
+    "seasonUsed": "2025",
+    "roundUsed": "24",
+    "note": "Audi not present in current standings yet; using Kick Sauber drivers + constructor data from last year as placeholders (team label forced to Audi)."
   },
   "audi": {
     "team": "Audi",
     "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/audi_logo_colored.png",
-    "teamLogoLocalPath": "teamlogos/audi_logo_colored.png"
+    "teamLogoLocalPath": "teamlogos/audi_logo_colored.png",
+    "teamStanding": {
+      "team": "Audi",
+      "position": "P9",
+      "points": 70,
+      "wins": 0,
+      "originalTeam": "Sauber"
+    }
+  },
+  "lastRace": {
+    "season": "2025",
+    "round": "24",
+    "raceName": "Abu Dhabi Grand Prix",
+    "date": "2025-12-07",
+    "timeUtc": "13:00:00Z",
+    "circuit": {
+      "name": "Yas Marina Circuit",
+      "locality": "Abu Dhabi",
+      "country": "UAE"
+    }
   },
   "drivers": [
     {
+      "driverId": "hulkenberg",
       "position": "P11",
       "points": 51,
       "wins": 0,
@@ -36,9 +55,11 @@
       "team": "Audi",
       "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/N/NICHUL01_Nico_Hulkenberg/nichul01.png.transform/1col/image.png",
       "placeholder": true,
-      "originalTeam": "Sauber"
+      "originalTeam": "Sauber",
+      "bestFinish": "P3"
     },
     {
+      "driverId": "bortoleto",
       "position": "P19",
       "points": 19,
       "wins": 0,
@@ -49,7 +70,8 @@
       "team": "Audi",
       "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/G/GABBOR01_Gabriel_Bortoleto/gabbor01.png.transform/1col/image.png",
       "placeholder": true,
-      "originalTeam": "Sauber"
+      "originalTeam": "Sauber",
+      "bestFinish": "P6"
     }
   ]
 }
