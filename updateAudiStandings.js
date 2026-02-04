@@ -121,7 +121,6 @@ async function buildAudiLogoPngIfMissing() {
 /* -------------------- OpenF1 headshots (best-effort) -------------------- */
 
 async function getOpenF1HeadshotMap() {
-  // Uses latest session so it works even in offseason/preseason
   try {
     const sessions = await fetchJson(`${OPENF1_BASE}/sessions?session_key=latest`);
     const sessionKey = Array.isArray(sessions) ? sessions[0]?.session_key : null;
@@ -134,9 +133,7 @@ async function getOpenF1HeadshotMap() {
     const map = new Map();
     if (Array.isArray(drivers)) {
       for (const d of drivers) {
-        if (d?.driver_number != null) {
-          map.set(Number(d.driver_number), d.headshot_url || null);
-        }
+        if (d?.driver_number != null) map.set(Number(d.driver_number), d.headshot_url || null);
       }
     }
     return map;
@@ -179,7 +176,6 @@ async function getConstructorStandingsForSeason(seasonTag) {
 }
 
 async function getLastRaceForSeason(seasonTag) {
-  // returns null if no races
   const { data, url } = await fetchErgastWithFallback(`/${seasonTag}/last/results.json`);
   const race = safeGet(data, ["MRData", "RaceTable", "Races", 0]) || null;
   return { race, source: url };
@@ -201,13 +197,21 @@ function mapLastRaceInfo(race) {
   };
 }
 
-async function getDriverBestFinish(seasonTag, driverId) {
-  // Best finishing position (lowest numeric position) across completed races in the season.
-  // We fetch all results for that driver in the season and find min position.
+/**
+ * ✅ Return both:
+ * - best finishing position
+ * - the race where it happened (raceName, round, date, circuit)
+ */
+async function getDriverBestFinishWithRace(seasonTag, driverId) {
   try {
-    const { data } = await fetchErgastWithFallback(`/${seasonTag}/drivers/${driverId}/results.json?limit=500`);
+    const { data } = await fetchErgastWithFallback(
+      `/${seasonTag}/drivers/${driverId}/results.json?limit=500`
+    );
+
     const races = safeGet(data, ["MRData", "RaceTable", "Races"]) || [];
-    let best = null;
+
+    let bestPos = null;
+    let bestRace = null;
 
     for (const r of races) {
       const result = r?.Results?.[0];
@@ -216,10 +220,21 @@ async function getDriverBestFinish(seasonTag, driverId) {
       const pos = Number(result.position);
       if (!Number.isFinite(pos)) continue;
 
-      if (best === null || pos < best) best = pos;
+      if (bestPos === null || pos < bestPos) {
+        bestPos = pos;
+        bestRace = r;
+      }
     }
 
-    return best !== null ? `P${best}` : null;
+    if (bestPos === null || !bestRace) return null;
+
+    return {
+      position: `P${bestPos}`,
+      raceName: bestRace.raceName || null,
+      round: bestRace.round || null,
+      date: bestRace.date || null,
+      circuit: bestRace?.Circuit?.circuitName || null,
+    };
   } catch {
     return null;
   }
@@ -231,7 +246,7 @@ function mapDriverStanding(d, headshotMap, options = {}) {
   const num = driver.permanentNumber ? Number(driver.permanentNumber) : null;
 
   const obj = {
-    driverId: driver.driverId || null, // keep for best-finish lookup
+    driverId: driver.driverId || null,
     position: d.position ? `P${d.position}` : null,
     points: d.points ? Number(d.points) : null,
     wins: d.wins ? Number(d.wins) : null,
@@ -242,6 +257,7 @@ function mapDriverStanding(d, headshotMap, options = {}) {
     team: options.teamOverride || originalTeam,
     headshotUrl: num != null ? headshotMap.get(num) || null : null,
     placeholder: Boolean(options.placeholder),
+    bestFinish: null, // will be filled later
   };
 
   if (options.includeOriginalTeam) obj.originalTeam = originalTeam;
@@ -249,7 +265,6 @@ function mapDriverStanding(d, headshotMap, options = {}) {
 }
 
 function findConstructorRow(list, matchers) {
-  // Find the constructor row that matches any substring matcher in Constructor.name
   const row = (list || []).find((c) => {
     const name = c?.Constructor?.name || "";
     return teamMatchesAny(name, matchers);
@@ -274,16 +289,15 @@ async function updateAudiStandings() {
   const now = new Date();
   const prevYear = String(now.getUTCFullYear() - 1);
 
-  // Ensure logo exists
+  // Logo
   const audiLogo = await buildAudiLogoPngIfMissing();
 
   // Headshots
   const headshotMap = await getOpenF1HeadshotMap();
 
-  // Pull current season driver standings
+  // Current season drivers
   const currentDrivers = await getDriverStandingsForSeason("current");
 
-  // Do we have Audi in current standings?
   const audiDriversCurrent = currentDrivers.list
     .filter((d) => teamMatchesAny(teamNameFromDriverStandingRow(d), ["audi"]))
     .map((d) => mapDriverStanding(d, headshotMap, { teamOverride: "Audi" }));
@@ -301,7 +315,6 @@ async function updateAudiStandings() {
     mode = "AUDI_LIVE_FROM_CURRENT_SEASON";
     driverStandingsSource = currentDrivers.source;
   } else {
-    // Use Kick Sauber drivers from last year as placeholders
     const lastYearDrivers = await getDriverStandingsForSeason(prevYear);
 
     const sauberDrivers = lastYearDrivers.list
@@ -320,7 +333,6 @@ async function updateAudiStandings() {
     mode = "AUDI_PLACEHOLDERS_FROM_KICK_SAUBER_LAST_YEAR";
     driverStandingsSource = lastYearDrivers.source;
 
-    // Ultra fallback if nothing matched
     if (!driversOut || driversOut.length === 0) {
       driversOut = [
         {
@@ -357,37 +369,27 @@ async function updateAudiStandings() {
     }
   }
 
-  // Constructor standings for seasonUsed:
-  // If Audi live: match "audi"
-  // Else placeholder mode: match Sauber-ish names, but force display as Audi.
+  // Constructor standings for seasonUsed
   const ctor = await getConstructorStandingsForSeason(seasonUsed);
-  const ctorRow = mode === "AUDI_LIVE_FROM_CURRENT_SEASON"
-    ? findConstructorRow(ctor.list, ["audi"])
-    : findConstructorRow(ctor.list, SAUBER_MATCHERS);
+  const ctorRow =
+    mode === "AUDI_LIVE_FROM_CURRENT_SEASON"
+      ? findConstructorRow(ctor.list, ["audi"])
+      : findConstructorRow(ctor.list, SAUBER_MATCHERS);
 
   const teamStanding = mapConstructorRow(ctorRow, "Audi");
 
-  // Last race info for seasonUsed (may be null if no races)
+  // Last race info for seasonUsed
   const lastRace = await getLastRaceForSeason(seasonUsed);
   const lastRaceInfo = mapLastRaceInfo(lastRace.race);
 
-  // Best finish for each driver in seasonUsed (only if we have driverId)
-  // Two drivers only → safe to do sequentially
+  // ✅ Best finish + race info per driver
   for (const d of driversOut) {
     if (d?.driverId) {
-      d.bestFinish = await getDriverBestFinish(seasonUsed, d.driverId);
+      d.bestFinish = await getDriverBestFinishWithRace(seasonUsed, d.driverId);
     } else {
       d.bestFinish = null;
     }
   }
-
-  // Remove driverId from output if you don’t want it in Widgy (optional)
-  const driversClean = driversOut.map((d) => {
-    const copy = { ...d };
-    // keep driverId internal? If you want it hidden, uncomment next line:
-    // delete copy.driverId;
-    return copy;
-  });
 
   const out = {
     header: "Audi standings",
@@ -413,10 +415,10 @@ async function updateAudiStandings() {
       team: "Audi",
       teamLogoPng: audiLogo.ok ? audiLogo.pngUrl : null,
       teamLogoLocalPath: OUT_LOGO_PNG,
-      teamStanding, // ✅ team position + points
+      teamStanding,
     },
-    lastRace: lastRaceInfo, // ✅ last race details
-    drivers: driversClean, // ✅ includes bestFinish per driver
+    lastRace: lastRaceInfo,
+    drivers: driversOut,
   };
 
   await fs.writeFile(OUT_JSON, JSON.stringify(out, null, 2), "utf8");
