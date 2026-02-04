@@ -1,0 +1,48 @@
+{
+  "header": "Audi standings",
+  "generatedAtUtc": "2026-02-04T05:43:15.074Z",
+  "sources": {
+    "driverStandings": "https://api.jolpi.ca/ergast/f1/2025/driverstandings.json",
+    "openf1": "https://api.openf1.org/v1",
+    "audiTeamPage": "https://www.formula1.com/en/teams/audi",
+    "constructorStandings": "https://api.jolpi.ca/ergast/f1/2025/constructorstandings.json"
+  },
+  "meta": {
+    "season": "2025",
+    "round": "24",
+    "usedFallback": true,
+    "note": "No current season standings yet; using 2025."
+  },
+  "audi": {
+    "team": "Audi",
+    "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/audi_audi_v1.png",
+    "teamLogoNote": null,
+    "constructorStanding": null
+  },
+  "drivers": [
+    {
+      "position": "P?",
+      "points": 0,
+      "wins": 0,
+      "firstName": "Audi",
+      "lastName": "Driver 1",
+      "code": null,
+      "driverNumber": null,
+      "team": "Audi",
+      "headshotUrl": null,
+      "placeholder": true
+    },
+    {
+      "position": "P?",
+      "points": 0,
+      "wins": 0,
+      "firstName": "Audi",
+      "lastName": "Driver 2",
+      "code": null,
+      "driverNumber": null,
+      "team": "Audi",
+      "headshotUrl": null,
+      "placeholder": true
+    }
+  ]
+}
