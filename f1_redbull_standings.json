@@ -1,0 +1,36 @@
+{
+  "header": "Red Bull standings",
+  "generatedAtUtc": "2026-02-04T15:28:43.107Z",
+  "sources": {
+    "driverStandings": "https://api.jolpi.ca/ergast/f1/current/driverstandings.json",
+    "openf1": "https://api.openf1.org/v1"
+  },
+  "redbull": {
+    "team": "Red Bull",
+    "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/redbull_logo.png"
+  },
+  "drivers": [
+    {
+      "position": null,
+      "points": null,
+      "wins": null,
+      "firstName": "Max",
+      "lastName": "Verstappen",
+      "driverNumber": null,
+      "headshotUrl": null,
+      "bestResult": null,
+      "placeholder": true
+    },
+    {
+      "position": null,
+      "points": null,
+      "wins": null,
+      "firstName": "Isack",
+      "lastName": "Hadjar",
+      "driverNumber": null,
+      "headshotUrl": null,
+      "bestResult": null,
+      "placeholder": true
+    }
+  ]
+}
