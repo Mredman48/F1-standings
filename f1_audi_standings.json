@@ -1,48 +1,55 @@
 {
   "header": "Audi standings",
-  "generatedAtUtc": "2026-02-04T05:51:39.412Z",
+  "generatedAtUtc": "2026-02-04T06:04:44.952Z",
   "sources": {
-    "driverStandings": "https://api.jolpi.ca/ergast/f1/2025/driverstandings.json",
-    "constructorStandings": "https://api.jolpi.ca/ergast/f1/2025/constructorstandings.json",
     "openf1": "https://api.openf1.org/v1",
-    "audiLogoSourceWebp": "https://media.formula1.com/image/upload/c_fit,h_1024/q_auto/v1740000000/common/f1/2026/audi/2026audilogowhite.webp"
+    "audiLogoSourcePng": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Audif1.com_logo17_%28cropped%29.svg/1920px-Audif1.com_logo17_%28cropped%29.svg.png",
+    "ergastBases": [
+      "https://api.jolpi.ca/ergast/f1",
+      "https://ergast.com/api/f1"
+    ],
+    "driverStandings": "https://api.jolpi.ca/ergast/f1/2025/driverstandings.json"
   },
   "meta": {
     "season": "2025",
     "round": "24",
-    "usedFallback": true,
-    "note": "No current season standings yet; using 2025."
+    "mode": "AUDI_PLACEHOLDERS_FROM_KICK_SAUBER_LAST_YEAR",
+    "note": "Audi not present in current standings yet; showing Kick Sauber drivers from last year as placeholders (team label forced to Audi, Audi colored logo used).",
+    "sources": {
+      "driverStandings": "https://api.jolpi.ca/ergast/f1/2025/driverstandings.json"
+    }
   },
   "audi": {
     "team": "Audi",
-    "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/audi_logo_1024.png",
-    "teamLogoLocalPath": "teamlogos/audi_logo_1024.png",
-    "constructorStanding": null
+    "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/audi_logo_colored.png",
+    "teamLogoLocalPath": "teamlogos/audi_logo_colored.png"
   },
   "drivers": [
     {
-      "position": "P?",
-      "points": 0,
+      "position": "P11",
+      "points": 51,
       "wins": 0,
-      "firstName": "Audi",
-      "lastName": "Driver 1",
-      "code": null,
-      "driverNumber": null,
+      "firstName": "Nico",
+      "lastName": "Hülkenberg",
+      "code": "HUL",
+      "driverNumber": 27,
       "team": "Audi",
-      "headshotUrl": null,
-      "placeholder": true
+      "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/N/NICHUL01_Nico_Hulkenberg/nichul01.png.transform/1col/image.png",
+      "placeholder": true,
+      "originalTeam": "Sauber"
     },
     {
-      "position": "P?",
-      "points": 0,
+      "position": "P19",
+      "points": 19,
       "wins": 0,
-      "firstName": "Audi",
-      "lastName": "Driver 2",
-      "code": null,
-      "driverNumber": null,
+      "firstName": "Gabriel",
+      "lastName": "Bortoleto",
+      "code": "BOR",
+      "driverNumber": 5,
       "team": "Audi",
-      "headshotUrl": null,
-      "placeholder": true
+      "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/G/GABBOR01_Gabriel_Bortoleto/gabbor01.png.transform/1col/image.png",
+      "placeholder": true,
+      "originalTeam": "Sauber"
     }
   ]
 }
