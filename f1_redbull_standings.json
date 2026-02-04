@@ -1,21 +1,21 @@
 {
   "header": "Red Bull standings",
-  "generatedAtUtc": "2026-02-04T15:34:15.408Z",
+  "generatedAtUtc": "2026-02-04T15:39:03.397Z",
   "sources": {
+    "openf1": "https://api.openf1.org/v1",
     "driverStandings": "DUMMY",
     "constructorStandings": "DUMMY",
-    "lastRace": "DUMMY",
-    "openf1": "DUMMY"
+    "lastRace": "DUMMY"
   },
   "meta": {
-    "mode": "DUMMY_DATA_FOR_WIDGET_BUILD",
+    "mode": "DUMMY_DATA_REAL_HEADSHOTS",
     "seasonUsed": "2026",
     "roundUsed": "3",
-    "note": "All fields are populated with dummy data to help build the Widgy widget layout. Set DUMMY_MODE=false to switch to live data later."
+    "note": "All fields are populated with dummy values for widget building. Headshots are pulled from OpenF1 (latest session) when available."
   },
   "redbull": {
     "team": "Red Bull",
-    "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/redbull_logo.png",
+    "teamLogoPng": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/2025_red-bull_color_v2.png",
     "teamStanding": {
       "team": "Red Bull",
       "position": "P2",
@@ -38,15 +38,14 @@
   },
   "drivers": [
     {
-      "position": "P1",
-      "points": 58,
-      "wins": 2,
       "firstName": "Max",
       "lastName": "Verstappen",
       "code": "VER",
       "driverNumber": 1,
+      "position": "P1",
+      "points": 58,
+      "wins": 2,
       "team": "Red Bull",
-      "headshotUrl": "https://example.com/headshots/max_verstappen.png",
       "placeholder": true,
       "bestResult": {
         "position": "P1",
@@ -54,18 +53,18 @@
         "round": "1",
         "date": "2026-03-08",
         "circuit": "Albert Park Circuit"
-      }
+      },
+      "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/M/MAXVER01_Max_Verstappen/maxver01.png.transform/1col/image.png"
     },
     {
-      "position": "P15",
-      "points": 2,
-      "wins": 0,
       "firstName": "Isack",
       "lastName": "Hadjar",
       "code": "HAD",
       "driverNumber": 99,
+      "position": "P15",
+      "points": 2,
+      "wins": 0,
       "team": "Red Bull",
-      "headshotUrl": "https://example.com/headshots/isack_hadjar.png",
       "placeholder": true,
       "bestResult": {
         "position": "P8",
@@ -73,7 +72,8 @@
         "round": "2",
         "date": "2026-03-15",
         "circuit": "Jeddah Corniche Circuit"
-      }
+      },
+      "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/I/ISAHAD01_Isack_Hadjar/isahad01.png.transform/1col/image.png"
     }
   ]
 }
