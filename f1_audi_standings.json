@@ -1,11 +1,11 @@
 {
   "header": "Audi standings",
-  "generatedAtUtc": "2026-02-04T05:43:15.074Z",
+  "generatedAtUtc": "2026-02-04T05:51:39.412Z",
   "sources": {
     "driverStandings": "https://api.jolpi.ca/ergast/f1/2025/driverstandings.json",
+    "constructorStandings": "https://api.jolpi.ca/ergast/f1/2025/constructorstandings.json",
     "openf1": "https://api.openf1.org/v1",
-    "audiTeamPage": "https://www.formula1.com/en/teams/audi",
-    "constructorStandings": "https://api.jolpi.ca/ergast/f1/2025/constructorstandings.json"
+    "audiLogoSourceWebp": "https://media.formula1.com/image/upload/c_fit,h_1024/q_auto/v1740000000/common/f1/2026/audi/2026audilogowhite.webp"
   },
   "meta": {
     "season": "2025",
@@ -15,8 +15,8 @@
   },
   "audi": {
     "team": "Audi",
-    "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/audi_audi_v1.png",
-    "teamLogoNote": null,
+    "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/audi_logo_1024.png",
+    "teamLogoLocalPath": "teamlogos/audi_logo_1024.png",
     "constructorStanding": null
   },
   "drivers": [
