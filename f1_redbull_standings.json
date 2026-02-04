@@ -1,36 +1,79 @@
 {
   "header": "Red Bull standings",
-  "generatedAtUtc": "2026-02-04T15:28:43.107Z",
+  "generatedAtUtc": "2026-02-04T15:34:15.408Z",
   "sources": {
-    "driverStandings": "https://api.jolpi.ca/ergast/f1/current/driverstandings.json",
-    "openf1": "https://api.openf1.org/v1"
+    "driverStandings": "DUMMY",
+    "constructorStandings": "DUMMY",
+    "lastRace": "DUMMY",
+    "openf1": "DUMMY"
+  },
+  "meta": {
+    "mode": "DUMMY_DATA_FOR_WIDGET_BUILD",
+    "seasonUsed": "2026",
+    "roundUsed": "3",
+    "note": "All fields are populated with dummy data to help build the Widgy widget layout. Set DUMMY_MODE=false to switch to live data later."
   },
   "redbull": {
     "team": "Red Bull",
-    "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/redbull_logo.png"
+    "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/redbull_logo.png",
+    "teamStanding": {
+      "team": "Red Bull",
+      "position": "P2",
+      "points": 123,
+      "wins": 4,
+      "originalTeam": "Oracle Red Bull Racing"
+    }
+  },
+  "lastRace": {
+    "season": "2026",
+    "round": "3",
+    "raceName": "Gulf Air Bahrain Grand Prix 2026",
+    "date": "2026-03-29",
+    "timeUtc": "15:00:00Z",
+    "circuit": {
+      "name": "Bahrain International Circuit",
+      "locality": "Sakhir",
+      "country": "Bahrain"
+    }
   },
   "drivers": [
     {
-      "position": null,
-      "points": null,
-      "wins": null,
+      "position": "P1",
+      "points": 58,
+      "wins": 2,
       "firstName": "Max",
       "lastName": "Verstappen",
-      "driverNumber": null,
-      "headshotUrl": null,
-      "bestResult": null,
-      "placeholder": true
+      "code": "VER",
+      "driverNumber": 1,
+      "team": "Red Bull",
+      "headshotUrl": "https://example.com/headshots/max_verstappen.png",
+      "placeholder": true,
+      "bestResult": {
+        "position": "P1",
+        "raceName": "Australian Grand Prix 2026",
+        "round": "1",
+        "date": "2026-03-08",
+        "circuit": "Albert Park Circuit"
+      }
     },
     {
-      "position": null,
-      "points": null,
-      "wins": null,
+      "position": "P15",
+      "points": 2,
+      "wins": 0,
       "firstName": "Isack",
       "lastName": "Hadjar",
-      "driverNumber": null,
-      "headshotUrl": null,
-      "bestResult": null,
-      "placeholder": true
+      "code": "HAD",
+      "driverNumber": 99,
+      "team": "Red Bull",
+      "headshotUrl": "https://example.com/headshots/isack_hadjar.png",
+      "placeholder": true,
+      "bestResult": {
+        "position": "P8",
+        "raceName": "Saudi Arabian Grand Prix 2026",
+        "round": "2",
+        "date": "2026-03-15",
+        "circuit": "Jeddah Corniche Circuit"
+      }
     }
   ]
 }
