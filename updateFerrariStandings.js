@@ -9,39 +9,85 @@ const FERRARI_LOGO_PNG =
 
 const OUT_JSON = "f1_ferrari_standings.json";
 
-// ----------------- Helpers -----------------
+// ---------- Fetch helpers ----------
 
-async function fetchHtml(url) {
-  const res = await fetch(url, { headers: { "User-Agent": UA }, redirect: "follow" });
+async function fetchJson(url) {
+  const res = await fetch(url, {
+    headers: { "User-Agent": UA, Accept: "application/json" },
+    redirect: "follow",
+  });
+  const text = await res.text();
   if (!res.ok) throw new Error(`HTTP ${res.status} from ${url}`);
-  return await res.text();
+  return JSON.parse(text);
 }
 
-/**
- * Pull official F1 driver cutout URL from the driver profile page,
- * then increase width for higher-res.
- */
-async function getF1DriverCutoutUrl(slug, width = 1400) {
-  const pageUrl = `https://www.formula1.com/en/drivers/${slug}`;
-  const html = await fetchHtml(pageUrl);
-
-  const m = html.match(
-    /https:\/\/media\.formula1\.com\/image\/upload\/[^"']+?\.(?:webp|png|jpg|jpeg)/i
-  );
-  if (!m) throw new Error(`Could not find driver image on ${pageUrl}`);
-
-  let imgUrl = m[0];
-
-  if (imgUrl.match(/w_\d+/)) {
-    imgUrl = imgUrl.replace(/w_\d+/, `w_${width}`);
-  } else if (imgUrl.includes("c_fill")) {
-    imgUrl = imgUrl.replace("c_fill", `c_fill,w_${width}`);
-  } else {
-    imgUrl = imgUrl.replace("/image/upload/", `/image/upload/w_${width}/`);
+// Convert https://en.wikipedia.org/wiki/Max_Verstappen => "Max_Verstappen"
+function wikipediaTitleFromUrl(wikiUrl) {
+  try {
+    const u = new URL(wikiUrl);
+    const parts = u.pathname.split("/").filter(Boolean);
+    const idx = parts.indexOf("wiki");
+    if (idx === -1 || !parts[idx + 1]) return null;
+    return decodeURIComponent(parts[idx + 1]);
+  } catch {
+    return null;
   }
-
-  return imgUrl;
 }
+
+// Wikipedia title -> Wikidata QID
+async function getWikidataQidFromEnwikiTitle(title) {
+  const api =
+    `https://www.wikidata.org/w/api.php?action=wbgetentities` +
+    `&sites=enwiki&titles=${encodeURIComponent(title)}` +
+    `&props=sitelinks&format=json&origin=*`;
+
+  const data = await fetchJson(api);
+  const entities = data?.entities || {};
+  const firstKey = Object.keys(entities)[0];
+  if (!firstKey || firstKey === "-1") return null;
+  return firstKey; // QID like "Q173206"
+}
+
+// QID -> P18 Commons file name
+async function getCommonsFileFromQid(qid) {
+  const api =
+    `https://www.wikidata.org/w/api.php?action=wbgetclaims` +
+    `&entity=${encodeURIComponent(qid)}` +
+    `&property=P18&format=json&origin=*`;
+
+  const data = await fetchJson(api);
+  const claims = data?.claims?.P18;
+  const file = claims?.[0]?.mainsnak?.datavalue?.value;
+  return file || null;
+}
+
+// Commons file -> direct URL (optionally resized)
+function commonsFileToUrl(fileName, width = 900) {
+  const base = `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(
+    fileName
+  )}`;
+  return width ? `${base}?width=${width}` : base;
+}
+
+// Wikipedia URL -> Commons image URL (via Wikidata P18)
+async function getHeadshotFromWikipediaUrl(wikipediaUrl, width = 900) {
+  try {
+    const title = wikipediaTitleFromUrl(wikipediaUrl);
+    if (!title) return "-";
+
+    const qid = await getWikidataQidFromEnwikiTitle(title);
+    if (!qid) return "-";
+
+    const file = await getCommonsFileFromQid(qid);
+    if (!file) return "-";
+
+    return commonsFileToUrl(file, width);
+  } catch {
+    return "-";
+  }
+}
+
+// ---------- Placeholder builders ----------
 
 function dashBestResult() {
   return {
@@ -78,49 +124,45 @@ function dashTeamStanding(teamDisplay, originalTeam = "-") {
   };
 }
 
-// ----------------- Main -----------------
+// ---------- Main ----------
 
 async function updateFerrariStandings() {
   const now = new Date();
 
-  // Ferrari drivers (edit any time if you want different names)
+  // Ferrari drivers
+  // NOTE: Wikipedia URLs are stable and power the Wikidata -> Commons headshot pipeline.
   const driversConfig = [
     {
       firstName: "Charles",
       lastName: "Leclerc",
       code: "LEC",
       driverNumber: "16",
-      slug: "charles-leclerc",
+      wikipediaUrl: "https://en.wikipedia.org/wiki/Charles_Leclerc",
     },
     {
       firstName: "Lewis",
       lastName: "Hamilton",
       code: "HAM",
       driverNumber: "44",
-      slug: "lewis-hamilton",
+      wikipediaUrl: "https://en.wikipedia.org/wiki/Lewis_Hamilton",
     },
   ];
 
-  // High-res headshots (if a fetch fails, we set "-")
+  // Pull real headshots (Commons), keep every other datapoint as "-"
   const drivers = [];
   for (const d of driversConfig) {
-    let headshotUrl = "-";
-    try {
-      headshotUrl = await getF1DriverCutoutUrl(d.slug, 1400);
-    } catch (e) {
-      console.log(`Could not fetch headshot for ${d.slug}:`, e?.message || e);
-    }
+    const headshotUrl = await getHeadshotFromWikipediaUrl(d.wikipediaUrl, 900);
 
     drivers.push({
-      position: "-",      // placeholders as dashes
-      points: "-",        // placeholders as dashes
-      wins: "-",          // placeholders as dashes
+      position: "-",
+      points: "-",
+      wins: "-",
       firstName: d.firstName,
       lastName: d.lastName,
       code: d.code,
       driverNumber: d.driverNumber,
       team: "Ferrari",
-      headshotUrl,
+      headshotUrl, // ✅ real link (Commons) or "-" if unavailable
       placeholder: true,
       bestResult: dashBestResult(),
     });
@@ -131,17 +173,17 @@ async function updateFerrariStandings() {
     generatedAtUtc: now.toISOString(),
     sources: {
       ferrariLogo: FERRARI_LOGO_PNG,
-      headshots: "formula1.com driver profile pages (media.formula1.com)",
+      headshots: "Wikidata P18 -> Wikimedia Commons (Special:FilePath)",
       driverStandings: "DASH_PLACEHOLDERS",
       constructorStandings: "DASH_PLACEHOLDERS",
       lastRace: "DASH_PLACEHOLDERS",
     },
     meta: {
-      mode: "DASH_PLACEHOLDERS_REAL_HIGHRES_HEADSHOTS",
+      mode: "DASH_PLACEHOLDERS_REAL_HEADSHOTS_WIKIDATA_COMMONS",
       seasonUsed: "-",
       roundUsed: "-",
       note:
-        "All non-image datapoints are '-' placeholders for widget building. Driver headshots are pulled from official F1 driver pages in high resolution.",
+        "All non-image datapoints are '-' placeholders for widget building. Driver headshots are pulled via Wikidata (P18) and served from Wikimedia Commons.",
     },
     ferrari: {
       team: "Ferrari",
