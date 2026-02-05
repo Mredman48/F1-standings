@@ -16,6 +16,17 @@ const TEAMLOGOS_DIR = "teamlogos";
 // Turn on if Widgy/GitHub CDN is stubborn
 const CACHE_BUST = false;
 
+// ✅ Team name shortening (display names)
+const TEAM_NAME_OVERRIDES = {
+  "RB F1 Team": "VCARB",
+  "Haas F1 Team": "Haas",
+  "Alpine F1 Team": "Alpine",
+};
+
+function normalizeTeamName(name) {
+  return TEAM_NAME_OVERRIDES[name] || name;
+}
+
 // ✅ LOCAL-ONLY logo mapping: Ergast constructorId -> filename in /teamlogos
 // Update filenames to match your repo exactly.
 const TEAM_LOGOS_LOCAL = {
@@ -179,10 +190,12 @@ async function updateConstructors() {
   const constructors = pack.constructorRows.map((row) => {
     const c = row?.Constructor || {};
     const constructorId = (c.constructorId || "").toLowerCase();
+    const rawName = c.name || "-";
+    const shortName = normalizeTeamName(rawName);
 
     return {
       constructorId: constructorId || "-",
-      team: c.name || "-",
+      team: shortName, // ✅ shortened
       position: row?.position ? `P${row.position}` : "-",
       points: safeNum(row?.points),
       wins: safeNum(row?.wins),
