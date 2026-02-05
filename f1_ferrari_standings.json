@@ -1,13 +1,14 @@
 {
   "header": "Ferrari standings",
-  "generatedAtUtc": "2026-02-05T05:51:52.597Z",
+  "generatedAtUtc": "2026-02-05T07:18:19.278Z",
   "sources": {
     "ferrariLogo": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/2025_ferrari_color_v2.png",
-    "headshots": "OpenF1 drivers endpoint (headshot_url)"
+    "headshots": "OpenF1 drivers endpoint (headshot_url)",
+    "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png"
   },
   "meta": {
     "mode": "DASH_PLACEHOLDERS_REAL_HEADSHOTS",
-    "note": "All non-image datapoints are '-' placeholders for widget building. Headshots are downloaded and converted to PNG, then served from your repo."
+    "note": "All non-image datapoints are '-' placeholders for widget building. Headshots are downloaded and converted to PNG, then served from your repo. Driver number images are pulled from your repo folder driver-numbers."
   },
   "ferrari": {
     "team": "Ferrari",
@@ -41,6 +42,7 @@
       "lastName": "Leclerc",
       "code": "LEC",
       "driverNumber": "16",
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-16.png",
       "team": "Ferrari",
       "headshotUrl": "https://raw.githubusercontent.com/Mredman48/F1-standings/main/headshots/charles-leclerc.png",
       "bestResult": {
@@ -59,6 +61,7 @@
       "lastName": "Hamilton",
       "code": "HAM",
       "driverNumber": "44",
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-44.png",
       "team": "Ferrari",
       "headshotUrl": "https://raw.githubusercontent.com/Mredman48/F1-standings/main/headshots/lewis-hamilton.png",
       "bestResult": {
