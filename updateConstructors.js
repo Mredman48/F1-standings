@@ -1,474 +1,229 @@
-
+// updateConstructors.js
 import fs from "node:fs/promises";
-import path from "node:path";
-import sharp from "sharp";
 
 const UA = "f1-standings-bot/1.0 (GitHub Actions)";
-const BASES = ["https://api.jolpi.ca/ergast/f1"];
 
-// Your GitHub Pages base (where Widgy reads from)
-const PAGES_BASE = "https://mredman48.github.io/F1-standings";
+const ERGAST_BASES = ["https://api.jolpi.ca/ergast/f1", "https://ergast.com/api/f1"];
 
-// Folder committed to repo for PNG logos
-const TEAMLOGO_DIR = "teamlogos";
+// Output JSON (adjust if your repo uses a different name)
+const OUT_JSON = "f1_constructors_standings.json";
 
-// Bump this to force new filenames (Widgy cache bust)
-const LOGO_VERSION = "color_v2";
+// ✅ Force Mercedes logo everywhere (your exact file)
+const MERCEDES_LOGO_PNG =
+  "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/2025_mercedes_color_v2.png";
 
-// High-res download request from F1 CDN
-const LOGO_HEIGHT = 2048;
-const LOGO_QUALITY = 100;
+// --- optional: cache busting (helps Widgy + GitHub CDN) ---
+// If you want Widgy to ALWAYS refresh logos, set this true.
+const CACHE_BUST = false;
 
-// F1 CDN uses a version segment (often changes). We try to learn it from team pages.
-const DEFAULT_MEDIA_VERSION = "v1740000000";
+// ---------- fetch helpers ----------
 
-// Team name cleanup to match your naming preferences
-function cleanTeamName(name) {
-  const n = (name || "").trim();
-  if (/red bull racing/i.test(n)) return "Red Bull";
-  if (/RB F1 Team/i.test(n)) return "VCARB";
-  return n;
-}
-
-// Team colors (hex)
-const TEAM_HEX = {
-  "Red Bull": "#1E41FF",
-  "Ferrari": "#DC0000",
-  "Mercedes": "#00D2BE",
-  "McLaren": "#FF8700",
-  "Aston Martin": "#006F62",
-  "Alpine F1 Team": "#0090FF",
-  "Williams": "#005AFF",
-  "Haas F1 Team": "#B6BABD",
-  "Sauber": "#00E701",
-  "VCARB": "#2B4562",
-  "Audi": "#000000",
-  "Cadillac": "#111111",
-};
-
-// Formula1.com team page slug
-const TEAM_F1_PAGE_SLUG = {
-  "Red Bull": "red-bull-racing",
-  "Ferrari": "ferrari",
-  "Mercedes": "mercedes",
-  "McLaren": "mclaren",
-  "Aston Martin": "aston-martin",
-  "Alpine F1 Team": "alpine",
-  "Williams": "williams",
-  "Haas F1 Team": "haas",
-  "Sauber": "kick-sauber",
-  "VCARB": "racing-bulls",
-  "Audi": "audi",
-  "Cadillac": "cadillac",
-};
-
-/**
- * OFFICIAL F1 CDN "common/f1/{season}/{teamFolder}/" folder mapping.
- * These folder names are used in the media URL path.
- * (They’re not always identical to the team page slug.)
- */
-const TEAM_F1_MEDIA_FOLDER = {
-  "Red Bull": "redbullracing",
-  "Ferrari": "ferrari",
-  "Mercedes": "mercedes",
-  "McLaren": "mclaren",
-  "Aston Martin": "astonmartin",
-  "Alpine F1 Team": "alpine",
-  "Williams": "williams",
-  "Haas F1 Team": "haas",
-  "Sauber": "kicksauber",
-  "VCARB": "racingbulls",
-  "Audi": "audi",
-  // Cadillac folder naming on CDN may differ; we’ll scrape as fallback
-  "Cadillac": "cadillac",
-};
-
-/**
- * Preferred logo filename patterns to try (coloured first).
- */
-function logoFilenameCandidates(season, team) {
-  const folder = TEAM_F1_MEDIA_FOLDER[team];
-  if (!folder) return [];
-  return [
-    `${season}${folder}logo.webp`,       // coloured (often)
-    `${season}${folder}logolight.webp`,  // coloured/light
-    `${season}${folder}logowhite.webp`,  // white
-  ];
-}
-
-/* -------------------- utils -------------------- */
-
-async function ensureDir(dir) {
-  await fs.mkdir(dir, { recursive: true });
-}
-
-function makePagesUrl(relPath) {
-  return `${PAGES_BASE}/${relPath.split(path.sep).join("/")}`;
-}
-
-function safeFileSlug(s) {
-  return (s || "")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
-}
-
-function safeGet(obj, pathArr) {
-  return pathArr.reduce((acc, k) => (acc && acc[k] !== undefined ? acc[k] : undefined), obj);
-}
-
-async function fetchText(url) {
+async function fetchText(url, accept = "application/json") {
   const res = await fetch(url, {
-    headers: { "User-Agent": UA, Accept: "text/html,*/*" },
+    headers: { "User-Agent": UA, Accept: accept },
     redirect: "follow",
   });
-  if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${url}`);
-  return res.text();
-}
-
-async function fetchBuffer(url) {
-  const res = await fetch(url, {
-    headers: { "User-Agent": UA, Accept: "image/*,*/*" },
-    redirect: "follow",
-  });
-  if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${url}`);
-  const ab = await res.arrayBuffer();
-  return Buffer.from(ab);
+  const text = await res.text();
+  return { res, text };
 }
 
 async function fetchJson(url) {
-  const res = await fetch(url, {
-    headers: { "User-Agent": UA, Accept: "application/json" },
-  });
-  const text = await res.text();
-  let data;
-  try {
-    data = JSON.parse(text);
-  } catch {
-    throw new Error(`Non-JSON from ${url}: ${text.slice(0, 160)}`);
-  }
-  if (!res.ok) throw new Error(`HTTP ${res.status} from ${url}`);
-  return { data, url, status: res.status };
+  const { res, text } = await fetchText(url, "application/json");
+  if (!res.ok) throw new Error(`HTTP ${res.status} from ${url}\n${text.slice(0, 200)}`);
+  return JSON.parse(text);
 }
 
-async function fetchWithFallback(paths) {
+async function fetchErgastWithFallback(pathPart) {
   const attempts = [];
-  for (const base of BASES) {
-    for (const p of paths) {
-      const url = `${base}${p}`;
-      try {
-        const out = await fetchJson(url);
-        return { ...out, attempts };
-      } catch (e) {
-        attempts.push({ url, error: e?.message || String(e) });
-      }
+  for (const base of ERGAST_BASES) {
+    const url = `${base}${pathPart}`;
+    try {
+      const data = await fetchJson(url);
+      attempts.push({ url, status: 200, ok: true });
+      return { data, url, attempts };
+    } catch (e) {
+      attempts.push({ url, status: "ERR", ok: false, err: String(e?.message || e) });
     }
   }
-  throw new Error(`All fetch attempts failed: ${JSON.stringify(attempts, null, 2)}`);
+  const err = new Error(
+    `Failed Ergast fetch for ${pathPart}. Attempts: ${JSON.stringify(attempts)}`
+  );
+  err.attempts = attempts;
+  throw err;
 }
 
-/* -------------------- standings + fallback -------------------- */
+// ---------- Ergast parsers ----------
 
-function parseConstructorStandingsPayload(payload) {
-  const mr = payload?.MRData || {};
-  const season = mr?.StandingsTable?.season || null;
-  const round = mr?.StandingsTable?.round ?? null;
+function getStandingsListsFromErgast(data) {
+  return data?.MRData?.StandingsTable?.StandingsLists || [];
+}
 
-  const list =
-    safeGet(payload, ["MRData", "StandingsTable", "StandingsLists", 0, "ConstructorStandings"]) || [];
+function getRacesFromErgast(data) {
+  return data?.MRData?.RaceTable?.Races || [];
+}
 
-  const total = Number(mr.total || 0);
+// ---------- logo helpers ----------
+
+// Best-effort mapping to high quality colored logos.
+// (These can be swapped anytime; if one URL fails, you’ll just get null.)
+function buildF1MediaLogoUrl(season, teamSlug) {
+  // Example pattern you shared:
+  // https://media.formula1.com/image/upload/c_fit,h_64/q_auto/v1740000000/common/f1/2025/alpine/2025alpinelogowhite.webp
+  // We'll use colored if available; if not, these are still useful placeholders.
+  // NOTE: F1 media URLs are not guaranteed stable for every team/season.
+  return `https://media.formula1.com/image/upload/c_fit,h_256/q_auto/common/f1/${season}/${teamSlug}/${season}${teamSlug}logocolor.webp`;
+}
+
+// Hard map constructorId -> media folder slug (best-effort)
+const TEAM_SLUG = {
+  red_bull: "redbullracing",
+  ferrari: "ferrari",
+  mercedes: "mercedes",
+  mclaren: "mclaren",
+  aston_martin: "astonmartin",
+  alpine: "alpine",
+  williams: "williams",
+  haas: "haas",
+  sauber: "sauber",
+  rb: "rb",
+  kick_sauber: "sauber",
+  alfa: "sauber",
+  cadillac: "cadillac",
+};
+
+// If you already host stable PNG logos in your repo/pages, this is the best place to map them.
+const TEAM_LOGO_OVERRIDES = {
+  // ✅ FORCE Mercedes to your exact file name (used elsewhere)
+  mercedes: MERCEDES_LOGO_PNG,
+};
+
+function withCacheBust(url) {
+  if (!url) return url;
+  return CACHE_BUST ? `${url}${url.includes("?") ? "&" : "?"}v=${Date.now()}` : url;
+}
+
+function resolveTeamLogo({ constructorId, seasonUsed }) {
+  const id = String(constructorId || "").toLowerCase();
+
+  // 1) Hard override
+  if (TEAM_LOGO_OVERRIDES[id]) return withCacheBust(TEAM_LOGO_OVERRIDES[id]);
+
+  // 2) Best-effort F1 media mapping
+  const slug = TEAM_SLUG[id];
+  if (slug) return withCacheBust(buildF1MediaLogoUrl(seasonUsed || "2025", slug));
+
+  // 3) unknown -> null
+  return null;
+}
+
+// ---------- season fallback logic ----------
+
+async function loadSeasonPack(season) {
+  const cs = await fetchErgastWithFallback(`/${season}/constructorstandings.json`);
+  const lr = await fetchErgastWithFallback(`/${season}/last/results.json`);
+
+  const csLists = getStandingsListsFromErgast(cs.data);
+  const constructorRows = csLists?.[0]?.ConstructorStandings || [];
+
+  const lastRace = getRacesFromErgast(lr.data)?.[0] || null;
 
   return {
     season,
-    round,
-    total,
-    raw: Array.isArray(list) ? list : [],
+    constructorStandings: cs.data,
+    constructorStandingsUrl: cs.url,
+    lastRaceResults: lr.data,
+    lastRaceUrl: lr.url,
+    constructorRows,
+    lastRace,
   };
 }
 
-async function getStandingsWithFallback(now) {
-  const utcYear = now.getUTCFullYear();
-
-  const currentRes = await fetchWithFallback([
-    "/current/constructorstandings.json",
-    "/current/constructorStandings.json",
-  ]);
-  const currentParsed = parseConstructorStandingsPayload(currentRes.data);
-
-  const inferredCurrentSeason = currentParsed.season ? Number(currentParsed.season) : null;
-  const fallbackSeason = inferredCurrentSeason ? String(inferredCurrentSeason - 1) : String(utcYear - 1);
-
-  let used = {
-    tag: "current",
-    url: currentRes.url,
-    season: currentParsed.season,
-    round: currentParsed.round,
-    total: currentParsed.total,
-    raw: currentParsed.raw,
-    usedFallback: false,
-    note: null,
-  };
-
-  if (used.total === 0 || used.raw.length === 0) {
-    const prevRes = await fetchWithFallback([
-      `/${fallbackSeason}/constructorstandings.json`,
-      `/${fallbackSeason}/constructorStandings.json`,
-    ]);
-    const prevParsed = parseConstructorStandingsPayload(prevRes.data);
-
-    if (prevParsed.total > 0 && prevParsed.raw.length > 0) {
-      used = {
-        tag: fallbackSeason,
-        url: prevRes.url,
-        season: prevParsed.season || fallbackSeason,
-        round: prevParsed.round,
-        total: prevParsed.total,
-        raw: prevParsed.raw,
-        usedFallback: true,
-        note: `No constructor standings available for current season yet; showing ${fallbackSeason} season instead.`,
-      };
-    } else {
-      used.note = "No constructor standings available yet (season not started or standings not published).";
-    }
-  }
-
-  return used;
+function safeNum(x) {
+  const n = Number(x);
+  return Number.isFinite(n) ? n : "-";
 }
 
-async function getLastRaceForSeason(seasonTag) {
-  try {
-    const { data, url } = await fetchWithFallback([
-      `/${seasonTag}/last/results.json`,
-      `/${seasonTag}/last/Results.json`,
-    ]);
-
-    const race = safeGet(data, ["MRData", "RaceTable", "Races", 0]) || null;
-
-    return {
-      source: url,
-      season: race?.season ? Number(race.season) : null,
-      round: race?.round ? Number(race.round) : null,
-      name: race?.raceName || null,
-      date: race?.date || null,
-      timeUtc: race?.time || null,
-      circuit: race?.Circuit?.circuitName || null,
-      locality: race?.Circuit?.Location?.locality || null,
-      country: race?.Circuit?.Location?.country || null,
-    };
-  } catch {
-    return {
-      source: null,
-      season: null,
-      round: null,
-      name: null,
-      date: null,
-      timeUtc: null,
-      circuit: null,
-      locality: null,
-      country: null,
-    };
-  }
-}
-
-/* -------------------- F1 coloured logo builder -------------------- */
-
-function extractMediaVersionFromHtml(html) {
-  const m = html.match(/\/(v\d{6,})\//i);
-  return m ? m[1] : DEFAULT_MEDIA_VERSION;
-}
-
-// Scrape *any* logo(light/white) URL from a team page (used as robust fallback — Cadillac)
-function scrapeAnyLogoFromTeamPage(html, season) {
-  const re = new RegExp(
-    `https://media\\.formula1\\.com/image/upload[^"']+/common/f1/${season}/[^"']+?logo(?:light|white|)\\.webp`,
-    "ig"
-  );
-  const matches = html.match(re) || [];
-  // Prefer coloured/light if present
-  const light = matches.find((u) => /logolight\.webp/i.test(u));
-  return light || matches[0] || null;
-}
-
-function buildF1MediaUrl({ version, season, team, filename }) {
-  const folder = TEAM_F1_MEDIA_FOLDER[team];
-  if (!folder) return null;
-  const transforms = `c_fit,h_${LOGO_HEIGHT},q_${LOGO_QUALITY}`;
-  return `https://media.formula1.com/image/upload/${transforms}/${version}/common/f1/${season}/${folder}/${filename}`;
-}
-
-async function findBestColouredLogoWebpUrl({ season, team }) {
-  const pageSlug = TEAM_F1_PAGE_SLUG[team];
-  let version = DEFAULT_MEDIA_VERSION;
-  let pageHtml = null;
-
-  if (pageSlug) {
-    try {
-      pageHtml = await fetchText(`https://www.formula1.com/en/teams/${pageSlug}`);
-      version = extractMediaVersionFromHtml(pageHtml) || DEFAULT_MEDIA_VERSION;
-    } catch {
-      // ignore
-    }
-  }
-
-  // 1) Try predictable official CDN filenames first
-  const candidates = logoFilenameCandidates(season, team);
-  for (const filename of candidates) {
-    const url = buildF1MediaUrl({ version, season, team, filename });
-    if (!url) continue;
-    try {
-      await fetchBuffer(url);
-      return { url, version, filename, strategy: "pattern" };
-    } catch {
-      // try next
-    }
-  }
-
-  // 2) Fallback: scrape the team page for an actual logo URL and then upgrade transforms
-  if (pageHtml) {
-    const scraped = scrapeAnyLogoFromTeamPage(pageHtml, season);
-    if (scraped) {
-      // Upgrade transforms by rewriting h_ / q_
-      let u = scraped;
-      try {
-        u = decodeURIComponent(u);
-      } catch {}
-      u = u.replace(/h_\d+/i, `h_${LOGO_HEIGHT}`).replace(/q_auto/i, `q_${LOGO_QUALITY}`);
-      if (!/\/q_\d+/.test(u) && /\/image\/upload\//.test(u)) {
-        u = u.replace("/image/upload/", `/image/upload/q_${LOGO_QUALITY}/`);
-      }
-      try {
-        await fetchBuffer(u);
-        return { url: u, version, filename: "scraped", strategy: "scrape" };
-      } catch {
-        // fallthrough
-      }
-    }
-  }
-
-  return { url: null, version, filename: null, strategy: null };
-}
-
-async function getOrBuildTeamLogoPng({ season, team }) {
-  const outRel = `${TEAMLOGO_DIR}/${season}_${safeFileSlug(team)}_${LOGO_VERSION}.png`;
-  const outPath = path.join(outRel);
-
-  // Reuse if already generated
-  try {
-    await fs.access(outPath);
-    return { ok: true, pngUrl: makePagesUrl(outRel), note: "cached" };
-  } catch {
-    // continue
-  }
-
-  const found = await findBestColouredLogoWebpUrl({ season, team });
-  if (!found.url) {
-    return { ok: false, pngUrl: null, note: "No suitable logo found on official F1 CDN." };
-  }
-
-  const webpBuf = await fetchBuffer(found.url);
-
-  await ensureDir(TEAMLOGO_DIR);
-
-  const pngBuf = await sharp(webpBuf)
-    .png({ quality: 100, compressionLevel: 9 })
-    .toBuffer();
-
-  await fs.writeFile(outPath, pngBuf);
-
-  return { ok: true, pngUrl: makePagesUrl(outRel), note: `${found.strategy}:${found.filename}` };
-}
-
-/* -------------------- output mapping -------------------- */
-
-function mapConstructorStanding(cs) {
-  const ctor = cs?.Constructor || {};
-  const team = cleanTeamName(ctor?.name || ctor?.Name || "");
-  return {
-    position: cs.position ? Number(cs.position) : null,
-    positionText: cs.position ? `P${cs.position}` : null,
-    points: cs.points ? Number(cs.points) : null,
-    wins: cs.wins ? Number(cs.wins) : null,
-    team: team || null,
-    teamHex: TEAM_HEX[team] || null,
-    teamLogoPng: null,
-    _teamKey: team,
-  };
-}
-
-/* -------------------- main -------------------- */
+// ---------- main ----------
 
 async function updateConstructors() {
   const now = new Date();
-  const used = await getStandingsWithFallback(now);
 
-  // Determine season string for F1 CDN path
-  const seasonNum = used.season ? Number(used.season) : null;
-  const seasonStr =
-    seasonNum ? String(seasonNum) : used.tag === "current" ? String(now.getUTCFullYear()) : String(used.tag);
+  // Try current first, then fallback to previous season (2025)
+  let pack = await loadSeasonPack("current");
 
-  const lastRace = await getLastRaceForSeason(used.tag);
-
-  let constructors = used.raw.map(mapConstructorStanding);
-
-  // Build logos -> PNG hosted by your GitHub Pages
-  for (const c of constructors) {
-    const team = c._teamKey;
-    try {
-      const result = await getOrBuildTeamLogoPng({ season: seasonStr, team });
-      c.teamLogoPng = result.pngUrl;
-      c.logoNote = result.ok ? null : result.note;
-    } catch (e) {
-      c.teamLogoPng = null;
-      c.logoNote = e?.message || String(e);
-    }
-    delete c._teamKey;
+  if (!Array.isArray(pack.constructorRows) || pack.constructorRows.length === 0) {
+    pack = await loadSeasonPack("2025");
   }
 
-  // If fewer than 11 teams, add Cadillac placeholder at the end (P11 if there are 10)
-  if (constructors.length < 11) {
-    const position = constructors.length + 1;
-    const cadLogo = await getOrBuildTeamLogoPng({ season: seasonStr, team: "Cadillac" });
+  const seasonUsed = pack.season === "current" ? String(pack.lastRace?.season || "current") : "2025";
+  const roundUsed = String(pack.lastRace?.round || "-");
 
-    constructors.push({
+  const lastRaceOut = pack.lastRace
+    ? {
+        season: String(pack.lastRace.season || seasonUsed),
+        round: String(pack.lastRace.round || "-"),
+        raceName: pack.lastRace.raceName || "-",
+        date: pack.lastRace.date || "-",
+        timeUtc: pack.lastRace.time || "-",
+        circuit: {
+          name: pack.lastRace?.Circuit?.circuitName || "-",
+          locality: pack.lastRace?.Circuit?.Location?.locality || "-",
+          country: pack.lastRace?.Circuit?.Location?.country || "-",
+        },
+      }
+    : {
+        season: String(seasonUsed),
+        round: "-",
+        raceName: "-",
+        date: "-",
+        timeUtc: "-",
+        circuit: { name: "-", locality: "-", country: "-" },
+      };
+
+  const constructors = pack.constructorRows.map((row) => {
+    const c = row?.Constructor || {};
+    const constructorId = (c.constructorId || "").toLowerCase();
+
+    const teamName = c.name || "-";
+    const position = row?.position ? `P${row.position}` : "-";
+    const points = safeNum(row?.points);
+    const wins = safeNum(row?.wins);
+
+    const teamLogoPng = resolveTeamLogo({ constructorId, seasonUsed });
+
+    return {
+      constructorId: constructorId || "-",
+      team: teamName,
       position,
-      positionText: `P${position}`,
-      points: 0,
-      wins: 0,
-      team: "Cadillac",
-      teamHex: TEAM_HEX["Cadillac"] || "#111111",
-      teamLogoPng: cadLogo.ok ? cadLogo.pngUrl : null,
-      dummy: true,
-      note: "Placeholder until standings include Cadillac",
-    });
-  }
+      points,
+      wins,
+      teamLogoPng, // ✅ Mercedes will always be your provided link
+    };
+  });
 
   const out = {
-    header: `${now.getUTCFullYear()} constructors standings`,
+    header: "Constructors standings",
     generatedAtUtc: now.toISOString(),
-    source: { constructors: used.url },
-    meta: {
-      usedSeasonTag: used.tag,
-      season: seasonNum ? seasonNum : null,
-      round: used.round !== null && used.round !== undefined ? Number(used.round) : null,
-      total: used.total,
-      usedFallback: used.usedFallback,
-      note: used.note,
-      logos: {
-        source: "formula1.com official CDN",
-        format: "png",
-        heightRequested: LOGO_HEIGHT,
-        qualityRequested: LOGO_QUALITY,
-        folder: TEAMLOGO_DIR,
-        version: LOGO_VERSION,
-      },
+    sources: {
+      ergastBases: ERGAST_BASES,
+      constructorStandings: pack.constructorStandingsUrl,
+      lastRace: pack.lastRaceUrl,
+      mercedesLogoOverride: MERCEDES_LOGO_PNG,
     },
-    lastRace,
+    meta: {
+      seasonUsed: String(seasonUsed),
+      roundUsed: String(roundUsed),
+      note:
+        pack.season === "current"
+          ? "Pulled current constructor standings."
+          : "Current season standings unavailable; fell back to 2025.",
+    },
+    lastRace: lastRaceOut,
     constructors,
   };
 
-  await fs.writeFile("f1_constructor_standings.json", JSON.stringify(out, null, 2), "utf8");
-  console.log(`Wrote f1_constructor_standings.json (seasonTag=${used.tag}, season=${seasonStr})`);
+  await fs.writeFile(OUT_JSON, JSON.stringify(out, null, 2), "utf8");
+  console.log(`Wrote ${OUT_JSON}`);
 }
 
 updateConstructors().catch((err) => {
