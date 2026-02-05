@@ -23,6 +23,13 @@ jobs:
           ref: main
           fetch-depth: 0
 
+      - name: Ensure branch is up-to-date
+        run: |
+          set -e
+          git checkout main
+          git fetch origin main
+          git pull --rebase origin main
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -49,12 +56,6 @@ jobs:
           git config user.name "f1-bot"
           git config user.email "f1-bot@users.noreply.github.com"
 
-          # Ensure we're on main and up to date
-          git checkout main
-          git fetch origin main
-          git pull --rebase origin main
-
-          # ✅ Add JSON + generated PNGs
           git add f1_ferrari_standings.json headshots || true
 
           if git diff --cached --quiet; then
@@ -64,9 +65,10 @@ jobs:
 
           git commit -m "Update Ferrari standings + headshots"
 
-          # Push with retry in case another workflow pushed first
+          # Push with retry (if another workflow pushed after our earlier rebase)
           if ! git push origin main; then
-            echo "Push failed (race condition). Retrying..."
-            git pull --rebase origin main
+            echo "Push failed (race condition). Rebasing and retrying..."
+            git fetch origin main
+            git rebase origin/main
             git push origin main
           fi
