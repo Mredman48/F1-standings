@@ -5,6 +5,11 @@ on:
     - cron: "0 * * * *"
   workflow_dispatch:
 
+# Prevent overlapping runs of THIS workflow (reduces push collisions)
+concurrency:
+  group: audi-standings
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
@@ -34,6 +39,8 @@ jobs:
 
       - name: Commit and push if changed
         run: |
+          set -e
+
           git config user.name "f1-bot"
           git config user.email "f1-bot@users.noreply.github.com"
 
@@ -41,7 +48,19 @@ jobs:
 
           if git diff --cached --quiet; then
             echo "No changes to commit."
-          else
-            git commit -m "Update Audi standings"
-            git push
+            exit 0
+          fi
+
+          git commit -m "Update Audi standings"
+
+          # Sync with remote to avoid 'fetch first' failures
+          git fetch origin main
+          git rebase origin/main
+
+          # Push (retry once in case another workflow beat us again)
+          if ! git push origin HEAD:main; then
+            echo "Push failed (race condition). Retrying..."
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
           fi
