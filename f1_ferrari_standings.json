@@ -1,0 +1,80 @@
+{
+  "header": "Ferrari standings",
+  "generatedAtUtc": "2026-02-05T04:49:07.591Z",
+  "sources": {
+    "ferrariLogo": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/2025_ferrari_color_v2.png",
+    "headshots": "formula1.com driver profile pages (media.formula1.com)",
+    "driverStandings": "DASH_PLACEHOLDERS",
+    "constructorStandings": "DASH_PLACEHOLDERS",
+    "lastRace": "DASH_PLACEHOLDERS"
+  },
+  "meta": {
+    "mode": "DASH_PLACEHOLDERS_REAL_HIGHRES_HEADSHOTS",
+    "seasonUsed": "-",
+    "roundUsed": "-",
+    "note": "All non-image datapoints are '-' placeholders for widget building. Driver headshots are pulled from official F1 driver pages in high resolution."
+  },
+  "ferrari": {
+    "team": "Ferrari",
+    "teamLogoPng": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/2025_ferrari_color_v2.png",
+    "teamStanding": {
+      "team": "Ferrari",
+      "position": "-",
+      "points": "-",
+      "wins": "-",
+      "originalTeam": "Scuderia Ferrari"
+    }
+  },
+  "lastRace": {
+    "season": "-",
+    "round": "-",
+    "raceName": "-",
+    "date": "-",
+    "timeUtc": "-",
+    "circuit": {
+      "name": "-",
+      "locality": "-",
+      "country": "-"
+    }
+  },
+  "drivers": [
+    {
+      "position": "-",
+      "points": "-",
+      "wins": "-",
+      "firstName": "Charles",
+      "lastName": "Leclerc",
+      "code": "LEC",
+      "driverNumber": "16",
+      "team": "Ferrari",
+      "headshotUrl": "https://media.formula1.com/image/upload/c_lfill,w_1400/q_auto/v1740000000/fom-website/static-assets/2026/races/card/pre-season-testing.webp",
+      "placeholder": true,
+      "bestResult": {
+        "position": "-",
+        "raceName": "-",
+        "round": "-",
+        "date": "-",
+        "circuit": "-"
+      }
+    },
+    {
+      "position": "-",
+      "points": "-",
+      "wins": "-",
+      "firstName": "Lewis",
+      "lastName": "Hamilton",
+      "code": "HAM",
+      "driverNumber": "44",
+      "team": "Ferrari",
+      "headshotUrl": "https://media.formula1.com/image/upload/c_lfill,w_1400/q_auto/v1740000000/fom-website/static-assets/2026/races/card/pre-season-testing.webp",
+      "placeholder": true,
+      "bestResult": {
+        "position": "-",
+        "raceName": "-",
+        "round": "-",
+        "date": "-",
+        "circuit": "-"
+      }
+    }
+  ]
+}
