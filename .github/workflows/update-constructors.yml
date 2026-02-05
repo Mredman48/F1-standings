@@ -2,7 +2,7 @@ name: Update Constructors Standings (Hourly)
 
 on:
   schedule:
-    - cron: "0 * * * *" # every hour
+    - cron: "0 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -23,6 +23,13 @@ jobs:
           ref: main
           fetch-depth: 0
           persist-credentials: true
+
+      # ✅ IMPORTANT: sync BEFORE generating files (working tree must be clean)
+      - name: Sync with remote
+        run: |
+          set -e
+          git fetch origin main
+          git pull --rebase origin main
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -49,14 +56,6 @@ jobs:
           git config user.name "f1-bot"
           git config user.email "f1-bot@users.noreply.github.com"
 
-          # Ensure we're on main (not detached)
-          git checkout -B main
-
-          # Sync with remote in case another workflow pushed first
-          git fetch origin main
-          git pull --rebase origin main
-
-          # Stage outputs (NOTE: plural filename)
           git add f1_constructors_standings.json teamlogos || true
 
           if git diff --cached --quiet; then
@@ -66,7 +65,7 @@ jobs:
 
           git commit -m "Update F1 constructors standings"
 
-          # Push; if race condition happens, rebase and retry once
+          # Push; if another workflow pushed first, rebase and retry once
           if ! git push origin main; then
             echo "Push failed, retrying after rebase..."
             git pull --rebase origin main
