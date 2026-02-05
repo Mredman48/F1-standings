@@ -1,18 +1,9 @@
 {
   "header": "Ferrari standings",
-  "generatedAtUtc": "2026-02-05T05:36:17.133Z",
+  "generatedAtUtc": "2026-02-05T05:41:18.438Z",
   "sources": {
     "ferrariLogo": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/2025_ferrari_color_v2.png",
-    "headshots": "Official F1 media cutouts from formula1.com",
-    "driverStandings": "DASH_PLACEHOLDERS",
-    "constructorStandings": "DASH_PLACEHOLDERS",
-    "lastRace": "DASH_PLACEHOLDERS"
-  },
-  "meta": {
-    "mode": "OFFICIAL_HEADSHOTS_PNG",
-    "seasonUsed": "-",
-    "roundUsed": "-",
-    "note": "Driver profile photos are real cutouts from the official F1 site in PNG with transparent backgrounds."
+    "headshots": "Scraped from formula1.com pages; downloaded from media.formula1.com and converted to PNG"
   },
   "ferrari": {
     "team": "Ferrari",
@@ -22,7 +13,7 @@
       "position": "-",
       "points": "-",
       "wins": "-",
-      "originalTeam": "-"
+      "originalTeam": "Scuderia Ferrari"
     }
   },
   "lastRace": {
@@ -45,10 +36,9 @@
       "firstName": "Charles",
       "lastName": "Leclerc",
       "code": "LEC",
-      "driverNumber": "-",
+      "driverNumber": "16",
       "team": "Ferrari",
-      "headshotUrl": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/headshots/charles-leclerc_1024.png",
-      "placeholder": true,
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/charles-leclerc_1024.png",
       "bestResult": {
         "position": "-",
         "raceName": "-",
@@ -64,10 +54,9 @@
       "firstName": "Lewis",
       "lastName": "Hamilton",
       "code": "HAM",
-      "driverNumber": "-",
+      "driverNumber": "44",
       "team": "Ferrari",
-      "headshotUrl": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/headshots/lewis-hamilton_1024.png",
-      "placeholder": true,
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lewis-hamilton_1024.png",
       "bestResult": {
         "position": "-",
         "raceName": "-",
