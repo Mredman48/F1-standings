@@ -1,5 +1,7 @@
 // updateRedBullStandings.js
 import fs from "node:fs/promises";
+import path from "node:path";
+import sharp from "sharp";
 
 const UA = "f1-standings-bot/1.0 (GitHub Actions)";
 const OPENF1_BASE = "https://api.openf1.org/v1";
@@ -11,191 +13,212 @@ const REDBULL_LOGO_PNG =
 // Output JSON
 const OUT_JSON = "f1_redbull_standings.json";
 
-// If OpenF1 can’t supply a headshot, we use a harmless placeholder.
-// Replace this with any image you want (or one you host in your repo).
-const FALLBACK_HEADSHOT =
-  "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/placeholder_headshot.png";
+// Where we store downloaded headshots
+const HEADSHOTS_DIR = "headshots";
 
-async function fetchText(url, headers = {}) {
+// GitHub Pages base (Widgy-friendly)
+const PAGES_BASE = "https://mredman48.github.io/F1-standings";
+
+// ---------- Helpers ----------
+
+async function fetchJson(url) {
   const res = await fetch(url, {
-    headers: { "User-Agent": UA, ...headers },
+    headers: { "User-Agent": UA, Accept: "application/json" },
     redirect: "follow",
   });
   const text = await res.text();
-  return { res, text };
+  if (!res.ok) throw new Error(`HTTP ${res.status} from ${url}\n${text.slice(0, 200)}`);
+  return JSON.parse(text);
 }
 
-async function fetchJson(url) {
-  const { res, text } = await fetchText(url, { Accept: "application/json" });
-  let data;
+async function fetchBinary(url) {
+  const res = await fetch(url, { headers: { "User-Agent": UA }, redirect: "follow" });
+  if (!res.ok) throw new Error(`HTTP ${res.status} downloading ${url}`);
+  return Buffer.from(await res.arrayBuffer());
+}
+
+async function ensureDir(dir) {
+  await fs.mkdir(dir, { recursive: true });
+}
+
+async function exists(filePath) {
   try {
-    data = JSON.parse(text);
+    await fs.stat(filePath);
+    return true;
   } catch {
-    throw new Error(`Non-JSON from ${url}: ${text.slice(0, 140)}`);
+    return false;
   }
-  if (!res.ok) throw new Error(`HTTP ${res.status} from ${url}`);
-  return data;
+}
+
+function toSlug(s) {
+  return String(s || "")
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+// Pick the most recent driver row if multiple returned
+function pickLatestByMeetingKey(rows) {
+  if (!Array.isArray(rows) || rows.length === 0) return null;
+  return rows.reduce((best, cur) => {
+    const a = Number(best?.meeting_key ?? -1);
+    const b = Number(cur?.meeting_key ?? -1);
+    return b > a ? cur : best;
+  }, rows[0]);
+}
+
+// ---------- OpenF1 headshot pipeline (download -> PNG -> repo) ----------
+
+async function getOpenF1HeadshotUrlByDriverNumber(driverNumber) {
+  // Works even offseason (OpenF1 returns historical rows); we pick the latest.
+  const url = `${OPENF1_BASE}/drivers?driver_number=${encodeURIComponent(driverNumber)}`;
+  try {
+    const rows = await fetchJson(url);
+    const latest = pickLatestByMeetingKey(rows);
+    return latest?.headshot_url || null;
+  } catch {
+    return null;
+  }
 }
 
 /**
- * Build a map of driver -> headshot url.
- * We use OpenF1’s latest session so it works during offseason too.
- * Keys included:
- * - driver_number (preferred)
- * - name keys (fallback)
+ * Downloads a headshot, converts to PNG, writes to /headshots/<slug>.png
+ * Returns Pages URL if we have a file, else null.
+ *
+ * No placeholders: if no OpenF1 headshot and no prior saved file, return null.
+ * If OpenF1 fails but we already have a file, keep returning the existing Pages URL.
  */
-async function getOpenF1HeadshotIndex() {
-  const idx = {
-    byNumber: new Map(),
-    byName: new Map(), // "first last" lowercase => url
+async function getOrUpdateHeadshotPng({ firstName, lastName, driverNumber }, width = 900) {
+  const slug = `${toSlug(firstName)}-${toSlug(lastName)}`;
+  const fileName = `${slug}.png`;
+  const localPath = path.join(HEADSHOTS_DIR, fileName);
+  const pagesUrl = `${PAGES_BASE}/${HEADSHOTS_DIR}/${fileName}`;
+
+  const openf1Url = await getOpenF1HeadshotUrlByDriverNumber(driverNumber);
+
+  if (!openf1Url) {
+    if (await exists(localPath)) return pagesUrl;
+    return null;
+  }
+
+  await ensureDir(HEADSHOTS_DIR);
+
+  const buf = await fetchBinary(openf1Url);
+
+  const png = await sharp(buf)
+    .resize({ width, withoutEnlargement: true })
+    .png()
+    .toBuffer();
+
+  await fs.writeFile(localPath, png);
+  return pagesUrl;
+}
+
+// ---------- Dash placeholder builders ----------
+
+function dashBestResult() {
+  return { position: "-", raceName: "-", round: "-", date: "-", circuit: "-" };
+}
+
+function dashLastRace() {
+  return {
+    season: "-",
+    round: "-",
+    raceName: "-",
+    date: "-",
+    timeUtc: "-",
+    circuit: { name: "-", locality: "-", country: "-" },
   };
-
-  try {
-    const sessions = await fetchJson(`${OPENF1_BASE}/sessions?session_key=latest`);
-    const sessionKey = Array.isArray(sessions) ? sessions[0]?.session_key : null;
-    if (!sessionKey) return idx;
-
-    const drivers = await fetchJson(
-      `${OPENF1_BASE}/drivers?session_key=${encodeURIComponent(sessionKey)}`
-    );
-
-    if (!Array.isArray(drivers)) return idx;
-
-    for (const d of drivers) {
-      const url = d?.headshot_url || null;
-      if (!url) continue;
-
-      if (d?.driver_number != null) {
-        idx.byNumber.set(Number(d.driver_number), url);
-      }
-
-      const first = (d?.first_name || "").trim();
-      const last = (d?.last_name || "").trim();
-      const full = `${first} ${last}`.trim().toLowerCase();
-      if (full && full !== " ") idx.byName.set(full, url);
-    }
-
-    return idx;
-  } catch {
-    return idx;
-  }
 }
 
-function resolveHeadshot({ driverNumber, firstName, lastName }, headshotIndex) {
-  if (driverNumber != null) {
-    const byNum = headshotIndex.byNumber.get(Number(driverNumber));
-    if (byNum) return byNum;
-  }
-  const full = `${firstName} ${lastName}`.trim().toLowerCase();
-  const byName = headshotIndex.byName.get(full);
-  if (byName) return byName;
-
-  return FALLBACK_HEADSHOT;
+function dashTeamStanding() {
+  return {
+    team: "Red Bull",
+    position: "-",
+    points: "-",
+    wins: "-",
+    originalTeam: "-",
+  };
 }
 
-function buildDummyJson(headshotIndex) {
+// ---------- Build JSON (same structure, dashes) ----------
+
+async function buildDashJson() {
   const now = new Date();
 
-  // Dummy values (everything populated)
+  // Keep your same driver selection (Max + Isack)
+  // NOTE: You previously used 99 for Hadjar. If OpenF1 uses a different number,
+  // we still keep your structure; headshot will be null until OpenF1 supports it.
   const driversBase = [
     {
-      // Real headshot expected
       firstName: "Max",
       lastName: "Verstappen",
       code: "VER",
       driverNumber: 1,
-      // Dummy season stats
-      position: "P1",
-      points: 58,
-      wins: 2,
-      team: "Red Bull",
-      placeholder: true,
-      bestResult: {
-        position: "P1",
-        raceName: "Australian Grand Prix 2026",
-        round: "1",
-        date: "2026-03-08",
-        circuit: "Albert Park Circuit",
-      },
     },
     {
-      // Might not exist in OpenF1 yet; will fallback if not found
       firstName: "Isack",
       lastName: "Hadjar",
       code: "HAD",
       driverNumber: 99,
-      position: "P15",
-      points: 2,
-      wins: 0,
-      team: "Red Bull",
-      placeholder: true,
-      bestResult: {
-        position: "P8",
-        raceName: "Saudi Arabian Grand Prix 2026",
-        round: "2",
-        date: "2026-03-15",
-        circuit: "Jeddah Corniche Circuit",
-      },
     },
   ];
 
-  // Add resolved real headshotUrl fields
-  const drivers = driversBase.map((d) => ({
-    ...d,
-    headshotUrl: resolveHeadshot(
-      { driverNumber: d.driverNumber, firstName: d.firstName, lastName: d.lastName },
-      headshotIndex
-    ),
-  }));
+  const drivers = [];
+  for (const d of driversBase) {
+    const headshotUrl = await getOrUpdateHeadshotPng(d, 900);
+
+    drivers.push({
+      firstName: d.firstName,
+      lastName: d.lastName,
+      code: d.code,
+      driverNumber: d.driverNumber,
+
+      // dash placeholders (Ferrari-style)
+      position: "-",
+      points: "-",
+      wins: "-",
+      team: "Red Bull",
+      placeholder: true,
+      bestResult: dashBestResult(),
+
+      // ✅ either Pages URL or null; never a placeholder image
+      headshotUrl,
+    });
+  }
 
   return {
     header: "Red Bull standings",
     generatedAtUtc: now.toISOString(),
     sources: {
       openf1: OPENF1_BASE,
-      // These remain DUMMY so your widget doesn’t break when you later switch to live pulls.
-      driverStandings: "DUMMY",
-      constructorStandings: "DUMMY",
-      lastRace: "DUMMY",
+      driverStandings: "DASH_PLACEHOLDERS",
+      constructorStandings: "DASH_PLACEHOLDERS",
+      lastRace: "DASH_PLACEHOLDERS",
     },
     meta: {
-      mode: "DUMMY_DATA_REAL_HEADSHOTS",
-      seasonUsed: "2026",
-      roundUsed: "3",
+      mode: "DASH_PLACEHOLDERS_REAL_HEADSHOTS",
+      seasonUsed: "-",
+      roundUsed: "-",
       note:
-        "All fields are populated with dummy values for widget building. Headshots are pulled from OpenF1 (latest session) when available.",
+        "All fields are '-' placeholders for widget building. Headshots are pulled from OpenF1 when available, downloaded, converted to PNG, and stored in /headshots.",
     },
     redbull: {
       team: "Red Bull",
       teamLogoPng: REDBULL_LOGO_PNG,
-      teamStanding: {
-        team: "Red Bull",
-        position: "P2",
-        points: 123,
-        wins: 4,
-        originalTeam: "Oracle Red Bull Racing",
-      },
+      teamStanding: dashTeamStanding(),
     },
-    lastRace: {
-      season: "2026",
-      round: "3",
-      raceName: "Gulf Air Bahrain Grand Prix 2026",
-      date: "2026-03-29",
-      timeUtc: "15:00:00Z",
-      circuit: {
-        name: "Bahrain International Circuit",
-        locality: "Sakhir",
-        country: "Bahrain",
-      },
-    },
+    lastRace: dashLastRace(),
     drivers,
   };
 }
 
-async function updateRedBullStandings() {
-  const headshotIndex = await getOpenF1HeadshotIndex();
-  const out = buildDummyJson(headshotIndex);
+// ---------- Main ----------
 
+async function updateRedBullStandings() {
+  const out = await buildDashJson();
   await fs.writeFile(OUT_JSON, JSON.stringify(out, null, 2), "utf8");
   console.log(`Wrote ${OUT_JSON}`);
 }
