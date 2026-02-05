@@ -19,6 +19,13 @@ const HEADSHOTS_DIR = "headshots";
 // GitHub Pages base (Widgy-friendly)
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 
+// ✅ Driver number images folder + helper
+const DRIVER_NUMBER_FOLDER = "driver-numbers";
+function getDriverNumberImageUrl(driverNumber) {
+  if (driverNumber == null || driverNumber === "-" || driverNumber === "") return null;
+  return `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-${driverNumber}.png`;
+}
+
 // ---------- Helpers ----------
 
 async function fetchJson(url) {
@@ -148,22 +155,9 @@ function dashTeamStanding() {
 async function buildDashJson() {
   const now = new Date();
 
-  // Keep your same driver selection (Max + Isack)
-  // NOTE: You previously used 99 for Hadjar. If OpenF1 uses a different number,
-  // we still keep your structure; headshot will be null until OpenF1 supports it.
   const driversBase = [
-    {
-      firstName: "Max",
-      lastName: "Verstappen",
-      code: "VER",
-      driverNumber: 1,
-    },
-    {
-      firstName: "Isack",
-      lastName: "Hadjar",
-      code: "HAD",
-      driverNumber: 99,
-    },
+    { firstName: "Max", lastName: "Verstappen", code: "VER", driverNumber: 1 },
+    { firstName: "Isack", lastName: "Hadjar", code: "HAD", driverNumber: 99 },
   ];
 
   const drivers = [];
@@ -176,7 +170,9 @@ async function buildDashJson() {
       code: d.code,
       driverNumber: d.driverNumber,
 
-      // dash placeholders (Ferrari-style)
+      // ✅ NEW FIELD (your uploaded number images)
+      numberImageUrl: getDriverNumberImageUrl(d.driverNumber),
+
       position: "-",
       points: "-",
       wins: "-",
@@ -184,7 +180,6 @@ async function buildDashJson() {
       placeholder: true,
       bestResult: dashBestResult(),
 
-      // ✅ either Pages URL or null; never a placeholder image
       headshotUrl,
     });
   }
@@ -197,13 +192,14 @@ async function buildDashJson() {
       driverStandings: "DASH_PLACEHOLDERS",
       constructorStandings: "DASH_PLACEHOLDERS",
       lastRace: "DASH_PLACEHOLDERS",
+      driverNumbers: `${PAGES_BASE}/driver-numbers/driver-number-<number>.png`,
     },
     meta: {
       mode: "DASH_PLACEHOLDERS_REAL_HEADSHOTS",
       seasonUsed: "-",
       roundUsed: "-",
       note:
-        "All fields are '-' placeholders for widget building. Headshots are pulled from OpenF1 when available, downloaded, converted to PNG, and stored in /headshots.",
+        "All fields are '-' placeholders for widget building. Headshots are pulled from OpenF1 when available, downloaded, converted to PNG, and stored in /headshots. Driver number images are pulled from your repo folder driver-numbers.",
     },
     redbull: {
       team: "Red Bull",
