@@ -14,7 +14,7 @@ const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 const TEAMLOGOS_DIR = "teamlogos";
 
 // Turn on if Widgy/GitHub CDN is stubborn
-const CACHE_BUST = false;
+const CACHE_BUST = true;
 
 // ✅ Team name shortening (display names)
 const TEAM_NAME_OVERRIDES = {
