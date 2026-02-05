@@ -37,7 +37,7 @@ jobs:
           git config user.name "f1-bot"
           git config user.email "f1-bot@users.noreply.github.com"
 
-          git add f1_constructor_standings.json teamlogos
+          git add f1_constructors_standings.json teamlogos
 
           if git diff --cached --quiet; then
             echo "No changes to commit"
