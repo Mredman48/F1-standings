@@ -16,6 +16,13 @@ const HEADSHOTS_DIR = "headshots";
 // GitHub Pages base (Widgy-friendly)
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 
+// ✅ Driver number images (you uploaded these)
+const DRIVER_NUMBER_FOLDER = "driver-numbers";
+function getDriverNumberImageUrl(driverNumber) {
+  if (driverNumber == null || driverNumber === "-" || driverNumber === "") return null;
+  return `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-${driverNumber}.png`;
+}
+
 // Audi logo (you already use this file path in your JSON)
 const AUDI_LOGO_LOCAL = "teamlogos/audi_logo_colored.png";
 const AUDI_LOGO_PAGES = `${PAGES_BASE}/${AUDI_LOGO_LOCAL}`;
@@ -118,32 +125,29 @@ async function getOpenF1HeadshotUrlByDriverNumber(driverNumber) {
 }
 
 /**
- * Downloads OpenF1 headshot -> converts to PNG -> saves to /headshots/<slug>.png
- * Returns GitHub Pages URL OR null if not available.
- *
- * No placeholders: if no headshot_url, return null.
- * If previously saved PNG exists and OpenF1 fails, keep it by returning the Pages URL.
+ * ✅ UPDATED:
+ * - Use openF1Number for lookup if provided, otherwise driverNumber.
  */
-async function getOrUpdateHeadshotPng({ firstName, lastName, driverNumber }, width = 900) {
+async function getOrUpdateHeadshotPng(
+  { firstName, lastName, driverNumber, openF1Number },
+  width = 900
+) {
   const slug = `${toSlug(firstName)}-${toSlug(lastName)}`;
   const fileName = `${slug}.png`;
   const localPath = path.join(HEADSHOTS_DIR, fileName);
   const pagesUrl = `${PAGES_BASE}/${HEADSHOTS_DIR}/${fileName}`;
 
-  const openf1Url = await getOpenF1HeadshotUrlByDriverNumber(driverNumber);
+  const lookupNumber = openF1Number ?? driverNumber;
+  const openf1Url = await getOpenF1HeadshotUrlByDriverNumber(lookupNumber);
 
   if (!openf1Url) {
-    // If we already have a saved image from a prior run, keep using it.
     if (await exists(localPath)) return pagesUrl;
-    return null; // no placeholder
+    return null;
   }
 
   const buf = await fetchBinary(openf1Url);
-
   await ensureDir(HEADSHOTS_DIR);
 
-  // Convert to PNG; if source is already PNG/JPG/WEBP, this normalizes it.
-  // (Transparency only exists if the source contains it.)
   const png = await sharp(buf)
     .resize({ width, withoutEnlargement: true })
     .png()
@@ -160,7 +164,6 @@ async function ensureAudiLogo() {
   const local = AUDI_LOGO_LOCAL;
   if (await exists(local)) return;
 
-  // Download the colored Audi logo source and store as PNG (already PNG)
   const buf = await fetchBinary(AUDI_LOGO_SOURCE_PNG);
   await fs.writeFile(local, buf);
 }
@@ -172,12 +175,7 @@ async function updateAudiStandings() {
 
   await ensureAudiLogo();
 
-  // We want “current” if Audi exists, else fallback to previous season like your output.
-  // We’ll check current driver standings for constructor “audi” first; if not present, use 2025 “Sauber” placeholders.
-  const currentSeason = "current";
-
-  // Fetch current standings
-  let seasonUsed = currentSeason;
+  let seasonUsed = "current";
   let roundUsed = "-";
 
   let driverStandingsUrlUsed = null;
@@ -188,7 +186,6 @@ async function updateAudiStandings() {
   let constructorStandingsData = null;
   let lastRaceData = null;
 
-  // Helper to load a season set
   async function loadSeason(season) {
     const ds = await fetchErgastWithFallback(`/${season}/driverstandings.json`);
     const cs = await fetchErgastWithFallback(`/${season}/constructorstandings.json`);
@@ -203,11 +200,9 @@ async function updateAudiStandings() {
       constructor: cs.data,
       lastRace: lr.data,
       lastRaceRound: getRacesFromErgast(lr.data)?.[0]?.round || "-",
-      lastRaceSeason: getRacesFromErgast(lr.data)?.[0]?.season || season,
     };
   }
 
-  // Determine if Audi exists in current constructor standings
   let loaded = await loadSeason("current");
 
   const csLists = getStandingsListsFromErgast(loaded.constructor);
@@ -215,19 +210,16 @@ async function updateAudiStandings() {
   const audiInCurrent = cs.some((x) => (x?.Constructor?.constructorId || "").toLowerCase() === "audi");
 
   if (!audiInCurrent) {
-    // fallback season like your output: 2025
     loaded = await loadSeason("2025");
     seasonUsed = "2025";
   }
 
-  // Set roundUsed from last race
   roundUsed = String(loaded.lastRaceRound || "-");
 
   driverStandingsData = loaded.driver;
   constructorStandingsData = loaded.constructor;
   lastRaceData = loaded.lastRace;
 
-  // Pull last race details (same shape as your output)
   const lastRace = getRacesFromErgast(lastRaceData)?.[0];
   const lastRaceOut = lastRace
     ? {
@@ -251,7 +243,6 @@ async function updateAudiStandings() {
         circuit: { name: "-", locality: "-", country: "-" },
       };
 
-  // Constructor standing: if Audi not present, use Sauber from 2025 but label as Audi (matches your note)
   const consLists = getStandingsListsFromErgast(constructorStandingsData);
   const consRows = consLists?.[0]?.ConstructorStandings || [];
 
@@ -279,12 +270,9 @@ async function updateAudiStandings() {
         originalTeam: "-",
       };
 
-  // Driver standings: if Audi not present, use 2025 Sauber drivers but label Audi
   const dsLists = getStandingsListsFromErgast(driverStandingsData);
   const dsRows = dsLists?.[0]?.DriverStandings || [];
 
-  // Collect drivers that belong to constructor in that season set
-  // In Ergast, each driver standing has Constructors[] array.
   function belongsToConstructor(row, constructorId) {
     const cs = row?.Constructors || [];
     return cs.some((c) => (c?.constructorId || "").toLowerCase() === constructorId);
@@ -292,38 +280,27 @@ async function updateAudiStandings() {
 
   const constructorIdForDrivers = audiInCurrent ? "audi" : "sauber";
   const driverRows = dsRows.filter((r) => belongsToConstructor(r, constructorIdForDrivers));
-
-  // For Audi placeholder mode, keep exactly 2 drivers if present
   const chosenDrivers = driverRows.slice(0, 2);
 
-  // Best finish placeholders:
-  // You already have bestFinish filled from last year in your working output.
-  // We will keep “bestFinish” but if we can’t compute it reliably here, we preserve dashes.
-  // (This does not affect your “only headshot change” request.)
-  function bestFinishFromRow(row) {
-    // Keep existing semantics: position + raceName + round + date + circuit
-    // If you already compute it in your current file, you can swap this back in.
-    return {
-      position: "-",
-      raceName: "-",
-      round: "-",
-      date: "-",
-      circuit: "-",
-    };
+  function bestFinishFromRow() {
+    return { position: "-", raceName: "-", round: "-", date: "-", circuit: "-" };
   }
 
-  // Build drivers output with ONLY headshot change (OpenF1 download+png)
   const driversOut = [];
+
   for (const r of chosenDrivers) {
     const d = r?.Driver;
     const firstName = d?.givenName || "-";
     const lastName = d?.familyName || "-";
     const driverNumber = d?.permanentNumber ? Number(d.permanentNumber) : null;
 
-    // ✅ new headshot pipeline (real only)
+    // ✅ Use openF1Number if you ever need to override (defaults to driverNumber)
     const headshotPagesUrl =
       driverNumber != null
-        ? await getOrUpdateHeadshotPng({ firstName, lastName, driverNumber }, 900)
+        ? await getOrUpdateHeadshotPng(
+            { firstName, lastName, driverNumber, openF1Number: driverNumber },
+            900
+          )
         : null;
 
     driversOut.push({
@@ -335,15 +312,18 @@ async function updateAudiStandings() {
       lastName,
       code: d?.code || "-",
       driverNumber: driverNumber ?? "-",
+
+      // ✅ driver-number images you uploaded
+      numberImageUrl: getDriverNumberImageUrl(driverNumber ?? "-"),
+
       team: "Audi",
-      headshotUrl: headshotPagesUrl, // ✅ either Pages URL or null (no placeholder)
-      placeholder: !audiInCurrent, // matches your “placeholder mode”
+      headshotUrl: headshotPagesUrl,
+      placeholder: !audiInCurrent,
       bestFinish: bestFinishFromRow(r),
-      originalTeam: (r?.Constructors?.[0]?.name || "-"),
+      originalTeam: r?.Constructors?.[0]?.name || "-",
     });
   }
 
-  // If placeholder mode and Ergast returns fewer than 2 drivers, pad with minimal rows (no headshot placeholders)
   while (driversOut.length < 2) {
     driversOut.push({
       driverId: "-",
@@ -354,6 +334,7 @@ async function updateAudiStandings() {
       lastName: "-",
       code: "-",
       driverNumber: "-",
+      numberImageUrl: null,
       team: "Audi",
       headshotUrl: null,
       placeholder: true,
@@ -362,7 +343,6 @@ async function updateAudiStandings() {
     });
   }
 
-  // Output JSON matches your structure
   const out = {
     header: "Audi standings",
     generatedAtUtc: now.toISOString(),
@@ -373,11 +353,10 @@ async function updateAudiStandings() {
       driverStandings: driverStandingsUrlUsed,
       constructorStandings: constructorStandingsUrlUsed,
       lastRace: lastRaceUrlUsed,
+      driverNumbers: `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-<number>.png`,
     },
     meta: {
-      mode: audiInCurrent
-        ? "AUDI_LIVE"
-        : "AUDI_PLACEHOLDERS_FROM_KICK_SAUBER_LAST_YEAR",
+      mode: audiInCurrent ? "AUDI_LIVE" : "AUDI_PLACEHOLDERS_FROM_KICK_SAUBER_LAST_YEAR",
       seasonUsed: String(seasonUsed),
       roundUsed: String(roundUsed),
       note: audiInCurrent
