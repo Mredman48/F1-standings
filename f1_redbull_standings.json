@@ -1,17 +1,18 @@
 {
   "header": "Red Bull standings",
-  "generatedAtUtc": "2026-02-05T17:35:43.051Z",
+  "generatedAtUtc": "2026-02-05T17:56:05.264Z",
   "sources": {
     "openf1": "https://api.openf1.org/v1",
     "driverStandings": "DASH_PLACEHOLDERS",
     "constructorStandings": "DASH_PLACEHOLDERS",
-    "lastRace": "DASH_PLACEHOLDERS"
+    "lastRace": "DASH_PLACEHOLDERS",
+    "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png"
   },
   "meta": {
     "mode": "DASH_PLACEHOLDERS_REAL_HEADSHOTS",
     "seasonUsed": "-",
     "roundUsed": "-",
-    "note": "All fields are '-' placeholders for widget building. Headshots are pulled from OpenF1 when available, downloaded, converted to PNG, and stored in /headshots."
+    "note": "All fields are '-' placeholders for widget building. Headshots are pulled from OpenF1 when available, downloaded, converted to PNG, and stored in /headshots. Driver number images are pulled from your repo folder driver-numbers."
   },
   "redbull": {
     "team": "Red Bull",
@@ -42,6 +43,7 @@
       "lastName": "Verstappen",
       "code": "VER",
       "driverNumber": 1,
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-1.png",
       "position": "-",
       "points": "-",
       "wins": "-",
@@ -61,6 +63,7 @@
       "lastName": "Hadjar",
       "code": "HAD",
       "driverNumber": 99,
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-99.png",
       "position": "-",
       "points": "-",
       "wins": "-",
