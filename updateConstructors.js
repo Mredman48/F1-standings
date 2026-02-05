@@ -1,42 +1,40 @@
 // updateConstructors.js
+import fs from "node:fs/promises";
+
+const UA = "f1-standings-bot/1.0 (GitHub Actions)";
+
+// Data sources (Jolpi first, Ergast fallback)
+const ERGAST_BASES = ["https://api.jolpi.ca/ergast/f1", "https://ergast.com/api/f1"];
+
+// Output
+const OUT_JSON = "f1_constructors_standings.json";
+
+// GitHub Pages base (Widgy-friendly)
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 const TEAMLOGOS_DIR = "teamlogos";
 
-// Map Ergast constructorId -> your logo filename inside /teamlogos
+// Turn on if Widgy/GitHub CDN is stubborn
+const CACHE_BUST = false;
+
+// ✅ Mercedes logo (single source of truth — same filename used elsewhere)
+const MERCEDES_LOGO_FILE = "2025_mercedes_color_v2.png";
+const MERCEDES_LOGO_PNG = `${PAGES_BASE}/${TEAMLOGOS_DIR}/${MERCEDES_LOGO_FILE}`;
+
+// Map Ergast constructorId -> filename in /teamlogos
+// Update filenames here to match what you actually have in your repo.
 const TEAM_LOGOS_LOCAL = {
   red_bull: "2025_red-bull_color_v2.png",
   ferrari: "2025_ferrari_color_v2.png",
-  mercedes: "2025_mercedes_color_v2.png",
+  mercedes: MERCEDES_LOGO_FILE, // ✅ points to same file
   mclaren: "2025_mclaren_color_v2.png",
   aston_martin: "2025_astonmartin_color_v2.png",
   alpine: "2025_alpine_color_v2.png",
   williams: "2025_williams_color_v2.png",
   haas: "2025_haas_color_v2.png",
   sauber: "2025_sauber_color_v2.png",
-  rb: "2025_vcarb_color_v2.png",          // if you named it vcarb
-  // cadillac: "2025_cadillac_color_v2.png" // if/when you add it
+  rb: "2025_vcarb_color_v2.png", // if you renamed RB to VCARB logo
+  // cadillac: "2025_cadillac_color_v2.png", // add when you have it
 };
-
-// ✅ Force Mercedes to your exact raw URL (same file used elsewhere)
-const MERCEDES_LOGO_PNG =
-  "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/2025_mercedes_color_v2.png";
-
-import fs from "node:fs/promises";
-
-const UA = "f1-standings-bot/1.0 (GitHub Actions)";
-
-const ERGAST_BASES = ["https://api.jolpi.ca/ergast/f1", "https://ergast.com/api/f1"];
-
-// Output JSON (adjust if your repo uses a different name)
-const OUT_JSON = "f1_constructor_standings.json";
-
-// ✅ Force Mercedes logo everywhere (your exact file)
-const MERCEDES_LOGO_PNG =
-  "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/2025_mercedes_color_v2.png";
-
-// --- optional: cache busting (helps Widgy + GitHub CDN) ---
-// If you want Widgy to ALWAYS refresh logos, set this true.
-const CACHE_BUST = true;
 
 // ---------- fetch helpers ----------
 
@@ -86,59 +84,21 @@ function getRacesFromErgast(data) {
 
 // ---------- logo helpers ----------
 
-// Best-effort mapping to high quality colored logos.
-// (These can be swapped anytime; if one URL fails, you’ll just get null.)
-function buildF1MediaLogoUrl(season, teamSlug) {
-  // Example pattern you shared:
-  // https://media.formula1.com/image/upload/c_fit,h_64/q_auto/v1740000000/common/f1/2025/alpine/2025alpinelogowhite.webp
-  // We'll use colored if available; if not, these are still useful placeholders.
-  // NOTE: F1 media URLs are not guaranteed stable for every team/season.
-  return `https://media.formula1.com/image/upload/c_fit,h_256/q_auto/common/f1/${season}/${teamSlug}/${season}${teamSlug}logocolor.webp`;
-}
-
-// Hard map constructorId -> media folder slug (best-effort)
-const TEAM_SLUG = {
-  red_bull: "redbullracing",
-  ferrari: "ferrari",
-  mercedes: "mercedes",
-  mclaren: "mclaren",
-  aston_martin: "astonmartin",
-  alpine: "alpine",
-  williams: "williams",
-  haas: "haas",
-  sauber: "sauber",
-  rb: "rb",
-  kick_sauber: "sauber",
-  alfa: "sauber",
-  cadillac: "cadillac",
-};
-
-// If you already host stable PNG logos in your repo/pages, this is the best place to map them.
-const TEAM_LOGO_OVERRIDES = {
-  // ✅ FORCE Mercedes to your exact file name (used elsewhere)
-  mercedes: MERCEDES_LOGO_PNG,
-};
-
 function withCacheBust(url) {
   if (!url) return url;
   return CACHE_BUST ? `${url}${url.includes("?") ? "&" : "?"}v=${Date.now()}` : url;
 }
 
-function resolveTeamLogo({ constructorId, seasonUsed }) {
+function resolveTeamLogo(constructorId) {
   const id = String(constructorId || "").toLowerCase();
 
-  // 1) Hard override
-  if (TEAM_LOGO_OVERRIDES[id]) return withCacheBust(TEAM_LOGO_OVERRIDES[id]);
+  const file = TEAM_LOGOS_LOCAL[id];
+  if (!file) return null;
 
-  // 2) Best-effort F1 media mapping
-  const slug = TEAM_SLUG[id];
-  if (slug) return withCacheBust(buildF1MediaLogoUrl(seasonUsed || "2025", slug));
-
-  // 3) unknown -> null
-  return null;
+  return withCacheBust(`${PAGES_BASE}/${TEAMLOGOS_DIR}/${file}`);
 }
 
-// ---------- season fallback logic ----------
+// ---------- season fallback ----------
 
 async function loadSeasonPack(season) {
   const cs = await fetchErgastWithFallback(`/${season}/constructorstandings.json`);
@@ -151,9 +111,7 @@ async function loadSeasonPack(season) {
 
   return {
     season,
-    constructorStandings: cs.data,
     constructorStandingsUrl: cs.url,
-    lastRaceResults: lr.data,
     lastRaceUrl: lr.url,
     constructorRows,
     lastRace,
@@ -170,14 +128,14 @@ function safeNum(x) {
 async function updateConstructors() {
   const now = new Date();
 
-  // Try current first, then fallback to previous season (2025)
+  // Try current first, then fallback to 2025 if empty
   let pack = await loadSeasonPack("current");
-
   if (!Array.isArray(pack.constructorRows) || pack.constructorRows.length === 0) {
     pack = await loadSeasonPack("2025");
   }
 
-  const seasonUsed = pack.season === "current" ? String(pack.lastRace?.season || "current") : "2025";
+  const seasonUsed =
+    pack.season === "current" ? String(pack.lastRace?.season || "current") : "2025";
   const roundUsed = String(pack.lastRace?.round || "-");
 
   const lastRaceOut = pack.lastRace
@@ -206,20 +164,13 @@ async function updateConstructors() {
     const c = row?.Constructor || {};
     const constructorId = (c.constructorId || "").toLowerCase();
 
-    const teamName = c.name || "-";
-    const position = row?.position ? `P${row.position}` : "-";
-    const points = safeNum(row?.points);
-    const wins = safeNum(row?.wins);
-
-    const teamLogoPng = resolveTeamLogo({ constructorId, seasonUsed });
-
     return {
       constructorId: constructorId || "-",
-      team: teamName,
-      position,
-      points,
-      wins,
-      teamLogoPng, // ✅ Mercedes will always be your provided link
+      team: c.name || "-",
+      position: row?.position ? `P${row.position}` : "-",
+      points: safeNum(row?.points),
+      wins: safeNum(row?.wins),
+      teamLogoPng: resolveTeamLogo(constructorId), // ✅ now always from /teamlogos
     };
   });
 
@@ -230,11 +181,12 @@ async function updateConstructors() {
       ergastBases: ERGAST_BASES,
       constructorStandings: pack.constructorStandingsUrl,
       lastRace: pack.lastRaceUrl,
-      mercedesLogoOverride: MERCEDES_LOGO_PNG,
+      teamLogosFolder: `${PAGES_BASE}/${TEAMLOGOS_DIR}/`,
     },
     meta: {
       seasonUsed: String(seasonUsed),
       roundUsed: String(roundUsed),
+      cacheBust: CACHE_BUST,
       note:
         pack.season === "current"
           ? "Pulled current constructor standings."
