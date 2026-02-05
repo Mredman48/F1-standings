@@ -1,0 +1,79 @@
+{
+  "header": "Mercedes standings",
+  "generatedAtUtc": "2026-02-05T19:46:14.287Z",
+  "sources": {
+    "openf1": "https://api.openf1.org/v1",
+    "driverStandings": "DASH_PLACEHOLDERS",
+    "constructorStandings": "DASH_PLACEHOLDERS",
+    "lastRace": "DASH_PLACEHOLDERS"
+  },
+  "meta": {
+    "mode": "DASH_PLACEHOLDERS_REAL_HEADSHOTS",
+    "seasonUsed": "-",
+    "roundUsed": "-",
+    "note": "All datapoints are '-' placeholders for widget building. Headshots are pulled from OpenF1, downloaded, converted to PNG, and stored in /headshots."
+  },
+  "mercedes": {
+    "team": "Mercedes",
+    "teamLogoPng": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/2025_mercedes_color_v2.png",
+    "teamStanding": {
+      "team": "Mercedes",
+      "position": "-",
+      "points": "-",
+      "wins": "-",
+      "originalTeam": "-"
+    }
+  },
+  "lastRace": {
+    "season": "-",
+    "round": "-",
+    "raceName": "-",
+    "date": "-",
+    "timeUtc": "-",
+    "circuit": {
+      "name": "-",
+      "locality": "-",
+      "country": "-"
+    }
+  },
+  "drivers": [
+    {
+      "firstName": "George",
+      "lastName": "Russell",
+      "code": "RUS",
+      "driverNumber": 63,
+      "position": "-",
+      "points": "-",
+      "wins": "-",
+      "team": "Mercedes",
+      "placeholder": true,
+      "bestResult": {
+        "position": "-",
+        "raceName": "-",
+        "round": "-",
+        "date": "-",
+        "circuit": "-"
+      },
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/george-russell.png"
+    },
+    {
+      "firstName": "Andrea",
+      "lastName": "Kimi Antonelli",
+      "code": "ANT",
+      "driverNumber": 12,
+      "position": "-",
+      "points": "-",
+      "wins": "-",
+      "team": "Mercedes",
+      "placeholder": true,
+      "bestResult": {
+        "position": "-",
+        "raceName": "-",
+        "round": "-",
+        "date": "-",
+        "circuit": "-"
+      },
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/andrea-kimi-antonelli.png"
+    }
+  ]
+}
