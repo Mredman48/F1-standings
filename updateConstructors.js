@@ -14,7 +14,7 @@ const MERCEDES_LOGO_PNG =
 
 // --- optional: cache busting (helps Widgy + GitHub CDN) ---
 // If you want Widgy to ALWAYS refresh logos, set this true.
-const CACHE_BUST = false;
+const CACHE_BUST = true;
 
 // ---------- fetch helpers ----------
 
