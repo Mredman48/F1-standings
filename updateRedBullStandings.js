@@ -159,7 +159,7 @@ async function buildDashJson() {
   // ✅ Force Max to #3 for 2026
   { firstName: "Max", lastName: "Verstappen", code: "VER", driverNumber: 3 },
 
-  { firstName: "Isack", lastName: "Hadjar", code: "HAD", driverNumber: 99 },
+  { firstName: "Isack", lastName: "Hadjar", code: "HAD", driverNumber: 6 },
 ];
 
   const drivers = [];
