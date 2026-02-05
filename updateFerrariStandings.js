@@ -15,6 +15,15 @@ const HEADSHOT_DIR = "headshots";
 // OpenF1 base
 const OPENF1 = "https://api.openf1.org/v1";
 
+// ✅ Driver number images (your folder + naming format)
+const PAGES_BASE = "https://mredman48.github.io/F1-standings";
+const DRIVER_NUMBER_FOLDER = "driver-numbers";
+
+function getDriverNumberImageUrl(driverNumber) {
+  if (!driverNumber || driverNumber === "-") return null;
+  return `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-${driverNumber}.png`;
+}
+
 // ------------ helpers ------------
 
 async function fetchJson(url) {
@@ -106,8 +115,6 @@ async function updateFerrariStandings() {
   const drivers = [];
 
   for (const d of driversConfig) {
-    // Query OpenF1 drivers. We filter by driver_number + name as a safety net.
-    // OpenF1 returns driver entries for sessions/meetings; we pick the latest one.
     const url =
       `${OPENF1}/drivers?driver_number=${encodeURIComponent(d.driverNumber)}` +
       `&first_name=${encodeURIComponent(d.firstName)}` +
@@ -133,6 +140,8 @@ async function updateFerrariStandings() {
       headshotPngUrl = rawGithubUrlForFile(repoFull, headshotPngPath);
     }
 
+    const driverNumberStr = String(d.driverNumber);
+
     drivers.push({
       position: "-",
       points: "-",
@@ -140,9 +149,13 @@ async function updateFerrariStandings() {
       firstName: d.firstName,
       lastName: d.lastName,
       code: d.code,
-      driverNumber: String(d.driverNumber),
+      driverNumber: driverNumberStr,
+
+      // ✅ NEW FIELD
+      numberImageUrl: getDriverNumberImageUrl(driverNumberStr),
+
       team: "Ferrari",
-      headshotUrl: headshotPngUrl, // ✅ PNG in your repo, or "-" if not found
+      headshotUrl: headshotPngUrl,
       bestResult: dashBestResult(),
     });
   }
@@ -153,11 +166,12 @@ async function updateFerrariStandings() {
     sources: {
       ferrariLogo: FERRARI_LOGO_PNG,
       headshots: "OpenF1 drivers endpoint (headshot_url)",
+      driverNumbers: `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-<number>.png`,
     },
     meta: {
       mode: "DASH_PLACEHOLDERS_REAL_HEADSHOTS",
       note:
-        "All non-image datapoints are '-' placeholders for widget building. Headshots are downloaded and converted to PNG, then served from your repo.",
+        "All non-image datapoints are '-' placeholders for widget building. Headshots are downloaded and converted to PNG, then served from your repo. Driver number images are pulled from your repo folder driver-numbers.",
     },
     ferrari: {
       team: "Ferrari",
