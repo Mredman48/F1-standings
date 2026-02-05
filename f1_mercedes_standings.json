@@ -1,6 +1,6 @@
 {
   "header": "Mercedes standings",
-  "generatedAtUtc": "2026-02-05T19:46:14.287Z",
+  "generatedAtUtc": "2026-02-05T19:59:03.266Z",
   "sources": {
     "openf1": "https://api.openf1.org/v1",
     "driverStandings": "DASH_PLACEHOLDERS",
@@ -11,7 +11,7 @@
     "mode": "DASH_PLACEHOLDERS_REAL_HEADSHOTS",
     "seasonUsed": "-",
     "roundUsed": "-",
-    "note": "All datapoints are '-' placeholders for widget building. Headshots are pulled from OpenF1, downloaded, converted to PNG, and stored in /headshots."
+    "note": "All stats are '-' placeholders for widget building. Headshots are pulled from OpenF1, downloaded as PNG, and stored in /headshots. Driver numbers are loaded from /driver-numbers."
   },
   "mercedes": {
     "team": "Mercedes",
@@ -42,6 +42,7 @@
       "lastName": "Russell",
       "code": "RUS",
       "driverNumber": 63,
+      "driverNumberImage": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-63.png",
       "position": "-",
       "points": "-",
       "wins": "-",
@@ -61,6 +62,7 @@
       "lastName": "Kimi Antonelli",
       "code": "ANT",
       "driverNumber": 12,
+      "driverNumberImage": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-12.png",
       "position": "-",
       "points": "-",
       "wins": "-",
