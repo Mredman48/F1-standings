@@ -1,23 +1,23 @@
-name: Update Next Race JSON + Track Map
+name: Update Next Race (Hourly)
 
 on:
-  workflow_dispatch:
   schedule:
-    - cron: "35 * * * *"
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: next-race
+  cancel-in-progress: false
 
 permissions:
   contents: write
 
-concurrency:
-  group: update-next-race
-  cancel-in-progress: false
-
 jobs:
-  build:
+  update-next-race:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Node
@@ -28,31 +28,36 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run next race updater
-        env:
-          # lets the script authenticate to GitHub API if it uses it
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Run updater
         run: node updateNextRace.js
 
-      - name: Debug generated files
+      - name: Show generated files
         run: |
-          echo "Repo root:"
           ls -la
-          echo "Trackmaps:"
-          ls -la trackmaps || true
-          echo "Git status:"
-          git status
+          test -f f1_next_race.json && echo "✅ f1_next_race.json exists" || (echo "❌ file missing" && exit 1)
 
       - name: Commit and push if changed
         run: |
+          set -e
+
           git config user.name "f1-bot"
           git config user.email "f1-bot@users.noreply.github.com"
 
-          # IMPORTANT: include trackmaps so PNGs are committed
-          git add f1_next_race.json trackmaps
+          git add f1_next_race.json || true
 
-          # Commit only if something changed
-          git diff --staged --quiet || git commit -m "Update next race JSON + track map"
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
 
-          # Push back to the same branch (default: main)
-          git push
+          git commit -m "Update next race"
+
+          git fetch origin main
+          git rebase origin/main
+
+          if ! git push origin HEAD:main; then
+            echo "Push failed (race condition). Retrying..."
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
+          fi
