@@ -17,8 +17,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout (main, full history)
         uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Ensure branch is up-to-date
+        run: |
+          set -e
+          git checkout main
+          git fetch origin main
+          git pull --rebase origin main
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -31,10 +41,13 @@ jobs:
       - name: Run updater
         run: node updateRedBullStandings.js
 
-      - name: Show generated files
+      - name: Verify outputs created
         run: |
+          echo "Repo root:"
           ls -la
-          test -f f1_redbull_standings.json && echo "✅ f1_redbull_standings.json exists" || (echo "❌ file missing" && exit 1)
+          echo "Headshots:"
+          ls -la headshots || true
+          test -f f1_redbull_standings.json && echo "✅ f1_redbull_standings.json exists" || (echo "❌ JSON missing" && exit 1)
 
       - name: Commit and push if changed
         run: |
@@ -43,21 +56,18 @@ jobs:
           git config user.name "f1-bot"
           git config user.email "f1-bot@users.noreply.github.com"
 
-          git add f1_redbull_standings.json || true
+          git add f1_redbull_standings.json headshots || true
 
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0
           fi
 
-          git commit -m "Update Red Bull standings"
+          git commit -m "Update Red Bull standings + headshots"
 
-          git fetch origin main
-          git rebase origin/main
-
-          if ! git push origin HEAD:main; then
-            echo "Push failed (race condition). Retrying..."
+          if ! git push origin main; then
+            echo "Push failed (race condition). Rebasing and retrying..."
             git fetch origin main
             git rebase origin/main
-            git push origin HEAD:main
+            git push origin main
           fi
