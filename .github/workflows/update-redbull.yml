@@ -52,7 +52,6 @@ jobs:
       - name: Commit and push if changed
         run: |
           set -e
-
           git config user.name "f1-bot"
           git config user.email "f1-bot@users.noreply.github.com"
 
