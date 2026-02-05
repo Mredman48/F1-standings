@@ -3,40 +3,36 @@ import fs from "node:fs/promises";
 
 const UA = "f1-standings-bot/1.0 (GitHub Actions)";
 
-// Data sources (Jolpi first, Ergast fallback)
+// Ergast (Jolpi first, Ergast fallback)
 const ERGAST_BASES = ["https://api.jolpi.ca/ergast/f1", "https://ergast.com/api/f1"];
 
-// Output
+// Output JSON
 const OUT_JSON = "f1_constructors_standings.json";
 
 // GitHub Pages base (Widgy-friendly)
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 const TEAMLOGOS_DIR = "teamlogos";
 
-// Turn on if Widgy/GitHub CDN is stubborn
+// Turn on if Widgy is stubborn about caching
 const CACHE_BUST = false;
 
-// ✅ Mercedes logo (single source of truth — same filename used elsewhere)
-const MERCEDES_LOGO_FILE = "2025_mercedes_color_v2.png";
-const MERCEDES_LOGO_PNG = `${PAGES_BASE}/${TEAMLOGOS_DIR}/${MERCEDES_LOGO_FILE}`;
-
-// Map Ergast constructorId -> filename in /teamlogos
-// Update filenames here to match what you actually have in your repo.
+// Map Ergast constructorId -> filename in your /teamlogos folder
+// ✅ This is the ONLY source of logos used by this script.
 const TEAM_LOGOS_LOCAL = {
   red_bull: "2025_red-bull_color_v2.png",
   ferrari: "2025_ferrari_color_v2.png",
-  mercedes: MERCEDES_LOGO_FILE, // ✅ points to same file
+  mercedes: "2025_mercedes_color_v2.png",
   mclaren: "2025_mclaren_color_v2.png",
   aston_martin: "2025_astonmartin_color_v2.png",
   alpine: "2025_alpine_color_v2.png",
   williams: "2025_williams_color_v2.png",
   haas: "2025_haas_color_v2.png",
   sauber: "2025_sauber_color_v2.png",
-  rb: "2025_vcarb_color_v2.png", // if you renamed RB to VCARB logo
-  // cadillac: "2025_cadillac_color_v2.png", // add when you have it
+  rb: "2025_vcarb_color_v2.png", // RB/VCARB depending on your naming
+  // cadillac: "2025_cadillac_color_v2.png", // add if/when you create it
 };
 
-// ---------- fetch helpers ----------
+// ---------- Fetch helpers ----------
 
 async function fetchText(url, accept = "application/json") {
   const res = await fetch(url, {
@@ -82,23 +78,26 @@ function getRacesFromErgast(data) {
   return data?.MRData?.RaceTable?.Races || [];
 }
 
-// ---------- logo helpers ----------
+// ---------- Logo resolver (LOCAL ONLY) ----------
 
 function withCacheBust(url) {
   if (!url) return url;
   return CACHE_BUST ? `${url}${url.includes("?") ? "&" : "?"}v=${Date.now()}` : url;
 }
 
+/**
+ * ✅ LOCAL ONLY
+ * Returns a GitHub Pages URL into /teamlogos.
+ * Returns null if we don't have a mapping (no external fallback).
+ */
 function resolveTeamLogo(constructorId) {
   const id = String(constructorId || "").toLowerCase();
-
-  const file = TEAM_LOGOS_LOCAL[id];
-  if (!file) return null;
-
-  return withCacheBust(`${PAGES_BASE}/${TEAMLOGOS_DIR}/${file}`);
+  const fileName = TEAM_LOGOS_LOCAL[id];
+  if (!fileName) return null;
+  return withCacheBust(`${PAGES_BASE}/${TEAMLOGOS_DIR}/${fileName}`);
 }
 
-// ---------- season fallback ----------
+// ---------- Season fallback ----------
 
 async function loadSeasonPack(season) {
   const cs = await fetchErgastWithFallback(`/${season}/constructorstandings.json`);
@@ -123,12 +122,12 @@ function safeNum(x) {
   return Number.isFinite(n) ? n : "-";
 }
 
-// ---------- main ----------
+// ---------- Main ----------
 
 async function updateConstructors() {
   const now = new Date();
 
-  // Try current first, then fallback to 2025 if empty
+  // Try current first, fallback to 2025 if current is empty (offseason)
   let pack = await loadSeasonPack("current");
   if (!Array.isArray(pack.constructorRows) || pack.constructorRows.length === 0) {
     pack = await loadSeasonPack("2025");
@@ -170,9 +169,18 @@ async function updateConstructors() {
       position: row?.position ? `P${row.position}` : "-",
       points: safeNum(row?.points),
       wins: safeNum(row?.wins),
-      teamLogoPng: resolveTeamLogo(constructorId), // ✅ now always from /teamlogos
+
+      // ✅ LOCAL ONLY (null if missing)
+      teamLogoPng: resolveTeamLogo(constructorId),
     };
   });
+
+  // ✅ Guardrail: ensure we NEVER output F1 media links
+  for (const t of constructors) {
+    if (typeof t.teamLogoPng === "string" && t.teamLogoPng.includes("formula1")) {
+      throw new Error(`External logo detected for ${t.constructorId}: ${t.teamLogoPng}`);
+    }
+  }
 
   const out = {
     header: "Constructors standings",
@@ -181,7 +189,7 @@ async function updateConstructors() {
       ergastBases: ERGAST_BASES,
       constructorStandings: pack.constructorStandingsUrl,
       lastRace: pack.lastRaceUrl,
-      teamLogosFolder: `${PAGES_BASE}/${TEAMLOGOS_DIR}/`,
+      logos: `LOCAL_ONLY: ${PAGES_BASE}/${TEAMLOGOS_DIR}/`,
     },
     meta: {
       seasonUsed: String(seasonUsed),
