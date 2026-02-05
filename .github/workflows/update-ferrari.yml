@@ -34,10 +34,13 @@ jobs:
       - name: Run updater
         run: node updateFerrariStandings.js
 
-      - name: Show generated file
+      - name: Verify outputs created
         run: |
+          echo "Repo root:"
           ls -la
-          test -f f1_ferrari_standings.json && echo "✅ f1_ferrari_standings.json exists" || (echo "❌ file missing" && exit 1)
+          echo "Headshots folder:"
+          ls -la headshots || true
+          test -f f1_ferrari_standings.json && echo "✅ f1_ferrari_standings.json exists" || (echo "❌ JSON missing" && exit 1)
 
       - name: Commit and push if changed
         run: |
@@ -46,23 +49,22 @@ jobs:
           git config user.name "f1-bot"
           git config user.email "f1-bot@users.noreply.github.com"
 
-          # Ensure we're on the branch, not detached
+          # Ensure we're on main and up to date
           git checkout main
+          git fetch origin main
+          git pull --rebase origin main
 
-          git add f1_ferrari_standings.json || true
+          # ✅ Add JSON + generated PNGs
+          git add f1_ferrari_standings.json headshots || true
 
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0
           fi
 
-          git commit -m "Update Ferrari standings"
+          git commit -m "Update Ferrari standings + headshots"
 
-          # Rebase onto latest main to avoid 'fetch first'
-          git fetch origin main
-          git pull --rebase origin main
-
-          # Push with a retry in case another workflow pushes at the same time
+          # Push with retry in case another workflow pushed first
           if ! git push origin main; then
             echo "Push failed (race condition). Retrying..."
             git pull --rebase origin main
