@@ -6,18 +6,18 @@ const UA = "f1-standings-bot/1.0 (GitHub Actions)";
 // Ergast (Jolpi first, Ergast fallback)
 const ERGAST_BASES = ["https://api.jolpi.ca/ergast/f1", "https://ergast.com/api/f1"];
 
-// Output JSON
+// Output JSON (plural)
 const OUT_JSON = "f1_constructors_standings.json";
 
 // GitHub Pages base (Widgy-friendly)
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 const TEAMLOGOS_DIR = "teamlogos";
 
-// Turn on if Widgy is stubborn about caching
+// Turn on if Widgy/GitHub CDN is stubborn
 const CACHE_BUST = false;
 
-// Map Ergast constructorId -> filename in your /teamlogos folder
-// ✅ This is the ONLY source of logos used by this script.
+// ✅ LOCAL-ONLY logo mapping: Ergast constructorId -> filename in /teamlogos
+// Update filenames to match your repo exactly.
 const TEAM_LOGOS_LOCAL = {
   red_bull: "2025_red-bull_color_v2.png",
   ferrari: "2025_ferrari_color_v2.png",
@@ -28,8 +28,10 @@ const TEAM_LOGOS_LOCAL = {
   williams: "2025_williams_color_v2.png",
   haas: "2025_haas_color_v2.png",
   sauber: "2025_sauber_color_v2.png",
-  rb: "2025_vcarb_color_v2.png", // RB/VCARB depending on your naming
-  // cadillac: "2025_cadillac_color_v2.png", // add if/when you create it
+  rb: "2025_vcarb_color_v2.png",
+
+  // ✅ Cadillac placeholder logo (upload this file to /teamlogos)
+  cadillac: "2025_cadillac_color_v2.png",
 };
 
 // ---------- Fetch helpers ----------
@@ -88,7 +90,7 @@ function withCacheBust(url) {
 /**
  * ✅ LOCAL ONLY
  * Returns a GitHub Pages URL into /teamlogos.
- * Returns null if we don't have a mapping (no external fallback).
+ * Returns null if we don't have a mapping (NO external fallback).
  */
 function resolveTeamLogo(constructorId) {
   const id = String(constructorId || "").toLowerCase();
@@ -120,6 +122,20 @@ async function loadSeasonPack(season) {
 function safeNum(x) {
   const n = Number(x);
   return Number.isFinite(n) ? n : "-";
+}
+
+// ---------- Cadillac placeholder ----------
+
+function cadillacPlaceholder() {
+  return {
+    constructorId: "cadillac",
+    team: "Cadillac",
+    position: "P11",
+    points: "-",
+    wins: "-",
+    teamLogoPng: resolveTeamLogo("cadillac"),
+    placeholder: true,
+  };
 }
 
 // ---------- Main ----------
@@ -159,6 +175,7 @@ async function updateConstructors() {
         circuit: { name: "-", locality: "-", country: "-" },
       };
 
+  // Build constructors output from Ergast
   const constructors = pack.constructorRows.map((row) => {
     const c = row?.Constructor || {};
     const constructorId = (c.constructorId || "").toLowerCase();
@@ -169,13 +186,18 @@ async function updateConstructors() {
       position: row?.position ? `P${row.position}` : "-",
       points: safeNum(row?.points),
       wins: safeNum(row?.wins),
-
-      // ✅ LOCAL ONLY (null if missing)
-      teamLogoPng: resolveTeamLogo(constructorId),
+      teamLogoPng: resolveTeamLogo(constructorId), // ✅ LOCAL ONLY
+      placeholder: false,
     };
   });
 
-  // ✅ Guardrail: ensure we NEVER output F1 media links
+  // ✅ Add Cadillac placeholder only if not already present
+  const hasCadillac = constructors.some(
+    (t) => String(t.constructorId || "").toLowerCase() === "cadillac"
+  );
+  if (!hasCadillac) constructors.push(cadillacPlaceholder());
+
+  // ✅ Guardrail: fail if any external logo somehow appears
   for (const t of constructors) {
     if (typeof t.teamLogoPng === "string" && t.teamLogoPng.includes("formula1")) {
       throw new Error(`External logo detected for ${t.constructorId}: ${t.teamLogoPng}`);
@@ -196,9 +218,7 @@ async function updateConstructors() {
       roundUsed: String(roundUsed),
       cacheBust: CACHE_BUST,
       note:
-        pack.season === "current"
-          ? "Pulled current constructor standings."
-          : "Current season standings unavailable; fell back to 2025.",
+        "Logos are LOCAL ONLY (teamlogos folder). Cadillac is appended as a placeholder at P11 until it appears in the standings feed.",
     },
     lastRace: lastRaceOut,
     constructors,
