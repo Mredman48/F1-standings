@@ -97,13 +97,17 @@ async function getOpenF1HeadshotUrlByDriverNumber(driverNumber) {
  * No placeholders: if no OpenF1 headshot and no prior saved file, return null.
  * If OpenF1 fails but we already have a file, keep returning the existing Pages URL.
  */
-async function getOrUpdateHeadshotPng({ firstName, lastName, driverNumber }, width = 900) {
+async function getOrUpdateHeadshotPng(
+  { firstName, lastName, driverNumber, openF1Number },
+  width = 900
+) {
   const slug = `${toSlug(firstName)}-${toSlug(lastName)}`;
   const fileName = `${slug}.png`;
   const localPath = path.join(HEADSHOTS_DIR, fileName);
   const pagesUrl = `${PAGES_BASE}/${HEADSHOTS_DIR}/${fileName}`;
 
-  const openf1Url = await getOpenF1HeadshotUrlByDriverNumber(driverNumber);
+const lookupNumber = openF1Number ?? driverNumber;
+const openf1Url = await getOpenF1HeadshotUrlByDriverNumber(lookupNumber);
 
   if (!openf1Url) {
     if (await exists(localPath)) return pagesUrl;
