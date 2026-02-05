@@ -1,18 +1,18 @@
 {
   "header": "Ferrari standings",
-  "generatedAtUtc": "2026-02-05T05:26:33.280Z",
+  "generatedAtUtc": "2026-02-05T05:29:30.439Z",
   "sources": {
     "ferrariLogo": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/2025_ferrari_color_v2.png",
-    "headshots": "Wikidata P18 -> Wikimedia Commons (Special:FilePath)",
+    "headshots": "Official F1 media cutouts from formula1.com",
     "driverStandings": "DASH_PLACEHOLDERS",
     "constructorStandings": "DASH_PLACEHOLDERS",
     "lastRace": "DASH_PLACEHOLDERS"
   },
   "meta": {
-    "mode": "DASH_PLACEHOLDERS_REAL_HEADSHOTS_WIKIDATA_COMMONS",
+    "mode": "OFFICIAL_HEADSHOTS_PNG",
     "seasonUsed": "-",
     "roundUsed": "-",
-    "note": "All non-image datapoints are '-' placeholders for widget building. Driver headshots are pulled via Wikidata (P18) and served from Wikimedia Commons."
+    "note": "Driver profile photos are real cutouts from the official F1 site in PNG with transparent backgrounds."
   },
   "ferrari": {
     "team": "Ferrari",
@@ -22,7 +22,7 @@
       "position": "-",
       "points": "-",
       "wins": "-",
-      "originalTeam": "Scuderia Ferrari"
+      "originalTeam": "-"
     }
   },
   "lastRace": {
@@ -45,9 +45,9 @@
       "firstName": "Charles",
       "lastName": "Leclerc",
       "code": "LEC",
-      "driverNumber": "16",
+      "driverNumber": "-",
       "team": "Ferrari",
-      "headshotUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/2024-08-25%20Motorsport%2C%20Formel%201%2C%20Gro%C3%9Fer%20Preis%20der%20Niederlande%202024%20STP%203978%20by%20Stepro%20(cropped2).jpg?width=900",
+      "headshotUrl": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/headshots/charles-leclerc_1024.png",
       "placeholder": true,
       "bestResult": {
         "position": "-",
@@ -64,9 +64,9 @@
       "firstName": "Lewis",
       "lastName": "Hamilton",
       "code": "HAM",
-      "driverNumber": "44",
+      "driverNumber": "-",
       "team": "Ferrari",
-      "headshotUrl": "https://commons.wikimedia.org/wiki/Special:FilePath/Lewis%20Hamilton%202022%20S%C3%A3o%20Paulo%20Grand%20Prix%20(52498120773)%20(cropped).jpg?width=900",
+      "headshotUrl": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/headshots/lewis-hamilton_1024.png",
       "placeholder": true,
       "bestResult": {
         "position": "-",
