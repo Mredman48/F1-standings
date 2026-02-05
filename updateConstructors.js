@@ -6,7 +6,7 @@ const UA = "f1-standings-bot/1.0 (GitHub Actions)";
 const ERGAST_BASES = ["https://api.jolpi.ca/ergast/f1", "https://ergast.com/api/f1"];
 
 // Output JSON (adjust if your repo uses a different name)
-const OUT_JSON = "f1_constructors_standings.json";
+const OUT_JSON = "f1_constructor_standings.json";
 
 // ✅ Force Mercedes logo everywhere (your exact file)
 const MERCEDES_LOGO_PNG =
