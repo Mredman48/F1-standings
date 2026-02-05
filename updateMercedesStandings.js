@@ -4,22 +4,34 @@ import path from "node:path";
 import sharp from "sharp";
 
 const UA = "f1-standings-bot/1.0 (GitHub Actions)";
-const OPENF1_BASE = "https://api.openf1.org/v1";
 
-// ✅ Mercedes logo (your repo)
-const MERCEDES_LOGO_PNG =
-  "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/2025_mercedes_color_v2.png";
+// OpenF1 base
+const OPENF1_BASE = "https://api.openf1.org/v1";
 
 // Output JSON
 const OUT_JSON = "f1_mercedes_standings.json";
 
-// Where headshots are saved
-const HEADSHOTS_DIR = "headshots";
-
-// GitHub Pages base
+// GitHub Pages base (Widgy-friendly)
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 
-// ---------------- Helpers ----------------
+// ✅ Mercedes logo URL
+const MERCEDES_LOGO_PNG =
+  "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/2025_mercedes_color_v2.png";
+
+// Local folders
+const HEADSHOTS_DIR = "headshots";
+const DRIVER_NUMBERS_DIR = "driver-numbers";
+
+// ---------- Helpers ----------
+
+function toSlug(s) {
+  return String(s || "")
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
 
 async function fetchJson(url) {
   const res = await fetch(url, {
@@ -29,6 +41,7 @@ async function fetchJson(url) {
 
   const text = await res.text();
   if (!res.ok) throw new Error(`HTTP ${res.status} from ${url}\n${text.slice(0, 200)}`);
+
   return JSON.parse(text);
 }
 
@@ -55,16 +68,7 @@ async function exists(filePath) {
   }
 }
 
-function toSlug(s) {
-  return String(s || "")
-    .toLowerCase()
-    .normalize("NFKD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
-}
-
-// Pick latest OpenF1 row
+// Pick newest OpenF1 row if multiple exist
 function pickLatestByMeetingKey(rows) {
   if (!Array.isArray(rows) || rows.length === 0) return null;
 
@@ -75,9 +79,15 @@ function pickLatestByMeetingKey(rows) {
   }, rows[0]);
 }
 
-// ---------------- Headshot Download ----------------
+// ---------- Driver Number PNG URL ----------
 
-async function getOpenF1HeadshotUrl(driverNumber) {
+function getDriverNumberImageUrl(driverNumber) {
+  return `${PAGES_BASE}/${DRIVER_NUMBERS_DIR}/driver-number-${driverNumber}.png`;
+}
+
+// ---------- OpenF1 Headshot Pipeline ----------
+
+async function getOpenF1HeadshotUrlByDriverNumber(driverNumber) {
   const url = `${OPENF1_BASE}/drivers?driver_number=${encodeURIComponent(driverNumber)}`;
 
   try {
@@ -90,19 +100,19 @@ async function getOpenF1HeadshotUrl(driverNumber) {
 }
 
 /**
- * Downloads driver headshot → converts PNG → stores in /headshots
- * Returns Pages URL OR null if none exists.
+ * Downloads OpenF1 headshot → converts to PNG → saves in /headshots/
+ * Returns Pages URL OR null if unavailable.
  */
-async function getOrUpdateHeadshot({ firstName, lastName, driverNumber }, width = 900) {
+async function getOrUpdateHeadshotPng({ firstName, lastName, driverNumber }, width = 900) {
   const slug = `${toSlug(firstName)}-${toSlug(lastName)}`;
   const fileName = `${slug}.png`;
 
   const localPath = path.join(HEADSHOTS_DIR, fileName);
   const pagesUrl = `${PAGES_BASE}/${HEADSHOTS_DIR}/${fileName}`;
 
-  const openf1Url = await getOpenF1HeadshotUrl(driverNumber);
+  const openf1Url = await getOpenF1HeadshotUrlByDriverNumber(driverNumber);
 
-  // If OpenF1 has nothing, reuse old saved file if present
+  // No placeholder photos allowed
   if (!openf1Url) {
     if (await exists(localPath)) return pagesUrl;
     return null;
@@ -122,7 +132,7 @@ async function getOrUpdateHeadshot({ firstName, lastName, driverNumber }, width 
   return pagesUrl;
 }
 
-// ---------------- Dash Builders ----------------
+// ---------- Dash Placeholder Builders ----------
 
 function dashBestResult() {
   return { position: "-", raceName: "-", round: "-", date: "-", circuit: "-" };
@@ -149,12 +159,12 @@ function dashTeamStanding() {
   };
 }
 
-// ---------------- Main JSON Builder ----------------
+// ---------- Build JSON ----------
 
 async function buildMercedesJson() {
   const now = new Date();
 
-  // ✅ Mercedes driver lineup (edit anytime)
+  // Mercedes driver lineup
   const driversBase = [
     {
       firstName: "George",
@@ -173,13 +183,16 @@ async function buildMercedesJson() {
   const drivers = [];
 
   for (const d of driversBase) {
-    const headshotUrl = await getOrUpdateHeadshot(d, 900);
+    const headshotUrl = await getOrUpdateHeadshotPng(d, 900);
 
     drivers.push({
       firstName: d.firstName,
       lastName: d.lastName,
       code: d.code,
       driverNumber: d.driverNumber,
+
+      // ✅ Driver number image from your repo folder
+      driverNumberImage: getDriverNumberImageUrl(d.driverNumber),
 
       // Dash placeholders
       position: "-",
@@ -189,7 +202,7 @@ async function buildMercedesJson() {
       placeholder: true,
       bestResult: dashBestResult(),
 
-      // Real headshot URL or null
+      // Real headshot or null
       headshotUrl,
     });
   }
@@ -208,7 +221,7 @@ async function buildMercedesJson() {
       seasonUsed: "-",
       roundUsed: "-",
       note:
-        "All datapoints are '-' placeholders for widget building. Headshots are pulled from OpenF1, downloaded, converted to PNG, and stored in /headshots.",
+        "All stats are '-' placeholders for widget building. Headshots are pulled from OpenF1, downloaded as PNG, and stored in /headshots. Driver numbers are loaded from /driver-numbers.",
     },
     mercedes: {
       team: "Mercedes",
@@ -220,12 +233,12 @@ async function buildMercedesJson() {
   };
 }
 
-// ---------------- Run Script ----------------
+// ---------- Main ----------
 
 async function updateMercedesStandings() {
   const out = await buildMercedesJson();
-  await fs.writeFile(OUT_JSON, JSON.stringify(out, null, 2), "utf8");
 
+  await fs.writeFile(OUT_JSON, JSON.stringify(out, null, 2), "utf8");
   console.log(`Wrote ${OUT_JSON}`);
 }
 
