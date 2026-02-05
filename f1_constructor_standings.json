@@ -1,0 +1,112 @@
+{
+  "header": "Constructors standings",
+  "generatedAtUtc": "2026-02-05T20:37:13.640Z",
+  "sources": {
+    "ergastBases": [
+      "https://api.jolpi.ca/ergast/f1",
+      "https://ergast.com/api/f1"
+    ],
+    "constructorStandings": "https://api.jolpi.ca/ergast/f1/2025/constructorstandings.json",
+    "lastRace": "https://api.jolpi.ca/ergast/f1/2025/last/results.json",
+    "mercedesLogoOverride": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/2025_mercedes_color_v2.png"
+  },
+  "meta": {
+    "seasonUsed": "2025",
+    "roundUsed": "24",
+    "note": "Current season standings unavailable; fell back to 2025."
+  },
+  "lastRace": {
+    "season": "2025",
+    "round": "24",
+    "raceName": "Abu Dhabi Grand Prix",
+    "date": "2025-12-07",
+    "timeUtc": "13:00:00Z",
+    "circuit": {
+      "name": "Yas Marina Circuit",
+      "locality": "Abu Dhabi",
+      "country": "UAE"
+    }
+  },
+  "constructors": [
+    {
+      "constructorId": "mclaren",
+      "team": "McLaren",
+      "position": "P1",
+      "points": 833,
+      "wins": 14,
+      "teamLogoPng": "https://media.formula1.com/image/upload/c_fit,h_256/q_auto/common/f1/2025/mclaren/2025mclarenlogocolor.webp?v=1770323834872"
+    },
+    {
+      "constructorId": "mercedes",
+      "team": "Mercedes",
+      "position": "P2",
+      "points": 469,
+      "wins": 2,
+      "teamLogoPng": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/2025_mercedes_color_v2.png?v=1770323834872"
+    },
+    {
+      "constructorId": "red_bull",
+      "team": "Red Bull",
+      "position": "P3",
+      "points": 451,
+      "wins": 8,
+      "teamLogoPng": "https://media.formula1.com/image/upload/c_fit,h_256/q_auto/common/f1/2025/redbullracing/2025redbullracinglogocolor.webp?v=1770323834872"
+    },
+    {
+      "constructorId": "ferrari",
+      "team": "Ferrari",
+      "position": "P4",
+      "points": 398,
+      "wins": 0,
+      "teamLogoPng": "https://media.formula1.com/image/upload/c_fit,h_256/q_auto/common/f1/2025/ferrari/2025ferrarilogocolor.webp?v=1770323834872"
+    },
+    {
+      "constructorId": "williams",
+      "team": "Williams",
+      "position": "P5",
+      "points": 137,
+      "wins": 0,
+      "teamLogoPng": "https://media.formula1.com/image/upload/c_fit,h_256/q_auto/common/f1/2025/williams/2025williamslogocolor.webp?v=1770323834872"
+    },
+    {
+      "constructorId": "rb",
+      "team": "RB F1 Team",
+      "position": "P6",
+      "points": 92,
+      "wins": 0,
+      "teamLogoPng": "https://media.formula1.com/image/upload/c_fit,h_256/q_auto/common/f1/2025/rb/2025rblogocolor.webp?v=1770323834872"
+    },
+    {
+      "constructorId": "aston_martin",
+      "team": "Aston Martin",
+      "position": "P7",
+      "points": 89,
+      "wins": 0,
+      "teamLogoPng": "https://media.formula1.com/image/upload/c_fit,h_256/q_auto/common/f1/2025/astonmartin/2025astonmartinlogocolor.webp?v=1770323834872"
+    },
+    {
+      "constructorId": "haas",
+      "team": "Haas F1 Team",
+      "position": "P8",
+      "points": 79,
+      "wins": 0,
+      "teamLogoPng": "https://media.formula1.com/image/upload/c_fit,h_256/q_auto/common/f1/2025/haas/2025haaslogocolor.webp?v=1770323834872"
+    },
+    {
+      "constructorId": "sauber",
+      "team": "Sauber",
+      "position": "P9",
+      "points": 70,
+      "wins": 0,
+      "teamLogoPng": "https://media.formula1.com/image/upload/c_fit,h_256/q_auto/common/f1/2025/sauber/2025sauberlogocolor.webp?v=1770323834872"
+    },
+    {
+      "constructorId": "alpine",
+      "team": "Alpine F1 Team",
+      "position": "P10",
+      "points": 22,
+      "wins": 0,
+      "teamLogoPng": "https://media.formula1.com/image/upload/c_fit,h_256/q_auto/common/f1/2025/alpine/2025alpinelogocolor.webp?v=1770323834872"
+    }
+  ]
+}
