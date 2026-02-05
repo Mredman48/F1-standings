@@ -17,8 +17,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout (main, full history)
         uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -31,7 +34,7 @@ jobs:
       - name: Run updater
         run: node updateFerrariStandings.js
 
-      - name: Show generated files
+      - name: Show generated file
         run: |
           ls -la
           test -f f1_ferrari_standings.json && echo "✅ f1_ferrari_standings.json exists" || (echo "❌ file missing" && exit 1)
@@ -43,6 +46,9 @@ jobs:
           git config user.name "f1-bot"
           git config user.email "f1-bot@users.noreply.github.com"
 
+          # Ensure we're on the branch, not detached
+          git checkout main
+
           git add f1_ferrari_standings.json || true
 
           if git diff --cached --quiet; then
@@ -52,12 +58,13 @@ jobs:
 
           git commit -m "Update Ferrari standings"
 
+          # Rebase onto latest main to avoid 'fetch first'
           git fetch origin main
-          git rebase origin/main
+          git pull --rebase origin main
 
-          if ! git push origin HEAD:main; then
+          # Push with a retry in case another workflow pushes at the same time
+          if ! git push origin main; then
             echo "Push failed (race condition). Retrying..."
-            git fetch origin main
-            git rebase origin/main
-            git push origin HEAD:main
+            git pull --rebase origin main
+            git push origin main
           fi
