@@ -1,9 +1,13 @@
 {
   "header": "Ferrari standings",
-  "generatedAtUtc": "2026-02-05T05:44:22.586Z",
+  "generatedAtUtc": "2026-02-05T05:51:52.597Z",
   "sources": {
     "ferrariLogo": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/2025_ferrari_color_v2.png",
-    "headshots": "Scraped from formula1.com pages; downloaded from media.formula1.com and converted to PNG"
+    "headshots": "OpenF1 drivers endpoint (headshot_url)"
+  },
+  "meta": {
+    "mode": "DASH_PLACEHOLDERS_REAL_HEADSHOTS",
+    "note": "All non-image datapoints are '-' placeholders for widget building. Headshots are downloaded and converted to PNG, then served from your repo."
   },
   "ferrari": {
     "team": "Ferrari",
@@ -38,7 +42,7 @@
       "code": "LEC",
       "driverNumber": "16",
       "team": "Ferrari",
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/charles-leclerc_1024.png",
+      "headshotUrl": "https://raw.githubusercontent.com/Mredman48/F1-standings/main/headshots/charles-leclerc.png",
       "bestResult": {
         "position": "-",
         "raceName": "-",
@@ -56,7 +60,7 @@
       "code": "HAM",
       "driverNumber": "44",
       "team": "Ferrari",
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lewis-hamilton_1024.png",
+      "headshotUrl": "https://raw.githubusercontent.com/Mredman48/F1-standings/main/headshots/lewis-hamilton.png",
       "bestResult": {
         "position": "-",
         "raceName": "-",
