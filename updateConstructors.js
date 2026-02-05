@@ -1,4 +1,26 @@
 // updateConstructors.js
+const PAGES_BASE = "https://mredman48.github.io/F1-standings";
+const TEAMLOGOS_DIR = "teamlogos";
+
+// Map Ergast constructorId -> your logo filename inside /teamlogos
+const TEAM_LOGOS_LOCAL = {
+  red_bull: "2025_red-bull_color_v2.png",
+  ferrari: "2025_ferrari_color_v2.png",
+  mercedes: "2025_mercedes_color_v2.png",
+  mclaren: "2025_mclaren_color_v2.png",
+  aston_martin: "2025_astonmartin_color_v2.png",
+  alpine: "2025_alpine_color_v2.png",
+  williams: "2025_williams_color_v2.png",
+  haas: "2025_haas_color_v2.png",
+  sauber: "2025_sauber_color_v2.png",
+  rb: "2025_vcarb_color_v2.png",          // if you named it vcarb
+  // cadillac: "2025_cadillac_color_v2.png" // if/when you add it
+};
+
+// ✅ Force Mercedes to your exact raw URL (same file used elsewhere)
+const MERCEDES_LOGO_PNG =
+  "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/2025_mercedes_color_v2.png";
+
 import fs from "node:fs/promises";
 
 const UA = "f1-standings-bot/1.0 (GitHub Actions)";
