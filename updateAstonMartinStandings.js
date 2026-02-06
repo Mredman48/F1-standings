@@ -8,7 +8,7 @@ const OPENF1_BASE = "https://api.openf1.org/v1";
 
 // ✅ Aston Martin logo (raw GitHub)
 const ASTON_LOGO_PNG =
-  "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/2025_astonmartin_color_v2.png";
+  "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/2025_aston-martin_color_v2.png";
 
 // Output JSON
 const OUT_JSON = "f1_astonmartin_standings.json";
