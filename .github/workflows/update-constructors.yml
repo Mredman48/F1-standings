@@ -5,15 +5,12 @@ on:
     - cron: "0 * * * *"
   workflow_dispatch:
 
-concurrency:
-  group: push-to-main
-  cancel-in-progress: false
-
 permissions:
   contents: write
 
+# ✅ GLOBAL LOCK (only one workflow pushes at a time)
 concurrency:
-  group: constructors-standings
+  group: push-to-main
   cancel-in-progress: false
 
 jobs:
@@ -21,19 +18,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout (main)
+      - name: Checkout (main, full history)
         uses: actions/checkout@v4
         with:
           ref: main
           fetch-depth: 0
           persist-credentials: true
-
-      # ✅ IMPORTANT: sync BEFORE generating files (working tree must be clean)
-      - name: Sync with remote
-        run: |
-          set -e
-          git fetch origin main
-          git pull --rebase origin main
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -46,14 +36,7 @@ jobs:
       - name: Run updater
         run: node updateConstructors.js
 
-      - name: Show generated files
-        run: |
-          ls -la
-          ls -la teamlogos || true
-          echo "---- JSON preview (first 80 lines) ----"
-          sed -n '1,80p' f1_constructors_standings.json || true
-
-      - name: Commit and push if changed
+      - name: Commit and push if changed (safe)
         run: |
           set -e
 
@@ -69,9 +52,17 @@ jobs:
 
           git commit -m "Update F1 constructors standings"
 
-          # Push; if another workflow pushed first, rebase and retry once
-          if ! git push origin main; then
-            echo "Push failed, retrying after rebase..."
-            git pull --rebase origin main
-            git push origin main
-          fi
+          # ✅ Push retry loop
+          for i in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              echo "Push succeeded."
+              exit 0
+            fi
+
+            echo "Push failed (attempt $i). Rebasing and retrying..."
+            git fetch origin main
+            git rebase origin/main
+          done
+
+          echo "Push failed after retries."
+          exit 1
