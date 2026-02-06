@@ -2,7 +2,7 @@ name: Update Audi Standings (Hourly)
 
 on:
   schedule:
-    - cron: "0 * * * *"
+    - cron: "12 * * * *"
   workflow_dispatch:
 
 # IMPORTANT: one concurrency block only
