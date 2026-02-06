@@ -1,14 +1,13 @@
 name: Update Audi Standings (Hourly)
 
-concurrency:
-  group: push-to-main
-  cancel-in-progress: false
-
 on:
   schedule:
     - cron: "0 * * * *"
   workflow_dispatch:
 
+# IMPORTANT: one concurrency block only
+# Group by workflow so other workflows can still run,
+# but we'll also make the push step race-safe.
 concurrency:
   group: audi-standings
   cancel-in-progress: false
@@ -27,13 +26,6 @@ jobs:
           ref: main
           fetch-depth: 0
 
-      - name: Ensure branch is up-to-date
-        run: |
-          set -e
-          git checkout main
-          git fetch origin main
-          git pull --rebase origin main
-
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -47,22 +39,23 @@ jobs:
 
       - name: Verify outputs created
         run: |
+          set -e
           echo "Repo root:"
           ls -la
           echo "Teamlogos:"
           ls -la teamlogos || true
           echo "Headshots:"
           ls -la headshots || true
-          test -f f1_audi_standings.json && echo "✅ f1_audi_standings.json exists" || (echo "❌ JSON missing" && exit 1)
+          test -f f1_audi_standings.json
 
-      - name: Commit and push if changed
+      - name: Commit and push if changed (race-condition safe)
         run: |
           set -e
 
           git config user.name "f1-bot"
           git config user.email "f1-bot@users.noreply.github.com"
 
-          # Commit JSON + any new/updated images
+          # Stage outputs
           git add f1_audi_standings.json headshots teamlogos || true
 
           if git diff --cached --quiet; then
@@ -72,10 +65,17 @@ jobs:
 
           git commit -m "Update Audi standings + headshots"
 
-          # Push with retry in case another workflow pushed after our earlier rebase
-          if ! git push origin main; then
-            echo "Push failed (race condition). Rebasing and retrying..."
+          # Push retry loop (handles other workflows pushing first)
+          for i in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              echo "Push succeeded."
+              exit 0
+            fi
+
+            echo "Push failed (attempt $i). Syncing with origin/main and retrying..."
             git fetch origin main
             git rebase origin/main
-            git push origin main
-          fi
+          done
+
+          echo "Push failed after retries."
+          exit 1
