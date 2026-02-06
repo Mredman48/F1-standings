@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: ferrari-standings
+  group: push-to-main
   cancel-in-progress: false
 
 permissions:
