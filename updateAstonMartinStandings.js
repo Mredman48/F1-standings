@@ -6,7 +6,7 @@ import sharp from "sharp";
 const UA = "f1-standings-bot/1.0 (GitHub Actions)";
 const OPENF1_BASE = "https://api.openf1.org/v1";
 
-// ✅ Aston Martin logo (raw GitHub)
+// ✅ UPDATED: correct Aston Martin logo filename (with dash)
 const ASTON_LOGO_PNG =
   "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/2025_aston-martin_color_v2.png";
 
@@ -158,7 +158,7 @@ function dashTeamStanding() {
 async function buildDashJson() {
   const now = new Date();
 
-  // ✅ Aston Martin drivers (edit numbers if your 2026 set differs)
+  // Aston Martin drivers (adjust if needed)
   const driversBase = [
     { firstName: "Fernando", lastName: "Alonso", code: "ALO", driverNumber: 14 },
     { firstName: "Lance", lastName: "Stroll", code: "STR", driverNumber: 18 },
@@ -174,8 +174,10 @@ async function buildDashJson() {
       code: d.code,
       driverNumber: d.driverNumber,
 
+      // driver number image from your repo
       numberImageUrl: getDriverNumberImageUrl(d.driverNumber),
 
+      // dash placeholders
       position: "-",
       points: "-",
       wins: "-",
@@ -183,6 +185,7 @@ async function buildDashJson() {
       placeholder: true,
       bestResult: dashBestResult(),
 
+      // either Pages URL or null (never placeholder images)
       headshotUrl,
     });
   }
