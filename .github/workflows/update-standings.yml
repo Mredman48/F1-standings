@@ -3,7 +3,7 @@ name: Update F1 Driver Standings
 on:
   workflow_dispatch:
   schedule:
-    - cron: "05 * * * *"
+    - cron: "42 * * * *"
 
 jobs:
   update:
