@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: williams-standings
+  group: push-to-main
   cancel-in-progress: false
 
 jobs:
