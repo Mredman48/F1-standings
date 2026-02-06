@@ -1,5 +1,9 @@
 name: Update F1 Weekend Results (Hourly)
 
+concurrency:
+  group: push-to-main
+  cancel-in-progress: false
+
 on:
   schedule:
     - cron: "0 * * * *"
