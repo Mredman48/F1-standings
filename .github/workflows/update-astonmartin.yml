@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: push-to-main
+  group: astonmartin-standings
   cancel-in-progress: false
 
 jobs:
@@ -24,48 +24,30 @@ jobs:
           fetch-depth: 0
           persist-credentials: true
 
-      - name: Setup Node
+      - name: Setup Node (no npm cache)
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install
-
-      # ✅ CRITICAL: sync BEFORE generating (tree must be clean for rebase)
-      - name: Sync with origin/main (clean)
         run: |
           set -e
-          git fetch origin main
-          git reset --hard origin/main
-          git clean -fd
+          npm install
+
+      - name: Verify sharp is installed
+        run: |
+          set -e
+          node -e "require('sharp'); console.log('✅ sharp ok')"
 
       - name: Run updater
         run: node updateAstonMartinStandings.js
 
-      - name: Verify outputs
-        run: |
-          set -e
-          ls -la
-          test -f f1_astonmartin_standings.json
-
-          echo "Headshots:"
-          ls -la headshots || true
-
-          echo "Teamlogos:"
-          ls -la teamlogos || true
-
-          echo "Driver numbers:"
-          ls -la driver-numbers || true
-
       - name: Commit and push if changed (race-condition safe)
         run: |
           set -e
-
           git config user.name "f1-bot"
           git config user.email "f1-bot@users.noreply.github.com"
 
-          # Stage outputs (include folders in case images update)
           git add f1_astonmartin_standings.json headshots teamlogos driver-numbers || true
 
           if git diff --cached --quiet; then
@@ -73,20 +55,18 @@ jobs:
             exit 0
           fi
 
-          git commit -m "Update Aston Martin standings + assets"
+          git commit -m "Update Aston Martin standings + headshots"
 
-          # Retry push with rebase if another workflow pushed first
+          # Try push; if someone else pushed, rebase and retry a few times
           for i in 1 2 3 4 5; do
             if git push origin HEAD:main; then
               echo "Push succeeded."
               exit 0
             fi
-
-            echo "Push failed (attempt $i). Rebasing onto origin/main and retrying..."
+            echo "Push failed (attempt $i). Rebasing and retrying..."
             git fetch origin main
             git rebase origin/main
           done
 
           echo "Push failed after retries."
-          git status --porcelain
           exit 1
