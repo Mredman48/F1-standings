@@ -9,7 +9,7 @@ on:
 # Group by workflow so other workflows can still run,
 # but we'll also make the push step race-safe.
 concurrency:
-  group: audi-standings
+  group: push-to-main
   cancel-in-progress: false
 
 permissions:
