@@ -1,49 +1,11 @@
-name: Update Aston Martin Standings (Hourly)
-
-on:
-  schedule:
-    - cron: "0 * * * *"
-  workflow_dispatch:
-
-permissions:
-  contents: write
-
-# Prevent overlapping runs of THIS workflow
-concurrency:
-  group: astonmartin-standings
-  cancel-in-progress: false
-
-jobs:
-  update-astonmartin:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          ref: main
-          fetch-depth: 0
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run updater
-        run: node updateAstonMartinStandings.js
-
-      - name: Commit and push if changed (robust)
+      - name: Commit and push if changed (race-condition safe)
         run: |
           set -e
 
           git config user.name "f1-bot"
           git config user.email "f1-bot@users.noreply.github.com"
 
-          # Stage outputs
-          git add f1_astonmartin_standings.json headshots || true
+          git add f1_astonmartin_standings.json headshots teamlogos driver-numbers || true
 
           if git diff --cached --quiet; then
             echo "No changes to commit."
@@ -52,32 +14,17 @@ jobs:
 
           git commit -m "Update Aston Martin standings + headshots"
 
-          # Push retry loop that stashes before rebase
           for i in 1 2 3 4 5; do
             if git push origin HEAD:main; then
               echo "Push succeeded."
               exit 0
             fi
 
-            echo "Push failed (attempt $i). Rebasing and retrying..."
-
-            # ✅ Make tree clean so rebase can run
-            git stash push -u -m "autostash before rebase" || true
-
+            echo "Push failed (attempt $i). Rebasing on origin/main and retrying..."
             git fetch origin main
-            git pull --rebase origin main
-
-            # Bring changes back (if any)
-            git stash pop || true
-
-            # Re-stage after pop, in case stash restored changes
-            git add f1_astonmartin_standings.json headshots || true
-
-            # If stash pop created diffs, recommit so push contains them
-            if ! git diff --cached --quiet; then
-              git commit -m "Update Aston Martin standings + headshots (retry)"
-            fi
+            git rebase origin/main
           done
 
           echo "Push failed after retries."
+          git status --porcelain
           exit 1
