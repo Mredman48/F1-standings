@@ -1,0 +1,82 @@
+{
+  "header": "Aston Martin standings",
+  "generatedAtUtc": "2026-02-06T01:12:29.521Z",
+  "sources": {
+    "openf1": "https://api.openf1.org/v1",
+    "driverStandings": "DASH_PLACEHOLDERS",
+    "constructorStandings": "DASH_PLACEHOLDERS",
+    "lastRace": "DASH_PLACEHOLDERS",
+    "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png"
+  },
+  "meta": {
+    "mode": "DASH_PLACEHOLDERS_REAL_HEADSHOTS",
+    "seasonUsed": "-",
+    "roundUsed": "-",
+    "note": "All fields are '-' placeholders for widget building. Headshots are pulled from OpenF1 when available, downloaded, converted to PNG, and stored in /headshots. Driver number images are pulled from your repo folder driver-numbers."
+  },
+  "astonmartin": {
+    "team": "Aston Martin",
+    "teamLogoPng": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/2025_astonmartin_color_v2.png",
+    "teamStanding": {
+      "team": "Aston Martin",
+      "position": "-",
+      "points": "-",
+      "wins": "-",
+      "originalTeam": "-"
+    }
+  },
+  "lastRace": {
+    "season": "-",
+    "round": "-",
+    "raceName": "-",
+    "date": "-",
+    "timeUtc": "-",
+    "circuit": {
+      "name": "-",
+      "locality": "-",
+      "country": "-"
+    }
+  },
+  "drivers": [
+    {
+      "firstName": "Fernando",
+      "lastName": "Alonso",
+      "code": "ALO",
+      "driverNumber": 14,
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-14.png",
+      "position": "-",
+      "points": "-",
+      "wins": "-",
+      "team": "Aston Martin",
+      "placeholder": true,
+      "bestResult": {
+        "position": "-",
+        "raceName": "-",
+        "round": "-",
+        "date": "-",
+        "circuit": "-"
+      },
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/fernando-alonso.png"
+    },
+    {
+      "firstName": "Lance",
+      "lastName": "Stroll",
+      "code": "STR",
+      "driverNumber": 18,
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-18.png",
+      "position": "-",
+      "points": "-",
+      "wins": "-",
+      "team": "Aston Martin",
+      "placeholder": true,
+      "bestResult": {
+        "position": "-",
+        "raceName": "-",
+        "round": "-",
+        "date": "-",
+        "circuit": "-"
+      },
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lance-stroll.png"
+    }
+  ]
+}
