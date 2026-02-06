@@ -2,14 +2,12 @@ name: Update Aston Martin Standings (Hourly)
 
 on:
   schedule:
-    # Stagger from :00 to reduce collisions with other hourly jobs
     - cron: "7 * * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
 
-# ✅ GLOBAL LOCK: only ONE workflow in the repo may push at a time
 concurrency:
   group: push-to-main
   cancel-in-progress: false
@@ -30,26 +28,35 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
 
       - name: Install dependencies
         run: npm install
 
+      # ✅ CRITICAL: sync BEFORE generating (tree must be clean for rebase)
+      - name: Sync with origin/main (clean)
+        run: |
+          set -e
+          git fetch origin main
+          git reset --hard origin/main
+          git clean -fd
+
       - name: Run updater
         run: node updateAstonMartinStandings.js
 
-      - name: Verify outputs created
+      - name: Verify outputs
         run: |
-          echo "Repo root:"
+          set -e
           ls -la
+          test -f f1_astonmartin_standings.json
+
           echo "Headshots:"
           ls -la headshots || true
+
           echo "Teamlogos:"
           ls -la teamlogos || true
+
           echo "Driver numbers:"
           ls -la driver-numbers || true
-
-          test -f f1_astonmartin_standings.json && echo "✅ JSON exists" || (echo "❌ JSON missing" && exit 1)
 
       - name: Commit and push if changed (race-condition safe)
         run: |
@@ -58,7 +65,7 @@ jobs:
           git config user.name "f1-bot"
           git config user.email "f1-bot@users.noreply.github.com"
 
-          # Stage outputs (add/remove folders here if Aston doesn't touch them)
+          # Stage outputs (include folders in case images update)
           git add f1_astonmartin_standings.json headshots teamlogos driver-numbers || true
 
           if git diff --cached --quiet; then
@@ -66,28 +73,18 @@ jobs:
             exit 0
           fi
 
-          git commit -m "Update Aston Martin standings + headshots"
+          git commit -m "Update Aston Martin standings + assets"
 
-          # Push with rebase + retry + jitter
-          for i in 1 2 3 4 5 6 7 8 9 10; do
+          # Retry push with rebase if another workflow pushed first
+          for i in 1 2 3 4 5; do
             if git push origin HEAD:main; then
               echo "Push succeeded."
               exit 0
             fi
 
-            echo "Push failed (attempt $i). Syncing with origin/main and retrying..."
-
+            echo "Push failed (attempt $i). Rebasing onto origin/main and retrying..."
             git fetch origin main
-
-            if ! git rebase origin/main; then
-              echo "Rebase failed. Aborting rebase and exiting."
-              git rebase --abort || true
-              git status --porcelain
-              exit 1
-            fi
-
-            # small jitter so we don't collide at the exact same second
-            sleep $(( (RANDOM % 7) + 2 ))
+            git rebase origin/main
           done
 
           echo "Push failed after retries."
