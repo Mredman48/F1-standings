@@ -6,22 +6,16 @@ const UA = "f1-standings-bot/1.0 (GitHub Actions)";
 // Output JSON
 const OUT_JSON = "f1_redbull_standings.json";
 
-// Repo folders
-const HEADSHOTS_DIR = "headshots";
-const DRIVER_NUMBER_FOLDER = "driver-numbers";
-
-const TEAMLOGOS_DIR = "teamlogos";
-const REDBULL_LOGO_LOCAL = `${TEAMLOGOS_DIR}/2025_red-bull_color_v2.png`;
-const REDBULL_LOGO_PNG = `${PAGES_BASE}/${REDBULL_LOGO_LOCAL}`;
-
 // GitHub Pages base (Widgy-friendly)
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 
-// Repo team logo helper (LOCAL via GitHub Pages)
+// Repo folders
 const TEAMLOGOS_DIR = "teamlogos";
-function teamLogoUrl(fileName) {
-  return `${PAGES_BASE}/${TEAMLOGOS_DIR}/${fileName}`;
-}
+const HEADSHOTS_DIR = "headshots";
+const DRIVER_NUMBER_FOLDER = "driver-numbers";
+
+// ✅ Red Bull logo pulled from YOUR repo (GitHub Pages, not raw GitHub)
+const REDBULL_LOGO_PNG = `${PAGES_BASE}/${TEAMLOGOS_DIR}/2025_red-bull_color_v2.png`;
 
 // ---------- Helpers ----------
 
@@ -54,10 +48,13 @@ async function getSavedHeadshotUrl({ firstName, lastName }) {
   const fileName = `${toSlug(firstName)}-${toSlug(lastName)}.png`;
   const localPath = `${HEADSHOTS_DIR}/${fileName}`;
 
+  // Only return URL if the file actually exists in the repo checkout
   if (await exists(localPath)) {
     return `${PAGES_BASE}/${HEADSHOTS_DIR}/${fileName}`;
   }
-  return null; // no placeholders
+
+  // No placeholders
+  return null;
 }
 
 // ---------- Dash placeholder builders ----------
@@ -87,18 +84,19 @@ function dashTeamStanding() {
   };
 }
 
-// ---------- Build JSON (same structure, dashes) ----------
+// ---------- Build JSON ----------
 
 async function buildDashJson() {
   const now = new Date();
 
+  // ✅ Your forced driver numbers
   const driversBase = [
-    // ✅ Forced for your 2026 setup
     { firstName: "Max", lastName: "Verstappen", code: "VER", driverNumber: 3 },
     { firstName: "Isack", lastName: "Hadjar", code: "HAD", driverNumber: 6 },
   ];
 
   const drivers = [];
+
   for (const d of driversBase) {
     const headshotUrl = await getSavedHeadshotUrl(d);
 
@@ -108,10 +106,10 @@ async function buildDashJson() {
       code: d.code,
       driverNumber: d.driverNumber,
 
-      // ✅ Your uploaded number images
+      // ✅ driver-number images you uploaded
       numberImageUrl: getDriverNumberImageUrl(d.driverNumber),
 
-      // dash placeholders (Ferrari/Mercedes style)
+      // dash placeholders
       position: "-",
       points: "-",
       wins: "-",
@@ -128,6 +126,7 @@ async function buildDashJson() {
     header: "Red Bull standings",
     generatedAtUtc: now.toISOString(),
     sources: {
+      logos: `LOCAL_ONLY: ${PAGES_BASE}/${TEAMLOGOS_DIR}/`,
       headshots: `LOCAL_ONLY: ${PAGES_BASE}/${HEADSHOTS_DIR}/<first>-<last>.png`,
       driverNumbers: `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-<number>.png`,
       driverStandings: "DASH_PLACEHOLDERS",
@@ -135,11 +134,11 @@ async function buildDashJson() {
       lastRace: "DASH_PLACEHOLDERS",
     },
     meta: {
-      mode: "DASH_PLACEHOLDERS_LOCAL_HEADSHOTS",
+      mode: "DASH_PLACEHOLDERS_LOCAL_HEADSHOTS_LOCAL_LOGO",
       seasonUsed: "-",
       roundUsed: "-",
       note:
-        "All fields are '-' placeholders for widget building. Headshots are LOCAL ONLY from /headshots in the repo (no OpenF1, no downloading). Driver number images are loaded from /driver-numbers.",
+        "All fields are '-' placeholders for widget building. Team logo + headshots + driver number images are LOCAL ONLY from your repo (no OpenF1, no downloading).",
     },
     redbull: {
       team: "Red Bull",
