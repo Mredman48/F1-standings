@@ -1,0 +1,83 @@
+{
+  "header": "McLaren standings",
+  "generatedAtUtc": "2026-02-07T04:00:22.384Z",
+  "sources": {
+    "teamLogo": "https://mredman48.github.io/F1-standings/teamlogos/2025_mclaren_color_v2.png",
+    "headshots": "https://mredman48.github.io/F1-standings/headshots/<file>.png (saved in repo)",
+    "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png",
+    "driverStandings": "DASH_PLACEHOLDERS",
+    "constructorStandings": "DASH_PLACEHOLDERS",
+    "lastRace": "DASH_PLACEHOLDERS"
+  },
+  "meta": {
+    "mode": "DASH_PLACEHOLDERS_SAVED_HEADSHOTS",
+    "seasonUsed": "-",
+    "roundUsed": "-",
+    "note": "All fields are '-' placeholders for widget building. Headshots are NOT downloaded; they are read from existing /headshots files in the repo. Driver number images are read from /driver-numbers."
+  },
+  "mclaren": {
+    "team": "McLaren",
+    "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_mclaren_color_v2.png",
+    "teamStanding": {
+      "team": "McLaren",
+      "position": "-",
+      "points": "-",
+      "wins": "-",
+      "originalTeam": "-"
+    }
+  },
+  "lastRace": {
+    "season": "-",
+    "round": "-",
+    "raceName": "-",
+    "date": "-",
+    "timeUtc": "-",
+    "circuit": {
+      "name": "-",
+      "locality": "-",
+      "country": "-"
+    }
+  },
+  "drivers": [
+    {
+      "firstName": "Lando",
+      "lastName": "Norris",
+      "code": "NOR",
+      "driverNumber": 4,
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-4.png",
+      "position": "-",
+      "points": "-",
+      "wins": "-",
+      "team": "McLaren",
+      "placeholder": true,
+      "bestResult": {
+        "position": "-",
+        "raceName": "-",
+        "round": "-",
+        "date": "-",
+        "circuit": "-"
+      },
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lando-norris.png"
+    },
+    {
+      "firstName": "Oscar",
+      "lastName": "Piastri",
+      "code": "PIA",
+      "driverNumber": 81,
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-81.png",
+      "position": "-",
+      "points": "-",
+      "wins": "-",
+      "team": "McLaren",
+      "placeholder": true,
+      "bestResult": {
+        "position": "-",
+        "raceName": "-",
+        "round": "-",
+        "date": "-",
+        "circuit": "-"
+      },
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/oscar-piastri.png"
+    }
+  ]
+}
