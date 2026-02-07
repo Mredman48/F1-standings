@@ -9,9 +9,12 @@ const OUT_JSON = "f1_mercedes_standings.json";
 // GitHub Pages base (Widgy-friendly)
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 
-// ✅ Mercedes logo URL (unchanged)
-const MERCEDES_LOGO_PNG =
-  "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/2025_mercedes_color_v2.png";
+// Repo team logo helper (LOCAL repo via GitHub Pages)
+const TEAMLOGOS_DIR = "teamlogos";
+
+function teamLogoUrl(fileName) {
+  return `${PAGES_BASE}/${TEAMLOGOS_DIR}/${fileName}`;
+}
 
 // Repo folders
 const HEADSHOTS_DIR = "headshots";
