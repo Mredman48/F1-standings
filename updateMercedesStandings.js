@@ -9,16 +9,13 @@ const OUT_JSON = "f1_mercedes_standings.json";
 // GitHub Pages base (Widgy-friendly)
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 
-// Repo team logo helper (LOCAL repo via GitHub Pages)
-const TEAMLOGOS_DIR = "teamlogos";
-
-function teamLogoUrl(fileName) {
-  return `${PAGES_BASE}/${TEAMLOGOS_DIR}/${fileName}`;
-}
-
 // Repo folders
+const TEAMLOGOS_DIR = "teamlogos";
 const HEADSHOTS_DIR = "headshots";
-const DRIVER_NUMBERS_DIR = "driver-numbers";
+const DRIVER_NUMBER_FOLDER = "driver-numbers";
+
+// ✅ Mercedes logo pulled from YOUR repo (GitHub Pages)
+const MERCEDES_LOGO_PNG = `${PAGES_BASE}/${TEAMLOGOS_DIR}/2025_mercedes_color_v2.png`;
 
 // ---------- Helpers ----------
 
@@ -40,9 +37,13 @@ async function exists(filePath) {
   }
 }
 
-// ---------- Repo-saved headshots (NO INTERNET) ----------
-// Looks for: headshots/<first>-<last>.png
-// Returns Pages URL if file exists, else null.
+// ✅ Driver number images (repo-saved)
+function getDriverNumberImageUrl(driverNumber) {
+  if (driverNumber == null || driverNumber === "-" || driverNumber === "") return null;
+  return `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-${driverNumber}.png`;
+}
+
+// ✅ Headshots (LOCAL ONLY; no downloading)
 async function getSavedHeadshotUrl({ firstName, lastName }) {
   const fileName = `${toSlug(firstName)}-${toSlug(lastName)}.png`;
   const localPath = `${HEADSHOTS_DIR}/${fileName}`;
@@ -53,14 +54,7 @@ async function getSavedHeadshotUrl({ firstName, lastName }) {
   return null; // no placeholders
 }
 
-// ---------- Driver Number PNG URL ----------
-
-function getDriverNumberImageUrl(driverNumber) {
-  if (driverNumber == null || driverNumber === "-" || driverNumber === "") return null;
-  return `${PAGES_BASE}/${DRIVER_NUMBERS_DIR}/driver-number-${driverNumber}.png`;
-}
-
-// ---------- Dash Placeholder Builders ----------
+// ---------- Dash placeholder builders ----------
 
 function dashBestResult() {
   return { position: "-", raceName: "-", round: "-", date: "-", circuit: "-" };
@@ -89,10 +83,10 @@ function dashTeamStanding() {
 
 // ---------- Build JSON ----------
 
-async function buildMercedesJson() {
+async function buildDashJson() {
   const now = new Date();
 
-  // Mercedes driver lineup
+  // ✅ Mercedes drivers (edit if needed)
   const driversBase = [
     { firstName: "George", lastName: "Russell", code: "RUS", driverNumber: 63 },
     { firstName: "Andrea", lastName: "Kimi Antonelli", code: "ANT", driverNumber: 12 },
@@ -109,10 +103,10 @@ async function buildMercedesJson() {
       code: d.code,
       driverNumber: d.driverNumber,
 
-      // ✅ Driver number image from your repo folder
-      driverNumberImage: getDriverNumberImageUrl(d.driverNumber),
+      // ✅ repo driver-number images
+      numberImageUrl: getDriverNumberImageUrl(d.driverNumber),
 
-      // Dash placeholders
+      // dash placeholders
       position: "-",
       points: "-",
       wins: "-",
@@ -120,7 +114,7 @@ async function buildMercedesJson() {
       placeholder: true,
       bestResult: dashBestResult(),
 
-      // ✅ Repo-saved headshot URL or null
+      // ✅ local-only headshot URL or null
       headshotUrl,
     });
   }
@@ -129,18 +123,19 @@ async function buildMercedesJson() {
     header: "Mercedes standings",
     generatedAtUtc: now.toISOString(),
     sources: {
+      logos: `LOCAL_ONLY: ${PAGES_BASE}/${TEAMLOGOS_DIR}/`,
       headshots: `LOCAL_ONLY: ${PAGES_BASE}/${HEADSHOTS_DIR}/<first>-<last>.png`,
-      driverNumbers: `${PAGES_BASE}/${DRIVER_NUMBERS_DIR}/driver-number-<number>.png`,
+      driverNumbers: `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-<number>.png`,
       driverStandings: "DASH_PLACEHOLDERS",
       constructorStandings: "DASH_PLACEHOLDERS",
       lastRace: "DASH_PLACEHOLDERS",
     },
     meta: {
-      mode: "DASH_PLACEHOLDERS_LOCAL_HEADSHOTS",
+      mode: "DASH_PLACEHOLDERS_LOCAL_HEADSHOTS_LOCAL_LOGO",
       seasonUsed: "-",
       roundUsed: "-",
       note:
-        "All stats are '-' placeholders for widget building. Headshots are LOCAL ONLY from /headshots in the repo. No OpenF1, no downloading, no placeholder images.",
+        "All fields are '-' placeholders for widget building. Team logo + headshots + driver number images are LOCAL ONLY from your repo (no OpenF1, no downloading).",
     },
     mercedes: {
       team: "Mercedes",
@@ -155,7 +150,7 @@ async function buildMercedesJson() {
 // ---------- Main ----------
 
 async function updateMercedesStandings() {
-  const out = await buildMercedesJson();
+  const out = await buildDashJson();
   await fs.writeFile(OUT_JSON, JSON.stringify(out, null, 2), "utf8");
   console.log(`Wrote ${OUT_JSON}`);
 }
