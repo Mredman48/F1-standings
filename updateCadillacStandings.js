@@ -1,21 +1,18 @@
 // updateCadillacStandings.js
 import fs from "node:fs/promises";
 
-const UA = "f1-standings-bot/1.0 (GitHub Actions)";
-
-// Output JSON
 const OUT_JSON = "f1_cadillac_standings.json";
 
 // GitHub Pages base (Widgy-friendly)
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 
-// Repo folders (LOCAL ONLY)
-const TEAMLOGOS_DIR = "teamlogos";
+// Repo folders
 const HEADSHOTS_DIR = "headshots";
 const DRIVER_NUMBER_FOLDER = "driver-numbers";
+const TEAMLOGOS_DIR = "teamlogos";
 
-// ✅ Cadillac logo file in your repo (upload this to /teamlogos)
-const CADILLAC_LOGO_FILE = "2025_cadillac_color_v2.png";
+// ✅ Cadillac logo served from your GitHub Pages repo (NOT F1 / NOT external)
+const CADILLAC_LOGO_PNG = `${PAGES_BASE}/${TEAMLOGOS_DIR}/2025_cadillac_color_v2.png`;
 
 // ---------- Helpers ----------
 
@@ -37,24 +34,24 @@ async function exists(filePath) {
   }
 }
 
-function pagesUrl(path) {
-  return `${PAGES_BASE}/${String(path).replace(/^\/+/, "")}`;
-}
-
+// ✅ driver-number images (repo-saved)
 function getDriverNumberImageUrl(driverNumber) {
   if (driverNumber == null || driverNumber === "-" || driverNumber === "") return null;
-  return pagesUrl(`${DRIVER_NUMBER_FOLDER}/driver-number-${driverNumber}.png`);
+  return `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-${driverNumber}.png`;
 }
 
+// ✅ headshots (LOCAL ONLY; no downloading)
 async function getSavedHeadshotUrl({ firstName, lastName }) {
   const fileName = `${toSlug(firstName)}-${toSlug(lastName)}.png`;
   const localPath = `${HEADSHOTS_DIR}/${fileName}`;
 
-  if (await exists(localPath)) return pagesUrl(localPath);
+  if (await exists(localPath)) {
+    return `${PAGES_BASE}/${HEADSHOTS_DIR}/${fileName}`;
+  }
   return null; // no placeholders
 }
 
-// ---------- Dash placeholders ----------
+// ---------- Dash placeholder builders ----------
 
 function dashBestResult() {
   return { position: "-", raceName: "-", round: "-", date: "-", circuit: "-" };
@@ -83,20 +80,19 @@ function dashTeamStanding() {
 
 // ---------- Build JSON ----------
 
-async function buildCadillacJson() {
+async function buildDashJson() {
   const now = new Date();
 
-  // ✅ Placeholder drivers (edit anytime; these are LOCAL ONLY assets)
-  // Keep driverNumber "-" if you don't have a number image yet.
+  // ✅ Cadillac placeholder drivers
+  // Reported lineup: Bottas (#77) and Perez (#11)
   const driversBase = [
-    { firstName: "-", lastName: "-", code: "-", driverNumber: "-" },
-    { firstName: "-", lastName: "-", code: "-", driverNumber: "-" },
+    { firstName: "Valtteri", lastName: "Bottas", code: "BOT", driverNumber: 77 },
+    { firstName: "Sergio", lastName: "Perez", code: "PER", driverNumber: 11 },
   ];
 
   const drivers = [];
   for (const d of driversBase) {
-    const headshotUrl =
-      d.firstName !== "-" && d.lastName !== "-" ? await getSavedHeadshotUrl(d) : null;
+    const headshotUrl = await getSavedHeadshotUrl(d);
 
     drivers.push({
       firstName: d.firstName,
@@ -104,10 +100,10 @@ async function buildCadillacJson() {
       code: d.code,
       driverNumber: d.driverNumber,
 
-      // ✅ number images from repo (or null)
+      // ✅ repo driver-number images
       numberImageUrl: getDriverNumberImageUrl(d.driverNumber),
 
-      // dash placeholders
+      // placeholders
       position: "-",
       points: "-",
       wins: "-",
@@ -115,7 +111,7 @@ async function buildCadillacJson() {
       placeholder: true,
       bestResult: dashBestResult(),
 
-      // ✅ local-only headshot or null
+      // ✅ local-only headshot URL or null
       headshotUrl,
     });
   }
@@ -124,7 +120,7 @@ async function buildCadillacJson() {
     header: "Cadillac standings",
     generatedAtUtc: now.toISOString(),
     sources: {
-      teamLogo: `LOCAL_ONLY: ${PAGES_BASE}/${TEAMLOGOS_DIR}/${CADILLAC_LOGO_FILE}`,
+      logos: `LOCAL_ONLY: ${PAGES_BASE}/${TEAMLOGOS_DIR}/`,
       headshots: `LOCAL_ONLY: ${PAGES_BASE}/${HEADSHOTS_DIR}/<first>-<last>.png`,
       driverNumbers: `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-<number>.png`,
       driverStandings: "DASH_PLACEHOLDERS",
@@ -136,11 +132,11 @@ async function buildCadillacJson() {
       seasonUsed: "-",
       roundUsed: "-",
       note:
-        "Cadillac is a placeholder team. Logos/headshots/driver numbers are LOCAL ONLY from your repo (no OpenF1, no external image URLs).",
+        "All fields are '-' placeholders for widget building. Headshots + team logo + driver-number images are LOCAL ONLY from the repo (no OpenF1, no external logos).",
     },
     cadillac: {
       team: "Cadillac",
-      teamLogoPng: pagesUrl(`${TEAMLOGOS_DIR}/${CADILLAC_LOGO_FILE}`),
+      teamLogoPng: CADILLAC_LOGO_PNG,
       teamStanding: dashTeamStanding(),
     },
     lastRace: dashLastRace(),
@@ -151,7 +147,7 @@ async function buildCadillacJson() {
 // ---------- Main ----------
 
 async function updateCadillacStandings() {
-  const out = await buildCadillacJson();
+  const out = await buildDashJson();
   await fs.writeFile(OUT_JSON, JSON.stringify(out, null, 2), "utf8");
   console.log(`Wrote ${OUT_JSON}`);
 }
