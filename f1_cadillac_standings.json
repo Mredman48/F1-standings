@@ -1,8 +1,8 @@
 {
   "header": "Cadillac standings",
-  "generatedAtUtc": "2026-02-07T21:54:53.871Z",
+  "generatedAtUtc": "2026-02-07T22:00:20.239Z",
   "sources": {
-    "teamLogo": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/teamlogos/2025_cadillac_color_v2.png",
+    "logos": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/teamlogos/",
     "headshots": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/headshots/<first>-<last>.png",
     "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png",
     "driverStandings": "DASH_PLACEHOLDERS",
@@ -13,7 +13,7 @@
     "mode": "DASH_PLACEHOLDERS_LOCAL_ASSETS",
     "seasonUsed": "-",
     "roundUsed": "-",
-    "note": "Cadillac is a placeholder team. Logos/headshots/driver numbers are LOCAL ONLY from your repo (no OpenF1, no external image URLs)."
+    "note": "All fields are '-' placeholders for widget building. Headshots + team logo + driver-number images are LOCAL ONLY from the repo (no OpenF1, no external logos)."
   },
   "cadillac": {
     "team": "Cadillac",
@@ -40,11 +40,11 @@
   },
   "drivers": [
     {
-      "firstName": "-",
-      "lastName": "-",
-      "code": "-",
-      "driverNumber": "-",
-      "numberImageUrl": null,
+      "firstName": "Valtteri",
+      "lastName": "Bottas",
+      "code": "BOT",
+      "driverNumber": 77,
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-77.png",
       "position": "-",
       "points": "-",
       "wins": "-",
@@ -57,14 +57,14 @@
         "date": "-",
         "circuit": "-"
       },
-      "headshotUrl": null
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/valtteri-bottas.png"
     },
     {
-      "firstName": "-",
-      "lastName": "-",
-      "code": "-",
-      "driverNumber": "-",
-      "numberImageUrl": null,
+      "firstName": "Sergio",
+      "lastName": "Perez",
+      "code": "PER",
+      "driverNumber": 11,
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-11.png",
       "position": "-",
       "points": "-",
       "wins": "-",
@@ -77,7 +77,7 @@
         "date": "-",
         "circuit": "-"
       },
-      "headshotUrl": null
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/sergio-perez.png"
     }
   ]
 }
