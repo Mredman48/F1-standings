@@ -13,6 +13,22 @@ const OUT_JSON = "f1_audi_standings.json";
 const TEAMLOGOS_DIR = "teamlogos";
 const HEADSHOTS_DIR = "headshots";
 
+const HEADSHOTS_DIR = "headshots";
+
+function toSlug(s) {
+  return String(s || "")
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+function getSavedHeadshotUrlByName(firstName, lastName) {
+  const file = `${toSlug(firstName)}-${toSlug(lastName)}.png`;
+  return `${PAGES_BASE}/${HEADSHOTS_DIR}/${file}`;
+}
+
 // GitHub Pages base (Widgy-friendly)
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 
