@@ -1,18 +1,18 @@
 {
   "header": "Williams standings",
-  "generatedAtUtc": "2026-02-07T05:05:33.662Z",
+  "generatedAtUtc": "2026-02-07T06:25:08.885Z",
   "sources": {
-    "openf1": "https://api.openf1.org/v1",
+    "headshots": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/headshots/<first>-<last>.png",
+    "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png",
     "driverStandings": "DASH_PLACEHOLDERS",
     "constructorStandings": "DASH_PLACEHOLDERS",
-    "lastRace": "DASH_PLACEHOLDERS",
-    "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png"
+    "lastRace": "DASH_PLACEHOLDERS"
   },
   "meta": {
-    "mode": "DASH_PLACEHOLDERS_REAL_HEADSHOTS",
+    "mode": "DASH_PLACEHOLDERS_LOCAL_HEADSHOTS",
     "seasonUsed": "-",
     "roundUsed": "-",
-    "note": "All fields are '-' placeholders for widget building. Headshots are pulled from OpenF1 when available, downloaded, converted to PNG, and stored in /headshots. Driver number images are pulled from your repo folder driver-numbers."
+    "note": "All fields are '-' placeholders for widget building. Headshots are LOCAL ONLY from /headshots in the repo (no OpenF1, no downloading). Driver number images are loaded from /driver-numbers."
   },
   "williams": {
     "team": "Williams",
