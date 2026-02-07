@@ -1,7 +1,8 @@
 {
   "header": "Mercedes standings",
-  "generatedAtUtc": "2026-02-07T06:06:51.324Z",
+  "generatedAtUtc": "2026-02-07T07:21:55.852Z",
   "sources": {
+    "logos": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/teamlogos/",
     "headshots": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/headshots/<first>-<last>.png",
     "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png",
     "driverStandings": "DASH_PLACEHOLDERS",
@@ -9,14 +10,14 @@
     "lastRace": "DASH_PLACEHOLDERS"
   },
   "meta": {
-    "mode": "DASH_PLACEHOLDERS_LOCAL_HEADSHOTS",
+    "mode": "DASH_PLACEHOLDERS_LOCAL_HEADSHOTS_LOCAL_LOGO",
     "seasonUsed": "-",
     "roundUsed": "-",
-    "note": "All stats are '-' placeholders for widget building. Headshots are LOCAL ONLY from /headshots in the repo. No OpenF1, no downloading, no placeholder images."
+    "note": "All fields are '-' placeholders for widget building. Team logo + headshots + driver number images are LOCAL ONLY from your repo (no OpenF1, no downloading)."
   },
   "mercedes": {
     "team": "Mercedes",
-    "teamLogoPng": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/2025_mercedes_color_v2.png",
+    "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_mercedes_color_v2.png",
     "teamStanding": {
       "team": "Mercedes",
       "position": "-",
@@ -43,7 +44,7 @@
       "lastName": "Russell",
       "code": "RUS",
       "driverNumber": 63,
-      "driverNumberImage": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-63.png",
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-63.png",
       "position": "-",
       "points": "-",
       "wins": "-",
@@ -63,7 +64,7 @@
       "lastName": "Kimi Antonelli",
       "code": "ANT",
       "driverNumber": 12,
-      "driverNumberImage": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-12.png",
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-12.png",
       "position": "-",
       "points": "-",
       "wins": "-",
