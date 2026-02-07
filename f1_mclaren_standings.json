@@ -1,19 +1,19 @@
 {
   "header": "McLaren standings",
-  "generatedAtUtc": "2026-02-07T07:10:27.887Z",
+  "generatedAtUtc": "2026-02-07T07:37:13.450Z",
   "sources": {
-    "teamLogo": "https://mredman48.github.io/F1-standings/teamlogos/2025_mclaren_color_v2.png",
-    "headshots": "https://mredman48.github.io/F1-standings/headshots/<file>.png (saved in repo)",
+    "logos": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/teamlogos/",
+    "headshots": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/headshots/<first>-<last>.png",
     "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png",
     "driverStandings": "DASH_PLACEHOLDERS",
     "constructorStandings": "DASH_PLACEHOLDERS",
     "lastRace": "DASH_PLACEHOLDERS"
   },
   "meta": {
-    "mode": "DASH_PLACEHOLDERS_SAVED_HEADSHOTS",
+    "mode": "DASH_PLACEHOLDERS_LOCAL_HEADSHOTS_LOCAL_LOGO",
     "seasonUsed": "-",
     "roundUsed": "-",
-    "note": "All fields are '-' placeholders for widget building. Headshots are NOT downloaded; they are read from existing /headshots files in the repo. Driver number images are read from /driver-numbers."
+    "note": "All fields are '-' placeholders for widget building. Team logo + headshots + driver number images are LOCAL ONLY from your repo (no OpenF1, no downloading)."
   },
   "mclaren": {
     "team": "McLaren",
