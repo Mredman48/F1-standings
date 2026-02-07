@@ -88,16 +88,51 @@ async function exists(filePath) {
 
 async function fetchErgastWithFallback(pathPart) {
   const attempts = [];
+
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
   for (const base of ERGAST_BASES) {
     const url = `${base}${pathPart}`;
-    try {
-      const data = await fetchJson(url);
-      attempts.push({ url, status: 200, ok: true });
-      return { data, url, attempts };
-    } catch (e) {
-      attempts.push({ url, status: "ERR", ok: false, err: String(e?.message || e) });
+
+    // Retry a few times (handles 429 throttling + random HTML responses)
+    for (let i = 1; i <= 5; i++) {
+      try {
+        const res = await fetch(url, {
+          headers: { "User-Agent": UA, Accept: "application/json" },
+          redirect: "follow",
+        });
+
+        const text = await res.text();
+
+        // 429 = throttled
+        if (res.status === 429) {
+          attempts.push({ url, ok: false, status: 429, try: i, err: "throttled" });
+          await sleep(1000 * i); // simple backoff
+          continue;
+        }
+
+        if (!res.ok) {
+          attempts.push({ url, ok: false, status: res.status, try: i, err: text.slice(0, 120) });
+          break; // not retryable here
+        }
+
+        // Sometimes Ergast returns HTML ("<") instead of JSON
+        if (text.trimStart().startsWith("<")) {
+          attempts.push({ url, ok: false, status: "HTML", try: i, err: text.slice(0, 120) });
+          await sleep(1000 * i);
+          continue;
+        }
+
+        const data = JSON.parse(text);
+        attempts.push({ url, ok: true, status: 200, try: i });
+        return { data, url, attempts };
+      } catch (e) {
+        attempts.push({ url, ok: false, status: "ERR", try: i, err: String(e?.message || e) });
+        await sleep(1000 * i);
+      }
     }
   }
+
   const err = new Error(`Failed Ergast fetch for ${pathPart}. Attempts: ${JSON.stringify(attempts)}`);
   err.attempts = attempts;
   throw err;
