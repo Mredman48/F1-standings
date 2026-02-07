@@ -1,28 +1,31 @@
 // updateMcLarenStandings.js
 import fs from "node:fs/promises";
-import path from "node:path";
 
+const UA = "f1-standings-bot/1.0 (GitHub Actions)";
+
+// Output JSON
 const OUT_JSON = "f1_mclaren_standings.json";
 
 // GitHub Pages base (Widgy-friendly)
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 
-// ✅ Team logo (LOCAL in your repo)
+// Repo folders
 const TEAMLOGOS_DIR = "teamlogos";
-const MCLAREN_LOGO_FILE = "2025_mclaren_color_v2.png";
-const MCLAREN_LOGO_PNG = `${PAGES_BASE}/${TEAMLOGOS_DIR}/${MCLAREN_LOGO_FILE}`;
-
-// ✅ Driver number images folder
-const DRIVER_NUMBER_FOLDER = "driver-numbers";
-function getDriverNumberImageUrl(driverNumber) {
-  if (driverNumber == null || driverNumber === "-" || driverNumber === "") return null;
-  return `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-${driverNumber}.png`;
-}
-
-// ✅ Headshots are already saved here
 const HEADSHOTS_DIR = "headshots";
-function headshotPagesUrl(fileName) {
-  return `${PAGES_BASE}/${HEADSHOTS_DIR}/${fileName}`;
+const DRIVER_NUMBER_FOLDER = "driver-numbers";
+
+// ✅ McLaren logo pulled from YOUR repo (GitHub Pages)
+const MCLAREN_LOGO_PNG = `${PAGES_BASE}/${TEAMLOGOS_DIR}/2025_mclaren_color_v2.png`;
+
+// ---------- Helpers ----------
+
+function toSlug(s) {
+  return String(s || "")
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
 }
 
 async function exists(filePath) {
@@ -34,14 +37,21 @@ async function exists(filePath) {
   }
 }
 
-/**
- * ✅ Uses already-saved headshots in /headshots
- * Returns Pages URL if file exists, else null (no placeholders).
- */
-async function getSavedHeadshotUrl(fileName) {
-  const localPath = path.join(HEADSHOTS_DIR, fileName);
-  if (await exists(localPath)) return headshotPagesUrl(fileName);
-  return null;
+// ✅ Driver number images (repo-saved)
+function getDriverNumberImageUrl(driverNumber) {
+  if (driverNumber == null || driverNumber === "-" || driverNumber === "") return null;
+  return `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-${driverNumber}.png`;
+}
+
+// ✅ Headshots (LOCAL ONLY; no downloading)
+async function getSavedHeadshotUrl({ firstName, lastName }) {
+  const fileName = `${toSlug(firstName)}-${toSlug(lastName)}.png`;
+  const localPath = `${HEADSHOTS_DIR}/${fileName}`;
+
+  if (await exists(localPath)) {
+    return `${PAGES_BASE}/${HEADSHOTS_DIR}/${fileName}`;
+  }
+  return null; // no placeholders
 }
 
 // ---------- Dash placeholder builders ----------
@@ -76,29 +86,16 @@ function dashTeamStanding() {
 async function buildDashJson() {
   const now = new Date();
 
-  // ✅ IMPORTANT:
-  // Set headshotFile values to EXACT filenames that exist in /headshots
-  // Example: "lando-norris.png" must exist at /headshots/lando-norris.png
+  // ✅ McLaren drivers (edit if your lineup differs)
   const driversBase = [
-    {
-      firstName: "Lando",
-      lastName: "Norris",
-      code: "NOR",
-      driverNumber: 4,
-      headshotFile: "lando-norris.png",
-    },
-    {
-      firstName: "Oscar",
-      lastName: "Piastri",
-      code: "PIA",
-      driverNumber: 81,
-      headshotFile: "oscar-piastri.png",
-    },
+    { firstName: "Lando", lastName: "Norris", code: "NOR", driverNumber: 4 },
+    { firstName: "Oscar", lastName: "Piastri", code: "PIA", driverNumber: 81 },
   ];
 
   const drivers = [];
+
   for (const d of driversBase) {
-    const headshotUrl = await getSavedHeadshotUrl(d.headshotFile);
+    const headshotUrl = await getSavedHeadshotUrl(d);
 
     drivers.push({
       firstName: d.firstName,
@@ -106,10 +103,10 @@ async function buildDashJson() {
       code: d.code,
       driverNumber: d.driverNumber,
 
-      // ✅ your uploaded number images
+      // ✅ repo driver-number images
       numberImageUrl: getDriverNumberImageUrl(d.driverNumber),
 
-      // placeholders
+      // dash placeholders
       position: "-",
       points: "-",
       wins: "-",
@@ -117,7 +114,7 @@ async function buildDashJson() {
       placeholder: true,
       bestResult: dashBestResult(),
 
-      // ✅ saved repo file only
+      // ✅ local-only headshot URL or null
       headshotUrl,
     });
   }
@@ -126,19 +123,19 @@ async function buildDashJson() {
     header: "McLaren standings",
     generatedAtUtc: now.toISOString(),
     sources: {
-      teamLogo: MCLAREN_LOGO_PNG,
-      headshots: `${PAGES_BASE}/${HEADSHOTS_DIR}/<file>.png (saved in repo)`,
+      logos: `LOCAL_ONLY: ${PAGES_BASE}/${TEAMLOGOS_DIR}/`,
+      headshots: `LOCAL_ONLY: ${PAGES_BASE}/${HEADSHOTS_DIR}/<first>-<last>.png`,
       driverNumbers: `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-<number>.png`,
       driverStandings: "DASH_PLACEHOLDERS",
       constructorStandings: "DASH_PLACEHOLDERS",
       lastRace: "DASH_PLACEHOLDERS",
     },
     meta: {
-      mode: "DASH_PLACEHOLDERS_SAVED_HEADSHOTS",
+      mode: "DASH_PLACEHOLDERS_LOCAL_HEADSHOTS_LOCAL_LOGO",
       seasonUsed: "-",
       roundUsed: "-",
       note:
-        "All fields are '-' placeholders for widget building. Headshots are NOT downloaded; they are read from existing /headshots files in the repo. Driver number images are read from /driver-numbers.",
+        "All fields are '-' placeholders for widget building. Team logo + headshots + driver number images are LOCAL ONLY from your repo (no OpenF1, no downloading).",
     },
     mclaren: {
       team: "McLaren",
