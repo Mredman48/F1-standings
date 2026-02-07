@@ -13,22 +13,11 @@ const OUT_JSON = "f1_audi_standings.json";
 const TEAMLOGOS_DIR = "teamlogos";
 const HEADSHOTS_DIR = "headshots";
 
-function toSlug(s) {
-  return String(s || "")
-    .toLowerCase()
-    .normalize("NFKD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
-}
-
-function getSavedHeadshotUrlByName(firstName, lastName) {
-  const file = `${toSlug(firstName)}-${toSlug(lastName)}.png`;
-  return `${PAGES_BASE}/${HEADSHOTS_DIR}/${file}`;
-}
-
 // GitHub Pages base (Widgy-friendly)
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
+
+// ✅ Toggle: use repo-saved headshots (no downloading) vs OpenF1 downloading
+const USE_SAVED_HEADSHOTS = true;
 
 // ✅ Driver number images (you uploaded these)
 const DRIVER_NUMBER_FOLDER = "driver-numbers";
@@ -45,7 +34,7 @@ const AUDI_LOGO_PAGES = `${PAGES_BASE}/${AUDI_LOGO_LOCAL}`;
 const AUDI_LOGO_SOURCE_PNG =
   "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Audif1.com_logo17_%28cropped%29.svg/1920px-Audif1.com_logo17_%28cropped%29.svg.png";
 
-// ---------- small helpers ----------
+// ---------- helpers ----------
 
 function toSlug(s) {
   return String(s || "")
@@ -54,6 +43,11 @@ function toSlug(s) {
     .replace(/[\u0300-\u036f]/g, "") // strip accents
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
+}
+
+function getSavedHeadshotUrlByName(firstName, lastName) {
+  const file = `${toSlug(firstName)}-${toSlug(lastName)}.png`;
+  return `${PAGES_BASE}/${HEADSHOTS_DIR}/${file}`;
 }
 
 async function fetchText(url, accept = "application/json") {
@@ -117,7 +111,7 @@ function getStandingsListsFromErgast(data) {
   return data?.MRData?.StandingsTable?.StandingsLists || [];
 }
 
-// ---------- OpenF1 headshot pipeline (real only) ----------
+// ---------- OpenF1 headshot pipeline (optional) ----------
 
 async function getOpenF1HeadshotUrlByDriverNumber(driverNumber) {
   const url = `${OPENF1_BASE}/drivers?driver_number=${encodeURIComponent(driverNumber)}`;
@@ -139,8 +133,8 @@ async function getOpenF1HeadshotUrlByDriverNumber(driverNumber) {
 }
 
 /**
- * ✅ UPDATED:
- * - Use openF1Number for lookup if provided, otherwise driverNumber.
+ * Downloads OpenF1 headshot -> converts to PNG -> saves to /headshots/<slug>.png
+ * Returns GitHub Pages URL OR null if not available.
  */
 async function getOrUpdateHeadshotPng(
   { firstName, lastName, driverNumber, openF1Number },
@@ -171,15 +165,14 @@ async function getOrUpdateHeadshotPng(
   return pagesUrl;
 }
 
-// ---------- Audi logo ensure (keeps your existing JSON fields) ----------
+// ---------- Audi logo ensure ----------
 
 async function ensureAudiLogo() {
   await ensureDir(TEAMLOGOS_DIR);
-  const local = AUDI_LOGO_LOCAL;
-  if (await exists(local)) return;
+  if (await exists(AUDI_LOGO_LOCAL)) return;
 
   const buf = await fetchBinary(AUDI_LOGO_SOURCE_PNG);
-  await fs.writeFile(local, buf);
+  await fs.writeFile(AUDI_LOGO_LOCAL, buf);
 }
 
 // ---------- Main logic ----------
@@ -195,10 +188,6 @@ async function updateAudiStandings() {
   let driverStandingsUrlUsed = null;
   let constructorStandingsUrlUsed = null;
   let lastRaceUrlUsed = null;
-
-  let driverStandingsData = null;
-  let constructorStandingsData = null;
-  let lastRaceData = null;
 
   async function loadSeason(season) {
     const ds = await fetchErgastWithFallback(`/${season}/driverstandings.json`);
@@ -230,11 +219,7 @@ async function updateAudiStandings() {
 
   roundUsed = String(loaded.lastRaceRound || "-");
 
-  driverStandingsData = loaded.driver;
-  constructorStandingsData = loaded.constructor;
-  lastRaceData = loaded.lastRace;
-
-  const lastRace = getRacesFromErgast(lastRaceData)?.[0];
+  const lastRace = getRacesFromErgast(loaded.lastRace)?.[0];
   const lastRaceOut = lastRace
     ? {
         season: String(lastRace.season || seasonUsed),
@@ -257,15 +242,13 @@ async function updateAudiStandings() {
         circuit: { name: "-", locality: "-", country: "-" },
       };
 
-  const consLists = getStandingsListsFromErgast(constructorStandingsData);
+  const consLists = getStandingsListsFromErgast(loaded.constructor);
   const consRows = consLists?.[0]?.ConstructorStandings || [];
-
   const getConsRow = (constructorId) =>
     consRows.find((x) => (x?.Constructor?.constructorId || "").toLowerCase() === constructorId);
 
   const audiConsRow = audiInCurrent ? getConsRow("audi") : null;
   const sauberConsRow = getConsRow("sauber");
-
   const consUsed = audiConsRow || sauberConsRow || null;
 
   const teamStandingOut = consUsed
@@ -276,15 +259,9 @@ async function updateAudiStandings() {
         wins: Number(consUsed.wins),
         originalTeam: consUsed?.Constructor?.name || "-",
       }
-    : {
-        team: "Audi",
-        position: "-",
-        points: "-",
-        wins: "-",
-        originalTeam: "-",
-      };
+    : { team: "Audi", position: "-", points: "-", wins: "-", originalTeam: "-" };
 
-  const dsLists = getStandingsListsFromErgast(driverStandingsData);
+  const dsLists = getStandingsListsFromErgast(loaded.driver);
   const dsRows = dsLists?.[0]?.DriverStandings || [];
 
   function belongsToConstructor(row, constructorId) {
@@ -308,13 +285,18 @@ async function updateAudiStandings() {
     const lastName = d?.familyName || "-";
     const driverNumber = d?.permanentNumber ? Number(d.permanentNumber) : null;
 
-    // ✅ Use openF1Number if you ever need to override (defaults to driverNumber)
-    const headshotPagesUrl =
-      driverNumber != null
-        ? await getOrUpdateHeadshotPng(
-            { firstName, lastName, driverNumber, openF1Number: driverNumber },
-            900
-          )
+    // ✅ Headshot URL: prefer your saved repo images (no internet)
+    // If you set USE_SAVED_HEADSHOTS=false, it will download/update from OpenF1
+    const headshotUrl =
+      firstName !== "-" && lastName !== "-"
+        ? USE_SAVED_HEADSHOTS
+          ? getSavedHeadshotUrlByName(firstName, lastName)
+          : driverNumber != null
+            ? await getOrUpdateHeadshotPng(
+                { firstName, lastName, driverNumber, openF1Number: driverNumber },
+                900
+              )
+            : null
         : null;
 
     driversOut.push({
@@ -327,11 +309,10 @@ async function updateAudiStandings() {
       code: d?.code || "-",
       driverNumber: driverNumber ?? "-",
 
-      // ✅ driver-number images you uploaded
       numberImageUrl: getDriverNumberImageUrl(driverNumber ?? "-"),
 
       team: "Audi",
-      headshotUrl: headshotPagesUrl,
+      headshotUrl,
       placeholder: !audiInCurrent,
       bestFinish: bestFinishFromRow(r),
       originalTeam: r?.Constructors?.[0]?.name || "-",
@@ -368,6 +349,9 @@ async function updateAudiStandings() {
       constructorStandings: constructorStandingsUrlUsed,
       lastRace: lastRaceUrlUsed,
       driverNumbers: `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-<number>.png`,
+      headshots: USE_SAVED_HEADSHOTS
+        ? `LOCAL_ONLY: ${PAGES_BASE}/${HEADSHOTS_DIR}/<first>-<last>.png`
+        : "OpenF1 drivers endpoint (headshot_url) downloaded -> /headshots",
     },
     meta: {
       mode: audiInCurrent ? "AUDI_LIVE" : "AUDI_PLACEHOLDERS_FROM_KICK_SAUBER_LAST_YEAR",
