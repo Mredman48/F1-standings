@@ -13,8 +13,6 @@ const OUT_JSON = "f1_audi_standings.json";
 const TEAMLOGOS_DIR = "teamlogos";
 const HEADSHOTS_DIR = "headshots";
 
-const HEADSHOTS_DIR = "headshots";
-
 function toSlug(s) {
   return String(s || "")
     .toLowerCase()
