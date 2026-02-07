@@ -10,6 +10,10 @@ const OUT_JSON = "f1_redbull_standings.json";
 const HEADSHOTS_DIR = "headshots";
 const DRIVER_NUMBER_FOLDER = "driver-numbers";
 
+const TEAMLOGOS_DIR = "teamlogos";
+const REDBULL_LOGO_LOCAL = `${TEAMLOGOS_DIR}/2025_red-bull_color_v2.png`;
+const REDBULL_LOGO_PNG = `${PAGES_BASE}/${REDBULL_LOGO_LOCAL}`;
+
 // GitHub Pages base (Widgy-friendly)
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 
