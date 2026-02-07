@@ -1,24 +1,29 @@
 {
   "header": "Ferrari standings",
-  "generatedAtUtc": "2026-02-07T07:21:03.725Z",
+  "generatedAtUtc": "2026-02-07T07:37:43.751Z",
   "sources": {
-    "ferrariLogo": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/2025_ferrari_color_v2.png",
-    "headshots": "OpenF1 drivers endpoint (headshot_url)",
-    "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png"
+    "logos": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/teamlogos/",
+    "headshots": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/headshots/<first>-<last>.png",
+    "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png",
+    "driverStandings": "DASH_PLACEHOLDERS",
+    "constructorStandings": "DASH_PLACEHOLDERS",
+    "lastRace": "DASH_PLACEHOLDERS"
   },
   "meta": {
-    "mode": "DASH_PLACEHOLDERS_REAL_HEADSHOTS",
-    "note": "All non-image datapoints are '-' placeholders for widget building. Headshots are downloaded and converted to PNG, then served from your repo. Driver number images are pulled from your repo folder driver-numbers."
+    "mode": "DASH_PLACEHOLDERS_LOCAL_HEADSHOTS_LOCAL_LOGO",
+    "seasonUsed": "-",
+    "roundUsed": "-",
+    "note": "All fields are '-' placeholders for widget building. Team logo + headshots + driver number images are LOCAL ONLY from your repo (no OpenF1, no downloading)."
   },
   "ferrari": {
     "team": "Ferrari",
-    "teamLogoPng": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/2025_ferrari_color_v2.png",
+    "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_ferrari_color_v2.png",
     "teamStanding": {
       "team": "Ferrari",
       "position": "-",
       "points": "-",
       "wins": "-",
-      "originalTeam": "Scuderia Ferrari"
+      "originalTeam": "-"
     }
   },
   "lastRace": {
@@ -35,42 +40,44 @@
   },
   "drivers": [
     {
-      "position": "-",
-      "points": "-",
-      "wins": "-",
       "firstName": "Charles",
       "lastName": "Leclerc",
       "code": "LEC",
-      "driverNumber": "16",
+      "driverNumber": 16,
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-16.png",
-      "team": "Ferrari",
-      "headshotUrl": "https://raw.githubusercontent.com/Mredman48/F1-standings/main/headshots/charles-leclerc.png",
-      "bestResult": {
-        "position": "-",
-        "raceName": "-",
-        "round": "-",
-        "date": "-",
-        "circuit": "-"
-      }
-    },
-    {
       "position": "-",
       "points": "-",
       "wins": "-",
-      "firstName": "Lewis",
-      "lastName": "Hamilton",
-      "code": "HAM",
-      "driverNumber": "44",
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-44.png",
       "team": "Ferrari",
-      "headshotUrl": "https://raw.githubusercontent.com/Mredman48/F1-standings/main/headshots/lewis-hamilton.png",
+      "placeholder": true,
       "bestResult": {
         "position": "-",
         "raceName": "-",
         "round": "-",
         "date": "-",
         "circuit": "-"
-      }
+      },
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/charles-leclerc.png"
+    },
+    {
+      "firstName": "Lewis",
+      "lastName": "Hamilton",
+      "code": "HAM",
+      "driverNumber": 44,
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-44.png",
+      "position": "-",
+      "points": "-",
+      "wins": "-",
+      "team": "Ferrari",
+      "placeholder": true,
+      "bestResult": {
+        "position": "-",
+        "raceName": "-",
+        "round": "-",
+        "date": "-",
+        "circuit": "-"
+      },
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lewis-hamilton.png"
     }
   ]
 }
