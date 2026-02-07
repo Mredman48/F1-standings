@@ -28,13 +28,16 @@ function normalizeTeamName(name) {
 }
 
 // ✅ LOCAL-ONLY logo mapping: Ergast constructorId -> filename in /teamlogos
-// Update filenames to match your repo exactly.
+// NOTE: Aston Martin filename fixed to match your team script naming.
 const TEAM_LOGOS_LOCAL = {
   red_bull: "2025_red-bull_color_v2.png",
   ferrari: "2025_ferrari_color_v2.png",
   mercedes: "2025_mercedes_color_v2.png",
   mclaren: "2025_mclaren_color_v2.png",
-  aston_martin: "2025_astonmartin_color_v2.png",
+
+  // ✅ FIXED: use the hyphenated file name you referenced elsewhere
+  aston_martin: "2025_aston-martin_color_v2.png",
+
   alpine: "2025_alpine_color_v2.png",
   williams: "2025_williams_color_v2.png",
   haas: "2025_haas_color_v2.png",
@@ -101,12 +104,18 @@ function withCacheBust(url) {
 /**
  * ✅ LOCAL ONLY
  * Returns a GitHub Pages URL into /teamlogos.
- * Returns null if we don't have a mapping (NO external fallback).
+ * Throws if we don't have a mapping (NO external fallback).
  */
 function resolveTeamLogo(constructorId) {
   const id = String(constructorId || "").toLowerCase();
   const fileName = TEAM_LOGOS_LOCAL[id];
-  if (!fileName) return null;
+
+  if (!fileName) {
+    throw new Error(
+      `Missing local logo mapping for constructorId="${id}". Add it to TEAM_LOGOS_LOCAL.`
+    );
+  }
+
   return withCacheBust(`${PAGES_BASE}/${TEAMLOGOS_DIR}/${fileName}`);
 }
 
@@ -199,7 +208,7 @@ async function updateConstructors() {
       position: row?.position ? `P${row.position}` : "-",
       points: safeNum(row?.points),
       wins: safeNum(row?.wins),
-      teamLogoPng: resolveTeamLogo(constructorId), // ✅ LOCAL ONLY
+      teamLogoPng: resolveTeamLogo(constructorId), // ✅ LOCAL ONLY (throws if missing)
       placeholder: false,
     };
   });
@@ -210,10 +219,10 @@ async function updateConstructors() {
   );
   if (!hasCadillac) constructors.push(cadillacPlaceholder());
 
-  // ✅ Guardrail: fail if any external logo somehow appears
+  // ✅ Guardrail: ensure ALL logos are from your GitHub Pages repo
   for (const t of constructors) {
-    if (typeof t.teamLogoPng === "string" && t.teamLogoPng.includes("formula1")) {
-      throw new Error(`External logo detected for ${t.constructorId}: ${t.teamLogoPng}`);
+    if (typeof t.teamLogoPng === "string" && !t.teamLogoPng.startsWith(PAGES_BASE)) {
+      throw new Error(`Non-repo logo detected for ${t.constructorId}: ${t.teamLogoPng}`);
     }
   }
 
@@ -231,7 +240,7 @@ async function updateConstructors() {
       roundUsed: String(roundUsed),
       cacheBust: CACHE_BUST,
       note:
-        "Logos are LOCAL ONLY (teamlogos folder). Cadillac is appended as a placeholder at P11 until it appears in the standings feed.",
+        "Logos are LOCAL ONLY (teamlogos folder via GitHub Pages). Cadillac is appended as a placeholder at P11 until it appears in the standings feed.",
     },
     lastRace: lastRaceOut,
     constructors,
