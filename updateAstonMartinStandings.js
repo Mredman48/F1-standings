@@ -3,10 +3,6 @@ import fs from "node:fs/promises";
 
 const UA = "f1-standings-bot/1.0 (GitHub Actions)";
 
-// ✅ Aston Martin logo (your repo file)
-const ASTONMARTIN_LOGO_PNG =
-  "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/2025_aston-martin_color_v2.png";
-
 // Output JSON
 const OUT_JSON = "f1_astonmartin_standings.json";
 
@@ -16,6 +12,13 @@ const DRIVER_NUMBER_FOLDER = "driver-numbers";
 
 // GitHub Pages base (Widgy-friendly)
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
+
+// Repo team logo helper (LOCAL repo via GitHub Pages)
+const TEAMLOGOS_DIR = "teamlogos";
+
+function teamLogoUrl(fileName) {
+  return `${PAGES_BASE}/${TEAMLOGOS_DIR}/${fileName}`;
+}
 
 // ---------- Helpers ----------
 
