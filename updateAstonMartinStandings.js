@@ -1,51 +1,31 @@
 // updateAstonMartinStandings.js
 import fs from "node:fs/promises";
-import path from "node:path";
-import sharp from "sharp";
 
 const UA = "f1-standings-bot/1.0 (GitHub Actions)";
-const OPENF1_BASE = "https://api.openf1.org/v1";
 
-// ✅ UPDATED: correct Aston Martin logo filename (with dash)
-const ASTON_LOGO_PNG =
+// ✅ Aston Martin logo (your repo file)
+const ASTONMARTIN_LOGO_PNG =
   "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/2025_aston-martin_color_v2.png";
 
 // Output JSON
 const OUT_JSON = "f1_astonmartin_standings.json";
 
-// Where we store downloaded headshots
+// Repo folders
 const HEADSHOTS_DIR = "headshots";
+const DRIVER_NUMBER_FOLDER = "driver-numbers";
 
 // GitHub Pages base (Widgy-friendly)
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 
-// ✅ Driver number images folder + helper
-const DRIVER_NUMBER_FOLDER = "driver-numbers";
-function getDriverNumberImageUrl(driverNumber) {
-  if (driverNumber == null || driverNumber === "-" || driverNumber === "") return null;
-  return `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-${driverNumber}.png`;
-}
-
 // ---------- Helpers ----------
 
-async function fetchJson(url) {
-  const res = await fetch(url, {
-    headers: { "User-Agent": UA, Accept: "application/json" },
-    redirect: "follow",
-  });
-  const text = await res.text();
-  if (!res.ok) throw new Error(`HTTP ${res.status} from ${url}\n${text.slice(0, 200)}`);
-  return JSON.parse(text);
-}
-
-async function fetchBinary(url) {
-  const res = await fetch(url, { headers: { "User-Agent": UA }, redirect: "follow" });
-  if (!res.ok) throw new Error(`HTTP ${res.status} downloading ${url}`);
-  return Buffer.from(await res.arrayBuffer());
-}
-
-async function ensureDir(dir) {
-  await fs.mkdir(dir, { recursive: true });
+function toSlug(s) {
+  return String(s || "")
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
 }
 
 async function exists(filePath) {
@@ -57,73 +37,21 @@ async function exists(filePath) {
   }
 }
 
-function toSlug(s) {
-  return String(s || "")
-    .toLowerCase()
-    .normalize("NFKD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
+// ✅ Driver number images (repo-saved)
+function getDriverNumberImageUrl(driverNumber) {
+  if (driverNumber == null || driverNumber === "-" || driverNumber === "") return null;
+  return `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-${driverNumber}.png`;
 }
 
-// Pick the most recent driver row if multiple returned
-function pickLatestByMeetingKey(rows) {
-  if (!Array.isArray(rows) || rows.length === 0) return null;
-  return rows.reduce((best, cur) => {
-    const a = Number(best?.meeting_key ?? -1);
-    const b = Number(cur?.meeting_key ?? -1);
-    return b > a ? cur : best;
-  }, rows[0]);
-}
+// ✅ Headshots (LOCAL ONLY; no downloading)
+async function getSavedHeadshotUrl({ firstName, lastName }) {
+  const fileName = `${toSlug(firstName)}-${toSlug(lastName)}.png`;
+  const localPath = `${HEADSHOTS_DIR}/${fileName}`;
 
-// ---------- OpenF1 headshot pipeline (download -> PNG -> repo) ----------
-
-async function getOpenF1HeadshotUrlByDriverNumber(driverNumber) {
-  const url = `${OPENF1_BASE}/drivers?driver_number=${encodeURIComponent(driverNumber)}`;
-  try {
-    const rows = await fetchJson(url);
-    const latest = pickLatestByMeetingKey(rows);
-    return latest?.headshot_url || null;
-  } catch {
-    return null;
+  if (await exists(localPath)) {
+    return `${PAGES_BASE}/${HEADSHOTS_DIR}/${fileName}`;
   }
-}
-
-/**
- * Downloads a headshot, converts to PNG, writes to /headshots/<slug>.png
- * Returns Pages URL if we have a file, else null.
- *
- * No placeholders: if no OpenF1 headshot and no prior saved file, return null.
- * If OpenF1 fails but we already have a file, keep returning the existing Pages URL.
- */
-async function getOrUpdateHeadshotPng(
-  { firstName, lastName, driverNumber, openF1Number },
-  width = 900
-) {
-  const slug = `${toSlug(firstName)}-${toSlug(lastName)}`;
-  const fileName = `${slug}.png`;
-  const localPath = path.join(HEADSHOTS_DIR, fileName);
-  const pagesUrl = `${PAGES_BASE}/${HEADSHOTS_DIR}/${fileName}`;
-
-  const lookupNumber = openF1Number ?? driverNumber;
-  const openf1Url = await getOpenF1HeadshotUrlByDriverNumber(lookupNumber);
-
-  if (!openf1Url) {
-    if (await exists(localPath)) return pagesUrl;
-    return null;
-  }
-
-  await ensureDir(HEADSHOTS_DIR);
-
-  const buf = await fetchBinary(openf1Url);
-
-  const png = await sharp(buf)
-    .resize({ width, withoutEnlargement: true })
-    .png()
-    .toBuffer();
-
-  await fs.writeFile(localPath, png);
-  return pagesUrl;
+  return null; // no placeholders
 }
 
 // ---------- Dash placeholder builders ----------
@@ -158,7 +86,7 @@ function dashTeamStanding() {
 async function buildDashJson() {
   const now = new Date();
 
-  // Aston Martin drivers (adjust if needed)
+  // ✅ Aston Martin drivers (edit if your lineup differs)
   const driversBase = [
     { firstName: "Fernando", lastName: "Alonso", code: "ALO", driverNumber: 14 },
     { firstName: "Lance", lastName: "Stroll", code: "STR", driverNumber: 18 },
@@ -166,7 +94,7 @@ async function buildDashJson() {
 
   const drivers = [];
   for (const d of driversBase) {
-    const headshotUrl = await getOrUpdateHeadshotPng(d, 900);
+    const headshotUrl = await getSavedHeadshotUrl(d);
 
     drivers.push({
       firstName: d.firstName,
@@ -174,7 +102,7 @@ async function buildDashJson() {
       code: d.code,
       driverNumber: d.driverNumber,
 
-      // driver number image from your repo
+      // ✅ repo driver-number images
       numberImageUrl: getDriverNumberImageUrl(d.driverNumber),
 
       // dash placeholders
@@ -185,7 +113,7 @@ async function buildDashJson() {
       placeholder: true,
       bestResult: dashBestResult(),
 
-      // either Pages URL or null (never placeholder images)
+      // ✅ local-only headshot URL or null
       headshotUrl,
     });
   }
@@ -194,22 +122,22 @@ async function buildDashJson() {
     header: "Aston Martin standings",
     generatedAtUtc: now.toISOString(),
     sources: {
-      openf1: OPENF1_BASE,
+      headshots: `LOCAL_ONLY: ${PAGES_BASE}/${HEADSHOTS_DIR}/<first>-<last>.png`,
+      driverNumbers: `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-<number>.png`,
       driverStandings: "DASH_PLACEHOLDERS",
       constructorStandings: "DASH_PLACEHOLDERS",
       lastRace: "DASH_PLACEHOLDERS",
-      driverNumbers: `${PAGES_BASE}/driver-numbers/driver-number-<number>.png`,
     },
     meta: {
-      mode: "DASH_PLACEHOLDERS_REAL_HEADSHOTS",
+      mode: "DASH_PLACEHOLDERS_LOCAL_HEADSHOTS",
       seasonUsed: "-",
       roundUsed: "-",
       note:
-        "All fields are '-' placeholders for widget building. Headshots are pulled from OpenF1 when available, downloaded, converted to PNG, and stored in /headshots. Driver number images are pulled from your repo folder driver-numbers.",
+        "All fields are '-' placeholders for widget building. Headshots are LOCAL ONLY from /headshots in the repo (no OpenF1, no downloading). Driver number images are loaded from /driver-numbers.",
     },
     astonmartin: {
       team: "Aston Martin",
-      teamLogoPng: ASTON_LOGO_PNG,
+      teamLogoPng: ASTONMARTIN_LOGO_PNG,
       teamStanding: dashTeamStanding(),
     },
     lastRace: dashLastRace(),
