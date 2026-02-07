@@ -1,9 +1,7 @@
 {
   "header": "Audi standings",
-  "generatedAtUtc": "2026-02-07T06:01:03.953Z",
+  "generatedAtUtc": "2026-02-07T07:20:33.378Z",
   "sources": {
-    "openf1": "https://api.openf1.org/v1",
-    "audiLogoSourcePng": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Audif1.com_logo17_%28cropped%29.svg/1920px-Audif1.com_logo17_%28cropped%29.svg.png",
     "ergastBases": [
       "https://api.jolpi.ca/ergast/f1",
       "https://ergast.com/api/f1"
@@ -11,14 +9,15 @@
     "driverStandings": "https://api.jolpi.ca/ergast/f1/2025/driverstandings.json",
     "constructorStandings": "https://api.jolpi.ca/ergast/f1/2025/constructorstandings.json",
     "lastRace": "https://api.jolpi.ca/ergast/f1/2025/last/results.json",
-    "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png",
-    "headshots": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/headshots/<first>-<last>.png"
+    "audiLogoSourcePng": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Audif1.com_logo17_%28cropped%29.svg/1920px-Audif1.com_logo17_%28cropped%29.svg.png",
+    "headshots": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/headshots/<first>-<last>.png",
+    "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png"
   },
   "meta": {
-    "mode": "AUDI_PLACEHOLDERS_FROM_KICK_SAUBER_LAST_YEAR",
+    "mode": "AUDI_PLACEHOLDERS_LOCAL_HEADSHOTS",
     "seasonUsed": "2025",
     "roundUsed": "24",
-    "note": "Audi not present in current standings yet; using Kick Sauber drivers + constructor data from last year as placeholders (team label forced to Audi)."
+    "note": "Audi not present in current standings yet; using Kick Sauber drivers + constructor data from last year as placeholders (team label forced to Audi). Headshots are LOCAL ONLY from repo /headshots."
   },
   "audi": {
     "team": "Audi",
