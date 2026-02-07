@@ -1,12 +1,7 @@
 // updateMercedesStandings.js
 import fs from "node:fs/promises";
-import path from "node:path";
-import sharp from "sharp";
 
 const UA = "f1-standings-bot/1.0 (GitHub Actions)";
-
-// OpenF1 base
-const OPENF1_BASE = "https://api.openf1.org/v1";
 
 // Output JSON
 const OUT_JSON = "f1_mercedes_standings.json";
@@ -14,11 +9,11 @@ const OUT_JSON = "f1_mercedes_standings.json";
 // GitHub Pages base (Widgy-friendly)
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 
-// ✅ Mercedes logo URL
+// ✅ Mercedes logo URL (unchanged)
 const MERCEDES_LOGO_PNG =
   "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/2025_mercedes_color_v2.png";
 
-// Local folders
+// Repo folders
 const HEADSHOTS_DIR = "headshots";
 const DRIVER_NUMBERS_DIR = "driver-numbers";
 
@@ -33,32 +28,6 @@ function toSlug(s) {
     .replace(/(^-|-$)/g, "");
 }
 
-async function fetchJson(url) {
-  const res = await fetch(url, {
-    headers: { "User-Agent": UA, Accept: "application/json" },
-    redirect: "follow",
-  });
-
-  const text = await res.text();
-  if (!res.ok) throw new Error(`HTTP ${res.status} from ${url}\n${text.slice(0, 200)}`);
-
-  return JSON.parse(text);
-}
-
-async function fetchBinary(url) {
-  const res = await fetch(url, {
-    headers: { "User-Agent": UA },
-    redirect: "follow",
-  });
-
-  if (!res.ok) throw new Error(`HTTP ${res.status} downloading ${url}`);
-  return Buffer.from(await res.arrayBuffer());
-}
-
-async function ensureDir(dir) {
-  await fs.mkdir(dir, { recursive: true });
-}
-
 async function exists(filePath) {
   try {
     await fs.stat(filePath);
@@ -68,68 +37,24 @@ async function exists(filePath) {
   }
 }
 
-// Pick newest OpenF1 row if multiple exist
-function pickLatestByMeetingKey(rows) {
-  if (!Array.isArray(rows) || rows.length === 0) return null;
+// ---------- Repo-saved headshots (NO INTERNET) ----------
+// Looks for: headshots/<first>-<last>.png
+// Returns Pages URL if file exists, else null.
+async function getSavedHeadshotUrl({ firstName, lastName }) {
+  const fileName = `${toSlug(firstName)}-${toSlug(lastName)}.png`;
+  const localPath = `${HEADSHOTS_DIR}/${fileName}`;
 
-  return rows.reduce((best, cur) => {
-    const a = Number(best?.meeting_key ?? -1);
-    const b = Number(cur?.meeting_key ?? -1);
-    return b > a ? cur : best;
-  }, rows[0]);
+  if (await exists(localPath)) {
+    return `${PAGES_BASE}/${HEADSHOTS_DIR}/${fileName}`;
+  }
+  return null; // no placeholders
 }
 
 // ---------- Driver Number PNG URL ----------
 
 function getDriverNumberImageUrl(driverNumber) {
+  if (driverNumber == null || driverNumber === "-" || driverNumber === "") return null;
   return `${PAGES_BASE}/${DRIVER_NUMBERS_DIR}/driver-number-${driverNumber}.png`;
-}
-
-// ---------- OpenF1 Headshot Pipeline ----------
-
-async function getOpenF1HeadshotUrlByDriverNumber(driverNumber) {
-  const url = `${OPENF1_BASE}/drivers?driver_number=${encodeURIComponent(driverNumber)}`;
-
-  try {
-    const rows = await fetchJson(url);
-    const latest = pickLatestByMeetingKey(rows);
-    return latest?.headshot_url || null;
-  } catch {
-    return null;
-  }
-}
-
-/**
- * Downloads OpenF1 headshot → converts to PNG → saves in /headshots/
- * Returns Pages URL OR null if unavailable.
- */
-async function getOrUpdateHeadshotPng({ firstName, lastName, driverNumber }, width = 900) {
-  const slug = `${toSlug(firstName)}-${toSlug(lastName)}`;
-  const fileName = `${slug}.png`;
-
-  const localPath = path.join(HEADSHOTS_DIR, fileName);
-  const pagesUrl = `${PAGES_BASE}/${HEADSHOTS_DIR}/${fileName}`;
-
-  const openf1Url = await getOpenF1HeadshotUrlByDriverNumber(driverNumber);
-
-  // No placeholder photos allowed
-  if (!openf1Url) {
-    if (await exists(localPath)) return pagesUrl;
-    return null;
-  }
-
-  await ensureDir(HEADSHOTS_DIR);
-
-  const buf = await fetchBinary(openf1Url);
-
-  const png = await sharp(buf)
-    .resize({ width, withoutEnlargement: true })
-    .png()
-    .toBuffer();
-
-  await fs.writeFile(localPath, png);
-
-  return pagesUrl;
 }
 
 // ---------- Dash Placeholder Builders ----------
@@ -166,24 +91,14 @@ async function buildMercedesJson() {
 
   // Mercedes driver lineup
   const driversBase = [
-    {
-      firstName: "George",
-      lastName: "Russell",
-      code: "RUS",
-      driverNumber: 63,
-    },
-    {
-      firstName: "Andrea",
-      lastName: "Kimi Antonelli",
-      code: "ANT",
-      driverNumber: 12,
-    },
+    { firstName: "George", lastName: "Russell", code: "RUS", driverNumber: 63 },
+    { firstName: "Andrea", lastName: "Kimi Antonelli", code: "ANT", driverNumber: 12 },
   ];
 
   const drivers = [];
 
   for (const d of driversBase) {
-    const headshotUrl = await getOrUpdateHeadshotPng(d, 900);
+    const headshotUrl = await getSavedHeadshotUrl(d);
 
     drivers.push({
       firstName: d.firstName,
@@ -202,7 +117,7 @@ async function buildMercedesJson() {
       placeholder: true,
       bestResult: dashBestResult(),
 
-      // Real headshot or null
+      // ✅ Repo-saved headshot URL or null
       headshotUrl,
     });
   }
@@ -211,17 +126,18 @@ async function buildMercedesJson() {
     header: "Mercedes standings",
     generatedAtUtc: now.toISOString(),
     sources: {
-      openf1: OPENF1_BASE,
+      headshots: `LOCAL_ONLY: ${PAGES_BASE}/${HEADSHOTS_DIR}/<first>-<last>.png`,
+      driverNumbers: `${PAGES_BASE}/${DRIVER_NUMBERS_DIR}/driver-number-<number>.png`,
       driverStandings: "DASH_PLACEHOLDERS",
       constructorStandings: "DASH_PLACEHOLDERS",
       lastRace: "DASH_PLACEHOLDERS",
     },
     meta: {
-      mode: "DASH_PLACEHOLDERS_REAL_HEADSHOTS",
+      mode: "DASH_PLACEHOLDERS_LOCAL_HEADSHOTS",
       seasonUsed: "-",
       roundUsed: "-",
       note:
-        "All stats are '-' placeholders for widget building. Headshots are pulled from OpenF1, downloaded as PNG, and stored in /headshots. Driver numbers are loaded from /driver-numbers.",
+        "All stats are '-' placeholders for widget building. Headshots are LOCAL ONLY from /headshots in the repo. No OpenF1, no downloading, no placeholder images.",
     },
     mercedes: {
       team: "Mercedes",
@@ -237,7 +153,6 @@ async function buildMercedesJson() {
 
 async function updateMercedesStandings() {
   const out = await buildMercedesJson();
-
   await fs.writeFile(OUT_JSON, JSON.stringify(out, null, 2), "utf8");
   console.log(`Wrote ${OUT_JSON}`);
 }
