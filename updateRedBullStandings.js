@@ -13,13 +13,11 @@ const DRIVER_NUMBER_FOLDER = "driver-numbers";
 // GitHub Pages base (Widgy-friendly)
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 
-// Repo team logo helper (LOCAL repo via GitHub Pages)
+// Repo team logo helper (LOCAL via GitHub Pages)
 const TEAMLOGOS_DIR = "teamlogos";
-
 function teamLogoUrl(fileName) {
   return `${PAGES_BASE}/${TEAMLOGOS_DIR}/${fileName}`;
 }
-
 
 // ---------- Helpers ----------
 
