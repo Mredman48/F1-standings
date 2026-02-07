@@ -1,48 +1,60 @@
 // updateFerrariStandings.js
 import fs from "node:fs/promises";
-import path from "node:path";
-import sharp from "sharp";
 
 const UA = "f1-standings-bot/1.0 (GitHub Actions)";
 
-// Your Ferrari logo (already in repo)
-const FERRARI_LOGO_PNG =
-  "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/2025_ferrari_color_v2.png";
-
+// Output JSON
 const OUT_JSON = "f1_ferrari_standings.json";
-const HEADSHOT_DIR = "headshots";
 
-// OpenF1 base
-const OPENF1 = "https://api.openf1.org/v1";
-
-// ✅ Driver number images (your folder + naming format)
+// GitHub Pages base (Widgy-friendly)
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
+
+// Repo folders
+const TEAMLOGOS_DIR = "teamlogos";
+const HEADSHOTS_DIR = "headshots";
 const DRIVER_NUMBER_FOLDER = "driver-numbers";
 
-function getDriverNumberImageUrl(driverNumber) {
-  if (!driverNumber || driverNumber === "-") return null;
-  return `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-${driverNumber}.png`;
-}
+// ✅ Ferrari logo pulled from YOUR repo (GitHub Pages)
+const FERRARI_LOGO_PNG = `${PAGES_BASE}/${TEAMLOGOS_DIR}/2025_ferrari_color_v2.png`;
 
-// ------------ helpers ------------
+// ---------- Helpers ----------
 
-async function fetchJson(url) {
-  const res = await fetch(url, {
-    headers: { "User-Agent": UA, Accept: "application/json" },
-  });
-  if (!res.ok) {
-    const t = await res.text().catch(() => "");
-    throw new Error(`HTTP ${res.status} from ${url}\n${t.slice(0, 200)}`);
-  }
-  return res.json();
-}
-
-function slugify(s) {
-  return String(s)
+function toSlug(s) {
+  return String(s || "")
     .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
 }
+
+async function exists(filePath) {
+  try {
+    await fs.stat(filePath);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+// ✅ Driver number images (repo-saved)
+function getDriverNumberImageUrl(driverNumber) {
+  if (driverNumber == null || driverNumber === "-" || driverNumber === "") return null;
+  return `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-${driverNumber}.png`;
+}
+
+// ✅ Headshots (LOCAL ONLY; no downloading)
+async function getSavedHeadshotUrl({ firstName, lastName }) {
+  const fileName = `${toSlug(firstName)}-${toSlug(lastName)}.png`;
+  const localPath = `${HEADSHOTS_DIR}/${fileName}`;
+
+  if (await exists(localPath)) {
+    return `${PAGES_BASE}/${HEADSHOTS_DIR}/${fileName}`;
+  }
+  return null; // no placeholders
+}
+
+// ---------- Dash placeholder builders ----------
 
 function dashBestResult() {
   return { position: "-", raceName: "-", round: "-", date: "-", circuit: "-" };
@@ -59,131 +71,88 @@ function dashLastRace() {
   };
 }
 
-function dashTeamStanding(teamDisplay, originalTeam = "-") {
-  return { team: teamDisplay, position: "-", points: "-", wins: "-", originalTeam };
+function dashTeamStanding() {
+  return {
+    team: "Ferrari",
+    position: "-",
+    points: "-",
+    wins: "-",
+    originalTeam: "-",
+  };
 }
 
-// Pick “latest” driver record if OpenF1 returns multiple rows
-function pickLatestByMeetingKey(rows) {
-  if (!Array.isArray(rows) || rows.length === 0) return null;
-  // meeting_key tends to increase over time
-  return rows.reduce((best, cur) => {
-    const a = Number(best.meeting_key ?? -1);
-    const b = Number(cur.meeting_key ?? -1);
-    return b > a ? cur : best;
-  }, rows[0]);
-}
+// ---------- Build JSON ----------
 
-async function ensureDir(dir) {
-  await fs.mkdir(dir, { recursive: true });
-}
-
-// Download image and convert to PNG.
-// (PNG file may not be transparent unless the source image has transparency.)
-async function downloadToPng(imageUrl, outFilePath) {
-  const res = await fetch(imageUrl, { headers: { "User-Agent": UA } });
-  if (!res.ok) throw new Error(`Failed to download image: ${res.status} ${imageUrl}`);
-
-  const buf = Buffer.from(await res.arrayBuffer());
-
-  // Convert whatever it is to PNG for consistency
-  const pngBuf = await sharp(buf).png().toBuffer();
-  await fs.writeFile(outFilePath, pngBuf);
-}
-
-function rawGithubUrlForFile(repoFull, filePath) {
-  // Use your real repo; Actions sets GITHUB_REPOSITORY as "Owner/Repo"
-  // raw.githubusercontent.com uses this format:
-  // https://raw.githubusercontent.com/Owner/Repo/main/<path>
-  return `https://raw.githubusercontent.com/${repoFull}/main/${filePath.replace(/\\/g, "/")}`;
-}
-
-// ------------ main ------------
-
-async function updateFerrariStandings() {
+async function buildDashJson() {
   const now = new Date();
 
-  const repoFull = process.env.GITHUB_REPOSITORY || "Mredman48/F1-standings";
-
-  const driversConfig = [
-    { firstName: "Charles", lastName: "Leclerc", driverNumber: 16, code: "LEC" },
-    { firstName: "Lewis", lastName: "Hamilton", driverNumber: 44, code: "HAM" },
+  // ✅ Ferrari drivers (edit if your lineup differs)
+  const driversBase = [
+    { firstName: "Charles", lastName: "Leclerc", code: "LEC", driverNumber: 16 },
+    { firstName: "Lewis", lastName: "Hamilton", code: "HAM", driverNumber: 44 },
   ];
-
-  await ensureDir(HEADSHOT_DIR);
 
   const drivers = [];
 
-  for (const d of driversConfig) {
-    const url =
-      `${OPENF1}/drivers?driver_number=${encodeURIComponent(d.driverNumber)}` +
-      `&first_name=${encodeURIComponent(d.firstName)}` +
-      `&last_name=${encodeURIComponent(d.lastName)}`;
-
-    const rows = await fetchJson(url);
-    const latest = pickLatestByMeetingKey(rows);
-
-    // Only accept “real” headshot URLs. If none, leave "-" (no placeholder images).
-    let headshotUrl = latest?.headshot_url || "-";
-
-    let headshotPngPath = "-";
-    let headshotPngUrl = "-";
-
-    if (headshotUrl && headshotUrl !== "-") {
-      const fileName = `${slugify(d.firstName)}-${slugify(d.lastName)}.png`;
-      headshotPngPath = path.join(HEADSHOT_DIR, fileName);
-
-      // Download + convert to PNG
-      await downloadToPng(headshotUrl, headshotPngPath);
-
-      // Provide a stable URL your widgets can load
-      headshotPngUrl = rawGithubUrlForFile(repoFull, headshotPngPath);
-    }
-
-    const driverNumberStr = String(d.driverNumber);
+  for (const d of driversBase) {
+    const headshotUrl = await getSavedHeadshotUrl(d);
 
     drivers.push({
-      position: "-",
-      points: "-",
-      wins: "-",
       firstName: d.firstName,
       lastName: d.lastName,
       code: d.code,
-      driverNumber: driverNumberStr,
+      driverNumber: d.driverNumber,
 
-      // ✅ NEW FIELD
-      numberImageUrl: getDriverNumberImageUrl(driverNumberStr),
+      // ✅ repo driver-number images
+      numberImageUrl: getDriverNumberImageUrl(d.driverNumber),
 
+      // dash placeholders
+      position: "-",
+      points: "-",
+      wins: "-",
       team: "Ferrari",
-      headshotUrl: headshotPngUrl,
+      placeholder: true,
       bestResult: dashBestResult(),
+
+      // ✅ local-only headshot URL or null
+      headshotUrl,
     });
   }
 
-  const out = {
+  return {
     header: "Ferrari standings",
     generatedAtUtc: now.toISOString(),
     sources: {
-      ferrariLogo: FERRARI_LOGO_PNG,
-      headshots: "OpenF1 drivers endpoint (headshot_url)",
+      logos: `LOCAL_ONLY: ${PAGES_BASE}/${TEAMLOGOS_DIR}/`,
+      headshots: `LOCAL_ONLY: ${PAGES_BASE}/${HEADSHOTS_DIR}/<first>-<last>.png`,
       driverNumbers: `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-<number>.png`,
+      driverStandings: "DASH_PLACEHOLDERS",
+      constructorStandings: "DASH_PLACEHOLDERS",
+      lastRace: "DASH_PLACEHOLDERS",
     },
     meta: {
-      mode: "DASH_PLACEHOLDERS_REAL_HEADSHOTS",
+      mode: "DASH_PLACEHOLDERS_LOCAL_HEADSHOTS_LOCAL_LOGO",
+      seasonUsed: "-",
+      roundUsed: "-",
       note:
-        "All non-image datapoints are '-' placeholders for widget building. Headshots are downloaded and converted to PNG, then served from your repo. Driver number images are pulled from your repo folder driver-numbers.",
+        "All fields are '-' placeholders for widget building. Team logo + headshots + driver number images are LOCAL ONLY from your repo (no OpenF1, no downloading).",
     },
     ferrari: {
       team: "Ferrari",
       teamLogoPng: FERRARI_LOGO_PNG,
-      teamStanding: dashTeamStanding("Ferrari", "Scuderia Ferrari"),
+      teamStanding: dashTeamStanding(),
     },
     lastRace: dashLastRace(),
     drivers,
   };
+}
 
+// ---------- Main ----------
+
+async function updateFerrariStandings() {
+  const out = await buildDashJson();
   await fs.writeFile(OUT_JSON, JSON.stringify(out, null, 2), "utf8");
-  console.log(`Wrote ${OUT_JSON} and saved headshots (if available) into /${HEADSHOT_DIR}`);
+  console.log(`Wrote ${OUT_JSON}`);
 }
 
 updateFerrariStandings().catch((err) => {
