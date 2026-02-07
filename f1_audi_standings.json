@@ -1,6 +1,6 @@
 {
   "header": "Audi standings",
-  "generatedAtUtc": "2026-02-07T04:55:11.315Z",
+  "generatedAtUtc": "2026-02-07T06:01:03.953Z",
   "sources": {
     "openf1": "https://api.openf1.org/v1",
     "audiLogoSourcePng": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Audif1.com_logo17_%28cropped%29.svg/1920px-Audif1.com_logo17_%28cropped%29.svg.png",
@@ -11,7 +11,8 @@
     "driverStandings": "https://api.jolpi.ca/ergast/f1/2025/driverstandings.json",
     "constructorStandings": "https://api.jolpi.ca/ergast/f1/2025/constructorstandings.json",
     "lastRace": "https://api.jolpi.ca/ergast/f1/2025/last/results.json",
-    "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png"
+    "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png",
+    "headshots": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/headshots/<first>-<last>.png"
   },
   "meta": {
     "mode": "AUDI_PLACEHOLDERS_FROM_KICK_SAUBER_LAST_YEAR",
