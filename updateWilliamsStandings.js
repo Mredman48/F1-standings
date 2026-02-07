@@ -6,19 +6,17 @@ const UA = "f1-standings-bot/1.0 (GitHub Actions)";
 // Output JSON
 const OUT_JSON = "f1_williams_standings.json";
 
-// Repo folders
-const HEADSHOTS_DIR = "headshots";
-const DRIVER_NUMBER_FOLDER = "driver-numbers";
-
 // GitHub Pages base (Widgy-friendly)
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 
-// Repo team logo helper (LOCAL repo via GitHub Pages)
+// Repo folders
 const TEAMLOGOS_DIR = "teamlogos";
+const HEADSHOTS_DIR = "headshots";
+const DRIVER_NUMBER_FOLDER = "driver-numbers";
 
-function teamLogoUrl(fileName) {
-  return `${PAGES_BASE}/${TEAMLOGOS_DIR}/${fileName}`;
-}
+// ✅ Williams logo pulled from YOUR repo (GitHub Pages)
+const WILLIAMS_LOGO_PNG = `${PAGES_BASE}/${TEAMLOGOS_DIR}/2025_williams_color_v2.png`;
+
 // ---------- Helpers ----------
 
 function toSlug(s) {
@@ -83,18 +81,19 @@ function dashTeamStanding() {
   };
 }
 
-// ---------- Build JSON (same structure, dashes) ----------
+// ---------- Build JSON ----------
 
 async function buildDashJson() {
   const now = new Date();
 
-  // ✅ Williams drivers (edit if needed)
+  // ✅ Williams drivers (your lineup)
   const driversBase = [
     { firstName: "Alex", lastName: "Albon", code: "ALB", driverNumber: 23 },
     { firstName: "Carlos", lastName: "Sainz", code: "SAI", driverNumber: 55 },
   ];
 
   const drivers = [];
+
   for (const d of driversBase) {
     const headshotUrl = await getSavedHeadshotUrl(d);
 
@@ -124,6 +123,7 @@ async function buildDashJson() {
     header: "Williams standings",
     generatedAtUtc: now.toISOString(),
     sources: {
+      logos: `LOCAL_ONLY: ${PAGES_BASE}/${TEAMLOGOS_DIR}/`,
       headshots: `LOCAL_ONLY: ${PAGES_BASE}/${HEADSHOTS_DIR}/<first>-<last>.png`,
       driverNumbers: `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-<number>.png`,
       driverStandings: "DASH_PLACEHOLDERS",
@@ -131,11 +131,11 @@ async function buildDashJson() {
       lastRace: "DASH_PLACEHOLDERS",
     },
     meta: {
-      mode: "DASH_PLACEHOLDERS_LOCAL_HEADSHOTS",
+      mode: "DASH_PLACEHOLDERS_LOCAL_HEADSHOTS_LOCAL_LOGO",
       seasonUsed: "-",
       roundUsed: "-",
       note:
-        "All fields are '-' placeholders for widget building. Headshots are LOCAL ONLY from /headshots in the repo (no OpenF1, no downloading). Driver number images are loaded from /driver-numbers.",
+        "All fields are '-' placeholders for widget building. Team logo + headshots + driver number images are LOCAL ONLY from your repo (no OpenF1, no downloading).",
     },
     williams: {
       team: "Williams",
