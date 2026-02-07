@@ -1,6 +1,6 @@
 {
   "header": "Red Bull standings",
-  "generatedAtUtc": "2026-02-07T00:01:38.957Z",
+  "generatedAtUtc": "2026-02-07T04:58:05.605Z",
   "sources": {
     "openf1": "https://api.openf1.org/v1",
     "driverStandings": "DASH_PLACEHOLDERS",
@@ -16,7 +16,7 @@
   },
   "redbull": {
     "team": "Red Bull",
-    "teamLogoPng": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/2025_red-bull_color_v2.png?v=123",
+    "teamLogoPng": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/teamlogos/2025_red-bull_color_v2.png",
     "teamStanding": {
       "team": "Red Bull",
       "position": "-",
@@ -56,7 +56,7 @@
         "date": "-",
         "circuit": "-"
       },
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/max-verstappen.png?v=123456"
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/max-verstappen.png"
     },
     {
       "firstName": "Isack",
@@ -76,7 +76,7 @@
         "date": "-",
         "circuit": "-"
       },
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/isack-hadjar.png?v=123456"
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/isack-hadjar.png"
     }
   ]
 }
