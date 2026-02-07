@@ -1,7 +1,8 @@
 {
   "header": "Red Bull standings",
-  "generatedAtUtc": "2026-02-07T06:17:30.185Z",
+  "generatedAtUtc": "2026-02-07T07:08:43.091Z",
   "sources": {
+    "logos": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/teamlogos/",
     "headshots": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/headshots/<first>-<last>.png",
     "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png",
     "driverStandings": "DASH_PLACEHOLDERS",
@@ -9,14 +10,14 @@
     "lastRace": "DASH_PLACEHOLDERS"
   },
   "meta": {
-    "mode": "DASH_PLACEHOLDERS_LOCAL_HEADSHOTS",
+    "mode": "DASH_PLACEHOLDERS_LOCAL_HEADSHOTS_LOCAL_LOGO",
     "seasonUsed": "-",
     "roundUsed": "-",
-    "note": "All fields are '-' placeholders for widget building. Headshots are LOCAL ONLY from /headshots in the repo (no OpenF1, no downloading). Driver number images are loaded from /driver-numbers."
+    "note": "All fields are '-' placeholders for widget building. Team logo + headshots + driver number images are LOCAL ONLY from your repo (no OpenF1, no downloading)."
   },
   "redbull": {
     "team": "Red Bull",
-    teamLogoPng: teamLogoUrl("2025_red-bull_color_v2.png"),
+    "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_red-bull_color_v2.png",
     "teamStanding": {
       "team": "Red Bull",
       "position": "-",
