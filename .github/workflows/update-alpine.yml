@@ -8,6 +8,7 @@ on:
 permissions:
   contents: write
 
+# Prevent overlapping runs of THIS workflow
 concurrency:
   group: alpine-standings
   cancel-in-progress: false
@@ -17,18 +18,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout (main)
+      - name: Checkout (main, full history)
         uses: actions/checkout@v4
         with:
           ref: main
           fetch-depth: 0
           persist-credentials: true
-
-      - name: Sync with remote
-        run: |
-          set -e
-          git fetch origin main
-          git pull --rebase origin main
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -38,12 +33,27 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      # ✅ IMPORTANT: Sync FIRST while clean (prevents rebase errors later)
+      - name: Sync with remote (must be clean)
+        run: |
+          set -e
+          git fetch origin main
+          git checkout main
+          git reset --hard origin/main
+          git clean -fd
+
       - name: Run updater
         run: node updateAlpineStandings.js
 
-      - name: Commit and push if changed (race-safe)
+      - name: Verify output
+        run: |
+          ls -la
+          test -f f1_alpine_standings.json && echo "✅ f1_alpine_standings.json exists" || (echo "❌ JSON missing" && exit 1)
+
+      - name: Commit and push if changed (race-condition safe)
         run: |
           set -e
+
           git config user.name "f1-bot"
           git config user.email "f1-bot@users.noreply.github.com"
 
@@ -56,14 +66,16 @@ jobs:
 
           git commit -m "Update Alpine standings"
 
+          # Retry push with autostash rebase
           for i in 1 2 3 4 5; do
             if git push origin HEAD:main; then
               echo "Push succeeded."
               exit 0
             fi
-            echo "Push failed (attempt $i). Rebasing and retrying..."
+
+            echo "Push failed (attempt $i). Rebasing with autostash and retrying..."
             git fetch origin main
-            git pull --rebase origin main
+            git pull --rebase --autostash origin main
           done
 
           echo "Push failed after retries."
