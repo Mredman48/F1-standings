@@ -1,0 +1,71 @@
+name: Update Alpine Standings (Hourly)
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: alpine-standings
+  cancel-in-progress: false
+
+jobs:
+  update-alpine:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout (main)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Sync with remote
+        run: |
+          set -e
+          git fetch origin main
+          git pull --rebase origin main
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run updater
+        run: node updateAlpineStandings.js
+
+      - name: Commit and push if changed (race-safe)
+        run: |
+          set -e
+          git config user.name "f1-bot"
+          git config user.email "f1-bot@users.noreply.github.com"
+
+          git add f1_alpine_standings.json || true
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "Update Alpine standings"
+
+          for i in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              echo "Push succeeded."
+              exit 0
+            fi
+            echo "Push failed (attempt $i). Rebasing and retrying..."
+            git fetch origin main
+            git pull --rebase origin main
+          done
+
+          echo "Push failed after retries."
+          git status --porcelain
+          exit 1
