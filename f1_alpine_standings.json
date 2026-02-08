@@ -1,0 +1,83 @@
+{
+  "header": "Alpine standings",
+  "generatedAtUtc": "2026-02-08T01:01:42.115Z",
+  "sources": {
+    "logos": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/teamlogos/",
+    "headshots": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/headshots/<first>-<last>.png",
+    "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png",
+    "driverStandings": "DASH_PLACEHOLDERS",
+    "constructorStandings": "DASH_PLACEHOLDERS",
+    "lastRace": "DASH_PLACEHOLDERS"
+  },
+  "meta": {
+    "mode": "DASH_PLACEHOLDERS_LOCAL_ASSETS",
+    "seasonUsed": "-",
+    "roundUsed": "-",
+    "note": "All fields are '-' placeholders for widget building. Headshots + team logo + driver-number images are LOCAL ONLY from the repo (no OpenF1, no external logos)."
+  },
+  "alpine": {
+    "team": "Alpine",
+    "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_alpine_color_v2.png",
+    "teamStanding": {
+      "team": "Alpine",
+      "position": "-",
+      "points": "-",
+      "wins": "-",
+      "originalTeam": "-"
+    }
+  },
+  "lastRace": {
+    "season": "-",
+    "round": "-",
+    "raceName": "-",
+    "date": "-",
+    "timeUtc": "-",
+    "circuit": {
+      "name": "-",
+      "locality": "-",
+      "country": "-"
+    }
+  },
+  "drivers": [
+    {
+      "firstName": "Pierre",
+      "lastName": "Gasly",
+      "code": "GAS",
+      "driverNumber": 10,
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-10.png",
+      "position": "-",
+      "points": "-",
+      "wins": "-",
+      "team": "Alpine",
+      "placeholder": true,
+      "bestResult": {
+        "position": "-",
+        "raceName": "-",
+        "round": "-",
+        "date": "-",
+        "circuit": "-"
+      },
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/pierre-gasly.png"
+    },
+    {
+      "firstName": "Jack",
+      "lastName": "Doohan",
+      "code": "DOO",
+      "driverNumber": 7,
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-7.png",
+      "position": "-",
+      "points": "-",
+      "wins": "-",
+      "team": "Alpine",
+      "placeholder": true,
+      "bestResult": {
+        "position": "-",
+        "raceName": "-",
+        "round": "-",
+        "date": "-",
+        "circuit": "-"
+      },
+      "headshotUrl": null
+    }
+  ]
+}
