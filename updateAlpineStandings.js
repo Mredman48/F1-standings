@@ -1,10 +1,10 @@
 // updateAlpineStandings.js
 import fs from "node:fs/promises";
-import path from "node:path";
 
 const UA = "f1-standings-bot/1.0 (GitHub Actions)";
 const OPENF1_BASE = "https://api.openf1.org/v1";
 
+// Output JSON
 const OUT_JSON = "f1_alpine_standings.json";
 
 // GitHub Pages base (Widgy-friendly)
@@ -15,20 +15,24 @@ const HEADSHOTS_DIR = "headshots";
 const DRIVER_NUMBER_FOLDER = "driver-numbers";
 const TEAMLOGOS_DIR = "teamlogos";
 
-// ✅ LOCAL Alpine logo (repo Pages)
+// Local logo on Pages
+const CACHE_BUST = true;
 const ALPINE_LOGO_PNG = `${PAGES_BASE}/${TEAMLOGOS_DIR}/2025_alpine_color_v2.png`;
 
-// Widgy cache bust toggle
-const CACHE_BUST = true;
-
-// OpenF1 team name
+// OpenF1 team name filter
 const OPENF1_TEAM_NAME = "Alpine";
 
-/* ---------------- Helpers ---------------- */
+// ✅ Prefer the actual race lineup (prevents Paul Aron / reserves showing up)
+const PREFERRED_DRIVERS = [
+  { firstName: "Pierre", lastName: "Gasly", code: "GAS", driverNumber: 10 },
+  { firstName: "Franco", lastName: "Colapinto", code: "COL", driverNumber: 43 },
+];
+
+// ---------- helpers ----------
 
 function withCacheBust(url) {
   if (!url) return url;
-  return CACHE_BUST ? `${url}?v=${Date.now()}` : url;
+  return CACHE_BUST ? `${url}${url.includes("?") ? "&" : "?"}v=${Date.now()}` : url;
 }
 
 function toSlug(s) {
@@ -40,27 +44,6 @@ function toSlug(s) {
     .replace(/(^-|-$)/g, "");
 }
 
-async function fetchJson(url) {
-  const res = await fetch(url, {
-    headers: { "User-Agent": UA, Accept: "application/json" },
-  });
-
-  const text = await res.text();
-  if (!res.ok) throw new Error(`HTTP ${res.status} from ${url}\n${text.slice(0, 200)}`);
-
-  return JSON.parse(text);
-}
-
-async function fetchBinary(url) {
-  const res = await fetch(url, { headers: { "User-Agent": UA } });
-  if (!res.ok) throw new Error(`HTTP ${res.status} downloading ${url}`);
-  return Buffer.from(await res.arrayBuffer());
-}
-
-async function ensureDir(dir) {
-  await fs.mkdir(dir, { recursive: true });
-}
-
 async function exists(filePath) {
   try {
     await fs.stat(filePath);
@@ -70,16 +53,44 @@ async function exists(filePath) {
   }
 }
 
-/* ---------------- Local Asset URLs ---------------- */
-
-function getDriverNumberImageUrl(driverNumber) {
-  if (!driverNumber || driverNumber === "-") return null;
-  return withCacheBust(
-    `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-${driverNumber}.png`
-  );
+async function fetchJson(url) {
+  const res = await fetch(url, {
+    headers: { "User-Agent": UA, Accept: "application/json" },
+    redirect: "follow",
+  });
+  const text = await res.text();
+  if (!res.ok) throw new Error(`HTTP ${res.status} from ${url}\n${text.slice(0, 200)}`);
+  return JSON.parse(text);
 }
 
-/* ---------------- OpenF1 Alpine Drivers ---------------- */
+// ✅ Driver number images (repo-saved)
+function getDriverNumberImageUrl(driverNumber) {
+  if (driverNumber == null || driverNumber === "-" || driverNumber === "") return null;
+  return withCacheBust(`${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-${driverNumber}.png`);
+}
+
+// ✅ Headshots (LOCAL ONLY; no downloading)
+async function getSavedHeadshotUrl({ firstName, lastName }) {
+  if (!firstName || !lastName || firstName === "-" || lastName === "-") return null;
+  const fileName = `${toSlug(firstName)}-${toSlug(lastName)}.png`;
+  const localPath = `${HEADSHOTS_DIR}/${fileName}`;
+
+  if (await exists(localPath)) {
+    return withCacheBust(`${PAGES_BASE}/${HEADSHOTS_DIR}/${fileName}`);
+  }
+  return null; // no placeholders
+}
+
+// ---------- OpenF1: drivers ----------
+
+function pickLatestByMeetingKey(rows) {
+  if (!Array.isArray(rows) || rows.length === 0) return [];
+  const withKey = rows.filter((r) => r && r.meeting_key != null);
+  if (withKey.length === 0) return rows;
+
+  const maxKey = withKey.reduce((m, r) => Math.max(m, Number(r.meeting_key) || -1), -1);
+  return rows.filter((r) => Number(r?.meeting_key) === maxKey);
+}
 
 async function getAlpineDriversFromOpenF1() {
   const url = `${OPENF1_BASE}/drivers?meeting_key=latest&team_name=${encodeURIComponent(
@@ -87,37 +98,18 @@ async function getAlpineDriversFromOpenF1() {
   )}`;
 
   const rows = await fetchJson(url);
+  const latestRows = pickLatestByMeetingKey(rows);
 
-  // Deduplicate by driver_number
-  const map = new Map();
-  for (const r of rows) {
+  // Deduplicate by driver_number (OpenF1 can return multiple rows)
+  const byNum = new Map();
+  for (const r of latestRows) {
     const num = r?.driver_number;
-    if (!num) continue;
-    if (!map.has(num)) map.set(num, r);
+    if (num == null) continue;
+    if (!byNum.has(num)) byNum.set(num, r);
   }
 
-  // Return exactly 2 drivers
-  return Array.from(map.values()).slice(0, 2);
+  return Array.from(byNum.values());
 }
-
-/* ---------------- Headshot Saver (NO sharp) ---------------- */
-
-async function saveHeadshot({ firstName, lastName, headshotUrl }) {
-  if (!headshotUrl) return null;
-
-  const fileName = `${toSlug(firstName)}-${toSlug(lastName)}.png`;
-  const localPath = path.join(HEADSHOTS_DIR, fileName);
-
-  await ensureDir(HEADSHOTS_DIR);
-
-  // Download and save directly
-  const buf = await fetchBinary(headshotUrl);
-  await fs.writeFile(localPath, buf);
-
-  return withCacheBust(`${PAGES_BASE}/${HEADSHOTS_DIR}/${fileName}`);
-}
-
-/* ---------------- Dash Placeholders ---------------- */
 
 function dashBestResult() {
   return { position: "-", raceName: "-", round: "-", date: "-", circuit: "-" };
@@ -144,44 +136,46 @@ function dashTeamStanding() {
   };
 }
 
-/* ---------------- Build JSON ---------------- */
+// ---------- Build JSON ----------
 
-async function buildJson() {
+async function buildDashJson() {
   const now = new Date();
 
-  let openf1Drivers = [];
+  let openf1Rows = [];
   try {
-    openf1Drivers = await getAlpineDriversFromOpenF1();
+    openf1Rows = await getAlpineDriversFromOpenF1();
   } catch {
-    openf1Drivers = [];
+    openf1Rows = [];
   }
+
+  // Index OpenF1 by driver_number for quick lookup
+  const openf1ByNum = new Map(openf1Rows.map((r) => [Number(r.driver_number), r]));
+
+  // 1) Take preferred drivers if OpenF1 returned them
+  // 2) If OpenF1 didn’t return them (offseason weirdness), still output preferred lineup
+  const selected = PREFERRED_DRIVERS.map((p) => {
+    const r = openf1ByNum.get(Number(p.driverNumber));
+    return {
+      firstName: r?.first_name || p.firstName,
+      lastName: r?.last_name || p.lastName,
+      code: r?.name_acronym || p.code,
+      driverNumber: r?.driver_number ?? p.driverNumber,
+    };
+  });
 
   const drivers = [];
-
-  for (const r of openf1Drivers) {
-    const firstName = r?.first_name || "-";
-    const lastName = r?.last_name || "-";
-    const code = r?.name_acronym || "-";
-    const driverNumber = r?.driver_number || "-";
-
-    // Save headshot locally if provided
-    let headshotUrl = null;
-    if (firstName !== "-" && lastName !== "-" && r?.headshot_url) {
-      headshotUrl = await saveHeadshot({
-        firstName,
-        lastName,
-        headshotUrl: r.headshot_url,
-      });
-    }
+  for (const d of selected) {
+    const headshotUrl = await getSavedHeadshotUrl(d);
 
     drivers.push({
-      firstName,
-      lastName,
-      code,
-      driverNumber,
+      firstName: d.firstName,
+      lastName: d.lastName,
+      code: d.code,
+      driverNumber: d.driverNumber,
 
-      numberImageUrl: getDriverNumberImageUrl(driverNumber),
+      numberImageUrl: getDriverNumberImageUrl(d.driverNumber),
 
+      // dash placeholders
       position: "-",
       points: "-",
       wins: "-",
@@ -189,25 +183,8 @@ async function buildJson() {
       placeholder: true,
       bestResult: dashBestResult(),
 
+      // local-only headshot
       headshotUrl,
-    });
-  }
-
-  // Pad to exactly 2 drivers
-  while (drivers.length < 2) {
-    drivers.push({
-      firstName: "-",
-      lastName: "-",
-      code: "-",
-      driverNumber: "-",
-      numberImageUrl: null,
-      position: "-",
-      points: "-",
-      wins: "-",
-      team: "Alpine",
-      placeholder: true,
-      bestResult: dashBestResult(),
-      headshotUrl: null,
     });
   }
 
@@ -216,15 +193,21 @@ async function buildJson() {
     generatedAtUtc: now.toISOString(),
     sources: {
       openf1: OPENF1_BASE,
-      drivers: `${OPENF1_BASE}/drivers?meeting_key=latest&team_name=Alpine`,
-      logos: `LOCAL_ONLY: ${PAGES_BASE}/${TEAMLOGOS_DIR}/`,
-      headshots: `Saved locally into /headshots`,
+      drivers: `${OPENF1_BASE}/drivers?meeting_key=latest&team_name=${encodeURIComponent(
+        OPENF1_TEAM_NAME
+      )}`,
+      headshots: `LOCAL_ONLY: ${PAGES_BASE}/${HEADSHOTS_DIR}/<first>-<last>.png`,
       driverNumbers: `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-<number>.png`,
+      logos: `LOCAL_ONLY: ${PAGES_BASE}/${TEAMLOGOS_DIR}/`,
+      driverStandings: "DASH_PLACEHOLDERS",
+      constructorStandings: "DASH_PLACEHOLDERS",
+      lastRace: "DASH_PLACEHOLDERS",
     },
     meta: {
-      mode: "DASH_PLACEHOLDERS_OPENF1_DRIVERS",
+      mode: "DASH_PLACEHOLDERS_OPENF1_DRIVERS_LOCAL_ASSETS",
+      cacheBust: CACHE_BUST,
       note:
-        "Drivers pulled from OpenF1, headshots saved locally, all standings fields remain dash placeholders until season data is available.",
+        "Standings fields are '-' placeholders. Driver identity is pulled from OpenF1, but lineup is pinned to the race drivers to avoid reserve/test results. Headshots + logo + driver numbers are LOCAL ONLY from repo folders.",
     },
     alpine: {
       team: "Alpine",
@@ -236,10 +219,10 @@ async function buildJson() {
   };
 }
 
-/* ---------------- Main ---------------- */
+// ---------- Main ----------
 
 async function updateAlpineStandings() {
-  const out = await buildJson();
+  const out = await buildDashJson();
   await fs.writeFile(OUT_JSON, JSON.stringify(out, null, 2), "utf8");
   console.log(`Wrote ${OUT_JSON}`);
 }
