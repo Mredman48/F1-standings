@@ -1,7 +1,9 @@
 {
   "header": "Cadillac standings",
-  "generatedAtUtc": "2026-02-08T00:01:32.037Z",
+  "generatedAtUtc": "2026-02-08T05:45:29.049Z",
   "sources": {
+    "openf1": "https://api.openf1.org/v1",
+    "openf1CadillacDrivers": "NO_CADILLAC_DRIVERS_RETURNED_YET",
     "logos": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/teamlogos/",
     "headshots": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/headshots/<first>-<last>.png",
     "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png",
@@ -10,10 +12,10 @@
     "lastRace": "DASH_PLACEHOLDERS"
   },
   "meta": {
-    "mode": "DASH_PLACEHOLDERS_LOCAL_ASSETS",
+    "mode": "DASH_PLACEHOLDERS_FALLBACK_DRIVERS_LOCAL_ASSETS",
     "seasonUsed": "-",
     "roundUsed": "-",
-    "note": "All fields are '-' placeholders for widget building. Headshots + team logo + driver-number images are LOCAL ONLY from the repo (no OpenF1, no external logos)."
+    "note": "All fields are '-' placeholders for widget building. Team logo + headshots + driver-number images are LOCAL ONLY from the repo. If OpenF1 returns Cadillac drivers (team_name=Cadillac on latest session/meeting), this file will automatically swap to those drivers while keeping local headshots + number images."
   },
   "cadillac": {
     "team": "Cadillac",
@@ -57,7 +59,8 @@
         "date": "-",
         "circuit": "-"
       },
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/valtteri-bottas.png"
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/valtteri-bottas.png",
+      "fromOpenF1": false
     },
     {
       "firstName": "Sergio",
@@ -77,7 +80,8 @@
         "date": "-",
         "circuit": "-"
       },
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/sergio-perez.png"
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/sergio-perez.png",
+      "fromOpenF1": false
     }
   ]
 }
