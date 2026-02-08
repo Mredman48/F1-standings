@@ -1,20 +1,24 @@
 {
   "header": "Alpine standings",
-  "generatedAtUtc": "2026-02-08T06:09:22.864Z",
+  "generatedAtUtc": "2026-02-08T06:14:58.699Z",
   "sources": {
     "openf1": "https://api.openf1.org/v1",
     "drivers": "https://api.openf1.org/v1/drivers?meeting_key=latest&team_name=Alpine",
+    "headshots": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/headshots/<first>-<last>.png",
+    "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png",
     "logos": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/teamlogos/",
-    "headshots": "Saved locally into /headshots",
-    "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png"
+    "driverStandings": "DASH_PLACEHOLDERS",
+    "constructorStandings": "DASH_PLACEHOLDERS",
+    "lastRace": "DASH_PLACEHOLDERS"
   },
   "meta": {
-    "mode": "DASH_PLACEHOLDERS_OPENF1_DRIVERS",
-    "note": "Drivers pulled from OpenF1, headshots saved locally, all standings fields remain dash placeholders until season data is available."
+    "mode": "DASH_PLACEHOLDERS_OPENF1_DRIVERS_LOCAL_ASSETS",
+    "cacheBust": true,
+    "note": "Standings fields are '-' placeholders. Driver identity is pulled from OpenF1, but lineup is pinned to the race drivers to avoid reserve/test results. Headshots + logo + driver numbers are LOCAL ONLY from repo folders."
   },
   "alpine": {
     "team": "Alpine",
-    "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_alpine_color_v2.png?v=1770530963644",
+    "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_alpine_color_v2.png?v=1770531299332",
     "teamStanding": {
       "team": "Alpine",
       "position": "-",
@@ -37,11 +41,31 @@
   },
   "drivers": [
     {
+      "firstName": "Pierre",
+      "lastName": "Gasly",
+      "code": "GAS",
+      "driverNumber": 10,
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-10.png?v=1770531299332",
+      "position": "-",
+      "points": "-",
+      "wins": "-",
+      "team": "Alpine",
+      "placeholder": true,
+      "bestResult": {
+        "position": "-",
+        "raceName": "-",
+        "round": "-",
+        "date": "-",
+        "circuit": "-"
+      },
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/pierre-gasly.png?v=1770531299332"
+    },
+    {
       "firstName": "Franco",
       "lastName": "Colapinto",
       "code": "COL",
       "driverNumber": 43,
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-43.png?v=1770530963644",
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-43.png?v=1770531299332",
       "position": "-",
       "points": "-",
       "wins": "-",
@@ -54,27 +78,7 @@
         "date": "-",
         "circuit": "-"
       },
-      "headshotUrl": null
-    },
-    {
-      "firstName": "Paul",
-      "lastName": "Aron",
-      "code": "ARO",
-      "driverNumber": 61,
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-61.png?v=1770530963644",
-      "position": "-",
-      "points": "-",
-      "wins": "-",
-      "team": "Alpine",
-      "placeholder": true,
-      "bestResult": {
-        "position": "-",
-        "raceName": "-",
-        "round": "-",
-        "date": "-",
-        "circuit": "-"
-      },
-      "headshotUrl": null
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/franco-colapinto.png?v=1770531299332"
     }
   ]
 }
