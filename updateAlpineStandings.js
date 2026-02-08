@@ -118,29 +118,7 @@ async function getAlpineDriversFromOpenF1() {
   return drivers;
 }
 
-// ---------- Headshots: download from OpenF1 headshot_url and store in /headshots ----------
 
-async function getOrUpdateHeadshotFromOpenF1({ firstName, lastName, headshotUrl }) {
-  if (!firstName || !lastName) return null;
-
-  const fileName = `${toSlug(firstName)}-${toSlug(lastName)}.png`;
-  const localPath = path.join(HEADSHOTS_DIR, fileName);
-  const pagesUrl = withCacheBust(`${PAGES_BASE}/${HEADSHOTS_DIR}/${fileName}`);
-
-  // If OpenF1 didn’t provide one, keep existing if present, else null
-  if (!headshotUrl) {
-    if (await exists(localPath)) return pagesUrl;
-    return null;
-  }
-
-  await ensureDir(HEADSHOTS_DIR);
-
-  // ✅ Download binary and save directly (no conversion)
-  const buf = await fetchBinary(headshotUrl);
-  await fs.writeFile(localPath, buf);
-
-  return pagesUrl;
-}
 
   await ensureDir(HEADSHOTS_DIR);
 
