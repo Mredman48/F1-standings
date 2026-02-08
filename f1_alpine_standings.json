@@ -1,8 +1,8 @@
 {
   "header": "Alpine standings",
-  "generatedAtUtc": "2026-02-08T05:52:50.025Z",
+  "generatedAtUtc": "2026-02-08T05:57:51.092Z",
   "sources": {
-    "openf1": "https://api.openf1.org/v1",
+    "openf1Drivers": "https://api.openf1.org/v1/drivers?team_name=Alpine",
     "logos": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/teamlogos/",
     "headshots": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/headshots/<first>-<last>.png",
     "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png",
@@ -11,10 +11,10 @@
     "lastRace": "DASH_PLACEHOLDERS"
   },
   "meta": {
-    "mode": "DASH_PLACEHOLDERS_OPENF1_IDENTITIES_LOCAL_ASSETS",
+    "mode": "DASH_PLACEHOLDERS_OPENF1_DRIVER_IDENTITY_LOCAL_ASSETS",
     "seasonUsed": "-",
     "roundUsed": "-",
-    "note": "All stats are '-' placeholders. Driver identity (name/code) is fetched from OpenF1 by driver number when available. Headshots + logos + driver-number images are LOCAL ONLY from the repo (no downloads, no sharp)."
+    "note": "Driver identity (name/code/number) is pulled from OpenF1 when available; headshots + logo + driver-number images are LOCAL ONLY from the repo. Standings fields remain '-' placeholders until you switch to live data."
   },
   "alpine": {
     "team": "Alpine",
@@ -41,26 +41,6 @@
   },
   "drivers": [
     {
-      "firstName": "Pierre",
-      "lastName": "Gasly",
-      "code": "GAS",
-      "driverNumber": 10,
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-10.png",
-      "position": "-",
-      "points": "-",
-      "wins": "-",
-      "team": "Alpine",
-      "placeholder": true,
-      "bestResult": {
-        "position": "-",
-        "raceName": "-",
-        "round": "-",
-        "date": "-",
-        "circuit": "-"
-      },
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/pierre-gasly.png"
-    },
-    {
       "firstName": "Jack",
       "lastName": "Doohan",
       "code": "DOO",
@@ -79,6 +59,26 @@
         "circuit": "-"
       },
       "headshotUrl": null
+    },
+    {
+      "firstName": "Pierre",
+      "lastName": "Gasly",
+      "code": "GAS",
+      "driverNumber": 10,
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-10.png",
+      "position": "-",
+      "points": "-",
+      "wins": "-",
+      "team": "Alpine",
+      "placeholder": true,
+      "bestResult": {
+        "position": "-",
+        "raceName": "-",
+        "round": "-",
+        "date": "-",
+        "circuit": "-"
+      },
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/pierre-gasly.png"
     }
   ]
 }
