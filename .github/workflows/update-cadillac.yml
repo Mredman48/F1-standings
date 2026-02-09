@@ -2,7 +2,7 @@ name: Update Cadillac Standings (Hourly)
 
 on:
   schedule:
-    - cron: "0 * * * *"
+    - cron: "45 * * * 0,1"
   workflow_dispatch:
 
 permissions:
