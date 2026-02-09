@@ -2,7 +2,7 @@ name: Update Haas Standings (Hourly)
 
 on:
   schedule:
-    - cron: "33 * * * *"
+    - cron: "33 * * * 0,1"
   workflow_dispatch:
 
 permissions:
