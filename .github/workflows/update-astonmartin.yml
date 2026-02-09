@@ -2,7 +2,7 @@ name: Update Aston Martin Standings (Hourly)
 
 on:
   schedule:
-    - cron: "7 * * * *"
+    - cron: "7 * * * 0,1"
   workflow_dispatch:
 
 permissions:
