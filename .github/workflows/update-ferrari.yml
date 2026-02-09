@@ -2,7 +2,7 @@ name: Update Ferrari Standings (Hourly)
 
 on:
   schedule:
-    - cron: "22 * * * *"
+    - cron: "22 * * * 0,1"
   workflow_dispatch:
 
 concurrency:
