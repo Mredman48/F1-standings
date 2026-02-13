@@ -6,6 +6,15 @@ const OUTPUT_FILE = "f1_driver_standings.json";
 const JOLPICA_BASE = "https://api.jolpi.ca/ergast/f1";
 const OPENF1_DRIVERS_URL = "https://api.openf1.org/v1/drivers?session_key=latest";
 
+// GitHub Pages base (Widgy-friendly)
+const PAGES_BASE = "https://mredman48.github.io/F1-standings";
+
+// Local repo folders (served via Pages)
+const HEADSHOTS_DIR = "headshots";
+
+// If Widgy/GitHub CDN is stubborn
+const CACHE_BUST = true;
+
 // Team display name overrides
 const TEAM_NAME_MAP = {
   "Red Bull Racing": "Red Bull",
@@ -36,6 +45,27 @@ function normalizeOpenF1TeamName(name) {
 
 function nameKey(first, last) {
   return `${(first || "").trim().toLowerCase()}|${(last || "").trim().toLowerCase()}`;
+}
+
+function toSlug(s) {
+  return String(s || "")
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+function withCacheBust(url) {
+  if (!url) return url;
+  return CACHE_BUST ? `${url}${url.includes("?") ? "&" : "?"}v=${Date.now()}` : url;
+}
+
+// ✅ LOCAL ONLY (NO CHECKS): Always returns Pages URL for /headshots/<first>-<last>.png
+function getLocalHeadshotUrl(firstName, lastName) {
+  if (!firstName || !lastName) return null;
+  const file = `${toSlug(firstName)}-${toSlug(lastName)}.png`;
+  return withCacheBust(`${PAGES_BASE}/${HEADSHOTS_DIR}/${file}`);
 }
 
 async function fetchJson(url) {
@@ -107,7 +137,7 @@ async function fetchLastSeasonFinalStandings(seasonYear) {
   throw lastError || new Error("Could not fetch last season final standings.");
 }
 
-// -------- FIXED: lastRace matches the season we publish --------
+// lastRace matches the season we publish
 function parseLastRace(payload) {
   const race = payload?.MRData?.RaceTable?.Races?.[0] ?? null;
   if (!race) return null;
@@ -150,7 +180,7 @@ async function fetchLastRaceForSeason(season) {
   return { found: false, lastRace: null, sourceUrlTried: urls };
 }
 
-// -------- OpenF1 enrichment --------
+// -------- OpenF1 enrichment (NO headshots used) --------
 async function fetchOpenF1DriverMeta() {
   const arr = await fetchJson(OPENF1_DRIVERS_URL);
   if (!Array.isArray(arr)) return { byName: new Map(), rawCount: 0 };
@@ -163,7 +193,7 @@ async function fetchOpenF1DriverMeta() {
 
     byName.set(nameKey(first, last), {
       driverNumber: d?.driver_number ?? null,
-      headshotUrl: d?.headshot_url ?? null,
+      // ❌ headshotUrl ignored (we use local repo)
       teamColour: d?.team_colour ? `#${String(d.team_colour).replace("#", "")}` : null,
       teamName: normalizeOpenF1TeamName(d?.team_name ?? null),
       nameAcronym: d?.name_acronym ?? null,
@@ -279,10 +309,10 @@ async function updateStandings() {
     driverStandings = fallback.parsed.driverStandings;
   }
 
-  // ✅ lastRace pulled for the SAME season we publish
+  // lastRace pulled for the SAME season we publish
   const lastRaceInfo = await fetchLastRaceForSeason(season);
 
-  // 2) OpenF1 metadata
+  // 2) OpenF1 metadata (numbers/colors/acronym only)
   const openf1 = await fetchOpenF1DriverMeta();
 
   // 3) Build drivers
@@ -323,7 +353,10 @@ async function updateStandings() {
         fullName: firstName && lastName ? `${firstName} ${lastName}` : null,
         nationality: d?.Driver?.nationality ?? null,
         driverNumber: meta?.driverNumber ?? null,
-        headshotUrl: meta?.headshotUrl ?? null,
+
+        // ✅ LOCAL repo headshots (no OpenF1 headshot_url)
+        headshotUrl: firstName && lastName ? getLocalHeadshotUrl(firstName, lastName) : null,
+
         nameAcronym: meta?.nameAcronym ?? null,
       },
 
@@ -337,7 +370,9 @@ async function updateStandings() {
   });
 
   const out = {
-    header: usedStandingsFallback ? `${season} Driver Standings (fallback)` : `${season} Driver Standings`,
+    header: usedStandingsFallback
+      ? `${season} Driver Standings (fallback)`
+      : `${season} Driver Standings`,
     generatedAtUtc: nowIso,
     season: season ?? null,
 
@@ -359,7 +394,8 @@ async function updateStandings() {
     enrichment: {
       openf1DriversUrl: OPENF1_DRIVERS_URL,
       openf1RowsSeen: openf1.rawCount,
-      note: "Driver headshots + team hex colours come from OpenF1 drivers endpoint (joined by name).",
+      note:
+        "Driver numbers + team hex colours + acronyms come from OpenF1 drivers endpoint (joined by name). Headshots are LOCAL ONLY from repo /headshots.",
     },
 
     fallback: fallbackInfo,
