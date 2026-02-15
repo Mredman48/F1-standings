@@ -1,6 +1,6 @@
 {
   "header": "2025 Driver Standings (fallback)",
-  "generatedAtUtc": "2026-02-15T21:44:02.633Z",
+  "generatedAtUtc": "2026-02-15T23:46:09.043Z",
   "season": "2025",
   "lastRace": {
     "season": "2025",
@@ -32,7 +32,7 @@
   },
   "enrichment": {
     "openf1DriversUrl": "https://api.openf1.org/v1/drivers?session_key=latest",
-    "openf1RowsSeen": 32,
+    "openf1RowsSeen": 22,
     "note": "Driver numbers + team hex colours + acronyms come from OpenF1 drivers endpoint (joined by name). Headshots are LOCAL ONLY from repo /headshots."
   },
   "fallback": {
@@ -57,15 +57,15 @@
         "lastName": "Norris",
         "fullName": "Lando Norris",
         "nationality": "British",
-        "driverNumber": null,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lando-norris.png?v=1771191844128",
-        "nameAcronym": null
+        "driverNumber": 1,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lando-norris.png?v=1771199170861",
+        "nameAcronym": "NOR"
       },
       "constructor": {
         "name": "McLaren",
         "fullName": "McLaren",
         "nationality": "British",
-        "teamHex": null
+        "teamHex": "#F47600"
       }
     },
     {
@@ -84,15 +84,15 @@
         "lastName": "Verstappen",
         "fullName": "Max Verstappen",
         "nationality": "Dutch",
-        "driverNumber": null,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/max-verstappen.png?v=1771191844128",
-        "nameAcronym": null
+        "driverNumber": 3,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/max-verstappen.png?v=1771199170861",
+        "nameAcronym": "VER"
       },
       "constructor": {
         "name": "Red Bull",
         "fullName": "Red Bull",
         "nationality": "Austrian",
-        "teamHex": null
+        "teamHex": "#4781D7"
       }
     },
     {
@@ -111,15 +111,15 @@
         "lastName": "Piastri",
         "fullName": "Oscar Piastri",
         "nationality": "Australian",
-        "driverNumber": null,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/oscar-piastri.png?v=1771191844128",
-        "nameAcronym": null
+        "driverNumber": 81,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/oscar-piastri.png?v=1771199170861",
+        "nameAcronym": "PIA"
       },
       "constructor": {
         "name": "McLaren",
         "fullName": "McLaren",
         "nationality": "British",
-        "teamHex": null
+        "teamHex": "#F47600"
       }
     },
     {
@@ -138,15 +138,15 @@
         "lastName": "Russell",
         "fullName": "George Russell",
         "nationality": "British",
-        "driverNumber": null,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/george-russell.png?v=1771191844128",
-        "nameAcronym": null
+        "driverNumber": 63,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/george-russell.png?v=1771199170861",
+        "nameAcronym": "RUS"
       },
       "constructor": {
         "name": "Mercedes",
         "fullName": "Mercedes",
         "nationality": "German",
-        "teamHex": null
+        "teamHex": "#00D7B6"
       }
     },
     {
@@ -165,15 +165,15 @@
         "lastName": "Leclerc",
         "fullName": "Charles Leclerc",
         "nationality": "Monegasque",
-        "driverNumber": null,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/charles-leclerc.png?v=1771191844128",
-        "nameAcronym": null
+        "driverNumber": 16,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/charles-leclerc.png?v=1771199170861",
+        "nameAcronym": "LEC"
       },
       "constructor": {
         "name": "Ferrari",
         "fullName": "Ferrari",
         "nationality": "Italian",
-        "teamHex": null
+        "teamHex": "#ED1131"
       }
     },
     {
@@ -192,15 +192,15 @@
         "lastName": "Hamilton",
         "fullName": "Lewis Hamilton",
         "nationality": "British",
-        "driverNumber": null,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lewis-hamilton.png?v=1771191844128",
-        "nameAcronym": null
+        "driverNumber": 44,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lewis-hamilton.png?v=1771199170861",
+        "nameAcronym": "HAM"
       },
       "constructor": {
         "name": "Ferrari",
         "fullName": "Ferrari",
         "nationality": "Italian",
-        "teamHex": null
+        "teamHex": "#ED1131"
       }
     },
     {
@@ -219,15 +219,15 @@
         "lastName": "Antonelli",
         "fullName": "Andrea Kimi Antonelli",
         "nationality": "Italian",
-        "driverNumber": null,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/andrea-kimi-antonelli.png?v=1771191844128",
-        "nameAcronym": null
+        "driverNumber": 12,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/andrea-kimi-antonelli.png?v=1771199170861",
+        "nameAcronym": "ANT"
       },
       "constructor": {
         "name": "Mercedes",
         "fullName": "Mercedes",
         "nationality": "German",
-        "teamHex": null
+        "teamHex": "#00D7B6"
       }
     },
     {
@@ -246,15 +246,15 @@
         "lastName": "Albon",
         "fullName": "Alexander Albon",
         "nationality": "Thai",
-        "driverNumber": null,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/alexander-albon.png?v=1771191844128",
-        "nameAcronym": null
+        "driverNumber": 23,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/alexander-albon.png?v=1771199170861",
+        "nameAcronym": "ALB"
       },
       "constructor": {
         "name": "Williams",
         "fullName": "Williams",
         "nationality": "British",
-        "teamHex": null
+        "teamHex": "#1868DB"
       }
     },
     {
@@ -273,15 +273,15 @@
         "lastName": "Sainz",
         "fullName": "Carlos Sainz",
         "nationality": "Spanish",
-        "driverNumber": null,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/carlos-sainz.png?v=1771191844128",
-        "nameAcronym": null
+        "driverNumber": 55,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/carlos-sainz.png?v=1771199170861",
+        "nameAcronym": "SAI"
       },
       "constructor": {
         "name": "Williams",
         "fullName": "Williams",
         "nationality": "British",
-        "teamHex": null
+        "teamHex": "#1868DB"
       }
     },
     {
@@ -300,15 +300,15 @@
         "lastName": "Alonso",
         "fullName": "Fernando Alonso",
         "nationality": "Spanish",
-        "driverNumber": null,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/fernando-alonso.png?v=1771191844128",
-        "nameAcronym": null
+        "driverNumber": 14,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/fernando-alonso.png?v=1771199170861",
+        "nameAcronym": "ALO"
       },
       "constructor": {
         "name": "Aston Martin",
         "fullName": "Aston Martin",
         "nationality": "British",
-        "teamHex": null
+        "teamHex": "#229971"
       }
     },
     {
@@ -328,7 +328,7 @@
         "fullName": "Nico Hülkenberg",
         "nationality": "German",
         "driverNumber": null,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/nico-hulkenberg.png?v=1771191844128",
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/nico-hulkenberg.png?v=1771199170861",
         "nameAcronym": null
       },
       "constructor": {
@@ -354,15 +354,15 @@
         "lastName": "Hadjar",
         "fullName": "Isack Hadjar",
         "nationality": "French",
-        "driverNumber": null,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/isack-hadjar.png?v=1771191844128",
-        "nameAcronym": null
+        "driverNumber": 6,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/isack-hadjar.png?v=1771199170861",
+        "nameAcronym": "HAD"
       },
       "constructor": {
         "name": "VCARB",
         "fullName": "RB F1 Team",
         "nationality": "Italian",
-        "teamHex": null
+        "teamHex": "#4781D7"
       }
     },
     {
@@ -381,15 +381,15 @@
         "lastName": "Bearman",
         "fullName": "Oliver Bearman",
         "nationality": "British",
-        "driverNumber": null,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/oliver-bearman.png?v=1771191844128",
-        "nameAcronym": null
+        "driverNumber": 87,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/oliver-bearman.png?v=1771199170861",
+        "nameAcronym": "BEA"
       },
       "constructor": {
         "name": "Haas F1 Team",
         "fullName": "Haas F1 Team",
         "nationality": "American",
-        "teamHex": null
+        "teamHex": "#9C9FA2"
       }
     },
     {
@@ -408,15 +408,15 @@
         "lastName": "Lawson",
         "fullName": "Liam Lawson",
         "nationality": "New Zealander",
-        "driverNumber": null,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/liam-lawson.png?v=1771191844128",
-        "nameAcronym": null
+        "driverNumber": 30,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/liam-lawson.png?v=1771199170861",
+        "nameAcronym": "LAW"
       },
       "constructor": {
         "name": "Red Bull",
         "fullName": "Red Bull",
         "nationality": "Austrian",
-        "teamHex": null
+        "teamHex": "#6C98FF"
       }
     },
     {
@@ -435,15 +435,15 @@
         "lastName": "Ocon",
         "fullName": "Esteban Ocon",
         "nationality": "French",
-        "driverNumber": null,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/esteban-ocon.png?v=1771191844128",
-        "nameAcronym": null
+        "driverNumber": 31,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/esteban-ocon.png?v=1771199170861",
+        "nameAcronym": "OCO"
       },
       "constructor": {
         "name": "Haas F1 Team",
         "fullName": "Haas F1 Team",
         "nationality": "American",
-        "teamHex": null
+        "teamHex": "#9C9FA2"
       }
     },
     {
@@ -462,15 +462,15 @@
         "lastName": "Stroll",
         "fullName": "Lance Stroll",
         "nationality": "Canadian",
-        "driverNumber": null,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lance-stroll.png?v=1771191844128",
-        "nameAcronym": null
+        "driverNumber": 18,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lance-stroll.png?v=1771199170861",
+        "nameAcronym": "STR"
       },
       "constructor": {
         "name": "Aston Martin",
         "fullName": "Aston Martin",
         "nationality": "British",
-        "teamHex": null
+        "teamHex": "#229971"
       }
     },
     {
@@ -490,7 +490,7 @@
         "fullName": "Yuki Tsunoda",
         "nationality": "Japanese",
         "driverNumber": null,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/yuki-tsunoda.png?v=1771191844128",
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/yuki-tsunoda.png?v=1771199170861",
         "nameAcronym": null
       },
       "constructor": {
@@ -516,15 +516,15 @@
         "lastName": "Gasly",
         "fullName": "Pierre Gasly",
         "nationality": "French",
-        "driverNumber": null,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/pierre-gasly.png?v=1771191844128",
-        "nameAcronym": null
+        "driverNumber": 10,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/pierre-gasly.png?v=1771199170861",
+        "nameAcronym": "GAS"
       },
       "constructor": {
         "name": "Alpine F1 Team",
         "fullName": "Alpine F1 Team",
         "nationality": "French",
-        "teamHex": null
+        "teamHex": "#00A1E8"
       }
     },
     {
@@ -543,15 +543,15 @@
         "lastName": "Bortoleto",
         "fullName": "Gabriel Bortoleto",
         "nationality": "Brazilian",
-        "driverNumber": null,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/gabriel-bortoleto.png?v=1771191844128",
-        "nameAcronym": null
+        "driverNumber": 5,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/gabriel-bortoleto.png?v=1771199170861",
+        "nameAcronym": "BOR"
       },
       "constructor": {
         "name": "Sauber",
         "fullName": "Sauber",
         "nationality": "Swiss",
-        "teamHex": null
+        "teamHex": "#F50537"
       }
     },
     {
@@ -570,15 +570,15 @@
         "lastName": "Colapinto",
         "fullName": "Franco Colapinto",
         "nationality": "Argentine",
-        "driverNumber": null,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/franco-colapinto.png?v=1771191844128",
-        "nameAcronym": null
+        "driverNumber": 43,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/franco-colapinto.png?v=1771199170861",
+        "nameAcronym": "COL"
       },
       "constructor": {
         "name": "Alpine F1 Team",
         "fullName": "Alpine F1 Team",
         "nationality": "French",
-        "teamHex": null
+        "teamHex": "#00A1E8"
       }
     },
     {
@@ -598,7 +598,7 @@
         "fullName": "Jack Doohan",
         "nationality": "Australian",
         "driverNumber": null,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/jack-doohan.png?v=1771191844128",
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/jack-doohan.png?v=1771199170861",
         "nameAcronym": null
       },
       "constructor": {
