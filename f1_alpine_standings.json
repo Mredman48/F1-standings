@@ -1,6 +1,6 @@
 {
   "header": "Alpine standings",
-  "generatedAtUtc": "2026-02-15T23:02:01.172Z",
+  "generatedAtUtc": "2026-02-16T00:00:19.610Z",
   "sources": {
     "openf1": "https://api.openf1.org/v1",
     "drivers": "https://api.openf1.org/v1/drivers?meeting_key=latest&team_name=Alpine",
@@ -18,7 +18,7 @@
   },
   "alpine": {
     "team": "Alpine",
-    "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_alpine_color_v2.png?v=1771196521857",
+    "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_alpine_color_v2.png?v=1771200020432",
     "teamStanding": {
       "team": "Alpine",
       "position": "-",
@@ -45,7 +45,7 @@
       "lastName": "Gasly",
       "code": "GAS",
       "driverNumber": 10,
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-10.png?v=1771196521857",
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-10.png?v=1771200020432",
       "position": "-",
       "points": "-",
       "wins": "-",
@@ -58,14 +58,14 @@
         "date": "-",
         "circuit": "-"
       },
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/pierre-gasly.png?v=1771196521857"
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/pierre-gasly.png?v=1771200020432"
     },
     {
       "firstName": "Franco",
       "lastName": "Colapinto",
       "code": "COL",
       "driverNumber": 43,
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-43.png?v=1771196521857",
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-43.png?v=1771200020432",
       "position": "-",
       "points": "-",
       "wins": "-",
@@ -78,7 +78,7 @@
         "date": "-",
         "circuit": "-"
       },
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/franco-colapinto.png?v=1771196521857"
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/franco-colapinto.png?v=1771200020432"
     }
   ]
 }
