@@ -34,13 +34,20 @@ jobs:
       - name: Run updater
         run: node UpdateVCARBStandings.js
 
+      - name: Verify output exists
+        run: |
+          ls -la
+          ls -la vcarb_standings.json
+          echo "First 40 lines:"
+          sed -n '1,40p' vcarb_standings.json
+
       - name: Commit and push if changed (race-safe)
         run: |
           set -e
           git config user.name "f1-bot"
           git config user.email "f1-bot@users.noreply.github.com"
 
-          git add f1_vcarb_standings.json || true
+          git add vcarb_standings.json
 
           if git diff --cached --quiet; then
             echo "No changes to commit."
@@ -49,7 +56,6 @@ jobs:
 
           git commit -m "Update VCARB standings"
 
-          # Retry loop with autostash to keep rebase clean
           for i in 1 2 3 4 5; do
             if git push origin HEAD:main; then
               echo "Push succeeded."
@@ -62,10 +68,8 @@ jobs:
             git pull --rebase origin main
             git stash pop || true
 
-            # Restage after stash pop
-            git add f1_vcarb_standings.json || true
+            git add vcarb_standings.json
 
-            # Recommit if stash pop reintroduced diffs
             if ! git diff --cached --quiet; then
               git commit -m "Update VCARB standings (retry)" || true
             fi
