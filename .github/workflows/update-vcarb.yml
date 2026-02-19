@@ -1,0 +1,76 @@
+name: Update VCARB Standings (Hourly Sun+Mon)
+
+on:
+  schedule:
+    - cron: "0 * * * 0,1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: vcarb-standings
+  cancel-in-progress: false
+
+jobs:
+  update-vcarb:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout (main, full history)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run updater
+        run: node UpdateVCARBStandings.js
+
+      - name: Commit and push if changed (race-safe)
+        run: |
+          set -e
+          git config user.name "f1-bot"
+          git config user.email "f1-bot@users.noreply.github.com"
+
+          git add f1_vcarb_standings.json || true
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "Update VCARB standings"
+
+          # Retry loop with autostash to keep rebase clean
+          for i in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              echo "Push succeeded."
+              exit 0
+            fi
+
+            echo "Push failed (attempt $i). Rebasing and retrying..."
+            git stash push -u -m "autostash before rebase" || true
+            git fetch origin main
+            git pull --rebase origin main
+            git stash pop || true
+
+            # Restage after stash pop
+            git add f1_vcarb_standings.json || true
+
+            # Recommit if stash pop reintroduced diffs
+            if ! git diff --cached --quiet; then
+              git commit -m "Update VCARB standings (retry)" || true
+            fi
+          done
+
+          echo "Push failed after retries."
+          git status --porcelain
+          exit 1
