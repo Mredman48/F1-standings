@@ -10,7 +10,6 @@ const HEADSHOTS_DIR = "headshots";
 const DRIVER_NUMBER_FOLDER = "driver-numbers";
 
 const CACHE_BUST = true;
-
 const CADILLAC_LOGO_FILE = "2025_cadillac_color_v2.png";
 
 // Ergast + Jolpica fallback
@@ -19,7 +18,7 @@ const ERGAST_BASES = [
   "https://api.jolpi.ca/ergast/api/f1",
 ];
 
-// Placeholder lineup (until Cadillac is real in Ergast)
+// Placeholder drivers
 const DRIVERS_BASE = [
   { firstName: "Valtteri", lastName: "Bottas", code: "BOT", driverNumber: 77 },
   { firstName: "Sergio", lastName: "Perez", code: "PER", driverNumber: 11 },
@@ -30,6 +29,13 @@ const DRIVERS_BASE = [
 function withCacheBust(url) {
   if (!url) return url;
   return CACHE_BUST ? `${url}?v=${Date.now()}` : url;
+}
+
+function fmtPos(pos) {
+  if (pos == null || pos === "-" || pos === "") return "-";
+  const n = Number(pos);
+  if (!Number.isFinite(n)) return "-";
+  return `P${n}`;
 }
 
 function toSlug(s) {
@@ -87,15 +93,15 @@ function getLastRace(mr) {
   if (!race) return null;
 
   return {
-    season: race.season,
-    round: race.round,
-    raceName: race.raceName,
-    date: race.date,
-    timeUtc: race.time,
+    season: race.season ?? "-",
+    round: race.round ?? "-",
+    raceName: race.raceName ?? "-",
+    date: race.date ?? "-",
+    timeUtc: race.time ?? "-",
     circuit: {
-      name: race?.Circuit?.circuitName,
-      locality: race?.Circuit?.Location?.locality,
-      country: race?.Circuit?.Location?.country,
+      name: race?.Circuit?.circuitName ?? "-",
+      locality: race?.Circuit?.Location?.locality ?? "-",
+      country: race?.Circuit?.Location?.country ?? "-",
     },
   };
 }
@@ -113,7 +119,13 @@ async function buildJson() {
     wins: "-",
     team: "Cadillac",
     placeholder: true,
-    bestResult: { position: "-", raceName: "-", round: "-", date: "-", circuit: "-" },
+    bestResult: {
+      position: "-",
+      raceName: "-",
+      round: "-",
+      date: "-",
+      circuit: "-",
+    },
     headshotUrl: getSavedHeadshotUrl(d.firstName, d.lastName),
   }));
 
@@ -156,9 +168,9 @@ async function buildJson() {
       );
 
       if (match) {
-        d.position = match.position;
-        d.points = match.points;
-        d.wins = match.wins;
+        d.position = fmtPos(match.position);
+        d.points = match.points ?? "-";
+        d.wins = match.wins ?? "-";
         d.placeholder = false;
 
         const ctorId = match?.Constructors?.[0]?.constructorId;
@@ -166,7 +178,7 @@ async function buildJson() {
       }
     }
 
-    // Infer constructor row from drivers
+    // Infer constructor from drivers
     if (constructorIds.size === 1) {
       const ctorId = Array.from(constructorIds)[0];
       const ctorRow = constructorStandings.find(
@@ -176,10 +188,10 @@ async function buildJson() {
       if (ctorRow) {
         teamStanding = {
           team: "Cadillac",
-          position: ctorRow.position,
-          points: ctorRow.points,
-          wins: ctorRow.wins,
-          originalTeam: ctorRow?.Constructor?.name,
+          position: fmtPos(ctorRow.position),
+          points: ctorRow.points ?? "-",
+          wins: ctorRow.wins ?? "-",
+          originalTeam: ctorRow?.Constructor?.name ?? "-",
         };
       }
     }
@@ -197,7 +209,7 @@ async function buildJson() {
     meta: {
       mode: placeholderMode ? "PLACEHOLDERS" : "ERGAST_LIVE",
       note:
-        "Before first race this shows placeholders. After Race 1 it auto-populates from Ergast current standings.",
+        "Before first race this shows placeholders. After Race 1 it auto-populates from Ergast current standings. Positions formatted as P1, P2, etc.",
     },
     cadillac: {
       team: "Cadillac",
