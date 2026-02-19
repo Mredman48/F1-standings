@@ -45,6 +45,13 @@ function withCacheBust(url) {
   return CACHE_BUST ? `${url}${url.includes("?") ? "&" : "?"}v=${Date.now()}` : url;
 }
 
+function fmtPos(pos) {
+  if (pos == null || pos === "-" || pos === "") return "-";
+  const n = Number(pos);
+  if (!Number.isFinite(n)) return "-";
+  return `P${n}`;
+}
+
 function getTeamLogoUrl(fileName) {
   return withCacheBust(`${PAGES_BASE}/${TEAMLOGOS_DIR}/${fileName}`);
 }
@@ -210,7 +217,7 @@ async function buildJson() {
     if (ctorRow) {
       teamStanding = {
         team: "Aston Martin",
-        position: ctorRow.position ?? "-",
+        position: fmtPos(ctorRow.position),
         points: ctorRow.points ?? "-",
         wins: ctorRow.wins ?? "-",
         originalTeam: ctorRow?.Constructor?.name ?? "Aston Martin",
@@ -226,7 +233,7 @@ async function buildJson() {
       });
 
       if (match) {
-        d.position = match.position ?? "-";
+        d.position = fmtPos(match.position);
         d.points = match.points ?? "-";
         d.wins = match.wins ?? "-";
         d.placeholder = false;
@@ -257,7 +264,7 @@ async function buildJson() {
       mode: placeholderMode ? "PLACEHOLDERS_LOCAL_ASSETS" : "ERGAST_LIVE_LOCAL_ASSETS",
       cacheBust: CACHE_BUST,
       note:
-        "Before the first race (or if data is unavailable), outputs '-' placeholders. After the first race, fills positions/points/wins from current standings.",
+        "Before the first race (or if data is unavailable), outputs '-' placeholders. After the first race, fills positions/points/wins from current standings. Positions formatted as P1, P2, etc.",
     },
     astonmartin: {
       team: "Aston Martin",
