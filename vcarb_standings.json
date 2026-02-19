@@ -1,20 +1,36 @@
 {
   "header": "2026 Racing Bulls Standings",
-  "generatedAtUtc": "2026-02-19T22:06:33.906Z",
-  "placeholder": false,
-  "debug": {
-    "mode": "live-drivers-only",
-    "reason": "OpenF1 driver list succeeded"
+  "generatedAtUtc": "2026-02-19T22:08:32.342Z",
+  "source": {
+    "provider": "OpenF1",
+    "note": "Championship endpoints require a Race session_key (OpenF1 docs). This file uses the latest Race session_key from /sessions.",
+    "latest_race_session": {
+      "session_key": 11436,
+      "meeting_name": null,
+      "circuit_short_name": "Yas Marina Circuit",
+      "country_name": "United Arab Emirates",
+      "date_start": "2026-12-06T13:00:00+00:00",
+      "date_end": "2026-12-06T15:00:00+00:00",
+      "year": 2026
+    },
+    "urls": {
+      "sessions_race": "https://api.openf1.org/v1/sessions?session_name=Race",
+      "drivers_latest": "https://api.openf1.org/v1/drivers?session_key=latest",
+      "championship_drivers": "https://api.openf1.org/v1/championship_drivers?session_key=11436&driver_number=30&driver_number=41",
+      "championship_teams": "https://api.openf1.org/v1/championship_teams?session_key=11436"
+    }
   },
   "team": {
     "display_name": "Racing Bulls",
-    "matched_team_name": "Racing Bulls",
-    "position": "P—",
+    "matched_team_name": null,
+    "position": null,
     "position_current": null,
+    "position_start": null,
     "position_change": null,
     "position_arrow": "—",
-    "points_current": 0,
-    "placeholder": false
+    "points_current": null,
+    "points_start": null,
+    "points_gained_in_latest_race": null
   },
   "drivers": [
     {
@@ -26,12 +42,14 @@
       "headshot_url": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LIALAW01_Liam_Lawson/lialaw01.png.transform/1col/image.png",
       "team_name": "Racing Bulls",
       "team_colour": "6C98FF",
-      "position": "P—",
+      "position": null,
       "position_current": null,
+      "position_start": null,
       "position_change": null,
       "position_arrow": "—",
-      "points_current": 0,
-      "placeholder": false
+      "points_current": null,
+      "points_start": null,
+      "points_gained_in_latest_race": null
     },
     {
       "driver_number": 41,
@@ -42,12 +60,14 @@
       "headshot_url": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/A/ARVLIN01_Arvid_Lindblad/arvlin01.png.transform/1col/image.png",
       "team_name": "Racing Bulls",
       "team_colour": "6C98FF",
-      "position": "P—",
+      "position": null,
       "position_current": null,
+      "position_start": null,
       "position_change": null,
       "position_arrow": "—",
-      "points_current": 0,
-      "placeholder": false
+      "points_current": null,
+      "points_start": null,
+      "points_gained_in_latest_race": null
     }
   ]
 }
