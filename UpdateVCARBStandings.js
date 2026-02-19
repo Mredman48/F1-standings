@@ -4,7 +4,7 @@ import fs from "node:fs/promises";
 const UA = "f1-standings-bot/1.0 (GitHub Actions)";
 
 // Output JSON (keep naming consistent with your other endpoints style)
-const OUT_JSON = "f1_vcarb_standings.json";
+const OUT_JSON = "vcarb_standings.json";
 
 // GitHub Pages base (Widgy-friendly)
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
