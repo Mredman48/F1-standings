@@ -4,14 +4,21 @@ import fs from "node:fs/promises";
 const UA = "f1-standings-bot/1.0";
 const OPENF1 = "https://api.openf1.org/v1";
 
-// Team name variants (OpenF1 team_name can vary by season/branding)
-const TEAM_NAME_CANDIDATES = [
-  "Visa Cash App RB",
-  "RB",
-  "Racing Bulls",
-  "Scuderia AlphaTauri", // historical fallback
-  "AlphaTauri",          // historical fallback
-];
+// Keep under OpenF1 max 3 req/sec
+const MIN_DELAY_MS = 550; // ~1.8 req/sec
+let lastRequestAt = 0;
+
+function sleep(ms) {
+  return new Promise((r) => setTimeout(r, ms));
+}
+
+async function throttledFetch(url, options) {
+  const now = Date.now();
+  const wait = Math.max(0, MIN_DELAY_MS - (now - lastRequestAt));
+  if (wait > 0) await sleep(wait);
+  lastRequestAt = Date.now();
+  return fetch(url, options);
+}
 
 function fmtPos(n) {
   return Number.isFinite(n) ? `P${n}` : null;
@@ -20,26 +27,6 @@ function fmtPos(n) {
 function arrowFromDelta(delta) {
   if (!Number.isFinite(delta) || delta === 0) return "—";
   return delta > 0 ? "↑" : "↓";
-}
-
-async function fetchJson(url, { timeoutMs = 20000 } = {}) {
-  const ac = new AbortController();
-  const t = setTimeout(() => ac.abort(), timeoutMs);
-
-  try {
-    const res = await fetch(url, {
-      headers: { "User-Agent": UA, Accept: "application/json" },
-      signal: ac.signal,
-    });
-
-    if (!res.ok) {
-      const text = await res.text().catch(() => "");
-      throw new Error(`HTTP ${res.status} for ${url}\n${text.slice(0, 250)}`);
-    }
-    return await res.json();
-  } finally {
-    clearTimeout(t);
-  }
 }
 
 function normalize(s) {
@@ -56,43 +43,70 @@ function isVcarbTeamName(teamName) {
   );
 }
 
+async function fetchJson(url, { timeoutMs = 20000, retries = 5 } = {}) {
+  const ac = new AbortController();
+  const t = setTimeout(() => ac.abort(), timeoutMs);
+
+  try {
+    for (let attempt = 0; attempt <= retries; attempt++) {
+      const res = await throttledFetch(url, {
+        headers: { "User-Agent": UA, Accept: "application/json" },
+        signal: ac.signal,
+      });
+
+      // Handle rate limit
+      if (res.status === 429) {
+        const body = await res.text().catch(() => "");
+        const backoff = 800 * Math.pow(2, attempt); // 0.8s, 1.6s, 3.2s...
+        console.warn(`OpenF1 429 (attempt ${attempt + 1}/${retries + 1}). Backing off ${backoff}ms.`);
+        console.warn(body.slice(0, 200));
+        await sleep(backoff);
+        continue;
+      }
+
+      if (!res.ok) {
+        const text = await res.text().catch(() => "");
+        throw new Error(`HTTP ${res.status} for ${url}\n${text.slice(0, 250)}`);
+      }
+
+      return await res.json();
+    }
+
+    throw new Error(`OpenF1 429 persisted after ${retries + 1} attempts for ${url}`);
+  } finally {
+    clearTimeout(t);
+  }
+}
+
 async function getLatestVcarbDrivers() {
-  // Pull all drivers for latest session, then filter to VCARB
-  const url = `${OPENF1}/drivers?session_key=latest`;
-  const drivers = await fetchJson(url);
+  // 1 call
+  const drivers = await fetchJson(`${OPENF1}/drivers?session_key=latest`);
 
   const vcarb = (drivers || []).filter((d) => isVcarbTeamName(d?.team_name));
 
-  // De-dup by driver_number (sometimes multiple entries)
+  // De-dup by driver_number
   const byNum = new Map();
   for (const d of vcarb) {
     if (d?.driver_number != null) byNum.set(Number(d.driver_number), d);
   }
 
-  // Convert to array sorted by driver_number
-  return [...byNum.entries()]
-    .sort((a, b) => a[0] - b[0])
-    .map(([, d]) => d);
+  return [...byNum.values()].sort((a, b) => Number(a.driver_number) - Number(b.driver_number));
 }
 
 async function getDriverChampionshipFor(driverNumbers) {
   if (!driverNumbers.length) return [];
 
+  // 1 call
   const qs = driverNumbers.map((n) => `driver_number=${encodeURIComponent(n)}`).join("&");
-  const url = `${OPENF1}/championship_drivers?session_key=latest&${qs}`;
-  return await fetchJson(url);
+  return await fetchJson(`${OPENF1}/championship_drivers?session_key=latest&${qs}`);
 }
 
-async function getTeamChampionship() {
-  // Try variants until OpenF1 returns a non-empty array
-  for (const name of TEAM_NAME_CANDIDATES) {
-    const url = `${OPENF1}/championship_teams?session_key=latest&team_name=${encodeURIComponent(name)}`;
-    const data = await fetchJson(url);
-    if (Array.isArray(data) && data.length > 0) {
-      return { team_name: name, row: data[0] };
-    }
-  }
-  return { team_name: null, row: null };
+async function getTeamChampionshipRow() {
+  // 1 call for ALL teams, then filter locally (avoids multiple requests)
+  const teams = await fetchJson(`${OPENF1}/championship_teams?session_key=latest`);
+
+  const vcarb = (teams || []).find((t) => isVcarbTeamName(t?.team_name));
+  return vcarb || null;
 }
 
 async function updateVcarbStandings() {
@@ -102,11 +116,13 @@ async function updateVcarbStandings() {
   const vcarbDrivers = await getLatestVcarbDrivers();
   if (!vcarbDrivers.length) {
     throw new Error(
-      "Could not find any VCARB drivers from OpenF1 drivers?session_key=latest. Team name may have changed."
+      "Could not find VCARB drivers from OpenF1 drivers?session_key=latest. Team name may have changed."
     );
   }
 
-  const driverNumbers = vcarbDrivers.map((d) => Number(d.driver_number)).filter(Number.isFinite);
+  const driverNumbers = vcarbDrivers
+    .map((d) => Number(d.driver_number))
+    .filter((n) => Number.isFinite(n));
 
   const champDrivers = await getDriverChampionshipFor(driverNumbers);
   const champByNum = new Map((champDrivers || []).map((r) => [Number(r.driver_number), r]));
@@ -137,7 +153,7 @@ async function updateVcarbStandings() {
         position: fmtPos(posCur),
         position_current: posCur,
         position_start: posStart,
-        position_change: posDelta, // positive = gained places
+        position_change: posDelta,
         position_arrow: arrowFromDelta(posDelta),
 
         points_current: ptsCur,
@@ -145,7 +161,6 @@ async function updateVcarbStandings() {
         points_gained_in_latest_race: ptsDelta,
       };
     })
-    // Sort by championship position if available
     .sort((a, b) => {
       if (a.position_current == null && b.position_current == null) return 0;
       if (a.position_current == null) return 1;
@@ -153,9 +168,8 @@ async function updateVcarbStandings() {
       return a.position_current - b.position_current;
     });
 
-  const teamChamp = await getTeamChampionship();
+  const teamRow = await getTeamChampionshipRow();
 
-  const teamRow = teamChamp.row;
   const tPosCur = teamRow?.position_current != null ? Number(teamRow.position_current) : null;
   const tPosStart = teamRow?.position_start != null ? Number(teamRow.position_start) : null;
   const tPosDelta = Number.isFinite(tPosCur) && Number.isFinite(tPosStart) ? tPosStart - tPosCur : null;
@@ -173,13 +187,13 @@ async function updateVcarbStandings() {
       championship_drivers: `${OPENF1}/championship_drivers?session_key=latest&driver_number=${driverNumbers.join(
         "&driver_number="
       )}`,
-      championship_teams: `${OPENF1}/championship_teams?session_key=latest&team_name=<team>`,
+      championship_teams: `${OPENF1}/championship_teams?session_key=latest`,
+      note: "Requests are throttled (< 3/sec) with retry/backoff for 429 rate limits.",
     },
 
     team: {
-      display_name: "Visa Cash App RB",
-      short_name: "VCARB",
-      matched_team_name: teamChamp.team_name,
+      display_name: "VCARB",
+      matched_team_name: teamRow?.team_name ?? null,
       position: fmtPos(tPosCur),
       position_current: tPosCur,
       position_start: tPosStart,
