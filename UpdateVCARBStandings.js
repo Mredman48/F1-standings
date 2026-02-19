@@ -1,263 +1,214 @@
-// UpdateVCARBStandings.js
+// updateVCARBStandings.js
 import fs from "node:fs/promises";
 
-const UA = "f1-standings-bot/1.0";
-const OPENF1 = "https://api.openf1.org/v1";
+const UA = "f1-standings-bot/1.0 (GitHub Actions)";
 
-// Keep under OpenF1 max 3 req/sec
-const MIN_DELAY_MS = 550; // ~1.8 req/sec
-let lastRequestAt = 0;
+// Output JSON (keep naming consistent with your other endpoints style)
+const OUT_JSON = "f1_vcarb_standings.json";
 
-function sleep(ms) {
-  return new Promise((r) => setTimeout(r, ms));
+// GitHub Pages base (Widgy-friendly)
+const PAGES_BASE = "https://mredman48.github.io/F1-standings";
+
+// Repo folders
+const TEAMLOGOS_DIR = "teamlogos";
+const HEADSHOTS_DIR = "headshots";
+const DRIVER_NUMBER_FOLDER = "driver-numbers";
+
+// ✅ VCARB/Racing Bulls logo pulled from YOUR repo (GitHub Pages)
+// Update filename if yours differs:
+const VCARB_LOGO_PNG = `${PAGES_BASE}/${TEAMLOGOS_DIR}/2025_vcarb_color_v1.png`;
+
+// ---------- Helpers ----------
+
+function toSlug(s) {
+  return String(s || "")
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
 }
 
-async function throttledFetch(url, options) {
-  const now = Date.now();
-  const wait = Math.max(0, MIN_DELAY_MS - (now - lastRequestAt));
-  if (wait > 0) await sleep(wait);
-  lastRequestAt = Date.now();
-  return fetch(url, options);
-}
-
-async function fetchJson(url, { timeoutMs = 20000, retries = 5 } = {}) {
-  const ac = new AbortController();
-  const t = setTimeout(() => ac.abort(), timeoutMs);
-
+async function exists(filePath) {
   try {
-    for (let attempt = 0; attempt <= retries; attempt++) {
-      const res = await throttledFetch(url, {
-        headers: { "User-Agent": UA, Accept: "application/json" },
-        signal: ac.signal,
+    await fs.stat(filePath);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+// ✅ Driver number images (repo-saved)
+function getDriverNumberImageUrl(driverNumber) {
+  if (driverNumber == null || driverNumber === "-" || driverNumber === "") return null;
+  return `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-${driverNumber}.png`;
+}
+
+// ✅ Headshots (LOCAL ONLY; no downloading)
+async function getSavedHeadshotUrl({ firstName, lastName }) {
+  const fileName = `${toSlug(firstName)}-${toSlug(lastName)}.png`;
+  const localPath = `${HEADSHOTS_DIR}/${fileName}`;
+
+  if (await exists(localPath)) {
+    return `${PAGES_BASE}/${HEADSHOTS_DIR}/${fileName}`;
+  }
+  return null; // no placeholders
+}
+
+// ---------- Dash placeholder builders ----------
+
+function dashBestResult() {
+  return { position: "-", raceName: "-", round: "-", date: "-", circuit: "-" };
+}
+
+function dashLastRace() {
+  return {
+    season: "-",
+    round: "-",
+    raceName: "-",
+    date: "-",
+    timeUtc: "-",
+    circuit: { name: "-", locality: "-", country: "-" },
+  };
+}
+
+function dashTeamStanding() {
+  return {
+    team: "VCARB",
+    position: "-",
+    points: "-",
+    wins: "-",
+    originalTeam: "-",
+  };
+}
+
+// ---------- Core: enforce exactly two placeholder drivers if empty ----------
+function ensurePlaceholders(drivers) {
+  // If we already have >= 2 drivers, leave it alone.
+  if (Array.isArray(drivers) && drivers.length >= 2) return drivers;
+
+  // Always return exactly two placeholders (Liam Lawson + Arvid Lindblad)
+  // NOTE: You specified Arvid's number is 41.
+  return [
+    {
+      firstName: "Liam",
+      lastName: "Lawson",
+      code: "LAW",
+      driverNumber: 30,
+      numberImageUrl: getDriverNumberImageUrl(30),
+      position: "-",
+      points: "-",
+      wins: "-",
+      team: "Racing Bulls", // also known as VCARB
+      placeholder: true,
+      bestResult: dashBestResult(),
+      headshotUrl: null,
+    },
+    {
+      firstName: "Arvid",
+      lastName: "Lindblad",
+      code: "LIN",
+      driverNumber: 41,
+      numberImageUrl: getDriverNumberImageUrl(41),
+      position: "-",
+      points: "-",
+      wins: "-",
+      team: "Racing Bulls",
+      placeholder: true,
+      bestResult: dashBestResult(),
+      headshotUrl: null,
+    },
+  ];
+}
+
+// ---------- Build JSON ----------
+
+async function buildDashJson() {
+  const now = new Date();
+
+  // ✅ If you later wire live data, replace this list with fetched results.
+  // For now, this is a base list (placeholders) that can be overridden by live results.
+  // These are placeholders until your live source is stable.
+  const driversBase = []; // intentionally empty by default
+
+  const drivers = [];
+
+  for (const d of driversBase) {
+    const headshotUrl = await getSavedHeadshotUrl(d);
+
+    drivers.push({
+      firstName: d.firstName,
+      lastName: d.lastName,
+      code: d.code,
+      driverNumber: d.driverNumber,
+
+      // ✅ repo driver-number images
+      numberImageUrl: getDriverNumberImageUrl(d.driverNumber),
+
+      // dash placeholders
+      position: "-",
+      points: "-",
+      wins: "-",
+      team: d.team || "Racing Bulls",
+      placeholder: true,
+      bestResult: dashBestResult(),
+
+      // ✅ local-only headshot URL or null
+      headshotUrl,
+    });
+  }
+
+  const finalDrivers = ensurePlaceholders(drivers);
+
+  // Attempt local headshots for placeholders too (optional, still local-only)
+  for (const dr of finalDrivers) {
+    if (!dr.headshotUrl) {
+      dr.headshotUrl = await getSavedHeadshotUrl({
+        firstName: dr.firstName,
+        lastName: dr.lastName,
       });
-
-      if (res.status === 429) {
-        const body = await res.text().catch(() => "");
-        const backoff = 800 * Math.pow(2, attempt);
-        console.warn(`OpenF1 429 (attempt ${attempt + 1}/${retries + 1}). Backing off ${backoff}ms.`);
-        console.warn(body.slice(0, 200));
-        await sleep(backoff);
-        continue;
-      }
-
-      if (!res.ok) {
-        const text = await res.text().catch(() => "");
-        throw new Error(`HTTP ${res.status} for ${url}\n${text.slice(0, 250)}`);
-      }
-
-      return await res.json();
     }
-
-    throw new Error(`OpenF1 429 persisted after ${retries + 1} attempts for ${url}`);
-  } finally {
-    clearTimeout(t);
-  }
-}
-
-function fmtPos(n) {
-  return Number.isFinite(n) ? `P${n}` : null;
-}
-
-function arrowFromDelta(delta) {
-  if (!Number.isFinite(delta) || delta === 0) return "—";
-  return delta > 0 ? "↑" : "↓";
-}
-
-function normalize(s) {
-  return (s || "").toLowerCase().trim();
-}
-
-// Your key requirement:
-function isRacingBulls(teamName) {
-  const t = normalize(teamName);
-  return (
-    t === "racing bulls" ||
-    t.includes("racing bulls") ||
-    t.includes("visa cash app") ||
-    t === "rb" ||
-    t.includes("alphatauri")
-  );
-}
-
-// 1) Find the latest *Race* session_key (championship endpoints require race sessions)  [oai_citation:1‡OpenF1](https://openf1.org/docs/?utm_source=chatgpt.com)
-async function getLatestRaceSessionKey() {
-  // Query all Race sessions; use date_end sorting to find the latest completed/most recent race
-  const url = `${OPENF1}/sessions?session_name=Race`;
-  const sessions = await fetchJson(url);
-
-  if (!Array.isArray(sessions) || sessions.length === 0) {
-    throw new Error("OpenF1 returned no Race sessions from /sessions?session_name=Race");
-  }
-
-  // Prefer the most recent by date_end, fallback to date_start
-  const sorted = [...sessions].sort((a, b) => {
-    const aEnd = a?.date_end ? Date.parse(a.date_end) : NaN;
-    const bEnd = b?.date_end ? Date.parse(b.date_end) : NaN;
-    const aStart = a?.date_start ? Date.parse(a.date_start) : NaN;
-    const bStart = b?.date_start ? Date.parse(b.date_start) : NaN;
-
-    const aKey = Number.isFinite(aEnd) ? aEnd : aStart;
-    const bKey = Number.isFinite(bEnd) ? bEnd : bStart;
-
-    return bKey - aKey;
-  });
-
-  const latest = sorted[0];
-  if (!latest?.session_key) {
-    throw new Error("Could not determine latest Race session_key from sessions list");
   }
 
   return {
-    session_key: latest.session_key,
-    meeting_name: latest.meeting_name ?? null,
-    circuit_short_name: latest.circuit_short_name ?? null,
-    country_name: latest.country_name ?? null,
-    date_start: latest.date_start ?? null,
-    date_end: latest.date_end ?? null,
-    year: latest.year ?? null,
-  };
-}
-
-// 2) Get Racing Bulls drivers from latest session (works fine for driver metadata)
-async function getRacingBullsDriversLatest() {
-  const drivers = await fetchJson(`${OPENF1}/drivers?session_key=latest`);
-  const rb = (drivers || []).filter((d) => isRacingBulls(d?.team_name));
-
-  // de-dupe by driver_number
-  const byNum = new Map();
-  for (const d of rb) {
-    if (d?.driver_number != null) byNum.set(Number(d.driver_number), d);
-  }
-  return [...byNum.values()].sort((a, b) => Number(a.driver_number) - Number(b.driver_number));
-}
-
-// 3) Championship standings for those drivers — MUST use race session_key  [oai_citation:2‡OpenF1](https://openf1.org/docs/?utm_source=chatgpt.com)
-async function getChampionshipDrivers(sessionKey, driverNumbers) {
-  const qs = driverNumbers.map((n) => `driver_number=${encodeURIComponent(n)}`).join("&");
-  const url = `${OPENF1}/championship_drivers?session_key=${encodeURIComponent(sessionKey)}&${qs}`;
-  return await fetchJson(url);
-}
-
-// 4) Teams standings — fetch all teams for that race session_key and filter locally
-async function getChampionshipTeamRow(sessionKey) {
-  const url = `${OPENF1}/championship_teams?session_key=${encodeURIComponent(sessionKey)}`;
-  const teams = await fetchJson(url);
-  return (teams || []).find((t) => isRacingBulls(t?.team_name)) || null;
-}
-
-async function updateVcarbStandings() {
-  const now = new Date();
-  const year = now.getUTCFullYear();
-
-  const race = await getLatestRaceSessionKey();
-
-  const rbDrivers = await getRacingBullsDriversLatest();
-  if (!rbDrivers.length) {
-    throw new Error(
-      'Could not find Racing Bulls drivers from /drivers?session_key=latest. You said they appear under "Racing Bulls"—if so, this means OpenF1 field names changed.'
-    );
-  }
-
-  const driverNumbers = rbDrivers
-    .map((d) => Number(d.driver_number))
-    .filter((n) => Number.isFinite(n));
-
-  const champDrivers = await getChampionshipDrivers(race.session_key, driverNumbers);
-  const champByNum = new Map((champDrivers || []).map((r) => [Number(r.driver_number), r]));
-
-  const driversOut = rbDrivers
-    .map((d) => {
-      const num = Number(d.driver_number);
-      const c = champByNum.get(num);
-
-      const posCur = c?.position_current != null ? Number(c.position_current) : null;
-      const posStart = c?.position_start != null ? Number(c.position_start) : null;
-      const posDelta = Number.isFinite(posCur) && Number.isFinite(posStart) ? posStart - posCur : null;
-
-      const ptsCur = c?.points_current != null ? Number(c.points_current) : null;
-      const ptsStart = c?.points_start != null ? Number(c.points_start) : null;
-      const ptsDelta = Number.isFinite(ptsCur) && Number.isFinite(ptsStart) ? ptsCur - ptsStart : null;
-
-      return {
-        driver_number: num,
-        acronym: d?.name_acronym ?? null,
-        first_name: d?.first_name ?? null,
-        last_name: d?.last_name ?? null,
-        full_name: d?.full_name ?? null,
-        headshot_url: d?.headshot_url ?? null,
-
-        team_name: d?.team_name ?? null,
-        team_colour: d?.team_colour ?? null,
-
-        position: fmtPos(posCur),
-        position_current: posCur,
-        position_start: posStart,
-        position_change: posDelta,
-        position_arrow: arrowFromDelta(posDelta),
-
-        points_current: ptsCur,
-        points_start: ptsStart,
-        points_gained_in_latest_race: ptsDelta,
-      };
-    })
-    .sort((a, b) => {
-      if (a.position_current == null && b.position_current == null) return 0;
-      if (a.position_current == null) return 1;
-      if (b.position_current == null) return -1;
-      return a.position_current - b.position_current;
-    });
-
-  const teamRow = await getChampionshipTeamRow(race.session_key);
-
-  const tPosCur = teamRow?.position_current != null ? Number(teamRow.position_current) : null;
-  const tPosStart = teamRow?.position_start != null ? Number(teamRow.position_start) : null;
-  const tPosDelta = Number.isFinite(tPosCur) && Number.isFinite(tPosStart) ? tPosStart - tPosCur : null;
-
-  const tPtsCur = teamRow?.points_current != null ? Number(teamRow.points_current) : null;
-  const tPtsStart = teamRow?.points_start != null ? Number(teamRow.points_start) : null;
-  const tPtsDelta = Number.isFinite(tPtsCur) && Number.isFinite(tPtsStart) ? tPtsCur - tPtsStart : null;
-
-  const out = {
-    header: `${year} Racing Bulls Standings`,
+    header: "VCARB standings",
     generatedAtUtc: now.toISOString(),
-    source: {
-      provider: "OpenF1",
+    sources: {
+      logos: `LOCAL_ONLY: ${PAGES_BASE}/${TEAMLOGOS_DIR}/`,
+      headshots: `LOCAL_ONLY: ${PAGES_BASE}/${HEADSHOTS_DIR}/<first>-<last>.png`,
+      driverNumbers: `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-<number>.png`,
+      driverStandings: "DASH_PLACEHOLDERS",
+      constructorStandings: "DASH_PLACEHOLDERS",
+      lastRace: "DASH_PLACEHOLDERS",
+    },
+    meta: {
+      mode: "DASH_PLACEHOLDERS_LOCAL_HEADSHOTS_LOCAL_LOGO",
+      seasonUsed: "-",
+      roundUsed: "-",
+      teamAliases: ["VCARB", "Racing Bulls"],
       note:
-        "Championship endpoints require a Race session_key (OpenF1 docs). This file uses the latest Race session_key from /sessions.", //  [oai_citation:3‡OpenF1](https://openf1.org/docs/?utm_source=chatgpt.com)
-      latest_race_session: race,
-      urls: {
-        sessions_race: `${OPENF1}/sessions?session_name=Race`,
-        drivers_latest: `${OPENF1}/drivers?session_key=latest`,
-        championship_drivers: `${OPENF1}/championship_drivers?session_key=${race.session_key}&driver_number=${driverNumbers.join(
-          "&driver_number="
-        )}`,
-        championship_teams: `${OPENF1}/championship_teams?session_key=${race.session_key}`,
-      },
+        "All fields are '-' placeholders for widget building. Team logo + headshots + driver number images are LOCAL ONLY from your repo. If no drivers are available, placeholders are Liam Lawson (#30) and Arvid Lindblad (#41).",
     },
-
-    team: {
-      display_name: "Racing Bulls",
-      matched_team_name: teamRow?.team_name ?? null,
-
-      position: fmtPos(tPosCur),
-      position_current: tPosCur,
-      position_start: tPosStart,
-      position_change: tPosDelta,
-      position_arrow: arrowFromDelta(tPosDelta),
-
-      points_current: tPtsCur,
-      points_start: tPtsStart,
-      points_gained_in_latest_race: tPtsDelta,
+    vcarb: {
+      team: "VCARB",
+      teamAliases: ["Racing Bulls"],
+      teamLogoPng: VCARB_LOGO_PNG,
+      teamStanding: dashTeamStanding(),
     },
-
-    drivers: driversOut,
+    lastRace: dashLastRace(),
+    drivers: finalDrivers,
   };
-
-  await fs.writeFile("vcarb_standings.json", JSON.stringify(out, null, 2), "utf8");
-  console.log("Wrote vcarb_standings.json");
 }
 
-updateVcarbStandings().catch((err) => {
+// ---------- Main ----------
+
+async function updateVCARBStandings() {
+  const out = await buildDashJson();
+  await fs.writeFile(OUT_JSON, JSON.stringify(out, null, 2), "utf8");
+  console.log(`Wrote ${OUT_JSON}`);
+}
+
+updateVCARBStandings().catch((err) => {
   console.error(err);
   process.exit(1);
 });
