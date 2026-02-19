@@ -17,6 +17,15 @@ const CACHE_BUST = true;
 // ✅ Haas logo (LOCAL repo file)
 const HAAS_LOGO_FILE = "2025_haas_color_v2.png";
 
+// --- Data sources (Ergast + fallback) ---
+// Ergast endpoints for current standings are documented and stable.  [oai_citation:2‡ergast.com](https://ergast.com/mrd/methods/standings/?utm_source=chatgpt.com)
+const ERGAST_BASES = [
+  "https://ergast.com/api/f1",          // primary
+  "https://api.jolpi.ca/ergast/api/f1", // fallback mirror (Ergast-compatible)  [oai_citation:3‡GitHub](https://github.com/jolpica/jolpica-f1?utm_source=chatgpt.com)
+];
+
+const UA = "f1-standings-bot/1.0 (GitHub Actions)";
+
 // ---------- Helpers ----------
 
 function toSlug(s) {
@@ -33,20 +42,15 @@ function withCacheBust(url) {
   return CACHE_BUST ? `${url}${url.includes("?") ? "&" : "?"}v=${Date.now()}` : url;
 }
 
-// ✅ Logos from repo (GitHub Pages)
 function getTeamLogoUrl(fileName) {
   return withCacheBust(`${PAGES_BASE}/${TEAMLOGOS_DIR}/${fileName}`);
 }
 
-// ✅ Driver number images from repo (GitHub Pages)
 function getDriverNumberImageUrl(driverNumber) {
   if (driverNumber == null || driverNumber === "-" || driverNumber === "") return null;
-  return withCacheBust(
-    `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-${driverNumber}.png`
-  );
+  return withCacheBust(`${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-${driverNumber}.png`);
 }
 
-// ✅ Headshots from repo (GitHub Pages) — NO CHECKS
 function getSavedHeadshotUrl(firstName, lastName) {
   const fileName = `${toSlug(firstName)}-${toSlug(lastName)}.png`;
   return withCacheBust(`${PAGES_BASE}/${HEADSHOTS_DIR}/${fileName}`);
@@ -79,27 +83,97 @@ function dashTeamStanding() {
   };
 }
 
-// ---------- Build JSON (placeholders, local assets) ----------
+// ---------- Ergast fetch with fallback ----------
 
-async function buildDashJson() {
+async function fetchJson(url) {
+  const res = await fetch(url, {
+    headers: { "User-Agent": UA, Accept: "application/json" },
+    redirect: "follow",
+  });
+  if (!res.ok) {
+    const text = await res.text().catch(() => "");
+    throw new Error(`HTTP ${res.status} for ${url}\n${text.slice(0, 180)}`);
+  }
+  return res.json();
+}
+
+async function fetchFromAnyBase(path) {
+  let lastErr = null;
+
+  for (const base of ERGAST_BASES) {
+    const url = `${base}${path}`;
+    try {
+      const json = await fetchJson(url);
+      return { json, urlUsed: url };
+    } catch (e) {
+      lastErr = e;
+      console.warn(`Fetch failed, trying next base. url=${url} err=${e.message}`);
+    }
+  }
+
+  throw lastErr || new Error("All Ergast bases failed");
+}
+
+function safeNum(x) {
+  if (x === null || x === undefined) return null;
+  const n = Number(x);
+  return Number.isFinite(n) ? n : null;
+}
+
+// ---------- Data extraction (Ergast response shapes) ----------
+
+function getCurrentDriverStandings(mr) {
+  return (
+    mr?.MRData?.StandingsTable?.StandingsLists?.[0]?.DriverStandings ??
+    []
+  );
+}
+
+function getCurrentConstructorStandings(mr) {
+  return (
+    mr?.MRData?.StandingsTable?.StandingsLists?.[0]?.ConstructorStandings ??
+    []
+  );
+}
+
+function getLastRaceResult(mr) {
+  const race = mr?.MRData?.RaceTable?.Races?.[0];
+  if (!race) return null;
+
+  return {
+    season: race.season ?? "-",
+    round: race.round ?? "-",
+    raceName: race.raceName ?? "-",
+    date: race.date ?? "-",
+    timeUtc: race.time ?? "-",
+    circuit: {
+      name: race?.Circuit?.circuitName ?? "-",
+      locality: race?.Circuit?.Location?.locality ?? "-",
+      country: race?.Circuit?.Location?.country ?? "-",
+    },
+  };
+}
+
+// ---------- Build JSON (Ergast live w/ placeholders fallback) ----------
+
+async function buildJson() {
   const now = new Date();
 
-  // ✅ Haas drivers (edit if your lineup differs)
+  // ✅ Haas drivers placeholders (update if lineup changes)
   const driversBase = [
     { firstName: "Esteban", lastName: "Ocon", code: "OCO", driverNumber: 31 },
     { firstName: "Oliver", lastName: "Bearman", code: "BEA", driverNumber: 87 },
   ];
 
+  // Start with placeholders
   const drivers = driversBase.map((d) => ({
     firstName: d.firstName,
     lastName: d.lastName,
     code: d.code,
     driverNumber: d.driverNumber,
 
-    // ✅ repo driver-number images
     numberImageUrl: getDriverNumberImageUrl(d.driverNumber),
 
-    // dash placeholders
     position: "-",
     points: "-",
     wins: "-",
@@ -107,9 +181,79 @@ async function buildDashJson() {
     placeholder: true,
     bestResult: dashBestResult(),
 
-    // ✅ repo headshots (no downloading)
     headshotUrl: getSavedHeadshotUrl(d.firstName, d.lastName),
   }));
+
+  let teamStanding = dashTeamStanding();
+  let lastRace = dashLastRace();
+  let placeholderMode = true;
+
+  let urlUsed = {
+    driverStandings: null,
+    constructorStandings: null,
+    lastRace: null,
+  };
+
+  try {
+    // 1) current driver standings
+    const ds = await fetchFromAnyBase("/current/driverStandings.json");
+    urlUsed.driverStandings = ds.urlUsed;
+    const driverStandings = getCurrentDriverStandings(ds.json);
+
+    // 2) current constructor standings
+    const cs = await fetchFromAnyBase("/current/constructorStandings.json");
+    urlUsed.constructorStandings = cs.urlUsed;
+    const constructorStandings = getCurrentConstructorStandings(cs.json);
+
+    // 3) last race results (for context)
+    const lr = await fetchFromAnyBase("/current/last/results.json");
+    urlUsed.lastRace = lr.urlUsed;
+    const lrParsed = getLastRaceResult(lr.json);
+    if (lrParsed) lastRace = lrParsed;
+
+    // Fill team standing (constructorId for Haas is typically "haas")
+    const haasCtor = constructorStandings.find(
+      (c) => String(c?.Constructor?.constructorId || "").toLowerCase() === "haas"
+    );
+
+    if (haasCtor) {
+      teamStanding = {
+        team: "Haas",
+        position: haasCtor.position ?? "-",
+        points: haasCtor.points ?? "-",
+        wins: haasCtor.wins ?? "-",
+        originalTeam: haasCtor?.Constructor?.name ?? "Haas",
+      };
+    }
+
+    // Fill driver standing rows by matching lastname/code
+    for (const d of drivers) {
+      const match = driverStandings.find((row) => {
+        const code = String(row?.Driver?.code || "").toUpperCase();
+        const fam = String(row?.Driver?.familyName || "").toLowerCase();
+        return code === d.code || fam === d.lastName.toLowerCase();
+      });
+
+      if (match) {
+        d.position = match.position ?? "-";
+        d.points = match.points ?? "-";
+        d.wins = match.wins ?? "-";
+        d.placeholder = false;
+
+        // keep bestResult placeholder for now (Ergast "best result" would require more queries)
+        d.bestResult = dashBestResult();
+      }
+    }
+
+    // If ANY driver got real data OR team got real data, consider it live
+    const anyDriverLive = drivers.some((d) => d.placeholder === false);
+    const teamLive = teamStanding.position !== "-" && teamStanding.points !== "-";
+
+    placeholderMode = !(anyDriverLive || teamLive);
+  } catch (e) {
+    console.warn("Standings fetch failed; keeping placeholders.", e.message);
+    placeholderMode = true;
+  }
 
   return {
     header: "Haas standings",
@@ -118,24 +262,23 @@ async function buildDashJson() {
       logos: `LOCAL_ONLY: ${PAGES_BASE}/${TEAMLOGOS_DIR}/`,
       headshots: `LOCAL_ONLY: ${PAGES_BASE}/${HEADSHOTS_DIR}/<first>-<last>.png`,
       driverNumbers: `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-<number>.png`,
-      driverStandings: "DASH_PLACEHOLDERS",
-      constructorStandings: "DASH_PLACEHOLDERS",
-      lastRace: "DASH_PLACEHOLDERS",
+      driverStandings: urlUsed.driverStandings || "ERGAST_UNAVAILABLE",
+      constructorStandings: urlUsed.constructorStandings || "ERGAST_UNAVAILABLE",
+      lastRace: urlUsed.lastRace || "ERGAST_UNAVAILABLE",
+      note: "Uses Ergast current standings with Jolpica fallback (Ergast-compatible).",
     },
     meta: {
-      mode: "DASH_PLACEHOLDERS_LOCAL_ASSETS",
-      seasonUsed: "-",
-      roundUsed: "-",
+      mode: placeholderMode ? "PLACEHOLDERS_LOCAL_ASSETS" : "ERGAST_LIVE_LOCAL_ASSETS",
       cacheBust: CACHE_BUST,
       note:
-        "All stats are '-' placeholders for widget building. Team logo, driver headshots, and driver-number images are pulled from repo-hosted GitHub Pages URLs (no OpenF1, no downloading).",
+        "Before the first race (or if data is unavailable), outputs '-' placeholders. After the first race, fills positions/points/wins from current standings.",
     },
     haas: {
       team: "Haas",
       teamLogoPng: getTeamLogoUrl(HAAS_LOGO_FILE),
-      teamStanding: dashTeamStanding(),
+      teamStanding,
     },
-    lastRace: dashLastRace(),
+    lastRace,
     drivers,
   };
 }
@@ -143,7 +286,7 @@ async function buildDashJson() {
 // ---------- Main ----------
 
 async function updateHaasStandings() {
-  const out = await buildDashJson();
+  const out = await buildJson();
   await fs.writeFile(OUT_JSON, JSON.stringify(out, null, 2), "utf8");
   console.log(`Wrote ${OUT_JSON}`);
 }
