@@ -36,6 +36,13 @@ function withCacheBust(url) {
   return CACHE_BUST ? `${url}${url.includes("?") ? "&" : "?"}v=${Date.now()}` : url;
 }
 
+function fmtPos(pos) {
+  if (pos == null || pos === "-" || pos === "") return "-";
+  const n = Number(pos);
+  if (!Number.isFinite(n)) return "-";
+  return `P${n}`;
+}
+
 function toSlug(s) {
   return String(s || "")
     .toLowerCase()
@@ -213,7 +220,7 @@ async function buildJson() {
       });
 
       if (match) {
-        d.position = match.position ?? "-";
+        d.position = fmtPos(match.position);
         d.points = match.points ?? "-";
         d.wins = match.wins ?? "-";
         d.placeholder = false;
@@ -227,15 +234,17 @@ async function buildJson() {
     let ctorIdToUse = null;
 
     // Prefer explicit hint if it exists in standings
-    if (constructorStandings.some((c) =>
-      String(c?.Constructor?.constructorId || "").toLowerCase() === ERGAST_CONSTRUCTOR_ID_HINT
-    )) {
+    if (
+      constructorStandings.some(
+        (c) =>
+          String(c?.Constructor?.constructorId || "").toLowerCase() ===
+          ERGAST_CONSTRUCTOR_ID_HINT
+      )
+    ) {
       ctorIdToUse = ERGAST_CONSTRUCTOR_ID_HINT;
     } else if (foundConstructorIds.size === 1) {
-      // If both drivers map to the same constructor, use that
       ctorIdToUse = Array.from(foundConstructorIds)[0];
     } else if (foundConstructorIds.size > 1) {
-      // Mixed constructors (shouldn't happen for a real team) — pick the one with most points
       ctorIdToUse = Array.from(foundConstructorIds)[0];
     }
 
@@ -247,7 +256,7 @@ async function buildJson() {
       if (ctorRow) {
         teamStanding = {
           team: "Audi",
-          position: ctorRow.position ?? "-",
+          position: fmtPos(ctorRow.position),
           points: ctorRow.points ?? "-",
           wins: ctorRow.wins ?? "-",
           originalTeam: ctorRow?.Constructor?.name ?? "-",
@@ -281,7 +290,7 @@ async function buildJson() {
       mode: placeholderMode ? "PLACEHOLDERS_LOCAL_ASSETS" : "ERGAST_LIVE_LOCAL_ASSETS",
       cacheBust: CACHE_BUST,
       note:
-        "Before the first race (or if data is unavailable), outputs '-' placeholders. After the first race, fills positions/points/wins from current standings. Constructor standings are inferred from the drivers’ constructorId.",
+        "Before the first race (or if data is unavailable), outputs '-' placeholders. After the first race, fills positions/points/wins from current standings. Constructor standings are inferred from the drivers’ constructorId. Positions formatted as P1, P2, etc.",
     },
     audi: {
       team: "Audi",
