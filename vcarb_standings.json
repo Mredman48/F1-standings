@@ -1,0 +1,53 @@
+{
+  "header": "2026 Racing Bulls Standings",
+  "generatedAtUtc": "2026-02-19T22:06:33.906Z",
+  "placeholder": false,
+  "debug": {
+    "mode": "live-drivers-only",
+    "reason": "OpenF1 driver list succeeded"
+  },
+  "team": {
+    "display_name": "Racing Bulls",
+    "matched_team_name": "Racing Bulls",
+    "position": "P—",
+    "position_current": null,
+    "position_change": null,
+    "position_arrow": "—",
+    "points_current": 0,
+    "placeholder": false
+  },
+  "drivers": [
+    {
+      "driver_number": 30,
+      "acronym": "LAW",
+      "first_name": "Liam",
+      "last_name": "Lawson",
+      "full_name": "Liam LAWSON",
+      "headshot_url": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LIALAW01_Liam_Lawson/lialaw01.png.transform/1col/image.png",
+      "team_name": "Racing Bulls",
+      "team_colour": "6C98FF",
+      "position": "P—",
+      "position_current": null,
+      "position_change": null,
+      "position_arrow": "—",
+      "points_current": 0,
+      "placeholder": false
+    },
+    {
+      "driver_number": 41,
+      "acronym": "LIN",
+      "first_name": "Arvid",
+      "last_name": "Lindblad",
+      "full_name": "Arvid LINDBLAD",
+      "headshot_url": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/A/ARVLIN01_Arvid_Lindblad/arvlin01.png.transform/1col/image.png",
+      "team_name": "Racing Bulls",
+      "team_colour": "6C98FF",
+      "position": "P—",
+      "position_current": null,
+      "position_change": null,
+      "position_arrow": "—",
+      "points_current": 0,
+      "placeholder": false
+    }
+  ]
+}
