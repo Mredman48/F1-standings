@@ -16,7 +16,7 @@ const DRIVER_NUMBER_FOLDER = "driver-numbers";
 
 // ✅ VCARB/Racing Bulls logo pulled from YOUR repo (GitHub Pages)
 // Update filename if yours differs:
-const VCARB_LOGO_PNG = `${PAGES_BASE}/${TEAMLOGOS_DIR}/2025_vcarb_color_v1.png`;
+const VCARB_LOGO_PNG = `${PAGES_BASE}/${TEAMLOGOS_DIR}/2025_vcarb_color_v2.png`;
 
 // ---------- Helpers ----------
 
