@@ -20,29 +20,6 @@ async function throttledFetch(url, options) {
   return fetch(url, options);
 }
 
-function fmtPos(n) {
-  return Number.isFinite(n) ? `P${n}` : null;
-}
-
-function arrowFromDelta(delta) {
-  if (!Number.isFinite(delta) || delta === 0) return "—";
-  return delta > 0 ? "↑" : "↓";
-}
-
-function normalize(s) {
-  return (s || "").toLowerCase().trim();
-}
-
-function isVcarbTeamName(teamName) {
-  const t = normalize(teamName);
-  return (
-    t === "rb" ||
-    t.includes("visa cash app") ||
-    t.includes("racing bulls") ||
-    t.includes("alphatauri")
-  );
-}
-
 async function fetchJson(url, { timeoutMs = 20000, retries = 5 } = {}) {
   const ac = new AbortController();
   const t = setTimeout(() => ac.abort(), timeoutMs);
@@ -54,10 +31,9 @@ async function fetchJson(url, { timeoutMs = 20000, retries = 5 } = {}) {
         signal: ac.signal,
       });
 
-      // Handle rate limit
       if (res.status === 429) {
         const body = await res.text().catch(() => "");
-        const backoff = 800 * Math.pow(2, attempt); // 0.8s, 1.6s, 3.2s...
+        const backoff = 800 * Math.pow(2, attempt);
         console.warn(`OpenF1 429 (attempt ${attempt + 1}/${retries + 1}). Backing off ${backoff}ms.`);
         console.warn(body.slice(0, 200));
         await sleep(backoff);
@@ -78,56 +54,118 @@ async function fetchJson(url, { timeoutMs = 20000, retries = 5 } = {}) {
   }
 }
 
-async function getLatestVcarbDrivers() {
-  // 1 call
-  const drivers = await fetchJson(`${OPENF1}/drivers?session_key=latest`);
+function fmtPos(n) {
+  return Number.isFinite(n) ? `P${n}` : null;
+}
 
-  const vcarb = (drivers || []).filter((d) => isVcarbTeamName(d?.team_name));
+function arrowFromDelta(delta) {
+  if (!Number.isFinite(delta) || delta === 0) return "—";
+  return delta > 0 ? "↑" : "↓";
+}
 
-  // De-dup by driver_number
-  const byNum = new Map();
-  for (const d of vcarb) {
-    if (d?.driver_number != null) byNum.set(Number(d.driver_number), d);
+function normalize(s) {
+  return (s || "").toLowerCase().trim();
+}
+
+// Your key requirement:
+function isRacingBulls(teamName) {
+  const t = normalize(teamName);
+  return (
+    t === "racing bulls" ||
+    t.includes("racing bulls") ||
+    t.includes("visa cash app") ||
+    t === "rb" ||
+    t.includes("alphatauri")
+  );
+}
+
+// 1) Find the latest *Race* session_key (championship endpoints require race sessions)  [oai_citation:1‡OpenF1](https://openf1.org/docs/?utm_source=chatgpt.com)
+async function getLatestRaceSessionKey() {
+  // Query all Race sessions; use date_end sorting to find the latest completed/most recent race
+  const url = `${OPENF1}/sessions?session_name=Race`;
+  const sessions = await fetchJson(url);
+
+  if (!Array.isArray(sessions) || sessions.length === 0) {
+    throw new Error("OpenF1 returned no Race sessions from /sessions?session_name=Race");
   }
 
+  // Prefer the most recent by date_end, fallback to date_start
+  const sorted = [...sessions].sort((a, b) => {
+    const aEnd = a?.date_end ? Date.parse(a.date_end) : NaN;
+    const bEnd = b?.date_end ? Date.parse(b.date_end) : NaN;
+    const aStart = a?.date_start ? Date.parse(a.date_start) : NaN;
+    const bStart = b?.date_start ? Date.parse(b.date_start) : NaN;
+
+    const aKey = Number.isFinite(aEnd) ? aEnd : aStart;
+    const bKey = Number.isFinite(bEnd) ? bEnd : bStart;
+
+    return bKey - aKey;
+  });
+
+  const latest = sorted[0];
+  if (!latest?.session_key) {
+    throw new Error("Could not determine latest Race session_key from sessions list");
+  }
+
+  return {
+    session_key: latest.session_key,
+    meeting_name: latest.meeting_name ?? null,
+    circuit_short_name: latest.circuit_short_name ?? null,
+    country_name: latest.country_name ?? null,
+    date_start: latest.date_start ?? null,
+    date_end: latest.date_end ?? null,
+    year: latest.year ?? null,
+  };
+}
+
+// 2) Get Racing Bulls drivers from latest session (works fine for driver metadata)
+async function getRacingBullsDriversLatest() {
+  const drivers = await fetchJson(`${OPENF1}/drivers?session_key=latest`);
+  const rb = (drivers || []).filter((d) => isRacingBulls(d?.team_name));
+
+  // de-dupe by driver_number
+  const byNum = new Map();
+  for (const d of rb) {
+    if (d?.driver_number != null) byNum.set(Number(d.driver_number), d);
+  }
   return [...byNum.values()].sort((a, b) => Number(a.driver_number) - Number(b.driver_number));
 }
 
-async function getDriverChampionshipFor(driverNumbers) {
-  if (!driverNumbers.length) return [];
-
-  // 1 call
+// 3) Championship standings for those drivers — MUST use race session_key  [oai_citation:2‡OpenF1](https://openf1.org/docs/?utm_source=chatgpt.com)
+async function getChampionshipDrivers(sessionKey, driverNumbers) {
   const qs = driverNumbers.map((n) => `driver_number=${encodeURIComponent(n)}`).join("&");
-  return await fetchJson(`${OPENF1}/championship_drivers?session_key=latest&${qs}`);
+  const url = `${OPENF1}/championship_drivers?session_key=${encodeURIComponent(sessionKey)}&${qs}`;
+  return await fetchJson(url);
 }
 
-async function getTeamChampionshipRow() {
-  // 1 call for ALL teams, then filter locally (avoids multiple requests)
-  const teams = await fetchJson(`${OPENF1}/championship_teams?session_key=latest`);
-
-  const vcarb = (teams || []).find((t) => isVcarbTeamName(t?.team_name));
-  return vcarb || null;
+// 4) Teams standings — fetch all teams for that race session_key and filter locally
+async function getChampionshipTeamRow(sessionKey) {
+  const url = `${OPENF1}/championship_teams?session_key=${encodeURIComponent(sessionKey)}`;
+  const teams = await fetchJson(url);
+  return (teams || []).find((t) => isRacingBulls(t?.team_name)) || null;
 }
 
 async function updateVcarbStandings() {
   const now = new Date();
   const year = now.getUTCFullYear();
 
-  const vcarbDrivers = await getLatestVcarbDrivers();
-  if (!vcarbDrivers.length) {
+  const race = await getLatestRaceSessionKey();
+
+  const rbDrivers = await getRacingBullsDriversLatest();
+  if (!rbDrivers.length) {
     throw new Error(
-      "Could not find VCARB drivers from OpenF1 drivers?session_key=latest. Team name may have changed."
+      'Could not find Racing Bulls drivers from /drivers?session_key=latest. You said they appear under "Racing Bulls"—if so, this means OpenF1 field names changed.'
     );
   }
 
-  const driverNumbers = vcarbDrivers
+  const driverNumbers = rbDrivers
     .map((d) => Number(d.driver_number))
     .filter((n) => Number.isFinite(n));
 
-  const champDrivers = await getDriverChampionshipFor(driverNumbers);
+  const champDrivers = await getChampionshipDrivers(race.session_key, driverNumbers);
   const champByNum = new Map((champDrivers || []).map((r) => [Number(r.driver_number), r]));
 
-  const driversOut = vcarbDrivers
+  const driversOut = rbDrivers
     .map((d) => {
       const num = Number(d.driver_number);
       const c = champByNum.get(num);
@@ -147,6 +185,7 @@ async function updateVcarbStandings() {
         last_name: d?.last_name ?? null,
         full_name: d?.full_name ?? null,
         headshot_url: d?.headshot_url ?? null,
+
         team_name: d?.team_name ?? null,
         team_colour: d?.team_colour ?? null,
 
@@ -168,7 +207,7 @@ async function updateVcarbStandings() {
       return a.position_current - b.position_current;
     });
 
-  const teamRow = await getTeamChampionshipRow();
+  const teamRow = await getChampionshipTeamRow(race.session_key);
 
   const tPosCur = teamRow?.position_current != null ? Number(teamRow.position_current) : null;
   const tPosStart = teamRow?.position_start != null ? Number(teamRow.position_start) : null;
@@ -179,26 +218,33 @@ async function updateVcarbStandings() {
   const tPtsDelta = Number.isFinite(tPtsCur) && Number.isFinite(tPtsStart) ? tPtsCur - tPtsStart : null;
 
   const out = {
-    header: `${year} VCARB Standings`,
+    header: `${year} Racing Bulls Standings`,
     generatedAtUtc: now.toISOString(),
     source: {
       provider: "OpenF1",
-      drivers: `${OPENF1}/drivers?session_key=latest`,
-      championship_drivers: `${OPENF1}/championship_drivers?session_key=latest&driver_number=${driverNumbers.join(
-        "&driver_number="
-      )}`,
-      championship_teams: `${OPENF1}/championship_teams?session_key=latest`,
-      note: "Requests are throttled (< 3/sec) with retry/backoff for 429 rate limits.",
+      note:
+        "Championship endpoints require a Race session_key (OpenF1 docs). This file uses the latest Race session_key from /sessions.", //  [oai_citation:3‡OpenF1](https://openf1.org/docs/?utm_source=chatgpt.com)
+      latest_race_session: race,
+      urls: {
+        sessions_race: `${OPENF1}/sessions?session_name=Race`,
+        drivers_latest: `${OPENF1}/drivers?session_key=latest`,
+        championship_drivers: `${OPENF1}/championship_drivers?session_key=${race.session_key}&driver_number=${driverNumbers.join(
+          "&driver_number="
+        )}`,
+        championship_teams: `${OPENF1}/championship_teams?session_key=${race.session_key}`,
+      },
     },
 
     team: {
-      display_name: "VCARB",
+      display_name: "Racing Bulls",
       matched_team_name: teamRow?.team_name ?? null,
+
       position: fmtPos(tPosCur),
       position_current: tPosCur,
       position_start: tPosStart,
       position_change: tPosDelta,
       position_arrow: arrowFromDelta(tPosDelta),
+
       points_current: tPtsCur,
       points_start: tPtsStart,
       points_gained_in_latest_race: tPtsDelta,
