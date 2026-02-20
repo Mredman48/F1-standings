@@ -1,19 +1,29 @@
 {
   "header": "Mercedes standings",
-  "generatedAtUtc": "2026-02-16T23:48:53.896Z",
+  "generatedAtUtc": "2026-02-20T04:52:57.958Z",
   "sources": {
+    "openf1": "https://api.openf1.org/v1",
+    "openf1Drivers": "https://api.openf1.org/v1/drivers?meeting_key=latest&team_name=Mercedes",
+    "openf1TeamNameUsed": "Mercedes",
     "logos": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/teamlogos/",
     "headshots": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/headshots/<first>-<last>.png",
     "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png",
-    "driverStandings": "DASH_PLACEHOLDERS",
-    "constructorStandings": "DASH_PLACEHOLDERS",
-    "lastRace": "DASH_PLACEHOLDERS"
+    "driverStandings": "https://api.jolpi.ca/ergast/f1/current/driverStandings.json",
+    "constructorStandings": "https://api.jolpi.ca/ergast/f1/current/constructorStandings.json",
+    "lastRace": "https://api.jolpi.ca/ergast/f1/current/last/results.json",
+    "note": "Drivers/numbers come ONLY from OpenF1. Standings come from Jolpica (Ergast-compatible) with Ergast fallback. No fallback drivers are inserted."
   },
   "meta": {
-    "mode": "DASH_PLACEHOLDERS_LOCAL_HEADSHOTS_LOCAL_LOGO",
-    "seasonUsed": "-",
-    "roundUsed": "-",
-    "note": "All fields are '-' placeholders for widget building. Team logo + headshots + driver number images are LOCAL ONLY from your repo (no OpenF1, no downloading)."
+    "mode": "OPENF1_DRIVERS_STANDINGS_PLACEHOLDERS_LOCAL_ASSETS",
+    "openf1DriversOk": true,
+    "teamAliasesTried": [
+      "Mercedes",
+      "Mercedes AMG",
+      "Mercedes-AMG",
+      "Mercedes-AMG Petronas",
+      "Mercedes-AMG Petronas F1 Team"
+    ],
+    "note": "Positions are formatted as P1, P2, etc. If OpenF1 returns <2 drivers, drivers[] will be empty (no placeholders). Number images are pulled from your repo using the OpenF1-provided number."
   },
   "mercedes": {
     "team": "Mercedes",
@@ -23,7 +33,8 @@
       "position": "-",
       "points": "-",
       "wins": "-",
-      "originalTeam": "-"
+      "originalTeam": "-",
+      "constructorId": "mercedes"
     }
   },
   "lastRace": {
@@ -39,6 +50,27 @@
     }
   },
   "drivers": [
+    {
+      "firstName": "Kimi",
+      "lastName": "Antonelli",
+      "code": "ANT",
+      "driverNumber": 12,
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-12.png",
+      "position": "-",
+      "points": "-",
+      "wins": "-",
+      "team": "Mercedes",
+      "placeholder": true,
+      "bestResult": {
+        "position": "-",
+        "raceName": "-",
+        "round": "-",
+        "date": "-",
+        "circuit": "-"
+      },
+      "headshotUrl": null,
+      "fromOpenF1": true
+    },
     {
       "firstName": "George",
       "lastName": "Russell",
@@ -57,27 +89,8 @@
         "date": "-",
         "circuit": "-"
       },
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/george-russell.png"
-    },
-    {
-      "firstName": "Andrea",
-      "lastName": "Kimi Antonelli",
-      "code": "ANT",
-      "driverNumber": 12,
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-12.png",
-      "position": "-",
-      "points": "-",
-      "wins": "-",
-      "team": "Mercedes",
-      "placeholder": true,
-      "bestResult": {
-        "position": "-",
-        "raceName": "-",
-        "round": "-",
-        "date": "-",
-        "circuit": "-"
-      },
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/andrea-kimi-antonelli.png"
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/george-russell.png",
+      "fromOpenF1": true
     }
   ]
 }
