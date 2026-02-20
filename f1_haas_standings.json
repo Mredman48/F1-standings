@@ -1,30 +1,39 @@
 {
   "header": "Haas standings",
-  "generatedAtUtc": "2026-02-16T23:52:03.923Z",
+  "generatedAtUtc": "2026-02-20T04:45:32.999Z",
   "sources": {
+    "openf1": "https://api.openf1.org/v1",
+    "openf1Drivers": "https://api.openf1.org/v1/drivers?meeting_key=latest&team_name=Haas%20F1%20Team",
+    "openf1TeamNameUsed": "Haas F1 Team",
     "logos": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/teamlogos/",
     "headshots": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/headshots/<first>-<last>.png",
     "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png",
-    "driverStandings": "DASH_PLACEHOLDERS",
-    "constructorStandings": "DASH_PLACEHOLDERS",
-    "lastRace": "DASH_PLACEHOLDERS"
+    "driverStandings": "https://api.jolpi.ca/ergast/f1/current/driverStandings.json",
+    "constructorStandings": "https://api.jolpi.ca/ergast/f1/current/constructorStandings.json",
+    "lastRace": "https://api.jolpi.ca/ergast/f1/current/last/results.json",
+    "note": "Drivers/numbers come ONLY from OpenF1. Standings come from Jolpica (Ergast-compatible) with Ergast fallback. No fallback drivers are inserted."
   },
   "meta": {
-    "mode": "DASH_PLACEHOLDERS_LOCAL_ASSETS",
-    "seasonUsed": "-",
-    "roundUsed": "-",
-    "cacheBust": true,
-    "note": "All stats are '-' placeholders for widget building. Team logo, driver headshots, and driver-number images are pulled from repo-hosted GitHub Pages URLs (no OpenF1, no downloading)."
+    "mode": "OPENF1_DRIVERS_STANDINGS_PLACEHOLDERS_LOCAL_ASSETS",
+    "openf1DriversOk": true,
+    "teamAliasesTried": [
+      "Haas",
+      "Haas F1 Team",
+      "MoneyGram Haas F1 Team",
+      "MoneyGram Haas"
+    ],
+    "note": "Positions are formatted as P1, P2, etc. If OpenF1 returns <2 drivers, drivers[] will be empty (no placeholders). Number images are pulled from your repo using the OpenF1-provided number."
   },
   "haas": {
     "team": "Haas",
-    "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_haas_color_v2.png?v=1771285923923",
+    "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_haas_color_v2.png",
     "teamStanding": {
       "team": "Haas",
       "position": "-",
       "points": "-",
       "wins": "-",
-      "originalTeam": "-"
+      "originalTeam": "-",
+      "constructorId": "haas"
     }
   },
   "lastRace": {
@@ -45,7 +54,7 @@
       "lastName": "Ocon",
       "code": "OCO",
       "driverNumber": 31,
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-31.png?v=1771285923923",
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-31.png",
       "position": "-",
       "points": "-",
       "wins": "-",
@@ -58,14 +67,15 @@
         "date": "-",
         "circuit": "-"
       },
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/esteban-ocon.png?v=1771285923923"
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/esteban-ocon.png",
+      "fromOpenF1": true
     },
     {
       "firstName": "Oliver",
       "lastName": "Bearman",
       "code": "BEA",
       "driverNumber": 87,
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-87.png?v=1771285923923",
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-87.png",
       "position": "-",
       "points": "-",
       "wins": "-",
@@ -78,7 +88,8 @@
         "date": "-",
         "circuit": "-"
       },
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/oliver-bearman.png?v=1771285923923"
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/oliver-bearman.png",
+      "fromOpenF1": true
     }
   ]
 }
