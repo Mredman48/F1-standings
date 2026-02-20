@@ -18,10 +18,9 @@ const CACHE_BUST = true;
 const HAAS_LOGO_FILE = "2025_haas_color_v2.png";
 
 // --- Data sources (Ergast + fallback) ---
-// Ergast endpoints for current standings are documented and stable.  [oai_citation:2‡ergast.com](https://ergast.com/mrd/methods/standings/?utm_source=chatgpt.com)
 const ERGAST_BASES = [
   "https://ergast.com/api/f1",          // primary
-  "https://api.jolpi.ca/ergast/api/f1", // fallback mirror (Ergast-compatible)  [oai_citation:3‡GitHub](https://github.com/jolpica/jolpica-f1?utm_source=chatgpt.com)
+  "https://api.jolpi.ca/ergast/api/f1", // fallback mirror (Ergast-compatible)
 ];
 
 const UA = "f1-standings-bot/1.0 (GitHub Actions)";
@@ -40,6 +39,14 @@ function toSlug(s) {
 function withCacheBust(url) {
   if (!url) return url;
   return CACHE_BUST ? `${url}${url.includes("?") ? "&" : "?"}v=${Date.now()}` : url;
+}
+
+// ✅ P1 formatting
+function fmtPos(pos) {
+  if (pos == null || pos === "-" || pos === "") return "-";
+  const n = Number(pos);
+  if (!Number.isFinite(n)) return "-";
+  return `P${n}`;
 }
 
 function getTeamLogoUrl(fileName) {
@@ -114,26 +121,14 @@ async function fetchFromAnyBase(path) {
   throw lastErr || new Error("All Ergast bases failed");
 }
 
-function safeNum(x) {
-  if (x === null || x === undefined) return null;
-  const n = Number(x);
-  return Number.isFinite(n) ? n : null;
-}
-
 // ---------- Data extraction (Ergast response shapes) ----------
 
 function getCurrentDriverStandings(mr) {
-  return (
-    mr?.MRData?.StandingsTable?.StandingsLists?.[0]?.DriverStandings ??
-    []
-  );
+  return mr?.MRData?.StandingsTable?.StandingsLists?.[0]?.DriverStandings ?? [];
 }
 
 function getCurrentConstructorStandings(mr) {
-  return (
-    mr?.MRData?.StandingsTable?.StandingsLists?.[0]?.ConstructorStandings ??
-    []
-  );
+  return mr?.MRData?.StandingsTable?.StandingsLists?.[0]?.ConstructorStandings ?? [];
 }
 
 function getLastRaceResult(mr) {
@@ -219,7 +214,7 @@ async function buildJson() {
     if (haasCtor) {
       teamStanding = {
         team: "Haas",
-        position: haasCtor.position ?? "-",
+        position: fmtPos(haasCtor.position),
         points: haasCtor.points ?? "-",
         wins: haasCtor.wins ?? "-",
         originalTeam: haasCtor?.Constructor?.name ?? "Haas",
@@ -235,12 +230,11 @@ async function buildJson() {
       });
 
       if (match) {
-        d.position = match.position ?? "-";
+        d.position = fmtPos(match.position);
         d.points = match.points ?? "-";
         d.wins = match.wins ?? "-";
         d.placeholder = false;
 
-        // keep bestResult placeholder for now (Ergast "best result" would require more queries)
         d.bestResult = dashBestResult();
       }
     }
@@ -248,7 +242,6 @@ async function buildJson() {
     // If ANY driver got real data OR team got real data, consider it live
     const anyDriverLive = drivers.some((d) => d.placeholder === false);
     const teamLive = teamStanding.position !== "-" && teamStanding.points !== "-";
-
     placeholderMode = !(anyDriverLive || teamLive);
   } catch (e) {
     console.warn("Standings fetch failed; keeping placeholders.", e.message);
@@ -271,7 +264,7 @@ async function buildJson() {
       mode: placeholderMode ? "PLACEHOLDERS_LOCAL_ASSETS" : "ERGAST_LIVE_LOCAL_ASSETS",
       cacheBust: CACHE_BUST,
       note:
-        "Before the first race (or if data is unavailable), outputs '-' placeholders. After the first race, fills positions/points/wins from current standings.",
+        "Before the first race (or if data is unavailable), outputs '-' placeholders. After the first race, fills positions/points/wins from current standings. Positions formatted as P1, P2, etc.",
     },
     haas: {
       team: "Haas",
