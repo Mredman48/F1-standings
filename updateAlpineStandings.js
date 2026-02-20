@@ -1,45 +1,35 @@
 // updateAlpineStandings.js
 import fs from "node:fs/promises";
 
+const UA = "f1-standings-bot/1.0 (GitHub Actions)";
+
+// Output JSON
 const OUT_JSON = "f1_alpine_standings.json";
 
 // GitHub Pages base (Widgy-friendly)
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 
 // Repo folders
+const TEAMLOGOS_DIR = "teamlogos";
 const HEADSHOTS_DIR = "headshots";
 const DRIVER_NUMBER_FOLDER = "driver-numbers";
-const TEAMLOGOS_DIR = "teamlogos";
 
-// CDN/Widgy cache-busting
-const CACHE_BUST = true;
+// ✅ Alpine logo from your repo (update filename if needed)
+const ALPINE_LOGO_PNG = `${PAGES_BASE}/${TEAMLOGOS_DIR}/2025_alpine_color_v2.png`;
 
-// Local Alpine logo on Pages
-const ALPINE_LOGO_FILE = "2025_alpine_color_v2.png";
+// --- Sources ---
+const OPENF1_BASE = "https://api.openf1.org/v1";
+const OPENF1_TEAM_NAME = "Alpine";
 
-// Ergast + fallback (Ergast-compatible Jolpica)
 const ERGAST_BASES = [
+  "https://api.jolpi.ca/ergast/f1",
   "https://ergast.com/api/f1",
-  "https://api.jolpi.ca/ergast/api/f1",
-];
-
-const UA = "f1-standings-bot/1.0 (GitHub Actions)";
-
-// ✅ Pin lineup to avoid reserves
-const PREFERRED_DRIVERS = [
-  { firstName: "Pierre", lastName: "Gasly", code: "GAS", driverNumber: 10 },
-  { firstName: "Franco", lastName: "Colapinto", code: "COL", driverNumber: 43 },
 ];
 
 // Ergast constructorId for Alpine is typically "alpine"
 const ERGAST_CONSTRUCTOR_ID = "alpine";
 
-// ---------- helpers ----------
-
-function withCacheBust(url) {
-  if (!url) return url;
-  return CACHE_BUST ? `${url}${url.includes("?") ? "&" : "?"}v=${Date.now()}` : url;
-}
+// ---------- Helpers ----------
 
 function fmtPos(pos) {
   if (pos == null || pos === "-" || pos === "") return "-";
@@ -57,48 +47,95 @@ function toSlug(s) {
     .replace(/(^-|-$)/g, "");
 }
 
-function getTeamLogoUrl(fileName) {
-  return withCacheBust(`${PAGES_BASE}/${TEAMLOGOS_DIR}/${fileName}`);
+async function exists(filePath) {
+  try {
+    await fs.stat(filePath);
+    return true;
+  } catch {
+    return false;
+  }
 }
 
+// Number PNGs from your repo
 function getDriverNumberImageUrl(driverNumber) {
   if (driverNumber == null || driverNumber === "-" || driverNumber === "") return null;
-  return withCacheBust(`${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-${driverNumber}.png`);
+  return `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-${driverNumber}.png`;
 }
 
-function getSavedHeadshotUrl(firstName, lastName) {
+// Headshots local-only, only if file exists in repo checkout
+async function getSavedHeadshotUrl({ firstName, lastName }) {
   const fileName = `${toSlug(firstName)}-${toSlug(lastName)}.png`;
-  return withCacheBust(`${PAGES_BASE}/${HEADSHOTS_DIR}/${fileName}`);
+  const localPath = `${HEADSHOTS_DIR}/${fileName}`;
+
+  if (await exists(localPath)) {
+    return `${PAGES_BASE}/${HEADSHOTS_DIR}/${fileName}`;
+  }
+  return null;
 }
 
-async function fetchJson(url) {
+// ---------- Fetch helpers ----------
+
+async function fetchText(url) {
   const res = await fetch(url, {
     headers: { "User-Agent": UA, Accept: "application/json" },
     redirect: "follow",
   });
-  if (!res.ok) {
-    const text = await res.text().catch(() => "");
-    throw new Error(`HTTP ${res.status} from ${url}\n${text.slice(0, 200)}`);
-  }
-  return res.json();
+  const text = await res.text();
+  return { res, text };
 }
 
-async function fetchFromAnyBase(path) {
+async function fetchJsonStrict(url) {
+  const { res, text } = await fetchText(url);
+  if (!res.ok) throw new Error(`HTTP ${res.status} from ${url}\n${text.slice(0, 200)}`);
+  try {
+    return JSON.parse(text);
+  } catch {
+    throw new Error(`Invalid JSON from ${url}\n${text.slice(0, 200)}`);
+  }
+}
+
+async function fetchFromAnyErgastBase(path) {
   let lastErr = null;
   for (const base of ERGAST_BASES) {
     const url = `${base}${path}`;
     try {
-      const json = await fetchJson(url);
+      const json = await fetchJsonStrict(url);
       return { json, urlUsed: url };
     } catch (e) {
       lastErr = e;
-      console.warn(`Fetch failed, trying next base. url=${url} err=${e.message}`);
+      console.warn(`Ergast/Jolpica fetch failed, trying next base. url=${url} err=${e.message}`);
     }
   }
-  throw lastErr || new Error("All Ergast bases failed");
+  throw lastErr || new Error("All Ergast/Jolpica bases failed");
 }
 
-// ---------- dash placeholder builders ----------
+// OpenF1 rate-limit safe fetch (backoff on 429)
+async function fetchOpenF1Json(path, { retries = 4 } = {}) {
+  const url = `${OPENF1_BASE}${path}`;
+
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    const { res, text } = await fetchText(url);
+
+    if (res.status === 429) {
+      const waitMs = 1100 + attempt * 900;
+      console.warn(`OpenF1 429. Waiting ${waitMs}ms. ${text.slice(0, 120)}`);
+      await new Promise((r) => setTimeout(r, waitMs));
+      continue;
+    }
+
+    if (!res.ok) throw new Error(`HTTP ${res.status} from ${url}\n${text.slice(0, 200)}`);
+
+    try {
+      return { json: JSON.parse(text), urlUsed: url };
+    } catch {
+      throw new Error(`Invalid JSON from ${url}\n${text.slice(0, 200)}`);
+    }
+  }
+
+  throw new Error(`OpenF1 rate limited too long for ${url}`);
+}
+
+// ---------- Placeholders ----------
 
 function dashBestResult() {
   return { position: "-", raceName: "-", round: "-", date: "-", circuit: "-" };
@@ -124,6 +161,8 @@ function dashTeamStanding() {
     originalTeam: "-",
   };
 }
+
+// ---------- Ergast extractors ----------
 
 function getCurrentDriverStandings(mr) {
   return mr?.MRData?.StandingsTable?.StandingsLists?.[0]?.DriverStandings ?? [];
@@ -151,78 +190,142 @@ function getLastRaceResult(mr) {
   };
 }
 
-// ---------- Build JSON (Ergast live, placeholders fallback) ----------
+// ---------- OpenF1: get current Alpine drivers ----------
+
+function pickLatestMeetingRows(rows) {
+  if (!Array.isArray(rows) || rows.length === 0) return [];
+  const withMk = rows.filter((r) => r && r.meeting_key != null);
+  if (withMk.length === 0) return rows;
+
+  const maxKey = withMk.reduce((m, r) => Math.max(m, Number(r.meeting_key) || -1), -1);
+  return rows.filter((r) => Number(r?.meeting_key) === maxKey);
+}
+
+async function getAlpineDriversFromOpenF1() {
+  const res = await fetchOpenF1Json(
+    `/drivers?meeting_key=latest&team_name=${encodeURIComponent(OPENF1_TEAM_NAME)}`
+  );
+
+  const rows = pickLatestMeetingRows(res.json);
+
+  // De-dupe by driver_number
+  const byNum = new Map();
+  for (const r of rows) {
+    const num = r?.driver_number;
+    if (num == null) continue;
+    if (!byNum.has(num)) byNum.set(num, r);
+  }
+
+  const drivers = Array.from(byNum.values())
+    .sort((a, b) => Number(a.driver_number) - Number(b.driver_number))
+    .slice(0, 2)
+    .map((r) => ({
+      firstName: r?.first_name ?? "-",
+      lastName: r?.last_name ?? "-",
+      code: (r?.name_acronym ?? "-").toUpperCase(),
+      driverNumber: r?.driver_number ?? "-",
+      fromOpenF1: true,
+    }));
+
+  return { drivers, urlUsed: res.urlUsed };
+}
+
+// ---------- Build JSON (OpenF1 drivers + Ergast standings) ----------
 
 async function buildJson() {
   const now = new Date();
 
-  // Start with pinned lineup placeholders
-  const drivers = PREFERRED_DRIVERS.map((d) => ({
-    firstName: d.firstName,
-    lastName: d.lastName,
-    code: d.code,
-    driverNumber: d.driverNumber,
+  // Fallback placeholders ONLY if OpenF1 returns nothing
+  const FALLBACK_DRIVERS = [
+    { firstName: "Pierre", lastName: "Gasly", code: "GAS", driverNumber: 10, fromOpenF1: false },
+    { firstName: "Franco", lastName: "Colapinto", code: "COL", driverNumber: 43, fromOpenF1: false },
+  ];
 
-    numberImageUrl: getDriverNumberImageUrl(d.driverNumber),
+  let openf1Drivers = [];
+  let openf1UrlUsed = null;
 
-    position: "-",
-    points: "-",
-    wins: "-",
-    team: "Alpine",
-    placeholder: true,
-    bestResult: dashBestResult(),
+  try {
+    const of1 = await getAlpineDriversFromOpenF1();
+    openf1Drivers = of1.drivers;
+    openf1UrlUsed = of1.urlUsed;
+  } catch (e) {
+    console.warn("OpenF1 drivers fetch failed; using fallback drivers.", e.message);
+    openf1Drivers = [];
+  }
 
-    headshotUrl: getSavedHeadshotUrl(d.firstName, d.lastName),
-  }));
+  const driversBase = openf1Drivers.length === 2 ? openf1Drivers : FALLBACK_DRIVERS;
+
+  const drivers = [];
+  for (const d of driversBase) {
+    const headshotUrl =
+      d.firstName !== "-" && d.lastName !== "-" ? await getSavedHeadshotUrl(d) : null;
+
+    drivers.push({
+      firstName: d.firstName,
+      lastName: d.lastName,
+      code: d.code,
+      driverNumber: d.driverNumber,
+
+      numberImageUrl: getDriverNumberImageUrl(d.driverNumber),
+
+      position: "-",
+      points: "-",
+      wins: "-",
+      team: "Alpine",
+      placeholder: true,
+      bestResult: dashBestResult(),
+
+      headshotUrl,
+      fromOpenF1: Boolean(d.fromOpenF1),
+    });
+  }
 
   let teamStanding = dashTeamStanding();
   let lastRace = dashLastRace();
   let placeholderMode = true;
 
   let urlUsed = {
+    openf1Drivers: openf1UrlUsed,
     driverStandings: null,
     constructorStandings: null,
     lastRace: null,
   };
 
   try {
-    // Driver standings (current)
-    const ds = await fetchFromAnyBase("/current/driverStandings.json");
+    const ds = await fetchFromAnyErgastBase("/current/driverStandings.json");
     urlUsed.driverStandings = ds.urlUsed;
     const driverStandings = getCurrentDriverStandings(ds.json);
 
-    // Constructor standings (current)
-    const cs = await fetchFromAnyBase("/current/constructorStandings.json");
+    const cs = await fetchFromAnyErgastBase("/current/constructorStandings.json");
     urlUsed.constructorStandings = cs.urlUsed;
     const constructorStandings = getCurrentConstructorStandings(cs.json);
 
-    // Last race result
-    const lr = await fetchFromAnyBase("/current/last/results.json");
+    const lr = await fetchFromAnyErgastBase("/current/last/results.json");
     urlUsed.lastRace = lr.urlUsed;
     const lrParsed = getLastRaceResult(lr.json);
     if (lrParsed) lastRace = lrParsed;
 
     // Team row
-    const alpineCtor = constructorStandings.find(
+    const ctorRow = constructorStandings.find(
       (c) => String(c?.Constructor?.constructorId || "").toLowerCase() === ERGAST_CONSTRUCTOR_ID
     );
 
-    if (alpineCtor) {
+    if (ctorRow) {
       teamStanding = {
         team: "Alpine",
-        position: fmtPos(alpineCtor.position),
-        points: alpineCtor.points ?? "-",
-        wins: alpineCtor.wins ?? "-",
-        originalTeam: alpineCtor?.Constructor?.name ?? "Alpine",
+        position: fmtPos(ctorRow.position),
+        points: ctorRow.points ?? "-",
+        wins: ctorRow.wins ?? "-",
+        originalTeam: ctorRow?.Constructor?.name ?? "Alpine",
       };
     }
 
-    // Driver rows (match by code or familyName)
+    // Driver rows: match by code first, then last name
     for (const d of drivers) {
       const match = driverStandings.find((row) => {
         const code = String(row?.Driver?.code || "").toUpperCase();
         const fam = String(row?.Driver?.familyName || "").toLowerCase();
-        return code === d.code || fam === d.lastName.toLowerCase();
+        return (code && code === d.code) || fam === String(d.lastName || "").toLowerCase();
       });
 
       if (match) {
@@ -237,7 +340,7 @@ async function buildJson() {
     const teamLive = teamStanding.position !== "-" && teamStanding.points !== "-";
     placeholderMode = !(anyDriverLive || teamLive);
   } catch (e) {
-    console.warn("Ergast fetch failed; keeping placeholders.", e.message);
+    console.warn("Standings fetch failed; keeping placeholders.", e.message);
     placeholderMode = true;
   }
 
@@ -245,23 +348,26 @@ async function buildJson() {
     header: "Alpine standings",
     generatedAtUtc: now.toISOString(),
     sources: {
+      openf1: OPENF1_BASE,
+      openf1Drivers:
+        urlUsed.openf1Drivers ||
+        `${OPENF1_BASE}/drivers?meeting_key=latest&team_name=${encodeURIComponent(OPENF1_TEAM_NAME)}`,
       logos: `LOCAL_ONLY: ${PAGES_BASE}/${TEAMLOGOS_DIR}/`,
       headshots: `LOCAL_ONLY: ${PAGES_BASE}/${HEADSHOTS_DIR}/<first>-<last>.png`,
       driverNumbers: `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-<number>.png`,
-      driverStandings: urlUsed.driverStandings || "ERGAST_UNAVAILABLE",
-      constructorStandings: urlUsed.constructorStandings || "ERGAST_UNAVAILABLE",
-      lastRace: urlUsed.lastRace || "ERGAST_UNAVAILABLE",
-      note: "Uses Ergast current standings with Jolpica fallback (Ergast-compatible).",
+      driverStandings: urlUsed.driverStandings || "ERGAST_COMPAT_UNAVAILABLE",
+      constructorStandings: urlUsed.constructorStandings || "ERGAST_COMPAT_UNAVAILABLE",
+      lastRace: urlUsed.lastRace || "ERGAST_COMPAT_UNAVAILABLE",
+      note: "Drivers/numbers from OpenF1. Standings from Jolpica (Ergast-compatible) with Ergast fallback.",
     },
     meta: {
-      mode: placeholderMode ? "PLACEHOLDERS_LOCAL_ASSETS" : "ERGAST_LIVE_LOCAL_ASSETS",
-      cacheBust: CACHE_BUST,
+      mode: placeholderMode ? "PLACEHOLDERS_LOCAL_ASSETS" : "OPENF1_DRIVERS_ERGAST_STANDINGS_LOCAL_ASSETS",
       note:
-        "Before the first race (or if data is unavailable), outputs '-' placeholders. After the first race, fills positions/points/wins from current standings. Lineup is pinned to avoid reserve/test drivers. Positions formatted as P1, P2, etc.",
+        "Drivers are fully automatic via OpenF1 (meeting_key=latest). Positions are formatted as P1, P2, etc. Number images are pulled from your repo using the API-provided number.",
     },
     alpine: {
       team: "Alpine",
-      teamLogoPng: getTeamLogoUrl(ALPINE_LOGO_FILE),
+      teamLogoPng: ALPINE_LOGO_PNG,
       teamStanding,
     },
     lastRace,
