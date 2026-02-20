@@ -3,7 +3,7 @@ import fs from "node:fs/promises";
 
 const UA = "f1-standings-bot/1.0 (GitHub Actions)";
 
-// Output JSON
+// Output JSON (match your other endpoint naming style)
 const OUT_JSON = "f1_vcarb_standings.json";
 
 // GitHub Pages base (Widgy-friendly)
@@ -14,38 +14,28 @@ const TEAMLOGOS_DIR = "teamlogos";
 const HEADSHOTS_DIR = "headshots";
 const DRIVER_NUMBER_FOLDER = "driver-numbers";
 
-// ✅ VCARB/Racing Bulls logo from your repo (update filename if needed)
-const VCARB_LOGO_PNG = `${PAGES_BASE}/${TEAMLOGOS_DIR}/2025_vcarb_color_v2.png`;
+// ✅ VCARB / Racing Bulls logo from your repo (update filename if needed)
+const VCARB_LOGO_FILE = "2025_vcarb_color_v2.png";
+const VCARB_LOGO_PNG = `${PAGES_BASE}/${TEAMLOGOS_DIR}/${VCARB_LOGO_FILE}`;
 
 // --- Sources ---
-// Drivers (who + numbers) from OpenF1
 const OPENF1_BASE = "https://api.openf1.org/v1";
 
-// OpenF1 team name can vary; we’ll try these in order
+// Racing Bulls naming can vary; try a few
 const OPENF1_TEAM_NAMES_TO_TRY = [
   "Racing Bulls",
-  "VCARB",
   "RB",
+  "VCARB",
   "Visa Cash App RB",
+  "Visa Cash App RB Formula One Team",
   "Visa Cash App Racing Bulls",
-  "AlphaTauri", // legacy fallback just in case OpenF1 is weird
 ];
 
 // Standings from Jolpica (Ergast-compatible), Ergast fallback
-const ERGAST_BASES = [
-  "https://api.jolpi.ca/ergast/f1",
-  "https://ergast.com/api/f1",
-];
+const ERGAST_BASES = ["https://api.jolpi.ca/ergast/f1", "https://ergast.com/api/f1"];
 
-// Ergast constructorId for Racing Bulls can change across eras.
-// We'll infer from the two drivers if needed.
-const ERGAST_CONSTRUCTOR_ID_HINTS = [
-  "rb",
-  "racing_bulls",
-  "visa_cash_app_rb",
-  "alphatauri",
-  "toro_rosso",
-];
+// Ergast constructorId (best guess; can vary by season naming)
+const ERGAST_CONSTRUCTOR_IDS_TO_TRY = ["rb", "racing_bulls", "alphatauri", "toro_rosso"];
 
 // ---------- Helpers ----------
 
@@ -74,7 +64,6 @@ async function exists(filePath) {
   }
 }
 
-// Number PNGs from your repo
 function getDriverNumberImageUrl(driverNumber) {
   if (driverNumber == null || driverNumber === "-" || driverNumber === "") return null;
   return `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-${driverNumber}.png`;
@@ -82,6 +71,8 @@ function getDriverNumberImageUrl(driverNumber) {
 
 // Headshots local-only, only if file exists in repo checkout
 async function getSavedHeadshotUrl({ firstName, lastName }) {
+  if (!firstName || !lastName || firstName === "-" || lastName === "-") return null;
+
   const fileName = `${toSlug(firstName)}-${toSlug(lastName)}.png`;
   const localPath = `${HEADSHOTS_DIR}/${fileName}`;
 
@@ -153,34 +144,6 @@ async function fetchOpenF1Json(path, { retries = 4 } = {}) {
   throw new Error(`OpenF1 rate limited too long for ${url}`);
 }
 
-// ---------- Placeholders ----------
-
-function dashBestResult() {
-  return { position: "-", raceName: "-", round: "-", date: "-", circuit: "-" };
-}
-
-function dashLastRace() {
-  return {
-    season: "-",
-    round: "-",
-    raceName: "-",
-    date: "-",
-    timeUtc: "-",
-    circuit: { name: "-", locality: "-", country: "-" },
-  };
-}
-
-function dashTeamStanding(teamLabel = "Racing Bulls") {
-  return {
-    team: teamLabel,
-    position: "-",
-    points: "-",
-    wins: "-",
-    originalTeam: "-",
-    constructorId: "-",
-  };
-}
-
 // ---------- Ergast extractors ----------
 
 function getCurrentDriverStandings(mr) {
@@ -209,7 +172,7 @@ function getLastRaceResult(mr) {
   };
 }
 
-// ---------- OpenF1: get current drivers for Racing Bulls/VCARB ----------
+// ---------- OpenF1: get current Racing Bulls drivers (NO FALLBACK DRIVERS) ----------
 
 function pickLatestMeetingRows(rows) {
   if (!Array.isArray(rows) || rows.length === 0) return [];
@@ -221,7 +184,6 @@ function pickLatestMeetingRows(rows) {
 }
 
 async function getVcarbDriversFromOpenF1() {
-  // Try multiple possible team_name values until we get >=2 drivers
   for (const teamName of OPENF1_TEAM_NAMES_TO_TRY) {
     try {
       const res = await fetchOpenF1Json(
@@ -246,8 +208,8 @@ async function getVcarbDriversFromOpenF1() {
           lastName: r?.last_name ?? "-",
           code: (r?.name_acronym ?? "-").toUpperCase(),
           driverNumber: r?.driver_number ?? "-",
-          openf1TeamNameUsed: teamName,
           fromOpenF1: true,
+          openf1TeamNameUsed: teamName,
         }));
 
       if (drivers.length >= 2) {
@@ -261,23 +223,16 @@ async function getVcarbDriversFromOpenF1() {
   return { drivers: [], urlUsed: null, teamNameUsed: null };
 }
 
-// ---------- Build JSON (OpenF1 drivers + Ergast standings) ----------
+// ---------- Build JSON (OpenF1 drivers ONLY + Ergast standings) ----------
 
 async function buildJson() {
   const now = new Date();
 
-  // Fallback placeholders ONLY if OpenF1 returns nothing
-  const FALLBACK_DRIVERS = [
-    { firstName: "Liam", lastName: "Lawson", code: "LAW", driverNumber: 30, fromOpenF1: false },
-    { firstName: "Arvid", lastName: "Lindblad", code: "LIN", driverNumber: 41, fromOpenF1: false },
-  ];
-
+  // 1) Drivers & numbers: OpenF1 ONLY (no fallback)
   const of1 = await getVcarbDriversFromOpenF1();
-  const driversBase = of1.drivers.length === 2 ? of1.drivers : FALLBACK_DRIVERS;
 
-  // Build driver objects (numbers from OpenF1, images from repo)
   const drivers = [];
-  for (const d of driversBase) {
+  for (const d of of1.drivers) {
     const headshotUrl =
       d.firstName !== "-" && d.lastName !== "-" ? await getSavedHeadshotUrl(d) : null;
 
@@ -287,23 +242,43 @@ async function buildJson() {
       code: d.code,
       driverNumber: d.driverNumber,
 
+      // number PNG from your repo
       numberImageUrl: getDriverNumberImageUrl(d.driverNumber),
 
+      // filled by Ergast later (if available)
       position: "-",
       points: "-",
       wins: "-",
-      team: "Racing Bulls",
+      team: "VCARB",
       placeholder: true,
-      bestResult: dashBestResult(),
+      bestResult: { position: "-", raceName: "-", round: "-", date: "-", circuit: "-" },
 
       headshotUrl,
-
-      fromOpenF1: Boolean(d.fromOpenF1),
+      fromOpenF1: true,
     });
   }
 
-  let teamStanding = dashTeamStanding("Racing Bulls");
-  let lastRace = dashLastRace();
+  const openf1DriversOk = drivers.length >= 2;
+
+  // 2) Standings (Ergast/Jolpica)
+  let teamStanding = {
+    team: "VCARB",
+    position: "-",
+    points: "-",
+    wins: "-",
+    originalTeam: "-",
+    constructorId: "UNKNOWN",
+  };
+
+  let lastRace = {
+    season: "-",
+    round: "-",
+    raceName: "-",
+    date: "-",
+    timeUtc: "-",
+    circuit: { name: "-", locality: "-", country: "-" },
+  };
+
   let placeholderMode = true;
 
   let urlUsed = {
@@ -312,10 +287,10 @@ async function buildJson() {
     driverStandings: null,
     constructorStandings: null,
     lastRace: null,
+    constructorIdUsed: null,
   };
 
   try {
-    // standings
     const ds = await fetchFromAnyErgastBase("/current/driverStandings.json");
     urlUsed.driverStandings = ds.urlUsed;
     const driverStandings = getCurrentDriverStandings(ds.json);
@@ -329,9 +304,62 @@ async function buildJson() {
     const lrParsed = getLastRaceResult(lr.json);
     if (lrParsed) lastRace = lrParsed;
 
-    // Fill driver standings: match by acronym (code) first, then last name
-    const foundCtorIds = new Map(); // ctorId -> count
+    // Try to locate a constructor row for Racing Bulls by known ids
+    let ctorRow = null;
+    for (const cid of ERGAST_CONSTRUCTOR_IDS_TO_TRY) {
+      ctorRow = constructorStandings.find(
+        (c) => String(c?.Constructor?.constructorId || "").toLowerCase() === cid
+      );
+      if (ctorRow) {
+        urlUsed.constructorIdUsed = cid;
+        break;
+      }
+    }
 
+    // If not found by known ids, infer constructorId from the drivers' standings rows
+    if (!ctorRow && drivers.length) {
+      const ctorIds = new Map(); // ctorId -> count
+      for (const d of drivers) {
+        const match = driverStandings.find((row) => {
+          const code = String(row?.Driver?.code || "").toUpperCase();
+          const fam = String(row?.Driver?.familyName || "").toLowerCase();
+          return (code && code === d.code) || fam === String(d.lastName || "").toLowerCase();
+        });
+
+        const cid = match?.Constructors?.[0]?.constructorId;
+        if (cid) ctorIds.set(cid, (ctorIds.get(cid) || 0) + 1);
+      }
+
+      // pick the most common inferred constructorId
+      let best = null;
+      let bestCount = -1;
+      for (const [cid, count] of ctorIds.entries()) {
+        if (count > bestCount) {
+          bestCount = count;
+          best = cid;
+        }
+      }
+
+      if (best) {
+        ctorRow = constructorStandings.find(
+          (c) => String(c?.Constructor?.constructorId || "").toLowerCase() === String(best).toLowerCase()
+        );
+        urlUsed.constructorIdUsed = best;
+      }
+    }
+
+    if (ctorRow) {
+      teamStanding = {
+        team: "VCARB",
+        position: fmtPos(ctorRow.position),
+        points: ctorRow.points ?? "-",
+        wins: ctorRow.wins ?? "-",
+        originalTeam: ctorRow?.Constructor?.name ?? "-",
+        constructorId: urlUsed.constructorIdUsed || ctorRow?.Constructor?.constructorId || "UNKNOWN",
+      };
+    }
+
+    // Driver rows (match by code, then last name)
     for (const d of drivers) {
       const match = driverStandings.find((row) => {
         const code = String(row?.Driver?.code || "").toUpperCase();
@@ -344,47 +372,6 @@ async function buildJson() {
         d.points = match.points ?? "-";
         d.wins = match.wins ?? "-";
         d.placeholder = false;
-
-        const ctorId = String(match?.Constructors?.[0]?.constructorId || "").toLowerCase();
-        if (ctorId) foundCtorIds.set(ctorId, (foundCtorIds.get(ctorId) || 0) + 1);
-      }
-    }
-
-    // Determine constructorId for teamStanding:
-    // 1) Any known hint present in standings
-    // 2) Else infer from the drivers' constructorId (most common)
-    let ctorIdToUse = null;
-
-    for (const hint of ERGAST_CONSTRUCTOR_ID_HINTS) {
-      if (
-        constructorStandings.some(
-          (c) => String(c?.Constructor?.constructorId || "").toLowerCase() === hint
-        )
-      ) {
-        ctorIdToUse = hint;
-        break;
-      }
-    }
-
-    if (!ctorIdToUse && foundCtorIds.size) {
-      // take most frequent ctorId among the two drivers
-      ctorIdToUse = Array.from(foundCtorIds.entries()).sort((a, b) => b[1] - a[1])[0][0];
-    }
-
-    if (ctorIdToUse) {
-      const ctorRow = constructorStandings.find(
-        (c) => String(c?.Constructor?.constructorId || "").toLowerCase() === ctorIdToUse
-      );
-
-      if (ctorRow) {
-        teamStanding = {
-          team: "Racing Bulls",
-          position: fmtPos(ctorRow.position),
-          points: ctorRow.points ?? "-",
-          wins: ctorRow.wins ?? "-",
-          originalTeam: ctorRow?.Constructor?.name ?? "Racing Bulls",
-          constructorId: ctorIdToUse,
-        };
       }
     }
 
@@ -392,7 +379,7 @@ async function buildJson() {
     const teamLive = teamStanding.position !== "-" && teamStanding.points !== "-";
     placeholderMode = !(anyDriverLive || teamLive);
   } catch (e) {
-    console.warn("Standings fetch failed; keeping placeholders.", e.message);
+    console.warn("Standings fetch failed; keeping standings placeholders.", e.message);
     placeholderMode = true;
   }
 
@@ -403,7 +390,9 @@ async function buildJson() {
       openf1: OPENF1_BASE,
       openf1Drivers:
         urlUsed.openf1Drivers ||
-        `${OPENF1_BASE}/drivers?meeting_key=latest&team_name=Racing%20Bulls`,
+        `${OPENF1_BASE}/drivers?meeting_key=latest&team_name=${encodeURIComponent(
+          OPENF1_TEAM_NAMES_TO_TRY[0]
+        )}`,
       openf1TeamNameUsed: urlUsed.openf1TeamNameUsed || "NOT_FOUND",
       logos: `LOCAL_ONLY: ${PAGES_BASE}/${TEAMLOGOS_DIR}/`,
       headshots: `LOCAL_ONLY: ${PAGES_BASE}/${HEADSHOTS_DIR}/<first>-<last>.png`,
@@ -411,23 +400,28 @@ async function buildJson() {
       driverStandings: urlUsed.driverStandings || "ERGAST_COMPAT_UNAVAILABLE",
       constructorStandings: urlUsed.constructorStandings || "ERGAST_COMPAT_UNAVAILABLE",
       lastRace: urlUsed.lastRace || "ERGAST_COMPAT_UNAVAILABLE",
+      ergastConstructorIdsTried: ERGAST_CONSTRUCTOR_IDS_TO_TRY,
+      constructorIdUsed: urlUsed.constructorIdUsed || "NOT_FOUND",
       note:
-        "Drivers/numbers come from OpenF1 (tries multiple team_name aliases). Standings come from Jolpica (Ergast-compatible) with Ergast fallback. Team standing is inferred from constructor standings or drivers’ constructorId.",
+        "Drivers/numbers come ONLY from OpenF1. Standings come from Jolpica (Ergast-compatible) with Ergast fallback. No fallback drivers are inserted.",
     },
     meta: {
-      mode: placeholderMode ? "PLACEHOLDERS_LOCAL_ASSETS" : "OPENF1_DRIVERS_ERGAST_STANDINGS_LOCAL_ASSETS",
+      mode: placeholderMode
+        ? "OPENF1_DRIVERS_STANDINGS_PLACEHOLDERS_LOCAL_ASSETS"
+        : "OPENF1_DRIVERS_ERGAST_STANDINGS_LOCAL_ASSETS",
+      openf1DriversOk,
       teamAliasesTried: OPENF1_TEAM_NAMES_TO_TRY,
       note:
-        "Drivers are fully automatic via OpenF1 (meeting_key=latest). Positions are formatted as P1, P2, etc. Number images are always pulled from your repo using the API-provided number.",
+        "Positions are formatted as P1, P2, etc. If OpenF1 returns <2 drivers, drivers[] will be empty (no placeholders). Number images are pulled from your repo using the OpenF1-provided number.",
     },
     vcarb: {
       team: "VCARB",
-      teamAliases: ["Racing Bulls"],
+      teamAliases: ["Racing Bulls", "RB", "Visa Cash App RB"],
       teamLogoPng: VCARB_LOGO_PNG,
       teamStanding,
     },
     lastRace,
-    drivers,
+    drivers: openf1DriversOk ? drivers : [],
   };
 }
 
