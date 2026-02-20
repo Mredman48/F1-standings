@@ -1,19 +1,20 @@
 {
   "header": "Williams standings",
-  "generatedAtUtc": "2026-02-16T23:55:05.121Z",
+  "generatedAtUtc": "2026-02-20T00:45:05.477Z",
   "sources": {
     "logos": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/teamlogos/",
     "headshots": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/headshots/<first>-<last>.png",
     "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png",
-    "driverStandings": "DASH_PLACEHOLDERS",
-    "constructorStandings": "DASH_PLACEHOLDERS",
-    "lastRace": "DASH_PLACEHOLDERS"
+    "driverStandings": "https://api.jolpi.ca/ergast/f1/current/driverStandings.json",
+    "constructorStandings": "https://api.jolpi.ca/ergast/f1/current/constructorStandings.json",
+    "lastRace": "https://api.jolpi.ca/ergast/f1/current/last/results.json",
+    "openf1Sessions": "https://api.openf1.org/v1/sessions?session_name=Race&date_end<2026-02-20T00%3A45%3A06.209Z",
+    "openf1Meeting": "https://api.openf1.org/v1/meetings?meeting_key=1276",
+    "note": "Hybrid mode: standings from Jolpica (Ergast-compatible) with Ergast fallback; lastRace is enriched from OpenF1 when available."
   },
   "meta": {
-    "mode": "DASH_PLACEHOLDERS_LOCAL_HEADSHOTS_LOCAL_LOGO",
-    "seasonUsed": "-",
-    "roundUsed": "-",
-    "note": "All fields are '-' placeholders for widget building. Team logo + headshots + driver number images are LOCAL ONLY from your repo (no OpenF1, no downloading)."
+    "mode": "PLACEHOLDERS_LOCAL_ASSETS",
+    "note": "Before the first race (or if data is unavailable), outputs '-' placeholders. After races, fills positions/points/wins from standings. Positions are formatted as P1, P2, etc. Last-race city/country may be enriched via OpenF1."
   },
   "williams": {
     "team": "Williams",
@@ -34,8 +35,14 @@
     "timeUtc": "-",
     "circuit": {
       "name": "-",
-      "locality": "-",
-      "country": "-"
+      "locality": "Yas Island",
+      "country": "United Arab Emirates"
+    },
+    "openf1": {
+      "meetingName": "Abu Dhabi Grand Prix",
+      "circuitShortName": "Yas Marina Circuit",
+      "location": "Yas Island",
+      "countryName": "United Arab Emirates"
     }
   },
   "drivers": [
