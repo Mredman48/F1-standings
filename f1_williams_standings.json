@@ -1,6 +1,28 @@
 {
   "header": "Williams standings",
-  "generatedAtUtc": "2026-02-20T05:07:27.315Z",
+  "generatedAtUtc": "2026-02-20T05:14:23.947Z",
+  "sources": {
+    "openf1": "https://api.openf1.org/v1",
+    "openf1Drivers": "https://api.openf1.org/v1/drivers?meeting_key=latest&team_name=Williams",
+    "openf1TeamNameUsed": "Williams",
+    "logos": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/teamlogos/",
+    "headshots": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/headshots/<first>-<last>.png",
+    "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png",
+    "driverStandings": "https://api.jolpi.ca/ergast/f1/current/driverStandings.json",
+    "constructorStandings": "https://api.jolpi.ca/ergast/f1/current/constructorStandings.json",
+    "lastRace": "https://api.jolpi.ca/ergast/f1/current/last/results.json",
+    "note": "Drivers/numbers come ONLY from OpenF1 (with Alex Albon normalization). Standings come from Jolpica (Ergast-compatible) with Ergast fallback. No fallback drivers are inserted."
+  },
+  "meta": {
+    "mode": "OPENF1_DRIVERS_STANDINGS_PLACEHOLDERS_LOCAL_ASSETS",
+    "openf1DriversOk": true,
+    "teamAliasesTried": [
+      "Williams",
+      "Williams Racing",
+      "Atlassian Williams Racing"
+    ],
+    "note": "Positions are formatted as P1, P2, etc. If OpenF1 returns <2 drivers, drivers[] will be empty (no placeholders). Number images are pulled from your repo using the OpenF1-provided number."
+  },
   "williams": {
     "team": "Williams",
     "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_williams_color_v2.png",
@@ -9,7 +31,8 @@
       "position": "-",
       "points": "-",
       "wins": "-",
-      "originalTeam": "-"
+      "originalTeam": "-",
+      "constructorId": "williams"
     }
   },
   "lastRace": {
@@ -43,7 +66,8 @@
         "date": "-",
         "circuit": "-"
       },
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/alex-albon.png"
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/alex-albon.png",
+      "fromOpenF1": true
     },
     {
       "firstName": "Carlos",
@@ -63,7 +87,8 @@
         "date": "-",
         "circuit": "-"
       },
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/carlos-sainz.png"
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/carlos-sainz.png",
+      "fromOpenF1": true
     }
   ]
 }
