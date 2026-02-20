@@ -1,19 +1,22 @@
 {
   "header": "Aston Martin standings",
-  "generatedAtUtc": "2026-02-16T23:57:34.457Z",
+  "generatedAtUtc": "2026-02-20T04:24:49.111Z",
   "sources": {
+    "openf1": "https://api.openf1.org/v1",
+    "openf1Drivers": "https://api.openf1.org/v1/drivers?meeting_key=latest&team_name=Aston%20Martin",
+    "openf1Error": null,
     "logos": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/teamlogos/",
     "headshots": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/headshots/<first>-<last>.png",
     "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png",
-    "driverStandings": "DASH_PLACEHOLDERS",
-    "constructorStandings": "DASH_PLACEHOLDERS",
-    "lastRace": "DASH_PLACEHOLDERS"
+    "driverStandings": "https://api.jolpi.ca/ergast/f1/current/driverStandings.json",
+    "constructorStandings": "https://api.jolpi.ca/ergast/f1/current/constructorStandings.json",
+    "lastRace": "https://api.jolpi.ca/ergast/f1/current/last/results.json",
+    "note": "Drivers/numbers come ONLY from OpenF1. Standings come from Jolpica (Ergast-compatible) with Ergast fallback. No fallback drivers are ever inserted."
   },
   "meta": {
-    "mode": "DASH_PLACEHOLDERS_LOCAL_HEADSHOTS_LOCAL_LOGO",
-    "seasonUsed": "-",
-    "roundUsed": "-",
-    "note": "All fields are '-' placeholders for widget building. Team logo + headshots + driver number images are LOCAL ONLY from your repo (no OpenF1/Ergast, no downloading)."
+    "mode": "OPENF1_DRIVERS_STANDINGS_PLACEHOLDERS_LOCAL_ASSETS",
+    "openf1DriversOk": true,
+    "note": "Positions are formatted as P1, P2, etc. If OpenF1 returns <2 drivers, drivers[] will be empty (no placeholders). Number images are pulled from your repo using the OpenF1-provided number."
   },
   "astonmartin": {
     "team": "Aston Martin",
@@ -57,7 +60,8 @@
         "date": "-",
         "circuit": "-"
       },
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/fernando-alonso.png"
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/fernando-alonso.png",
+      "fromOpenF1": true
     },
     {
       "firstName": "Lance",
@@ -77,7 +81,8 @@
         "date": "-",
         "circuit": "-"
       },
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lance-stroll.png"
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lance-stroll.png",
+      "fromOpenF1": true
     }
   ]
 }
