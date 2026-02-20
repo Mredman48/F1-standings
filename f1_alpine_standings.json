@@ -1,23 +1,24 @@
 {
   "header": "Alpine standings",
-  "generatedAtUtc": "2026-02-20T00:44:17.333Z",
+  "generatedAtUtc": "2026-02-20T04:21:20.550Z",
   "sources": {
+    "openf1": "https://api.openf1.org/v1",
+    "openf1Drivers": "https://api.openf1.org/v1/drivers?meeting_key=latest&team_name=Alpine",
     "logos": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/teamlogos/",
     "headshots": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/headshots/<first>-<last>.png",
     "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png",
-    "driverStandings": "https://api.jolpi.ca/ergast/api/f1/current/driverStandings.json",
-    "constructorStandings": "https://api.jolpi.ca/ergast/api/f1/current/constructorStandings.json",
-    "lastRace": "https://api.jolpi.ca/ergast/api/f1/current/last/results.json",
-    "note": "Uses Ergast current standings with Jolpica fallback (Ergast-compatible)."
+    "driverStandings": "https://api.jolpi.ca/ergast/f1/current/driverStandings.json",
+    "constructorStandings": "https://api.jolpi.ca/ergast/f1/current/constructorStandings.json",
+    "lastRace": "https://api.jolpi.ca/ergast/f1/current/last/results.json",
+    "note": "Drivers/numbers from OpenF1. Standings from Jolpica (Ergast-compatible) with Ergast fallback."
   },
   "meta": {
     "mode": "PLACEHOLDERS_LOCAL_ASSETS",
-    "cacheBust": true,
-    "note": "Before the first race (or if data is unavailable), outputs '-' placeholders. After the first race, fills positions/points/wins from current standings. Lineup is pinned to avoid reserve/test drivers. Positions formatted as P1, P2, etc."
+    "note": "Drivers are fully automatic via OpenF1 (meeting_key=latest). Positions are formatted as P1, P2, etc. Number images are pulled from your repo using the API-provided number."
   },
   "alpine": {
     "team": "Alpine",
-    "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_alpine_color_v2.png?v=1771548258719",
+    "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_alpine_color_v2.png",
     "teamStanding": {
       "team": "Alpine",
       "position": "-",
@@ -44,7 +45,7 @@
       "lastName": "Gasly",
       "code": "GAS",
       "driverNumber": 10,
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-10.png?v=1771548257333",
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-10.png",
       "position": "-",
       "points": "-",
       "wins": "-",
@@ -57,14 +58,15 @@
         "date": "-",
         "circuit": "-"
       },
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/pierre-gasly.png?v=1771548257333"
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/pierre-gasly.png",
+      "fromOpenF1": true
     },
     {
       "firstName": "Franco",
       "lastName": "Colapinto",
       "code": "COL",
       "driverNumber": 43,
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-43.png?v=1771548257333",
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-43.png",
       "position": "-",
       "points": "-",
       "wins": "-",
@@ -77,7 +79,8 @@
         "date": "-",
         "circuit": "-"
       },
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/franco-colapinto.png?v=1771548257333"
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/franco-colapinto.png",
+      "fromOpenF1": true
     }
   ]
 }
