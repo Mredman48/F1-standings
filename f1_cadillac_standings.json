@@ -1,6 +1,6 @@
 {
   "header": "Cadillac standings",
-  "generatedAtUtc": "2026-02-20T04:33:05.559Z",
+  "generatedAtUtc": "2026-02-20T04:38:47.312Z",
   "sources": {
     "openf1": "https://api.openf1.org/v1",
     "openf1Drivers": "https://api.openf1.org/v1/drivers?meeting_key=latest&team_name=Cadillac",
@@ -11,7 +11,7 @@
     "driverStandings": "https://api.jolpi.ca/ergast/f1/current/driverStandings.json",
     "constructorStandings": "https://api.jolpi.ca/ergast/f1/current/constructorStandings.json",
     "lastRace": "https://api.jolpi.ca/ergast/f1/current/last/results.json",
-    "note": "Drivers/numbers come ONLY from OpenF1 (tries multiple team_name aliases). Standings come from Jolpica (Ergast-compatible) with Ergast fallback. No fallback drivers are ever inserted."
+    "note": "Drivers/numbers come ONLY from OpenF1 (tries multiple team_name aliases). Standings come from Jolpica (Ergast-compatible) with Ergast fallback. No fallback drivers are inserted."
   },
   "meta": {
     "mode": "OPENF1_DRIVERS_STANDINGS_PLACEHOLDERS_LOCAL_ASSETS",
