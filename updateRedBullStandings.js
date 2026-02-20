@@ -1,5 +1,3 @@
-It’s not giving quite the same endpoints. I’ve attached the red bull code we used before but let’s make it for Williams with the “Alexander” to “Alex” change
-
 // updateRedBullStandings.js
 import fs from "node:fs/promises";
 
