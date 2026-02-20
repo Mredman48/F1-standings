@@ -21,7 +21,8 @@ const CADILLAC_LOGO_PNG = `${PAGES_BASE}/${TEAMLOGOS_DIR}/${CADILLAC_LOGO_FILE}`
 // --- Sources ---
 const OPENF1_BASE = "https://api.openf1.org/v1";
 
-// Cadillac might appear under different naming. We'll try a few.
+// Cadillac may appear under different names; try a few.
+// (You can trim this list once you see which one works in your JSON output.)
 const OPENF1_TEAM_NAMES_TO_TRY = [
   "Cadillac",
   "Cadillac F1 Team",
@@ -37,8 +38,6 @@ const ERGAST_BASES = [
   "https://ergast.com/api/f1",
 ];
 
-// Note: Cadillac likely has no constructorId in Ergast yet.
-// We'll infer teamStanding from the constructorId of the OpenF1 drivers (if found).
 // ---------- Helpers ----------
 
 function fmtPos(pos) {
@@ -71,6 +70,7 @@ function getDriverNumberImageUrl(driverNumber) {
   return `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-${driverNumber}.png`;
 }
 
+// Headshots local-only, only if file exists in repo checkout
 async function getSavedHeadshotUrl({ firstName, lastName }) {
   if (!firstName || !lastName || firstName === "-" || lastName === "-") return null;
 
@@ -173,7 +173,7 @@ function getLastRaceResult(mr) {
   };
 }
 
-// ---------- OpenF1: get current Cadillac drivers (NO FALLBACK) ----------
+// ---------- OpenF1: get current Cadillac drivers (NO FALLBACK DRIVERS) ----------
 
 function pickLatestMeetingRows(rows) {
   if (!Array.isArray(rows) || rows.length === 0) return [];
@@ -193,6 +193,7 @@ async function getCadillacDriversFromOpenF1() {
 
       const rows = pickLatestMeetingRows(res.json);
 
+      // De-dupe by driver_number
       const byNum = new Map();
       for (const r of rows) {
         const num = r?.driver_number;
@@ -228,7 +229,7 @@ async function getCadillacDriversFromOpenF1() {
 async function buildJson() {
   const now = new Date();
 
-  // 1) Drivers & numbers: OpenF1 ONLY
+  // 1) Drivers & numbers: OpenF1 ONLY (no fallback)
   const of1 = await getCadillacDriversFromOpenF1();
 
   const drivers = [];
@@ -242,8 +243,10 @@ async function buildJson() {
       code: d.code,
       driverNumber: d.driverNumber,
 
+      // number PNG from your repo
       numberImageUrl: getDriverNumberImageUrl(d.driverNumber),
 
+      // filled by Ergast later (if available)
       position: "-",
       points: "-",
       wins: "-",
@@ -258,7 +261,7 @@ async function buildJson() {
 
   const openf1DriversOk = drivers.length >= 2;
 
-  // 2) Standings: Ergast/Jolpica (updates after races)
+  // 2) Standings (Ergast/Jolpica) — still useful once races happen
   let teamStanding = {
     team: "Cadillac",
     position: "-",
@@ -301,7 +304,7 @@ async function buildJson() {
     const lrParsed = getLastRaceResult(lr.json);
     if (lrParsed) lastRace = lrParsed;
 
-    // Fill driver standings (if we have drivers)
+    // Fill driver standings (only if we have drivers)
     const foundCtorIds = new Map(); // ctorId -> count
 
     for (const d of drivers) {
@@ -322,7 +325,7 @@ async function buildJson() {
       }
     }
 
-    // Infer constructorId for teamStanding based on the constructor of these drivers
+    // Infer constructor row for "Cadillac" based on the constructor of these drivers
     let ctorIdToUse = null;
     if (foundCtorIds.size) {
       ctorIdToUse = Array.from(foundCtorIds.entries()).sort((a, b) => b[1] - a[1])[0][0];
@@ -371,7 +374,7 @@ async function buildJson() {
       constructorStandings: urlUsed.constructorStandings || "ERGAST_COMPAT_UNAVAILABLE",
       lastRace: urlUsed.lastRace || "ERGAST_COMPAT_UNAVAILABLE",
       note:
-        "Drivers/numbers come ONLY from OpenF1 (tries multiple team_name aliases). Standings come from Jolpica (Ergast-compatible) with Ergast fallback. No fallback drivers are ever inserted.",
+        "Drivers/numbers come ONLY from OpenF1 (tries multiple team_name aliases). Standings come from Jolpica (Ergast-compatible) with Ergast fallback. No fallback drivers are inserted.",
     },
     meta: {
       mode: placeholderMode
