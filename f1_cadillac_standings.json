@@ -1,21 +1,30 @@
 {
   "header": "Cadillac standings",
-  "generatedAtUtc": "2026-02-16T23:54:50.829Z",
+  "generatedAtUtc": "2026-02-20T04:33:05.559Z",
   "sources": {
     "openf1": "https://api.openf1.org/v1",
-    "openf1CadillacDrivers": "https://api.openf1.org/v1/drivers?session_key=latest&team_name=Cadillac",
+    "openf1Drivers": "https://api.openf1.org/v1/drivers?meeting_key=latest&team_name=Cadillac",
+    "openf1TeamNameUsed": "Cadillac",
     "logos": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/teamlogos/",
     "headshots": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/headshots/<first>-<last>.png",
     "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png",
-    "driverStandings": "DASH_PLACEHOLDERS",
-    "constructorStandings": "DASH_PLACEHOLDERS",
-    "lastRace": "DASH_PLACEHOLDERS"
+    "driverStandings": "https://api.jolpi.ca/ergast/f1/current/driverStandings.json",
+    "constructorStandings": "https://api.jolpi.ca/ergast/f1/current/constructorStandings.json",
+    "lastRace": "https://api.jolpi.ca/ergast/f1/current/last/results.json",
+    "note": "Drivers/numbers come ONLY from OpenF1 (tries multiple team_name aliases). Standings come from Jolpica (Ergast-compatible) with Ergast fallback. No fallback drivers are ever inserted."
   },
   "meta": {
-    "mode": "DASH_PLACEHOLDERS_OPENF1_DRIVERS_LOCAL_ASSETS",
-    "seasonUsed": "-",
-    "roundUsed": "-",
-    "note": "All fields are '-' placeholders for widget building. Team logo + headshots + driver-number images are LOCAL ONLY from the repo. If OpenF1 returns Cadillac drivers (team_name=Cadillac on latest session/meeting), this file will automatically swap to those drivers while keeping local headshots + number images."
+    "mode": "OPENF1_DRIVERS_STANDINGS_PLACEHOLDERS_LOCAL_ASSETS",
+    "openf1DriversOk": true,
+    "teamAliasesTried": [
+      "Cadillac",
+      "Cadillac F1 Team",
+      "GM Cadillac",
+      "General Motors",
+      "Andretti Cadillac",
+      "Andretti"
+    ],
+    "note": "Positions are formatted as P1, P2, etc. If OpenF1 returns <2 drivers, drivers[] will be empty (no placeholders). Number images are pulled from your repo using the OpenF1-provided number."
   },
   "cadillac": {
     "team": "Cadillac",
@@ -25,7 +34,8 @@
       "position": "-",
       "points": "-",
       "wins": "-",
-      "originalTeam": "-"
+      "originalTeam": "-",
+      "constructorId": "-"
     }
   },
   "lastRace": {
