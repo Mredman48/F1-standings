@@ -1,23 +1,23 @@
 {
   "header": "McLaren standings",
-  "generatedAtUtc": "2026-02-19T21:19:25.834Z",
+  "generatedAtUtc": "2026-02-20T04:04:02.815Z",
   "sources": {
     "logos": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/teamlogos/",
     "headshots": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/headshots/<first>-<last>.png",
     "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png",
-    "driverStandings": "DASH_PLACEHOLDERS",
-    "constructorStandings": "DASH_PLACEHOLDERS",
-    "lastRace": "DASH_PLACEHOLDERS"
+    "driverStandings": "https://api.jolpi.ca/ergast/api/f1/current/driverStandings.json",
+    "constructorStandings": "https://api.jolpi.ca/ergast/api/f1/current/constructorStandings.json",
+    "lastRace": "https://api.jolpi.ca/ergast/api/f1/current/last/results.json",
+    "note": "Uses Ergast current standings with Jolpica fallback (Ergast-compatible)."
   },
   "meta": {
-    "mode": "DASH_PLACEHOLDERS_LOCAL_HEADSHOTS_LOCAL_LOGO",
-    "seasonUsed": "-",
-    "roundUsed": "-",
-    "note": "All fields are '-' placeholders for widget building. Team logo + headshots + driver number images are LOCAL ONLY from your repo (no OpenF1, no downloading)."
+    "mode": "PLACEHOLDERS_LOCAL_ASSETS",
+    "cacheBust": true,
+    "note": "Before the first race (or if data is unavailable), outputs '-' placeholders. After the first race, fills positions/points/wins from current standings. Positions formatted as P1, P2, etc."
   },
   "mclaren": {
     "team": "McLaren",
-    "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_mclaren_color_v2.png",
+    "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_mclaren_color_v2.png?v=1771560244315",
     "teamStanding": {
       "team": "McLaren",
       "position": "-",
@@ -44,7 +44,7 @@
       "lastName": "Norris",
       "code": "NOR",
       "driverNumber": 4,
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-4.png",
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-4.png?v=1771560242815",
       "position": "-",
       "points": "-",
       "wins": "-",
@@ -57,14 +57,14 @@
         "date": "-",
         "circuit": "-"
       },
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lando-norris.png"
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lando-norris.png?v=1771560242815"
     },
     {
       "firstName": "Oscar",
       "lastName": "Piastri",
       "code": "PIA",
       "driverNumber": 81,
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-81.png",
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-81.png?v=1771560242815",
       "position": "-",
       "points": "-",
       "wins": "-",
@@ -77,7 +77,7 @@
         "date": "-",
         "circuit": "-"
       },
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/oscar-piastri.png"
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/oscar-piastri.png?v=1771560242815"
     }
   ]
 }
