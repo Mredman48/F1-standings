@@ -1,10 +1,12 @@
-// updateWilliamsStandings.js
+It’s not giving quite the same endpoints. I’ve attached the red bull code we used before but let’s make it for Williams with the “Alexander” to “Alex” change
+
+// updateRedBullStandings.js
 import fs from "node:fs/promises";
 
 const UA = "f1-standings-bot/1.0 (GitHub Actions)";
 
 // Output JSON
-const OUT_JSON = "f1_williams_standings.json";
+const OUT_JSON = "f1_redbull_standings.json";
 
 // GitHub Pages base (Widgy-friendly)
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
@@ -14,25 +16,25 @@ const TEAMLOGOS_DIR = "teamlogos";
 const HEADSHOTS_DIR = "headshots";
 const DRIVER_NUMBER_FOLDER = "driver-numbers";
 
-// ✅ Williams logo from your repo (update filename if needed)
-const WILLIAMS_LOGO_FILE = "2025_williams_color_v2.png";
-const WILLIAMS_LOGO_PNG = `${PAGES_BASE}/${TEAMLOGOS_DIR}/${WILLIAMS_LOGO_FILE}`;
+// ✅ Red Bull logo from your repo (update filename if needed)
+const REDBULL_LOGO_FILE = "2025_red-bull_color_v2.png";
+const REDBULL_LOGO_PNG = `${PAGES_BASE}/${TEAMLOGOS_DIR}/${REDBULL_LOGO_FILE}`;
 
 // --- Sources ---
 const OPENF1_BASE = "https://api.openf1.org/v1";
 
-// Williams naming can vary; try a few
+// Red Bull naming can vary; try a few
 const OPENF1_TEAM_NAMES_TO_TRY = [
-  "Williams",
-  "Williams Racing",
-  "Atlassian Williams Racing",
+  "Red Bull",
+  "Red Bull Racing",
+  "Oracle Red Bull Racing",
 ];
 
 // Standings from Jolpica (Ergast-compatible), Ergast fallback
 const ERGAST_BASES = ["https://api.jolpi.ca/ergast/f1", "https://ergast.com/api/f1"];
 
-// Williams constructorId in Ergast is typically "williams"
-const ERGAST_CONSTRUCTOR_ID = "williams";
+// Red Bull constructorId in Ergast is typically "red_bull"
+const ERGAST_CONSTRUCTOR_ID = "red_bull";
 
 // ---------- Helpers ----------
 
@@ -50,18 +52,6 @@ function toSlug(s) {
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
-}
-
-// ✅ Name normalization: "Alexander Albon" -> "Alex Albon"
-function normalizeDriverName(firstName, lastName) {
-  const fn = String(firstName || "");
-  const ln = String(lastName || "");
-
-  if (fn.toLowerCase() === "alexander" && ln.toLowerCase() === "albon") {
-    return { firstName: "Alex", lastName: "Albon" };
-  }
-
-  return { firstName: fn || "-", lastName: ln || "-" };
 }
 
 async function exists(filePath) {
@@ -181,7 +171,7 @@ function getLastRaceResult(mr) {
   };
 }
 
-// ---------- OpenF1: get current Williams drivers (NO FALLBACK DRIVERS) ----------
+// ---------- OpenF1: get current Red Bull drivers (NO FALLBACK DRIVERS) ----------
 
 function pickLatestMeetingRows(rows) {
   if (!Array.isArray(rows) || rows.length === 0) return [];
@@ -192,7 +182,7 @@ function pickLatestMeetingRows(rows) {
   return rows.filter((r) => Number(r?.meeting_key) === maxKey);
 }
 
-async function getWilliamsDriversFromOpenF1() {
+async function getRedBullDriversFromOpenF1() {
   for (const teamName of OPENF1_TEAM_NAMES_TO_TRY) {
     try {
       const res = await fetchOpenF1Json(
@@ -212,17 +202,14 @@ async function getWilliamsDriversFromOpenF1() {
       const drivers = Array.from(byNum.values())
         .sort((a, b) => Number(a.driver_number) - Number(b.driver_number))
         .slice(0, 2)
-        .map((r) => {
-          const norm = normalizeDriverName(r?.first_name, r?.last_name);
-          return {
-            firstName: norm.firstName,
-            lastName: norm.lastName,
-            code: (r?.name_acronym ?? "-").toUpperCase(),
-            driverNumber: r?.driver_number ?? "-",
-            fromOpenF1: true,
-            openf1TeamNameUsed: teamName,
-          };
-        });
+        .map((r) => ({
+          firstName: r?.first_name ?? "-",
+          lastName: r?.last_name ?? "-",
+          code: (r?.name_acronym ?? "-").toUpperCase(),
+          driverNumber: r?.driver_number ?? "-",
+          fromOpenF1: true,
+          openf1TeamNameUsed: teamName,
+        }));
 
       if (drivers.length >= 2) {
         return { drivers, urlUsed: res.urlUsed, teamNameUsed: teamName };
@@ -241,7 +228,7 @@ async function buildJson() {
   const now = new Date();
 
   // 1) Drivers & numbers: OpenF1 ONLY (no fallback)
-  const of1 = await getWilliamsDriversFromOpenF1();
+  const of1 = await getRedBullDriversFromOpenF1();
 
   const drivers = [];
   for (const d of of1.drivers) {
@@ -261,7 +248,7 @@ async function buildJson() {
       position: "-",
       points: "-",
       wins: "-",
-      team: "Williams",
+      team: "Red Bull",
       placeholder: true,
       bestResult: { position: "-", raceName: "-", round: "-", date: "-", circuit: "-" },
 
@@ -274,7 +261,7 @@ async function buildJson() {
 
   // 2) Standings (Ergast/Jolpica)
   let teamStanding = {
-    team: "Williams",
+    team: "Red Bull",
     position: "-",
     points: "-",
     wins: "-",
@@ -316,17 +303,17 @@ async function buildJson() {
     if (lrParsed) lastRace = lrParsed;
 
     // Team row
-    const williamsCtor = constructorStandings.find(
+    const redBullCtor = constructorStandings.find(
       (c) => String(c?.Constructor?.constructorId || "").toLowerCase() === ERGAST_CONSTRUCTOR_ID
     );
 
-    if (williamsCtor) {
+    if (redBullCtor) {
       teamStanding = {
-        team: "Williams",
-        position: fmtPos(williamsCtor.position),
-        points: williamsCtor.points ?? "-",
-        wins: williamsCtor.wins ?? "-",
-        originalTeam: williamsCtor?.Constructor?.name ?? "Williams",
+        team: "Red Bull",
+        position: fmtPos(redBullCtor.position),
+        points: redBullCtor.points ?? "-",
+        wins: redBullCtor.wins ?? "-",
+        originalTeam: redBullCtor?.Constructor?.name ?? "Red Bull",
         constructorId: ERGAST_CONSTRUCTOR_ID,
       };
     }
@@ -356,7 +343,7 @@ async function buildJson() {
   }
 
   return {
-    header: "Williams standings",
+    header: "Red Bull standings",
     generatedAtUtc: now.toISOString(),
     sources: {
       openf1: OPENF1_BASE,
@@ -373,7 +360,7 @@ async function buildJson() {
       constructorStandings: urlUsed.constructorStandings || "ERGAST_COMPAT_UNAVAILABLE",
       lastRace: urlUsed.lastRace || "ERGAST_COMPAT_UNAVAILABLE",
       note:
-        "Drivers/numbers come ONLY from OpenF1 (with Alex Albon normalization). Standings come from Jolpica (Ergast-compatible) with Ergast fallback. No fallback drivers are inserted.",
+        "Drivers/numbers come ONLY from OpenF1. Standings come from Jolpica (Ergast-compatible) with Ergast fallback. No fallback drivers are inserted.",
     },
     meta: {
       mode: placeholderMode
@@ -384,9 +371,9 @@ async function buildJson() {
       note:
         "Positions are formatted as P1, P2, etc. If OpenF1 returns <2 drivers, drivers[] will be empty (no placeholders). Number images are pulled from your repo using the OpenF1-provided number.",
     },
-    williams: {
-      team: "Williams",
-      teamLogoPng: WILLIAMS_LOGO_PNG,
+    redbull: {
+      team: "Red Bull",
+      teamLogoPng: REDBULL_LOGO_PNG,
       teamStanding,
     },
     lastRace,
@@ -396,13 +383,13 @@ async function buildJson() {
 
 // ---------- Main ----------
 
-async function updateWilliamsStandings() {
+async function updateRedBullStandings() {
   const out = await buildJson();
   await fs.writeFile(OUT_JSON, JSON.stringify(out, null, 2), "utf8");
   console.log(`Wrote ${OUT_JSON}`);
 }
 
-updateWilliamsStandings().catch((err) => {
+updateRedBullStandings().catch((err) => {
   console.error(err);
   process.exit(1);
 });
