@@ -37,7 +37,7 @@ jobs:
       - name: Verify output exists
         run: |
           ls -la
-          ls -la f1_vcarb_standings
+          ls -la f1_vcarb_standings.json
           echo "First 40 lines:"
           sed -n '1,40p' f1_vcarb_standings.json
 
