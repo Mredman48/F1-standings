@@ -37,7 +37,7 @@ jobs:
       - name: Verify output exists
         run: |
           ls -la
-          ls -la vcarb_standings.json
+          ls -la f1_vcarb_standings
           echo "First 40 lines:"
           sed -n '1,40p' f1_vcarb_standings.json
 
@@ -68,7 +68,7 @@ jobs:
             git pull --rebase origin main
             git stash pop || true
 
-            git add vcarb_standings.json
+            git add f1_vcarb_standings.json
 
             if ! git diff --cached --quiet; then
               git commit -m "Update VCARB standings (retry)" || true
