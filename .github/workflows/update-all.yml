@@ -1,48 +1,54 @@
-name: Update All F1 Data (Race Weekends Only)
+name: Update F1 Data on Race Weekends
 
 on:
   schedule:
-    - cron: "*/30 * * * *" # checks every 30 min; will SKIP unless race weekend
+    - cron: '*/30 * * * *'  # every 30 minutes
   workflow_dispatch:
 
-permissions:
-  contents: write
-
-concurrency:
-  group: f1-standings-publish
-  cancel-in-progress: false
-
 jobs:
-  update-all:
+  check-and-run:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: '20'
 
       - name: Install dependencies
         run: npm install
 
-      # Race weekend gate
-      - name: Race weekend gate
-        id: gate
-        run: node scripts/isRaceWeekend.mjs
-
-      - name: Skip if not race weekend
-        if: steps.gate.outputs.in_window != 'true' && github.event_name != 'workflow_dispatch'
+      - name: Check if it's a race weekend
+        id: check_race
         run: |
-          echo "Not a race weekend window. Skipping updates."
-          exit 0
+          node -e "
+          import fs from 'fs/promises';
+          import ical from 'node-ical';
 
-      # Run updates
-      - name: Run all JS updates
+          const ICS_URL = 'https://better-f1-calendar.vercel.app/api/calendar.ics';
+          const now = new Date();
+
+          const ics = await ical.async.fromURL(ICS_URL, { headers: { 'User-Agent': 'f1-standings-bot/1.0' } });
+          const events = Object.values(ics).filter(e => e?.type === 'VEVENT');
+
+          const upcomingWeekend = events.find(e => {
+            const start = new Date(e.start);
+            const end = new Date(e.end);
+            return start <= now && now <= end;
+          });
+
+          if (!upcomingWeekend) {
+            console.log('No race weekend currently. Exiting.');
+            process.exit(78); // Neutral exit for GitHub Actions
+          } else {
+            console.log('Race weekend ongoing. Running updates.');
+          }
+          "
+
+      - name: Run all update scripts
+        if: ${{ success() }}
         run: |
           node updateStandings.js
           node updateConstructors.js
@@ -58,13 +64,3 @@ jobs:
           node updateAudiStandings.js
           node updateCadillacStandings.js
           node UpdateVCARBStandings.js
-
-      # Commit & push
-      - name: Commit & Push
-        run: |
-          git config user.name "f1-bot"
-          git config user.email "f1-bot@users.noreply.github.com"
-          git add *.json headshots teamlogos driver-numbers || true
-          if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Automated F1 data update (race weekend)"
-          git push origin main || (git fetch origin main && git rebase origin/main && git push origin main)
