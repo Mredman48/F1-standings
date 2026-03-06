@@ -1,30 +1,7 @@
 {
-  "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-03-06T02:27:06.322Z",
-  "season": "2026",
-  "mode": "PLACEHOLDERS",
-  "lastRace": null,
-  "lastRaceSource": {
-    "found": false,
-    "urlUsed": null,
-    "urlsTried": [
-      "https://api.jolpi.ca/ergast/f1/2026/last/results.json",
-      "https://api.jolpi.ca/ergast/f1/2026/last/results/",
-      "https://api.jolpi.ca/ergast/f1/2026/last/results"
-    ]
-  },
-  "source": {
-    "kind": "jolpica ergast-compatible",
-    "url": "https://api.jolpi.ca/ergast/f1/current/driverstandings.json",
-    "note": "Standings were empty; outputting alphabetical placeholders with dashes."
-  },
-  "enrichment": {
-    "openf1DriversUrl": "https://api.openf1.org/v1/drivers?session_key=latest",
-    "openf1RowsSeen": 0,
-    "openf1Ok": false,
-    "openf1Status": 401,
-    "note": "If OpenF1 is locked during live sessions, enrichment is skipped (no crash). Headshots are LOCAL ONLY from repo /headshots."
-  },
-  "positionDeltaNotes": "positionDirection is one of UP/DOWN/SAME/NEW. positionChange = previousPosition - currentPosition.",
+  "header": "Current Driver Standings",
+  "generatedAtUtc": "2026-03-06T02:36:17.011Z",
+  "season": null,
+  "source": "placeholder",
   "drivers": []
 }
