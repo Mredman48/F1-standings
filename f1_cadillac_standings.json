@@ -1,10 +1,10 @@
 {
   "header": "Cadillac standings",
-  "generatedAtUtc": "2026-03-06T01:02:34.030Z",
+  "generatedAtUtc": "2026-03-06T01:54:03.641Z",
   "sources": {
     "openf1": "https://api.openf1.org/v1",
     "openf1Drivers": "https://api.openf1.org/v1/drivers?meeting_key=latest&team_name=Cadillac",
-    "openf1TeamNameUsed": "Cadillac",
+    "openf1TeamNameUsed": "NOT_FOUND",
     "logos": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/teamlogos/",
     "headshots": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/headshots/<first>-<last>.png",
     "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png",
@@ -15,7 +15,7 @@
   },
   "meta": {
     "mode": "OPENF1_DRIVERS_STANDINGS_PLACEHOLDERS_LOCAL_ASSETS",
-    "openf1DriversOk": true,
+    "openf1DriversOk": false,
     "teamAliasesTried": [
       "Cadillac",
       "Cadillac F1 Team",
@@ -50,48 +50,5 @@
       "country": "-"
     }
   },
-  "drivers": [
-    {
-      "firstName": "Sergio",
-      "lastName": "Perez",
-      "code": "PER",
-      "driverNumber": 11,
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-11.png",
-      "position": "-",
-      "points": "-",
-      "wins": "-",
-      "team": "Cadillac",
-      "placeholder": true,
-      "bestResult": {
-        "position": "-",
-        "raceName": "-",
-        "round": "-",
-        "date": "-",
-        "circuit": "-"
-      },
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/sergio-perez.png",
-      "fromOpenF1": true
-    },
-    {
-      "firstName": "Valtteri",
-      "lastName": "Bottas",
-      "code": "BOT",
-      "driverNumber": 77,
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-77.png",
-      "position": "-",
-      "points": "-",
-      "wins": "-",
-      "team": "Cadillac",
-      "placeholder": true,
-      "bestResult": {
-        "position": "-",
-        "raceName": "-",
-        "round": "-",
-        "date": "-",
-        "circuit": "-"
-      },
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/valtteri-bottas.png",
-      "fromOpenF1": true
-    }
-  ]
+  "drivers": []
 }
