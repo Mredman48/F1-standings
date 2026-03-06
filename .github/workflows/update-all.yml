@@ -31,7 +31,10 @@ jobs:
       - name: Install dependencies
         run: npm install --no-audit --no-fund
 
-      # ---- Gate 1: race weekend ----
+      ############################################################
+      # Gate 1 — Race Weekend Window
+      ############################################################
+
       - name: Race weekend gate
         id: gate
         run: node scripts/isRaceWeekend.mjs
@@ -45,11 +48,38 @@ jobs:
           echo "next_race=${{ steps.gate.outputs.next_race }}"
           exit 0
 
-      # ------------------------------------------------
-      # RUN SCRIPTS THAT DO NOT USE OPENF1
-      # ------------------------------------------------
-      - name: Run non-OpenF1 scripts
+      ############################################################
+      # Gate 2 — OpenF1 Live Session Check
+      ############################################################
+
+      - name: Check OpenF1 availability
+        id: openf1
         run: |
+          STATUS=$(curl -s -o /tmp/openf1.txt -w "%{http_code}" "https://api.openf1.org/v1/drivers?session_key=latest")
+
+          echo "status=$STATUS" >> "$GITHUB_OUTPUT"
+
+          if [ "$STATUS" = "401" ]; then
+            echo "blocked=true" >> "$GITHUB_OUTPUT"
+            echo "OpenF1 blocked due to live session."
+          else
+            echo "blocked=false" >> "$GITHUB_OUTPUT"
+            echo "OpenF1 available."
+          fi
+
+      - name: Skip (live session)
+        if: steps.openf1.outputs.blocked == 'true' && github.event_name != 'workflow_dispatch'
+        run: |
+          echo "Live session detected — skipping all updates to prevent empty data."
+          exit 0
+
+      ############################################################
+      # Run Scripts (ONLY when OpenF1 accessible)
+      ############################################################
+
+      - name: Run update scripts
+        run: |
+          node updateStandings.js
           node updateConstructors.js
           node updateNextRace.js
           node updateRedBullStandings.js
@@ -64,39 +94,10 @@ jobs:
           node updateCadillacStandings.js
           node UpdateVCARBStandings.js
 
-      # ------------------------------------------------
-      # CHECK OPENF1
-      # ------------------------------------------------
-      - name: OpenF1 availability check
-        id: openf1
-        run: |
-          STATUS=$(curl -s -o /tmp/openf1.txt -w "%{http_code}" "https://api.openf1.org/v1/drivers?session_key=latest")
+      ############################################################
+      # Commit Updates
+      ############################################################
 
-          echo "status=$STATUS" >> "$GITHUB_OUTPUT"
-
-          if [ "$STATUS" = "401" ]; then
-            echo "blocked=true" >> "$GITHUB_OUTPUT"
-            echo "OpenF1 locked (live session)"
-          else
-            echo "blocked=false" >> "$GITHUB_OUTPUT"
-            echo "OpenF1 available"
-          fi
-
-      # ------------------------------------------------
-      # RUN OPENF1 SCRIPTS
-      # ------------------------------------------------
-      - name: Run OpenF1 scripts
-        if: steps.openf1.outputs.blocked != 'true' || github.event_name == 'workflow_dispatch'
-        run: |
-          node updateStandings.js
-
-      - name: Skip OpenF1 scripts
-        if: steps.openf1.outputs.blocked == 'true' && github.event_name != 'workflow_dispatch'
-        run: echo "Skipping OpenF1 scripts due to live session."
-
-      # ------------------------------------------------
-      # COMMIT
-      # ------------------------------------------------
       - name: Commit & Push
         run: |
           set -e
