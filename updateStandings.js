@@ -3,7 +3,7 @@ import fs from "node:fs/promises";
 const OUTPUT_FILE = "f1_driver_standings.json";
 
 const OPENF1_URL =
-  "https://api.openf1.org/v1/drivers?session_key=latest";
+  "https://api.openf1.org/v1/drivers";
 
 const HEADSHOTS =
   "https://mredman48.github.io/F1-standings/headshots";
