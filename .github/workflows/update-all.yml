@@ -1,4 +1,3 @@
-# .github/workflows/update-all.yml
 name: Update All F1 Data (Race Weekends Only)
 
 on:
@@ -29,6 +28,7 @@ jobs:
         with:
           node-version: 20
 
+      # No dependencies needed for OpenF1 scripts
       - name: Install dependencies
         run: npm install
 
