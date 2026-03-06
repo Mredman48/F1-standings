@@ -2,7 +2,7 @@ name: Update All F1 Data (Race Weekends Only)
 
 on:
   schedule:
-    - cron: "*/30 * * * *" # every 30 minutes
+    - cron: "*/30 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo (full history)
+      - name: Checkout repo
         uses: actions/checkout@v4
         with:
           ref: main
@@ -31,7 +31,7 @@ jobs:
       - name: Install dependencies
         run: npm install --no-audit --no-fund
 
-      # ---- Gate 1: only proceed on race weekends ----
+      # ---- Gate 1: race weekend ----
       - name: Race weekend gate
         id: gate
         run: node scripts/isRaceWeekend.mjs
@@ -39,39 +39,17 @@ jobs:
       - name: Skip (not race weekend)
         if: steps.gate.outputs.in_window != 'true' && github.event_name != 'workflow_dispatch'
         run: |
-          echo "Not a race weekend window. Skipping updates."
+          echo "Not race weekend — skipping."
           echo "window_start=${{ steps.gate.outputs.window_start }}"
           echo "window_end=${{ steps.gate.outputs.window_end }}"
           echo "next_race=${{ steps.gate.outputs.next_race }}"
           exit 0
 
-      # ---- Gate 2: skip scheduled runs if OpenF1 is locked during a live session ----
-      - name: OpenF1 live-session gate
-        id: openf1_gate
+      # ------------------------------------------------
+      # RUN SCRIPTS THAT DO NOT USE OPENF1
+      # ------------------------------------------------
+      - name: Run non-OpenF1 scripts
         run: |
-          STATUS=$(curl -s -o /tmp/openf1_body.txt -w "%{http_code}" "https://api.openf1.org/v1/drivers?session_key=latest")
-
-          echo "openf1_status=$STATUS" >> "$GITHUB_OUTPUT"
-
-          if [ "$STATUS" = "401" ]; then
-            echo "openf1_blocked=true" >> "$GITHUB_OUTPUT"
-            echo "OpenF1 is locked during a live session. Skipping scheduled updates."
-          else
-            echo "openf1_blocked=false" >> "$GITHUB_OUTPUT"
-            echo "OpenF1 is available."
-          fi
-
-      - name: Skip (live session in progress)
-        if: steps.openf1_gate.outputs.openf1_blocked == 'true' && github.event_name != 'workflow_dispatch'
-        run: |
-          echo "Live session detected via OpenF1 401. Skipping this scheduled run."
-          exit 0
-
-      # ---------- RUN ALL UPDATE SCRIPTS ----------
-      - name: Run all JS updates
-        if: steps.openf1_gate.outputs.openf1_blocked != 'true' || github.event_name == 'workflow_dispatch'
-        run: |
-          node updateStandings.js
           node updateConstructors.js
           node updateNextRace.js
           node updateRedBullStandings.js
@@ -86,9 +64,40 @@ jobs:
           node updateCadillacStandings.js
           node UpdateVCARBStandings.js
 
-      # ---------- SINGLE COMMIT / PUSH ----------
-      - name: Commit & Push (safe)
-        if: steps.openf1_gate.outputs.openf1_blocked != 'true' || github.event_name == 'workflow_dispatch'
+      # ------------------------------------------------
+      # CHECK OPENF1
+      # ------------------------------------------------
+      - name: OpenF1 availability check
+        id: openf1
+        run: |
+          STATUS=$(curl -s -o /tmp/openf1.txt -w "%{http_code}" "https://api.openf1.org/v1/drivers?session_key=latest")
+
+          echo "status=$STATUS" >> "$GITHUB_OUTPUT"
+
+          if [ "$STATUS" = "401" ]; then
+            echo "blocked=true" >> "$GITHUB_OUTPUT"
+            echo "OpenF1 locked (live session)"
+          else
+            echo "blocked=false" >> "$GITHUB_OUTPUT"
+            echo "OpenF1 available"
+          fi
+
+      # ------------------------------------------------
+      # RUN OPENF1 SCRIPTS
+      # ------------------------------------------------
+      - name: Run OpenF1 scripts
+        if: steps.openf1.outputs.blocked != 'true' || github.event_name == 'workflow_dispatch'
+        run: |
+          node updateStandings.js
+
+      - name: Skip OpenF1 scripts
+        if: steps.openf1.outputs.blocked == 'true' && github.event_name != 'workflow_dispatch'
+        run: echo "Skipping OpenF1 scripts due to live session."
+
+      # ------------------------------------------------
+      # COMMIT
+      # ------------------------------------------------
+      - name: Commit & Push
         run: |
           set -e
 
@@ -116,5 +125,5 @@ jobs:
             sleep $((i * 2))
           done
 
-          echo "Push failed after retries."
+          echo "Push failed."
           exit 1
