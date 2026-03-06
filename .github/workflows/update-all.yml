@@ -1,8 +1,9 @@
+# .github/workflows/update-all.yml
 name: Update All F1 Data (Race Weekends Only)
 
 on:
   schedule:
-    - cron: "*/30 * * * *" # checks every 30 min; will SKIP unless race weekend
+    - cron: "*/30 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -15,12 +16,10 @@ concurrency:
 jobs:
   update-all:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repo (full history)
+      - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          ref: main
           fetch-depth: 0
 
       - name: Setup Node
@@ -28,11 +27,11 @@ jobs:
         with:
           node-version: 20
 
-      # No dependencies needed for OpenF1 scripts
+      # No dependencies needed for ICS script
       - name: Install dependencies
         run: npm install
 
-      # ---- Gate: only proceed on race weekends ----
+      # Race weekend gate
       - name: Race weekend gate
         id: gate
         run: node scripts/isRaceWeekend.mjs
@@ -41,13 +40,10 @@ jobs:
         if: steps.gate.outputs.in_window != 'true' && github.event_name != 'workflow_dispatch'
         run: |
           echo "Not a race weekend window. Skipping updates."
-          echo "window_start=${{ steps.gate.outputs.window_start }}"
-          echo "window_end=${{ steps.gate.outputs.window_end }}"
-          echo "next_race=${{ steps.gate.outputs.next_race }}"
           exit 0
 
-      # ---------- RUN ALL UPDATE SCRIPTS ----------
-      - name: Run all JS updates
+      # Run all JS updates
+      - name: Run all updates
         run: |
           node updateStandings.js
           node updateConstructors.js
@@ -64,34 +60,23 @@ jobs:
           node updateCadillacStandings.js
           node UpdateVCARBStandings.js
 
-      # ---------- SINGLE COMMIT / PUSH ----------
-      - name: Commit & Push (safe)
+      # Commit & push
+      - name: Commit & Push
         run: |
           set -e
-
           git config user.name "f1-bot"
           git config user.email "f1-bot@users.noreply.github.com"
-
           git add *.json headshots teamlogos driver-numbers || true
-
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0
           fi
-
           git commit -m "Automated F1 data update (race weekend)"
-
           for i in 1 2 3 4 5; do
-            if git push origin main; then
-              echo "Push succeeded."
-              exit 0
-            fi
-
-            echo "Push failed (attempt $i). Rebasing..."
+            if git push origin main; then exit 0; fi
             git fetch origin main
             git rebase origin/main
             sleep $((i * 2))
           done
-
           echo "Push failed after retries."
           exit 1
