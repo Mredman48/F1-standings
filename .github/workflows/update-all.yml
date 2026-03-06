@@ -2,7 +2,7 @@ name: Update All F1 Data (Race Weekends Only)
 
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "*/30 * * * *" # checks every 30 min; will SKIP unless race weekend
   workflow_dispatch:
 
 permissions:
@@ -20,7 +20,6 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
-          ref: main
           fetch-depth: 0
 
       - name: Setup Node
@@ -28,23 +27,21 @@ jobs:
         with:
           node-version: 20
 
-      # No dependencies needed
       - name: Install dependencies
         run: npm install
 
+      # Race weekend gate
       - name: Race weekend gate
         id: gate
         run: node scripts/isRaceWeekend.mjs
 
-      - name: Skip (not race weekend)
+      - name: Skip if not race weekend
         if: steps.gate.outputs.in_window != 'true' && github.event_name != 'workflow_dispatch'
         run: |
           echo "Not a race weekend window. Skipping updates."
-          echo "window_start=${{ steps.gate.outputs.window_start }}"
-          echo "window_end=${{ steps.gate.outputs.window_end }}"
-          echo "next_race=${{ steps.gate.outputs.next_race }}"
           exit 0
 
+      # Run updates
       - name: Run all JS updates
         run: |
           node updateStandings.js
@@ -62,15 +59,12 @@ jobs:
           node updateCadillacStandings.js
           node UpdateVCARBStandings.js
 
+      # Commit & push
       - name: Commit & Push
         run: |
-          set -e
           git config user.name "f1-bot"
           git config user.email "f1-bot@users.noreply.github.com"
           git add *.json headshots teamlogos driver-numbers || true
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
-            exit 0
-          fi
+          if git diff --cached --quiet; then exit 0; fi
           git commit -m "Automated F1 data update (race weekend)"
-          git push origin main || true
+          git push origin main || (git fetch origin main && git rebase origin/main && git push origin main)
