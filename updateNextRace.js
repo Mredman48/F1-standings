@@ -1,15 +1,49 @@
 // updateNextRace.js
 import fs from "fs/promises";
 
-const ICS_URL = "https://better-f1-calendar.vercel.app/api/calendar.ics";
+// Ergast API endpoint for current season
+const ERGAST_API = "https://ergast.com/api/f1/current.json";
 
-// Helpers
-function formatIsoUTC(date) {
-  return date ? date.toISOString() : null;
+// Map country name to ISO2 for flags
+const COUNTRY_MAP = {
+  australia: "au",
+  bahrain: "bh",
+  china: "cn",
+  japan: "jp",
+  "saudi arabia": "sa",
+  qatar: "qa",
+  singapore: "sg",
+  uae: "ae",
+  canada: "ca",
+  mexico: "mx",
+  brazil: "br",
+  italy: "it",
+  spain: "es",
+  france: "fr",
+  belgium: "be",
+  netherlands: "nl",
+  austria: "at",
+  hungary: "hu",
+  germany: "de",
+  portugal: "pt",
+};
+
+// Convert country name → flag URLs
+function buildFlagUrls(name) {
+  if (!name) return { iso2: null, png: null, svg: null };
+  const iso2 = COUNTRY_MAP[name.toLowerCase()] || null;
+  return iso2
+    ? {
+        iso2,
+        png: `https://flagcdn.com/w160/${iso2}.png`,
+        svg: `https://flagcdn.com/${iso2}.svg`,
+      }
+    : { iso2: null, png: null, svg: null };
 }
 
-function sessionTypeFromSummary(summary) {
-  const s = summary.toLowerCase();
+// Map session type
+function mapSessionType(name) {
+  const s = name.toLowerCase();
   if (s.includes("practice 1")) return "FP1";
   if (s.includes("practice 2")) return "FP2";
   if (s.includes("practice 3")) return "FP3";
@@ -17,134 +51,115 @@ function sessionTypeFromSummary(summary) {
   if (s.includes("sprint") && !s.includes("sprint qualifying")) return "Sprint";
   if (s.includes("qualifying") && !s.includes("sprint")) return "Quali";
   if (s.includes("race")) return "Race";
-  return null;
+  return name;
 }
 
-function countryToIso2(name) {
-  const map = {
-    australia: "au",
-    bahrain: "bh",
-    china: "cn",
-    japan: "jp",
-    "saudi arabia": "sa",
-    qatar: "qa",
-    singapore: "sg",
-    uae: "ae",
-    canada: "ca",
-    mexico: "mx",
-    brazil: "br",
-    italy: "it",
-    spain: "es",
-    france: "fr",
-    belgium: "be",
-    netherlands: "nl",
-    austria: "at",
-    hungary: "hu",
-    germany: "de",
-    portugal: "pt"
-  };
-  return map[(name || "").toLowerCase()] || null;
-}
-
-function buildFlagUrls(iso2) {
-  if (!iso2) return { iso2: null, png: null, svg: null };
-  return {
-    iso2,
-    png: `https://flagcdn.com/w160/${iso2}.png`,
-    svg: `https://flagcdn.com/${iso2}.svg`
-  };
-}
-
-async function fetchICS() {
-  const res = await fetch(ICS_URL, { headers: { "User-Agent": "f1-standings-bot/1.0" } });
-  if (!res.ok) throw new Error(`Failed to fetch ICS (${res.status})`);
-  return res.text();
-}
-
-// Minimal ICS parser for VEVENTs
-function parseICS(text) {
-  const events = [];
-  const lines = text.split(/\r?\n/);
-  let current = null;
-
-  for (const line of lines) {
-    if (line.startsWith("BEGIN:VEVENT")) current = {};
-    else if (line.startsWith("END:VEVENT")) {
-      if (current) events.push(current);
-      current = null;
-    } else if (current) {
-      const [key, ...rest] = line.split(":");
-      const value = rest.join(":");
-      if (key.startsWith("SUMMARY")) current.summary = value;
-      else if (key.startsWith("DTSTART")) current.start = new Date(value);
-      else if (key.startsWith("DTEND")) current.end = new Date(value);
-      else if (key.startsWith("LOCATION")) current.location = value;
-    }
-  }
-  return events;
+// Convert ISO string → UTC
+function formatUtc(dateStr) {
+  return dateStr ? new Date(dateStr).toISOString() : null;
 }
 
 async function updateNextRace() {
   const now = new Date();
-  const icsText = await fetchICS();
-  const parsedEvents = parseICS(icsText);
+  try {
+    const res = await fetch(ERGAST_API);
+    if (!res.ok) throw new Error(`Failed to fetch Ergast API (${res.status})`);
+    const data = await res.json();
 
-  const upcoming = parsedEvents.filter(e => e.start > now);
-
-  // group by GP
-  const grouped = {};
-  for (const ev of upcoming) {
-    const gpName = ev.summary.split(" - ")[0].trim();
-    grouped[gpName] = grouped[gpName] || [];
-    grouped[gpName].push(ev);
-  }
-
-  const nextGpNames = Object.keys(grouped);
-  if (nextGpNames.length === 0) throw new Error("No upcoming race found.");
-
-  const nextGpName = nextGpNames[0];
-  const gpSessions = grouped[nextGpName];
-
-  const sessionObjects = gpSessions.map(s => ({
-    type: sessionTypeFromSummary(s.summary),
-    startUtc: formatIsoUTC(s.start),
-    endUtc: formatIsoUTC(s.end)
-  }));
-
-  const starts = sessionObjects.map(s => new Date(s.startUtc));
-  const ends = sessionObjects.map(s => new Date(s.endUtc));
-  const weekendStart = new Date(Math.min(...starts));
-  const weekendEnd = new Date(Math.max(...ends));
-
-  const country = gpSessions[0].location || null;
-  const iso2 = countryToIso2(country);
-  const flag = buildFlagUrls(iso2);
-
-  const out = {
-    header: "Next F1 event",
-    generatedAtUtc: now.toISOString(),
-    source: { kind: "ics", url: ICS_URL },
-    nextEvent: {
-      type: "RACE_WEEKEND",
-      title: nextGpName,
-      season: String(weekendStart.getUTCFullYear()),
-      location: { raw: country, flag },
-      countdowns: {
-        startsInDays: Math.ceil((weekendStart - now) / (1000 * 60 * 60 * 24))
-      },
-      weekend: {
-        startUtc: formatIsoUTC(weekendStart),
-        endUtc: formatIsoUTC(weekendEnd)
-      },
-      sessions: sessionObjects
+    const races = data.MRData.RaceTable.Races || [];
+    if (!races.length) {
+      console.warn("No races found in Ergast API.");
+      await fs.writeFile("f1_next_race.json", JSON.stringify(null, null, 2));
+      return;
     }
-  };
 
-  await fs.writeFile("f1_next_race.json", JSON.stringify(out, null, 2));
-  console.log(`Wrote f1_next_race.json with full session schedule for ${nextGpName}`);
+    // Find the next race after now
+    const upcoming = races.filter(
+      (r) => new Date(r.date + "T" + (r.time || "00:00:00Z")) > now
+    );
+
+    if (!upcoming.length) {
+      console.warn("No upcoming race found.");
+      await fs.writeFile("f1_next_race.json", JSON.stringify(null, null, 2));
+      return;
+    }
+
+    const nextRace = upcoming[0];
+    const country = nextRace.Circuit.Location.country;
+    const flag = buildFlagUrls(country);
+
+    // Build session objects
+    const sessions = [];
+    if (nextRace.FirstPractice)
+      sessions.push({
+        type: "FP1",
+        startUtc: formatUtc(nextRace.FirstPractice.date + "T" + nextRace.FirstPractice.time),
+        endUtc: null,
+      });
+    if (nextRace.SecondPractice)
+      sessions.push({
+        type: "FP2",
+        startUtc: formatUtc(nextRace.SecondPractice.date + "T" + nextRace.SecondPractice.time),
+        endUtc: null,
+      });
+    if (nextRace.ThirdPractice)
+      sessions.push({
+        type: "FP3",
+        startUtc: formatUtc(nextRace.ThirdPractice.date + "T" + nextRace.ThirdPractice.time),
+        endUtc: null,
+      });
+    if (nextRace.Qualifying)
+      sessions.push({
+        type: "Quali",
+        startUtc: formatUtc(nextRace.Qualifying.date + "T" + nextRace.Qualifying.time),
+        endUtc: null,
+      });
+    if (nextRace.Sprint)
+      sessions.push({
+        type: "Sprint Quali",
+        startUtc: formatUtc(nextRace.Sprint.date + "T" + nextRace.Sprint.time),
+        endUtc: null,
+      });
+    // Main race
+    sessions.push({
+      type: "Race",
+      startUtc: formatUtc(nextRace.date + "T" + (nextRace.time || "00:00:00Z")),
+      endUtc: null,
+    });
+
+    // Weekend start/end
+    const sessionStarts = sessions
+      .map((s) => s.startUtc && new Date(s.startUtc))
+      .filter(Boolean);
+    const weekendStart = new Date(Math.min(...sessionStarts));
+    const weekendEnd = new Date(Math.max(...sessionStarts));
+
+    const out = {
+      header: "Next F1 event",
+      generatedAtUtc: now.toISOString(),
+      source: { kind: "ergast", url: ERGAST_API },
+      nextEvent: {
+        type: "RACE_WEEKEND",
+        title: nextRace.raceName,
+        season: nextRace.season,
+        location: { raw: country, flag },
+        countdowns: {
+          startsInDays: Math.ceil((weekendStart - now) / (1000 * 60 * 60 * 24)),
+        },
+        weekend: {
+          startUtc: weekendStart.toISOString(),
+          endUtc: weekendEnd.toISOString(),
+        },
+        sessions,
+      },
+    };
+
+    await fs.writeFile("f1_next_race.json", JSON.stringify(out, null, 2));
+    console.log(`Wrote f1_next_race.json for ${nextRace.raceName}`);
+  } catch (err) {
+    console.error(err);
+    await fs.writeFile("f1_next_race.json", JSON.stringify(null, null, 2));
+  }
 }
 
-updateNextRace().catch(err => {
-  console.error(err);
-  process.exit(1);
-});
+updateNextRace();
