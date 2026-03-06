@@ -1,10 +1,10 @@
 {
   "header": "VCARB standings",
-  "generatedAtUtc": "2026-03-06T05:33:00.866Z",
+  "generatedAtUtc": "2026-03-06T06:34:16.792Z",
   "sources": {
     "openf1": "https://api.openf1.org/v1",
     "openf1Drivers": "https://api.openf1.org/v1/drivers?meeting_key=latest&team_name=Racing%20Bulls",
-    "openf1TeamNameUsed": "NOT_FOUND",
+    "openf1TeamNameUsed": "Racing Bulls",
     "logos": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/teamlogos/",
     "headshots": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/headshots/<first>-<last>.png",
     "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png",
@@ -22,7 +22,7 @@
   },
   "meta": {
     "mode": "OPENF1_DRIVERS_STANDINGS_PLACEHOLDERS_LOCAL_ASSETS",
-    "openf1DriversOk": false,
+    "openf1DriversOk": true,
     "teamAliasesTried": [
       "Racing Bulls",
       "RB",
@@ -62,5 +62,48 @@
       "country": "-"
     }
   },
-  "drivers": []
+  "drivers": [
+    {
+      "firstName": "Liam",
+      "lastName": "Lawson",
+      "code": "LAW",
+      "driverNumber": 30,
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-30.png",
+      "position": "-",
+      "points": "-",
+      "wins": "-",
+      "team": "VCARB",
+      "placeholder": true,
+      "bestResult": {
+        "position": "-",
+        "raceName": "-",
+        "round": "-",
+        "date": "-",
+        "circuit": "-"
+      },
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/liam-lawson.png",
+      "fromOpenF1": true
+    },
+    {
+      "firstName": "Arvid",
+      "lastName": "Lindblad",
+      "code": "LIN",
+      "driverNumber": 41,
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-41.png",
+      "position": "-",
+      "points": "-",
+      "wins": "-",
+      "team": "VCARB",
+      "placeholder": true,
+      "bestResult": {
+        "position": "-",
+        "raceName": "-",
+        "round": "-",
+        "date": "-",
+        "circuit": "-"
+      },
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/arvid-lindblad.png",
+      "fromOpenF1": true
+    }
+  ]
 }

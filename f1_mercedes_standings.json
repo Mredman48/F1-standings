@@ -1,10 +1,10 @@
 {
   "header": "Mercedes standings",
-  "generatedAtUtc": "2026-03-06T05:32:03.583Z",
+  "generatedAtUtc": "2026-03-06T06:34:05.283Z",
   "sources": {
     "openf1": "https://api.openf1.org/v1",
     "openf1Drivers": "https://api.openf1.org/v1/drivers?meeting_key=latest&team_name=Mercedes",
-    "openf1TeamNameUsed": "NOT_FOUND",
+    "openf1TeamNameUsed": "Mercedes",
     "logos": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/teamlogos/",
     "headshots": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/headshots/<first>-<last>.png",
     "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png",
@@ -15,7 +15,7 @@
   },
   "meta": {
     "mode": "OPENF1_DRIVERS_STANDINGS_PLACEHOLDERS_LOCAL_ASSETS",
-    "openf1DriversOk": false,
+    "openf1DriversOk": true,
     "teamAliasesTried": [
       "Mercedes",
       "Mercedes AMG",
@@ -49,5 +49,48 @@
       "country": "-"
     }
   },
-  "drivers": []
+  "drivers": [
+    {
+      "firstName": "Kimi",
+      "lastName": "Antonelli",
+      "code": "ANT",
+      "driverNumber": 12,
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-12.png",
+      "position": "-",
+      "points": "-",
+      "wins": "-",
+      "team": "Mercedes",
+      "placeholder": true,
+      "bestResult": {
+        "position": "-",
+        "raceName": "-",
+        "round": "-",
+        "date": "-",
+        "circuit": "-"
+      },
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/kimi-antonelli.png",
+      "fromOpenF1": true
+    },
+    {
+      "firstName": "George",
+      "lastName": "Russell",
+      "code": "RUS",
+      "driverNumber": 63,
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-63.png",
+      "position": "-",
+      "points": "-",
+      "wins": "-",
+      "team": "Mercedes",
+      "placeholder": true,
+      "bestResult": {
+        "position": "-",
+        "raceName": "-",
+        "round": "-",
+        "date": "-",
+        "circuit": "-"
+      },
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/george-russell.png",
+      "fromOpenF1": true
+    }
+  ]
 }
