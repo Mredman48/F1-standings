@@ -1,10 +1,10 @@
 {
   "header": "Red Bull standings",
-  "generatedAtUtc": "2026-03-06T04:20:19.297Z",
+  "generatedAtUtc": "2026-03-06T05:32:00.408Z",
   "sources": {
     "openf1": "https://api.openf1.org/v1",
-    "openf1Drivers": "https://api.openf1.org/v1/drivers?meeting_key=latest&team_name=Red%20Bull%20Racing",
-    "openf1TeamNameUsed": "Red Bull Racing",
+    "openf1Drivers": "https://api.openf1.org/v1/drivers?meeting_key=latest&team_name=Red%20Bull",
+    "openf1TeamNameUsed": "NOT_FOUND",
     "logos": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/teamlogos/",
     "headshots": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/headshots/<first>-<last>.png",
     "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png",
@@ -15,7 +15,7 @@
   },
   "meta": {
     "mode": "OPENF1_DRIVERS_STANDINGS_PLACEHOLDERS_LOCAL_ASSETS",
-    "openf1DriversOk": true,
+    "openf1DriversOk": false,
     "teamAliasesTried": [
       "Red Bull",
       "Red Bull Racing",
@@ -47,48 +47,5 @@
       "country": "-"
     }
   },
-  "drivers": [
-    {
-      "firstName": "Max",
-      "lastName": "Verstappen",
-      "code": "VER",
-      "driverNumber": 3,
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-3.png",
-      "position": "-",
-      "points": "-",
-      "wins": "-",
-      "team": "Red Bull",
-      "placeholder": true,
-      "bestResult": {
-        "position": "-",
-        "raceName": "-",
-        "round": "-",
-        "date": "-",
-        "circuit": "-"
-      },
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/max-verstappen.png",
-      "fromOpenF1": true
-    },
-    {
-      "firstName": "Isack",
-      "lastName": "Hadjar",
-      "code": "HAD",
-      "driverNumber": 6,
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-6.png",
-      "position": "-",
-      "points": "-",
-      "wins": "-",
-      "team": "Red Bull",
-      "placeholder": true,
-      "bestResult": {
-        "position": "-",
-        "raceName": "-",
-        "round": "-",
-        "date": "-",
-        "circuit": "-"
-      },
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/isack-hadjar.png",
-      "fromOpenF1": true
-    }
-  ]
+  "drivers": []
 }
