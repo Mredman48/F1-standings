@@ -2,8 +2,13 @@ import fs from "node:fs/promises";
 
 const OUTPUT_FILE = "f1_driver_standings.json";
 
+const JOLPICA_URLS = [
+  "https://api.jolpi.ca/ergast/f1/current/driverStandings.json",
+  "https://api.jolpi.ca/ergast/f1/current/driverstandings.json"
+];
+
 const OPENF1_URL =
-  "https://api.openf1.org/v1/drivers";
+  "https://api.openf1.org/v1/drivers?meeting_key=latest";
 
 const HEADSHOTS =
   "https://mredman48.github.io/F1-standings/headshots";
@@ -15,7 +20,7 @@ const UA = "f1-standings-bot";
 /* ------------------------------------------------ */
 
 const DRIVER_SLUG_OVERRIDES = {
-  alexander: "alex",   // Alex Albon
+  alexander: "alex"
 };
 
 /* ------------------------------------------------ */
@@ -33,14 +38,8 @@ function slug(s) {
 
 function normalizeFirstName(first) {
   if (!first) return first;
-
   const lower = first.toLowerCase();
-
-  if (DRIVER_SLUG_OVERRIDES[lower]) {
-    return DRIVER_SLUG_OVERRIDES[lower];
-  }
-
-  return lower;
+  return DRIVER_SLUG_OVERRIDES[lower] || lower;
 }
 
 function headshot(first, last) {
@@ -52,38 +51,195 @@ function headshot(first, last) {
   return `${HEADSHOTS}/${firstSlug}-${lastSlug}.png`;
 }
 
-async function fetchJson(url) {
+function normalizeTeamName(name) {
+  if (!name) return null;
+
+  const map = {
+    "Red Bull Racing": "Red Bull",
+    "Oracle Red Bull Racing": "Red Bull",
+    "RB F1 Team": "VCARB",
+    "Visa Cash App RB": "VCARB",
+    "Visa Cash App RB F1 Team": "VCARB",
+    "Haas F1 Team": "Haas",
+    "Alpine F1 Team": "Alpine"
+  };
+
+  return map[name] || name;
+}
+
+async function fetchText(url) {
   const res = await fetch(url, {
     headers: {
       "User-Agent": UA,
-      Accept: "application/json",
+      Accept: "application/json"
     },
+    redirect: "follow"
   });
 
+  const text = await res.text();
+  return { res, text };
+}
+
+async function fetchJsonSafe(url) {
+  const { res, text } = await fetchText(url);
+
   if (!res.ok) {
-    throw new Error(`HTTP ${res.status}`);
+    return {
+      ok: false,
+      status: res.status,
+      text,
+      json: null,
+      url
+    };
   }
 
-  return res.json();
+  try {
+    return {
+      ok: true,
+      status: res.status,
+      text: null,
+      json: JSON.parse(text),
+      url
+    };
+  } catch {
+    return {
+      ok: false,
+      status: res.status,
+      text,
+      json: null,
+      url
+    };
+  }
+}
+
+async function readPreviousFile() {
+  try {
+    const raw = await fs.readFile(OUTPUT_FILE, "utf8");
+    const parsed = JSON.parse(raw);
+
+    if (Array.isArray(parsed?.drivers) && parsed.drivers.length > 0) {
+      return parsed;
+    }
+  } catch {}
+
+  return null;
 }
 
 /* ------------------------------------------------ */
-/* BUILD DRIVER LIST */
+/* SOURCE 1: JOLPICA REAL STANDINGS */
 /* ------------------------------------------------ */
 
+function parseJolpicaStandings(json) {
+  const season =
+    json?.MRData?.StandingsTable?.season ?? null;
+
+  const lists =
+    json?.MRData?.StandingsTable?.StandingsLists ?? [];
+
+  const rows =
+    lists.length ? lists[0].DriverStandings ?? [] : [];
+
+  if (!rows.length) {
+    return { season, drivers: [] };
+  }
+
+  const drivers = rows.map((d) => {
+    const ctor = d?.Constructors?.[0] ?? null;
+    const first = d?.Driver?.givenName ?? null;
+    const last = d?.Driver?.familyName ?? null;
+
+    return {
+      position: d?.position ? `P${d.position}` : "-",
+      positionNumber: d?.position ? Number(d.position) : null,
+      points: d?.points != null ? Number(d.points) : "-",
+      wins: d?.wins != null ? Number(d.wins) : "-",
+
+      driver: {
+        code: d?.Driver?.code ?? null,
+        firstName: first,
+        lastName: last,
+        fullName: first && last ? `${first} ${last}` : null,
+        nationality: d?.Driver?.nationality ?? null,
+        driverNumber: null,
+        headshotUrl: first && last ? headshot(first, last) : null
+      },
+
+      constructor: {
+        name: normalizeTeamName(ctor?.name ?? null),
+        fullName: ctor?.name ?? null,
+        nationality: ctor?.nationality ?? null
+      }
+    };
+  });
+
+  return { season, drivers };
+}
+
+async function getLiveStandingsFromJolpica() {
+  for (const url of JOLPICA_URLS) {
+    const resp = await fetchJsonSafe(url);
+
+    if (!resp.ok) continue;
+
+    const parsed = parseJolpicaStandings(resp.json);
+
+    if (parsed.drivers.length > 0) {
+      return {
+        ok: true,
+        season: parsed.season,
+        drivers: parsed.drivers,
+        sourceUrl: url
+      };
+    }
+  }
+
+  return {
+    ok: false,
+    season: null,
+    drivers: [],
+    sourceUrl: null
+  };
+}
+
+/* ------------------------------------------------ */
+/* SOURCE 2: OPENF1 ALPHABETICAL ROSTER */
+/* ------------------------------------------------ */
+
+function dedupeOpenF1Drivers(drivers) {
+  const byNumber = new Map();
+
+  for (const d of drivers) {
+    const num = d?.driver_number;
+    const first = d?.first_name;
+    const last = d?.last_name;
+
+    if (num == null || !first || !last) continue;
+
+    if (!byNumber.has(num)) {
+      byNumber.set(num, d);
+    }
+  }
+
+  return Array.from(byNumber.values());
+}
+
 function buildAlphabeticalDrivers(drivers) {
-  const rows = drivers
+  const uniqueDrivers = dedupeOpenF1Drivers(drivers);
+
+  const rows = uniqueDrivers
     .map((d) => ({
       firstName: d.first_name,
       lastName: d.last_name,
       driverNumber: d.driver_number,
-      team: d.team_name,
+      team: d.team_name
     }))
     .filter((d) => d.firstName && d.lastName);
 
-  rows.sort((a, b) =>
-    a.lastName.localeCompare(b.lastName)
-  );
+  rows.sort((a, b) => {
+    const lastCmp = a.lastName.localeCompare(b.lastName);
+    if (lastCmp !== 0) return lastCmp;
+    return a.firstName.localeCompare(b.firstName);
+  });
 
   return rows.map((d) => ({
     position: "-",
@@ -92,17 +248,41 @@ function buildAlphabeticalDrivers(drivers) {
     wins: "-",
 
     driver: {
+      code: null,
       firstName: d.firstName,
       lastName: d.lastName,
       fullName: `${d.firstName} ${d.lastName}`,
+      nationality: null,
       driverNumber: d.driverNumber ?? null,
-      headshotUrl: headshot(d.firstName, d.lastName),
+      headshotUrl: headshot(d.firstName, d.lastName)
     },
 
     constructor: {
-      name: d.team ?? null,
-    },
+      name: normalizeTeamName(d.team ?? null),
+      fullName: d.team ?? null,
+      nationality: null
+    }
   }));
+}
+
+async function getAlphabeticalFallbackFromOpenF1() {
+  const resp = await fetchJsonSafe(OPENF1_URL);
+
+  if (!resp.ok || !Array.isArray(resp.json) || resp.json.length === 0) {
+    return {
+      ok: false,
+      drivers: [],
+      sourceUrl: OPENF1_URL,
+      status: resp.status
+    };
+  }
+
+  return {
+    ok: true,
+    drivers: buildAlphabeticalDrivers(resp.json),
+    sourceUrl: OPENF1_URL,
+    status: resp.status
+  };
 }
 
 /* ------------------------------------------------ */
@@ -111,53 +291,84 @@ function buildAlphabeticalDrivers(drivers) {
 
 async function updateStandings() {
   const now = new Date().toISOString();
+  const previous = await readPreviousFile();
 
-  let drivers = [];
-  let mode = "LIVE";
+  // 1) Real standings
+  const live = await getLiveStandingsFromJolpica();
+  if (live.ok && live.drivers.length > 0) {
+    const out = {
+      header: `${live.season ?? "Current"} Driver Standings`,
+      generatedAtUtc: now,
+      season: live.season,
+      mode: "LIVE",
+      source: {
+        kind: "jolpica",
+        url: live.sourceUrl,
+        note: null
+      },
+      drivers: live.drivers
+    };
 
-  try {
-    const data = await fetchJson(OPENF1_URL);
-
-    if (!Array.isArray(data) || !data.length) {
-      throw new Error("OpenF1 returned no drivers");
-    }
-
-    drivers = buildAlphabeticalDrivers(data);
-
-    console.log("Source: OpenF1");
-  } catch (err) {
-    console.warn("OpenF1 unavailable:", err.message);
-
-    mode = "PLACEHOLDER";
-
-    try {
-      const fallback = await fetchJson(
-        "https://api.openf1.org/v1/drivers"
-      );
-
-      drivers = buildAlphabeticalDrivers(fallback);
-
-      console.log("Source: fallback alphabetical list");
-    } catch {
-      console.warn("Fallback also failed");
-    }
+    await fs.writeFile(OUTPUT_FILE, JSON.stringify(out, null, 2), "utf8");
+    console.log(`Wrote ${OUTPUT_FILE} mode=LIVE drivers=${out.drivers.length}`);
+    return;
   }
 
+  // 2) Alphabetical fallback
+  const alpha = await getAlphabeticalFallbackFromOpenF1();
+  if (alpha.ok && alpha.drivers.length > 0) {
+    const out = {
+      header: "Driver Standings",
+      generatedAtUtc: now,
+      season: live.season ?? previous?.season ?? null,
+      mode: "ALPHABETICAL_FALLBACK",
+      source: {
+        kind: "openf1-roster",
+        url: alpha.sourceUrl,
+        note: "No standings available; using alphabetical driver roster fallback."
+      },
+      drivers: alpha.drivers
+    };
+
+    await fs.writeFile(OUTPUT_FILE, JSON.stringify(out, null, 2), "utf8");
+    console.log(`Wrote ${OUTPUT_FILE} mode=ALPHABETICAL_FALLBACK drivers=${out.drivers.length}`);
+    return;
+  }
+
+  // 3) Previous file fallback
+  if (previous?.drivers?.length) {
+    const out = {
+      ...previous,
+      generatedAtUtc: now,
+      mode: "PREVIOUS_FILE_FALLBACK",
+      source: {
+        kind: "previous-file",
+        url: previous?.source?.url ?? null,
+        note: "Both live standings and alphabetical fallback were unavailable; reusing previous file."
+      }
+    };
+
+    await fs.writeFile(OUTPUT_FILE, JSON.stringify(out, null, 2), "utf8");
+    console.log(`Wrote ${OUTPUT_FILE} mode=PREVIOUS_FILE_FALLBACK drivers=${out.drivers.length}`);
+    return;
+  }
+
+  // 4) Last resort
   const out = {
     header: "Driver Standings",
     generatedAtUtc: now,
-    mode,
-    drivers,
+    season: null,
+    mode: "EMPTY",
+    source: {
+      kind: "none",
+      url: null,
+      note: "No standings or fallback roster available."
+    },
+    drivers: []
   };
 
-  await fs.writeFile(
-    OUTPUT_FILE,
-    JSON.stringify(out, null, 2)
-  );
-
-  console.log(
-    `Wrote ${OUTPUT_FILE} drivers=${drivers.length}`
-  );
+  await fs.writeFile(OUTPUT_FILE, JSON.stringify(out, null, 2), "utf8");
+  console.log(`Wrote ${OUTPUT_FILE} mode=EMPTY drivers=0`);
 }
 
 updateStandings().catch((err) => {
