@@ -7,9 +7,7 @@
     "updateNextRace": "node updateNextRace.js",
     "updateStandings": "node updateStandings.js"
   },
-  "author": "Your Name",
+  "author": "f1-bot",
   "license": "MIT",
-  "dependencies": {
-    "node-ical": "^2.0.0"
-  }
+  "dependencies": {}
 }
