@@ -2,10 +2,13 @@ import fs from "node:fs/promises";
 
 const OUTPUT_FILE = "f1_driver_standings.json";
 
-const JOLPICA_URLS = [
+const JOLPICA_STANDINGS_URLS = [
   "https://api.jolpi.ca/ergast/f1/current/driverStandings.json",
   "https://api.jolpi.ca/ergast/f1/current/driverstandings.json"
 ];
+
+const JOLPICA_LAST_RACE_URL =
+  "https://api.jolpi.ca/ergast/f1/current/last/results.json";
 
 const OPENF1_URL =
   "https://api.openf1.org/v1/drivers?meeting_key=latest";
@@ -126,18 +129,66 @@ async function readPreviousFile() {
 }
 
 /* ------------------------------------------------ */
+/* LAST FINISHED RACE */
+/* ------------------------------------------------ */
+
+async function getLastFinishedRace() {
+  const resp = await fetchJsonSafe(JOLPICA_LAST_RACE_URL);
+
+  if (!resp.ok) return null;
+
+  const race = resp?.json?.MRData?.RaceTable?.Races?.[0];
+  if (!race) return null;
+
+  const winner = race?.Results?.[0] ?? null;
+
+  return {
+    season: race?.season ?? null,
+    round: race?.round ? Number(race.round) : null,
+    raceName: race?.raceName ?? null,
+    date: race?.date ?? null,
+    time: race?.time ?? null,
+    circuit: {
+      name: race?.Circuit?.circuitName ?? null,
+      location: {
+        locality: race?.Circuit?.Location?.locality ?? null,
+        country: race?.Circuit?.Location?.country ?? null
+      }
+    },
+    winner: winner
+      ? {
+          position: winner?.position ? Number(winner.position) : null,
+          points: winner?.points != null ? Number(winner.points) : null,
+          driver: {
+            code: winner?.Driver?.code ?? null,
+            firstName: winner?.Driver?.givenName ?? null,
+            lastName: winner?.Driver?.familyName ?? null,
+            fullName:
+              winner?.Driver?.givenName && winner?.Driver?.familyName
+                ? `${winner.Driver.givenName} ${winner.Driver.familyName}`
+                : null,
+            nationality: winner?.Driver?.nationality ?? null
+          },
+          constructor: {
+            name: normalizeTeamName(winner?.Constructor?.name ?? null),
+            fullName: winner?.Constructor?.name ?? null,
+            nationality: winner?.Constructor?.nationality ?? null
+          }
+        }
+      : null
+  };
+}
+
+/* ------------------------------------------------ */
 /* SOURCE 1: JOLPICA REAL STANDINGS */
 /* ------------------------------------------------ */
 
 function parseJolpicaStandings(json) {
-  const season =
-    json?.MRData?.StandingsTable?.season ?? null;
+  const season = json?.MRData?.StandingsTable?.season ?? null;
 
-  const lists =
-    json?.MRData?.StandingsTable?.StandingsLists ?? [];
+  const lists = json?.MRData?.StandingsTable?.StandingsLists ?? [];
 
-  const rows =
-    lists.length ? lists[0].DriverStandings ?? [] : [];
+  const rows = lists.length ? lists[0].DriverStandings ?? [] : [];
 
   if (!rows.length) {
     return { season, drivers: [] };
@@ -176,7 +227,7 @@ function parseJolpicaStandings(json) {
 }
 
 async function getLiveStandingsFromJolpica() {
-  for (const url of JOLPICA_URLS) {
+  for (const url of JOLPICA_STANDINGS_URLS) {
     const resp = await fetchJsonSafe(url);
 
     if (!resp.ok) continue;
@@ -292,8 +343,9 @@ async function getAlphabeticalFallbackFromOpenF1() {
 async function updateStandings() {
   const now = new Date().toISOString();
   const previous = await readPreviousFile();
+  const lastRace = await getLastFinishedRace();
 
-  // 1) Real standings
+  // 1) Real standings from Jolpica
   const live = await getLiveStandingsFromJolpica();
   if (live.ok && live.drivers.length > 0) {
     const out = {
@@ -306,6 +358,7 @@ async function updateStandings() {
         url: live.sourceUrl,
         note: null
       },
+      lastRace,
       drivers: live.drivers
     };
 
@@ -314,7 +367,7 @@ async function updateStandings() {
     return;
   }
 
-  // 2) Alphabetical fallback
+  // 2) Alphabetical fallback from OpenF1
   const alpha = await getAlphabeticalFallbackFromOpenF1();
   if (alpha.ok && alpha.drivers.length > 0) {
     const out = {
@@ -327,6 +380,7 @@ async function updateStandings() {
         url: alpha.sourceUrl,
         note: "No standings available; using alphabetical driver roster fallback."
       },
+      lastRace: lastRace ?? previous?.lastRace ?? null,
       drivers: alpha.drivers
     };
 
@@ -345,7 +399,8 @@ async function updateStandings() {
         kind: "previous-file",
         url: previous?.source?.url ?? null,
         note: "Both live standings and alphabetical fallback were unavailable; reusing previous file."
-      }
+      },
+      lastRace: lastRace ?? previous?.lastRace ?? null
     };
 
     await fs.writeFile(OUTPUT_FILE, JSON.stringify(out, null, 2), "utf8");
@@ -353,7 +408,7 @@ async function updateStandings() {
     return;
   }
 
-  // 4) Last resort
+  // 4) Last resort empty
   const out = {
     header: "Driver Standings",
     generatedAtUtc: now,
@@ -364,6 +419,7 @@ async function updateStandings() {
       url: null,
       note: "No standings or fallback roster available."
     },
+    lastRace: lastRace ?? null,
     drivers: []
   };
 
