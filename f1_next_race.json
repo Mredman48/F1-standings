@@ -1,23 +1,23 @@
 {
   "header": "Next F1 event",
-  "generatedAtUtc": "2026-03-06T01:53:43.618Z",
+  "generatedAtUtc": "2026-03-06T02:12:33.621Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
-    "kind": "ics",
+    "kind": "ics+formula1",
     "url": "https://better-f1-calendar.vercel.app/api/calendar.ics"
   },
   "nextEvent": {
     "type": "RACE_WEEKEND",
-    "title": "F1 Australian GP",
+    "title": "FORMULA 1 QATAR AIRWAYS AUSTRALIAN GRAND PRIX 2026",
     "season": "2026",
     "location": {
       "raw": null,
       "city": "Melbourne",
-      "country": null,
+      "country": "Australia",
       "flag": {
-        "iso2": null,
-        "png": null,
-        "svg": null
+        "iso2": "au",
+        "png": "https://flagcdn.com/w160/au.png",
+        "svg": "https://flagcdn.com/au.svg"
       }
     },
     "racePage": {
