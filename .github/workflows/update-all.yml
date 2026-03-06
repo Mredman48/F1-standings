@@ -1,54 +1,54 @@
-name: Update F1 Data on Race Weekends
+name: Update All F1 Data (Race Weekends Only)
 
 on:
   schedule:
-    - cron: '*/30 * * * *'  # every 30 minutes
+    - cron: "*/30 * * * *" # checks every 30 min; will SKIP unless race weekend
   workflow_dispatch:
 
+permissions:
+  contents: write
+
+concurrency:
+  group: f1-standings-publish
+  cancel-in-progress: false
+
 jobs:
-  check-and-run:
+  update-all:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Checkout repo (full history)
+        uses: actions/checkout@v4
         with:
-          node-version: '20'
+          ref: main
+          fetch-depth: 0
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      # Use npm install (NOT ci) so it works even if package-lock was deleted/changed
       - name: Install dependencies
-        run: npm install
+        run: npm install --no-audit --no-fund
 
-      - name: Check if it's a race weekend
-        id: check_race
+      # ---- Gate: only proceed on race weekends ----
+      - name: Race weekend gate
+        id: gate
+        run: node scripts/isRaceWeekend.mjs
+
+      - name: Skip (not race weekend)
+        if: steps.gate.outputs.in_window != 'true' && github.event_name != 'workflow_dispatch'
         run: |
-          node -e "
-          import fs from 'fs/promises';
-          import ical from 'node-ical';
+          echo "Not a race weekend window. Skipping updates."
+          echo "window_start=${{ steps.gate.outputs.window_start }}"
+          echo "window_end=${{ steps.gate.outputs.window_end }}"
+          echo "next_race=${{ steps.gate.outputs.next_race }}"
+          exit 0
 
-          const ICS_URL = 'https://better-f1-calendar.vercel.app/api/calendar.ics';
-          const now = new Date();
-
-          const ics = await ical.async.fromURL(ICS_URL, { headers: { 'User-Agent': 'f1-standings-bot/1.0' } });
-          const events = Object.values(ics).filter(e => e?.type === 'VEVENT');
-
-          const upcomingWeekend = events.find(e => {
-            const start = new Date(e.start);
-            const end = new Date(e.end);
-            return start <= now && now <= end;
-          });
-
-          if (!upcomingWeekend) {
-            console.log('No race weekend currently. Exiting.');
-            process.exit(78); // Neutral exit for GitHub Actions
-          } else {
-            console.log('Race weekend ongoing. Running updates.');
-          }
-          "
-
-      - name: Run all update scripts
-        if: ${{ success() }}
+      # ---------- RUN ALL UPDATE SCRIPTS ----------
+      - name: Run all JS updates
         run: |
           node updateStandings.js
           node updateConstructors.js
@@ -64,3 +64,36 @@ jobs:
           node updateAudiStandings.js
           node updateCadillacStandings.js
           node UpdateVCARBStandings.js
+
+      # ---------- SINGLE COMMIT / PUSH ----------
+      - name: Commit & Push (safe)
+        run: |
+          set -e
+
+          git config user.name "f1-bot"
+          git config user.email "f1-bot@users.noreply.github.com"
+
+          # include package-lock.json if npm generated it
+          git add *.json headshots teamlogos driver-numbers trackmaps package-lock.json || true
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "Automated F1 data update (race weekend)"
+
+          for i in 1 2 3 4 5; do
+            if git push origin main; then
+              echo "Push succeeded."
+              exit 0
+            fi
+
+            echo "Push failed (attempt $i). Rebasing..."
+            git fetch origin main
+            git rebase origin/main
+            sleep $((i * 2))
+          done
+
+          echo "Push failed after retries."
+          exit 1
