@@ -6,15 +6,10 @@ import sharp from "sharp";
 
 const ICS_URL = "https://better-f1-calendar.vercel.app/api/calendar.ics";
 
-// These are only used for the pre-formatted local strings we include in sessions.
-// Widgy can also convert from startUtc itself, but this keeps your JSON widget-ready.
 const USER_TZ = "America/Edmonton";
 const LOCALE = "en-CA";
 
-// Your GitHub Pages base for this repo
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
-
-// Where track PNGs are written (commit this folder)
 const TRACKMAP_DIR = "trackmaps";
 
 const UA = "f1-standings-bot/1.0 (GitHub Actions)";
@@ -60,9 +55,9 @@ function makeTrackPngUrl(filename) {
 
 /* -------------------- network helpers -------------------- */
 
-async function fetchText(url) {
+async function fetchText(url, accept = "text/html,*/*") {
   const res = await fetch(url, {
-    headers: { "User-Agent": UA, Accept: "text/html,*/*" },
+    headers: { "User-Agent": UA, Accept: accept },
     redirect: "follow",
   });
   if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${url}`);
@@ -132,11 +127,17 @@ function titleCaseFromSlug(slug) {
     .join(" ");
 }
 
+function stripFormula1Prefix(name) {
+  if (!name) return name;
+  return name
+    .replace(/^formula 1\s+/i, "F1 ")
+    .replace(/^formule 1\s+/i, "F1 ")
+    .trim();
+}
+
 /* -------------------- track map extraction -------------------- */
 
 function extractDetailedTrackMediaUrl(html, season) {
-  // Matches:
-  // https://media.formula1.com/image/upload/.../common/f1/2026/track/2026trackmelbournedetailed.webp
   const re = new RegExp(
     `https://media\\.formula1\\.com/image/upload[^"']+/common/f1/${season}/track/[^"']+detailed\\.(webp|png)`,
     "i"
@@ -146,7 +147,6 @@ function extractDetailedTrackMediaUrl(html, season) {
 }
 
 function getCityFromTrackMediaUrl(mediaUrl) {
-  // ".../2026trackmelbournedetailed.webp" -> "Melbourne"
   if (!mediaUrl) return null;
   const m = mediaUrl.match(/\/(\d{4})track([a-z0-9]+)detailed\.(webp|png)/i);
   if (!m) return null;
@@ -162,8 +162,7 @@ async function downloadToPng({ mediaUrl, outName }) {
   return makeTrackPngUrl(outName);
 }
 
-async function fetchTrackMapFromF1RacePage({ pageUrl, season, outFileBase }) {
-  const html = await fetchText(pageUrl);
+async function fetchTrackMapFromRacePageHtml({ html, pageUrl, season, outFileBase }) {
   const mediaUrl = extractDetailedTrackMediaUrl(html, season);
   if (!mediaUrl) {
     return {
@@ -179,6 +178,121 @@ async function fetchTrackMapFromF1RacePage({ pageUrl, season, outFileBase }) {
   return { found: true, pageUrl, mediaUrl, pngUrl, note: null };
 }
 
+/* -------------------- official F1 page helpers -------------------- */
+
+function extractF1RacePageUrlFromDescription(description, season) {
+  const text = String(description || "");
+  const re = new RegExp(`https://www\\.formula1\\.com/en/racing/${season}/[a-z0-9-]+`, "i");
+  const m = text.match(re);
+  return m ? m[0] : null;
+}
+
+function slugFromRacePageUrl(url, season) {
+  if (!url) return null;
+  const m = url.match(new RegExp(`/en/racing/${season}/([a-z0-9-]+)`, "i"));
+  return m ? m[1] : null;
+}
+
+function countryFromSlug(slug) {
+  const map = {
+    australia: "Australia",
+    china: "China",
+    japan: "Japan",
+    bahrain: "Bahrain",
+    saudi-arabia: "Saudi Arabia",
+    miami: "United States",
+    emilia-romagna: "Italy",
+    monaco: "Monaco",
+    spain: "Spain",
+    canada: "Canada",
+    austria: "Austria",
+    great-britain: "United Kingdom",
+    belgium: "Belgium",
+    hungary: "Hungary",
+    netherlands: "Netherlands",
+    italy: "Italy",
+    azerbaijan: "Azerbaijan",
+    singapore: "Singapore",
+    united-states: "United States",
+    mexico: "Mexico",
+    sao-paulo: "Brazil",
+    las-vegas: "United States",
+    qatar: "Qatar",
+    abu-dhabi: "United Arab Emirates",
+    madrid: "Spain",
+  };
+  return map[slug] || null;
+}
+
+function extractOfficialRaceMetaFromHtml(html, { fallbackGpName, fallbackSlug, fallbackCountry, fallbackCity }) {
+  const out = {
+    officialTitle: null,
+    city: fallbackCity || null,
+    country: fallbackCountry || null,
+  };
+
+  // JSON-LD / embedded metadata patterns
+  const titlePatterns = [
+    /"name":"([^"]*Grand Prix[^"]*\d{4})"/i,
+    /"headline":"([^"]*Grand Prix[^"]*\d{4})"/i,
+    /<title>\s*([^<]*Grand Prix[^<]*)<\/title>/i,
+  ];
+
+  for (const re of titlePatterns) {
+    const m = html.match(re);
+    if (m?.[1]) {
+      out.officialTitle = m[1]
+        .replace(/\s*\|\s*Formula 1.*$/i, "")
+        .replace(/\s*-\s*Formula 1.*$/i, "")
+        .trim();
+      break;
+    }
+  }
+
+  const cityPatterns = [
+    /"addressLocality":"([^"]+)"/i,
+    /"locality":"([^"]+)"/i,
+  ];
+  for (const re of cityPatterns) {
+    const m = html.match(re);
+    if (m?.[1]) {
+      out.city = titleCaseWords(m[1]);
+      break;
+    }
+  }
+
+  const countryPatterns = [
+    /"addressCountry":"([^"]+)"/i,
+    /"country":"([^"]+)"/i,
+  ];
+  for (const re of countryPatterns) {
+    const m = html.match(re);
+    if (m?.[1]) {
+      out.country = titleCaseWords(m[1]);
+      break;
+    }
+  }
+
+  if (!out.country && fallbackSlug) {
+    out.country = countryFromSlug(fallbackSlug);
+  }
+
+  if (!out.officialTitle) {
+    if (out.country && fallbackGpName) {
+      // Turn "F1 Australian GP" into "Australian Grand Prix"
+      const cleaned = fallbackGpName
+        .replace(/^F1\s+/i, "")
+        .replace(/\s+GP$/i, " Grand Prix")
+        .trim();
+      out.officialTitle = cleaned;
+    } else {
+      out.officialTitle = fallbackGpName || null;
+    }
+  }
+
+  return out;
+}
+
 /* -------------------- resolve correct race page (NO testing) -------------------- */
 
 function isBadSlug(slug) {
@@ -187,22 +301,21 @@ function isBadSlug(slug) {
 }
 
 function scoreSlug(slug, gpName, locationRaw) {
-  // score based on overlap with GP name and location (Australia, etc.)
   const sTokens = tokens(slug);
   const gpTokens = new Set(tokens(gpName));
   const locTokens = new Set(tokens(locationRaw));
 
   let score = 0;
 
-  // slug tokens matching location is strong
   for (const t of sTokens) {
     if (locTokens.has(t)) score += 20;
     if (gpTokens.has(t)) score += 6;
   }
 
-  // small boost if gpName contains the country adjective (australian -> australia)
   const gpNorm = normalize(gpName);
   if (slug === "australia" && gpNorm.includes("australian")) score += 30;
+  if (slug === "great-britain" && gpNorm.includes("british")) score += 30;
+  if (slug === "sao-paulo" && gpNorm.includes("brazil")) score += 25;
 
   return score;
 }
@@ -211,8 +324,10 @@ async function resolveRacePage({ season, gpName, locationRaw }) {
   const seasonUrl = `https://www.formula1.com/en/racing/${season}`;
   const html = await fetchText(seasonUrl);
 
-  // pull all /en/racing/{season}/{slug}
-  const matches = Array.from(html.matchAll(new RegExp(`/en/racing/${season}/[a-z0-9-]+`, "g"))).map((m) => m[0]);
+  const matches = Array.from(
+    html.matchAll(new RegExp(`/en/racing/${season}/[a-z0-9-]+`, "g"))
+  ).map((m) => m[0]);
+
   const uniq = [...new Set(matches)];
 
   const slugs = uniq
@@ -245,12 +360,10 @@ function normalizeCountryName(s) {
     .trim();
 }
 
-// Minimal mapping; add as needed when you hit an unmapped country string.
 function countryToIso2(countryName) {
   const c = normalizeCountryName(countryName);
 
   const map = {
-    // Oceania / Asia / Middle East
     australia: "au",
     bahrain: "bh",
     china: "cn",
@@ -260,8 +373,6 @@ function countryToIso2(countryName) {
     singapore: "sg",
     "united arab emirates": "ae",
     uae: "ae",
-
-    // Americas
     canada: "ca",
     mexico: "mx",
     brazil: "br",
@@ -269,8 +380,6 @@ function countryToIso2(countryName) {
     "united states": "us",
     "united states of america": "us",
     usa: "us",
-
-    // Europe
     "united kingdom": "gb",
     "great britain": "gb",
     britain: "gb",
@@ -291,6 +400,7 @@ function countryToIso2(countryName) {
     poland: "pl",
     turkey: "tr",
     switzerland: "ch",
+    azerbaijan: "az",
   };
 
   return map[c] || null;
@@ -348,7 +458,6 @@ function computeWindowFromSessions(sessions) {
 async function updateNextRace() {
   const now = new Date();
 
-  // ICS -> sessions
   const ics = await ical.async.fromURL(ICS_URL, { headers: { "User-Agent": UA } });
   const events = Object.values(ics).filter((x) => x?.type === "VEVENT");
 
@@ -362,11 +471,12 @@ async function updateNextRace() {
       const end = ev.end instanceof Date ? ev.end : new Date(ev.end);
 
       return {
-        gpName: getGpName(summary),
+        gpName: stripFormula1Prefix(getGpName(summary)),
         sessionType,
         start,
         end,
-        location: ev.location || null, // often just a country like "Australia"
+        location: ev.location || null,
+        description: ev.description || null,
       };
     })
     .filter(Boolean)
@@ -376,30 +486,54 @@ async function updateNextRace() {
   if (!nextRaceSession) throw new Error("Could not find upcoming Race session in calendar feed.");
 
   const season = String(nextRaceSession.start.getUTCFullYear());
-  const gpName = nextRaceSession.gpName;
+  const gpNameShort = nextRaceSession.gpName;
   const locationRaw = nextRaceSession.location || "";
 
-  // group sessions for this GP
-  const gpSessions = allSessions.filter((s) => s.gpName === gpName).sort((a, b) => a.start - b.start);
+  const gpSessions = allSessions
+    .filter((s) => s.gpName === gpNameShort)
+    .sort((a, b) => a.start - b.start);
+
   const weekendStart = gpSessions[0].start;
 
-  // resolve correct race page slug (and avoid testing slugs)
-  const racePage = await resolveRacePage({ season, gpName, locationRaw });
+  // 1) Prefer official F1 event page from ICS description
+  const racePageUrlFromDescription = extractF1RacePageUrlFromDescription(
+    nextRaceSession.description,
+    season
+  );
 
-  // track map from the official race page
-  const trackMap = await fetchTrackMapFromF1RacePage({
+  let racePage;
+  if (racePageUrlFromDescription) {
+    racePage = {
+      slug: slugFromRacePageUrl(racePageUrlFromDescription, season),
+      pageUrl: racePageUrlFromDescription,
+      rankedTop: [],
+    };
+  } else {
+    racePage = await resolveRacePage({ season, gpName: gpNameShort, locationRaw });
+  }
+
+  const racePageHtml = await fetchText(racePage.pageUrl);
+
+  const trackMap = await fetchTrackMapFromRacePageHtml({
+    html: racePageHtml,
     pageUrl: racePage.pageUrl,
     season,
     outFileBase: `f1_${season}_${racePage.slug}_detailed`,
   });
 
-  // city from the detailed track image filename (melbourne, etc.)
-  const city = getCityFromTrackMediaUrl(trackMap.mediaUrl);
+  const cityFromTrackMap = getCityFromTrackMediaUrl(trackMap.mediaUrl);
 
-  // country from ICS raw (your feed commonly returns "Australia")
-  const country = locationRaw ? titleCaseWords(locationRaw) : null;
+  const meta = extractOfficialRaceMetaFromHtml(racePageHtml, {
+    fallbackGpName: gpNameShort,
+    fallbackSlug: racePage.slug,
+    fallbackCountry: locationRaw ? titleCaseWords(locationRaw) : null,
+    fallbackCity: cityFromTrackMap,
+  });
 
-  // flag URLs from country ISO2
+  const officialTitle = meta.officialTitle || gpNameShort;
+  const city = meta.city || cityFromTrackMap || null;
+  const country = meta.country || (locationRaw ? titleCaseWords(locationRaw) : null);
+
   const iso2 = countryToIso2(country);
   const flag = buildFlagUrls(iso2);
 
@@ -410,16 +544,16 @@ async function updateNextRace() {
     header: "Next F1 event",
     generatedAtUtc: now.toISOString(),
     displayTimeZone: USER_TZ,
-    source: { kind: "ics", url: ICS_URL },
+    source: { kind: "ics+formula1", url: ICS_URL },
     nextEvent: {
       type: "RACE_WEEKEND",
-      title: gpName,
+      title: officialTitle,
       season,
       location: {
         raw: locationRaw || null,
         city: city || null,
         country: country || null,
-        flag, // { iso2, png, svg }
+        flag,
       },
       racePage: {
         slug: racePage.slug,
@@ -434,13 +568,12 @@ async function updateNextRace() {
 
   await fs.writeFile("f1_next_race.json", JSON.stringify(out, null, 2), "utf8");
 
-  // Helpful logs for Actions debugging
-  console.log("Resolved race slug:", racePage.slug);
+  console.log("Short GP name from ICS:", gpNameShort);
+  console.log("Official title:", officialTitle);
   console.log("Race page url:", racePage.pageUrl);
-  console.log("Ranked slugs (top):", racePage.rankedTop);
   console.log("Location raw:", locationRaw);
   console.log("Country:", country, "ISO2:", iso2);
-  console.log("City inferred:", city);
+  console.log("City:", city);
   console.log("Flag:", flag);
   console.log("Track map:", trackMap);
   console.log("Wrote f1_next_race.json");
