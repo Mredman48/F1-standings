@@ -2,7 +2,7 @@ name: Update All F1 Data (Race Weekends Only)
 
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "*/30 * * * *" # every 30 minutes
   workflow_dispatch:
 
 permissions:
@@ -31,7 +31,7 @@ jobs:
       - name: Install dependencies
         run: npm install --no-audit --no-fund
 
-      # ---- Gate: only proceed on race weekends ----
+      # ---- Gate 1: only proceed on race weekends ----
       - name: Race weekend gate
         id: gate
         run: node scripts/isRaceWeekend.mjs
@@ -45,7 +45,31 @@ jobs:
           echo "next_race=${{ steps.gate.outputs.next_race }}"
           exit 0
 
+      # ---- Gate 2: skip scheduled runs if OpenF1 is locked during a live session ----
+      - name: OpenF1 live-session gate
+        id: openf1_gate
+        run: |
+          STATUS=$(curl -s -o /tmp/openf1_body.txt -w "%{http_code}" "https://api.openf1.org/v1/drivers?session_key=latest")
+
+          echo "openf1_status=$STATUS" >> "$GITHUB_OUTPUT"
+
+          if [ "$STATUS" = "401" ]; then
+            echo "openf1_blocked=true" >> "$GITHUB_OUTPUT"
+            echo "OpenF1 is locked during a live session. Skipping scheduled updates."
+          else
+            echo "openf1_blocked=false" >> "$GITHUB_OUTPUT"
+            echo "OpenF1 is available."
+          fi
+
+      - name: Skip (live session in progress)
+        if: steps.openf1_gate.outputs.openf1_blocked == 'true' && github.event_name != 'workflow_dispatch'
+        run: |
+          echo "Live session detected via OpenF1 401. Skipping this scheduled run."
+          exit 0
+
+      # ---------- RUN ALL UPDATE SCRIPTS ----------
       - name: Run all JS updates
+        if: steps.openf1_gate.outputs.openf1_blocked != 'true' || github.event_name == 'workflow_dispatch'
         run: |
           node updateStandings.js
           node updateConstructors.js
@@ -62,7 +86,9 @@ jobs:
           node updateCadillacStandings.js
           node UpdateVCARBStandings.js
 
+      # ---------- SINGLE COMMIT / PUSH ----------
       - name: Commit & Push (safe)
+        if: steps.openf1_gate.outputs.openf1_blocked != 'true' || github.event_name == 'workflow_dispatch'
         run: |
           set -e
 
