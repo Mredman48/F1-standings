@@ -1,10 +1,10 @@
 {
   "header": "McLaren standings",
-  "generatedAtUtc": "2026-03-06T02:44:09.235Z",
+  "generatedAtUtc": "2026-03-06T03:02:17.737Z",
   "sources": {
     "openf1": "https://api.openf1.org/v1",
     "openf1Drivers": "https://api.openf1.org/v1/drivers?meeting_key=latest&team_name=McLaren",
-    "openf1TeamNameUsed": "NOT_FOUND",
+    "openf1TeamNameUsed": "McLaren",
     "logos": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/teamlogos/",
     "headshots": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/headshots/<first>-<last>.png",
     "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png",
@@ -15,7 +15,7 @@
   },
   "meta": {
     "mode": "OPENF1_DRIVERS_STANDINGS_PLACEHOLDERS_LOCAL_ASSETS",
-    "openf1DriversOk": false,
+    "openf1DriversOk": true,
     "teamAliasesTried": [
       "McLaren",
       "McLaren F1 Team"
@@ -46,5 +46,48 @@
       "country": "-"
     }
   },
-  "drivers": []
+  "drivers": [
+    {
+      "firstName": "Lando",
+      "lastName": "Norris",
+      "code": "NOR",
+      "driverNumber": 1,
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-1.png",
+      "position": "-",
+      "points": "-",
+      "wins": "-",
+      "team": "McLaren",
+      "placeholder": true,
+      "bestResult": {
+        "position": "-",
+        "raceName": "-",
+        "round": "-",
+        "date": "-",
+        "circuit": "-"
+      },
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lando-norris.png",
+      "fromOpenF1": true
+    },
+    {
+      "firstName": "Oscar",
+      "lastName": "Piastri",
+      "code": "PIA",
+      "driverNumber": 81,
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-81.png",
+      "position": "-",
+      "points": "-",
+      "wins": "-",
+      "team": "McLaren",
+      "placeholder": true,
+      "bestResult": {
+        "position": "-",
+        "raceName": "-",
+        "round": "-",
+        "date": "-",
+        "circuit": "-"
+      },
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/oscar-piastri.png",
+      "fromOpenF1": true
+    }
+  ]
 }

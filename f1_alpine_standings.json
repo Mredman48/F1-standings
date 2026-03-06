@@ -1,6 +1,6 @@
 {
   "header": "Alpine standings",
-  "generatedAtUtc": "2026-03-06T02:44:10.568Z",
+  "generatedAtUtc": "2026-03-06T03:02:18.739Z",
   "sources": {
     "openf1": "https://api.openf1.org/v1",
     "openf1Drivers": "https://api.openf1.org/v1/drivers?meeting_key=latest&team_name=Alpine",
@@ -59,7 +59,7 @@
         "circuit": "-"
       },
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/pierre-gasly.png",
-      "fromOpenF1": false
+      "fromOpenF1": true
     },
     {
       "firstName": "Franco",
@@ -80,7 +80,7 @@
         "circuit": "-"
       },
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/franco-colapinto.png",
-      "fromOpenF1": false
+      "fromOpenF1": true
     }
   ]
 }
