@@ -2,6 +2,7 @@
   "name": "f1-standings",
   "version": "1.0.0",
   "description": "F1 standings and next race updater",
+  "main": "updateNextRace.js",
   "type": "module",
   "scripts": {
     "updateNextRace": "node updateNextRace.js",
@@ -9,5 +10,7 @@
   },
   "author": "Your Name",
   "license": "MIT",
-  "dependencies": {}
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
 }
