@@ -1,4 +1,3 @@
-# .github/workflows/update-all.yml
 name: Update All F1 Data (Race Weekends Only)
 
 on:
@@ -16,10 +15,12 @@ concurrency:
 jobs:
   update-all:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
 
       - name: Setup Node
@@ -27,11 +28,10 @@ jobs:
         with:
           node-version: 20
 
-      # No dependencies needed for ICS script
+      # No dependencies needed
       - name: Install dependencies
         run: npm install
 
-      # Race weekend gate
       - name: Race weekend gate
         id: gate
         run: node scripts/isRaceWeekend.mjs
@@ -40,10 +40,12 @@ jobs:
         if: steps.gate.outputs.in_window != 'true' && github.event_name != 'workflow_dispatch'
         run: |
           echo "Not a race weekend window. Skipping updates."
+          echo "window_start=${{ steps.gate.outputs.window_start }}"
+          echo "window_end=${{ steps.gate.outputs.window_end }}"
+          echo "next_race=${{ steps.gate.outputs.next_race }}"
           exit 0
 
-      # Run all JS updates
-      - name: Run all updates
+      - name: Run all JS updates
         run: |
           node updateStandings.js
           node updateConstructors.js
@@ -60,7 +62,6 @@ jobs:
           node updateCadillacStandings.js
           node UpdateVCARBStandings.js
 
-      # Commit & push
       - name: Commit & Push
         run: |
           set -e
@@ -72,11 +73,4 @@ jobs:
             exit 0
           fi
           git commit -m "Automated F1 data update (race weekend)"
-          for i in 1 2 3 4 5; do
-            if git push origin main; then exit 0; fi
-            git fetch origin main
-            git rebase origin/main
-            sleep $((i * 2))
-          done
-          echo "Push failed after retries."
-          exit 1
+          git push origin main || true
