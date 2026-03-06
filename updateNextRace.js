@@ -1,16 +1,40 @@
 // updateNextRace.js
 import fs from "fs/promises";
 
-// -------------------- CONFIG --------------------
-const OPENF1_JSON = "https://raw.githubusercontent.com/MarkRedman/F1-standings-data/main/openf1_next_race.json";
+const USER_TZ = "UTC"; // keep UTC for widgets
+const LOCALE = "en-CA";
 
-// -------------------- TIME HELPERS --------------------
-function daysUntilUtc(date, now = new Date()) {
+// Base URL for your GitHub Pages track maps
+const PAGES_BASE = "https://mredman48.github.io/F1-standings";
+const TRACKMAP_DIR = "trackmaps";
+
+// OpenF1 API endpoint for next race
+const OPENF1_URL = "https://raw.githubusercontent.com/openf1/openf1/master/data/next_race.json";
+
+/* -------------------- helpers -------------------- */
+
+function titleCaseWords(s) {
+  if (!s) return null;
+  return String(s)
+    .trim()
+    .split(/\s+/)
+    .map((w) => w[0].toUpperCase() + w.slice(1).toLowerCase())
+    .join(" ");
+}
+
+function makeTrackPngUrl(filename) {
+  return `${PAGES_BASE}/${TRACKMAP_DIR}/${encodeURIComponent(filename)}`;
+}
+
+function daysUntil(date, now = new Date()) {
   const ms = new Date(date).getTime() - now.getTime();
   return Math.ceil(ms / (1000 * 60 * 60 * 24));
 }
 
-// -------------------- UTILS --------------------
+function normalizeCountryName(s) {
+  return (s || "").toLowerCase().replace(/[^a-z\s]/g, "").trim();
+}
+
 function countryToIso2(countryName) {
   const map = {
     australia: "au",
@@ -26,10 +50,10 @@ function countryToIso2(countryName) {
     mexico: "mx",
     brazil: "br",
     argentina: "ar",
-    "united states": "us",
     usa: "us",
+    "united states": "us",
+    "united states of america": "us",
     "united kingdom": "gb",
-    greatbritain: "gb",
     monaco: "mc",
     italy: "it",
     spain: "es",
@@ -48,8 +72,7 @@ function countryToIso2(countryName) {
     turkey: "tr",
     switzerland: "ch",
   };
-  if (!countryName) return null;
-  return map[countryName.toLowerCase().replace(/\s/g, "")] || null;
+  return map[normalizeCountryName(countryName)] || null;
 }
 
 function buildFlagUrls(iso2) {
@@ -62,69 +85,70 @@ function buildFlagUrls(iso2) {
   };
 }
 
-function buildSessionsUtc(sessions) {
-  if (!sessions) return [];
-  return sessions.map((s) => ({
-    type: s.type,
-    startUtc: s.startUtc,
-    endUtc: s.endUtc,
-  }));
-}
+/* -------------------- main -------------------- */
 
-function computeWindowUtc(sessions) {
-  if (!sessions || !sessions.length) return { startUtc: null, endUtc: null };
-  const starts = sessions.map((s) => new Date(s.startUtc)).filter((d) => !isNaN(d));
-  const ends = sessions.map((s) => new Date(s.endUtc)).filter((d) => !isNaN(d));
-  return {
-    startUtc: starts.length ? new Date(Math.min(...starts)).toISOString() : null,
-    endUtc: ends.length ? new Date(Math.max(...ends)).toISOString() : null,
-  };
-}
-
-// -------------------- MAIN --------------------
 async function updateNextRace() {
-  try {
-    const res = await fetch(OPENF1_JSON);
-    if (!res.ok) throw new Error(`HTTP ${res.status} fetching JSON`);
-    const data = await res.json();
+  const now = new Date();
 
-    const nextEventRaw = data.nextEvent || {};
-    const weekendStart = nextEventRaw.weekend?.startUtc;
-    const sessions = buildSessionsUtc(nextEventRaw.sessions || []);
-    const window = computeWindowUtc(sessions);
+  // Fetch OpenF1 JSON
+  const res = await fetch(OPENF1_URL);
+  if (!res.ok) throw new Error(`HTTP ${res.status} fetching ${OPENF1_URL}`);
+  const data = await res.json();
 
-    const country = nextEventRaw.location?.raw || null;
-    const iso2 = countryToIso2(country);
-    const flag = buildFlagUrls(iso2);
+  const nextRace = data.nextEvent;
+  if (!nextRace) throw new Error("No next race data found in OpenF1 feed.");
 
-    const out = {
-      header: "Next F1 event",
-      generatedAtUtc: new Date().toISOString(),
-      source: { kind: "openf1", url: OPENF1_JSON },
-      nextEvent: {
-        type: "RACE_WEEKEND",
-        title: nextEventRaw.title || null,
-        season: nextEventRaw.season || null,
-        location: {
-          raw: country,
-          city: nextEventRaw.location?.city || null,
-          country,
-          flag,
-        },
-        racePage: nextEventRaw.racePage || null,
-        trackMap: nextEventRaw.trackMap || null,
-        countdowns: { startsInDays: weekendStart ? daysUntilUtc(weekendStart) : null },
-        weekend: { startUtc: window.startUtc, endUtc: window.endUtc },
-        sessions,
+  // Extract country and flag
+  const country = nextRace.location?.raw ? titleCaseWords(nextRace.location.raw) : null;
+  const iso2 = countryToIso2(country);
+  const flag = buildFlagUrls(iso2);
+
+  // Track map PNG URL
+  const trackMap = {
+    found: Boolean(nextRace.trackMap?.mediaUrl),
+    pageUrl: nextRace.trackMap?.pageUrl || null,
+    mediaUrl: nextRace.trackMap?.mediaUrl || null,
+    pngUrl: nextRace.trackMap?.pngUrl || null,
+    note: null,
+  };
+
+  // Weekend start/end
+  const weekendStart = nextRace.weekend?.startUtc;
+  const weekendEnd = nextRace.weekend?.endUtc;
+
+  const out = {
+    header: "Next F1 event",
+    generatedAtUtc: now.toISOString(),
+    displayTimeZone: USER_TZ,
+    source: { kind: "openf1", url: OPENF1_URL },
+    nextEvent: {
+      type: "RACE_WEEKEND",
+      title: nextRace.title,
+      season: nextRace.season,
+      location: {
+        raw: country,
+        city: nextRace.location?.city || null,
+        country,
+        flag,
       },
-    };
+      racePage: nextRace.racePage || null,
+      trackMap,
+      countdowns: {
+        startsInDays: weekendStart ? daysUntil(weekendStart, now) : null,
+      },
+      weekend: {
+        startUtc: weekendStart,
+        endUtc: weekendEnd,
+      },
+      sessions: nextRace.sessions || [],
+    },
+  };
 
-    await fs.writeFile("f1_next_race.json", JSON.stringify(out, null, 2), "utf8");
-    console.log("✅ f1_next_race.json updated (UTC times)");
-  } catch (err) {
-    console.error("❌ Error updating next race:", err);
-    process.exit(1);
-  }
+  await fs.writeFile("f1_next_race.json", JSON.stringify(out, null, 2), "utf8");
+  console.log("Updated f1_next_race.json");
 }
 
-updateNextRace();
+updateNextRace().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
