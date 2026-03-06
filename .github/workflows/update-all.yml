@@ -31,28 +31,17 @@ jobs:
       - name: Install dependencies
         run: npm install --no-audit --no-fund
 
-      ############################################################
-      # Gate 1 — Race Weekend Window
-      ############################################################
-
+      # ------------------------------------------------
+      # Gate 1: race weekend
+      # ------------------------------------------------
       - name: Race weekend gate
-        id: gate
+        id: weekend
         run: node scripts/isRaceWeekend.mjs
 
-      - name: Skip (not race weekend)
-        if: steps.gate.outputs.in_window != 'true' && github.event_name != 'workflow_dispatch'
-        run: |
-          echo "Not race weekend — skipping."
-          echo "window_start=${{ steps.gate.outputs.window_start }}"
-          echo "window_end=${{ steps.gate.outputs.window_end }}"
-          echo "next_race=${{ steps.gate.outputs.next_race }}"
-          exit 0
-
-      ############################################################
-      # Gate 2 — OpenF1 Live Session Check
-      ############################################################
-
-      - name: Check OpenF1 availability
+      # ------------------------------------------------
+      # Gate 2: OpenF1 lock check
+      # ------------------------------------------------
+      - name: OpenF1 availability check
         id: openf1
         run: |
           STATUS=$(curl -s -o /tmp/openf1.txt -w "%{http_code}" "https://api.openf1.org/v1/drivers?session_key=latest")
@@ -67,17 +56,23 @@ jobs:
             echo "OpenF1 available."
           fi
 
-      - name: Skip (live session)
-        if: steps.openf1.outputs.blocked == 'true' && github.event_name != 'workflow_dispatch'
+      # ------------------------------------------------
+      # Log skip reason
+      # ------------------------------------------------
+      - name: Skip reason
+        if: steps.weekend.outputs.in_window != 'true' || steps.openf1.outputs.blocked == 'true'
         run: |
-          echo "Live session detected — skipping all updates to prevent empty data."
+          echo "Skipping run."
+          echo "in_window=${{ steps.weekend.outputs.in_window }}"
+          echo "openf1_blocked=${{ steps.openf1.outputs.blocked }}"
+          echo "openf1_status=${{ steps.openf1.outputs.status }}"
           exit 0
 
-      ############################################################
-      # Run Scripts (ONLY when OpenF1 accessible)
-      ############################################################
-
-      - name: Run update scripts
+      # ------------------------------------------------
+      # ONLY run scripts when BOTH gates pass
+      # ------------------------------------------------
+      - name: Run all update scripts
+        if: steps.weekend.outputs.in_window == 'true' && steps.openf1.outputs.blocked != 'true'
         run: |
           node updateStandings.js
           node updateConstructors.js
@@ -94,11 +89,8 @@ jobs:
           node updateCadillacStandings.js
           node UpdateVCARBStandings.js
 
-      ############################################################
-      # Commit Updates
-      ############################################################
-
       - name: Commit & Push
+        if: steps.weekend.outputs.in_window == 'true' && steps.openf1.outputs.blocked != 'true'
         run: |
           set -e
 
