@@ -4,9 +4,10 @@
   "description": "F1 standings and next race updater",
   "type": "module",
   "scripts": {
-    "updateNextRace": "node updateNextRace.js"
+    "updateNextRace": "node updateNextRace.js",
+    "updateStandings": "node updateStandings.js"
   },
-  "author": "Your Name",
-  "license": "MIT",
-  "dependencies": {}
+  "dependencies": {
+    "node-fetch": "^3.4.0"
+  }
 }
