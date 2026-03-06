@@ -7,5 +7,11 @@
     "updateNextRace": "node updateNextRace.js",
     "updateStandings": "node updateStandings.js"
   },
-  "dependencies": {}
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "node-ical": "^1.0.0",
+    "axios": "^1.6.3",
+    "sharp": "^0.32.0"
+  }
 }
