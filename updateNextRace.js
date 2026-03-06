@@ -1,58 +1,38 @@
 // updateNextRace.js
-import fs from "fs/promises";
+import fs from "node:fs/promises";
 
-const ICS_URL = "https://better-f1-calendar.vercel.app/api/calendar.ics";
-const USER_TZ = "America/Edmonton";
-const LOCALE = "en-CA";
+const OPENF1_SCHEDULE_BASE = "https://api.jolpi.ca/ergast/f1";
+const NEXT_RACE_ENDPOINT = `${OPENF1_SCHEDULE_BASE}/current/next.json`;
+const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 
-// Helpers
-function parseDateICS(line) {
-  const match = line.match(/:(\d{8}T\d{6}Z)/);
-  return match ? new Date(match[1]) : null;
-}
+// country→ISO map (same as you had before)
+const COUNTRY_ISO = {
+  australia: "au",
+  bahrain: "bh",
+  china: "cn",
+  japan: "jp",
+  "saudi arabia": "sa",
+  qatar: "qa",
+  singapore: "sg",
+  "united arab emirates": "ae",
+  canada: "ca",
+  mexico: "mx",
+  brazil: "br",
+  italy: "it",
+  spain: "es",
+  france: "fr",
+  belgium: "be",
+  netherlands: "nl",
+  austria: "at",
+  hungary: "hu",
+  germany: "de",
+  portugal: "pt",
+};
 
-function daysUntil(date, now = new Date()) {
-  const ms = date.getTime() - now.getTime();
-  return Math.ceil(ms / (1000 * 60 * 60 * 24));
-}
-
-function titleCase(s) {
-  if (!s) return null;
-  return s
-    .split(/\s+/)
-    .map((w) => w[0].toUpperCase() + w.slice(1).toLowerCase())
-    .join(" ");
-}
-
-function countryToIso2(country) {
-  const map = {
-    australia: "au",
-    bahrain: "bh",
-    china: "cn",
-    japan: "jp",
-    "saudi arabia": "sa",
-    qatar: "qa",
-    singapore: "sg",
-    "united arab emirates": "ae",
-    uae: "ae",
-    canada: "ca",
-    mexico: "mx",
-    brazil: "br",
-    argentina: "ar",
-    "united states": "us",
-    usa: "us",
-    "united kingdom": "gb",
-    italy: "it",
-    spain: "es",
-    france: "fr",
-    belgium: "be",
-    netherlands: "nl",
-    austria: "at",
-    hungary: "hu",
-    germany: "de",
-    portugal: "pt",
-  };
-  return map[(country || "").toLowerCase()] || null;
+// convert country to iso2
+function countryToIso2(name) {
+  if (!name) return null;
+  return COUNTRY_ISO[String(name).toLowerCase()] || null;
 }
 
 function buildFlagUrls(iso2) {
@@ -65,64 +45,66 @@ function buildFlagUrls(iso2) {
   };
 }
 
-// Main
-async function updateNextRace() {
-  const now = new Date();
-  const res = await fetch(ICS_URL);
-  if (!res.ok) throw new Error(`Failed to fetch ICS: ${res.status}`);
-  const icsText = await res.text();
-
-  // Parse VEVENTS manually
-  const events = icsText.split("BEGIN:VEVENT").slice(1).map((ev) => {
-    const lines = ev.split("\n").map((l) => l.trim());
-    const summary = lines.find((l) => l.startsWith("SUMMARY:"))?.replace("SUMMARY:", "") || "";
-    const dtstart = parseDateICS(lines.find((l) => l.startsWith("DTSTART"))) || null;
-    const dtend = parseDateICS(lines.find((l) => l.startsWith("DTEND"))) || null;
-    const location = lines.find((l) => l.startsWith("LOCATION:"))?.replace("LOCATION:", "") || null;
-
-    return { summary, start: dtstart, end: dtend, location };
+async function fetchJson(url) {
+  const res = await fetch(url, {
+    headers: { "User-Agent": "f1-standings-bot/1.0", Accept: "application/json" },
   });
+  const text = await res.text();
+  if (!res.ok) throw new Error(`HTTP ${res.status} from ${url}`);
+  return JSON.parse(text);
+}
 
-  // Filter future races
-  const futureRaces = events.filter(
-    (e) => e.start && e.summary.toLowerCase().includes("race") && e.start > now
-  );
-  if (!futureRaces.length) throw new Error("No upcoming race found.");
+async function updateNextRace() {
+  const now = new Date().toISOString();
+  const schedule = await fetchJson(NEXT_RACE_ENDPOINT);
 
-  const nextRace = futureRaces[0];
-  const weekendEvents = events.filter((e) => e.summary.includes(nextRace.summary));
-  const weekendStart = weekendEvents[0]?.start;
-  const weekendEnd = weekendEvents[weekendEvents.length - 1]?.end;
+  // Ergast/Jolpica schedule JSON:
+  // MRData.RaceTable.Races is an array, `[0]` is next race
+  const race = schedule?.MRData?.RaceTable?.Races?.[0];
+  if (!race) throw new Error("No upcoming race found in schedule.");
 
-  const locationRaw = nextRace.location || "";
-  const country = titleCase(locationRaw);
+  const season = race.season;
+  const round = race.round;
+  const raceName = race.raceName;
+  const date = race.date;
+  const time = race.time || null;
+
+  // flag and location
+  const country = race?.Circuit?.Location?.country || null;
   const iso2 = countryToIso2(country);
   const flag = buildFlagUrls(iso2);
 
+  // weekend start / end from schedule (date only)
+  const weekendStart = `${date}T00:00:00.000Z`;
+  const weekendEnd = `${date}T23:59:59.000Z`;
+
   const out = {
     header: "Next F1 event",
-    generatedAtUtc: now.toISOString(),
-    displayTimeZone: USER_TZ,
-    source: { kind: "ics", url: ICS_URL },
+    generatedAtUtc: now,
     nextEvent: {
       type: "RACE_WEEKEND",
-      title: nextRace.summary,
-      season: String(nextRace.start.getUTCFullYear()),
+      title: raceName,
+      season: String(season),
       location: {
-        raw: locationRaw || null,
-        country: country || null,
+        raw: country,
+        city: race?.Circuit?.Location?.locality || null,
+        country,
         flag,
       },
-      countdowns: { startsInDays: daysUntil(weekendStart, now) },
+      raceInfo: {
+        round: round,
+        date,
+        time,
+      },
       weekend: {
-        startUtc: weekendStart?.toISOString() || null,
-        endUtc: weekendEnd?.toISOString() || null,
+        startUtc: weekendStart,
+        endUtc: weekendEnd,
       },
     },
   };
 
   await fs.writeFile("f1_next_race.json", JSON.stringify(out, null, 2), "utf8");
-  console.log("Next race JSON written:", out.nextEvent.title, "in", country);
+  console.log("Wrote f1_next_race.json", raceName);
 }
 
 updateNextRace().catch((err) => {
