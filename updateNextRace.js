@@ -1,110 +1,140 @@
 // updateNextRace.js
-import fs from "node:fs/promises";
+import fs from "fs/promises";
+import ical from "node-ical";
 
-const OPENF1_SCHEDULE_BASE = "https://api.jolpi.ca/ergast/f1";
-const NEXT_RACE_ENDPOINT = `${OPENF1_SCHEDULE_BASE}/current/next.json`;
-const PAGES_BASE = "https://mredman48.github.io/F1-standings";
+const ICS_URL = "https://better-f1-calendar.vercel.app/api/calendar.ics";
 
-// country→ISO map (same as you had before)
-const COUNTRY_ISO = {
-  australia: "au",
-  bahrain: "bh",
-  china: "cn",
-  japan: "jp",
-  "saudi arabia": "sa",
-  qatar: "qa",
-  singapore: "sg",
-  "united arab emirates": "ae",
-  canada: "ca",
-  mexico: "mx",
-  brazil: "br",
-  italy: "it",
-  spain: "es",
-  france: "fr",
-  belgium: "be",
-  netherlands: "nl",
-  austria: "at",
-  hungary: "hu",
-  germany: "de",
-  portugal: "pt",
-};
+// Helpers
+function formatIsoUTC(date) {
+  return date ? date.toISOString() : null;
+}
 
-// convert country to iso2
+// Map ICS summary to your widget session names
+function sessionTypeFromSummary(summary) {
+  const s = summary.toLowerCase();
+  if (s.includes("practice 1")) return "FP1";
+  if (s.includes("practice 2")) return "FP2";
+  if (s.includes("practice 3")) return "FP3";
+  if (s.includes("sprint qualifying")) return "Sprint Quali";
+  if (s.includes("sprint") && !s.includes("sprint qualifying")) return "Sprint";
+  if (s.includes("qualifying") && !s.includes("sprint")) return "Quali";
+  if (s.includes("race")) return "Race";
+  return null;
+}
+
 function countryToIso2(name) {
-  if (!name) return null;
-  return COUNTRY_ISO[String(name).toLowerCase()] || null;
+  const map = {
+    australia: "au",
+    bahrain: "bh",
+    china: "cn",
+    japan: "jp",
+    "saudi arabia": "sa",
+    qatar: "qa",
+    singapore: "sg",
+    uae: "ae",
+    canada: "ca",
+    mexico: "mx",
+    brazil: "br",
+    italy: "it",
+    spain: "es",
+    france: "fr",
+    belgium: "be",
+    netherlands: "nl",
+    austria: "at",
+    hungary: "hu",
+    germany: "de",
+    portugal: "pt",
+  };
+  return map[(name || "").toLowerCase()] || null;
 }
 
 function buildFlagUrls(iso2) {
   if (!iso2) return { iso2: null, png: null, svg: null };
-  const code = iso2.toLowerCase();
   return {
-    iso2: code,
-    png: `https://flagcdn.com/w160/${code}.png`,
-    svg: `https://flagcdn.com/${code}.svg`,
+    iso2,
+    png: `https://flagcdn.com/w160/${iso2}.png`,
+    svg: `https://flagcdn.com/${iso2}.svg`,
   };
 }
 
-async function fetchJson(url) {
-  const res = await fetch(url, {
-    headers: { "User-Agent": "f1-standings-bot/1.0", Accept: "application/json" },
+async function fetchCalendar() {
+  const res = await fetch(ICS_URL, {
+    headers: { "User-Agent": "f1-standings-bot/1.0" },
   });
-  const text = await res.text();
-  if (!res.ok) throw new Error(`HTTP ${res.status} from ${url}`);
-  return JSON.parse(text);
+  if (!res.ok) throw new Error(`Failed to fetch ICS (${res.status})`);
+  return res.text();
 }
 
 async function updateNextRace() {
-  const now = new Date().toISOString();
-  const schedule = await fetchJson(NEXT_RACE_ENDPOINT);
+  const now = new Date();
 
-  // Ergast/Jolpica schedule JSON:
-  // MRData.RaceTable.Races is an array, `[0]` is next race
-  const race = schedule?.MRData?.RaceTable?.Races?.[0];
-  if (!race) throw new Error("No upcoming race found in schedule.");
+  const icsText = await fetchCalendar();
+  const parsed = ical.parseICS(icsText);
 
-  const season = race.season;
-  const round = race.round;
-  const raceName = race.raceName;
-  const date = race.date;
-  const time = race.time || null;
+  const events = Object.values(parsed)
+    .filter((e) => e.type === "VEVENT")
+    .map((e) => ({
+      summary: e.summary,
+      start: e.start,
+      end: e.end,
+      location: e.location,
+    }))
+    .sort((a, b) => a.start - b.start);
 
-  // flag and location
-  const country = race?.Circuit?.Location?.country || null;
+  // filter events starting after now
+  const upcoming = events.filter((e) => e.start > now);
+
+  // group by GP name
+  const grouped = {};
+  for (const ev of upcoming) {
+    const gpName = ev.summary.split(" - ")[0].trim();
+    grouped[gpName] = grouped[gpName] || [];
+    grouped[gpName].push(ev);
+  }
+
+  const nextGpNames = Object.keys(grouped);
+  if (nextGpNames.length === 0) throw new Error("No upcoming race found.");
+
+  const nextGpName = nextGpNames[0];
+  const gpSessions = grouped[nextGpName];
+
+  const sessionObjects = gpSessions.map((s) => ({
+    type: sessionTypeFromSummary(s.summary),
+    startUtc: formatIsoUTC(s.start),
+    endUtc: formatIsoUTC(s.end),
+  }));
+
+  const starts = sessionObjects.map((s) => new Date(s.startUtc));
+  const ends = sessionObjects.map((s) => new Date(s.endUtc));
+  const weekendStart = new Date(Math.min(...starts));
+  const weekendEnd = new Date(Math.max(...ends));
+
+  const country = gpSessions[0].location || null;
   const iso2 = countryToIso2(country);
   const flag = buildFlagUrls(iso2);
 
-  // weekend start / end from schedule (date only)
-  const weekendStart = `${date}T00:00:00.000Z`;
-  const weekendEnd = `${date}T23:59:59.000Z`;
-
   const out = {
     header: "Next F1 event",
-    generatedAtUtc: now,
+    generatedAtUtc: new Date().toISOString(),
+    source: { kind: "ics", url: ICS_URL },
     nextEvent: {
       type: "RACE_WEEKEND",
-      title: raceName,
-      season: String(season),
-      location: {
-        raw: country,
-        city: race?.Circuit?.Location?.locality || null,
-        country,
-        flag,
-      },
-      raceInfo: {
-        round: round,
-        date,
-        time,
+      title: nextGpName,
+      season: String(weekendStart.getUTCFullYear()),
+      location: { raw: country, flag },
+      countdowns: {
+        startsInDays: Math.ceil((weekendStart - now) / (1000 * 60 * 60 * 24)),
       },
       weekend: {
-        startUtc: weekendStart,
-        endUtc: weekendEnd,
+        startUtc: formatIsoUTC(weekendStart),
+        endUtc: formatIsoUTC(weekendEnd),
       },
+      sessions: sessionObjects,
     },
   };
 
-  await fs.writeFile("f1_next_race.json", JSON.stringify(out, null, 2), "utf8");
-  console.log("Wrote f1_next_race.json", raceName);
+  await fs.writeFile("f1_next_race.json", JSON.stringify(out, null, 2));
+  console.log(`Wrote f1_next_race.json with full session schedule for ${nextGpName}`);
 }
 
 updateNextRace().catch((err) => {
