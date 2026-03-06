@@ -8,14 +8,12 @@ const OPENF1_DRIVERS_URL = "https://api.openf1.org/v1/drivers?session_key=latest
 
 // GitHub Pages base (Widgy-friendly)
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
-
-// Local repo folders (served via Pages)
 const HEADSHOTS_DIR = "headshots";
 
 // If Widgy/GitHub CDN is stubborn
 const CACHE_BUST = true;
 
-// Team display name overrides (Ergast/Jolpica constructor names)
+// Team display name overrides
 const TEAM_NAME_MAP = {
   "Red Bull Racing": "Red Bull",
   "Oracle Red Bull Racing": "Red Bull",
@@ -25,13 +23,9 @@ const TEAM_NAME_MAP = {
   "Visa Cash App RB F1 Team": "VCARB",
 };
 
-// If OpenF1 team_name differs from Ergast/Jolpica constructor name
 const OPENF1_TEAM_NAME_MAP = {
   "Red Bull Racing": "Red Bull",
-  "Oracle Red Bull Racing": "Red Bull",
-
   "RB": "VCARB",
-  "RB F1 Team": "VCARB",
   "Visa Cash App RB F1 Team": "VCARB",
   "Visa Cash App RB": "VCARB",
 };
@@ -71,66 +65,51 @@ function getLocalHeadshotUrl(firstName, lastName) {
   return withCacheBust(`${PAGES_BASE}/${HEADSHOTS_DIR}/${file}`);
 }
 
-function fmtPos(pos) {
-  if (pos == null || pos === "-" || pos === "") return "-";
-  const n = Number(pos);
-  if (!Number.isFinite(n)) return "-";
-  return `P${n}`;
-}
+// -------------------- fetch helpers --------------------
 
-// ✅ Name normalization rules
-function normalizeDriverName(firstName, lastName) {
-  let first = (firstName || "").trim();
-  let last = (lastName || "").trim();
-
-  // If Jolpica gives: givenName="Andrea" familyName="Kimi Antonelli"
-  if (first.toLowerCase() === "andrea" && last.toLowerCase() === "kimi antonelli") {
-    first = "Kimi";
-    last = "Antonelli";
-  }
-
-  // If OpenF1 gives: first_name="Andrea Kimi" last_name="Antonelli"
-  if (first.toLowerCase() === "andrea kimi" && last.toLowerCase() === "antonelli") {
-    first = "Kimi";
-    last = "Antonelli";
-  }
-
-  // If anything yields a combined full name "Andrea Kimi Antonelli"
-  const full = `${first} ${last}`.trim().toLowerCase();
-  if (full === "andrea kimi antonelli") {
-    first = "Kimi";
-    last = "Antonelli";
-  }
-
-  // (Keeping this because you asked earlier on Williams)
-  if (first.toLowerCase() === "alexander" && last.toLowerCase() === "albon") {
-    first = "Alex";
-    last = "Albon";
-  }
-
-  return { firstName: first || null, lastName: last || null };
-}
-
-async function fetchJson(url) {
+async function fetchText(url) {
   const res = await fetch(url, {
     headers: {
       "User-Agent": "f1-standings-bot/1.0",
-      Accept: "application/json",
+      "Accept": "application/json",
     },
     redirect: "follow",
   });
-
   const text = await res.text();
-  if (!res.ok) throw new Error(`HTTP ${res.status} from ${url}\n${text.slice(0, 200)}`);
+  return { res, text };
+}
 
+async function fetchJsonStrict(url) {
+  const { res, text } = await fetchText(url);
+  if (!res.ok) throw new Error(`HTTP ${res.status} from ${url}\n${text.slice(0, 250)}`);
   try {
     return JSON.parse(text);
   } catch {
-    throw new Error(`Non-JSON response from ${url}\n${text.slice(0, 200)}`);
+    throw new Error(`Non-JSON response from ${url}\n${text.slice(0, 250)}`);
   }
 }
 
-// ---------- Jolpica standings (CURRENT ONLY, no last-season fallback) ----------
+// ✅ NEW: safe JSON fetch that never throws on 401/403/etc.
+// You can choose how to handle it at the call site.
+async function fetchJsonSafe(url) {
+  const { res, text } = await fetchText(url);
+  if (!res.ok) {
+    return {
+      ok: false,
+      status: res.status,
+      url,
+      text: text.slice(0, 400),
+      json: null,
+    };
+  }
+  try {
+    return { ok: true, status: res.status, url, text: null, json: JSON.parse(text) };
+  } catch {
+    return { ok: false, status: res.status, url, text: text.slice(0, 400), json: null };
+  }
+}
+
+// -------------------- Ergast/Jolpica parsing --------------------
 
 function extractStandings(payload) {
   const season = payload?.MRData?.StandingsTable?.season ?? null;
@@ -145,22 +124,17 @@ async function fetchCurrentStandings() {
     `${JOLPICA_BASE}/current/driverStandings.json`,
   ];
 
-  let lastErr = null;
+  // NOTE: if Jolpica is empty/offseason, we still return empty standings (no fallback).
   for (const url of urls) {
-    try {
-      const data = await fetchJson(url);
-      const parsed = extractStandings(data);
-      return { parsed, sourceUrl: url, urlsTried: urls };
-    } catch (e) {
-      lastErr = e;
-    }
+    const data = await fetchJsonStrict(url);
+    const parsed = extractStandings(data);
+    return { parsed, sourceUrl: url };
   }
 
-  throw lastErr || new Error("Could not fetch current standings from Jolpica.");
+  throw new Error("Could not fetch current standings from Jolpica.");
 }
 
-// ---------- last race (best-effort) ----------
-
+// lastRace matches the season we publish
 function parseLastRace(payload) {
   const race = payload?.MRData?.RaceTable?.Races?.[0] ?? null;
   if (!race) return null;
@@ -192,7 +166,7 @@ async function fetchLastRaceForSeason(season) {
 
   for (const url of urls) {
     try {
-      const data = await fetchJson(url);
+      const data = await fetchJsonStrict(url);
       const lastRace = parseLastRace(data);
       if (lastRace) return { found: true, lastRace, sourceUrl: url, sourceUrlTried: urls };
     } catch {
@@ -203,22 +177,36 @@ async function fetchLastRaceForSeason(season) {
   return { found: false, lastRace: null, sourceUrlTried: urls };
 }
 
-// -------- OpenF1 enrichment (numbers/colors/acronym/team) --------
+// -------------------- OpenF1 enrichment (SAFE) --------------------
+// ✅ This will NOT throw if OpenF1 is locked (401). It just returns empty meta.
 
 async function fetchOpenF1DriverMeta() {
-  const arr = await fetchJson(OPENF1_DRIVERS_URL);
-  if (!Array.isArray(arr)) return { byName: new Map(), rawCount: 0, raw: [] };
+  const resp = await fetchJsonSafe(OPENF1_DRIVERS_URL);
+
+  // OpenF1 locked during live sessions -> do NOT fail the workflow
+  if (!resp.ok) {
+    console.warn(
+      `OpenF1 unavailable: HTTP ${resp.status} from ${resp.url}. Continuing without OpenF1 enrichment.`
+    );
+    if (resp.text) console.warn(resp.text);
+    return {
+      byName: new Map(),
+      rawCount: 0,
+      openf1Ok: false,
+      openf1Status: resp.status,
+    };
+  }
+
+  const arr = resp.json;
+  if (!Array.isArray(arr)) {
+    console.warn("OpenF1 returned non-array. Continuing without enrichment.");
+    return { byName: new Map(), rawCount: 0, openf1Ok: false, openf1Status: resp.status };
+  }
 
   const byName = new Map();
-
   for (const d of arr) {
-    let first = d?.first_name ?? null;
-    let last = d?.last_name ?? null;
-
-    const norm = normalizeDriverName(first, last);
-    first = norm.firstName;
-    last = norm.lastName;
-
+    const first = d?.first_name ?? null;
+    const last = d?.last_name ?? null;
     if (!first || !last) continue;
 
     byName.set(nameKey(first, last), {
@@ -229,7 +217,7 @@ async function fetchOpenF1DriverMeta() {
     });
   }
 
-  return { byName, rawCount: arr.length, raw: arr };
+  return { byName, rawCount: arr.length, openf1Ok: true, openf1Status: resp.status };
 }
 
 function matchOpenF1Meta(byName, first, last) {
@@ -239,7 +227,6 @@ function matchOpenF1Meta(byName, first, last) {
   const lastLower = (last || "").trim().toLowerCase();
   if (!lastLower) return null;
 
-  // unique last-name fallback
   let found = null;
   let count = 0;
   for (const [k, v] of byName.entries()) {
@@ -253,7 +240,8 @@ function matchOpenF1Meta(byName, first, last) {
   return found;
 }
 
-// ----- previous standings for arrows -----
+// -------------------- previous positions (arrows) --------------------
+
 async function readPreviousPositions() {
   try {
     const raw = await fs.readFile(OUTPUT_FILE, "utf8");
@@ -317,118 +305,96 @@ function computePositionDelta(prevPos, currentPos) {
   };
 }
 
-// ---------- Placeholder drivers (alphabetical) when standings are empty/unavailable ----------
-function buildAlphabeticalPlaceholderDrivers(openf1Raw) {
-  if (!Array.isArray(openf1Raw) || openf1Raw.length === 0) return [];
+// -------------------- placeholders mode (alphabetical) --------------------
 
-  // De-dupe by driver_number (latest session may include duplicates)
-  const byNum = new Map();
-  for (const r of openf1Raw) {
-    const num = r?.driver_number;
-    if (num == null) continue;
+function buildAlphabeticalPlaceholders(openf1Meta) {
+  // If OpenF1 is available, we can build a 2026-ish roster placeholders from it.
+  // If not, still return an empty placeholder list (or keep your previous count).
+  const rows = [];
 
-    const norm = normalizeDriverName(r?.first_name ?? null, r?.last_name ?? null);
-    if (!norm.firstName || !norm.lastName) continue;
+  // Prefer OpenF1 names if we have them
+  for (const [k, v] of openf1Meta.byName.entries()) {
+    const [first, last] = k.split("|").map((x) => x || "");
+    if (!first || !last) continue;
 
-    if (!byNum.has(num)) {
-      byNum.set(num, {
-        firstName: norm.firstName,
-        lastName: norm.lastName,
-        code: (r?.name_acronym ?? null)?.toUpperCase?.() ?? (r?.name_acronym ?? null),
-        driverNumber: num,
-        teamName: normalizeOpenF1TeamName(r?.team_name ?? null),
-        teamHex: r?.team_colour ? `#${String(r.team_colour).replace("#", "")}` : null,
-      });
-    }
+    rows.push({
+      driver: {
+        code: v?.nameAcronym ?? null,
+        firstName: first ? first[0].toUpperCase() + first.slice(1) : null,
+        lastName: last ? last[0].toUpperCase() + last.slice(1) : null,
+        fullName: `${first ? first[0].toUpperCase() + first.slice(1) : ""} ${last ? last[0].toUpperCase() + last.slice(1) : ""}`.trim(),
+        nationality: null,
+        driverNumber: v?.driverNumber ?? null,
+        headshotUrl:
+          first && last ? getLocalHeadshotUrl(first, last) : null,
+        nameAcronym: v?.nameAcronym ?? null,
+      },
+      constructor: {
+        name: v?.teamName ?? null,
+        fullName: v?.teamName ?? null,
+        nationality: null,
+        teamHex: v?.teamColour ?? null,
+      },
+    });
   }
 
-  const rows = Array.from(byNum.values()).sort((a, b) => {
-    const al = (a.lastName || "").toLowerCase();
-    const bl = (b.lastName || "").toLowerCase();
-    if (al !== bl) return al.localeCompare(bl);
-    return (a.firstName || "").toLowerCase().localeCompare((b.firstName || "").toLowerCase());
+  // Sort alphabetically by last name then first
+  rows.sort((a, b) => {
+    const aL = (a.driver.lastName || "").toLowerCase();
+    const bL = (b.driver.lastName || "").toLowerCase();
+    if (aL !== bL) return aL.localeCompare(bL);
+    const aF = (a.driver.firstName || "").toLowerCase();
+    const bF = (b.driver.firstName || "").toLowerCase();
+    return aF.localeCompare(bF);
   });
 
-  // Alphabetical placeholders: position "-" points "-" wins "-"
+  // If OpenF1 is locked, rows will be empty. That’s OK: we still output a valid JSON.
+  // If you want a fixed-length placeholder list (like 22), you can keep your existing list here.
   return rows.map((r) => ({
-    position: "-", // ✅ dashes as requested
+    position: "-",
     positionNumber: null,
     points: "-",
     wins: "-",
 
     previousPositionNumber: null,
     positionChange: null,
-    positionDirection: null,
-    arrowSymbol: null,
-    positionChangeText: null,
+    positionDirection: "NEW",
+    arrowSymbol: "NEW",
+    positionChangeText: "NEW",
 
-    driver: {
-      code: r.code ?? null,
-      firstName: r.firstName,
-      lastName: r.lastName,
-      fullName: r.firstName && r.lastName ? `${r.firstName} ${r.lastName}` : null,
-      nationality: null,
-      driverNumber: r.driverNumber ?? null,
-      headshotUrl:
-        r.firstName && r.lastName ? getLocalHeadshotUrl(r.firstName, r.lastName) : null,
-      nameAcronym: r.code ?? null,
-    },
-
-    constructor: {
-      name: r.teamName ?? null,
-      fullName: r.teamName ?? null,
-      nationality: null,
-      teamHex: r.teamHex ?? null,
-    },
-
-    placeholder: true,
+    driver: r.driver,
+    constructor: r.constructor,
   }));
 }
 
-// ---------- main ----------
+// -------------------- main --------------------
+
 async function updateStandings() {
   const nowIso = new Date().toISOString();
   const prevPosMap = await readPreviousPositions();
 
-  // OpenF1 meta + raw (used for enrichment AND placeholders)
+  // 1) Current standings from Jolpica (no fallback to last season)
+  const current = await fetchCurrentStandings();
+  let { season, driverStandings } = current.parsed;
+
+  // 2) OpenF1 enrichment (SAFE, never throws)
   const openf1 = await fetchOpenF1DriverMeta();
 
-  // 1) CURRENT standings (no last-season fallback)
-  let season = null;
-  let driverStandings = [];
-  let standingsSourceUrl = null;
-  let standingsUrlsTried = [];
-
-  let standingsOk = false;
-  let standingsError = null;
-
-  try {
-    const current = await fetchCurrentStandings();
-    season = current.parsed.season;
-    driverStandings = current.parsed.driverStandings;
-    standingsSourceUrl = current.sourceUrl;
-    standingsUrlsTried = current.urlsTried || [];
-    standingsOk = Array.isArray(driverStandings) && driverStandings.length > 0;
-  } catch (e) {
-    standingsOk = false;
-    standingsError = String(e?.message || e);
-  }
-
-  // lastRace best-effort (if season known)
+  // lastRace pulled for the SAME season we publish (best-effort)
   const lastRaceInfo = await fetchLastRaceForSeason(season);
 
-  // 2) Build drivers
-  let drivers = [];
+  // 3) If no standings, output alphabetical placeholders (dashes)
+  const standingsEmpty = !Array.isArray(driverStandings) || driverStandings.length === 0;
 
-  if (!standingsOk) {
-    // ✅ Alphabetical placeholder mode
-    drivers = buildAlphabeticalPlaceholderDrivers(openf1.raw);
+  if (standingsEmpty) {
+    const drivers = buildAlphabeticalPlaceholders(openf1);
 
     const out = {
-      header: "Driver Standings (placeholders)",
+      header: `${season || "current"} Driver Standings`,
       generatedAtUtc: nowIso,
       season: season ?? null,
 
+      mode: "PLACEHOLDERS",
       lastRace: lastRaceInfo.found ? lastRaceInfo.lastRace : null,
       lastRaceSource: {
         found: lastRaceInfo.found,
@@ -438,23 +404,21 @@ async function updateStandings() {
 
       source: {
         kind: "jolpica ergast-compatible",
-        url: standingsSourceUrl ?? "UNAVAILABLE",
-        urlsTried: standingsUrlsTried,
-        ok: false,
-        error: standingsError,
-        note:
-          "Current season driver standings were empty/unavailable; output is alphabetical placeholders (from OpenF1 drivers list).",
+        url: current.sourceUrl,
+        note: "Standings were empty; outputting alphabetical placeholders with dashes.",
       },
 
       enrichment: {
         openf1DriversUrl: OPENF1_DRIVERS_URL,
         openf1RowsSeen: openf1.rawCount,
+        openf1Ok: openf1.openf1Ok,
+        openf1Status: openf1.openf1Status,
         note:
-          "Placeholder driver list (alphabetical) is built from OpenF1 drivers endpoint. Headshots are LOCAL ONLY from repo /headshots. Standings fields are '-' until Jolpica standings populate.",
+          "If OpenF1 is locked during live sessions, enrichment is skipped (no crash). Headshots are LOCAL ONLY from repo /headshots.",
       },
 
       positionDeltaNotes:
-        "In placeholder mode, position deltas are null because there is no current positionNumber.",
+        "positionDirection is one of UP/DOWN/SAME/NEW. positionChange = previousPosition - currentPosition.",
       drivers,
     };
 
@@ -463,17 +427,12 @@ async function updateStandings() {
     return;
   }
 
-  // ✅ Live standings mode
-  drivers = (driverStandings || []).map((d) => {
+  // 4) Normal standings mode
+  const drivers = (driverStandings || []).map((d) => {
     const ctor = d.Constructors?.[0] ?? null;
 
-    // Normalize names (incl. Antonelli fix)
-    const rawFirst = d?.Driver?.givenName ?? null;
-    const rawLast = d?.Driver?.familyName ?? null;
-    const norm = normalizeDriverName(rawFirst, rawLast);
-    const firstName = norm.firstName;
-    const lastName = norm.lastName;
-
+    const firstName = d?.Driver?.givenName ?? null;
+    const lastName = d?.Driver?.familyName ?? null;
     const driverCode = d?.Driver?.code ?? null;
 
     const meta = matchOpenF1Meta(openf1.byName, firstName, lastName);
@@ -492,10 +451,10 @@ async function updateStandings() {
     );
 
     return {
-      position: fmtPos(d.position), // ✅ P1 formatting
+      position: d.position ? `P${d.position}` : "-",
       positionNumber: Number.isFinite(currentPos) ? currentPos : null,
-      points: Number(d.points),
-      wins: Number(d.wins),
+      points: d?.points != null ? Number(d.points) : "-",
+      wins: d?.wins != null ? Number(d.wins) : "-",
 
       ...delta,
 
@@ -506,10 +465,7 @@ async function updateStandings() {
         fullName: firstName && lastName ? `${firstName} ${lastName}` : null,
         nationality: d?.Driver?.nationality ?? null,
         driverNumber: meta?.driverNumber ?? null,
-
-        // ✅ LOCAL repo headshots (no OpenF1 headshot_url)
         headshotUrl: firstName && lastName ? getLocalHeadshotUrl(firstName, lastName) : null,
-
         nameAcronym: meta?.nameAcronym ?? null,
       },
 
@@ -523,9 +479,11 @@ async function updateStandings() {
   });
 
   const out = {
-    header: season ? `${season} Driver Standings` : "Driver Standings",
+    header: `${season} Driver Standings`,
     generatedAtUtc: nowIso,
     season: season ?? null,
+
+    mode: "LIVE",
 
     lastRace: lastRaceInfo.found ? lastRaceInfo.lastRace : null,
     lastRaceSource: {
@@ -536,17 +494,17 @@ async function updateStandings() {
 
     source: {
       kind: "jolpica ergast-compatible",
-      url: standingsSourceUrl,
-      urlsTried: standingsUrlsTried,
-      ok: true,
+      url: current.sourceUrl,
       note: null,
     },
 
     enrichment: {
       openf1DriversUrl: OPENF1_DRIVERS_URL,
       openf1RowsSeen: openf1.rawCount,
+      openf1Ok: openf1.openf1Ok,
+      openf1Status: openf1.openf1Status,
       note:
-        "Driver numbers + team hex colours + acronyms come from OpenF1 drivers endpoint (joined by name). Headshots are LOCAL ONLY from repo /headshots. Name normalization includes: 'Andrea Kimi Antonelli' -> firstName 'Kimi', lastName 'Antonelli'.",
+        "Driver numbers + team hex colours + acronyms come from OpenF1 when available. If OpenF1 is locked during live sessions, enrichment is skipped (no crash). Headshots are LOCAL ONLY from repo /headshots.",
     },
 
     positionDeltaNotes:
@@ -555,7 +513,7 @@ async function updateStandings() {
   };
 
   await fs.writeFile(OUTPUT_FILE, JSON.stringify(out, null, 2), "utf8");
-  console.log(`Wrote ${OUTPUT_FILE} mode=LIVE season=${out.season} drivers=${drivers.length}`);
+  console.log(`Wrote ${OUTPUT_FILE} mode=LIVE drivers=${drivers.length}`);
 }
 
 updateStandings().catch((err) => {
