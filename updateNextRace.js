@@ -1,6 +1,5 @@
 // updateNextRace.js
 import fs from "fs/promises";
-import fetch from "node-fetch"; // Node 18+ supports fetch natively
 
 const ICS_URL = "https://better-f1-calendar.vercel.app/api/calendar.ics";
 const USER_TZ = "America/Edmonton";
@@ -8,7 +7,6 @@ const LOCALE = "en-CA";
 
 // Helpers
 function parseDateICS(line) {
-  // DTSTART;TZID=UTC:20260306T013000Z
   const match = line.match(/:(\d{8}T\d{6}Z)/);
   return match ? new Date(match[1]) : null;
 }
@@ -26,7 +24,6 @@ function titleCase(s) {
     .join(" ");
 }
 
-// Minimal country -> ISO2 mapping
 function countryToIso2(country) {
   const map = {
     australia: "au",
@@ -87,7 +84,9 @@ async function updateNextRace() {
   });
 
   // Filter future races
-  const futureRaces = events.filter((e) => e.start && e.summary.toLowerCase().includes("race") && e.start > now);
+  const futureRaces = events.filter(
+    (e) => e.start && e.summary.toLowerCase().includes("race") && e.start > now
+  );
   if (!futureRaces.length) throw new Error("No upcoming race found.");
 
   const nextRace = futureRaces[0];
@@ -115,7 +114,10 @@ async function updateNextRace() {
         flag,
       },
       countdowns: { startsInDays: daysUntil(weekendStart, now) },
-      weekend: { startUtc: weekendStart?.toISOString() || null, endUtc: weekendEnd?.toISOString() || null },
+      weekend: {
+        startUtc: weekendStart?.toISOString() || null,
+        endUtc: weekendEnd?.toISOString() || null,
+      },
     },
   };
 
