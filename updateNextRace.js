@@ -199,29 +199,30 @@ function countryFromSlug(slug) {
     china: "China",
     japan: "Japan",
     bahrain: "Bahrain",
-    saudi-arabia: "Saudi Arabia",
+    "saudi-arabia": "Saudi Arabia",
     miami: "United States",
-    emilia-romagna: "Italy",
+    "emilia-romagna": "Italy",
     monaco: "Monaco",
     spain: "Spain",
     canada: "Canada",
     austria: "Austria",
-    great-britain: "United Kingdom",
+    "great-britain": "United Kingdom",
     belgium: "Belgium",
     hungary: "Hungary",
     netherlands: "Netherlands",
     italy: "Italy",
     azerbaijan: "Azerbaijan",
     singapore: "Singapore",
-    united-states: "United States",
+    "united-states": "United States",
     mexico: "Mexico",
-    sao-paulo: "Brazil",
-    las-vegas: "United States",
+    "sao-paulo": "Brazil",
+    "las-vegas": "United States",
     qatar: "Qatar",
-    abu-dhabi: "United Arab Emirates",
+    "abu-dhabi": "United Arab Emirates",
     madrid: "Spain",
   };
   return map[slug] || null;
+
 }
 
 function extractOfficialRaceMetaFromHtml(html, { fallbackGpName, fallbackSlug, fallbackCountry, fallbackCity }) {
