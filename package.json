@@ -1,16 +1,17 @@
 {
   "name": "f1-standings",
   "version": "1.0.0",
+  "private": true,
   "type": "module",
+  "description": "F1 standings + next race updater",
   "scripts": {
-    "updateNextRace": "node updateNextRace.js",
-    "updateStandings": "node updateStandings.js",
-    "updateConstructors": "node updateConstructors.js",
-    "updateAll": "node updateStandings.js && node updateConstructors.js && node updateNextRace.js"
+    "update:standings": "node updateStandings.js",
+    "update:constructors": "node updateConstructors.js",
+    "update:nextrace": "node updateNextRace.js",
+    "update:all": "node updateStandings.js && node updateConstructors.js && node updateNextRace.js && node updateRedBullStandings.js && node updateFerrariStandings.js && node updateMercedesStandings.js && node updateMcLarenStandings.js && node updateAlpineStandings.js && node updateAstonMartinStandings.js && node updateWilliamsStandings.js && node updateHaasStandings.js && node updateAudiStandings.js && node updateCadillacStandings.js && node UpdateVCARBStandings.js"
   },
   "dependencies": {
-    "node-ical": "^1.11.0",
-    "sharp": "^0.32.4",
-    "node-fetch": "^3.3.2"
+    "node-ical": "^0.17.0",
+    "sharp": "^0.34.5"
   }
 }
