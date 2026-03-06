@@ -1,5 +1,3 @@
-Can we look at my next race js code? The data it’s pulling has all of a sudden changed, and it’s no longer pulling a flag link and the race information isn’t as detailed
-
 // updateNextRace.js
 import fs from "node:fs/promises";
 import path from "node:path";
