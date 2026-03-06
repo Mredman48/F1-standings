@@ -2,7 +2,7 @@ name: Update All F1 Data (Race Weekends Only)
 
 on:
   schedule:
-    - cron: "*/30 * * * *" # checks every 30 min; will SKIP unless race weekend
+    - cron: "*/30 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -27,9 +27,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "npm"
 
-      # Use npm install (NOT ci) so it works even if package-lock was deleted/changed
       - name: Install dependencies
         run: npm install --no-audit --no-fund
 
@@ -47,7 +45,6 @@ jobs:
           echo "next_race=${{ steps.gate.outputs.next_race }}"
           exit 0
 
-      # ---------- RUN ALL UPDATE SCRIPTS ----------
       - name: Run all JS updates
         run: |
           node updateStandings.js
@@ -65,7 +62,6 @@ jobs:
           node updateCadillacStandings.js
           node UpdateVCARBStandings.js
 
-      # ---------- SINGLE COMMIT / PUSH ----------
       - name: Commit & Push (safe)
         run: |
           set -e
@@ -73,7 +69,6 @@ jobs:
           git config user.name "f1-bot"
           git config user.email "f1-bot@users.noreply.github.com"
 
-          # include package-lock.json if npm generated it
           git add *.json headshots teamlogos driver-numbers trackmaps package-lock.json || true
 
           if git diff --cached --quiet; then
