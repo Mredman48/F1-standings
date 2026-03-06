@@ -1,125 +1,130 @@
-const fs = require("fs");
+// updateNextRace.js
+import fs from "fs/promises";
 
-const YEAR = 2026;
-const OUTPUT = "f1_next_race.json";
+// -------------------- CONFIG --------------------
+const OPENF1_JSON = "https://raw.githubusercontent.com/MarkRedman/F1-standings-data/main/openf1_next_race.json";
 
-async function fetchJson(url) {
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`Fetch failed: ${url}`);
-  return await res.json();
+// -------------------- TIME HELPERS --------------------
+function daysUntilUtc(date, now = new Date()) {
+  const ms = new Date(date).getTime() - now.getTime();
+  return Math.ceil(ms / (1000 * 60 * 60 * 24));
 }
 
-function isoToFlag(iso2) {
-  if (!iso2) return null;
+// -------------------- UTILS --------------------
+function countryToIso2(countryName) {
+  const map = {
+    australia: "au",
+    bahrain: "bh",
+    china: "cn",
+    japan: "jp",
+    "saudi arabia": "sa",
+    qatar: "qa",
+    singapore: "sg",
+    "united arab emirates": "ae",
+    uae: "ae",
+    canada: "ca",
+    mexico: "mx",
+    brazil: "br",
+    argentina: "ar",
+    "united states": "us",
+    usa: "us",
+    "united kingdom": "gb",
+    greatbritain: "gb",
+    monaco: "mc",
+    italy: "it",
+    spain: "es",
+    france: "fr",
+    belgium: "be",
+    netherlands: "nl",
+    austria: "at",
+    hungary: "hu",
+    germany: "de",
+    portugal: "pt",
+    sweden: "se",
+    finland: "fi",
+    denmark: "dk",
+    norway: "no",
+    poland: "pl",
+    turkey: "tr",
+    switzerland: "ch",
+  };
+  if (!countryName) return null;
+  return map[countryName.toLowerCase().replace(/\s/g, "")] || null;
+}
+
+function buildFlagUrls(iso2) {
+  if (!iso2) return { iso2: null, png: null, svg: null };
+  const code = iso2.toLowerCase();
   return {
-    iso2: iso2.toLowerCase(),
-    png: `https://flagcdn.com/w160/${iso2.toLowerCase()}.png`,
-    svg: `https://flagcdn.com/${iso2.toLowerCase()}.svg`
+    iso2: code,
+    png: `https://flagcdn.com/w160/${code}.png`,
+    svg: `https://flagcdn.com/${code}.svg`,
   };
 }
 
-function slugify(name) {
-  return name
-    .toLowerCase()
-    .replace("grand prix", "")
-    .replace(/[^\w\s]/g, "")
-    .trim()
-    .replace(/\s+/g, "-");
+function buildSessionsUtc(sessions) {
+  if (!sessions) return [];
+  return sessions.map((s) => ({
+    type: s.type,
+    startUtc: s.startUtc,
+    endUtc: s.endUtc,
+  }));
 }
 
-async function getNextMeeting() {
-
-  const meetings = await fetchJson(
-    `https://api.openf1.org/v1/meetings?year=${YEAR}`
-  );
-
-  const now = new Date();
-
-  const next = meetings
-    .map(m => ({
-      ...m,
-      start: new Date(m.date_start),
-      end: new Date(m.date_end)
-    }))
-    .filter(m => m.end > now)
-    .sort((a, b) => a.start - b.start)[0];
-
-  return next;
+function computeWindowUtc(sessions) {
+  if (!sessions || !sessions.length) return { startUtc: null, endUtc: null };
+  const starts = sessions.map((s) => new Date(s.startUtc)).filter((d) => !isNaN(d));
+  const ends = sessions.map((s) => new Date(s.endUtc)).filter((d) => !isNaN(d));
+  return {
+    startUtc: starts.length ? new Date(Math.min(...starts)).toISOString() : null,
+    endUtc: ends.length ? new Date(Math.max(...ends)).toISOString() : null,
+  };
 }
 
-async function run() {
+// -------------------- MAIN --------------------
+async function updateNextRace() {
+  try {
+    const res = await fetch(OPENF1_JSON);
+    if (!res.ok) throw new Error(`HTTP ${res.status} fetching JSON`);
+    const data = await res.json();
 
-  const meeting = await getNextMeeting();
+    const nextEventRaw = data.nextEvent || {};
+    const weekendStart = nextEventRaw.weekend?.startUtc;
+    const sessions = buildSessionsUtc(nextEventRaw.sessions || []);
+    const window = computeWindowUtc(sessions);
 
-  if (!meeting) {
-    console.log("No upcoming race weekend found.");
-    return;
+    const country = nextEventRaw.location?.raw || null;
+    const iso2 = countryToIso2(country);
+    const flag = buildFlagUrls(iso2);
+
+    const out = {
+      header: "Next F1 event",
+      generatedAtUtc: new Date().toISOString(),
+      source: { kind: "openf1", url: OPENF1_JSON },
+      nextEvent: {
+        type: "RACE_WEEKEND",
+        title: nextEventRaw.title || null,
+        season: nextEventRaw.season || null,
+        location: {
+          raw: country,
+          city: nextEventRaw.location?.city || null,
+          country,
+          flag,
+        },
+        racePage: nextEventRaw.racePage || null,
+        trackMap: nextEventRaw.trackMap || null,
+        countdowns: { startsInDays: weekendStart ? daysUntilUtc(weekendStart) : null },
+        weekend: { startUtc: window.startUtc, endUtc: window.endUtc },
+        sessions,
+      },
+    };
+
+    await fs.writeFile("f1_next_race.json", JSON.stringify(out, null, 2), "utf8");
+    console.log("✅ f1_next_race.json updated (UTC times)");
+  } catch (err) {
+    console.error("❌ Error updating next race:", err);
+    process.exit(1);
   }
-
-  const slug = slugify(meeting.meeting_name);
-
-  const weekendStart = new Date(meeting.date_start);
-  const weekendEnd = new Date(meeting.date_end);
-
-  const now = new Date();
-  const diffDays = Math.floor((weekendStart - now) / (1000 * 60 * 60 * 24));
-
-  const json = {
-
-    header: "Next F1 event",
-
-    generatedAtUtc: new Date().toISOString(),
-
-    displayTimeZone: "America/Edmonton",
-
-    source: {
-      kind: "openf1",
-      url: "https://api.openf1.org/v1/meetings"
-    },
-
-    nextEvent: {
-
-      type: "RACE_WEEKEND",
-
-      title: meeting.meeting_name,
-
-      season: String(meeting.year),
-
-      location: {
-        raw: meeting.country_name,
-        city: meeting.location,
-        country: meeting.country_name,
-        flag: isoToFlag(meeting.country_code)
-      },
-
-      racePage: {
-        slug: slug,
-        url: `https://www.formula1.com/en/racing/${meeting.year}/${slug}`
-      },
-
-      trackMap: {
-        found: true,
-        pageUrl: `https://www.formula1.com/en/racing/${meeting.year}/${slug}`,
-        mediaUrl: null,
-        pngUrl: `https://mredman48.github.io/F1-standings/trackmaps/f1_${meeting.year}_${slug}_detailed.png`,
-        note: null
-      },
-
-      countdowns: {
-        startsInDays: diffDays
-      },
-
-      weekend: {
-        startUtc: weekendStart.toISOString(),
-        endUtc: weekendEnd.toISOString()
-      }
-
-    }
-  };
-
-  fs.writeFileSync(OUTPUT, JSON.stringify(json, null, 2));
-
-  console.log("Generated", OUTPUT);
 }
 
-run();
+updateNextRace();
