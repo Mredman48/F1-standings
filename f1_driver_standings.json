@@ -1,6 +1,6 @@
 {
   "header": "Driver Standings",
-  "generatedAtUtc": "2026-03-06T07:02:50.440Z",
+  "generatedAtUtc": "2026-03-06T07:14:54.354Z",
   "season": null,
   "mode": "ALPHABETICAL_FALLBACK",
   "source": {
@@ -8,6 +8,7 @@
     "url": "https://api.openf1.org/v1/drivers?meeting_key=latest",
     "note": "No standings available; using alphabetical driver roster fallback."
   },
+  "lastRace": null,
   "drivers": [
     {
       "position": "-",
