@@ -10,18 +10,46 @@ const HEADSHOTS =
 
 const UA = "f1-standings-bot";
 
-/* ---------------- helpers ---------------- */
+/* ------------------------------------------------ */
+/* DRIVER NAME FIXES FOR HEADSHOT FILES */
+/* ------------------------------------------------ */
+
+const DRIVER_SLUG_OVERRIDES = {
+  alexander: "alex",   // Alex Albon
+};
+
+/* ------------------------------------------------ */
+/* HELPERS */
+/* ------------------------------------------------ */
 
 function slug(s) {
   return String(s)
     .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
 }
 
+function normalizeFirstName(first) {
+  if (!first) return first;
+
+  const lower = first.toLowerCase();
+
+  if (DRIVER_SLUG_OVERRIDES[lower]) {
+    return DRIVER_SLUG_OVERRIDES[lower];
+  }
+
+  return lower;
+}
+
 function headshot(first, last) {
   if (!first || !last) return null;
-  return `${HEADSHOTS}/${slug(first)}-${slug(last)}.png`;
+
+  const firstSlug = slug(normalizeFirstName(first));
+  const lastSlug = slug(last);
+
+  return `${HEADSHOTS}/${firstSlug}-${lastSlug}.png`;
 }
 
 async function fetchJson(url) {
@@ -32,13 +60,16 @@ async function fetchJson(url) {
     },
   });
 
-  if (!res.ok)
+  if (!res.ok) {
     throw new Error(`HTTP ${res.status}`);
+  }
 
   return res.json();
 }
 
-/* ---------------- alphabetical fallback ---------------- */
+/* ------------------------------------------------ */
+/* BUILD DRIVER LIST */
+/* ------------------------------------------------ */
 
 function buildAlphabeticalDrivers(drivers) {
   const rows = drivers
@@ -74,7 +105,9 @@ function buildAlphabeticalDrivers(drivers) {
   }));
 }
 
-/* ---------------- main ---------------- */
+/* ------------------------------------------------ */
+/* MAIN */
+/* ------------------------------------------------ */
 
 async function updateStandings() {
   const now = new Date().toISOString();
@@ -85,34 +118,11 @@ async function updateStandings() {
   try {
     const data = await fetchJson(OPENF1_URL);
 
-    if (!Array.isArray(data) || !data.length)
+    if (!Array.isArray(data) || !data.length) {
       throw new Error("OpenF1 returned no drivers");
+    }
 
-    drivers = data
-      .sort((a, b) =>
-        a.last_name.localeCompare(b.last_name)
-      )
-      .map((d) => ({
-        position: "-",
-        positionNumber: null,
-        points: "-",
-        wins: "-",
-
-        driver: {
-          firstName: d.first_name,
-          lastName: d.last_name,
-          fullName: `${d.first_name} ${d.last_name}`,
-          driverNumber: d.driver_number ?? null,
-          headshotUrl: headshot(
-            d.first_name,
-            d.last_name
-          ),
-        },
-
-        constructor: {
-          name: d.team_name ?? null,
-        },
-      }));
+    drivers = buildAlphabeticalDrivers(data);
 
     console.log("Source: OpenF1");
   } catch (err) {
@@ -127,7 +137,7 @@ async function updateStandings() {
 
       drivers = buildAlphabeticalDrivers(fallback);
 
-      console.log("Source: alphabetical fallback");
+      console.log("Source: fallback alphabetical list");
     } catch {
       console.warn("Fallback also failed");
     }
