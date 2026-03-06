@@ -2,8 +2,8 @@ import fs from "node:fs/promises";
 
 const OUTPUT_FILE = "f1_driver_standings.json";
 
-const JOLPICA =
-  "https://api.jolpi.ca/ergast/f1/current/driverstandings.json";
+const OPENF1_URL =
+  "https://api.openf1.org/v1/drivers?session_key=latest";
 
 const HEADSHOTS =
   "https://mredman48.github.io/F1-standings/headshots";
@@ -26,7 +26,10 @@ function headshot(first, last) {
 
 async function fetchJson(url) {
   const res = await fetch(url, {
-    headers: { "User-Agent": UA },
+    headers: {
+      "User-Agent": UA,
+      Accept: "application/json",
+    },
   });
 
   if (!res.ok)
@@ -35,62 +38,40 @@ async function fetchJson(url) {
   return res.json();
 }
 
-async function readPrevious() {
-  try {
-    const raw = await fs.readFile(OUTPUT_FILE, "utf8");
-    const parsed = JSON.parse(raw);
+/* ---------------- alphabetical fallback ---------------- */
 
-    if (parsed?.drivers?.length)
-      return parsed;
-  } catch {}
+function buildAlphabeticalDrivers(drivers) {
+  const rows = drivers
+    .map((d) => ({
+      firstName: d.first_name,
+      lastName: d.last_name,
+      driverNumber: d.driver_number,
+      team: d.team_name,
+    }))
+    .filter((d) => d.firstName && d.lastName);
 
-  return null;
-}
+  rows.sort((a, b) =>
+    a.lastName.localeCompare(b.lastName)
+  );
 
-/* ---------------- jolpica ---------------- */
+  return rows.map((d) => ({
+    position: "-",
+    positionNumber: null,
+    points: "-",
+    wins: "-",
 
-async function getStandings() {
-  const json = await fetchJson(JOLPICA);
+    driver: {
+      firstName: d.firstName,
+      lastName: d.lastName,
+      fullName: `${d.firstName} ${d.lastName}`,
+      driverNumber: d.driverNumber ?? null,
+      headshotUrl: headshot(d.firstName, d.lastName),
+    },
 
-  const season =
-    json?.MRData?.StandingsTable?.season;
-
-  const rows =
-    json?.MRData?.StandingsTable?.StandingsLists?.[0]
-      ?.DriverStandings ?? [];
-
-  if (!rows.length)
-    throw new Error("No standings returned");
-
-  const drivers = rows.map((d) => {
-    const ctor = d.Constructors?.[0];
-
-    const first = d.Driver.givenName;
-    const last = d.Driver.familyName;
-
-    return {
-      position: `P${d.position}`,
-      positionNumber: Number(d.position),
-      points: Number(d.points),
-      wins: Number(d.wins),
-
-      driver: {
-        code: d.Driver.code ?? null,
-        firstName: first,
-        lastName: last,
-        fullName: `${first} ${last}`,
-        nationality: d.Driver.nationality,
-        headshotUrl: headshot(first, last),
-      },
-
-      constructor: {
-        name: ctor?.name,
-        nationality: ctor?.nationality,
-      },
-    };
-  });
-
-  return { season, drivers };
+    constructor: {
+      name: d.team ?? null,
+    },
+  }));
 }
 
 /* ---------------- main ---------------- */
@@ -98,51 +79,65 @@ async function getStandings() {
 async function updateStandings() {
   const now = new Date().toISOString();
 
-  let data = null;
-
-  /* ---- PRIMARY SOURCE ---- */
+  let drivers = [];
+  let mode = "LIVE";
 
   try {
-    data = await getStandings();
-    console.log("Source: Jolpica");
+    const data = await fetchJson(OPENF1_URL);
+
+    if (!Array.isArray(data) || !data.length)
+      throw new Error("OpenF1 returned no drivers");
+
+    drivers = data
+      .sort((a, b) =>
+        a.last_name.localeCompare(b.last_name)
+      )
+      .map((d) => ({
+        position: "-",
+        positionNumber: null,
+        points: "-",
+        wins: "-",
+
+        driver: {
+          firstName: d.first_name,
+          lastName: d.last_name,
+          fullName: `${d.first_name} ${d.last_name}`,
+          driverNumber: d.driver_number ?? null,
+          headshotUrl: headshot(
+            d.first_name,
+            d.last_name
+          ),
+        },
+
+        constructor: {
+          name: d.team_name ?? null,
+        },
+      }));
+
+    console.log("Source: OpenF1");
   } catch (err) {
-    console.warn("Jolpica failed:", err.message);
-  }
+    console.warn("OpenF1 unavailable:", err.message);
 
-  /* ---- FALLBACK: previous JSON ---- */
+    mode = "PLACEHOLDER";
 
-  if (!data) {
-    const prev = await readPrevious();
+    try {
+      const fallback = await fetchJson(
+        "https://api.openf1.org/v1/drivers"
+      );
 
-    if (prev) {
-      data = {
-        season: prev.season,
-        drivers: prev.drivers,
-        source: "previous-file",
-      };
+      drivers = buildAlphabeticalDrivers(fallback);
 
-      console.log("Source: previous JSON");
+      console.log("Source: alphabetical fallback");
+    } catch {
+      console.warn("Fallback also failed");
     }
   }
 
-  /* ---- LAST RESORT ---- */
-
-  if (!data) {
-    data = {
-      season: null,
-      drivers: [],
-      source: "placeholder",
-    };
-
-    console.warn("All sources failed");
-  }
-
   const out = {
-    header: `${data.season ?? "Current"} Driver Standings`,
+    header: "Driver Standings",
     generatedAtUtc: now,
-    season: data.season,
-    source: data.source ?? "jolpica",
-    drivers: data.drivers,
+    mode,
+    drivers,
   };
 
   await fs.writeFile(
@@ -151,7 +146,7 @@ async function updateStandings() {
   );
 
   console.log(
-    `Wrote ${OUTPUT_FILE} drivers=${data.drivers.length}`
+    `Wrote ${OUTPUT_FILE} drivers=${drivers.length}`
   );
 }
 
