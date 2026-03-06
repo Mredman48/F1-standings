@@ -2,10 +2,7 @@ import fs from "node:fs/promises";
 
 const OUTPUT_FILE = "f1_driver_standings.json";
 
-const F1_API =
-  "https://api.formula1.com/v1/standings/drivers?season=2026";
-
-const JOLPICA_API =
+const JOLPICA =
   "https://api.jolpi.ca/ergast/f1/current/driverstandings.json";
 
 const HEADSHOTS =
@@ -23,19 +20,17 @@ function slug(s) {
 }
 
 function headshot(first, last) {
+  if (!first || !last) return null;
   return `${HEADSHOTS}/${slug(first)}-${slug(last)}.png`;
 }
 
 async function fetchJson(url) {
   const res = await fetch(url, {
-    headers: {
-      "User-Agent": UA,
-      Accept: "application/json",
-    },
+    headers: { "User-Agent": UA },
   });
 
   if (!res.ok)
-    throw new Error(`HTTP ${res.status} ${url}`);
+    throw new Error(`HTTP ${res.status}`);
 
   return res.json();
 }
@@ -44,58 +39,18 @@ async function readPrevious() {
   try {
     const raw = await fs.readFile(OUTPUT_FILE, "utf8");
     const parsed = JSON.parse(raw);
-    if (parsed?.drivers?.length) return parsed;
+
+    if (parsed?.drivers?.length)
+      return parsed;
   } catch {}
 
   return null;
 }
 
-/* ---------------- source 1 : F1 API ---------------- */
+/* ---------------- jolpica ---------------- */
 
-async function fromF1API() {
-  const json = await fetchJson(F1_API);
-
-  const rows = json?.standings ?? [];
-  if (!rows.length) throw new Error("F1 API empty");
-
-  const drivers = rows.map((d) => {
-    const first = d.driver.firstName;
-    const last = d.driver.lastName;
-
-    return {
-      position: `P${d.position}`,
-      positionNumber: d.position,
-      points: d.points,
-      wins: d.wins ?? 0,
-
-      driver: {
-        code: d.driver.code ?? null,
-        firstName: first,
-        lastName: last,
-        fullName: `${first} ${last}`,
-        nationality: d.driver.nationality,
-        driverNumber: d.driver.number,
-        headshotUrl: headshot(first, last),
-      },
-
-      constructor: {
-        name: d.team.name,
-        nationality: d.team.nationality,
-      },
-    };
-  });
-
-  return {
-    season: json.season,
-    drivers,
-    source: "f1-api",
-  };
-}
-
-/* ---------------- source 2 : Jolpica ---------------- */
-
-async function fromJolpica() {
-  const json = await fetchJson(JOLPICA_API);
+async function getStandings() {
+  const json = await fetchJson(JOLPICA);
 
   const season =
     json?.MRData?.StandingsTable?.season;
@@ -105,7 +60,7 @@ async function fromJolpica() {
       ?.DriverStandings ?? [];
 
   if (!rows.length)
-    throw new Error("Jolpica empty");
+    throw new Error("No standings returned");
 
   const drivers = rows.map((d) => {
     const ctor = d.Constructors?.[0];
@@ -135,11 +90,7 @@ async function fromJolpica() {
     };
   });
 
-  return {
-    season,
-    drivers,
-    source: "jolpica",
-  };
+  return { season, drivers };
 }
 
 /* ---------------- main ---------------- */
@@ -147,59 +98,51 @@ async function fromJolpica() {
 async function updateStandings() {
   const now = new Date().toISOString();
 
-  let result = null;
+  let data = null;
 
-  /* source 1 */
+  /* ---- PRIMARY SOURCE ---- */
 
   try {
-    result = await fromF1API();
-    console.log("Standings source: F1 API");
+    data = await getStandings();
+    console.log("Source: Jolpica");
   } catch (err) {
-    console.warn("F1 API failed:", err.message);
+    console.warn("Jolpica failed:", err.message);
   }
 
-  /* source 2 */
+  /* ---- FALLBACK: previous JSON ---- */
 
-  if (!result) {
-    try {
-      result = await fromJolpica();
-      console.log("Standings source: Jolpica");
-    } catch (err) {
-      console.warn("Jolpica failed:", err.message);
-    }
-  }
-
-  /* source 3 */
-
-  if (!result) {
+  if (!data) {
     const prev = await readPrevious();
 
     if (prev) {
-      result = {
-        ...prev,
+      data = {
+        season: prev.season,
+        drivers: prev.drivers,
         source: "previous-file",
       };
 
-      console.log("Standings source: previous file");
+      console.log("Source: previous JSON");
     }
   }
 
-  /* placeholder */
+  /* ---- LAST RESORT ---- */
 
-  if (!result) {
-    result = {
+  if (!data) {
+    data = {
       season: null,
       drivers: [],
       source: "placeholder",
     };
+
+    console.warn("All sources failed");
   }
 
   const out = {
-    header: `${result.season ?? "Current"} Driver Standings`,
+    header: `${data.season ?? "Current"} Driver Standings`,
     generatedAtUtc: now,
-    season: result.season,
-    source: result.source,
-    drivers: result.drivers,
+    season: data.season,
+    source: data.source ?? "jolpica",
+    drivers: data.drivers,
   };
 
   await fs.writeFile(
@@ -208,7 +151,7 @@ async function updateStandings() {
   );
 
   console.log(
-    `Wrote ${OUTPUT_FILE} source=${result.source}`
+    `Wrote ${OUTPUT_FILE} drivers=${data.drivers.length}`
   );
 }
 
