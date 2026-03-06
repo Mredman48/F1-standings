@@ -1,16 +1,16 @@
 {
   "name": "f1-standings",
   "version": "1.0.0",
-  "description": "F1 standings and next race updater",
-  "main": "updateNextRace.js",
   "type": "module",
   "scripts": {
     "updateNextRace": "node updateNextRace.js",
-    "updateStandings": "node updateStandings.js"
+    "updateStandings": "node updateStandings.js",
+    "updateConstructors": "node updateConstructors.js",
+    "updateAll": "node updateStandings.js && node updateConstructors.js && node updateNextRace.js"
   },
-  "author": "Your Name",
-  "license": "MIT",
   "dependencies": {
+    "node-ical": "^1.11.0",
+    "sharp": "^0.32.4",
     "node-fetch": "^3.3.2"
   }
 }
