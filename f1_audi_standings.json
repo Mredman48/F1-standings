@@ -1,6 +1,11 @@
 {
   "header": "Audi standings",
-  "generatedAtUtc": "2026-03-08T10:39:35.933Z",
+  "generatedAtUtc": "2026-03-08T10:43:14.836Z",
+  "sources": {
+    "driverStandings": "f1_driver_standings.json",
+    "constructorStandings": "f1_constructors_standings.json",
+    "bestResults": "OpenF1 sessions?year=YYYY&session_name=Race + session_result?driver_number=NN"
+  },
   "audi": {
     "team": "Audi",
     "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/audi_logo_colored.png",
@@ -41,13 +46,14 @@
       "wins": 0,
       "team": "Audi",
       "bestResult": {
-        "position": "-",
+        "position": "P9",
         "raceName": "-",
-        "circuit": "-",
+        "circuit": "Melbourne",
         "location": {
-          "locality": "-",
-          "country": "-"
-        }
+          "locality": "Melbourne",
+          "country": "Australia"
+        },
+        "sessionKey": 11234
       }
     },
     {
@@ -62,13 +68,14 @@
       "wins": 0,
       "team": "Audi",
       "bestResult": {
-        "position": "-",
+        "position": "DNS",
         "raceName": "-",
         "circuit": "-",
         "location": {
           "locality": "-",
           "country": "-"
-        }
+        },
+        "sessionKey": 11234
       }
     }
   ]
