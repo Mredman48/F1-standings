@@ -121,18 +121,31 @@ function decodeHtmlEntities(str) {
     .replace(/&gt;/g, ">");
 }
 
-function htmlToText(html) {
+function htmlToLines(html) {
   let text = String(html);
 
   text = text.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ");
   text = text.replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, " ");
   text = text.replace(/<noscript\b[^>]*>[\s\S]*?<\/noscript>/gi, " ");
   text = text.replace(/<!--[\s\S]*?-->/g, " ");
+
+  text = text.replace(
+    /<\/(p|div|section|article|header|footer|main|li|tr|td|th|h1|h2|h3|h4|h5|h6|a|ul|ol)>/gi,
+    "\n"
+  );
+  text = text.replace(/<br\s*\/?>/gi, "\n");
   text = text.replace(/<[^>]+>/g, " ");
 
   text = decodeHtmlEntities(text);
 
-  return text.replace(/\s+/g, " ").trim();
+  return text
+    .split("\n")
+    .map((line) => line.replace(/\s+/g, " ").trim())
+    .filter(Boolean);
+}
+
+function cleanLine(line) {
+  return String(line || "").replace(/\s+/g, " ").trim();
 }
 
 async function fetchText(url, accept = "text/html,*/*") {
@@ -168,23 +181,18 @@ function buildAlphabeticalPlaceholders() {
 }
 
 /* ------------------------------------------------ */
-/* SECTION EXTRACTION */
+/* SECTION FINDERS */
 /* ------------------------------------------------ */
 
-function extractSectionText(html, headingRegex) {
-  const text = htmlToText(html);
-  const headingMatch = text.match(headingRegex);
+function findSection(lines, headingRegex) {
+  const start = lines.findIndex((line) => headingRegex.test(line));
+  if (start === -1) return [];
 
-  if (!headingMatch || headingMatch.index == null) {
-    return null;
-  }
+  const end = lines.findIndex(
+    (line, idx) => idx > start && /OUR PARTNERS/i.test(line)
+  );
 
-  const fromHeading = text.slice(headingMatch.index);
-  const partnersIndex = fromHeading.search(/\bOUR PARTNERS\b/i);
-
-  return partnersIndex === -1
-    ? fromHeading
-    : fromHeading.slice(0, partnersIndex);
+  return lines.slice(start, end === -1 ? lines.length : end);
 }
 
 /* ------------------------------------------------ */
@@ -192,44 +200,40 @@ function extractSectionText(html, headingRegex) {
 /* ------------------------------------------------ */
 
 function parseOfficialTeamStandings(html, year) {
-  const section = extractSectionText(
-    html,
-    new RegExp(`${year}\\s+TEAMS?['’]?\\s+STANDINGS`, "i")
+  const lines = htmlToLines(html);
+
+  // Handles actual current heading line:
+  // "# 2026 Teams' Standings"
+  const section = findSection(
+    lines,
+    new RegExp(`^#?\\s*${year}\\s+Teams['’]\\s+Standings$`, "i")
   );
 
-  if (!section) {
+  if (!section.length) {
     return { rows: [], reason: "heading_not_found" };
   }
 
-  const compact = section.replace(/\s+/g, " ");
-
-  const teamNames = [
-    "Mercedes",
-    "Ferrari",
-    "McLaren",
-    "Red Bull Racing",
-    "Haas F1 Team",
-    "Racing Bulls",
-    "Audi",
-    "Alpine",
-    "Williams",
-    "Cadillac",
-    "Aston Martin",
-  ];
-
-  const teamAlt = teamNames
-    .sort((a, b) => b.length - a.length)
-    .map((t) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
-    .join("|");
-
-  const rowRe = new RegExp(`(\\d+)\\s*(${teamAlt})\\s*(\\d+(?:\\.\\d+)?)`, "g");
-
   const rows = [];
-  for (const match of compact.matchAll(rowRe)) {
-    const [, pos, teamRaw, pts] = match;
+
+  // Current official rows look like:
+  // 1Mercedes43
+  // 4Red Bull Racing8
+  const rowRe = /^(\d+)([A-Za-z][A-Za-z0-9 '&.\-]*?)(\d+(?:\.\d+)?)$/;
+
+  for (const rawLine of section) {
+    const line = cleanLine(rawLine);
+
+    if (/^Pos\.?Team\s*Pts\.?$/i.test(line)) continue;
+    if (new RegExp(`^#?\\s*${year}\\s+Teams['’]\\s+Standings$`, "i").test(line)) continue;
+
+    const m = line.match(rowRe);
+    if (!m) continue;
+
+    const [, pos, teamRaw, pts] = m;
+
     rows.push({
-      teamRaw,
-      team: normalizeTeamName(teamRaw),
+      teamRaw: cleanLine(teamRaw),
+      team: normalizeTeamName(cleanLine(teamRaw)),
       position: fmtPos(pos),
       points: safeNumOrDash(pts),
       wins: "-",
@@ -258,71 +262,69 @@ function parseOfficialTeamStandings(html, year) {
 /* ------------------------------------------------ */
 
 function parseOfficialRaceResults(html, year) {
-  const section = extractSectionText(
-    html,
-    new RegExp(`${year}\\s+RACE\\s+RESULTS`, "i")
+  const lines = htmlToLines(html);
+
+  const start = lines.findIndex((line) =>
+    new RegExp(`^#?\\s*${year}\\s+RACE RESULTS$`, "i").test(line)
   );
 
-  if (!section) {
+  if (start === -1) {
     return { lastRace: null, reason: "heading_not_found" };
   }
 
-  // Normalize the weird inline "Image" markers the current page emits.
-  const compact = section
-    .replace(/\bImage\b/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
+  // Search only the results area, not the whole page.
+  const section = lines.slice(start);
 
-  const teamNames = [
-    "Mercedes",
-    "Ferrari",
-    "McLaren",
-    "Red Bull Racing",
-    "Haas F1 Team",
-    "Racing Bulls",
-    "Audi",
-    "Alpine",
-    "Williams",
-    "Cadillac",
-    "Aston Martin",
-  ];
+  // Current table is line-based after stripping:
+  // Australia
+  // 08 Mar
+  // George Russell RUS
+  // Mercedes
+  // 58
+  // 1:23:06.801
+  for (let i = 0; i < section.length - 5; i += 1) {
+    const raceName = cleanLine(section[i]);
+    const date = cleanLine(section[i + 1]);
+    const winner = cleanLine(section[i + 2]);
+    const team = cleanLine(section[i + 3]);
+    const laps = cleanLine(section[i + 4]);
+    const timeUtc = cleanLine(section[i + 5]);
 
-  const teamAlt = teamNames
-    .sort((a, b) => b.length - a.length)
-    .map((t) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
-    .join("|");
+    if (new RegExp(`^#?\\s*${year}\\s+RACE RESULTS$`, "i").test(raceName)) continue;
+    if (/^Grand Prix\s*Date\s*Winner\s*Team\s*Laps\s*Time$/i.test(raceName)) continue;
 
-  const raceRe = new RegExp(
-    `([A-Za-z][A-Za-z\\s'’-]+?)\\s*(\\d{2}\\s+[A-Za-z]{3})\\s*([A-Za-zÀ-ÿ\\s'’-]+?)\\s+([A-Z]{3})\\s*(${teamAlt})\\s+(\\d+)\\s+([0-9:.+-]+)`,
-    "i"
-  );
+    if (!/^[A-Za-z][A-Za-z\s'’-]+$/.test(raceName)) continue;
+    if (!/^\d{2}\s[A-Za-z]{3}$/.test(date)) continue;
+    if (!/^[A-Za-zÀ-ÿ\s'’.-]+\s[A-Z]{3}$/.test(winner)) continue;
+    if (!/^[A-Za-z][A-Za-z0-9\s&'.-]+$/.test(team)) continue;
+    if (!/^\d+$/.test(laps)) continue;
+    if (!/^[0-9:.+-]+$/.test(timeUtc)) continue;
 
-  const m = compact.match(raceRe);
-  if (!m) {
-    return { lastRace: null, reason: "no_rows_parsed" };
+    return {
+      lastRace: {
+        season: String(year),
+        round: "latest",
+        raceName,
+        date,
+        timeUtc,
+        circuit: {
+          name: "-",
+          locality: "-",
+          country: "-",
+        },
+        winner: {
+          name: winner,
+          team,
+          laps: Number(laps),
+        },
+      },
+      reason: null,
+    };
   }
 
-  const [, raceName, date, winnerName, winnerCode, team, laps, timeUtc] = m;
-
   return {
-    lastRace: {
-      season: String(year),
-      round: "latest",
-      raceName: raceName.trim(),
-      date: date.trim(),
-      timeUtc: timeUtc.trim(),
-      circuit: {
-        name: "-",
-        locality: "-",
-        country: "-",
-      },
-      winner: {
-        name: `${winnerName.trim()} ${winnerCode.trim()}`,
-        team: team.trim(),
-        laps: Number(laps),
-      },
-    },
-    reason: null,
+    lastRace: null,
+    reason: "no_rows_parsed",
   };
 }
 
