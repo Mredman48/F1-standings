@@ -24,7 +24,7 @@ jobs:
         run: npm ci
 
       - name: Run driver standings script
-        run: node updateDriverStandings.js
+        run: node updateStandings.js
 
       - name: Show generated JSON
         if: always()
