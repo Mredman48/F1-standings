@@ -1,6 +1,6 @@
 {
   "header": "Haas standings",
-  "generatedAtUtc": "2026-03-08T09:32:24.268Z",
+  "generatedAtUtc": "2026-03-08T09:56:18.124Z",
   "sources": {
     "openf1": "https://api.openf1.org/v1",
     "openf1Drivers": "https://api.openf1.org/v1/drivers?meeting_key=latest&team_name=Haas%20F1%20Team",
@@ -14,7 +14,7 @@
     "note": "Drivers/numbers come ONLY from OpenF1. Standings come from Jolpica (Ergast-compatible) with Ergast fallback. No fallback drivers are inserted."
   },
   "meta": {
-    "mode": "OPENF1_DRIVERS_STANDINGS_PLACEHOLDERS_LOCAL_ASSETS",
+    "mode": "OPENF1_DRIVERS_ERGAST_STANDINGS_LOCAL_ASSETS",
     "openf1DriversOk": true,
     "teamAliasesTried": [
       "Haas",
@@ -29,23 +29,23 @@
     "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_haas_color_v2.png",
     "teamStanding": {
       "team": "Haas",
-      "position": "-",
-      "points": "-",
-      "wins": "-",
-      "originalTeam": "-",
+      "position": "P5",
+      "points": "6",
+      "wins": "0",
+      "originalTeam": "Haas F1 Team",
       "constructorId": "haas"
     }
   },
   "lastRace": {
-    "season": "-",
-    "round": "-",
-    "raceName": "-",
-    "date": "-",
-    "timeUtc": "-",
+    "season": "2026",
+    "round": "1",
+    "raceName": "Australian Grand Prix",
+    "date": "2026-03-08",
+    "timeUtc": "04:00:00Z",
     "circuit": {
-      "name": "-",
-      "locality": "-",
-      "country": "-"
+      "name": "Albert Park Grand Prix Circuit",
+      "locality": "Melbourne",
+      "country": "Australia"
     }
   },
   "drivers": [
@@ -55,11 +55,11 @@
       "code": "OCO",
       "driverNumber": 31,
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-31.png",
-      "position": "-",
-      "points": "-",
-      "wins": "-",
+      "position": "P11",
+      "points": "0",
+      "wins": "0",
       "team": "Haas",
-      "placeholder": true,
+      "placeholder": false,
       "bestResult": {
         "position": "-",
         "raceName": "-",
@@ -76,11 +76,11 @@
       "code": "BEA",
       "driverNumber": 87,
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-87.png",
-      "position": "-",
-      "points": "-",
-      "wins": "-",
+      "position": "P7",
+      "points": "6",
+      "wins": "0",
       "team": "Haas",
-      "placeholder": true,
+      "placeholder": false,
       "bestResult": {
         "position": "-",
         "raceName": "-",

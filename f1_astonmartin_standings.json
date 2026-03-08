@@ -1,6 +1,6 @@
 {
   "header": "Aston Martin standings",
-  "generatedAtUtc": "2026-03-08T09:32:21.395Z",
+  "generatedAtUtc": "2026-03-08T09:56:15.815Z",
   "sources": {
     "openf1": "https://api.openf1.org/v1",
     "openf1Drivers": "https://api.openf1.org/v1/drivers?meeting_key=latest&team_name=Aston%20Martin",
@@ -14,7 +14,7 @@
     "note": "Drivers/numbers come ONLY from OpenF1. Standings come from Jolpica (Ergast-compatible) with Ergast fallback. No fallback drivers are ever inserted."
   },
   "meta": {
-    "mode": "OPENF1_DRIVERS_STANDINGS_PLACEHOLDERS_LOCAL_ASSETS",
+    "mode": "OPENF1_DRIVERS_ERGAST_STANDINGS_LOCAL_ASSETS",
     "openf1DriversOk": true,
     "note": "Positions are formatted as P1, P2, etc. If OpenF1 returns <2 drivers, drivers[] will be empty (no placeholders). Number images are pulled from your repo using the OpenF1-provided number."
   },
@@ -24,21 +24,21 @@
     "teamStanding": {
       "team": "Aston Martin",
       "position": "-",
-      "points": "-",
-      "wins": "-",
-      "originalTeam": "-"
+      "points": "0",
+      "wins": "0",
+      "originalTeam": "Aston Martin"
     }
   },
   "lastRace": {
-    "season": "-",
-    "round": "-",
-    "raceName": "-",
-    "date": "-",
-    "timeUtc": "-",
+    "season": "2026",
+    "round": "1",
+    "raceName": "Australian Grand Prix",
+    "date": "2026-03-08",
+    "timeUtc": "04:00:00Z",
     "circuit": {
-      "name": "-",
-      "locality": "-",
-      "country": "-"
+      "name": "Albert Park Grand Prix Circuit",
+      "locality": "Melbourne",
+      "country": "Australia"
     }
   },
   "drivers": [
@@ -49,10 +49,10 @@
       "driverNumber": 14,
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-14.png",
       "position": "-",
-      "points": "-",
-      "wins": "-",
+      "points": "0",
+      "wins": "0",
       "team": "Aston Martin",
-      "placeholder": true,
+      "placeholder": false,
       "bestResult": {
         "position": "-",
         "raceName": "-",
@@ -70,10 +70,10 @@
       "driverNumber": 18,
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-18.png",
       "position": "-",
-      "points": "-",
-      "wins": "-",
+      "points": "0",
+      "wins": "0",
       "team": "Aston Martin",
-      "placeholder": true,
+      "placeholder": false,
       "bestResult": {
         "position": "-",
         "raceName": "-",
