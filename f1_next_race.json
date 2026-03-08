@@ -1,34 +1,35 @@
 {
   "header": "Next F1 event",
-  "generatedAtUtc": "2026-03-08T07:07:35.152Z",
+  "generatedAtUtc": "2026-03-08T07:10:18.278Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics+formula1",
-    "url": "https://better-f1-calendar.vercel.app/api/calendar.ics"
+    "url": "https://better-f1-calendar.vercel.app/api/calendar.ics",
+    "officialRacePage": "https://www.formula1.com/en/racing/2026/china"
   },
   "nextEvent": {
     "type": "RACE_WEEKEND",
-    "title": "FORMULA 1 QATAR AIRWAYS AUSTRALIAN GRAND PRIX 2026",
+    "title": "FORMULA 1 HEINEKEN CHINESE GRAND PRIX 2026",
     "season": "2026",
     "location": {
       "raw": null,
-      "city": "Melbourne",
-      "country": "Australia",
+      "city": "Shanghai",
+      "country": "China",
       "flag": {
-        "iso2": "au",
-        "png": "https://flagcdn.com/w160/au.png",
-        "svg": "https://flagcdn.com/au.svg"
+        "iso2": "cn",
+        "png": "https://flagcdn.com/w160/cn.png",
+        "svg": "https://flagcdn.com/cn.svg"
       }
     },
     "racePage": {
-      "slug": "australia",
-      "url": "https://www.formula1.com/en/racing/2026/australia"
+      "slug": "china",
+      "url": "https://www.formula1.com/en/racing/2026/china"
     },
     "trackMap": {
       "found": true,
-      "pageUrl": "https://www.formula1.com/en/racing/2026/australia",
-      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000000/common/f1/2026/track/2026trackmelbournedetailed.webp",
-      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_australia_detailed.png",
+      "pageUrl": "https://www.formula1.com/en/racing/2026/china",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000000/common/f1/2026/track/2026trackshanghaidetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_china_detailed.png",
       "note": null
     },
     "countdowns": {
@@ -54,6 +55,14 @@
         "startLocalDateShort": "Fri, Mar 13",
         "startLocalTimeShort": "01:30",
         "startLocalDateTimeShort": "Fri, Mar 13 01:30"
+      },
+      {
+        "type": "Sprint",
+        "startUtc": "2026-03-14T03:00:00.000Z",
+        "endUtc": "2026-03-14T04:00:00.000Z",
+        "startLocalDateShort": "Fri, Mar 13",
+        "startLocalTimeShort": "21:00",
+        "startLocalDateTimeShort": "Fri, Mar 13 21:00"
       },
       {
         "type": "Quali",
