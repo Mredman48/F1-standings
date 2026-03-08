@@ -16,9 +16,9 @@ const DRIVER_NUMBER_FOLDER = "driver-numbers";
 
 const AUDI_LOGO = `${PAGES_BASE}/${TEAMLOGOS_DIR}/audi_logo_colored.png`;
 
-/* ----------------------------- */
+/* -------------------------------- */
 /* HELPERS */
-/* ----------------------------- */
+/* -------------------------------- */
 
 function slug(s) {
   return String(s || "")
@@ -27,28 +27,6 @@ function slug(s) {
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
-}
-
-function normalizePoints(val) {
-  if (val === "-" || val === null || val === undefined) return 0;
-  const n = Number(val);
-  return Number.isFinite(n) ? n : 0;
-}
-
-function normalizeStandingPosition(pos) {
-  if (!pos) return "-";
-
-  const p = String(pos).toUpperCase();
-
-  if (p === "DNF") return "DNF";
-  if (p === "DNS") return "DNS";
-  if (p === "DSQ") return "DSQ";
-
-  const n = Number(p.replace("P", ""));
-
-  if (!Number.isFinite(n) || n <= 0) return "-";
-
-  return `P${n}`;
 }
 
 function numberImage(num) {
@@ -63,11 +41,61 @@ async function headshot(first, last) {
   return `${PAGES_BASE}/${HEADSHOTS_DIR}/${file}`;
 }
 
-/* ----------------------------- */
+/* -------------------------------- */
+/* FORCE NORMALIZATION */
+/* -------------------------------- */
+
+function normalizePoints(val) {
+
+  if (val === "-" || val === "" || val === null || val === undefined) {
+    return 0;
+  }
+
+  const n = Number(val);
+
+  return Number.isFinite(n) ? n : 0;
+}
+
+function normalizeStandingPosition(pos) {
+
+  if (!pos) return "-";
+
+  const p = String(pos).toUpperCase();
+
+  if (p === "P0") return "-";
+
+  if (p === "DNF") return "DNF";
+  if (p === "DNS") return "DNS";
+  if (p === "DSQ") return "DSQ";
+
+  const n = Number(p.replace("P", ""));
+
+  if (!Number.isFinite(n) || n <= 0) return "-";
+
+  return `P${n}`;
+}
+
+function classificationFromOpenF1(row) {
+
+  if (!row) return "-";
+
+  if (row.dns === true) return "DNS";
+  if (row.dnf === true) return "DNF";
+  if (row.dsq === true) return "DSQ";
+
+  const pos = Number(row.position);
+
+  if (!Number.isFinite(pos) || pos <= 0) return "-";
+
+  return `P${pos}`;
+}
+
+/* -------------------------------- */
 /* FETCH */
-/* ----------------------------- */
+/* -------------------------------- */
 
 async function fetchJson(url) {
+
   const res = await fetch(url);
   const text = await res.text();
 
@@ -80,32 +108,35 @@ async function fetchJson(url) {
   return JSON.parse(text);
 }
 
-/* ----------------------------- */
-/* READ LOCAL JSON */
-/* ----------------------------- */
+/* -------------------------------- */
+/* READ JSON */
+/* -------------------------------- */
 
 async function readJson(file) {
   const raw = await fs.readFile(file, "utf8");
   return JSON.parse(raw);
 }
 
-/* ----------------------------- */
+/* -------------------------------- */
 /* FIND AUDI DRIVERS */
-/* ----------------------------- */
+/* -------------------------------- */
 
 function getAudiDrivers(driverData) {
+
   return (driverData.drivers || []).filter((d) => {
+
     const team =
       d?.constructor?.name ||
       d?.constructor?.fullName ||
       "";
+
     return team.toLowerCase().includes("audi");
   });
 }
 
-/* ----------------------------- */
-/* FIND TEAM STANDING */
-/* ----------------------------- */
+/* -------------------------------- */
+/* TEAM STANDING */
+/* -------------------------------- */
 
 function getAudiConstructor(constructorData) {
 
@@ -114,6 +145,7 @@ function getAudiConstructor(constructorData) {
   );
 
   if (!row) {
+
     return {
       team: "Audi",
       position: "-",
@@ -123,6 +155,7 @@ function getAudiConstructor(constructorData) {
   }
 
   return {
+
     team: "Audi",
     position: normalizeStandingPosition(row.position),
     points: normalizePoints(row.points),
@@ -130,22 +163,9 @@ function getAudiConstructor(constructorData) {
   };
 }
 
-/* ----------------------------- */
-/* BEST RESULT FROM OPENF1 */
-/* ----------------------------- */
-
-function classificationFromResult(row) {
-
-  if (row.dns === true) return "DNS";
-  if (row.dnf === true) return "DNF";
-  if (row.dsq === true) return "DSQ";
-
-  const pos = Number(row.position);
-
-  if (!Number.isFinite(pos) || pos <= 0) return "-";
-
-  return `P${pos}`;
-}
+/* -------------------------------- */
+/* BEST RESULTS FROM OPENF1 */
+/* -------------------------------- */
 
 async function getBestResults(driverNumbers) {
 
@@ -180,6 +200,7 @@ async function getBestResults(driverNumbers) {
       const session = sessionMap.get(row.session_key);
 
       best[num] = {
+
         pos,
         raceName: session?.meeting_name ?? "-",
         circuit: session?.circuit_short_name ?? "-",
@@ -192,9 +213,9 @@ async function getBestResults(driverNumbers) {
   return best;
 }
 
-/* ----------------------------- */
+/* -------------------------------- */
 /* BUILD JSON */
-/* ----------------------------- */
+/* -------------------------------- */
 
 async function buildJson() {
 
@@ -250,7 +271,7 @@ async function buildJson() {
             }
           }
         : {
-            position: classificationFromResult(d),
+            position: "-",
             raceName: "-",
             circuit: "-",
             location: {
@@ -262,14 +283,9 @@ async function buildJson() {
   }
 
   return {
+
     header: "Audi standings",
     generatedAtUtc: new Date().toISOString(),
-
-    sources: {
-      driverStandings: DRIVER_STANDINGS_FILE,
-      constructorStandings: CONSTRUCTOR_STANDINGS_FILE,
-      bestResults: "OpenF1 race results"
-    },
 
     audi: {
       team: "Audi",
@@ -283,9 +299,9 @@ async function buildJson() {
   };
 }
 
-/* ----------------------------- */
+/* -------------------------------- */
 /* MAIN */
-/* ----------------------------- */
+/* -------------------------------- */
 
 async function updateAudiStandings() {
 
