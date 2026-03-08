@@ -1,109 +1,88 @@
 {
   "header": "VCARB standings",
-  "generatedAtUtc": "2026-03-08T09:56:22.409Z",
+  "generatedAtUtc": "2026-03-08T16:31:58.415Z",
   "sources": {
-    "openf1": "https://api.openf1.org/v1",
-    "openf1Drivers": "https://api.openf1.org/v1/drivers?meeting_key=latest&team_name=Racing%20Bulls",
-    "openf1TeamNameUsed": "Racing Bulls",
-    "logos": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/teamlogos/",
-    "headshots": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/headshots/<first>-<last>.png",
-    "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png",
-    "driverStandings": "https://api.jolpi.ca/ergast/f1/current/driverStandings.json",
-    "constructorStandings": "https://api.jolpi.ca/ergast/f1/current/constructorStandings.json",
-    "lastRace": "https://api.jolpi.ca/ergast/f1/current/last/results.json",
-    "ergastConstructorIdsTried": [
-      "rb",
-      "racing_bulls",
-      "alphatauri",
-      "toro_rosso"
-    ],
-    "constructorIdUsed": "rb",
-    "note": "Drivers/numbers come ONLY from OpenF1. Standings come from Jolpica (Ergast-compatible) with Ergast fallback. No fallback drivers are inserted."
-  },
-  "meta": {
-    "mode": "OPENF1_DRIVERS_ERGAST_STANDINGS_LOCAL_ASSETS",
-    "openf1DriversOk": true,
-    "teamAliasesTried": [
-      "Racing Bulls",
-      "RB",
-      "VCARB",
-      "Visa Cash App RB",
-      "Visa Cash App RB Formula One Team",
-      "Visa Cash App Racing Bulls"
-    ],
-    "note": "Positions are formatted as P1, P2, etc. If OpenF1 returns <2 drivers, drivers[] will be empty (no placeholders). Number images are pulled from your repo using the OpenF1-provided number."
+    "driverStandings": "f1_driver_standings.json",
+    "constructorStandings": "f1_constructors_standings.json",
+    "bestResults": "OpenF1 sessions?year=YYYY&session_name=Race + session_result?driver_number=NN"
   },
   "vcarb": {
     "team": "VCARB",
-    "teamAliases": [
-      "Racing Bulls",
-      "RB",
-      "Visa Cash App RB"
-    ],
     "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_vcarb_color_v2.png",
     "teamStanding": {
       "team": "VCARB",
       "position": "P6",
-      "points": "4",
-      "wins": "0",
-      "originalTeam": "RB F1 Team",
-      "constructorId": "rb"
+      "points": 4,
+      "wins": 0
     }
   },
   "lastRace": {
     "season": "2026",
-    "round": "1",
-    "raceName": "Australian Grand Prix",
-    "date": "2026-03-08",
-    "timeUtc": "04:00:00Z",
+    "round": "latest",
+    "raceName": "Flag of Australia Australia",
+    "date": "08 Mar",
+    "timeUtc": "1:23:06.801",
     "circuit": {
       "name": "Albert Park Grand Prix Circuit",
       "locality": "Melbourne",
       "country": "Australia"
+    },
+    "winner": {
+      "name": "George Russell RUS",
+      "team": "Mercedes",
+      "laps": 58
     }
   },
   "drivers": [
-    {
-      "firstName": "Liam",
-      "lastName": "Lawson",
-      "code": "LAW",
-      "driverNumber": 30,
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-30.png",
-      "position": "P13",
-      "points": "0",
-      "wins": "0",
-      "team": "VCARB",
-      "placeholder": false,
-      "bestResult": {
-        "position": "-",
-        "raceName": "-",
-        "round": "-",
-        "date": "-",
-        "circuit": "-"
-      },
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/liam-lawson.png",
-      "fromOpenF1": true
-    },
     {
       "firstName": "Arvid",
       "lastName": "Lindblad",
       "code": "LIN",
       "driverNumber": 41,
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-41.png",
-      "position": "P8",
-      "points": "4",
-      "wins": "0",
-      "team": "VCARB",
-      "placeholder": false,
-      "bestResult": {
-        "position": "-",
-        "raceName": "-",
-        "round": "-",
-        "date": "-",
-        "circuit": "-"
-      },
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/arvid-lindblad.png",
-      "fromOpenF1": true
+      "position": "P8",
+      "points": 4,
+      "wins": 0,
+      "team": "VCARB",
+      "bestResult": {
+        "position": "P8",
+        "raceName": "-",
+        "round": "1279",
+        "date": "2026-03-08T04:00:00+00:00",
+        "circuit": "Melbourne",
+        "location": {
+          "locality": "Melbourne",
+          "country": "Australia"
+        },
+        "sessionKey": 11234,
+        "meetingKey": 1279
+      }
+    },
+    {
+      "firstName": "Liam",
+      "lastName": "Lawson",
+      "code": "LAW",
+      "driverNumber": 30,
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-30.png",
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/liam-lawson.png",
+      "position": "P13",
+      "points": 0,
+      "wins": 0,
+      "team": "VCARB",
+      "bestResult": {
+        "position": "P13",
+        "raceName": "-",
+        "round": "1279",
+        "date": "2026-03-08T04:00:00+00:00",
+        "circuit": "Melbourne",
+        "location": {
+          "locality": "Melbourne",
+          "country": "Australia"
+        },
+        "sessionKey": 11234,
+        "meetingKey": 1279
+      }
     }
   ]
 }

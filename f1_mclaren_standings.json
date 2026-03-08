@@ -1,26 +1,10 @@
 {
   "header": "McLaren standings",
-  "generatedAtUtc": "2026-03-08T09:56:13.556Z",
+  "generatedAtUtc": "2026-03-08T16:31:58.411Z",
   "sources": {
-    "openf1": "https://api.openf1.org/v1",
-    "openf1Drivers": "https://api.openf1.org/v1/drivers?meeting_key=latest&team_name=McLaren",
-    "openf1TeamNameUsed": "McLaren",
-    "logos": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/teamlogos/",
-    "headshots": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/headshots/<first>-<last>.png",
-    "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png",
-    "driverStandings": "https://api.jolpi.ca/ergast/f1/current/driverStandings.json",
-    "constructorStandings": "https://api.jolpi.ca/ergast/f1/current/constructorStandings.json",
-    "lastRace": "https://api.jolpi.ca/ergast/f1/current/last/results.json",
-    "note": "Drivers/numbers come ONLY from OpenF1. Standings come from Jolpica (Ergast-compatible) with Ergast fallback. No fallback drivers are inserted."
-  },
-  "meta": {
-    "mode": "OPENF1_DRIVERS_ERGAST_STANDINGS_LOCAL_ASSETS",
-    "openf1DriversOk": true,
-    "teamAliasesTried": [
-      "McLaren",
-      "McLaren F1 Team"
-    ],
-    "note": "Positions are formatted as P1, P2, etc. If OpenF1 returns <2 drivers, drivers[] will be empty (no placeholders). Number images are pulled from your repo using the OpenF1-provided number."
+    "driverStandings": "f1_driver_standings.json",
+    "constructorStandings": "f1_constructors_standings.json",
+    "bestResults": "OpenF1 sessions?year=YYYY&session_name=Race + session_result?driver_number=NN"
   },
   "mclaren": {
     "team": "McLaren",
@@ -28,22 +12,25 @@
     "teamStanding": {
       "team": "McLaren",
       "position": "P3",
-      "points": "10",
-      "wins": "0",
-      "originalTeam": "McLaren",
-      "constructorId": "mclaren"
+      "points": 10,
+      "wins": 0
     }
   },
   "lastRace": {
     "season": "2026",
-    "round": "1",
-    "raceName": "Australian Grand Prix",
-    "date": "2026-03-08",
-    "timeUtc": "04:00:00Z",
+    "round": "latest",
+    "raceName": "Flag of Australia Australia",
+    "date": "08 Mar",
+    "timeUtc": "1:23:06.801",
     "circuit": {
       "name": "Albert Park Grand Prix Circuit",
       "locality": "Melbourne",
       "country": "Australia"
+    },
+    "winner": {
+      "name": "George Russell RUS",
+      "team": "Mercedes",
+      "laps": 58
     }
   },
   "drivers": [
@@ -53,20 +40,24 @@
       "code": "NOR",
       "driverNumber": 1,
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-1.png",
-      "position": "P5",
-      "points": "10",
-      "wins": "0",
-      "team": "McLaren",
-      "placeholder": false,
-      "bestResult": {
-        "position": "-",
-        "raceName": "-",
-        "round": "-",
-        "date": "-",
-        "circuit": "-"
-      },
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lando-norris.png",
-      "fromOpenF1": true
+      "position": "P5",
+      "points": 10,
+      "wins": 0,
+      "team": "McLaren",
+      "bestResult": {
+        "position": "P5",
+        "raceName": "-",
+        "round": "1279",
+        "date": "2026-03-08T04:00:00+00:00",
+        "circuit": "Melbourne",
+        "location": {
+          "locality": "Melbourne",
+          "country": "Australia"
+        },
+        "sessionKey": 11234,
+        "meetingKey": 1279
+      }
     },
     {
       "firstName": "Oscar",
@@ -74,20 +65,24 @@
       "code": "PIA",
       "driverNumber": 81,
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-81.png",
-      "position": "-",
-      "points": "0",
-      "wins": "0",
-      "team": "McLaren",
-      "placeholder": false,
-      "bestResult": {
-        "position": "-",
-        "raceName": "-",
-        "round": "-",
-        "date": "-",
-        "circuit": "-"
-      },
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/oscar-piastri.png",
-      "fromOpenF1": true
+      "position": "P18",
+      "points": 0,
+      "wins": 0,
+      "team": "McLaren",
+      "bestResult": {
+        "position": "DNS",
+        "raceName": "-",
+        "round": "1279",
+        "date": "2026-03-08T04:00:00+00:00",
+        "circuit": "Melbourne",
+        "location": {
+          "locality": "Melbourne",
+          "country": "Australia"
+        },
+        "sessionKey": 11234,
+        "meetingKey": 1279
+      }
     }
   ]
 }

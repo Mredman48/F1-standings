@@ -1,28 +1,10 @@
 {
   "header": "Haas standings",
-  "generatedAtUtc": "2026-03-08T09:56:18.124Z",
+  "generatedAtUtc": "2026-03-08T16:31:58.413Z",
   "sources": {
-    "openf1": "https://api.openf1.org/v1",
-    "openf1Drivers": "https://api.openf1.org/v1/drivers?meeting_key=latest&team_name=Haas%20F1%20Team",
-    "openf1TeamNameUsed": "Haas F1 Team",
-    "logos": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/teamlogos/",
-    "headshots": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/headshots/<first>-<last>.png",
-    "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png",
-    "driverStandings": "https://api.jolpi.ca/ergast/f1/current/driverStandings.json",
-    "constructorStandings": "https://api.jolpi.ca/ergast/f1/current/constructorStandings.json",
-    "lastRace": "https://api.jolpi.ca/ergast/f1/current/last/results.json",
-    "note": "Drivers/numbers come ONLY from OpenF1. Standings come from Jolpica (Ergast-compatible) with Ergast fallback. No fallback drivers are inserted."
-  },
-  "meta": {
-    "mode": "OPENF1_DRIVERS_ERGAST_STANDINGS_LOCAL_ASSETS",
-    "openf1DriversOk": true,
-    "teamAliasesTried": [
-      "Haas",
-      "Haas F1 Team",
-      "MoneyGram Haas F1 Team",
-      "MoneyGram Haas"
-    ],
-    "note": "Positions are formatted as P1, P2, etc. If OpenF1 returns <2 drivers, drivers[] will be empty (no placeholders). Number images are pulled from your repo using the OpenF1-provided number."
+    "driverStandings": "f1_driver_standings.json",
+    "constructorStandings": "f1_constructors_standings.json",
+    "bestResults": "OpenF1 sessions?year=YYYY&session_name=Race + session_result?driver_number=NN"
   },
   "haas": {
     "team": "Haas",
@@ -30,66 +12,77 @@
     "teamStanding": {
       "team": "Haas",
       "position": "P5",
-      "points": "6",
-      "wins": "0",
-      "originalTeam": "Haas F1 Team",
-      "constructorId": "haas"
+      "points": 6,
+      "wins": 0
     }
   },
   "lastRace": {
     "season": "2026",
-    "round": "1",
-    "raceName": "Australian Grand Prix",
-    "date": "2026-03-08",
-    "timeUtc": "04:00:00Z",
+    "round": "latest",
+    "raceName": "Flag of Australia Australia",
+    "date": "08 Mar",
+    "timeUtc": "1:23:06.801",
     "circuit": {
       "name": "Albert Park Grand Prix Circuit",
       "locality": "Melbourne",
       "country": "Australia"
+    },
+    "winner": {
+      "name": "George Russell RUS",
+      "team": "Mercedes",
+      "laps": 58
     }
   },
   "drivers": [
-    {
-      "firstName": "Esteban",
-      "lastName": "Ocon",
-      "code": "OCO",
-      "driverNumber": 31,
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-31.png",
-      "position": "P11",
-      "points": "0",
-      "wins": "0",
-      "team": "Haas",
-      "placeholder": false,
-      "bestResult": {
-        "position": "-",
-        "raceName": "-",
-        "round": "-",
-        "date": "-",
-        "circuit": "-"
-      },
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/esteban-ocon.png",
-      "fromOpenF1": true
-    },
     {
       "firstName": "Oliver",
       "lastName": "Bearman",
       "code": "BEA",
       "driverNumber": 87,
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-87.png",
-      "position": "P7",
-      "points": "6",
-      "wins": "0",
-      "team": "Haas",
-      "placeholder": false,
-      "bestResult": {
-        "position": "-",
-        "raceName": "-",
-        "round": "-",
-        "date": "-",
-        "circuit": "-"
-      },
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/oliver-bearman.png",
-      "fromOpenF1": true
+      "position": "P7",
+      "points": 6,
+      "wins": 0,
+      "team": "Haas",
+      "bestResult": {
+        "position": "P7",
+        "raceName": "-",
+        "round": "1279",
+        "date": "2026-03-08T04:00:00+00:00",
+        "circuit": "Melbourne",
+        "location": {
+          "locality": "Melbourne",
+          "country": "Australia"
+        },
+        "sessionKey": 11234,
+        "meetingKey": 1279
+      }
+    },
+    {
+      "firstName": "Esteban",
+      "lastName": "Ocon",
+      "code": "OCO",
+      "driverNumber": 31,
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-31.png",
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/esteban-ocon.png",
+      "position": "P11",
+      "points": 0,
+      "wins": 0,
+      "team": "Haas",
+      "bestResult": {
+        "position": "P11",
+        "raceName": "-",
+        "round": "1279",
+        "date": "2026-03-08T04:00:00+00:00",
+        "circuit": "Melbourne",
+        "location": {
+          "locality": "Melbourne",
+          "country": "Australia"
+        },
+        "sessionKey": 11234,
+        "meetingKey": 1279
+      }
     }
   ]
 }
