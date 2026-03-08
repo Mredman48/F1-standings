@@ -621,9 +621,23 @@ async function updateNextRace() {
 
   const gpSessions = collectWeekendSessionsFromICS(allSessions, nextRaceSession);
 
-  if (gpSessions.length === 0) {
-    throw new Error("Could not collect sessions for upcoming race weekend.");
-  }
+if (gpSessions.length === 0) {
+  throw new Error("Could not collect sessions for upcoming race weekend.");
+}
+
+console.log("NEXT RACE WEEKEND SESSIONS FROM ICAL:");
+
+gpSessions.forEach((s, i) => {
+  console.log(
+    `${i + 1}. RAW="${s.summary}" | TYPE="${s.sessionType}" | START="${s.start.toISOString()}"`
+  );
+});
+
+const racePage = await resolveRacePage({
+  season,
+  gpName: gpNameShort,
+  locationRaw,
+});
 
   const racePage = await resolveRacePage({
     season,
