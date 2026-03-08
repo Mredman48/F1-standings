@@ -5,10 +5,8 @@ const OUTPUT_FILE = "f1_driver_standings.json";
 const OPENF1_BASE = "https://api.openf1.org/v1";
 const OPENF1_SESSIONS_URL = `${OPENF1_BASE}/sessions`;
 const OPENF1_CHAMPIONSHIP_URL = `${OPENF1_BASE}/championship_drivers`;
-const OPENF1_DRIVERS_URL = `${OPENF1_BASE}/drivers`;
 
 const F1_DRIVERS_URL = "https://www.formula1.com/en/drivers";
-const F1_TEAMS_URL = "https://www.formula1.com/en/teams";
 
 const HEADSHOTS = "https://mredman48.github.io/F1-standings/headshots";
 const UA = "f1-standings-bot";
@@ -148,24 +146,6 @@ function driverKey(value) {
   return String(value).trim();
 }
 
-function fullNameKey(firstName, lastName) {
-  if (!firstName || !lastName) return null;
-  return `${String(firstName).trim().toLowerCase()} ${String(lastName).trim().toLowerCase()}`;
-}
-
-async function readPreviousFile() {
-  try {
-    const raw = await fs.readFile(OUTPUT_FILE, "utf8");
-    const parsed = JSON.parse(raw);
-
-    if (Array.isArray(parsed?.drivers) && parsed.drivers.length > 0) {
-      return parsed;
-    }
-  } catch {}
-
-  return null;
-}
-
 function decodeHtmlEntities(str) {
   if (!str) return str;
 
@@ -195,6 +175,23 @@ function htmlToLines(html) {
     .split("\n")
     .map((line) => line.replace(/\s+/g, " ").trim())
     .filter(Boolean);
+}
+
+function cleanLine(line) {
+  return String(line || "").replace(/\s+/g, " ").trim();
+}
+
+async function readPreviousFile() {
+  try {
+    const raw = await fs.readFile(OUTPUT_FILE, "utf8");
+    const parsed = JSON.parse(raw);
+
+    if (Array.isArray(parsed?.drivers) && parsed.drivers.length > 0) {
+      return parsed;
+    }
+  } catch {}
+
+  return null;
 }
 
 /* ------------------------------------------------ */
@@ -260,7 +257,7 @@ async function getLatestRaceSession() {
 }
 
 /* ------------------------------------------------ */
-/* OPENF1: LIVE STANDINGS + NAME/NUMBER BRIDGE */
+/* OPENF1: LIVE STANDINGS */
 /* ------------------------------------------------ */
 
 async function getOpenF1StandingsForLatestRace() {
@@ -283,16 +280,9 @@ async function getOpenF1StandingsForLatestRace() {
     session_key: sessionKey,
   });
 
-  const driversUrl = buildUrl(OPENF1_DRIVERS_URL, {
-    session_key: sessionKey,
-  });
+  const resp = await fetchJson(standingsUrl);
 
-  const [standingsResp, driversResp] = await Promise.all([
-    fetchJson(standingsUrl),
-    fetchJson(driversUrl),
-  ]);
-
-  if (!standingsResp.ok || !Array.isArray(standingsResp.json) || standingsResp.json.length === 0) {
+  if (!resp.ok || !Array.isArray(resp.json) || resp.json.length === 0) {
     return {
       ok: false,
       season: latestRace.session?.year ?? null,
@@ -303,39 +293,7 @@ async function getOpenF1StandingsForLatestRace() {
     };
   }
 
-  const bridgeByNumber = new Map();
-
-  if (driversResp.ok && Array.isArray(driversResp.json)) {
-    for (const d of driversResp.json) {
-      const key = driverKey(d?.driver_number);
-      if (!key) continue;
-
-      const firstName = d?.first_name ?? null;
-      const lastName = d?.last_name ?? null;
-      const fullName =
-        d?.full_name ??
-        (firstName && lastName ? `${firstName} ${lastName}` : null);
-
-      const score =
-        Number(Boolean(firstName)) +
-        Number(Boolean(lastName)) +
-        Number(Boolean(fullName)) +
-        Number(Boolean(d?.name_acronym));
-
-      const prev = bridgeByNumber.get(key);
-      if (!prev || score > prev.score) {
-        bridgeByNumber.set(key, {
-          firstName,
-          lastName,
-          fullName,
-          code: d?.name_acronym ?? null,
-          score,
-        });
-      }
-    }
-  }
-
-  const rows = [...standingsResp.json].sort((a, b) => {
+  const rows = [...resp.json].sort((a, b) => {
     const posA = Number.isFinite(a?.position_current) ? a.position_current : 999;
     const posB = Number.isFinite(b?.position_current) ? b.position_current : 999;
     if (posA !== posB) return posA - posB;
@@ -350,141 +308,141 @@ async function getOpenF1StandingsForLatestRace() {
     season: latestRace.session?.year ?? null,
     raceSession: latestRace.session,
     rows,
-    bridgeByNumber,
     sourceUrl: standingsUrl,
-    bridgeUrl: driversUrl,
     note: null,
   };
 }
 
 /* ------------------------------------------------ */
-/* F1.COM: DRIVERS METADATA */
+/* F1.COM: DRIVER PROFILE METADATA */
 /* ------------------------------------------------ */
 
-function parseF1DriversPage(html) {
-  const lines = htmlToLines(html);
+function extractDriverProfileUrls(html) {
+  const matches = Array.from(
+    String(html).matchAll(/\/en\/drivers\/[a-z0-9-]+/g)
+  ).map((m) => m[0]);
 
-  const startIndex = lines.findIndex(
-    (line) =>
-      line.includes("F1 Drivers 2026") ||
-      line.includes("F1 Drivers")
-  );
+  const unique = [...new Set(matches)]
+    .filter((href) => !href.endsWith("/en/drivers"))
+    .filter((href) => href !== "/en/drivers");
 
-  const endIndex = lines.findIndex(
-    (line, idx) => idx > startIndex && /F1 TEAMS/i.test(line)
-  );
-
-  if (startIndex === -1 || endIndex === -1 || endIndex <= startIndex) {
-    return new Map();
-  }
-
-  const section = lines.slice(startIndex + 1, endIndex);
-  const byName = new Map();
-
-  for (const line of section) {
-    if (/^Find the current Formula 1 drivers/i.test(line)) continue;
-    if (/^F1 Drivers/i.test(line)) continue;
-
-    // Example:
-    // "George Russell Mercedes Flag of Great Britain"
-    const m = line.match(/^(.*?)\s+(.+?)\s+Flag of\s+(.+)$/i);
-    if (!m) continue;
-
-    const fullName = m[1].trim();
-    const teamName = m[2].trim();
-    const nationality = m[3].trim();
-
-    const nameParts = fullName.split(/\s+/);
-    if (nameParts.length < 2) continue;
-
-    const firstName = nameParts.slice(0, -1).join(" ");
-    const lastName = nameParts[nameParts.length - 1];
-    const key = fullNameKey(firstName, lastName);
-
-    if (!key) continue;
-
-    byName.set(key, {
-      firstName,
-      lastName,
-      fullName,
-      nationality,
-      teamName,
-    });
-  }
-
-  return byName;
+  return unique.map((href) => `https://www.formula1.com${href}`);
 }
 
-/* ------------------------------------------------ */
-/* F1.COM: TEAMS METADATA */
-/* ------------------------------------------------ */
-
-function parseF1TeamsPage(html) {
+function parseDriverProfile(html, url) {
   const lines = htmlToLines(html);
-  const byTeam = new Map();
 
-  for (const line of lines) {
-    // Example:
-    // "Mercedes George Russell Kimi Antonelli"
-    const m = line.match(
-      /^(Mercedes|Ferrari|McLaren|Red Bull Racing|Haas F1 Team|Racing Bulls|Audi|Alpine|Williams|Cadillac|Aston Martin)\s+(.+)$/i
-    );
-
-    if (!m) continue;
-
-    const teamName = m[1].trim();
-    byTeam.set(teamName.toLowerCase(), {
-      teamName,
-    });
+  const nameIdx = lines.findIndex((line) => /^#\s+/.test(line));
+  if (nameIdx === -1) {
+    throw new Error(`Could not parse driver name from profile: ${url}`);
   }
 
-  return byTeam;
-}
-
-async function getF1ComMetadata() {
-  const [driversResp, teamsResp] = await Promise.all([
-    fetchText(F1_DRIVERS_URL),
-    fetchText(F1_TEAMS_URL),
-  ]);
-
-  if (!driversResp.ok) {
-    return {
-      ok: false,
-      byName: new Map(),
-      byTeam: new Map(),
-      sourceUrls: {
-        drivers: F1_DRIVERS_URL,
-        teams: F1_TEAMS_URL,
-      },
-      note: `Drivers page HTTP ${driversResp.status}`,
-    };
+  const fullName = cleanLine(lines[nameIdx].replace(/^#\s+/, ""));
+  if (!fullName) {
+    throw new Error(`Empty driver name in profile: ${url}`);
   }
 
-  if (!teamsResp.ok) {
-    return {
-      ok: false,
-      byName: new Map(),
-      byTeam: new Map(),
-      sourceUrls: {
-        drivers: F1_DRIVERS_URL,
-        teams: F1_TEAMS_URL,
-      },
-      note: `Teams page HTTP ${teamsResp.status}`,
-    };
+  const window = lines.slice(nameIdx + 1, nameIdx + 20);
+
+  const numberIdx = window.findIndex((line) => /^\d{1,3}$/.test(line));
+  if (numberIdx === -1) {
+    throw new Error(`Could not parse driver number from profile: ${url}`);
   }
 
-  const byName = parseF1DriversPage(driversResp.text);
-  const byTeam = parseF1TeamsPage(teamsResp.text);
+  const driverNumber = Number(window[numberIdx]);
+
+  let teamName = null;
+  for (let i = numberIdx - 1; i >= 0; i -= 1) {
+    const line = cleanLine(window[i]);
+    if (!line) continue;
+    if (/^Flag of /i.test(line)) continue;
+    if (/^Shop now$/i.test(line)) continue;
+    if (/^Statistics$/i.test(line)) continue;
+    if (/^[A-Z0-9 .'-]+$/.test(line) && /^\d+$/.test(line)) continue;
+
+    teamName = line;
+    break;
+  }
+
+  let nationality = null;
+  if (teamName) {
+    const teamIdx = window.findIndex((line) => cleanLine(line) === cleanLine(teamName));
+    for (let i = teamIdx - 1; i >= 0; i -= 1) {
+      const line = cleanLine(window[i]);
+      if (!line) continue;
+      if (/^Flag of /i.test(line)) continue;
+      nationality = line;
+      break;
+    }
+  }
+
+  const parts = fullName.split(/\s+/);
+  const firstName = parts.length > 1 ? parts.slice(0, -1).join(" ") : fullName;
+  const lastName = parts.length > 1 ? parts[parts.length - 1] : null;
+
+  const slugPart = url.split("/en/drivers/")[1] || "";
 
   return {
-    ok: byName.size > 0,
-    byName,
-    byTeam,
-    sourceUrls: {
-      drivers: F1_DRIVERS_URL,
-      teams: F1_TEAMS_URL,
-    },
-    note: byName.size > 0 ? null : "Parsed no driver metadata from F1.com",
+    url,
+    slug: slugPart,
+    driverNumber,
+    firstName,
+    lastName,
+    fullName,
+    nationality,
+    teamName,
+  };
+}
+
+async function getF1ComDriverMetadata() {
+  const driversPage = await fetchText(F1_DRIVERS_URL);
+
+  if (!driversPage.ok) {
+    return {
+      ok: false,
+      byNumber: new Map(),
+      sourceUrl: F1_DRIVERS_URL,
+      note: `Drivers page HTTP ${driversPage.status}`,
+    };
+  }
+
+  const profileUrls = extractDriverProfileUrls(driversPage.text);
+
+  if (profileUrls.length === 0) {
+    return {
+      ok: false,
+      byNumber: new Map(),
+      sourceUrl: F1_DRIVERS_URL,
+      note: "No driver profile URLs found on F1.com drivers page.",
+    };
+  }
+
+  console.log(`F1.com driver profile URLs found: ${profileUrls.length}`);
+
+  const byNumber = new Map();
+
+  for (const url of profileUrls) {
+    const resp = await fetchText(url);
+
+    if (!resp.ok) {
+      throw new Error(`Driver profile HTTP ${resp.status}: ${url}`);
+    }
+
+    const parsed = parseDriverProfile(resp.text, url);
+    const key = driverKey(parsed.driverNumber);
+
+    if (!key) {
+      throw new Error(`Parsed profile missing driver number: ${url}`);
+    }
+
+    byNumber.set(key, parsed);
+  }
+
+  return {
+    ok: byNumber.size > 0,
+    byNumber,
+    sourceUrl: F1_DRIVERS_URL,
+    note: byNumber.size > 0 ? null : "Parsed no driver profile metadata from F1.com",
   };
 }
 
@@ -498,7 +456,6 @@ function validateMergedRows(rows) {
       !row.driver.firstName ||
       !row.driver.lastName ||
       !row.driver.fullName ||
-      !row.driver.code ||
       !row.constructor.fullName
   );
 
@@ -506,7 +463,6 @@ function validateMergedRows(rows) {
     const sample = bad.slice(0, 8).map((row) => ({
       driverNumber: row.driver.driverNumber,
       fullName: row.driver.fullName,
-      code: row.driver.code,
       team: row.constructor.fullName,
     }));
 
@@ -516,27 +472,21 @@ function validateMergedRows(rows) {
   }
 }
 
-function buildMergedStandings(openf1Rows, bridgeByNumber, f1DriversByName) {
+function buildMergedStandings(openf1Rows, f1ByNumber) {
   const rows = openf1Rows.map((row) => {
     const key = driverKey(row?.driver_number);
-    const bridge = key ? bridgeByNumber.get(key) ?? null : null;
-
-    if (!bridge?.firstName || !bridge?.lastName) {
-      throw new Error(
-        `No usable OpenF1 name bridge for driver_number=${row?.driver_number}`
-      );
-    }
-
-    const nameKey = fullNameKey(bridge.firstName, bridge.lastName);
-    const meta = nameKey ? f1DriversByName.get(nameKey) ?? null : null;
+    const meta = key ? f1ByNumber.get(key) ?? null : null;
 
     if (!meta) {
       throw new Error(
-        `No F1.com metadata match for ${bridge.firstName} ${bridge.lastName}`
+        `No F1.com profile metadata match for driver_number=${row?.driver_number}`
       );
     }
 
-    const code = bridge.code ?? null;
+    const code =
+      meta.lastName && meta.lastName.length >= 3
+        ? meta.lastName.slice(0, 3).toUpperCase()
+        : null;
 
     return {
       position: Number.isFinite(row?.position_current)
@@ -551,20 +501,21 @@ function buildMergedStandings(openf1Rows, bridgeByNumber, f1DriversByName) {
       wins: "-",
       driver: {
         code,
-        firstName: meta.firstName,
-        lastName: meta.lastName,
-        fullName: meta.fullName,
-        nationality: meta.nationality,
+        firstName: meta.firstName ?? null,
+        lastName: meta.lastName ?? null,
+        fullName: meta.fullName ?? null,
+        nationality: meta.nationality ?? null,
         driverNumber:
           row?.driver_number != null ? Number(row.driver_number) : null,
         headshotUrl:
           meta.firstName && meta.lastName
             ? headshot(meta.firstName, meta.lastName)
             : null,
+        profileUrl: meta.url,
       },
       constructor: {
-        name: normalizeTeamName(meta.teamName),
-        fullName: meta.teamName,
+        name: normalizeTeamName(meta.teamName ?? null),
+        fullName: meta.teamName ?? null,
         nationality: null,
       },
     };
@@ -584,25 +535,23 @@ async function updateStandings() {
 
   const [liveStandings, f1Metadata] = await Promise.all([
     getOpenF1StandingsForLatestRace(),
-    getF1ComMetadata(),
+    getF1ComDriverMetadata(),
   ]);
 
   if (!liveStandings.ok || liveStandings.rows.length === 0) {
     throw new Error(liveStandings.note || "OpenF1 standings unavailable.");
   }
 
-  if (!f1Metadata.ok || f1Metadata.byName.size === 0) {
-    throw new Error(f1Metadata.note || "F1.com metadata unavailable.");
+  if (!f1Metadata.ok || f1Metadata.byNumber.size === 0) {
+    throw new Error(f1Metadata.note || "F1.com driver metadata unavailable.");
   }
 
   console.log(`OpenF1 standings rows: ${liveStandings.rows.length}`);
-  console.log(`OpenF1 bridge rows: ${liveStandings.bridgeByNumber.size}`);
-  console.log(`F1.com driver metadata rows: ${f1Metadata.byName.size}`);
+  console.log(`F1.com driver metadata rows: ${f1Metadata.byNumber.size}`);
 
   const mergedDrivers = buildMergedStandings(
     liveStandings.rows,
-    liveStandings.bridgeByNumber,
-    f1Metadata.byName
+    f1Metadata.byNumber
   );
 
   const race = liveStandings.raceSession;
@@ -613,11 +562,10 @@ async function updateStandings() {
     season: liveStandings.season,
     mode: "LIVE",
     source: {
-      kind: "openf1+f1com",
+      kind: "openf1+f1com-driver-profiles",
       url: liveStandings.sourceUrl,
-      note: "Standings from OpenF1; driver and team metadata from F1.com.",
-      metadataUrls: f1Metadata.sourceUrls,
-      bridgeUrl: liveStandings.bridgeUrl,
+      note: "Standings from OpenF1; driver and team metadata from official F1.com driver profile pages.",
+      metadataUrl: f1Metadata.sourceUrl,
     },
     lastRace: race
       ? {
