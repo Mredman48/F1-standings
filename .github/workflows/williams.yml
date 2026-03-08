@@ -1,0 +1,52 @@
+name: Run Williams Standings Script
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run-williams:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Show repo files
+        run: ls -la
+
+      - name: Run Williams standings script
+        run: node updateWilliamsStandings.js
+
+      - name: Show generated JSON
+        if: always()
+        run: |
+          if [ -f f1_williams_standings.json ]; then
+            echo "----- f1_williams_standings.json -----"
+            cat f1_williams_standings.json
+          else
+            echo "f1_williams_standings.json was not created"
+          fi
+
+      - name: Commit updated JSON
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add f1_williams_standings.json
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          git commit -m "Update Williams standings JSON"
+          git push
