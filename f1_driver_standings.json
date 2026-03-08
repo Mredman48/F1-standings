@@ -1,12 +1,12 @@
 {
   "header": "Driver Standings",
-  "generatedAtUtc": "2026-03-08T06:37:13.449Z",
+  "generatedAtUtc": "2026-03-08T06:48:51.727Z",
   "season": null,
-  "mode": "ALPHABETICAL_FALLBACK",
+  "mode": "PREVIOUS_FILE_FALLBACK",
   "source": {
-    "kind": "openf1-roster",
+    "kind": "previous-file",
     "url": "https://api.openf1.org/v1/drivers?meeting_key=latest",
-    "note": "No standings available; using alphabetical driver roster fallback."
+    "note": "Official F1.com standings and roster fallback were unavailable; reusing previous file."
   },
   "lastRace": null,
   "drivers": [
