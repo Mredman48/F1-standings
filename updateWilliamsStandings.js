@@ -21,6 +21,10 @@ const TEAM_DISPLAY_NAME = "Williams";
 const TEAM_OBJECT_KEY = "williams";
 const TEAM_LOGO = `${PAGES_BASE}/${TEAMLOGOS_DIR}/2025_williams_color_v2.png`;
 
+const DRIVER_FIRSTNAME_OVERRIDES = {
+  alexander: "alex",
+};
+
 /* -------------------------------- */
 /* HELPERS */
 /* -------------------------------- */
@@ -41,7 +45,13 @@ function numberImage(num) {
 
 async function headshot(first, last) {
   if (!first || !last) return null;
-  const file = `${slug(first)}-${slug(last)}.png`;
+
+  let firstName = String(first).toLowerCase();
+  if (DRIVER_FIRSTNAME_OVERRIDES[firstName]) {
+    firstName = DRIVER_FIRSTNAME_OVERRIDES[firstName];
+  }
+
+  const file = `${slug(firstName)}-${slug(last)}.png`;
   return `${PAGES_BASE}/${HEADSHOTS_DIR}/${file}`;
 }
 
