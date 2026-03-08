@@ -3,17 +3,12 @@ import fs from "node:fs/promises";
 
 const UA = "f1-standings-bot/1.0 (GitHub Actions)";
 
-// Official F1 results pages
 const F1_RESULTS_BASE = "https://www.formula1.com/en/results";
-
-// Output JSON
 const OUT_JSON = "f1_constructors_standings.json";
 
-// GitHub Pages base (Widgy-friendly)
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 const TEAMLOGOS_DIR = "teamlogos";
 
-// Cache busting
 const CACHE_BUST = true;
 
 /* ------------------------------------------------ */
@@ -84,6 +79,10 @@ function getSeasonYear() {
   return new Date().getUTCFullYear();
 }
 
+function buildResultsUrl(year, section) {
+  return `${F1_RESULTS_BASE}/${year}/${section}`;
+}
+
 function withCacheBust(url) {
   if (!url) return url;
   return CACHE_BUST ? `${url}${url.includes("?") ? "&" : "?"}v=${Date.now()}` : url;
@@ -106,10 +105,6 @@ function normalizeKey(s) {
     .replace(/&/g, "and")
     .replace(/[^a-z0-9]+/g, " ")
     .trim();
-}
-
-function buildResultsUrl(year, section) {
-  return `${F1_RESULTS_BASE}/${year}/${section}`;
 }
 
 function decodeHtmlEntities(str) {
@@ -135,7 +130,7 @@ function htmlToLines(html) {
   text = text.replace(/<!--[\s\S]*?-->/g, " ");
 
   text = text.replace(
-    /<\/(p|div|section|article|header|footer|main|li|tr|td|th|h1|h2|h3|h4|h5|h6)>/gi,
+    /<\/(p|div|section|article|header|footer|main|li|tr|td|th|h1|h2|h3|h4|h5|h6|a)>/gi,
     "\n"
   );
   text = text.replace(/<br\s*\/?>/gi, "\n");
@@ -153,10 +148,6 @@ function cleanLine(line) {
   return String(line || "").replace(/\s+/g, " ").trim();
 }
 
-/* ------------------------------------------------ */
-/* FETCH */
-/* ------------------------------------------------ */
-
 async function fetchText(url, accept = "text/html,*/*") {
   const res = await fetch(url, {
     headers: { "User-Agent": UA, Accept: accept },
@@ -167,20 +158,12 @@ async function fetchText(url, accept = "text/html,*/*") {
   return { res, text, url };
 }
 
-/* ------------------------------------------------ */
-/* LOGOS */
-/* ------------------------------------------------ */
-
 function resolveTeamLogo(teamName) {
   const key = normalizeKey(teamName);
   const fileName = TEAM_LOGOS_LOCAL[key];
   if (!fileName) return null;
   return withCacheBust(`${PAGES_BASE}/${TEAMLOGOS_DIR}/${fileName}`);
 }
-
-/* ------------------------------------------------ */
-/* PLACEHOLDERS */
-/* ------------------------------------------------ */
 
 function buildAlphabeticalPlaceholders() {
   return PLACEHOLDER_TEAMS.map((t) => {
@@ -198,7 +181,7 @@ function buildAlphabeticalPlaceholders() {
 }
 
 /* ------------------------------------------------ */
-/* PARSERS */
+/* SECTION EXTRACTION */
 /* ------------------------------------------------ */
 
 function extractSection(lines, headingPattern) {
@@ -212,6 +195,10 @@ function extractSection(lines, headingPattern) {
   const endIndex = partnersIndex === -1 ? lines.length : partnersIndex;
   return lines.slice(startIndex, endIndex);
 }
+
+/* ------------------------------------------------ */
+/* TEAM STANDINGS PARSER */
+/* ------------------------------------------------ */
 
 function parseOfficialTeamStandings(html, year) {
   const lines = htmlToLines(html);
@@ -231,21 +218,29 @@ function parseOfficialTeamStandings(html, year) {
 
   const rows = [];
 
-  // Current official format:
-  // 1Mercedes43
-  // 4Red Bull Racing8
-  const compactRowRe = /^(\d+)([A-Za-z][A-Za-z0-9 '&.-]*?)(\d+(?:\.\d+)?)$/;
+  // Handles:
+  // "1 Mercedes 43"
+  // "1Mercedes43"
+  const spacedOrCompactRowRe =
+    /^(\d+)\s*([A-Za-z][A-Za-z0-9 '&.\-]*?)\s*(\d+(?:\.\d+)?)$/;
 
   for (const rawLine of section) {
     const line = cleanLine(rawLine);
-    const m = line.match(compactRowRe);
+
+    if (/^Pos\.?Team/i.test(line)) continue;
+    if (/^#\s*\d{4}\s+Teams/i.test(line)) continue;
+
+    const m = line.match(spacedOrCompactRowRe);
     if (!m) continue;
 
     const [, pos, teamRaw, pts] = m;
+    const teamClean = cleanLine(teamRaw);
+
+    if (!teamClean) continue;
 
     rows.push({
-      teamRaw,
-      team: normalizeTeamName(teamRaw),
+      teamRaw: teamClean,
+      team: normalizeTeamName(teamClean),
       position: fmtPos(pos),
       points: safeNumOrDash(pts),
       wins: "-",
@@ -269,6 +264,10 @@ function parseOfficialTeamStandings(html, year) {
   };
 }
 
+/* ------------------------------------------------ */
+/* RACE RESULTS PARSER */
+/* ------------------------------------------------ */
+
 function parseOfficialRaceResults(html, year) {
   const lines = htmlToLines(html);
   const section = extractSection(lines, new RegExp(`${year}\\s+RACE RESULTS`, "i"));
@@ -282,14 +281,19 @@ function parseOfficialRaceResults(html, year) {
     return { lastRace: null, reason: "no_results_available" };
   }
 
-  // Current official compact format:
-  // Australia08 MarGeorge Russell RUSMercedes 58 1:23:06.801
-  const compactRaceRe =
-    /^([A-Za-z][A-Za-z\s'-]+)(\d{2}\s[A-Za-z]{3})([A-Za-zÀ-ÿ\s'-]+)\s([A-Z]{3})([A-Za-z][A-Za-z0-9\s&'.-]+)\s(\d+)\s([0-9:.+-]+)$/;
+  // Handles:
+  // "Australia 08 Mar George Russell RUS Mercedes 58 1:23:06.801"
+  // and tighter variants with inconsistent spacing after HTML stripping
+  const raceRowRe =
+    /^([A-Za-z][A-Za-z\s'’-]+?)\s*(\d{2}\s+[A-Za-z]{3})\s*([A-Za-zÀ-ÿ\s'’-]+?)\s+([A-Z]{3})\s+([A-Za-z][A-Za-z0-9\s&'.\-]+?)\s+(\d+)\s+([0-9:.\-+]+)$/;
 
   for (const rawLine of section) {
     const line = cleanLine(rawLine);
-    const m = line.match(compactRaceRe);
+
+    if (/^Grand Prix Date Winner Team Laps Time/i.test(line)) continue;
+    if (/^#\s*\d{4}\s+RACE RESULTS/i.test(line)) continue;
+
+    const m = line.match(raceRowRe);
     if (!m) continue;
 
     const [, raceName, date, winnerName, winnerCode, team, laps, timeUtc] = m;
@@ -298,17 +302,17 @@ function parseOfficialRaceResults(html, year) {
       lastRace: {
         season: String(year),
         round: "latest",
-        raceName: raceName.trim(),
-        date: date.trim(),
-        timeUtc: timeUtc.trim(),
+        raceName: cleanLine(raceName),
+        date: cleanLine(date),
+        timeUtc: cleanLine(timeUtc),
         circuit: {
           name: "-",
           locality: "-",
           country: "-",
         },
         winner: {
-          name: `${winnerName.trim()} ${winnerCode.trim()}`,
-          team: team.trim(),
+          name: `${cleanLine(winnerName)} ${cleanLine(winnerCode)}`,
+          team: cleanLine(team),
           laps: Number(laps),
         },
       },
@@ -395,7 +399,6 @@ async function updateConstructors() {
       };
     });
 
-    // Ensure Cadillac exists even if not yet in official standings
     const hasCadillac = constructors.some(
       (t) => normalizeKey(t.team) === "cadillac"
     );
@@ -412,7 +415,6 @@ async function updateConstructors() {
       });
     }
 
-    // Guardrail: logos must be repo-hosted (or null)
     for (const t of constructors) {
       if (
         typeof t.teamLogoPng === "string" &&
@@ -454,6 +456,8 @@ async function updateConstructors() {
   console.log(
     `Wrote ${OUT_JSON} season=${out.meta.seasonUsed} constructors=${out.constructors.length} mode=${out.meta.mode}`
   );
+  console.log(`Standings parse reason: ${parsedStandings.reason}`);
+  console.log(`Race parse reason: ${parsedLastRace.reason}`);
 }
 
 updateConstructors().catch((err) => {
