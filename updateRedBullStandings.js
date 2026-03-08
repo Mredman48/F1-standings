@@ -1,49 +1,30 @@
 // updateRedBullStandings.js
 import fs from "node:fs/promises";
 
-const UA = "f1-standings-bot/1.0 (GitHub Actions)";
+const UA = "f1-standings-bot";
 
-// Output JSON
 const OUT_JSON = "f1_redbull_standings.json";
 
-// GitHub Pages base (Widgy-friendly)
-const PAGES_BASE = "https://mredman48.github.io/F1-standings";
+const DRIVER_STANDINGS_FILE = "f1_driver_standings.json";
+const CONSTRUCTOR_STANDINGS_FILE = "f1_constructors_standings.json";
 
-// Repo folders
+const OPENF1_BASE = "https://api.openf1.org/v1";
+const YEAR = new Date().getUTCFullYear();
+
+const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 const TEAMLOGOS_DIR = "teamlogos";
 const HEADSHOTS_DIR = "headshots";
 const DRIVER_NUMBER_FOLDER = "driver-numbers";
 
-// ✅ Red Bull logo from your repo (update filename if needed)
-const REDBULL_LOGO_FILE = "2025_red-bull_color_v2.png";
-const REDBULL_LOGO_PNG = `${PAGES_BASE}/${TEAMLOGOS_DIR}/${REDBULL_LOGO_FILE}`;
+const TEAM_KEYWORDS = ["red bull"];
+const TEAM_DISPLAY_NAME = "Red Bull";
+const TEAM_LOGO = `${PAGES_BASE}/${TEAMLOGOS_DIR}/2025_red-bull_color_v2.png`;
 
-// --- Sources ---
-const OPENF1_BASE = "https://api.openf1.org/v1";
+/* -------------------------------- */
+/* HELPERS */
+/* -------------------------------- */
 
-// Red Bull naming can vary; try a few
-const OPENF1_TEAM_NAMES_TO_TRY = [
-  "Red Bull",
-  "Red Bull Racing",
-  "Oracle Red Bull Racing",
-];
-
-// Standings from Jolpica (Ergast-compatible), Ergast fallback
-const ERGAST_BASES = ["https://api.jolpi.ca/ergast/f1", "https://ergast.com/api/f1"];
-
-// Red Bull constructorId in Ergast is typically "red_bull"
-const ERGAST_CONSTRUCTOR_ID = "red_bull";
-
-// ---------- Helpers ----------
-
-function fmtPos(pos) {
-  if (pos == null || pos === "-" || pos === "") return "-";
-  const n = Number(pos);
-  if (!Number.isFinite(n)) return "-";
-  return `P${n}`;
-}
-
-function toSlug(s) {
+function slug(s) {
   return String(s || "")
     .toLowerCase()
     .normalize("NFKD")
@@ -52,338 +33,352 @@ function toSlug(s) {
     .replace(/(^-|-$)/g, "");
 }
 
-async function exists(filePath) {
-  try {
-    await fs.stat(filePath);
-    return true;
-  } catch {
-    return false;
-  }
+function numberImage(num) {
+  if (!num) return null;
+  return `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-${num}.png`;
 }
 
-function getDriverNumberImageUrl(driverNumber) {
-  if (driverNumber == null || driverNumber === "-" || driverNumber === "") return null;
-  return `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-${driverNumber}.png`;
+async function headshot(first, last) {
+  if (!first || !last) return null;
+  const file = `${slug(first)}-${slug(last)}.png`;
+  return `${PAGES_BASE}/${HEADSHOTS_DIR}/${file}`;
 }
 
-// Headshots local-only, only if file exists in repo checkout
-async function getSavedHeadshotUrl({ firstName, lastName }) {
-  if (!firstName || !lastName || firstName === "-" || lastName === "-") return null;
-
-  const fileName = `${toSlug(firstName)}-${toSlug(lastName)}.png`;
-  const localPath = `${HEADSHOTS_DIR}/${fileName}`;
-
-  if (await exists(localPath)) {
-    return `${PAGES_BASE}/${HEADSHOTS_DIR}/${fileName}`;
-  }
-  return null;
+function normalizePoints(val) {
+  if (val === "-" || val === "" || val === null || val === undefined) return 0;
+  const n = Number(val);
+  return Number.isFinite(n) ? n : 0;
 }
 
-// ---------- Fetch helpers ----------
+function normalizeStandingPosition(pos) {
+  if (!pos) return "-";
 
-async function fetchText(url) {
-  const res = await fetch(url, {
-    headers: { "User-Agent": UA, Accept: "application/json" },
-    redirect: "follow",
-  });
-  const text = await res.text();
-  return { res, text };
+  const p = String(pos).toUpperCase().trim();
+
+  if (p === "P0") return "-";
+  if (p === "DNF") return "DNF";
+  if (p === "DNS") return "DNS";
+  if (p === "DSQ") return "DSQ";
+
+  const n = Number(p.replace(/^P/, ""));
+  if (!Number.isFinite(n) || n <= 0) return "-";
+
+  return `P${n}`;
 }
 
-async function fetchJsonStrict(url) {
-  const { res, text } = await fetchText(url);
-  if (!res.ok) throw new Error(`HTTP ${res.status} from ${url}\n${text.slice(0, 200)}`);
-  try {
-    return JSON.parse(text);
-  } catch {
-    throw new Error(`Invalid JSON from ${url}\n${text.slice(0, 200)}`);
-  }
+function classificationFromOpenF1(row) {
+  if (!row) return "-";
+
+  if (row.dsq === true) return "DSQ";
+  if (row.dns === true) return "DNS";
+  if (row.dnf === true) return "DNF";
+
+  const pos = Number(row.position);
+  if (!Number.isFinite(pos) || pos <= 0) return "-";
+
+  return `P${pos}`;
 }
 
-async function fetchFromAnyErgastBase(path) {
-  let lastErr = null;
-  for (const base of ERGAST_BASES) {
-    const url = `${base}${path}`;
-    try {
-      const json = await fetchJsonStrict(url);
-      return { json, urlUsed: url };
-    } catch (e) {
-      lastErr = e;
-      console.warn(`Ergast/Jolpica fetch failed, trying next base. url=${url} err=${e.message}`);
-    }
-  }
-  throw lastErr || new Error("All Ergast/Jolpica bases failed");
-}
-
-// OpenF1 rate-limit safe fetch (backoff on 429)
-async function fetchOpenF1Json(path, { retries = 4 } = {}) {
-  const url = `${OPENF1_BASE}${path}`;
-
-  for (let attempt = 0; attempt <= retries; attempt++) {
-    const { res, text } = await fetchText(url);
-
-    if (res.status === 429) {
-      const waitMs = 1100 + attempt * 900;
-      console.warn(`OpenF1 429. Waiting ${waitMs}ms. ${text.slice(0, 120)}`);
-      await new Promise((r) => setTimeout(r, waitMs));
-      continue;
-    }
-
-    if (!res.ok) throw new Error(`HTTP ${res.status} from ${url}\n${text.slice(0, 200)}`);
-
-    try {
-      return { json: JSON.parse(text), urlUsed: url };
-    } catch {
-      throw new Error(`Invalid JSON from ${url}\n${text.slice(0, 200)}`);
-    }
-  }
-
-  throw new Error(`OpenF1 rate limited too long for ${url}`);
-}
-
-// ---------- Ergast extractors ----------
-
-function getCurrentDriverStandings(mr) {
-  return mr?.MRData?.StandingsTable?.StandingsLists?.[0]?.DriverStandings ?? [];
-}
-
-function getCurrentConstructorStandings(mr) {
-  return mr?.MRData?.StandingsTable?.StandingsLists?.[0]?.ConstructorStandings ?? [];
-}
-
-function getLastRaceResult(mr) {
-  const race = mr?.MRData?.RaceTable?.Races?.[0];
-  if (!race) return null;
-
+function emptyBestResult(position = "-") {
   return {
-    season: race.season ?? "-",
-    round: race.round ?? "-",
-    raceName: race.raceName ?? "-",
-    date: race.date ?? "-",
-    timeUtc: race.time ?? "-",
-    circuit: {
-      name: race?.Circuit?.circuitName ?? "-",
-      locality: race?.Circuit?.Location?.locality ?? "-",
-      country: race?.Circuit?.Location?.country ?? "-",
+    position,
+    raceName: "-",
+    round: "-",
+    date: "-",
+    circuit: "-",
+    location: {
+      locality: "-",
+      country: "-",
     },
+    sessionKey: null,
+    meetingKey: null,
   };
 }
 
-// ---------- OpenF1: get current Red Bull drivers (NO FALLBACK DRIVERS) ----------
-
-function pickLatestMeetingRows(rows) {
-  if (!Array.isArray(rows) || rows.length === 0) return [];
-  const withMk = rows.filter((r) => r && r.meeting_key != null);
-  if (withMk.length === 0) return rows;
-
-  const maxKey = withMk.reduce((m, r) => Math.max(m, Number(r.meeting_key) || -1), -1);
-  return rows.filter((r) => Number(r?.meeting_key) === maxKey);
+function bestResultFromSessionRow(row, session) {
+  return {
+    position: classificationFromOpenF1(row),
+    raceName: session?.meeting_name ?? "-",
+    round: session?.meeting_key != null ? String(session.meeting_key) : "-",
+    date: session?.date_start ?? "-",
+    circuit: session?.circuit_short_name ?? "-",
+    location: {
+      locality: session?.location ?? "-",
+      country: session?.country_name ?? "-",
+    },
+    sessionKey: row?.session_key ?? session?.session_key ?? null,
+    meetingKey: row?.meeting_key ?? session?.meeting_key ?? null,
+  };
 }
 
-async function getRedBullDriversFromOpenF1() {
-  for (const teamName of OPENF1_TEAM_NAMES_TO_TRY) {
-    try {
-      const res = await fetchOpenF1Json(
-        `/drivers?meeting_key=latest&team_name=${encodeURIComponent(teamName)}`
-      );
+function bestResultFromBestFinish(best) {
+  return {
+    position: `P${best.pos}`,
+    raceName: best.raceName,
+    round: best.round,
+    date: best.date,
+    circuit: best.circuit,
+    location: {
+      locality: best.locality,
+      country: best.country,
+    },
+    sessionKey: best.sessionKey,
+    meetingKey: best.meetingKey,
+  };
+}
 
-      const rows = pickLatestMeetingRows(res.json);
+function isCompletedRaceSession(session) {
+  if (!session) return false;
+  if (String(session.session_name || "") !== "Race") return false;
 
-      // De-dupe by driver_number
-      const byNum = new Map();
-      for (const r of rows) {
-        const num = r?.driver_number;
-        if (num == null) continue;
-        if (!byNum.has(num)) byNum.set(num, r);
+  const end = new Date(session.date_end || session.date_start || 0).getTime();
+  return Number.isFinite(end) && end > 0 && end <= Date.now();
+}
+
+/* -------------------------------- */
+/* FETCH */
+/* -------------------------------- */
+
+async function fetchJson(url) {
+  const res = await fetch(url, {
+    headers: {
+      "User-Agent": UA,
+      Accept: "application/json",
+    },
+    redirect: "follow",
+  });
+
+  const text = await res.text();
+
+  if (res.status === 404) return null;
+
+  if (!res.ok) {
+    throw new Error(`HTTP ${res.status} from ${url}\n${text}`);
+  }
+
+  return JSON.parse(text);
+}
+
+/* -------------------------------- */
+/* READ LOCAL JSON */
+/* -------------------------------- */
+
+async function readJson(file) {
+  const raw = await fs.readFile(file, "utf8");
+  return JSON.parse(raw);
+}
+
+/* -------------------------------- */
+/* TEAM MATCHING */
+/* -------------------------------- */
+
+function matchesTeamName(name) {
+  const value = String(name || "").toLowerCase();
+  return TEAM_KEYWORDS.some((keyword) => value.includes(keyword));
+}
+
+/* -------------------------------- */
+/* FIND TEAM DRIVERS */
+/* -------------------------------- */
+
+function getTeamDrivers(driverData) {
+  return (driverData.drivers || []).filter((d) => {
+    const teamA = d?.constructor?.name || "";
+    const teamB = d?.constructor?.fullName || "";
+    return matchesTeamName(teamA) || matchesTeamName(teamB);
+  });
+}
+
+/* -------------------------------- */
+/* TEAM STANDING */
+/* -------------------------------- */
+
+function getTeamConstructor(constructorData) {
+  const row = (constructorData.constructors || []).find((c) =>
+    matchesTeamName(c.team)
+  );
+
+  if (!row) {
+    return {
+      team: TEAM_DISPLAY_NAME,
+      position: "-",
+      points: 0,
+      wins: 0,
+    };
+  }
+
+  return {
+    team: TEAM_DISPLAY_NAME,
+    position: normalizeStandingPosition(row.position),
+    points: normalizePoints(row.points),
+    wins: normalizePoints(row.wins),
+  };
+}
+
+/* -------------------------------- */
+/* BEST RESULTS FROM OPENF1 */
+/* -------------------------------- */
+
+async function getRaceSessionsForYear() {
+  const sessions = await fetchJson(
+    `${OPENF1_BASE}/sessions?year=${YEAR}&session_name=Race`
+  );
+
+  const raceSessions = (sessions || [])
+    .filter(isCompletedRaceSession)
+    .sort(
+      (a, b) =>
+        new Date(a.date_start || 0).getTime() - new Date(b.date_start || 0).getTime()
+    );
+
+  const sessionMap = new Map();
+  const allowedKeys = new Set();
+
+  for (const s of raceSessions) {
+    sessionMap.set(Number(s.session_key), s);
+    allowedKeys.add(Number(s.session_key));
+  }
+
+  return { sessionMap, allowedKeys };
+}
+
+async function getBestResults(driverNumbers) {
+  const { sessionMap, allowedKeys } = await getRaceSessionsForYear();
+
+  const best = {};
+  const latestClassification = {};
+
+  for (const driverNumber of driverNumbers) {
+    if (!driverNumber) continue;
+
+    const rows = await fetchJson(
+      `${OPENF1_BASE}/session_result?driver_number=${encodeURIComponent(driverNumber)}`
+    );
+
+    const filtered = (rows || [])
+      .filter((row) => allowedKeys.has(Number(row.session_key)))
+      .sort((a, b) => Number(a.session_key) - Number(b.session_key));
+
+    if (filtered.length > 0) {
+      latestClassification[driverNumber] = filtered[filtered.length - 1];
+    }
+
+    for (const row of filtered) {
+      const pos = Number(row.position);
+      if (!Number.isFinite(pos) || pos <= 0) continue;
+
+      const session = sessionMap.get(Number(row.session_key));
+
+      if (!best[driverNumber] || pos < best[driverNumber].pos) {
+        best[driverNumber] = {
+          pos,
+          raceName: session?.meeting_name ?? "-",
+          round: session?.meeting_key != null ? String(session.meeting_key) : "-",
+          date: session?.date_start ?? "-",
+          circuit: session?.circuit_short_name ?? "-",
+          locality: session?.location ?? "-",
+          country: session?.country_name ?? "-",
+          sessionKey: row.session_key ?? null,
+          meetingKey: row.meeting_key ?? session?.meeting_key ?? null,
+        };
       }
-
-      const drivers = Array.from(byNum.values())
-        .sort((a, b) => Number(a.driver_number) - Number(b.driver_number))
-        .slice(0, 2)
-        .map((r) => ({
-          firstName: r?.first_name ?? "-",
-          lastName: r?.last_name ?? "-",
-          code: (r?.name_acronym ?? "-").toUpperCase(),
-          driverNumber: r?.driver_number ?? "-",
-          fromOpenF1: true,
-          openf1TeamNameUsed: teamName,
-        }));
-
-      if (drivers.length >= 2) {
-        return { drivers, urlUsed: res.urlUsed, teamNameUsed: teamName };
-      }
-    } catch (e) {
-      console.warn(`OpenF1 team_name="${teamName}" failed or empty.`, e.message);
     }
   }
 
-  return { drivers: [], urlUsed: null, teamNameUsed: null };
+  return { best, latestClassification, sessionMap };
 }
 
-// ---------- Build JSON (OpenF1 drivers ONLY + Ergast standings) ----------
+/* -------------------------------- */
+/* BUILD JSON */
+/* -------------------------------- */
 
 async function buildJson() {
-  const now = new Date();
+  const driverData = await readJson(DRIVER_STANDINGS_FILE);
+  const constructorData = await readJson(CONSTRUCTOR_STANDINGS_FILE);
 
-  // 1) Drivers & numbers: OpenF1 ONLY (no fallback)
-  const of1 = await getRedBullDriversFromOpenF1();
+  const teamDrivers = getTeamDrivers(driverData);
+  const teamStanding = getTeamConstructor(constructorData);
+
+  const driverNumbers = teamDrivers.map((d) => d?.driver?.driverNumber);
+  const { best: bestResults, latestClassification, sessionMap } =
+    await getBestResults(driverNumbers);
 
   const drivers = [];
-  for (const d of of1.drivers) {
-    const headshotUrl =
-      d.firstName !== "-" && d.lastName !== "-" ? await getSavedHeadshotUrl(d) : null;
+
+  for (const d of teamDrivers) {
+    const drv = d.driver || {};
+
+    const first = drv.firstName || "-";
+    const last = drv.lastName || "-";
+    const num = drv.driverNumber || null;
+
+    const best = bestResults[num];
+    const latest = latestClassification[num];
+    const latestSession = latest ? sessionMap.get(Number(latest.session_key)) : null;
+
+    let bestResult = emptyBestResult();
+
+    if (best) {
+      bestResult = bestResultFromBestFinish(best);
+    } else if (latest) {
+      bestResult = bestResultFromSessionRow(latest, latestSession);
+    }
 
     drivers.push({
-      firstName: d.firstName,
-      lastName: d.lastName,
-      code: d.code,
-      driverNumber: d.driverNumber,
+      firstName: first,
+      lastName: last,
+      code: drv.code || "-",
+      driverNumber: num,
 
-      // number PNG from your repo
-      numberImageUrl: getDriverNumberImageUrl(d.driverNumber),
+      numberImageUrl: numberImage(num),
+      headshotUrl: await headshot(first, last),
 
-      // filled by Ergast later (if available)
-      position: "-",
-      points: "-",
-      wins: "-",
-      team: "Red Bull",
-      placeholder: true,
-      bestResult: { position: "-", raceName: "-", round: "-", date: "-", circuit: "-" },
+      position: normalizeStandingPosition(d.position),
+      points: normalizePoints(d.points),
+      wins: normalizePoints(d.wins),
 
-      headshotUrl,
-      fromOpenF1: true,
+      team: TEAM_DISPLAY_NAME,
+
+      bestResult,
     });
   }
 
-  const openf1DriversOk = drivers.length >= 2;
-
-  // 2) Standings (Ergast/Jolpica)
-  let teamStanding = {
-    team: "Red Bull",
-    position: "-",
-    points: "-",
-    wins: "-",
-    originalTeam: "-",
-    constructorId: ERGAST_CONSTRUCTOR_ID,
-  };
-
-  let lastRace = {
-    season: "-",
-    round: "-",
-    raceName: "-",
-    date: "-",
-    timeUtc: "-",
-    circuit: { name: "-", locality: "-", country: "-" },
-  };
-
-  let placeholderMode = true;
-
-  let urlUsed = {
-    openf1Drivers: of1.urlUsed,
-    openf1TeamNameUsed: of1.teamNameUsed,
-    driverStandings: null,
-    constructorStandings: null,
-    lastRace: null,
-  };
-
-  try {
-    const ds = await fetchFromAnyErgastBase("/current/driverStandings.json");
-    urlUsed.driverStandings = ds.urlUsed;
-    const driverStandings = getCurrentDriverStandings(ds.json);
-
-    const cs = await fetchFromAnyErgastBase("/current/constructorStandings.json");
-    urlUsed.constructorStandings = cs.urlUsed;
-    const constructorStandings = getCurrentConstructorStandings(cs.json);
-
-    const lr = await fetchFromAnyErgastBase("/current/last/results.json");
-    urlUsed.lastRace = lr.urlUsed;
-    const lrParsed = getLastRaceResult(lr.json);
-    if (lrParsed) lastRace = lrParsed;
-
-    // Team row
-    const redBullCtor = constructorStandings.find(
-      (c) => String(c?.Constructor?.constructorId || "").toLowerCase() === ERGAST_CONSTRUCTOR_ID
-    );
-
-    if (redBullCtor) {
-      teamStanding = {
-        team: "Red Bull",
-        position: fmtPos(redBullCtor.position),
-        points: redBullCtor.points ?? "-",
-        wins: redBullCtor.wins ?? "-",
-        originalTeam: redBullCtor?.Constructor?.name ?? "Red Bull",
-        constructorId: ERGAST_CONSTRUCTOR_ID,
-      };
-    }
-
-    // Driver rows (match by code, then last name)
-    for (const d of drivers) {
-      const match = driverStandings.find((row) => {
-        const code = String(row?.Driver?.code || "").toUpperCase();
-        const fam = String(row?.Driver?.familyName || "").toLowerCase();
-        return (code && code === d.code) || fam === String(d.lastName || "").toLowerCase();
-      });
-
-      if (match) {
-        d.position = fmtPos(match.position);
-        d.points = match.points ?? "-";
-        d.wins = match.wins ?? "-";
-        d.placeholder = false;
-      }
-    }
-
-    const anyDriverLive = drivers.some((d) => d.placeholder === false);
-    const teamLive = teamStanding.position !== "-" && teamStanding.points !== "-";
-    placeholderMode = !(anyDriverLive || teamLive);
-  } catch (e) {
-    console.warn("Standings fetch failed; keeping standings placeholders.", e.message);
-    placeholderMode = true;
-  }
-
   return {
-    header: "Red Bull standings",
-    generatedAtUtc: now.toISOString(),
+    header: `${TEAM_DISPLAY_NAME} standings`,
+    generatedAtUtc: new Date().toISOString(),
+
     sources: {
-      openf1: OPENF1_BASE,
-      openf1Drivers:
-        urlUsed.openf1Drivers ||
-        `${OPENF1_BASE}/drivers?meeting_key=latest&team_name=${encodeURIComponent(
-          OPENF1_TEAM_NAMES_TO_TRY[0]
-        )}`,
-      openf1TeamNameUsed: urlUsed.openf1TeamNameUsed || "NOT_FOUND",
-      logos: `LOCAL_ONLY: ${PAGES_BASE}/${TEAMLOGOS_DIR}/`,
-      headshots: `LOCAL_ONLY: ${PAGES_BASE}/${HEADSHOTS_DIR}/<first>-<last>.png`,
-      driverNumbers: `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-<number>.png`,
-      driverStandings: urlUsed.driverStandings || "ERGAST_COMPAT_UNAVAILABLE",
-      constructorStandings: urlUsed.constructorStandings || "ERGAST_COMPAT_UNAVAILABLE",
-      lastRace: urlUsed.lastRace || "ERGAST_COMPAT_UNAVAILABLE",
-      note:
-        "Drivers/numbers come ONLY from OpenF1. Standings come from Jolpica (Ergast-compatible) with Ergast fallback. No fallback drivers are inserted.",
+      driverStandings: DRIVER_STANDINGS_FILE,
+      constructorStandings: CONSTRUCTOR_STANDINGS_FILE,
+      bestResults:
+        "OpenF1 sessions?year=YYYY&session_name=Race + session_result?driver_number=NN",
     },
-    meta: {
-      mode: placeholderMode
-        ? "OPENF1_DRIVERS_STANDINGS_PLACEHOLDERS_LOCAL_ASSETS"
-        : "OPENF1_DRIVERS_ERGAST_STANDINGS_LOCAL_ASSETS",
-      openf1DriversOk,
-      teamAliasesTried: OPENF1_TEAM_NAMES_TO_TRY,
-      note:
-        "Positions are formatted as P1, P2, etc. If OpenF1 returns <2 drivers, drivers[] will be empty (no placeholders). Number images are pulled from your repo using the OpenF1-provided number.",
-    },
-    redbull: {
-      team: "Red Bull",
-      teamLogoPng: REDBULL_LOGO_PNG,
+
+    redBull: {
+      team: TEAM_DISPLAY_NAME,
+      teamLogoPng: TEAM_LOGO,
       teamStanding,
     },
-    lastRace,
-    drivers: openf1DriversOk ? drivers : [],
+
+    lastRace: constructorData.lastRace ?? null,
+
+    drivers,
   };
 }
 
-// ---------- Main ----------
+/* -------------------------------- */
+/* MAIN */
+/* -------------------------------- */
 
 async function updateRedBullStandings() {
   const out = await buildJson();
-  await fs.writeFile(OUT_JSON, JSON.stringify(out, null, 2), "utf8");
+
+  await fs.writeFile(
+    OUT_JSON,
+    JSON.stringify(out, null, 2),
+    "utf8"
+  );
+
   console.log(`Wrote ${OUT_JSON}`);
 }
 
