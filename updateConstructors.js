@@ -181,19 +181,18 @@ function buildAlphabeticalPlaceholders() {
 }
 
 /* ------------------------------------------------ */
-/* SECTION EXTRACTION */
+/* SECTION FINDERS */
 /* ------------------------------------------------ */
 
-function extractSection(lines, headingPattern) {
-  const startIndex = lines.findIndex((line) => headingPattern.test(line));
-  if (startIndex === -1) return [];
+function findSection(lines, headingRegex) {
+  const start = lines.findIndex((line) => headingRegex.test(line));
+  if (start === -1) return [];
 
-  const partnersIndex = lines.findIndex(
-    (line, idx) => idx > startIndex && /OUR PARTNERS/i.test(line)
+  const end = lines.findIndex(
+    (line, idx) => idx > start && /OUR PARTNERS/i.test(line)
   );
 
-  const endIndex = partnersIndex === -1 ? lines.length : partnersIndex;
-  return lines.slice(startIndex, endIndex);
+  return lines.slice(start, end === -1 ? lines.length : end);
 }
 
 /* ------------------------------------------------ */
@@ -202,45 +201,36 @@ function extractSection(lines, headingPattern) {
 
 function parseOfficialTeamStandings(html, year) {
   const lines = htmlToLines(html);
-  const section = extractSection(
-    lines,
-    new RegExp(`${year}\\s+Teams[’']\\s+Standings`, "i")
-  );
+  const section = findSection(lines, new RegExp(`^${year}\\s+Teams['’]\\s+Standings$`, "i"));
 
   if (!section.length) {
     return { rows: [], reason: "heading_not_found" };
   }
 
-  const joined = section.join("\n");
-  if (/No results available/i.test(joined) || /\bError\b/i.test(joined)) {
-    return { rows: [], reason: "no_results_available" };
-  }
-
   const rows = [];
 
-  // Handles:
-  // "1 Mercedes 43"
-  // "1Mercedes43"
-  const spacedOrCompactRowRe =
-    /^(\d+)\s*([A-Za-z][A-Za-z0-9 '&.\-]*?)\s*(\d+(?:\.\d+)?)$/;
+  // The current page lines are like:
+  // 1Mercedes43
+  // 4Red Bull Racing8
+  //
+  // We parse:
+  // ^(position)(team)(points)$
+  const rowRe = /^(\d+)([A-Za-z][A-Za-z0-9 '&.\-]*?)(\d+(?:\.\d+)?)$/;
 
   for (const rawLine of section) {
     const line = cleanLine(rawLine);
 
     if (/^Pos\.?Team/i.test(line)) continue;
-    if (/^#\s*\d{4}\s+Teams/i.test(line)) continue;
+    if (new RegExp(`^${year}\\s+Teams['’]\\s+Standings$`, "i").test(line)) continue;
 
-    const m = line.match(spacedOrCompactRowRe);
+    const m = line.match(rowRe);
     if (!m) continue;
 
     const [, pos, teamRaw, pts] = m;
-    const teamClean = cleanLine(teamRaw);
-
-    if (!teamClean) continue;
 
     rows.push({
-      teamRaw: teamClean,
-      team: normalizeTeamName(teamClean),
+      teamRaw: cleanLine(teamRaw),
+      team: normalizeTeamName(cleanLine(teamRaw)),
       position: fmtPos(pos),
       points: safeNumOrDash(pts),
       wins: "-",
@@ -265,35 +255,32 @@ function parseOfficialTeamStandings(html, year) {
 }
 
 /* ------------------------------------------------ */
-/* RACE RESULTS PARSER */
+/* LAST RACE PARSER */
 /* ------------------------------------------------ */
 
 function parseOfficialRaceResults(html, year) {
   const lines = htmlToLines(html);
-  const section = extractSection(lines, new RegExp(`${year}\\s+RACE RESULTS`, "i"));
+  const section = findSection(lines, new RegExp(`^${year}\\s+RACE RESULTS$`, "i"));
 
   if (!section.length) {
     return { lastRace: null, reason: "heading_not_found" };
   }
 
-  const joined = section.join("\n");
-  if (/No results available/i.test(joined) || /\bError\b/i.test(joined)) {
-    return { lastRace: null, reason: "no_results_available" };
-  }
-
-  // Handles:
-  // "Australia 08 Mar George Russell RUS Mercedes 58 1:23:06.801"
-  // and tighter variants with inconsistent spacing after HTML stripping
-  const raceRowRe =
-    /^([A-Za-z][A-Za-z\s'’-]+?)\s*(\d{2}\s+[A-Za-z]{3})\s*([A-Za-zÀ-ÿ\s'’-]+?)\s+([A-Z]{3})\s+([A-Za-z][A-Za-z0-9\s&'.\-]+?)\s+(\d+)\s+([0-9:.\-+]+)$/;
+  // Current page line looks like:
+  // Australia08 MarGeorge Russell RUSMercedes 58 1:23:06.801
+  //
+  // Parse as:
+  // (race)(date)(winner)(code)(team)(laps)(time)
+  const rowRe =
+    /^([A-Za-z][A-Za-z\s'’-]+?)(\d{2}\s[A-Za-z]{3})([A-Za-zÀ-ÿ\s'’-]+?)\s([A-Z]{3})([A-Za-z][A-Za-z0-9\s&'.\-]+?)\s(\d+)\s([0-9:.+-]+)$/;
 
   for (const rawLine of section) {
     const line = cleanLine(rawLine);
 
     if (/^Grand Prix Date Winner Team Laps Time/i.test(line)) continue;
-    if (/^#\s*\d{4}\s+RACE RESULTS/i.test(line)) continue;
+    if (new RegExp(`^${year}\\s+RACE RESULTS$`, "i").test(line)) continue;
 
-    const m = line.match(raceRowRe);
+    const m = line.match(rowRe);
     if (!m) continue;
 
     const [, raceName, date, winnerName, winnerCode, team, laps, timeUtc] = m;
@@ -320,7 +307,10 @@ function parseOfficialRaceResults(html, year) {
     };
   }
 
-  return { lastRace: null, reason: "no_rows_parsed" };
+  return {
+    lastRace: null,
+    reason: "no_rows_parsed",
+  };
 }
 
 /* ------------------------------------------------ */
@@ -355,33 +345,19 @@ async function updateConstructors() {
     },
   ];
 
-  let constructors = [];
-  let mode = "F1COM_CURRENT_EMPTY_PLACEHOLDERS_LOCAL_LOGOS";
-
   let parsedStandings = { rows: [], reason: "http_error" };
+  let parsedLastRace = { lastRace: null, reason: "http_error" };
+
   if (standingsResp.res.ok) {
     parsedStandings = parseOfficialTeamStandings(standingsResp.text, year);
   }
 
-  let parsedLastRace = { lastRace: null, reason: "http_error" };
   if (racesResp.res.ok) {
     parsedLastRace = parseOfficialRaceResults(racesResp.text, year);
   }
 
-  const lastRaceOut =
-    parsedLastRace.lastRace || {
-      season: String(year),
-      round: "-",
-      raceName: "-",
-      date: "-",
-      timeUtc: "-",
-      circuit: { name: "-", locality: "-", country: "-" },
-      winner: {
-        name: "-",
-        team: "-",
-        laps: "-",
-      },
-    };
+  let constructors = [];
+  let mode = "F1COM_CURRENT_EMPTY_PLACEHOLDERS_LOCAL_LOGOS";
 
   if (Array.isArray(parsedStandings.rows) && parsedStandings.rows.length > 0) {
     mode = "F1COM_CURRENT_LIVE_LOCAL_LOGOS";
@@ -402,6 +378,7 @@ async function updateConstructors() {
     const hasCadillac = constructors.some(
       (t) => normalizeKey(t.team) === "cadillac"
     );
+
     if (!hasCadillac) {
       const logo = resolveTeamLogo("Cadillac");
       constructors.push({
@@ -428,6 +405,25 @@ async function updateConstructors() {
     constructors = buildAlphabeticalPlaceholders();
   }
 
+  const lastRaceOut =
+    parsedLastRace.lastRace || {
+      season: String(year),
+      round: "-",
+      raceName: "-",
+      date: "-",
+      timeUtc: "-",
+      circuit: {
+        name: "-",
+        locality: "-",
+        country: "-",
+      },
+      winner: {
+        name: "-",
+        team: "-",
+        laps: "-",
+      },
+    };
+
   const out = {
     header: "Constructors standings",
     generatedAtUtc: now.toISOString(),
@@ -453,6 +449,7 @@ async function updateConstructors() {
   };
 
   await fs.writeFile(OUT_JSON, JSON.stringify(out, null, 2), "utf8");
+
   console.log(
     `Wrote ${OUT_JSON} season=${out.meta.seasonUsed} constructors=${out.constructors.length} mode=${out.meta.mode}`
   );
