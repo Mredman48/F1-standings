@@ -23,7 +23,7 @@ jobs:
         run: ls -la
 
       - name: Run all team standings script
-        run: node updateAllTeamStandings.js
+        run: node UpdateAllTeamStandings.js
 
       - name: Show generated files
         if: always()
