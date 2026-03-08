@@ -1,6 +1,6 @@
 {
   "header": "Next F1 event",
-  "generatedAtUtc": "2026-03-08T06:48:52.677Z",
+  "generatedAtUtc": "2026-03-08T06:59:54.962Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics+formula1",
@@ -48,20 +48,20 @@
         "startLocalDateTimeShort": "Thu, Mar 12 21:30"
       },
       {
-        "type": "Quali",
-        "startUtc": "2026-03-14T07:00:00.000Z",
-        "endUtc": "2026-03-14T08:00:00.000Z",
-        "startLocalDateShort": "Sat, Mar 14",
-        "startLocalTimeShort": "01:00",
-        "startLocalDateTimeShort": "Sat, Mar 14 01:00"
-      },
-      {
         "type": "Sprint",
         "startUtc": "2026-03-13T07:30:00.000Z",
         "endUtc": "2026-03-13T08:14:00.000Z",
         "startLocalDateShort": "Fri, Mar 13",
         "startLocalTimeShort": "01:30",
         "startLocalDateTimeShort": "Fri, Mar 13 01:30"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2026-03-14T07:00:00.000Z",
+        "endUtc": "2026-03-14T08:00:00.000Z",
+        "startLocalDateShort": "Sat, Mar 14",
+        "startLocalTimeShort": "01:00",
+        "startLocalDateTimeShort": "Sat, Mar 14 01:00"
       },
       {
         "type": "Race",
