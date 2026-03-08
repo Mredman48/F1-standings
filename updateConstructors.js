@@ -1,9 +1,6 @@
-// updateConstructors.js
-
 import fs from "node:fs/promises";
 
 const UA = "f1-standings-bot";
-
 const YEAR = new Date().getUTCFullYear();
 
 const OUT_JSON = "f1_constructors_standings.json";
@@ -52,7 +49,7 @@ async function fetchJson(url) {
 }
 
 /* ------------------------------------------------ */
-/* GET LATEST RACE */
+/* FIND LATEST RACE */
 /* ------------------------------------------------ */
 
 async function getLatestRace() {
@@ -60,24 +57,46 @@ async function getLatestRace() {
     `https://livetiming.formula1.com/static/${YEAR}/Index.json`
   );
 
-  const meetings = index.Meetings;
+  const meetings = index.Meetings || [];
 
-  const races = meetings
-    .map((m) => m.Sessions.find((s) => s.Name === "Race"))
-    .filter(Boolean);
+  const raceSessions = [];
 
-  const last = races[races.length - 1];
+  for (const meeting of meetings) {
+    if (!meeting.Sessions) continue;
+
+    for (const session of meeting.Sessions) {
+      if (session.Name === "Race") {
+        raceSessions.push({
+          meeting,
+          session,
+        });
+      }
+    }
+  }
+
+  if (!raceSessions.length) {
+    throw new Error("No race sessions found in Index.json");
+  }
+
+  // sort by session start time
+  raceSessions.sort(
+    (a, b) =>
+      new Date(a.session.StartDate).getTime() -
+      new Date(b.session.StartDate).getTime()
+  );
+
+  const last = raceSessions[raceSessions.length - 1];
 
   return {
-    round: last.Number,
-    name: last.Meeting.Name,
-    country: last.Meeting.Location,
-    date: last.StartDate,
+    round: last.session.Number,
+    raceName: last.meeting.Name,
+    location: last.meeting.Location,
+    date: last.session.StartDate,
   };
 }
 
 /* ------------------------------------------------ */
-/* GET STANDINGS */
+/* CONSTRUCTOR STANDINGS */
 /* ------------------------------------------------ */
 
 async function getConstructorStandings() {
@@ -102,7 +121,6 @@ async function getConstructorStandings() {
 
 async function updateConstructors() {
   const lastRace = await getLatestRace();
-
   const constructors = await getConstructorStandings();
 
   const out = {
@@ -114,12 +132,12 @@ async function updateConstructors() {
     lastRace: {
       season: YEAR,
       round: lastRace.round,
-      raceName: lastRace.name,
+      raceName: lastRace.raceName,
       date: lastRace.date,
       circuit: {
         name: "-",
-        locality: lastRace.country,
-        country: lastRace.country,
+        locality: lastRace.location,
+        country: lastRace.location,
       },
     },
 
@@ -128,9 +146,7 @@ async function updateConstructors() {
 
   await fs.writeFile(OUT_JSON, JSON.stringify(out, null, 2));
 
-  console.log(
-    `Wrote ${OUT_JSON} constructors=${constructors.length}`
-  );
+  console.log(`Wrote ${OUT_JSON} constructors=${constructors.length}`);
 }
 
 updateConstructors().catch((err) => {
