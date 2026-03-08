@@ -332,59 +332,93 @@ function extractDriverProfileUrls(html) {
 function parseDriverProfile(html, url) {
   const lines = htmlToLines(html);
 
-  const nameIdx = lines.findIndex((line) => /^#\s+/.test(line));
-  if (nameIdx === -1) {
+  let fullName = null;
+
+  for (let i = 0; i < lines.length; i += 1) {
+    const line = cleanLine(lines[i]);
+    const next = cleanLine(lines[i + 1] || "");
+    const next2 = cleanLine(lines[i + 2] || "");
+    const next3 = cleanLine(lines[i + 3] || "");
+
+    // Most reliable pattern on current pages:
+    // Name
+    // Flag of X
+    // X
+    // Team
+    // Number
+    if (
+      line &&
+      /^Flag of /i.test(next) &&
+      next2 &&
+      next3 &&
+      !/^Flag of /i.test(line)
+    ) {
+      fullName = line;
+      break;
+    }
+  }
+
+  if (!fullName) {
+    const titleMatch = String(html).match(/<title>\s*([^<]+?)\s*-\s*F1 Driver/i);
+    if (titleMatch?.[1]) {
+      fullName = decodeHtmlEntities(titleMatch[1]).trim();
+    }
+  }
+
+  if (!fullName) {
     throw new Error(`Could not parse driver name from profile: ${url}`);
   }
 
-  const fullName = cleanLine(lines[nameIdx].replace(/^#\s+/, ""));
-  if (!fullName) {
-    throw new Error(`Empty driver name in profile: ${url}`);
+  const fullNameIndex = lines.findIndex((line) => cleanLine(line) === fullName);
+  if (fullNameIndex === -1) {
+    throw new Error(`Could not locate parsed driver name in lines: ${url}`);
   }
 
-  const window = lines.slice(nameIdx + 1, nameIdx + 20);
+  const window = lines.slice(fullNameIndex, fullNameIndex + 12);
 
-  const numberIdx = window.findIndex((line) => /^\d{1,3}$/.test(line));
-  if (numberIdx === -1) {
+  let nationality = null;
+  let teamName = null;
+  let driverNumber = null;
+
+  for (let i = 0; i < window.length; i += 1) {
+    const line = cleanLine(window[i]);
+
+    if (!nationality && i > 0 && /^Flag of /i.test(window[i - 1])) {
+      nationality = line;
+      continue;
+    }
+
+    if (!driverNumber && /^\d{1,3}$/.test(line)) {
+      driverNumber = Number(line);
+      if (i > 0) {
+        const candidateTeam = cleanLine(window[i - 1]);
+        if (
+          candidateTeam &&
+          !/^Flag of /i.test(candidateTeam) &&
+          !/^\d{1,3}$/.test(candidateTeam) &&
+          candidateTeam !== nationality &&
+          candidateTeam !== fullName
+        ) {
+          teamName = candidateTeam;
+        }
+      }
+    }
+  }
+
+  if (driverNumber == null) {
     throw new Error(`Could not parse driver number from profile: ${url}`);
   }
 
-  const driverNumber = Number(window[numberIdx]);
-
-  let teamName = null;
-  for (let i = numberIdx - 1; i >= 0; i -= 1) {
-    const line = cleanLine(window[i]);
-    if (!line) continue;
-    if (/^Flag of /i.test(line)) continue;
-    if (/^Shop now$/i.test(line)) continue;
-    if (/^Statistics$/i.test(line)) continue;
-    if (/^[A-Z0-9 .'-]+$/.test(line) && /^\d+$/.test(line)) continue;
-
-    teamName = line;
-    break;
-  }
-
-  let nationality = null;
-  if (teamName) {
-    const teamIdx = window.findIndex((line) => cleanLine(line) === cleanLine(teamName));
-    for (let i = teamIdx - 1; i >= 0; i -= 1) {
-      const line = cleanLine(window[i]);
-      if (!line) continue;
-      if (/^Flag of /i.test(line)) continue;
-      nationality = line;
-      break;
-    }
+  if (!teamName) {
+    throw new Error(`Could not parse team name from profile: ${url}`);
   }
 
   const parts = fullName.split(/\s+/);
   const firstName = parts.length > 1 ? parts.slice(0, -1).join(" ") : fullName;
   const lastName = parts.length > 1 ? parts[parts.length - 1] : null;
 
-  const slugPart = url.split("/en/drivers/")[1] || "";
-
   return {
     url,
-    slug: slugPart,
     driverNumber,
     firstName,
     lastName,
@@ -450,6 +484,11 @@ async function getF1ComDriverMetadata() {
 /* JOIN + VALIDATION */
 /* ------------------------------------------------ */
 
+function buildCodeFromLastName(lastName) {
+  if (!lastName) return null;
+  return lastName.replace(/[^A-Za-z]/g, "").slice(0, 3).toUpperCase() || null;
+}
+
 function validateMergedRows(rows) {
   const bad = rows.filter(
     (row) =>
@@ -483,11 +522,6 @@ function buildMergedStandings(openf1Rows, f1ByNumber) {
       );
     }
 
-    const code =
-      meta.lastName && meta.lastName.length >= 3
-        ? meta.lastName.slice(0, 3).toUpperCase()
-        : null;
-
     return {
       position: Number.isFinite(row?.position_current)
         ? `P${row.position_current}`
@@ -500,7 +534,7 @@ function buildMergedStandings(openf1Rows, f1ByNumber) {
         : "-",
       wins: "-",
       driver: {
-        code,
+        code: buildCodeFromLastName(meta.lastName),
         firstName: meta.firstName ?? null,
         lastName: meta.lastName ?? null,
         fullName: meta.fullName ?? null,
