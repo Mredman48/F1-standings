@@ -1,11 +1,50 @@
 {
   "header": "Constructors standings",
-  "generatedAtUtc": "2026-03-08T08:47:13.322Z",
-  "source": "https://www.formula1.com/en/results/2026/team",
+  "generatedAtUtc": "2026-03-08T08:51:02.397Z",
+  "sources": {
+    "standings": "https://www.formula1.com/en/results/2026/team",
+    "standingsAttempts": [
+      {
+        "url": "https://www.formula1.com/en/results/2026/team",
+        "ok": true,
+        "status": 200
+      }
+    ],
+    "races": "https://www.formula1.com/en/results/2026/races",
+    "raceAttempts": [
+      {
+        "url": "https://www.formula1.com/en/results/2026/races",
+        "ok": true,
+        "status": 200
+      }
+    ],
+    "logos": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/teamlogos/"
+  },
   "meta": {
-    "mode": "PLACEHOLDER",
-    "season": 2026,
-    "parseReason": "heading_not_found"
+    "mode": "F1COM_CURRENT_EMPTY_PLACEHOLDERS_LOCAL_LOGOS",
+    "seasonUsed": "2026",
+    "roundUsed": "-",
+    "cacheBust": true,
+    "note": "Uses official F1.com current team standings. If current standings are empty/unavailable, emits alphabetical placeholder teams with '-' stats. Logos are LOCAL ONLY from /teamlogos via GitHub Pages.",
+    "standingsParseReason": "heading_not_found",
+    "raceParseReason": "no_rows_parsed"
+  },
+  "lastRace": {
+    "season": "2026",
+    "round": "-",
+    "raceName": "-",
+    "date": "-",
+    "timeUtc": "-",
+    "circuit": {
+      "name": "-",
+      "locality": "-",
+      "country": "-"
+    },
+    "winner": {
+      "name": "-",
+      "team": "-",
+      "laps": "-"
+    }
   },
   "constructors": [
     {
@@ -13,7 +52,8 @@
       "position": "-",
       "points": "-",
       "wins": "-",
-      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_alpine_color_v2.png?v=1772959633321",
+      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_alpine_color_v2.png?v=1772959862612",
+      "logoMissing": false,
       "placeholder": true
     },
     {
@@ -21,7 +61,8 @@
       "position": "-",
       "points": "-",
       "wins": "-",
-      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_aston-martin_color_v2.png?v=1772959633321",
+      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_aston-martin_color_v2.png?v=1772959862612",
+      "logoMissing": false,
       "placeholder": true
     },
     {
@@ -29,7 +70,8 @@
       "position": "-",
       "points": "-",
       "wins": "-",
-      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/audi_logo_colored.png?v=1772959633321",
+      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/audi_logo_colored.png?v=1772959862612",
+      "logoMissing": false,
       "placeholder": true
     },
     {
@@ -37,7 +79,8 @@
       "position": "-",
       "points": "-",
       "wins": "-",
-      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_cadillac_color_v2.png?v=1772959633321",
+      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_cadillac_color_v2.png?v=1772959862612",
+      "logoMissing": false,
       "placeholder": true
     },
     {
@@ -45,7 +88,8 @@
       "position": "-",
       "points": "-",
       "wins": "-",
-      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_ferrari_color_v2.png?v=1772959633321",
+      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_ferrari_color_v2.png?v=1772959862612",
+      "logoMissing": false,
       "placeholder": true
     },
     {
@@ -53,7 +97,8 @@
       "position": "-",
       "points": "-",
       "wins": "-",
-      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_haas_color_v2.png?v=1772959633321",
+      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_haas_color_v2.png?v=1772959862612",
+      "logoMissing": false,
       "placeholder": true
     },
     {
@@ -61,7 +106,8 @@
       "position": "-",
       "points": "-",
       "wins": "-",
-      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_mclaren_color_v2.png?v=1772959633321",
+      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_mclaren_color_v2.png?v=1772959862612",
+      "logoMissing": false,
       "placeholder": true
     },
     {
@@ -69,7 +115,8 @@
       "position": "-",
       "points": "-",
       "wins": "-",
-      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_mercedes_color_v2.png?v=1772959633321",
+      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_mercedes_color_v2.png?v=1772959862612",
+      "logoMissing": false,
       "placeholder": true
     },
     {
@@ -77,7 +124,8 @@
       "position": "-",
       "points": "-",
       "wins": "-",
-      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_red-bull_color_v2.png?v=1772959633321",
+      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_red-bull_color_v2.png?v=1772959862612",
+      "logoMissing": false,
       "placeholder": true
     },
     {
@@ -85,7 +133,8 @@
       "position": "-",
       "points": "-",
       "wins": "-",
-      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_vcarb_color_v2.png?v=1772959633322",
+      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_vcarb_color_v2.png?v=1772959862612",
+      "logoMissing": false,
       "placeholder": true
     },
     {
@@ -93,7 +142,8 @@
       "position": "-",
       "points": "-",
       "wins": "-",
-      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_williams_color_v2.png?v=1772959633322",
+      "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_williams_color_v2.png?v=1772959862612",
+      "logoMissing": false,
       "placeholder": true
     }
   ]
