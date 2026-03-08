@@ -1,36 +1,6 @@
 {
   "header": "Audi standings",
-  "generatedAtUtc": "2026-03-08T09:56:19.825Z",
-  "sources": {
-    "driverStandingsFile": "f1_driver_standings.json",
-    "constructorStandingsFile": "f1_constructors_standings.json",
-    "bestResultSource": "OpenF1 sessions + session_result (best classified race finish this season)",
-    "bestResultNotes": "Uses your own JSON for driver/team standings and only uses OpenF1 for each driver's best race result this season.",
-    "openf1Base": "https://api.openf1.org/v1",
-    "openf1BestResultLookups": [
-      {
-        "sessions": "https://api.openf1.org/v1/sessions?year=2026&session_name=Race",
-        "sessionResults": [
-          "https://api.openf1.org/v1/session_result?session_key=11234"
-        ]
-      },
-      {
-        "sessions": "https://api.openf1.org/v1/sessions?year=2026&session_name=Race",
-        "sessionResults": [
-          "https://api.openf1.org/v1/session_result?session_key=11234"
-        ]
-      }
-    ],
-    "logos": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/teamlogos/",
-    "headshots": "LOCAL_ONLY: https://mredman48.github.io/F1-standings/headshots/<first>-<last>.png",
-    "driverNumbers": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-<number>.png"
-  },
-  "meta": {
-    "mode": "LOCAL_JSON_STANDINGS_OPENF1_BEST_RESULT",
-    "team": "Audi",
-    "driversFound": 2,
-    "note": "Driver standings and team points come from your own JSON files. Best race result comes from OpenF1 session_result across completed race sessions in the current season."
-  },
+  "generatedAtUtc": "2026-03-08T10:39:35.933Z",
   "audi": {
     "team": "Audi",
     "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/audi_logo_colored.png",
@@ -38,8 +8,7 @@
       "team": "Audi",
       "position": "P7",
       "points": 2,
-      "wins": "-",
-      "originalTeam": "Audi"
+      "wins": 0
     }
   },
   "lastRace": {
@@ -69,23 +38,17 @@
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/gabriel-bortoleto.png",
       "position": "P9",
       "points": 2,
-      "wins": "-",
+      "wins": 0,
       "team": "Audi",
-      "placeholder": false,
       "bestResult": {
-        "position": "P9",
+        "position": "-",
         "raceName": "-",
-        "round": "1279",
-        "date": "2026-03-08T04:00:00+00:00",
-        "circuit": "Melbourne",
+        "circuit": "-",
         "location": {
-          "locality": "Melbourne",
-          "country": "Australia"
-        },
-        "sessionKey": 11234,
-        "meetingKey": 1279
-      },
-      "source": "local-json"
+          "locality": "-",
+          "country": "-"
+        }
+      }
     },
     {
       "firstName": "Nico",
@@ -95,24 +58,18 @@
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-27.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/nico-hulkenberg.png",
       "position": "P19",
-      "points": "-",
-      "wins": "-",
+      "points": 0,
+      "wins": 0,
       "team": "Audi",
-      "placeholder": false,
       "bestResult": {
-        "position": "P0",
+        "position": "-",
         "raceName": "-",
-        "round": "1279",
-        "date": "2026-03-08T04:00:00+00:00",
-        "circuit": "Melbourne",
+        "circuit": "-",
         "location": {
-          "locality": "Melbourne",
-          "country": "Australia"
-        },
-        "sessionKey": 11234,
-        "meetingKey": 1279
-      },
-      "source": "local-json"
+          "locality": "-",
+          "country": "-"
+        }
+      }
     }
   ]
 }
