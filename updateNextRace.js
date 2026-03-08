@@ -146,18 +146,30 @@ function htmlToText(html) {
 function getSessionType(summary) {
   const s = String(summary || "").toLowerCase().trim();
 
-  if (/\b(practice\s*1|fp1)\b/i.test(s)) return "FP1";
-  if (/\b(practice\s*2|fp2)\b/i.test(s)) return "FP2";
-  if (/\b(practice\s*3|fp3)\b/i.test(s)) return "FP3";
+  if (/\b(practice\s*1|fp1)\b/.test(s)) return "FP1";
+  if (/\b(practice\s*2|fp2)\b/.test(s)) return "FP2";
+  if (/\b(practice\s*3|fp3)\b/.test(s)) return "FP3";
 
-  if (/\bsprint\s+(qualifying|shootout)\b/i.test(s)) return "Sprint Qualifying";
-  if (/\bsprint\b/i.test(s) && !/\bqualifying\b/i.test(s) && !/\bshootout\b/i.test(s)) {
-    return "Sprint";
+  // Must be checked before plain "sprint"
+  if (
+    /\b(sprint\s+qualifying|sprint\s+shootout|sq)\b/.test(s) ||
+    (/\bsprint\b/.test(s) && /\b(qualifying|shootout)\b/.test(s))
+  ) {
+    return "Sprint Qualifying";
   }
 
-  if (/\bqualifying\b/i.test(s) && !/\bsprint\b/i.test(s)) return "Qualifying";
+  // Regular qualifying only
+  if (/\bqualifying\b/.test(s) && !/\bsprint\b/.test(s)) return "Qualifying";
 
-  if (/\b(race|grand prix)\b/i.test(s) && !/\bqualifying\b/i.test(s) && !/\bsprint\b/i.test(s)) {
+  // Plain sprint race
+  if (/\bsprint\b/.test(s)) return "Sprint";
+
+  // Race / Grand Prix only
+  if (
+    /\b(race|grand prix)\b/.test(s) &&
+    !/\bqualifying\b/.test(s) &&
+    !/\bsprint\b/.test(s)
+  ) {
     return "Race";
   }
 
@@ -573,6 +585,9 @@ async function updateNextRace() {
     .map((ev) => {
       const summary = (ev.summary || "").trim();
       const sessionType = getSessionType(summary);
+
+      console.log(`RAW SESSION: ${summary} => ${sessionType}`);
+
       if (!sessionType) return null;
 
       const start = ev.start instanceof Date ? ev.start : new Date(ev.start);
