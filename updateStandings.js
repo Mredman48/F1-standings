@@ -5,8 +5,7 @@ const OUTPUT_FILE = "f1_driver_standings.json";
 const OPENF1_BASE = "https://api.openf1.org/v1";
 const OPENF1_SESSIONS_URL = `${OPENF1_BASE}/sessions`;
 const OPENF1_CHAMPIONSHIP_URL = `${OPENF1_BASE}/championship_drivers`;
-
-const F1_DRIVERS_URL = "https://www.formula1.com/en/drivers";
+const OPENF1_DRIVERS_URL = `${OPENF1_BASE}/drivers`;
 
 const HEADSHOTS = "https://mredman48.github.io/F1-standings/headshots";
 const UA = "f1-standings-bot";
@@ -117,70 +116,6 @@ async function fetchJson(url) {
   }
 }
 
-async function fetchText(url) {
-  const res = await fetch(url, {
-    headers: {
-      "User-Agent": UA,
-      Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-    },
-    redirect: "follow",
-  });
-
-  const text = await res.text();
-
-  return {
-    ok: res.ok,
-    status: res.status,
-    text,
-    url,
-  };
-}
-
-function parseDateSafe(value) {
-  const d = new Date(value);
-  return Number.isNaN(d.getTime()) ? null : d;
-}
-
-function driverKey(value) {
-  if (value == null) return null;
-  return String(value).trim();
-}
-
-function decodeHtmlEntities(str) {
-  if (!str) return str;
-
-  return str
-    .replace(/&nbsp;/g, " ")
-    .replace(/&amp;/g, "&")
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&apos;/g, "'")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">");
-}
-
-function htmlToLines(html) {
-  let text = String(html);
-
-  text = text.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ");
-  text = text.replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, " ");
-  text = text.replace(/<noscript\b[^>]*>[\s\S]*?<\/noscript>/gi, " ");
-  text = text.replace(/<!--[\s\S]*?-->/g, " ");
-  text = text.replace(/<\/(p|div|section|article|header|footer|main|li|tr|td|th|h1|h2|h3|h4|h5|h6)>/gi, "\n");
-  text = text.replace(/<br\s*\/?>/gi, "\n");
-  text = text.replace(/<[^>]+>/g, " ");
-  text = decodeHtmlEntities(text);
-
-  return text
-    .split("\n")
-    .map((line) => line.replace(/\s+/g, " ").trim())
-    .filter(Boolean);
-}
-
-function cleanLine(line) {
-  return String(line || "").replace(/\s+/g, " ").trim();
-}
-
 async function readPreviousFile() {
   try {
     const raw = await fs.readFile(OUTPUT_FILE, "utf8");
@@ -194,18 +129,57 @@ async function readPreviousFile() {
   return null;
 }
 
+function parseDateSafe(value) {
+  const d = new Date(value);
+  return Number.isNaN(d.getTime()) ? null : d;
+}
+
+function driverKey(value) {
+  if (value == null) return null;
+  return String(value).trim();
+}
+
+function splitFullName(fullName) {
+  const parts = String(fullName || "").trim().split(/\s+/).filter(Boolean);
+
+  if (parts.length === 0) {
+    return { firstName: null, lastName: null };
+  }
+
+  if (parts.length === 1) {
+    return { firstName: parts[0], lastName: null };
+  }
+
+  return {
+    firstName: parts.slice(0, -1).join(" "),
+    lastName: parts[parts.length - 1],
+  };
+}
+
+function titleCaseWords(s) {
+  if (!s) return null;
+  return String(s)
+    .trim()
+    .split(/\s+/)
+    .map((w) => (w ? w[0].toUpperCase() + w.slice(1).toLowerCase() : w))
+    .join(" ");
+}
+
 /* ------------------------------------------------ */
-/* OPENF1: RESOLVE LATEST RACE SESSION */
+/* OPENF1 SESSION RESOLUTION */
 /* ------------------------------------------------ */
 
 function pickLatestRaceSession(sessions, now = new Date()) {
   const nowMs = now.getTime();
 
   const mapped = sessions
-    .map((s) => ({
-      raw: s,
-      start: parseDateSafe(s?.date_start),
-    }))
+    .map((s) => {
+      const start = parseDateSafe(s?.date_start);
+      return {
+        raw: s,
+        start,
+      };
+    })
     .filter((x) => x.raw && x.start && x.raw.session_name === "Race");
 
   if (!mapped.length) return null;
@@ -257,7 +231,7 @@ async function getLatestRaceSession() {
 }
 
 /* ------------------------------------------------ */
-/* OPENF1: LIVE STANDINGS */
+/* OPENF1 LIVE STANDINGS */
 /* ------------------------------------------------ */
 
 async function getOpenF1StandingsForLatestRace() {
@@ -274,10 +248,8 @@ async function getOpenF1StandingsForLatestRace() {
     };
   }
 
-  const sessionKey = latestRace.session.session_key;
-
   const standingsUrl = buildUrl(OPENF1_CHAMPIONSHIP_URL, {
-    session_key: sessionKey,
+    session_key: latestRace.session.session_key,
   });
 
   const resp = await fetchJson(standingsUrl);
@@ -314,169 +286,72 @@ async function getOpenF1StandingsForLatestRace() {
 }
 
 /* ------------------------------------------------ */
-/* F1.COM: DRIVER PROFILE METADATA */
+/* OPENF1 DRIVER METADATA FROM LATEST MEETING */
 /* ------------------------------------------------ */
 
-function extractDriverProfileUrls(html) {
-  const matches = Array.from(
-    String(html).matchAll(/\/en\/drivers\/[a-z0-9-]+/g)
-  ).map((m) => m[0]);
-
-  const unique = [...new Set(matches)]
-    .filter((href) => !href.endsWith("/en/drivers"))
-    .filter((href) => href !== "/en/drivers");
-
-  return unique.map((href) => `https://www.formula1.com${href}`);
-}
-
-function parseDriverProfile(html, url) {
-  const lines = htmlToLines(html);
-
-  let fullName = null;
-
-  for (let i = 0; i < lines.length; i += 1) {
-    const line = cleanLine(lines[i]);
-    const next = cleanLine(lines[i + 1] || "");
-    const next2 = cleanLine(lines[i + 2] || "");
-    const next3 = cleanLine(lines[i + 3] || "");
-
-    // Most reliable pattern on current pages:
-    // Name
-    // Flag of X
-    // X
-    // Team
-    // Number
-    if (
-      line &&
-      /^Flag of /i.test(next) &&
-      next2 &&
-      next3 &&
-      !/^Flag of /i.test(line)
-    ) {
-      fullName = line;
-      break;
-    }
-  }
-
-  if (!fullName) {
-    const titleMatch = String(html).match(/<title>\s*([^<]+?)\s*-\s*F1 Driver/i);
-    if (titleMatch?.[1]) {
-      fullName = decodeHtmlEntities(titleMatch[1]).trim();
-    }
-  }
-
-  if (!fullName) {
-    throw new Error(`Could not parse driver name from profile: ${url}`);
-  }
-
-  const fullNameIndex = lines.findIndex((line) => cleanLine(line) === fullName);
-  if (fullNameIndex === -1) {
-    throw new Error(`Could not locate parsed driver name in lines: ${url}`);
-  }
-
-  const window = lines.slice(fullNameIndex, fullNameIndex + 12);
-
-  let nationality = null;
-  let teamName = null;
-  let driverNumber = null;
-
-  for (let i = 0; i < window.length; i += 1) {
-    const line = cleanLine(window[i]);
-
-    if (!nationality && i > 0 && /^Flag of /i.test(window[i - 1])) {
-      nationality = line;
-      continue;
-    }
-
-    if (!driverNumber && /^\d{1,3}$/.test(line)) {
-      driverNumber = Number(line);
-      if (i > 0) {
-        const candidateTeam = cleanLine(window[i - 1]);
-        if (
-          candidateTeam &&
-          !/^Flag of /i.test(candidateTeam) &&
-          !/^\d{1,3}$/.test(candidateTeam) &&
-          candidateTeam !== nationality &&
-          candidateTeam !== fullName
-        ) {
-          teamName = candidateTeam;
-        }
-      }
-    }
-  }
-
-  if (driverNumber == null) {
-    throw new Error(`Could not parse driver number from profile: ${url}`);
-  }
-
-  if (!teamName) {
-    throw new Error(`Could not parse team name from profile: ${url}`);
-  }
-
-  const parts = fullName.split(/\s+/);
-  const firstName = parts.length > 1 ? parts.slice(0, -1).join(" ") : fullName;
-  const lastName = parts.length > 1 ? parts[parts.length - 1] : null;
-
-  return {
-    url,
-    driverNumber,
-    firstName,
-    lastName,
-    fullName,
-    nationality,
-    teamName,
-  };
-}
-
-async function getF1ComDriverMetadata() {
-  const driversPage = await fetchText(F1_DRIVERS_URL);
-
-  if (!driversPage.ok) {
-    return {
-      ok: false,
-      byNumber: new Map(),
-      sourceUrl: F1_DRIVERS_URL,
-      note: `Drivers page HTTP ${driversPage.status}`,
-    };
-  }
-
-  const profileUrls = extractDriverProfileUrls(driversPage.text);
-
-  if (profileUrls.length === 0) {
-    return {
-      ok: false,
-      byNumber: new Map(),
-      sourceUrl: F1_DRIVERS_URL,
-      note: "No driver profile URLs found on F1.com drivers page.",
-    };
-  }
-
-  console.log(`F1.com driver profile URLs found: ${profileUrls.length}`);
-
+function dedupeDriversByNumber(drivers) {
   const byNumber = new Map();
 
-  for (const url of profileUrls) {
-    const resp = await fetchText(url);
+  for (const d of drivers) {
+    const key = driverKey(d?.driver_number);
+    if (!key) continue;
 
-    if (!resp.ok) {
-      throw new Error(`Driver profile HTTP ${resp.status}: ${url}`);
+    const candidate = {
+      driverNumber: d?.driver_number != null ? Number(d.driver_number) : null,
+      firstName: d?.first_name ?? null,
+      lastName: d?.last_name ?? null,
+      fullName: d?.full_name
+        ? titleCaseWords(String(d.full_name).replace(/\s+/g, " "))
+        : d?.first_name && d?.last_name
+          ? `${d.first_name} ${d.last_name}`
+          : null,
+      code: d?.name_acronym ?? null,
+      nationality: d?.country_code ?? null,
+      teamName: d?.team_name ?? null,
+      openf1HeadshotUrl: d?.headshot_url ?? null,
+    };
+
+    const score =
+      Number(Boolean(candidate.firstName)) +
+      Number(Boolean(candidate.lastName)) +
+      Number(Boolean(candidate.fullName)) +
+      Number(Boolean(candidate.code)) +
+      Number(Boolean(candidate.teamName)) +
+      Number(Boolean(candidate.nationality)) +
+      Number(Boolean(candidate.openf1HeadshotUrl));
+
+    const prev = byNumber.get(key);
+    if (!prev || score > prev.score) {
+      byNumber.set(key, { ...candidate, score });
     }
-
-    const parsed = parseDriverProfile(resp.text, url);
-    const key = driverKey(parsed.driverNumber);
-
-    if (!key) {
-      throw new Error(`Parsed profile missing driver number: ${url}`);
-    }
-
-    byNumber.set(key, parsed);
   }
+
+  return byNumber;
+}
+
+async function getOpenF1MetadataFromLatestMeeting() {
+  const url = buildUrl(OPENF1_DRIVERS_URL, {
+    meeting_key: "latest",
+  });
+
+  const resp = await fetchJson(url);
+
+  if (!resp.ok || !Array.isArray(resp.json) || resp.json.length === 0) {
+    return {
+      ok: false,
+      byNumber: new Map(),
+      sourceUrl: url,
+      note: "OpenF1 drivers?meeting_key=latest returned no rows.",
+    };
+  }
+
+  const byNumber = dedupeDriversByNumber(resp.json);
 
   return {
     ok: byNumber.size > 0,
     byNumber,
-    sourceUrl: F1_DRIVERS_URL,
-    note: byNumber.size > 0 ? null : "Parsed no driver profile metadata from F1.com",
+    sourceUrl: url,
+    note: byNumber.size > 0 ? null : "No metadata rows built from OpenF1 latest meeting.",
   };
 }
 
@@ -484,17 +359,13 @@ async function getF1ComDriverMetadata() {
 /* JOIN + VALIDATION */
 /* ------------------------------------------------ */
 
-function buildCodeFromLastName(lastName) {
-  if (!lastName) return null;
-  return lastName.replace(/[^A-Za-z]/g, "").slice(0, 3).toUpperCase() || null;
-}
-
 function validateMergedRows(rows) {
   const bad = rows.filter(
     (row) =>
       !row.driver.firstName ||
       !row.driver.lastName ||
       !row.driver.fullName ||
+      !row.driver.code ||
       !row.constructor.fullName
   );
 
@@ -502,24 +373,35 @@ function validateMergedRows(rows) {
     const sample = bad.slice(0, 8).map((row) => ({
       driverNumber: row.driver.driverNumber,
       fullName: row.driver.fullName,
+      code: row.driver.code,
       team: row.constructor.fullName,
     }));
 
     throw new Error(
-      `Merged standings metadata incomplete for ${bad.length} row(s). Sample: ${JSON.stringify(sample)}`
+      `OpenF1 latest-meeting metadata incomplete for ${bad.length} row(s). Sample: ${JSON.stringify(sample)}`
     );
   }
 }
 
-function buildMergedStandings(openf1Rows, f1ByNumber) {
+function buildMergedStandings(openf1Rows, metadataByNumber) {
   const rows = openf1Rows.map((row) => {
     const key = driverKey(row?.driver_number);
-    const meta = key ? f1ByNumber.get(key) ?? null : null;
+    const meta = key ? metadataByNumber.get(key) ?? null : null;
 
     if (!meta) {
       throw new Error(
-        `No F1.com profile metadata match for driver_number=${row?.driver_number}`
+        `No OpenF1 latest-meeting metadata match for driver_number=${row?.driver_number}`
       );
+    }
+
+    let firstName = meta.firstName;
+    let lastName = meta.lastName;
+    let fullName = meta.fullName;
+
+    if ((!firstName || !lastName) && fullName) {
+      const split = splitFullName(fullName);
+      firstName = firstName ?? split.firstName;
+      lastName = lastName ?? split.lastName;
     }
 
     return {
@@ -534,18 +416,18 @@ function buildMergedStandings(openf1Rows, f1ByNumber) {
         : "-",
       wins: "-",
       driver: {
-        code: buildCodeFromLastName(meta.lastName),
-        firstName: meta.firstName ?? null,
-        lastName: meta.lastName ?? null,
-        fullName: meta.fullName ?? null,
+        code: meta.code ?? null,
+        firstName: firstName ?? null,
+        lastName: lastName ?? null,
+        fullName:
+          fullName ||
+          (firstName && lastName ? `${firstName} ${lastName}` : null),
         nationality: meta.nationality ?? null,
         driverNumber:
           row?.driver_number != null ? Number(row.driver_number) : null,
         headshotUrl:
-          meta.firstName && meta.lastName
-            ? headshot(meta.firstName, meta.lastName)
-            : null,
-        profileUrl: meta.url,
+          firstName && lastName ? headshot(firstName, lastName) : null,
+        openf1HeadshotUrl: meta.openf1HeadshotUrl ?? null,
       },
       constructor: {
         name: normalizeTeamName(meta.teamName ?? null),
@@ -567,25 +449,25 @@ async function updateStandings() {
   const now = new Date().toISOString();
   const previous = await readPreviousFile();
 
-  const [liveStandings, f1Metadata] = await Promise.all([
+  const [liveStandings, metadata] = await Promise.all([
     getOpenF1StandingsForLatestRace(),
-    getF1ComDriverMetadata(),
+    getOpenF1MetadataFromLatestMeeting(),
   ]);
 
   if (!liveStandings.ok || liveStandings.rows.length === 0) {
     throw new Error(liveStandings.note || "OpenF1 standings unavailable.");
   }
 
-  if (!f1Metadata.ok || f1Metadata.byNumber.size === 0) {
-    throw new Error(f1Metadata.note || "F1.com driver metadata unavailable.");
+  if (!metadata.ok || metadata.byNumber.size === 0) {
+    throw new Error(metadata.note || "OpenF1 latest-meeting metadata unavailable.");
   }
 
   console.log(`OpenF1 standings rows: ${liveStandings.rows.length}`);
-  console.log(`F1.com driver metadata rows: ${f1Metadata.byNumber.size}`);
+  console.log(`OpenF1 latest-meeting metadata rows: ${metadata.byNumber.size}`);
 
   const mergedDrivers = buildMergedStandings(
     liveStandings.rows,
-    f1Metadata.byNumber
+    metadata.byNumber
   );
 
   const race = liveStandings.raceSession;
@@ -596,10 +478,10 @@ async function updateStandings() {
     season: liveStandings.season,
     mode: "LIVE",
     source: {
-      kind: "openf1+f1com-driver-profiles",
+      kind: "openf1-only",
       url: liveStandings.sourceUrl,
-      note: "Standings from OpenF1; driver and team metadata from official F1.com driver profile pages.",
-      metadataUrl: f1Metadata.sourceUrl,
+      note: "Standings from OpenF1 championship_drivers; metadata from OpenF1 drivers?meeting_key=latest.",
+      metadataUrl: metadata.sourceUrl,
     },
     lastRace: race
       ? {
