@@ -160,13 +160,17 @@ function getSessionType(summary) {
 
   // Must come before plain sprint
   if (
-    /\b(sprint\s+qualifying|sprint\s+shootout|sq)\b/.test(s) ||
-    (/\bsprint\b/.test(s) && /\b(qualifying|shootout)\b/.test(s))
+    /\b(sprint\s+qualifying|sprint\s+qualification|sprint\s+shootout|sq)\b/.test(s) ||
+    (/\bsprint\b/.test(s) && /\b(qualifying|qualification|shootout)\b/.test(s))
   ) {
     return "Sprint Qualifying";
   }
 
   if (/\bqualifying\b/.test(s) && !/\bsprint\b/.test(s)) {
+    return "Qualifying";
+  }
+
+  if (/\bqualification\b/.test(s) && !/\bsprint\b/.test(s)) {
     return "Qualifying";
   }
 
@@ -177,6 +181,7 @@ function getSessionType(summary) {
   if (
     /\b(race|grand prix)\b/.test(s) &&
     !/\bqualifying\b/.test(s) &&
+    !/\bqualification\b/.test(s) &&
     !/\bsprint\b/.test(s)
   ) {
     return "Race";
