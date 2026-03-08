@@ -24,18 +24,13 @@ const YEAR = new Date().getUTCFullYear();
 /* HELPERS */
 /* ------------------------------------------------ */
 
-function toSlug(s) {
+function slug(s) {
   return String(s || "")
     .toLowerCase()
     .normalize("NFKD")
     .replace(/[\u0300-\u036f]/g, "")
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
-}
-
-function getDriverNumberImageUrl(num) {
-  if (!num) return null;
-  return `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-${num}.png`;
 }
 
 async function exists(path) {
@@ -50,7 +45,7 @@ async function exists(path) {
 async function getHeadshotUrl(first, last) {
   if (!first || !last) return null;
 
-  const file = `${toSlug(first)}-${toSlug(last)}.png`;
+  const file = `${slug(first)}-${slug(last)}.png`;
   const local = `${HEADSHOTS_DIR}/${file}`;
 
   if (await exists(local)) {
@@ -58,6 +53,11 @@ async function getHeadshotUrl(first, last) {
   }
 
   return null;
+}
+
+function getDriverNumberImageUrl(num) {
+  if (!num) return null;
+  return `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-${num}.png`;
 }
 
 function safeNumOrZero(x) {
@@ -85,24 +85,19 @@ function formatPosition(row) {
 }
 
 /* ------------------------------------------------ */
-/* JSON READ */
-/* ------------------------------------------------ */
-
-async function readJson(file) {
-  const raw = await fs.readFile(file, "utf8");
-  return JSON.parse(raw);
-}
-
-/* ------------------------------------------------ */
-/* OPENF1 REQUEST */
+/* FETCH */
 /* ------------------------------------------------ */
 
 async function fetchJson(url) {
   const res = await fetch(url, {
-    headers: { "User-Agent": UA },
+    headers: { "User-Agent": UA }
   });
 
   const text = await res.text();
+
+  if (res.status === 404) {
+    return null;
+  }
 
   if (!res.ok) {
     throw new Error(`HTTP ${res.status} from ${url}\n${text}`);
@@ -112,50 +107,56 @@ async function fetchJson(url) {
 }
 
 /* ------------------------------------------------ */
-/* GET AUDI DRIVERS */
+/* READ JSON */
 /* ------------------------------------------------ */
 
-function getAudiDrivers(driverData) {
-  const rows = driverData?.drivers ?? [];
-
-  return rows
-    .filter((d) => {
-      const team =
-        d?.constructor?.name ||
-        d?.constructor?.fullName ||
-        d?.team ||
-        "";
-
-      return String(team).toLowerCase().includes("audi");
-    })
-    .slice(0, 2);
+async function readJson(file) {
+  const raw = await fs.readFile(file, "utf8");
+  return JSON.parse(raw);
 }
 
 /* ------------------------------------------------ */
-/* GET TEAM STANDING */
+/* FIND AUDI DRIVERS */
 /* ------------------------------------------------ */
 
-function getAudiConstructor(constructorData) {
-  const rows = constructorData?.constructors ?? [];
+function getAudiDrivers(data) {
+  const rows = data?.drivers ?? [];
 
-  const match = rows.find((c) =>
+  return rows.filter(d => {
+    const team =
+      d?.constructor?.name ||
+      d?.constructor?.fullName ||
+      "";
+
+    return String(team).toLowerCase().includes("audi");
+  });
+}
+
+/* ------------------------------------------------ */
+/* FIND AUDI CONSTRUCTOR */
+/* ------------------------------------------------ */
+
+function getAudiConstructor(data) {
+  const rows = data?.constructors ?? [];
+
+  const row = rows.find(c =>
     String(c.team || "").toLowerCase().includes("audi")
   );
 
-  if (!match) {
+  if (!row) {
     return {
       team: "Audi",
       position: "-",
       points: 0,
-      wins: 0,
+      wins: 0
     };
   }
 
   return {
     team: "Audi",
-    position: match.position ?? "-",
-    points: safeNumOrZero(match.points),
-    wins: safeNumOrZero(match.wins),
+    position: row.position ?? "-",
+    points: safeNumOrZero(row.points),
+    wins: safeNumOrZero(row.wins)
   };
 }
 
@@ -164,12 +165,13 @@ function getAudiConstructor(constructorData) {
 /* ------------------------------------------------ */
 
 async function getBestResult(driverNumber) {
+
   if (!driverNumber) {
     return {
       position: "-",
       raceName: "-",
       circuit: "-",
-      location: { locality: "-", country: "-" },
+      location: { locality: "-", country: "-" }
     };
   }
 
@@ -177,15 +179,27 @@ async function getBestResult(driverNumber) {
     `${OPENF1_BASE}/sessions?year=${YEAR}&session_name=Race`
   );
 
+  if (!sessions) {
+    return {
+      position: "-",
+      raceName: "-",
+      circuit: "-",
+      location: { locality: "-", country: "-" }
+    };
+  }
+
   let best = null;
 
   for (const session of sessions) {
+
     const results = await fetchJson(
       `${OPENF1_BASE}/session_result?session_key=${session.session_key}`
     );
 
+    if (!results) continue;
+
     const row = results.find(
-      (r) => Number(r.driver_number) === Number(driverNumber)
+      r => Number(r.driver_number) === Number(driverNumber)
     );
 
     if (!row) continue;
@@ -200,7 +214,7 @@ async function getBestResult(driverNumber) {
         raceName: session.meeting_name,
         circuit: session.circuit_short_name,
         locality: session.location,
-        country: session.country_name,
+        country: session.country_name
       };
     }
   }
@@ -210,7 +224,7 @@ async function getBestResult(driverNumber) {
       position: "-",
       raceName: "-",
       circuit: "-",
-      location: { locality: "-", country: "-" },
+      location: { locality: "-", country: "-" }
     };
   }
 
@@ -220,8 +234,8 @@ async function getBestResult(driverNumber) {
     circuit: best.circuit,
     location: {
       locality: best.locality,
-      country: best.country,
-    },
+      country: best.country
+    }
   };
 }
 
@@ -230,6 +244,7 @@ async function getBestResult(driverNumber) {
 /* ------------------------------------------------ */
 
 async function buildJson() {
+
   const driverData = await readJson(DRIVER_STANDINGS_FILE);
   const constructorData = await readJson(CONSTRUCTOR_STANDINGS_FILE);
 
@@ -239,15 +254,17 @@ async function buildJson() {
   const drivers = [];
 
   for (const d of audiDrivers) {
+
     const driver = d?.driver ?? {};
 
     const first = driver.firstName ?? "-";
     const last = driver.lastName ?? "-";
-    const num = driver.driverNumber ?? "-";
+    const num = driver.driverNumber ?? null;
 
-    const best = await getBestResult(num);
+    const bestResult = await getBestResult(num);
 
     drivers.push({
+
       firstName: first,
       lastName: last,
       code: driver.code ?? "-",
@@ -262,29 +279,30 @@ async function buildJson() {
 
       team: "Audi",
 
-      bestResult: best,
+      bestResult
     });
   }
 
   return {
+
     header: "Audi standings",
     generatedAtUtc: new Date().toISOString(),
 
     sources: {
       driverStandings: DRIVER_STANDINGS_FILE,
       constructorStandings: CONSTRUCTOR_STANDINGS_FILE,
-      bestResult: "OpenF1 race classification",
+      bestResult: "OpenF1 race results"
     },
 
     audi: {
       team: "Audi",
       teamLogoPng: AUDI_LOGO_PNG,
-      teamStanding,
+      teamStanding
     },
 
     lastRace: constructorData.lastRace ?? null,
 
-    drivers,
+    drivers
   };
 }
 
@@ -293,14 +311,19 @@ async function buildJson() {
 /* ------------------------------------------------ */
 
 async function updateAudiStandings() {
+
   const out = await buildJson();
 
-  await fs.writeFile(OUT_JSON, JSON.stringify(out, null, 2), "utf8");
+  await fs.writeFile(
+    OUT_JSON,
+    JSON.stringify(out, null, 2),
+    "utf8"
+  );
 
   console.log(`Wrote ${OUT_JSON}`);
 }
 
-updateAudiStandings().catch((err) => {
+updateAudiStandings().catch(err => {
   console.error(err);
   process.exit(1);
 });
