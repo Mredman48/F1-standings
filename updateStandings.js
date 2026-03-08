@@ -5,9 +5,15 @@ const OUTPUT_FILE = "f1_driver_standings.json";
 const OPENF1_BASE = "https://api.openf1.org/v1";
 const OPENF1_SESSIONS_URL = `${OPENF1_BASE}/sessions`;
 const OPENF1_CHAMPIONSHIP_URL = `${OPENF1_BASE}/championship_drivers`;
-const OPENF1_DRIVERS_URL = `${OPENF1_BASE}/drivers`;
 
-const HEADSHOTS = "https://mredman48.github.io/F1-standings/headshots";
+const JOLPICA_DRIVER_STANDINGS_URL =
+  "https://api.jolpi.ca/ergast/f1/current/driverStandings.json";
+const JOLPICA_DRIVERS_URL =
+  "https://api.jolpi.ca/ergast/f1/current/drivers.json";
+
+const HEADSHOTS =
+  "https://mredman48.github.io/F1-standings/headshots";
+
 const UA = "f1-standings-bot";
 
 /* ------------------------------------------------ */
@@ -130,48 +136,31 @@ function driverKey(value) {
   return String(value).trim();
 }
 
-function splitFullName(fullName) {
-  const parts = String(fullName || "").trim().split(/\s+/).filter(Boolean);
+async function readPreviousFile() {
+  try {
+    const raw = await fs.readFile(OUTPUT_FILE, "utf8");
+    const parsed = JSON.parse(raw);
 
-  if (parts.length === 0) {
-    return { firstName: null, lastName: null };
-  }
+    if (Array.isArray(parsed?.drivers) && parsed.drivers.length > 0) {
+      return parsed;
+    }
+  } catch {}
 
-  if (parts.length === 1) {
-    return { firstName: parts[0], lastName: null };
-  }
-
-  return {
-    firstName: parts.slice(0, -1).join(" "),
-    lastName: parts[parts.length - 1],
-  };
-}
-
-function titleCaseWords(s) {
-  if (!s) return null;
-  return String(s)
-    .trim()
-    .split(/\s+/)
-    .map((w) => (w ? w[0].toUpperCase() + w.slice(1).toLowerCase() : w))
-    .join(" ");
+  return null;
 }
 
 /* ------------------------------------------------ */
-/* OPENF1 SESSION RESOLUTION */
+/* OPENF1: RESOLVE LATEST RACE SESSION */
 /* ------------------------------------------------ */
 
 function pickLatestRaceSession(sessions, now = new Date()) {
   const nowMs = now.getTime();
 
   const mapped = sessions
-    .map((s) => {
-      const start = parseDateSafe(s?.date_start);
-
-      return {
-        raw: s,
-        start,
-      };
-    })
+    .map((s) => ({
+      raw: s,
+      start: parseDateSafe(s?.date_start),
+    }))
     .filter((x) => x.raw && x.start && x.raw.session_name === "Race");
 
   if (!mapped.length) return null;
@@ -209,7 +198,6 @@ async function getLatestRaceSession() {
     if (race?.session_key != null) {
       return {
         ok: true,
-        year,
         session: race,
         sourceUrl: url,
       };
@@ -218,86 +206,181 @@ async function getLatestRaceSession() {
 
   return {
     ok: false,
-    year: null,
     session: null,
     sourceUrl: null,
   };
 }
 
 /* ------------------------------------------------ */
-/* OPENF1 DRIVER METADATA */
+/* OPENF1: LIVE STANDINGS */
 /* ------------------------------------------------ */
 
-function dedupeDriversByNumber(drivers) {
+async function getOpenF1StandingsForLatestRace() {
+  const latestRace = await getLatestRaceSession();
+
+  if (!latestRace.ok || !latestRace.session?.session_key) {
+    return {
+      ok: false,
+      season: null,
+      raceSession: null,
+      rows: [],
+      sourceUrl: null,
+      note: "Could not resolve latest race session from OpenF1.",
+    };
+  }
+
+  const sessionKey = latestRace.session.session_key;
+
+  const standingsUrl = buildUrl(OPENF1_CHAMPIONSHIP_URL, {
+    session_key: sessionKey,
+  });
+
+  const resp = await fetchJson(standingsUrl);
+
+  if (!resp.ok || !Array.isArray(resp.json) || resp.json.length === 0) {
+    return {
+      ok: false,
+      season: latestRace.session?.year ?? null,
+      raceSession: latestRace.session,
+      rows: [],
+      sourceUrl: standingsUrl,
+      note: "OpenF1 championship_drivers returned no rows.",
+    };
+  }
+
+  const rows = [...resp.json].sort((a, b) => {
+    const posA = Number.isFinite(a?.position_current) ? a.position_current : 999;
+    const posB = Number.isFinite(b?.position_current) ? b.position_current : 999;
+    if (posA !== posB) return posA - posB;
+
+    const ptsA = Number.isFinite(a?.points_current) ? a.points_current : -1;
+    const ptsB = Number.isFinite(b?.points_current) ? b.points_current : -1;
+    return ptsB - ptsA;
+  });
+
+  return {
+    ok: true,
+    season: latestRace.session?.year ?? null,
+    raceSession: latestRace.session,
+    rows,
+    sourceUrl: standingsUrl,
+    note: null,
+  };
+}
+
+/* ------------------------------------------------ */
+/* JOLPICA: METADATA */
+/* ------------------------------------------------ */
+
+function parseJolpicaDriverStandingsMetadata(json) {
+  const rows =
+    json?.MRData?.StandingsTable?.StandingsLists?.[0]?.DriverStandings ?? [];
+
   const byNumber = new Map();
 
-  for (const d of drivers) {
-    const key = driverKey(d?.driver_number);
+  for (const row of rows) {
+    const driver = row?.Driver ?? null;
+    const constructor = row?.Constructors?.[0] ?? null;
+    const key = driverKey(driver?.permanentNumber);
+
     if (!key) continue;
 
-    if (!byNumber.has(key)) {
-      byNumber.set(key, d);
-      continue;
-    }
-
-    const prev = byNumber.get(key);
-
-    const prevScore =
-      Number(Boolean(prev?.first_name)) +
-      Number(Boolean(prev?.last_name)) +
-      Number(Boolean(prev?.full_name)) +
-      Number(Boolean(prev?.team_name)) +
-      Number(Boolean(prev?.name_acronym)) +
-      Number(Boolean(prev?.headshot_url));
-
-    const nextScore =
-      Number(Boolean(d?.first_name)) +
-      Number(Boolean(d?.last_name)) +
-      Number(Boolean(d?.full_name)) +
-      Number(Boolean(d?.team_name)) +
-      Number(Boolean(d?.name_acronym)) +
-      Number(Boolean(d?.headshot_url));
-
-    if (nextScore > prevScore) {
-      byNumber.set(key, d);
-    }
+    byNumber.set(key, {
+      code: driver?.code ?? null,
+      firstName: driver?.givenName ?? null,
+      lastName: driver?.familyName ?? null,
+      fullName:
+        driver?.givenName && driver?.familyName
+          ? `${driver.givenName} ${driver.familyName}`
+          : null,
+      nationality: driver?.nationality ?? null,
+      driverNumber:
+        driver?.permanentNumber != null
+          ? Number(driver.permanentNumber)
+          : null,
+      constructorName: constructor?.name ?? null,
+      constructorNationality: constructor?.nationality ?? null,
+    });
   }
 
   return byNumber;
 }
 
-function buildDriverIdentity(meta) {
-  const firstName = meta?.first_name ?? null;
-  const lastName = meta?.last_name ?? null;
+function parseJolpicaDriversMetadata(json) {
+  const rows = json?.MRData?.DriverTable?.Drivers ?? [];
+  const byNumber = new Map();
 
-  const fullName =
-    meta?.full_name
-      ? titleCaseWords(String(meta.full_name).replace(/\s+/g, " "))
-      : firstName && lastName
-        ? `${firstName} ${lastName}`
-        : null;
+  for (const driver of rows) {
+    const key = driverKey(driver?.permanentNumber);
+    if (!key) continue;
 
-  const split =
-    firstName || lastName
-      ? { firstName, lastName }
-      : fullName
-        ? splitFullName(fullName)
-        : { firstName: null, lastName: null };
+    byNumber.set(key, {
+      code: driver?.code ?? null,
+      firstName: driver?.givenName ?? null,
+      lastName: driver?.familyName ?? null,
+      fullName:
+        driver?.givenName && driver?.familyName
+          ? `${driver.givenName} ${driver.familyName}`
+          : null,
+      nationality: driver?.nationality ?? null,
+      driverNumber:
+        driver?.permanentNumber != null
+          ? Number(driver.permanentNumber)
+          : null,
+      constructorName: null,
+      constructorNationality: null,
+    });
+  }
+
+  return byNumber;
+}
+
+async function getJolpicaMetadata() {
+  const [standingsResp, driversResp] = await Promise.all([
+    fetchJson(JOLPICA_DRIVER_STANDINGS_URL),
+    fetchJson(JOLPICA_DRIVERS_URL),
+  ]);
+
+  const standingsMap =
+    standingsResp.ok && standingsResp.json
+      ? parseJolpicaDriverStandingsMetadata(standingsResp.json)
+      : new Map();
+
+  const driversMap =
+    driversResp.ok && driversResp.json
+      ? parseJolpicaDriversMetadata(driversResp.json)
+      : new Map();
+
+  const merged = new Map();
+
+  for (const [key, value] of driversMap.entries()) {
+    merged.set(key, value);
+  }
+
+  for (const [key, value] of standingsMap.entries()) {
+    const prev = merged.get(key) ?? {};
+    merged.set(key, {
+      ...prev,
+      ...value,
+      constructorName: value.constructorName ?? prev.constructorName ?? null,
+      constructorNationality:
+        value.constructorNationality ?? prev.constructorNationality ?? null,
+    });
+  }
 
   return {
-    code: meta?.name_acronym ?? null,
-    firstName: split.firstName ?? null,
-    lastName: split.lastName ?? null,
-    fullName:
-      fullName ||
-      (split.firstName && split.lastName
-        ? `${split.firstName} ${split.lastName}`
-        : null),
-    nationality: meta?.country_code ?? null,
-    teamName: meta?.team_name ?? null,
-    openf1HeadshotUrl: meta?.headshot_url ?? null,
+    ok: merged.size > 0,
+    byNumber: merged,
+    sourceUrls: {
+      standings: JOLPICA_DRIVER_STANDINGS_URL,
+      drivers: JOLPICA_DRIVERS_URL,
+    },
   };
 }
+
+/* ------------------------------------------------ */
+/* JOIN + VALIDATION */
+/* ------------------------------------------------ */
 
 function validateMergedRows(rows) {
   const bad = rows.filter(
@@ -310,7 +393,7 @@ function validateMergedRows(rows) {
   );
 
   if (bad.length > 0) {
-    const sample = bad.slice(0, 5).map((row) => ({
+    const sample = bad.slice(0, 8).map((row) => ({
       driverNumber: row.driver.driverNumber,
       fullName: row.driver.fullName,
       code: row.driver.code,
@@ -318,119 +401,60 @@ function validateMergedRows(rows) {
     }));
 
     throw new Error(
-      `OpenF1 driver metadata incomplete for ${bad.length} row(s). Sample: ${JSON.stringify(sample)}`
+      `Merged standings metadata incomplete for ${bad.length} row(s). Sample: ${JSON.stringify(sample)}`
     );
   }
 }
 
-/* ------------------------------------------------ */
-/* OPENF1 STANDINGS */
-/* ------------------------------------------------ */
+function buildMergedStandings(openf1Rows, jolpicaMap) {
+  const rows = openf1Rows.map((row) => {
+    const key = driverKey(row?.driver_number);
+    const meta = key ? jolpicaMap.get(key) ?? null : null;
 
-async function getOpenF1StandingsForLatestRace() {
-  const latestRace = await getLatestRaceSession();
+    if (!meta) {
+      throw new Error(
+        `No Jolpica metadata match for driver_number=${row?.driver_number}`
+      );
+    }
 
-  if (!latestRace.ok || !latestRace.session?.session_key) {
-    throw new Error("Could not resolve latest race session from OpenF1.");
-  }
-
-  const sessionKey = latestRace.session.session_key;
-
-  const standingsUrl = buildUrl(OPENF1_CHAMPIONSHIP_URL, {
-    session_key: sessionKey,
-  });
-
-  const driversUrl = buildUrl(OPENF1_DRIVERS_URL, {
-    session_key: sessionKey,
-  });
-
-  const [standingsResp, driversResp] = await Promise.all([
-    fetchJson(standingsUrl),
-    fetchJson(driversUrl),
-  ]);
-
-  if (
-    !standingsResp.ok ||
-    !Array.isArray(standingsResp.json) ||
-    standingsResp.json.length === 0
-  ) {
-    throw new Error("OpenF1 championship_drivers returned no standings rows.");
-  }
-
-  if (
-    !driversResp.ok ||
-    !Array.isArray(driversResp.json) ||
-    driversResp.json.length === 0
-  ) {
-    throw new Error("OpenF1 drivers returned no driver metadata rows.");
-  }
-
-  const driverMap = dedupeDriversByNumber(driversResp.json);
-
-  console.log(`OpenF1 standings rows: ${standingsResp.json.length}`);
-  console.log(`OpenF1 driver metadata rows: ${driverMap.size}`);
-
-  const rows = [...standingsResp.json]
-    .sort((a, b) => {
-      const posA = Number.isFinite(a?.position_current) ? a.position_current : 999;
-      const posB = Number.isFinite(b?.position_current) ? b.position_current : 999;
-      if (posA !== posB) return posA - posB;
-
-      const ptsA = Number.isFinite(a?.points_current) ? a.points_current : -1;
-      const ptsB = Number.isFinite(b?.points_current) ? b.points_current : -1;
-      return ptsB - ptsA;
-    })
-    .map((row) => {
-      const key = driverKey(row?.driver_number);
-      const meta = key ? driverMap.get(key) ?? null : null;
-
-      if (!meta) {
-        throw new Error(`No OpenF1 driver metadata match for driver_number=${row?.driver_number}`);
-      }
-
-      const identity = buildDriverIdentity(meta);
-
-      return {
-        position: Number.isFinite(row?.position_current)
-          ? `P${row.position_current}`
-          : "-",
-        positionNumber: Number.isFinite(row?.position_current)
-          ? Number(row.position_current)
-          : null,
-        points: Number.isFinite(row?.points_current)
-          ? Number(row.points_current)
-          : "-",
-        wins: "-",
-        driver: {
-          code: identity.code,
-          firstName: identity.firstName,
-          lastName: identity.lastName,
-          fullName: identity.fullName,
-          nationality: identity.nationality,
-          driverNumber:
-            row?.driver_number != null ? Number(row.driver_number) : null,
-          headshotUrl:
-            identity.firstName && identity.lastName
-              ? headshot(identity.firstName, identity.lastName)
+    return {
+      position: Number.isFinite(row?.position_current)
+        ? `P${row.position_current}`
+        : "-",
+      positionNumber: Number.isFinite(row?.position_current)
+        ? Number(row.position_current)
+        : null,
+      points: Number.isFinite(row?.points_current)
+        ? Number(row.points_current)
+        : "-",
+      wins: "-",
+      driver: {
+        code: meta.code ?? null,
+        firstName: meta.firstName ?? null,
+        lastName: meta.lastName ?? null,
+        fullName: meta.fullName ?? null,
+        nationality: meta.nationality ?? null,
+        driverNumber:
+          meta.driverNumber != null
+            ? Number(meta.driverNumber)
+            : row?.driver_number != null
+              ? Number(row.driver_number)
               : null,
-          openf1HeadshotUrl: identity.openf1HeadshotUrl,
-        },
-        constructor: {
-          name: normalizeTeamName(identity.teamName),
-          fullName: identity.teamName,
-          nationality: null,
-        },
-      };
-    });
+        headshotUrl:
+          meta.firstName && meta.lastName
+            ? headshot(meta.firstName, meta.lastName)
+            : null,
+      },
+      constructor: {
+        name: normalizeTeamName(meta.constructorName ?? null),
+        fullName: meta.constructorName ?? null,
+        nationality: meta.constructorNationality ?? null,
+      },
+    };
+  });
 
   validateMergedRows(rows);
-
-  return {
-    season: latestRace.session?.year ?? null,
-    drivers: rows,
-    raceSession: latestRace.session,
-    sourceUrl: standingsUrl,
-  };
+  return rows;
 }
 
 /* ------------------------------------------------ */
@@ -439,19 +463,41 @@ async function getOpenF1StandingsForLatestRace() {
 
 async function updateStandings() {
   const now = new Date().toISOString();
+  const previous = await readPreviousFile();
 
-  const live = await getOpenF1StandingsForLatestRace();
-  const race = live.raceSession;
+  const [liveStandings, metadata] = await Promise.all([
+    getOpenF1StandingsForLatestRace(),
+    getJolpicaMetadata(),
+  ]);
+
+  if (!liveStandings.ok || liveStandings.rows.length === 0) {
+    throw new Error(liveStandings.note || "OpenF1 standings unavailable.");
+  }
+
+  if (!metadata.ok || metadata.byNumber.size === 0) {
+    throw new Error("Jolpica metadata unavailable.");
+  }
+
+  console.log(`OpenF1 standings rows: ${liveStandings.rows.length}`);
+  console.log(`Jolpica metadata rows: ${metadata.byNumber.size}`);
+
+  const mergedDrivers = buildMergedStandings(
+    liveStandings.rows,
+    metadata.byNumber
+  );
+
+  const race = liveStandings.raceSession;
 
   const out = {
-    header: `${live.season ?? "Current"} Driver Standings`,
+    header: `${liveStandings.season ?? "Current"} Driver Standings`,
     generatedAtUtc: now,
-    season: live.season,
+    season: liveStandings.season,
     mode: "LIVE",
     source: {
-      kind: "openf1-championship_drivers",
-      url: live.sourceUrl,
-      note: null,
+      kind: "openf1+jolpica",
+      url: liveStandings.sourceUrl,
+      note: "Standings from OpenF1; driver and constructor metadata from Jolpica.",
+      metadataUrls: metadata.sourceUrls,
     },
     lastRace: race
       ? {
@@ -465,8 +511,8 @@ async function updateStandings() {
           dateStartUtc: race.date_start ?? null,
           dateEndUtc: race.date_end ?? null,
         }
-      : null,
-    drivers: live.drivers,
+      : previous?.lastRace ?? null,
+    drivers: mergedDrivers,
   };
 
   await fs.writeFile(OUTPUT_FILE, JSON.stringify(out, null, 2), "utf8");
