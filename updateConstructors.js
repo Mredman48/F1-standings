@@ -1,13 +1,9 @@
 // updateConstructors.js
 import fs from "node:fs/promises";
 
-const UA = "f1-standings-bot/1.0 (GitHub Actions)";
+const UA = "f1-standings-bot";
 
 const OUT_JSON = "f1_constructors_standings.json";
-
-const PAGES_BASE = "https://mredman48.github.io/F1-standings";
-const TEAMLOGOS_DIR = "teamlogos";
-const CACHE_BUST = true;
 
 const YEAR = new Date().getUTCFullYear();
 
@@ -17,22 +13,28 @@ const FOH_CONSTRUCTORS_URL =
 const F1_RESULTS_RACES_URL =
   `https://www.formula1.com/en/results/${YEAR}/races`;
 
+const PAGES_BASE = "https://mredman48.github.io/F1-standings";
+const TEAMLOGOS_DIR = "teamlogos";
+const CACHE_BUST = true;
+
 /* ------------------------------------------------ */
-/* TEAM NAME OVERRIDES */
+/* TEAM NORMALIZATION */
 /* ------------------------------------------------ */
 
 const TEAM_NAME_OVERRIDES = {
   "RB F1 Team": "VCARB",
-  "Visa Cash App RB F1 Team": "VCARB",
   "Visa Cash App RB": "VCARB",
   "Racing Bulls": "VCARB",
   "Haas F1 Team": "Haas",
+  "MoneyGram Haas F1 Team": "Haas",
   "Alpine F1 Team": "Alpine",
   "Red Bull Racing": "Red Bull",
-  "Kick Sauber": "Audi",
+  "Oracle Red Bull Racing": "Red Bull",
   "Stake F1 Team Kick Sauber": "Audi",
+  "Kick Sauber": "Audi",
   "Audi Formula 1 Team": "Audi",
-  "Cadillac Formula 1 Team": "Cadillac",
+  "McLaren Formula 1 Team": "McLaren",
+  "Mercedes-AMG Petronas F1 Team": "Mercedes",
 };
 
 function normalizeTeamName(name) {
@@ -40,12 +42,11 @@ function normalizeTeamName(name) {
 }
 
 /* ------------------------------------------------ */
-/* LOCAL TEAM LOGOS */
+/* TEAM LOGOS */
 /* ------------------------------------------------ */
 
 const TEAM_LOGOS_LOCAL = {
   "red bull": "2025_red-bull_color_v2.png",
-  "red bull racing": "2025_red-bull_color_v2.png",
   ferrari: "2025_ferrari_color_v2.png",
   mercedes: "2025_mercedes_color_v2.png",
   mclaren: "2025_mclaren_color_v2.png",
@@ -53,206 +54,114 @@ const TEAM_LOGOS_LOCAL = {
   alpine: "2025_alpine_color_v2.png",
   williams: "2025_williams_color_v2.png",
   haas: "2025_haas_color_v2.png",
-  "haas f1 team": "2025_haas_color_v2.png",
   audi: "audi_logo_colored.png",
   vcarb: "2025_vcarb_color_v2.png",
-  "racing bulls": "2025_vcarb_color_v2.png",
   cadillac: "2025_cadillac_color_v2.png",
 };
 
+function normalizeKey(s) {
+  return String(s || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+function logo(team) {
+  const key = normalizeKey(team);
+  const file = TEAM_LOGOS_LOCAL[key];
+  if (!file) return null;
+
+  const url = `${PAGES_BASE}/${TEAMLOGOS_DIR}/${file}`;
+  return CACHE_BUST ? `${url}?v=${Date.now()}` : url;
+}
+
 /* ------------------------------------------------ */
-/* PLACEHOLDER TEAMS */
+/* RACE LOCATION MAP */
 /* ------------------------------------------------ */
 
-const PLACEHOLDER_TEAMS = [
-  { team: "Alpine" },
-  { team: "Aston Martin" },
-  { team: "Audi" },
-  { team: "Cadillac" },
-  { team: "Ferrari" },
-  { team: "Haas" },
-  { team: "McLaren" },
-  { team: "Mercedes" },
-  { team: "Red Bull" },
-  { team: "VCARB" },
-  { team: "Williams" },
-].sort((a, b) => a.team.localeCompare(b.team));
+const RACE_LOCATION_MAP = {
+  australia: { city: "Melbourne", country: "Australia" },
+  chinese: { city: "Shanghai", country: "China" },
+  japan: { city: "Suzuka", country: "Japan" },
+  bahrain: { city: "Sakhir", country: "Bahrain" },
+  monaco: { city: "Monte Carlo", country: "Monaco" },
+  canada: { city: "Montreal", country: "Canada" },
+  british: { city: "Silverstone", country: "United Kingdom" },
+  belgian: { city: "Spa", country: "Belgium" },
+  italian: { city: "Monza", country: "Italy" },
+  singapore: { city: "Singapore", country: "Singapore" },
+  qatar: { city: "Lusail", country: "Qatar" },
+  abu: { city: "Abu Dhabi", country: "UAE" },
+};
 
 /* ------------------------------------------------ */
 /* HELPERS */
 /* ------------------------------------------------ */
 
-function withCacheBust(url) {
-  if (!url) return url;
-  return CACHE_BUST ? `${url}${url.includes("?") ? "&" : "?"}v=${Date.now()}` : url;
-}
+async function fetchText(url) {
+  const res = await fetch(url, {
+    headers: { "User-Agent": UA },
+  });
 
-function fmtPos(pos) {
-  const n = Number(pos);
-  if (!Number.isFinite(n)) return "-";
-  return `P${n}`;
-}
+  if (!res.ok) {
+    throw new Error(`HTTP ${res.status} from ${url}`);
+  }
 
-function safeNumOrDash(x) {
-  const n = Number(x);
-  return Number.isFinite(n) ? n : "-";
-}
-
-function normalizeKey(s) {
-  return String(s || "")
-    .toLowerCase()
-    .replace(/&/g, "and")
-    .replace(/[^a-z0-9]+/g, " ")
-    .trim();
-}
-
-function decodeHtmlEntities(str) {
-  if (!str) return str;
-
-  return str
-    .replace(/&nbsp;/g, " ")
-    .replace(/&#160;/g, " ")
-    .replace(/&amp;/g, "&")
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&apos;/g, "'")
-    .replace(/&lt;/g, "<")
-    .replace(/&gt;/g, ">");
+  return res.text();
 }
 
 function htmlToText(html) {
-  let text = String(html);
-
-  text = text.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ");
-  text = text.replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, " ");
-  text = text.replace(/<noscript\b[^>]*>[\s\S]*?<\/noscript>/gi, " ");
-  text = text.replace(/<!--[\s\S]*?-->/g, " ");
-  text = text.replace(/<[^>]+>/g, " ");
-
-  return decodeHtmlEntities(text).replace(/\s+/g, " ").trim();
-}
-
-function htmlToLines(html) {
-  let text = String(html);
-
-  text = text.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ");
-  text = text.replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, " ");
-  text = text.replace(/<noscript\b[^>]*>[\s\S]*?<\/noscript>/gi, " ");
-  text = text.replace(/<!--[\s\S]*?-->/g, " ");
-  text = text.replace(
-    /<\/(p|div|section|article|header|footer|main|li|tr|td|th|h1|h2|h3|h4|h5|h6|a|ul|ol)>/gi,
-    "\n"
-  );
-  text = text.replace(/<br\s*\/?>/gi, "\n");
-  text = text.replace(/<[^>]+>/g, " ");
-
-  text = decodeHtmlEntities(text);
-
-  return text
-    .split("\n")
-    .map((line) => line.replace(/\s+/g, " ").trim())
-    .filter(Boolean);
-}
-
-function cleanLine(line) {
-  return String(line || "").replace(/\s+/g, " ").trim();
-}
-
-async function fetchText(url, accept = "text/html,*/*") {
-  const res = await fetch(url, {
-    headers: { "User-Agent": UA, Accept: accept },
-    redirect: "follow",
-  });
-
-  const text = await res.text();
-  return { res, text, url };
-}
-
-function resolveTeamLogo(teamName) {
-  const key = normalizeKey(teamName);
-  const fileName = TEAM_LOGOS_LOCAL[key];
-  if (!fileName) return null;
-  return withCacheBust(`${PAGES_BASE}/${TEAMLOGOS_DIR}/${fileName}`);
-}
-
-function buildAlphabeticalPlaceholders() {
-  return PLACEHOLDER_TEAMS.map((t) => {
-    const logo = resolveTeamLogo(t.team);
-    return {
-      team: t.team,
-      position: "-",
-      points: "-",
-      wins: "-",
-      teamLogoPng: logo,
-      logoMissing: logo == null,
-      placeholder: true,
-    };
-  });
+  return html
+    .replace(/<script[\s\S]*?<\/script>/gi, " ")
+    .replace(/<style[\s\S]*?<\/style>/gi, " ")
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 /* ------------------------------------------------ */
-/* FORMULA ONE HISTORY STANDINGS PARSER */
+/* PARSE STANDINGS */
 /* ------------------------------------------------ */
 
-function parseFohConstructorsStandings(html, year) {
+function parseStandings(html) {
   const text = htmlToText(html);
 
-  const headingRe = new RegExp(`${year}\\s+F1\\s+Constructors\\s+Championship\\s+Standings`, "i");
-  const headingMatch = text.match(headingRe);
+  const sectionStart = text.indexOf("Constructors Championship Standings");
 
-  if (!headingMatch || headingMatch.index == null) {
+  if (sectionStart === -1) {
     return { rows: [], reason: "heading_not_found" };
   }
 
-  const section = text.slice(headingMatch.index);
-
-  const teamNames = [
-    "Mercedes",
-    "Ferrari",
-    "McLaren",
-    "Red Bull Racing",
-    "Haas F1 Team",
-    "Racing Bulls",
-    "Audi",
-    "Alpine",
-    "Williams",
-    "Cadillac",
-    "Aston Martin",
-  ];
-
-  const escapedTeams = teamNames
-    .sort((a, b) => b.length - a.length)
-    .map((t) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
-    .join("|");
-
-  // Matches rows like:
-  // 1 Mercedes 43
-  // 4 Red Bull Racing 8
-  // Also survives compact HTML->text output.
-  const rowRe = new RegExp(`(?:^|\\s)(\\d+)\\s*(${escapedTeams})\\s*(\\d+)(?=\\s|$)`, "g");
+  const section = text.slice(sectionStart);
 
   const rows = [];
-  for (const match of section.matchAll(rowRe)) {
-    const [, pos, teamRaw, pts] = match;
+
+  const regex = /(\d+)\s+([A-Za-z0-9\s\-'.&]+?)\s+(\d+)/g;
+
+  for (const m of section.matchAll(regex)) {
+    const pos = Number(m[1]);
+    const teamRaw = m[2].trim();
+    const pts = Number(m[3]);
+
+    if (pos > 15) continue;
 
     rows.push({
-      teamRaw: cleanLine(teamRaw),
-      team: normalizeTeamName(cleanLine(teamRaw)),
-      position: fmtPos(pos),
-      points: safeNumOrDash(pts),
+      position: `P${pos}`,
+      team: normalizeTeamName(teamRaw),
+      points: pts,
       wins: "-",
-      placeholder: false,
+      teamLogoPng: logo(teamRaw),
     });
   }
 
-  const seen = new Set();
   const unique = [];
+  const seen = new Set();
 
-  for (const row of rows) {
-    const key = normalizeKey(row.teamRaw);
-    if (seen.has(key)) continue;
-    seen.add(key);
-    unique.push(row);
+  for (const r of rows) {
+    const k = normalizeKey(r.team);
+    if (seen.has(k)) continue;
+    seen.add(k);
+    unique.push(r);
   }
 
   return {
@@ -262,66 +171,50 @@ function parseFohConstructorsStandings(html, year) {
 }
 
 /* ------------------------------------------------ */
-/* F1.COM LAST RACE PARSER */
+/* PARSE LAST RACE */
 /* ------------------------------------------------ */
 
-function parseOfficialRaceResults(html, year) {
-  const lines = htmlToLines(html);
+function parseLastRace(html) {
+  const lines = html
+    .replace(/<[^>]+>/g, "\n")
+    .split("\n")
+    .map((l) => l.trim())
+    .filter(Boolean);
 
-  const start = lines.findIndex((line) =>
-    new RegExp(`^#?\\s*${year}\\s+RACE RESULTS$`, "i").test(line)
-  );
+  for (let i = 0; i < lines.length - 5; i++) {
+    const race = lines[i];
+    const date = lines[i + 1];
+    const winner = lines[i + 2];
+    const team = lines[i + 3];
+    const laps = lines[i + 4];
+    const time = lines[i + 5];
 
-  if (start === -1) {
-    return { lastRace: null, reason: "heading_not_found" };
-  }
-
-  const section = lines.slice(start);
-
-  for (let i = 0; i < section.length - 5; i += 1) {
-    const raceName = cleanLine(section[i]);
-    const date = cleanLine(section[i + 1]);
-    const winner = cleanLine(section[i + 2]);
-    const team = cleanLine(section[i + 3]);
-    const laps = cleanLine(section[i + 4]);
-    const timeUtc = cleanLine(section[i + 5]);
-
-    if (new RegExp(`^#?\\s*${year}\\s+RACE RESULTS$`, "i").test(raceName)) continue;
-    if (/^Grand Prix\s*Date\s*Winner\s*Team\s*Laps\s*Time$/i.test(raceName)) continue;
-
-    if (!/^[A-Za-z][A-Za-z\s'’-]+$/.test(raceName)) continue;
+    if (!/^[A-Za-z\s]+$/.test(race)) continue;
     if (!/^\d{2}\s[A-Za-z]{3}$/.test(date)) continue;
-    if (!/^[A-Za-zÀ-ÿ\s'’.\-]+\s[A-Z]{3}$/.test(winner)) continue;
-    if (!/^[A-Za-z][A-Za-z0-9\s&'.-]+$/.test(team)) continue;
-    if (!/^\d+$/.test(laps)) continue;
-    if (!/^[0-9:.+-]+$/.test(timeUtc)) continue;
+
+    const raceKey = normalizeKey(race).split(" ")[0];
+    const loc = RACE_LOCATION_MAP[raceKey] || {};
 
     return {
-      lastRace: {
-        season: String(year),
-        round: "latest",
-        raceName,
-        date,
-        timeUtc,
-        circuit: {
-          name: "-",
-          locality: "-",
-          country: "-",
-        },
-        winner: {
-          name: winner,
-          team,
-          laps: Number(laps),
-        },
+      season: YEAR,
+      round: "latest",
+      raceName: race,
+      date,
+      timeUtc: time,
+      circuit: {
+        name: "-",
+        locality: loc.city || "-",
+        country: loc.country || "-",
       },
-      reason: null,
+      winner: {
+        name: winner,
+        team,
+        laps,
+      },
     };
   }
 
-  return {
-    lastRace: null,
-    reason: "no_rows_parsed",
-  };
+  return null;
 }
 
 /* ------------------------------------------------ */
@@ -329,111 +222,39 @@ function parseOfficialRaceResults(html, year) {
 /* ------------------------------------------------ */
 
 async function updateConstructors() {
-  const now = new Date();
-
-  const [standingsResp, racesResp] = await Promise.all([
+  const [standingsHtml, racesHtml] = await Promise.all([
     fetchText(FOH_CONSTRUCTORS_URL),
     fetchText(F1_RESULTS_RACES_URL),
   ]);
 
-  let parsedStandings = { rows: [], reason: "http_error" };
-  let parsedLastRace = { lastRace: null, reason: "http_error" };
+  const parsedStandings = parseStandings(standingsHtml);
+  const lastRace = parseLastRace(racesHtml);
 
-  if (standingsResp.res.ok) {
-    parsedStandings = parseFohConstructorsStandings(standingsResp.text, YEAR);
-  }
-
-  if (racesResp.res.ok) {
-    parsedLastRace = parseOfficialRaceResults(racesResp.text, YEAR);
-  }
-
-  let constructors = [];
-  let mode = "FOH_EMPTY_PLACEHOLDERS_LOCAL_LOGOS";
-
-  if (Array.isArray(parsedStandings.rows) && parsedStandings.rows.length > 0) {
-    mode = "FOH_LIVE_LOCAL_LOGOS";
-
-    constructors = parsedStandings.rows.map((row) => {
-      const logo = resolveTeamLogo(row.team);
-      return {
-        team: row.team,
-        position: row.position,
-        points: row.points,
-        wins: row.wins,
-        teamLogoPng: logo,
-        logoMissing: logo == null,
-        placeholder: false,
-      };
-    });
-
-    const hasCadillac = constructors.some(
-      (t) => normalizeKey(t.team) === "cadillac"
-    );
-
-    if (!hasCadillac) {
-      const logo = resolveTeamLogo("Cadillac");
-      constructors.push({
-        team: "Cadillac",
-        position: "-",
-        points: "-",
-        wins: "-",
-        teamLogoPng: logo,
-        logoMissing: logo == null,
-        placeholder: true,
-      });
-    }
-  } else {
-    constructors = buildAlphabeticalPlaceholders();
-  }
-
-  const lastRaceOut =
-    parsedLastRace.lastRace || {
-      season: String(YEAR),
-      round: "-",
-      raceName: "-",
-      date: "-",
-      timeUtc: "-",
-      circuit: {
-        name: "-",
-        locality: "-",
-        country: "-",
-      },
-      winner: {
-        name: "-",
-        team: "-",
-        laps: "-",
-      },
-    };
+  const constructors = parsedStandings.rows;
 
   const out = {
     header: "Constructors standings",
-    generatedAtUtc: now.toISOString(),
+    generatedAtUtc: new Date().toISOString(),
+
     sources: {
-      constructorsStandings: FOH_CONSTRUCTORS_URL,
+      constructors: FOH_CONSTRUCTORS_URL,
       races: F1_RESULTS_RACES_URL,
-      logos: `LOCAL_ONLY: ${PAGES_BASE}/${TEAMLOGOS_DIR}/`,
     },
+
     meta: {
-      mode,
-      seasonUsed: String(YEAR),
-      roundUsed: lastRaceOut.round,
-      cacheBust: CACHE_BUST,
-      note:
-        "Uses Formula One History for constructors standings and official F1.com for latest race. If standings are empty/unavailable, emits alphabetical placeholder teams with '-' stats. Logos are LOCAL ONLY from /teamlogos via GitHub Pages.",
       standingsParseReason: parsedStandings.reason,
-      raceParseReason: parsedLastRace.reason,
     },
-    lastRace: lastRaceOut,
+
+    lastRace,
+
     constructors,
   };
 
-  await fs.writeFile(OUT_JSON, JSON.stringify(out, null, 2), "utf8");
+  await fs.writeFile(OUT_JSON, JSON.stringify(out, null, 2));
 
   console.log(
-    `Wrote ${OUT_JSON} season=${out.meta.seasonUsed} constructors=${out.constructors.length} mode=${out.meta.mode}`
+    `Wrote ${OUT_JSON} constructors=${constructors.length}`
   );
-  console.log(`Standings parse reason: ${parsedStandings.reason}`);
-  console.log(`Race parse reason: ${parsedLastRace.reason}`);
 }
 
 updateConstructors().catch((err) => {
