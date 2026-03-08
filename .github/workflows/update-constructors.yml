@@ -1,0 +1,56 @@
+name: Update Constructors Manual
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-constructors:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: List repo files
+        run: ls -la
+
+      - name: Run constructors update script
+        run: node updateConstructors.js
+
+      - name: Show generated JSON
+        if: always()
+        run: |
+          echo "----- f1_constructors_standings.json -----"
+          if [ -f f1_constructors_standings.json ]; then
+            cat f1_constructors_standings.json
+          else
+            echo "f1_constructors_standings.json not found"
+          fi
+
+      - name: Commit updated file
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add f1_constructors_standings.json
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          git commit -m "Update constructors standings"
+          git push
