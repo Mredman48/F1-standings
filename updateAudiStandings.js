@@ -59,15 +59,11 @@ function numberImage(num) {
   return `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-${num}.png`;
 }
 
-function safeNumOrZero(x) {
-  if (x == null || x === "" || x === "-") return 0;
+function normalizePoints(x) {
+  if (x === "-" || x === null || x === undefined) return 0;
   const n = Number(x);
   return Number.isFinite(n) ? n : 0;
 }
-
-/* ------------------------------------------------ */
-/* POSITION NORMALIZER */
-/* ------------------------------------------------ */
 
 function normalizePosition(pos) {
   if (!pos) return "-";
@@ -156,8 +152,8 @@ function getAudiConstructor(constructorData) {
   return {
     team: "Audi",
     position: normalizePosition(row.position),
-    points: safeNumOrZero(row.points),
-    wins: safeNumOrZero(row.wins)
+    points: normalizePoints(row.points),
+    wins: normalizePoints(row.wins)
   };
 }
 
@@ -191,7 +187,8 @@ async function getBestResultsForDrivers(driverNumbers) {
 
     const pos = Number(row.position);
 
-    if (!Number.isFinite(pos)) continue;
+    // Ignore invalid finishes (0 means DNF)
+    if (!Number.isFinite(pos) || pos <= 0) continue;
 
     if (!best[num] || pos < best[num].pos) {
 
@@ -252,8 +249,8 @@ async function buildJson() {
       headshotUrl: await headshot(first, last),
 
       position: normalizePosition(d.position),
-      points: safeNumOrZero(d.points),
-      wins: safeNumOrZero(d.wins),
+      points: normalizePoints(d.points),
+      wins: normalizePoints(d.wins),
 
       team: "Audi",
 
@@ -284,7 +281,7 @@ async function buildJson() {
     sources: {
       driverStandings: DRIVER_STANDINGS_FILE,
       constructorStandings: CONSTRUCTOR_STANDINGS_FILE,
-      bestResults: "OpenF1 season race results"
+      bestResults: "OpenF1 race results"
     },
 
     audi: {
