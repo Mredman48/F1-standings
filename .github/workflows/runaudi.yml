@@ -1,22 +1,52 @@
-steps:
-  - name: Checkout repository
-    uses: actions/checkout@v4
+name: Run Audi Standings Script
 
-  - name: Setup Node
-    uses: actions/setup-node@v4
-    with:
-      node-version: 20
+on:
+  workflow_dispatch:
 
-  - name: Run Audi standings script
-    run: node updateAudiStandings.js
+permissions:
+  contents: write
 
-  - name: Commit updated JSON
-    run: |
-      git config --global user.name "github-actions"
-      git config --global user.email "actions@github.com"
+jobs:
+  run-audi:
+    runs-on: ubuntu-latest
 
-      git add f1_audi_standings.json
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      git commit -m "Update Audi standings JSON" || echo "No changes to commit"
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
-      git push
+      - name: Show repo files
+        run: ls -la
+
+      - name: Run Audi standings script
+        run: node updateAudiStandings.js
+
+      - name: Show generated JSON
+        if: always()
+        run: |
+          if [ -f f1_audi_standings.json ]; then
+            echo "----- f1_audi_standings.json -----"
+            cat f1_audi_standings.json
+          else
+            echo "f1_audi_standings.json was not created"
+          fi
+
+      - name: Commit updated JSON
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add f1_audi_standings.json
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          git commit -m "Update Audi standings JSON"
+          git push
