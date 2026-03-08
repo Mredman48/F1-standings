@@ -66,10 +66,31 @@ function safeNumOrZero(x) {
 }
 
 /* ------------------------------------------------ */
+/* POSITION NORMALIZER */
+/* ------------------------------------------------ */
+
+function normalizePosition(pos) {
+  if (!pos) return "-";
+
+  const p = String(pos).toUpperCase();
+
+  if (p === "DNF") return "DNF";
+  if (p === "DNS") return "DNS";
+  if (p === "DSQ") return "DSQ";
+
+  const n = Number(p.replace("P", ""));
+
+  if (!Number.isFinite(n) || n <= 0) return "-";
+
+  return `P${n}`;
+}
+
+/* ------------------------------------------------ */
 /* FETCH */
 /* ------------------------------------------------ */
 
 async function fetchJson(url) {
+
   const res = await fetch(url, { headers: { "User-Agent": UA } });
 
   const text = await res.text();
@@ -97,9 +118,11 @@ async function readJson(file) {
 /* ------------------------------------------------ */
 
 function getAudiDrivers(driverData) {
+
   const rows = driverData?.drivers ?? [];
 
   return rows.filter((d) => {
+
     const team =
       d?.constructor?.name ||
       d?.constructor?.fullName ||
@@ -114,6 +137,7 @@ function getAudiDrivers(driverData) {
 /* ------------------------------------------------ */
 
 function getAudiConstructor(constructorData) {
+
   const rows = constructorData?.constructors ?? [];
 
   const row = rows.find((c) =>
@@ -131,14 +155,14 @@ function getAudiConstructor(constructorData) {
 
   return {
     team: "Audi",
-    position: row.position ?? "-",
+    position: normalizePosition(row.position),
     points: safeNumOrZero(row.points),
     wins: safeNumOrZero(row.wins)
   };
 }
 
 /* ------------------------------------------------ */
-/* OPENF1 BEST RESULT (FAST VERSION) */
+/* FAST OPENF1 BEST RESULT */
 /* ------------------------------------------------ */
 
 async function getBestResultsForDrivers(driverNumbers) {
@@ -196,6 +220,7 @@ async function buildJson() {
   const constructorData = await readJson(CONSTRUCTOR_STANDINGS_FILE);
 
   const audiDrivers = getAudiDrivers(driverData);
+
   const teamStanding = getAudiConstructor(constructorData);
 
   const driverNumbers = audiDrivers.map(
@@ -226,7 +251,7 @@ async function buildJson() {
       numberImageUrl: numberImage(num),
       headshotUrl: await headshot(first, last),
 
-      position: d.position ?? "-",
+      position: normalizePosition(d.position),
       points: safeNumOrZero(d.points),
       wins: safeNumOrZero(d.wins),
 
