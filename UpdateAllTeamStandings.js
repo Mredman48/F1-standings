@@ -1,4 +1,4 @@
-// updateAllTeamStandings.js
+// UpdateAllTeamStandings.js
 import fs from "node:fs/promises";
 
 const UA = "f1-standings-bot";
@@ -122,6 +122,10 @@ function slug(s) {
     .replace(/(^-|-$)/g, "");
 }
 
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 function numberImage(num) {
   if (!num) return null;
   return `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-${num}.png`;
@@ -239,24 +243,38 @@ function matchesTeamName(name, keywords) {
 /* FETCH */
 /* -------------------------------- */
 
-async function fetchJson(url) {
-  const res = await fetch(url, {
-    headers: {
-      "User-Agent": UA,
-      Accept: "application/json",
-    },
-    redirect: "follow",
-  });
+async function fetchJson(url, { retries = 6 } = {}) {
+  for (let attempt = 0; attempt <= retries; attempt += 1) {
+    const res = await fetch(url, {
+      headers: {
+        "User-Agent": UA,
+        Accept: "application/json",
+      },
+      redirect: "follow",
+    });
 
-  const text = await res.text();
+    const text = await res.text();
 
-  if (res.status === 404) return null;
+    if (res.status === 404) return null;
 
-  if (!res.ok) {
-    throw new Error(`HTTP ${res.status} from ${url}\n${text}`);
+    if (res.status === 429) {
+      if (attempt === retries) {
+        throw new Error(`HTTP 429 from ${url}\n${text}`);
+      }
+      const waitMs = 1200 + attempt * 700;
+      console.warn(`429 for ${url}. Retrying in ${waitMs}ms`);
+      await sleep(waitMs);
+      continue;
+    }
+
+    if (!res.ok) {
+      throw new Error(`HTTP ${res.status} from ${url}\n${text}`);
+    }
+
+    return JSON.parse(text);
   }
 
-  return JSON.parse(text);
+  throw new Error(`Failed to fetch ${url}`);
 }
 
 /* -------------------------------- */
@@ -336,6 +354,8 @@ async function getBestResultsForDriverNumbers(driverNumbers) {
         };
       }
     }
+
+    await sleep(450);
   }
 
   return { best, latestClassification, sessionMap };
