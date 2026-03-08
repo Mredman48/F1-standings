@@ -71,23 +71,13 @@ jobs:
       # ------------------------------------------------
       # ONLY run scripts when BOTH gates pass
       # ------------------------------------------------
-      - name: Run all update scripts
+      - name: Run core update scripts
         if: steps.weekend.outputs.in_window == 'true' && steps.openf1.outputs.blocked != 'true'
         run: |
           node updateStandings.js
           node updateConstructors.js
           node updateNextRace.js
-          node updateRedBullStandings.js
-          node updateFerrariStandings.js
-          node updateMercedesStandings.js
-          node updateMcLarenStandings.js
-          node updateAlpineStandings.js
-          node updateAstonMartinStandings.js
-          node updateWilliamsStandings.js
-          node updateHaasStandings.js
-          node updateAudiStandings.js
-          node updateCadillacStandings.js
-          node UpdateVCARBStandings.js
+          node UpdateAllTeamStandings.js
 
       - name: Commit & Push
         if: steps.weekend.outputs.in_window == 'true' && steps.openf1.outputs.blocked != 'true'
