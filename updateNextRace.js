@@ -78,13 +78,22 @@ async function fetchBuffer(url) {
 
 function getSessionType(summary) {
   const s = (summary || "").toLowerCase();
+
   if (s.includes("practice 1") || s.includes("fp1")) return "FP1";
   if (s.includes("practice 2") || s.includes("fp2")) return "FP2";
   if (s.includes("practice 3") || s.includes("fp3")) return "FP3";
-  if (s.includes("sprint qualifying")) return "Sprint Qualifying";
+
+  // Support both names
+  if (s.includes("sprint qualifying") || s.includes("sprint shootout")) {
+    return "Sprint Qualifying";
+  }
+
+  // Check sprint race after sprint qualifying/shootout
   if (s.includes("sprint")) return "Sprint";
+
   if (s.includes("qualifying") || s.includes("quali")) return "Qualifying";
-  if (s.includes("race")) return "Race";
+  if (s.includes("race") || s.includes("grand prix")) return "Race";
+
   return null;
 }
 
@@ -222,7 +231,6 @@ function countryFromSlug(slug) {
     madrid: "Spain",
   };
   return map[slug] || null;
-
 }
 
 function extractOfficialRaceMetaFromHtml(html, { fallbackGpName, fallbackSlug, fallbackCountry, fallbackCity }) {
@@ -232,7 +240,6 @@ function extractOfficialRaceMetaFromHtml(html, { fallbackGpName, fallbackSlug, f
     country: fallbackCountry || null,
   };
 
-  // JSON-LD / embedded metadata patterns
   const titlePatterns = [
     /"name":"([^"]*Grand Prix[^"]*\d{4})"/i,
     /"headline":"([^"]*Grand Prix[^"]*\d{4})"/i,
@@ -280,7 +287,6 @@ function extractOfficialRaceMetaFromHtml(html, { fallbackGpName, fallbackSlug, f
 
   if (!out.officialTitle) {
     if (out.country && fallbackGpName) {
-      // Turn "F1 Australian GP" into "Australian Grand Prix"
       const cleaned = fallbackGpName
         .replace(/^F1\s+/i, "")
         .replace(/\s+GP$/i, " Grand Prix")
@@ -417,10 +423,109 @@ function buildFlagUrls(iso2) {
   };
 }
 
+/* -------------------- robust weekend grouping -------------------- */
+
+function sessionPriority(type) {
+  const map = {
+    FP1: 1,
+    FP2: 2,
+    FP3: 3,
+    "Sprint Qualifying": 4,
+    Sprint: 5,
+    Qualifying: 6,
+    Race: 7,
+  };
+  return map[type] || 999;
+}
+
+function buildWeekendKeyFromDescriptionOrSlug(s, season) {
+  const url = extractF1RacePageUrlFromDescription(s.description, season);
+  const slug = slugFromRacePageUrl(url, season);
+  if (slug) return `slug:${slug}`;
+  return null;
+}
+
+function buildWeekendKeyFromNameLocation(s) {
+  return `name:${normalize(s.gpName)}|loc:${normalize(s.location || "")}`;
+}
+
+function dedupeSessions(sessions) {
+  const map = new Map();
+
+  for (const s of sessions) {
+    const key = `${s.sessionType}|${s.start.toISOString()}`;
+    const prev = map.get(key);
+
+    if (!prev) {
+      map.set(key, s);
+      continue;
+    }
+
+    const prevHasDescUrl = /formula1\.com\/en\/racing\//i.test(String(prev.description || ""));
+    const nextHasDescUrl = /formula1\.com\/en\/racing\//i.test(String(s.description || ""));
+
+    if (!prevHasDescUrl && nextHasDescUrl) {
+      map.set(key, s);
+    }
+  }
+
+  return Array.from(map.values()).sort((a, b) => a.start - b.start);
+}
+
+function collectWeekendSessions(allSessions, nextRaceSession) {
+  const season = String(nextRaceSession.start.getUTCFullYear());
+
+  const raceSlugKey = buildWeekendKeyFromDescriptionOrSlug(nextRaceSession, season);
+  const raceNameLocKey = buildWeekendKeyFromNameLocation(nextRaceSession);
+
+  const raceStart = nextRaceSession.start.getTime();
+
+  // Look back far enough to catch whole weekend, but not previous GP
+  const minStart = raceStart - 5 * 24 * 60 * 60 * 1000;
+  const maxStart = raceStart + 1 * 60 * 60 * 1000;
+
+  let candidates = allSessions.filter((s) => {
+    const ts = s.start.getTime();
+    return ts >= minStart && ts <= maxStart;
+  });
+
+  if (raceSlugKey) {
+    const bySlug = candidates.filter(
+      (s) => buildWeekendKeyFromDescriptionOrSlug(s, season) === raceSlugKey
+    );
+    if (bySlug.length > 0) {
+      candidates = bySlug;
+    }
+  } else {
+    const byNameLoc = candidates.filter(
+      (s) => buildWeekendKeyFromNameLocation(s) === raceNameLocKey
+    );
+    if (byNameLoc.length > 0) {
+      candidates = byNameLoc;
+    }
+  }
+
+  candidates = dedupeSessions(candidates);
+
+  return candidates.sort((a, b) => {
+    const timeCmp = a.start - b.start;
+    if (timeCmp !== 0) return timeCmp;
+    return sessionPriority(a.sessionType) - sessionPriority(b.sessionType);
+  });
+}
+
 /* -------------------- sessions + windows -------------------- */
 
 function buildSessionsForRaceWeekend(gpSessions) {
-  const order = ["FP1", "FP2", "FP3", "Qualifying", "Sprint Qualifying", "Sprint", "Race"];
+  const preferredOrder = [
+    "FP1",
+    "FP2",
+    "FP3",
+    "Sprint Qualifying",
+    "Sprint",
+    "Qualifying",
+    "Race",
+  ];
 
   function displayType(type) {
     if (type === "Qualifying") return "Quali";
@@ -428,9 +533,16 @@ function buildSessionsForRaceWeekend(gpSessions) {
     return type;
   }
 
-  return order
+  const byType = new Map();
+  for (const s of gpSessions) {
+    if (!byType.has(s.sessionType)) {
+      byType.set(s.sessionType, s);
+    }
+  }
+
+  return preferredOrder
     .map((type) => {
-      const s = gpSessions.find((x) => x.sessionType === type);
+      const s = byType.get(type);
       if (!s) return null;
 
       return {
@@ -471,6 +583,8 @@ async function updateNextRace() {
       const start = ev.start instanceof Date ? ev.start : new Date(ev.start);
       const end = ev.end instanceof Date ? ev.end : new Date(ev.end);
 
+      if (isNaN(start) || isNaN(end)) return null;
+
       return {
         gpName: stripFormula1Prefix(getGpName(summary)),
         sessionType,
@@ -478,25 +592,29 @@ async function updateNextRace() {
         end,
         location: ev.location || null,
         description: ev.description || null,
+        summary,
       };
     })
     .filter(Boolean)
     .sort((a, b) => a.start - b.start);
 
   const nextRaceSession = allSessions.find((s) => s.sessionType === "Race" && s.start > now);
-  if (!nextRaceSession) throw new Error("Could not find upcoming Race session in calendar feed.");
+  if (!nextRaceSession) {
+    throw new Error("Could not find upcoming Race session in calendar feed.");
+  }
 
   const season = String(nextRaceSession.start.getUTCFullYear());
   const gpNameShort = nextRaceSession.gpName;
   const locationRaw = nextRaceSession.location || "";
 
-  const gpSessions = allSessions
-    .filter((s) => s.gpName === gpNameShort)
-    .sort((a, b) => a.start - b.start);
+  const gpSessions = collectWeekendSessions(allSessions, nextRaceSession);
+
+  if (gpSessions.length === 0) {
+    throw new Error("Could not collect sessions for upcoming race weekend.");
+  }
 
   const weekendStart = gpSessions[0].start;
 
-  // 1) Prefer official F1 event page from ICS description
   const racePageUrlFromDescription = extractF1RacePageUrlFromDescription(
     nextRaceSession.description,
     season
@@ -570,6 +688,10 @@ async function updateNextRace() {
   await fs.writeFile("f1_next_race.json", JSON.stringify(out, null, 2), "utf8");
 
   console.log("Short GP name from ICS:", gpNameShort);
+  console.log("Collected session summaries:");
+  for (const s of gpSessions) {
+    console.log(` - ${s.summary} | ${s.sessionType} | ${s.start.toISOString()}`);
+  }
   console.log("Official title:", officialTitle);
   console.log("Race page url:", racePage.pageUrl);
   console.log("Location raw:", locationRaw);
