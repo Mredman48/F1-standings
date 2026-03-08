@@ -166,6 +166,11 @@ function titleCaseWords(s) {
     .join(" ");
 }
 
+function driverKey(value) {
+  if (value == null) return null;
+  return String(value).trim();
+}
+
 /* ------------------------------------------------ */
 /* OPENF1 SESSION RESOLUTION */
 /* ------------------------------------------------ */
@@ -188,7 +193,6 @@ function pickLatestRaceSession(sessions, now = new Date()) {
 
   if (!mapped.length) return null;
 
-  // Prefer a race that has already started. If multiple, choose the latest.
   const started = mapped
     .filter((x) => x.start.getTime() <= nowMs)
     .sort((a, b) => b.start.getTime() - a.start.getTime());
@@ -197,10 +201,7 @@ function pickLatestRaceSession(sessions, now = new Date()) {
     return started[0].raw;
   }
 
-  // If season hasn't started yet, choose the earliest upcoming race.
-  const upcoming = mapped
-    .sort((a, b) => a.start.getTime() - b.start.getTime());
-
+  const upcoming = mapped.sort((a, b) => a.start.getTime() - b.start.getTime());
   return upcoming[0]?.raw ?? null;
 }
 
@@ -221,6 +222,7 @@ async function getLatestRaceSession() {
     }
 
     const race = pickLatestRaceSession(resp.json);
+
     if (race?.session_key != null) {
       return {
         ok: true,
@@ -247,29 +249,31 @@ function dedupeDriversByNumber(drivers) {
   const byNumber = new Map();
 
   for (const d of drivers) {
-    const num = d?.driver_number;
-    if (num == null) continue;
+    const key = driverKey(d?.driver_number);
+    if (!key) continue;
 
-    if (!byNumber.has(num)) {
-      byNumber.set(num, d);
+    if (!byNumber.has(key)) {
+      byNumber.set(key, d);
       continue;
     }
 
-    const prev = byNumber.get(num);
+    const prev = byNumber.get(key);
     const prevScore =
       Number(Boolean(prev?.first_name)) +
       Number(Boolean(prev?.last_name)) +
+      Number(Boolean(prev?.full_name)) +
       Number(Boolean(prev?.team_name)) +
       Number(Boolean(prev?.name_acronym));
 
     const nextScore =
       Number(Boolean(d?.first_name)) +
       Number(Boolean(d?.last_name)) +
+      Number(Boolean(d?.full_name)) +
       Number(Boolean(d?.team_name)) +
       Number(Boolean(d?.name_acronym));
 
     if (nextScore > prevScore) {
-      byNumber.set(num, d);
+      byNumber.set(key, d);
     }
   }
 
@@ -324,6 +328,9 @@ async function getOpenF1StandingsForLatestRace() {
     Array.isArray(driversResp.json) ? driversResp.json : []
   );
 
+  console.log(`OpenF1 standings rows: ${standingsResp.json.length}`);
+  console.log(`OpenF1 driver metadata rows: ${driverMap.size}`);
+
   const rows = [...standingsResp.json]
     .sort((a, b) => {
       const posA = Number.isFinite(a?.position_current) ? a.position_current : 999;
@@ -335,20 +342,30 @@ async function getOpenF1StandingsForLatestRace() {
       return ptsB - ptsA;
     })
     .map((row) => {
-      const meta = driverMap.get(row.driver_number) ?? null;
+      const key = driverKey(row?.driver_number);
+      const meta = key ? driverMap.get(key) ?? null : null;
 
-      const firstName = meta?.first_name ?? null;
-      const lastName = meta?.last_name ?? null;
+      const fullNameRaw = meta?.full_name ?? null;
       const fullName =
-        meta?.full_name
-          ? titleCaseWords(String(meta.full_name).replace(/\s+/g, " "))
-          : firstName && lastName
-            ? `${firstName} ${lastName}`
+        fullNameRaw
+          ? titleCaseWords(String(fullNameRaw).replace(/\s+/g, " "))
+          : meta?.first_name && meta?.last_name
+            ? `${meta.first_name} ${meta.last_name}`
             : null;
 
-      const split = !firstName && !lastName && fullName
-        ? splitFullName(fullName)
-        : { firstName, lastName };
+      const split =
+        meta?.first_name || meta?.last_name
+          ? {
+              firstName: meta?.first_name ?? null,
+              lastName: meta?.last_name ?? null,
+            }
+          : fullName
+            ? splitFullName(fullName)
+            : { firstName: null, lastName: null };
+
+      if (!meta) {
+        console.log(`No metadata match for driver_number=${row?.driver_number}`);
+      }
 
       return {
         position: Number.isFinite(row?.position_current)
@@ -450,9 +467,10 @@ function buildAlphabeticalRoster(drivers) {
 async function getOpenF1RosterFallback() {
   const latestRace = await getLatestRaceSession();
 
-  const params = latestRace.ok && latestRace.session?.session_key != null
-    ? { session_key: latestRace.session.session_key }
-    : { session_key: "latest" };
+  const params =
+    latestRace.ok && latestRace.session?.session_key != null
+      ? { session_key: latestRace.session.session_key }
+      : { session_key: "latest" };
 
   const url = buildUrl(OPENF1_DRIVERS_URL, params);
   const resp = await fetchJson(url);
@@ -488,7 +506,6 @@ async function updateStandings() {
   const now = new Date().toISOString();
   const previous = await readPreviousFile();
 
-  // 1) OpenF1 championship standings from the latest race session
   const live = await getOpenF1StandingsForLatestRace();
   if (live.ok && live.drivers.length > 0) {
     const race = live.raceSession;
@@ -524,7 +541,6 @@ async function updateStandings() {
     return;
   }
 
-  // 2) OpenF1 drivers roster fallback
   const roster = await getOpenF1RosterFallback();
   if (roster.ok && roster.drivers.length > 0) {
     const out = {
@@ -548,7 +564,6 @@ async function updateStandings() {
     return;
   }
 
-  // 3) Previous file fallback
   if (previous?.drivers?.length) {
     const out = {
       ...previous,
@@ -568,7 +583,6 @@ async function updateStandings() {
     return;
   }
 
-  // 4) Empty
   const out = {
     header: "Driver Standings",
     generatedAtUtc: now,
