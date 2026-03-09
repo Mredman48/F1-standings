@@ -7,6 +7,7 @@ const DRIVER_STANDINGS_FILE = "f1_driver_standings.json";
 const CONSTRUCTOR_STANDINGS_FILE = "f1_constructors_standings.json";
 
 const OPENF1_BASE = "https://api.openf1.org/v1";
+const JOLPICA_BASE = "https://api.jolpi.ca/ergast/f1";
 const YEAR = new Date().getUTCFullYear();
 
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
@@ -194,6 +195,19 @@ function emptyBestResult(position = "-") {
   };
 }
 
+function emptyLastRace() {
+  return {
+    raceName: "-",
+    round: "-",
+    date: "-",
+    circuit: "-",
+    location: {
+      locality: "-",
+      country: "-",
+    },
+  };
+}
+
 function bestResultFromSessionRow(row, session) {
   return {
     position: classificationFromOpenF1(row),
@@ -237,6 +251,13 @@ function isCompletedRaceSession(session) {
 function matchesTeamName(name, keywords) {
   const value = String(name || "").toLowerCase();
   return keywords.some((keyword) => value.includes(keyword));
+}
+
+function normalizeLocation(input) {
+  return {
+    locality: input?.locality ?? input?.location?.locality ?? "-",
+    country: input?.country ?? input?.location?.country ?? "-",
+  };
 }
 
 /* -------------------------------- */
@@ -287,6 +308,53 @@ async function readJson(file) {
 }
 
 /* -------------------------------- */
+/* JOLPICA LAST RACE */
+/* -------------------------------- */
+
+async function getLastRaceMeta() {
+  const data = await fetchJson(`${JOLPICA_BASE}/current/last/results.json`);
+
+  const race = data?.MRData?.RaceTable?.Races?.[0];
+  if (!race) return null;
+
+  return {
+    raceName: race.raceName ?? "-",
+    round: race.round ?? "-",
+    date: race.date ?? "-",
+    circuit: race?.Circuit?.circuitName ?? "-",
+    location: {
+      locality: race?.Circuit?.Location?.locality ?? "-",
+      country: race?.Circuit?.Location?.country ?? "-",
+    },
+  };
+}
+
+function mergeLastRace(existingLastRace, jolpicaLastRace) {
+  const base = existingLastRace
+    ? {
+        ...existingLastRace,
+        location: normalizeLocation(existingLastRace),
+      }
+    : emptyLastRace();
+
+  if (!jolpicaLastRace) return base;
+
+  return {
+    ...base,
+    raceName: jolpicaLastRace.raceName ?? base.raceName ?? "-",
+    round: jolpicaLastRace.round ?? base.round ?? "-",
+    date: jolpicaLastRace.date ?? base.date ?? "-",
+    circuit: jolpicaLastRace.circuit ?? base.circuit ?? "-",
+    location: {
+      locality:
+        jolpicaLastRace.location?.locality ?? base.location?.locality ?? "-",
+      country:
+        jolpicaLastRace.location?.country ?? base.location?.country ?? "-",
+    },
+  };
+}
+
+/* -------------------------------- */
 /* OPENF1 SHARED LOOKUPS */
 /* -------------------------------- */
 
@@ -299,7 +367,8 @@ async function getRaceSessionsForYear() {
     .filter(isCompletedRaceSession)
     .sort(
       (a, b) =>
-        new Date(a.date_start || 0).getTime() - new Date(b.date_start || 0).getTime()
+        new Date(a.date_start || 0).getTime() -
+        new Date(b.date_start || 0).getTime()
     );
 
   const sessionMap = new Map();
@@ -398,7 +467,13 @@ function getTeamConstructor(constructorData, teamConfig) {
   };
 }
 
-async function buildTeamJson(teamConfig, driverData, constructorData, bestResultsPack) {
+async function buildTeamJson(
+  teamConfig,
+  driverData,
+  constructorData,
+  bestResultsPack,
+  lastRace
+) {
   const teamDrivers = getTeamDrivers(driverData, teamConfig);
   const teamStanding = getTeamConstructor(constructorData, teamConfig);
 
@@ -452,6 +527,7 @@ async function buildTeamJson(teamConfig, driverData, constructorData, bestResult
       constructorStandings: CONSTRUCTOR_STANDINGS_FILE,
       bestResults:
         "OpenF1 sessions?year=YYYY&session_name=Race + session_result?driver_number=NN",
+      lastRace: "Jolpica current/last/results.json",
     },
 
     [teamConfig.objectKey]: {
@@ -460,7 +536,7 @@ async function buildTeamJson(teamConfig, driverData, constructorData, bestResult
       teamStanding,
     },
 
-    lastRace: constructorData.lastRace ?? null,
+    lastRace,
 
     drivers,
   };
@@ -484,14 +560,20 @@ async function updateAllTeamStandings() {
     ),
   ];
 
-  const bestResultsPack = await getBestResultsForDriverNumbers(allDriverNumbers);
+  const [bestResultsPack, jolpicaLastRace] = await Promise.all([
+    getBestResultsForDriverNumbers(allDriverNumbers),
+    getLastRaceMeta(),
+  ]);
+
+  const mergedLastRace = mergeLastRace(constructorData.lastRace, jolpicaLastRace);
 
   for (const teamConfig of TEAMS) {
     const out = await buildTeamJson(
       teamConfig,
       driverData,
       constructorData,
-      bestResultsPack
+      bestResultsPack,
+      mergedLastRace
     );
 
     await fs.writeFile(
