@@ -1,10 +1,11 @@
 {
   "header": "McLaren standings",
-  "generatedAtUtc": "2026-03-08T16:31:58.411Z",
+  "generatedAtUtc": "2026-03-09T20:54:01.278Z",
   "sources": {
     "driverStandings": "f1_driver_standings.json",
     "constructorStandings": "f1_constructors_standings.json",
-    "bestResults": "OpenF1 sessions?year=YYYY&session_name=Race + session_result?driver_number=NN"
+    "bestResults": "OpenF1 sessions?year=YYYY&session_name=Race + session_result?driver_number=NN",
+    "lastRace": "Jolpica current/last/results.json"
   },
   "mclaren": {
     "team": "McLaren",
@@ -18,19 +19,19 @@
   },
   "lastRace": {
     "season": "2026",
-    "round": "latest",
-    "raceName": "Flag of Australia Australia",
-    "date": "08 Mar",
+    "round": "1",
+    "raceName": "Australian Grand Prix",
+    "date": "2026-03-08",
     "timeUtc": "1:23:06.801",
-    "circuit": {
-      "name": "Albert Park Grand Prix Circuit",
-      "locality": "Melbourne",
-      "country": "Australia"
-    },
+    "circuit": "Albert Park Grand Prix Circuit",
     "winner": {
       "name": "George Russell RUS",
       "team": "Mercedes",
       "laps": 58
+    },
+    "location": {
+      "locality": "Melbourne",
+      "country": "Australia"
     }
   },
   "drivers": [
