@@ -179,6 +179,13 @@ function classificationFromOpenF1(row) {
   return `P${pos}`;
 }
 
+function normalizeLocation(input) {
+  return {
+    locality: input?.locality ?? input?.location?.locality ?? "-",
+    country: input?.country ?? input?.location?.country ?? "-",
+  };
+}
+
 function emptyBestResult(position = "-") {
   return {
     position,
@@ -208,32 +215,48 @@ function emptyLastRace() {
   };
 }
 
-function bestResultFromSessionRow(row, session) {
+function normalizeRaceName(name) {
+  const value = String(name || "").trim();
+  return value || "-";
+}
+
+function dateOnly(value) {
+  if (!value) return "-";
+  const s = String(value);
+  return s.includes("T") ? s.slice(0, 10) : s.slice(0, 10);
+}
+
+function bestResultFromSessionRow(row, session, raceMetaBySessionKey) {
+  const raceMeta =
+    raceMetaBySessionKey?.get(Number(row?.session_key ?? session?.session_key)) || null;
+
   return {
     position: classificationFromOpenF1(row),
-    raceName: session?.meeting_name ?? "-",
-    round: session?.meeting_key != null ? String(session.meeting_key) : "-",
-    date: session?.date_start ?? "-",
-    circuit: session?.circuit_short_name ?? "-",
+    raceName: raceMeta?.raceName ?? session?.meeting_name ?? "-",
+    round: raceMeta?.round ?? "-",
+    date: raceMeta?.date ?? dateOnly(session?.date_start) ?? "-",
+    circuit: raceMeta?.circuit ?? session?.circuit_short_name ?? "-",
     location: {
-      locality: session?.location ?? "-",
-      country: session?.country_name ?? "-",
+      locality: raceMeta?.locality ?? session?.location ?? "-",
+      country: raceMeta?.country ?? session?.country_name ?? "-",
     },
     sessionKey: row?.session_key ?? session?.session_key ?? null,
     meetingKey: row?.meeting_key ?? session?.meeting_key ?? null,
   };
 }
 
-function bestResultFromBestFinish(best) {
+function bestResultFromBestFinish(best, raceMetaBySessionKey) {
+  const raceMeta = raceMetaBySessionKey?.get(Number(best.sessionKey)) || null;
+
   return {
     position: `P${best.pos}`,
-    raceName: best.raceName,
-    round: best.round,
-    date: best.date,
-    circuit: best.circuit,
+    raceName: raceMeta?.raceName ?? best.raceName ?? "-",
+    round: raceMeta?.round ?? best.round ?? "-",
+    date: raceMeta?.date ?? best.date ?? "-",
+    circuit: raceMeta?.circuit ?? best.circuit ?? "-",
     location: {
-      locality: best.locality,
-      country: best.country,
+      locality: raceMeta?.locality ?? best.locality ?? "-",
+      country: raceMeta?.country ?? best.country ?? "-",
     },
     sessionKey: best.sessionKey,
     meetingKey: best.meetingKey,
@@ -251,13 +274,6 @@ function isCompletedRaceSession(session) {
 function matchesTeamName(name, keywords) {
   const value = String(name || "").toLowerCase();
   return keywords.some((keyword) => value.includes(keyword));
-}
-
-function normalizeLocation(input) {
-  return {
-    locality: input?.locality ?? input?.location?.locality ?? "-",
-    country: input?.country ?? input?.location?.country ?? "-",
-  };
 }
 
 /* -------------------------------- */
@@ -308,19 +324,33 @@ async function readJson(file) {
 }
 
 /* -------------------------------- */
-/* JOLPICA LAST RACE */
+/* JOLPICA LOOKUPS */
 /* -------------------------------- */
+
+async function getRaceScheduleForYear(year) {
+  const data = await fetchJson(`${JOLPICA_BASE}/${year}.json`);
+  const races = data?.MRData?.RaceTable?.Races || [];
+
+  return races.map((race) => ({
+    round: String(race?.round ?? "-"),
+    raceName: normalizeRaceName(race?.raceName),
+    date: race?.date ?? "-",
+    circuit: race?.Circuit?.circuitName ?? "-",
+    locality: race?.Circuit?.Location?.locality ?? "-",
+    country: race?.Circuit?.Location?.country ?? "-",
+  }));
+}
 
 async function getLastRaceMeta() {
   const data = await fetchJson(`${JOLPICA_BASE}/current/last/results.json`);
-
   const race = data?.MRData?.RaceTable?.Races?.[0];
+
   if (!race) return null;
 
   return {
-    raceName: race.raceName ?? "-",
-    round: race.round ?? "-",
-    date: race.date ?? "-",
+    raceName: normalizeRaceName(race?.raceName),
+    round: String(race?.round ?? "-"),
+    date: race?.date ?? "-",
     circuit: race?.Circuit?.circuitName ?? "-",
     location: {
       locality: race?.Circuit?.Location?.locality ?? "-",
@@ -359,9 +389,10 @@ function mergeLastRace(existingLastRace, jolpicaLastRace) {
 /* -------------------------------- */
 
 async function getRaceSessionsForYear() {
-  const sessions = await fetchJson(
-    `${OPENF1_BASE}/sessions?year=${YEAR}&session_name=Race`
-  );
+  const [sessions, schedule] = await Promise.all([
+    fetchJson(`${OPENF1_BASE}/sessions?year=${YEAR}&session_name=Race`),
+    getRaceScheduleForYear(YEAR),
+  ]);
 
   const raceSessions = (sessions || [])
     .filter(isCompletedRaceSession)
@@ -373,17 +404,34 @@ async function getRaceSessionsForYear() {
 
   const sessionMap = new Map();
   const allowedKeys = new Set();
+  const raceMetaBySessionKey = new Map();
 
-  for (const s of raceSessions) {
-    sessionMap.set(Number(s.session_key), s);
-    allowedKeys.add(Number(s.session_key));
+  for (let i = 0; i < raceSessions.length; i += 1) {
+    const s = raceSessions[i];
+    const sessionKey = Number(s.session_key);
+
+    sessionMap.set(sessionKey, s);
+    allowedKeys.add(sessionKey);
+
+    const scheduleRace = schedule[i];
+    if (scheduleRace) {
+      raceMetaBySessionKey.set(sessionKey, {
+        round: scheduleRace.round,
+        raceName: scheduleRace.raceName,
+        date: scheduleRace.date,
+        circuit: scheduleRace.circuit,
+        locality: scheduleRace.locality,
+        country: scheduleRace.country,
+      });
+    }
   }
 
-  return { sessionMap, allowedKeys };
+  return { sessionMap, allowedKeys, raceMetaBySessionKey };
 }
 
 async function getBestResultsForDriverNumbers(driverNumbers) {
-  const { sessionMap, allowedKeys } = await getRaceSessionsForYear();
+  const { sessionMap, allowedKeys, raceMetaBySessionKey } =
+    await getRaceSessionsForYear();
 
   const best = {};
   const latestClassification = {};
@@ -408,16 +456,17 @@ async function getBestResultsForDriverNumbers(driverNumbers) {
       if (!Number.isFinite(pos) || pos <= 0) continue;
 
       const session = sessionMap.get(Number(row.session_key));
+      const raceMeta = raceMetaBySessionKey.get(Number(row.session_key));
 
       if (!best[driverNumber] || pos < best[driverNumber].pos) {
         best[driverNumber] = {
           pos,
-          raceName: session?.meeting_name ?? "-",
-          round: session?.meeting_key != null ? String(session.meeting_key) : "-",
-          date: session?.date_start ?? "-",
-          circuit: session?.circuit_short_name ?? "-",
-          locality: session?.location ?? "-",
-          country: session?.country_name ?? "-",
+          raceName: raceMeta?.raceName ?? session?.meeting_name ?? "-",
+          round: raceMeta?.round ?? "-",
+          date: raceMeta?.date ?? dateOnly(session?.date_start) ?? "-",
+          circuit: raceMeta?.circuit ?? session?.circuit_short_name ?? "-",
+          locality: raceMeta?.locality ?? session?.location ?? "-",
+          country: raceMeta?.country ?? session?.country_name ?? "-",
           sessionKey: row.session_key ?? null,
           meetingKey: row.meeting_key ?? session?.meeting_key ?? null,
         };
@@ -427,7 +476,7 @@ async function getBestResultsForDriverNumbers(driverNumbers) {
     await sleep(450);
   }
 
-  return { best, latestClassification, sessionMap };
+  return { best, latestClassification, sessionMap, raceMetaBySessionKey };
 }
 
 /* -------------------------------- */
@@ -477,7 +526,12 @@ async function buildTeamJson(
   const teamDrivers = getTeamDrivers(driverData, teamConfig);
   const teamStanding = getTeamConstructor(constructorData, teamConfig);
 
-  const { best: bestResults, latestClassification, sessionMap } = bestResultsPack;
+  const {
+    best: bestResults,
+    latestClassification,
+    sessionMap,
+    raceMetaBySessionKey,
+  } = bestResultsPack;
 
   const drivers = [];
 
@@ -495,9 +549,13 @@ async function buildTeamJson(
     let bestResult = emptyBestResult();
 
     if (best) {
-      bestResult = bestResultFromBestFinish(best);
+      bestResult = bestResultFromBestFinish(best, raceMetaBySessionKey);
     } else if (latest) {
-      bestResult = bestResultFromSessionRow(latest, latestSession);
+      bestResult = bestResultFromSessionRow(
+        latest,
+        latestSession,
+        raceMetaBySessionKey
+      );
     }
 
     drivers.push({
@@ -526,7 +584,7 @@ async function buildTeamJson(
       driverStandings: DRIVER_STANDINGS_FILE,
       constructorStandings: CONSTRUCTOR_STANDINGS_FILE,
       bestResults:
-        "OpenF1 sessions?year=YYYY&session_name=Race + session_result?driver_number=NN",
+        "OpenF1 session_result + OpenF1 race sessions + Jolpica season schedule",
       lastRace: "Jolpica current/last/results.json",
     },
 
