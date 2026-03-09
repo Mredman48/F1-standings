@@ -1,10 +1,10 @@
 {
   "header": "Audi standings",
-  "generatedAtUtc": "2026-03-09T20:54:01.280Z",
+  "generatedAtUtc": "2026-03-09T21:00:59.848Z",
   "sources": {
     "driverStandings": "f1_driver_standings.json",
     "constructorStandings": "f1_constructors_standings.json",
-    "bestResults": "OpenF1 sessions?year=YYYY&session_name=Race + session_result?driver_number=NN",
+    "bestResults": "OpenF1 session_result + OpenF1 race sessions + Jolpica season schedule",
     "lastRace": "Jolpica current/last/results.json"
   },
   "audi": {
@@ -48,10 +48,10 @@
       "team": "Audi",
       "bestResult": {
         "position": "P9",
-        "raceName": "-",
-        "round": "1279",
-        "date": "2026-03-08T04:00:00+00:00",
-        "circuit": "Melbourne",
+        "raceName": "Australian Grand Prix",
+        "round": "1",
+        "date": "2026-03-08",
+        "circuit": "Albert Park Grand Prix Circuit",
         "location": {
           "locality": "Melbourne",
           "country": "Australia"
@@ -73,10 +73,10 @@
       "team": "Audi",
       "bestResult": {
         "position": "DNS",
-        "raceName": "-",
-        "round": "1279",
-        "date": "2026-03-08T04:00:00+00:00",
-        "circuit": "Melbourne",
+        "raceName": "Australian Grand Prix",
+        "round": "1",
+        "date": "2026-03-08",
+        "circuit": "Albert Park Grand Prix Circuit",
         "location": {
           "locality": "Melbourne",
           "country": "Australia"
