@@ -11,8 +11,67 @@ const LOCALE = "en-CA";
 
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 const TRACKMAP_DIR = "trackmaps";
+const MAPS_DIR = "maps";
 
 const UA = "f1-standings-bot/1.0 (GitHub Actions)";
+
+/* -------------------- custom map assets -------------------- */
+
+const MAP_FILE_BY_SLUG = {
+  australia: "melbourne.png",
+  china: "shanghai.png",
+  japan: "suzuka.png",
+  bahrain: "bahrain.png",
+  "saudi-arabia": "jeddah.png",
+  miami: "miami.png",
+  monaco: "monaco.png",
+  spain: "barcelona.png",
+  canada: "montreal.png",
+  austria: "spielberg.png",
+  "great-britain": "silverstone.png",
+  belgium: "spa.png",
+  hungary: "hungaroring.png",
+  netherlands: "zandvoort.png",
+  italy: "monza.png",
+  azerbaijan: "baku.png",
+  singapore: "singapore.png",
+  "united-states": "austin.png",
+  mexico: "mexico-city.png",
+  "sao-paulo": "interlagos.png",
+  "las-vegas": "las-vegas.png",
+  qatar: "lusail.png",
+  "abu-dhabi": "yas-marina.png",
+  "emilia-romagna": "imola.png",
+  madrid: "madrid.png",
+};
+
+function makeTrackPngUrl(filename) {
+  return `${PAGES_BASE}/${TRACKMAP_DIR}/${encodeURIComponent(filename)}`;
+}
+
+function makeMapPngUrl(filename) {
+  return `${PAGES_BASE}/${MAPS_DIR}/${encodeURIComponent(filename)}`;
+}
+
+function resolveCustomMapAsset(slug) {
+  const filename = MAP_FILE_BY_SLUG[slug] || null;
+
+  if (!filename) {
+    return {
+      found: false,
+      filename: null,
+      pngUrl: null,
+      note: `No custom map file configured for slug "${slug}".`,
+    };
+  }
+
+  return {
+    found: true,
+    filename,
+    pngUrl: makeMapPngUrl(filename),
+    note: null,
+  };
+}
 
 /* -------------------- time helpers -------------------- */
 
@@ -47,10 +106,6 @@ function shortDateTimeInTZ(dateObj, timeZone = USER_TZ) {
 
 async function ensureDir(dir) {
   await fs.mkdir(dir, { recursive: true });
-}
-
-function makeTrackPngUrl(filename) {
-  return `${PAGES_BASE}/${TRACKMAP_DIR}/${encodeURIComponent(filename)}`;
 }
 
 /* -------------------- network helpers -------------------- */
@@ -158,7 +213,6 @@ function getSessionType(summary) {
   if (/\b(practice\s*2|fp2)\b/.test(s)) return "FP2";
   if (/\b(practice\s*3|fp3)\b/.test(s)) return "FP3";
 
-  // Must come before plain sprint
   if (
     /\b(sprint\s+qualifying|sprint\s+qualification|sprint\s+shootout|sq)\b/.test(s) ||
     (/\bsprint\b/.test(s) && /\b(qualifying|qualification|shootout)\b/.test(s))
@@ -336,7 +390,7 @@ function extractOfficialRaceMetaFromHtml(html, { fallbackGpName, fallbackSlug, f
   return { officialTitle, city, country };
 }
 
-/* -------------------- track map extraction -------------------- */
+/* -------------------- official track map extraction -------------------- */
 
 function extractDetailedTrackMediaUrl(html, season) {
   const patterns = [
@@ -664,6 +718,8 @@ async function updateNextRace() {
     outFileBase: `f1_${season}_${racePage.slug}_detailed`,
   });
 
+  const customMap = resolveCustomMapAsset(racePage.slug);
+
   const cityFromTrackMap = getCityFromTrackMediaUrl(trackMap.mediaUrl);
 
   const meta = extractOfficialRaceMetaFromHtml(racePageHtml, {
@@ -710,6 +766,7 @@ async function updateNextRace() {
         url: racePage.pageUrl,
       },
       trackMap,
+      map: customMap,
       countdowns: {
         startsInDays: daysUntil(weekendStart, now),
       },
@@ -725,6 +782,7 @@ async function updateNextRace() {
 
   console.log("GP name from ICS:", gpNameShort);
   console.log("Resolved race page:", racePage.pageUrl);
+  console.log("Resolved custom map:", customMap);
   console.log("Collected session summaries:");
   for (const s of gpSessions) {
     console.log(
