@@ -1,6 +1,6 @@
 {
   "header": "Next F1 event",
-  "generatedAtUtc": "2026-03-08T09:56:05.498Z",
+  "generatedAtUtc": "2026-03-11T04:54:47.238Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics+formula1",
@@ -32,8 +32,14 @@
       "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_china_detailed.png",
       "note": null
     },
+    "map": {
+      "found": true,
+      "filename": "shanghai.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/shanghai.png",
+      "note": null
+    },
     "countdowns": {
-      "startsInDays": 5
+      "startsInDays": 2
     },
     "weekend": {
       "startUtc": "2026-03-13T03:30:00.000Z",
