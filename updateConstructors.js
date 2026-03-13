@@ -5,7 +5,10 @@ const UA = "f1-standings-bot/1.0 (GitHub Actions)";
 const OUT_JSON = "f1_constructors_standings.json";
 const YEAR = new Date().getUTCFullYear();
 
-const FOH_TEAMS_URL = "https://www.formulaonehistory.com/teams/";
+const JOLPICA_CONSTRUCTORS_URL = `https://api.jolpi.ca/ergast/f1/${YEAR}/constructorStandings.json`;
+const JOLPICA_CONSTRUCTORS_CURRENT_URL =
+  "https://api.jolpi.ca/ergast/f1/current/constructorStandings.json";
+
 const F1_RESULTS_RACES_URL = `https://www.formula1.com/en/results/${YEAR}/races`;
 
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
@@ -24,19 +27,26 @@ const TEAM_NAME_OVERRIDES = {
   "Visa Cash App Racing Bulls": "VCARB",
   "Haas F1 Team": "Haas",
   "MoneyGram Haas F1 Team": "Haas",
+  "Haas Ferrari": "Haas",
   "Alpine F1 Team": "Alpine",
   "BWT Alpine Formula One Team": "Alpine",
+  "Alpine Renault": "Alpine",
   "Red Bull Racing": "Red Bull",
   "Oracle Red Bull Racing": "Red Bull",
+  "Red Bull Racing Honda RBPT": "Red Bull",
   "Kick Sauber": "Audi",
   "Stake F1 Team Kick Sauber": "Audi",
   "Audi Formula 1 Team": "Audi",
+  "Audi Revolut": "Audi",
   "Cadillac Formula 1 Team": "Cadillac",
   "McLaren Formula 1 Team": "McLaren",
+  "McLaren Mercedes": "McLaren",
   "Mercedes-AMG PETRONAS Formula One Team": "Mercedes",
   "Scuderia Ferrari HP": "Ferrari",
   "Williams Racing": "Williams",
+  "Williams Mercedes": "Williams",
   "Aston Martin Aramco Formula One Team": "Aston Martin",
+  "Aston Martin Aramco Mercedes": "Aston Martin",
 };
 
 function normalizeTeamName(name) {
@@ -274,17 +284,6 @@ function decodeHtmlEntities(str) {
     .replace(/&gt;/g, ">");
 }
 
-function htmlToText(html) {
-  let text = String(html);
-  text = text.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ");
-  text = text.replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, " ");
-  text = text.replace(/<noscript\b[^>]*>[\s\S]*?<\/noscript>/gi, " ");
-  text = text.replace(/<!--[\s\S]*?-->/g, " ");
-  text = text.replace(/<[^>]+>/g, " ");
-  text = decodeHtmlEntities(text);
-  return text.replace(/\s+/g, " ").trim();
-}
-
 function htmlToLines(html) {
   let text = String(html);
   text = text.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ");
@@ -309,6 +308,18 @@ function cleanLine(line) {
   return String(line || "").replace(/\s+/g, " ").trim();
 }
 
+function normalizeDateForDisplay(dateStr) {
+  if (!dateStr) return "-";
+
+  const d = new Date(`${dateStr}T00:00:00Z`);
+  if (Number.isNaN(d.getTime())) return dateStr;
+
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const dd = String(d.getUTCDate()).padStart(2, "0");
+  const mon = months[d.getUTCMonth()];
+  return `${dd} ${mon}`;
+}
+
 async function fetchText(url, accept = "text/html,*/*") {
   const res = await fetch(url, {
     headers: { "User-Agent": UA, Accept: accept },
@@ -318,70 +329,54 @@ async function fetchText(url, accept = "text/html,*/*") {
   return { res, text, url };
 }
 
-/* ------------------------------------------------ */
-/* STANDINGS PARSER (STRICT) */
-/* ------------------------------------------------ */
+async function fetchJson(url) {
+  const res = await fetch(url, {
+    headers: {
+      "User-Agent": UA,
+      Accept: "application/json",
+    },
+    redirect: "follow",
+  });
 
-function parseFohConstructorsStandings(html, year) {
-  const text = htmlToText(html);
+  const text = await res.text();
 
-  const heading = `${year} Team Standings`;
-  const idx = text.indexOf(heading);
-
-  if (idx === -1) {
-    return { rows: [], reason: "heading_not_found" };
+  if (!res.ok) {
+    throw new Error(`HTTP ${res.status} from ${url}\n${text}`);
   }
 
-  const section = text.slice(idx, idx + 3000);
+  return JSON.parse(text);
+}
 
-  const teamNames = [
-    "Mercedes",
-    "Ferrari",
-    "McLaren",
-    "Red Bull Racing",
-    "Haas",
-    "Racing Bulls",
-    "Audi",
-    "Alpine",
-    "Williams",
-    "Cadillac",
-    "Aston Martin",
-  ];
+/* ------------------------------------------------ */
+/* JOLPICA STANDINGS PARSER */
+/* ------------------------------------------------ */
 
-  const teamAlt = teamNames
-    .sort((a, b) => b.length - a.length)
-    .map((t) => t.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
-    .join("|");
+function parseJolpicaConstructorsStandings(data) {
+  const list =
+    data?.MRData?.StandingsTable?.StandingsLists?.[0]?.ConstructorStandings || [];
 
-  const rowRe = new RegExp(`(\\d+)\\s*(${teamAlt})\\s*(\\d+)(?=\\s|$)`, "g");
+  const rows = list.map((row) => {
+    const teamRaw = row?.Constructor?.name || "-";
+    const team = normalizeTeamName(teamRaw);
 
-  const rows = [];
-  for (const match of section.matchAll(rowRe)) {
-    const [, pos, teamRaw, pts] = match;
-
-    rows.push({
+    return {
       teamRaw,
-      team: normalizeTeamName(teamRaw),
-      position: fmtPos(pos),
-      points: safeNumOrDash(pts),
-      wins: "-",
+      team,
+      position: fmtPos(row?.position),
+      points: safeNumOrDash(row?.points),
+      wins: safeNumOrDash(row?.wins),
       placeholder: false,
-    });
-  }
-
-  const seen = new Set();
-  const unique = [];
-
-  for (const row of rows) {
-    const key = normalizeKey(row.team);
-    if (seen.has(key)) continue;
-    seen.add(key);
-    unique.push(row);
-  }
+    };
+  });
 
   return {
-    rows: unique,
-    reason: unique.length ? null : "no_rows_parsed",
+    season:
+      data?.MRData?.StandingsTable?.season ||
+      data?.MRData?.StandingsTable?.StandingsLists?.[0]?.season ||
+      String(YEAR),
+    round:
+      data?.MRData?.StandingsTable?.StandingsLists?.[0]?.round || "-",
+    rows,
   };
 }
 
@@ -467,34 +462,80 @@ function parseOfficialRaceResults(html, year) {
 }
 
 /* ------------------------------------------------ */
+/* OUTPUT */
+/* ------------------------------------------------ */
+
+function ensureCadillac(rows) {
+  const hasCadillac = rows.some((t) => normalizeKey(t.team) === "cadillac");
+
+  if (hasCadillac) return rows;
+
+  const logo = resolveTeamLogo("Cadillac");
+  return [
+    ...rows,
+    {
+      team: "Cadillac",
+      position: "-",
+      points: "-",
+      wins: "-",
+      teamLogoPng: logo,
+      logoMissing: logo == null,
+      placeholder: true,
+    },
+  ];
+}
+
+function sortConstructors(rows) {
+  return [...rows].sort((a, b) => {
+    const pa = Number(String(a.position).replace(/^P/, ""));
+    const pb = Number(String(b.position).replace(/^P/, ""));
+
+    const aOk = Number.isFinite(pa);
+    const bOk = Number.isFinite(pb);
+
+    if (aOk && bOk) return pa - pb;
+    if (aOk) return -1;
+    if (bOk) return 1;
+
+    return String(a.team).localeCompare(String(b.team));
+  });
+}
+
+/* ------------------------------------------------ */
 /* MAIN */
 /* ------------------------------------------------ */
 
 async function updateConstructors() {
   const now = new Date();
 
-  const [standingsResp, racesResp] = await Promise.all([
-    fetchText(FOH_TEAMS_URL),
-    fetchText(F1_RESULTS_RACES_URL),
-  ]);
+  let standingsData = null;
+  let standingsUrlUsed = JOLPICA_CONSTRUCTORS_URL;
+  let standingsMode = "JOLPICA_YEAR";
+  let standingsParseReason = null;
 
-  let parsedStandings = { rows: [], reason: "http_error" };
-  let parsedLastRace = { lastRace: null, reason: "http_error" };
-
-  if (standingsResp.res.ok) {
-    parsedStandings = parseFohConstructorsStandings(standingsResp.text, YEAR);
+  try {
+    standingsData = await fetchJson(JOLPICA_CONSTRUCTORS_URL);
+  } catch (err) {
+    console.warn(`Year standings fetch failed, falling back to current: ${err.message}`);
+    standingsData = await fetchJson(JOLPICA_CONSTRUCTORS_CURRENT_URL);
+    standingsUrlUsed = JOLPICA_CONSTRUCTORS_CURRENT_URL;
+    standingsMode = "JOLPICA_CURRENT_FALLBACK";
+    standingsParseReason = "year_fetch_failed_used_current_fallback";
   }
+
+  const parsedStandings = parseJolpicaConstructorsStandings(standingsData);
+
+  const racesResp = await fetchText(F1_RESULTS_RACES_URL);
+  let parsedLastRace = { lastRace: null, reason: "http_error" };
 
   if (racesResp.res.ok) {
     parsedLastRace = parseOfficialRaceResults(racesResp.text, YEAR);
   }
 
   let constructors = [];
-  let mode = "FOH_EMPTY_PLACEHOLDERS_LOCAL_LOGOS";
+  let mode = standingsMode;
 
   if (Array.isArray(parsedStandings.rows) && parsedStandings.rows.length > 0) {
-    mode = "FOH_LIVE_LOCAL_LOGOS";
-
     constructors = parsedStandings.rows.map((row) => {
       const logo = resolveTeamLogo(row.team);
       return {
@@ -508,29 +549,17 @@ async function updateConstructors() {
       };
     });
 
-    const hasCadillac = constructors.some(
-      (t) => normalizeKey(t.team) === "cadillac"
-    );
-
-    if (!hasCadillac) {
-      const logo = resolveTeamLogo("Cadillac");
-      constructors.push({
-        team: "Cadillac",
-        position: "-",
-        points: "-",
-        wins: "-",
-        teamLogoPng: logo,
-        logoMissing: logo == null,
-        placeholder: true,
-      });
-    }
+    constructors = ensureCadillac(constructors);
+    constructors = sortConstructors(constructors);
   } else {
     constructors = buildAlphabeticalPlaceholders();
+    mode = "JOLPICA_EMPTY_PLACEHOLDERS_LOCAL_LOGOS";
+    standingsParseReason = standingsParseReason || "no_rows_parsed";
   }
 
   const lastRaceOut =
     parsedLastRace.lastRace || {
-      season: String(YEAR),
+      season: String(parsedStandings.season || YEAR),
       round: "-",
       raceName: "-",
       date: "-",
@@ -551,18 +580,18 @@ async function updateConstructors() {
     header: "Constructors standings",
     generatedAtUtc: now.toISOString(),
     sources: {
-      constructorsStandings: FOH_TEAMS_URL,
+      constructorsStandings: standingsUrlUsed,
       races: F1_RESULTS_RACES_URL,
       logos: `LOCAL_ONLY: ${PAGES_BASE}/${TEAMLOGOS_DIR}/`,
     },
     meta: {
       mode,
-      seasonUsed: String(YEAR),
-      roundUsed: lastRaceOut.round,
+      seasonUsed: String(parsedStandings.season || YEAR),
+      roundUsed: String(parsedStandings.round || "-"),
       cacheBust: CACHE_BUST,
       note:
-        "Uses Formula One History team standings and official F1.com latest race. If standings are empty/unavailable, emits alphabetical placeholder teams with '-' stats. Logos are LOCAL ONLY from /teamlogos via GitHub Pages.",
-      standingsParseReason: parsedStandings.reason,
+        "Uses Jolpica constructor standings as primary source and official F1.com race results for latest race. If standings are empty/unavailable, emits alphabetical placeholder teams with '-' stats. Logos are LOCAL ONLY from /teamlogos via GitHub Pages.",
+      standingsParseReason,
       raceParseReason: parsedLastRace.reason,
     },
     lastRace: lastRaceOut,
@@ -572,9 +601,10 @@ async function updateConstructors() {
   await fs.writeFile(OUT_JSON, JSON.stringify(out, null, 2), "utf8");
 
   console.log(
-    `Wrote ${OUT_JSON} season=${out.meta.seasonUsed} constructors=${out.constructors.length} mode=${out.meta.mode}`
+    `Wrote ${OUT_JSON} season=${out.meta.seasonUsed} round=${out.meta.roundUsed} constructors=${out.constructors.length} mode=${out.meta.mode}`
   );
-  console.log(`Standings parse reason: ${parsedStandings.reason}`);
+  console.log(`Standings source: ${standingsUrlUsed}`);
+  console.log(`Standings parse reason: ${standingsParseReason}`);
   console.log(`Race parse reason: ${parsedLastRace.reason}`);
 }
 
