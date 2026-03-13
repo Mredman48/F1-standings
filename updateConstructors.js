@@ -25,26 +25,40 @@ const TEAM_NAME_OVERRIDES = {
   "Visa Cash App RB": "VCARB",
   "Racing Bulls": "VCARB",
   "Visa Cash App Racing Bulls": "VCARB",
+
   "Haas F1 Team": "Haas",
   "MoneyGram Haas F1 Team": "Haas",
   "Haas Ferrari": "Haas",
+
   "Alpine F1 Team": "Alpine",
   "BWT Alpine Formula One Team": "Alpine",
   "Alpine Renault": "Alpine",
+
   "Red Bull Racing": "Red Bull",
   "Oracle Red Bull Racing": "Red Bull",
   "Red Bull Racing Honda RBPT": "Red Bull",
+
   "Kick Sauber": "Audi",
   "Stake F1 Team Kick Sauber": "Audi",
   "Audi Formula 1 Team": "Audi",
+  "Audi Formula One Team": "Audi",
   "Audi Revolut": "Audi",
+
+  "Cadillac": "Cadillac",
+  "Cadillac F1 Team": "Cadillac",
   "Cadillac Formula 1 Team": "Cadillac",
+  "Cadillac Formula One Team": "Cadillac",
+
   "McLaren Formula 1 Team": "McLaren",
   "McLaren Mercedes": "McLaren",
+
   "Mercedes-AMG PETRONAS Formula One Team": "Mercedes",
+
   "Scuderia Ferrari HP": "Ferrari",
+
   "Williams Racing": "Williams",
   "Williams Mercedes": "Williams",
+
   "Aston Martin Aramco Formula One Team": "Aston Martin",
   "Aston Martin Aramco Mercedes": "Aston Martin",
 };
@@ -232,8 +246,11 @@ function withCacheBust(url) {
 }
 
 function fmtPos(pos) {
-  const n = Number(pos);
-  return Number.isFinite(n) ? `P${n}` : "-";
+  const raw = String(pos ?? "").trim();
+  if (!raw) return "-";
+
+  const n = Number(raw.replace(/^P/i, ""));
+  return Number.isFinite(n) && n > 0 ? `P${n}` : "-";
 }
 
 function safeNumOrDash(x) {
@@ -308,18 +325,6 @@ function cleanLine(line) {
   return String(line || "").replace(/\s+/g, " ").trim();
 }
 
-function normalizeDateForDisplay(dateStr) {
-  if (!dateStr) return "-";
-
-  const d = new Date(`${dateStr}T00:00:00Z`);
-  if (Number.isNaN(d.getTime())) return dateStr;
-
-  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  const dd = String(d.getUTCDate()).padStart(2, "0");
-  const mon = months[d.getUTCMonth()];
-  return `${dd} ${mon}`;
-}
-
 async function fetchText(url, accept = "text/html,*/*") {
   const res = await fetch(url, {
     headers: { "User-Agent": UA, Accept: accept },
@@ -352,17 +357,24 @@ async function fetchJson(url) {
 /* ------------------------------------------------ */
 
 function parseJolpicaConstructorsStandings(data) {
-  const list =
-    data?.MRData?.StandingsTable?.StandingsLists?.[0]?.ConstructorStandings || [];
+  const standingsList =
+    data?.MRData?.StandingsTable?.StandingsLists?.[0] || null;
 
-  const rows = list.map((row) => {
+  const list = standingsList?.ConstructorStandings || [];
+
+  const rows = list.map((row, index) => {
     const teamRaw = row?.Constructor?.name || "-";
     const team = normalizeTeamName(teamRaw);
+
+    const positionValue =
+      row?.position ??
+      row?.positionText ??
+      index + 1;
 
     return {
       teamRaw,
       team,
-      position: fmtPos(row?.position),
+      position: fmtPos(positionValue),
       points: safeNumOrDash(row?.points),
       wins: safeNumOrDash(row?.wins),
       placeholder: false,
@@ -372,10 +384,9 @@ function parseJolpicaConstructorsStandings(data) {
   return {
     season:
       data?.MRData?.StandingsTable?.season ||
-      data?.MRData?.StandingsTable?.StandingsLists?.[0]?.season ||
+      standingsList?.season ||
       String(YEAR),
-    round:
-      data?.MRData?.StandingsTable?.StandingsLists?.[0]?.round || "-",
+    round: standingsList?.round || "-",
     rows,
   };
 }
@@ -462,8 +473,22 @@ function parseOfficialRaceResults(html, year) {
 }
 
 /* ------------------------------------------------ */
-/* OUTPUT */
+/* OUTPUT HELPERS */
 /* ------------------------------------------------ */
+
+function dedupeConstructors(rows) {
+  const seen = new Set();
+  const out = [];
+
+  for (const row of rows) {
+    const key = normalizeKey(row.team);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(row);
+  }
+
+  return out;
+}
 
 function ensureCadillac(rows) {
   const hasCadillac = rows.some((t) => normalizeKey(t.team) === "cadillac");
@@ -487,11 +512,11 @@ function ensureCadillac(rows) {
 
 function sortConstructors(rows) {
   return [...rows].sort((a, b) => {
-    const pa = Number(String(a.position).replace(/^P/, ""));
-    const pb = Number(String(b.position).replace(/^P/, ""));
+    const pa = Number(String(a.position).replace(/^P/i, ""));
+    const pb = Number(String(b.position).replace(/^P/i, ""));
 
-    const aOk = Number.isFinite(pa);
-    const bOk = Number.isFinite(pb);
+    const aOk = Number.isFinite(pa) && pa > 0;
+    const bOk = Number.isFinite(pb) && pb > 0;
 
     if (aOk && bOk) return pa - pb;
     if (aOk) return -1;
@@ -549,6 +574,7 @@ async function updateConstructors() {
       };
     });
 
+    constructors = dedupeConstructors(constructors);
     constructors = ensureCadillac(constructors);
     constructors = sortConstructors(constructors);
   } else {
