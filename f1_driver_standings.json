@@ -1,29 +1,29 @@
 {
   "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-03-14T15:30:22.425Z",
+  "generatedAtUtc": "2026-03-14T15:45:34.461Z",
   "season": 2026,
   "mode": "SKY_SPORTS_STANDINGS",
   "source": {
     "kind": "sky-sports-standings-scrape",
     "url": "https://www.skysports.com/f1/standings",
-    "note": "Standings scraped from Sky Sports F1 standings page."
+    "note": "Standings scraped from Sky Sports F1 standings page. Last race comes from local season event results."
   },
   "lastRace": {
     "season": "2026",
-    "round": "1",
-    "raceName": "Australian Grand Prix",
-    "date": "2026-03-08",
+    "round": "2",
+    "raceName": "Chinese Grand Prix Sprint",
+    "date": "2026-03-14",
     "circuit": {
-      "name": "Albert Park Grand Prix Circuit",
-      "locality": "Melbourne",
-      "country": "Australia"
+      "name": "Shanghai",
+      "locality": "Shanghai",
+      "country": "China"
     },
     "winner": {
-      "firstName": "George",
-      "lastName": "Russell",
-      "fullName": "George Russell",
-      "code": "RUS",
-      "team": "Mercedes"
+      "firstName": "-",
+      "lastName": "-",
+      "fullName": "-",
+      "code": null,
+      "team": "-"
     }
   },
   "drivers": [
