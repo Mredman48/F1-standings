@@ -99,6 +99,16 @@ async function fetchJson(url, { allow401 = false, retries = 5 } = {}) {
       continue;
     }
 
+    if ([500, 502, 503, 504].includes(res.status)) {
+      if (attempt === retries) {
+        throw new Error(`HTTP ${res.status} from ${url}\n${text}`);
+      }
+      const waitMs = 1500 + attempt * 1200;
+      console.warn(`HTTP ${res.status} for ${url}. Retrying in ${waitMs}ms`);
+      await sleep(waitMs);
+      continue;
+    }
+
     if (!res.ok) {
       throw new Error(`HTTP ${res.status} from ${url}\n${text}`);
     }
@@ -158,35 +168,41 @@ async function getSessionResults(session) {
 }
 
 async function getMeetingsByKey(year) {
-  const meetings = await fetchJson(`${OPENF1_BASE}/meetings?year=${year}`, {
-    allow401: true,
-  });
-
-  if (meetings?.__authLocked) {
-    throw new Error(
-      "OpenF1 is auth-locked right now. Try again after the live-session restriction ends."
-    );
-  }
-
-  const map = new Map();
-
-  for (const m of meetings || []) {
-    const key = Number(m?.meeting_key);
-    if (!Number.isFinite(key)) continue;
-
-    map.set(key, {
-      meetingKey: key,
-      meetingName: cleanText(m?.meeting_name) || "",
-      meetingOfficialName: cleanText(m?.meeting_official_name) || "",
-      countryName: cleanText(m?.country_name) || "",
-      locality: cleanText(m?.location) || "",
-      circuit: cleanText(m?.circuit_short_name) || "",
-      dateStartUtc: m?.date_start || null,
-      dateEndUtc: m?.date_end || null,
+  try {
+    const meetings = await fetchJson(`${OPENF1_BASE}/meetings?year=${year}`, {
+      allow401: true,
+      retries: 5,
     });
-  }
 
-  return map;
+    if (meetings?.__authLocked) {
+      throw new Error(
+        "OpenF1 is auth-locked right now. Try again after the live-session restriction ends."
+      );
+    }
+
+    const map = new Map();
+
+    for (const m of meetings || []) {
+      const key = Number(m?.meeting_key);
+      if (!Number.isFinite(key)) continue;
+
+      map.set(key, {
+        meetingKey: key,
+        meetingName: cleanText(m?.meeting_name) || "",
+        meetingOfficialName: cleanText(m?.meeting_official_name) || "",
+        countryName: cleanText(m?.country_name) || "",
+        locality: cleanText(m?.location) || "",
+        circuit: cleanText(m?.circuit_short_name) || "",
+        dateStartUtc: m?.date_start || null,
+        dateEndUtc: m?.date_end || null,
+      });
+    }
+
+    return map;
+  } catch (err) {
+    console.warn(`OpenF1 meetings unavailable, falling back to Jolpica schedule only: ${err.message}`);
+    return new Map();
+  }
 }
 
 async function getSeasonSchedule(year) {
@@ -393,7 +409,7 @@ async function buildSeasonResults() {
       primary: "OpenF1 meetings + sessions + session_result",
       enrichment: "Jolpica season schedule",
       note:
-        "Meeting names come from OpenF1 meetings, with Jolpica used to enrich round, circuit, and location data.",
+        "Meeting names come from OpenF1 meetings when available, with Jolpica used as fallback for race naming, round, circuit, and location.",
     },
     events,
     bestByDriverNumber,
