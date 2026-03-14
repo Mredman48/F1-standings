@@ -304,6 +304,10 @@ function htmlToLines(html) {
     .filter(Boolean);
 }
 
+function stripF1Markers(s) {
+  return cleanLine(String(s || "").replace(/【[^】]+】/g, " "));
+}
+
 function splitFullName(fullName) {
   const parts = String(fullName || "")
     .trim()
@@ -512,8 +516,8 @@ function parseEventMeta(lines, sourceUrl) {
   if (headingIndex === -1) return null;
 
   const heading = cleanLine(lines[headingIndex]);
-  const dateLine = cleanLine(lines[headingIndex + 2] || lines[headingIndex + 3] || "-");
-  const circuitLine = cleanLine(lines[headingIndex + 3] || lines[headingIndex + 4] || "-");
+  const dateLine = cleanLine(lines[headingIndex + 4] || lines[headingIndex + 5] || "-");
+  const circuitLine = cleanLine(lines[headingIndex + 6] || lines[headingIndex + 7] || "-");
 
   const eventType = /-\s*SPRINT$/i.test(heading) ? "sprint" : "race";
   const raceName = heading
@@ -565,7 +569,7 @@ function parseOfficialResultRows(lines, meta) {
     if (/^Download the Official F1 App$/i.test(line)) break;
     if (/^View all$/i.test(line)) continue;
 
-    line = line.replace(/\bImage\b/g, " ").replace(/\s+/g, " ").trim();
+    line = stripF1Markers(line);
 
     const match = line.match(
       /^(NC|DSQ|DNS|DNF|\d+)\s+(\d+)\s+(.+?)\s+([A-Z]{3})\s+(.+?)\s+(\d+)\s+(.+?)\s+(\d+)$/
@@ -631,6 +635,8 @@ async function getSeasonBestAndStatusResults() {
   const indexHtml = await fetchText(F1_RESULTS_RACES_INDEX_URL);
   const resultUrls = extractOfficialResultUrls(indexHtml);
 
+  console.log(`Found ${resultUrls.length} official result URLs`);
+
   const bestClassifiedByNumber = {};
   const latestStatusByNumber = {};
 
@@ -640,9 +646,13 @@ async function getSeasonBestAndStatusResults() {
       const lines = htmlToLines(html);
       const meta = parseEventMeta(lines, url);
 
-      if (!meta) continue;
+      if (!meta) {
+        console.warn(`No event meta parsed for ${url}`);
+        continue;
+      }
 
       const rows = parseOfficialResultRows(lines, meta);
+      console.log(`Parsed ${rows.length} rows from ${url}`);
 
       for (const row of rows) {
         const key = String(row.driverNumber);
@@ -675,6 +685,8 @@ async function getSeasonBestAndStatusResults() {
   for (const key of keys) {
     merged[key] = bestClassifiedByNumber[key] || latestStatusByNumber[key];
   }
+
+  console.log(`Built best/status results for ${keys.size} drivers`);
 
   return {
     bestByNumber: merged,
