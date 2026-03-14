@@ -3,12 +3,13 @@ import fs from "node:fs/promises";
 const OUTPUT_FILE = "f1_driver_standings.json";
 const YEAR = new Date().getUTCFullYear();
 
-const F1_RESULTS_DRIVERS_URL = `https://www.formula1.com/en/results/${YEAR}/drivers`;
+const SKY_F1_STANDINGS_URL = "https://www.skysports.com/f1/standings";
 const HEADSHOTS = "https://mredman48.github.io/F1-standings/headshots";
-const UA = "f1-standings-bot";
+const UA =
+  "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36";
 
 /* ------------------------------------------------ */
-/* DRIVER NAME FIXES FOR HEADSHOT FILES */
+/* DRIVER NAME FIXES FOR HEADSHOT FILES / METADATA  */
 /* ------------------------------------------------ */
 
 const DRIVER_SLUG_OVERRIDES = {
@@ -39,6 +40,30 @@ const DRIVER_NUMBER_OVERRIDES = {
   "Valtteri Bottas": 77,
 };
 
+const DRIVER_CODE_OVERRIDES = {
+  "George Russell": "RUS",
+  "Kimi Antonelli": "ANT",
+  "Charles Leclerc": "LEC",
+  "Lewis Hamilton": "HAM",
+  "Lando Norris": "NOR",
+  "Max Verstappen": "VER",
+  "Oliver Bearman": "BEA",
+  "Arvid Lindblad": "LIN",
+  "Oscar Piastri": "PIA",
+  "Gabriel Bortoleto": "BOR",
+  "Liam Lawson": "LAW",
+  "Pierre Gasly": "GAS",
+  "Esteban Ocon": "OCO",
+  "Alexander Albon": "ALB",
+  "Franco Colapinto": "COL",
+  "Carlos Sainz": "SAI",
+  "Sergio Perez": "PER",
+  "Isack Hadjar": "HAD",
+  "Nico Hulkenberg": "HUL",
+  "Fernando Alonso": "ALO",
+  "Valtteri Bottas": "BOT",
+};
+
 const TEAM_NAME_OVERRIDES = {
   "Red Bull Racing": "Red Bull",
   "Oracle Red Bull Racing": "Red Bull",
@@ -59,6 +84,7 @@ const TEAM_NAME_OVERRIDES = {
   "Stake F1 Team Kick Sauber": "Audi",
   "Audi Formula 1 Team": "Audi",
   "Audi Formula One Team": "Audi",
+  Sauber: "Audi",
 
   "Cadillac F1 Team": "Cadillac",
   "Cadillac Formula 1 Team": "Cadillac",
@@ -112,24 +138,24 @@ function decodeHtmlEntities(str) {
     .replace(/&gt;/g, ">");
 }
 
-function htmlToLines(html) {
+function htmlToText(html) {
   let text = String(html);
   text = text.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ");
   text = text.replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, " ");
   text = text.replace(/<noscript\b[^>]*>[\s\S]*?<\/noscript>/gi, " ");
   text = text.replace(/<!--[\s\S]*?-->/g, " ");
+  text = text.replace(/<br\s*\/?>/gi, "\n");
   text = text.replace(
     /<\/(p|div|section|article|header|footer|main|li|tr|td|th|h1|h2|h3|h4|h5|h6|a|ul|ol)>/gi,
     "\n"
   );
-  text = text.replace(/<br\s*\/?>/gi, "\n");
   text = text.replace(/<[^>]+>/g, " ");
   text = decodeHtmlEntities(text);
+  return text.replace(/\r/g, "");
+}
 
-  return text
-    .split("\n")
-    .map((line) => line.replace(/\s+/g, " ").trim())
-    .filter(Boolean);
+function cleanLine(line) {
+  return String(line || "").replace(/\s+/g, " ").trim();
 }
 
 function fmtPos(pos) {
@@ -162,15 +188,15 @@ function splitFullName(fullName) {
   };
 }
 
-function cleanLine(line) {
-  return String(line || "").replace(/\s+/g, " ").trim();
-}
-
 async function fetchText(url, accept = "text/html,*/*") {
   const res = await fetch(url, {
     headers: {
       "User-Agent": UA,
       Accept: accept,
+      "Accept-Language": "en-CA,en-US;q=0.9,en;q=0.8",
+      "Cache-Control": "no-cache",
+      Pragma: "no-cache",
+      Referer: "https://www.skysports.com/f1",
     },
     redirect: "follow",
   });
@@ -188,76 +214,81 @@ async function fetchText(url, accept = "text/html,*/*") {
 /* PARSER */
 /* ------------------------------------------------ */
 
-function parseCompactDriverRow(line) {
-  const value = cleanLine(line);
+function extractDriverStandingsBlock(text) {
+  const compact = text.replace(/\s+/g, " ");
 
-  // Example:
-  // 1GBR33
-  const m = value.match(
-    /^(\d+)【\d+†(.+?)\s([A-Z]{3})】([A-Z]{3})【\d+†(.+?)】(\d+)$/
-  );
+  // Prefer the explicit driver table block.
+  const patterns = [
+    /#\s*Driver\s+Nat\s+Team\s+Pts\s+((?:\d+\s+[A-Z][A-Za-z'’.\-]+(?:\s+[A-Z][A-Za-z'’.\-]+)+\s+[A-Z]{3}\s+[A-Za-z][A-Za-z0-9 &'.\-]+?\s+\d+\s*){5,})/i,
+    /Driver\s+Nat\s+Team\s+Pts\s+((?:\d+\s+[A-Z][A-Za-z'’.\-]+(?:\s+[A-Z][A-Za-z'’.\-]+)+\s+[A-Z]{3}\s+[A-Za-z][A-Za-z0-9 &'.\-]+?\s+\d+\s*){5,})/i,
+  ];
 
-  if (!m) return null;
+  for (const re of patterns) {
+    const match = compact.match(re);
+    if (match?.[1]) {
+      return match[1].trim();
+    }
+  }
 
-  const [, posRaw, fullName, code, nationality, teamRaw, pointsRaw] = m;
-  const { firstName, lastName } = splitFullName(fullName);
-
-  return {
-    position: fmtPos(posRaw),
-    positionNumber: Number(posRaw),
-    points: safeNumOrDash(pointsRaw),
-    wins: "-",
-    driver: {
-      code,
-      firstName,
-      lastName,
-      fullName,
-      nationality,
-      driverNumber: DRIVER_NUMBER_OVERRIDES[fullName] ?? null,
-      headshotUrl: firstName && lastName ? headshot(firstName, lastName) : null,
-      openf1HeadshotUrl: null,
-    },
-    constructor: {
-      name: normalizeTeamName(teamRaw),
-      fullName: teamRaw,
-      nationality: null,
-    },
-  };
+  return null;
 }
 
-function parseOfficialDriverStandings(html, year) {
-  const lines = htmlToLines(html);
+function parseDriverRowsFromBlock(block) {
+  const rowRe =
+    /(\d+)\s+([A-Z][A-Za-z'’.\-]+(?:\s+[A-Z][A-Za-z'’.\-]+)+)\s+([A-Z]{3})\s+([A-Za-z][A-Za-z0-9 &'.\-]+?)\s+(\d+)(?=\s+\d+\s+[A-Z]|\s*$)/g;
 
-  const heading = `# ${year} Drivers' Standings`;
-  const start = lines.findIndex((line) => cleanLine(line) === heading);
+  const rows = [];
+  for (const match of block.matchAll(rowRe)) {
+    const [, posRaw, fullNameRaw, nationality, teamRaw, pointsRaw] = match;
 
-  if (start === -1) {
+    const fullName = cleanLine(fullNameRaw);
+    const team = cleanLine(teamRaw);
+    const { firstName, lastName } = splitFullName(fullName);
+
+    rows.push({
+      position: fmtPos(posRaw),
+      positionNumber: Number(posRaw),
+      points: safeNumOrDash(pointsRaw),
+      wins: "-",
+      driver: {
+        code: DRIVER_CODE_OVERRIDES[fullName] || null,
+        firstName,
+        lastName,
+        fullName,
+        nationality,
+        driverNumber: DRIVER_NUMBER_OVERRIDES[fullName] ?? null,
+        headshotUrl: firstName && lastName ? headshot(firstName, lastName) : null,
+        openf1HeadshotUrl: null,
+      },
+      constructor: {
+        name: normalizeTeamName(team),
+        fullName: team,
+        nationality: null,
+      },
+    });
+  }
+
+  return rows;
+}
+
+function parseSkyDriverStandings(html) {
+  const text = htmlToText(html);
+  const block = extractDriverStandingsBlock(text);
+
+  if (!block) {
     return {
       rows: [],
-      reason: "heading_not_found",
-      headingTried: heading,
-      nearby: lines.filter((line) => /\bDrivers'? Standings\b/i.test(line)).slice(0, 10),
+      reason: "driver_block_not_found",
+      sample: cleanLine(text).slice(0, 700),
     };
   }
 
-  const rows = [];
-  const section = lines.slice(start + 1);
-
-  for (const line of section) {
-    const value = cleanLine(line);
-
-    if (!value) continue;
-    if (value === "Pos.Driver Nationality Team Pts.") continue;
-    if (value.startsWith("## ")) break;
-    if (/^OUR PARTNERS$/i.test(value)) break;
-
-    const parsed = parseCompactDriverRow(value);
-    if (parsed) rows.push(parsed);
-  }
+  const rows = parseDriverRowsFromBlock(block);
 
   return {
     rows,
-    reason: rows.length ? null : "no_rows_parsed",
+    reason: rows.length ? null : "driver_rows_not_parsed",
+    blockSample: block.slice(0, 500),
   };
 }
 
@@ -268,14 +299,14 @@ function parseOfficialDriverStandings(html, year) {
 async function updateStandings() {
   const now = new Date().toISOString();
 
-  const driversResp = await fetchText(F1_RESULTS_DRIVERS_URL);
-  const parsed = parseOfficialDriverStandings(driversResp.text, YEAR);
+  const resp = await fetchText(SKY_F1_STANDINGS_URL);
+  const parsed = parseSkyDriverStandings(resp.text);
 
   if (!Array.isArray(parsed.rows) || parsed.rows.length === 0) {
     throw new Error(
-      `Official F1 drivers standings parser returned no rows. reason=${parsed.reason}` +
-        (parsed.headingTried ? ` heading=${parsed.headingTried}` : "") +
-        (parsed.nearby ? ` nearby=${JSON.stringify(parsed.nearby)}` : "")
+      `Sky Sports drivers standings parser returned no rows. reason=${parsed.reason}` +
+        (parsed.blockSample ? ` blockSample=${JSON.stringify(parsed.blockSample)}` : "") +
+        (parsed.sample ? ` sample=${JSON.stringify(parsed.sample)}` : "")
     );
   }
 
@@ -283,11 +314,11 @@ async function updateStandings() {
     header: `${YEAR} Driver Standings`,
     generatedAtUtc: now,
     season: YEAR,
-    mode: "OFFICIAL_F1_RESULTS",
+    mode: "SKY_SPORTS_STANDINGS",
     source: {
-      kind: "official-f1-results-scrape",
-      url: F1_RESULTS_DRIVERS_URL,
-      note: "Standings scraped from official Formula1.com results page.",
+      kind: "sky-sports-standings-scrape",
+      url: SKY_F1_STANDINGS_URL,
+      note: "Standings scraped from Sky Sports F1 standings page.",
     },
     lastRace: null,
     drivers: parsed.rows,
@@ -296,7 +327,7 @@ async function updateStandings() {
   await fs.writeFile(OUTPUT_FILE, JSON.stringify(out, null, 2), "utf8");
 
   console.log(
-    `Wrote ${OUTPUT_FILE} mode=OFFICIAL_F1_RESULTS drivers=${out.drivers.length}`
+    `Wrote ${OUTPUT_FILE} mode=SKY_SPORTS_STANDINGS drivers=${out.drivers.length}`
   );
 }
 
