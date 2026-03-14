@@ -40,6 +40,7 @@ const DRIVER_NUMBER_OVERRIDES = {
   "Nico Hulkenberg": 27,
   "Fernando Alonso": 14,
   "Valtteri Bottas": 77,
+  "Lance Stroll": 18,
 };
 
 const DRIVER_CODE_OVERRIDES = {
@@ -64,6 +65,7 @@ const DRIVER_CODE_OVERRIDES = {
   "Nico Hulkenberg": "HUL",
   "Fernando Alonso": "ALO",
   "Valtteri Bottas": "BOT",
+  "Lance Stroll": "STR",
 };
 
 const TEAM_NAME_OVERRIDES = {
