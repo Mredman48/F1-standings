@@ -4,6 +4,8 @@ const OUTPUT_FILE = "f1_driver_standings.json";
 const YEAR = new Date().getUTCFullYear();
 
 const SKY_F1_STANDINGS_URL = "https://www.skysports.com/f1/standings";
+const JOLPICA_LAST_RACE_URL = "https://api.jolpi.ca/ergast/f1/current/last/results.json";
+
 const HEADSHOTS = "https://mredman48.github.io/F1-standings/headshots";
 const UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36";
@@ -210,14 +212,31 @@ async function fetchText(url, accept = "text/html,*/*") {
   return { res, text, url };
 }
 
+async function fetchJson(url) {
+  const res = await fetch(url, {
+    headers: {
+      "User-Agent": UA,
+      Accept: "application/json",
+    },
+    redirect: "follow",
+  });
+
+  const text = await res.text();
+
+  if (!res.ok) {
+    throw new Error(`HTTP ${res.status} from ${url}\n${text}`);
+  }
+
+  return JSON.parse(text);
+}
+
 /* ------------------------------------------------ */
-/* PARSER */
+/* SKY DRIVER STANDINGS PARSER */
 /* ------------------------------------------------ */
 
 function extractDriverStandingsBlock(text) {
   const compact = text.replace(/\s+/g, " ");
 
-  // Prefer the explicit driver table block.
   const patterns = [
     /#\s*Driver\s+Nat\s+Team\s+Pts\s+((?:\d+\s+[A-Z][A-Za-z'’.\-]+(?:\s+[A-Z][A-Za-z'’.\-]+)+\s+[A-Z]{3}\s+[A-Za-z][A-Za-z0-9 &'.\-]+?\s+\d+\s*){5,})/i,
     /Driver\s+Nat\s+Team\s+Pts\s+((?:\d+\s+[A-Z][A-Za-z'’.\-]+(?:\s+[A-Z][A-Za-z'’.\-]+)+\s+[A-Z]{3}\s+[A-Za-z][A-Za-z0-9 &'.\-]+?\s+\d+\s*){5,})/i,
@@ -293,14 +312,74 @@ function parseSkyDriverStandings(html) {
 }
 
 /* ------------------------------------------------ */
+/* LAST RACE PARSER (JOLPICA) */
+/* ------------------------------------------------ */
+
+function parseLastRace(data) {
+  const race = data?.MRData?.RaceTable?.Races?.[0];
+
+  if (!race) {
+    return {
+      season: String(YEAR),
+      round: "-",
+      raceName: "-",
+      date: "-",
+      circuit: {
+        name: "-",
+        locality: "-",
+        country: "-",
+      },
+      winner: {
+        firstName: "-",
+        lastName: "-",
+        fullName: "-",
+        code: null,
+        team: "-",
+      },
+    };
+  }
+
+  const result = race?.Results?.[0];
+  const givenName = result?.Driver?.givenName || "-";
+  const familyName = result?.Driver?.familyName || "-";
+  const fullName =
+    givenName !== "-" || familyName !== "-"
+      ? `${givenName} ${familyName}`.trim()
+      : "-";
+
+  return {
+    season: String(race?.season ?? YEAR),
+    round: String(race?.round ?? "-"),
+    raceName: race?.raceName ?? "-",
+    date: race?.date ?? "-",
+    circuit: {
+      name: race?.Circuit?.circuitName ?? "-",
+      locality: race?.Circuit?.Location?.locality ?? "-",
+      country: race?.Circuit?.Location?.country ?? "-",
+    },
+    winner: {
+      firstName: givenName,
+      lastName: familyName,
+      fullName,
+      code: DRIVER_CODE_OVERRIDES[fullName] || null,
+      team: normalizeTeamName(result?.Constructor?.name ?? "-"),
+    },
+  };
+}
+
+/* ------------------------------------------------ */
 /* MAIN */
 /* ------------------------------------------------ */
 
 async function updateStandings() {
   const now = new Date().toISOString();
 
-  const resp = await fetchText(SKY_F1_STANDINGS_URL);
-  const parsed = parseSkyDriverStandings(resp.text);
+  const [skyResp, lastRaceJson] = await Promise.all([
+    fetchText(SKY_F1_STANDINGS_URL),
+    fetchJson(JOLPICA_LAST_RACE_URL),
+  ]);
+
+  const parsed = parseSkyDriverStandings(skyResp.text);
 
   if (!Array.isArray(parsed.rows) || parsed.rows.length === 0) {
     throw new Error(
@@ -320,14 +399,14 @@ async function updateStandings() {
       url: SKY_F1_STANDINGS_URL,
       note: "Standings scraped from Sky Sports F1 standings page.",
     },
-    lastRace: null,
+    lastRace: parseLastRace(lastRaceJson),
     drivers: parsed.rows,
   };
 
   await fs.writeFile(OUTPUT_FILE, JSON.stringify(out, null, 2), "utf8");
 
   console.log(
-    `Wrote ${OUTPUT_FILE} mode=SKY_SPORTS_STANDINGS drivers=${out.drivers.length}`
+    `Wrote ${OUTPUT_FILE} mode=SKY_SPORTS_STANDINGS drivers=${out.drivers.length} lastRace=${out.lastRace.raceName}`
   );
 }
 
