@@ -199,23 +199,47 @@ function matchesTeamName(name, keywords) {
 }
 
 function formatBestResultRaceName(best) {
-  const raceName = String(best?.raceName || "").trim();
-  const sessionName = String(best?.sessionName || "").trim();
+  const eventType = String(best?.eventType || "").trim().toLowerCase();
 
-  if (!raceName && !sessionName) return "-";
-  if (!raceName) return sessionName || "-";
+  const rawRaceName = String(best?.raceName || "").trim();
+  const rawMeetingName = String(best?.meetingName || "").trim();
+  const rawSessionName = String(best?.sessionName || "").trim();
 
-  const sessionLower = sessionName.toLowerCase();
+  const raceName =
+    rawRaceName &&
+    rawRaceName.toLowerCase() !== "sprint" &&
+    rawRaceName.toLowerCase() !== "race"
+      ? rawRaceName
+      : "";
 
-  if (!sessionName || sessionLower === "race") {
-    return raceName;
+  const meetingName =
+    rawMeetingName &&
+    rawMeetingName.toLowerCase() !== "sprint" &&
+    rawMeetingName.toLowerCase() !== "race"
+      ? rawMeetingName
+      : "";
+
+  const baseName = meetingName || raceName || "-";
+
+  if (eventType === "race" || rawSessionName.toLowerCase() === "race") {
+    return baseName;
   }
 
-  if (raceName.toLowerCase().includes(sessionLower)) {
-    return raceName;
+  if (eventType === "sprint" || rawSessionName.toLowerCase() === "sprint") {
+    if (baseName === "-") return "Sprint";
+    if (baseName.toLowerCase().endsWith(" sprint")) return baseName;
+    return `${baseName} Sprint`;
   }
 
-  return `${raceName} ${sessionName}`;
+  if (rawSessionName && rawSessionName.toLowerCase() !== "race") {
+    if (baseName === "-") return rawSessionName;
+    if (baseName.toLowerCase().includes(rawSessionName.toLowerCase())) {
+      return baseName;
+    }
+    return `${baseName} ${rawSessionName}`;
+  }
+
+  return baseName;
 }
 
 function bestResultFromSeasonData(best) {
@@ -318,7 +342,9 @@ async function buildTeamJson(
     const num = drv.driverNumber != null ? Number(drv.driverNumber) : null;
 
     const seasonBest =
-      num != null ? bestByDriverNumber[String(num)] ?? bestByDriverNumber[num] : null;
+      num != null
+        ? bestByDriverNumber[String(num)] ?? bestByDriverNumber[num]
+        : null;
 
     drivers.push({
       firstName: first,
