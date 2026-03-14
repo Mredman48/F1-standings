@@ -39,30 +39,6 @@ const DRIVER_NUMBER_OVERRIDES = {
   "Valtteri Bottas": 77,
 };
 
-const DRIVER_CODE_OVERRIDES = {
-  "George Russell": "RUS",
-  "Kimi Antonelli": "ANT",
-  "Charles Leclerc": "LEC",
-  "Lewis Hamilton": "HAM",
-  "Lando Norris": "NOR",
-  "Max Verstappen": "VER",
-  "Oliver Bearman": "BEA",
-  "Arvid Lindblad": "LIN",
-  "Oscar Piastri": "PIA",
-  "Gabriel Bortoleto": "BOR",
-  "Liam Lawson": "LAW",
-  "Pierre Gasly": "GAS",
-  "Esteban Ocon": "OCO",
-  "Alexander Albon": "ALB",
-  "Franco Colapinto": "COL",
-  "Carlos Sainz": "SAI",
-  "Sergio Perez": "PER",
-  "Isack Hadjar": "HAD",
-  "Nico Hulkenberg": "HUL",
-  "Fernando Alonso": "ALO",
-  "Valtteri Bottas": "BOT",
-};
-
 const TEAM_NAME_OVERRIDES = {
   "Red Bull Racing": "Red Bull",
   "Oracle Red Bull Racing": "Red Bull",
@@ -190,22 +166,11 @@ function cleanLine(line) {
   return String(line || "").replace(/\s+/g, " ").trim();
 }
 
-function parseDriverAnchorBlock(block) {
-  const cleaned = cleanLine(block);
-
-  const m = cleaned.match(/^(.+?)\s([A-Z]{3})$/);
-  if (!m) return null;
-
-  const fullName = m[1].trim();
-  const code = m[2].trim();
-  const split = splitFullName(fullName);
-
-  return {
-    fullName,
-    firstName: split.firstName,
-    lastName: split.lastName,
-    code,
-  };
+function normalizeHeadingForMatch(line) {
+  return cleanLine(line)
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
 }
 
 async function fetchText(url, accept = "text/html,*/*") {
@@ -230,15 +195,55 @@ async function fetchText(url, accept = "text/html,*/*") {
 /* PARSER */
 /* ------------------------------------------------ */
 
+function parseCompactDriverRow(line) {
+  const value = cleanLine(line);
+
+  // Actual current format:
+  // 1GBR33
+  const m = value.match(/^(\d+)【\d+†(.+?)\s([A-Z]{3})】([A-Z]{3})【\d+†(.+?)】(\d+)$/);
+  if (!m) return null;
+
+  const [, posRaw, fullName, code, nationality, teamRaw, pointsRaw] = m;
+  const { firstName, lastName } = splitFullName(fullName);
+
+  return {
+    position: fmtPos(posRaw),
+    positionNumber: Number(posRaw),
+    points: safeNumOrDash(pointsRaw),
+    wins: "-",
+    driver: {
+      code,
+      firstName,
+      lastName,
+      fullName,
+      nationality,
+      driverNumber: DRIVER_NUMBER_OVERRIDES[fullName] ?? null,
+      headshotUrl: firstName && lastName ? headshot(firstName, lastName) : null,
+      openf1HeadshotUrl: null,
+    },
+    constructor: {
+      name: normalizeTeamName(teamRaw),
+      fullName: teamRaw,
+      nationality: null,
+    },
+  };
+}
+
 function parseOfficialDriverStandings(html, year) {
   const lines = htmlToLines(html);
 
-  const start = lines.findIndex((line) =>
-    new RegExp(`^#\\s*${year}\\s+Drivers' Standings$`, "i").test(line)
-  );
+  const wantedHeading = normalizeHeadingForMatch(`${year} drivers standings`);
+  const start = lines.findIndex((line) => {
+    const norm = normalizeHeadingForMatch(line);
+    return norm.includes(wantedHeading);
+  });
 
   if (start === -1) {
-    return { rows: [], reason: "heading_not_found" };
+    return {
+      rows: [],
+      reason: "heading_not_found",
+      debugHeadingSample: lines.slice(120, 132),
+    };
   }
 
   const section = lines.slice(start + 1);
@@ -247,46 +252,14 @@ function parseOfficialDriverStandings(html, year) {
   for (const line of section) {
     const value = cleanLine(line);
 
-    if (/^##\s/.test(value)) break;
-    if (/^Pos\.Driver Nationality Team Pts\.$/i.test(value)) continue;
-    if (!/^\d+\s/.test(value)) continue;
+    if (/^##\s*/.test(value)) break;
+    if (/^our partners$/i.test(value)) break;
+    if (/^pos\.driver nationality team pts\.$/i.test(value)) continue;
 
-    const match = value.match(
-      /^(\d+)\s*(.+?)\s([A-Z]{3})\s(.+?)\s(\d+)$/
-    );
-
-    if (!match) continue;
-
-    const [, posRaw, driverBlock, nationality, teamRaw, pointsRaw] = match;
-
-    const parsedDriver = parseDriverAnchorBlock(driverBlock);
-    if (!parsedDriver) continue;
-
-    const fullName = parsedDriver.fullName;
-    const firstName = parsedDriver.firstName;
-    const lastName = parsedDriver.lastName;
-
-    rows.push({
-      position: fmtPos(posRaw),
-      positionNumber: Number(posRaw),
-      points: safeNumOrDash(pointsRaw),
-      wins: "-",
-      driver: {
-        code: parsedDriver.code || DRIVER_CODE_OVERRIDES[fullName] || null,
-        firstName,
-        lastName,
-        fullName,
-        nationality,
-        driverNumber: DRIVER_NUMBER_OVERRIDES[fullName] ?? null,
-        headshotUrl: firstName && lastName ? headshot(firstName, lastName) : null,
-        openf1HeadshotUrl: null,
-      },
-      constructor: {
-        name: normalizeTeamName(teamRaw),
-        fullName: teamRaw,
-        nationality: null,
-      },
-    });
+    const parsed = parseCompactDriverRow(value);
+    if (parsed) {
+      rows.push(parsed);
+    }
   }
 
   return {
@@ -307,7 +280,11 @@ async function updateStandings() {
 
   if (!Array.isArray(parsed.rows) || parsed.rows.length === 0) {
     throw new Error(
-      `Official F1 drivers standings parser returned no rows. reason=${parsed.reason}`
+      `Official F1 drivers standings parser returned no rows. reason=${parsed.reason}${
+        parsed.debugHeadingSample
+          ? ` sample=${JSON.stringify(parsed.debugHeadingSample)}`
+          : ""
+      }`
     );
   }
 
