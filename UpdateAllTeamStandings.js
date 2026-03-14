@@ -11,7 +11,6 @@ const YEAR = new Date().getUTCFullYear();
 const F1_RESULTS_RACES_INDEX_URL = `https://www.formula1.com/en/results/${YEAR}/races`;
 const JOLPICA_LAST_RACE_URL =
   "https://api.jolpi.ca/ergast/f1/current/last/results.json";
-const JOLPICA_ALL_RESULTS_URL = `https://api.jolpi.ca/ergast/f1/${YEAR}/results.json?limit=2000`;
 
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 const TEAMLOGOS_DIR = "teamlogos";
@@ -338,8 +337,13 @@ function toAbsoluteF1Url(href) {
 }
 
 function bestResultFromSeasonResult(result) {
+  const pos =
+    result.classification === "classified"
+      ? `P${result.position}`
+      : result.status || "-";
+
   return {
-    position: `P${result.position}`,
+    position: pos,
     eventType: result.eventType,
     raceName: result.raceName ?? "-",
     round: result.round ?? "-",
@@ -353,15 +357,30 @@ function bestResultFromSeasonResult(result) {
   };
 }
 
-function chooseBetterResult(a, b) {
+function chooseBetterClassified(a, b) {
   if (!a) return b;
   if (!b) return a;
 
   if (b.position < a.position) return b;
   if (a.position < b.position) return a;
 
-  // Tie-breaker: prefer earlier date in season
   if (String(b.date) < String(a.date)) return b;
+  return a;
+}
+
+function chooseLatestStatus(a, b) {
+  if (!a) return b;
+  if (!b) return a;
+
+  const da = String(a.date || "");
+  const db = String(b.date || "");
+
+  if (db > da) return b;
+  if (da > db) return a;
+
+  const ra = Number(a.round || 0);
+  const rb = Number(b.round || 0);
+  if (rb > ra) return b;
   return a;
 }
 
@@ -466,57 +485,17 @@ function mergeLastRace(existingLastRace, jolpicaLastRace) {
 }
 
 /* -------------------------------- */
-/* GRAND PRIX RESULTS FROM JOLPICA */
+/* OFFICIAL F1 RESULT PAGES */
 /* -------------------------------- */
 
-async function getSeasonRaceBestResultsFromJolpica() {
-  const data = await fetchJson(JOLPICA_ALL_RESULTS_URL);
-  const races = data?.MRData?.RaceTable?.Races || [];
-  const bestByNumber = {};
-
-  for (const race of races) {
-    const results = race?.Results || [];
-
-    for (const row of results) {
-      const num = Number(row?.Driver?.permanentNumber);
-      const pos = Number(row?.position);
-
-      if (!Number.isFinite(num) || !Number.isFinite(pos) || pos <= 0) continue;
-
-      const candidate = {
-        position: pos,
-        eventType: "race",
-        raceName: race?.raceName ?? "-",
-        round: String(race?.round ?? "-"),
-        date: race?.date ?? "-",
-        circuit: race?.Circuit?.circuitName ?? "-",
-        locality: race?.Circuit?.Location?.locality ?? "-",
-        country: race?.Circuit?.Location?.country ?? "-",
-        sourceUrl: null,
-      };
-
-      bestByNumber[num] = chooseBetterResult(bestByNumber[num], candidate);
-    }
-  }
-
-  return {
-    bestByNumber,
-    raceCount: races.length,
-  };
-}
-
-/* -------------------------------- */
-/* SPRINT RESULTS FROM OFFICIAL F1 */
-/* -------------------------------- */
-
-function extractSprintResultUrlsFromIndex(html) {
+function extractOfficialResultUrls(indexHtml) {
   const urls = new Set();
 
-  const hrefRe =
-    /href="([^"]*\/en\/results\/\d{4}\/races\/\d+\/[^"/]+\/sprint-results)"/gi;
+  const re =
+    /\/en\/results\/\d{4}\/races\/\d+\/[^"'?#\s]+\/(?:race-result|sprint-results)/gi;
 
-  for (const match of html.matchAll(hrefRe)) {
-    const abs = toAbsoluteF1Url(match[1]);
+  for (const match of indexHtml.matchAll(re)) {
+    const abs = toAbsoluteF1Url(match[0]);
     if (abs && abs.includes(`/${YEAR}/races/`)) {
       urls.add(abs);
     }
@@ -525,7 +504,7 @@ function extractSprintResultUrlsFromIndex(html) {
   return [...urls].sort();
 }
 
-function parseSprintMeta(lines, sourceUrl) {
+function parseEventMeta(lines, sourceUrl) {
   const headingIndex = lines.findIndex((line) =>
     /^#\s+FORMULA 1 /i.test(cleanLine(line))
   );
@@ -533,14 +512,13 @@ function parseSprintMeta(lines, sourceUrl) {
   if (headingIndex === -1) return null;
 
   const heading = cleanLine(lines[headingIndex]);
-  const dateRange = cleanLine(lines[headingIndex + 2] || "-");
-  const circuitLine = cleanLine(lines[headingIndex + 3] || "-");
+  const dateLine = cleanLine(lines[headingIndex + 2] || lines[headingIndex + 3] || "-");
+  const circuitLine = cleanLine(lines[headingIndex + 3] || lines[headingIndex + 4] || "-");
 
-  if (!/\-\s*SPRINT$/i.test(heading)) return null;
-
+  const eventType = /-\s*SPRINT$/i.test(heading) ? "sprint" : "race";
   const raceName = heading
     .replace(/^#\s*/i, "")
-    .replace(/\s+\d{4}\s*-\s*SPRINT$/i, "")
+    .replace(/\s+\d{4}\s*-\s*(SPRINT|RACE RESULT)$/i, "")
     .trim();
 
   let circuit = "-";
@@ -558,36 +536,34 @@ function parseSprintMeta(lines, sourceUrl) {
   const round = roundMatch ? roundMatch[1] : "-";
 
   return {
-    eventType: "sprint",
+    eventType,
     raceName,
     round,
-    date: dateRange,
+    date: dateLine,
     circuit,
     locality,
     country: "-",
+    sourceUrl,
   };
 }
 
-function parseSprintRows(lines, meta, sourceUrl) {
+function parseOfficialResultRows(lines, meta) {
   const start = lines.findIndex((line) =>
     /^Pos\.No\.Driver Team Laps Time \/ Retired Pts\.$/i.test(cleanLine(line))
   );
 
   if (start === -1) return [];
-  if (lines.some((line) => /^Error$/i.test(cleanLine(line))) &&
-      lines.some((line) => /^No results available$/i.test(cleanLine(line)))) {
-    return [];
-  }
 
-  const rows = [];
+  const out = [];
 
   for (let i = start + 1; i < lines.length; i += 1) {
     let line = cleanLine(lines[i]);
     if (!line) continue;
-    if (/^Error$/i.test(line)) break;
-    if (/^No results available$/i.test(line)) break;
+    if (/^\* Provisional results\./i.test(line)) continue;
     if (/^##\s+/i.test(line)) break;
     if (/^OUR PARTNERS$/i.test(line)) break;
+    if (/^Download the Official F1 App$/i.test(line)) break;
+    if (/^View all$/i.test(line)) continue;
 
     line = line.replace(/\bImage\b/g, " ").replace(/\s+/g, " ").trim();
 
@@ -597,21 +573,46 @@ function parseSprintRows(lines, meta, sourceUrl) {
 
     if (!match) continue;
 
-    const [, posRaw, numRaw, fullNameRaw, code, teamRaw, lapsRaw] = match;
+    const [, posRaw, numRaw, fullNameRaw, code, teamRaw, lapsRaw, timeRetiredRaw] = match;
 
-    const pos = Number(posRaw);
     const num = Number(numRaw);
-
-    if (!Number.isFinite(pos) || pos <= 0) continue;
     if (!Number.isFinite(num) || num <= 0) continue;
 
-    rows.push({
-      position: pos,
+    const fullName = cleanLine(fullNameRaw);
+    const { firstName, lastName } = splitFullName(fullName);
+    const statusText = cleanLine(timeRetiredRaw).toUpperCase();
+
+    let classification = "classified";
+    let position = null;
+    let status = null;
+
+    if (/^\d+$/.test(posRaw)) {
+      classification = "classified";
+      position = Number(posRaw);
+    } else {
+      classification = "status";
+      position = null;
+
+      if (statusText === "DNS") status = "DNS";
+      else if (statusText === "DNF") status = "DNF";
+      else if (posRaw === "DSQ") status = "DSQ";
+      else if (posRaw === "DNF") status = "DNF";
+      else if (posRaw === "DNS") status = "DNS";
+      else status = "NC";
+    }
+
+    out.push({
       driverNumber: num,
-      fullName: cleanLine(fullNameRaw),
+      fullName,
+      firstName,
+      lastName,
       code: code.toUpperCase(),
       team: normalizeTeamName(cleanLine(teamRaw)),
       laps: Number(lapsRaw),
+      timeRetired: cleanLine(timeRetiredRaw),
+      classification,
+      position,
+      status,
       eventType: meta.eventType,
       raceName: meta.raceName,
       round: meta.round,
@@ -619,63 +620,66 @@ function parseSprintRows(lines, meta, sourceUrl) {
       circuit: meta.circuit,
       locality: meta.locality,
       country: meta.country,
-      sourceUrl,
+      sourceUrl: meta.sourceUrl,
     });
   }
 
-  return rows;
+  return out;
 }
 
-async function getSeasonSprintBestResultsFromOfficialF1() {
+async function getSeasonBestAndStatusResults() {
   const indexHtml = await fetchText(F1_RESULTS_RACES_INDEX_URL);
-  const sprintUrls = extractSprintResultUrlsFromIndex(indexHtml);
-  const bestByNumber = {};
+  const resultUrls = extractOfficialResultUrls(indexHtml);
 
-  for (const url of sprintUrls) {
+  const bestClassifiedByNumber = {};
+  const latestStatusByNumber = {};
+
+  for (const url of resultUrls) {
     try {
       const html = await fetchText(url);
       const lines = htmlToLines(html);
-      const meta = parseSprintMeta(lines, url);
+      const meta = parseEventMeta(lines, url);
 
       if (!meta) continue;
 
-      const rows = parseSprintRows(lines, meta, url);
+      const rows = parseOfficialResultRows(lines, meta);
 
       for (const row of rows) {
-        bestByNumber[row.driverNumber] = chooseBetterResult(
-          bestByNumber[row.driverNumber],
-          row
-        );
+        const key = String(row.driverNumber);
+
+        if (row.classification === "classified" && Number.isFinite(row.position)) {
+          bestClassifiedByNumber[key] = chooseBetterClassified(
+            bestClassifiedByNumber[key],
+            row
+          );
+        } else {
+          latestStatusByNumber[key] = chooseLatestStatus(
+            latestStatusByNumber[key],
+            row
+          );
+        }
       }
     } catch (err) {
-      console.warn(`Skipping sprint page ${url}: ${err.message}`);
+      console.warn(`Skipping results page ${url}: ${err.message}`);
     }
 
     await sleep(120);
   }
 
-  return {
-    bestByNumber,
-    sourceCount: sprintUrls.length,
-  };
-}
-
-function mergeSeasonBestResults(raceBestByNumber, sprintBestByNumber) {
-  const allKeys = new Set([
-    ...Object.keys(raceBestByNumber || {}),
-    ...Object.keys(sprintBestByNumber || {}),
+  const merged = {};
+  const keys = new Set([
+    ...Object.keys(bestClassifiedByNumber),
+    ...Object.keys(latestStatusByNumber),
   ]);
 
-  const merged = {};
-
-  for (const key of allKeys) {
-    merged[key] = chooseBetterResult(
-      raceBestByNumber?.[key],
-      sprintBestByNumber?.[key]
-    );
+  for (const key of keys) {
+    merged[key] = bestClassifiedByNumber[key] || latestStatusByNumber[key];
   }
 
-  return merged;
+  return {
+    bestByNumber: merged,
+    sourceCount: resultUrls.length,
+  };
 }
 
 /* -------------------------------- */
@@ -719,7 +723,7 @@ async function buildTeamJson(
   teamConfig,
   driverData,
   constructorData,
-  seasonBestPack,
+  seasonResultPack,
   lastRace
 ) {
   const teamDrivers = getTeamDrivers(driverData, teamConfig);
@@ -736,9 +740,9 @@ async function buildTeamJson(
 
     let bestResult = emptyBestResult();
 
-    if (num && seasonBestPack.bestByNumber[String(num)]) {
+    if (num && seasonResultPack.bestByNumber[String(num)]) {
       bestResult = bestResultFromSeasonResult(
-        seasonBestPack.bestByNumber[String(num)]
+        seasonResultPack.bestByNumber[String(num)]
       );
     }
 
@@ -767,8 +771,7 @@ async function buildTeamJson(
     sources: {
       driverStandings: DRIVER_STANDINGS_FILE,
       constructorStandings: CONSTRUCTOR_STANDINGS_FILE,
-      bestResults:
-        `Jolpica season race results + official F1 sprint pages (${seasonBestPack.sprintPageCount} sprint pages scanned)`,
+      bestResults: `Official F1 race-result + sprint-results pages (${seasonResultPack.sourceCount} pages scanned)`,
       lastRace: JOLPICA_LAST_RACE_URL,
     },
 
@@ -789,36 +792,22 @@ async function buildTeamJson(
 /* -------------------------------- */
 
 async function updateAllTeamStandings() {
-  const [
-    driverData,
-    constructorData,
-    jolpicaLastRace,
-    raceBestPack,
-    sprintBestPack,
-  ] = await Promise.all([
-    readJson(DRIVER_STANDINGS_FILE),
-    readJson(CONSTRUCTOR_STANDINGS_FILE),
-    getLastRaceMeta(),
-    getSeasonRaceBestResultsFromJolpica(),
-    getSeasonSprintBestResultsFromOfficialF1(),
-  ]);
+  const [driverData, constructorData, jolpicaLastRace, seasonResultPack] =
+    await Promise.all([
+      readJson(DRIVER_STANDINGS_FILE),
+      readJson(CONSTRUCTOR_STANDINGS_FILE),
+      getLastRaceMeta(),
+      getSeasonBestAndStatusResults(),
+    ]);
 
   const mergedLastRace = mergeLastRace(constructorData.lastRace, jolpicaLastRace);
-
-  const seasonBestPack = {
-    bestByNumber: mergeSeasonBestResults(
-      raceBestPack.bestByNumber,
-      sprintBestPack.bestByNumber
-    ),
-    sprintPageCount: sprintBestPack.sourceCount,
-  };
 
   for (const teamConfig of TEAMS) {
     const out = await buildTeamJson(
       teamConfig,
       driverData,
       constructorData,
-      seasonBestPack,
+      seasonResultPack,
       mergedLastRace
     );
 
