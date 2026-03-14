@@ -1,14 +1,10 @@
 {
   "header": "Ferrari standings",
-  "generatedAtUtc": "2026-03-14T05:54:25.802Z",
+  "generatedAtUtc": "2026-03-14T06:04:17.593Z",
   "sources": {
     "driverStandings": "f1_driver_standings.json",
     "constructorStandings": "f1_constructors_standings.json",
-    "bestResults": "Previous team JSON bestResult only",
-    "lastRace": "https://api.jolpi.ca/ergast/f1/current/last/results.json"
-  },
-  "meta": {
-    "latestEventChecked": null
+    "seasonResults": "f1_season_event_results.json"
   },
   "ferrari": {
     "team": "Ferrari",
@@ -21,20 +17,13 @@
     }
   },
   "lastRace": {
-    "season": "2026",
-    "round": "1",
     "raceName": "Australian Grand Prix",
+    "round": "1",
     "date": "2026-03-08",
     "circuit": "Albert Park Grand Prix Circuit",
-    "winner": {
-      "firstName": "George",
-      "lastName": "Russell",
-      "fullName": "George Russell",
-      "team": "Mercedes"
-    },
     "location": {
-      "locality": "Melbourne",
-      "country": "Australia"
+      "locality": "-",
+      "country": "-"
     }
   },
   "drivers": [
@@ -50,15 +39,15 @@
       "wins": 0,
       "team": "Ferrari",
       "bestResult": {
-        "position": "-",
-        "eventType": "-",
+        "position": "P2",
+        "eventType": "sprint",
         "raceName": "-",
         "round": "-",
-        "date": "-",
-        "circuit": "-",
+        "date": "2026-03-14",
+        "circuit": "Shanghai",
         "location": {
-          "locality": "-",
-          "country": "-"
+          "locality": "Shanghai",
+          "country": "China"
         },
         "sourceUrl": null
       }
@@ -75,15 +64,15 @@
       "wins": 0,
       "team": "Ferrari",
       "bestResult": {
-        "position": "-",
-        "eventType": "-",
+        "position": "P3",
+        "eventType": "sprint",
         "raceName": "-",
         "round": "-",
-        "date": "-",
-        "circuit": "-",
+        "date": "2026-03-14",
+        "circuit": "Shanghai",
         "location": {
-          "locality": "-",
-          "country": "-"
+          "locality": "Shanghai",
+          "country": "China"
         },
         "sourceUrl": null
       }
