@@ -117,6 +117,10 @@ function slug(s) {
     .replace(/(^-|-$)/g, "");
 }
 
+function cleanText(value) {
+  return String(value || "").replace(/\s+/g, " ").trim();
+}
+
 function normalizePoints(val) {
   if (val === "-" || val === "" || val === null || val === undefined) return 0;
   const n = Number(val);
@@ -198,63 +202,94 @@ function matchesTeamName(name, keywords) {
   return keywords.some((keyword) => value.includes(keyword));
 }
 
-function formatBestResultRaceName(best) {
-  const eventType = String(best?.eventType || "").trim().toLowerCase();
+function formatRaceNameFromParts(meetingName, raceName, sessionName, eventType) {
+  const meeting = cleanText(meetingName);
+  const race = cleanText(raceName);
+  const session = cleanText(sessionName).toLowerCase();
+  const type = cleanText(eventType).toLowerCase();
 
-  const rawRaceName = String(best?.raceName || "").trim();
-  const rawMeetingName = String(best?.meetingName || "").trim();
-  const rawSessionName = String(best?.sessionName || "").trim();
+  const base =
+    meeting && meeting.toLowerCase() !== "sprint" && meeting.toLowerCase() !== "race"
+      ? meeting
+      : race && race.toLowerCase() !== "sprint" && race.toLowerCase() !== "race"
+        ? race
+        : "-";
 
-  const raceName =
-    rawRaceName &&
-    rawRaceName.toLowerCase() !== "sprint" &&
-    rawRaceName.toLowerCase() !== "race"
-      ? rawRaceName
-      : "";
-
-  const meetingName =
-    rawMeetingName &&
-    rawMeetingName.toLowerCase() !== "sprint" &&
-    rawMeetingName.toLowerCase() !== "race"
-      ? rawMeetingName
-      : "";
-
-  const baseName = meetingName || raceName || "-";
-
-  if (eventType === "race" || rawSessionName.toLowerCase() === "race") {
-    return baseName;
+  if (type === "sprint" || session === "sprint") {
+    if (base === "-") return "Sprint";
+    return base.toLowerCase().endsWith(" sprint") ? base : `${base} Sprint`;
   }
 
-  if (eventType === "sprint" || rawSessionName.toLowerCase() === "sprint") {
-    if (baseName === "-") return "Sprint";
-    if (baseName.toLowerCase().endsWith(" sprint")) return baseName;
-    return `${baseName} Sprint`;
+  if (type === "race" || session === "race" || !session) {
+    return base;
   }
 
-  if (rawSessionName && rawSessionName.toLowerCase() !== "race") {
-    if (baseName === "-") return rawSessionName;
-    if (baseName.toLowerCase().includes(rawSessionName.toLowerCase())) {
-      return baseName;
-    }
-    return `${baseName} ${rawSessionName}`;
-  }
-
-  return baseName;
+  if (base === "-") return cleanText(sessionName) || "-";
+  return base.toLowerCase().includes(session)
+    ? base
+    : `${base} ${cleanText(sessionName)}`;
 }
 
-function bestResultFromSeasonData(best) {
+function buildEventLookup(seasonResultsData) {
+  const bySessionKey = new Map();
+  const byMeetingKey = new Map();
+
+  for (const event of seasonResultsData?.events || []) {
+    const sessionKey = Number(event?.sessionKey);
+    const meetingKey = Number(event?.meetingKey);
+
+    if (Number.isFinite(sessionKey)) {
+      bySessionKey.set(sessionKey, event);
+    }
+    if (Number.isFinite(meetingKey) && !byMeetingKey.has(meetingKey)) {
+      byMeetingKey.set(meetingKey, event);
+    }
+  }
+
+  return { bySessionKey, byMeetingKey };
+}
+
+function bestResultFromSeasonData(best, eventLookup) {
   if (!best) return emptyBestResult();
+
+  const sessionKey = Number(best?.sessionKey);
+  const meetingKey = Number(best?.meetingKey);
+
+  const eventFromSession =
+    Number.isFinite(sessionKey) ? eventLookup.bySessionKey.get(sessionKey) : null;
+  const eventFromMeeting =
+    Number.isFinite(meetingKey) ? eventLookup.byMeetingKey.get(meetingKey) : null;
+
+  const event = eventFromSession || eventFromMeeting || null;
+
+  const raceName = formatRaceNameFromParts(
+    event?.meetingName ?? best?.meetingName,
+    event?.raceName ?? best?.raceName,
+    event?.sessionName ?? best?.sessionName,
+    event?.eventType ?? best?.eventType
+  );
 
   return {
     position: best?.position ?? "-",
-    eventType: best?.eventType ?? "-",
-    raceName: formatBestResultRaceName(best),
-    round: best?.round != null ? String(best.round) : "-",
-    date: best?.date ?? "-",
-    circuit: best?.circuit ?? "-",
+    eventType: event?.eventType ?? best?.eventType ?? "-",
+    raceName,
+    round:
+      event?.round != null
+        ? String(event.round)
+        : best?.round != null
+          ? String(best.round)
+          : "-",
+    date: event?.date ?? best?.date ?? "-",
+    circuit: event?.circuit ?? best?.circuit ?? "-",
     location: {
-      locality: best?.location?.locality ?? "-",
-      country: best?.location?.country ?? "-",
+      locality:
+        event?.location?.locality ??
+        best?.location?.locality ??
+        "-",
+      country:
+        event?.location?.country ??
+        best?.location?.country ??
+        "-",
     },
     sourceUrl: best?.sourceUrl ?? null,
   };
@@ -326,7 +361,8 @@ async function buildTeamJson(
   teamConfig,
   driverData,
   constructorData,
-  seasonResultsData
+  seasonResultsData,
+  eventLookup
 ) {
   const teamDrivers = getTeamDrivers(driverData, teamConfig);
   const teamStanding = getTeamConstructor(constructorData, teamConfig);
@@ -360,7 +396,7 @@ async function buildTeamJson(
       wins: normalizePoints(d.wins),
 
       team: teamConfig.displayName,
-      bestResult: bestResultFromSeasonData(seasonBest),
+      bestResult: bestResultFromSeasonData(seasonBest, eventLookup),
     });
   }
 
@@ -409,12 +445,15 @@ async function updateAllTeamStandings() {
     readJson(SEASON_RESULTS_FILE),
   ]);
 
+  const eventLookup = buildEventLookup(seasonResultsData);
+
   for (const teamConfig of TEAMS) {
     const out = await buildTeamJson(
       teamConfig,
       driverData,
       constructorData,
-      seasonResultsData
+      seasonResultsData,
+      eventLookup
     );
 
     await fs.writeFile(
