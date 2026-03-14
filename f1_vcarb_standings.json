@@ -1,10 +1,10 @@
 {
   "header": "VCARB standings",
-  "generatedAtUtc": "2026-03-14T05:20:28.835Z",
+  "generatedAtUtc": "2026-03-14T05:29:27.777Z",
   "sources": {
     "driverStandings": "f1_driver_standings.json",
     "constructorStandings": "f1_constructors_standings.json",
-    "bestResults": "Official F1 race-result + sprint-results pages (24 pages scanned)",
+    "bestResults": "Jolpica season race results + official F1 sprint pages (0 sprint pages scanned)",
     "lastRace": "https://api.jolpi.ca/ergast/f1/current/last/results.json"
   },
   "vcarb": {
@@ -72,15 +72,15 @@
       "wins": 0,
       "team": "VCARB",
       "bestResult": {
-        "position": "-",
-        "eventType": "-",
-        "raceName": "-",
-        "round": "-",
-        "date": "-",
-        "circuit": "-",
+        "position": "P13",
+        "eventType": "race",
+        "raceName": "Australian Grand Prix",
+        "round": "1",
+        "date": "2026-03-08",
+        "circuit": "Albert Park Grand Prix Circuit",
         "location": {
-          "locality": "-",
-          "country": "-"
+          "locality": "Melbourne",
+          "country": "Australia"
         },
         "sourceUrl": null
       }
