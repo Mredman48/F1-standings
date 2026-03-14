@@ -68,31 +68,45 @@ function buildFormattedRaceName(baseRaceName, eventType) {
   return eventType === "sprint" ? `${base} Sprint` : base;
 }
 
-async function fetchJson(url, { allow401 = false } = {}) {
-  const res = await fetch(url, {
-    headers: {
-      "User-Agent": UA,
-      Accept: "application/json",
-    },
-    redirect: "follow",
-  });
+async function fetchJson(url, { allow401 = false, retries = 5 } = {}) {
+  for (let attempt = 0; attempt <= retries; attempt += 1) {
+    const res = await fetch(url, {
+      headers: {
+        "User-Agent": UA,
+        Accept: "application/json",
+      },
+      redirect: "follow",
+    });
 
-  const text = await res.text();
+    const text = await res.text();
 
-  if (res.status === 401 && allow401) {
-    return {
-      __authLocked: true,
-      status: 401,
-      url,
-      body: text,
-    };
+    if (res.status === 401 && allow401) {
+      return {
+        __authLocked: true,
+        status: 401,
+        url,
+        body: text,
+      };
+    }
+
+    if (res.status === 429) {
+      if (attempt === retries) {
+        throw new Error(`HTTP 429 from ${url}\n${text}`);
+      }
+      const waitMs = 1200 + attempt * 800;
+      console.warn(`429 for ${url}. Retrying in ${waitMs}ms`);
+      await sleep(waitMs);
+      continue;
+    }
+
+    if (!res.ok) {
+      throw new Error(`HTTP ${res.status} from ${url}\n${text}`);
+    }
+
+    return JSON.parse(text);
   }
 
-  if (!res.ok) {
-    throw new Error(`HTTP ${res.status} from ${url}\n${text}`);
-  }
-
-  return JSON.parse(text);
+  throw new Error(`Failed to fetch ${url}`);
 }
 
 async function getCompletedRaceAndSprintSessions(year) {
@@ -131,7 +145,7 @@ async function getSessionResults(session) {
 
   const rows = await fetchJson(
     `${OPENF1_BASE}/session_result?session_key=${sessionKey}`,
-    { allow401: true }
+    { allow401: true, retries: 5 }
   );
 
   if (rows?.__authLocked) {
@@ -189,42 +203,40 @@ async function getSeasonSchedule(year) {
   }));
 }
 
-function attachScheduleToSessions(sessions, schedule) {
-  const races = sessions.filter(
-    (s) => normalizeEventType(s?.session_name) === "race"
-  );
+function buildMeetingScheduleMap(sessions, meetingsByKey, schedule) {
+  const uniqueMeetingKeys = [
+    ...new Set(
+      sessions
+        .map((s) => Number(s?.meeting_key))
+        .filter((k) => Number.isFinite(k))
+    ),
+  ];
 
-  const bySessionKey = new Map();
+  const completedMeetings = uniqueMeetingKeys
+    .map((meetingKey) => {
+      const meeting = meetingsByKey.get(meetingKey);
+      const firstSession = sessions.find((s) => Number(s?.meeting_key) === meetingKey);
+
+      return {
+        meetingKey,
+        sortDate:
+          meeting?.dateStartUtc ||
+          firstSession?.date_start ||
+          "",
+      };
+    })
+    .sort((a, b) => String(a.sortDate).localeCompare(String(b.sortDate)));
+
   const byMeetingKey = new Map();
 
-  for (let i = 0; i < races.length; i += 1) {
-    const session = races[i];
+  for (let i = 0; i < completedMeetings.length; i += 1) {
+    const item = completedMeetings[i];
     const scheduleRace = schedule[i] || null;
     if (!scheduleRace) continue;
-
-    const sessionKey = Number(session?.session_key);
-    const meetingKey = Number(session?.meeting_key);
-
-    if (Number.isFinite(sessionKey)) {
-      bySessionKey.set(sessionKey, scheduleRace);
-    }
-    if (Number.isFinite(meetingKey)) {
-      byMeetingKey.set(meetingKey, scheduleRace);
-    }
+    byMeetingKey.set(item.meetingKey, scheduleRace);
   }
 
-  return { bySessionKey, byMeetingKey };
-}
-
-function getScheduleMetaForSession(session, scheduleMaps) {
-  const sessionKey = Number(session?.session_key);
-  const meetingKey = Number(session?.meeting_key);
-
-  return (
-    scheduleMaps.bySessionKey.get(sessionKey) ||
-    scheduleMaps.byMeetingKey.get(meetingKey) ||
-    null
-  );
+  return byMeetingKey;
 }
 
 function buildSessionObject(session, rows, meetingMeta, scheduleMeta) {
@@ -236,6 +248,8 @@ function buildSessionObject(session, rows, meetingMeta, scheduleMeta) {
     cleanText(meetingMeta?.meetingOfficialName) ||
     cleanText(scheduleMeta?.raceName) ||
     "-";
+
+  const raceName = buildFormattedRaceName(meetingName, eventType);
 
   const locationLocality =
     cleanText(meetingMeta?.locality) ||
@@ -254,9 +268,6 @@ function buildSessionObject(session, rows, meetingMeta, scheduleMeta) {
     cleanText(session?.circuit_short_name) ||
     cleanText(scheduleMeta?.circuit) ||
     "-";
-
-  const round = scheduleMeta?.round ?? null;
-  const raceName = buildFormattedRaceName(meetingName, eventType);
 
   const drivers = rows
     .map((row) => ({
@@ -296,7 +307,7 @@ function buildSessionObject(session, rows, meetingMeta, scheduleMeta) {
     raceName,
     sessionName: cleanText(session?.session_name) || "-",
     officialName: cleanText(session?.session_name) || "-",
-    round,
+    round: scheduleMeta?.round ?? null,
     dateStartUtc: session?.date_start || null,
     dateEndUtc: session?.date_end || null,
     date: String(session?.date_start || "").slice(0, 10) || "-",
@@ -348,14 +359,19 @@ async function buildSeasonResults() {
     getSeasonSchedule(YEAR),
   ]);
 
-  const scheduleMaps = attachScheduleToSessions(sessions, schedule);
+  const scheduleByMeetingKey = buildMeetingScheduleMap(
+    sessions,
+    meetingsByKey,
+    schedule
+  );
+
   const events = [];
 
   for (const session of sessions) {
     const rows = await getSessionResults(session);
-    const meetingMeta =
-      meetingsByKey.get(Number(session?.meeting_key)) || null;
-    const scheduleMeta = getScheduleMetaForSession(session, scheduleMaps);
+    const meetingKey = Number(session?.meeting_key);
+    const meetingMeta = meetingsByKey.get(meetingKey) || null;
+    const scheduleMeta = scheduleByMeetingKey.get(meetingKey) || null;
 
     const event = buildSessionObject(session, rows, meetingMeta, scheduleMeta);
     events.push(event);
@@ -364,7 +380,7 @@ async function buildSeasonResults() {
       `Loaded ${event.raceName} (${event.date}) with ${event.drivers.length} drivers`
     );
 
-    await sleep(120);
+    await sleep(450);
   }
 
   const bestByDriverNumber = buildBestByDriver(events);
@@ -374,10 +390,10 @@ async function buildSeasonResults() {
     generatedAtUtc: new Date().toISOString(),
     season: YEAR,
     source: {
-      primary: "OpenF1 sessions + meetings + session_result",
+      primary: "OpenF1 meetings + sessions + session_result",
       enrichment: "Jolpica season schedule",
       note:
-        "Meeting names come from OpenF1 meetings when available, with Jolpica used to enrich round, circuit, and location data.",
+        "Meeting names come from OpenF1 meetings, with Jolpica used to enrich round, circuit, and location data.",
     },
     events,
     bestByDriverNumber,
