@@ -1,11 +1,11 @@
 {
   "header": "Cadillac standings",
-  "generatedAtUtc": "2026-03-14T05:11:31.918Z",
+  "generatedAtUtc": "2026-03-14T05:20:28.834Z",
   "sources": {
     "driverStandings": "f1_driver_standings.json",
     "constructorStandings": "f1_constructors_standings.json",
-    "bestResults": "OpenF1 session_result + OpenF1 race sessions + Jolpica season schedule",
-    "lastRace": "Jolpica current/last/results.json"
+    "bestResults": "Official F1 race-result + sprint-results pages (24 pages scanned)",
+    "lastRace": "https://api.jolpi.ca/ergast/f1/current/last/results.json"
   },
   "cadillac": {
     "team": "Cadillac",
@@ -47,17 +47,17 @@
       "wins": 0,
       "team": "Cadillac",
       "bestResult": {
-        "position": "P16",
-        "raceName": "Australian Grand Prix",
-        "round": "1",
-        "date": "2026-03-08",
-        "circuit": "Albert Park Grand Prix Circuit",
+        "position": "-",
+        "eventType": "-",
+        "raceName": "-",
+        "round": "-",
+        "date": "-",
+        "circuit": "-",
         "location": {
-          "locality": "Melbourne",
-          "country": "Australia"
+          "locality": "-",
+          "country": "-"
         },
-        "sessionKey": 11234,
-        "meetingKey": 1279
+        "sourceUrl": null
       }
     },
     {
@@ -72,17 +72,17 @@
       "wins": 0,
       "team": "Cadillac",
       "bestResult": {
-        "position": "DNF",
-        "raceName": "Australian Grand Prix",
-        "round": "1",
-        "date": "2026-03-08",
-        "circuit": "Albert Park Grand Prix Circuit",
+        "position": "-",
+        "eventType": "-",
+        "raceName": "-",
+        "round": "-",
+        "date": "-",
+        "circuit": "-",
         "location": {
-          "locality": "Melbourne",
-          "country": "Australia"
+          "locality": "-",
+          "country": "-"
         },
-        "sessionKey": 11234,
-        "meetingKey": 1279
+        "sourceUrl": null
       }
     }
   ]
