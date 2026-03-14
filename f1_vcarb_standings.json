@@ -1,6 +1,6 @@
 {
   "header": "VCARB standings",
-  "generatedAtUtc": "2026-03-14T06:51:45.752Z",
+  "generatedAtUtc": "2026-03-14T08:39:01.396Z",
   "sources": {
     "driverStandings": "f1_driver_standings.json",
     "constructorStandings": "f1_constructors_standings.json",
@@ -31,23 +31,23 @@
       "firstName": "Arvid",
       "lastName": "Lindblad",
       "code": "LIN",
-      "driverNumber": 47,
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-47.png",
+      "driverNumber": 41,
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-41.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/arvid-lindblad.png",
       "position": "P8",
       "points": 4,
       "wins": 0,
       "team": "VCARB",
       "bestResult": {
-        "position": "-",
-        "eventType": "-",
-        "raceName": "-",
-        "round": "-",
-        "date": "-",
-        "circuit": "-",
+        "position": "P8",
+        "eventType": "race",
+        "raceName": "Australian Grand Prix",
+        "round": "1",
+        "date": "2026-03-08",
+        "circuit": "Melbourne",
         "location": {
-          "locality": "-",
-          "country": "-"
+          "locality": "Melbourne",
+          "country": "Australia"
         },
         "sourceUrl": null
       }
