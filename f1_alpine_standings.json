@@ -1,6 +1,6 @@
 {
   "header": "Alpine standings",
-  "generatedAtUtc": "2026-03-14T04:34:17.821Z",
+  "generatedAtUtc": "2026-03-14T05:11:31.915Z",
   "sources": {
     "driverStandings": "f1_driver_standings.json",
     "constructorStandings": "f1_constructors_standings.json",
@@ -22,12 +22,12 @@
     "round": "1",
     "raceName": "Australian Grand Prix",
     "date": "2026-03-08",
-    "timeUtc": "1:23:06.801",
     "circuit": "Albert Park Grand Prix Circuit",
     "winner": {
-      "name": "George Russell RUS",
-      "team": "Mercedes",
-      "laps": 58
+      "firstName": "George",
+      "lastName": "Russell",
+      "fullName": "George Russell",
+      "team": "Mercedes"
     },
     "location": {
       "locality": "Melbourne",
@@ -42,7 +42,7 @@
       "driverNumber": 10,
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-10.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/pierre-gasly.png",
-      "position": "P10",
+      "position": "P12",
       "points": 1,
       "wins": 0,
       "team": "Alpine",
@@ -67,7 +67,7 @@
       "driverNumber": 43,
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-43.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/franco-colapinto.png",
-      "position": "P14",
+      "position": "P15",
       "points": 0,
       "wins": 0,
       "team": "Alpine",

@@ -1,6 +1,6 @@
 {
   "header": "Williams standings",
-  "generatedAtUtc": "2026-03-14T04:34:17.822Z",
+  "generatedAtUtc": "2026-03-14T05:11:31.916Z",
   "sources": {
     "driverStandings": "f1_driver_standings.json",
     "constructorStandings": "f1_constructors_standings.json",
@@ -22,12 +22,12 @@
     "round": "1",
     "raceName": "Australian Grand Prix",
     "date": "2026-03-08",
-    "timeUtc": "1:23:06.801",
     "circuit": "Albert Park Grand Prix Circuit",
     "winner": {
-      "name": "George Russell RUS",
-      "team": "Mercedes",
-      "laps": 58
+      "firstName": "George",
+      "lastName": "Russell",
+      "fullName": "George Russell",
+      "team": "Mercedes"
     },
     "location": {
       "locality": "Melbourne",
@@ -36,28 +36,28 @@
   },
   "drivers": [
     {
-      "firstName": "Alexander",
+      "firstName": "Alex",
       "lastName": "Albon",
-      "code": "ALB",
-      "driverNumber": 23,
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-23.png",
+      "code": "-",
+      "driverNumber": null,
+      "numberImageUrl": null,
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/alex-albon.png",
-      "position": "P12",
+      "position": "P14",
       "points": 0,
       "wins": 0,
       "team": "Williams",
       "bestResult": {
-        "position": "P12",
-        "raceName": "Australian Grand Prix",
-        "round": "1",
-        "date": "2026-03-08",
-        "circuit": "Albert Park Grand Prix Circuit",
+        "position": "-",
+        "raceName": "-",
+        "round": "-",
+        "date": "-",
+        "circuit": "-",
         "location": {
-          "locality": "Melbourne",
-          "country": "Australia"
+          "locality": "-",
+          "country": "-"
         },
-        "sessionKey": 11234,
-        "meetingKey": 1279
+        "sessionKey": null,
+        "meetingKey": null
       }
     },
     {
@@ -67,7 +67,7 @@
       "driverNumber": 55,
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-55.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/carlos-sainz.png",
-      "position": "P15",
+      "position": "P16",
       "points": 0,
       "wins": 0,
       "team": "Williams",

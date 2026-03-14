@@ -1,6 +1,6 @@
 {
   "header": "McLaren standings",
-  "generatedAtUtc": "2026-03-14T04:34:17.820Z",
+  "generatedAtUtc": "2026-03-14T05:11:31.914Z",
   "sources": {
     "driverStandings": "f1_driver_standings.json",
     "constructorStandings": "f1_constructors_standings.json",
@@ -13,7 +13,7 @@
     "teamStanding": {
       "team": "McLaren",
       "position": "P3",
-      "points": 10,
+      "points": 18,
       "wins": 0
     }
   },
@@ -22,12 +22,12 @@
     "round": "1",
     "raceName": "Australian Grand Prix",
     "date": "2026-03-08",
-    "timeUtc": "1:23:06.801",
     "circuit": "Albert Park Grand Prix Circuit",
     "winner": {
-      "name": "George Russell RUS",
-      "team": "Mercedes",
-      "laps": 58
+      "firstName": "George",
+      "lastName": "Russell",
+      "fullName": "George Russell",
+      "team": "Mercedes"
     },
     "location": {
       "locality": "Melbourne",
@@ -39,25 +39,25 @@
       "firstName": "Lando",
       "lastName": "Norris",
       "code": "NOR",
-      "driverNumber": 1,
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-1.png",
+      "driverNumber": 4,
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-4.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lando-norris.png",
       "position": "P5",
-      "points": 10,
+      "points": 15,
       "wins": 0,
       "team": "McLaren",
       "bestResult": {
-        "position": "P5",
-        "raceName": "Australian Grand Prix",
-        "round": "1",
-        "date": "2026-03-08",
-        "circuit": "Albert Park Grand Prix Circuit",
+        "position": "-",
+        "raceName": "-",
+        "round": "-",
+        "date": "-",
+        "circuit": "-",
         "location": {
-          "locality": "Melbourne",
-          "country": "Australia"
+          "locality": "-",
+          "country": "-"
         },
-        "sessionKey": 11234,
-        "meetingKey": 1279
+        "sessionKey": null,
+        "meetingKey": null
       }
     },
     {
@@ -67,8 +67,8 @@
       "driverNumber": 81,
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-81.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/oscar-piastri.png",
-      "position": "P18",
-      "points": 0,
+      "position": "P9",
+      "points": 3,
       "wins": 0,
       "team": "McLaren",
       "bestResult": {

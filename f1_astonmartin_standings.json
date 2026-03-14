@@ -1,6 +1,6 @@
 {
   "header": "Aston Martin standings",
-  "generatedAtUtc": "2026-03-14T04:34:17.821Z",
+  "generatedAtUtc": "2026-03-14T05:11:31.915Z",
   "sources": {
     "driverStandings": "f1_driver_standings.json",
     "constructorStandings": "f1_constructors_standings.json",
@@ -12,7 +12,7 @@
     "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_aston-martin_color_v2.png",
     "teamStanding": {
       "team": "Aston Martin",
-      "position": "-",
+      "position": "P11",
       "points": 0,
       "wins": 0
     }
@@ -22,12 +22,12 @@
     "round": "1",
     "raceName": "Australian Grand Prix",
     "date": "2026-03-08",
-    "timeUtc": "1:23:06.801",
     "circuit": "Albert Park Grand Prix Circuit",
     "winner": {
-      "name": "George Russell RUS",
-      "team": "Mercedes",
-      "laps": 58
+      "firstName": "George",
+      "lastName": "Russell",
+      "fullName": "George Russell",
+      "team": "Mercedes"
     },
     "location": {
       "locality": "Melbourne",
@@ -38,26 +38,26 @@
     {
       "firstName": "Lance",
       "lastName": "Stroll",
-      "code": "STR",
-      "driverNumber": 18,
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-18.png",
+      "code": "-",
+      "driverNumber": null,
+      "numberImageUrl": null,
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lance-stroll.png",
-      "position": "P17",
+      "position": "P18",
       "points": 0,
       "wins": 0,
       "team": "Aston Martin",
       "bestResult": {
         "position": "-",
-        "raceName": "Australian Grand Prix",
-        "round": "1",
-        "date": "2026-03-08",
-        "circuit": "Albert Park Grand Prix Circuit",
+        "raceName": "-",
+        "round": "-",
+        "date": "-",
+        "circuit": "-",
         "location": {
-          "locality": "Melbourne",
-          "country": "Australia"
+          "locality": "-",
+          "country": "-"
         },
-        "sessionKey": 11234,
-        "meetingKey": 1279
+        "sessionKey": null,
+        "meetingKey": null
       }
     },
     {
@@ -67,7 +67,7 @@
       "driverNumber": 14,
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-14.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/fernando-alonso.png",
-      "position": "P20",
+      "position": "P19",
       "points": 0,
       "wins": 0,
       "team": "Aston Martin",

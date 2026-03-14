@@ -1,6 +1,6 @@
 {
   "header": "Ferrari standings",
-  "generatedAtUtc": "2026-03-14T04:34:17.819Z",
+  "generatedAtUtc": "2026-03-14T05:11:31.913Z",
   "sources": {
     "driverStandings": "f1_driver_standings.json",
     "constructorStandings": "f1_constructors_standings.json",
@@ -13,7 +13,7 @@
     "teamStanding": {
       "team": "Ferrari",
       "position": "P2",
-      "points": 27,
+      "points": 40,
       "wins": 0
     }
   },
@@ -22,12 +22,12 @@
     "round": "1",
     "raceName": "Australian Grand Prix",
     "date": "2026-03-08",
-    "timeUtc": "1:23:06.801",
     "circuit": "Albert Park Grand Prix Circuit",
     "winner": {
-      "name": "George Russell RUS",
-      "team": "Mercedes",
-      "laps": 58
+      "firstName": "George",
+      "lastName": "Russell",
+      "fullName": "George Russell",
+      "team": "Mercedes"
     },
     "location": {
       "locality": "Melbourne",
@@ -43,7 +43,7 @@
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-16.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/charles-leclerc.png",
       "position": "P3",
-      "points": 15,
+      "points": 22,
       "wins": 0,
       "team": "Ferrari",
       "bestResult": {
@@ -68,7 +68,7 @@
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-44.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lewis-hamilton.png",
       "position": "P4",
-      "points": 12,
+      "points": 18,
       "wins": 0,
       "team": "Ferrari",
       "bestResult": {

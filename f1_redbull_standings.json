@@ -1,6 +1,6 @@
 {
   "header": "Red Bull standings",
-  "generatedAtUtc": "2026-03-14T04:34:17.817Z",
+  "generatedAtUtc": "2026-03-14T05:11:31.911Z",
   "sources": {
     "driverStandings": "f1_driver_standings.json",
     "constructorStandings": "f1_constructors_standings.json",
@@ -22,12 +22,12 @@
     "round": "1",
     "raceName": "Australian Grand Prix",
     "date": "2026-03-08",
-    "timeUtc": "1:23:06.801",
     "circuit": "Albert Park Grand Prix Circuit",
     "winner": {
-      "name": "George Russell RUS",
-      "team": "Mercedes",
-      "laps": 58
+      "firstName": "George",
+      "lastName": "Russell",
+      "fullName": "George Russell",
+      "team": "Mercedes"
     },
     "location": {
       "locality": "Melbourne",
@@ -39,15 +39,15 @@
       "firstName": "Max",
       "lastName": "Verstappen",
       "code": "VER",
-      "driverNumber": 3,
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-3.png",
+      "driverNumber": 1,
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-1.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/max-verstappen.png",
       "position": "P6",
       "points": 8,
       "wins": 0,
       "team": "Red Bull",
       "bestResult": {
-        "position": "P6",
+        "position": "P5",
         "raceName": "Australian Grand Prix",
         "round": "1",
         "date": "2026-03-08",
@@ -67,7 +67,7 @@
       "driverNumber": 6,
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-6.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/isack-hadjar.png",
-      "position": "P17",
+      "position": "P21",
       "points": 0,
       "wins": 0,
       "team": "Red Bull",
