@@ -7,8 +7,7 @@ const OUT_JSON = "f1_constructors_standings.json";
 const YEAR = new Date().getUTCFullYear();
 
 const SKY_F1_STANDINGS_URL = "https://www.skysports.com/f1/standings";
-const JOLPICA_LAST_RACE_URL =
-  "https://api.jolpi.ca/ergast/f1/current/last/results.json";
+const SEASON_RESULTS_FILE = "f1_season_event_results.json";
 
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 const TEAMLOGOS_DIR = "teamlogos";
@@ -113,6 +112,10 @@ function withCacheBust(url) {
   return CACHE_BUST ? `${url}${url.includes("?") ? "&" : "?"}v=${Date.now()}` : url;
 }
 
+function cleanText(value) {
+  return String(value || "").replace(/\s+/g, " ").trim();
+}
+
 function fmtPos(pos) {
   const raw = String(pos ?? "").trim();
   if (!raw) return "-";
@@ -189,6 +192,101 @@ function cleanLine(line) {
   return String(line || "").replace(/\s+/g, " ").trim();
 }
 
+function formatEventRaceName(event) {
+  const eventType = cleanText(event?.eventType).toLowerCase();
+  const meetingName = cleanText(event?.meetingName);
+  const raceName = cleanText(event?.raceName);
+  const sessionName = cleanText(event?.sessionName).toLowerCase();
+
+  const baseName =
+    meetingName &&
+    meetingName.toLowerCase() !== "race" &&
+    meetingName.toLowerCase() !== "sprint"
+      ? meetingName
+      : raceName &&
+          raceName.toLowerCase() !== "race" &&
+          raceName.toLowerCase() !== "sprint"
+        ? raceName
+        : "-";
+
+  if (eventType === "sprint" || sessionName === "sprint") {
+    if (baseName === "-") return "Sprint";
+    return baseName.toLowerCase().endsWith(" sprint")
+      ? baseName
+      : `${baseName} Sprint`;
+  }
+
+  return baseName;
+}
+
+function parseLastRaceFromSeasonResults(data) {
+  const events = Array.isArray(data?.events) ? data.events : [];
+
+  if (events.length === 0) {
+    return {
+      season: String(YEAR),
+      round: "-",
+      raceName: "-",
+      date: "-",
+      circuit: {
+        name: "-",
+        locality: "-",
+        country: "-",
+      },
+      winner: {
+        firstName: "-",
+        lastName: "-",
+        fullName: "-",
+        team: "-",
+      },
+    };
+  }
+
+  const sorted = [...events].sort((a, b) => {
+    const aTime = Date.parse(a?.dateStartUtc || a?.date || 0);
+    const bTime = Date.parse(b?.dateStartUtc || b?.date || 0);
+
+    const aSafe = Number.isFinite(aTime) ? aTime : 0;
+    const bSafe = Number.isFinite(bTime) ? bTime : 0;
+
+    if (aSafe !== bSafe) return bSafe - aSafe;
+
+    const aType = cleanText(a?.eventType).toLowerCase() === "race" ? 2 : 1;
+    const bType = cleanText(b?.eventType).toLowerCase() === "race" ? 2 : 1;
+    return bType - aType;
+  });
+
+  const latest = sorted[0];
+  const winnerRow = Array.isArray(latest?.drivers)
+    ? latest.drivers.find((d) => cleanText(d?.position) === "P1")
+    : null;
+
+  const winnerFullName = cleanText(winnerRow?.fullName);
+  const nameParts = winnerFullName ? winnerFullName.split(/\s+/) : [];
+  const firstName =
+    nameParts.length > 1 ? nameParts.slice(0, -1).join(" ") : nameParts[0] || "-";
+  const lastName =
+    nameParts.length > 1 ? nameParts[nameParts.length - 1] : "-";
+
+  return {
+    season: String(data?.season ?? YEAR),
+    round: latest?.round != null ? String(latest.round) : "-",
+    raceName: formatEventRaceName(latest),
+    date: latest?.date ?? "-",
+    circuit: {
+      name: latest?.circuit ?? "-",
+      locality: latest?.location?.locality ?? "-",
+      country: latest?.location?.country ?? "-",
+    },
+    winner: {
+      firstName,
+      lastName,
+      fullName: winnerFullName || "-",
+      team: normalizeTeamName(winnerRow?.team ?? "-"),
+    },
+  };
+}
+
 async function fetchText(url, accept = "text/html,*/*") {
   const res = await fetch(url, {
     headers: {
@@ -211,22 +309,9 @@ async function fetchText(url, accept = "text/html,*/*") {
   return { res, text, url };
 }
 
-async function fetchJson(url) {
-  const res = await fetch(url, {
-    headers: {
-      "User-Agent": UA,
-      Accept: "application/json",
-    },
-    redirect: "follow",
-  });
-
-  const text = await res.text();
-
-  if (!res.ok) {
-    throw new Error(`HTTP ${res.status} from ${url}\n${text}`);
-  }
-
-  return JSON.parse(text);
+async function readJson(file) {
+  const raw = await fs.readFile(file, "utf8");
+  return JSON.parse(raw);
 }
 
 /* ------------------------------------------------ */
@@ -295,60 +380,6 @@ function parseSkyConstructorStandings(html) {
 }
 
 /* ------------------------------------------------ */
-/* LAST RACE PARSER (JOLPICA) */
-/* ------------------------------------------------ */
-
-function parseLastRace(data) {
-  const race = data?.MRData?.RaceTable?.Races?.[0];
-
-  if (!race) {
-    return {
-      season: String(YEAR),
-      round: "-",
-      raceName: "-",
-      date: "-",
-      circuit: {
-        name: "-",
-        locality: "-",
-        country: "-",
-      },
-      winner: {
-        firstName: "-",
-        lastName: "-",
-        fullName: "-",
-        team: "-",
-      },
-    };
-  }
-
-  const result = race?.Results?.[0];
-  const givenName = result?.Driver?.givenName || "-";
-  const familyName = result?.Driver?.familyName || "-";
-  const fullName =
-    givenName !== "-" || familyName !== "-"
-      ? `${givenName} ${familyName}`.trim()
-      : "-";
-
-  return {
-    season: String(race?.season ?? YEAR),
-    round: String(race?.round ?? "-"),
-    raceName: race?.raceName ?? "-",
-    date: race?.date ?? "-",
-    circuit: {
-      name: race?.Circuit?.circuitName ?? "-",
-      locality: race?.Circuit?.Location?.locality ?? "-",
-      country: race?.Circuit?.Location?.country ?? "-",
-    },
-    winner: {
-      firstName: givenName,
-      lastName: familyName,
-      fullName,
-      team: normalizeTeamName(result?.Constructor?.name ?? "-"),
-    },
-  };
-}
-
-/* ------------------------------------------------ */
 /* OUTPUT HELPERS */
 /* ------------------------------------------------ */
 
@@ -409,9 +440,9 @@ function sortConstructors(rows) {
 async function updateConstructors() {
   const now = new Date().toISOString();
 
-  const [skyResp, lastRaceJson] = await Promise.all([
+  const [skyResp, seasonResults] = await Promise.all([
     fetchText(SKY_F1_STANDINGS_URL),
-    fetchJson(JOLPICA_LAST_RACE_URL),
+    readJson(SEASON_RESULTS_FILE),
   ]);
 
   const parsedStandings = parseSkyConstructorStandings(skyResp.text);
@@ -443,24 +474,26 @@ async function updateConstructors() {
     standingsParseReason = standingsParseReason || "no_rows_parsed";
   }
 
+  const lastRace = parseLastRaceFromSeasonResults(seasonResults);
+
   const out = {
     header: "Constructors standings",
     generatedAtUtc: now,
     sources: {
       constructorsStandings: SKY_F1_STANDINGS_URL,
-      lastRace: JOLPICA_LAST_RACE_URL,
+      lastRace: SEASON_RESULTS_FILE,
       logos: `LOCAL_ONLY: ${PAGES_BASE}/${TEAMLOGOS_DIR}/`,
     },
     meta: {
       mode,
       seasonUsed: String(YEAR),
-      roundUsed: parseLastRace(lastRaceJson).round,
+      roundUsed: lastRace.round,
       cacheBust: CACHE_BUST,
       note:
-        "Uses Sky Sports constructor standings as primary source and Jolpica for last race metadata. If standings are empty/unavailable, emits alphabetical placeholder teams with '-' stats. Logos are LOCAL ONLY from /teamlogos via GitHub Pages.",
+        "Uses Sky Sports constructor standings as primary source and local season event results for last race metadata. If standings are empty/unavailable, emits alphabetical placeholder teams with '-' stats. Logos are LOCAL ONLY from /teamlogos via GitHub Pages.",
       standingsParseReason,
     },
-    lastRace: parseLastRace(lastRaceJson),
+    lastRace,
     constructors,
   };
 
