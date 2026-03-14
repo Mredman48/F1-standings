@@ -198,13 +198,33 @@ function matchesTeamName(name, keywords) {
   return keywords.some((keyword) => value.includes(keyword));
 }
 
+function formatBestResultRaceName(best) {
+  const raceName = String(best?.raceName || "").trim();
+  const sessionName = String(best?.sessionName || "").trim();
+
+  if (!raceName && !sessionName) return "-";
+  if (!raceName) return sessionName || "-";
+
+  const sessionLower = sessionName.toLowerCase();
+
+  if (!sessionName || sessionLower === "race") {
+    return raceName;
+  }
+
+  if (raceName.toLowerCase().includes(sessionLower)) {
+    return raceName;
+  }
+
+  return `${raceName} ${sessionName}`;
+}
+
 function bestResultFromSeasonData(best) {
   if (!best) return emptyBestResult();
 
   return {
     position: best?.position ?? "-",
     eventType: best?.eventType ?? "-",
-    raceName: best?.meetingName ?? best?.raceName ?? "-",
+    raceName: formatBestResultRaceName(best),
     round: best?.round != null ? String(best.round) : "-",
     date: best?.date ?? "-",
     circuit: best?.circuit ?? "-",
