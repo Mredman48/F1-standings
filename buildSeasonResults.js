@@ -5,6 +5,7 @@ const UA =
 
 const YEAR = new Date().getUTCFullYear();
 const OPENF1_BASE = "https://api.openf1.org/v1";
+const JOLPICA_BASE = "https://api.jolpi.ca/ergast/f1";
 const OUTPUT_FILE = "f1_season_event_results.json";
 
 function sleep(ms) {
@@ -59,6 +60,22 @@ function isBetterResult(candidate, current) {
   const ad = String(candidate.date || "");
   const bd = String(current.date || "");
   return ad < bd;
+}
+
+function normalizeKey(value) {
+  return cleanText(value)
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+function buildFormattedRaceName(meetingName, eventType) {
+  const base = cleanText(meetingName) || "-";
+  if (base === "-") return "-";
+  return eventType === "sprint" ? `${base} Sprint` : base;
 }
 
 async function fetchJson(url, { allow401 = false } = {}) {
@@ -132,9 +149,76 @@ async function getSessionResults(session) {
   return rows || [];
 }
 
-function buildSessionObject(session, rows) {
+async function getSeasonSchedule(year) {
+  const data = await fetchJson(`${JOLPICA_BASE}/${year}.json`);
+  const races = data?.MRData?.RaceTable?.Races || [];
+
+  return races.map((race) => ({
+    round: Number(race?.round) || null,
+    raceName: cleanText(race?.raceName) || "-",
+    date: race?.date || "-",
+    circuit: cleanText(race?.Circuit?.circuitName) || "-",
+    locality: cleanText(race?.Circuit?.Location?.locality) || "-",
+    country: cleanText(race?.Circuit?.Location?.country) || "-",
+  }));
+}
+
+function attachScheduleToSessions(sessions, schedule) {
+  const races = sessions.filter(
+    (s) => normalizeEventType(s?.session_name) === "race"
+  );
+
+  const scheduleByRaceSessionKey = new Map();
+
+  for (let i = 0; i < races.length; i += 1) {
+    const session = races[i];
+    const scheduleRace = schedule[i] || null;
+    if (!scheduleRace) continue;
+
+    const meetingKey = Number(session?.meeting_key);
+    const sessionKey = Number(session?.session_key);
+
+    if (Number.isFinite(sessionKey)) {
+      scheduleByRaceSessionKey.set(sessionKey, scheduleRace);
+    }
+
+    if (Number.isFinite(meetingKey)) {
+      for (const s of sessions) {
+        if (Number(s?.meeting_key) === meetingKey) {
+          const sk = Number(s?.session_key);
+          if (Number.isFinite(sk)) {
+            scheduleByRaceSessionKey.set(sk, scheduleRace);
+          }
+        }
+      }
+    }
+  }
+
+  return scheduleByRaceSessionKey;
+}
+
+function buildSessionObject(session, rows, scheduleMeta) {
   const eventType = normalizeEventType(session?.session_name);
   const sessionKey = Number(session?.session_key);
+
+  const openf1MeetingName = cleanText(session?.meeting_name);
+  const jolpicaRaceName = cleanText(scheduleMeta?.raceName);
+  const meetingName = openf1MeetingName || jolpicaRaceName || "-";
+
+  const locationLocality =
+    cleanText(session?.location) ||
+    cleanText(scheduleMeta?.locality) ||
+    "-";
+
+  const locationCountry =
+    cleanText(session?.country_name) ||
+    cleanText(scheduleMeta?.country) ||
+    "-";
+
+  const circuit =
+    cleanText(session?.circuit_short_name) ||
+    cleanText(scheduleMeta?.circuit) ||
+    "-";
 
   const drivers = rows
     .map((row) => ({
@@ -170,17 +254,18 @@ function buildSessionObject(session, rows) {
     eventType,
     sessionKey,
     meetingKey: Number(session?.meeting_key) || null,
-    meetingName: cleanText(session?.meeting_name) || "-",
+    meetingName,
+    raceName: buildFormattedRaceName(meetingName, eventType),
     sessionName: cleanText(session?.session_name) || "-",
     officialName: cleanText(session?.session_name) || "-",
-    round: null,
+    round: scheduleMeta?.round ?? null,
     dateStartUtc: session?.date_start || null,
     dateEndUtc: session?.date_end || null,
     date: String(session?.date_start || "").slice(0, 10) || "-",
-    circuit: cleanText(session?.circuit_short_name) || "-",
+    circuit,
     location: {
-      locality: cleanText(session?.location) || "-",
-      country: cleanText(session?.country_name) || "-",
+      locality: locationLocality,
+      country: locationCountry,
     },
     drivers,
   };
@@ -198,7 +283,9 @@ function buildBestByDriver(events) {
         position: driver.position,
         eventType: event.eventType,
         meetingName: event.meetingName,
+        raceName: event.raceName,
         sessionName: event.sessionName,
+        round: event.round,
         date: event.date,
         dateStartUtc: event.dateStartUtc,
         circuit: event.circuit,
@@ -217,17 +304,26 @@ function buildBestByDriver(events) {
 }
 
 async function buildSeasonResults() {
-  const sessions = await getCompletedRaceAndSprintSessions(YEAR);
+  const [sessions, schedule] = await Promise.all([
+    getCompletedRaceAndSprintSessions(YEAR),
+    getSeasonSchedule(YEAR),
+  ]);
 
+  const scheduleBySessionKey = attachScheduleToSessions(sessions, schedule);
   const events = [];
 
   for (const session of sessions) {
     const rows = await getSessionResults(session);
-    const event = buildSessionObject(session, rows);
+    const scheduleMeta =
+      scheduleBySessionKey.get(Number(session?.session_key)) || null;
+
+    const event = buildSessionObject(session, rows, scheduleMeta);
     events.push(event);
+
     console.log(
-      `Loaded ${event.eventType} ${event.meetingName} (${event.date}) with ${event.drivers.length} drivers`
+      `Loaded ${event.raceName} (${event.date}) with ${event.drivers.length} drivers`
     );
+
     await sleep(120);
   }
 
@@ -239,7 +335,9 @@ async function buildSeasonResults() {
     season: YEAR,
     source: {
       primary: "OpenF1 sessions + session_result",
-      note: "Historical OpenF1 race and sprint sessions only. Best result is chosen by lowest classified finishing position.",
+      enrichment: "Jolpica season schedule",
+      note:
+        "Meeting names come from OpenF1 when available, with Jolpica used to enrich round, circuit, and location data.",
     },
     events,
     bestByDriverNumber,
