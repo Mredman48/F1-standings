@@ -1,11 +1,14 @@
 {
   "header": "Audi standings",
-  "generatedAtUtc": "2026-03-14T05:44:56.125Z",
+  "generatedAtUtc": "2026-03-14T05:54:25.806Z",
   "sources": {
     "driverStandings": "f1_driver_standings.json",
     "constructorStandings": "f1_constructors_standings.json",
-    "bestResults": "Official F1 race-result + sprint-results pages (24 pages scanned)",
+    "bestResults": "Previous team JSON bestResult only",
     "lastRace": "https://api.jolpi.ca/ergast/f1/current/last/results.json"
+  },
+  "meta": {
+    "latestEventChecked": null
   },
   "audi": {
     "team": "Audi",
