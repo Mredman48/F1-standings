@@ -166,13 +166,6 @@ function cleanLine(line) {
   return String(line || "").replace(/\s+/g, " ").trim();
 }
 
-function normalizeHeadingForMatch(line) {
-  return cleanLine(line)
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, " ")
-    .trim();
-}
-
 async function fetchText(url, accept = "text/html,*/*") {
   const res = await fetch(url, {
     headers: {
@@ -198,9 +191,12 @@ async function fetchText(url, accept = "text/html,*/*") {
 function parseCompactDriverRow(line) {
   const value = cleanLine(line);
 
-  // Actual current format:
+  // Example:
   // 1GBR33
-  const m = value.match(/^(\d+)【\d+†(.+?)\s([A-Z]{3})】([A-Z]{3})【\d+†(.+?)】(\d+)$/);
+  const m = value.match(
+    /^(\d+)【\d+†(.+?)\s([A-Z]{3})】([A-Z]{3})【\d+†(.+?)】(\d+)$/
+  );
+
   if (!m) return null;
 
   const [, posRaw, fullName, code, nationality, teamRaw, pointsRaw] = m;
@@ -232,39 +228,36 @@ function parseCompactDriverRow(line) {
 function parseOfficialDriverStandings(html, year) {
   const lines = htmlToLines(html);
 
-  const wantedHeading = normalizeHeadingForMatch(`${year} drivers standings`);
-  const start = lines.findIndex((line) => {
-    const norm = normalizeHeadingForMatch(line);
-    return norm.includes(wantedHeading);
-  });
+  const heading = `# ${year} Drivers' Standings`;
+  const start = lines.findIndex((line) => cleanLine(line) === heading);
 
   if (start === -1) {
     return {
       rows: [],
       reason: "heading_not_found",
-      debugHeadingSample: lines.slice(120, 132),
+      headingTried: heading,
+      nearby: lines.filter((line) => /\bDrivers'? Standings\b/i.test(line)).slice(0, 10),
     };
   }
 
-  const section = lines.slice(start + 1);
   const rows = [];
+  const section = lines.slice(start + 1);
 
   for (const line of section) {
     const value = cleanLine(line);
 
-    if (/^##\s*/.test(value)) break;
-    if (/^our partners$/i.test(value)) break;
-    if (/^pos\.driver nationality team pts\.$/i.test(value)) continue;
+    if (!value) continue;
+    if (value === "Pos.Driver Nationality Team Pts.") continue;
+    if (value.startsWith("## ")) break;
+    if (/^OUR PARTNERS$/i.test(value)) break;
 
     const parsed = parseCompactDriverRow(value);
-    if (parsed) {
-      rows.push(parsed);
-    }
+    if (parsed) rows.push(parsed);
   }
 
   return {
     rows,
-    reason: rows.length > 0 ? null : "no_rows_parsed",
+    reason: rows.length ? null : "no_rows_parsed",
   };
 }
 
@@ -280,11 +273,9 @@ async function updateStandings() {
 
   if (!Array.isArray(parsed.rows) || parsed.rows.length === 0) {
     throw new Error(
-      `Official F1 drivers standings parser returned no rows. reason=${parsed.reason}${
-        parsed.debugHeadingSample
-          ? ` sample=${JSON.stringify(parsed.debugHeadingSample)}`
-          : ""
-      }`
+      `Official F1 drivers standings parser returned no rows. reason=${parsed.reason}` +
+        (parsed.headingTried ? ` heading=${parsed.headingTried}` : "") +
+        (parsed.nearby ? ` nearby=${JSON.stringify(parsed.nearby)}` : "")
     );
   }
 
