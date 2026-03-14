@@ -1,6 +1,6 @@
 {
   "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-03-14T05:01:25.255Z",
+  "generatedAtUtc": "2026-03-14T05:06:57.466Z",
   "season": 2026,
   "mode": "SKY_SPORTS_STANDINGS",
   "source": {
@@ -8,7 +8,24 @@
     "url": "https://www.skysports.com/f1/standings",
     "note": "Standings scraped from Sky Sports F1 standings page."
   },
-  "lastRace": null,
+  "lastRace": {
+    "season": "2026",
+    "round": "1",
+    "raceName": "Australian Grand Prix",
+    "date": "2026-03-08",
+    "circuit": {
+      "name": "Albert Park Grand Prix Circuit",
+      "locality": "Melbourne",
+      "country": "Australia"
+    },
+    "winner": {
+      "firstName": "George",
+      "lastName": "Russell",
+      "fullName": "George Russell",
+      "code": "RUS",
+      "team": "Mercedes"
+    }
+  },
   "drivers": [
     {
       "position": "P1",
