@@ -308,26 +308,6 @@ function stripF1Markers(s) {
   return cleanLine(String(s || "").replace(/【[^】]+】/g, " "));
 }
 
-function splitFullName(fullName) {
-  const parts = String(fullName || "")
-    .trim()
-    .split(/\s+/)
-    .filter(Boolean);
-
-  if (parts.length === 0) {
-    return { firstName: "-", lastName: "-" };
-  }
-
-  if (parts.length === 1) {
-    return { firstName: parts[0], lastName: "-" };
-  }
-
-  return {
-    firstName: parts.slice(0, -1).join(" "),
-    lastName: parts[parts.length - 1],
-  };
-}
-
 function matchesTeamName(name, keywords) {
   const value = String(name || "").toLowerCase();
   return keywords.some((keyword) => value.includes(keyword));
@@ -340,52 +320,29 @@ function toAbsoluteF1Url(href) {
   return `https://www.formula1.com/${href}`;
 }
 
-function bestResultFromSeasonResult(result) {
-  const pos =
-    result.classification === "classified"
-      ? `P${result.position}`
-      : result.status || "-";
-
-  return {
-    position: pos,
-    eventType: result.eventType,
-    raceName: result.raceName ?? "-",
-    round: result.round ?? "-",
-    date: result.date ?? "-",
-    circuit: result.circuit ?? "-",
-    location: {
-      locality: result.locality ?? "-",
-      country: result.country ?? "-",
-    },
-    sourceUrl: result.sourceUrl ?? null,
-  };
+function classifyPosition(pos) {
+  const p = String(pos || "").toUpperCase().trim();
+  if (/^P\d+$/.test(p)) return { kind: "classified", rank: Number(p.slice(1)) };
+  if (["DNF", "DNS", "NC", "DSQ"].includes(p)) return { kind: "status", rank: Infinity };
+  return { kind: "blank", rank: Infinity };
 }
 
-function chooseBetterClassified(a, b) {
-  if (!a) return b;
-  if (!b) return a;
+function shouldUseLatestResult(existingBest, latestResult) {
+  const existing = classifyPosition(existingBest?.position || "-");
+  const latest = classifyPosition(latestResult?.position || "-");
 
-  if (b.position < a.position) return b;
-  if (a.position < b.position) return a;
+  if (latest.kind === "blank") return false;
 
-  if (String(b.date) < String(a.date)) return b;
-  return a;
-}
+  if (latest.kind === "classified") {
+    if (existing.kind !== "classified") return true;
+    return latest.rank < existing.rank;
+  }
 
-function chooseLatestStatus(a, b) {
-  if (!a) return b;
-  if (!b) return a;
+  if (latest.kind === "status") {
+    return existing.kind === "blank";
+  }
 
-  const da = String(a.date || "");
-  const db = String(b.date || "");
-
-  if (db > da) return b;
-  if (da > db) return a;
-
-  const ra = Number(a.round || 0);
-  const rb = Number(b.round || 0);
-  if (rb > ra) return b;
-  return a;
+  return false;
 }
 
 /* -------------------------------- */
@@ -441,6 +398,15 @@ async function readJson(file) {
   return JSON.parse(raw);
 }
 
+async function readJsonIfExists(file) {
+  try {
+    const raw = await fs.readFile(file, "utf8");
+    return JSON.parse(raw);
+  } catch {
+    return null;
+  }
+}
+
 /* -------------------------------- */
 /* LAST RACE */
 /* -------------------------------- */
@@ -489,7 +455,31 @@ function mergeLastRace(existingLastRace, jolpicaLastRace) {
 }
 
 /* -------------------------------- */
-/* OFFICIAL F1 RESULT PAGES */
+/* EXISTING BEST RESULT BASELINE */
+/* -------------------------------- */
+
+async function readExistingBestResults() {
+  const map = new Map();
+
+  for (const teamConfig of TEAMS) {
+    const data = await readJsonIfExists(teamConfig.outputFile);
+    const drivers = data?.drivers || [];
+
+    for (const d of drivers) {
+      const num = Number(d?.driverNumber);
+      if (!Number.isFinite(num) || num <= 0) continue;
+
+      if (d?.bestResult) {
+        map.set(num, d.bestResult);
+      }
+    }
+  }
+
+  return map;
+}
+
+/* -------------------------------- */
+/* LATEST COMPLETED OFFICIAL F1 EVENT */
 /* -------------------------------- */
 
 function extractOfficialResultUrls(indexHtml) {
@@ -505,14 +495,13 @@ function extractOfficialResultUrls(indexHtml) {
     }
   }
 
-  return [...urls].sort();
+  return [...urls];
 }
 
 function parseEventMeta(lines, sourceUrl) {
   const headingIndex = lines.findIndex((line) =>
     /^#\s+FORMULA 1 /i.test(cleanLine(line))
   );
-
   if (headingIndex === -1) return null;
 
   const heading = cleanLine(lines[headingIndex]);
@@ -537,7 +526,7 @@ function parseEventMeta(lines, sourceUrl) {
   }
 
   const roundMatch = sourceUrl.match(/\/races\/(\d+)\//);
-  const round = roundMatch ? roundMatch[1] : "-";
+  const round = roundMatch ? Number(roundMatch[1]) : 0;
 
   return {
     eventType,
@@ -555,7 +544,6 @@ function parseOfficialResultRows(lines, meta) {
   const start = lines.findIndex((line) =>
     /^Pos\.No\.Driver Team Laps Time \/ Retired Pts\.$/i.test(cleanLine(line))
   );
-
   if (start === -1) return [];
 
   const out = [];
@@ -568,6 +556,8 @@ function parseOfficialResultRows(lines, meta) {
     if (/^OUR PARTNERS$/i.test(line)) break;
     if (/^Download the Official F1 App$/i.test(line)) break;
     if (/^View all$/i.test(line)) continue;
+    if (/^No results available$/i.test(line)) break;
+    if (/^Error$/i.test(line)) break;
 
     line = stripF1Markers(line);
 
@@ -577,121 +567,75 @@ function parseOfficialResultRows(lines, meta) {
 
     if (!match) continue;
 
-    const [, posRaw, numRaw, fullNameRaw, code, teamRaw, lapsRaw, timeRetiredRaw] = match;
-
+    const [, posRaw, numRaw, fullNameRaw, code, teamRaw] = match;
     const num = Number(numRaw);
     if (!Number.isFinite(num) || num <= 0) continue;
 
-    const fullName = cleanLine(fullNameRaw);
-    const { firstName, lastName } = splitFullName(fullName);
-    const statusText = cleanLine(timeRetiredRaw).toUpperCase();
-
-    let classification = "classified";
-    let position = null;
-    let status = null;
+    let positionText = "-";
 
     if (/^\d+$/.test(posRaw)) {
-      classification = "classified";
-      position = Number(posRaw);
-    } else {
-      classification = "status";
-      position = null;
-
-      if (statusText === "DNS") status = "DNS";
-      else if (statusText === "DNF") status = "DNF";
-      else if (posRaw === "DSQ") status = "DSQ";
-      else if (posRaw === "DNF") status = "DNF";
-      else if (posRaw === "DNS") status = "DNS";
-      else status = "NC";
+      positionText = `P${Number(posRaw)}`;
+    } else if (["DNF", "DNS", "DSQ", "NC"].includes(String(posRaw).toUpperCase())) {
+      positionText = String(posRaw).toUpperCase();
     }
 
     out.push({
       driverNumber: num,
-      fullName,
-      firstName,
-      lastName,
+      fullName: cleanLine(fullNameRaw),
       code: code.toUpperCase(),
       team: normalizeTeamName(cleanLine(teamRaw)),
-      laps: Number(lapsRaw),
-      timeRetired: cleanLine(timeRetiredRaw),
-      classification,
-      position,
-      status,
-      eventType: meta.eventType,
-      raceName: meta.raceName,
-      round: meta.round,
-      date: meta.date,
-      circuit: meta.circuit,
-      locality: meta.locality,
-      country: meta.country,
-      sourceUrl: meta.sourceUrl,
+      bestResult: {
+        position: positionText,
+        eventType: meta.eventType,
+        raceName: meta.raceName,
+        round: String(meta.round || "-"),
+        date: meta.date,
+        circuit: meta.circuit,
+        location: {
+          locality: meta.locality,
+          country: meta.country,
+        },
+        sourceUrl: meta.sourceUrl,
+      },
     });
   }
 
   return out;
 }
 
-async function getSeasonBestAndStatusResults() {
+function eventSortValue(meta) {
+  if (!meta) return -1;
+  const typeWeight = meta.eventType === "race" ? 2 : 1;
+  return meta.round * 10 + typeWeight;
+}
+
+async function getLatestCompletedEventResults() {
   const indexHtml = await fetchText(F1_RESULTS_RACES_INDEX_URL);
-  const resultUrls = extractOfficialResultUrls(indexHtml);
+  const urls = extractOfficialResultUrls(indexHtml);
 
-  console.log(`Found ${resultUrls.length} official result URLs`);
+  let bestEvent = null;
 
-  const bestClassifiedByNumber = {};
-  const latestStatusByNumber = {};
-
-  for (const url of resultUrls) {
+  for (const url of urls) {
     try {
       const html = await fetchText(url);
       const lines = htmlToLines(html);
       const meta = parseEventMeta(lines, url);
-
-      if (!meta) {
-        console.warn(`No event meta parsed for ${url}`);
-        continue;
-      }
+      if (!meta) continue;
 
       const rows = parseOfficialResultRows(lines, meta);
-      console.log(`Parsed ${rows.length} rows from ${url}`);
+      if (rows.length === 0) continue;
 
-      for (const row of rows) {
-        const key = String(row.driverNumber);
-
-        if (row.classification === "classified" && Number.isFinite(row.position)) {
-          bestClassifiedByNumber[key] = chooseBetterClassified(
-            bestClassifiedByNumber[key],
-            row
-          );
-        } else {
-          latestStatusByNumber[key] = chooseLatestStatus(
-            latestStatusByNumber[key],
-            row
-          );
-        }
+      if (!bestEvent || eventSortValue(meta) > eventSortValue(bestEvent.meta)) {
+        bestEvent = { meta, rows };
       }
     } catch (err) {
-      console.warn(`Skipping results page ${url}: ${err.message}`);
+      console.warn(`Skipping latest-event candidate ${url}: ${err.message}`);
     }
 
-    await sleep(120);
+    await sleep(100);
   }
 
-  const merged = {};
-  const keys = new Set([
-    ...Object.keys(bestClassifiedByNumber),
-    ...Object.keys(latestStatusByNumber),
-  ]);
-
-  for (const key of keys) {
-    merged[key] = bestClassifiedByNumber[key] || latestStatusByNumber[key];
-  }
-
-  console.log(`Built best/status results for ${keys.size} drivers`);
-
-  return {
-    bestByNumber: merged,
-    sourceCount: resultUrls.length,
-  };
+  return bestEvent;
 }
 
 /* -------------------------------- */
@@ -731,12 +675,22 @@ function getTeamConstructor(constructorData, teamConfig) {
   };
 }
 
+function buildLatestResultMap(latestEvent) {
+  const map = new Map();
+  for (const row of latestEvent?.rows || []) {
+    map.set(Number(row.driverNumber), row.bestResult);
+  }
+  return map;
+}
+
 async function buildTeamJson(
   teamConfig,
   driverData,
   constructorData,
-  seasonResultPack,
-  lastRace
+  existingBestMap,
+  latestResultMap,
+  lastRace,
+  latestEventMeta
 ) {
   const teamDrivers = getTeamDrivers(driverData, teamConfig);
   const teamStanding = getTeamConstructor(constructorData, teamConfig);
@@ -745,17 +699,15 @@ async function buildTeamJson(
 
   for (const d of teamDrivers) {
     const drv = d.driver || {};
-
     const first = drv.firstName || "-";
     const last = drv.lastName || "-";
     const num = Number(drv.driverNumber) || null;
 
-    let bestResult = emptyBestResult();
+    let bestResult = existingBestMap.get(num) || emptyBestResult();
+    const latestResult = latestResultMap.get(num);
 
-    if (num && seasonResultPack.bestByNumber[String(num)]) {
-      bestResult = bestResultFromSeasonResult(
-        seasonResultPack.bestByNumber[String(num)]
-      );
+    if (latestResult && shouldUseLatestResult(bestResult, latestResult)) {
+      bestResult = latestResult;
     }
 
     drivers.push({
@@ -783,8 +735,22 @@ async function buildTeamJson(
     sources: {
       driverStandings: DRIVER_STANDINGS_FILE,
       constructorStandings: CONSTRUCTOR_STANDINGS_FILE,
-      bestResults: `Official F1 race-result + sprint-results pages (${seasonResultPack.sourceCount} pages scanned)`,
+      bestResults: latestEventMeta
+        ? `Previous team JSON bestResult, overwritten only if latest official F1 ${latestEventMeta.eventType} result is better`
+        : "Previous team JSON bestResult only",
       lastRace: JOLPICA_LAST_RACE_URL,
+    },
+
+    meta: {
+      latestEventChecked: latestEventMeta
+        ? {
+            eventType: latestEventMeta.eventType,
+            raceName: latestEventMeta.raceName,
+            round: String(latestEventMeta.round || "-"),
+            date: latestEventMeta.date,
+            sourceUrl: latestEventMeta.sourceUrl,
+          }
+        : null,
     },
 
     [teamConfig.objectKey]: {
@@ -804,23 +770,40 @@ async function buildTeamJson(
 /* -------------------------------- */
 
 async function updateAllTeamStandings() {
-  const [driverData, constructorData, jolpicaLastRace, seasonResultPack] =
-    await Promise.all([
-      readJson(DRIVER_STANDINGS_FILE),
-      readJson(CONSTRUCTOR_STANDINGS_FILE),
-      getLastRaceMeta(),
-      getSeasonBestAndStatusResults(),
-    ]);
+  const [
+    driverData,
+    constructorData,
+    jolpicaLastRace,
+    existingBestMap,
+    latestEvent,
+  ] = await Promise.all([
+    readJson(DRIVER_STANDINGS_FILE),
+    readJson(CONSTRUCTOR_STANDINGS_FILE),
+    getLastRaceMeta(),
+    readExistingBestResults(),
+    getLatestCompletedEventResults(),
+  ]);
 
   const mergedLastRace = mergeLastRace(constructorData.lastRace, jolpicaLastRace);
+  const latestResultMap = buildLatestResultMap(latestEvent);
+
+  if (latestEvent?.meta) {
+    console.log(
+      `Latest completed event: round ${latestEvent.meta.round} ${latestEvent.meta.raceName} (${latestEvent.meta.eventType})`
+    );
+  } else {
+    console.log("No latest completed official F1 event results found.");
+  }
 
   for (const teamConfig of TEAMS) {
     const out = await buildTeamJson(
       teamConfig,
       driverData,
       constructorData,
-      seasonResultPack,
-      mergedLastRace
+      existingBestMap,
+      latestResultMap,
+      mergedLastRace,
+      latestEvent?.meta || null
     );
 
     await fs.writeFile(
