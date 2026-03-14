@@ -1,14 +1,16 @@
-// UpdateAllTeamStandings.js
 import fs from "node:fs/promises";
 
-const UA = "f1-standings-bot";
+const UA =
+  "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36";
 
 const DRIVER_STANDINGS_FILE = "f1_driver_standings.json";
 const CONSTRUCTOR_STANDINGS_FILE = "f1_constructors_standings.json";
 
-const OPENF1_BASE = "https://api.openf1.org/v1";
-const JOLPICA_BASE = "https://api.jolpi.ca/ergast/f1";
 const YEAR = new Date().getUTCFullYear();
+
+const F1_RESULTS_RACES_INDEX_URL = `https://www.formula1.com/en/results/${YEAR}/races`;
+const JOLPICA_LAST_RACE_URL =
+  "https://api.jolpi.ca/ergast/f1/current/last/results.json";
 
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 const TEAMLOGOS_DIR = "teamlogos";
@@ -17,6 +19,51 @@ const DRIVER_NUMBER_FOLDER = "driver-numbers";
 
 const DRIVER_FIRSTNAME_OVERRIDES = {
   alexander: "alex",
+};
+
+const TEAM_NAME_OVERRIDES = {
+  "RB F1 Team": "VCARB",
+  "Visa Cash App RB F1 Team": "VCARB",
+  "Visa Cash App RB": "VCARB",
+  "Racing Bulls": "VCARB",
+  "Visa Cash App Racing Bulls": "VCARB",
+
+  "Haas F1 Team": "Haas",
+  "MoneyGram Haas F1 Team": "Haas",
+  "Haas Ferrari": "Haas",
+
+  "Alpine F1 Team": "Alpine",
+  "BWT Alpine Formula One Team": "Alpine",
+  "Alpine Renault": "Alpine",
+
+  "Red Bull Racing": "Red Bull",
+  "Oracle Red Bull Racing": "Red Bull",
+  "Red Bull Racing Honda RBPT": "Red Bull",
+
+  "Kick Sauber": "Audi",
+  "Stake F1 Team Kick Sauber": "Audi",
+  "Audi Formula 1 Team": "Audi",
+  "Audi Formula One Team": "Audi",
+  "Audi Revolut": "Audi",
+  Sauber: "Audi",
+
+  Cadillac: "Cadillac",
+  "Cadillac F1 Team": "Cadillac",
+  "Cadillac Formula 1 Team": "Cadillac",
+  "Cadillac Formula One Team": "Cadillac",
+
+  "McLaren Formula 1 Team": "McLaren",
+  "McLaren Mercedes": "McLaren",
+
+  "Mercedes-AMG PETRONAS Formula One Team": "Mercedes",
+
+  "Scuderia Ferrari HP": "Ferrari",
+
+  "Williams Racing": "Williams",
+  "Williams Mercedes": "Williams",
+
+  "Aston Martin Aramco Formula One Team": "Aston Martin",
+  "Aston Martin Aramco Mercedes": "Aston Martin",
 };
 
 const TEAMS = [
@@ -89,7 +136,7 @@ const TEAMS = [
     displayName: "Audi",
     outputFile: "f1_audi_standings.json",
     objectKey: "audi",
-    keywords: ["audi"],
+    keywords: ["audi", "sauber"],
     logoFile: "audi_logo_colored.png",
   },
   {
@@ -159,6 +206,7 @@ function normalizeStandingPosition(pos) {
   if (p === "DNF") return "DNF";
   if (p === "DNS") return "DNS";
   if (p === "DSQ") return "DSQ";
+  if (p === "NC") return "NC";
 
   const n = Number(p.replace(/^P/, ""));
   if (!Number.isFinite(n) || n <= 0) return "-";
@@ -166,17 +214,8 @@ function normalizeStandingPosition(pos) {
   return `P${n}`;
 }
 
-function classificationFromOpenF1(row) {
-  if (!row) return "-";
-
-  if (row.dsq === true) return "DSQ";
-  if (row.dns === true) return "DNS";
-  if (row.dnf === true) return "DNF";
-
-  const pos = Number(row.position);
-  if (!Number.isFinite(pos) || pos <= 0) return "-";
-
-  return `P${pos}`;
+function normalizeTeamName(name) {
+  return TEAM_NAME_OVERRIDES[name] || name;
 }
 
 function normalizeLocation(input) {
@@ -189,6 +228,7 @@ function normalizeLocation(input) {
 function emptyBestResult(position = "-") {
   return {
     position,
+    eventType: "-",
     raceName: "-",
     round: "-",
     date: "-",
@@ -197,8 +237,7 @@ function emptyBestResult(position = "-") {
       locality: "-",
       country: "-",
     },
-    sessionKey: null,
-    meetingKey: null,
+    sourceUrl: null,
   };
 }
 
@@ -226,49 +265,69 @@ function dateOnly(value) {
   return s.includes("T") ? s.slice(0, 10) : s.slice(0, 10);
 }
 
-function bestResultFromSessionRow(row, session, raceMetaBySessionKey) {
-  const raceMeta =
-    raceMetaBySessionKey?.get(Number(row?.session_key ?? session?.session_key)) || null;
-
-  return {
-    position: classificationFromOpenF1(row),
-    raceName: raceMeta?.raceName ?? session?.meeting_name ?? "-",
-    round: raceMeta?.round ?? "-",
-    date: raceMeta?.date ?? dateOnly(session?.date_start) ?? "-",
-    circuit: raceMeta?.circuit ?? session?.circuit_short_name ?? "-",
-    location: {
-      locality: raceMeta?.locality ?? session?.location ?? "-",
-      country: raceMeta?.country ?? session?.country_name ?? "-",
-    },
-    sessionKey: row?.session_key ?? session?.session_key ?? null,
-    meetingKey: row?.meeting_key ?? session?.meeting_key ?? null,
-  };
+function normalizeKey(s) {
+  return String(s || "")
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
 }
 
-function bestResultFromBestFinish(best, raceMetaBySessionKey) {
-  const raceMeta = raceMetaBySessionKey?.get(Number(best.sessionKey)) || null;
-
-  return {
-    position: `P${best.pos}`,
-    raceName: raceMeta?.raceName ?? best.raceName ?? "-",
-    round: raceMeta?.round ?? best.round ?? "-",
-    date: raceMeta?.date ?? best.date ?? "-",
-    circuit: raceMeta?.circuit ?? best.circuit ?? "-",
-    location: {
-      locality: raceMeta?.locality ?? best.locality ?? "-",
-      country: raceMeta?.country ?? best.country ?? "-",
-    },
-    sessionKey: best.sessionKey,
-    meetingKey: best.meetingKey,
-  };
+function cleanLine(line) {
+  return String(line || "").replace(/\s+/g, " ").trim();
 }
 
-function isCompletedRaceSession(session) {
-  if (!session) return false;
-  if (String(session.session_name || "") !== "Race") return false;
+function decodeHtmlEntities(str) {
+  if (!str) return str;
+  return str
+    .replace(/&nbsp;/g, " ")
+    .replace(/&#160;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&apos;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">");
+}
 
-  const end = new Date(session.date_end || session.date_start || 0).getTime();
-  return Number.isFinite(end) && end > 0 && end <= Date.now();
+function htmlToLines(html) {
+  let text = String(html);
+  text = text.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ");
+  text = text.replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, " ");
+  text = text.replace(/<noscript\b[^>]*>[\s\S]*?<\/noscript>/gi, " ");
+  text = text.replace(/<!--[\s\S]*?-->/g, " ");
+  text = text.replace(
+    /<\/(p|div|section|article|header|footer|main|li|tr|td|th|h1|h2|h3|h4|h5|h6|a|ul|ol)>/gi,
+    "\n"
+  );
+  text = text.replace(/<br\s*\/?>/gi, "\n");
+  text = text.replace(/<[^>]+>/g, " ");
+  text = decodeHtmlEntities(text);
+
+  return text
+    .split("\n")
+    .map((line) => line.replace(/\s+/g, " ").trim())
+    .filter(Boolean);
+}
+
+function splitFullName(fullName) {
+  const parts = String(fullName || "")
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
+
+  if (parts.length === 0) {
+    return { firstName: "-", lastName: "-" };
+  }
+
+  if (parts.length === 1) {
+    return { firstName: parts[0], lastName: "-" };
+  }
+
+  return {
+    firstName: parts.slice(0, -1).join(" "),
+    lastName: parts[parts.length - 1],
+  };
 }
 
 function matchesTeamName(name, keywords) {
@@ -276,42 +335,71 @@ function matchesTeamName(name, keywords) {
   return keywords.some((keyword) => value.includes(keyword));
 }
 
+function toAbsoluteF1Url(href) {
+  if (!href) return null;
+  if (href.startsWith("http://") || href.startsWith("https://")) return href;
+  if (href.startsWith("/")) return `https://www.formula1.com${href}`;
+  return `https://www.formula1.com/${href}`;
+}
+
+function bestResultFromSeasonResult(result) {
+  return {
+    position: `P${result.position}`,
+    eventType: result.eventType,
+    raceName: result.raceName ?? "-",
+    round: result.round ?? "-",
+    date: result.date ?? "-",
+    circuit: result.circuit ?? "-",
+    location: {
+      locality: result.locality ?? "-",
+      country: result.country ?? "-",
+    },
+    sourceUrl: result.sourceUrl ?? null,
+  };
+}
+
 /* -------------------------------- */
 /* FETCH */
 /* -------------------------------- */
 
-async function fetchJson(url, { retries = 6 } = {}) {
-  for (let attempt = 0; attempt <= retries; attempt += 1) {
-    const res = await fetch(url, {
-      headers: {
-        "User-Agent": UA,
-        Accept: "application/json",
-      },
-      redirect: "follow",
-    });
+async function fetchText(url, accept = "text/html,*/*") {
+  const res = await fetch(url, {
+    headers: {
+      "User-Agent": UA,
+      Accept: accept,
+      "Accept-Language": "en-CA,en-US;q=0.9,en;q=0.8",
+      "Cache-Control": "no-cache",
+      Pragma: "no-cache",
+      Referer: "https://www.formula1.com/",
+    },
+    redirect: "follow",
+  });
 
-    const text = await res.text();
+  const text = await res.text();
 
-    if (res.status === 404) return null;
-
-    if (res.status === 429) {
-      if (attempt === retries) {
-        throw new Error(`HTTP 429 from ${url}\n${text}`);
-      }
-      const waitMs = 1200 + attempt * 700;
-      console.warn(`429 for ${url}. Retrying in ${waitMs}ms`);
-      await sleep(waitMs);
-      continue;
-    }
-
-    if (!res.ok) {
-      throw new Error(`HTTP ${res.status} from ${url}\n${text}`);
-    }
-
-    return JSON.parse(text);
+  if (!res.ok) {
+    throw new Error(`HTTP ${res.status} from ${url}\n${text}`);
   }
 
-  throw new Error(`Failed to fetch ${url}`);
+  return text;
+}
+
+async function fetchJson(url) {
+  const res = await fetch(url, {
+    headers: {
+      "User-Agent": UA,
+      Accept: "application/json",
+    },
+    redirect: "follow",
+  });
+
+  const text = await res.text();
+
+  if (!res.ok) {
+    throw new Error(`HTTP ${res.status} from ${url}\n${text}`);
+  }
+
+  return JSON.parse(text);
 }
 
 /* -------------------------------- */
@@ -324,25 +412,11 @@ async function readJson(file) {
 }
 
 /* -------------------------------- */
-/* JOLPICA LOOKUPS */
+/* LAST RACE */
 /* -------------------------------- */
 
-async function getRaceScheduleForYear(year) {
-  const data = await fetchJson(`${JOLPICA_BASE}/${year}.json`);
-  const races = data?.MRData?.RaceTable?.Races || [];
-
-  return races.map((race) => ({
-    round: String(race?.round ?? "-"),
-    raceName: normalizeRaceName(race?.raceName),
-    date: race?.date ?? "-",
-    circuit: race?.Circuit?.circuitName ?? "-",
-    locality: race?.Circuit?.Location?.locality ?? "-",
-    country: race?.Circuit?.Location?.country ?? "-",
-  }));
-}
-
 async function getLastRaceMeta() {
-  const data = await fetchJson(`${JOLPICA_BASE}/current/last/results.json`);
+  const data = await fetchJson(JOLPICA_LAST_RACE_URL);
   const race = data?.MRData?.RaceTable?.Races?.[0];
 
   if (!race) return null;
@@ -385,98 +459,207 @@ function mergeLastRace(existingLastRace, jolpicaLastRace) {
 }
 
 /* -------------------------------- */
-/* OPENF1 SHARED LOOKUPS */
+/* OFFICIAL F1 RESULTS PARSING */
 /* -------------------------------- */
 
-async function getRaceSessionsForYear() {
-  const [sessions, schedule] = await Promise.all([
-    fetchJson(`${OPENF1_BASE}/sessions?year=${YEAR}&session_name=Race`),
-    getRaceScheduleForYear(YEAR),
+function buildTeamPattern() {
+  const names = new Set([
+    "Mercedes",
+    "Ferrari",
+    "McLaren",
+    "Haas F1 Team",
+    "Haas",
+    "Racing Bulls",
+    "VCARB",
+    "Red Bull Racing",
+    "Red Bull",
+    "Alpine",
+    "Williams",
+    "Audi",
+    "Aston Martin",
+    "Cadillac",
+    ...Object.keys(TEAM_NAME_OVERRIDES),
   ]);
 
-  const raceSessions = (sessions || [])
-    .filter(isCompletedRaceSession)
-    .sort(
-      (a, b) =>
-        new Date(a.date_start || 0).getTime() -
-        new Date(b.date_start || 0).getTime()
-    );
-
-  const sessionMap = new Map();
-  const allowedKeys = new Set();
-  const raceMetaBySessionKey = new Map();
-
-  for (let i = 0; i < raceSessions.length; i += 1) {
-    const s = raceSessions[i];
-    const sessionKey = Number(s.session_key);
-
-    sessionMap.set(sessionKey, s);
-    allowedKeys.add(sessionKey);
-
-    const scheduleRace = schedule[i];
-    if (scheduleRace) {
-      raceMetaBySessionKey.set(sessionKey, {
-        round: scheduleRace.round,
-        raceName: scheduleRace.raceName,
-        date: scheduleRace.date,
-        circuit: scheduleRace.circuit,
-        locality: scheduleRace.locality,
-        country: scheduleRace.country,
-      });
-    }
-  }
-
-  return { sessionMap, allowedKeys, raceMetaBySessionKey };
+  return [...names]
+    .sort((a, b) => b.length - a.length)
+    .map((s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+    .join("|");
 }
 
-async function getBestResultsForDriverNumbers(driverNumbers) {
-  const { sessionMap, allowedKeys, raceMetaBySessionKey } =
-    await getRaceSessionsForYear();
+const TEAM_PATTERN = buildTeamPattern();
 
-  const best = {};
-  const latestClassification = {};
+function parseEventMeta(lines, sourceUrl) {
+  const headingIndex = lines.findIndex((line) => /^#\s+FORMULA 1 /i.test(line));
+  if (headingIndex === -1) return null;
 
-  for (const driverNumber of driverNumbers) {
-    if (!driverNumber) continue;
+  const heading = cleanLine(lines[headingIndex]);
+  const date = cleanLine(lines[headingIndex + 3] || "-");
+  const circuitLine = cleanLine(lines[headingIndex + 4] || "-");
 
-    const rows = await fetchJson(
-      `${OPENF1_BASE}/session_result?driver_number=${encodeURIComponent(driverNumber)}`
-    );
+  const eventType = /-\s*SPRINT$/i.test(heading) ? "sprint" : "race";
+  const raceName = heading
+    .replace(/^#\s*/i, "")
+    .replace(/\s+\d{4}\s*-\s*(SPRINT|RACE RESULT)$/i, "")
+    .trim();
 
-    const filtered = (rows || [])
-      .filter((row) => allowedKeys.has(Number(row.session_key)))
-      .sort((a, b) => Number(a.session_key) - Number(b.session_key));
+  let circuit = "-";
+  let locality = "-";
 
-    if (filtered.length > 0) {
-      latestClassification[driverNumber] = filtered[filtered.length - 1];
-    }
-
-    for (const row of filtered) {
-      const pos = Number(row.position);
-      if (!Number.isFinite(pos) || pos <= 0) continue;
-
-      const session = sessionMap.get(Number(row.session_key));
-      const raceMeta = raceMetaBySessionKey.get(Number(row.session_key));
-
-      if (!best[driverNumber] || pos < best[driverNumber].pos) {
-        best[driverNumber] = {
-          pos,
-          raceName: raceMeta?.raceName ?? session?.meeting_name ?? "-",
-          round: raceMeta?.round ?? "-",
-          date: raceMeta?.date ?? dateOnly(session?.date_start) ?? "-",
-          circuit: raceMeta?.circuit ?? session?.circuit_short_name ?? "-",
-          locality: raceMeta?.locality ?? session?.location ?? "-",
-          country: raceMeta?.country ?? session?.country_name ?? "-",
-          sessionKey: row.session_key ?? null,
-          meetingKey: row.meeting_key ?? session?.meeting_key ?? null,
-        };
-      }
-    }
-
-    await sleep(450);
+  if (circuitLine.includes(",")) {
+    const parts = circuitLine.split(",").map((s) => s.trim());
+    circuit = parts[0] || "-";
+    locality = parts[1] || "-";
+  } else {
+    circuit = circuitLine || "-";
   }
 
-  return { best, latestClassification, sessionMap, raceMetaBySessionKey };
+  const roundMatch = sourceUrl.match(/\/races\/(\d+)\//);
+  const round = roundMatch ? roundMatch[1] : "-";
+
+  return {
+    eventType,
+    raceName,
+    round,
+    date,
+    circuit,
+    locality,
+  };
+}
+
+function parseResultLine(line) {
+  const value = cleanLine(line);
+
+  const rowRe = new RegExp(
+    `^(NC|DSQ|DNS|DNF|\\d+)\\s+(\\d+)\\s+(.+?)\\s+([A-Z]{3})\\s+(${TEAM_PATTERN})\\s+(\\d+)\\s+(.+?)\\s+(\\d+)$`,
+    "i"
+  );
+
+  const match = value.match(rowRe);
+  if (!match) return null;
+
+  const [, posRaw, driverNumberRaw, fullNameRaw, code, teamRaw, lapsRaw] = match;
+
+  const pos = Number(posRaw);
+  if (!Number.isFinite(pos) || pos <= 0) return null;
+
+  const fullName = cleanLine(fullNameRaw);
+  const { firstName, lastName } = splitFullName(fullName);
+
+  return {
+    position: pos,
+    driverNumber: Number(driverNumberRaw),
+    code: code.toUpperCase(),
+    firstName,
+    lastName,
+    fullName,
+    team: normalizeTeamName(teamRaw),
+    laps: Number(lapsRaw),
+  };
+}
+
+function extractResultRows(lines, meta, sourceUrl) {
+  const start = lines.findIndex((line) =>
+    /^Pos\.No\.Driver Team Laps Time \/ Retired Pts\.$/i.test(cleanLine(line))
+  );
+
+  if (start === -1) return [];
+
+  const out = [];
+
+  for (let i = start + 1; i < lines.length; i += 1) {
+    const line = cleanLine(lines[i]);
+    if (!line) continue;
+    if (/^\* Provisional results\./i.test(line)) continue;
+    if (/^##\s+/i.test(line)) break;
+    if (/^OUR PARTNERS$/i.test(line)) break;
+
+    const row = parseResultLine(line);
+    if (!row) continue;
+
+    out.push({
+      ...row,
+      eventType: meta.eventType,
+      raceName: meta.raceName,
+      round: meta.round,
+      date: meta.date,
+      circuit: meta.circuit,
+      locality: meta.locality,
+      country: "-",
+      sourceUrl,
+    });
+  }
+
+  return out;
+}
+
+async function getOfficialF1ResultUrls() {
+  const html = await fetchText(F1_RESULTS_RACES_INDEX_URL);
+  const urls = new Set();
+
+  const hrefRe =
+    /href="([^"]*\/en\/results\/\d{4}\/races\/\d+\/[^"/]+\/(?:race-result|sprint-results))"/gi;
+
+  for (const match of html.matchAll(hrefRe)) {
+    const abs = toAbsoluteF1Url(match[1]);
+    if (abs && abs.includes(`/${YEAR}/races/`)) {
+      urls.add(abs);
+    }
+  }
+
+  return [...urls].sort();
+}
+
+async function getSeasonBestResultsByDriverNumber() {
+  const resultUrls = await getOfficialF1ResultUrls();
+
+  if (resultUrls.length === 0) {
+    console.warn("No official F1 race/sprint result URLs found.");
+    return {
+      bestByNumber: {},
+      sourceCount: 0,
+    };
+  }
+
+  const allRows = [];
+
+  for (const url of resultUrls) {
+    try {
+      const html = await fetchText(url);
+      const lines = htmlToLines(html);
+      const meta = parseEventMeta(lines, url);
+
+      if (!meta) continue;
+
+      const rows = extractResultRows(lines, meta, url);
+      allRows.push(...rows);
+    } catch (err) {
+      console.warn(`Skipping result page ${url}: ${err.message}`);
+    }
+
+    await sleep(120);
+  }
+
+  const bestByNumber = {};
+
+  for (const row of allRows) {
+    const num = row.driverNumber;
+    if (!Number.isFinite(num) || num <= 0) continue;
+
+    if (
+      !bestByNumber[num] ||
+      row.position < bestByNumber[num].position ||
+      (row.position === bestByNumber[num].position &&
+        String(row.date) < String(bestByNumber[num].date))
+    ) {
+      bestByNumber[num] = row;
+    }
+  }
+
+  return {
+    bestByNumber,
+    sourceCount: resultUrls.length,
+  };
 }
 
 /* -------------------------------- */
@@ -520,18 +703,11 @@ async function buildTeamJson(
   teamConfig,
   driverData,
   constructorData,
-  bestResultsPack,
+  seasonBestPack,
   lastRace
 ) {
   const teamDrivers = getTeamDrivers(driverData, teamConfig);
   const teamStanding = getTeamConstructor(constructorData, teamConfig);
-
-  const {
-    best: bestResults,
-    latestClassification,
-    sessionMap,
-    raceMetaBySessionKey,
-  } = bestResultsPack;
 
   const drivers = [];
 
@@ -540,22 +716,12 @@ async function buildTeamJson(
 
     const first = drv.firstName || "-";
     const last = drv.lastName || "-";
-    const num = drv.driverNumber || null;
-
-    const best = bestResults[num];
-    const latest = latestClassification[num];
-    const latestSession = latest ? sessionMap.get(Number(latest.session_key)) : null;
+    const num = Number(drv.driverNumber) || null;
 
     let bestResult = emptyBestResult();
 
-    if (best) {
-      bestResult = bestResultFromBestFinish(best, raceMetaBySessionKey);
-    } else if (latest) {
-      bestResult = bestResultFromSessionRow(
-        latest,
-        latestSession,
-        raceMetaBySessionKey
-      );
+    if (num && seasonBestPack.bestByNumber[num]) {
+      bestResult = bestResultFromSeasonResult(seasonBestPack.bestByNumber[num]);
     }
 
     drivers.push({
@@ -583,9 +749,8 @@ async function buildTeamJson(
     sources: {
       driverStandings: DRIVER_STANDINGS_FILE,
       constructorStandings: CONSTRUCTOR_STANDINGS_FILE,
-      bestResults:
-        "OpenF1 session_result + OpenF1 race sessions + Jolpica season schedule",
-      lastRace: "Jolpica current/last/results.json",
+      bestResults: `Official F1 race-result + sprint-results pages (${seasonBestPack.sourceCount} pages scanned)`,
+      lastRace: JOLPICA_LAST_RACE_URL,
     },
 
     [teamConfig.objectKey]: {
@@ -605,23 +770,13 @@ async function buildTeamJson(
 /* -------------------------------- */
 
 async function updateAllTeamStandings() {
-  const [driverData, constructorData] = await Promise.all([
-    readJson(DRIVER_STANDINGS_FILE),
-    readJson(CONSTRUCTOR_STANDINGS_FILE),
-  ]);
-
-  const allDriverNumbers = [
-    ...new Set(
-      (driverData.drivers || [])
-        .map((d) => d?.driver?.driverNumber)
-        .filter(Boolean)
-    ),
-  ];
-
-  const [bestResultsPack, jolpicaLastRace] = await Promise.all([
-    getBestResultsForDriverNumbers(allDriverNumbers),
-    getLastRaceMeta(),
-  ]);
+  const [driverData, constructorData, jolpicaLastRace, seasonBestPack] =
+    await Promise.all([
+      readJson(DRIVER_STANDINGS_FILE),
+      readJson(CONSTRUCTOR_STANDINGS_FILE),
+      getLastRaceMeta(),
+      getSeasonBestResultsByDriverNumber(),
+    ]);
 
   const mergedLastRace = mergeLastRace(constructorData.lastRace, jolpicaLastRace);
 
@@ -630,7 +785,7 @@ async function updateAllTeamStandings() {
       teamConfig,
       driverData,
       constructorData,
-      bestResultsPack,
+      seasonBestPack,
       mergedLastRace
     );
 
