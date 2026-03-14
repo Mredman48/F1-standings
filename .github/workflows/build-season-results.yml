@@ -2,9 +2,7 @@ name: Build F1 Season Results
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "15,45 * * * *"
-
+  
 permissions:
   contents: write
 
