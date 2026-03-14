@@ -266,27 +266,28 @@ function parseDriverRowsFromBlock(block) {
     const team = cleanLine(teamRaw);
     const { firstName, lastName } = splitFullName(fullName);
 
-    rows.push({
-      position: fmtPos(posRaw),
-      positionNumber: Number(posRaw),
-      points: safeNumOrDash(pointsRaw),
-      wins: "-",
-      driver: {
-        code: DRIVER_CODE_OVERRIDES[fullName] || null,
-        firstName,
-        lastName,
-        fullName,
-        nationality,
-        driverNumber: DRIVER_NUMBER_OVERRIDES[fullName] ?? null,
-        headshotUrl: firstName && lastName ? headshot(firstName, lastName) : null,
-        openf1HeadshotUrl: null,
-      },
-      constructor: {
-        name: normalizeTeamName(team),
-        fullName: team,
-        nationality: null,
-      },
-    });
+rows.push({
+  position: fmtPos(posRaw),
+  positionNumber: Number(posRaw),
+  points: safeNumOrDash(pointsRaw),
+  wins: "-",
+  driver: {
+    code: DRIVER_CODE_OVERRIDES[fullName] ?? "-",
+    firstName,
+    lastName,
+    fullName,
+    nationality,
+    driverNumber: DRIVER_NUMBER_OVERRIDES[fullName] ?? null,
+    headshotUrl:
+      firstName && lastName ? headshot(firstName, lastName) : null,
+    openf1HeadshotUrl: null,
+  },
+  constructor: {
+    name: normalizeTeamName(team),
+    fullName: team,
+    nationality: null,
+  },
+});
   }
 
   return rows;
