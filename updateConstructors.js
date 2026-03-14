@@ -1,15 +1,14 @@
 import fs from "node:fs/promises";
 
-const UA = "f1-standings-bot/1.0 (GitHub Actions)";
+const UA =
+  "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36";
 
 const OUT_JSON = "f1_constructors_standings.json";
 const YEAR = new Date().getUTCFullYear();
 
-const JOLPICA_CONSTRUCTORS_URL = `https://api.jolpi.ca/ergast/f1/${YEAR}/constructorStandings.json`;
-const JOLPICA_CONSTRUCTORS_CURRENT_URL =
-  "https://api.jolpi.ca/ergast/f1/current/constructorStandings.json";
-
-const F1_RESULTS_RACES_URL = `https://www.formula1.com/en/results/${YEAR}/races`;
+const SKY_F1_STANDINGS_URL = "https://www.skysports.com/f1/standings";
+const JOLPICA_LAST_RACE_URL =
+  "https://api.jolpi.ca/ergast/f1/current/last/results.json";
 
 const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 const TEAMLOGOS_DIR = "teamlogos";
@@ -43,6 +42,7 @@ const TEAM_NAME_OVERRIDES = {
   "Audi Formula 1 Team": "Audi",
   "Audi Formula One Team": "Audi",
   "Audi Revolut": "Audi",
+  Sauber: "Audi",
 
   "Cadillac": "Cadillac",
   "Cadillac F1 Team": "Cadillac",
@@ -103,138 +103,6 @@ const PLACEHOLDER_TEAMS = [
   { team: "VCARB" },
   { team: "Williams" },
 ].sort((a, b) => a.team.localeCompare(b.team));
-
-/* ------------------------------------------------ */
-/* RACE LOCATION MAP */
-/* ------------------------------------------------ */
-
-const RACE_LOCATION_MAP = {
-  australia: {
-    locality: "Melbourne",
-    country: "Australia",
-    circuit: "Albert Park Grand Prix Circuit",
-  },
-  chinese: {
-    locality: "Shanghai",
-    country: "China",
-    circuit: "Shanghai International Circuit",
-  },
-  japan: {
-    locality: "Suzuka",
-    country: "Japan",
-    circuit: "Suzuka Circuit",
-  },
-  bahrain: {
-    locality: "Sakhir",
-    country: "Bahrain",
-    circuit: "Bahrain International Circuit",
-  },
-  "saudi arabian": {
-    locality: "Jeddah",
-    country: "Saudi Arabia",
-    circuit: "Jeddah Corniche Circuit",
-  },
-  miami: {
-    locality: "Miami",
-    country: "United States",
-    circuit: "Miami International Autodrome",
-  },
-  "emilia romagna": {
-    locality: "Imola",
-    country: "Italy",
-    circuit: "Autodromo Enzo e Dino Ferrari",
-  },
-  monaco: {
-    locality: "Monte Carlo",
-    country: "Monaco",
-    circuit: "Circuit de Monaco",
-  },
-  spanish: {
-    locality: "Barcelona",
-    country: "Spain",
-    circuit: "Circuit de Barcelona-Catalunya",
-  },
-  canadian: {
-    locality: "Montreal",
-    country: "Canada",
-    circuit: "Circuit Gilles Villeneuve",
-  },
-  austrian: {
-    locality: "Spielberg",
-    country: "Austria",
-    circuit: "Red Bull Ring",
-  },
-  british: {
-    locality: "Silverstone",
-    country: "United Kingdom",
-    circuit: "Silverstone Circuit",
-  },
-  belgian: {
-    locality: "Spa",
-    country: "Belgium",
-    circuit: "Circuit de Spa-Francorchamps",
-  },
-  hungarian: {
-    locality: "Mogyoród",
-    country: "Hungary",
-    circuit: "Hungaroring",
-  },
-  dutch: {
-    locality: "Zandvoort",
-    country: "Netherlands",
-    circuit: "Circuit Zandvoort",
-  },
-  italian: {
-    locality: "Monza",
-    country: "Italy",
-    circuit: "Autodromo Nazionale Monza",
-  },
-  azerbaijan: {
-    locality: "Baku",
-    country: "Azerbaijan",
-    circuit: "Baku City Circuit",
-  },
-  singapore: {
-    locality: "Singapore",
-    country: "Singapore",
-    circuit: "Marina Bay Street Circuit",
-  },
-  "united states": {
-    locality: "Austin",
-    country: "United States",
-    circuit: "Circuit of The Americas",
-  },
-  mexican: {
-    locality: "Mexico City",
-    country: "Mexico",
-    circuit: "Autódromo Hermanos Rodríguez",
-  },
-  "são paulo": {
-    locality: "São Paulo",
-    country: "Brazil",
-    circuit: "Interlagos",
-  },
-  "sao paulo": {
-    locality: "São Paulo",
-    country: "Brazil",
-    circuit: "Interlagos",
-  },
-  "las vegas": {
-    locality: "Las Vegas",
-    country: "United States",
-    circuit: "Las Vegas Strip Circuit",
-  },
-  qatar: {
-    locality: "Lusail",
-    country: "Qatar",
-    circuit: "Lusail International Circuit",
-  },
-  "abu dhabi": {
-    locality: "Abu Dhabi",
-    country: "United Arab Emirates",
-    circuit: "Yas Marina Circuit",
-  },
-};
 
 /* ------------------------------------------------ */
 /* HELPERS */
@@ -301,24 +169,20 @@ function decodeHtmlEntities(str) {
     .replace(/&gt;/g, ">");
 }
 
-function htmlToLines(html) {
+function htmlToText(html) {
   let text = String(html);
   text = text.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ");
   text = text.replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, " ");
   text = text.replace(/<noscript\b[^>]*>[\s\S]*?<\/noscript>/gi, " ");
   text = text.replace(/<!--[\s\S]*?-->/g, " ");
+  text = text.replace(/<br\s*\/?>/gi, "\n");
   text = text.replace(
     /<\/(p|div|section|article|header|footer|main|li|tr|td|th|h1|h2|h3|h4|h5|h6|a|ul|ol)>/gi,
     "\n"
   );
-  text = text.replace(/<br\s*\/?>/gi, "\n");
   text = text.replace(/<[^>]+>/g, " ");
   text = decodeHtmlEntities(text);
-
-  return text
-    .split("\n")
-    .map((line) => line.replace(/\s+/g, " ").trim())
-    .filter(Boolean);
+  return text.replace(/\r/g, "");
 }
 
 function cleanLine(line) {
@@ -327,10 +191,23 @@ function cleanLine(line) {
 
 async function fetchText(url, accept = "text/html,*/*") {
   const res = await fetch(url, {
-    headers: { "User-Agent": UA, Accept: accept },
+    headers: {
+      "User-Agent": UA,
+      Accept: accept,
+      "Accept-Language": "en-CA,en-US;q=0.9,en;q=0.8",
+      "Cache-Control": "no-cache",
+      Pragma: "no-cache",
+      Referer: "https://www.skysports.com/f1",
+    },
     redirect: "follow",
   });
+
   const text = await res.text();
+
+  if (!res.ok) {
+    throw new Error(`HTTP ${res.status} from ${url}\n${text}`);
+  }
+
   return { res, text, url };
 }
 
@@ -353,122 +230,121 @@ async function fetchJson(url) {
 }
 
 /* ------------------------------------------------ */
-/* JOLPICA STANDINGS PARSER */
+/* SKY CONSTRUCTORS PARSER */
 /* ------------------------------------------------ */
 
-function parseJolpicaConstructorsStandings(data) {
-  const standingsList =
-    data?.MRData?.StandingsTable?.StandingsLists?.[0] || null;
+function extractConstructorStandingsBlock(text) {
+  const compact = text.replace(/\s+/g, " ");
 
-  const list = standingsList?.ConstructorStandings || [];
+  const patterns = [
+    /#\s*Team\s+Pts\s+((?:\d+\s+[A-Za-z][A-Za-z0-9 &'.\-]+?\s+\d+\s*){5,})/i,
+    /Team\s+Pts\s+((?:\d+\s+[A-Za-z][A-Za-z0-9 &'.\-]+?\s+\d+\s*){5,})/i,
+  ];
 
-  const rows = list.map((row, index) => {
-    const teamRaw = row?.Constructor?.name || "-";
-    const team = normalizeTeamName(teamRaw);
-
-    const positionValue =
-      row?.position ??
-      row?.positionText ??
-      index + 1;
-
-    return {
-      teamRaw,
-      team,
-      position: fmtPos(positionValue),
-      points: safeNumOrDash(row?.points),
-      wins: safeNumOrDash(row?.wins),
-      placeholder: false,
-    };
-  });
-
-  return {
-    season:
-      data?.MRData?.StandingsTable?.season ||
-      standingsList?.season ||
-      String(YEAR),
-    round: standingsList?.round || "-",
-    rows,
-  };
-}
-
-/* ------------------------------------------------ */
-/* LAST RACE PARSER */
-/* ------------------------------------------------ */
-
-function raceLocationFromName(raceName) {
-  const key = normalizeKey(raceName);
-
-  for (const [needle, value] of Object.entries(RACE_LOCATION_MAP)) {
-    if (key.includes(normalizeKey(needle))) {
-      return value;
+  for (const re of patterns) {
+    const match = compact.match(re);
+    if (match?.[1]) {
+      return match[1].trim();
     }
   }
 
-  return {
-    locality: "-",
-    country: "-",
-    circuit: "-",
-  };
+  return null;
 }
 
-function parseOfficialRaceResults(html, year) {
-  const lines = htmlToLines(html);
+function parseConstructorRowsFromBlock(block) {
+  const rowRe =
+    /(\d+)\s+([A-Za-z][A-Za-z0-9 &'.\-]+?)\s+(\d+)(?=\s+\d+\s+[A-Za-z]|\s*$)/g;
 
-  const start = lines.findIndex((line) =>
-    new RegExp(`^#?\\s*${year}\\s+RACE RESULTS$`, "i").test(line)
-  );
+  const rows = [];
+  for (const match of block.matchAll(rowRe)) {
+    const [, posRaw, teamRaw, pointsRaw] = match;
 
-  if (start === -1) {
-    return { lastRace: null, reason: "heading_not_found" };
+    const team = normalizeTeamName(cleanLine(teamRaw));
+
+    rows.push({
+      team,
+      position: fmtPos(posRaw),
+      points: safeNumOrDash(pointsRaw),
+      wins: "-",
+      placeholder: false,
+    });
   }
 
-  const section = lines.slice(start);
+  return rows;
+}
 
-  for (let i = 0; i < section.length - 5; i += 1) {
-    const raceName = cleanLine(section[i]);
-    const date = cleanLine(section[i + 1]);
-    const winner = cleanLine(section[i + 2]);
-    const team = cleanLine(section[i + 3]);
-    const laps = cleanLine(section[i + 4]);
-    const timeUtc = cleanLine(section[i + 5]);
+function parseSkyConstructorStandings(html) {
+  const text = htmlToText(html);
+  const block = extractConstructorStandingsBlock(text);
 
-    if (new RegExp(`^#?\\s*${year}\\s+RACE RESULTS$`, "i").test(raceName)) continue;
-    if (/^Grand Prix\s*Date\s*Winner\s*Team\s*Laps\s*Time$/i.test(raceName)) continue;
-
-    if (!/^[A-Za-z][A-Za-z\s'’-]+$/.test(raceName)) continue;
-    if (!/^\d{2}\s[A-Za-z]{3}$/.test(date)) continue;
-    if (!/^[A-Za-zÀ-ÿ\s'’.\-]+\s[A-Z]{3}$/.test(winner)) continue;
-    if (!/^[A-Za-z][A-Za-z0-9\s&'.-]+$/.test(team)) continue;
-    if (!/^\d+$/.test(laps)) continue;
-    if (!/^[0-9:.+-]+$/.test(timeUtc)) continue;
-
-    const loc = raceLocationFromName(raceName);
-
+  if (!block) {
     return {
-      lastRace: {
-        season: String(year),
-        round: "latest",
-        raceName,
-        date,
-        timeUtc,
-        circuit: {
-          name: loc.circuit,
-          locality: loc.locality,
-          country: loc.country,
-        },
-        winner: {
-          name: winner,
-          team,
-          laps: Number(laps),
-        },
-      },
-      reason: null,
+      rows: [],
+      reason: "constructor_block_not_found",
+      sample: cleanLine(text).slice(0, 700),
     };
   }
 
+  const rows = parseConstructorRowsFromBlock(block);
+
   return {
-    lastRace: null,
-    reason: "no_rows_parsed",
+    rows,
+    reason: rows.length ? null : "constructor_rows_not_parsed",
+    blockSample: block.slice(0, 500),
+  };
+}
+
+/* ------------------------------------------------ */
+/* LAST RACE PARSER (JOLPICA) */
+/* ------------------------------------------------ */
+
+function parseLastRace(data) {
+  const race = data?.MRData?.RaceTable?.Races?.[0];
+
+  if (!race) {
+    return {
+      season: String(YEAR),
+      round: "-",
+      raceName: "-",
+      date: "-",
+      circuit: {
+        name: "-",
+        locality: "-",
+        country: "-",
+      },
+      winner: {
+        firstName: "-",
+        lastName: "-",
+        fullName: "-",
+        team: "-",
+      },
+    };
+  }
+
+  const result = race?.Results?.[0];
+  const givenName = result?.Driver?.givenName || "-";
+  const familyName = result?.Driver?.familyName || "-";
+  const fullName =
+    givenName !== "-" || familyName !== "-"
+      ? `${givenName} ${familyName}`.trim()
+      : "-";
+
+  return {
+    season: String(race?.season ?? YEAR),
+    round: String(race?.round ?? "-"),
+    raceName: race?.raceName ?? "-",
+    date: race?.date ?? "-",
+    circuit: {
+      name: race?.Circuit?.circuitName ?? "-",
+      locality: race?.Circuit?.Location?.locality ?? "-",
+      country: race?.Circuit?.Location?.country ?? "-",
+    },
+    winner: {
+      firstName: givenName,
+      lastName: familyName,
+      fullName,
+      team: normalizeTeamName(result?.Constructor?.name ?? "-"),
+    },
   };
 }
 
@@ -531,34 +407,18 @@ function sortConstructors(rows) {
 /* ------------------------------------------------ */
 
 async function updateConstructors() {
-  const now = new Date();
+  const now = new Date().toISOString();
 
-  let standingsData = null;
-  let standingsUrlUsed = JOLPICA_CONSTRUCTORS_URL;
-  let standingsMode = "JOLPICA_YEAR";
-  let standingsParseReason = null;
+  const [skyResp, lastRaceJson] = await Promise.all([
+    fetchText(SKY_F1_STANDINGS_URL),
+    fetchJson(JOLPICA_LAST_RACE_URL),
+  ]);
 
-  try {
-    standingsData = await fetchJson(JOLPICA_CONSTRUCTORS_URL);
-  } catch (err) {
-    console.warn(`Year standings fetch failed, falling back to current: ${err.message}`);
-    standingsData = await fetchJson(JOLPICA_CONSTRUCTORS_CURRENT_URL);
-    standingsUrlUsed = JOLPICA_CONSTRUCTORS_CURRENT_URL;
-    standingsMode = "JOLPICA_CURRENT_FALLBACK";
-    standingsParseReason = "year_fetch_failed_used_current_fallback";
-  }
-
-  const parsedStandings = parseJolpicaConstructorsStandings(standingsData);
-
-  const racesResp = await fetchText(F1_RESULTS_RACES_URL);
-  let parsedLastRace = { lastRace: null, reason: "http_error" };
-
-  if (racesResp.res.ok) {
-    parsedLastRace = parseOfficialRaceResults(racesResp.text, YEAR);
-  }
+  const parsedStandings = parseSkyConstructorStandings(skyResp.text);
 
   let constructors = [];
-  let mode = standingsMode;
+  let mode = "SKY_SPORTS_STANDINGS";
+  let standingsParseReason = parsedStandings.reason;
 
   if (Array.isArray(parsedStandings.rows) && parsedStandings.rows.length > 0) {
     constructors = parsedStandings.rows.map((row) => {
@@ -579,48 +439,28 @@ async function updateConstructors() {
     constructors = sortConstructors(constructors);
   } else {
     constructors = buildAlphabeticalPlaceholders();
-    mode = "JOLPICA_EMPTY_PLACEHOLDERS_LOCAL_LOGOS";
+    mode = "SKY_SPORTS_EMPTY_PLACEHOLDERS_LOCAL_LOGOS";
     standingsParseReason = standingsParseReason || "no_rows_parsed";
   }
 
-  const lastRaceOut =
-    parsedLastRace.lastRace || {
-      season: String(parsedStandings.season || YEAR),
-      round: "-",
-      raceName: "-",
-      date: "-",
-      timeUtc: "-",
-      circuit: {
-        name: "-",
-        locality: "-",
-        country: "-",
-      },
-      winner: {
-        name: "-",
-        team: "-",
-        laps: "-",
-      },
-    };
-
   const out = {
     header: "Constructors standings",
-    generatedAtUtc: now.toISOString(),
+    generatedAtUtc: now,
     sources: {
-      constructorsStandings: standingsUrlUsed,
-      races: F1_RESULTS_RACES_URL,
+      constructorsStandings: SKY_F1_STANDINGS_URL,
+      lastRace: JOLPICA_LAST_RACE_URL,
       logos: `LOCAL_ONLY: ${PAGES_BASE}/${TEAMLOGOS_DIR}/`,
     },
     meta: {
       mode,
-      seasonUsed: String(parsedStandings.season || YEAR),
-      roundUsed: String(parsedStandings.round || "-"),
+      seasonUsed: String(YEAR),
+      roundUsed: parseLastRace(lastRaceJson).round,
       cacheBust: CACHE_BUST,
       note:
-        "Uses Jolpica constructor standings as primary source and official F1.com race results for latest race. If standings are empty/unavailable, emits alphabetical placeholder teams with '-' stats. Logos are LOCAL ONLY from /teamlogos via GitHub Pages.",
+        "Uses Sky Sports constructor standings as primary source and Jolpica for last race metadata. If standings are empty/unavailable, emits alphabetical placeholder teams with '-' stats. Logos are LOCAL ONLY from /teamlogos via GitHub Pages.",
       standingsParseReason,
-      raceParseReason: parsedLastRace.reason,
     },
-    lastRace: lastRaceOut,
+    lastRace: parseLastRace(lastRaceJson),
     constructors,
   };
 
@@ -629,9 +469,8 @@ async function updateConstructors() {
   console.log(
     `Wrote ${OUT_JSON} season=${out.meta.seasonUsed} round=${out.meta.roundUsed} constructors=${out.constructors.length} mode=${out.meta.mode}`
   );
-  console.log(`Standings source: ${standingsUrlUsed}`);
+  console.log(`Standings source: ${SKY_F1_STANDINGS_URL}`);
   console.log(`Standings parse reason: ${standingsParseReason}`);
-  console.log(`Race parse reason: ${parsedLastRace.reason}`);
 }
 
 updateConstructors().catch((err) => {
