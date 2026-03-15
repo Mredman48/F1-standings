@@ -1,6 +1,6 @@
 {
   "header": "Alpine standings",
-  "generatedAtUtc": "2026-03-15T06:33:31.649Z",
+  "generatedAtUtc": "2026-03-15T09:35:15.697Z",
   "sources": {
     "driverStandings": "f1_driver_standings.json",
     "constructorStandings": "f1_constructors_standings.json",
@@ -11,8 +11,8 @@
     "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_alpine_color_v2.png",
     "teamStanding": {
       "team": "Alpine",
-      "position": "P8",
-      "points": 1,
+      "position": "P7",
+      "points": 10,
       "wins": 0
     }
   },
@@ -34,20 +34,20 @@
       "driverNumber": 10,
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-10.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/pierre-gasly.png",
-      "position": "P12",
-      "points": 1,
+      "position": "P7",
+      "points": 9,
       "wins": 0,
       "team": "Alpine",
       "bestResult": {
-        "position": "P10",
+        "position": "P6",
         "eventType": "race",
-        "raceName": "Australian Grand Prix",
-        "round": "1",
-        "date": "2026-03-08",
-        "circuit": "Melbourne",
+        "raceName": "Chinese Grand Prix",
+        "round": "2",
+        "date": "2026-03-15",
+        "circuit": "Shanghai",
         "location": {
-          "locality": "Melbourne",
-          "country": "Australia"
+          "locality": "Shanghai",
+          "country": "China"
         },
         "sourceUrl": null
       }
@@ -60,19 +60,19 @@
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-43.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/franco-colapinto.png",
       "position": "P15",
-      "points": 0,
+      "points": 1,
       "wins": 0,
       "team": "Alpine",
       "bestResult": {
-        "position": "P14",
+        "position": "P10",
         "eventType": "race",
-        "raceName": "Australian Grand Prix",
-        "round": "1",
-        "date": "2026-03-08",
-        "circuit": "Melbourne",
+        "raceName": "Chinese Grand Prix",
+        "round": "2",
+        "date": "2026-03-15",
+        "circuit": "Shanghai",
         "location": {
-          "locality": "Melbourne",
-          "country": "Australia"
+          "locality": "Shanghai",
+          "country": "China"
         },
         "sourceUrl": null
       }

@@ -1,6 +1,6 @@
 {
   "header": "Mercedes standings",
-  "generatedAtUtc": "2026-03-15T06:33:31.648Z",
+  "generatedAtUtc": "2026-03-15T09:35:15.696Z",
   "sources": {
     "driverStandings": "f1_driver_standings.json",
     "constructorStandings": "f1_constructors_standings.json",
@@ -12,7 +12,7 @@
     "teamStanding": {
       "team": "Mercedes",
       "position": "P1",
-      "points": 55,
+      "points": 98,
       "wins": 0
     }
   },
@@ -35,7 +35,7 @@
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-63.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/george-russell.png",
       "position": "P1",
-      "points": 33,
+      "points": 51,
       "wins": 0,
       "team": "Mercedes",
       "bestResult": {
@@ -60,19 +60,19 @@
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-12.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/kimi-antonelli.png",
       "position": "P2",
-      "points": 22,
+      "points": 47,
       "wins": 0,
       "team": "Mercedes",
       "bestResult": {
-        "position": "P2",
+        "position": "P1",
         "eventType": "race",
-        "raceName": "Australian Grand Prix",
-        "round": "1",
-        "date": "2026-03-08",
-        "circuit": "Melbourne",
+        "raceName": "Chinese Grand Prix",
+        "round": "2",
+        "date": "2026-03-15",
+        "circuit": "Shanghai",
         "location": {
-          "locality": "Melbourne",
-          "country": "Australia"
+          "locality": "Shanghai",
+          "country": "China"
         },
         "sourceUrl": null
       }

@@ -1,6 +1,6 @@
 {
   "header": "VCARB standings",
-  "generatedAtUtc": "2026-03-15T06:33:31.653Z",
+  "generatedAtUtc": "2026-03-15T09:35:15.701Z",
   "sources": {
     "driverStandings": "f1_driver_standings.json",
     "constructorStandings": "f1_constructors_standings.json",
@@ -12,7 +12,7 @@
     "teamStanding": {
       "team": "VCARB",
       "position": "P6",
-      "points": 6,
+      "points": 12,
       "wins": 0
     }
   },
@@ -28,13 +28,38 @@
   },
   "drivers": [
     {
+      "firstName": "Liam",
+      "lastName": "Lawson",
+      "code": "LAW",
+      "driverNumber": 30,
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-30.png",
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/liam-lawson.png",
+      "position": "P9",
+      "points": 8,
+      "wins": 0,
+      "team": "VCARB",
+      "bestResult": {
+        "position": "P7",
+        "eventType": "sprint",
+        "raceName": "Chinese Grand Prix Sprint",
+        "round": "2",
+        "date": "2026-03-14",
+        "circuit": "Shanghai",
+        "location": {
+          "locality": "Shanghai",
+          "country": "China"
+        },
+        "sourceUrl": null
+      }
+    },
+    {
       "firstName": "Arvid",
       "lastName": "Lindblad",
       "code": "LIN",
       "driverNumber": 41,
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-41.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/arvid-lindblad.png",
-      "position": "P8",
+      "position": "P10",
       "points": 4,
       "wins": 0,
       "team": "VCARB",
@@ -48,31 +73,6 @@
         "location": {
           "locality": "Melbourne",
           "country": "Australia"
-        },
-        "sourceUrl": null
-      }
-    },
-    {
-      "firstName": "Liam",
-      "lastName": "Lawson",
-      "code": "LAW",
-      "driverNumber": 30,
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-30.png",
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/liam-lawson.png",
-      "position": "P11",
-      "points": 2,
-      "wins": 0,
-      "team": "VCARB",
-      "bestResult": {
-        "position": "P7",
-        "eventType": "sprint",
-        "raceName": "Chinese Grand Prix Sprint",
-        "round": "2",
-        "date": "2026-03-14",
-        "circuit": "Shanghai",
-        "location": {
-          "locality": "Shanghai",
-          "country": "China"
         },
         "sourceUrl": null
       }

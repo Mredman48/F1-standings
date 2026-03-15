@@ -1,6 +1,6 @@
 {
   "header": "Williams standings",
-  "generatedAtUtc": "2026-03-15T06:33:31.651Z",
+  "generatedAtUtc": "2026-03-15T09:35:15.699Z",
   "sources": {
     "driverStandings": "f1_driver_standings.json",
     "constructorStandings": "f1_constructors_standings.json",
@@ -12,7 +12,7 @@
     "teamStanding": {
       "team": "Williams",
       "position": "P9",
-      "points": 0,
+      "points": 2,
       "wins": 0
     }
   },
@@ -28,13 +28,38 @@
   },
   "drivers": [
     {
+      "firstName": "Carlos",
+      "lastName": "Sainz",
+      "code": "SAI",
+      "driverNumber": 55,
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-55.png",
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/carlos-sainz.png",
+      "position": "P13",
+      "points": 2,
+      "wins": 0,
+      "team": "Williams",
+      "bestResult": {
+        "position": "P9",
+        "eventType": "race",
+        "raceName": "Chinese Grand Prix",
+        "round": "2",
+        "date": "2026-03-15",
+        "circuit": "Shanghai",
+        "location": {
+          "locality": "Shanghai",
+          "country": "China"
+        },
+        "sourceUrl": null
+      }
+    },
+    {
       "firstName": "Alex",
       "lastName": "Albon",
       "code": "-",
       "driverNumber": null,
       "numberImageUrl": null,
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/alex-albon.png",
-      "position": "P14",
+      "position": "P18",
       "points": 0,
       "wins": 0,
       "team": "Williams",
@@ -48,31 +73,6 @@
         "location": {
           "locality": "-",
           "country": "-"
-        },
-        "sourceUrl": null
-      }
-    },
-    {
-      "firstName": "Carlos",
-      "lastName": "Sainz",
-      "code": "SAI",
-      "driverNumber": 55,
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-55.png",
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/carlos-sainz.png",
-      "position": "P16",
-      "points": 0,
-      "wins": 0,
-      "team": "Williams",
-      "bestResult": {
-        "position": "P12",
-        "eventType": "sprint",
-        "raceName": "Chinese Grand Prix Sprint",
-        "round": "2",
-        "date": "2026-03-14",
-        "circuit": "Shanghai",
-        "location": {
-          "locality": "Shanghai",
-          "country": "China"
         },
         "sourceUrl": null
       }

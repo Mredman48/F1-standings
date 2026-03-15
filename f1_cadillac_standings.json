@@ -1,6 +1,6 @@
 {
   "header": "Cadillac standings",
-  "generatedAtUtc": "2026-03-15T06:33:31.652Z",
+  "generatedAtUtc": "2026-03-15T09:35:15.700Z",
   "sources": {
     "driverStandings": "f1_driver_standings.json",
     "constructorStandings": "f1_constructors_standings.json",
@@ -28,51 +28,51 @@
   },
   "drivers": [
     {
-      "firstName": "Sergio",
-      "lastName": "Perez",
-      "code": "PER",
-      "driverNumber": 11,
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-11.png",
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/sergio-perez.png",
-      "position": "P17",
-      "points": 0,
-      "wins": 0,
-      "team": "Cadillac",
-      "bestResult": {
-        "position": "P16",
-        "eventType": "race",
-        "raceName": "Australian Grand Prix",
-        "round": "1",
-        "date": "2026-03-08",
-        "circuit": "Melbourne",
-        "location": {
-          "locality": "Melbourne",
-          "country": "Australia"
-        },
-        "sourceUrl": null
-      }
-    },
-    {
       "firstName": "Valtteri",
       "lastName": "Bottas",
       "code": "BOT",
       "driverNumber": 77,
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-77.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/valtteri-bottas.png",
+      "position": "P19",
+      "points": 0,
+      "wins": 0,
+      "team": "Cadillac",
+      "bestResult": {
+        "position": "P13",
+        "eventType": "race",
+        "raceName": "Chinese Grand Prix",
+        "round": "2",
+        "date": "2026-03-15",
+        "circuit": "Shanghai",
+        "location": {
+          "locality": "Shanghai",
+          "country": "China"
+        },
+        "sourceUrl": null
+      }
+    },
+    {
+      "firstName": "Sergio",
+      "lastName": "Perez",
+      "code": "PER",
+      "driverNumber": 11,
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-11.png",
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/sergio-perez.png",
       "position": "P20",
       "points": 0,
       "wins": 0,
       "team": "Cadillac",
       "bestResult": {
-        "position": "DNF",
+        "position": "P15",
         "eventType": "race",
-        "raceName": "Australian Grand Prix",
-        "round": "1",
-        "date": "2026-03-08",
-        "circuit": "Melbourne",
+        "raceName": "Chinese Grand Prix",
+        "round": "2",
+        "date": "2026-03-15",
+        "circuit": "Shanghai",
         "location": {
-          "locality": "Melbourne",
-          "country": "Australia"
+          "locality": "Shanghai",
+          "country": "China"
         },
         "sourceUrl": null
       }

@@ -1,6 +1,6 @@
 {
   "header": "Red Bull standings",
-  "generatedAtUtc": "2026-03-15T06:33:31.642Z",
+  "generatedAtUtc": "2026-03-15T09:35:15.690Z",
   "sources": {
     "driverStandings": "f1_driver_standings.json",
     "constructorStandings": "f1_constructors_standings.json",
@@ -11,8 +11,8 @@
     "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_red-bull_color_v2.png",
     "teamStanding": {
       "team": "Red Bull",
-      "position": "P4",
-      "points": 8,
+      "position": "P5",
+      "points": 12,
       "wins": 0
     }
   },
@@ -34,7 +34,7 @@
       "driverNumber": 3,
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-3.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/max-verstappen.png",
-      "position": "P6",
+      "position": "P8",
       "points": 8,
       "wins": 0,
       "team": "Red Bull",
@@ -59,16 +59,16 @@
       "driverNumber": 6,
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-6.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/isack-hadjar.png",
-      "position": "P21",
-      "points": 0,
+      "position": "P11",
+      "points": 4,
       "wins": 0,
       "team": "Red Bull",
       "bestResult": {
-        "position": "P15",
-        "eventType": "sprint",
-        "raceName": "Chinese Grand Prix Sprint",
+        "position": "P8",
+        "eventType": "race",
+        "raceName": "Chinese Grand Prix",
         "round": "2",
-        "date": "2026-03-14",
+        "date": "2026-03-15",
         "circuit": "Shanghai",
         "location": {
           "locality": "Shanghai",

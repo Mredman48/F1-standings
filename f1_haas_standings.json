@@ -1,6 +1,6 @@
 {
   "header": "Haas standings",
-  "generatedAtUtc": "2026-03-15T06:33:31.651Z",
+  "generatedAtUtc": "2026-03-15T09:35:15.699Z",
   "sources": {
     "driverStandings": "f1_driver_standings.json",
     "constructorStandings": "f1_constructors_standings.json",
@@ -11,8 +11,8 @@
     "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_haas_color_v2.png",
     "teamStanding": {
       "team": "Haas",
-      "position": "P5",
-      "points": 7,
+      "position": "P4",
+      "points": 17,
       "wins": 0
     }
   },
@@ -34,20 +34,20 @@
       "driverNumber": 87,
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-87.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/oliver-bearman.png",
-      "position": "P7",
-      "points": 7,
+      "position": "P5",
+      "points": 17,
       "wins": 0,
       "team": "Haas",
       "bestResult": {
-        "position": "P7",
+        "position": "P5",
         "eventType": "race",
-        "raceName": "Australian Grand Prix",
-        "round": "1",
-        "date": "2026-03-08",
-        "circuit": "Melbourne",
+        "raceName": "Chinese Grand Prix",
+        "round": "2",
+        "date": "2026-03-15",
+        "circuit": "Shanghai",
         "location": {
-          "locality": "Melbourne",
-          "country": "Australia"
+          "locality": "Shanghai",
+          "country": "China"
         },
         "sourceUrl": null
       }
@@ -59,7 +59,7 @@
       "driverNumber": 31,
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-31.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/esteban-ocon.png",
-      "position": "P13",
+      "position": "P16",
       "points": 0,
       "wins": 0,
       "team": "Haas",
