@@ -248,17 +248,25 @@ function parseLastRaceFromSeasonResults(data) {
   }
 
   const sorted = [...events].sort((a, b) => {
-    const aTime = Date.parse(a?.dateStartUtc || a?.date || 0);
-    const bTime = Date.parse(b?.dateStartUtc || b?.date || 0);
+    const aRound = Number(a?.round);
+    const bRound = Number(b?.round);
+    const aRoundSafe = Number.isFinite(aRound) ? aRound : -1;
+    const bRoundSafe = Number.isFinite(bRound) ? bRound : -1;
+
+    if (aRoundSafe !== bRoundSafe) return bRoundSafe - aRoundSafe;
+
+    const aType = cleanText(a?.eventType).toLowerCase() === "race" ? 2 : 1;
+    const bType = cleanText(b?.eventType).toLowerCase() === "race" ? 2 : 1;
+
+    if (aType !== bType) return bType - aType;
+
+    const aTime = Date.parse(a?.dateEndUtc || a?.dateStartUtc || a?.date || 0);
+    const bTime = Date.parse(b?.dateEndUtc || b?.dateStartUtc || b?.date || 0);
 
     const aSafe = Number.isFinite(aTime) ? aTime : 0;
     const bSafe = Number.isFinite(bTime) ? bTime : 0;
 
-    if (aSafe !== bSafe) return bSafe - aSafe;
-
-    const aType = cleanText(a?.eventType).toLowerCase() === "race" ? 2 : 1;
-    const bType = cleanText(b?.eventType).toLowerCase() === "race" ? 2 : 1;
-    return bType - aType;
+    return bSafe - aSafe;
   });
 
   const latest = sorted[0];
