@@ -352,6 +352,54 @@ function bestResultFromSeasonData(best, eventLookup) {
   };
 }
 
+function createEmptySplitStats() {
+  return {
+    raceWins: 0,
+    racePodiums: 0,
+    sprintWins: 0,
+    sprintPodiums: 0,
+  };
+}
+
+function isPodiumPosition(position) {
+  const normalized = normalizeStandingPosition(position);
+  return normalized === "P1" || normalized === "P2" || normalized === "P3";
+}
+
+function buildDriverSplitStats(seasonResultsData) {
+  const statsByDriverNumber = {};
+
+  for (const event of seasonResultsData?.events || []) {
+    const eventType = cleanText(event?.eventType).toLowerCase();
+    if (eventType !== "race" && eventType !== "sprint") continue;
+
+    for (const row of event?.drivers || []) {
+      const driverNumber = Number(row?.driverNumber);
+      if (!Number.isFinite(driverNumber)) continue;
+
+      if (!statsByDriverNumber[driverNumber]) {
+        statsByDriverNumber[driverNumber] = createEmptySplitStats();
+      }
+
+      const stats = statsByDriverNumber[driverNumber];
+      const position = row?.position ?? "-";
+      const normalized = normalizeStandingPosition(position);
+
+      if (eventType === "race") {
+        if (normalized === "P1") stats.raceWins += 1;
+        if (isPodiumPosition(position)) stats.racePodiums += 1;
+      }
+
+      if (eventType === "sprint") {
+        if (normalized === "P1") stats.sprintWins += 1;
+        if (isPodiumPosition(position)) stats.sprintPodiums += 1;
+      }
+    }
+  }
+
+  return statsByDriverNumber;
+}
+
 /* -------------------------------- */
 /* READ JSON */
 /* -------------------------------- */
@@ -419,7 +467,8 @@ async function buildTeamJson(
   driverData,
   constructorData,
   seasonResultsData,
-  eventLookup
+  eventLookup,
+  splitStatsByDriverNumber
 ) {
   const teamDrivers = getTeamDrivers(driverData, teamConfig);
   const teamStanding = getTeamConstructor(constructorData, teamConfig);
@@ -453,6 +502,11 @@ async function buildTeamJson(
         ? bestByDriverNumber[String(num)] ?? bestByDriverNumber[num]
         : null;
 
+    const splitStats =
+      num != null && splitStatsByDriverNumber[num]
+        ? splitStatsByDriverNumber[num]
+        : createEmptySplitStats();
+
     drivers.push({
       firstName: first,
       lastName: last,
@@ -465,6 +519,11 @@ async function buildTeamJson(
       position: normalizeStandingPosition(d.position),
       points: normalizePoints(d.points),
       wins: normalizePoints(d.wins),
+
+      raceWins: splitStats.raceWins,
+      racePodiums: splitStats.racePodiums,
+      sprintWins: splitStats.sprintWins,
+      sprintPodiums: splitStats.sprintPodiums,
 
       team: teamConfig.displayName,
       bestResult: bestResultFromSeasonData(seasonBest, eventLookup),
@@ -517,6 +576,7 @@ async function updateAllTeamStandings() {
   ]);
 
   const eventLookup = buildEventLookup(seasonResultsData);
+  const splitStatsByDriverNumber = buildDriverSplitStats(seasonResultsData);
 
   for (const teamConfig of TEAMS) {
     const out = await buildTeamJson(
@@ -524,7 +584,8 @@ async function updateAllTeamStandings() {
       driverData,
       constructorData,
       seasonResultsData,
-      eventLookup
+      eventLookup,
+      splitStatsByDriverNumber
     );
 
     await fs.writeFile(
