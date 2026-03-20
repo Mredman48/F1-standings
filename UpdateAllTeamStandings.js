@@ -157,6 +157,45 @@ const TEAMS = [
 ];
 
 /* -------------------------------- */
+/* NATIONALITY / FLAGS */
+/* -------------------------------- */
+
+const NATIONALITY_TO_COUNTRY = {
+  british: { name: "United Kingdom", code: "gb" },
+  english: { name: "United Kingdom", code: "gb" },
+  scottish: { name: "United Kingdom", code: "gb" },
+  welsh: { name: "United Kingdom", code: "gb" },
+
+  italian: { name: "Italy", code: "it" },
+  monegasque: { name: "Monaco", code: "mc" },
+  french: { name: "France", code: "fr" },
+  australian: { name: "Australia", code: "au" },
+  dutch: { name: "Netherlands", code: "nl" },
+  thai: { name: "Thailand", code: "th" },
+  argentinian: { name: "Argentina", code: "ar" },
+  argentine: { name: "Argentina", code: "ar" },
+  spanish: { name: "Spain", code: "es" },
+  mexican: { name: "Mexico", code: "mx" },
+  japanese: { name: "Japan", code: "jp" },
+  german: { name: "Germany", code: "de" },
+  finnish: { name: "Finland", code: "fi" },
+  canadian: { name: "Canada", code: "ca" },
+  brazilian: { name: "Brazil", code: "br" },
+  new zealander: { name: "New Zealand", code: "nz" },
+  newzealander: { name: "New Zealand", code: "nz" },
+};
+
+function normalizeNationality(nationality) {
+  const key = cleanText(nationality).toLowerCase();
+  return NATIONALITY_TO_COUNTRY[key] || null;
+}
+
+function buildFlagUrl(countryCode) {
+  if (!countryCode) return null;
+  return `https://flagcdn.com/w80/${String(countryCode).toLowerCase()}.png`;
+}
+
+/* -------------------------------- */
 /* HELPERS */
 /* -------------------------------- */
 
@@ -507,11 +546,19 @@ async function buildTeamJson(
         ? splitStatsByDriverNumber[num]
         : createEmptySplitStats();
 
+    const nationality = cleanText(drv.nationality || "");
+    const nationalityInfo = normalizeNationality(nationality);
+
     drivers.push({
       firstName: first,
       lastName: last,
       code,
       driverNumber: num,
+
+      nationality: nationality || null,
+      countryCode: nationalityInfo?.code ?? null,
+      countryName: nationalityInfo?.name ?? null,
+      flagUrl: buildFlagUrl(nationalityInfo?.code ?? null),
 
       numberImageUrl: numberImage(num),
       headshotUrl: await headshot(first, last),
