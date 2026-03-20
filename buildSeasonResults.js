@@ -18,10 +18,17 @@ function cleanText(value) {
 
 function normalizeEventType(sessionName) {
   const s = cleanText(sessionName).toLowerCase();
+
   if (s === "race") return "race";
   if (s === "sprint") return "sprint";
   if (s === "qualifying") return "qualifying";
+
+  // Treat all sprint grid-setting sessions as the same logical type
   if (s === "sprint shootout") return "sprint_shootout";
+  if (s === "sprint qualifying") return "sprint_shootout";
+  if (s.includes("sprint shootout")) return "sprint_shootout";
+  if (s.includes("sprint qualifying")) return "sprint_shootout";
+
   return s || "-";
 }
 
@@ -131,6 +138,7 @@ async function getCompletedTargetSessions(year) {
     "Sprint",
     "Qualifying",
     "Sprint Shootout",
+    "Sprint Qualifying",
   ];
 
   const results = await Promise.all(
@@ -152,7 +160,7 @@ async function getCompletedTargetSessions(year) {
   }
 
   return results
-    .flatMap((r) => Array.isArray(r) ? r : [])
+    .flatMap((r) => (Array.isArray(r) ? r : []))
     .filter((s) => {
       const name = cleanText(s?.session_name);
       const isTarget = targetSessionNames.includes(name);
@@ -360,6 +368,7 @@ function buildStartPositionLookup(events) {
     if (!Number.isFinite(meetingKey)) continue;
 
     const type = String(event?.eventType || "").toLowerCase();
+
     if (type !== "qualifying" && type !== "sprint_shootout") continue;
 
     const eventLookupKey = `${meetingKey}:${type}`;
@@ -371,7 +380,9 @@ function buildStartPositionLookup(events) {
 
       byDriver.set(driverNumber, {
         startPosition: driver.position,
-        startPositionRank: driver.positionRank,
+        startPositionRank: Number.isFinite(driver.positionRank)
+          ? driver.positionRank
+          : null,
       });
     }
 
@@ -389,24 +400,31 @@ function applyStartPositionsToEvents(events, startPositionLookup) {
     })
     .map((event) => {
       const meetingKey = Number(event?.meetingKey);
-      let sourceKey = null;
+      const type = String(event?.eventType || "").toLowerCase();
 
-      if (event.eventType === "race") {
-        sourceKey = `${meetingKey}:qualifying`;
-      } else if (event.eventType === "sprint") {
-        sourceKey = `${meetingKey}:sprint_shootout`;
+      let startGrid = null;
+
+      if (type === "race") {
+        startGrid = startPositionLookup.get(`${meetingKey}:qualifying`) || null;
       }
 
-      const startGrid = sourceKey ? startPositionLookup.get(sourceKey) : null;
+      if (type === "sprint") {
+        // Prefer sprint-specific grid setter, but fall back to qualifying if needed
+        startGrid =
+          startPositionLookup.get(`${meetingKey}:sprint_shootout`) ||
+          startPositionLookup.get(`${meetingKey}:qualifying`) ||
+          null;
+      }
 
       return {
         ...event,
         drivers: (event.drivers || []).map((driver) => {
           const startInfo = startGrid?.get(Number(driver.driverNumber)) || null;
+
           return {
             ...driver,
             startPosition: startInfo?.startPosition ?? "-",
-            startPositionRank: startInfo?.startPositionRank ?? Infinity,
+            startPositionRank: startInfo?.startPositionRank ?? null,
           };
         }),
       };
@@ -488,7 +506,7 @@ async function buildSeasonResults() {
       primary: "OpenF1 meetings + sessions + session_result",
       enrichment: "Jolpica season schedule",
       note:
-        "Race and sprint events are enriched with start positions from Qualifying and Sprint Shootout when available.",
+        "Race and sprint events are enriched with start positions from Qualifying and Sprint Shootout/Sprint Qualifying when available.",
     },
     events,
     bestByDriverNumber,
