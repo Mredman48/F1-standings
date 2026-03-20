@@ -20,6 +20,8 @@ function normalizeEventType(sessionName) {
   const s = cleanText(sessionName).toLowerCase();
   if (s === "race") return "race";
   if (s === "sprint") return "sprint";
+  if (s === "qualifying") return "qualifying";
+  if (s === "sprint shootout") return "sprint_shootout";
   return s || "-";
 }
 
@@ -119,26 +121,34 @@ async function fetchJson(url, { allow401 = false, retries = 5 } = {}) {
   throw new Error(`Failed to fetch ${url}`);
 }
 
-async function getCompletedRaceAndSprintSessions(year) {
-  const [raceSessions, sprintSessions] = await Promise.all([
-    fetchJson(`${OPENF1_BASE}/sessions?year=${year}&session_name=Race`, {
-      allow401: true,
-    }),
-    fetchJson(`${OPENF1_BASE}/sessions?year=${year}&session_name=Sprint`, {
-      allow401: true,
-    }),
-  ]);
+async function getCompletedTargetSessions(year) {
+  const targetSessionNames = [
+    "Race",
+    "Sprint",
+    "Qualifying",
+    "Sprint Shootout",
+  ];
 
-  if (raceSessions?.__authLocked || sprintSessions?.__authLocked) {
+  const results = await Promise.all(
+    targetSessionNames.map((sessionName) =>
+      fetchJson(
+        `${OPENF1_BASE}/sessions?year=${year}&session_name=${encodeURIComponent(sessionName)}`,
+        { allow401: true }
+      )
+    )
+  );
+
+  if (results.some((r) => r?.__authLocked)) {
     throw new Error(
       "OpenF1 is auth-locked right now. Try again after the live-session restriction ends."
     );
   }
 
-  return [...(raceSessions || []), ...(sprintSessions || [])]
+  return results
+    .flatMap((r) => r || [])
     .filter((s) => {
       const name = cleanText(s?.session_name);
-      const isTarget = name === "Race" || name === "Sprint";
+      const isTarget = targetSessionNames.includes(name);
       const endMs = new Date(s?.date_end || s?.date_start || 0).getTime();
       return isTarget && Number.isFinite(endMs) && endMs > 0 && endMs <= Date.now();
     })
@@ -200,7 +210,9 @@ async function getMeetingsByKey(year) {
 
     return map;
   } catch (err) {
-    console.warn(`OpenF1 meetings unavailable, falling back to Jolpica schedule only: ${err.message}`);
+    console.warn(
+      `OpenF1 meetings unavailable, falling back to Jolpica schedule only: ${err.message}`
+    );
     return new Map();
   }
 }
@@ -235,10 +247,7 @@ function buildMeetingScheduleMap(sessions, meetingsByKey, schedule) {
 
       return {
         meetingKey,
-        sortDate:
-          meeting?.dateStartUtc ||
-          firstSession?.date_start ||
-          "",
+        sortDate: meeting?.dateStartUtc || firstSession?.date_start || "",
       };
     })
     .sort((a, b) => String(a.sortDate).localeCompare(String(b.sortDate)));
@@ -336,6 +345,67 @@ function buildSessionObject(session, rows, meetingMeta, scheduleMeta) {
   };
 }
 
+function buildStartPositionLookup(events) {
+  const lookup = new Map();
+
+  for (const event of events) {
+    const meetingKey = Number(event?.meetingKey);
+    if (!Number.isFinite(meetingKey)) continue;
+
+    const type = String(event?.eventType || "").toLowerCase();
+    if (type !== "qualifying" && type !== "sprint_shootout") continue;
+
+    const eventLookupKey = `${meetingKey}:${type}`;
+    const byDriver = new Map();
+
+    for (const driver of event.drivers || []) {
+      const driverNumber = Number(driver?.driverNumber);
+      if (!Number.isFinite(driverNumber)) continue;
+
+      byDriver.set(driverNumber, {
+        startPosition: driver.position,
+        startPositionRank: driver.positionRank,
+      });
+    }
+
+    lookup.set(eventLookupKey, byDriver);
+  }
+
+  return lookup;
+}
+
+function applyStartPositionsToEvents(events, startPositionLookup) {
+  return events
+    .filter((event) => {
+      const type = String(event?.eventType || "").toLowerCase();
+      return type === "race" || type === "sprint";
+    })
+    .map((event) => {
+      const meetingKey = Number(event?.meetingKey);
+      let sourceKey = null;
+
+      if (event.eventType === "race") {
+        sourceKey = `${meetingKey}:qualifying`;
+      } else if (event.eventType === "sprint") {
+        sourceKey = `${meetingKey}:sprint_shootout`;
+      }
+
+      const startGrid = sourceKey ? startPositionLookup.get(sourceKey) : null;
+
+      return {
+        ...event,
+        drivers: (event.drivers || []).map((driver) => {
+          const startInfo = startGrid?.get(Number(driver.driverNumber)) || null;
+          return {
+            ...driver,
+            startPosition: startInfo?.startPosition ?? "-",
+            startPositionRank: startInfo?.startPositionRank ?? Infinity,
+          };
+        }),
+      };
+    });
+}
+
 function buildBestByDriver(events) {
   const best = {};
 
@@ -370,7 +440,7 @@ function buildBestByDriver(events) {
 
 async function buildSeasonResults() {
   const [sessions, meetingsByKey, schedule] = await Promise.all([
-    getCompletedRaceAndSprintSessions(YEAR),
+    getCompletedTargetSessions(YEAR),
     getMeetingsByKey(YEAR),
     getSeasonSchedule(YEAR),
   ]);
@@ -381,7 +451,7 @@ async function buildSeasonResults() {
     schedule
   );
 
-  const events = [];
+  const allEvents = [];
 
   for (const session of sessions) {
     const rows = await getSessionResults(session);
@@ -390,15 +460,17 @@ async function buildSeasonResults() {
     const scheduleMeta = scheduleByMeetingKey.get(meetingKey) || null;
 
     const event = buildSessionObject(session, rows, meetingMeta, scheduleMeta);
-    events.push(event);
+    allEvents.push(event);
 
     console.log(
-      `Loaded ${event.raceName} (${event.date}) with ${event.drivers.length} drivers`
+      `Loaded ${event.sessionName} for ${event.raceName} (${event.date}) with ${event.drivers.length} drivers`
     );
 
     await sleep(450);
   }
 
+  const startPositionLookup = buildStartPositionLookup(allEvents);
+  const events = applyStartPositionsToEvents(allEvents, startPositionLookup);
   const bestByDriverNumber = buildBestByDriver(events);
 
   const out = {
@@ -409,7 +481,7 @@ async function buildSeasonResults() {
       primary: "OpenF1 meetings + sessions + session_result",
       enrichment: "Jolpica season schedule",
       note:
-        "Meeting names come from OpenF1 meetings when available, with Jolpica used as fallback for race naming, round, circuit, and location.",
+        "Race and sprint events are enriched with start positions from Qualifying and Sprint Shootout when available.",
     },
     events,
     bestByDriverNumber,
