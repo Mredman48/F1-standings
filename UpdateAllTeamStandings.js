@@ -181,7 +181,7 @@ const NATIONALITY_TO_COUNTRY = {
   finnish: { name: "Finland", code: "fi" },
   canadian: { name: "Canada", code: "ca" },
   brazilian: { name: "Brazil", code: "br" },
-  new zealander: { name: "New Zealand", code: "nz" },
+  "new zealander": { name: "New Zealand", code: "nz" },
   newzealander: { name: "New Zealand", code: "nz" },
 };
 
