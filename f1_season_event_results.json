@@ -1,11 +1,11 @@
 {
   "header": "2026 F1 race and sprint results",
-  "generatedAtUtc": "2026-03-15T09:34:14.124Z",
+  "generatedAtUtc": "2026-03-20T18:50:46.424Z",
   "season": 2026,
   "source": {
     "primary": "OpenF1 meetings + sessions + session_result",
     "enrichment": "Jolpica season schedule",
-    "note": "Meeting names come from OpenF1 meetings when available, with Jolpica used as fallback for race naming, round, circuit, and location."
+    "note": "Race and sprint events are enriched with start positions from Qualifying and Sprint Shootout when available."
   },
   "events": [
     {
@@ -38,7 +38,9 @@
           "gapToLeader": 0,
           "laps": 58,
           "sessionKey": 11234,
-          "meetingKey": 1279
+          "meetingKey": 1279,
+          "startPosition": "P1",
+          "startPositionRank": 1
         },
         {
           "driverNumber": 12,
@@ -52,7 +54,9 @@
           "gapToLeader": 2.974,
           "laps": 58,
           "sessionKey": 11234,
-          "meetingKey": 1279
+          "meetingKey": 1279,
+          "startPosition": "P2",
+          "startPositionRank": 2
         },
         {
           "driverNumber": 16,
@@ -66,7 +70,9 @@
           "gapToLeader": 15.519,
           "laps": 58,
           "sessionKey": 11234,
-          "meetingKey": 1279
+          "meetingKey": 1279,
+          "startPosition": "P4",
+          "startPositionRank": 4
         },
         {
           "driverNumber": 44,
@@ -80,7 +86,9 @@
           "gapToLeader": 16.144,
           "laps": 58,
           "sessionKey": 11234,
-          "meetingKey": 1279
+          "meetingKey": 1279,
+          "startPosition": "P7",
+          "startPositionRank": 7
         },
         {
           "driverNumber": 1,
@@ -94,7 +102,9 @@
           "gapToLeader": 51.741,
           "laps": 58,
           "sessionKey": 11234,
-          "meetingKey": 1279
+          "meetingKey": 1279,
+          "startPosition": "P6",
+          "startPositionRank": 6
         },
         {
           "driverNumber": 3,
@@ -108,7 +118,9 @@
           "gapToLeader": 54.617,
           "laps": 58,
           "sessionKey": 11234,
-          "meetingKey": 1279
+          "meetingKey": 1279,
+          "startPosition": "-",
+          "startPositionRank": null
         },
         {
           "driverNumber": 87,
@@ -122,7 +134,9 @@
           "gapToLeader": "+1 LAP",
           "laps": 57,
           "sessionKey": 11234,
-          "meetingKey": 1279
+          "meetingKey": 1279,
+          "startPosition": "P12",
+          "startPositionRank": 12
         },
         {
           "driverNumber": 41,
@@ -136,7 +150,9 @@
           "gapToLeader": "+1 LAP",
           "laps": 57,
           "sessionKey": 11234,
-          "meetingKey": 1279
+          "meetingKey": 1279,
+          "startPosition": "P9",
+          "startPositionRank": 9
         },
         {
           "driverNumber": 5,
@@ -150,7 +166,9 @@
           "gapToLeader": "+1 LAP",
           "laps": 57,
           "sessionKey": 11234,
-          "meetingKey": 1279
+          "meetingKey": 1279,
+          "startPosition": "P10",
+          "startPositionRank": 10
         },
         {
           "driverNumber": 10,
@@ -164,7 +182,9 @@
           "gapToLeader": "+1 LAP",
           "laps": 57,
           "sessionKey": 11234,
-          "meetingKey": 1279
+          "meetingKey": 1279,
+          "startPosition": "P14",
+          "startPositionRank": 14
         },
         {
           "driverNumber": 31,
@@ -178,7 +198,9 @@
           "gapToLeader": "+1 LAP",
           "laps": 57,
           "sessionKey": 11234,
-          "meetingKey": 1279
+          "meetingKey": 1279,
+          "startPosition": "P13",
+          "startPositionRank": 13
         },
         {
           "driverNumber": 23,
@@ -192,7 +214,9 @@
           "gapToLeader": "+1 LAP",
           "laps": 57,
           "sessionKey": 11234,
-          "meetingKey": 1279
+          "meetingKey": 1279,
+          "startPosition": "P15",
+          "startPositionRank": 15
         },
         {
           "driverNumber": 30,
@@ -206,7 +230,9 @@
           "gapToLeader": "+1 LAP",
           "laps": 57,
           "sessionKey": 11234,
-          "meetingKey": 1279
+          "meetingKey": 1279,
+          "startPosition": "P8",
+          "startPositionRank": 8
         },
         {
           "driverNumber": 43,
@@ -220,7 +246,9 @@
           "gapToLeader": "+2 LAPS",
           "laps": 56,
           "sessionKey": 11234,
-          "meetingKey": 1279
+          "meetingKey": 1279,
+          "startPosition": "P16",
+          "startPositionRank": 16
         },
         {
           "driverNumber": 55,
@@ -234,7 +262,9 @@
           "gapToLeader": "+2 LAPS",
           "laps": 56,
           "sessionKey": 11234,
-          "meetingKey": 1279
+          "meetingKey": 1279,
+          "startPosition": "-",
+          "startPositionRank": null
         },
         {
           "driverNumber": 11,
@@ -248,7 +278,9 @@
           "gapToLeader": "+3 LAPS",
           "laps": 55,
           "sessionKey": 11234,
-          "meetingKey": 1279
+          "meetingKey": 1279,
+          "startPosition": "P18",
+          "startPositionRank": 18
         },
         {
           "driverNumber": 6,
@@ -262,7 +294,9 @@
           "gapToLeader": null,
           "laps": 10,
           "sessionKey": 11234,
-          "meetingKey": 1279
+          "meetingKey": 1279,
+          "startPosition": "P3",
+          "startPositionRank": 3
         },
         {
           "driverNumber": 14,
@@ -276,7 +310,9 @@
           "gapToLeader": null,
           "laps": 21,
           "sessionKey": 11234,
-          "meetingKey": 1279
+          "meetingKey": 1279,
+          "startPosition": "P17",
+          "startPositionRank": 17
         },
         {
           "driverNumber": 18,
@@ -290,7 +326,9 @@
           "gapToLeader": "+15 LAPS",
           "laps": 43,
           "sessionKey": 11234,
-          "meetingKey": 1279
+          "meetingKey": 1279,
+          "startPosition": "-",
+          "startPositionRank": null
         },
         {
           "driverNumber": 27,
@@ -304,7 +342,9 @@
           "gapToLeader": null,
           "laps": 0,
           "sessionKey": 11234,
-          "meetingKey": 1279
+          "meetingKey": 1279,
+          "startPosition": "P11",
+          "startPositionRank": 11
         },
         {
           "driverNumber": 77,
@@ -318,7 +358,9 @@
           "gapToLeader": null,
           "laps": 15,
           "sessionKey": 11234,
-          "meetingKey": 1279
+          "meetingKey": 1279,
+          "startPosition": "P19",
+          "startPositionRank": 19
         },
         {
           "driverNumber": 81,
@@ -332,7 +374,9 @@
           "gapToLeader": null,
           "laps": 0,
           "sessionKey": 11234,
-          "meetingKey": 1279
+          "meetingKey": 1279,
+          "startPosition": "P5",
+          "startPositionRank": 5
         }
       ]
     },
@@ -366,7 +410,9 @@
           "gapToLeader": 0,
           "laps": 19,
           "sessionKey": 11240,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "-",
+          "startPositionRank": null
         },
         {
           "driverNumber": 16,
@@ -380,7 +426,9 @@
           "gapToLeader": 0.674,
           "laps": 19,
           "sessionKey": 11240,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "-",
+          "startPositionRank": null
         },
         {
           "driverNumber": 44,
@@ -394,7 +442,9 @@
           "gapToLeader": 2.554,
           "laps": 19,
           "sessionKey": 11240,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "-",
+          "startPositionRank": null
         },
         {
           "driverNumber": 1,
@@ -408,7 +458,9 @@
           "gapToLeader": 4.433,
           "laps": 19,
           "sessionKey": 11240,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "-",
+          "startPositionRank": null
         },
         {
           "driverNumber": 12,
@@ -422,7 +474,9 @@
           "gapToLeader": 5.688,
           "laps": 19,
           "sessionKey": 11240,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "-",
+          "startPositionRank": null
         },
         {
           "driverNumber": 81,
@@ -436,7 +490,9 @@
           "gapToLeader": 6.809,
           "laps": 19,
           "sessionKey": 11240,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "-",
+          "startPositionRank": null
         },
         {
           "driverNumber": 30,
@@ -450,7 +506,9 @@
           "gapToLeader": 10.9,
           "laps": 19,
           "sessionKey": 11240,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "-",
+          "startPositionRank": null
         },
         {
           "driverNumber": 87,
@@ -464,7 +522,9 @@
           "gapToLeader": 11.271,
           "laps": 19,
           "sessionKey": 11240,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "-",
+          "startPositionRank": null
         },
         {
           "driverNumber": 3,
@@ -478,7 +538,9 @@
           "gapToLeader": 11.619,
           "laps": 19,
           "sessionKey": 11240,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "-",
+          "startPositionRank": null
         },
         {
           "driverNumber": 31,
@@ -492,7 +554,9 @@
           "gapToLeader": 13.887,
           "laps": 19,
           "sessionKey": 11240,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "-",
+          "startPositionRank": null
         },
         {
           "driverNumber": 10,
@@ -506,7 +570,9 @@
           "gapToLeader": 14.78,
           "laps": 19,
           "sessionKey": 11240,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "-",
+          "startPositionRank": null
         },
         {
           "driverNumber": 55,
@@ -520,7 +586,9 @@
           "gapToLeader": 15.753,
           "laps": 19,
           "sessionKey": 11240,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "-",
+          "startPositionRank": null
         },
         {
           "driverNumber": 5,
@@ -534,7 +602,9 @@
           "gapToLeader": 15.858,
           "laps": 19,
           "sessionKey": 11240,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "-",
+          "startPositionRank": null
         },
         {
           "driverNumber": 43,
@@ -548,7 +618,9 @@
           "gapToLeader": 16.393,
           "laps": 19,
           "sessionKey": 11240,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "-",
+          "startPositionRank": null
         },
         {
           "driverNumber": 6,
@@ -562,7 +634,9 @@
           "gapToLeader": 16.43,
           "laps": 19,
           "sessionKey": 11240,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "-",
+          "startPositionRank": null
         },
         {
           "driverNumber": 23,
@@ -576,7 +650,9 @@
           "gapToLeader": 20.014,
           "laps": 19,
           "sessionKey": 11240,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "-",
+          "startPositionRank": null
         },
         {
           "driverNumber": 14,
@@ -590,7 +666,9 @@
           "gapToLeader": 21.599,
           "laps": 19,
           "sessionKey": 11240,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "-",
+          "startPositionRank": null
         },
         {
           "driverNumber": 18,
@@ -604,7 +682,9 @@
           "gapToLeader": 21.971,
           "laps": 19,
           "sessionKey": 11240,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "-",
+          "startPositionRank": null
         },
         {
           "driverNumber": 11,
@@ -618,7 +698,9 @@
           "gapToLeader": 28.241,
           "laps": 19,
           "sessionKey": 11240,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "-",
+          "startPositionRank": null
         },
         {
           "driverNumber": 27,
@@ -632,7 +714,9 @@
           "gapToLeader": null,
           "laps": 12,
           "sessionKey": 11240,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "-",
+          "startPositionRank": null
         },
         {
           "driverNumber": 41,
@@ -646,7 +730,9 @@
           "gapToLeader": null,
           "laps": 11,
           "sessionKey": 11240,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "-",
+          "startPositionRank": null
         },
         {
           "driverNumber": 77,
@@ -660,7 +746,9 @@
           "gapToLeader": null,
           "laps": 12,
           "sessionKey": 11240,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "-",
+          "startPositionRank": null
         }
       ]
     },
@@ -694,7 +782,9 @@
           "gapToLeader": 0,
           "laps": 56,
           "sessionKey": 11245,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "P1",
+          "startPositionRank": 1
         },
         {
           "driverNumber": 63,
@@ -708,7 +798,9 @@
           "gapToLeader": 5.515,
           "laps": 56,
           "sessionKey": 11245,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "P2",
+          "startPositionRank": 2
         },
         {
           "driverNumber": 44,
@@ -722,7 +814,9 @@
           "gapToLeader": 25.267,
           "laps": 56,
           "sessionKey": 11245,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "P3",
+          "startPositionRank": 3
         },
         {
           "driverNumber": 16,
@@ -736,7 +830,9 @@
           "gapToLeader": 28.894,
           "laps": 56,
           "sessionKey": 11245,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "P4",
+          "startPositionRank": 4
         },
         {
           "driverNumber": 87,
@@ -750,7 +846,9 @@
           "gapToLeader": 57.268,
           "laps": 56,
           "sessionKey": 11245,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "P10",
+          "startPositionRank": 10
         },
         {
           "driverNumber": 10,
@@ -764,7 +862,9 @@
           "gapToLeader": 59.647,
           "laps": 56,
           "sessionKey": 11245,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "P7",
+          "startPositionRank": 7
         },
         {
           "driverNumber": 30,
@@ -778,7 +878,9 @@
           "gapToLeader": 80.588,
           "laps": 56,
           "sessionKey": 11245,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "P14",
+          "startPositionRank": 14
         },
         {
           "driverNumber": 6,
@@ -792,7 +894,9 @@
           "gapToLeader": 87.247,
           "laps": 56,
           "sessionKey": 11245,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "P9",
+          "startPositionRank": 9
         },
         {
           "driverNumber": 55,
@@ -806,7 +910,9 @@
           "gapToLeader": "+1 LAP",
           "laps": 55,
           "sessionKey": 11245,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "P17",
+          "startPositionRank": 17
         },
         {
           "driverNumber": 43,
@@ -820,7 +926,9 @@
           "gapToLeader": "+1 LAP",
           "laps": 55,
           "sessionKey": 11245,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "P12",
+          "startPositionRank": 12
         },
         {
           "driverNumber": 27,
@@ -834,7 +942,9 @@
           "gapToLeader": "+1 LAP",
           "laps": 55,
           "sessionKey": 11245,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "P11",
+          "startPositionRank": 11
         },
         {
           "driverNumber": 41,
@@ -848,7 +958,9 @@
           "gapToLeader": "+1 LAP",
           "laps": 55,
           "sessionKey": 11245,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "P15",
+          "startPositionRank": 15
         },
         {
           "driverNumber": 77,
@@ -862,7 +974,9 @@
           "gapToLeader": "+1 LAP",
           "laps": 55,
           "sessionKey": 11245,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "P20",
+          "startPositionRank": 20
         },
         {
           "driverNumber": 31,
@@ -876,7 +990,9 @@
           "gapToLeader": "+1 LAP",
           "laps": 55,
           "sessionKey": 11245,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "P13",
+          "startPositionRank": 13
         },
         {
           "driverNumber": 11,
@@ -890,7 +1006,9 @@
           "gapToLeader": "+1 LAP",
           "laps": 55,
           "sessionKey": 11245,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "P22",
+          "startPositionRank": 22
         },
         {
           "driverNumber": 1,
@@ -904,7 +1022,9 @@
           "gapToLeader": null,
           "laps": 0,
           "sessionKey": 11245,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "P6",
+          "startPositionRank": 6
         },
         {
           "driverNumber": 3,
@@ -918,7 +1038,9 @@
           "gapToLeader": null,
           "laps": 45,
           "sessionKey": 11245,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "P8",
+          "startPositionRank": 8
         },
         {
           "driverNumber": 5,
@@ -932,7 +1054,9 @@
           "gapToLeader": null,
           "laps": 0,
           "sessionKey": 11245,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "P16",
+          "startPositionRank": 16
         },
         {
           "driverNumber": 14,
@@ -946,7 +1070,9 @@
           "gapToLeader": null,
           "laps": 32,
           "sessionKey": 11245,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "P19",
+          "startPositionRank": 19
         },
         {
           "driverNumber": 18,
@@ -960,7 +1086,9 @@
           "gapToLeader": null,
           "laps": 9,
           "sessionKey": 11245,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "P21",
+          "startPositionRank": 21
         },
         {
           "driverNumber": 23,
@@ -974,7 +1102,9 @@
           "gapToLeader": null,
           "laps": 0,
           "sessionKey": 11245,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "P18",
+          "startPositionRank": 18
         },
         {
           "driverNumber": 81,
@@ -988,7 +1118,9 @@
           "gapToLeader": null,
           "laps": 0,
           "sessionKey": 11245,
-          "meetingKey": 1280
+          "meetingKey": 1280,
+          "startPosition": "P5",
+          "startPositionRank": 5
         }
       ]
     }
