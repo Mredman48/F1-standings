@@ -1,6 +1,6 @@
 {
   "header": "McLaren standings",
-  "generatedAtUtc": "2026-03-20T00:30:48.979Z",
+  "generatedAtUtc": "2026-03-20T14:43:25.781Z",
   "sources": {
     "driverStandings": "f1_driver_standings.json",
     "constructorStandings": "f1_constructors_standings.json",
@@ -37,6 +37,10 @@
       "position": "P6",
       "points": 15,
       "wins": 0,
+      "raceWins": 0,
+      "racePodiums": 0,
+      "sprintWins": 0,
+      "sprintPodiums": 0,
       "team": "McLaren",
       "bestResult": {
         "position": "P4",
@@ -62,6 +66,10 @@
       "position": "P12",
       "points": 3,
       "wins": 0,
+      "raceWins": 0,
+      "racePodiums": 0,
+      "sprintWins": 0,
+      "sprintPodiums": 0,
       "team": "McLaren",
       "bestResult": {
         "position": "P6",

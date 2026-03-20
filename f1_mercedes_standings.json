@@ -1,6 +1,6 @@
 {
   "header": "Mercedes standings",
-  "generatedAtUtc": "2026-03-20T00:30:48.978Z",
+  "generatedAtUtc": "2026-03-20T14:43:25.781Z",
   "sources": {
     "driverStandings": "f1_driver_standings.json",
     "constructorStandings": "f1_constructors_standings.json",
@@ -37,6 +37,10 @@
       "position": "P1",
       "points": 51,
       "wins": 0,
+      "raceWins": 1,
+      "racePodiums": 2,
+      "sprintWins": 1,
+      "sprintPodiums": 1,
       "team": "Mercedes",
       "bestResult": {
         "position": "P1",
@@ -62,6 +66,10 @@
       "position": "P2",
       "points": 47,
       "wins": 0,
+      "raceWins": 1,
+      "racePodiums": 2,
+      "sprintWins": 0,
+      "sprintPodiums": 0,
       "team": "Mercedes",
       "bestResult": {
         "position": "P1",

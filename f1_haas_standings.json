@@ -1,6 +1,6 @@
 {
   "header": "Haas standings",
-  "generatedAtUtc": "2026-03-20T00:30:48.982Z",
+  "generatedAtUtc": "2026-03-20T14:43:25.784Z",
   "sources": {
     "driverStandings": "f1_driver_standings.json",
     "constructorStandings": "f1_constructors_standings.json",
@@ -37,6 +37,10 @@
       "position": "P5",
       "points": 17,
       "wins": 0,
+      "raceWins": 0,
+      "racePodiums": 0,
+      "sprintWins": 0,
+      "sprintPodiums": 0,
       "team": "Haas",
       "bestResult": {
         "position": "P5",
@@ -62,6 +66,10 @@
       "position": "P16",
       "points": 0,
       "wins": 0,
+      "raceWins": 0,
+      "racePodiums": 0,
+      "sprintWins": 0,
+      "sprintPodiums": 0,
       "team": "Haas",
       "bestResult": {
         "position": "P10",
