@@ -160,34 +160,83 @@ const TEAMS = [
 /* NATIONALITY / FLAGS */
 /* -------------------------------- */
 
-const NATIONALITY_TO_COUNTRY = {
-  british: { name: "United Kingdom", code: "gb" },
-  english: { name: "United Kingdom", code: "gb" },
-  scottish: { name: "United Kingdom", code: "gb" },
-  welsh: { name: "United Kingdom", code: "gb" },
+const NATIONALITY_LOOKUP = {
+  british: { nationality: "British", name: "United Kingdom", code: "gb" },
+  english: { nationality: "British", name: "United Kingdom", code: "gb" },
+  scottish: { nationality: "British", name: "United Kingdom", code: "gb" },
+  welsh: { nationality: "British", name: "United Kingdom", code: "gb" },
+  gbr: { nationality: "British", name: "United Kingdom", code: "gb" },
+  gb: { nationality: "British", name: "United Kingdom", code: "gb" },
 
-  italian: { name: "Italy", code: "it" },
-  monegasque: { name: "Monaco", code: "mc" },
-  french: { name: "France", code: "fr" },
-  australian: { name: "Australia", code: "au" },
-  dutch: { name: "Netherlands", code: "nl" },
-  thai: { name: "Thailand", code: "th" },
-  argentinian: { name: "Argentina", code: "ar" },
-  argentine: { name: "Argentina", code: "ar" },
-  spanish: { name: "Spain", code: "es" },
-  mexican: { name: "Mexico", code: "mx" },
-  japanese: { name: "Japan", code: "jp" },
-  german: { name: "Germany", code: "de" },
-  finnish: { name: "Finland", code: "fi" },
-  canadian: { name: "Canada", code: "ca" },
-  brazilian: { name: "Brazil", code: "br" },
-  "new zealander": { name: "New Zealand", code: "nz" },
-  newzealander: { name: "New Zealand", code: "nz" },
+  italian: { nationality: "Italian", name: "Italy", code: "it" },
+  ita: { nationality: "Italian", name: "Italy", code: "it" },
+  it: { nationality: "Italian", name: "Italy", code: "it" },
+
+  monegasque: { nationality: "Monegasque", name: "Monaco", code: "mc" },
+  mon: { nationality: "Monegasque", name: "Monaco", code: "mc" },
+  mc: { nationality: "Monegasque", name: "Monaco", code: "mc" },
+
+  french: { nationality: "French", name: "France", code: "fr" },
+  fra: { nationality: "French", name: "France", code: "fr" },
+  fr: { nationality: "French", name: "France", code: "fr" },
+
+  australian: { nationality: "Australian", name: "Australia", code: "au" },
+  aus: { nationality: "Australian", name: "Australia", code: "au" },
+  au: { nationality: "Australian", name: "Australia", code: "au" },
+
+  dutch: { nationality: "Dutch", name: "Netherlands", code: "nl" },
+  ned: { nationality: "Dutch", name: "Netherlands", code: "nl" },
+  nld: { nationality: "Dutch", name: "Netherlands", code: "nl" },
+  nl: { nationality: "Dutch", name: "Netherlands", code: "nl" },
+
+  thai: { nationality: "Thai", name: "Thailand", code: "th" },
+  tha: { nationality: "Thai", name: "Thailand", code: "th" },
+  th: { nationality: "Thai", name: "Thailand", code: "th" },
+
+  argentinian: { nationality: "Argentinian", name: "Argentina", code: "ar" },
+  argentine: { nationality: "Argentinian", name: "Argentina", code: "ar" },
+  arg: { nationality: "Argentinian", name: "Argentina", code: "ar" },
+  ar: { nationality: "Argentinian", name: "Argentina", code: "ar" },
+
+  spanish: { nationality: "Spanish", name: "Spain", code: "es" },
+  esp: { nationality: "Spanish", name: "Spain", code: "es" },
+  es: { nationality: "Spanish", name: "Spain", code: "es" },
+
+  mexican: { nationality: "Mexican", name: "Mexico", code: "mx" },
+  mex: { nationality: "Mexican", name: "Mexico", code: "mx" },
+  mx: { nationality: "Mexican", name: "Mexico", code: "mx" },
+
+  japanese: { nationality: "Japanese", name: "Japan", code: "jp" },
+  jpn: { nationality: "Japanese", name: "Japan", code: "jp" },
+  jp: { nationality: "Japanese", name: "Japan", code: "jp" },
+
+  german: { nationality: "German", name: "Germany", code: "de" },
+  ger: { nationality: "German", name: "Germany", code: "de" },
+  deu: { nationality: "German", name: "Germany", code: "de" },
+  de: { nationality: "German", name: "Germany", code: "de" },
+
+  finnish: { nationality: "Finnish", name: "Finland", code: "fi" },
+  fin: { nationality: "Finnish", name: "Finland", code: "fi" },
+  fi: { nationality: "Finnish", name: "Finland", code: "fi" },
+
+  canadian: { nationality: "Canadian", name: "Canada", code: "ca" },
+  can: { nationality: "Canadian", name: "Canada", code: "ca" },
+  ca: { nationality: "Canadian", name: "Canada", code: "ca" },
+
+  brazilian: { nationality: "Brazilian", name: "Brazil", code: "br" },
+  bra: { nationality: "Brazilian", name: "Brazil", code: "br" },
+  br: { nationality: "Brazilian", name: "Brazil", code: "br" },
+
+  "new zealander": { nationality: "New Zealander", name: "New Zealand", code: "nz" },
+  newzealander: { nationality: "New Zealander", name: "New Zealand", code: "nz" },
+  nzl: { nationality: "New Zealander", name: "New Zealand", code: "nz" },
+  nz: { nationality: "New Zealander", name: "New Zealand", code: "nz" },
 };
 
-function normalizeNationality(nationality) {
-  const key = cleanText(nationality).toLowerCase();
-  return NATIONALITY_TO_COUNTRY[key] || null;
+function normalizeNationalityInfo(value) {
+  const raw = cleanText(value).toLowerCase();
+  if (!raw) return null;
+  return NATIONALITY_LOOKUP[raw] || null;
 }
 
 function buildFlagUrl(countryCode) {
@@ -546,8 +595,8 @@ async function buildTeamJson(
         ? splitStatsByDriverNumber[num]
         : createEmptySplitStats();
 
-    const nationality = cleanText(drv.nationality || "");
-    const nationalityInfo = normalizeNationality(nationality);
+    const rawNationality = cleanText(drv.nationality || "");
+    const nationalityInfo = normalizeNationalityInfo(rawNationality);
 
     drivers.push({
       firstName: first,
@@ -555,7 +604,7 @@ async function buildTeamJson(
       code,
       driverNumber: num,
 
-      nationality: nationality || null,
+      nationality: nationalityInfo?.nationality ?? (rawNationality || null),
       countryCode: nationalityInfo?.code ?? null,
       countryName: nationalityInfo?.name ?? null,
       flagUrl: buildFlagUrl(nationalityInfo?.code ?? null),
