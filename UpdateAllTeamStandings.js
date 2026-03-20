@@ -13,6 +13,58 @@ const DRIVER_FIRSTNAME_OVERRIDES = {
   alexander: "alex",
 };
 
+const DRIVER_NUMBER_OVERRIDES = {
+  "George Russell": 63,
+  "Kimi Antonelli": 12,
+  "Charles Leclerc": 16,
+  "Lewis Hamilton": 44,
+  "Lando Norris": 1,
+  "Max Verstappen": 3,
+  "Oliver Bearman": 87,
+  "Arvid Lindblad": 41,
+  "Oscar Piastri": 81,
+  "Gabriel Bortoleto": 5,
+  "Liam Lawson": 30,
+  "Pierre Gasly": 10,
+  "Esteban Ocon": 31,
+  "Alexander Albon": 23,
+  "Alex Albon": 23,
+  "Franco Colapinto": 43,
+  "Carlos Sainz": 55,
+  "Sergio Perez": 11,
+  "Isack Hadjar": 6,
+  "Nico Hulkenberg": 27,
+  "Fernando Alonso": 14,
+  "Valtteri Bottas": 77,
+  "Lance Stroll": 18,
+};
+
+const DRIVER_CODE_OVERRIDES = {
+  "George Russell": "RUS",
+  "Kimi Antonelli": "ANT",
+  "Charles Leclerc": "LEC",
+  "Lewis Hamilton": "HAM",
+  "Lando Norris": "NOR",
+  "Max Verstappen": "VER",
+  "Oliver Bearman": "BEA",
+  "Arvid Lindblad": "LIN",
+  "Oscar Piastri": "PIA",
+  "Gabriel Bortoleto": "BOR",
+  "Liam Lawson": "LAW",
+  "Pierre Gasly": "GAS",
+  "Esteban Ocon": "OCO",
+  "Alexander Albon": "ALB",
+  "Alex Albon": "ALB",
+  "Franco Colapinto": "COL",
+  "Carlos Sainz": "SAI",
+  "Sergio Perez": "PER",
+  "Isack Hadjar": "HAD",
+  "Nico Hulkenberg": "HUL",
+  "Fernando Alonso": "ALO",
+  "Valtteri Bottas": "BOT",
+  "Lance Stroll": "STR",
+};
+
 const TEAMS = [
   {
     key: "redbull",
@@ -119,6 +171,17 @@ function slug(s) {
 
 function cleanText(value) {
   return String(value || "").replace(/\s+/g, " ").trim();
+}
+
+function canonicalDriverName(name) {
+  const cleaned = cleanText(name);
+
+  const aliases = {
+    "Alex Albon": "Alexander Albon",
+    "Alexander Albon": "Alexander Albon",
+  };
+
+  return aliases[cleaned] || cleaned;
 }
 
 function normalizePoints(val) {
@@ -282,14 +345,8 @@ function bestResultFromSeasonData(best, eventLookup) {
     date: event?.date ?? best?.date ?? "-",
     circuit: event?.circuit ?? best?.circuit ?? "-",
     location: {
-      locality:
-        event?.location?.locality ??
-        best?.location?.locality ??
-        "-",
-      country:
-        event?.location?.country ??
-        best?.location?.country ??
-        "-",
+      locality: event?.location?.locality ?? best?.location?.locality ?? "-",
+      country: event?.location?.country ?? best?.location?.country ?? "-",
     },
     sourceUrl: best?.sourceUrl ?? null,
   };
@@ -375,7 +432,21 @@ async function buildTeamJson(
 
     const first = drv.firstName || "-";
     const last = drv.lastName || "-";
-    const num = drv.driverNumber != null ? Number(drv.driverNumber) : null;
+    const fullName = cleanText(drv.fullName || `${first} ${last}`);
+    const canonicalFullName = canonicalDriverName(fullName);
+
+    const rawNumber =
+      drv.driverNumber != null && Number.isFinite(Number(drv.driverNumber))
+        ? Number(drv.driverNumber)
+        : null;
+
+    const num = rawNumber ?? DRIVER_NUMBER_OVERRIDES[canonicalFullName] ?? null;
+
+    const code =
+      drv.code ||
+      DRIVER_CODE_OVERRIDES[canonicalFullName] ||
+      DRIVER_CODE_OVERRIDES[fullName] ||
+      "-";
 
     const seasonBest =
       num != null
@@ -385,7 +456,7 @@ async function buildTeamJson(
     drivers.push({
       firstName: first,
       lastName: last,
-      code: drv.code || "-",
+      code,
       driverNumber: num,
 
       numberImageUrl: numberImage(num),
