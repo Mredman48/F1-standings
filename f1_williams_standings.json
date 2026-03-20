@@ -1,6 +1,6 @@
 {
   "header": "Williams standings",
-  "generatedAtUtc": "2026-03-15T09:35:15.699Z",
+  "generatedAtUtc": "2026-03-20T00:30:48.981Z",
   "sources": {
     "driverStandings": "f1_driver_standings.json",
     "constructorStandings": "f1_constructors_standings.json",
@@ -17,9 +17,9 @@
     }
   },
   "lastRace": {
-    "raceName": "Chinese Grand Prix Sprint",
+    "raceName": "Chinese Grand Prix",
     "round": "2",
-    "date": "2026-03-14",
+    "date": "2026-03-15",
     "circuit": "Shanghai",
     "location": {
       "locality": "-",
@@ -55,24 +55,24 @@
     {
       "firstName": "Alex",
       "lastName": "Albon",
-      "code": "-",
-      "driverNumber": null,
-      "numberImageUrl": null,
+      "code": "ALB",
+      "driverNumber": 23,
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-23.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/alex-albon.png",
       "position": "P18",
       "points": 0,
       "wins": 0,
       "team": "Williams",
       "bestResult": {
-        "position": "-",
-        "eventType": "-",
-        "raceName": "-",
-        "round": "-",
-        "date": "-",
-        "circuit": "-",
+        "position": "P12",
+        "eventType": "race",
+        "raceName": "Australian Grand Prix",
+        "round": "1",
+        "date": "2026-03-08",
+        "circuit": "Melbourne",
         "location": {
-          "locality": "-",
-          "country": "-"
+          "locality": "Melbourne",
+          "country": "Australia"
         },
         "sourceUrl": null
       }
