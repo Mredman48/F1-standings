@@ -26,9 +26,19 @@ jobs:
         with:
           node-version: 20
 
-      - name: List repo files
-        run: ls -la
+      # 🔍 DEBUG — shows EXACT file names + location
+      - name: Debug file structure
+        run: |
+          echo "Current directory:"
+          pwd
+          echo ""
+          echo "Repo root contents:"
+          ls -la
+          echo ""
+          echo "All files (2 levels deep):"
+          find . -maxdepth 2 -type f
 
+      # 🚀 RUN SCRIPT (⚠️ EDIT THIS LINE IF NEEDED)
       - name: Run season results builder
         run: node buildSeasonResults.js
 
