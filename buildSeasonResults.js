@@ -70,7 +70,7 @@ function buildFormattedRaceName(baseRaceName, eventType) {
   return eventType === "sprint" ? `${base} Sprint` : base;
 }
 
-async function fetchJson(url, { allow401 = false, retries = 5 } = {}) {
+async function fetchJson(url, { allow401 = false, allow404 = false, retries = 5 } = {}) {
   for (let attempt = 0; attempt <= retries; attempt += 1) {
     const res = await fetch(url, {
       headers: {
@@ -89,6 +89,10 @@ async function fetchJson(url, { allow401 = false, retries = 5 } = {}) {
         url,
         body: text,
       };
+    }
+
+    if (res.status === 404 && allow404) {
+      return [];
     }
 
     if (res.status === 429) {
@@ -133,7 +137,10 @@ async function getCompletedTargetSessions(year) {
     targetSessionNames.map((sessionName) =>
       fetchJson(
         `${OPENF1_BASE}/sessions?year=${year}&session_name=${encodeURIComponent(sessionName)}`,
-        { allow401: true }
+        {
+          allow401: true,
+          allow404: true,
+        }
       )
     )
   );
@@ -145,7 +152,7 @@ async function getCompletedTargetSessions(year) {
   }
 
   return results
-    .flatMap((r) => r || [])
+    .flatMap((r) => Array.isArray(r) ? r : [])
     .filter((s) => {
       const name = cleanText(s?.session_name);
       const isTarget = targetSessionNames.includes(name);
