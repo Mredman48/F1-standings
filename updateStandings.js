@@ -33,6 +33,7 @@ const DRIVER_NUMBER_OVERRIDES = {
   "Pierre Gasly": 10,
   "Esteban Ocon": 31,
   "Alexander Albon": 23,
+  "Alex Albon": 23,
   "Franco Colapinto": 43,
   "Carlos Sainz": 55,
   "Sergio Perez": 11,
@@ -58,6 +59,7 @@ const DRIVER_CODE_OVERRIDES = {
   "Pierre Gasly": "GAS",
   "Esteban Ocon": "OCO",
   "Alexander Albon": "ALB",
+  "Alex Albon": "ALB",
   "Franco Colapinto": "COL",
   "Carlos Sainz": "SAI",
   "Sergio Perez": "PER",
@@ -131,6 +133,17 @@ function headshot(first, last) {
 function normalizeTeamName(name) {
   if (!name) return null;
   return TEAM_NAME_OVERRIDES[name] || name;
+}
+
+function canonicalDriverName(name) {
+  const cleaned = cleanText(name);
+
+  const aliases = {
+    "Alex Albon": "Alexander Albon",
+    "Alexander Albon": "Alexander Albon",
+  };
+
+  return aliases[cleaned] || cleaned;
 }
 
 function decodeHtmlEntities(str) {
@@ -280,6 +293,7 @@ function parseLastRaceFromSeasonResults(data) {
       lastName: winnerNames.lastName || "-",
       fullName: winnerFullName || "-",
       code:
+        DRIVER_CODE_OVERRIDES[canonicalDriverName(winnerFullName)] ||
         DRIVER_CODE_OVERRIDES[winnerFullName] ||
         cleanText(winnerRow?.code) ||
         null,
@@ -346,6 +360,7 @@ function parseDriverRowsFromBlock(block) {
     const [, posRaw, fullNameRaw, nationality, teamRaw, pointsRaw] = match;
 
     const fullName = cleanLine(fullNameRaw);
+    const canonicalFullName = canonicalDriverName(fullName);
     const team = cleanLine(teamRaw);
     const { firstName, lastName } = splitFullName(fullName);
 
@@ -355,12 +370,12 @@ function parseDriverRowsFromBlock(block) {
       points: safeNumOrDash(pointsRaw),
       wins: "-",
       driver: {
-        code: DRIVER_CODE_OVERRIDES[fullName] ?? "-",
+        code: DRIVER_CODE_OVERRIDES[canonicalFullName] ?? "-",
         firstName,
         lastName,
         fullName,
         nationality,
-        driverNumber: DRIVER_NUMBER_OVERRIDES[fullName] ?? null,
+        driverNumber: DRIVER_NUMBER_OVERRIDES[canonicalFullName] ?? null,
         headshotUrl:
           firstName && lastName ? headshot(firstName, lastName) : null,
         openf1HeadshotUrl: null,
