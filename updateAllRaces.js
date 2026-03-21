@@ -1,4 +1,4 @@
-// updateSeasonCalendar.js
+// updateAllRaces.js
 import fs from "node:fs/promises";
 import ical from "node-ical";
 
@@ -15,27 +15,6 @@ const OMIT_RACE_KEYS = new Set([
 ]);
 
 /* -------------------- helpers -------------------- */
-function daysUntil(date, now = new Date()) {
-  const ms = date.getTime() - now.getTime();
-  return Math.ceil(ms / (1000 * 60 * 60 * 24));
-}
-
-function shortDateInTZ(dateObj, timeZone = USER_TZ) {
-  ...
-}
-
-function shortTimeInTZ(dateObj, timeZone = USER_TZ) {
-  ...
-}
-
-function shortDateTimeInTZ(dateObj, timeZone = USER_TZ) {
-  return `${shortDateInTZ(dateObj, timeZone)} ${shortTimeInTZ(dateObj, timeZone)}`;
-}
-
-function daysUntil(date, now = new Date()) {
-  const ms = date.getTime() - now.getTime();
-  return Math.ceil(ms / (1000 * 60 * 60 * 24));
-}
 
 function normalize(s) {
   return String(s || "")
@@ -78,6 +57,11 @@ function shortTimeInTZ(dateObj, timeZone = USER_TZ) {
 
 function shortDateTimeInTZ(dateObj, timeZone = USER_TZ) {
   return `${shortDateInTZ(dateObj, timeZone)} ${shortTimeInTZ(dateObj, timeZone)}`;
+}
+
+function daysUntil(date, now = new Date()) {
+  const ms = date.getTime() - now.getTime();
+  return Math.ceil(ms / (1000 * 60 * 60 * 24));
 }
 
 /* -------------------- race key resolution -------------------- */
@@ -174,6 +158,7 @@ const LOCATION_BY_KEY = {
   madrid: { city: "Madrid", country: "Spain", iso2: "es" },
 };
 
+const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 const MAP_FILE_BY_KEY = {
   australia: "melbourne.png",
   china: "shanghai.png",
@@ -416,7 +401,9 @@ async function updateSeasonCalendar() {
   });
 
   const seasonCalendar = races.map((race, index) => {
-    const season = String(race.sessions[0]?.start?.getUTCFullYear?.() ?? new Date().getUTCFullYear());
+    const season = String(
+      race.sessions[0]?.start?.getUTCFullYear?.() ?? new Date().getUTCFullYear()
+    );
     const title = DISPLAY_TITLE_BY_KEY[race.raceKey] || titleCaseWords(race.gpName) || race.gpName;
     const locationData = LOCATION_BY_KEY[race.raceKey] || {
       city: null,
