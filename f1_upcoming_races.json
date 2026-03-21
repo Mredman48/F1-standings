@@ -1,12 +1,12 @@
 {
   "header": "Upcoming F1 events",
-  "generatedAtUtc": "2026-03-21T22:42:45.360Z",
+  "generatedAtUtc": "2026-03-21T22:47:51.495Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics+formula1",
     "url": "https://better-f1-calendar.vercel.app/api/calendar.ics"
   },
-  "totalRaces": 22,
+  "totalRaces": 21,
   "upcomingEvents": [
     {
       "round": 1,
@@ -503,41 +503,41 @@
     {
       "round": 7,
       "type": "RACE_WEEKEND",
-      "title": "F1 Barcelona Catalunya Gp",
+      "title": "FORMULA 1 MSC CRUISES GRAN PREMIO DE BARCELONA-CATALUNYA 2026",
       "season": "2026",
       "location": {
         "raw": null,
-        "city": null,
-        "country": null,
+        "city": "Barcelona",
+        "country": "Spain",
         "flag": {
-          "iso2": null,
-          "png": null,
-          "svg": null
+          "iso2": "es",
+          "png": "https://flagcdn.com/w160/es.png",
+          "svg": "https://flagcdn.com/es.svg"
         }
       },
       "racePage": {
-        "slug": null,
-        "url": null
+        "slug": "barcelona-catalunya",
+        "url": "https://www.formula1.com/en/racing/2026/barcelona-catalunya"
       },
       "trackMap": {
         "found": false,
-        "pageUrl": null,
+        "pageUrl": "https://www.formula1.com/en/racing/2026/barcelona-catalunya",
         "mediaUrl": null,
         "pngUrl": null,
-        "note": "No Formula1 slug configured for race key \"barcelonacatalunyagp\"."
+        "note": "HTTP 404 fetching https://www.formula1.com/content/dam/fom-website/manual/Misc/2026calendarImages/2026trackcatalunyadetailed.png"
       },
       "map": {
-        "found": false,
-        "filename": null,
-        "pngUrl": null,
-        "note": "No custom map file configured for key \"barcelonacatalunyagp\"."
+        "found": true,
+        "filename": "barcelona.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/barcelona.png",
+        "note": null
       },
       "countdowns": {
         "startsInDays": 83
       },
       "weekend": {
         "startUtc": "2026-06-12T11:30:00.000Z",
-        "endUtc": "2026-06-14T15:00:00.000Z"
+        "endUtc": "2026-09-13T15:00:00.000Z"
       },
       "sessions": [
         {
@@ -579,6 +579,46 @@
           "startLocalDateShort": "Sun, Jun 14",
           "startLocalTimeShort": "07:00",
           "startLocalDateTimeShort": "Sun, Jun 14 07:00"
+        },
+        {
+          "type": "FP1",
+          "startUtc": "2026-09-11T11:30:00.000Z",
+          "endUtc": "2026-09-11T12:30:00.000Z",
+          "startLocalDateShort": "Fri, Sep 11",
+          "startLocalTimeShort": "05:30",
+          "startLocalDateTimeShort": "Fri, Sep 11 05:30"
+        },
+        {
+          "type": "FP2",
+          "startUtc": "2026-09-11T15:00:00.000Z",
+          "endUtc": "2026-09-11T16:00:00.000Z",
+          "startLocalDateShort": "Fri, Sep 11",
+          "startLocalTimeShort": "09:00",
+          "startLocalDateTimeShort": "Fri, Sep 11 09:00"
+        },
+        {
+          "type": "FP3",
+          "startUtc": "2026-09-12T10:30:00.000Z",
+          "endUtc": "2026-09-12T11:30:00.000Z",
+          "startLocalDateShort": "Sat, Sep 12",
+          "startLocalTimeShort": "04:30",
+          "startLocalDateTimeShort": "Sat, Sep 12 04:30"
+        },
+        {
+          "type": "Quali",
+          "startUtc": "2026-09-12T14:00:00.000Z",
+          "endUtc": "2026-09-12T15:00:00.000Z",
+          "startLocalDateShort": "Sat, Sep 12",
+          "startLocalTimeShort": "08:00",
+          "startLocalDateTimeShort": "Sat, Sep 12 08:00"
+        },
+        {
+          "type": "Race",
+          "startUtc": "2026-09-13T13:00:00.000Z",
+          "endUtc": "2026-09-13T15:00:00.000Z",
+          "startLocalDateShort": "Sun, Sep 13",
+          "startLocalTimeShort": "07:00",
+          "startLocalDateTimeShort": "Sun, Sep 13 07:00"
         }
       ]
     },
@@ -995,34 +1035,34 @@
     {
       "round": 13,
       "type": "RACE_WEEKEND",
-      "title": "F1 Premio Italia Gp",
+      "title": "FORMULA 1 PIRELLI GRAN PREMIO D’ITALIA 2026",
       "season": "2026",
       "location": {
         "raw": null,
-        "city": null,
-        "country": null,
+        "city": "Monza",
+        "country": "Italy",
         "flag": {
-          "iso2": null,
-          "png": null,
-          "svg": null
+          "iso2": "it",
+          "png": "https://flagcdn.com/w160/it.png",
+          "svg": "https://flagcdn.com/it.svg"
         }
       },
       "racePage": {
-        "slug": null,
-        "url": null
+        "slug": "italy",
+        "url": "https://www.formula1.com/en/racing/2026/italy"
       },
       "trackMap": {
         "found": false,
-        "pageUrl": null,
+        "pageUrl": "https://www.formula1.com/en/racing/2026/italy",
         "mediaUrl": null,
         "pngUrl": null,
-        "note": "No Formula1 slug configured for race key \"premioitaliagp\"."
+        "note": "HTTP 404 fetching https://www.formula1.com/content/dam/fom-website/manual/Misc/2026calendarImages/2026trackmonzadetailed.png"
       },
       "map": {
-        "found": false,
-        "filename": null,
-        "pngUrl": null,
-        "note": "No custom map file configured for key \"premioitaliagp\"."
+        "found": true,
+        "filename": "monza.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/monza.png",
+        "note": null
       },
       "countdowns": {
         "startsInDays": 167
@@ -1076,88 +1116,6 @@
     },
     {
       "round": 14,
-      "type": "RACE_WEEKEND",
-      "title": "FORMULA 1 MSC CRUISES GRAN PREMIO DE BARCELONA-CATALUNYA 2026",
-      "season": "2026",
-      "location": {
-        "raw": null,
-        "city": "Barcelona",
-        "country": "Spain",
-        "flag": {
-          "iso2": "es",
-          "png": "https://flagcdn.com/w160/es.png",
-          "svg": "https://flagcdn.com/es.svg"
-        }
-      },
-      "racePage": {
-        "slug": "barcelona-catalunya",
-        "url": "https://www.formula1.com/en/racing/2026/barcelona-catalunya"
-      },
-      "trackMap": {
-        "found": false,
-        "pageUrl": "https://www.formula1.com/en/racing/2026/barcelona-catalunya",
-        "mediaUrl": null,
-        "pngUrl": null,
-        "note": "HTTP 404 fetching https://www.formula1.com/content/dam/fom-website/manual/Misc/2026calendarImages/2026trackcatalunyadetailed.png"
-      },
-      "map": {
-        "found": true,
-        "filename": "barcelona.png",
-        "pngUrl": "https://mredman48.github.io/F1-standings/maps/barcelona.png",
-        "note": null
-      },
-      "countdowns": {
-        "startsInDays": 174
-      },
-      "weekend": {
-        "startUtc": "2026-09-11T11:30:00.000Z",
-        "endUtc": "2026-09-13T15:00:00.000Z"
-      },
-      "sessions": [
-        {
-          "type": "FP1",
-          "startUtc": "2026-09-11T11:30:00.000Z",
-          "endUtc": "2026-09-11T12:30:00.000Z",
-          "startLocalDateShort": "Fri, Sep 11",
-          "startLocalTimeShort": "05:30",
-          "startLocalDateTimeShort": "Fri, Sep 11 05:30"
-        },
-        {
-          "type": "FP2",
-          "startUtc": "2026-09-11T15:00:00.000Z",
-          "endUtc": "2026-09-11T16:00:00.000Z",
-          "startLocalDateShort": "Fri, Sep 11",
-          "startLocalTimeShort": "09:00",
-          "startLocalDateTimeShort": "Fri, Sep 11 09:00"
-        },
-        {
-          "type": "FP3",
-          "startUtc": "2026-09-12T10:30:00.000Z",
-          "endUtc": "2026-09-12T11:30:00.000Z",
-          "startLocalDateShort": "Sat, Sep 12",
-          "startLocalTimeShort": "04:30",
-          "startLocalDateTimeShort": "Sat, Sep 12 04:30"
-        },
-        {
-          "type": "Quali",
-          "startUtc": "2026-09-12T14:00:00.000Z",
-          "endUtc": "2026-09-12T15:00:00.000Z",
-          "startLocalDateShort": "Sat, Sep 12",
-          "startLocalTimeShort": "08:00",
-          "startLocalDateTimeShort": "Sat, Sep 12 08:00"
-        },
-        {
-          "type": "Race",
-          "startUtc": "2026-09-13T13:00:00.000Z",
-          "endUtc": "2026-09-13T15:00:00.000Z",
-          "startLocalDateShort": "Sun, Sep 13",
-          "startLocalTimeShort": "07:00",
-          "startLocalDateTimeShort": "Sun, Sep 13 07:00"
-        }
-      ]
-    },
-    {
-      "round": 15,
       "type": "RACE_WEEKEND",
       "title": "FORMULA 1 QATAR AIRWAYS AZERBAIJAN GRAND PRIX 2026",
       "season": "2026",
@@ -1239,7 +1197,7 @@
       ]
     },
     {
-      "round": 16,
+      "round": 15,
       "type": "RACE_WEEKEND",
       "title": "FORMULA 1 SINGAPORE AIRLINES SINGAPORE GRAND PRIX 2026",
       "season": "2026",
@@ -1321,7 +1279,7 @@
       ]
     },
     {
-      "round": 17,
+      "round": 16,
       "type": "RACE_WEEKEND",
       "title": "FORMULA 1 MSC CRUISES UNITED STATES GRAND PRIX 2026",
       "season": "2026",
@@ -1403,7 +1361,7 @@
       ]
     },
     {
-      "round": 18,
+      "round": 17,
       "type": "RACE_WEEKEND",
       "title": "FORMULA 1 GRAN PREMIO DE LA CIUDAD DE MÉXICO 2026",
       "season": "2026",
@@ -1485,7 +1443,7 @@
       ]
     },
     {
-      "round": 19,
+      "round": 18,
       "type": "RACE_WEEKEND",
       "title": "FORMULA 1 MSC CRUISES GRANDE PRÊMIO DE SÃO PAULO 2026",
       "season": "2026",
@@ -1567,7 +1525,7 @@
       ]
     },
     {
-      "round": 20,
+      "round": 19,
       "type": "RACE_WEEKEND",
       "title": "FORMULA 1 HEINEKEN LAS VEGAS GRAND PRIX 2026",
       "season": "2026",
@@ -1649,7 +1607,7 @@
       ]
     },
     {
-      "round": 21,
+      "round": 20,
       "type": "RACE_WEEKEND",
       "title": "FORMULA 1 QATAR AIRWAYS QATAR GRAND PRIX 2026",
       "season": "2026",
@@ -1731,7 +1689,7 @@
       ]
     },
     {
-      "round": 22,
+      "round": 21,
       "type": "RACE_WEEKEND",
       "title": "F1 Abu Dhabi Gp",
       "season": "2026",
