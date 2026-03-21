@@ -34,7 +34,7 @@ const FORMULA1_SLUG_BY_KEY = {
   "saudi-arabia": "saudi-arabia",
   miami: "miami",
   monaco: "monaco",
-  spain: "spain",
+  spain: "barcelona-catalunya",
   canada: "canada",
   austria: "austria",
   "great-britain": "great-britain",
@@ -46,7 +46,7 @@ const FORMULA1_SLUG_BY_KEY = {
   singapore: "singapore",
   "united-states": "united-states",
   mexico: "mexico",
-  "sao-paulo": "sao-paulo",
+  "sao-paulo": "brazil",
   "las-vegas": "las-vegas",
   qatar: "qatar",
   "abu-dhabi": "abu-dhabi",
@@ -141,6 +141,26 @@ const MAP_FILE_BY_KEY = {
 };
 
 /* -------------------- basic helpers -------------------- */
+
+function decodeHtmlEntities(str) {
+  if (!str) return str;
+  return str
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&apos;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&#8217;/g, "’")
+    .replace(/&#8211;/g, "–");
+}
+
+function extractOfficialRaceTitle(html, fallbackTitle) {
+  const m = html.match(/<h1[^>]*>\s*([^<]+?)\s*<\/h1>/i);
+  if (!m?.[1]) return fallbackTitle;
+  return decodeHtmlEntities(m[1]).replace(/\s+/g, " ").trim();
+}
 
 function normalize(s) {
   return String(s || "")
@@ -388,35 +408,37 @@ function extractDetailedTrackMediaUrl(html, season) {
       `https://media\\.formula1\\.com/[^"'\\s]+/common/f1/${season}/track/[^"'\\s]+detailed\\.(webp|png)`,
       "i"
     ),
+    /Image:\s*2026track[a-z0-9-]+detailed\.png/i,
+    /2026track[a-z0-9-]+detailed\.png/i,
   ];
 
   for (const re of patterns) {
     const m = html.match(re);
-    if (m) return m[0];
+    if (!m) continue;
+
+    const found = m[0].replace(/^Image:\s*/i, "");
+    if (found.startsWith("http")) return found;
+
+    return `https://www.formula1.com/content/dam/fom-website/manual/Misc/2026calendarImages/${found}`;
   }
 
   return null;
 }
 
-async function downloadToPng({ mediaUrl, outName }) {
-  await ensureDir(TRACKMAP_DIR);
-  const inputBuf = await fetchBuffer(mediaUrl);
-  const outPath = path.join(TRACKMAP_DIR, outName);
-  const pngBuf = await sharp(inputBuf).png().toBuffer();
-  await fs.writeFile(outPath, pngBuf);
-  return `${PAGES_BASE}/${TRACKMAP_DIR}/${encodeURIComponent(outName)}`;
-}
-
-async function fetchTrackMapForRace({ raceKey, season }) {
+async function fetchRacePageDetails({ raceKey, season, fallbackTitle }) {
   const slug = FORMULA1_SLUG_BY_KEY[raceKey];
 
   if (!slug) {
     return {
-      found: false,
+      title: fallbackTitle,
       pageUrl: null,
-      mediaUrl: null,
-      pngUrl: null,
-      note: `No Formula1 slug configured for race key "${raceKey}".`,
+      trackMap: {
+        found: false,
+        pageUrl: null,
+        mediaUrl: null,
+        pngUrl: null,
+        note: `No Formula1 slug configured for race key "${raceKey}".`,
+      },
     };
   }
 
@@ -424,35 +446,53 @@ async function fetchTrackMapForRace({ raceKey, season }) {
 
   try {
     const html = await fetchText(pageUrl);
+    const title = extractOfficialRaceTitle(html, fallbackTitle);
+
     const mediaUrl = extractDetailedTrackMediaUrl(html, season);
 
     if (!mediaUrl) {
       return {
-        found: false,
+        title,
         pageUrl,
-        mediaUrl: null,
-        pngUrl: null,
-        note: "No detailed track image found on race page.",
+        trackMap: {
+          found: false,
+          pageUrl,
+          mediaUrl: null,
+          pngUrl: null,
+          note: "No detailed track image found on race page.",
+        },
       };
     }
 
     const outName = `f1_${season}_${slug}_detailed.png`;
-    const pngUrl = await downloadToPng({ mediaUrl, outName });
+    await ensureDir(TRACKMAP_DIR);
+    const inputBuf = await fetchBuffer(mediaUrl);
+    const outPath = path.join(TRACKMAP_DIR, outName);
+    const pngBuf = await sharp(inputBuf).png().toBuffer();
+    await fs.writeFile(outPath, pngBuf);
 
     return {
-      found: true,
+      title,
       pageUrl,
-      mediaUrl,
-      pngUrl,
-      note: null,
+      trackMap: {
+        found: true,
+        pageUrl,
+        mediaUrl,
+        pngUrl: `${PAGES_BASE}/${TRACKMAP_DIR}/${encodeURIComponent(outName)}`,
+        note: null,
+      },
     };
   } catch (err) {
     return {
-      found: false,
+      title: fallbackTitle,
       pageUrl,
-      mediaUrl: null,
-      pngUrl: null,
-      note: err.message,
+      trackMap: {
+        found: false,
+        pageUrl,
+        mediaUrl: null,
+        pngUrl: null,
+        note: err.message,
+      },
     };
   }
 }
@@ -567,16 +607,18 @@ async function updateAllRaces() {
 
     console.log(`Building race ${index + 1}/${races.length}: ${race.raceKey}`);
 
-    const title =
-      DISPLAY_TITLE_BY_KEY[race.raceKey] ||
-      titleCaseWords(race.gpName) ||
-      race.gpName;
+const fallbackTitle =
+  titleCaseWords(race.gpName) ||
+  race.gpName;
 
-    const locationData = LOCATION_BY_KEY[race.raceKey] || {
-      city: null,
-      country: titleCaseWords(race.locationRaw) || null,
-      iso2: null,
-    };
+const pageDetails = await fetchRacePageDetails({
+  raceKey: race.raceKey,
+  season,
+  fallbackTitle,
+});
+
+const title = pageDetails.title;
+const trackMap = pageDetails.trackMap;
 
     const sessionsOut = buildSessionsOut(race.sessions);
     const window = computeWindowFromSessions(sessionsOut);
@@ -598,12 +640,10 @@ async function updateAllRaces() {
         country: locationData.country,
         flag: buildFlag(locationData.iso2),
       },
-      racePage: {
-        slug: FORMULA1_SLUG_BY_KEY[race.raceKey] || null,
-        url: FORMULA1_SLUG_BY_KEY[race.raceKey]
-          ? `https://www.formula1.com/en/racing/${season}/${FORMULA1_SLUG_BY_KEY[race.raceKey]}`
-          : null,
-      },
+racePage: {
+  slug: FORMULA1_SLUG_BY_KEY[race.raceKey] || null,
+  url: pageDetails.pageUrl,
+},
       trackMap,
       map: buildCustomMap(race.raceKey),
       countdowns: {
