@@ -15,6 +15,25 @@ const MAPS_DIR = "maps";
 
 const UA = "f1-standings-bot/1.0 (GitHub Actions)";
 
+/* -------------------- canceled races to omit -------------------- */
+
+const OMIT_RACE_SLUGS = new Set([
+  "bahrain",
+  "saudi-arabia",
+]);
+
+const OMIT_TEXT_PATTERNS = [
+  /\bbahrain\b/i,
+  /\bsaudi\b/i,
+  /\bjeddah\b/i,
+  /\bsaudi arabia\b/i,
+];
+
+function shouldOmitRaceByText(text) {
+  const s = String(text || "");
+  return OMIT_TEXT_PATTERNS.some((re) => re.test(s));
+}
+
 /* -------------------- custom map assets -------------------- */
 
 const MAP_FILE_BY_SLUG = {
@@ -665,13 +684,27 @@ async function updateNextRace() {
 
       if (isNaN(start) || isNaN(end)) return null;
 
+      const gpName = stripFormula1Prefix(getGpName(summary));
+      const location = ev.location || null;
+      const description = ev.description || null;
+
+      if (
+        shouldOmitRaceByText(summary) ||
+        shouldOmitRaceByText(gpName) ||
+        shouldOmitRaceByText(location) ||
+        shouldOmitRaceByText(description)
+      ) {
+        console.log(`Skipping omitted ICS item: ${summary}`);
+        return null;
+      }
+
       return {
-        gpName: stripFormula1Prefix(getGpName(summary)),
+        gpName,
         sessionType,
         start,
         end,
-        location: ev.location || null,
-        description: ev.description || null,
+        location,
+        description,
         summary,
       };
     })
@@ -708,6 +741,10 @@ async function updateNextRace() {
     gpName: gpNameShort,
     locationRaw,
   });
+
+  if (OMIT_RACE_SLUGS.has(racePage.slug)) {
+    throw new Error(`Resolved omitted race slug "${racePage.slug}" from ICS feed.`);
+  }
 
   const racePageHtml = await fetchText(racePage.pageUrl);
 
