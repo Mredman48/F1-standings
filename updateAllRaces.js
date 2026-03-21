@@ -15,6 +15,27 @@ const OMIT_RACE_KEYS = new Set([
 ]);
 
 /* -------------------- helpers -------------------- */
+function daysUntil(date, now = new Date()) {
+  const ms = date.getTime() - now.getTime();
+  return Math.ceil(ms / (1000 * 60 * 60 * 24));
+}
+
+function shortDateInTZ(dateObj, timeZone = USER_TZ) {
+  ...
+}
+
+function shortTimeInTZ(dateObj, timeZone = USER_TZ) {
+  ...
+}
+
+function shortDateTimeInTZ(dateObj, timeZone = USER_TZ) {
+  return `${shortDateInTZ(dateObj, timeZone)} ${shortTimeInTZ(dateObj, timeZone)}`;
+}
+
+function daysUntil(date, now = new Date()) {
+  const ms = date.getTime() - now.getTime();
+  return Math.ceil(ms / (1000 * 60 * 60 * 24));
+}
 
 function normalize(s) {
   return String(s || "")
