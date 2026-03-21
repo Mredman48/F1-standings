@@ -269,32 +269,161 @@ function canonicalRaceKey(gpName, location = "", summary = "") {
   const gp = normalize(gpName);
   const loc = normalize(location);
   const sum = normalize(summary);
+  const combined = `${gp} ${loc} ${sum}`;
 
-  if (gp.includes("australian") || loc.includes("melbourne") || sum.includes("australian")) return "australia";
-  if (gp.includes("chinese") || loc.includes("shanghai") || sum.includes("chinese")) return "china";
-  if (gp.includes("japanese") || loc.includes("suzuka") || sum.includes("japanese")) return "japan";
-  if (gp.includes("bahrain") || loc.includes("bahrain")) return "bahrain";
-  if (gp.includes("saudi") || loc.includes("jeddah") || sum.includes("saudi")) return "saudi-arabia";
-  if (gp.includes("miami") || loc.includes("miami")) return "miami";
-  if (gp.includes("monaco") || loc.includes("monaco") || loc.includes("montecarlo")) return "monaco";
-  if (gp.includes("spanish") || loc.includes("barcelona")) return "spain";
-  if (gp.includes("canadian") || loc.includes("montreal")) return "canada";
-  if (gp.includes("austrian") || loc.includes("spielberg")) return "austria";
-  if (gp.includes("british") || loc.includes("silverstone")) return "great-britain";
-  if (gp.includes("belgian") || loc.includes("spa")) return "belgium";
-  if (gp.includes("hungarian") || loc.includes("budapest") || loc.includes("hungaroring")) return "hungary";
-  if (gp.includes("dutch") || loc.includes("zandvoort")) return "netherlands";
-  if (gp.includes("italian") || loc.includes("monza")) return "italy";
-  if (gp.includes("azerbaijan") || loc.includes("baku")) return "azerbaijan";
-  if (gp.includes("singapore") || loc.includes("singapore")) return "singapore";
-  if (gp.includes("unitedstates") || gp.includes("usgrandprix") || loc.includes("austin")) return "united-states";
-  if (gp.includes("mexicocity") || gp.includes("mexican") || loc.includes("mexicocity")) return "mexico";
-  if (gp.includes("saopaulo") || gp.includes("brazilian") || loc.includes("interlagos")) return "sao-paulo";
-  if (gp.includes("lasvegas") || loc.includes("lasvegas")) return "las-vegas";
-  if (gp.includes("qatar") || loc.includes("lusail")) return "qatar";
-  if (gp.includes("abudhabi") || loc.includes("yasmarina")) return "abu-dhabi";
-  if (gp.includes("emiliaromagna") || loc.includes("imola")) return "emilia-romagna";
-  if (gp.includes("madrid") || loc.includes("madrid")) return "madrid";
+  if (
+    gp.includes("australian") ||
+    loc.includes("melbourne") ||
+    sum.includes("australian")
+  ) return "australia";
+
+  if (
+    gp.includes("chinese") ||
+    loc.includes("shanghai") ||
+    sum.includes("chinese")
+  ) return "china";
+
+  if (
+    gp.includes("japanese") ||
+    loc.includes("suzuka") ||
+    sum.includes("japanese")
+  ) return "japan";
+
+  if (
+    gp.includes("bahrain") ||
+    loc.includes("bahrain")
+  ) return "bahrain";
+
+  if (
+    gp.includes("saudi") ||
+    loc.includes("jeddah") ||
+    sum.includes("saudi")
+  ) return "saudi-arabia";
+
+  if (
+    gp.includes("miami") ||
+    loc.includes("miami")
+  ) return "miami";
+
+  if (
+    gp.includes("monaco") ||
+    loc.includes("monaco") ||
+    loc.includes("montecarlo")
+  ) return "monaco";
+
+  if (
+    gp.includes("spanish") ||
+    gp.includes("barcelonacatalunya") ||
+    gp.includes("catalunya") ||
+    gp.includes("catalunyagp") ||
+    gp.includes("barcelonacatalunyagp") ||
+    loc.includes("barcelona") ||
+    loc.includes("catalunya") ||
+    combined.includes("barcelonacatalunya")
+  ) return "spain";
+
+  if (
+    gp.includes("canadian") ||
+    gp.includes("canada") ||
+    gp.includes("grandprixducanada") ||
+    loc.includes("montreal")
+  ) return "canada";
+
+  if (
+    gp.includes("austrian") ||
+    loc.includes("spielberg")
+  ) return "austria";
+
+  if (
+    gp.includes("british") ||
+    gp.includes("greatbritain") ||
+    loc.includes("silverstone")
+  ) return "great-britain";
+
+  if (
+    gp.includes("belgian") ||
+    loc.includes("spa")
+  ) return "belgium";
+
+  if (
+    gp.includes("hungarian") ||
+    loc.includes("budapest") ||
+    loc.includes("hungaroring")
+  ) return "hungary";
+
+  if (
+    gp.includes("dutch") ||
+    loc.includes("zandvoort")
+  ) return "netherlands";
+
+  if (
+    gp.includes("italian") ||
+    gp.includes("italia") ||
+    gp.includes("premioitalia") ||
+    gp.includes("premioditalia") ||
+    gp.includes("premioitaliagp") ||
+    gp.includes("italiagp") ||
+    loc.includes("monza") ||
+    combined.includes("premioitalia")
+  ) return "italy";
+
+  if (
+    gp.includes("azerbaijan") ||
+    loc.includes("baku")
+  ) return "azerbaijan";
+
+  if (
+    gp.includes("singapore") ||
+    loc.includes("singapore")
+  ) return "singapore";
+
+  if (
+    gp.includes("unitedstates") ||
+    gp.includes("usgrandprix") ||
+    gp.includes("americas") ||
+    loc.includes("austin")
+  ) return "united-states";
+
+  if (
+    gp.includes("mexicocity") ||
+    gp.includes("mexican") ||
+    gp.includes("mexico") ||
+    loc.includes("mexicocity")
+  ) return "mexico";
+
+  if (
+    gp.includes("saopaulo") ||
+    gp.includes("brazilian") ||
+    gp.includes("grandepremiodesaopaulo") ||
+    gp.includes("brazil") ||
+    loc.includes("interlagos")
+  ) return "sao-paulo";
+
+  if (
+    gp.includes("lasvegas") ||
+    loc.includes("lasvegas")
+  ) return "las-vegas";
+
+  if (
+    gp.includes("qatar") ||
+    loc.includes("lusail")
+  ) return "qatar";
+
+  if (
+    gp.includes("abudhabi") ||
+    loc.includes("yasmarina")
+  ) return "abu-dhabi";
+
+  if (
+    gp.includes("emiliaromagna") ||
+    gp.includes("imola") ||
+    loc.includes("imola")
+  ) return "emilia-romagna";
+
+  if (
+    gp.includes("madrid") ||
+    loc.includes("madrid")
+  ) return "madrid";
 
   return gp || sum;
 }
@@ -524,19 +653,24 @@ async function updateAllRaces() {
       const end = ev.end instanceof Date ? ev.end : new Date(ev.end);
       if (isNaN(start) || isNaN(end)) return null;
 
-      const gpName = getGpName(summary);
-      const location = String(ev.location || "").trim();
-      const raceKey = canonicalRaceKey(gpName, location, summary);
+const gpName = getGpName(summary);
+const location = String(ev.location || "").trim();
+const raceKey = canonicalRaceKey(gpName, location, summary);
 
-      return {
-        raceKey,
-        gpName,
-        sessionType,
-        start,
-        end,
-        location,
-        summary,
-      };
+// ✅ DEBUG HERE
+console.log(
+  `KEY DEBUG: gp="${gpName}" | loc="${location}" | summary="${summary}" -> key="${raceKey}"`
+);
+
+return {
+  raceKey,
+  gpName,
+  sessionType,
+  start,
+  end,
+  location,
+  summary,
+};
     })
     .filter(Boolean)
     .sort((a, b) => a.start - b.start);
