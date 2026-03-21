@@ -533,10 +533,15 @@ function extractDetailedTrackMediaUrl(html, season, raceKey) {
     const m = html.match(re);
     if (!m) continue;
 
-    const found = m[0];
-    if (found.startsWith("http")) return found;
+const found = m[0]
+  .replace(/^Image:\s*/i, "")
+  .replace(/^["']+|["']+$/g, "");
 
-    return `https://www.formula1.com/content/dam/fom-website/manual/Misc/${season}calendarImages/${found}`;
+if (found.startsWith("http")) {
+  return found.replace(/^["']+|["']+$/g, "");
+}
+
+return `https://www.formula1.com/content/dam/fom-website/manual/Misc/${season}calendarImages/${found}`;
   }
 
   return null;
