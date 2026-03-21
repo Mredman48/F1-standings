@@ -6,7 +6,7 @@ const ICS_URL = "https://better-f1-calendar.vercel.app/api/calendar.ics";
 const USER_TZ = "America/Edmonton";
 const LOCALE = "en-CA";
 
-/* -------------------- helpers -------------------- */
+/* -------------------- HELPERS -------------------- */
 
 function normalize(s) {
   return (s || "")
@@ -18,7 +18,7 @@ function normalize(s) {
 }
 
 function getSessionType(summary) {
-  const s = summary.toLowerCase();
+  const s = (summary || "").toLowerCase();
 
   if (s.includes("practice 1") || s.includes("fp1")) return "FP1";
   if (s.includes("practice 2") || s.includes("fp2")) return "FP2";
@@ -52,23 +52,41 @@ function shortTime(date) {
 /* -------------------- MAIN -------------------- */
 
 async function updateAllRaces() {
-  const ics = await ical.async.fromURL(ICS_URL);
+  console.log("🚀 Fetching ICS...");
 
-  const events = Object.values(ics).filter(e => e.type === "VEVENT");
+  // 🔥 RELIABLE FETCH
+  const res = await fetch(ICS_URL);
+  if (!res.ok) {
+    throw new Error(`Failed to fetch ICS: ${res.status}`);
+  }
 
-  // STEP 1: Extract ALL sessions
+  const icsText = await res.text();
+
+  console.log("📦 Parsing ICS...");
+  const data = ical.parseICS(icsText);
+
+  const events = Object.values(data).filter(e => e.type === "VEVENT");
+
+  console.log("📊 Total raw events:", events.length);
+
+  // STEP 1: Extract sessions
   const sessions = events
     .map(ev => {
       const summary = ev.summary || "";
-      const sessionType = getSessionType(summary);
+      const type = getSessionType(summary);
 
-      if (!sessionType) return null;
+      if (!type) return null;
+
+      const start = new Date(ev.start);
+      const end = new Date(ev.end);
+
+      if (isNaN(start) || isNaN(end)) return null;
 
       return {
         gpName: summary.split(" - ")[0].trim(),
-        sessionType,
-        start: new Date(ev.start),
-        end: new Date(ev.end),
+        type,
+        start,
+        end,
         location: ev.location || "",
         summary
       };
@@ -76,7 +94,13 @@ async function updateAllRaces() {
     .filter(Boolean)
     .sort((a, b) => a.start - b.start);
 
-  // STEP 2: Group by race weekend (KEY FIX HERE)
+  console.log("✅ Parsed sessions:", sessions.length);
+
+  if (sessions.length === 0) {
+    throw new Error("No sessions parsed — ICS structure may have changed.");
+  }
+
+  // STEP 2: Group by GP (FIXES CHINA BUG)
   const raceMap = new Map();
 
   for (const s of sessions) {
@@ -93,36 +117,35 @@ async function updateAllRaces() {
     raceMap.get(key).sessions.push(s);
   }
 
-  // STEP 3: Convert to array
   let races = Array.from(raceMap.values());
 
-  // STEP 4: REMOVE Bahrain + Saudi Arabia (your requirement)
+  console.log("🏁 Unique races found:", races.length);
+
+  // STEP 3: REMOVE Bahrain + Saudi
   races = races.filter(r => {
     const n = normalize(r.name);
-
-    return (
-      !n.includes("bahrain") &&
-      !n.includes("saudiarabia")
-    );
+    return !n.includes("bahrain") && !n.includes("saudiarabia");
   });
 
-  // STEP 5: Sort races by first session date
+  console.log("🚫 After filtering:", races.length);
+
+  // STEP 4: Sort races chronologically
   races.sort((a, b) => {
     const aStart = Math.min(...a.sessions.map(s => s.start));
     const bStart = Math.min(...b.sessions.map(s => s.start));
     return aStart - bStart;
   });
 
-  // STEP 6: Format output
+  // STEP 5: Format output
   const output = races.map((race, index) => {
-    const sessionsSorted = race.sessions.sort((a, b) => a.start - b.start);
+    const sortedSessions = race.sessions.sort((a, b) => a.start - b.start);
 
     return {
       round: index + 1,
       name: race.name,
       location: race.location,
-      sessions: sessionsSorted.map(s => ({
-        type: s.sessionType,
+      sessions: sortedSessions.map(s => ({
+        type: s.type,
         startUtc: s.start.toISOString(),
         endUtc: s.end.toISOString(),
         startLocalDate: shortDate(s.start),
@@ -131,16 +154,25 @@ async function updateAllRaces() {
     };
   });
 
-  // STEP 7: Write file
+  // STEP 6: WRITE FILE (GUARANTEED)
+  const final = {
+    generatedAt: new Date().toISOString(),
+    totalRaces: output.length,
+    races: output
+  };
+
   await fs.writeFile(
     "f1_all_races.json",
-    JSON.stringify({ races: output }, null, 2)
+    JSON.stringify(final, null, 2),
+    "utf8"
   );
 
-  console.log("✅ Built f1_all_races.json with", output.length, "races");
+  console.log("✅ SUCCESS — wrote f1_all_races.json");
 }
 
+/* -------------------- RUN -------------------- */
+
 updateAllRaces().catch(err => {
-  console.error(err);
+  console.error("❌ ERROR:", err.message);
   process.exit(1);
 });
