@@ -17,14 +17,6 @@ const MAPS_DIR = "maps";
 
 const UA = "f1-standings-bot/1.0 (GitHub Actions)";
 
-const TRACK_IMAGE_URL_OVERRIDE_BY_KEY = {
-  spain:
-    "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackcatalunyadetailed.webp",
-  italy:
-    "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmonzadetailed.webp",
-  "sao-paulo":
-    "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackinterlagosdetailed.webp",
-};
 
 /* -------------------- omit canceled races -------------------- */
 
@@ -530,7 +522,7 @@ const TRACK_IMAGE_URL_OVERRIDE_BY_KEY = {
 };
 
 function extractDetailedTrackMediaUrl(html, season, raceKey) {
-
+  const explicitUrl = TRACK_IMAGE_URL_OVERRIDE_BY_KEY[raceKey];
   if (explicitUrl) {
     return explicitUrl;
   }
