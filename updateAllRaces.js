@@ -1,11 +1,21 @@
 // updateAllRaces.js
 import fs from "node:fs/promises";
+import path from "node:path";
 import ical from "node-ical";
+import sharp from "sharp";
 
 const ICS_URL = "https://better-f1-calendar.vercel.app/api/calendar.ics";
+
 const USER_TZ = "America/Edmonton";
 const LOCALE = "en-CA";
-const OUTPUT_FILE = "f1_season_calendar.json";
+
+const OUTPUT_FILE = "f1_upcoming_races.json";
+
+const PAGES_BASE = "https://mredman48.github.io/F1-standings";
+const TRACKMAP_DIR = "trackmaps";
+const MAPS_DIR = "maps";
+
+const UA = "f1-standings-bot/1.0 (GitHub Actions)";
 
 /* -------------------- omit canceled races -------------------- */
 
@@ -14,91 +24,35 @@ const OMIT_RACE_KEYS = new Set([
   "saudi-arabia",
 ]);
 
-/* -------------------- helpers -------------------- */
+/* -------------------- exact slug mapping -------------------- */
 
-function normalize(s) {
-  return String(s || "")
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/^formula 1\s+/i, "")
-    .replace(/^f1\s+/i, "")
-    .replace(/grand prix/g, "grandprix")
-    .replace(/[^a-z0-9]+/g, "")
-    .trim();
-}
-
-function titleCaseWords(s) {
-  if (!s) return null;
-  return String(s)
-    .trim()
-    .split(/\s+/)
-    .map((w) => (w ? w[0].toUpperCase() + w.slice(1).toLowerCase() : w))
-    .join(" ");
-}
-
-function shortDateInTZ(dateObj, timeZone = USER_TZ) {
-  return dateObj.toLocaleDateString(LOCALE, {
-    timeZone,
-    weekday: "short",
-    month: "short",
-    day: "2-digit",
-  });
-}
-
-function shortTimeInTZ(dateObj, timeZone = USER_TZ) {
-  return dateObj.toLocaleTimeString(LOCALE, {
-    timeZone,
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: false,
-  });
-}
-
-function shortDateTimeInTZ(dateObj, timeZone = USER_TZ) {
-  return `${shortDateInTZ(dateObj, timeZone)} ${shortTimeInTZ(dateObj, timeZone)}`;
-}
-
-function daysUntil(date, now = new Date()) {
-  const ms = date.getTime() - now.getTime();
-  return Math.ceil(ms / (1000 * 60 * 60 * 24));
-}
-
-/* -------------------- race key resolution -------------------- */
-
-function canonicalRaceKey(gpName, location = "", summary = "") {
-  const gp = normalize(gpName);
-  const loc = normalize(location);
-  const sum = normalize(summary);
-
-  if (gp.includes("australian") || loc.includes("melbourne") || sum.includes("australian")) return "australia";
-  if (gp.includes("chinese") || loc.includes("shanghai") || sum.includes("chinese")) return "china";
-  if (gp.includes("japanese") || loc.includes("suzuka") || sum.includes("japanese")) return "japan";
-  if (gp.includes("bahrain") || loc.includes("bahrain")) return "bahrain";
-  if (gp.includes("saudi") || loc.includes("jeddah") || sum.includes("saudi")) return "saudi-arabia";
-  if (gp.includes("miami") || loc.includes("miami")) return "miami";
-  if (gp.includes("monaco") || loc.includes("monaco") || loc.includes("montecarlo")) return "monaco";
-  if (gp.includes("spanish") || loc.includes("barcelona")) return "spain";
-  if (gp.includes("canadian") || loc.includes("montreal")) return "canada";
-  if (gp.includes("austrian") || loc.includes("spielberg")) return "austria";
-  if (gp.includes("british") || loc.includes("silverstone")) return "great-britain";
-  if (gp.includes("belgian") || loc.includes("spa")) return "belgium";
-  if (gp.includes("hungarian") || loc.includes("budapest") || loc.includes("hungaroring")) return "hungary";
-  if (gp.includes("dutch") || loc.includes("zandvoort")) return "netherlands";
-  if (gp.includes("italian") || loc.includes("monza")) return "italy";
-  if (gp.includes("azerbaijan") || loc.includes("baku")) return "azerbaijan";
-  if (gp.includes("singapore") || loc.includes("singapore")) return "singapore";
-  if (gp.includes("unitedstates") || gp.includes("usgrandprix") || loc.includes("austin")) return "united-states";
-  if (gp.includes("mexicocity") || gp.includes("mexican") || loc.includes("mexicocity")) return "mexico";
-  if (gp.includes("saopaulo") || gp.includes("brazilian") || loc.includes("interlagos")) return "sao-paulo";
-  if (gp.includes("lasvegas") || loc.includes("lasvegas")) return "las-vegas";
-  if (gp.includes("qatar") || loc.includes("lusail")) return "qatar";
-  if (gp.includes("abudhabi") || loc.includes("yasmarina")) return "abu-dhabi";
-  if (gp.includes("emiliaromagna") || loc.includes("imola")) return "emilia-romagna";
-  if (gp.includes("madrid") || loc.includes("madrid")) return "madrid";
-
-  return gp || sum;
-}
+const FORMULA1_SLUG_BY_KEY = {
+  australia: "australia",
+  china: "china",
+  japan: "japan",
+  bahrain: "bahrain",
+  "saudi-arabia": "saudi-arabia",
+  miami: "miami",
+  monaco: "monaco",
+  spain: "spain",
+  canada: "canada",
+  austria: "austria",
+  "great-britain": "great-britain",
+  belgium: "belgium",
+  hungary: "hungary",
+  netherlands: "netherlands",
+  italy: "italy",
+  azerbaijan: "azerbaijan",
+  singapore: "singapore",
+  "united-states": "united-states",
+  mexico: "mexico",
+  "sao-paulo": "sao-paulo",
+  "las-vegas": "las-vegas",
+  qatar: "qatar",
+  "abu-dhabi": "abu-dhabi",
+  "emilia-romagna": "emilia-romagna",
+  madrid: "madrid",
+};
 
 /* -------------------- display mappings -------------------- */
 
@@ -158,7 +112,6 @@ const LOCATION_BY_KEY = {
   madrid: { city: "Madrid", country: "Spain", iso2: "es" },
 };
 
-const PAGES_BASE = "https://mredman48.github.io/F1-standings";
 const MAP_FILE_BY_KEY = {
   australia: "melbourne.png",
   china: "shanghai.png",
@@ -187,6 +140,93 @@ const MAP_FILE_BY_KEY = {
   madrid: "madrid.png",
 };
 
+/* -------------------- basic helpers -------------------- */
+
+function normalize(s) {
+  return String(s || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/^formula 1\s+/i, "")
+    .replace(/^f1\s+/i, "")
+    .replace(/grand prix/g, "grandprix")
+    .replace(/[^a-z0-9]+/g, "")
+    .trim();
+}
+
+function titleCaseWords(s) {
+  if (!s) return null;
+  return String(s)
+    .trim()
+    .split(/\s+/)
+    .map((w) => (w ? w[0].toUpperCase() + w.slice(1).toLowerCase() : w))
+    .join(" ");
+}
+
+function shortDateInTZ(dateObj, timeZone = USER_TZ) {
+  return dateObj.toLocaleDateString(LOCALE, {
+    timeZone,
+    weekday: "short",
+    month: "short",
+    day: "2-digit",
+  });
+}
+
+function shortTimeInTZ(dateObj, timeZone = USER_TZ) {
+  return dateObj.toLocaleTimeString(LOCALE, {
+    timeZone,
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  });
+}
+
+function shortDateTimeInTZ(dateObj, timeZone = USER_TZ) {
+  return `${shortDateInTZ(dateObj, timeZone)} ${shortTimeInTZ(dateObj, timeZone)}`;
+}
+
+function daysUntil(date, now = new Date()) {
+  const ms = date.getTime() - now.getTime();
+  return Math.ceil(ms / (1000 * 60 * 60 * 24));
+}
+
+async function ensureDir(dir) {
+  await fs.mkdir(dir, { recursive: true });
+}
+
+async function fetchText(url, accept = "text/html,*/*") {
+  const res = await fetch(url, {
+    headers: {
+      "User-Agent": UA,
+      Accept: accept,
+    },
+    redirect: "follow",
+  });
+
+  if (!res.ok) {
+    throw new Error(`HTTP ${res.status} fetching ${url}`);
+  }
+
+  return res.text();
+}
+
+async function fetchBuffer(url) {
+  const res = await fetch(url, {
+    headers: {
+      "User-Agent": UA,
+      Accept: "image/*,*/*",
+    },
+    redirect: "follow",
+  });
+
+  if (!res.ok) {
+    throw new Error(`HTTP ${res.status} fetching ${url}`);
+  }
+
+  const ab = await res.arrayBuffer();
+  return Buffer.from(ab);
+}
+
 function buildFlag(iso2) {
   if (!iso2) {
     return { iso2: null, png: null, svg: null };
@@ -199,7 +239,7 @@ function buildFlag(iso2) {
   };
 }
 
-function buildMap(key) {
+function buildCustomMap(key) {
   const filename = MAP_FILE_BY_KEY[key] || null;
 
   if (!filename) {
@@ -214,12 +254,48 @@ function buildMap(key) {
   return {
     found: true,
     filename,
-    pngUrl: `${PAGES_BASE}/maps/${encodeURIComponent(filename)}`,
+    pngUrl: `${PAGES_BASE}/${MAPS_DIR}/${encodeURIComponent(filename)}`,
     note: null,
   };
 }
 
-/* -------------------- session parsing -------------------- */
+/* -------------------- race key resolution -------------------- */
+
+function canonicalRaceKey(gpName, location = "", summary = "") {
+  const gp = normalize(gpName);
+  const loc = normalize(location);
+  const sum = normalize(summary);
+
+  if (gp.includes("australian") || loc.includes("melbourne") || sum.includes("australian")) return "australia";
+  if (gp.includes("chinese") || loc.includes("shanghai") || sum.includes("chinese")) return "china";
+  if (gp.includes("japanese") || loc.includes("suzuka") || sum.includes("japanese")) return "japan";
+  if (gp.includes("bahrain") || loc.includes("bahrain")) return "bahrain";
+  if (gp.includes("saudi") || loc.includes("jeddah") || sum.includes("saudi")) return "saudi-arabia";
+  if (gp.includes("miami") || loc.includes("miami")) return "miami";
+  if (gp.includes("monaco") || loc.includes("monaco") || loc.includes("montecarlo")) return "monaco";
+  if (gp.includes("spanish") || loc.includes("barcelona")) return "spain";
+  if (gp.includes("canadian") || loc.includes("montreal")) return "canada";
+  if (gp.includes("austrian") || loc.includes("spielberg")) return "austria";
+  if (gp.includes("british") || loc.includes("silverstone")) return "great-britain";
+  if (gp.includes("belgian") || loc.includes("spa")) return "belgium";
+  if (gp.includes("hungarian") || loc.includes("budapest") || loc.includes("hungaroring")) return "hungary";
+  if (gp.includes("dutch") || loc.includes("zandvoort")) return "netherlands";
+  if (gp.includes("italian") || loc.includes("monza")) return "italy";
+  if (gp.includes("azerbaijan") || loc.includes("baku")) return "azerbaijan";
+  if (gp.includes("singapore") || loc.includes("singapore")) return "singapore";
+  if (gp.includes("unitedstates") || gp.includes("usgrandprix") || loc.includes("austin")) return "united-states";
+  if (gp.includes("mexicocity") || gp.includes("mexican") || loc.includes("mexicocity")) return "mexico";
+  if (gp.includes("saopaulo") || gp.includes("brazilian") || loc.includes("interlagos")) return "sao-paulo";
+  if (gp.includes("lasvegas") || loc.includes("lasvegas")) return "las-vegas";
+  if (gp.includes("qatar") || loc.includes("lusail")) return "qatar";
+  if (gp.includes("abudhabi") || loc.includes("yasmarina")) return "abu-dhabi";
+  if (gp.includes("emiliaromagna") || loc.includes("imola")) return "emilia-romagna";
+  if (gp.includes("madrid") || loc.includes("madrid")) return "madrid";
+
+  return gp || sum;
+}
+
+/* -------------------- ICS/session parsing -------------------- */
 
 function getSessionType(summary) {
   const s = String(summary || "").toLowerCase().trim();
@@ -300,16 +376,97 @@ function computeWindowFromSessions(sessions) {
   };
 }
 
+/* -------------------- track map download -------------------- */
+
+function extractDetailedTrackMediaUrl(html, season) {
+  const patterns = [
+    new RegExp(
+      `https://media\\.formula1\\.com/image/upload[^"'\\s]+/common/f1/${season}/track/[^"'\\s]+detailed\\.(webp|png)`,
+      "i"
+    ),
+    new RegExp(
+      `https://media\\.formula1\\.com/[^"'\\s]+/common/f1/${season}/track/[^"'\\s]+detailed\\.(webp|png)`,
+      "i"
+    ),
+  ];
+
+  for (const re of patterns) {
+    const m = html.match(re);
+    if (m) return m[0];
+  }
+
+  return null;
+}
+
+async function downloadToPng({ mediaUrl, outName }) {
+  await ensureDir(TRACKMAP_DIR);
+  const inputBuf = await fetchBuffer(mediaUrl);
+  const outPath = path.join(TRACKMAP_DIR, outName);
+  const pngBuf = await sharp(inputBuf).png().toBuffer();
+  await fs.writeFile(outPath, pngBuf);
+  return `${PAGES_BASE}/${TRACKMAP_DIR}/${encodeURIComponent(outName)}`;
+}
+
+async function fetchTrackMapForRace({ raceKey, season }) {
+  const slug = FORMULA1_SLUG_BY_KEY[raceKey];
+
+  if (!slug) {
+    return {
+      found: false,
+      pageUrl: null,
+      mediaUrl: null,
+      pngUrl: null,
+      note: `No Formula1 slug configured for race key "${raceKey}".`,
+    };
+  }
+
+  const pageUrl = `https://www.formula1.com/en/racing/${season}/${slug}`;
+
+  try {
+    const html = await fetchText(pageUrl);
+    const mediaUrl = extractDetailedTrackMediaUrl(html, season);
+
+    if (!mediaUrl) {
+      return {
+        found: false,
+        pageUrl,
+        mediaUrl: null,
+        pngUrl: null,
+        note: "No detailed track image found on race page.",
+      };
+    }
+
+    const outName = `f1_${season}_${slug}_detailed.png`;
+    const pngUrl = await downloadToPng({ mediaUrl, outName });
+
+    return {
+      found: true,
+      pageUrl,
+      mediaUrl,
+      pngUrl,
+      note: null,
+    };
+  } catch (err) {
+    return {
+      found: false,
+      pageUrl,
+      mediaUrl: null,
+      pngUrl: null,
+      note: err.message,
+    };
+  }
+}
+
 /* -------------------- main -------------------- */
 
-async function updateSeasonCalendar() {
+async function updateAllRaces() {
   const now = new Date();
 
   console.log("Fetching ICS...");
   const res = await fetch(ICS_URL, {
     headers: {
       Accept: "text/calendar,text/plain,*/*",
-      "User-Agent": "f1-standings-bot/1.0",
+      "User-Agent": UA,
     },
     redirect: "follow",
   });
@@ -400,11 +557,21 @@ async function updateSeasonCalendar() {
     return aStart - bStart;
   });
 
-  const seasonCalendar = races.map((race, index) => {
+  const upcomingEvents = [];
+
+  for (let index = 0; index < races.length; index += 1) {
+    const race = races[index];
     const season = String(
       race.sessions[0]?.start?.getUTCFullYear?.() ?? new Date().getUTCFullYear()
     );
-    const title = DISPLAY_TITLE_BY_KEY[race.raceKey] || titleCaseWords(race.gpName) || race.gpName;
+
+    console.log(`Building race ${index + 1}/${races.length}: ${race.raceKey}`);
+
+    const title =
+      DISPLAY_TITLE_BY_KEY[race.raceKey] ||
+      titleCaseWords(race.gpName) ||
+      race.gpName;
+
     const locationData = LOCATION_BY_KEY[race.raceKey] || {
       city: null,
       country: titleCaseWords(race.locationRaw) || null,
@@ -415,7 +582,12 @@ async function updateSeasonCalendar() {
     const window = computeWindowFromSessions(sessionsOut);
     const weekendStart = window.startUtc ? new Date(window.startUtc) : race.sessions[0].start;
 
-    return {
+    const trackMap = await fetchTrackMapForRace({
+      raceKey: race.raceKey,
+      season,
+    });
+
+    const event = {
       round: index + 1,
       type: "RACE_WEEKEND",
       title,
@@ -426,7 +598,14 @@ async function updateSeasonCalendar() {
         country: locationData.country,
         flag: buildFlag(locationData.iso2),
       },
-      raceKey: race.raceKey,
+      racePage: {
+        slug: FORMULA1_SLUG_BY_KEY[race.raceKey] || null,
+        url: FORMULA1_SLUG_BY_KEY[race.raceKey]
+          ? `https://www.formula1.com/en/racing/${season}/${FORMULA1_SLUG_BY_KEY[race.raceKey]}`
+          : null,
+      },
+      trackMap,
+      map: buildCustomMap(race.raceKey),
       countdowns: {
         startsInDays: daysUntil(weekendStart, now),
       },
@@ -434,28 +613,29 @@ async function updateSeasonCalendar() {
         startUtc: window.startUtc,
         endUtc: window.endUtc,
       },
-      map: buildMap(race.raceKey),
       sessions: sessionsOut,
     };
-  });
+
+    upcomingEvents.push(event);
+  }
 
   const out = {
-    header: "F1 season calendar",
+    header: "Upcoming F1 events",
     generatedAtUtc: now.toISOString(),
     displayTimeZone: USER_TZ,
     source: {
-      kind: "ics",
+      kind: "ics+formula1",
       url: ICS_URL,
     },
-    totalRaces: seasonCalendar.length,
-    seasonCalendar,
+    totalRaces: upcomingEvents.length,
+    upcomingEvents,
   };
 
   await fs.writeFile(OUTPUT_FILE, JSON.stringify(out, null, 2), "utf8");
   console.log(`Wrote ${OUTPUT_FILE}`);
 }
 
-updateSeasonCalendar().catch((err) => {
+updateAllRaces().catch((err) => {
   console.error(err);
   process.exit(1);
 });
