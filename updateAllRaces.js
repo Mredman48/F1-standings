@@ -54,6 +54,20 @@ const FORMULA1_SLUG_BY_KEY = {
   madrid: "madrid",
 };
 
+const PAGE_TITLE_OVERRIDE_BY_KEY = {
+  spain: "FORMULA 1 MSC CRUISES GRAN PREMIO DE BARCELONA-CATALUNYA 2026",
+  italy: "FORMULA 1 PIRELLI GRAN PREMIO D’ITALIA 2026",
+  "sao-paulo": "FORMULA 1 MSC CRUISES GRANDE PRÊMIO DE SÃO PAULO 2026",
+  canada: "FORMULA 1 LENOVO GRAND PRIX DU CANADA 2026",
+};
+
+const TRACK_IMAGE_FILENAME_OVERRIDE_BY_KEY = {
+  spain: "2026trackcatalunyadetailed.png",
+  italy: "2026trackmonzadetailed.png",
+  "sao-paulo": "2026trackinterlagosdetailed.png",
+  canada: "2026trackmontrealdetailed.png",
+};
+
 const LOCATION_BY_KEY = {
   australia: { city: "Melbourne", country: "Australia", iso2: "au" },
   china: { city: "Shanghai", country: "China", iso2: "cn" },
@@ -368,7 +382,12 @@ function computeWindowFromSessions(sessions) {
 
 /* -------------------- track map + page details -------------------- */
 
-function extractDetailedTrackMediaUrl(html, season) {
+function extractDetailedTrackMediaUrl(html, season, raceKey) {
+  const explicitFilename = TRACK_IMAGE_FILENAME_OVERRIDE_BY_KEY[raceKey];
+  if (explicitFilename) {
+    return `https://www.formula1.com/content/dam/fom-website/manual/Misc/${season}calendarImages/${explicitFilename}`;
+  }
+
   const patterns = [
     new RegExp(
       `https://media\\.formula1\\.com/image/upload[^"'\\s]+/common/f1/${season}/track/[^"'\\s]+detailed\\.(webp|png)`,
@@ -378,7 +397,6 @@ function extractDetailedTrackMediaUrl(html, season) {
       `https://media\\.formula1\\.com/[^"'\\s]+/common/f1/${season}/track/[^"'\\s]+detailed\\.(webp|png)`,
       "i"
     ),
-    new RegExp(`Image:\\s*${season}track[a-z0-9-]+detailed\\.png`, "i"),
     new RegExp(`${season}track[a-z0-9-]+detailed\\.png`, "i"),
   ];
 
@@ -386,7 +404,7 @@ function extractDetailedTrackMediaUrl(html, season) {
     const m = html.match(re);
     if (!m) continue;
 
-    const found = m[0].replace(/^Image:\s*/i, "");
+    const found = m[0];
     if (found.startsWith("http")) return found;
 
     return `https://www.formula1.com/content/dam/fom-website/manual/Misc/${season}calendarImages/${found}`;
@@ -416,9 +434,12 @@ async function fetchRacePageDetails({ raceKey, season, fallbackTitle }) {
 
   try {
     const html = await fetchText(pageUrl);
-    const title = extractOfficialRaceTitle(html, fallbackTitle);
 
-    const mediaUrl = extractDetailedTrackMediaUrl(html, season);
+    const title =
+      PAGE_TITLE_OVERRIDE_BY_KEY[raceKey] ||
+      extractOfficialRaceTitle(html, fallbackTitle);
+
+    const mediaUrl = extractDetailedTrackMediaUrl(html, season, raceKey);
 
     if (!mediaUrl) {
       return {
@@ -454,7 +475,7 @@ async function fetchRacePageDetails({ raceKey, season, fallbackTitle }) {
     };
   } catch (err) {
     return {
-      title: fallbackTitle,
+      title: PAGE_TITLE_OVERRIDE_BY_KEY[raceKey] || fallbackTitle,
       pageUrl,
       trackMap: {
         found: false,
