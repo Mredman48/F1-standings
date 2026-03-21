@@ -29,6 +29,72 @@ const OMIT_TEXT_PATTERNS = [
   /\bsaudi arabia\b/i,
 ];
 
+function shouldOmitRaceByText(text) {
+  const s = String(text || "");
+  return OMIT_TEXT_PATTERNS.some((re) => re.test(s));
+}
+
+/* -------------------- explicit slug overrides -------------------- */
+
+const RACE_SLUG_OVERRIDES = {
+  "australian grand prix": "australia",
+  "chinese grand prix": "china",
+  "japanese grand prix": "japan",
+  "bahrain grand prix": "bahrain",
+  "saudi arabian grand prix": "saudi-arabia",
+  "miami grand prix": "miami",
+  "monaco grand prix": "monaco",
+  "spanish grand prix": "spain",
+  "canadian grand prix": "canada",
+  "austrian grand prix": "austria",
+  "british grand prix": "great-britain",
+  "belgian grand prix": "belgium",
+  "hungarian grand prix": "hungary",
+  "dutch grand prix": "netherlands",
+  "italian grand prix": "italy",
+  "azerbaijan grand prix": "azerbaijan",
+  "singapore grand prix": "singapore",
+  "united states grand prix": "united-states",
+  "mexico city grand prix": "mexico",
+  "mexican grand prix": "mexico",
+  "sao paulo grand prix": "sao-paulo",
+  "las vegas grand prix": "las-vegas",
+  "qatar grand prix": "qatar",
+  "abu dhabi grand prix": "abu-dhabi",
+  "emilia romagna grand prix": "emilia-romagna",
+  "madrid grand prix": "madrid",
+};
+
+const LOCATION_SLUG_OVERRIDES = {
+  melbourne: "australia",
+  shanghai: "china",
+  suzuka: "japan",
+  bahrain: "bahrain",
+  jeddah: "saudi-arabia",
+  miami: "miami",
+  montecarlo: "monaco",
+  monaco: "monaco",
+  barcelona: "spain",
+  montreal: "canada",
+  spielberg: "austria",
+  silverstone: "great-britain",
+  spa: "belgium",
+  budapest: "hungary",
+  zandvoort: "netherlands",
+  monza: "italy",
+  baku: "azerbaijan",
+  singapore: "singapore",
+  austin: "united-states",
+  mexicocity: "mexico",
+  interlagos: "sao-paulo",
+  saopaulo: "sao-paulo",
+  lasvegas: "las-vegas",
+  lusail: "qatar",
+  yasmarina: "abu-dhabi",
+  imola: "emilia-romagna",
+  madrid: "madrid",
+};
+
 /* -------------------- custom map assets -------------------- */
 
 const MAP_FILE_BY_SLUG = {
@@ -162,6 +228,10 @@ function normalize(s) {
     .trim();
 }
 
+function compactNormalized(s) {
+  return normalize(s).replace(/\s+/g, "");
+}
+
 function tokens(s) {
   return normalize(s).split(" ").filter(Boolean);
 }
@@ -263,11 +333,6 @@ function getGpName(summary) {
   return (parts[0] || summary || "").trim();
 }
 
-function shouldOmitRaceByText(text) {
-  const s = String(text || "");
-  return OMIT_TEXT_PATTERNS.some((re) => re.test(s));
-}
-
 /* -------------------- official race page resolution -------------------- */
 
 function isBadSlug(slug) {
@@ -287,6 +352,7 @@ function scoreSlug(slug, gpName, locationRaw) {
   }
 
   const gpNorm = normalize(gpName);
+
   if (slug === "australia" && gpNorm.includes("australian")) score += 30;
   if (slug === "great-britain" && gpNorm.includes("british")) score += 30;
   if (slug === "sao-paulo" && gpNorm.includes("brazil")) score += 25;
@@ -312,6 +378,43 @@ async function resolveRacePage({ season, gpName, locationRaw }) {
 
   if (slugs.length === 0) {
     throw new Error("No race slugs found on season page.");
+  }
+
+  const gpNorm = normalize(gpName);
+  const locNormCompact = compactNormalized(locationRaw);
+
+  if (RACE_SLUG_OVERRIDES[gpNorm]) {
+    const slug = RACE_SLUG_OVERRIDES[gpNorm];
+    if (slugs.includes(slug)) {
+      return {
+        slug,
+        pageUrl: `https://www.formula1.com/en/racing/${season}/${slug}`,
+        rankedTop: [{ slug, score: 999 }],
+      };
+    }
+  }
+
+  if (LOCATION_SLUG_OVERRIDES[locNormCompact]) {
+    const slug = LOCATION_SLUG_OVERRIDES[locNormCompact];
+    if (slugs.includes(slug)) {
+      return {
+        slug,
+        pageUrl: `https://www.formula1.com/en/racing/${season}/${slug}`,
+        rankedTop: [{ slug, score: 998 }],
+      };
+    }
+  }
+
+  const gpTokens = tokens(gpName);
+  for (const token of gpTokens) {
+    const direct = slugs.find((slug) => slug === token);
+    if (direct) {
+      return {
+        slug: direct,
+        pageUrl: `https://www.formula1.com/en/racing/${season}/${direct}`,
+        rankedTop: [{ slug: direct, score: 997 }],
+      };
+    }
   }
 
   const ranked = slugs
@@ -667,7 +770,7 @@ function weekendIdentityKey(raceSession) {
   return `${season}|${gp}|${location}|${day}`;
 }
 
-/* -------------------- build one event -------------------- */
+/* -------------------- build one weekend -------------------- */
 
 async function buildRaceWeekendEvent(allSessions, raceSession, now) {
   const season = String(raceSession.start.getUTCFullYear());
@@ -679,6 +782,10 @@ async function buildRaceWeekendEvent(allSessions, raceSession, now) {
     gpName: gpNameShort,
     locationRaw,
   });
+
+  console.log(
+    `[resolveRacePage] gp="${gpNameShort}" location="${locationRaw}" -> slug="${racePage.slug}"`
+  );
 
   if (OMIT_RACE_SLUGS.has(racePage.slug)) {
     console.log(`Skipping omitted race by slug: ${racePage.slug}`);
@@ -806,12 +913,12 @@ async function updateAllRaces() {
   );
 
   const uniqueRaceSessions = [];
-  const seen = new Set();
+  const seenWeekends = new Set();
 
   for (const raceSession of upcomingRaceSessions) {
     const key = weekendIdentityKey(raceSession);
-    if (seen.has(key)) continue;
-    seen.add(key);
+    if (seenWeekends.has(key)) continue;
+    seenWeekends.add(key);
     uniqueRaceSessions.push(raceSession);
   }
 
@@ -838,6 +945,22 @@ async function updateAllRaces() {
     throw new Error("No valid upcoming race weekends could be built.");
   }
 
+  const seenSlugs = new Set();
+  const dedupedRaceWeekends = [];
+
+  for (const weekend of raceWeekends) {
+    const slug = weekend?.racePage?.slug;
+    if (!slug) continue;
+
+    if (seenSlugs.has(slug)) {
+      console.warn(`Dropping duplicate resolved slug: ${slug} for "${weekend.title}"`);
+      continue;
+    }
+
+    seenSlugs.add(slug);
+    dedupedRaceWeekends.push(weekend);
+  }
+
   const out = {
     header: "Upcoming F1 events",
     generatedAtUtc: now.toISOString(),
@@ -846,13 +969,13 @@ async function updateAllRaces() {
       kind: "ics+formula1",
       url: ICS_URL,
     },
-    upcomingEvents: raceWeekends,
+    upcomingEvents: dedupedRaceWeekends,
   };
 
   await fs.writeFile(OUTPUT_FILE, JSON.stringify(out, null, 2), "utf8");
 
   console.log(`Wrote ${OUTPUT_FILE}`);
-  console.log(`Built ${raceWeekends.length} upcoming race weekends`);
+  console.log(`Built ${dedupedRaceWeekends.length} upcoming race weekends`);
 }
 
 updateAllRaces().catch((err) => {
