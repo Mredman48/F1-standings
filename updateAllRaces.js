@@ -54,36 +54,6 @@ const FORMULA1_SLUG_BY_KEY = {
   madrid: "madrid",
 };
 
-/* -------------------- display mappings -------------------- */
-
-const DISPLAY_TITLE_BY_KEY = {
-  australia: "FORMULA 1 AUSTRALIAN GRAND PRIX",
-  china: "FORMULA 1 CHINESE GRAND PRIX",
-  japan: "FORMULA 1 JAPANESE GRAND PRIX",
-  bahrain: "FORMULA 1 BAHRAIN GRAND PRIX",
-  "saudi-arabia": "FORMULA 1 SAUDI ARABIAN GRAND PRIX",
-  miami: "FORMULA 1 MIAMI GRAND PRIX",
-  monaco: "FORMULA 1 MONACO GRAND PRIX",
-  spain: "FORMULA 1 SPANISH GRAND PRIX",
-  canada: "FORMULA 1 CANADIAN GRAND PRIX",
-  austria: "FORMULA 1 AUSTRIAN GRAND PRIX",
-  "great-britain": "FORMULA 1 BRITISH GRAND PRIX",
-  belgium: "FORMULA 1 BELGIAN GRAND PRIX",
-  hungary: "FORMULA 1 HUNGARIAN GRAND PRIX",
-  netherlands: "FORMULA 1 DUTCH GRAND PRIX",
-  italy: "FORMULA 1 ITALIAN GRAND PRIX",
-  azerbaijan: "FORMULA 1 AZERBAIJAN GRAND PRIX",
-  singapore: "FORMULA 1 SINGAPORE GRAND PRIX",
-  "united-states": "FORMULA 1 UNITED STATES GRAND PRIX",
-  mexico: "FORMULA 1 MEXICO CITY GRAND PRIX",
-  "sao-paulo": "FORMULA 1 SAO PAULO GRAND PRIX",
-  "las-vegas": "FORMULA 1 LAS VEGAS GRAND PRIX",
-  qatar: "FORMULA 1 QATAR GRAND PRIX",
-  "abu-dhabi": "FORMULA 1 ABU DHABI GRAND PRIX",
-  "emilia-romagna": "FORMULA 1 EMILIA ROMAGNA GRAND PRIX",
-  madrid: "FORMULA 1 MADRID GRAND PRIX",
-};
-
 const LOCATION_BY_KEY = {
   australia: { city: "Melbourne", country: "Australia", iso2: "au" },
   china: { city: "Shanghai", country: "China", iso2: "cn" },
@@ -396,7 +366,7 @@ function computeWindowFromSessions(sessions) {
   };
 }
 
-/* -------------------- track map download -------------------- */
+/* -------------------- track map + page details -------------------- */
 
 function extractDetailedTrackMediaUrl(html, season) {
   const patterns = [
@@ -408,8 +378,8 @@ function extractDetailedTrackMediaUrl(html, season) {
       `https://media\\.formula1\\.com/[^"'\\s]+/common/f1/${season}/track/[^"'\\s]+detailed\\.(webp|png)`,
       "i"
     ),
-    /Image:\s*2026track[a-z0-9-]+detailed\.png/i,
-    /2026track[a-z0-9-]+detailed\.png/i,
+    new RegExp(`Image:\\s*${season}track[a-z0-9-]+detailed\\.png`, "i"),
+    new RegExp(`${season}track[a-z0-9-]+detailed\\.png`, "i"),
   ];
 
   for (const re of patterns) {
@@ -419,7 +389,7 @@ function extractDetailedTrackMediaUrl(html, season) {
     const found = m[0].replace(/^Image:\s*/i, "");
     if (found.startsWith("http")) return found;
 
-    return `https://www.formula1.com/content/dam/fom-website/manual/Misc/2026calendarImages/${found}`;
+    return `https://www.formula1.com/content/dam/fom-website/manual/Misc/${season}calendarImages/${found}`;
   }
 
   return null;
@@ -607,27 +577,28 @@ async function updateAllRaces() {
 
     console.log(`Building race ${index + 1}/${races.length}: ${race.raceKey}`);
 
-const fallbackTitle =
-  titleCaseWords(race.gpName) ||
-  race.gpName;
+    const locationData = LOCATION_BY_KEY[race.raceKey] || {
+      city: null,
+      country: titleCaseWords(race.locationRaw) || null,
+      iso2: null,
+    };
 
-const pageDetails = await fetchRacePageDetails({
-  raceKey: race.raceKey,
-  season,
-  fallbackTitle,
-});
+    const fallbackTitle =
+      titleCaseWords(race.gpName) ||
+      race.gpName;
 
-const title = pageDetails.title;
-const trackMap = pageDetails.trackMap;
+    const pageDetails = await fetchRacePageDetails({
+      raceKey: race.raceKey,
+      season,
+      fallbackTitle,
+    });
+
+    const title = pageDetails.title;
+    const trackMap = pageDetails.trackMap;
 
     const sessionsOut = buildSessionsOut(race.sessions);
     const window = computeWindowFromSessions(sessionsOut);
     const weekendStart = window.startUtc ? new Date(window.startUtc) : race.sessions[0].start;
-
-    const trackMap = await fetchTrackMapForRace({
-      raceKey: race.raceKey,
-      season,
-    });
 
     const event = {
       round: index + 1,
@@ -640,10 +611,10 @@ const trackMap = pageDetails.trackMap;
         country: locationData.country,
         flag: buildFlag(locationData.iso2),
       },
-racePage: {
-  slug: FORMULA1_SLUG_BY_KEY[race.raceKey] || null,
-  url: pageDetails.pageUrl,
-},
+      racePage: {
+        slug: FORMULA1_SLUG_BY_KEY[race.raceKey] || null,
+        url: pageDetails.pageUrl,
+      },
       trackMap,
       map: buildCustomMap(race.raceKey),
       countdowns: {
