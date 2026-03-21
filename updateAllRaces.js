@@ -17,6 +17,15 @@ const MAPS_DIR = "maps";
 
 const UA = "f1-standings-bot/1.0 (GitHub Actions)";
 
+const TRACK_IMAGE_URL_OVERRIDE_BY_KEY = {
+  spain:
+    "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackcatalunyadetailed.webp",
+  italy:
+    "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmonzadetailed.webp",
+  "sao-paulo":
+    "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackinterlagosdetailed.webp",
+};
+
 /* -------------------- omit canceled races -------------------- */
 
 const OMIT_RACE_KEYS = new Set([
@@ -511,10 +520,19 @@ function computeWindowFromSessions(sessions) {
 
 /* -------------------- track map + page details -------------------- */
 
+const TRACK_IMAGE_URL_OVERRIDE_BY_KEY = {
+  spain:
+    "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackcatalunyadetailed.webp",
+  italy:
+    "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmonzadetailed.webp",
+  "sao-paulo":
+    "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackinterlagosdetailed.webp",
+};
+
 function extractDetailedTrackMediaUrl(html, season, raceKey) {
-  const explicitFilename = TRACK_IMAGE_FILENAME_OVERRIDE_BY_KEY[raceKey];
-  if (explicitFilename) {
-    return `https://www.formula1.com/content/dam/fom-website/manual/Misc/${season}calendarImages/${explicitFilename}`;
+  const explicitUrl = TRACK_IMAGE_URL_OVERRIDE_BY_KEY[raceKey];
+  if (explicitUrl) {
+    return explicitUrl;
   }
 
   const patterns = [
@@ -526,22 +544,23 @@ function extractDetailedTrackMediaUrl(html, season, raceKey) {
       `https://media\\.formula1\\.com/[^"'\\s]+/common/f1/${season}/track/[^"'\\s]+detailed\\.(webp|png)`,
       "i"
     ),
-    new RegExp(`${season}track[a-z0-9-]+detailed\\.png`, "i"),
+    new RegExp(`Image:\\s*${season}track[a-z0-9-]+detailed\\.(webp|png)`, "i"),
+    new RegExp(`${season}track[a-z0-9-]+detailed\\.(webp|png)`, "i"),
   ];
 
   for (const re of patterns) {
     const m = html.match(re);
     if (!m) continue;
 
-const found = m[0]
-  .replace(/^Image:\s*/i, "")
-  .replace(/^["']+|["']+$/g, "");
+    const found = m[0]
+      .replace(/^Image:\s*/i, "")
+      .replace(/^["']+|["']+$/g, "");
 
-if (found.startsWith("http")) {
-  return found.replace(/^["']+|["']+$/g, "");
-}
+    if (found.startsWith("http")) {
+      return found;
+    }
 
-return `https://www.formula1.com/content/dam/fom-website/manual/Misc/${season}calendarImages/${found}`;
+    return null;
   }
 
   return null;
