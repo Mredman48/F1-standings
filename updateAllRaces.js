@@ -530,7 +530,7 @@ const TRACK_IMAGE_URL_OVERRIDE_BY_KEY = {
 };
 
 function extractDetailedTrackMediaUrl(html, season, raceKey) {
-  const explicitUrl = TRACK_IMAGE_URL_OVERRIDE_BY_KEY[raceKey];
+
   if (explicitUrl) {
     return explicitUrl;
   }
