@@ -37,8 +37,8 @@ jobs:
           echo "All files (2 levels deep):"
           find . -maxdepth 2 -type f
 
-      - name: Run season results builder
-        run: node ./buildSeasonResults.js
+- name: Build season results
+  run: node scripts/buildSeasonResults.js
 
       - name: Commit updated season results
         run: |
