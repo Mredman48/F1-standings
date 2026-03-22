@@ -612,8 +612,7 @@ async function buildSeasonResults() {
     source: {
       primary: "OpenF1 meetings + sessions + session_result",
       enrichment: "Jolpica season schedule",
-      note:
-        "Only race and sprint events are written to output. They are enriched with starting positions and qualifying times from qualifying and sprint shootout session results when available.",
+      note: "Only race and sprint events are written to output. They are enriched with starting positions and qualifying times from qualifying and sprint shootout session results when available.",
     },
     events,
     bestByDriverNumber,
@@ -625,6 +624,11 @@ async function buildSeasonResults() {
     `Wrote ${OUTPUT_FILE} with ${events.length} events and ${Object.keys(bestByDriverNumber).length} driver bests`
   );
 }
+
+buildSeasonResults().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
 
 buildSeasonResults().catch((err) => {
   console.error(err);
