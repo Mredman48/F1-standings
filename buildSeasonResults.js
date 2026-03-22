@@ -23,7 +23,6 @@ function normalizeEventType(sessionName) {
   if (s === "sprint") return "sprint";
   if (s === "qualifying") return "qualifying";
 
-  // Treat all sprint grid-setting sessions as the same logical type
   if (s === "sprint shootout") return "sprint_shootout";
   if (s === "sprint qualifying") return "sprint_shootout";
   if (s.includes("sprint shootout")) return "sprint_shootout";
@@ -192,6 +191,24 @@ async function getSessionResults(session) {
   return rows || [];
 }
 
+async function getStartingGrid(session) {
+  const sessionKey = Number(session?.session_key);
+  if (!Number.isFinite(sessionKey)) return [];
+
+  const rows = await fetchJson(
+    `${OPENF1_BASE}/starting_grid?session_key=${sessionKey}`,
+    { allow401: true, allow404: true, retries: 5 }
+  );
+
+  if (rows?.__authLocked) {
+    throw new Error(
+      `OpenF1 became auth-locked while reading starting_grid for session_key=${sessionKey}`
+    );
+  }
+
+  return rows || [];
+}
+
 async function getMeetingsByKey(year) {
   try {
     const meetings = await fetchJson(`${OPENF1_BASE}/meetings?year=${year}`, {
@@ -279,6 +296,35 @@ function buildMeetingScheduleMap(sessions, meetingsByKey, schedule) {
   return byMeetingKey;
 }
 
+function normalizeMaybeNumber(value) {
+  const n = Number(value);
+  return Number.isFinite(n) ? n : null;
+}
+
+function buildQualifyingTimes(durationValue) {
+  if (Array.isArray(durationValue)) {
+    const q1 = normalizeMaybeNumber(durationValue[0]);
+    const q2 = normalizeMaybeNumber(durationValue[1]);
+    const q3 = normalizeMaybeNumber(durationValue[2]);
+
+    const best = [q1, q2, q3].filter((v) => Number.isFinite(v));
+    return {
+      q1,
+      q2,
+      q3,
+      bestQualifyingTime: best.length ? Math.min(...best) : null,
+    };
+  }
+
+  const single = normalizeMaybeNumber(durationValue);
+  return {
+    q1: single,
+    q2: null,
+    q3: null,
+    bestQualifyingTime: single,
+  };
+}
+
 function buildSessionObject(session, rows, meetingMeta, scheduleMeta) {
   const eventType = normalizeEventType(session?.session_name);
   const sessionKey = Number(session?.session_key);
@@ -310,23 +356,34 @@ function buildSessionObject(session, rows, meetingMeta, scheduleMeta) {
     "-";
 
   const drivers = rows
-    .map((row) => ({
-      driverNumber: Number(row?.driver_number) || null,
-      position: normalizePosition(row),
-      positionRank: resultRank(normalizePosition(row)),
-      classifiedPosition:
-        Number.isFinite(Number(row?.position)) && Number(row?.position) > 0
-          ? Number(row.position)
-          : null,
-      dnf: row?.dnf === true,
-      dns: row?.dns === true,
-      dsq: row?.dsq === true,
-      duration: row?.duration ?? null,
-      gapToLeader: row?.gap_to_leader ?? null,
-      laps: row?.number_of_laps ?? null,
-      sessionKey: Number(row?.session_key) || sessionKey,
-      meetingKey: Number(row?.meeting_key) || Number(session?.meeting_key) || null,
-    }))
+    .map((row) => {
+      const qualifyingTimes =
+        eventType === "qualifying" || eventType === "sprint_shootout"
+          ? buildQualifyingTimes(row?.duration)
+          : null;
+
+      return {
+        driverNumber: Number(row?.driver_number) || null,
+        position: normalizePosition(row),
+        positionRank: resultRank(normalizePosition(row)),
+        classifiedPosition:
+          Number.isFinite(Number(row?.position)) && Number(row?.position) > 0
+            ? Number(row.position)
+            : null,
+        dnf: row?.dnf === true,
+        dns: row?.dns === true,
+        dsq: row?.dsq === true,
+        duration:
+          eventType === "qualifying" || eventType === "sprint_shootout"
+            ? null
+            : row?.duration ?? null,
+        qualifyingTimes,
+        gapToLeader: row?.gap_to_leader ?? null,
+        laps: row?.number_of_laps ?? null,
+        sessionKey: Number(row?.session_key) || sessionKey,
+        meetingKey: Number(row?.meeting_key) || Number(session?.meeting_key) || null,
+      };
+    })
     .filter((d) => Number.isFinite(d.driverNumber) && d.driverNumber > 0)
     .sort((a, b) => {
       const ar = a.positionRank;
@@ -383,6 +440,8 @@ function buildStartPositionLookup(events) {
         startPositionRank: Number.isFinite(driver.positionRank)
           ? driver.positionRank
           : null,
+        qualifyingLapTime: driver.qualifyingTimes?.bestQualifyingTime ?? null,
+        qualifyingTimes: driver.qualifyingTimes ?? null,
       });
     }
 
@@ -392,7 +451,24 @@ function buildStartPositionLookup(events) {
   return lookup;
 }
 
-function applyStartPositionsToEvents(events, startPositionLookup) {
+function buildStartingGridLookup(startingGridRows) {
+  const byDriver = new Map();
+
+  for (const row of startingGridRows || []) {
+    const driverNumber = Number(row?.driver_number);
+    if (!Number.isFinite(driverNumber)) continue;
+
+    byDriver.set(driverNumber, {
+      startPosition: Number.isFinite(Number(row?.position)) ? `P${Number(row.position)}` : "-",
+      startPositionRank: Number.isFinite(Number(row?.position)) ? Number(row.position) : null,
+      qualifyingLapTime: normalizeMaybeNumber(row?.lap_duration),
+    });
+  }
+
+  return byDriver;
+}
+
+function applyStartPositionsToEvents(events, startPositionLookup, startingGridBySessionKey) {
   return events
     .filter((event) => {
       const type = String(event?.eventType || "").toLowerCase();
@@ -401,16 +477,20 @@ function applyStartPositionsToEvents(events, startPositionLookup) {
     .map((event) => {
       const meetingKey = Number(event?.meetingKey);
       const type = String(event?.eventType || "").toLowerCase();
+      const gridLookup = startingGridBySessionKey.get(Number(event.sessionKey)) || null;
 
       let startGrid = null;
 
       if (type === "race") {
-        startGrid = startPositionLookup.get(`${meetingKey}:qualifying`) || null;
+        startGrid =
+          gridLookup ||
+          startPositionLookup.get(`${meetingKey}:qualifying`) ||
+          null;
       }
 
       if (type === "sprint") {
-        // Prefer sprint-specific grid setter, but fall back to qualifying if needed
         startGrid =
+          gridLookup ||
           startPositionLookup.get(`${meetingKey}:sprint_shootout`) ||
           startPositionLookup.get(`${meetingKey}:qualifying`) ||
           null;
@@ -425,6 +505,8 @@ function applyStartPositionsToEvents(events, startPositionLookup) {
             ...driver,
             startPosition: startInfo?.startPosition ?? "-",
             startPositionRank: startInfo?.startPositionRank ?? null,
+            qualifyingLapTime: startInfo?.qualifyingLapTime ?? null,
+            qualifyingTimes: startInfo?.qualifyingTimes ?? null,
           };
         }),
       };
@@ -477,15 +559,27 @@ async function buildSeasonResults() {
   );
 
   const allEvents = [];
+  const startingGridBySessionKey = new Map();
 
   for (const session of sessions) {
-    const rows = await getSessionResults(session);
+    const [rows, startingGridRows] = await Promise.all([
+      getSessionResults(session),
+      getStartingGrid(session),
+    ]);
+
     const meetingKey = Number(session?.meeting_key);
     const meetingMeta = meetingsByKey.get(meetingKey) || null;
     const scheduleMeta = scheduleByMeetingKey.get(meetingKey) || null;
 
     const event = buildSessionObject(session, rows, meetingMeta, scheduleMeta);
     allEvents.push(event);
+
+    if (event.eventType === "race" || event.eventType === "sprint") {
+      startingGridBySessionKey.set(
+        Number(event.sessionKey),
+        buildStartingGridLookup(startingGridRows)
+      );
+    }
 
     console.log(
       `Loaded ${event.sessionName} for ${event.raceName} (${event.date}) with ${event.drivers.length} drivers`
@@ -495,7 +589,12 @@ async function buildSeasonResults() {
   }
 
   const startPositionLookup = buildStartPositionLookup(allEvents);
-  const events = applyStartPositionsToEvents(allEvents, startPositionLookup);
+  const events = applyStartPositionsToEvents(
+    allEvents,
+    startPositionLookup,
+    startingGridBySessionKey
+  );
+
   const bestByDriverNumber = buildBestByDriver(events);
 
   const out = {
@@ -503,10 +602,10 @@ async function buildSeasonResults() {
     generatedAtUtc: new Date().toISOString(),
     season: YEAR,
     source: {
-      primary: "OpenF1 meetings + sessions + session_result",
+      primary: "OpenF1 meetings + sessions + session_result + starting_grid",
       enrichment: "Jolpica season schedule",
       note:
-        "Race and sprint events are enriched with start positions from Qualifying and Sprint Shootout/Sprint Qualifying when available.",
+        "Qualifying and sprint shootout sessions include Q1/Q2/Q3 times when available. Race and sprint events are enriched with starting positions and qualifying lap times from starting_grid and/or qualifying results.",
     },
     events,
     bestByDriverNumber,
