@@ -1,6 +1,6 @@
 {
   "header": "Upcoming F1 events",
-  "generatedAtUtc": "2026-03-22T03:20:02.322Z",
+  "generatedAtUtc": "2026-03-22T05:25:13.654Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics+formula1",
@@ -123,7 +123,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": -8
+        "startsInDays": -9
       },
       "weekend": {
         "startUtc": "2026-03-13T03:30:00.000Z",
@@ -1077,7 +1077,7 @@
     {
       "round": 14,
       "type": "RACE_WEEKEND",
-      "title": "FORMULA 1 TAG HEUER GRAN PREMIO DO ESPAÑA 2026",
+      "title": "F1 Spanish GP",
       "season": "2026",
       "location": {
         "raw": null,
@@ -1094,11 +1094,11 @@
         "url": "https://www.formula1.com/en/racing/2026/madrid"
       },
       "trackMap": {
-        "found": true,
+        "found": false,
         "pageUrl": "https://www.formula1.com/en/racing/2026/madrid",
-        "mediaUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_spain_detailed.png",
-        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_spain_detailed.png",
-        "note": "nil"
+        "mediaUrl": null,
+        "pngUrl": null,
+        "note": "HTTP 404 fetching https://www.formula1.com/en/racing/2026/madrid"
       },
       "map": {
         "found": true,
@@ -1750,11 +1750,11 @@
         "url": "https://www.formula1.com/en/racing/2026/abu-dhabi"
       },
       "trackMap": {
-        "found": true,
+        "found": false,
         "pageUrl": "https://www.formula1.com/en/racing/2026/abu-dhabi",
-        "mediaUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_abudhabi_detailed.webp",
-        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_abudhabi_detailed.webp",
-        "note": "null"
+        "mediaUrl": null,
+        "pngUrl": null,
+        "note": "HTTP 404 fetching https://www.formula1.com/en/racing/2026/abu-dhabi"
       },
       "map": {
         "found": true,
