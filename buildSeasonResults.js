@@ -371,7 +371,7 @@ function buildSessionObject(session, rows, meetingMeta, scheduleMeta) {
       const ar = a.positionRank;
       const br = b.positionRank;
       const aOk = Number.isFinite(ar) && ar !== Infinity;
-      const bOk = Number.isFinite(br) && b !== Infinity;
+      const bOk = Number.isFinite(br) && br !== Infinity;
       if (aOk && bOk) return ar - br;
       if (aOk) return -1;
       if (bOk) return 1;
@@ -531,71 +531,7 @@ async function buildSeasonResults() {
     await sleep(450);
   }
 
-const qualifyingLookup = buildGridLookupFromQualifyingEvents(allEvents);
-
-const enrichedEvents = enrichRaceAndSprintEvents(allEvents, qualifyingLookup);
-
-const events = enrichedEvents.filter((event) => {
-  const type = String(event?.eventType || "").toLowerCase();
-  return type === "race" || type === "sprint";
-});
-
-const bestByDriverNumber = buildBestByDriver(events);
-
-  const out = {
-    header: `${YEAR} F1 race and sprint results`,
-    generatedAtUtc: new Date().toISOString(),
-    season: YEAR,
-    source: {
-      primary: "OpenF1 meetings + sessions + session_result",
-      enrichment: "Jolpica season schedule",
-      note:
-note:
-  "Only race and sprint events are written to output. They are enriched with starting positions and qualifying times from qualifying and sprint shootout session results when available.",
-    },
-    events,
-    bestByDriverNumber,
-  };
-
-  await fs.writeFile(OUTPUT_FILE, JSON.stringify(out, null, 2), "utf8");
-
-  console.log(
-    `Wrote ${OUTPUT_FILE} with ${events.length} events and ${Object.keys(bestByDriverNumber).length} driver bests`
-  );
-}
-async function buildSeasonResults() {
-  const [sessions, meetingsByKey, schedule] = await Promise.all([
-    getCompletedTargetSessions(YEAR),
-    getMeetingsByKey(YEAR),
-    getSeasonSchedule(YEAR),
-  ]);
-
-  const scheduleByMeetingKey = buildMeetingScheduleMap(
-    sessions,
-    meetingsByKey,
-    schedule
-  );
-
-  const allEvents = [];
-
-  for (const session of sessions) {
-    const rows = await getSessionResults(session);
-    const meetingKey = Number(session?.meeting_key);
-    const meetingMeta = meetingsByKey.get(meetingKey) || null;
-    const scheduleMeta = scheduleByMeetingKey.get(meetingKey) || null;
-
-    const event = buildSessionObject(session, rows, meetingMeta, scheduleMeta);
-    allEvents.push(event);
-
-    console.log(
-      `Loaded ${event.sessionName} for ${event.raceName} (${event.date}) with ${event.drivers.length} drivers`
-    );
-
-    await sleep(450);
-  }
-
   const qualifyingLookup = buildGridLookupFromQualifyingEvents(allEvents);
-
   const enrichedEvents = enrichRaceAndSprintEvents(allEvents, qualifyingLookup);
 
   const events = enrichedEvents.filter((event) => {
@@ -624,11 +560,6 @@ async function buildSeasonResults() {
     `Wrote ${OUTPUT_FILE} with ${events.length} events and ${Object.keys(bestByDriverNumber).length} driver bests`
   );
 }
-
-buildSeasonResults().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
 
 buildSeasonResults().catch((err) => {
   console.error(err);
