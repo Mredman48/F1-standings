@@ -1,13 +1,489 @@
 {
   "header": "2026 F1 race and sprint results",
-  "generatedAtUtc": "2026-03-22T04:52:26.684Z",
+  "generatedAtUtc": "2026-03-22T05:03:50.507Z",
   "season": 2026,
   "source": {
-    "primary": "OpenF1 meetings + sessions + session_result + starting_grid",
+    "primary": "OpenF1 meetings + sessions + session_result",
     "enrichment": "Jolpica season schedule",
-    "note": "Qualifying and sprint shootout sessions include Q1/Q2/Q3 times when available. Race and sprint events are enriched with starting positions and qualifying lap times from starting_grid and/or qualifying results."
+    "note": "Qualifying and sprint shootout sessions include Q1/Q2/Q3 times when available. Race and sprint events are enriched with starting positions and qualifying lap times from qualifying and sprint shootout results."
   },
   "events": [
+    {
+      "eventType": "qualifying",
+      "sessionKey": 11230,
+      "meetingKey": 1279,
+      "meetingName": "Australian Grand Prix",
+      "raceName": "Australian Grand Prix",
+      "sessionName": "Qualifying",
+      "officialName": "Qualifying",
+      "round": 1,
+      "dateStartUtc": "2026-03-07T05:00:00+00:00",
+      "dateEndUtc": "2026-03-07T06:00:00+00:00",
+      "date": "2026-03-07",
+      "circuit": "Melbourne",
+      "location": {
+        "locality": "Melbourne",
+        "country": "Australia"
+      },
+      "drivers": [
+        {
+          "driverNumber": 63,
+          "position": "P1",
+          "positionRank": 1,
+          "classifiedPosition": 1,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 79.507,
+            "q2": 78.934,
+            "q3": 78.518,
+            "bestQualifyingTime": 78.518
+          },
+          "gapToLeader": [
+            0,
+            0,
+            0
+          ],
+          "laps": 22,
+          "sessionKey": 11230,
+          "meetingKey": 1279
+        },
+        {
+          "driverNumber": 12,
+          "position": "P2",
+          "positionRank": 2,
+          "classifiedPosition": 2,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 80.12,
+            "q2": 79.435,
+            "q3": 78.811,
+            "bestQualifyingTime": 78.811
+          },
+          "gapToLeader": [
+            0.613,
+            0.501,
+            0.293
+          ],
+          "laps": 18,
+          "sessionKey": 11230,
+          "meetingKey": 1279
+        },
+        {
+          "driverNumber": 6,
+          "position": "P3",
+          "positionRank": 3,
+          "classifiedPosition": 3,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 80.023,
+            "q2": 79.653,
+            "q3": 79.303,
+            "bestQualifyingTime": 79.303
+          },
+          "gapToLeader": [
+            0.516,
+            0.719,
+            0.785
+          ],
+          "laps": 19,
+          "sessionKey": 11230,
+          "meetingKey": 1279
+        },
+        {
+          "driverNumber": 16,
+          "position": "P4",
+          "positionRank": 4,
+          "classifiedPosition": 4,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 80.226,
+            "q2": 79.357,
+            "q3": 79.327,
+            "bestQualifyingTime": 79.327
+          },
+          "gapToLeader": [
+            0.719,
+            0.423,
+            0.809
+          ],
+          "laps": 24,
+          "sessionKey": 11230,
+          "meetingKey": 1279
+        },
+        {
+          "driverNumber": 81,
+          "position": "P5",
+          "positionRank": 5,
+          "classifiedPosition": 5,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 79.664,
+            "q2": 79.525,
+            "q3": 79.38,
+            "bestQualifyingTime": 79.38
+          },
+          "gapToLeader": [
+            0.157,
+            0.591,
+            0.862
+          ],
+          "laps": 26,
+          "sessionKey": 11230,
+          "meetingKey": 1279
+        },
+        {
+          "driverNumber": 1,
+          "position": "P6",
+          "positionRank": 6,
+          "classifiedPosition": 6,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 80.01,
+            "q2": 79.882,
+            "q3": 79.475,
+            "bestQualifyingTime": 79.475
+          },
+          "gapToLeader": [
+            0.503,
+            0.948,
+            0.957
+          ],
+          "laps": 26,
+          "sessionKey": 11230,
+          "meetingKey": 1279
+        },
+        {
+          "driverNumber": 44,
+          "position": "P7",
+          "positionRank": 7,
+          "classifiedPosition": 7,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 79.811,
+            "q2": 79.921,
+            "q3": 79.478,
+            "bestQualifyingTime": 79.478
+          },
+          "gapToLeader": [
+            0.304,
+            0.987,
+            0.96
+          ],
+          "laps": 25,
+          "sessionKey": 11230,
+          "meetingKey": 1279
+        },
+        {
+          "driverNumber": 30,
+          "position": "P8",
+          "positionRank": 8,
+          "classifiedPosition": 8,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 80.491,
+            "q2": 80.144,
+            "q3": 79.994,
+            "bestQualifyingTime": 79.994
+          },
+          "gapToLeader": [
+            0.984,
+            1.21,
+            1.476
+          ],
+          "laps": 24,
+          "sessionKey": 11230,
+          "meetingKey": 1279
+        },
+        {
+          "driverNumber": 41,
+          "position": "P9",
+          "positionRank": 9,
+          "classifiedPosition": 9,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 80.409,
+            "q2": 79.971,
+            "q3": 81.247,
+            "bestQualifyingTime": 79.971
+          },
+          "gapToLeader": [
+            0.902,
+            1.037,
+            2.729
+          ],
+          "laps": 25,
+          "sessionKey": 11230,
+          "meetingKey": 1279
+        },
+        {
+          "driverNumber": 5,
+          "position": "P10",
+          "positionRank": 10,
+          "classifiedPosition": 10,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 80.495,
+            "q2": 80.221,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            0.988,
+            1.287,
+            null
+          ],
+          "laps": 14,
+          "sessionKey": 11230,
+          "meetingKey": 1279
+        },
+        {
+          "driverNumber": 27,
+          "position": "P11",
+          "positionRank": 11,
+          "classifiedPosition": 11,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 81.024,
+            "q2": 80.303,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            1.517,
+            1.369,
+            null
+          ],
+          "laps": 18,
+          "sessionKey": 11230,
+          "meetingKey": 1279
+        },
+        {
+          "driverNumber": 87,
+          "position": "P12",
+          "positionRank": 12,
+          "classifiedPosition": 12,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 81.247,
+            "q2": 80.311,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            1.74,
+            1.377,
+            null
+          ],
+          "laps": 18,
+          "sessionKey": 11230,
+          "meetingKey": 1279
+        },
+        {
+          "driverNumber": 31,
+          "position": "P13",
+          "positionRank": 13,
+          "classifiedPosition": 13,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 80.759,
+            "q2": 80.491,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            1.252,
+            1.557,
+            null
+          ],
+          "laps": 18,
+          "sessionKey": 11230,
+          "meetingKey": 1279
+        },
+        {
+          "driverNumber": 10,
+          "position": "P14",
+          "positionRank": 14,
+          "classifiedPosition": 14,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 81.138,
+            "q2": 80.501,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            1.631,
+            1.567,
+            null
+          ],
+          "laps": 18,
+          "sessionKey": 11230,
+          "meetingKey": 1279
+        },
+        {
+          "driverNumber": 23,
+          "position": "P15",
+          "positionRank": 15,
+          "classifiedPosition": 15,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 81.051,
+            "q2": 80.941,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            1.544,
+            2.007,
+            null
+          ],
+          "laps": 19,
+          "sessionKey": 11230,
+          "meetingKey": 1279
+        },
+        {
+          "driverNumber": 43,
+          "position": "P16",
+          "positionRank": 16,
+          "classifiedPosition": 16,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 81.2,
+            "q2": 81.27,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            1.693,
+            2.336,
+            null
+          ],
+          "laps": 18,
+          "sessionKey": 11230,
+          "meetingKey": 1279
+        },
+        {
+          "driverNumber": 14,
+          "position": "P17",
+          "positionRank": 17,
+          "classifiedPosition": 17,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 81.969,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            2.462,
+            null,
+            null
+          ],
+          "laps": 10,
+          "sessionKey": 11230,
+          "meetingKey": 1279
+        },
+        {
+          "driverNumber": 11,
+          "position": "P18",
+          "positionRank": 18,
+          "classifiedPosition": 18,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 82.605,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            3.098,
+            null,
+            null
+          ],
+          "laps": 7,
+          "sessionKey": 11230,
+          "meetingKey": 1279
+        },
+        {
+          "driverNumber": 77,
+          "position": "P19",
+          "positionRank": 19,
+          "classifiedPosition": 19,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 83.244,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            3.737,
+            null,
+            null
+          ],
+          "laps": 8,
+          "sessionKey": 11230,
+          "meetingKey": 1279
+        }
+      ]
+    },
     {
       "eventType": "race",
       "sessionKey": 11234,
@@ -35,14 +511,19 @@
           "dns": false,
           "dsq": false,
           "duration": 4986.801,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 79.507,
+            "q2": 78.934,
+            "q3": 78.518,
+            "bestQualifyingTime": 78.518
+          },
           "gapToLeader": 0,
           "laps": 58,
           "sessionKey": 11234,
           "meetingKey": 1279,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P1",
+          "startPositionRank": 1,
+          "qualifyingLapTime": 78.518
         },
         {
           "driverNumber": 12,
@@ -53,14 +534,19 @@
           "dns": false,
           "dsq": false,
           "duration": 4989.775,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 80.12,
+            "q2": 79.435,
+            "q3": 78.811,
+            "bestQualifyingTime": 78.811
+          },
           "gapToLeader": 2.974,
           "laps": 58,
           "sessionKey": 11234,
           "meetingKey": 1279,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P2",
+          "startPositionRank": 2,
+          "qualifyingLapTime": 78.811
         },
         {
           "driverNumber": 16,
@@ -71,14 +557,19 @@
           "dns": false,
           "dsq": false,
           "duration": 5002.32,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 80.226,
+            "q2": 79.357,
+            "q3": 79.327,
+            "bestQualifyingTime": 79.327
+          },
           "gapToLeader": 15.519,
           "laps": 58,
           "sessionKey": 11234,
           "meetingKey": 1279,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P4",
+          "startPositionRank": 4,
+          "qualifyingLapTime": 79.327
         },
         {
           "driverNumber": 44,
@@ -89,14 +580,19 @@
           "dns": false,
           "dsq": false,
           "duration": 5002.945,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 79.811,
+            "q2": 79.921,
+            "q3": 79.478,
+            "bestQualifyingTime": 79.478
+          },
           "gapToLeader": 16.144,
           "laps": 58,
           "sessionKey": 11234,
           "meetingKey": 1279,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P7",
+          "startPositionRank": 7,
+          "qualifyingLapTime": 79.478
         },
         {
           "driverNumber": 1,
@@ -107,14 +603,19 @@
           "dns": false,
           "dsq": false,
           "duration": 5038.542,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 80.01,
+            "q2": 79.882,
+            "q3": 79.475,
+            "bestQualifyingTime": 79.475
+          },
           "gapToLeader": 51.741,
           "laps": 58,
           "sessionKey": 11234,
           "meetingKey": 1279,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P6",
+          "startPositionRank": 6,
+          "qualifyingLapTime": 79.475
         },
         {
           "driverNumber": 3,
@@ -130,7 +631,7 @@
           "laps": 58,
           "sessionKey": 11234,
           "meetingKey": 1279,
-          "startPosition": "-",
+          "startPosition": null,
           "startPositionRank": null,
           "qualifyingLapTime": null
         },
@@ -143,14 +644,19 @@
           "dns": false,
           "dsq": false,
           "duration": null,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 81.247,
+            "q2": 80.311,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": "+1 LAP",
           "laps": 57,
           "sessionKey": 11234,
           "meetingKey": 1279,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P12",
+          "startPositionRank": 12,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 41,
@@ -161,14 +667,19 @@
           "dns": false,
           "dsq": false,
           "duration": null,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 80.409,
+            "q2": 79.971,
+            "q3": 81.247,
+            "bestQualifyingTime": 79.971
+          },
           "gapToLeader": "+1 LAP",
           "laps": 57,
           "sessionKey": 11234,
           "meetingKey": 1279,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P9",
+          "startPositionRank": 9,
+          "qualifyingLapTime": 79.971
         },
         {
           "driverNumber": 5,
@@ -179,14 +690,19 @@
           "dns": false,
           "dsq": false,
           "duration": null,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 80.495,
+            "q2": 80.221,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": "+1 LAP",
           "laps": 57,
           "sessionKey": 11234,
           "meetingKey": 1279,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P10",
+          "startPositionRank": 10,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 10,
@@ -197,14 +713,19 @@
           "dns": false,
           "dsq": false,
           "duration": null,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 81.138,
+            "q2": 80.501,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": "+1 LAP",
           "laps": 57,
           "sessionKey": 11234,
           "meetingKey": 1279,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P14",
+          "startPositionRank": 14,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 31,
@@ -215,14 +736,19 @@
           "dns": false,
           "dsq": false,
           "duration": null,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 80.759,
+            "q2": 80.491,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": "+1 LAP",
           "laps": 57,
           "sessionKey": 11234,
           "meetingKey": 1279,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P13",
+          "startPositionRank": 13,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 23,
@@ -233,14 +759,19 @@
           "dns": false,
           "dsq": false,
           "duration": null,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 81.051,
+            "q2": 80.941,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": "+1 LAP",
           "laps": 57,
           "sessionKey": 11234,
           "meetingKey": 1279,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P15",
+          "startPositionRank": 15,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 30,
@@ -251,14 +782,19 @@
           "dns": false,
           "dsq": false,
           "duration": null,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 80.491,
+            "q2": 80.144,
+            "q3": 79.994,
+            "bestQualifyingTime": 79.994
+          },
           "gapToLeader": "+1 LAP",
           "laps": 57,
           "sessionKey": 11234,
           "meetingKey": 1279,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P8",
+          "startPositionRank": 8,
+          "qualifyingLapTime": 79.994
         },
         {
           "driverNumber": 43,
@@ -269,14 +805,19 @@
           "dns": false,
           "dsq": false,
           "duration": null,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 81.2,
+            "q2": 81.27,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": "+2 LAPS",
           "laps": 56,
           "sessionKey": 11234,
           "meetingKey": 1279,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P16",
+          "startPositionRank": 16,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 55,
@@ -292,7 +833,7 @@
           "laps": 56,
           "sessionKey": 11234,
           "meetingKey": 1279,
-          "startPosition": "-",
+          "startPosition": null,
           "startPositionRank": null,
           "qualifyingLapTime": null
         },
@@ -305,14 +846,19 @@
           "dns": false,
           "dsq": false,
           "duration": null,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 82.605,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": "+3 LAPS",
           "laps": 55,
           "sessionKey": 11234,
           "meetingKey": 1279,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P18",
+          "startPositionRank": 18,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 6,
@@ -323,14 +869,19 @@
           "dns": false,
           "dsq": false,
           "duration": null,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 80.023,
+            "q2": 79.653,
+            "q3": 79.303,
+            "bestQualifyingTime": 79.303
+          },
           "gapToLeader": null,
           "laps": 10,
           "sessionKey": 11234,
           "meetingKey": 1279,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P3",
+          "startPositionRank": 3,
+          "qualifyingLapTime": 79.303
         },
         {
           "driverNumber": 14,
@@ -341,14 +892,19 @@
           "dns": false,
           "dsq": false,
           "duration": null,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 81.969,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": null,
           "laps": 21,
           "sessionKey": 11234,
           "meetingKey": 1279,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P17",
+          "startPositionRank": 17,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 18,
@@ -364,7 +920,7 @@
           "laps": 43,
           "sessionKey": 11234,
           "meetingKey": 1279,
-          "startPosition": "-",
+          "startPosition": null,
           "startPositionRank": null,
           "qualifyingLapTime": null
         },
@@ -377,14 +933,19 @@
           "dns": true,
           "dsq": false,
           "duration": null,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 81.024,
+            "q2": 80.303,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": null,
           "laps": 0,
           "sessionKey": 11234,
           "meetingKey": 1279,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P11",
+          "startPositionRank": 11,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 77,
@@ -395,14 +956,19 @@
           "dns": false,
           "dsq": false,
           "duration": null,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 83.244,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": null,
           "laps": 15,
           "sessionKey": 11234,
           "meetingKey": 1279,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P19",
+          "startPositionRank": 19,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 81,
@@ -413,14 +979,543 @@
           "dns": true,
           "dsq": false,
           "duration": null,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 79.664,
+            "q2": 79.525,
+            "q3": 79.38,
+            "bestQualifyingTime": 79.38
+          },
           "gapToLeader": null,
           "laps": 0,
           "sessionKey": 11234,
           "meetingKey": 1279,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P5",
+          "startPositionRank": 5,
+          "qualifyingLapTime": 79.38
+        }
+      ]
+    },
+    {
+      "eventType": "sprint_shootout",
+      "sessionKey": 11236,
+      "meetingKey": 1280,
+      "meetingName": "Chinese Grand Prix",
+      "raceName": "Chinese Grand Prix",
+      "sessionName": "Sprint Qualifying",
+      "officialName": "Sprint Qualifying",
+      "round": 2,
+      "dateStartUtc": "2026-03-13T07:30:00+00:00",
+      "dateEndUtc": "2026-03-13T08:14:00+00:00",
+      "date": "2026-03-13",
+      "circuit": "Shanghai",
+      "location": {
+        "locality": "Shanghai",
+        "country": "China"
+      },
+      "drivers": [
+        {
+          "driverNumber": 63,
+          "position": "P1",
+          "positionRank": 1,
+          "classifiedPosition": 1,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.03,
+            "q2": 92.241,
+            "q3": 91.52,
+            "bestQualifyingTime": 91.52
+          },
+          "gapToLeader": [
+            0,
+            0,
+            0
+          ],
+          "laps": 13,
+          "sessionKey": 11236,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 12,
+          "position": "P2",
+          "positionRank": 2,
+          "classifiedPosition": 2,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.455,
+            "q2": 92.291,
+            "q3": 91.809,
+            "bestQualifyingTime": 91.809
+          },
+          "gapToLeader": [
+            0.425,
+            0.05,
+            0.289
+          ],
+          "laps": 13,
+          "sessionKey": 11236,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 1,
+          "position": "P3",
+          "positionRank": 3,
+          "classifiedPosition": 3,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.783,
+            "q2": 93.086,
+            "q3": 92.141,
+            "bestQualifyingTime": 92.141
+          },
+          "gapToLeader": [
+            0.753,
+            0.845,
+            0.621
+          ],
+          "laps": 13,
+          "sessionKey": 11236,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 44,
+          "position": "P4",
+          "positionRank": 4,
+          "classifiedPosition": 4,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.148,
+            "q2": 93.042,
+            "q3": 92.161,
+            "bestQualifyingTime": 92.161
+          },
+          "gapToLeader": [
+            0.118,
+            0.801,
+            0.641
+          ],
+          "laps": 15,
+          "sessionKey": 11236,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 81,
+          "position": "P5",
+          "positionRank": 5,
+          "classifiedPosition": 5,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.813,
+            "q2": 93.038,
+            "q3": 92.224,
+            "bestQualifyingTime": 92.224
+          },
+          "gapToLeader": [
+            0.783,
+            0.797,
+            0.704
+          ],
+          "laps": 13,
+          "sessionKey": 11236,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 16,
+          "position": "P6",
+          "positionRank": 6,
+          "classifiedPosition": 6,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.194,
+            "q2": 92.602,
+            "q3": 92.528,
+            "bestQualifyingTime": 92.528
+          },
+          "gapToLeader": [
+            0.164,
+            0.361,
+            1.008
+          ],
+          "laps": 16,
+          "sessionKey": 11236,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 10,
+          "position": "P7",
+          "positionRank": 7,
+          "classifiedPosition": 7,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.97,
+            "q2": 93.405,
+            "q3": 92.888,
+            "bestQualifyingTime": 92.888
+          },
+          "gapToLeader": [
+            0.94,
+            1.164,
+            1.368
+          ],
+          "laps": 15,
+          "sessionKey": 11236,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 3,
+          "position": "P8",
+          "positionRank": 8,
+          "classifiedPosition": 8,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 94.17,
+            "q2": 93.564,
+            "q3": 93.254,
+            "bestQualifyingTime": 93.254
+          },
+          "gapToLeader": [
+            1.14,
+            1.323,
+            1.734
+          ],
+          "laps": 17,
+          "sessionKey": 11236,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 87,
+          "position": "P9",
+          "positionRank": 9,
+          "classifiedPosition": 9,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 94.28,
+            "q2": 93.501,
+            "q3": 93.409,
+            "bestQualifyingTime": 93.409
+          },
+          "gapToLeader": [
+            1.25,
+            1.26,
+            1.889
+          ],
+          "laps": 16,
+          "sessionKey": 11236,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 6,
+          "position": "P10",
+          "positionRank": 10,
+          "classifiedPosition": 10,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 94.447,
+            "q2": 93.62,
+            "q3": 93.723,
+            "bestQualifyingTime": 93.62
+          },
+          "gapToLeader": [
+            1.417,
+            1.379,
+            2.203
+          ],
+          "laps": 15,
+          "sessionKey": 11236,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 27,
+          "position": "P11",
+          "positionRank": 11,
+          "classifiedPosition": 11,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.997,
+            "q2": 93.635,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            0.967,
+            1.394,
+            null
+          ],
+          "laps": 14,
+          "sessionKey": 11236,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 31,
+          "position": "P12",
+          "positionRank": 12,
+          "classifiedPosition": 12,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 94.087,
+            "q2": 93.639,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            1.057,
+            1.398,
+            null
+          ],
+          "laps": 13,
+          "sessionKey": 11236,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 30,
+          "position": "P13",
+          "positionRank": 13,
+          "classifiedPosition": 13,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 94.11,
+            "q2": 93.714,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            1.08,
+            1.473,
+            null
+          ],
+          "laps": 13,
+          "sessionKey": 11236,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 5,
+          "position": "P14",
+          "positionRank": 14,
+          "classifiedPosition": 14,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 94.291,
+            "q2": 93.774,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            1.261,
+            1.533,
+            null
+          ],
+          "laps": 14,
+          "sessionKey": 11236,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 41,
+          "position": "P15",
+          "positionRank": 15,
+          "classifiedPosition": 15,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 94.495,
+            "q2": 94.048,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            1.465,
+            1.807,
+            null
+          ],
+          "laps": 13,
+          "sessionKey": 11236,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 43,
+          "position": "P16",
+          "positionRank": 16,
+          "classifiedPosition": 16,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 94.592,
+            "q2": 94.327,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            1.562,
+            2.086,
+            null
+          ],
+          "laps": 12,
+          "sessionKey": 11236,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 55,
+          "position": "P17",
+          "positionRank": 17,
+          "classifiedPosition": 17,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 94.761,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            1.731,
+            null,
+            null
+          ],
+          "laps": 6,
+          "sessionKey": 11236,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 23,
+          "position": "P18",
+          "positionRank": 18,
+          "classifiedPosition": 18,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 95.305,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            2.275,
+            null,
+            null
+          ],
+          "laps": 6,
+          "sessionKey": 11236,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 14,
+          "position": "P19",
+          "positionRank": 19,
+          "classifiedPosition": 19,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 95.581,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            2.551,
+            null,
+            null
+          ],
+          "laps": 5,
+          "sessionKey": 11236,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 18,
+          "position": "P20",
+          "positionRank": 20,
+          "classifiedPosition": 20,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 96.151,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            3.121,
+            null,
+            null
+          ],
+          "laps": 7,
+          "sessionKey": 11236,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 77,
+          "position": "P21",
+          "positionRank": 21,
+          "classifiedPosition": 21,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 97.378,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            4.348,
+            null,
+            null
+          ],
+          "laps": 8,
+          "sessionKey": 11236,
+          "meetingKey": 1280
         }
       ]
     },
@@ -451,14 +1546,19 @@
           "dns": false,
           "dsq": false,
           "duration": 2018.998,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 93.03,
+            "q2": 92.241,
+            "q3": 91.52,
+            "bestQualifyingTime": 91.52
+          },
           "gapToLeader": 0,
           "laps": 19,
           "sessionKey": 11240,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P1",
+          "startPositionRank": 1,
+          "qualifyingLapTime": 91.52
         },
         {
           "driverNumber": 16,
@@ -469,14 +1569,19 @@
           "dns": false,
           "dsq": false,
           "duration": 2019.672,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 93.194,
+            "q2": 92.602,
+            "q3": 92.528,
+            "bestQualifyingTime": 92.528
+          },
           "gapToLeader": 0.674,
           "laps": 19,
           "sessionKey": 11240,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P6",
+          "startPositionRank": 6,
+          "qualifyingLapTime": 92.528
         },
         {
           "driverNumber": 44,
@@ -487,14 +1592,19 @@
           "dns": false,
           "dsq": false,
           "duration": 2021.552,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 93.148,
+            "q2": 93.042,
+            "q3": 92.161,
+            "bestQualifyingTime": 92.161
+          },
           "gapToLeader": 2.554,
           "laps": 19,
           "sessionKey": 11240,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P4",
+          "startPositionRank": 4,
+          "qualifyingLapTime": 92.161
         },
         {
           "driverNumber": 1,
@@ -505,14 +1615,19 @@
           "dns": false,
           "dsq": false,
           "duration": 2023.431,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 93.783,
+            "q2": 93.086,
+            "q3": 92.141,
+            "bestQualifyingTime": 92.141
+          },
           "gapToLeader": 4.433,
           "laps": 19,
           "sessionKey": 11240,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P3",
+          "startPositionRank": 3,
+          "qualifyingLapTime": 92.141
         },
         {
           "driverNumber": 12,
@@ -523,14 +1638,19 @@
           "dns": false,
           "dsq": false,
           "duration": 2024.686,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 93.455,
+            "q2": 92.291,
+            "q3": 91.809,
+            "bestQualifyingTime": 91.809
+          },
           "gapToLeader": 5.688,
           "laps": 19,
           "sessionKey": 11240,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P2",
+          "startPositionRank": 2,
+          "qualifyingLapTime": 91.809
         },
         {
           "driverNumber": 81,
@@ -541,14 +1661,19 @@
           "dns": false,
           "dsq": false,
           "duration": 2025.807,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 93.813,
+            "q2": 93.038,
+            "q3": 92.224,
+            "bestQualifyingTime": 92.224
+          },
           "gapToLeader": 6.809,
           "laps": 19,
           "sessionKey": 11240,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P5",
+          "startPositionRank": 5,
+          "qualifyingLapTime": 92.224
         },
         {
           "driverNumber": 30,
@@ -559,14 +1684,19 @@
           "dns": false,
           "dsq": false,
           "duration": 2029.898,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 94.11,
+            "q2": 93.714,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": 10.9,
           "laps": 19,
           "sessionKey": 11240,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P13",
+          "startPositionRank": 13,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 87,
@@ -577,14 +1707,19 @@
           "dns": false,
           "dsq": false,
           "duration": 2030.269,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 94.28,
+            "q2": 93.501,
+            "q3": 93.409,
+            "bestQualifyingTime": 93.409
+          },
           "gapToLeader": 11.271,
           "laps": 19,
           "sessionKey": 11240,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P9",
+          "startPositionRank": 9,
+          "qualifyingLapTime": 93.409
         },
         {
           "driverNumber": 3,
@@ -595,14 +1730,19 @@
           "dns": false,
           "dsq": false,
           "duration": 2030.617,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 94.17,
+            "q2": 93.564,
+            "q3": 93.254,
+            "bestQualifyingTime": 93.254
+          },
           "gapToLeader": 11.619,
           "laps": 19,
           "sessionKey": 11240,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P8",
+          "startPositionRank": 8,
+          "qualifyingLapTime": 93.254
         },
         {
           "driverNumber": 31,
@@ -613,14 +1753,19 @@
           "dns": false,
           "dsq": false,
           "duration": 2032.885,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 94.087,
+            "q2": 93.639,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": 13.887,
           "laps": 19,
           "sessionKey": 11240,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P12",
+          "startPositionRank": 12,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 10,
@@ -631,14 +1776,19 @@
           "dns": false,
           "dsq": false,
           "duration": 2033.778,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 93.97,
+            "q2": 93.405,
+            "q3": 92.888,
+            "bestQualifyingTime": 92.888
+          },
           "gapToLeader": 14.78,
           "laps": 19,
           "sessionKey": 11240,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P7",
+          "startPositionRank": 7,
+          "qualifyingLapTime": 92.888
         },
         {
           "driverNumber": 55,
@@ -649,14 +1799,19 @@
           "dns": false,
           "dsq": false,
           "duration": 2034.751,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 94.761,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": 15.753,
           "laps": 19,
           "sessionKey": 11240,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P17",
+          "startPositionRank": 17,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 5,
@@ -667,14 +1822,19 @@
           "dns": false,
           "dsq": false,
           "duration": 2034.856,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 94.291,
+            "q2": 93.774,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": 15.858,
           "laps": 19,
           "sessionKey": 11240,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P14",
+          "startPositionRank": 14,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 43,
@@ -685,14 +1845,19 @@
           "dns": false,
           "dsq": false,
           "duration": 2035.391,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 94.592,
+            "q2": 94.327,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": 16.393,
           "laps": 19,
           "sessionKey": 11240,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P16",
+          "startPositionRank": 16,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 6,
@@ -703,14 +1868,19 @@
           "dns": false,
           "dsq": false,
           "duration": 2035.428,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 94.447,
+            "q2": 93.62,
+            "q3": 93.723,
+            "bestQualifyingTime": 93.62
+          },
           "gapToLeader": 16.43,
           "laps": 19,
           "sessionKey": 11240,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P10",
+          "startPositionRank": 10,
+          "qualifyingLapTime": 93.62
         },
         {
           "driverNumber": 23,
@@ -721,14 +1891,19 @@
           "dns": false,
           "dsq": false,
           "duration": 2039.012,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 95.305,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": 20.014,
           "laps": 19,
           "sessionKey": 11240,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P18",
+          "startPositionRank": 18,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 14,
@@ -739,14 +1914,19 @@
           "dns": false,
           "dsq": false,
           "duration": 2040.597,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 95.581,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": 21.599,
           "laps": 19,
           "sessionKey": 11240,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P19",
+          "startPositionRank": 19,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 18,
@@ -757,14 +1937,19 @@
           "dns": false,
           "dsq": false,
           "duration": 2040.969,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 96.151,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": 21.971,
           "laps": 19,
           "sessionKey": 11240,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P20",
+          "startPositionRank": 20,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 11,
@@ -780,7 +1965,7 @@
           "laps": 19,
           "sessionKey": 11240,
           "meetingKey": 1280,
-          "startPosition": "-",
+          "startPosition": null,
           "startPositionRank": null,
           "qualifyingLapTime": null
         },
@@ -793,14 +1978,19 @@
           "dns": false,
           "dsq": false,
           "duration": null,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 93.997,
+            "q2": 93.635,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": null,
           "laps": 12,
           "sessionKey": 11240,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P11",
+          "startPositionRank": 11,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 41,
@@ -811,14 +2001,19 @@
           "dns": false,
           "dsq": false,
           "duration": null,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 94.495,
+            "q2": 94.048,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": null,
           "laps": 11,
           "sessionKey": 11240,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P15",
+          "startPositionRank": 15,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 77,
@@ -829,14 +2024,567 @@
           "dns": false,
           "dsq": false,
           "duration": null,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 97.378,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": null,
           "laps": 12,
           "sessionKey": 11240,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P21",
+          "startPositionRank": 21,
+          "qualifyingLapTime": 0
+        }
+      ]
+    },
+    {
+      "eventType": "qualifying",
+      "sessionKey": 11241,
+      "meetingKey": 1280,
+      "meetingName": "Chinese Grand Prix",
+      "raceName": "Chinese Grand Prix",
+      "sessionName": "Qualifying",
+      "officialName": "Qualifying",
+      "round": 2,
+      "dateStartUtc": "2026-03-14T07:00:00+00:00",
+      "dateEndUtc": "2026-03-14T08:00:00+00:00",
+      "date": "2026-03-14",
+      "circuit": "Shanghai",
+      "location": {
+        "locality": "Shanghai",
+        "country": "China"
+      },
+      "drivers": [
+        {
+          "driverNumber": 12,
+          "position": "P1",
+          "positionRank": 1,
+          "classifiedPosition": 1,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.305,
+            "q2": 92.443,
+            "q3": 92.064,
+            "bestQualifyingTime": 92.064
+          },
+          "gapToLeader": [
+            0.13,
+            0,
+            0
+          ],
+          "laps": 15,
+          "sessionKey": 11241,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 63,
+          "position": "P2",
+          "positionRank": 2,
+          "classifiedPosition": 2,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.262,
+            "q2": 92.523,
+            "q3": 92.286,
+            "bestQualifyingTime": 92.286
+          },
+          "gapToLeader": [
+            0.087,
+            0.08,
+            0.222
+          ],
+          "laps": 13,
+          "sessionKey": 11241,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 44,
+          "position": "P3",
+          "positionRank": 3,
+          "classifiedPosition": 3,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.522,
+            "q2": 92.567,
+            "q3": 92.415,
+            "bestQualifyingTime": 92.415
+          },
+          "gapToLeader": [
+            0.347,
+            0.124,
+            0.351
+          ],
+          "laps": 19,
+          "sessionKey": 11241,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 16,
+          "position": "P4",
+          "positionRank": 4,
+          "classifiedPosition": 4,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.175,
+            "q2": 92.486,
+            "q3": 92.428,
+            "bestQualifyingTime": 92.428
+          },
+          "gapToLeader": [
+            0,
+            0.043,
+            0.364
+          ],
+          "laps": 20,
+          "sessionKey": 11241,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 81,
+          "position": "P5",
+          "positionRank": 5,
+          "classifiedPosition": 5,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.59,
+            "q2": 93.13,
+            "q3": 92.55,
+            "bestQualifyingTime": 92.55
+          },
+          "gapToLeader": [
+            0.415,
+            0.687,
+            0.486
+          ],
+          "laps": 20,
+          "sessionKey": 11241,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 1,
+          "position": "P6",
+          "positionRank": 6,
+          "classifiedPosition": 6,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.535,
+            "q2": 92.91,
+            "q3": 92.608,
+            "bestQualifyingTime": 92.608
+          },
+          "gapToLeader": [
+            0.36,
+            0.467,
+            0.544
+          ],
+          "laps": 20,
+          "sessionKey": 11241,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 10,
+          "position": "P7",
+          "positionRank": 7,
+          "classifiedPosition": 7,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.788,
+            "q2": 93.003,
+            "q3": 92.873,
+            "bestQualifyingTime": 92.873
+          },
+          "gapToLeader": [
+            0.613,
+            0.56,
+            0.809
+          ],
+          "laps": 21,
+          "sessionKey": 11241,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 3,
+          "position": "P8",
+          "positionRank": 8,
+          "classifiedPosition": 8,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.417,
+            "q2": 93.098,
+            "q3": 93.002,
+            "bestQualifyingTime": 93.002
+          },
+          "gapToLeader": [
+            0.242,
+            0.655,
+            0.938
+          ],
+          "laps": 20,
+          "sessionKey": 11241,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 6,
+          "position": "P9",
+          "positionRank": 9,
+          "classifiedPosition": 9,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.632,
+            "q2": 93.352,
+            "q3": 93.121,
+            "bestQualifyingTime": 93.121
+          },
+          "gapToLeader": [
+            0.457,
+            0.909,
+            1.057
+          ],
+          "laps": 20,
+          "sessionKey": 11241,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 87,
+          "position": "P10",
+          "positionRank": 10,
+          "classifiedPosition": 10,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.687,
+            "q2": 93.197,
+            "q3": 93.292,
+            "bestQualifyingTime": 93.197
+          },
+          "gapToLeader": [
+            0.512,
+            0.754,
+            1.228
+          ],
+          "laps": 19,
+          "sessionKey": 11241,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 27,
+          "position": "P11",
+          "positionRank": 11,
+          "classifiedPosition": 11,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 94.116,
+            "q2": 93.354,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            0.941,
+            0.911,
+            null
+          ],
+          "laps": 12,
+          "sessionKey": 11241,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 43,
+          "position": "P12",
+          "positionRank": 12,
+          "classifiedPosition": 12,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.634,
+            "q2": 93.357,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            0.459,
+            0.914,
+            null
+          ],
+          "laps": 15,
+          "sessionKey": 11241,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 31,
+          "position": "P13",
+          "positionRank": 13,
+          "classifiedPosition": 13,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.974,
+            "q2": 93.538,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            0.799,
+            1.095,
+            null
+          ],
+          "laps": 14,
+          "sessionKey": 11241,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 30,
+          "position": "P14",
+          "positionRank": 14,
+          "classifiedPosition": 14,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 94.139,
+            "q2": 93.765,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            0.964,
+            1.322,
+            null
+          ],
+          "laps": 15,
+          "sessionKey": 11241,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 41,
+          "position": "P15",
+          "positionRank": 15,
+          "classifiedPosition": 15,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.906,
+            "q2": 93.784,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            0.731,
+            1.341,
+            null
+          ],
+          "laps": 15,
+          "sessionKey": 11241,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 5,
+          "position": "P16",
+          "positionRank": 16,
+          "classifiedPosition": 16,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.549,
+            "q2": 93.965,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            0.374,
+            1.522,
+            null
+          ],
+          "laps": 14,
+          "sessionKey": 11241,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 55,
+          "position": "P17",
+          "positionRank": 17,
+          "classifiedPosition": 17,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 94.317,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            1.142,
+            null,
+            null
+          ],
+          "laps": 10,
+          "sessionKey": 11241,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 23,
+          "position": "P18",
+          "positionRank": 18,
+          "classifiedPosition": 18,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 94.772,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            1.597,
+            null,
+            null
+          ],
+          "laps": 10,
+          "sessionKey": 11241,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 14,
+          "position": "P19",
+          "positionRank": 19,
+          "classifiedPosition": 19,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 95.203,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            2.028,
+            null,
+            null
+          ],
+          "laps": 9,
+          "sessionKey": 11241,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 77,
+          "position": "P20",
+          "positionRank": 20,
+          "classifiedPosition": 20,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 95.436,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            2.261,
+            null,
+            null
+          ],
+          "laps": 9,
+          "sessionKey": 11241,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 18,
+          "position": "P21",
+          "positionRank": 21,
+          "classifiedPosition": 21,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 95.995,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            2.82,
+            null,
+            null
+          ],
+          "laps": 9,
+          "sessionKey": 11241,
+          "meetingKey": 1280
+        },
+        {
+          "driverNumber": 11,
+          "position": "P22",
+          "positionRank": 22,
+          "classifiedPosition": 22,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 96.906,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            3.731,
+            null,
+            null
+          ],
+          "laps": 6,
+          "sessionKey": 11241,
+          "meetingKey": 1280
         }
       ]
     },
@@ -867,14 +2615,19 @@
           "dns": false,
           "dsq": false,
           "duration": 5595.607,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 93.305,
+            "q2": 92.443,
+            "q3": 92.064,
+            "bestQualifyingTime": 92.064
+          },
           "gapToLeader": 0,
           "laps": 56,
           "sessionKey": 11245,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P1",
+          "startPositionRank": 1,
+          "qualifyingLapTime": 92.064
         },
         {
           "driverNumber": 63,
@@ -885,14 +2638,19 @@
           "dns": false,
           "dsq": false,
           "duration": 5601.122,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 93.262,
+            "q2": 92.523,
+            "q3": 92.286,
+            "bestQualifyingTime": 92.286
+          },
           "gapToLeader": 5.515,
           "laps": 56,
           "sessionKey": 11245,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P2",
+          "startPositionRank": 2,
+          "qualifyingLapTime": 92.286
         },
         {
           "driverNumber": 44,
@@ -903,14 +2661,19 @@
           "dns": false,
           "dsq": false,
           "duration": 5620.874,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 93.522,
+            "q2": 92.567,
+            "q3": 92.415,
+            "bestQualifyingTime": 92.415
+          },
           "gapToLeader": 25.267,
           "laps": 56,
           "sessionKey": 11245,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P3",
+          "startPositionRank": 3,
+          "qualifyingLapTime": 92.415
         },
         {
           "driverNumber": 16,
@@ -921,14 +2684,19 @@
           "dns": false,
           "dsq": false,
           "duration": 5624.501,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 93.175,
+            "q2": 92.486,
+            "q3": 92.428,
+            "bestQualifyingTime": 92.428
+          },
           "gapToLeader": 28.894,
           "laps": 56,
           "sessionKey": 11245,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P4",
+          "startPositionRank": 4,
+          "qualifyingLapTime": 92.428
         },
         {
           "driverNumber": 87,
@@ -939,14 +2707,19 @@
           "dns": false,
           "dsq": false,
           "duration": 5652.875,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 93.687,
+            "q2": 93.197,
+            "q3": 93.292,
+            "bestQualifyingTime": 93.197
+          },
           "gapToLeader": 57.268,
           "laps": 56,
           "sessionKey": 11245,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P10",
+          "startPositionRank": 10,
+          "qualifyingLapTime": 93.197
         },
         {
           "driverNumber": 10,
@@ -957,14 +2730,19 @@
           "dns": false,
           "dsq": false,
           "duration": 5655.254,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 93.788,
+            "q2": 93.003,
+            "q3": 92.873,
+            "bestQualifyingTime": 92.873
+          },
           "gapToLeader": 59.647,
           "laps": 56,
           "sessionKey": 11245,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P7",
+          "startPositionRank": 7,
+          "qualifyingLapTime": 92.873
         },
         {
           "driverNumber": 30,
@@ -975,14 +2753,19 @@
           "dns": false,
           "dsq": false,
           "duration": 5676.195,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 94.139,
+            "q2": 93.765,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": 80.588,
           "laps": 56,
           "sessionKey": 11245,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P14",
+          "startPositionRank": 14,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 6,
@@ -993,14 +2776,19 @@
           "dns": false,
           "dsq": false,
           "duration": 5682.854,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 93.632,
+            "q2": 93.352,
+            "q3": 93.121,
+            "bestQualifyingTime": 93.121
+          },
           "gapToLeader": 87.247,
           "laps": 56,
           "sessionKey": 11245,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P9",
+          "startPositionRank": 9,
+          "qualifyingLapTime": 93.121
         },
         {
           "driverNumber": 55,
@@ -1011,14 +2799,19 @@
           "dns": false,
           "dsq": false,
           "duration": null,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 94.317,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": "+1 LAP",
           "laps": 55,
           "sessionKey": 11245,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P17",
+          "startPositionRank": 17,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 43,
@@ -1029,14 +2822,19 @@
           "dns": false,
           "dsq": false,
           "duration": null,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 93.634,
+            "q2": 93.357,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": "+1 LAP",
           "laps": 55,
           "sessionKey": 11245,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P12",
+          "startPositionRank": 12,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 27,
@@ -1047,14 +2845,19 @@
           "dns": false,
           "dsq": false,
           "duration": null,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 94.116,
+            "q2": 93.354,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": "+1 LAP",
           "laps": 55,
           "sessionKey": 11245,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P11",
+          "startPositionRank": 11,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 41,
@@ -1065,14 +2868,19 @@
           "dns": false,
           "dsq": false,
           "duration": null,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 93.906,
+            "q2": 93.784,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": "+1 LAP",
           "laps": 55,
           "sessionKey": 11245,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P15",
+          "startPositionRank": 15,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 77,
@@ -1083,14 +2891,19 @@
           "dns": false,
           "dsq": false,
           "duration": null,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 95.436,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": "+1 LAP",
           "laps": 55,
           "sessionKey": 11245,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P20",
+          "startPositionRank": 20,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 31,
@@ -1101,14 +2914,19 @@
           "dns": false,
           "dsq": false,
           "duration": null,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 93.974,
+            "q2": 93.538,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": "+1 LAP",
           "laps": 55,
           "sessionKey": 11245,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P13",
+          "startPositionRank": 13,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 11,
@@ -1119,14 +2937,19 @@
           "dns": false,
           "dsq": false,
           "duration": null,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 96.906,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": "+1 LAP",
           "laps": 55,
           "sessionKey": 11245,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P22",
+          "startPositionRank": 22,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 1,
@@ -1137,14 +2960,19 @@
           "dns": true,
           "dsq": false,
           "duration": null,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 93.535,
+            "q2": 92.91,
+            "q3": 92.608,
+            "bestQualifyingTime": 92.608
+          },
           "gapToLeader": null,
           "laps": 0,
           "sessionKey": 11245,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P6",
+          "startPositionRank": 6,
+          "qualifyingLapTime": 92.608
         },
         {
           "driverNumber": 3,
@@ -1155,14 +2983,19 @@
           "dns": false,
           "dsq": false,
           "duration": null,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 93.417,
+            "q2": 93.098,
+            "q3": 93.002,
+            "bestQualifyingTime": 93.002
+          },
           "gapToLeader": null,
           "laps": 45,
           "sessionKey": 11245,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P8",
+          "startPositionRank": 8,
+          "qualifyingLapTime": 93.002
         },
         {
           "driverNumber": 5,
@@ -1173,14 +3006,19 @@
           "dns": true,
           "dsq": false,
           "duration": null,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 93.549,
+            "q2": 93.965,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": null,
           "laps": 0,
           "sessionKey": 11245,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P16",
+          "startPositionRank": 16,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 14,
@@ -1191,14 +3029,19 @@
           "dns": false,
           "dsq": false,
           "duration": null,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 95.203,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": null,
           "laps": 32,
           "sessionKey": 11245,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P19",
+          "startPositionRank": 19,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 18,
@@ -1209,14 +3052,19 @@
           "dns": false,
           "dsq": false,
           "duration": null,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 95.995,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": null,
           "laps": 9,
           "sessionKey": 11245,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P21",
+          "startPositionRank": 21,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 23,
@@ -1227,14 +3075,19 @@
           "dns": true,
           "dsq": false,
           "duration": null,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 94.772,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
           "gapToLeader": null,
           "laps": 0,
           "sessionKey": 11245,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P18",
+          "startPositionRank": 18,
+          "qualifyingLapTime": 0
         },
         {
           "driverNumber": 81,
@@ -1245,14 +3098,19 @@
           "dns": true,
           "dsq": false,
           "duration": null,
-          "qualifyingTimes": null,
+          "qualifyingTimes": {
+            "q1": 93.59,
+            "q2": 93.13,
+            "q3": 92.55,
+            "bestQualifyingTime": 92.55
+          },
           "gapToLeader": null,
           "laps": 0,
           "sessionKey": 11245,
           "meetingKey": 1280,
-          "startPosition": "-",
-          "startPositionRank": null,
-          "qualifyingLapTime": null
+          "startPosition": "P5",
+          "startPositionRank": 5,
+          "qualifyingLapTime": 92.55
         }
       ]
     }
@@ -1260,20 +3118,20 @@
   "bestByDriverNumber": {
     "1": {
       "driverNumber": 1,
-      "position": "P4",
-      "eventType": "sprint",
+      "position": "P3",
+      "eventType": "sprint_shootout",
       "meetingName": "Chinese Grand Prix",
-      "raceName": "Chinese Grand Prix Sprint",
-      "sessionName": "Sprint",
+      "raceName": "Chinese Grand Prix",
+      "sessionName": "Sprint Qualifying",
       "round": 2,
-      "date": "2026-03-14",
-      "dateStartUtc": "2026-03-14T03:00:00+00:00",
+      "date": "2026-03-13",
+      "dateStartUtc": "2026-03-13T07:30:00+00:00",
       "circuit": "Shanghai",
       "location": {
         "locality": "Shanghai",
         "country": "China"
       },
-      "sessionKey": 11240,
+      "sessionKey": 11236,
       "meetingKey": 1280
     },
     "3": {
@@ -1314,21 +3172,21 @@
     },
     "6": {
       "driverNumber": 6,
-      "position": "P8",
-      "eventType": "race",
-      "meetingName": "Chinese Grand Prix",
-      "raceName": "Chinese Grand Prix",
-      "sessionName": "Race",
-      "round": 2,
-      "date": "2026-03-15",
-      "dateStartUtc": "2026-03-15T07:00:00+00:00",
-      "circuit": "Shanghai",
+      "position": "P3",
+      "eventType": "qualifying",
+      "meetingName": "Australian Grand Prix",
+      "raceName": "Australian Grand Prix",
+      "sessionName": "Qualifying",
+      "round": 1,
+      "date": "2026-03-07",
+      "dateStartUtc": "2026-03-07T05:00:00+00:00",
+      "circuit": "Melbourne",
       "location": {
-        "locality": "Shanghai",
-        "country": "China"
+        "locality": "Melbourne",
+        "country": "Australia"
       },
-      "sessionKey": 11245,
-      "meetingKey": 1280
+      "sessionKey": 11230,
+      "meetingKey": 1279
     },
     "10": {
       "driverNumber": 10,
@@ -1369,38 +3227,38 @@
     "12": {
       "driverNumber": 12,
       "position": "P1",
-      "eventType": "race",
+      "eventType": "qualifying",
       "meetingName": "Chinese Grand Prix",
       "raceName": "Chinese Grand Prix",
-      "sessionName": "Race",
+      "sessionName": "Qualifying",
       "round": 2,
-      "date": "2026-03-15",
-      "dateStartUtc": "2026-03-15T07:00:00+00:00",
+      "date": "2026-03-14",
+      "dateStartUtc": "2026-03-14T07:00:00+00:00",
       "circuit": "Shanghai",
       "location": {
         "locality": "Shanghai",
         "country": "China"
       },
-      "sessionKey": 11245,
+      "sessionKey": 11241,
       "meetingKey": 1280
     },
     "14": {
       "driverNumber": 14,
       "position": "P17",
-      "eventType": "sprint",
-      "meetingName": "Chinese Grand Prix",
-      "raceName": "Chinese Grand Prix Sprint",
-      "sessionName": "Sprint",
-      "round": 2,
-      "date": "2026-03-14",
-      "dateStartUtc": "2026-03-14T03:00:00+00:00",
-      "circuit": "Shanghai",
+      "eventType": "qualifying",
+      "meetingName": "Australian Grand Prix",
+      "raceName": "Australian Grand Prix",
+      "sessionName": "Qualifying",
+      "round": 1,
+      "date": "2026-03-07",
+      "dateStartUtc": "2026-03-07T05:00:00+00:00",
+      "circuit": "Melbourne",
       "location": {
-        "locality": "Shanghai",
-        "country": "China"
+        "locality": "Melbourne",
+        "country": "Australia"
       },
-      "sessionKey": 11240,
-      "meetingKey": 1280
+      "sessionKey": 11230,
+      "meetingKey": 1279
     },
     "16": {
       "driverNumber": 16,
@@ -1459,20 +3317,20 @@
     "27": {
       "driverNumber": 27,
       "position": "P11",
-      "eventType": "race",
-      "meetingName": "Chinese Grand Prix",
-      "raceName": "Chinese Grand Prix",
-      "sessionName": "Race",
-      "round": 2,
-      "date": "2026-03-15",
-      "dateStartUtc": "2026-03-15T07:00:00+00:00",
-      "circuit": "Shanghai",
+      "eventType": "qualifying",
+      "meetingName": "Australian Grand Prix",
+      "raceName": "Australian Grand Prix",
+      "sessionName": "Qualifying",
+      "round": 1,
+      "date": "2026-03-07",
+      "dateStartUtc": "2026-03-07T05:00:00+00:00",
+      "circuit": "Melbourne",
       "location": {
-        "locality": "Shanghai",
-        "country": "China"
+        "locality": "Melbourne",
+        "country": "Australia"
       },
-      "sessionKey": 11245,
-      "meetingKey": 1280
+      "sessionKey": 11230,
+      "meetingKey": 1279
     },
     "30": {
       "driverNumber": 30,
@@ -1585,19 +3443,19 @@
     "63": {
       "driverNumber": 63,
       "position": "P1",
-      "eventType": "race",
+      "eventType": "qualifying",
       "meetingName": "Australian Grand Prix",
       "raceName": "Australian Grand Prix",
-      "sessionName": "Race",
+      "sessionName": "Qualifying",
       "round": 1,
-      "date": "2026-03-08",
-      "dateStartUtc": "2026-03-08T04:00:00+00:00",
+      "date": "2026-03-07",
+      "dateStartUtc": "2026-03-07T05:00:00+00:00",
       "circuit": "Melbourne",
       "location": {
         "locality": "Melbourne",
         "country": "Australia"
       },
-      "sessionKey": 11234,
+      "sessionKey": 11230,
       "meetingKey": 1279
     },
     "77": {
@@ -1620,21 +3478,21 @@
     },
     "81": {
       "driverNumber": 81,
-      "position": "P6",
-      "eventType": "sprint",
-      "meetingName": "Chinese Grand Prix",
-      "raceName": "Chinese Grand Prix Sprint",
-      "sessionName": "Sprint",
-      "round": 2,
-      "date": "2026-03-14",
-      "dateStartUtc": "2026-03-14T03:00:00+00:00",
-      "circuit": "Shanghai",
+      "position": "P5",
+      "eventType": "qualifying",
+      "meetingName": "Australian Grand Prix",
+      "raceName": "Australian Grand Prix",
+      "sessionName": "Qualifying",
+      "round": 1,
+      "date": "2026-03-07",
+      "dateStartUtc": "2026-03-07T05:00:00+00:00",
+      "circuit": "Melbourne",
       "location": {
-        "locality": "Shanghai",
-        "country": "China"
+        "locality": "Melbourne",
+        "country": "Australia"
       },
-      "sessionKey": 11240,
-      "meetingKey": 1280
+      "sessionKey": 11230,
+      "meetingKey": 1279
     },
     "87": {
       "driverNumber": 87,
