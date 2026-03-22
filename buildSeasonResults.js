@@ -158,19 +158,31 @@ async function getCompletedTargetSessions(year) {
     );
   }
 
-  return results
+  const merged = results
     .flatMap((r) => (Array.isArray(r) ? r : []))
     .filter((s) => {
       const name = cleanText(s?.session_name);
       const isTarget = targetSessionNames.includes(name);
       const endMs = new Date(s?.date_end || s?.date_start || 0).getTime();
       return isTarget && Number.isFinite(endMs) && endMs > 0 && endMs <= Date.now();
-    })
-    .sort((a, b) => {
-      const da = new Date(a?.date_start || 0).getTime();
-      const db = new Date(b?.date_start || 0).getTime();
-      return da - db;
     });
+
+  const dedupedBySessionKey = new Map();
+
+  for (const session of merged) {
+    const sessionKey = Number(session?.session_key);
+    if (!Number.isFinite(sessionKey)) continue;
+
+    if (!dedupedBySessionKey.has(sessionKey)) {
+      dedupedBySessionKey.set(sessionKey, session);
+    }
+  }
+
+  return Array.from(dedupedBySessionKey.values()).sort((a, b) => {
+    const da = new Date(a?.date_start || 0).getTime();
+    const db = new Date(b?.date_start || 0).getTime();
+    return da - db;
+  });
 }
 
 async function getSessionResults(session) {
