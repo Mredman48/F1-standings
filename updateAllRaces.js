@@ -17,7 +17,6 @@ const MAPS_DIR = "maps";
 
 const UA = "f1-standings-bot/1.0 (GitHub Actions)";
 
-
 /* -------------------- omit canceled races -------------------- */
 
 const OMIT_RACE_KEYS = new Set([
@@ -35,7 +34,7 @@ const FORMULA1_SLUG_BY_KEY = {
   "saudi-arabia": "saudi-arabia",
   miami: "miami",
   monaco: "monaco",
-  spain: "barcelona-catalunya",
+  barcelona: "barcelona-catalunya",
   canada: "canada",
   austria: "austria",
   "great-britain": "great-britain",
@@ -56,17 +55,22 @@ const FORMULA1_SLUG_BY_KEY = {
 };
 
 const PAGE_TITLE_OVERRIDE_BY_KEY = {
-  spain: "FORMULA 1 MSC CRUISES GRAN PREMIO DE BARCELONA-CATALUNYA 2026",
+  barcelona: "FORMULA 1 MSC CRUISES GRAN PREMIO DE BARCELONA-CATALUNYA 2026",
   italy: "FORMULA 1 PIRELLI GRAN PREMIO D’ITALIA 2026",
   "sao-paulo": "FORMULA 1 MSC CRUISES GRANDE PRÊMIO DE SÃO PAULO 2026",
   canada: "FORMULA 1 LENOVO GRAND PRIX DU CANADA 2026",
+  "abu-dhabi": "FORMULA 1 ETIHAD AIRWAYS ABU DHABI GRAND PRIX 2026",
 };
 
-const TRACK_IMAGE_FILENAME_OVERRIDE_BY_KEY = {
-  spain: "2026trackcatalunyadetailed.png",
-  italy: "2026trackmonzadetailed.png",
-  "sao-paulo": "2026trackinterlagosdetailed.png",
-  canada: "2026trackmontrealdetailed.png",
+const TRACK_IMAGE_URL_OVERRIDE_BY_KEY = {
+  barcelona:
+    "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackcatalunyadetailed.webp",
+  italy:
+    "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmonzadetailed.webp",
+  "sao-paulo":
+    "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackinterlagosdetailed.webp",
+  "abu-dhabi":
+    "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackyasmarinadetailed.webp",
 };
 
 const LOCATION_BY_KEY = {
@@ -77,7 +81,7 @@ const LOCATION_BY_KEY = {
   "saudi-arabia": { city: "Jeddah", country: "Saudi Arabia", iso2: "sa" },
   miami: { city: "Miami", country: "United States", iso2: "us" },
   monaco: { city: "Monaco", country: "Monaco", iso2: "mc" },
-  spain: { city: "Barcelona", country: "Spain", iso2: "es" },
+  barcelona: { city: "Barcelona", country: "Spain", iso2: "es" },
   canada: { city: "Montreal", country: "Canada", iso2: "ca" },
   austria: { city: "Spielberg", country: "Austria", iso2: "at" },
   "great-britain": { city: "Silverstone", country: "United Kingdom", iso2: "gb" },
@@ -105,7 +109,7 @@ const MAP_FILE_BY_KEY = {
   "saudi-arabia": "jeddah.png",
   miami: "miami.png",
   monaco: "monaco.png",
-  spain: "barcelona.png",
+  barcelona: "barcelona.png",
   canada: "montreal.png",
   austria: "spielberg.png",
   "great-britain": "silverstone.png",
@@ -313,7 +317,6 @@ function canonicalRaceKey(gpName, location = "", summary = "") {
   ) return "monaco";
 
   if (
-    gp.includes("spanish") ||
     gp.includes("barcelonacatalunya") ||
     gp.includes("catalunya") ||
     gp.includes("catalunyagp") ||
@@ -321,7 +324,13 @@ function canonicalRaceKey(gpName, location = "", summary = "") {
     loc.includes("barcelona") ||
     loc.includes("catalunya") ||
     combined.includes("barcelonacatalunya")
-  ) return "spain";
+  ) return "barcelona";
+
+  if (
+    gp.includes("spanish") ||
+    gp.includes("espana") ||
+    gp.includes("españa")
+  ) return "madrid";
 
   if (
     gp.includes("canadian") ||
@@ -512,15 +521,6 @@ function computeWindowFromSessions(sessions) {
 
 /* -------------------- track map + page details -------------------- */
 
-const TRACK_IMAGE_URL_OVERRIDE_BY_KEY = {
-  spain:
-    "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackcatalunyadetailed.webp",
-  italy:
-    "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmonzadetailed.webp",
-  "sao-paulo":
-    "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackinterlagosdetailed.webp",
-};
-
 function extractDetailedTrackMediaUrl(html, season, raceKey) {
   const explicitUrl = TRACK_IMAGE_URL_OVERRIDE_BY_KEY[raceKey];
   if (explicitUrl) {
@@ -669,24 +669,23 @@ async function updateAllRaces() {
       const end = ev.end instanceof Date ? ev.end : new Date(ev.end);
       if (isNaN(start) || isNaN(end)) return null;
 
-const gpName = getGpName(summary);
-const location = String(ev.location || "").trim();
-const raceKey = canonicalRaceKey(gpName, location, summary);
+      const gpName = getGpName(summary);
+      const location = String(ev.location || "").trim();
+      const raceKey = canonicalRaceKey(gpName, location, summary);
 
-// ✅ DEBUG HERE
-console.log(
-  `KEY DEBUG: gp="${gpName}" | loc="${location}" | summary="${summary}" -> key="${raceKey}"`
-);
+      console.log(
+        `KEY DEBUG: gp="${gpName}" | loc="${location}" | summary="${summary}" -> key="${raceKey}"`
+      );
 
-return {
-  raceKey,
-  gpName,
-  sessionType,
-  start,
-  end,
-  location,
-  summary,
-};
+      return {
+        raceKey,
+        gpName,
+        sessionType,
+        start,
+        end,
+        location,
+        summary,
+      };
     })
     .filter(Boolean)
     .sort((a, b) => a.start - b.start);
@@ -754,9 +753,7 @@ return {
       iso2: null,
     };
 
-    const fallbackTitle =
-      titleCaseWords(race.gpName) ||
-      race.gpName;
+    const fallbackTitle = race.gpName || titleCaseWords(race.gpName);
 
     const pageDetails = await fetchRacePageDetails({
       raceKey: race.raceKey,
