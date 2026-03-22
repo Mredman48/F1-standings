@@ -531,9 +531,16 @@ async function buildSeasonResults() {
     await sleep(450);
   }
 
-  const qualifyingLookup = buildGridLookupFromQualifyingEvents(allEvents);
-  const events = enrichRaceAndSprintEvents(allEvents, qualifyingLookup);
-  const bestByDriverNumber = buildBestByDriver(events);
+const qualifyingLookup = buildGridLookupFromQualifyingEvents(allEvents);
+
+const enrichedEvents = enrichRaceAndSprintEvents(allEvents, qualifyingLookup);
+
+const events = enrichedEvents.filter((event) => {
+  const type = String(event?.eventType || "").toLowerCase();
+  return type === "race" || type === "sprint";
+});
+
+const bestByDriverNumber = buildBestByDriver(events);
 
   const out = {
     header: `${YEAR} F1 race and sprint results`,
@@ -543,7 +550,8 @@ async function buildSeasonResults() {
       primary: "OpenF1 meetings + sessions + session_result",
       enrichment: "Jolpica season schedule",
       note:
-        "Qualifying and sprint shootout sessions include Q1/Q2/Q3 times when available. Race and sprint events are enriched with starting positions and qualifying lap times from qualifying and sprint shootout results.",
+note:
+  "Only race and sprint events are written to output. They are enriched with starting positions and qualifying times from qualifying and sprint shootout session results when available.",
     },
     events,
     bestByDriverNumber,
