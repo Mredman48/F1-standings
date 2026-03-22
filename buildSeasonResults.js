@@ -191,24 +191,6 @@ async function getSessionResults(session) {
   return rows || [];
 }
 
-async function getStartingGrid(session) {
-  const sessionKey = Number(session?.session_key);
-  if (!Number.isFinite(sessionKey)) return [];
-
-  const rows = await fetchJson(
-    `${OPENF1_BASE}/starting_grid?session_key=${sessionKey}`,
-    { allow401: true, allow404: true, retries: 5 }
-  );
-
-  if (rows?.__authLocked) {
-    throw new Error(
-      `OpenF1 became auth-locked while reading starting_grid for session_key=${sessionKey}`
-    );
-  }
-
-  return rows || [];
-}
-
 async function getMeetingsByKey(year) {
   try {
     const meetings = await fetchJson(`${OPENF1_BASE}/meetings?year=${year}`, {
@@ -306,13 +288,13 @@ function buildQualifyingTimes(durationValue) {
     const q1 = normalizeMaybeNumber(durationValue[0]);
     const q2 = normalizeMaybeNumber(durationValue[1]);
     const q3 = normalizeMaybeNumber(durationValue[2]);
+    const valid = [q1, q2, q3].filter((v) => Number.isFinite(v));
 
-    const best = [q1, q2, q3].filter((v) => Number.isFinite(v));
     return {
       q1,
       q2,
       q3,
-      bestQualifyingTime: best.length ? Math.min(...best) : null,
+      bestQualifyingTime: valid.length ? Math.min(...valid) : null,
     };
   }
 
@@ -389,7 +371,7 @@ function buildSessionObject(session, rows, meetingMeta, scheduleMeta) {
       const ar = a.positionRank;
       const br = b.positionRank;
       const aOk = Number.isFinite(ar) && ar !== Infinity;
-      const bOk = Number.isFinite(br) && br !== Infinity;
+      const bOk = Number.isFinite(br) && b !== Infinity;
       if (aOk && bOk) return ar - br;
       if (aOk) return -1;
       if (bOk) return 1;
@@ -417,7 +399,7 @@ function buildSessionObject(session, rows, meetingMeta, scheduleMeta) {
   };
 }
 
-function buildStartPositionLookup(events) {
+function buildGridLookupFromQualifyingEvents(events) {
   const lookup = new Map();
 
   for (const event of events) {
@@ -425,10 +407,8 @@ function buildStartPositionLookup(events) {
     if (!Number.isFinite(meetingKey)) continue;
 
     const type = String(event?.eventType || "").toLowerCase();
-
     if (type !== "qualifying" && type !== "sprint_shootout") continue;
 
-    const eventLookupKey = `${meetingKey}:${type}`;
     const byDriver = new Map();
 
     for (const driver of event.drivers || []) {
@@ -437,80 +417,55 @@ function buildStartPositionLookup(events) {
 
       byDriver.set(driverNumber, {
         startPosition: driver.position,
-        startPositionRank: Number.isFinite(driver.positionRank)
-          ? driver.positionRank
-          : null,
+        startPositionRank:
+          Number.isFinite(driver.positionRank) && driver.positionRank !== Infinity
+            ? driver.positionRank
+            : null,
         qualifyingLapTime: driver.qualifyingTimes?.bestQualifyingTime ?? null,
         qualifyingTimes: driver.qualifyingTimes ?? null,
       });
     }
 
-    lookup.set(eventLookupKey, byDriver);
+    lookup.set(`${meetingKey}:${type}`, byDriver);
   }
 
   return lookup;
 }
 
-function buildStartingGridLookup(startingGridRows) {
-  const byDriver = new Map();
+function enrichRaceAndSprintEvents(events, qualifyingLookup) {
+  return events.map((event) => {
+    const type = String(event?.eventType || "").toLowerCase();
+    if (type !== "race" && type !== "sprint") {
+      return event;
+    }
 
-  for (const row of startingGridRows || []) {
-    const driverNumber = Number(row?.driver_number);
-    if (!Number.isFinite(driverNumber)) continue;
+    const meetingKey = Number(event?.meetingKey);
 
-    byDriver.set(driverNumber, {
-      startPosition: Number.isFinite(Number(row?.position)) ? `P${Number(row.position)}` : "-",
-      startPositionRank: Number.isFinite(Number(row?.position)) ? Number(row.position) : null,
-      qualifyingLapTime: normalizeMaybeNumber(row?.lap_duration),
-    });
-  }
+    let grid = null;
+    if (type === "race") {
+      grid = qualifyingLookup.get(`${meetingKey}:qualifying`) || null;
+    } else if (type === "sprint") {
+      grid =
+        qualifyingLookup.get(`${meetingKey}:sprint_shootout`) ||
+        qualifyingLookup.get(`${meetingKey}:qualifying`) ||
+        null;
+    }
 
-  return byDriver;
-}
+    return {
+      ...event,
+      drivers: (event.drivers || []).map((driver) => {
+        const gridInfo = grid?.get(Number(driver.driverNumber)) || null;
 
-function applyStartPositionsToEvents(events, startPositionLookup, startingGridBySessionKey) {
-  return events
-    .filter((event) => {
-      const type = String(event?.eventType || "").toLowerCase();
-      return type === "race" || type === "sprint";
-    })
-    .map((event) => {
-      const meetingKey = Number(event?.meetingKey);
-      const type = String(event?.eventType || "").toLowerCase();
-      const gridLookup = startingGridBySessionKey.get(Number(event.sessionKey)) || null;
-
-      let startGrid = null;
-
-      if (type === "race") {
-        startGrid =
-          gridLookup ||
-          startPositionLookup.get(`${meetingKey}:qualifying`) ||
-          null;
-      }
-
-      if (type === "sprint") {
-        startGrid =
-          gridLookup ||
-          startPositionLookup.get(`${meetingKey}:sprint_shootout`) ||
-          startPositionLookup.get(`${meetingKey}:qualifying`) ||
-          null;
-      }
-
-      return {
-        ...event,
-        drivers: (event.drivers || []).map((driver) => {
-          const startInfo = startGrid?.get(Number(driver.driverNumber)) || null;
-
-          return {
-            ...driver,
-            startPosition: startInfo?.startPosition ?? "-",
-            startPositionRank: startInfo?.startPositionRank ?? null,
-            qualifyingLapTime: startInfo?.qualifyingLapTime ?? null,
-            qualifyingTimes: startInfo?.qualifyingTimes ?? null,
-          };
-        }),
-      };
-    });
+        return {
+          ...driver,
+          startPosition: gridInfo?.startPosition ?? null,
+          startPositionRank: gridInfo?.startPositionRank ?? null,
+          qualifyingLapTime: gridInfo?.qualifyingLapTime ?? null,
+          qualifyingTimes: gridInfo?.qualifyingTimes ?? null,
+        };
+      }),
+    };
+  });
 }
 
 function buildBestByDriver(events) {
@@ -559,27 +514,15 @@ async function buildSeasonResults() {
   );
 
   const allEvents = [];
-  const startingGridBySessionKey = new Map();
 
   for (const session of sessions) {
-    const [rows, startingGridRows] = await Promise.all([
-      getSessionResults(session),
-      getStartingGrid(session),
-    ]);
-
+    const rows = await getSessionResults(session);
     const meetingKey = Number(session?.meeting_key);
     const meetingMeta = meetingsByKey.get(meetingKey) || null;
     const scheduleMeta = scheduleByMeetingKey.get(meetingKey) || null;
 
     const event = buildSessionObject(session, rows, meetingMeta, scheduleMeta);
     allEvents.push(event);
-
-    if (event.eventType === "race" || event.eventType === "sprint") {
-      startingGridBySessionKey.set(
-        Number(event.sessionKey),
-        buildStartingGridLookup(startingGridRows)
-      );
-    }
 
     console.log(
       `Loaded ${event.sessionName} for ${event.raceName} (${event.date}) with ${event.drivers.length} drivers`
@@ -588,13 +531,8 @@ async function buildSeasonResults() {
     await sleep(450);
   }
 
-  const startPositionLookup = buildStartPositionLookup(allEvents);
-  const events = applyStartPositionsToEvents(
-    allEvents,
-    startPositionLookup,
-    startingGridBySessionKey
-  );
-
+  const qualifyingLookup = buildGridLookupFromQualifyingEvents(allEvents);
+  const events = enrichRaceAndSprintEvents(allEvents, qualifyingLookup);
   const bestByDriverNumber = buildBestByDriver(events);
 
   const out = {
@@ -602,10 +540,10 @@ async function buildSeasonResults() {
     generatedAtUtc: new Date().toISOString(),
     season: YEAR,
     source: {
-      primary: "OpenF1 meetings + sessions + session_result + starting_grid",
+      primary: "OpenF1 meetings + sessions + session_result",
       enrichment: "Jolpica season schedule",
       note:
-        "Qualifying and sprint shootout sessions include Q1/Q2/Q3 times when available. Race and sprint events are enriched with starting positions and qualifying lap times from starting_grid and/or qualifying results.",
+        "Qualifying and sprint shootout sessions include Q1/Q2/Q3 times when available. Race and sprint events are enriched with starting positions and qualifying lap times from qualifying and sprint shootout results.",
     },
     events,
     bestByDriverNumber,
