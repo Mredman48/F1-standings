@@ -1,12 +1,12 @@
 {
   "header": "Upcoming F1 events",
-  "generatedAtUtc": "2026-03-21T23:00:15.250Z",
+  "generatedAtUtc": "2026-03-22T03:20:02.322Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics+formula1",
     "url": "https://better-f1-calendar.vercel.app/api/calendar.ics"
   },
-  "totalRaces": 21,
+  "totalRaces": 22,
   "upcomingEvents": [
     {
       "round": 1,
@@ -41,7 +41,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": -15
+        "startsInDays": -16
       },
       "weekend": {
         "startUtc": "2026-03-06T01:30:00.000Z",
@@ -205,7 +205,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 6
+        "startsInDays": 5
       },
       "weekend": {
         "startUtc": "2026-03-27T02:30:00.000Z",
@@ -537,7 +537,7 @@
       },
       "weekend": {
         "startUtc": "2026-06-12T11:30:00.000Z",
-        "endUtc": "2026-09-13T15:00:00.000Z"
+        "endUtc": "2026-06-14T15:00:00.000Z"
       },
       "sessions": [
         {
@@ -579,46 +579,6 @@
           "startLocalDateShort": "Sun, Jun 14",
           "startLocalTimeShort": "07:00",
           "startLocalDateTimeShort": "Sun, Jun 14 07:00"
-        },
-        {
-          "type": "FP1",
-          "startUtc": "2026-09-11T11:30:00.000Z",
-          "endUtc": "2026-09-11T12:30:00.000Z",
-          "startLocalDateShort": "Fri, Sep 11",
-          "startLocalTimeShort": "05:30",
-          "startLocalDateTimeShort": "Fri, Sep 11 05:30"
-        },
-        {
-          "type": "FP2",
-          "startUtc": "2026-09-11T15:00:00.000Z",
-          "endUtc": "2026-09-11T16:00:00.000Z",
-          "startLocalDateShort": "Fri, Sep 11",
-          "startLocalTimeShort": "09:00",
-          "startLocalDateTimeShort": "Fri, Sep 11 09:00"
-        },
-        {
-          "type": "FP3",
-          "startUtc": "2026-09-12T10:30:00.000Z",
-          "endUtc": "2026-09-12T11:30:00.000Z",
-          "startLocalDateShort": "Sat, Sep 12",
-          "startLocalTimeShort": "04:30",
-          "startLocalDateTimeShort": "Sat, Sep 12 04:30"
-        },
-        {
-          "type": "Quali",
-          "startUtc": "2026-09-12T14:00:00.000Z",
-          "endUtc": "2026-09-12T15:00:00.000Z",
-          "startLocalDateShort": "Sat, Sep 12",
-          "startLocalTimeShort": "08:00",
-          "startLocalDateTimeShort": "Sat, Sep 12 08:00"
-        },
-        {
-          "type": "Race",
-          "startUtc": "2026-09-13T13:00:00.000Z",
-          "endUtc": "2026-09-13T15:00:00.000Z",
-          "startLocalDateShort": "Sun, Sep 13",
-          "startLocalTimeShort": "07:00",
-          "startLocalDateTimeShort": "Sun, Sep 13 07:00"
         }
       ]
     },
@@ -1117,6 +1077,88 @@
     {
       "round": 14,
       "type": "RACE_WEEKEND",
+      "title": "F1 Spanish GP",
+      "season": "2026",
+      "location": {
+        "raw": null,
+        "city": "Madrid",
+        "country": "Spain",
+        "flag": {
+          "iso2": "es",
+          "png": "https://flagcdn.com/w160/es.png",
+          "svg": "https://flagcdn.com/es.svg"
+        }
+      },
+      "racePage": {
+        "slug": "madrid",
+        "url": "https://www.formula1.com/en/racing/2026/madrid"
+      },
+      "trackMap": {
+        "found": false,
+        "pageUrl": "https://www.formula1.com/en/racing/2026/madrid",
+        "mediaUrl": null,
+        "pngUrl": null,
+        "note": "HTTP 404 fetching https://www.formula1.com/en/racing/2026/madrid"
+      },
+      "map": {
+        "found": true,
+        "filename": "madrid.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/madrid.png",
+        "note": null
+      },
+      "countdowns": {
+        "startsInDays": 174
+      },
+      "weekend": {
+        "startUtc": "2026-09-11T11:30:00.000Z",
+        "endUtc": "2026-09-13T15:00:00.000Z"
+      },
+      "sessions": [
+        {
+          "type": "FP1",
+          "startUtc": "2026-09-11T11:30:00.000Z",
+          "endUtc": "2026-09-11T12:30:00.000Z",
+          "startLocalDateShort": "Fri, Sep 11",
+          "startLocalTimeShort": "05:30",
+          "startLocalDateTimeShort": "Fri, Sep 11 05:30"
+        },
+        {
+          "type": "FP2",
+          "startUtc": "2026-09-11T15:00:00.000Z",
+          "endUtc": "2026-09-11T16:00:00.000Z",
+          "startLocalDateShort": "Fri, Sep 11",
+          "startLocalTimeShort": "09:00",
+          "startLocalDateTimeShort": "Fri, Sep 11 09:00"
+        },
+        {
+          "type": "FP3",
+          "startUtc": "2026-09-12T10:30:00.000Z",
+          "endUtc": "2026-09-12T11:30:00.000Z",
+          "startLocalDateShort": "Sat, Sep 12",
+          "startLocalTimeShort": "04:30",
+          "startLocalDateTimeShort": "Sat, Sep 12 04:30"
+        },
+        {
+          "type": "Quali",
+          "startUtc": "2026-09-12T14:00:00.000Z",
+          "endUtc": "2026-09-12T15:00:00.000Z",
+          "startLocalDateShort": "Sat, Sep 12",
+          "startLocalTimeShort": "08:00",
+          "startLocalDateTimeShort": "Sat, Sep 12 08:00"
+        },
+        {
+          "type": "Race",
+          "startUtc": "2026-09-13T13:00:00.000Z",
+          "endUtc": "2026-09-13T15:00:00.000Z",
+          "startLocalDateShort": "Sun, Sep 13",
+          "startLocalTimeShort": "07:00",
+          "startLocalDateTimeShort": "Sun, Sep 13 07:00"
+        }
+      ]
+    },
+    {
+      "round": 15,
+      "type": "RACE_WEEKEND",
       "title": "FORMULA 1 QATAR AIRWAYS AZERBAIJAN GRAND PRIX 2026",
       "season": "2026",
       "location": {
@@ -1197,7 +1239,7 @@
       ]
     },
     {
-      "round": 15,
+      "round": 16,
       "type": "RACE_WEEKEND",
       "title": "FORMULA 1 SINGAPORE AIRLINES SINGAPORE GRAND PRIX 2026",
       "season": "2026",
@@ -1279,7 +1321,7 @@
       ]
     },
     {
-      "round": 16,
+      "round": 17,
       "type": "RACE_WEEKEND",
       "title": "FORMULA 1 MSC CRUISES UNITED STATES GRAND PRIX 2026",
       "season": "2026",
@@ -1361,7 +1403,7 @@
       ]
     },
     {
-      "round": 17,
+      "round": 18,
       "type": "RACE_WEEKEND",
       "title": "FORMULA 1 GRAN PREMIO DE LA CIUDAD DE MÉXICO 2026",
       "season": "2026",
@@ -1443,7 +1485,7 @@
       ]
     },
     {
-      "round": 18,
+      "round": 19,
       "type": "RACE_WEEKEND",
       "title": "FORMULA 1 MSC CRUISES GRANDE PRÊMIO DE SÃO PAULO 2026",
       "season": "2026",
@@ -1525,7 +1567,7 @@
       ]
     },
     {
-      "round": 19,
+      "round": 20,
       "type": "RACE_WEEKEND",
       "title": "FORMULA 1 HEINEKEN LAS VEGAS GRAND PRIX 2026",
       "season": "2026",
@@ -1557,7 +1599,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 244
+        "startsInDays": 243
       },
       "weekend": {
         "startUtc": "2026-11-20T00:30:00.000Z",
@@ -1607,7 +1649,7 @@
       ]
     },
     {
-      "round": 20,
+      "round": 21,
       "type": "RACE_WEEKEND",
       "title": "FORMULA 1 QATAR AIRWAYS QATAR GRAND PRIX 2026",
       "season": "2026",
@@ -1689,9 +1731,9 @@
       ]
     },
     {
-      "round": 21,
+      "round": 22,
       "type": "RACE_WEEKEND",
-      "title": "F1 Abu Dhabi Gp",
+      "title": "FORMULA 1 ETIHAD AIRWAYS ABU DHABI GRAND PRIX 2026",
       "season": "2026",
       "location": {
         "raw": null,
