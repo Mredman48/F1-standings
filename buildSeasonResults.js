@@ -7,6 +7,7 @@ const YEAR = new Date().getUTCFullYear();
 const OPENF1_BASE = "https://api.openf1.org/v1";
 const JOLPICA_BASE = "https://api.jolpi.ca/ergast/f1";
 const OUTPUT_FILE = "f1_season_event_results.json";
+const FALLBACK_DRIVERS_FILE = "fallback_drivers.json";
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -134,6 +135,71 @@ async function fetchJson(url, { allow401 = false, allow404 = false, retries = 5 
   }
 
   throw new Error(`Failed to fetch ${url}`);
+}
+
+async function loadFallbackDrivers() {
+  try {
+    const raw = await fs.readFile(FALLBACK_DRIVERS_FILE, "utf8");
+    const parsed = JSON.parse(raw);
+
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+      console.warn(`${FALLBACK_DRIVERS_FILE} is not an object. Ignoring fallback file.`);
+      return {};
+    }
+
+    return parsed;
+  } catch (err) {
+    if (err?.code === "ENOENT") {
+      console.warn(`${FALLBACK_DRIVERS_FILE} not found. Continuing without fallback driver enrichment.`);
+      return {};
+    }
+
+    throw err;
+  }
+}
+
+function getFallbackDriver(fallbackDrivers, driverNumber) {
+  if (!Number.isFinite(driverNumber) || driverNumber <= 0) return null;
+
+  const entry = fallbackDrivers[String(driverNumber)];
+  if (!entry || typeof entry !== "object") return null;
+
+  return {
+    name:
+      cleanText(entry.name) ||
+      cleanText(entry.fullName) ||
+      cleanText(entry.driverName) ||
+      null,
+    team:
+      cleanText(entry.team) ||
+      cleanText(entry.teamName) ||
+      cleanText(entry.constructor) ||
+      null,
+  };
+}
+
+function needsFallbackDriverEnrichment(driver) {
+  const hasName = cleanText(driver?.driverName);
+  const hasTeam = cleanText(driver?.teamName);
+
+  return !hasName || !hasTeam;
+}
+
+function enrichDriverWithFallback(driver, fallbackDrivers) {
+  if (!needsFallbackDriverEnrichment(driver)) {
+    return driver;
+  }
+
+  const fallback = getFallbackDriver(fallbackDrivers, driver.driverNumber);
+  if (!fallback) {
+    return driver;
+  }
+
+  return {
+    ...driver,
+    driverName: cleanText(driver.driverName) || fallback.name || null,
+    teamName: cleanText(driver.teamName) || fallback.team || null,
+  };
 }
 
 async function getCompletedTargetSessions(year) {
@@ -327,7 +393,7 @@ function buildQualifyingTimes(durationValue) {
   };
 }
 
-function buildSessionObject(session, rows, meetingMeta, scheduleMeta) {
+function buildSessionObject(session, rows, meetingMeta, scheduleMeta, fallbackDrivers) {
   const eventType = normalizeEventType(session?.session_name);
   const sessionKey = Number(session?.session_key);
 
@@ -367,9 +433,21 @@ function buildSessionObject(session, rows, meetingMeta, scheduleMeta) {
         : null;
 
       const normalizedPosition = normalizePosition(row);
+      const driverNumber = Number(row?.driver_number) || null;
 
-      return {
-        driverNumber: Number(row?.driver_number) || null,
+      const rawDriver = {
+        driverNumber,
+        driverName:
+          cleanText(row?.full_name) ||
+          cleanText(row?.broadcast_name) ||
+          cleanText(row?.driver_name) ||
+          cleanText(row?.name) ||
+          null,
+        teamName:
+          cleanText(row?.team_name) ||
+          cleanText(row?.constructor_name) ||
+          cleanText(row?.team) ||
+          null,
         position: normalizedPosition,
         positionRank: resultRank(normalizedPosition),
         classifiedPosition:
@@ -387,6 +465,8 @@ function buildSessionObject(session, rows, meetingMeta, scheduleMeta) {
         sessionKey: Number(row?.session_key) || sessionKey,
         meetingKey: Number(row?.meeting_key) || Number(session?.meeting_key) || null,
       };
+
+      return enrichDriverWithFallback(rawDriver, fallbackDrivers);
     })
     .filter((d) => Number.isFinite(d.driverNumber) && d.driverNumber > 0)
     .sort((a, b) => {
@@ -499,6 +579,8 @@ function buildBestByDriver(events) {
 
       const candidate = {
         driverNumber: driver.driverNumber,
+        driverName: driver.driverName ?? null,
+        teamName: driver.teamName ?? null,
         position: driver.position,
         eventType: event.eventType,
         meetingName: event.meetingName,
@@ -523,10 +605,11 @@ function buildBestByDriver(events) {
 }
 
 async function buildSeasonResults() {
-  const [sessions, meetingsByKey, schedule] = await Promise.all([
+  const [sessions, meetingsByKey, schedule, fallbackDrivers] = await Promise.all([
     getCompletedTargetSessions(YEAR),
     getMeetingsByKey(YEAR),
     getSeasonSchedule(YEAR),
+    loadFallbackDrivers(),
   ]);
 
   const scheduleByMeetingKey = buildMeetingScheduleMap(
@@ -543,11 +626,22 @@ async function buildSeasonResults() {
     const meetingMeta = meetingsByKey.get(meetingKey) || null;
     const scheduleMeta = scheduleByMeetingKey.get(meetingKey) || null;
 
-    const event = buildSessionObject(session, rows, meetingMeta, scheduleMeta);
+    const event = buildSessionObject(
+      session,
+      rows,
+      meetingMeta,
+      scheduleMeta,
+      fallbackDrivers
+    );
+
     allEvents.push(event);
 
+    const enrichedCount = event.drivers.filter(
+      (d) => cleanText(d.driverName) && cleanText(d.teamName)
+    ).length;
+
     console.log(
-      `Loaded ${event.sessionName} for ${event.raceName} (${event.date}) with ${event.drivers.length} drivers`
+      `Loaded ${event.sessionName} for ${event.raceName} (${event.date}) with ${event.drivers.length} drivers (${enrichedCount} with name+team)`
     );
 
     await sleep(450);
@@ -571,8 +665,8 @@ async function buildSeasonResults() {
     season: YEAR,
     source: {
       primary: "OpenF1 meetings + sessions + session_result",
-      enrichment: "Jolpica season schedule",
-      note: "All completed sessions are written to output, including FP1, FP2, FP3, qualifying, sprint shootout, sprint, and race. Race and sprint sessions are enriched with starting positions and qualifying times when available. bestByDriverNumber is calculated from race and sprint events only.",
+      enrichment: "Jolpica season schedule + fallback_drivers.json",
+      note: "All completed sessions are written to output, including FP1, FP2, FP3, qualifying, sprint shootout, sprint, and race. Race and sprint sessions are enriched with starting positions and qualifying times when available. Driver name/team are enriched from fallback_drivers.json when missing. bestByDriverNumber is calculated from race and sprint events only.",
     },
     events,
     bestByDriverNumber,
