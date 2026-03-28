@@ -28,6 +28,10 @@ function normalizeEventType(sessionName) {
   if (s.includes("sprint shootout")) return "sprint_shootout";
   if (s.includes("sprint qualifying")) return "sprint_shootout";
 
+  if (s === "practice 1" || s === "fp1") return "fp1";
+  if (s === "practice 2" || s === "fp2") return "fp2";
+  if (s === "practice 3" || s === "fp3") return "fp3";
+
   return s || "-";
 }
 
@@ -60,6 +64,7 @@ function isBetterResult(candidate, current) {
 
   if (aClassified && !bClassified) return true;
   if (!aClassified && bClassified) return false;
+
   if (aClassified && bClassified) {
     if (a < b) return true;
     if (a > b) return false;
@@ -133,11 +138,14 @@ async function fetchJson(url, { allow401 = false, allow404 = false, retries = 5 
 
 async function getCompletedTargetSessions(year) {
   const targetSessionNames = [
-    "Race",
-    "Sprint",
+    "Practice 1",
+    "Practice 2",
+    "Practice 3",
     "Qualifying",
     "Sprint Shootout",
     "Sprint Qualifying",
+    "Sprint",
+    "Race",
   ];
 
   const results = await Promise.all(
@@ -349,17 +357,21 @@ function buildSessionObject(session, rows, meetingMeta, scheduleMeta) {
     cleanText(scheduleMeta?.circuit) ||
     "-";
 
+  const isQualifyingStyle =
+    eventType === "qualifying" || eventType === "sprint_shootout";
+
   const drivers = rows
     .map((row) => {
-      const qualifyingTimes =
-        eventType === "qualifying" || eventType === "sprint_shootout"
-          ? buildQualifyingTimes(row?.duration)
-          : null;
+      const qualifyingTimes = isQualifyingStyle
+        ? buildQualifyingTimes(row?.duration)
+        : null;
+
+      const normalizedPosition = normalizePosition(row);
 
       return {
         driverNumber: Number(row?.driver_number) || null,
-        position: normalizePosition(row),
-        positionRank: resultRank(normalizePosition(row)),
+        position: normalizedPosition,
+        positionRank: resultRank(normalizedPosition),
         classifiedPosition:
           Number.isFinite(Number(row?.position)) && Number(row?.position) > 0
             ? Number(row.position)
@@ -367,13 +379,11 @@ function buildSessionObject(session, rows, meetingMeta, scheduleMeta) {
         dnf: row?.dnf === true,
         dns: row?.dns === true,
         dsq: row?.dsq === true,
-        duration:
-          eventType === "qualifying" || eventType === "sprint_shootout"
-            ? null
-            : row?.duration ?? null,
+        duration: isQualifyingStyle ? null : row?.duration ?? null,
         qualifyingTimes,
         gapToLeader: row?.gap_to_leader ?? null,
         laps: row?.number_of_laps ?? null,
+        points: row?.points ?? null,
         sessionKey: Number(row?.session_key) || sessionKey,
         meetingKey: Number(row?.meeting_key) || Number(session?.meeting_key) || null,
       };
@@ -546,21 +556,23 @@ async function buildSeasonResults() {
   const qualifyingLookup = buildGridLookupFromQualifyingEvents(allEvents);
   const enrichedEvents = enrichRaceAndSprintEvents(allEvents, qualifyingLookup);
 
-  const events = enrichedEvents.filter((event) => {
+  const events = enrichedEvents;
+
+  const competitiveEventsForBests = enrichedEvents.filter((event) => {
     const type = String(event?.eventType || "").toLowerCase();
     return type === "race" || type === "sprint";
   });
 
-  const bestByDriverNumber = buildBestByDriver(events);
+  const bestByDriverNumber = buildBestByDriver(competitiveEventsForBests);
 
   const out = {
-    header: `${YEAR} F1 race and sprint results`,
+    header: `${YEAR} F1 all session results`,
     generatedAtUtc: new Date().toISOString(),
     season: YEAR,
     source: {
       primary: "OpenF1 meetings + sessions + session_result",
       enrichment: "Jolpica season schedule",
-      note: "Only race and sprint events are written to output. They are enriched with starting positions and qualifying times from qualifying and sprint shootout session results when available.",
+      note: "All completed sessions are written to output, including FP1, FP2, FP3, qualifying, sprint shootout, sprint, and race. Race and sprint sessions are enriched with starting positions and qualifying times when available. bestByDriverNumber is calculated from race and sprint events only.",
     },
     events,
     bestByDriverNumber,
