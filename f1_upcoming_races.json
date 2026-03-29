@@ -1,6 +1,6 @@
 {
   "header": "Upcoming F1 events",
-  "generatedAtUtc": "2026-03-22T05:25:13.654Z",
+  "generatedAtUtc": "2026-03-29T18:41:26.931Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics+formula1",
@@ -41,7 +41,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": -16
+        "startsInDays": -23
       },
       "weekend": {
         "startUtc": "2026-03-06T01:30:00.000Z",
@@ -123,7 +123,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": -9
+        "startsInDays": -16
       },
       "weekend": {
         "startUtc": "2026-03-13T03:30:00.000Z",
@@ -205,7 +205,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 5
+        "startsInDays": -2
       },
       "weekend": {
         "startUtc": "2026-03-27T02:30:00.000Z",
@@ -287,7 +287,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 41
+        "startsInDays": 33
       },
       "weekend": {
         "startUtc": "2026-05-01T16:30:00.000Z",
@@ -369,7 +369,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 62
+        "startsInDays": 54
       },
       "weekend": {
         "startUtc": "2026-05-22T16:30:00.000Z",
@@ -451,7 +451,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 76
+        "startsInDays": 68
       },
       "weekend": {
         "startUtc": "2026-06-05T11:30:00.000Z",
@@ -533,7 +533,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 83
+        "startsInDays": 75
       },
       "weekend": {
         "startUtc": "2026-06-12T11:30:00.000Z",
@@ -615,7 +615,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 97
+        "startsInDays": 89
       },
       "weekend": {
         "startUtc": "2026-06-26T11:30:00.000Z",
@@ -697,7 +697,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 104
+        "startsInDays": 96
       },
       "weekend": {
         "startUtc": "2026-07-03T11:30:00.000Z",
@@ -779,7 +779,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 118
+        "startsInDays": 110
       },
       "weekend": {
         "startUtc": "2026-07-17T11:30:00.000Z",
@@ -861,7 +861,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 125
+        "startsInDays": 117
       },
       "weekend": {
         "startUtc": "2026-07-24T11:30:00.000Z",
@@ -943,7 +943,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 153
+        "startsInDays": 145
       },
       "weekend": {
         "startUtc": "2026-08-21T10:30:00.000Z",
@@ -1025,7 +1025,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 167
+        "startsInDays": 159
       },
       "weekend": {
         "startUtc": "2026-09-04T10:30:00.000Z",
@@ -1077,7 +1077,7 @@
     {
       "round": 14,
       "type": "RACE_WEEKEND",
-      "title": "FORMULA 1 TAG HEUER GRAN PREMIO DE ESPAÑA 2026",
+      "title": "F1 Spanish GP",
       "season": "2026",
       "location": {
         "raw": null,
@@ -1094,11 +1094,11 @@
         "url": "https://www.formula1.com/en/racing/2026/madrid"
       },
       "trackMap": {
-        "found": true,
+        "found": false,
         "pageUrl": "https://www.formula1.com/en/racing/2026/madrid",
-        "mediaUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_spain_detailed.png",
-        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_spain_detailed.png",
-        "note": null
+        "mediaUrl": null,
+        "pngUrl": null,
+        "note": "HTTP 404 fetching https://www.formula1.com/en/racing/2026/madrid"
       },
       "map": {
         "found": true,
@@ -1107,7 +1107,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 174
+        "startsInDays": 166
       },
       "weekend": {
         "startUtc": "2026-09-11T11:30:00.000Z",
@@ -1189,7 +1189,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 187
+        "startsInDays": 179
       },
       "weekend": {
         "startUtc": "2026-09-24T08:30:00.000Z",
@@ -1271,7 +1271,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 202
+        "startsInDays": 194
       },
       "weekend": {
         "startUtc": "2026-10-09T08:30:00.000Z",
@@ -1353,7 +1353,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 216
+        "startsInDays": 208
       },
       "weekend": {
         "startUtc": "2026-10-23T17:30:00.000Z",
@@ -1435,7 +1435,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 223
+        "startsInDays": 215
       },
       "weekend": {
         "startUtc": "2026-10-30T18:30:00.000Z",
@@ -1517,7 +1517,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 230
+        "startsInDays": 222
       },
       "weekend": {
         "startUtc": "2026-11-06T15:30:00.000Z",
@@ -1599,7 +1599,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 243
+        "startsInDays": 236
       },
       "weekend": {
         "startUtc": "2026-11-20T00:30:00.000Z",
@@ -1681,7 +1681,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 251
+        "startsInDays": 243
       },
       "weekend": {
         "startUtc": "2026-11-27T13:30:00.000Z",
@@ -1750,11 +1750,11 @@
         "url": "https://www.formula1.com/en/racing/2026/abu-dhabi"
       },
       "trackMap": {
-        "found": true,
+        "found": false,
         "pageUrl": "https://www.formula1.com/en/racing/2026/abu-dhabi",
-        "mediaUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_abudhabi_detailed.webp",
-        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_abudhabi_detailed.webp",
-        "note": null
+        "mediaUrl": null,
+        "pngUrl": null,
+        "note": "HTTP 404 fetching https://www.formula1.com/en/racing/2026/abu-dhabi"
       },
       "map": {
         "found": true,
@@ -1763,7 +1763,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 258
+        "startsInDays": 250
       },
       "weekend": {
         "startUtc": "2026-12-04T09:30:00.000Z",
