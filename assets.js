@@ -1,8 +1,7 @@
 import fs from "node:fs/promises";
-import fetch from "node-fetch";
 
 const YEAR = 2026;
-const VERSION = "v1740000001"; // can update later
+const VERSION = "v1740000001";
 
 const BASE =
   "https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto";
@@ -25,7 +24,7 @@ const ANGLES = ["right", "left", "front", "rear"];
 async function checkImage(url) {
   try {
     const res = await fetch(url, { method: "HEAD" });
-    return res.status === 200;
+    return res.ok;
   } catch {
     return false;
   }
@@ -39,14 +38,13 @@ async function buildAssetMap() {
 
     for (const angle of ANGLES) {
       const url = `${BASE}/${VERSION}/common/f1/${YEAR}/${team}/${YEAR}${team}car${angle}.webp`;
-
       const exists = await checkImage(url);
 
       if (exists) {
         result[team][angle] = url;
-        console.log(`✅ ${team} ${angle}`);
+        console.log(`OK  ${team} ${angle}`);
       } else {
-        console.log(`❌ ${team} ${angle}`);
+        console.log(`MISS ${team} ${angle}`);
       }
     }
   }
@@ -56,7 +54,10 @@ async function buildAssetMap() {
     JSON.stringify(result, null, 2)
   );
 
-  console.log("🎉 Asset map saved");
+  console.log("Saved f1_car_assets_2026.json");
 }
 
-buildAssetMap();
+buildAssetMap().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
