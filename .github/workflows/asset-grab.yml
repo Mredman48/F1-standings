@@ -1,0 +1,63 @@
+name: Generate F1 Car Asset Map
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate-assets:
+    runs-on: ubuntu-latest
+
+    steps:
+      # -------------------------------
+      # Checkout repo
+      # -------------------------------
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      # -------------------------------
+      # Setup Node
+      # -------------------------------
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # -------------------------------
+      # Install dependencies
+      # -------------------------------
+      - name: Install dependencies
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            npm install
+          fi
+
+      # -------------------------------
+      # Run script
+      # -------------------------------
+      - name: Generate asset map
+        run: node buildCarAssets.js
+
+      # -------------------------------
+      # Commit if changed
+      # -------------------------------
+      - name: Commit and push
+        run: |
+          git config user.name "f1-bot"
+          git config user.email "f1-bot@users.noreply.github.com"
+
+          git add f1_car_assets_2026.json
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update car asset map"
+            git push
+          fi
