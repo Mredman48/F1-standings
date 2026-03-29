@@ -400,11 +400,107 @@ function buildEventLookup(seasonResultsData) {
   return { bySessionKey, byMeetingKey };
 }
 
-function bestResultFromSeasonData(best, eventLookup) {
+function compareEventsNewestFirst(a, b) {
+  const roundA = Number(a?.round);
+  const roundB = Number(b?.round);
+
+  if (Number.isFinite(roundA) && Number.isFinite(roundB) && roundA !== roundB) {
+    return roundB - roundA;
+  }
+
+  const dateA = Date.parse(a?.date || "");
+  const dateB = Date.parse(b?.date || "");
+
+  if (Number.isFinite(dateA) && Number.isFinite(dateB) && dateA !== dateB) {
+    return dateB - dateA;
+  }
+
+  const sessionKeyA = Number(a?.sessionKey);
+  const sessionKeyB = Number(b?.sessionKey);
+
+  if (Number.isFinite(sessionKeyA) && Number.isFinite(sessionKeyB) && sessionKeyA !== sessionKeyB) {
+    return sessionKeyB - sessionKeyA;
+  }
+
+  const meetingKeyA = Number(a?.meetingKey);
+  const meetingKeyB = Number(b?.meetingKey);
+
+  if (Number.isFinite(meetingKeyA) && Number.isFinite(meetingKeyB) && meetingKeyA !== meetingKeyB) {
+    return meetingKeyB - meetingKeyA;
+  }
+
+  return 0;
+}
+
+function findMostRecentMatchingBestResult(best, driverNumber, seasonResultsData) {
+  if (!best || !Number.isFinite(Number(driverNumber))) return best || null;
+
+  const targetPosition = normalizeStandingPosition(best.position);
+  const targetEventType = cleanText(best.eventType).toLowerCase();
+
+  if (!targetPosition || targetPosition === "-") return best;
+
+  const matchingEvents = [];
+
+  for (const event of seasonResultsData?.events || []) {
+    const eventType = cleanText(event?.eventType).toLowerCase();
+
+    if (targetEventType && eventType && eventType !== targetEventType) continue;
+
+    const row = (event?.drivers || []).find(
+      (r) => Number(r?.driverNumber) === Number(driverNumber)
+    );
+
+    if (!row) continue;
+
+    const rowPosition = normalizeStandingPosition(row?.position);
+    if (rowPosition !== targetPosition) continue;
+
+    matchingEvents.push({
+      ...best,
+      position: rowPosition,
+      eventType: event?.eventType ?? best?.eventType ?? "-",
+      raceName: formatRaceNameFromParts(
+        event?.meetingName ?? best?.meetingName,
+        event?.raceName ?? best?.raceName,
+        event?.sessionName ?? best?.sessionName,
+        event?.eventType ?? best?.eventType
+      ),
+      round:
+        event?.round != null
+          ? String(event.round)
+          : best?.round != null
+            ? String(best.round)
+            : "-",
+      date: event?.date ?? best?.date ?? "-",
+      circuit: event?.circuit ?? best?.circuit ?? "-",
+      location: {
+        locality: event?.location?.locality ?? best?.location?.locality ?? "-",
+        country: event?.location?.country ?? best?.location?.country ?? "-",
+      },
+      sessionKey: event?.sessionKey ?? best?.sessionKey ?? null,
+      meetingKey: event?.meetingKey ?? best?.meetingKey ?? null,
+      sourceUrl: best?.sourceUrl ?? null,
+      _sortEvent: event,
+    });
+  }
+
+  if (!matchingEvents.length) return best;
+
+  matchingEvents.sort((a, b) => compareEventsNewestFirst(a._sortEvent, b._sortEvent));
+
+  const newest = matchingEvents[0];
+  delete newest._sortEvent;
+  return newest;
+}
+
+function bestResultFromSeasonData(best, eventLookup, seasonResultsData, driverNumber) {
   if (!best) return emptyBestResult();
 
-  const sessionKey = Number(best?.sessionKey);
-  const meetingKey = Number(best?.meetingKey);
+  const resolvedBest = findMostRecentMatchingBestResult(best, driverNumber, seasonResultsData);
+
+  const sessionKey = Number(resolvedBest?.sessionKey);
+  const meetingKey = Number(resolvedBest?.meetingKey);
 
   const eventFromSession =
     Number.isFinite(sessionKey) ? eventLookup.bySessionKey.get(sessionKey) : null;
@@ -414,29 +510,29 @@ function bestResultFromSeasonData(best, eventLookup) {
   const event = eventFromSession || eventFromMeeting || null;
 
   const raceName = formatRaceNameFromParts(
-    event?.meetingName ?? best?.meetingName,
-    event?.raceName ?? best?.raceName,
-    event?.sessionName ?? best?.sessionName,
-    event?.eventType ?? best?.eventType
+    event?.meetingName ?? resolvedBest?.meetingName,
+    event?.raceName ?? resolvedBest?.raceName,
+    event?.sessionName ?? resolvedBest?.sessionName,
+    event?.eventType ?? resolvedBest?.eventType
   );
 
   return {
-    position: best?.position ?? "-",
-    eventType: event?.eventType ?? best?.eventType ?? "-",
+    position: resolvedBest?.position ?? "-",
+    eventType: event?.eventType ?? resolvedBest?.eventType ?? "-",
     raceName,
     round:
       event?.round != null
         ? String(event.round)
-        : best?.round != null
-          ? String(best.round)
+        : resolvedBest?.round != null
+          ? String(resolvedBest.round)
           : "-",
-    date: event?.date ?? best?.date ?? "-",
-    circuit: event?.circuit ?? best?.circuit ?? "-",
+    date: event?.date ?? resolvedBest?.date ?? "-",
+    circuit: event?.circuit ?? resolvedBest?.circuit ?? "-",
     location: {
-      locality: event?.location?.locality ?? best?.location?.locality ?? "-",
-      country: event?.location?.country ?? best?.location?.country ?? "-",
+      locality: event?.location?.locality ?? resolvedBest?.location?.locality ?? "-",
+      country: event?.location?.country ?? resolvedBest?.location?.country ?? "-",
     },
-    sourceUrl: best?.sourceUrl ?? null,
+    sourceUrl: resolvedBest?.sourceUrl ?? null,
   };
 }
 
@@ -622,7 +718,12 @@ async function buildTeamJson(
       sprintPodiums: splitStats.sprintPodiums,
 
       team: teamConfig.displayName,
-      bestResult: bestResultFromSeasonData(seasonBest, eventLookup),
+      bestResult: bestResultFromSeasonData(
+        seasonBest,
+        eventLookup,
+        seasonResultsData,
+        num
+      ),
     });
   }
 
