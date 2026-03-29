@@ -1,6 +1,6 @@
 {
   "header": "Mercedes standings",
-  "generatedAtUtc": "2026-03-29T02:39:25.294Z",
+  "generatedAtUtc": "2026-03-29T07:31:59.781Z",
   "sources": {
     "driverStandings": "f1_driver_standings.json",
     "constructorStandings": "f1_constructors_standings.json",
@@ -12,7 +12,7 @@
     "teamStanding": {
       "team": "Mercedes",
       "position": "P1",
-      "points": 98,
+      "points": 135,
       "wins": 0
     }
   },
@@ -28,6 +28,39 @@
   },
   "drivers": [
     {
+      "firstName": "Kimi",
+      "lastName": "Antonelli",
+      "code": "ANT",
+      "driverNumber": 12,
+      "nationality": "Italian",
+      "countryCode": "it",
+      "countryName": "Italy",
+      "flagUrl": "https://flagcdn.com/w80/it.png",
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-12.png",
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/kimi-antonelli.png",
+      "position": "P1",
+      "points": 72,
+      "wins": 0,
+      "raceWins": 2,
+      "racePodiums": 3,
+      "sprintWins": 0,
+      "sprintPodiums": 0,
+      "team": "Mercedes",
+      "bestResult": {
+        "position": "P1",
+        "eventType": "race",
+        "raceName": "Chinese Grand Prix",
+        "round": "2",
+        "date": "2026-03-15",
+        "circuit": "Shanghai",
+        "location": {
+          "locality": "Shanghai",
+          "country": "China"
+        },
+        "sourceUrl": null
+      }
+    },
+    {
       "firstName": "George",
       "lastName": "Russell",
       "code": "RUS",
@@ -38,8 +71,8 @@
       "flagUrl": "https://flagcdn.com/w80/gb.png",
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-63.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/george-russell.png",
-      "position": "P1",
-      "points": 51,
+      "position": "P2",
+      "points": 63,
       "wins": 0,
       "raceWins": 1,
       "racePodiums": 2,
@@ -56,39 +89,6 @@
         "location": {
           "locality": "Melbourne",
           "country": "Australia"
-        },
-        "sourceUrl": null
-      }
-    },
-    {
-      "firstName": "Kimi",
-      "lastName": "Antonelli",
-      "code": "ANT",
-      "driverNumber": 12,
-      "nationality": "Italian",
-      "countryCode": "it",
-      "countryName": "Italy",
-      "flagUrl": "https://flagcdn.com/w80/it.png",
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-12.png",
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/kimi-antonelli.png",
-      "position": "P2",
-      "points": 47,
-      "wins": 0,
-      "raceWins": 1,
-      "racePodiums": 2,
-      "sprintWins": 0,
-      "sprintPodiums": 0,
-      "team": "Mercedes",
-      "bestResult": {
-        "position": "P1",
-        "eventType": "race",
-        "raceName": "Chinese Grand Prix",
-        "round": "2",
-        "date": "2026-03-15",
-        "circuit": "Shanghai",
-        "location": {
-          "locality": "Shanghai",
-          "country": "China"
         },
         "sourceUrl": null
       }

@@ -1,90 +1,90 @@
 {
   "header": "Next F1 event",
-  "generatedAtUtc": "2026-03-29T02:39:12.145Z",
+  "generatedAtUtc": "2026-03-29T07:31:46.501Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics+formula1",
     "url": "https://better-f1-calendar.vercel.app/api/calendar.ics",
-    "officialRacePage": "https://www.formula1.com/en/racing/2026/japan"
+    "officialRacePage": "https://www.formula1.com/en/racing/2026/miami"
   },
   "nextEvent": {
     "type": "RACE_WEEKEND",
-    "title": "FORMULA 1 ARAMCO JAPANESE GRAND PRIX 2026",
+    "title": "FORMULA 1 CRYPTO.COM MIAMI GRAND PRIX 2026",
     "season": "2026",
     "location": {
       "raw": null,
-      "city": "Suzuka",
-      "country": "Japan",
+      "city": "Miami",
+      "country": "United States",
       "flag": {
-        "iso2": "jp",
-        "png": "https://flagcdn.com/w160/jp.png",
-        "svg": "https://flagcdn.com/jp.svg"
+        "iso2": "us",
+        "png": "https://flagcdn.com/w160/us.png",
+        "svg": "https://flagcdn.com/us.svg"
       }
     },
     "racePage": {
-      "slug": "japan",
-      "url": "https://www.formula1.com/en/racing/2026/japan"
+      "slug": "miami",
+      "url": "https://www.formula1.com/en/racing/2026/miami"
     },
     "trackMap": {
       "found": true,
-      "pageUrl": "https://www.formula1.com/en/racing/2026/japan",
-      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026tracksuzukadetailed.webp",
-      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_japan_detailed.png",
+      "pageUrl": "https://www.formula1.com/en/racing/2026/miami",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmiamidetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_miami_detailed.png",
       "note": null
     },
     "map": {
       "found": true,
-      "filename": "suzuka.png",
-      "pngUrl": "https://mredman48.github.io/F1-standings/maps/suzuka.png",
+      "filename": "miami.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/miami.png",
       "note": null
     },
     "countdowns": {
-      "startsInDays": -2
+      "startsInDays": 34
     },
     "weekend": {
-      "startUtc": "2026-03-27T02:30:00.000Z",
-      "endUtc": "2026-03-29T07:00:00.000Z"
+      "startUtc": "2026-05-01T16:30:00.000Z",
+      "endUtc": "2026-05-03T22:00:00.000Z"
     },
     "sessions": [
       {
         "type": "FP1",
-        "startUtc": "2026-03-27T02:30:00.000Z",
-        "endUtc": "2026-03-27T03:30:00.000Z",
-        "startLocalDateShort": "Thu, Mar 26",
-        "startLocalTimeShort": "20:30",
-        "startLocalDateTimeShort": "Thu, Mar 26 20:30"
+        "startUtc": "2026-05-01T16:30:00.000Z",
+        "endUtc": "2026-05-01T17:30:00.000Z",
+        "startLocalDateShort": "Fri, May 01",
+        "startLocalTimeShort": "10:30",
+        "startLocalDateTimeShort": "Fri, May 01 10:30"
       },
       {
-        "type": "FP2",
-        "startUtc": "2026-03-27T06:00:00.000Z",
-        "endUtc": "2026-03-27T07:00:00.000Z",
-        "startLocalDateShort": "Fri, Mar 27",
-        "startLocalTimeShort": "24:00",
-        "startLocalDateTimeShort": "Fri, Mar 27 24:00"
+        "type": "Sprint Quali",
+        "startUtc": "2026-05-01T20:30:00.000Z",
+        "endUtc": "2026-05-01T21:14:00.000Z",
+        "startLocalDateShort": "Fri, May 01",
+        "startLocalTimeShort": "14:30",
+        "startLocalDateTimeShort": "Fri, May 01 14:30"
       },
       {
-        "type": "FP3",
-        "startUtc": "2026-03-28T02:30:00.000Z",
-        "endUtc": "2026-03-28T03:30:00.000Z",
-        "startLocalDateShort": "Fri, Mar 27",
-        "startLocalTimeShort": "20:30",
-        "startLocalDateTimeShort": "Fri, Mar 27 20:30"
+        "type": "Sprint",
+        "startUtc": "2026-05-02T16:00:00.000Z",
+        "endUtc": "2026-05-02T17:00:00.000Z",
+        "startLocalDateShort": "Sat, May 02",
+        "startLocalTimeShort": "10:00",
+        "startLocalDateTimeShort": "Sat, May 02 10:00"
       },
       {
         "type": "Quali",
-        "startUtc": "2026-03-28T06:00:00.000Z",
-        "endUtc": "2026-03-28T07:00:00.000Z",
-        "startLocalDateShort": "Sat, Mar 28",
-        "startLocalTimeShort": "24:00",
-        "startLocalDateTimeShort": "Sat, Mar 28 24:00"
+        "startUtc": "2026-05-02T20:00:00.000Z",
+        "endUtc": "2026-05-02T21:00:00.000Z",
+        "startLocalDateShort": "Sat, May 02",
+        "startLocalTimeShort": "14:00",
+        "startLocalDateTimeShort": "Sat, May 02 14:00"
       },
       {
         "type": "Race",
-        "startUtc": "2026-03-29T05:00:00.000Z",
-        "endUtc": "2026-03-29T07:00:00.000Z",
-        "startLocalDateShort": "Sat, Mar 28",
-        "startLocalTimeShort": "23:00",
-        "startLocalDateTimeShort": "Sat, Mar 28 23:00"
+        "startUtc": "2026-05-03T20:00:00.000Z",
+        "endUtc": "2026-05-03T22:00:00.000Z",
+        "startLocalDateShort": "Sun, May 03",
+        "startLocalTimeShort": "14:00",
+        "startLocalDateTimeShort": "Sun, May 03 14:00"
       }
     ]
   }
