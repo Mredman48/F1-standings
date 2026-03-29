@@ -43,7 +43,7 @@ jobs:
       # Run script
       # -------------------------------
       - name: Generate asset map
-        run: node buildCarAssets.js
+        run: node assets.js
 
       # -------------------------------
       # Commit if changed
