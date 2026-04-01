@@ -336,6 +336,11 @@ function numberImage(num) {
   return `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-${num}.png`;
 }
 
+function alternateNumberImage(num) {
+  if (!num) return null;
+  return `${PAGES_BASE}/${DRIVER_NUMBER_FOLDER}/driver-number-${num}-2.png`;
+}
+
 async function headshot(first, last) {
   if (!first || !last) return null;
 
@@ -706,6 +711,7 @@ async function buildTeamJson(
       flagUrl: buildFlagUrl(nationalityInfo?.code ?? null),
 
       numberImageUrl: numberImage(num),
+      alternateNumberImageUrl: alternateNumberImage(num),
       headshotUrl: await headshot(first, last),
 
       position: normalizeStandingPosition(d.position),
