@@ -663,11 +663,6 @@ async function buildSeasonResults() {
     header: `${YEAR} F1 all session results`,
     generatedAtUtc: new Date().toISOString(),
     season: YEAR,
-    source: {
-      primary: "OpenF1 meetings + sessions + session_result",
-      enrichment: "Jolpica season schedule + fallback_drivers.json",
-      note: "All completed sessions are written to output, including FP1, FP2, FP3, qualifying, sprint shootout, sprint, and race. Race and sprint sessions are enriched with starting positions and qualifying times when available. Driver name/team are enriched from fallback_drivers.json when missing. bestByDriverNumber is calculated from race and sprint events only.",
-    },
     events,
     bestByDriverNumber,
   };
