@@ -443,9 +443,6 @@ async function updateStandings() {
     lastRace: parseLastRaceFromSeasonResults(seasonResults),
     drivers: parsed.rows,
   };
-    lastRace: parseLastRaceFromSeasonResults(seasonResults),
-    drivers: parsed.rows,
-  };
 
   await fs.writeFile(OUTPUT_FILE, JSON.stringify(out, null, 2), "utf8");
 
