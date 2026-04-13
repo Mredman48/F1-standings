@@ -265,7 +265,7 @@ async function getSessionResults(session) {
 
   const rows = await fetchJson(
     `${OPENF1_BASE}/session_result?session_key=${sessionKey}`,
-    { allow401: true, retries: 5 }
+    { allow401: true, allow404: true, retries: 5 }
   );
 
   if (rows?.__authLocked) {
@@ -274,7 +274,7 @@ async function getSessionResults(session) {
     );
   }
 
-  return rows || [];
+  return Array.isArray(rows) ? rows : [];
 }
 
 async function getMeetingsByKey(year) {
