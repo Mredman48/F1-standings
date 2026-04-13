@@ -5,13 +5,180 @@
   "source": {
     "kind": "ics+formula1",
     "url": "https://better-f1-calendar.vercel.app/api/calendar.ics"
-  },
-  "totalRaces": 20,
+ },
+  "totalRaces": 22,
   "upcomingEvents": [
     {
       "round": 1,
       "type": "RACE_WEEKEND",
-      "title": "FORMULA 1 ARAMCO JAPANESE GRAND PRIX 2026",
+      "title": "AUSTRALIAN GRAND PRIX 2026",
+      "circuit": "Albert Park Circuit",
+      "season": "2026",
+      "location": {
+        "raw": null,
+        "city": "Melbourne",
+        "country": "Australia",
+        "flag": {
+          "iso2": "au",
+          "png": "https://flagcdn.com/w160/au.png",
+          "svg": "https://flagcdn.com/au.svg"
+        }
+      },
+      "racePage": {
+        "slug": "australia",
+        "url": "https://www.formula1.com/en/racing/2026/australia"
+      },
+      "trackMap": {
+        "found": true,
+        "pageUrl": "https://www.formula1.com/en/racing/2026/australia",
+        "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmelbournedetailed.webp",
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_australia_detailed.png",
+        "note": null
+      },
+      "map": {
+        "found": true,
+        "filename": "melbourne.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/melbourne.png",
+        "note": null
+      },
+      "countdowns": {
+        "startsInDays": -23
+      },
+      "weekend": {
+        "startUtc": "2026-03-06T01:30:00.000Z",
+        "endUtc": "2026-03-08T06:00:00.000Z"
+      },
+      "sessions": [
+        {
+          "type": "FP1",
+          "startUtc": "2026-03-06T01:30:00.000Z",
+          "endUtc": "2026-03-06T02:30:00.000Z",
+          "startLocalDateShort": "Thu, Mar 05",
+          "startLocalTimeShort": "18:30",
+          "startLocalDateTimeShort": "Thu, Mar 05 18:30"
+        },
+        {
+          "type": "FP2",
+          "startUtc": "2026-03-06T05:00:00.000Z",
+          "endUtc": "2026-03-06T06:00:00.000Z",
+          "startLocalDateShort": "Thu, Mar 05",
+          "startLocalTimeShort": "22:00",
+          "startLocalDateTimeShort": "Thu, Mar 05 22:00"
+        },
+        {
+          "type": "FP3",
+          "startUtc": "2026-03-07T01:30:00.000Z",
+          "endUtc": "2026-03-07T02:30:00.000Z",
+          "startLocalDateShort": "Fri, Mar 06",
+          "startLocalTimeShort": "18:30",
+          "startLocalDateTimeShort": "Fri, Mar 06 18:30"
+        },
+        {
+          "type": "Quali",
+          "startUtc": "2026-03-07T05:00:00.000Z",
+          "endUtc": "2026-03-07T06:00:00.000Z",
+          "startLocalDateShort": "Fri, Mar 06",
+          "startLocalTimeShort": "22:00",
+          "startLocalDateTimeShort": "Fri, Mar 06 22:00"
+        },
+        {
+          "type": "Race",
+          "startUtc": "2026-03-08T04:00:00.000Z",
+          "endUtc": "2026-03-08T06:00:00.000Z",
+          "startLocalDateShort": "Sat, Mar 07",
+          "startLocalTimeShort": "21:00",
+          "startLocalDateTimeShort": "Sat, Mar 07 21:00"
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "type": "RACE_WEEKEND",
+      "title": "CHINESE GRAND PRIX 2026",
+      "circuit": "Shanghai International Circuit",
+      "season": "2026",
+      "location": {
+        "raw": null,
+        "city": "Shanghai",
+        "country": "China",
+        "flag": {
+          "iso2": "cn",
+          "png": "https://flagcdn.com/w160/cn.png",
+          "svg": "https://flagcdn.com/cn.svg"
+        }
+      },
+      "racePage": {
+        "slug": "china",
+        "url": "https://www.formula1.com/en/racing/2026/china"
+      },
+      "trackMap": {
+        "found": true,
+        "pageUrl": "https://www.formula1.com/en/racing/2026/china",
+        "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackshanghaidetailed.webp",
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_china_detailed.png",
+        "note": null
+      },
+      "map": {
+        "found": true,
+        "filename": "shanghai.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/shanghai.png",
+        "note": null
+      },
+      "countdowns": {
+        "startsInDays": -16
+      },
+      "weekend": {
+        "startUtc": "2026-03-13T03:30:00.000Z",
+        "endUtc": "2026-03-15T09:00:00.000Z"
+      },
+      "sessions": [
+        {
+          "type": "FP1",
+          "startUtc": "2026-03-13T03:30:00.000Z",
+          "endUtc": "2026-03-13T04:30:00.000Z",
+          "startLocalDateShort": "Thu, Mar 12",
+          "startLocalTimeShort": "21:30",
+          "startLocalDateTimeShort": "Thu, Mar 12 21:30"
+        },
+        {
+          "type": "Sprint Quali",
+          "startUtc": "2026-03-13T07:30:00.000Z",
+          "endUtc": "2026-03-13T08:14:00.000Z",
+          "startLocalDateShort": "Fri, Mar 13",
+          "startLocalTimeShort": "01:30",
+          "startLocalDateTimeShort": "Fri, Mar 13 01:30"
+        },
+        {
+          "type": "Sprint",
+          "startUtc": "2026-03-14T03:00:00.000Z",
+          "endUtc": "2026-03-14T04:00:00.000Z",
+          "startLocalDateShort": "Fri, Mar 13",
+          "startLocalTimeShort": "21:00",
+          "startLocalDateTimeShort": "Fri, Mar 13 21:00"
+        },
+        {
+          "type": "Quali",
+          "startUtc": "2026-03-14T07:00:00.000Z",
+          "endUtc": "2026-03-14T08:00:00.000Z",
+          "startLocalDateShort": "Sat, Mar 14",
+          "startLocalTimeShort": "01:00",
+          "startLocalDateTimeShort": "Sat, Mar 14 01:00"
+        },
+        {
+          "type": "Race",
+          "startUtc": "2026-03-15T07:00:00.000Z",
+          "endUtc": "2026-03-15T09:00:00.000Z",
+          "startLocalDateShort": "Sun, Mar 15",
+          "startLocalTimeShort": "01:00",
+          "startLocalDateTimeShort": "Sun, Mar 15 01:00"
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "type": "RACE_WEEKEND",
+      "title": "JAPANESE GRAND PRIX 2026",
+      "circuit": "Suzuka International Racing Course",
       "season": "2026",
       "location": {
         "raw": null,
@@ -41,7 +208,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": -17
+        "startsInDays": -2
       },
       "weekend": {
         "startUtc": "2026-03-27T02:30:00.000Z",
@@ -91,9 +258,10 @@
       ]
     },
     {
-      "round": 2,
+      "round": 4,
       "type": "RACE_WEEKEND",
-      "title": "FORMULA 1 CRYPTO.COM MIAMI GRAND PRIX 2026",
+      "title": "MIAMI GRAND PRIX 2026",
+      "circuit": "Miami International Autodrome",
       "season": "2026",
       "location": {
         "raw": null,
@@ -123,7 +291,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 18
+        "startsInDays": 33
       },
       "weekend": {
         "startUtc": "2026-05-01T16:30:00.000Z",
@@ -173,9 +341,10 @@
       ]
     },
     {
-      "round": 3,
+      "round": 5,
       "type": "RACE_WEEKEND",
-      "title": "FORMULA 1 LENOVO GRAND PRIX DU CANADA 2026",
+      "title": "GRAND PRIX DU CANADA 2026",
+      "circuit": "Circuit Gilles Villeneuve",
       "season": "2026",
       "location": {
         "raw": null,
@@ -205,7 +374,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 39
+        "startsInDays": 54
       },
       "weekend": {
         "startUtc": "2026-05-22T16:30:00.000Z",
@@ -255,9 +424,10 @@
       ]
     },
     {
-      "round": 4,
+      "round": 6,
       "type": "RACE_WEEKEND",
-      "title": "FORMULA 1 LOUIS VUITTON GRAND PRIX DE MONACO 2026",
+      "title": "GRAND PRIX DE MONACO 2026",
+      "circuit": "Circuit de Monaco",
       "season": "2026",
       "location": {
         "raw": null,
@@ -287,7 +457,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 53
+        "startsInDays": 68
       },
       "weekend": {
         "startUtc": "2026-06-05T11:30:00.000Z",
@@ -337,9 +507,10 @@
       ]
     },
     {
-      "round": 5,
+      "round": 7,
       "type": "RACE_WEEKEND",
-      "title": "FORMULA 1 MSC CRUISES GRAN PREMIO DE BARCELONA-CATALUNYA 2026",
+      "title": "GRAN PREMIO DE BARCELONA-CATALUNYA 2026",
+      "circuit": "Circuit de Barcelona-Catalunya",
       "season": "2026",
       "location": {
         "raw": null,
@@ -369,7 +540,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 60
+        "startsInDays": 75
       },
       "weekend": {
         "startUtc": "2026-06-12T11:30:00.000Z",
@@ -419,9 +590,10 @@
       ]
     },
     {
-      "round": 6,
+      "round": 8,
       "type": "RACE_WEEKEND",
-      "title": "FORMULA 1 LENOVO AUSTRIAN GRAND PRIX 2026",
+      "title": "AUSTRIAN GRAND PRIX 2026",
+      "circuit": "Red Bull Ring",
       "season": "2026",
       "location": {
         "raw": null,
@@ -451,7 +623,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 74
+        "startsInDays": 89
       },
       "weekend": {
         "startUtc": "2026-06-26T11:30:00.000Z",
@@ -501,9 +673,10 @@
       ]
     },
     {
-      "round": 7,
+      "round": 9,
       "type": "RACE_WEEKEND",
-      "title": "FORMULA 1 PIRELLI BRITISH GRAND PRIX 2026",
+      "title": "BRITISH GRAND PRIX 2026",
+      "circuit": "Silverstone Circuit",
       "season": "2026",
       "location": {
         "raw": null,
@@ -533,7 +706,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 81
+        "startsInDays": 96
       },
       "weekend": {
         "startUtc": "2026-07-03T11:30:00.000Z",
@@ -583,9 +756,10 @@
       ]
     },
     {
-      "round": 8,
+      "round": 10,
       "type": "RACE_WEEKEND",
-      "title": "FORMULA 1 MOËT & CHANDON BELGIAN GRAND PRIX 2026",
+      "title": "BELGIAN GRAND PRIX 2026",
+      "circuit": "Circuit de Spa-Francorchamps",
       "season": "2026",
       "location": {
         "raw": null,
@@ -615,7 +789,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 95
+        "startsInDays": 110
       },
       "weekend": {
         "startUtc": "2026-07-17T11:30:00.000Z",
@@ -665,9 +839,10 @@
       ]
     },
     {
-      "round": 9,
+      "round": 11,
       "type": "RACE_WEEKEND",
-      "title": "FORMULA 1 AWS HUNGARIAN GRAND PRIX 2026",
+      "title": "HUNGARIAN GRAND PRIX 2026",
+      "circuit": "Hungaroring",
       "season": "2026",
       "location": {
         "raw": null,
@@ -697,7 +872,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 102
+        "startsInDays": 117
       },
       "weekend": {
         "startUtc": "2026-07-24T11:30:00.000Z",
@@ -747,9 +922,10 @@
       ]
     },
     {
-      "round": 10,
+      "round": 12,
       "type": "RACE_WEEKEND",
-      "title": "FORMULA 1 HEINEKEN DUTCH GRAND PRIX 2026",
+      "title": "DUTCH GRAND PRIX 2026",
+      "circuit": "Circuit Zandvoort",
       "season": "2026",
       "location": {
         "raw": null,
@@ -779,7 +955,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 130
+        "startsInDays": 145
       },
       "weekend": {
         "startUtc": "2026-08-21T10:30:00.000Z",
@@ -829,9 +1005,10 @@
       ]
     },
     {
-      "round": 11,
+      "round": 13,
       "type": "RACE_WEEKEND",
-      "title": "FORMULA 1 PIRELLI GRAN PREMIO D’ITALIA 2026",
+      "title": "GRAN PREMIO D’ITALIA 2026",
+      "circuit": "Autodromo Nazionale Monza",
       "season": "2026",
       "location": {
         "raw": null,
@@ -861,7 +1038,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 144
+        "startsInDays": 159
       },
       "weekend": {
         "startUtc": "2026-09-04T10:30:00.000Z",
@@ -911,9 +1088,10 @@
       ]
     },
     {
-      "round": 12,
+      "round": 14,
       "type": "RACE_WEEKEND",
-      "title": "F1 Spanish GP",
+      "title": "GRAN PREMIO DE ESPAÑA 2026",
+      "circuit": "Circuito de Madring",
       "season": "2026",
       "location": {
         "raw": null,
@@ -930,11 +1108,11 @@
         "url": "https://www.formula1.com/en/racing/2026/madrid"
       },
       "trackMap": {
-        "found": false,
+        "found": true,
         "pageUrl": "https://www.formula1.com/en/racing/2026/madrid",
-        "mediaUrl": null,
-        "pngUrl": null,
-        "note": "HTTP 404 fetching https://www.formula1.com/en/racing/2026/madrid"
+        "mediaUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_spain_detailed.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_spain_detailed.png",
+        "note": null
       },
       "map": {
         "found": true,
@@ -943,7 +1121,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 151
+        "startsInDays": 166
       },
       "weekend": {
         "startUtc": "2026-09-11T11:30:00.000Z",
@@ -993,9 +1171,10 @@
       ]
     },
     {
-      "round": 13,
+      "round": 15,
       "type": "RACE_WEEKEND",
-      "title": "FORMULA 1 QATAR AIRWAYS AZERBAIJAN GRAND PRIX 2026",
+      "title": "AZERBAIJAN GRAND PRIX 2026",
+      "circuit": "Baku City Circuit",
       "season": "2026",
       "location": {
         "raw": null,
@@ -1025,7 +1204,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 164
+        "startsInDays": 179
       },
       "weekend": {
         "startUtc": "2026-09-24T08:30:00.000Z",
@@ -1075,9 +1254,10 @@
       ]
     },
     {
-      "round": 14,
+      "round": 16,
       "type": "RACE_WEEKEND",
-      "title": "FORMULA 1 SINGAPORE AIRLINES SINGAPORE GRAND PRIX 2026",
+      "title": "SINGAPORE GRAND PRIX 2026",
+      "circuit": "Marina Bay Street Circuit",
       "season": "2026",
       "location": {
         "raw": null,
@@ -1107,7 +1287,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 179
+        "startsInDays": 194
       },
       "weekend": {
         "startUtc": "2026-10-09T08:30:00.000Z",
@@ -1157,9 +1337,10 @@
       ]
     },
     {
-      "round": 15,
+      "round": 17,
       "type": "RACE_WEEKEND",
-      "title": "FORMULA 1 MSC CRUISES UNITED STATES GRAND PRIX 2026",
+      "title": "UNITED STATES GRAND PRIX 2026",
+      "circuit": "Circuit of the Americas",
       "season": "2026",
       "location": {
         "raw": null,
@@ -1189,7 +1370,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 193
+        "startsInDays": 208
       },
       "weekend": {
         "startUtc": "2026-10-23T17:30:00.000Z",
@@ -1239,9 +1420,10 @@
       ]
     },
     {
-      "round": 16,
+      "round": 18,
       "type": "RACE_WEEKEND",
-      "title": "FORMULA 1 GRAN PREMIO DE LA CIUDAD DE MÉXICO 2026",
+      "title": "GRAN PREMIO DE LA CIUDAD DE MÉXICO 2026",
+      "circuit": "Autódromo Hermanos Rodríguez",
       "season": "2026",
       "location": {
         "raw": null,
@@ -1271,7 +1453,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 200
+        "startsInDays": 215
       },
       "weekend": {
         "startUtc": "2026-10-30T18:30:00.000Z",
@@ -1321,9 +1503,10 @@
       ]
     },
     {
-      "round": 17,
+      "round": 19,
       "type": "RACE_WEEKEND",
-      "title": "FORMULA 1 MSC CRUISES GRANDE PRÊMIO DE SÃO PAULO 2026",
+      "title": "GRANDE PRÊMIO DE SÃO PAULO 2026",
+      "circuit": "Autódromo José Carlos Pace",
       "season": "2026",
       "location": {
         "raw": null,
@@ -1353,7 +1536,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 207
+        "startsInDays": 222
       },
       "weekend": {
         "startUtc": "2026-11-06T15:30:00.000Z",
@@ -1403,9 +1586,10 @@
       ]
     },
     {
-      "round": 18,
+      "round": 20,
       "type": "RACE_WEEKEND",
-      "title": "FORMULA 1 HEINEKEN LAS VEGAS GRAND PRIX 2026",
+      "title": "LAS VEGAS GRAND PRIX 2026",
+      "circuit": "Las Vegas Strip Circuit",
       "season": "2026",
       "location": {
         "raw": null,
@@ -1435,7 +1619,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 221
+        "startsInDays": 236
       },
       "weekend": {
         "startUtc": "2026-11-20T00:30:00.000Z",
@@ -1485,9 +1669,10 @@
       ]
     },
     {
-      "round": 19,
+      "round": 21,
       "type": "RACE_WEEKEND",
-      "title": "FORMULA 1 QATAR AIRWAYS QATAR GRAND PRIX 2026",
+      "title": "QATAR GRAND PRIX 2026",
+      "circuit": "Lusail International Circuit",
       "season": "2026",
       "location": {
         "raw": null,
@@ -1517,7 +1702,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 228
+        "startsInDays": 243
       },
       "weekend": {
         "startUtc": "2026-11-27T13:30:00.000Z",
@@ -1567,9 +1752,10 @@
       ]
     },
     {
-      "round": 20,
+      "round": 22,
       "type": "RACE_WEEKEND",
-      "title": "FORMULA 1 ETIHAD AIRWAYS ABU DHABI GRAND PRIX 2026",
+      "title": "ABU DHABI GRAND PRIX 2026",
+      "circuit": "Yas Marina Circuit",
       "season": "2026",
       "location": {
         "raw": null,
@@ -1586,11 +1772,11 @@
         "url": "https://www.formula1.com/en/racing/2026/abu-dhabi"
       },
       "trackMap": {
-        "found": false,
+        "found": true,
         "pageUrl": "https://www.formula1.com/en/racing/2026/abu-dhabi",
-        "mediaUrl": null,
-        "pngUrl": null,
-        "note": "HTTP 404 fetching https://www.formula1.com/en/racing/2026/abu-dhabi"
+        "mediaUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_abudhabi_detailed.webp",
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_abudhabi_detailed.webp",
+        "note": null
       },
       "map": {
         "found": true,
@@ -1599,7 +1785,7 @@
         "note": null
       },
       "countdowns": {
-        "startsInDays": 235
+        "startsInDays": 250
       },
       "weekend": {
         "startUtc": "2026-12-04T09:30:00.000Z",
