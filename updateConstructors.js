@@ -475,18 +475,11 @@ async function updateConstructors() {
   const out = {
     header: "Constructors standings",
     generatedAtUtc: now,
-    sources: {
-      constructorsStandings: SKY_F1_STANDINGS_URL,
-      lastRace: SEASON_RESULTS_FILE,
-      logos: `LOCAL_ONLY: ${PAGES_BASE}/${TEAMLOGOS_DIR}/`,
-    },
     meta: {
       mode,
       seasonUsed: String(YEAR),
       roundUsed: lastRace.round,
       cacheBust: CACHE_BUST,
-      note:
-        "Uses Sky Sports constructor standings as primary source and local season event results for last race metadata. If standings are empty/unavailable, emits alphabetical placeholder teams with '-' stats. Logos are LOCAL ONLY from /teamlogos via GitHub Pages.",
       standingsParseReason,
     },
     lastRace,
