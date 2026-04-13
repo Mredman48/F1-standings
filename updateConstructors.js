@@ -475,13 +475,12 @@ async function updateConstructors() {
   const out = {
     header: "Constructors standings",
     generatedAtUtc: now,
-    meta: {
-      mode,
-      seasonUsed: String(YEAR),
-      roundUsed: lastRace.round,
-      cacheBust: CACHE_BUST,
-      standingsParseReason,
-    },
+meta: {
+  seasonUsed: String(YEAR),
+  roundUsed: lastRace.round,
+  cacheBust: CACHE_BUST,
+  standingsParseReason,
+},
     lastRace,
     constructors,
   };
