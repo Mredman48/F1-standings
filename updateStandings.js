@@ -440,12 +440,9 @@ async function updateStandings() {
     header: `${YEAR} Driver Standings`,
     generatedAtUtc: now,
     season: YEAR,
-    mode: "SKY_SPORTS_STANDINGS",
-    source: {
-      kind: "sky-sports-standings-scrape",
-      url: SKY_F1_STANDINGS_URL,
-      note: "Standings scraped from Sky Sports F1 standings page. Last race comes from local season event results.",
-    },
+    lastRace: parseLastRaceFromSeasonResults(seasonResults),
+    drivers: parsed.rows,
+  };
     lastRace: parseLastRaceFromSeasonResults(seasonResults),
     drivers: parsed.rows,
   };
@@ -453,7 +450,7 @@ async function updateStandings() {
   await fs.writeFile(OUTPUT_FILE, JSON.stringify(out, null, 2), "utf8");
 
   console.log(
-    `Wrote ${OUTPUT_FILE} mode=SKY_SPORTS_STANDINGS drivers=${out.drivers.length} lastRace=${out.lastRace.raceName}`
+    `Wrote ${OUTPUT_FILE} drivers=${out.drivers.length} lastRace=${out.lastRace.raceName}`
   );
 }
 
