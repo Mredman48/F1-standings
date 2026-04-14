@@ -1,6 +1,6 @@
 {
   "header": "2026 F1 all session results",
-  "generatedAtUtc": "2026-04-13T23:22:07.640Z",
+  "generatedAtUtc": "2026-04-14T00:44:40.624Z",
   "season": 2026,
   "events": [
     {
@@ -7574,101 +7574,6 @@
           "qualifyingLapTime": 0
         }
       ]
-    },
-    {
-      "eventType": "fp1",
-      "sessionKey": 11254,
-      "meetingKey": 1282,
-      "meetingName": "Bahrain Grand Prix",
-      "raceName": "Bahrain Grand Prix",
-      "sessionName": "Practice 1",
-      "officialName": "Practice 1",
-      "round": 4,
-      "dateStartUtc": "2026-04-10T11:30:00+00:00",
-      "dateEndUtc": "2026-04-10T12:30:00+00:00",
-      "date": "2026-04-10",
-      "circuit": "Sakhir",
-      "location": {
-        "locality": "Sakhir",
-        "country": "Bahrain"
-      },
-      "drivers": []
-    },
-    {
-      "eventType": "fp2",
-      "sessionKey": 11255,
-      "meetingKey": 1282,
-      "meetingName": "Bahrain Grand Prix",
-      "raceName": "Bahrain Grand Prix",
-      "sessionName": "Practice 2",
-      "officialName": "Practice 2",
-      "round": 4,
-      "dateStartUtc": "2026-04-10T15:00:00+00:00",
-      "dateEndUtc": "2026-04-10T16:00:00+00:00",
-      "date": "2026-04-10",
-      "circuit": "Sakhir",
-      "location": {
-        "locality": "Sakhir",
-        "country": "Bahrain"
-      },
-      "drivers": []
-    },
-    {
-      "eventType": "fp3",
-      "sessionKey": 11256,
-      "meetingKey": 1282,
-      "meetingName": "Bahrain Grand Prix",
-      "raceName": "Bahrain Grand Prix",
-      "sessionName": "Practice 3",
-      "officialName": "Practice 3",
-      "round": 4,
-      "dateStartUtc": "2026-04-11T12:30:00+00:00",
-      "dateEndUtc": "2026-04-11T13:30:00+00:00",
-      "date": "2026-04-11",
-      "circuit": "Sakhir",
-      "location": {
-        "locality": "Sakhir",
-        "country": "Bahrain"
-      },
-      "drivers": []
-    },
-    {
-      "eventType": "qualifying",
-      "sessionKey": 11257,
-      "meetingKey": 1282,
-      "meetingName": "Bahrain Grand Prix",
-      "raceName": "Bahrain Grand Prix",
-      "sessionName": "Qualifying",
-      "officialName": "Qualifying",
-      "round": 4,
-      "dateStartUtc": "2026-04-11T16:00:00+00:00",
-      "dateEndUtc": "2026-04-11T17:00:00+00:00",
-      "date": "2026-04-11",
-      "circuit": "Sakhir",
-      "location": {
-        "locality": "Sakhir",
-        "country": "Bahrain"
-      },
-      "drivers": []
-    },
-    {
-      "eventType": "race",
-      "sessionKey": 11261,
-      "meetingKey": 1282,
-      "meetingName": "Bahrain Grand Prix",
-      "raceName": "Bahrain Grand Prix",
-      "sessionName": "Race",
-      "officialName": "Race",
-      "round": 4,
-      "dateStartUtc": "2026-04-12T15:00:00+00:00",
-      "dateEndUtc": "2026-04-12T17:00:00+00:00",
-      "date": "2026-04-12",
-      "circuit": "Sakhir",
-      "location": {
-        "locality": "Sakhir",
-        "country": "Bahrain"
-      },
-      "drivers": []
     }
   ],
   "bestByDriverNumber": {
