@@ -1,0 +1,91 @@
+{
+  "header": "Next F1 event",
+  "generatedAtUtc": "2026-04-14T03:36:49.046Z",
+  "displayTimeZone": "America/Edmonton",
+  "source": {
+    "kind": "ics+formula1",
+    "url": "https://better-f1-calendar.vercel.app/api/calendar.ics",
+    "officialRacePage": "https://www.formula1.com/en/racing/2026/miami"
+  },
+  "nextEvent": {
+    "type": "RACE_WEEKEND",
+    "title": "FORMULA 1 CRYPTO.COM MIAMI GRAND PRIX 2026",
+    "season": "2026",
+    "location": {
+      "raw": null,
+      "city": "Miami",
+      "country": "United States",
+      "flag": {
+        "iso2": "us",
+        "png": "https://flagcdn.com/w160/us.png",
+        "svg": "https://flagcdn.com/us.svg"
+      }
+    },
+    "racePage": {
+      "slug": "miami",
+      "url": "https://www.formula1.com/en/racing/2026/miami"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2026/miami",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmiamidetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_miami_detailed.png",
+      "note": null
+    },
+    "map": {
+      "found": true,
+      "filename": "miami.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/miami.png",
+      "note": null
+    },
+    "countdowns": {
+      "startsInDays": 18
+    },
+    "weekend": {
+      "startUtc": "2026-05-01T16:30:00.000Z",
+      "endUtc": "2026-05-03T22:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2026-05-01T16:30:00.000Z",
+        "endUtc": "2026-05-01T17:30:00.000Z",
+        "startLocalDateShort": "Fri, May 01",
+        "startLocalTimeShort": "10:30",
+        "startLocalDateTimeShort": "Fri, May 01 10:30"
+      },
+      {
+        "type": "Sprint Quali",
+        "startUtc": "2026-05-01T20:30:00.000Z",
+        "endUtc": "2026-05-01T21:14:00.000Z",
+        "startLocalDateShort": "Fri, May 01",
+        "startLocalTimeShort": "14:30",
+        "startLocalDateTimeShort": "Fri, May 01 14:30"
+      },
+      {
+        "type": "Sprint",
+        "startUtc": "2026-05-02T16:00:00.000Z",
+        "endUtc": "2026-05-02T17:00:00.000Z",
+        "startLocalDateShort": "Sat, May 02",
+        "startLocalTimeShort": "10:00",
+        "startLocalDateTimeShort": "Sat, May 02 10:00"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2026-05-02T20:00:00.000Z",
+        "endUtc": "2026-05-02T21:00:00.000Z",
+        "startLocalDateShort": "Sat, May 02",
+        "startLocalTimeShort": "14:00",
+        "startLocalDateTimeShort": "Sat, May 02 14:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2026-05-03T20:00:00.000Z",
+        "endUtc": "2026-05-03T22:00:00.000Z",
+        "startLocalDateShort": "Sun, May 03",
+        "startLocalTimeShort": "14:00",
+        "startLocalDateTimeShort": "Sun, May 03 14:00"
+      }
+    ]
+  }
+}
