@@ -1,11 +1,6 @@
 {
   "header": "Mercedes standings",
-  "generatedAtUtc": "2026-04-01T23:44:39.515Z",
-  "sources": {
-    "driverStandings": "f1_driver_standings.json",
-    "constructorStandings": "f1_constructors_standings.json",
-    "seasonResults": "f1_season_event_results.json"
-  },
+  "generatedAtUtc": "2026-04-14T02:31:32.938Z",
   "mercedes": {
     "team": "Mercedes",
     "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_mercedes_color_v2.png",
@@ -57,8 +52,7 @@
         "location": {
           "locality": "Suzuka",
           "country": "Japan"
-        },
-        "sourceUrl": null
+        }
       }
     },
     {
@@ -91,8 +85,7 @@
         "location": {
           "locality": "Melbourne",
           "country": "Australia"
-        },
-        "sourceUrl": null
+        }
       }
     }
   ]
