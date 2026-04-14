@@ -9,6 +9,10 @@ const JOLPICA_BASE = "https://api.jolpi.ca/ergast/f1";
 const OUTPUT_FILE = "f1_season_event_results.json";
 const FALLBACK_DRIVERS_FILE = "fallback_drivers.json";
 
+const CANCELLED_RACES_BY_YEAR = {
+  2026: ["bahrain grand prix", "saudi arabian grand prix"],
+};
+
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -80,6 +84,29 @@ function buildFormattedRaceName(baseRaceName, eventType) {
   const base = cleanText(baseRaceName) || "-";
   if (base === "-") return "-";
   return eventType === "sprint" ? `${base} Sprint` : base;
+}
+
+function normalizeRaceKey(value) {
+  return cleanText(value)
+    .toLowerCase()
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function isCancelledEventForYear(event, year) {
+  const cancelled = CANCELLED_RACES_BY_YEAR[year] || [];
+  if (!cancelled.length) return false;
+
+  const candidates = [
+    event?.raceName,
+    event?.meetingName,
+    event?.officialName,
+  ].map(normalizeRaceKey);
+
+  return cancelled.some((cancelledRace) => {
+    const target = normalizeRaceKey(cancelledRace);
+    return candidates.some((candidate) => candidate.includes(target));
+  });
 }
 
 async function fetchJson(url, { allow401 = false, allow404 = false, retries = 5 } = {}) {
@@ -633,6 +660,14 @@ async function buildSeasonResults() {
       scheduleMeta,
       fallbackDrivers
     );
+
+    if (isCancelledEventForYear(event, YEAR)) {
+      console.log(
+        `Skipping cancelled event ${event.sessionName} for ${event.raceName} (${event.date})`
+      );
+      await sleep(450);
+      continue;
+    }
 
     allEvents.push(event);
 
