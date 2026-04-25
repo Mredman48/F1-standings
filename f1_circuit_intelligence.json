@@ -2,7 +2,6 @@
   "generatedAt": "STATIC",
   "circuits": [
     {
-      "id": "bahrain",
       "displayName": "Bahrain Grand Prix",
       "dna": {
         "cornerProfile": "Stop-start traction",
@@ -17,10 +16,27 @@
         "Turn 1 and Turn 4 are the main overtaking zones.",
         "The undercut is often powerful because tires drop off quickly.",
         "Wind can make braking and traction inconsistent."
-      ]
+      ],
+      "id": "bahrain",
+      "matchKeys": [
+        "bahrain",
+        "sakhir"
+      ],
+      "specs": {
+        "turns": 15,
+        "longestStraightKm": 1.1,
+        "averageSpeed": "Medium",
+        "raceLaps": 57
+      },
+      "raceLapRecord": {
+        "time": "1:31.447",
+        "driver": "Pedro de la Rosa",
+        "constructor": "McLaren",
+        "year": 2005,
+        "raceName": "Bahrain Grand Prix"
+      }
     },
     {
-      "id": "saudi",
       "displayName": "Saudi Arabian Grand Prix",
       "dna": {
         "cornerProfile": "High-speed street",
@@ -35,10 +51,27 @@
         "Safety Cars can quickly reshape strategy.",
         "Qualifying position matters because overtaking is risky.",
         "Low degradation can limit strategic variation."
-      ]
+      ],
+      "id": "saudi",
+      "matchKeys": [
+        "saudi",
+        "jeddah"
+      ],
+      "specs": {
+        "turns": 27,
+        "longestStraightKm": 0.9,
+        "averageSpeed": "High",
+        "raceLaps": 50
+      },
+      "raceLapRecord": {
+        "time": "1:30.734",
+        "driver": "Lewis Hamilton",
+        "constructor": "Mercedes",
+        "year": 2021,
+        "raceName": "Saudi Arabian Grand Prix"
+      }
     },
     {
-      "id": "australia",
       "displayName": "Australian Grand Prix",
       "dna": {
         "cornerProfile": "Fast street-parkland",
@@ -53,10 +86,28 @@
         "Multiple DRS zones can create passing chances.",
         "Mistakes often carry consequences because walls are close.",
         "Balance through medium-speed corners is important."
-      ]
+      ],
+      "id": "australia",
+      "matchKeys": [
+        "australia",
+        "melbourne",
+        "albertpark"
+      ],
+      "specs": {
+        "turns": 14,
+        "longestStraightKm": 1.2,
+        "averageSpeed": "Medium",
+        "raceLaps": 58
+      },
+      "raceLapRecord": {
+        "time": "1:19.813",
+        "driver": "Charles Leclerc",
+        "constructor": "Ferrari",
+        "year": 2024,
+        "raceName": "Australian Grand Prix"
+      }
     },
     {
-      "id": "japan",
       "displayName": "Japanese Grand Prix",
       "dna": {
         "cornerProfile": "High-speed flowing",
@@ -71,10 +122,28 @@
         "Dirty air can make overtaking difficult.",
         "Tire management is critical through long high-load corners.",
         "Qualifying position is very important."
-      ]
+      ],
+      "id": "japan",
+      "matchKeys": [
+        "japan",
+        "japanese",
+        "suzuka"
+      ],
+      "specs": {
+        "turns": 18,
+        "longestStraightKm": 1.2,
+        "averageSpeed": "High",
+        "raceLaps": 53
+      },
+      "raceLapRecord": {
+        "time": "1:30.965",
+        "driver": "Andrea Kimi Antonelli",
+        "constructor": "Mercedes",
+        "year": 2025,
+        "raceName": "Japanese Grand Prix"
+      }
     },
     {
-      "id": "china",
       "displayName": "Chinese Grand Prix",
       "dna": {
         "cornerProfile": "Technical with long straight",
@@ -89,10 +158,27 @@
         "Front tire wear can become a limiting factor.",
         "Long-radius corners punish poor balance.",
         "Strategy flexibility matters if degradation is high."
-      ]
+      ],
+      "id": "china",
+      "matchKeys": [
+        "china",
+        "shanghai"
+      ],
+      "specs": {
+        "turns": 16,
+        "longestStraightKm": 1.2,
+        "averageSpeed": "Medium",
+        "raceLaps": 56
+      },
+      "raceLapRecord": {
+        "time": "1:32.238",
+        "driver": "Michael Schumacher",
+        "constructor": "Ferrari",
+        "year": 2004,
+        "raceName": "Chinese Grand Prix"
+      }
     },
     {
-      "id": "miami",
       "displayName": "Miami Grand Prix",
       "dna": {
         "cornerProfile": "Mixed street-style",
@@ -107,10 +193,26 @@
         "The long straight creates the best overtaking chance.",
         "Track evolution is usually noticeable.",
         "Balance between traction and top speed matters."
-      ]
+      ],
+      "id": "miami",
+      "matchKeys": [
+        "miami"
+      ],
+      "specs": {
+        "turns": 19,
+        "longestStraightKm": 1.2,
+        "averageSpeed": "Medium",
+        "raceLaps": 57
+      },
+      "raceLapRecord": {
+        "time": "1:29.708",
+        "driver": "Max Verstappen",
+        "constructor": "Red Bull",
+        "year": 2023,
+        "raceName": "Miami Grand Prix"
+      }
     },
     {
-      "id": "monaco",
       "displayName": "Monaco Grand Prix",
       "dna": {
         "cornerProfile": "Tight street",
@@ -125,10 +227,27 @@
         "Track position dominates strategy.",
         "Overtaking is extremely difficult.",
         "Safety Car timing can completely change the race."
-      ]
+      ],
+      "id": "monaco",
+      "matchKeys": [
+        "monaco",
+        "montecarlo"
+      ],
+      "specs": {
+        "turns": 19,
+        "longestStraightKm": 0.5,
+        "averageSpeed": "Low",
+        "raceLaps": 78
+      },
+      "raceLapRecord": {
+        "time": "1:12.909",
+        "driver": "Lewis Hamilton",
+        "constructor": "Mercedes",
+        "year": 2021,
+        "raceName": "Monaco Grand Prix"
+      }
     },
     {
-      "id": "canada",
       "displayName": "Canadian Grand Prix",
       "dna": {
         "cornerProfile": "Stop-start braking",
@@ -143,10 +262,29 @@
         "Wall proximity increases Safety Car chances.",
         "Traction out of slow corners is key.",
         "Brake management can influence race pace."
-      ]
+      ],
+      "id": "canada",
+      "matchKeys": [
+        "canada",
+        "canadian",
+        "montreal",
+        "gillesvilleneuve"
+      ],
+      "specs": {
+        "turns": 14,
+        "longestStraightKm": 1.2,
+        "averageSpeed": "Medium",
+        "raceLaps": 70
+      },
+      "raceLapRecord": {
+        "time": "1:13.078",
+        "driver": "Valtteri Bottas",
+        "constructor": "Mercedes",
+        "year": 2019,
+        "raceName": "Canadian Grand Prix"
+      }
     },
     {
-      "id": "madrid",
       "displayName": "Spanish Grand Prix",
       "dna": {
         "cornerProfile": "New street-hybrid",
@@ -161,10 +299,23 @@
         "Track evolution is likely to be high across the weekend.",
         "Setup confidence may matter more than historical form.",
         "Race intelligence should be updated after the first event establishes trends."
-      ]
+      ],
+      "id": "madrid",
+      "matchKeys": [
+        "spain",
+        "spanish",
+        "madrid",
+        "madring"
+      ],
+      "specs": {
+        "turns": 22,
+        "longestStraightKm": 0.8,
+        "averageSpeed": "Unknown",
+        "raceLaps": 57
+      },
+      "raceLapRecord": null
     },
     {
-      "id": "barcelona",
       "displayName": "Barcelona-Catalunya Grand Prix",
       "dna": {
         "cornerProfile": "Aero balance test",
@@ -179,10 +330,28 @@
         "Tire degradation is usually a major factor.",
         "Overtaking can be difficult despite the main straight.",
         "Cars that are strong here often have balanced all-round performance."
-      ]
+      ],
+      "id": "barcelona",
+      "matchKeys": [
+        "barcelona",
+        "catalunya",
+        "barcelonacatalunya"
+      ],
+      "specs": {
+        "turns": 16,
+        "longestStraightKm": 1,
+        "averageSpeed": "Medium",
+        "raceLaps": 66
+      },
+      "raceLapRecord": {
+        "time": "1:15.743",
+        "driver": "Oscar Piastri",
+        "constructor": "McLaren",
+        "year": 2025,
+        "raceName": "Barcelona-Catalunya Grand Prix"
+      }
     },
     {
-      "id": "austria",
       "displayName": "Austrian Grand Prix",
       "dna": {
         "cornerProfile": "Short high-speed braking",
@@ -197,10 +366,29 @@
         "Heavy braking zones create multiple overtaking chances.",
         "Track limits can heavily affect results.",
         "Traffic management is important because the lap is so short."
-      ]
+      ],
+      "id": "austria",
+      "matchKeys": [
+        "austria",
+        "austrian",
+        "spielberg",
+        "redbullring"
+      ],
+      "specs": {
+        "turns": 10,
+        "longestStraightKm": 0.9,
+        "averageSpeed": "High",
+        "raceLaps": 71
+      },
+      "raceLapRecord": {
+        "time": "1:07.924",
+        "driver": "Oscar Piastri",
+        "constructor": "McLaren",
+        "year": 2025,
+        "raceName": "Austrian Grand Prix"
+      }
     },
     {
-      "id": "greatbritain",
       "displayName": "British Grand Prix",
       "dna": {
         "cornerProfile": "High-speed aero",
@@ -215,10 +403,28 @@
         "Wind can noticeably change car balance.",
         "Aerodynamic stability is critical.",
         "Race pace often depends on tire life through long corners."
-      ]
+      ],
+      "id": "greatbritain",
+      "matchKeys": [
+        "greatbritain",
+        "british",
+        "silverstone"
+      ],
+      "specs": {
+        "turns": 18,
+        "longestStraightKm": 0.8,
+        "averageSpeed": "High",
+        "raceLaps": 52
+      },
+      "raceLapRecord": {
+        "time": "1:27.097",
+        "driver": "Max Verstappen",
+        "constructor": "Red Bull",
+        "year": 2020,
+        "raceName": "British Grand Prix"
+      }
     },
     {
-      "id": "belgium",
       "displayName": "Belgian Grand Prix",
       "dna": {
         "cornerProfile": "High-speed elevation",
@@ -233,10 +439,29 @@
         "Slipstream and DRS are powerful on long straights.",
         "Setup is a compromise between sector speed and straight-line performance.",
         "Elevation changes reward commitment and confidence."
-      ]
+      ],
+      "id": "belgium",
+      "matchKeys": [
+        "belgium",
+        "belgian",
+        "spa",
+        "spafrancorchamps"
+      ],
+      "specs": {
+        "turns": 19,
+        "longestStraightKm": 1.9,
+        "averageSpeed": "High",
+        "raceLaps": 44
+      },
+      "raceLapRecord": {
+        "time": "1:44.701",
+        "driver": "Sergio Perez",
+        "constructor": "Red Bull",
+        "year": 2024,
+        "raceName": "Belgian Grand Prix"
+      }
     },
     {
-      "id": "hungary",
       "displayName": "Hungarian Grand Prix",
       "dna": {
         "cornerProfile": "Low-speed technical",
@@ -251,10 +476,29 @@
         "Qualifying performance usually has a major impact.",
         "The circuit rewards mechanical grip and rotation.",
         "Traffic can heavily compromise race pace."
-      ]
+      ],
+      "id": "hungary",
+      "matchKeys": [
+        "hungary",
+        "hungarian",
+        "hungaroring",
+        "budapest"
+      ],
+      "specs": {
+        "turns": 14,
+        "longestStraightKm": 0.8,
+        "averageSpeed": "Low",
+        "raceLaps": 70
+      },
+      "raceLapRecord": {
+        "time": "1:16.627",
+        "driver": "Lewis Hamilton",
+        "constructor": "Mercedes",
+        "year": 2020,
+        "raceName": "Hungarian Grand Prix"
+      }
     },
     {
-      "id": "netherlands",
       "displayName": "Dutch Grand Prix",
       "dna": {
         "cornerProfile": "Banked flowing",
@@ -269,10 +513,28 @@
         "Overtaking is difficult because the track is narrow.",
         "Qualifying position is important.",
         "Momentum through flowing sections is critical."
-      ]
+      ],
+      "id": "netherlands",
+      "matchKeys": [
+        "netherlands",
+        "dutch",
+        "zandvoort"
+      ],
+      "specs": {
+        "turns": 14,
+        "longestStraightKm": 0.7,
+        "averageSpeed": "Medium",
+        "raceLaps": 72
+      },
+      "raceLapRecord": {
+        "time": "1:11.097",
+        "driver": "Lewis Hamilton",
+        "constructor": "Mercedes",
+        "year": 2021,
+        "raceName": "Dutch Grand Prix"
+      }
     },
     {
-      "id": "italy",
       "displayName": "Italian Grand Prix",
       "dna": {
         "cornerProfile": "Low-downforce power",
@@ -287,10 +549,28 @@
         "Slipstream battles are common.",
         "Low-downforce setup choices define competitiveness.",
         "Braking stability into chicanes is important."
-      ]
+      ],
+      "id": "italy",
+      "matchKeys": [
+        "italy",
+        "italian",
+        "monza"
+      ],
+      "specs": {
+        "turns": 11,
+        "longestStraightKm": 1.1,
+        "averageSpeed": "Very High",
+        "raceLaps": 53
+      },
+      "raceLapRecord": {
+        "time": "1:20.901",
+        "driver": "Lando Norris",
+        "constructor": "McLaren",
+        "year": 2025,
+        "raceName": "Italian Grand Prix"
+      }
     },
     {
-      "id": "azerbaijan",
       "displayName": "Azerbaijan Grand Prix",
       "dna": {
         "cornerProfile": "Street with long straight",
@@ -305,10 +585,27 @@
         "Safety Cars are a constant strategic threat.",
         "Low-speed castle sections punish mistakes.",
         "Top speed and braking confidence are both critical."
-      ]
+      ],
+      "id": "azerbaijan",
+      "matchKeys": [
+        "azerbaijan",
+        "baku"
+      ],
+      "specs": {
+        "turns": 20,
+        "longestStraightKm": 2.2,
+        "averageSpeed": "High",
+        "raceLaps": 51
+      },
+      "raceLapRecord": {
+        "time": "1:43.009",
+        "driver": "Charles Leclerc",
+        "constructor": "Ferrari",
+        "year": 2019,
+        "raceName": "Azerbaijan Grand Prix"
+      }
     },
     {
-      "id": "singapore",
       "displayName": "Singapore Grand Prix",
       "dna": {
         "cornerProfile": "Technical street",
@@ -323,10 +620,27 @@
         "Heat and humidity make this one of the most physical races.",
         "Track position is very valuable.",
         "Tire management and concentration are critical over a long race."
-      ]
+      ],
+      "id": "singapore",
+      "matchKeys": [
+        "singapore",
+        "marinabay"
+      ],
+      "specs": {
+        "turns": 19,
+        "longestStraightKm": 0.8,
+        "averageSpeed": "Low",
+        "raceLaps": 62
+      },
+      "raceLapRecord": {
+        "time": "1:33.808",
+        "driver": "Lewis Hamilton",
+        "constructor": "Ferrari",
+        "year": 2025,
+        "raceName": "Singapore Grand Prix"
+      }
     },
     {
-      "id": "usa",
       "displayName": "United States Grand Prix",
       "dna": {
         "cornerProfile": "Mixed technical",
@@ -341,10 +655,30 @@
         "The long back straight creates strong overtaking chances.",
         "Bumpy sections can affect balance and tire life.",
         "This is a strong all-round car test."
-      ]
+      ],
+      "id": "usa",
+      "matchKeys": [
+        "unitedstates",
+        "usa",
+        "austin",
+        "cota",
+        "circuitoftheamericas"
+      ],
+      "specs": {
+        "turns": 20,
+        "longestStraightKm": 1.2,
+        "averageSpeed": "Medium",
+        "raceLaps": 56
+      },
+      "raceLapRecord": {
+        "time": "1:36.169",
+        "driver": "Charles Leclerc",
+        "constructor": "Ferrari",
+        "year": 2019,
+        "raceName": "United States Grand Prix"
+      }
     },
     {
-      "id": "mexico",
       "displayName": "Mexico City Grand Prix",
       "dna": {
         "cornerProfile": "Altitude traction",
@@ -359,10 +693,28 @@
         "Straight-line speed is influenced by thin air.",
         "The long run to Turn 1 creates major opening-lap opportunity.",
         "Power unit and brake cooling can be a major concern."
-      ]
+      ],
+      "id": "mexico",
+      "matchKeys": [
+        "mexico",
+        "mexicocity",
+        "autodromohermanosrodriguez"
+      ],
+      "specs": {
+        "turns": 17,
+        "longestStraightKm": 1.2,
+        "averageSpeed": "Medium",
+        "raceLaps": 71
+      },
+      "raceLapRecord": {
+        "time": "1:17.774",
+        "driver": "Valtteri Bottas",
+        "constructor": "Mercedes",
+        "year": 2021,
+        "raceName": "Mexico City Grand Prix"
+      }
     },
     {
-      "id": "brazil",
       "displayName": "São Paulo Grand Prix",
       "dna": {
         "cornerProfile": "Short flowing elevation",
@@ -377,10 +729,29 @@
         "Short lap length keeps the field compressed.",
         "Overtaking is possible into Turn 1 and Turn 4.",
         "Traction through the final sector is important for straight-line attacks."
-      ]
+      ],
+      "id": "brazil",
+      "matchKeys": [
+        "brazil",
+        "brazilian",
+        "saopaulo",
+        "interlagos"
+      ],
+      "specs": {
+        "turns": 15,
+        "longestStraightKm": 0.9,
+        "averageSpeed": "Medium",
+        "raceLaps": 71
+      },
+      "raceLapRecord": {
+        "time": "1:10.540",
+        "driver": "Valtteri Bottas",
+        "constructor": "Mercedes",
+        "year": 2018,
+        "raceName": "Sao Paulo Grand Prix"
+      }
     },
     {
-      "id": "lasvegas",
       "displayName": "Las Vegas Grand Prix",
       "dna": {
         "cornerProfile": "Low-grip street",
@@ -395,10 +766,27 @@
         "The long straight creates strong overtaking chances.",
         "Low grip makes braking stability important.",
         "Track evolution can be significant across the weekend."
-      ]
+      ],
+      "id": "lasvegas",
+      "matchKeys": [
+        "lasvegas",
+        "vegas"
+      ],
+      "specs": {
+        "turns": 17,
+        "longestStraightKm": 1.9,
+        "averageSpeed": "High",
+        "raceLaps": 50
+      },
+      "raceLapRecord": {
+        "time": "1:33.365",
+        "driver": "Max Verstappen",
+        "constructor": "Red Bull",
+        "year": 2025,
+        "raceName": "Las Vegas Grand Prix"
+      }
     },
     {
-      "id": "qatar",
       "displayName": "Qatar Grand Prix",
       "dna": {
         "cornerProfile": "Fast flowing",
@@ -413,10 +801,28 @@
         "Track limits can become a major storyline.",
         "Tire management is central to race execution.",
         "Cars with stable aero balance are rewarded."
-      ]
+      ],
+      "id": "qatar",
+      "matchKeys": [
+        "qatar",
+        "lusail",
+        "doha"
+      ],
+      "specs": {
+        "turns": 16,
+        "longestStraightKm": 1.1,
+        "averageSpeed": "High",
+        "raceLaps": 57
+      },
+      "raceLapRecord": {
+        "time": "1:22.384",
+        "driver": "Lando Norris",
+        "constructor": "McLaren",
+        "year": 2024,
+        "raceName": "Qatar Grand Prix"
+      }
     },
     {
-      "id": "abudhabi",
       "displayName": "Abu Dhabi Grand Prix",
       "dna": {
         "cornerProfile": "Modern traction",
@@ -431,7 +837,25 @@
         "Traction out of slow corners is important.",
         "Strategy is often straightforward without interruption.",
         "Qualifying remains important because overtaking can be limited."
-      ]
+      ],
+      "id": "abudhabi",
+      "matchKeys": [
+        "abudhabi",
+        "yasmarina"
+      ],
+      "specs": {
+        "turns": 16,
+        "longestStraightKm": 1.2,
+        "averageSpeed": "Medium",
+        "raceLaps": 58
+      },
+      "raceLapRecord": {
+        "time": "1:25.637",
+        "driver": "Kevin Magnussen",
+        "constructor": "Haas",
+        "year": 2024,
+        "raceName": "Abu Dhabi Grand Prix"
+      }
     }
   ]
 }
