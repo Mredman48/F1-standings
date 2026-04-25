@@ -160,7 +160,7 @@
         "raceLaps": 66
       },
       "raceLapRecord": {
-        "time": "1:16.330",
+        "time": "1:15.743",
         "driver": "Oscar Piastri",
         "constructor": "McLaren",
         "year": 2025,
@@ -227,10 +227,10 @@
         "raceLaps": 71
       },
       "raceLapRecord": {
-        "time": "1:05.619",
-        "driver": "Carlos Sainz",
+        "time": "1:07.924",
+        "driver": "Oscar Piastri",
         "constructor": "McLaren",
-        "year": 2020,
+        "year": 2025,
         "raceName": "Austrian Grand Prix"
       }
     },
@@ -295,10 +295,10 @@
         "raceLaps": 44
       },
       "raceLapRecord": {
-        "time": "1:10.540",
-        "driver": "Valtteri Bottas",
-        "constructor": "Mercedes",
-        "year": 2018,
+        "time": "1:44.701",
+        "driver": "Sergio Perez",
+        "constructor": "Red Bull",
+        "year": 2024,
         "raceName": "Belgian Grand Prix"
       }
     },
@@ -449,7 +449,12 @@
         "averageSpeed": "Medium",
         "raceLaps": 71
       },
-      "raceLapRecord": null
+      "raceLapRecord": {
+        "time": "1:10.540",
+        "driver": "Valtteri Bottas",
+        "constructor": "Mercedes",
+        "year": 2018,
+        "raceName": "Sao Paulo Grand Prix"
     },
     {
       "id": "lasvegas",
