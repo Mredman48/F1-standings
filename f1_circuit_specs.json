@@ -1,0 +1,454 @@
+{
+  "generatedAt": "2026-04-25T02:45:53.570Z",
+  "circuits": [
+    {
+      "id": "bahrain",
+      "displayName": "Bahrain Grand Prix",
+      "matchKeys": [
+        "bahrain",
+        "sakhir"
+      ],
+      "specs": {
+        "turns": 15,
+        "longestStraightKm": 1.1,
+        "averageSpeed": "Medium"
+      },
+      "raceLapRecord": {
+        "time": "1:30.252",
+        "driver": "Michael Schumacher",
+        "driverCode": "MSC",
+        "constructor": "Ferrari",
+        "year": 2004,
+        "raceName": "Bahrain Grand Prix"
+      }
+    },
+    {
+      "id": "saudi",
+      "displayName": "Saudi Arabian Grand Prix",
+      "matchKeys": [
+        "saudi",
+        "jeddah"
+      ],
+      "specs": {
+        "turns": 27,
+        "longestStraightKm": 0.9,
+        "averageSpeed": "High"
+      },
+      "raceLapRecord": {
+        "time": "1:31.632",
+        "driver": "Charles Leclerc",
+        "driverCode": "LEC",
+        "constructor": "Ferrari",
+        "year": 2024,
+        "raceName": "Saudi Arabian Grand Prix"
+      }
+    },
+    {
+      "id": "australia",
+      "displayName": "Australian Grand Prix",
+      "matchKeys": [
+        "australia",
+        "melbourne",
+        "albertpark"
+      ],
+      "specs": {
+        "turns": 14,
+        "longestStraightKm": 1.2,
+        "averageSpeed": "Medium"
+      },
+      "raceLapRecord": {
+        "time": "1:19.813",
+        "driver": "Charles Leclerc",
+        "driverCode": "LEC",
+        "constructor": "Ferrari",
+        "year": 2024,
+        "raceName": "Australian Grand Prix"
+      }
+    },
+    {
+      "id": "japan",
+      "displayName": "Japanese Grand Prix",
+      "matchKeys": [
+        "japan",
+        "japanese",
+        "suzuka"
+      ],
+      "specs": {
+        "turns": 18,
+        "longestStraightKm": 1.2,
+        "averageSpeed": "High"
+      },
+      "raceLapRecord": {
+        "time": "1:30.965",
+        "driver": "Andrea Kimi Antonelli",
+        "driverCode": "ANT",
+        "constructor": "Mercedes",
+        "year": 2025,
+        "raceName": "Japanese Grand Prix"
+      }
+    },
+    {
+      "id": "china",
+      "displayName": "Chinese Grand Prix",
+      "matchKeys": [
+        "china",
+        "shanghai"
+      ],
+      "specs": {
+        "turns": 16,
+        "longestStraightKm": 1.2,
+        "averageSpeed": "Medium"
+      },
+      "raceLapRecord": {
+        "time": "1:34.742",
+        "driver": "Pierre Gasly",
+        "driverCode": "GAS",
+        "constructor": "Red Bull",
+        "year": 2019,
+        "raceName": "Chinese Grand Prix"
+      }
+    },
+    {
+      "id": "miami",
+      "displayName": "Miami Grand Prix",
+      "matchKeys": [
+        "miami"
+      ],
+      "specs": {
+        "turns": 19,
+        "longestStraightKm": 1.2,
+        "averageSpeed": "Medium"
+      },
+      "raceLapRecord": {
+        "time": "1:29.708",
+        "driver": "Max Verstappen",
+        "driverCode": "VER",
+        "constructor": "Red Bull",
+        "year": 2023,
+        "raceName": "Miami Grand Prix"
+      }
+    },
+    {
+      "id": "madrid",
+      "displayName": "Spanish Grand Prix",
+      "matchKeys": [
+        "spain",
+        "spanish",
+        "madrid",
+        "madring"
+      ],
+      "specs": {
+        "turns": 22,
+        "longestStraightKm": 0.8,
+        "averageSpeed": "Unknown"
+      },
+      "raceLapRecord": {
+        "time": "1:15.641",
+        "driver": "Giancarlo Fisichella",
+        "driverCode": "FIS",
+        "constructor": "Renault",
+        "year": 2005,
+        "raceName": "Spanish Grand Prix"
+      }
+    },
+    {
+      "id": "barcelona",
+      "displayName": "Barcelona-Catalunya Grand Prix",
+      "matchKeys": [
+        "barcelona",
+        "catalunya",
+        "barcelonacatalunya"
+      ],
+      "specs": {
+        "turns": 16,
+        "longestStraightKm": 1,
+        "averageSpeed": "Medium"
+      },
+      "raceLapRecord": null
+    },
+    {
+      "id": "monaco",
+      "displayName": "Monaco Grand Prix",
+      "matchKeys": [
+        "monaco",
+        "montecarlo"
+      ],
+      "specs": {
+        "turns": 19,
+        "longestStraightKm": 0.5,
+        "averageSpeed": "Low"
+      },
+      "raceLapRecord": {
+        "time": "1:12.909",
+        "driver": "Lewis Hamilton",
+        "driverCode": "HAM",
+        "constructor": "Mercedes",
+        "year": 2021,
+        "raceName": "Monaco Grand Prix"
+      }
+    },
+    {
+      "id": "canada",
+      "displayName": "Canadian Grand Prix",
+      "matchKeys": [
+        "canada",
+        "canadian",
+        "montreal",
+        "gillesvilleneuve"
+      ],
+      "specs": {
+        "turns": 14,
+        "longestStraightKm": 1.2,
+        "averageSpeed": "Medium"
+      },
+      "raceLapRecord": null
+    },
+    {
+      "id": "austria",
+      "displayName": "Austrian Grand Prix",
+      "matchKeys": [
+        "austria",
+        "austrian",
+        "spielberg",
+        "redbullring"
+      ],
+      "specs": {
+        "turns": 10,
+        "longestStraightKm": 0.9,
+        "averageSpeed": "High"
+      },
+      "raceLapRecord": {
+        "time": "1:05.619",
+        "driver": "Carlos Sainz",
+        "driverCode": "SAI",
+        "constructor": "McLaren",
+        "year": 2020,
+        "raceName": "Styrian Grand Prix"
+      }
+    },
+    {
+      "id": "greatbritain",
+      "displayName": "British Grand Prix",
+      "matchKeys": [
+        "greatbritain",
+        "british",
+        "silverstone"
+      ],
+      "specs": {
+        "turns": 18,
+        "longestStraightKm": 0.8,
+        "averageSpeed": "High"
+      },
+      "raceLapRecord": {
+        "time": "1:27.097",
+        "driver": "Max Verstappen",
+        "driverCode": "VER",
+        "constructor": "Red Bull",
+        "year": 2020,
+        "raceName": "British Grand Prix"
+      }
+    },
+    {
+      "id": "hungary",
+      "displayName": "Hungarian Grand Prix",
+      "matchKeys": [
+        "hungary",
+        "hungarian",
+        "hungaroring",
+        "budapest"
+      ],
+      "specs": {
+        "turns": 14,
+        "longestStraightKm": 0.8,
+        "averageSpeed": "Low"
+      },
+      "raceLapRecord": {
+        "time": "1:16.627",
+        "driver": "Lewis Hamilton",
+        "driverCode": "HAM",
+        "constructor": "Mercedes",
+        "year": 2020,
+        "raceName": "Hungarian Grand Prix"
+      }
+    },
+    {
+      "id": "belgium",
+      "displayName": "Belgian Grand Prix",
+      "matchKeys": [
+        "belgium",
+        "belgian",
+        "spa",
+        "spafrancorchamps"
+      ],
+      "specs": {
+        "turns": 19,
+        "longestStraightKm": 1.9,
+        "averageSpeed": "High"
+      },
+      "raceLapRecord": null
+    },
+    {
+      "id": "netherlands",
+      "displayName": "Dutch Grand Prix",
+      "matchKeys": [
+        "netherlands",
+        "dutch",
+        "zandvoort"
+      ],
+      "specs": {
+        "turns": 14,
+        "longestStraightKm": 0.7,
+        "averageSpeed": "Medium"
+      },
+      "raceLapRecord": null
+    },
+    {
+      "id": "italy",
+      "displayName": "Italian Grand Prix",
+      "matchKeys": [
+        "italy",
+        "italian",
+        "monza"
+      ],
+      "specs": {
+        "turns": 11,
+        "longestStraightKm": 1.1,
+        "averageSpeed": "Very High"
+      },
+      "raceLapRecord": {
+        "time": "1:16.702",
+        "driver": "Lewis Hamilton",
+        "driverCode": "HAM",
+        "constructor": "Mercedes",
+        "year": 2021,
+        "raceName": "Emilia Romagna Grand Prix"
+      }
+    },
+    {
+      "id": "azerbaijan",
+      "displayName": "Azerbaijan Grand Prix",
+      "matchKeys": [
+        "azerbaijan",
+        "baku"
+      ],
+      "specs": {
+        "turns": 20,
+        "longestStraightKm": 2.2,
+        "averageSpeed": "High"
+      },
+      "raceLapRecord": {
+        "time": "1:43.009",
+        "driver": "Charles Leclerc",
+        "driverCode": "LEC",
+        "constructor": "Ferrari",
+        "year": 2019,
+        "raceName": "Azerbaijan Grand Prix"
+      }
+    },
+    {
+      "id": "singapore",
+      "displayName": "Singapore Grand Prix",
+      "matchKeys": [
+        "singapore",
+        "marinabay"
+      ],
+      "specs": {
+        "turns": 19,
+        "longestStraightKm": 0.8,
+        "averageSpeed": "Low"
+      },
+      "raceLapRecord": null
+    },
+    {
+      "id": "usa",
+      "displayName": "United States Grand Prix",
+      "matchKeys": [
+        "unitedstates",
+        "usa",
+        "austin",
+        "cota",
+        "circuitoftheamericas"
+      ],
+      "specs": {
+        "turns": 20,
+        "longestStraightKm": 1.2,
+        "averageSpeed": "Medium"
+      },
+      "raceLapRecord": null
+    },
+    {
+      "id": "mexico",
+      "displayName": "Mexico City Grand Prix",
+      "matchKeys": [
+        "mexico",
+        "mexicocity",
+        "autodromohermanosrodriguez"
+      ],
+      "specs": {
+        "turns": 17,
+        "longestStraightKm": 1.2,
+        "averageSpeed": "Medium"
+      },
+      "raceLapRecord": null
+    },
+    {
+      "id": "brazil",
+      "displayName": "São Paulo Grand Prix",
+      "matchKeys": [
+        "brazil",
+        "brazilian",
+        "saopaulo",
+        "interlagos"
+      ],
+      "specs": {
+        "turns": 15,
+        "longestStraightKm": 0.9,
+        "averageSpeed": "Medium"
+      },
+      "raceLapRecord": null
+    },
+    {
+      "id": "lasvegas",
+      "displayName": "Las Vegas Grand Prix",
+      "matchKeys": [
+        "lasvegas",
+        "vegas"
+      ],
+      "specs": {
+        "turns": 17,
+        "longestStraightKm": 1.9,
+        "averageSpeed": "High"
+      },
+      "raceLapRecord": null
+    },
+    {
+      "id": "qatar",
+      "displayName": "Qatar Grand Prix",
+      "matchKeys": [
+        "qatar",
+        "lusail",
+        "doha"
+      ],
+      "specs": {
+        "turns": 16,
+        "longestStraightKm": 1.1,
+        "averageSpeed": "High"
+      },
+      "raceLapRecord": null
+    },
+    {
+      "id": "abudhabi",
+      "displayName": "Abu Dhabi Grand Prix",
+      "matchKeys": [
+        "abudhabi",
+        "yasmarina"
+      ],
+      "specs": {
+        "turns": 16,
+        "longestStraightKm": 1.2,
+        "averageSpeed": "Medium"
+      },
+      "raceLapRecord": null
+    }
+  ]
+}
