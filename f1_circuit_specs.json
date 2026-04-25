@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-25T03:18:56.832Z",
+  "generatedAt": "2026-04-25T03:48:25.362Z",
   "circuits": [
     {
       "id": "bahrain",
@@ -45,7 +45,14 @@
         "averageSpeed": "Medium",
         "raceLaps": 58
       },
-      "raceLapRecord": null
+      "raceLapRecord": {
+        "time": "1:22.091",
+        "driver": null,
+        "driverCode": "VER",
+        "constructor": null,
+        "year": 2026,
+        "raceName": "Australian Grand Prix"
+      }
     },
     {
       "id": "japan",
@@ -61,7 +68,14 @@
         "averageSpeed": "High",
         "raceLaps": 53
       },
-      "raceLapRecord": null
+      "raceLapRecord": {
+        "time": "1:32.432",
+        "driver": null,
+        "driverCode": "ANT",
+        "constructor": null,
+        "year": 2026,
+        "raceName": "Japanese Grand Prix"
+      }
     },
     {
       "id": "china",
@@ -76,7 +90,14 @@
         "averageSpeed": "Medium",
         "raceLaps": 56
       },
-      "raceLapRecord": null
+      "raceLapRecord": {
+        "time": "1:35.275",
+        "driver": null,
+        "driverCode": "ANT",
+        "constructor": null,
+        "year": 2026,
+        "raceName": "Chinese Grand Prix"
+      }
     },
     {
       "id": "miami",
