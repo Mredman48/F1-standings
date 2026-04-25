@@ -1,0 +1,437 @@
+{
+  "generatedAt": "STATIC",
+  "circuits": [
+    {
+      "id": "bahrain",
+      "displayName": "Bahrain Grand Prix",
+      "dna": {
+        "cornerProfile": "Stop-start traction",
+        "overtaking": "High",
+        "tireWear": "High",
+        "trackEvolution": "High",
+        "strategyBias": "Undercut",
+        "safetyCarRisk": "Low"
+      },
+      "intelligence": [
+        "Rear tire degradation usually drives strategy.",
+        "Turn 1 and Turn 4 are the main overtaking zones.",
+        "The undercut is often powerful because tires drop off quickly.",
+        "Wind can make braking and traction inconsistent."
+      ]
+    },
+    {
+      "id": "saudi",
+      "displayName": "Saudi Arabian Grand Prix",
+      "dna": {
+        "cornerProfile": "High-speed street",
+        "overtaking": "Medium",
+        "tireWear": "Low",
+        "trackEvolution": "High",
+        "strategyBias": "Track Position",
+        "safetyCarRisk": "High"
+      },
+      "intelligence": [
+        "High-speed walls make mistakes costly.",
+        "Safety Cars can quickly reshape strategy.",
+        "Qualifying position matters because overtaking is risky.",
+        "Low degradation can limit strategic variation."
+      ]
+    },
+    {
+      "id": "australia",
+      "displayName": "Australian Grand Prix",
+      "dna": {
+        "cornerProfile": "Fast street-parkland",
+        "overtaking": "Medium",
+        "tireWear": "Medium",
+        "trackEvolution": "High",
+        "strategyBias": "Undercut",
+        "safetyCarRisk": "Medium"
+      },
+      "intelligence": [
+        "Track evolution is usually significant across the weekend.",
+        "Multiple DRS zones can create passing chances.",
+        "Mistakes often carry consequences because walls are close.",
+        "Balance through medium-speed corners is important."
+      ]
+    },
+    {
+      "id": "japan",
+      "displayName": "Japanese Grand Prix",
+      "dna": {
+        "cornerProfile": "High-speed flowing",
+        "overtaking": "Low",
+        "tireWear": "High",
+        "trackEvolution": "Medium",
+        "strategyBias": "Tire Management",
+        "safetyCarRisk": "Low"
+      },
+      "intelligence": [
+        "Sector 1 rewards aerodynamic stability and driver confidence.",
+        "Dirty air can make overtaking difficult.",
+        "Tire management is critical through long high-load corners.",
+        "Qualifying position is very important."
+      ]
+    },
+    {
+      "id": "china",
+      "displayName": "Chinese Grand Prix",
+      "dna": {
+        "cornerProfile": "Technical with long straight",
+        "overtaking": "High",
+        "tireWear": "High",
+        "trackEvolution": "Medium",
+        "strategyBias": "Tire Management",
+        "safetyCarRisk": "Low"
+      },
+      "intelligence": [
+        "The long back straight creates strong DRS opportunities.",
+        "Front tire wear can become a limiting factor.",
+        "Long-radius corners punish poor balance.",
+        "Strategy flexibility matters if degradation is high."
+      ]
+    },
+    {
+      "id": "miami",
+      "displayName": "Miami Grand Prix",
+      "dna": {
+        "cornerProfile": "Mixed street-style",
+        "overtaking": "Medium",
+        "tireWear": "Medium",
+        "trackEvolution": "High",
+        "strategyBias": "Neutral",
+        "safetyCarRisk": "Medium"
+      },
+      "intelligence": [
+        "Grip can vary across the lap.",
+        "The long straight creates the best overtaking chance.",
+        "Track evolution is usually noticeable.",
+        "Balance between traction and top speed matters."
+      ]
+    },
+    {
+      "id": "monaco",
+      "displayName": "Monaco Grand Prix",
+      "dna": {
+        "cornerProfile": "Tight street",
+        "overtaking": "Very Low",
+        "tireWear": "Low",
+        "trackEvolution": "High",
+        "strategyBias": "Track Position",
+        "safetyCarRisk": "High"
+      },
+      "intelligence": [
+        "Qualifying is often more important than race pace.",
+        "Track position dominates strategy.",
+        "Overtaking is extremely difficult.",
+        "Safety Car timing can completely change the race."
+      ]
+    },
+    {
+      "id": "canada",
+      "displayName": "Canadian Grand Prix",
+      "dna": {
+        "cornerProfile": "Stop-start braking",
+        "overtaking": "High",
+        "tireWear": "Medium",
+        "trackEvolution": "Medium",
+        "strategyBias": "Undercut",
+        "safetyCarRisk": "High"
+      },
+      "intelligence": [
+        "Heavy braking zones create real passing opportunities.",
+        "Wall proximity increases Safety Car chances.",
+        "Traction out of slow corners is key.",
+        "Brake management can influence race pace."
+      ]
+    },
+    {
+      "id": "madrid",
+      "displayName": "Spanish Grand Prix",
+      "dna": {
+        "cornerProfile": "New street-hybrid",
+        "overtaking": "Unknown",
+        "tireWear": "Unknown",
+        "trackEvolution": "High",
+        "strategyBias": "Unknown",
+        "safetyCarRisk": "Medium"
+      },
+      "intelligence": [
+        "As a new venue, early sessions will be important for learning grip levels.",
+        "Track evolution is likely to be high across the weekend.",
+        "Setup confidence may matter more than historical form.",
+        "Race intelligence should be updated after the first event establishes trends."
+      ]
+    },
+    {
+      "id": "barcelona",
+      "displayName": "Barcelona-Catalunya Grand Prix",
+      "dna": {
+        "cornerProfile": "Aero balance test",
+        "overtaking": "Low",
+        "tireWear": "High",
+        "trackEvolution": "Medium",
+        "strategyBias": "Tire Management",
+        "safetyCarRisk": "Low"
+      },
+      "intelligence": [
+        "This circuit heavily rewards aerodynamic efficiency.",
+        "Tire degradation is usually a major factor.",
+        "Overtaking can be difficult despite the main straight.",
+        "Cars that are strong here often have balanced all-round performance."
+      ]
+    },
+    {
+      "id": "austria",
+      "displayName": "Austrian Grand Prix",
+      "dna": {
+        "cornerProfile": "Short high-speed braking",
+        "overtaking": "High",
+        "tireWear": "Medium",
+        "trackEvolution": "Medium",
+        "strategyBias": "Track Limits",
+        "safetyCarRisk": "Medium"
+      },
+      "intelligence": [
+        "Short lap times make qualifying gaps extremely tight.",
+        "Heavy braking zones create multiple overtaking chances.",
+        "Track limits can heavily affect results.",
+        "Traffic management is important because the lap is so short."
+      ]
+    },
+    {
+      "id": "greatbritain",
+      "displayName": "British Grand Prix",
+      "dna": {
+        "cornerProfile": "High-speed aero",
+        "overtaking": "Medium",
+        "tireWear": "High",
+        "trackEvolution": "Medium",
+        "strategyBias": "Tire Management",
+        "safetyCarRisk": "Low"
+      },
+      "intelligence": [
+        "High-speed corners place heavy load on tires.",
+        "Wind can noticeably change car balance.",
+        "Aerodynamic stability is critical.",
+        "Race pace often depends on tire life through long corners."
+      ]
+    },
+    {
+      "id": "belgium",
+      "displayName": "Belgian Grand Prix",
+      "dna": {
+        "cornerProfile": "High-speed elevation",
+        "overtaking": "High",
+        "tireWear": "Medium",
+        "trackEvolution": "Medium",
+        "strategyBias": "Weather",
+        "safetyCarRisk": "Medium"
+      },
+      "intelligence": [
+        "Weather can vary across different parts of the circuit.",
+        "Slipstream and DRS are powerful on long straights.",
+        "Setup is a compromise between sector speed and straight-line performance.",
+        "Elevation changes reward commitment and confidence."
+      ]
+    },
+    {
+      "id": "hungary",
+      "displayName": "Hungarian Grand Prix",
+      "dna": {
+        "cornerProfile": "Low-speed technical",
+        "overtaking": "Low",
+        "tireWear": "Medium",
+        "trackEvolution": "High",
+        "strategyBias": "Track Position",
+        "safetyCarRisk": "Low"
+      },
+      "intelligence": [
+        "Track position is extremely valuable.",
+        "Qualifying performance usually has a major impact.",
+        "The circuit rewards mechanical grip and rotation.",
+        "Traffic can heavily compromise race pace."
+      ]
+    },
+    {
+      "id": "netherlands",
+      "displayName": "Dutch Grand Prix",
+      "dna": {
+        "cornerProfile": "Banked flowing",
+        "overtaking": "Low",
+        "tireWear": "Medium",
+        "trackEvolution": "Medium",
+        "strategyBias": "Track Position",
+        "safetyCarRisk": "Low"
+      },
+      "intelligence": [
+        "Banked corners create unique racing lines.",
+        "Overtaking is difficult because the track is narrow.",
+        "Qualifying position is important.",
+        "Momentum through flowing sections is critical."
+      ]
+    },
+    {
+      "id": "italy",
+      "displayName": "Italian Grand Prix",
+      "dna": {
+        "cornerProfile": "Low-downforce power",
+        "overtaking": "High",
+        "tireWear": "Low",
+        "trackEvolution": "Low",
+        "strategyBias": "Straight-Line Speed",
+        "safetyCarRisk": "Medium"
+      },
+      "intelligence": [
+        "Straight-line speed is the dominant performance factor.",
+        "Slipstream battles are common.",
+        "Low-downforce setup choices define competitiveness.",
+        "Braking stability into chicanes is important."
+      ]
+    },
+    {
+      "id": "azerbaijan",
+      "displayName": "Azerbaijan Grand Prix",
+      "dna": {
+        "cornerProfile": "Street with long straight",
+        "overtaking": "High",
+        "tireWear": "Low",
+        "trackEvolution": "High",
+        "strategyBias": "Safety Car",
+        "safetyCarRisk": "High"
+      },
+      "intelligence": [
+        "The long main straight creates major passing opportunities.",
+        "Safety Cars are a constant strategic threat.",
+        "Low-speed castle sections punish mistakes.",
+        "Top speed and braking confidence are both critical."
+      ]
+    },
+    {
+      "id": "singapore",
+      "displayName": "Singapore Grand Prix",
+      "dna": {
+        "cornerProfile": "Technical street",
+        "overtaking": "Low",
+        "tireWear": "High",
+        "trackEvolution": "High",
+        "strategyBias": "Safety Car",
+        "safetyCarRisk": "Very High"
+      },
+      "intelligence": [
+        "Safety Cars frequently reshape the race.",
+        "Heat and humidity make this one of the most physical races.",
+        "Track position is very valuable.",
+        "Tire management and concentration are critical over a long race."
+      ]
+    },
+    {
+      "id": "usa",
+      "displayName": "United States Grand Prix",
+      "dna": {
+        "cornerProfile": "Mixed technical",
+        "overtaking": "High",
+        "tireWear": "Medium",
+        "trackEvolution": "Medium",
+        "strategyBias": "Balanced",
+        "safetyCarRisk": "Medium"
+      },
+      "intelligence": [
+        "Sector 1 rewards high-speed aero stability.",
+        "The long back straight creates strong overtaking chances.",
+        "Bumpy sections can affect balance and tire life.",
+        "This is a strong all-round car test."
+      ]
+    },
+    {
+      "id": "mexico",
+      "displayName": "Mexico City Grand Prix",
+      "dna": {
+        "cornerProfile": "Altitude traction",
+        "overtaking": "High",
+        "tireWear": "Low",
+        "trackEvolution": "Medium",
+        "strategyBias": "Cooling",
+        "safetyCarRisk": "Low"
+      },
+      "intelligence": [
+        "High altitude reduces downforce and cooling efficiency.",
+        "Straight-line speed is influenced by thin air.",
+        "The long run to Turn 1 creates major opening-lap opportunity.",
+        "Power unit and brake cooling can be a major concern."
+      ]
+    },
+    {
+      "id": "brazil",
+      "displayName": "São Paulo Grand Prix",
+      "dna": {
+        "cornerProfile": "Short flowing elevation",
+        "overtaking": "High",
+        "tireWear": "Medium",
+        "trackEvolution": "Medium",
+        "strategyBias": "Weather",
+        "safetyCarRisk": "Medium"
+      },
+      "intelligence": [
+        "Weather can quickly change strategy.",
+        "Short lap length keeps the field compressed.",
+        "Overtaking is possible into Turn 1 and Turn 4.",
+        "Traction through the final sector is important for straight-line attacks."
+      ]
+    },
+    {
+      "id": "lasvegas",
+      "displayName": "Las Vegas Grand Prix",
+      "dna": {
+        "cornerProfile": "Low-grip street",
+        "overtaking": "High",
+        "tireWear": "Low",
+        "trackEvolution": "High",
+        "strategyBias": "Tire Temperature",
+        "safetyCarRisk": "Medium"
+      },
+      "intelligence": [
+        "Cold track temperatures can make tire warm-up difficult.",
+        "The long straight creates strong overtaking chances.",
+        "Low grip makes braking stability important.",
+        "Track evolution can be significant across the weekend."
+      ]
+    },
+    {
+      "id": "qatar",
+      "displayName": "Qatar Grand Prix",
+      "dna": {
+        "cornerProfile": "Fast flowing",
+        "overtaking": "Medium",
+        "tireWear": "High",
+        "trackEvolution": "Low",
+        "strategyBias": "Tire Management",
+        "safetyCarRisk": "Low"
+      },
+      "intelligence": [
+        "High-speed corners place heavy sustained load on tires.",
+        "Track limits can become a major storyline.",
+        "Tire management is central to race execution.",
+        "Cars with stable aero balance are rewarded."
+      ]
+    },
+    {
+      "id": "abudhabi",
+      "displayName": "Abu Dhabi Grand Prix",
+      "dna": {
+        "cornerProfile": "Modern traction",
+        "overtaking": "Medium",
+        "tireWear": "Low",
+        "trackEvolution": "Medium",
+        "strategyBias": "Neutral",
+        "safetyCarRisk": "Low"
+      },
+      "intelligence": [
+        "Race conditions change as the event moves from daylight to night.",
+        "Traction out of slow corners is important.",
+        "Strategy is often straightforward without interruption.",
+        "Qualifying remains important because overtaking can be limited."
+      ]
+    }
+  ]
+}
