@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-25T03:48:25.362Z",
+  "generatedAt": "2026-04-25T04:09:50.017Z",
   "circuits": [
     {
       "id": "bahrain",
@@ -14,7 +14,14 @@
         "averageSpeed": "Medium",
         "raceLaps": 57
       },
-      "raceLapRecord": null
+      "raceLapRecord": {
+        "time": "1:19.813",
+        "driver": "the likes of Michael",
+        "driverCode": "MIC",
+        "constructor": null,
+        "year": 2026,
+        "raceName": "Bahrain Grand Prix"
+      }
     },
     {
       "id": "saudi",
