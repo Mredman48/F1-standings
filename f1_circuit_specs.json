@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-25T12:11:37.396Z",
+  "generatedAt": "2026-04-25T12:19:06.974Z",
   "circuits": [
     {
       "id": "bahrain",
@@ -15,10 +15,10 @@
         "raceLaps": 57
       },
       "raceLapRecord": {
-        "time": "1:19.813",
-        "driver": "the likes of Michael",
-        "constructor": "Red Bull",
-        "year": 2026,
+        "time": "1:27.264",
+        "driver": "Lewis Hamilton 🇬🇧",
+        "constructor": "Mercedes",
+        "year": 2020,
         "raceName": "Bahrain Grand Prix"
       }
     },
@@ -35,7 +35,13 @@
         "averageSpeed": "High",
         "raceLaps": 50
       },
-      "raceLapRecord": null
+      "raceLapRecord": {
+        "time": "1:27.294",
+        "driver": "Max Verstappen 🇳🇱",
+        "constructor": "Red Bull",
+        "year": 2025,
+        "raceName": "Saudi Arabian Grand Prix"
+      }
     },
     {
       "id": "australia",
@@ -52,10 +58,10 @@
         "raceLaps": 58
       },
       "raceLapRecord": {
-        "time": "1:22.091",
-        "driver": null,
-        "constructor": null,
-        "year": 2026,
+        "time": "1:15.096",
+        "driver": "Lando Norris🇬🇧",
+        "constructor": "McLaren",
+        "year": 2025,
         "raceName": "Australian Grand Prix"
       }
     },
@@ -74,10 +80,10 @@
         "raceLaps": 53
       },
       "raceLapRecord": {
-        "time": "1:32.432",
-        "driver": null,
-        "constructor": null,
-        "year": 2026,
+        "time": "1:26.983",
+        "driver": "Max Verstappen 🇳🇱",
+        "constructor": "Red Bull",
+        "year": 2025,
         "raceName": "Japanese Grand Prix"
       }
     },
@@ -95,10 +101,10 @@
         "raceLaps": 56
       },
       "raceLapRecord": {
-        "time": "1:35.275",
-        "driver": null,
-        "constructor": null,
-        "year": 2026,
+        "time": "1:30.641",
+        "driver": "Oscar Piastri 🇦🇺",
+        "constructor": "McLaren",
+        "year": 2025,
         "raceName": "Chinese Grand Prix"
       }
     },
@@ -114,7 +120,13 @@
         "averageSpeed": "Medium",
         "raceLaps": 57
       },
-      "raceLapRecord": null
+      "raceLapRecord": {
+        "time": "1:26.204",
+        "driver": "Max Verstappen 🇳🇱",
+        "constructor": "Red Bull",
+        "year": 2025,
+        "raceName": "Miami Grand Prix"
+      }
     },
     {
       "id": "madrid",
@@ -147,7 +159,13 @@
         "averageSpeed": "Medium",
         "raceLaps": 66
       },
-      "raceLapRecord": null
+      "raceLapRecord": {
+        "time": "1:11.383",
+        "driver": "Lando Norris 🇬🇧",
+        "constructor": "McLaren",
+        "year": 2024,
+        "raceName": "Barcelona-Catalunya Grand Prix"
+      }
     },
     {
       "id": "monaco",
@@ -162,7 +180,13 @@
         "averageSpeed": "Low",
         "raceLaps": 78
       },
-      "raceLapRecord": null
+      "raceLapRecord": {
+        "time": "1:09.954",
+        "driver": "Lando Norris 🇬🇧",
+        "constructor": "McLaren",
+        "year": 2025,
+        "raceName": "Monaco Grand Prix"
+      }
     },
     {
       "id": "canada",
@@ -179,7 +203,13 @@
         "averageSpeed": "Medium",
         "raceLaps": 70
       },
-      "raceLapRecord": null
+      "raceLapRecord": {
+        "time": "1:10.240",
+        "driver": "Sebastian Vettel 🇩🇪",
+        "constructor": "Ferrari",
+        "year": 2019,
+        "raceName": "Canadian Grand Prix"
+      }
     },
     {
       "id": "austria",
@@ -196,7 +226,13 @@
         "averageSpeed": "High",
         "raceLaps": 71
       },
-      "raceLapRecord": null
+      "raceLapRecord": {
+        "time": "1:02.939",
+        "driver": "Valtteri Bottas 🇫🇮",
+        "constructor": "Mercedes",
+        "year": 2020,
+        "raceName": "Austrian Grand Prix"
+      }
     },
     {
       "id": "greatbritain",
@@ -212,7 +248,13 @@
         "averageSpeed": "High",
         "raceLaps": 52
       },
-      "raceLapRecord": null
+      "raceLapRecord": {
+        "time": "1:24.303",
+        "driver": "Lewis Hamilton 🇬🇧",
+        "constructor": "Mercedes",
+        "year": 2020,
+        "raceName": "British Grand Prix"
+      }
     },
     {
       "id": "hungary",
@@ -229,7 +271,13 @@
         "averageSpeed": "Low",
         "raceLaps": 70
       },
-      "raceLapRecord": null
+      "raceLapRecord": {
+        "time": "1:13.447",
+        "driver": "Lewis Hamilton 🇬🇧",
+        "constructor": "Mercedes",
+        "year": 2020,
+        "raceName": "Hungarian Grand Prix"
+      }
     },
     {
       "id": "belgium",
@@ -246,7 +294,13 @@
         "averageSpeed": "High",
         "raceLaps": 44
       },
-      "raceLapRecord": null
+      "raceLapRecord": {
+        "time": "1:07.281",
+        "driver": "Lewis Hamilton 🇬🇧",
+        "constructor": "Mercedes",
+        "year": 2018,
+        "raceName": "Belgian Grand Prix"
+      }
     },
     {
       "id": "netherlands",
@@ -262,7 +316,13 @@
         "averageSpeed": "Medium",
         "raceLaps": 72
       },
-      "raceLapRecord": null
+      "raceLapRecord": {
+        "time": "1:08.662",
+        "driver": "Oscar Piastri 🇦🇺",
+        "constructor": "McLaren",
+        "year": 2025,
+        "raceName": "Dutch Grand Prix"
+      }
     },
     {
       "id": "italy",
@@ -278,7 +338,13 @@
         "averageSpeed": "Very High",
         "raceLaps": 53
       },
-      "raceLapRecord": null
+      "raceLapRecord": {
+        "time": "1:18.792",
+        "driver": "Max Verstappen 🇳🇱",
+        "constructor": "Red Bull",
+        "year": 2025,
+        "raceName": "Italian Grand Prix"
+      }
     },
     {
       "id": "azerbaijan",
@@ -293,7 +359,13 @@
         "averageSpeed": "High",
         "raceLaps": 51
       },
-      "raceLapRecord": null
+      "raceLapRecord": {
+        "time": "1:40.203",
+        "driver": "Charles Leclerc 🇲🇨",
+        "constructor": "Ferrari",
+        "year": 2023,
+        "raceName": "Azerbaijan Grand Prix"
+      }
     },
     {
       "id": "singapore",
@@ -308,7 +380,13 @@
         "averageSpeed": "Low",
         "raceLaps": 62
       },
-      "raceLapRecord": null
+      "raceLapRecord": {
+        "time": "1:29.525",
+        "driver": "Lando Norris 🇬🇧",
+        "constructor": "McLaren",
+        "year": 2024,
+        "raceName": "Singapore Grand Prix"
+      }
     },
     {
       "id": "usa",
@@ -326,7 +404,13 @@
         "averageSpeed": "Medium",
         "raceLaps": 56
       },
-      "raceLapRecord": null
+      "raceLapRecord": {
+        "time": "1:32.237",
+        "driver": "Lewis Hamilton 🇬🇧",
+        "constructor": "Mercedes",
+        "year": 2018,
+        "raceName": "United States Grand Prix"
+      }
     },
     {
       "id": "mexico",
@@ -342,7 +426,13 @@
         "averageSpeed": "Medium",
         "raceLaps": 71
       },
-      "raceLapRecord": null
+      "raceLapRecord": {
+        "time": "1:14.758",
+        "driver": "Max Verstappen 🇳🇱",
+        "constructor": "Red Bull",
+        "year": 2019,
+        "raceName": "Mexico City Grand Prix"
+      }
     },
     {
       "id": "brazil",
@@ -374,7 +464,13 @@
         "averageSpeed": "High",
         "raceLaps": 50
       },
-      "raceLapRecord": null
+      "raceLapRecord": {
+        "time": "1:32.312",
+        "driver": "George Russell 🇬🇧",
+        "constructor": "Mercedes",
+        "year": 2024,
+        "raceName": "Las Vegas Grand Prix"
+      }
     },
     {
       "id": "qatar",
@@ -390,7 +486,13 @@
         "averageSpeed": "High",
         "raceLaps": 57
       },
-      "raceLapRecord": null
+      "raceLapRecord": {
+        "time": "1:19.387",
+        "driver": "Oscar Piastri 🇦🇺",
+        "constructor": "McLaren",
+        "year": 2025,
+        "raceName": "Qatar Grand Prix"
+      }
     },
     {
       "id": "abudhabi",
@@ -405,7 +507,13 @@
         "averageSpeed": "Medium",
         "raceLaps": 58
       },
-      "raceLapRecord": null
+      "raceLapRecord": {
+        "time": "1:22.109",
+        "driver": "Max Verstappen 🇳🇱",
+        "constructor": "Red Bull",
+        "year": 2021,
+        "raceName": "Abu Dhabi Grand Prix"
+      }
     }
   ]
 }
