@@ -1,0 +1,37 @@
+{
+  "header": "F1 championship outlook",
+  "lastUpdated": "2026-04-27T02:28:46.222Z",
+  "sourceRace": {
+    "raceName": "Japanese Grand Prix",
+    "meetingName": "Japanese Grand Prix",
+    "round": 3,
+    "date": "2026-03-29",
+    "sessionKey": 11253,
+    "meetingKey": 1281
+  },
+  "sources": {
+    "driverStandings": "https://mredman48.github.io/F1-standings/f1_driver_standings.json",
+    "constructorStandings": "https://mredman48.github.io/F1-standings/f1_constructors_standings.json",
+    "seasonResults": "https://mredman48.github.io/F1-standings/f1_season_event_results.json"
+  },
+  "drivers": {
+    "leader": "Antonelli",
+    "second": "Russell",
+    "gap": 9,
+    "standingsText": "Antonelli leads by 9 pts over Russell",
+    "raceImpact": "Antonelli gained 13 pts on Russell",
+    "leaderRacePoints": 25,
+    "secondRacePoints": 12,
+    "raceDelta": 13
+  },
+  "constructors": {
+    "leader": "Mercedes",
+    "second": "Ferrari",
+    "gap": 45,
+    "standingsText": "Mercedes leads by 45 pts over Ferrari",
+    "raceImpact": "Mercedes and Ferrari scored equally",
+    "leaderRacePoints": 0,
+    "secondRacePoints": 0,
+    "raceDelta": 0
+  }
+}
