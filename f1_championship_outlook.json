@@ -1,37 +1,156 @@
 {
   "header": "F1 championship outlook",
-  "lastUpdated": "2026-04-27T02:28:46.222Z",
-  "sourceRace": {
-    "raceName": "Japanese Grand Prix",
-    "meetingName": "Japanese Grand Prix",
-    "round": 3,
-    "date": "2026-03-29",
-    "sessionKey": 11253,
-    "meetingKey": 1281
-  },
+  "season": 2026,
+  "lastUpdated": "2026-04-27T02:35:46.401Z",
   "sources": {
     "driverStandings": "https://mredman48.github.io/F1-standings/f1_driver_standings.json",
     "constructorStandings": "https://mredman48.github.io/F1-standings/f1_constructors_standings.json",
     "seasonResults": "https://mredman48.github.io/F1-standings/f1_season_event_results.json"
   },
-  "drivers": {
-    "leader": "Antonelli",
-    "second": "Russell",
-    "gap": 9,
-    "standingsText": "Antonelli leads by 9 pts over Russell",
-    "raceImpact": "Antonelli gained 13 pts on Russell",
-    "leaderRacePoints": 25,
-    "secondRacePoints": 12,
-    "raceDelta": 13
+  "latest": {
+    "id": "round-3-japanesegrandprix-2026-03-29",
+    "sourceRace": {
+      "raceName": "Japanese Grand Prix",
+      "meetingName": "Japanese Grand Prix",
+      "round": 3,
+      "date": "2026-03-29",
+      "dateStartUtc": "2026-03-29T05:00:00+00:00",
+      "sessionKey": 11253,
+      "meetingKey": 1281
+    },
+    "drivers": {
+      "leader": "Antonelli",
+      "second": "Russell",
+      "gap": 9,
+      "standingsText": "Antonelli leads by 9 pts over Russell",
+      "raceImpact": "Antonelli moved ahead of Russell to P1",
+      "scenarioText": "Antonelli moved ahead of Russell to P1",
+      "p1Changed": true,
+      "leaderRacePoints": 25,
+      "secondRacePoints": 12,
+      "raceDelta": 13
+    },
+    "constructors": {
+      "leader": "Mercedes",
+      "second": "Ferrari",
+      "gap": 45,
+      "standingsText": "Mercedes leads by 45 pts over Ferrari",
+      "raceImpact": "Mercedes maintained lead over Ferrari",
+      "scenarioText": "Mercedes maintained lead over Ferrari",
+      "p1Changed": false,
+      "leaderRacePoints": 0,
+      "secondRacePoints": 0,
+      "raceDelta": 0
+    }
   },
-  "constructors": {
-    "leader": "Mercedes",
-    "second": "Ferrari",
-    "gap": 45,
-    "standingsText": "Mercedes leads by 45 pts over Ferrari",
-    "raceImpact": "Mercedes and Ferrari scored equally",
-    "leaderRacePoints": 0,
-    "secondRacePoints": 0,
-    "raceDelta": 0
-  }
+  "races": [
+    {
+      "id": "round-1-australiangrandprix-2026-03-08",
+      "sourceRace": {
+        "raceName": "Australian Grand Prix",
+        "meetingName": "Australian Grand Prix",
+        "round": 1,
+        "date": "2026-03-08",
+        "dateStartUtc": "2026-03-08T04:00:00+00:00",
+        "sessionKey": 11234,
+        "meetingKey": 1279
+      },
+      "drivers": {
+        "leader": "Russell",
+        "second": "Antonelli",
+        "gap": 11,
+        "standingsText": "Russell leads by 11 pts over Antonelli",
+        "raceImpact": "Russell extended lead by 7 pts over Antonelli",
+        "scenarioText": "Russell extended lead by 7 pts over Antonelli",
+        "p1Changed": false,
+        "leaderRacePoints": 25,
+        "secondRacePoints": 18,
+        "raceDelta": 7
+      },
+      "constructors": {
+        "leader": "Mercedes",
+        "second": "Ferrari",
+        "gap": 45,
+        "standingsText": "Mercedes leads by 45 pts over Ferrari",
+        "raceImpact": "Mercedes maintained lead over Ferrari",
+        "scenarioText": "Mercedes maintained lead over Ferrari",
+        "p1Changed": false,
+        "leaderRacePoints": 0,
+        "secondRacePoints": 0,
+        "raceDelta": 0
+      }
+    },
+    {
+      "id": "round-2-chinesegrandprix-2026-03-15",
+      "sourceRace": {
+        "raceName": "Chinese Grand Prix",
+        "meetingName": "Chinese Grand Prix",
+        "round": 2,
+        "date": "2026-03-15",
+        "dateStartUtc": "2026-03-15T07:00:00+00:00",
+        "sessionKey": 11245,
+        "meetingKey": 1280
+      },
+      "drivers": {
+        "leader": "Russell",
+        "second": "Antonelli",
+        "gap": 4,
+        "standingsText": "Russell leads by 4 pts over Antonelli",
+        "raceImpact": "Antonelli cut Russell's lead by 7 pts",
+        "scenarioText": "Antonelli cut Russell's lead by 7 pts",
+        "p1Changed": false,
+        "leaderRacePoints": 18,
+        "secondRacePoints": 25,
+        "raceDelta": -7
+      },
+      "constructors": {
+        "leader": "Mercedes",
+        "second": "Ferrari",
+        "gap": 45,
+        "standingsText": "Mercedes leads by 45 pts over Ferrari",
+        "raceImpact": "Mercedes maintained lead over Ferrari",
+        "scenarioText": "Mercedes maintained lead over Ferrari",
+        "p1Changed": false,
+        "leaderRacePoints": 0,
+        "secondRacePoints": 0,
+        "raceDelta": 0
+      }
+    },
+    {
+      "id": "round-3-japanesegrandprix-2026-03-29",
+      "sourceRace": {
+        "raceName": "Japanese Grand Prix",
+        "meetingName": "Japanese Grand Prix",
+        "round": 3,
+        "date": "2026-03-29",
+        "dateStartUtc": "2026-03-29T05:00:00+00:00",
+        "sessionKey": 11253,
+        "meetingKey": 1281
+      },
+      "drivers": {
+        "leader": "Antonelli",
+        "second": "Russell",
+        "gap": 9,
+        "standingsText": "Antonelli leads by 9 pts over Russell",
+        "raceImpact": "Antonelli moved ahead of Russell to P1",
+        "scenarioText": "Antonelli moved ahead of Russell to P1",
+        "p1Changed": true,
+        "leaderRacePoints": 25,
+        "secondRacePoints": 12,
+        "raceDelta": 13
+      },
+      "constructors": {
+        "leader": "Mercedes",
+        "second": "Ferrari",
+        "gap": 45,
+        "standingsText": "Mercedes leads by 45 pts over Ferrari",
+        "raceImpact": "Mercedes maintained lead over Ferrari",
+        "scenarioText": "Mercedes maintained lead over Ferrari",
+        "p1Changed": false,
+        "leaderRacePoints": 0,
+        "secondRacePoints": 0,
+        "raceDelta": 0
+      }
+    }
+  ]
 }
