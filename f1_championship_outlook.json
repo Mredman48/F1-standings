@@ -1,7 +1,8 @@
 {
   "header": "F1 championship outlook",
   "season": 2026,
-  "lastUpdated": "2026-04-27T02:35:46.401Z",
+  "lastUpdated": "2026-04-27T03:17:35.630Z",
+  "mode": "race-weekend",
   "sources": {
     "driverStandings": "https://mredman48.github.io/F1-standings/f1_driver_standings.json",
     "constructorStandings": "https://mredman48.github.io/F1-standings/f1_constructors_standings.json",
@@ -15,8 +16,16 @@
       "round": 3,
       "date": "2026-03-29",
       "dateStartUtc": "2026-03-29T05:00:00+00:00",
-      "sessionKey": 11253,
-      "meetingKey": 1281
+      "meetingKey": 1281,
+      "sessionsIncluded": [
+        {
+          "eventType": "race",
+          "sessionName": "Race",
+          "sessionKey": 11253,
+          "date": "2026-03-29",
+          "dateStartUtc": "2026-03-29T05:00:00+00:00"
+        }
+      ]
     },
     "drivers": {
       "leader": "Antonelli",
@@ -26,9 +35,9 @@
       "raceImpact": "Antonelli moved ahead of Russell to P1",
       "scenarioText": "Antonelli moved ahead of Russell to P1",
       "p1Changed": true,
-      "leaderRacePoints": 25,
-      "secondRacePoints": 12,
-      "raceDelta": 13
+      "leaderWeekendPoints": 25,
+      "secondWeekendPoints": 12,
+      "weekendDelta": 13
     },
     "constructors": {
       "leader": "Mercedes",
@@ -38,9 +47,9 @@
       "raceImpact": "Mercedes maintained lead over Ferrari",
       "scenarioText": "Mercedes maintained lead over Ferrari",
       "p1Changed": false,
-      "leaderRacePoints": 0,
-      "secondRacePoints": 0,
-      "raceDelta": 0
+      "leaderWeekendPoints": 0,
+      "secondWeekendPoints": 0,
+      "weekendDelta": 0
     }
   },
   "races": [
@@ -52,20 +61,28 @@
         "round": 1,
         "date": "2026-03-08",
         "dateStartUtc": "2026-03-08T04:00:00+00:00",
-        "sessionKey": 11234,
-        "meetingKey": 1279
+        "meetingKey": 1279,
+        "sessionsIncluded": [
+          {
+            "eventType": "race",
+            "sessionName": "Race",
+            "sessionKey": 11234,
+            "date": "2026-03-08",
+            "dateStartUtc": "2026-03-08T04:00:00+00:00"
+          }
+        ]
       },
       "drivers": {
         "leader": "Russell",
         "second": "Antonelli",
-        "gap": 11,
-        "standingsText": "Russell leads by 11 pts over Antonelli",
-        "raceImpact": "Russell extended lead by 7 pts over Antonelli",
-        "scenarioText": "Russell extended lead by 7 pts over Antonelli",
-        "p1Changed": false,
-        "leaderRacePoints": 25,
-        "secondRacePoints": 18,
-        "raceDelta": 7
+        "gap": 7,
+        "standingsText": "Russell leads by 7 pts over Antonelli",
+        "raceImpact": "Russell moved ahead of Albon to P1",
+        "scenarioText": "Russell moved ahead of Albon to P1",
+        "p1Changed": true,
+        "leaderWeekendPoints": 25,
+        "secondWeekendPoints": 18,
+        "weekendDelta": 7
       },
       "constructors": {
         "leader": "Mercedes",
@@ -75,33 +92,48 @@
         "raceImpact": "Mercedes maintained lead over Ferrari",
         "scenarioText": "Mercedes maintained lead over Ferrari",
         "p1Changed": false,
-        "leaderRacePoints": 0,
-        "secondRacePoints": 0,
-        "raceDelta": 0
+        "leaderWeekendPoints": 0,
+        "secondWeekendPoints": 0,
+        "weekendDelta": 0
       }
     },
     {
-      "id": "round-2-chinesegrandprix-2026-03-15",
+      "id": "round-2-chinesegrandprixsprint-2026-03-14",
       "sourceRace": {
-        "raceName": "Chinese Grand Prix",
+        "raceName": "Chinese Grand Prix Sprint",
         "meetingName": "Chinese Grand Prix",
         "round": 2,
-        "date": "2026-03-15",
-        "dateStartUtc": "2026-03-15T07:00:00+00:00",
-        "sessionKey": 11245,
-        "meetingKey": 1280
+        "date": "2026-03-14",
+        "dateStartUtc": "2026-03-14T03:00:00+00:00",
+        "meetingKey": 1280,
+        "sessionsIncluded": [
+          {
+            "eventType": "sprint",
+            "sessionName": "Sprint",
+            "sessionKey": 11240,
+            "date": "2026-03-14",
+            "dateStartUtc": "2026-03-14T03:00:00+00:00"
+          },
+          {
+            "eventType": "race",
+            "sessionName": "Race",
+            "sessionKey": 11245,
+            "date": "2026-03-15",
+            "dateStartUtc": "2026-03-15T07:00:00+00:00"
+          }
+        ]
       },
       "drivers": {
         "leader": "Russell",
         "second": "Antonelli",
         "gap": 4,
         "standingsText": "Russell leads by 4 pts over Antonelli",
-        "raceImpact": "Antonelli cut Russell's lead by 7 pts",
-        "scenarioText": "Antonelli cut Russell's lead by 7 pts",
+        "raceImpact": "Antonelli cut Russell's lead by 3 pts",
+        "scenarioText": "Antonelli cut Russell's lead by 3 pts",
         "p1Changed": false,
-        "leaderRacePoints": 18,
-        "secondRacePoints": 25,
-        "raceDelta": -7
+        "leaderWeekendPoints": 26,
+        "secondWeekendPoints": 29,
+        "weekendDelta": -3
       },
       "constructors": {
         "leader": "Mercedes",
@@ -111,9 +143,9 @@
         "raceImpact": "Mercedes maintained lead over Ferrari",
         "scenarioText": "Mercedes maintained lead over Ferrari",
         "p1Changed": false,
-        "leaderRacePoints": 0,
-        "secondRacePoints": 0,
-        "raceDelta": 0
+        "leaderWeekendPoints": 0,
+        "secondWeekendPoints": 0,
+        "weekendDelta": 0
       }
     },
     {
@@ -124,8 +156,16 @@
         "round": 3,
         "date": "2026-03-29",
         "dateStartUtc": "2026-03-29T05:00:00+00:00",
-        "sessionKey": 11253,
-        "meetingKey": 1281
+        "meetingKey": 1281,
+        "sessionsIncluded": [
+          {
+            "eventType": "race",
+            "sessionName": "Race",
+            "sessionKey": 11253,
+            "date": "2026-03-29",
+            "dateStartUtc": "2026-03-29T05:00:00+00:00"
+          }
+        ]
       },
       "drivers": {
         "leader": "Antonelli",
@@ -135,9 +175,9 @@
         "raceImpact": "Antonelli moved ahead of Russell to P1",
         "scenarioText": "Antonelli moved ahead of Russell to P1",
         "p1Changed": true,
-        "leaderRacePoints": 25,
-        "secondRacePoints": 12,
-        "raceDelta": 13
+        "leaderWeekendPoints": 25,
+        "secondWeekendPoints": 12,
+        "weekendDelta": 13
       },
       "constructors": {
         "leader": "Mercedes",
@@ -147,9 +187,9 @@
         "raceImpact": "Mercedes maintained lead over Ferrari",
         "scenarioText": "Mercedes maintained lead over Ferrari",
         "p1Changed": false,
-        "leaderRacePoints": 0,
-        "secondRacePoints": 0,
-        "raceDelta": 0
+        "leaderWeekendPoints": 0,
+        "secondWeekendPoints": 0,
+        "weekendDelta": 0
       }
     }
   ]
