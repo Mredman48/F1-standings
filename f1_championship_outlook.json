@@ -1,12 +1,14 @@
 {
   "header": "F1 championship outlook",
   "season": 2026,
-  "lastUpdated": "2026-04-27T03:17:35.630Z",
+  "previousSeason": 2025,
+  "lastUpdated": "2026-04-28T03:21:44.404Z",
   "mode": "race-weekend",
   "sources": {
     "driverStandings": "https://mredman48.github.io/F1-standings/f1_driver_standings.json",
     "constructorStandings": "https://mredman48.github.io/F1-standings/f1_constructors_standings.json",
-    "seasonResults": "https://mredman48.github.io/F1-standings/f1_season_event_results.json"
+    "seasonResults": "https://mredman48.github.io/F1-standings/f1_season_event_results.json",
+    "previousYearWinners": "https://api.jolpi.ca/ergast/f1/2025/results/1.json"
   },
   "latest": {
     "id": "round-3-japanesegrandprix-2026-03-29",
@@ -17,6 +19,15 @@
       "date": "2026-03-29",
       "dateStartUtc": "2026-03-29T05:00:00+00:00",
       "meetingKey": 1281,
+      "previousYearWinner": {
+        "season": 2025,
+        "round": 3,
+        "raceName": "Japanese Grand Prix",
+        "date": "2025-04-06",
+        "winner": "Max Verstappen",
+        "constructor": "Red Bull",
+        "source": "jolpica"
+      },
       "sessionsIncluded": [
         {
           "eventType": "race",
@@ -26,6 +37,15 @@
           "dateStartUtc": "2026-03-29T05:00:00+00:00"
         }
       ]
+    },
+    "previousYearWinner": {
+      "season": 2025,
+      "round": 3,
+      "raceName": "Japanese Grand Prix",
+      "date": "2025-04-06",
+      "winner": "Max Verstappen",
+      "constructor": "Red Bull",
+      "source": "jolpica"
     },
     "drivers": {
       "leader": "Antonelli",
@@ -62,6 +82,15 @@
         "date": "2026-03-08",
         "dateStartUtc": "2026-03-08T04:00:00+00:00",
         "meetingKey": 1279,
+        "previousYearWinner": {
+          "season": 2025,
+          "round": 1,
+          "raceName": "Australian Grand Prix",
+          "date": "2025-03-16",
+          "winner": "Lando Norris",
+          "constructor": "McLaren",
+          "source": "jolpica"
+        },
         "sessionsIncluded": [
           {
             "eventType": "race",
@@ -71,6 +100,15 @@
             "dateStartUtc": "2026-03-08T04:00:00+00:00"
           }
         ]
+      },
+      "previousYearWinner": {
+        "season": 2025,
+        "round": 1,
+        "raceName": "Australian Grand Prix",
+        "date": "2025-03-16",
+        "winner": "Lando Norris",
+        "constructor": "McLaren",
+        "source": "jolpica"
       },
       "drivers": {
         "leader": "Russell",
@@ -106,6 +144,15 @@
         "date": "2026-03-14",
         "dateStartUtc": "2026-03-14T03:00:00+00:00",
         "meetingKey": 1280,
+        "previousYearWinner": {
+          "season": 2025,
+          "round": 2,
+          "raceName": "Chinese Grand Prix",
+          "date": "2025-03-23",
+          "winner": "Oscar Piastri",
+          "constructor": "McLaren",
+          "source": "jolpica"
+        },
         "sessionsIncluded": [
           {
             "eventType": "sprint",
@@ -122,6 +169,15 @@
             "dateStartUtc": "2026-03-15T07:00:00+00:00"
           }
         ]
+      },
+      "previousYearWinner": {
+        "season": 2025,
+        "round": 2,
+        "raceName": "Chinese Grand Prix",
+        "date": "2025-03-23",
+        "winner": "Oscar Piastri",
+        "constructor": "McLaren",
+        "source": "jolpica"
       },
       "drivers": {
         "leader": "Russell",
@@ -157,6 +213,15 @@
         "date": "2026-03-29",
         "dateStartUtc": "2026-03-29T05:00:00+00:00",
         "meetingKey": 1281,
+        "previousYearWinner": {
+          "season": 2025,
+          "round": 3,
+          "raceName": "Japanese Grand Prix",
+          "date": "2025-04-06",
+          "winner": "Max Verstappen",
+          "constructor": "Red Bull",
+          "source": "jolpica"
+        },
         "sessionsIncluded": [
           {
             "eventType": "race",
@@ -166,6 +231,15 @@
             "dateStartUtc": "2026-03-29T05:00:00+00:00"
           }
         ]
+      },
+      "previousYearWinner": {
+        "season": 2025,
+        "round": 3,
+        "raceName": "Japanese Grand Prix",
+        "date": "2025-04-06",
+        "winner": "Max Verstappen",
+        "constructor": "Red Bull",
+        "source": "jolpica"
       },
       "drivers": {
         "leader": "Antonelli",
