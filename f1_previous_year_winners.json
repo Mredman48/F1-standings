@@ -2,11 +2,13 @@
   "header": "F1 previous year race winners",
   "season": 2026,
   "previousSeason": 2025,
-  "lastUpdated": "2026-04-28T03:29:24.647Z",
+  "lastUpdated": "2026-04-28T23:55:52.970Z",
   "races": [
     {
       "round": 1,
       "raceName": "Australian Grand Prix",
+      "city": "Melbourne",
+      "country": "Australia",
       "previousWinner": "Lando Norris",
       "constructor": "McLaren",
       "date": "2025-03-16"
@@ -14,6 +16,8 @@
     {
       "round": 2,
       "raceName": "Chinese Grand Prix",
+      "city": "Shanghai",
+      "country": "China",
       "previousWinner": "Oscar Piastri",
       "constructor": "McLaren",
       "date": "2025-03-23"
@@ -21,6 +25,8 @@
     {
       "round": 3,
       "raceName": "Japanese Grand Prix",
+      "city": "Suzuka",
+      "country": "Japan",
       "previousWinner": "Max Verstappen",
       "constructor": "Red Bull",
       "date": "2025-04-06"
@@ -28,6 +34,8 @@
     {
       "round": 4,
       "raceName": "Bahrain Grand Prix",
+      "city": "Sakhir",
+      "country": "Bahrain",
       "previousWinner": "Oscar Piastri",
       "constructor": "McLaren",
       "date": "2025-04-13"
@@ -35,6 +43,8 @@
     {
       "round": 5,
       "raceName": "Saudi Arabian Grand Prix",
+      "city": "Jeddah",
+      "country": "Saudi Arabia",
       "previousWinner": "Oscar Piastri",
       "constructor": "McLaren",
       "date": "2025-04-20"
@@ -42,6 +52,8 @@
     {
       "round": 6,
       "raceName": "Miami Grand Prix",
+      "city": "Miami",
+      "country": "USA",
       "previousWinner": "Oscar Piastri",
       "constructor": "McLaren",
       "date": "2025-05-04"
@@ -49,6 +61,8 @@
     {
       "round": 7,
       "raceName": "Emilia Romagna Grand Prix",
+      "city": "Imola",
+      "country": "Italy",
       "previousWinner": "Max Verstappen",
       "constructor": "Red Bull",
       "date": "2025-05-18"
@@ -56,13 +70,17 @@
     {
       "round": 8,
       "raceName": "Monaco Grand Prix",
+      "city": "Monte Carlo",
+      "country": "Monaco",
       "previousWinner": "Lando Norris",
       "constructor": "McLaren",
       "date": "2025-05-25"
     },
     {
       "round": 9,
-      "raceName": "Barcelona-Catalunya Prix",
+      "raceName": "Spanish Grand Prix",
+      "city": "Barcelona",
+      "country": "Spain",
       "previousWinner": "Oscar Piastri",
       "constructor": "McLaren",
       "date": "2025-06-01"
@@ -70,6 +88,8 @@
     {
       "round": 10,
       "raceName": "Canadian Grand Prix",
+      "city": "Montreal",
+      "country": "Canada",
       "previousWinner": "George Russell",
       "constructor": "Mercedes",
       "date": "2025-06-15"
@@ -77,6 +97,8 @@
     {
       "round": 11,
       "raceName": "Austrian Grand Prix",
+      "city": "Spielberg",
+      "country": "Austria",
       "previousWinner": "Lando Norris",
       "constructor": "McLaren",
       "date": "2025-06-29"
@@ -84,6 +106,8 @@
     {
       "round": 12,
       "raceName": "British Grand Prix",
+      "city": "Silverstone",
+      "country": "UK",
       "previousWinner": "Lando Norris",
       "constructor": "McLaren",
       "date": "2025-07-06"
@@ -91,6 +115,8 @@
     {
       "round": 13,
       "raceName": "Belgian Grand Prix",
+      "city": "Spa",
+      "country": "Belgium",
       "previousWinner": "Oscar Piastri",
       "constructor": "McLaren",
       "date": "2025-07-27"
@@ -98,6 +124,8 @@
     {
       "round": 14,
       "raceName": "Hungarian Grand Prix",
+      "city": "Budapest",
+      "country": "Hungary",
       "previousWinner": "Lando Norris",
       "constructor": "McLaren",
       "date": "2025-08-03"
@@ -105,6 +133,8 @@
     {
       "round": 15,
       "raceName": "Dutch Grand Prix",
+      "city": "Zandvoort",
+      "country": "Netherlands",
       "previousWinner": "Oscar Piastri",
       "constructor": "McLaren",
       "date": "2025-08-31"
@@ -112,6 +142,8 @@
     {
       "round": 16,
       "raceName": "Italian Grand Prix",
+      "city": "Monza",
+      "country": "Italy",
       "previousWinner": "Max Verstappen",
       "constructor": "Red Bull",
       "date": "2025-09-07"
@@ -119,6 +151,8 @@
     {
       "round": 17,
       "raceName": "Azerbaijan Grand Prix",
+      "city": "Baku",
+      "country": "Azerbaijan",
       "previousWinner": "Max Verstappen",
       "constructor": "Red Bull",
       "date": "2025-09-21"
@@ -126,6 +160,8 @@
     {
       "round": 18,
       "raceName": "Singapore Grand Prix",
+      "city": "Marina Bay",
+      "country": "Singapore",
       "previousWinner": "George Russell",
       "constructor": "Mercedes",
       "date": "2025-10-05"
@@ -133,6 +169,8 @@
     {
       "round": 19,
       "raceName": "United States Grand Prix",
+      "city": "Austin",
+      "country": "USA",
       "previousWinner": "Max Verstappen",
       "constructor": "Red Bull",
       "date": "2025-10-19"
@@ -140,6 +178,8 @@
     {
       "round": 20,
       "raceName": "Mexico City Grand Prix",
+      "city": "Mexico City",
+      "country": "Mexico",
       "previousWinner": "Lando Norris",
       "constructor": "McLaren",
       "date": "2025-10-26"
@@ -147,6 +187,8 @@
     {
       "round": 21,
       "raceName": "São Paulo Grand Prix",
+      "city": "São Paulo",
+      "country": "Brazil",
       "previousWinner": "Lando Norris",
       "constructor": "McLaren",
       "date": "2025-11-09"
@@ -154,6 +196,8 @@
     {
       "round": 22,
       "raceName": "Las Vegas Grand Prix",
+      "city": "Las Vegas",
+      "country": "USA",
       "previousWinner": "Max Verstappen",
       "constructor": "Red Bull",
       "date": "2025-11-23"
@@ -161,6 +205,8 @@
     {
       "round": 23,
       "raceName": "Qatar Grand Prix",
+      "city": "Lusail",
+      "country": "Qatar",
       "previousWinner": "Max Verstappen",
       "constructor": "Red Bull",
       "date": "2025-11-30"
@@ -168,6 +214,8 @@
     {
       "round": 24,
       "raceName": "Abu Dhabi Grand Prix",
+      "city": "Abu Dhabi",
+      "country": "UAE",
       "previousWinner": "Max Verstappen",
       "constructor": "Red Bull",
       "date": "2025-12-07"
