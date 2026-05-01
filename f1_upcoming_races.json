@@ -1,18 +1,184 @@
 {
-  "header": "F1 race weekends",
-  "generatedAtUtc": "2026-05-01T22:10:35.033Z",
+  "header": "Upcoming F1 events",
+  "generatedAtUtc": "2026-04-13T22:53:28.151Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
-    "kind": "ics",
+    "kind": "ics+formula1",
     "url": "https://better-f1-calendar.vercel.app/api/calendar.ics"
-  },
-  "totalRaces": 20,
+ },
+  "totalRaces": 22,
   "upcomingEvents": [
     {
       "round": 1,
-      "id": "japan",
       "type": "RACE_WEEKEND",
-      "title": "Japanese Grand Prix 2026",
+      "title": "AUSTRALIAN GRAND PRIX 2026",
+      "circuit": "Albert Park Circuit",
+      "season": "2026",
+      "location": {
+        "raw": null,
+        "city": "Melbourne",
+        "country": "Australia",
+        "flag": {
+          "iso2": "au",
+          "png": "https://flagcdn.com/w160/au.png",
+          "svg": "https://flagcdn.com/au.svg"
+        }
+      },
+      "racePage": {
+        "slug": "australia",
+        "url": "https://www.formula1.com/en/racing/2026/australia"
+      },
+      "trackMap": {
+        "found": true,
+        "pageUrl": "https://www.formula1.com/en/racing/2026/australia",
+        "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmelbournedetailed.webp",
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_australia_detailed.png",
+        "note": null
+      },
+      "map": {
+        "found": true,
+        "filename": "melbourne.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/melbourne.png",
+        "note": null
+      },
+      "countdowns": {
+        "startsInDays": -23
+      },
+      "weekend": {
+        "startUtc": "2026-03-06T01:30:00.000Z",
+        "endUtc": "2026-03-08T06:00:00.000Z"
+      },
+      "sessions": [
+        {
+          "type": "FP1",
+          "startUtc": "2026-03-06T01:30:00.000Z",
+          "endUtc": "2026-03-06T02:30:00.000Z",
+          "startLocalDateShort": "Thu, Mar 05",
+          "startLocalTimeShort": "18:30",
+          "startLocalDateTimeShort": "Thu, Mar 05 18:30"
+        },
+        {
+          "type": "FP2",
+          "startUtc": "2026-03-06T05:00:00.000Z",
+          "endUtc": "2026-03-06T06:00:00.000Z",
+          "startLocalDateShort": "Thu, Mar 05",
+          "startLocalTimeShort": "22:00",
+          "startLocalDateTimeShort": "Thu, Mar 05 22:00"
+        },
+        {
+          "type": "FP3",
+          "startUtc": "2026-03-07T01:30:00.000Z",
+          "endUtc": "2026-03-07T02:30:00.000Z",
+          "startLocalDateShort": "Fri, Mar 06",
+          "startLocalTimeShort": "18:30",
+          "startLocalDateTimeShort": "Fri, Mar 06 18:30"
+        },
+        {
+          "type": "Quali",
+          "startUtc": "2026-03-07T05:00:00.000Z",
+          "endUtc": "2026-03-07T06:00:00.000Z",
+          "startLocalDateShort": "Fri, Mar 06",
+          "startLocalTimeShort": "22:00",
+          "startLocalDateTimeShort": "Fri, Mar 06 22:00"
+        },
+        {
+          "type": "Race",
+          "startUtc": "2026-03-08T04:00:00.000Z",
+          "endUtc": "2026-03-08T06:00:00.000Z",
+          "startLocalDateShort": "Sat, Mar 07",
+          "startLocalTimeShort": "21:00",
+          "startLocalDateTimeShort": "Sat, Mar 07 21:00"
+        }
+      ]
+    },
+    {
+      "round": 2,
+      "type": "RACE_WEEKEND",
+      "title": "CHINESE GRAND PRIX 2026",
+      "circuit": "Shanghai International Circuit",
+      "season": "2026",
+      "location": {
+        "raw": null,
+        "city": "Shanghai",
+        "country": "China",
+        "flag": {
+          "iso2": "cn",
+          "png": "https://flagcdn.com/w160/cn.png",
+          "svg": "https://flagcdn.com/cn.svg"
+        }
+      },
+      "racePage": {
+        "slug": "china",
+        "url": "https://www.formula1.com/en/racing/2026/china"
+      },
+      "trackMap": {
+        "found": true,
+        "pageUrl": "https://www.formula1.com/en/racing/2026/china",
+        "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackshanghaidetailed.webp",
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_china_detailed.png",
+        "note": null
+      },
+      "map": {
+        "found": true,
+        "filename": "shanghai.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/shanghai.png",
+        "note": null
+      },
+      "countdowns": {
+        "startsInDays": -16
+      },
+      "weekend": {
+        "startUtc": "2026-03-13T03:30:00.000Z",
+        "endUtc": "2026-03-15T09:00:00.000Z"
+      },
+      "sessions": [
+        {
+          "type": "FP1",
+          "startUtc": "2026-03-13T03:30:00.000Z",
+          "endUtc": "2026-03-13T04:30:00.000Z",
+          "startLocalDateShort": "Thu, Mar 12",
+          "startLocalTimeShort": "21:30",
+          "startLocalDateTimeShort": "Thu, Mar 12 21:30"
+        },
+        {
+          "type": "Sprint Quali",
+          "startUtc": "2026-03-13T07:30:00.000Z",
+          "endUtc": "2026-03-13T08:14:00.000Z",
+          "startLocalDateShort": "Fri, Mar 13",
+          "startLocalTimeShort": "01:30",
+          "startLocalDateTimeShort": "Fri, Mar 13 01:30"
+        },
+        {
+          "type": "Sprint",
+          "startUtc": "2026-03-14T03:00:00.000Z",
+          "endUtc": "2026-03-14T04:00:00.000Z",
+          "startLocalDateShort": "Fri, Mar 13",
+          "startLocalTimeShort": "21:00",
+          "startLocalDateTimeShort": "Fri, Mar 13 21:00"
+        },
+        {
+          "type": "Quali",
+          "startUtc": "2026-03-14T07:00:00.000Z",
+          "endUtc": "2026-03-14T08:00:00.000Z",
+          "startLocalDateShort": "Sat, Mar 14",
+          "startLocalTimeShort": "01:00",
+          "startLocalDateTimeShort": "Sat, Mar 14 01:00"
+        },
+        {
+          "type": "Race",
+          "startUtc": "2026-03-15T07:00:00.000Z",
+          "endUtc": "2026-03-15T09:00:00.000Z",
+          "startLocalDateShort": "Sun, Mar 15",
+          "startLocalTimeShort": "01:00",
+          "startLocalDateTimeShort": "Sun, Mar 15 01:00"
+        }
+      ]
+    },
+    {
+      "round": 3,
+      "type": "RACE_WEEKEND",
+      "title": "JAPANESE GRAND PRIX 2026",
+      "circuit": "Suzuka International Racing Course",
       "season": "2026",
       "location": {
         "raw": null,
@@ -31,18 +197,18 @@
       "trackMap": {
         "found": true,
         "pageUrl": "https://www.formula1.com/en/racing/2026/japan",
-        "mediaUrl": null,
+        "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026tracksuzukadetailed.webp",
         "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_japan_detailed.png",
-        "note": "Using existing saved track map file. No download performed."
+        "note": null
       },
       "map": {
         "found": true,
         "filename": "suzuka.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/suzuka.png",
-        "note": "Using saved map file. No download performed."
+        "note": null
       },
       "countdowns": {
-        "startsInDays": -35
+        "startsInDays": -2
       },
       "weekend": {
         "startUtc": "2026-03-27T02:30:00.000Z",
@@ -92,10 +258,10 @@
       ]
     },
     {
-      "round": 2,
-      "id": "miami",
+      "round": 4,
       "type": "RACE_WEEKEND",
-      "title": "Miami Grand Prix 2026",
+      "title": "MIAMI GRAND PRIX 2026",
+      "circuit": "Miami International Autodrome",
       "season": "2026",
       "location": {
         "raw": null,
@@ -114,21 +280,21 @@
       "trackMap": {
         "found": true,
         "pageUrl": "https://www.formula1.com/en/racing/2026/miami",
-        "mediaUrl": null,
+        "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmiamidetailed.webp",
         "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_miami_detailed.png",
-        "note": "Using existing saved track map file. No download performed."
+        "note": null
       },
       "map": {
         "found": true,
         "filename": "miami.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/miami.png",
-        "note": "Using saved map file. No download performed."
+        "note": null
       },
       "countdowns": {
-        "startsInDays": 0
+        "startsInDays": 33
       },
       "weekend": {
-        "startUtc": "2026-05-01T16:00:00.000Z",
+        "startUtc": "2026-05-01T16:30:00.000Z",
         "endUtc": "2026-05-03T22:00:00.000Z"
       },
       "sessions": [
@@ -138,14 +304,6 @@
           "endUtc": "2026-05-01T17:30:00.000Z",
           "startLocalDateShort": "Fri, May 01",
           "startLocalTimeShort": "10:00",
-          "startLocalDateTimeShort": "Fri, May 01 10:00"
-        },
-        {
-          "type": "FP1",
-          "startUtc": "2026-05-01T16:30:00.000Z",
-          "endUtc": "2026-05-01T17:30:00.000Z",
-          "startLocalDateShort": "Fri, May 01",
-          "startLocalTimeShort": "10:30",
           "startLocalDateTimeShort": "Fri, May 01 10:30"
         },
         {
@@ -183,10 +341,10 @@
       ]
     },
     {
-      "round": 3,
-      "id": "canada",
+      "round": 5,
       "type": "RACE_WEEKEND",
-      "title": "Canadian Grand Prix 2026",
+      "title": "GRAND PRIX DU CANADA 2026",
+      "circuit": "Circuit Gilles Villeneuve",
       "season": "2026",
       "location": {
         "raw": null,
@@ -205,18 +363,18 @@
       "trackMap": {
         "found": true,
         "pageUrl": "https://www.formula1.com/en/racing/2026/canada",
-        "mediaUrl": null,
+        "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmontrealdetailed.webp",
         "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_canada_detailed.png",
-        "note": "Using existing saved track map file. No download performed."
+        "note": null
       },
       "map": {
         "found": true,
         "filename": "montreal.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/montreal.png",
-        "note": "Using saved map file. No download performed."
+        "note": null
       },
       "countdowns": {
-        "startsInDays": 21
+        "startsInDays": 54
       },
       "weekend": {
         "startUtc": "2026-05-22T16:30:00.000Z",
@@ -266,10 +424,10 @@
       ]
     },
     {
-      "round": 4,
-      "id": "monaco",
+      "round": 6,
       "type": "RACE_WEEKEND",
-      "title": "Monaco Grand Prix 2026",
+      "title": "GRAND PRIX DE MONACO 2026",
+      "circuit": "Circuit de Monaco",
       "season": "2026",
       "location": {
         "raw": null,
@@ -288,18 +446,18 @@
       "trackMap": {
         "found": true,
         "pageUrl": "https://www.formula1.com/en/racing/2026/monaco",
-        "mediaUrl": null,
+        "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmontecarlodetailed.webp",
         "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_monaco_detailed.png",
-        "note": "Using existing saved track map file. No download performed."
+        "note": null
       },
       "map": {
         "found": true,
         "filename": "monaco.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/monaco.png",
-        "note": "Using saved map file. No download performed."
+        "note": null
       },
       "countdowns": {
-        "startsInDays": 35
+        "startsInDays": 68
       },
       "weekend": {
         "startUtc": "2026-06-05T11:30:00.000Z",
@@ -349,10 +507,10 @@
       ]
     },
     {
-      "round": 5,
-      "id": "barcelona",
+      "round": 7,
       "type": "RACE_WEEKEND",
-      "title": "Barcelona Grand Prix 2026",
+      "title": "GRAN PREMIO DE BARCELONA-CATALUNYA 2026",
+      "circuit": "Circuit de Barcelona-Catalunya",
       "season": "2026",
       "location": {
         "raw": null,
@@ -371,18 +529,18 @@
       "trackMap": {
         "found": true,
         "pageUrl": "https://www.formula1.com/en/racing/2026/barcelona-catalunya",
-        "mediaUrl": null,
+        "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackcatalunyadetailed.webp",
         "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_barcelona-catalunya_detailed.png",
-        "note": "Using existing saved track map file. No download performed."
+        "note": null
       },
       "map": {
         "found": true,
         "filename": "barcelona.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/barcelona.png",
-        "note": "Using saved map file. No download performed."
+        "note": null
       },
       "countdowns": {
-        "startsInDays": 42
+        "startsInDays": 75
       },
       "weekend": {
         "startUtc": "2026-06-12T11:30:00.000Z",
@@ -432,10 +590,10 @@
       ]
     },
     {
-      "round": 6,
-      "id": "austria",
+      "round": 8,
       "type": "RACE_WEEKEND",
-      "title": "Austrian Grand Prix 2026",
+      "title": "AUSTRIAN GRAND PRIX 2026",
+      "circuit": "Red Bull Ring",
       "season": "2026",
       "location": {
         "raw": null,
@@ -454,18 +612,18 @@
       "trackMap": {
         "found": true,
         "pageUrl": "https://www.formula1.com/en/racing/2026/austria",
-        "mediaUrl": null,
+        "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackspielbergdetailed.webp",
         "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_austria_detailed.png",
-        "note": "Using existing saved track map file. No download performed."
+        "note": null
       },
       "map": {
         "found": true,
         "filename": "spielberg.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/spielberg.png",
-        "note": "Using saved map file. No download performed."
+        "note": null
       },
       "countdowns": {
-        "startsInDays": 56
+        "startsInDays": 89
       },
       "weekend": {
         "startUtc": "2026-06-26T11:30:00.000Z",
@@ -515,10 +673,10 @@
       ]
     },
     {
-      "round": 7,
-      "id": "great-britain",
+      "round": 9,
       "type": "RACE_WEEKEND",
-      "title": "British Grand Prix 2026",
+      "title": "BRITISH GRAND PRIX 2026",
+      "circuit": "Silverstone Circuit",
       "season": "2026",
       "location": {
         "raw": null,
@@ -537,18 +695,18 @@
       "trackMap": {
         "found": true,
         "pageUrl": "https://www.formula1.com/en/racing/2026/great-britain",
-        "mediaUrl": null,
+        "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026tracksilverstonedetailed.webp",
         "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_great-britain_detailed.png",
-        "note": "Using existing saved track map file. No download performed."
+        "note": null
       },
       "map": {
         "found": true,
         "filename": "silverstone.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/silverstone.png",
-        "note": "Using saved map file. No download performed."
+        "note": null
       },
       "countdowns": {
-        "startsInDays": 63
+        "startsInDays": 96
       },
       "weekend": {
         "startUtc": "2026-07-03T11:30:00.000Z",
@@ -598,10 +756,10 @@
       ]
     },
     {
-      "round": 8,
-      "id": "belgium",
+      "round": 10,
       "type": "RACE_WEEKEND",
-      "title": "Belgian Grand Prix 2026",
+      "title": "BELGIAN GRAND PRIX 2026",
+      "circuit": "Circuit de Spa-Francorchamps",
       "season": "2026",
       "location": {
         "raw": null,
@@ -620,18 +778,18 @@
       "trackMap": {
         "found": true,
         "pageUrl": "https://www.formula1.com/en/racing/2026/belgium",
-        "mediaUrl": null,
+        "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackspafrancorchampsdetailed.webp",
         "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_belgium_detailed.png",
-        "note": "Using existing saved track map file. No download performed."
+        "note": null
       },
       "map": {
         "found": true,
         "filename": "spa.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/spa.png",
-        "note": "Using saved map file. No download performed."
+        "note": null
       },
       "countdowns": {
-        "startsInDays": 77
+        "startsInDays": 110
       },
       "weekend": {
         "startUtc": "2026-07-17T11:30:00.000Z",
@@ -681,10 +839,10 @@
       ]
     },
     {
-      "round": 9,
-      "id": "hungary",
+      "round": 11,
       "type": "RACE_WEEKEND",
-      "title": "Hungarian Grand Prix 2026",
+      "title": "HUNGARIAN GRAND PRIX 2026",
+      "circuit": "Hungaroring",
       "season": "2026",
       "location": {
         "raw": null,
@@ -703,18 +861,18 @@
       "trackMap": {
         "found": true,
         "pageUrl": "https://www.formula1.com/en/racing/2026/hungary",
-        "mediaUrl": null,
+        "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackhungaroringdetailed.webp",
         "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_hungary_detailed.png",
-        "note": "Using existing saved track map file. No download performed."
+        "note": null
       },
       "map": {
         "found": true,
         "filename": "hungaroring.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/hungaroring.png",
-        "note": "Using saved map file. No download performed."
+        "note": null
       },
       "countdowns": {
-        "startsInDays": 84
+        "startsInDays": 117
       },
       "weekend": {
         "startUtc": "2026-07-24T11:30:00.000Z",
@@ -764,10 +922,10 @@
       ]
     },
     {
-      "round": 10,
-      "id": "netherlands",
+      "round": 12,
       "type": "RACE_WEEKEND",
-      "title": "Dutch Grand Prix 2026",
+      "title": "DUTCH GRAND PRIX 2026",
+      "circuit": "Circuit Zandvoort",
       "season": "2026",
       "location": {
         "raw": null,
@@ -786,18 +944,18 @@
       "trackMap": {
         "found": true,
         "pageUrl": "https://www.formula1.com/en/racing/2026/netherlands",
-        "mediaUrl": null,
+        "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackzandvoortdetailed.webp",
         "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_netherlands_detailed.png",
-        "note": "Using existing saved track map file. No download performed."
+        "note": null
       },
       "map": {
         "found": true,
         "filename": "zandvoort.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/zandvoort.png",
-        "note": "Using saved map file. No download performed."
+        "note": null
       },
       "countdowns": {
-        "startsInDays": 112
+        "startsInDays": 145
       },
       "weekend": {
         "startUtc": "2026-08-21T10:30:00.000Z",
@@ -847,10 +1005,10 @@
       ]
     },
     {
-      "round": 11,
-      "id": "italy",
+      "round": 13,
       "type": "RACE_WEEKEND",
-      "title": "Italian Grand Prix 2026",
+      "title": "GRAN PREMIO D’ITALIA 2026",
+      "circuit": "Autodromo Nazionale Monza",
       "season": "2026",
       "location": {
         "raw": null,
@@ -869,18 +1027,18 @@
       "trackMap": {
         "found": true,
         "pageUrl": "https://www.formula1.com/en/racing/2026/italy",
-        "mediaUrl": null,
+        "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmonzadetailed.webp",
         "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_italy_detailed.png",
-        "note": "Using existing saved track map file. No download performed."
+        "note": null
       },
       "map": {
         "found": true,
         "filename": "monza.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/monza.png",
-        "note": "Using saved map file. No download performed."
+        "note": null
       },
       "countdowns": {
-        "startsInDays": 126
+        "startsInDays": 159
       },
       "weekend": {
         "startUtc": "2026-09-04T10:30:00.000Z",
@@ -930,10 +1088,10 @@
       ]
     },
     {
-      "round": 12,
-      "id": "madrid",
+      "round": 14,
       "type": "RACE_WEEKEND",
-      "title": "Madrid Grand Prix 2026",
+      "title": "GRAN PREMIO DE ESPAÑA 2026",
+      "circuit": "Circuito de Madring",
       "season": "2026",
       "location": {
         "raw": null,
@@ -952,18 +1110,18 @@
       "trackMap": {
         "found": true,
         "pageUrl": "https://www.formula1.com/en/racing/2026/madrid",
-        "mediaUrl": null,
-        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_madrid_detailed.png",
-        "note": "Using existing saved track map file. No download performed."
+        "mediaUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_spain_detailed.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_spain_detailed.png",
+        "note": null
       },
       "map": {
         "found": true,
         "filename": "madrid.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/madrid.png",
-        "note": "Using saved map file. No download performed."
+        "note": null
       },
       "countdowns": {
-        "startsInDays": 133
+        "startsInDays": 166
       },
       "weekend": {
         "startUtc": "2026-09-11T11:30:00.000Z",
@@ -1013,10 +1171,10 @@
       ]
     },
     {
-      "round": 13,
-      "id": "azerbaijan",
+      "round": 15,
       "type": "RACE_WEEKEND",
-      "title": "Azerbaijan Grand Prix 2026",
+      "title": "AZERBAIJAN GRAND PRIX 2026",
+      "circuit": "Baku City Circuit",
       "season": "2026",
       "location": {
         "raw": null,
@@ -1035,18 +1193,18 @@
       "trackMap": {
         "found": true,
         "pageUrl": "https://www.formula1.com/en/racing/2026/azerbaijan",
-        "mediaUrl": null,
+        "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackbakudetailed.webp",
         "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_azerbaijan_detailed.png",
-        "note": "Using existing saved track map file. No download performed."
+        "note": null
       },
       "map": {
         "found": true,
         "filename": "baku.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/baku.png",
-        "note": "Using saved map file. No download performed."
+        "note": null
       },
       "countdowns": {
-        "startsInDays": 146
+        "startsInDays": 179
       },
       "weekend": {
         "startUtc": "2026-09-24T08:30:00.000Z",
@@ -1096,10 +1254,10 @@
       ]
     },
     {
-      "round": 14,
-      "id": "singapore",
+      "round": 16,
       "type": "RACE_WEEKEND",
-      "title": "Singapore Grand Prix 2026",
+      "title": "SINGAPORE GRAND PRIX 2026",
+      "circuit": "Marina Bay Street Circuit",
       "season": "2026",
       "location": {
         "raw": null,
@@ -1118,18 +1276,18 @@
       "trackMap": {
         "found": true,
         "pageUrl": "https://www.formula1.com/en/racing/2026/singapore",
-        "mediaUrl": null,
+        "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026tracksingaporedetailed.webp",
         "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_singapore_detailed.png",
-        "note": "Using existing saved track map file. No download performed."
+        "note": null
       },
       "map": {
         "found": true,
         "filename": "singapore.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/singapore.png",
-        "note": "Using saved map file. No download performed."
+        "note": null
       },
       "countdowns": {
-        "startsInDays": 161
+        "startsInDays": 194
       },
       "weekend": {
         "startUtc": "2026-10-09T08:30:00.000Z",
@@ -1179,10 +1337,10 @@
       ]
     },
     {
-      "round": 15,
-      "id": "united-states",
+      "round": 17,
       "type": "RACE_WEEKEND",
-      "title": "United States Grand Prix 2026",
+      "title": "UNITED STATES GRAND PRIX 2026",
+      "circuit": "Circuit of the Americas",
       "season": "2026",
       "location": {
         "raw": null,
@@ -1201,18 +1359,18 @@
       "trackMap": {
         "found": true,
         "pageUrl": "https://www.formula1.com/en/racing/2026/united-states",
-        "mediaUrl": null,
+        "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackaustindetailed.webp",
         "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_united-states_detailed.png",
-        "note": "Using existing saved track map file. No download performed."
+        "note": null
       },
       "map": {
         "found": true,
         "filename": "austin.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/austin.png",
-        "note": "Using saved map file. No download performed."
+        "note": null
       },
       "countdowns": {
-        "startsInDays": 175
+        "startsInDays": 208
       },
       "weekend": {
         "startUtc": "2026-10-23T17:30:00.000Z",
@@ -1262,10 +1420,10 @@
       ]
     },
     {
-      "round": 16,
-      "id": "mexico",
+      "round": 18,
       "type": "RACE_WEEKEND",
-      "title": "Mexico City Grand Prix 2026",
+      "title": "GRAN PREMIO DE LA CIUDAD DE MÉXICO 2026",
+      "circuit": "Autódromo Hermanos Rodríguez",
       "season": "2026",
       "location": {
         "raw": null,
@@ -1284,18 +1442,18 @@
       "trackMap": {
         "found": true,
         "pageUrl": "https://www.formula1.com/en/racing/2026/mexico",
-        "mediaUrl": null,
+        "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmexicocitydetailed.webp",
         "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_mexico_detailed.png",
-        "note": "Using existing saved track map file. No download performed."
+        "note": null
       },
       "map": {
         "found": true,
         "filename": "mexico-city.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/mexico-city.png",
-        "note": "Using saved map file. No download performed."
+        "note": null
       },
       "countdowns": {
-        "startsInDays": 182
+        "startsInDays": 215
       },
       "weekend": {
         "startUtc": "2026-10-30T18:30:00.000Z",
@@ -1345,14 +1503,14 @@
       ]
     },
     {
-      "round": 17,
-      "id": "sao-paulo",
+      "round": 19,
       "type": "RACE_WEEKEND",
-      "title": "São Paulo Grand Prix 2026",
+      "title": "GRANDE PRÊMIO DE SÃO PAULO 2026",
+      "circuit": "Autódromo José Carlos Pace",
       "season": "2026",
       "location": {
         "raw": null,
-        "city": "São Paulo",
+        "city": "Sao Paulo",
         "country": "Brazil",
         "flag": {
           "iso2": "br",
@@ -1367,18 +1525,18 @@
       "trackMap": {
         "found": true,
         "pageUrl": "https://www.formula1.com/en/racing/2026/brazil",
-        "mediaUrl": null,
+        "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackinterlagosdetailed.webp",
         "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_brazil_detailed.png",
-        "note": "Using existing saved track map file. No download performed."
+        "note": null
       },
       "map": {
         "found": true,
         "filename": "interlagos.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/interlagos.png",
-        "note": "Using saved map file. No download performed."
+        "note": null
       },
       "countdowns": {
-        "startsInDays": 189
+        "startsInDays": 222
       },
       "weekend": {
         "startUtc": "2026-11-06T15:30:00.000Z",
@@ -1428,10 +1586,10 @@
       ]
     },
     {
-      "round": 18,
-      "id": "las-vegas",
+      "round": 20,
       "type": "RACE_WEEKEND",
-      "title": "Las Vegas Grand Prix 2026",
+      "title": "LAS VEGAS GRAND PRIX 2026",
+      "circuit": "Las Vegas Strip Circuit",
       "season": "2026",
       "location": {
         "raw": null,
@@ -1450,18 +1608,18 @@
       "trackMap": {
         "found": true,
         "pageUrl": "https://www.formula1.com/en/racing/2026/las-vegas",
-        "mediaUrl": null,
+        "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026tracklasvegasdetailed.webp",
         "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_las-vegas_detailed.png",
-        "note": "Using existing saved track map file. No download performed."
+        "note": null
       },
       "map": {
         "found": true,
         "filename": "las-vegas.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/las-vegas.png",
-        "note": "Using saved map file. No download performed."
+        "note": null
       },
       "countdowns": {
-        "startsInDays": 203
+        "startsInDays": 236
       },
       "weekend": {
         "startUtc": "2026-11-20T00:30:00.000Z",
@@ -1511,10 +1669,10 @@
       ]
     },
     {
-      "round": 19,
-      "id": "qatar",
+      "round": 21,
       "type": "RACE_WEEKEND",
-      "title": "Qatar Grand Prix 2026",
+      "title": "QATAR GRAND PRIX 2026",
+      "circuit": "Lusail International Circuit",
       "season": "2026",
       "location": {
         "raw": null,
@@ -1533,18 +1691,18 @@
       "trackMap": {
         "found": true,
         "pageUrl": "https://www.formula1.com/en/racing/2026/qatar",
-        "mediaUrl": null,
+        "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026tracklusaildetailed.webp",
         "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_qatar_detailed.png",
-        "note": "Using existing saved track map file. No download performed."
+        "note": null
       },
       "map": {
         "found": true,
         "filename": "lusail.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/lusail.png",
-        "note": "Using saved map file. No download performed."
+        "note": null
       },
       "countdowns": {
-        "startsInDays": 210
+        "startsInDays": 243
       },
       "weekend": {
         "startUtc": "2026-11-27T13:30:00.000Z",
@@ -1594,10 +1752,10 @@
       ]
     },
     {
-      "round": 20,
-      "id": "abu-dhabi",
+      "round": 22,
       "type": "RACE_WEEKEND",
-      "title": "Abu Dhabi Grand Prix 2026",
+      "title": "ABU DHABI GRAND PRIX 2026",
+      "circuit": "Yas Marina Circuit",
       "season": "2026",
       "location": {
         "raw": null,
@@ -1616,18 +1774,18 @@
       "trackMap": {
         "found": true,
         "pageUrl": "https://www.formula1.com/en/racing/2026/abu-dhabi",
-        "mediaUrl": null,
-        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_abu-dhabi_detailed.png",
-        "note": "Using existing saved track map file. No download performed."
+        "mediaUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_abudhabi_detailed.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_abudhabi_detailed.png",
+        "note": null
       },
       "map": {
         "found": true,
         "filename": "yas-marina.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/yas-marina.png",
-        "note": "Using saved map file. No download performed."
+        "note": null
       },
       "countdowns": {
-        "startsInDays": 217
+        "startsInDays": 250
       },
       "weekend": {
         "startUtc": "2026-12-04T09:30:00.000Z",
