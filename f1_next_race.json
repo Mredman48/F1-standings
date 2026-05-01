@@ -1,6 +1,6 @@
 {
   "header": "Next F1 event",
-  "generatedAtUtc": "2026-05-01T14:11:51.027Z",
+  "generatedAtUtc": "2026-05-01T18:02:04.372Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics+formula1",
@@ -30,7 +30,7 @@
       "pageUrl": "https://www.formula1.com/en/racing/2026/miami",
       "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmiamidetailed.webp",
       "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_miami_detailed.png",
-      "note": null
+      "note": "Using existing saved track map file. No download performed."
     },
     "map": {
       "found": true,
@@ -39,7 +39,7 @@
       "note": null
     },
     "countdowns": {
-      "startsInDays": 1
+      "startsInDays": 0
     },
     "weekend": {
       "startUtc": "2026-05-01T16:00:00.000Z",
