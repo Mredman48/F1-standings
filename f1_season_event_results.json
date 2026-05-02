@@ -1,6 +1,6 @@
 {
   "header": "2026 F1 all session results",
-  "generatedAtUtc": "2026-05-02T20:30:23.305Z",
+  "generatedAtUtc": "2026-05-02T21:08:43.225Z",
   "season": 2026,
   "events": [
     {
@@ -9164,6 +9164,25 @@
           "qualifyingLapTime": 0
         }
       ]
+    },
+    {
+      "eventType": "qualifying",
+      "sessionKey": 11276,
+      "meetingKey": 1284,
+      "meetingName": "Miami Grand Prix",
+      "raceName": "Miami Grand Prix",
+      "sessionName": "Qualifying",
+      "officialName": "Qualifying",
+      "round": 6,
+      "dateStartUtc": "2026-05-02T20:00:00+00:00",
+      "dateEndUtc": "2026-05-02T21:00:00+00:00",
+      "date": "2026-05-02",
+      "circuit": "Miami",
+      "location": {
+        "locality": "Miami Gardens",
+        "country": "United States"
+      },
+      "drivers": []
     }
   ],
   "bestByDriverNumber": {
