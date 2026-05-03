@@ -2,7 +2,7 @@
   "header": "F1 championship outlook",
   "season": 2026,
   "previousSeason": 2025,
-  "lastUpdated": "2026-05-03T21:56:50.501Z",
+  "lastUpdated": "2026-05-03T22:07:35.203Z",
   "mode": "race-weekend",
   "sources": {
     "driverStandings": "https://mredman48.github.io/F1-standings/f1_driver_standings.json",
@@ -64,19 +64,25 @@
       "p1Changed": false,
       "leaderWeekendPoints": 28,
       "secondWeekendPoints": 17,
-      "weekendDelta": 11
+      "weekendDelta": 11,
+      "leaderRacePoints": 28,
+      "secondRacePoints": 17,
+      "raceDelta": 11
     },
     "constructors": {
       "leader": "Mercedes",
       "second": "Ferrari",
       "gap": 68,
       "standingsText": "Mercedes leads by 68 pts over Ferrari",
-      "raceImpact": "Mercedes maintained its constructors' lead over Ferrari",
-      "scenarioText": "Mercedes maintained its constructors' lead over Ferrari",
+      "raceImpact": "Mercedes extended its constructors' lead by 23 pts over Ferrari",
+      "scenarioText": "Mercedes extended its constructors' lead by 23 pts over Ferrari",
       "p1Changed": false,
-      "leaderWeekendPoints": 0,
-      "secondWeekendPoints": 0,
-      "weekendDelta": 0
+      "leaderWeekendPoints": 45,
+      "secondWeekendPoints": 22,
+      "weekendDelta": 23,
+      "leaderRacePoints": 45,
+      "secondRacePoints": 22,
+      "raceDelta": 23
     }
   },
   "races": [
@@ -127,19 +133,25 @@
         "p1Changed": true,
         "leaderWeekendPoints": 25,
         "secondWeekendPoints": 18,
-        "weekendDelta": 7
+        "weekendDelta": 7,
+        "leaderRacePoints": 25,
+        "secondRacePoints": 18,
+        "raceDelta": 7
       },
       "constructors": {
         "leader": "Mercedes",
         "second": "Ferrari",
-        "gap": 68,
-        "standingsText": "Mercedes leads by 68 pts over Ferrari",
-        "raceImpact": "Mercedes maintained its constructors' lead over Ferrari",
-        "scenarioText": "Mercedes maintained its constructors' lead over Ferrari",
-        "p1Changed": false,
-        "leaderWeekendPoints": 0,
-        "secondWeekendPoints": 0,
-        "weekendDelta": 0
+        "gap": 16,
+        "standingsText": "Mercedes leads by 16 pts over Ferrari",
+        "raceImpact": "Mercedes moved ahead of Alpine to P1",
+        "scenarioText": "Mercedes moved ahead of Alpine to P1",
+        "p1Changed": true,
+        "leaderWeekendPoints": 43,
+        "secondWeekendPoints": 27,
+        "weekendDelta": 16,
+        "leaderRacePoints": 43,
+        "secondRacePoints": 27,
+        "raceDelta": 16
       }
     },
     {
@@ -196,19 +208,25 @@
         "p1Changed": false,
         "leaderWeekendPoints": 26,
         "secondWeekendPoints": 29,
-        "weekendDelta": -3
+        "weekendDelta": -3,
+        "leaderRacePoints": 26,
+        "secondRacePoints": 29,
+        "raceDelta": -3
       },
       "constructors": {
         "leader": "Mercedes",
         "second": "Ferrari",
-        "gap": 68,
-        "standingsText": "Mercedes leads by 68 pts over Ferrari",
-        "raceImpact": "Mercedes maintained its constructors' lead over Ferrari",
-        "scenarioText": "Mercedes maintained its constructors' lead over Ferrari",
+        "gap": 31,
+        "standingsText": "Mercedes leads by 31 pts over Ferrari",
+        "raceImpact": "Mercedes extended its constructors' lead by 15 pts over Ferrari",
+        "scenarioText": "Mercedes extended its constructors' lead by 15 pts over Ferrari",
         "p1Changed": false,
-        "leaderWeekendPoints": 0,
-        "secondWeekendPoints": 0,
-        "weekendDelta": 0
+        "leaderWeekendPoints": 55,
+        "secondWeekendPoints": 40,
+        "weekendDelta": 15,
+        "leaderRacePoints": 55,
+        "secondRacePoints": 40,
+        "raceDelta": 15
       }
     },
     {
@@ -258,19 +276,25 @@
         "p1Changed": true,
         "leaderWeekendPoints": 25,
         "secondWeekendPoints": 12,
-        "weekendDelta": 13
+        "weekendDelta": 13,
+        "leaderRacePoints": 25,
+        "secondRacePoints": 12,
+        "raceDelta": 13
       },
       "constructors": {
         "leader": "Mercedes",
         "second": "Ferrari",
-        "gap": 68,
-        "standingsText": "Mercedes leads by 68 pts over Ferrari",
-        "raceImpact": "Mercedes maintained its constructors' lead over Ferrari",
-        "scenarioText": "Mercedes maintained its constructors' lead over Ferrari",
+        "gap": 45,
+        "standingsText": "Mercedes leads by 45 pts over Ferrari",
+        "raceImpact": "Mercedes extended its constructors' lead by 14 pts over Ferrari",
+        "scenarioText": "Mercedes extended its constructors' lead by 14 pts over Ferrari",
         "p1Changed": false,
-        "leaderWeekendPoints": 0,
-        "secondWeekendPoints": 0,
-        "weekendDelta": 0
+        "leaderWeekendPoints": 37,
+        "secondWeekendPoints": 23,
+        "weekendDelta": 14,
+        "leaderRacePoints": 37,
+        "secondRacePoints": 23,
+        "raceDelta": 14
       }
     },
     {
@@ -327,19 +351,25 @@
         "p1Changed": false,
         "leaderWeekendPoints": 28,
         "secondWeekendPoints": 17,
-        "weekendDelta": 11
+        "weekendDelta": 11,
+        "leaderRacePoints": 28,
+        "secondRacePoints": 17,
+        "raceDelta": 11
       },
       "constructors": {
         "leader": "Mercedes",
         "second": "Ferrari",
         "gap": 68,
         "standingsText": "Mercedes leads by 68 pts over Ferrari",
-        "raceImpact": "Mercedes maintained its constructors' lead over Ferrari",
-        "scenarioText": "Mercedes maintained its constructors' lead over Ferrari",
+        "raceImpact": "Mercedes extended its constructors' lead by 23 pts over Ferrari",
+        "scenarioText": "Mercedes extended its constructors' lead by 23 pts over Ferrari",
         "p1Changed": false,
-        "leaderWeekendPoints": 0,
-        "secondWeekendPoints": 0,
-        "weekendDelta": 0
+        "leaderWeekendPoints": 45,
+        "secondWeekendPoints": 22,
+        "weekendDelta": 23,
+        "leaderRacePoints": 45,
+        "secondRacePoints": 22,
+        "raceDelta": 23
       }
     }
   ]
