@@ -2,7 +2,7 @@
   "header": "F1 championship outlook",
   "season": 2026,
   "previousSeason": 2025,
-  "lastUpdated": "2026-05-03T19:32:43.435Z",
+  "lastUpdated": "2026-05-03T21:51:17.776Z",
   "mode": "race-weekend",
   "sources": {
     "driverStandings": "https://mredman48.github.io/F1-standings/f1_driver_standings.json",
@@ -11,59 +11,66 @@
     "previousYearWinners": "https://api.jolpi.ca/ergast/f1/2025/results/1.json"
   },
   "latest": {
-    "id": "round-3-japanesegrandprix-2026-03-29",
+    "id": "round-6-miamigrandprixsprint-2026-05-02",
     "sourceRace": {
-      "raceName": "Japanese Grand Prix",
-      "meetingName": "Japanese Grand Prix",
-      "round": 3,
-      "date": "2026-03-29",
-      "dateStartUtc": "2026-03-29T05:00:00+00:00",
-      "meetingKey": 1281,
+      "raceName": "Miami Grand Prix Sprint",
+      "meetingName": "Miami Grand Prix",
+      "round": 6,
+      "date": "2026-05-02",
+      "dateStartUtc": "2026-05-02T16:00:00+00:00",
+      "meetingKey": 1284,
       "previousYearWinner": {
         "season": 2025,
-        "round": 3,
-        "raceName": "Japanese Grand Prix",
-        "date": "2025-04-06",
-        "winner": "Max Verstappen",
-        "constructor": "Red Bull",
+        "round": 6,
+        "raceName": "Miami Grand Prix",
+        "date": "2025-05-04",
+        "winner": "Oscar Piastri",
+        "constructor": "McLaren",
         "source": "jolpica"
       },
       "sessionsIncluded": [
         {
+          "eventType": "sprint",
+          "sessionName": "Sprint",
+          "sessionKey": 11275,
+          "date": "2026-05-02",
+          "dateStartUtc": "2026-05-02T16:00:00+00:00"
+        },
+        {
           "eventType": "race",
           "sessionName": "Race",
-          "sessionKey": 11253,
-          "date": "2026-03-29",
-          "dateStartUtc": "2026-03-29T05:00:00+00:00"
+          "sessionKey": 11280,
+          "date": "2026-05-03",
+          "dateStartUtc": "2026-05-03T17:00:00+00:00"
         }
       ]
     },
     "previousYearWinner": {
       "season": 2025,
-      "round": 3,
-      "raceName": "Japanese Grand Prix",
-      "date": "2025-04-06",
-      "winner": "Max Verstappen",
-      "constructor": "Red Bull",
+      "round": 6,
+      "raceName": "Miami Grand Prix",
+      "date": "2025-05-04",
+      "winner": "Oscar Piastri",
+      "constructor": "McLaren",
       "source": "jolpica"
     },
     "drivers": {
       "leader": "Antonelli",
       "second": "Russell",
-      "gap": 7,
-      "standingsText": "Antonelli leads by 7 pts over Russell",
-      "raceImpact": "Antonelli moved ahead of Russell to P1",
-      "scenarioText": "Antonelli moved ahead of Russell to P1",
-      "p1Changed": true,
-      "leaderWeekendPoints": 25,
-      "secondWeekendPoints": 12,
-      "weekendDelta": 13
+      "gap": 20,
+      "standingsText": "Antonelli leads by 20 pts over Russell",
+      "raceImpact": "Antonelli extended lead by 11 pts over Russell",
+      "scenarioText": "Antonelli extended lead by 11 pts over Russell",
+      "p1Changed": false,
+      "leaderWeekendPoints": 28,
+      "secondWeekendPoints": 17,
+      "weekendDelta": 11
     },
     "constructors": {
       "leader": "Mercedes",
       "second": "Ferrari",
-      "gap": 45,
-      "standingsText": "Mercedes leads by 45 pts over Ferrari",
+      "gap": 68,
+      "standingsText": "Mercedes leads by 68 pts over Ferrari",
       "raceImpact": "Mercedes maintained lead over Ferrari",
       "scenarioText": "Mercedes maintained lead over Ferrari",
       "p1Changed": false,
@@ -113,10 +120,10 @@
       "drivers": {
         "leader": "Russell",
         "second": "Antonelli",
-        "gap": 9,
-        "standingsText": "Russell leads by 9 pts over Antonelli",
-        "raceImpact": "Russell moved ahead of Norris to P1",
-        "scenarioText": "Russell moved ahead of Norris to P1",
+        "gap": 7,
+        "standingsText": "Russell leads by 7 pts over Antonelli",
+        "raceImpact": "Russell moved ahead of Albon to P1",
+        "scenarioText": "Russell moved ahead of Albon to P1",
         "p1Changed": true,
         "leaderWeekendPoints": 25,
         "secondWeekendPoints": 18,
@@ -125,8 +132,8 @@
       "constructors": {
         "leader": "Mercedes",
         "second": "Ferrari",
-        "gap": 45,
-        "standingsText": "Mercedes leads by 45 pts over Ferrari",
+        "gap": 68,
+        "standingsText": "Mercedes leads by 68 pts over Ferrari",
         "raceImpact": "Mercedes maintained lead over Ferrari",
         "scenarioText": "Mercedes maintained lead over Ferrari",
         "p1Changed": false,
@@ -182,8 +189,8 @@
       "drivers": {
         "leader": "Russell",
         "second": "Antonelli",
-        "gap": 6,
-        "standingsText": "Russell leads by 6 pts over Antonelli",
+        "gap": 4,
+        "standingsText": "Russell leads by 4 pts over Antonelli",
         "raceImpact": "Antonelli cut Russell's lead by 3 pts",
         "scenarioText": "Antonelli cut Russell's lead by 3 pts",
         "p1Changed": false,
@@ -194,8 +201,8 @@
       "constructors": {
         "leader": "Mercedes",
         "second": "Ferrari",
-        "gap": 45,
-        "standingsText": "Mercedes leads by 45 pts over Ferrari",
+        "gap": 68,
+        "standingsText": "Mercedes leads by 68 pts over Ferrari",
         "raceImpact": "Mercedes maintained lead over Ferrari",
         "scenarioText": "Mercedes maintained lead over Ferrari",
         "p1Changed": false,
@@ -244,8 +251,8 @@
       "drivers": {
         "leader": "Antonelli",
         "second": "Russell",
-        "gap": 7,
-        "standingsText": "Antonelli leads by 7 pts over Russell",
+        "gap": 9,
+        "standingsText": "Antonelli leads by 9 pts over Russell",
         "raceImpact": "Antonelli moved ahead of Russell to P1",
         "scenarioText": "Antonelli moved ahead of Russell to P1",
         "p1Changed": true,
@@ -256,8 +263,77 @@
       "constructors": {
         "leader": "Mercedes",
         "second": "Ferrari",
-        "gap": 45,
-        "standingsText": "Mercedes leads by 45 pts over Ferrari",
+        "gap": 68,
+        "standingsText": "Mercedes leads by 68 pts over Ferrari",
+        "raceImpact": "Mercedes maintained lead over Ferrari",
+        "scenarioText": "Mercedes maintained lead over Ferrari",
+        "p1Changed": false,
+        "leaderWeekendPoints": 0,
+        "secondWeekendPoints": 0,
+        "weekendDelta": 0
+      }
+    },
+    {
+      "id": "round-6-miamigrandprixsprint-2026-05-02",
+      "sourceRace": {
+        "raceName": "Miami Grand Prix Sprint",
+        "meetingName": "Miami Grand Prix",
+        "round": 6,
+        "date": "2026-05-02",
+        "dateStartUtc": "2026-05-02T16:00:00+00:00",
+        "meetingKey": 1284,
+        "previousYearWinner": {
+          "season": 2025,
+          "round": 6,
+          "raceName": "Miami Grand Prix",
+          "date": "2025-05-04",
+          "winner": "Oscar Piastri",
+          "constructor": "McLaren",
+          "source": "jolpica"
+        },
+        "sessionsIncluded": [
+          {
+            "eventType": "sprint",
+            "sessionName": "Sprint",
+            "sessionKey": 11275,
+            "date": "2026-05-02",
+            "dateStartUtc": "2026-05-02T16:00:00+00:00"
+          },
+          {
+            "eventType": "race",
+            "sessionName": "Race",
+            "sessionKey": 11280,
+            "date": "2026-05-03",
+            "dateStartUtc": "2026-05-03T17:00:00+00:00"
+          }
+        ]
+      },
+      "previousYearWinner": {
+        "season": 2025,
+        "round": 6,
+        "raceName": "Miami Grand Prix",
+        "date": "2025-05-04",
+        "winner": "Oscar Piastri",
+        "constructor": "McLaren",
+        "source": "jolpica"
+      },
+      "drivers": {
+        "leader": "Antonelli",
+        "second": "Russell",
+        "gap": 20,
+        "standingsText": "Antonelli leads by 20 pts over Russell",
+        "raceImpact": "Antonelli extended lead by 11 pts over Russell",
+        "scenarioText": "Antonelli extended lead by 11 pts over Russell",
+        "p1Changed": false,
+        "leaderWeekendPoints": 28,
+        "secondWeekendPoints": 17,
+        "weekendDelta": 11
+      },
+      "constructors": {
+        "leader": "Mercedes",
+        "second": "Ferrari",
+        "gap": 68,
+        "standingsText": "Mercedes leads by 68 pts over Ferrari",
         "raceImpact": "Mercedes maintained lead over Ferrari",
         "scenarioText": "Mercedes maintained lead over Ferrari",
         "p1Changed": false,
