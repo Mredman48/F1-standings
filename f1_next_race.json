@@ -1,6 +1,6 @@
 {
   "header": "Next F1 event",
-  "generatedAtUtc": "2026-05-03T00:04:13.221Z",
+  "generatedAtUtc": "2026-05-03T04:15:27.215Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics+formula1",
@@ -85,6 +85,14 @@
         "startLocalDateShort": "Sat, May 02",
         "startLocalTimeShort": "14:00",
         "startLocalDateTimeShort": "Sat, May 02 14:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2026-05-03T17:00:00.000Z",
+        "endUtc": "2026-05-03T19:00:00.000Z",
+        "startLocalDateShort": "Sun, May 03",
+        "startLocalTimeShort": "11:00",
+        "startLocalDateTimeShort": "Sun, May 03 11:00"
       },
       {
         "type": "Race",
