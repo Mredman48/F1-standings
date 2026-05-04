@@ -1,6 +1,6 @@
 {
   "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-05-04T00:46:22.695Z",
+  "generatedAtUtc": "2026-05-04T01:12:01.783Z",
   "season": 2026,
   "source": {
     "primary": "f1_season_event_results.json",
@@ -22,7 +22,7 @@
       "lastName": "-",
       "fullName": "-",
       "code": null,
-      "team": "function Object() { [native code] }"
+      "team": "-"
     }
   },
   "drivers": [
@@ -42,7 +42,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "function Object() { [native code] }",
+        "name": "Mercedes",
         "fullName": "Mercedes",
         "nationality": null
       }
@@ -63,7 +63,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "function Object() { [native code] }",
+        "name": "Mercedes",
         "fullName": "Mercedes",
         "nationality": null
       }
@@ -84,7 +84,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "function Object() { [native code] }",
+        "name": "Ferrari",
         "fullName": "Ferrari",
         "nationality": null
       }
@@ -105,7 +105,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "function Object() { [native code] }",
+        "name": "McLaren",
         "fullName": "McLaren",
         "nationality": null
       }
@@ -126,7 +126,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "function Object() { [native code] }",
+        "name": "Ferrari",
         "fullName": "Ferrari",
         "nationality": null
       }
@@ -147,7 +147,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "function Object() { [native code] }",
+        "name": "McLaren",
         "fullName": "McLaren",
         "nationality": null
       }
@@ -168,7 +168,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "function Object() { [native code] }",
+        "name": "Red Bull",
         "fullName": "Red Bull",
         "nationality": null
       }
@@ -189,7 +189,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "function Object() { [native code] }",
+        "name": "Haas",
         "fullName": "Haas",
         "nationality": null
       }
@@ -210,7 +210,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "function Object() { [native code] }",
+        "name": "Alpine",
         "fullName": "Alpine",
         "nationality": null
       }
@@ -231,8 +231,8 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "function Object() { [native code] }",
-        "fullName": "Racing Bulls",
+        "name": "VCARB",
+        "fullName": "VCARB",
         "nationality": null
       }
     },
@@ -252,7 +252,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "function Object() { [native code] }",
+        "name": "Alpine",
         "fullName": "Alpine",
         "nationality": null
       }
@@ -273,8 +273,8 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "function Object() { [native code] }",
-        "fullName": "Racing Bulls",
+        "name": "VCARB",
+        "fullName": "VCARB",
         "nationality": null
       }
     },
@@ -294,7 +294,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "function Object() { [native code] }",
+        "name": "Red Bull",
         "fullName": "Red Bull",
         "nationality": null
       }
@@ -315,7 +315,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "function Object() { [native code] }",
+        "name": "Williams",
         "fullName": "Williams",
         "nationality": null
       }
@@ -336,7 +336,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "function Object() { [native code] }",
+        "name": "Audi",
         "fullName": "Audi",
         "nationality": null
       }
@@ -357,7 +357,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "function Object() { [native code] }",
+        "name": "Haas",
         "fullName": "Haas",
         "nationality": null
       }
@@ -378,7 +378,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "function Object() { [native code] }",
+        "name": "Williams",
         "fullName": "Williams",
         "nationality": null
       }
@@ -399,7 +399,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "function Object() { [native code] }",
+        "name": "Audi",
         "fullName": "Audi",
         "nationality": null
       }
@@ -420,7 +420,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "function Object() { [native code] }",
+        "name": "Cadillac",
         "fullName": "Cadillac",
         "nationality": null
       }
@@ -441,7 +441,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "function Object() { [native code] }",
+        "name": "Cadillac",
         "fullName": "Cadillac",
         "nationality": null
       }
@@ -462,7 +462,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "function Object() { [native code] }",
+        "name": "Aston Martin",
         "fullName": "Aston Martin",
         "nationality": null
       }
@@ -483,7 +483,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "function Object() { [native code] }",
+        "name": "Aston Martin",
         "fullName": "Aston Martin",
         "nationality": null
       }
