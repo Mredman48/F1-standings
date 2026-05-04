@@ -2,12 +2,12 @@
   "header": "F1 championship outlook",
   "season": 2026,
   "previousSeason": 2025,
-  "lastUpdated": "2026-05-03T22:07:35.203Z",
+  "lastUpdated": "2026-05-04T00:36:26.523Z",
   "mode": "race-weekend",
   "sources": {
-    "driverStandings": "https://mredman48.github.io/F1-standings/f1_driver_standings.json",
-    "constructorStandings": "https://mredman48.github.io/F1-standings/f1_constructors_standings.json",
-    "seasonResults": "https://mredman48.github.io/F1-standings/f1_season_event_results.json",
+    "driverStandings": "public-repo/f1_driver_standings.json",
+    "constructorStandings": "public-repo/f1_constructors_standings.json",
+    "seasonResults": "public-repo/f1_season_event_results.json",
     "previousYearWinners": "https://api.jolpi.ca/ergast/f1/2025/results/1.json"
   },
   "latest": {
@@ -74,15 +74,15 @@
       "second": "Ferrari",
       "gap": 68,
       "standingsText": "Mercedes leads by 68 pts over Ferrari",
-      "raceImpact": "Mercedes extended its constructors' lead by 23 pts over Ferrari",
-      "scenarioText": "Mercedes extended its constructors' lead by 23 pts over Ferrari",
+      "raceImpact": "Mercedes extended its constructors' lead by 25 pts over Ferrari",
+      "scenarioText": "Mercedes extended its constructors' lead by 25 pts over Ferrari",
       "p1Changed": false,
       "leaderWeekendPoints": 45,
-      "secondWeekendPoints": 22,
-      "weekendDelta": 23,
+      "secondWeekendPoints": 20,
+      "weekendDelta": 25,
       "leaderRacePoints": 45,
-      "secondRacePoints": 22,
-      "raceDelta": 23
+      "secondRacePoints": 20,
+      "raceDelta": 25
     }
   },
   "races": [
@@ -125,26 +125,26 @@
       },
       "drivers": {
         "leader": "Russell",
-        "second": "Antonelli",
-        "gap": 7,
-        "standingsText": "Russell leads by 7 pts over Antonelli",
-        "raceImpact": "Russell moved ahead of Albon to P1",
-        "scenarioText": "Russell moved ahead of Albon to P1",
+        "second": "Leclerc",
+        "gap": 6,
+        "standingsText": "Russell leads by 6 pts over Leclerc",
+        "raceImpact": "Russell moved ahead of Leclerc to P1",
+        "scenarioText": "Russell moved ahead of Leclerc to P1",
         "p1Changed": true,
         "leaderWeekendPoints": 25,
-        "secondWeekendPoints": 18,
-        "weekendDelta": 7,
+        "secondWeekendPoints": 15,
+        "weekendDelta": 10,
         "leaderRacePoints": 25,
-        "secondRacePoints": 18,
-        "raceDelta": 7
+        "secondRacePoints": 15,
+        "raceDelta": 10
       },
       "constructors": {
         "leader": "Mercedes",
         "second": "Ferrari",
-        "gap": 16,
-        "standingsText": "Mercedes leads by 16 pts over Ferrari",
-        "raceImpact": "Mercedes moved ahead of Alpine to P1",
-        "scenarioText": "Mercedes moved ahead of Alpine to P1",
+        "gap": 14,
+        "standingsText": "Mercedes leads by 14 pts over Ferrari",
+        "raceImpact": "Mercedes moved ahead of Ferrari to P1",
+        "scenarioText": "Mercedes moved ahead of Ferrari to P1",
         "p1Changed": true,
         "leaderWeekendPoints": 43,
         "secondWeekendPoints": 27,
@@ -216,8 +216,8 @@
       "constructors": {
         "leader": "Mercedes",
         "second": "Ferrari",
-        "gap": 31,
-        "standingsText": "Mercedes leads by 31 pts over Ferrari",
+        "gap": 29,
+        "standingsText": "Mercedes leads by 29 pts over Ferrari",
         "raceImpact": "Mercedes extended its constructors' lead by 15 pts over Ferrari",
         "scenarioText": "Mercedes extended its constructors' lead by 15 pts over Ferrari",
         "p1Changed": false,
@@ -284,8 +284,8 @@
       "constructors": {
         "leader": "Mercedes",
         "second": "Ferrari",
-        "gap": 45,
-        "standingsText": "Mercedes leads by 45 pts over Ferrari",
+        "gap": 43,
+        "standingsText": "Mercedes leads by 43 pts over Ferrari",
         "raceImpact": "Mercedes extended its constructors' lead by 14 pts over Ferrari",
         "scenarioText": "Mercedes extended its constructors' lead by 14 pts over Ferrari",
         "p1Changed": false,
@@ -361,15 +361,15 @@
         "second": "Ferrari",
         "gap": 68,
         "standingsText": "Mercedes leads by 68 pts over Ferrari",
-        "raceImpact": "Mercedes extended its constructors' lead by 23 pts over Ferrari",
-        "scenarioText": "Mercedes extended its constructors' lead by 23 pts over Ferrari",
+        "raceImpact": "Mercedes extended its constructors' lead by 25 pts over Ferrari",
+        "scenarioText": "Mercedes extended its constructors' lead by 25 pts over Ferrari",
         "p1Changed": false,
         "leaderWeekendPoints": 45,
-        "secondWeekendPoints": 22,
-        "weekendDelta": 23,
+        "secondWeekendPoints": 20,
+        "weekendDelta": 25,
         "leaderRacePoints": 45,
-        "secondRacePoints": 22,
-        "raceDelta": 23
+        "secondRacePoints": 20,
+        "raceDelta": 25
       }
     }
   ]
