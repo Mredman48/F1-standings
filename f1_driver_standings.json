@@ -1,7 +1,12 @@
 {
   "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-05-04T00:34:45.978Z",
+  "generatedAtUtc": "2026-05-04T00:46:22.695Z",
   "season": 2026,
+  "source": {
+    "primary": "f1_season_event_results.json",
+    "tieBreakFallback": "https://www.skysports.com/f1/standings",
+    "note": "Points are calculated from completed race/sprint events. Sky Sports is only used for tied-point ordering fallback and missing metadata."
+  },
   "lastRace": {
     "season": "2026",
     "round": "6",
@@ -17,7 +22,7 @@
       "lastName": "-",
       "fullName": "-",
       "code": null,
-      "team": "-"
+      "team": "function Object() { [native code] }"
     }
   },
   "drivers": [
@@ -25,7 +30,7 @@
       "position": "P1",
       "positionNumber": 1,
       "points": 100,
-      "wins": "-",
+      "wins": 3,
       "driver": {
         "code": "ANT",
         "firstName": "Kimi",
@@ -37,7 +42,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "Mercedes",
+        "name": "function Object() { [native code] }",
         "fullName": "Mercedes",
         "nationality": null
       }
@@ -46,7 +51,7 @@
       "position": "P2",
       "positionNumber": 2,
       "points": 80,
-      "wins": "-",
+      "wins": 1,
       "driver": {
         "code": "RUS",
         "firstName": "George",
@@ -58,7 +63,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "Mercedes",
+        "name": "function Object() { [native code] }",
         "fullName": "Mercedes",
         "nationality": null
       }
@@ -66,8 +71,8 @@
     {
       "position": "P3",
       "positionNumber": 3,
-      "points": 63,
-      "wins": "-",
+      "points": 59,
+      "wins": 0,
       "driver": {
         "code": "LEC",
         "firstName": "Charles",
@@ -79,7 +84,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "Ferrari",
+        "name": "function Object() { [native code] }",
         "fullName": "Ferrari",
         "nationality": null
       }
@@ -88,7 +93,7 @@
       "position": "P4",
       "positionNumber": 4,
       "points": 51,
-      "wins": "-",
+      "wins": 0,
       "driver": {
         "code": "NOR",
         "firstName": "Lando",
@@ -100,7 +105,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "McLaren",
+        "name": "function Object() { [native code] }",
         "fullName": "McLaren",
         "nationality": null
       }
@@ -108,8 +113,8 @@
     {
       "position": "P5",
       "positionNumber": 5,
-      "points": 49,
-      "wins": "-",
+      "points": 51,
+      "wins": 0,
       "driver": {
         "code": "HAM",
         "firstName": "Lewis",
@@ -121,7 +126,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "Ferrari",
+        "name": "function Object() { [native code] }",
         "fullName": "Ferrari",
         "nationality": null
       }
@@ -130,7 +135,7 @@
       "position": "P6",
       "positionNumber": 6,
       "points": 43,
-      "wins": "-",
+      "wins": 0,
       "driver": {
         "code": "PIA",
         "firstName": "Oscar",
@@ -142,7 +147,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "McLaren",
+        "name": "function Object() { [native code] }",
         "fullName": "McLaren",
         "nationality": null
       }
@@ -151,7 +156,7 @@
       "position": "P7",
       "positionNumber": 7,
       "points": 26,
-      "wins": "-",
+      "wins": 0,
       "driver": {
         "code": "VER",
         "firstName": "Max",
@@ -163,7 +168,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "Red Bull",
+        "name": "function Object() { [native code] }",
         "fullName": "Red Bull",
         "nationality": null
       }
@@ -172,7 +177,7 @@
       "position": "P8",
       "positionNumber": 8,
       "points": 17,
-      "wins": "-",
+      "wins": 0,
       "driver": {
         "code": "BEA",
         "firstName": "Oliver",
@@ -184,7 +189,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "Haas",
+        "name": "function Object() { [native code] }",
         "fullName": "Haas",
         "nationality": null
       }
@@ -193,7 +198,7 @@
       "position": "P9",
       "positionNumber": 9,
       "points": 16,
-      "wins": "-",
+      "wins": 0,
       "driver": {
         "code": "GAS",
         "firstName": "Pierre",
@@ -205,7 +210,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "Alpine",
+        "name": "function Object() { [native code] }",
         "fullName": "Alpine",
         "nationality": null
       }
@@ -214,7 +219,7 @@
       "position": "P10",
       "positionNumber": 10,
       "points": 10,
-      "wins": "-",
+      "wins": 0,
       "driver": {
         "code": "LAW",
         "firstName": "Liam",
@@ -226,7 +231,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "VCARB",
+        "name": "function Object() { [native code] }",
         "fullName": "Racing Bulls",
         "nationality": null
       }
@@ -234,8 +239,8 @@
     {
       "position": "P11",
       "positionNumber": 11,
-      "points": 5,
-      "wins": "-",
+      "points": 7,
+      "wins": 0,
       "driver": {
         "code": "COL",
         "firstName": "Franco",
@@ -247,7 +252,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "Alpine",
+        "name": "function Object() { [native code] }",
         "fullName": "Alpine",
         "nationality": null
       }
@@ -256,7 +261,7 @@
       "position": "P12",
       "positionNumber": 12,
       "points": 4,
-      "wins": "-",
+      "wins": 0,
       "driver": {
         "code": "LIN",
         "firstName": "Arvid",
@@ -268,7 +273,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "VCARB",
+        "name": "function Object() { [native code] }",
         "fullName": "Racing Bulls",
         "nationality": null
       }
@@ -277,7 +282,7 @@
       "position": "P13",
       "positionNumber": 13,
       "points": 4,
-      "wins": "-",
+      "wins": 0,
       "driver": {
         "code": "HAD",
         "firstName": "Isack",
@@ -289,7 +294,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "Red Bull",
+        "name": "function Object() { [native code] }",
         "fullName": "Red Bull",
         "nationality": null
       }
@@ -298,7 +303,7 @@
       "position": "P14",
       "positionNumber": 14,
       "points": 4,
-      "wins": "-",
+      "wins": 0,
       "driver": {
         "code": "SAI",
         "firstName": "Carlos",
@@ -310,7 +315,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "Williams",
+        "name": "function Object() { [native code] }",
         "fullName": "Williams",
         "nationality": null
       }
@@ -319,7 +324,7 @@
       "position": "P15",
       "positionNumber": 15,
       "points": 2,
-      "wins": "-",
+      "wins": 0,
       "driver": {
         "code": "BOR",
         "firstName": "Gabriel",
@@ -331,7 +336,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "Audi",
+        "name": "function Object() { [native code] }",
         "fullName": "Audi",
         "nationality": null
       }
@@ -340,7 +345,7 @@
       "position": "P16",
       "positionNumber": 16,
       "points": 1,
-      "wins": "-",
+      "wins": 0,
       "driver": {
         "code": "OCO",
         "firstName": "Esteban",
@@ -352,7 +357,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "Haas",
+        "name": "function Object() { [native code] }",
         "fullName": "Haas",
         "nationality": null
       }
@@ -361,19 +366,19 @@
       "position": "P17",
       "positionNumber": 17,
       "points": 1,
-      "wins": "-",
+      "wins": 0,
       "driver": {
         "code": "ALB",
-        "firstName": "Alex",
+        "firstName": "Alexander",
         "lastName": "Albon",
-        "fullName": "Alex Albon",
+        "fullName": "Alexander Albon",
         "nationality": "THA",
         "driverNumber": 23,
         "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/alex-albon.png",
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "Williams",
+        "name": "function Object() { [native code] }",
         "fullName": "Williams",
         "nationality": null
       }
@@ -382,7 +387,7 @@
       "position": "P18",
       "positionNumber": 18,
       "points": 0,
-      "wins": "-",
+      "wins": 0,
       "driver": {
         "code": "HUL",
         "firstName": "Nico",
@@ -394,7 +399,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "Audi",
+        "name": "function Object() { [native code] }",
         "fullName": "Audi",
         "nationality": null
       }
@@ -403,7 +408,7 @@
       "position": "P19",
       "positionNumber": 19,
       "points": 0,
-      "wins": "-",
+      "wins": 0,
       "driver": {
         "code": "BOT",
         "firstName": "Valtteri",
@@ -415,7 +420,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "Cadillac",
+        "name": "function Object() { [native code] }",
         "fullName": "Cadillac",
         "nationality": null
       }
@@ -424,7 +429,7 @@
       "position": "P20",
       "positionNumber": 20,
       "points": 0,
-      "wins": "-",
+      "wins": 0,
       "driver": {
         "code": "PER",
         "firstName": "Sergio",
@@ -436,7 +441,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "Cadillac",
+        "name": "function Object() { [native code] }",
         "fullName": "Cadillac",
         "nationality": null
       }
@@ -445,7 +450,7 @@
       "position": "P21",
       "positionNumber": 21,
       "points": 0,
-      "wins": "-",
+      "wins": 0,
       "driver": {
         "code": "ALO",
         "firstName": "Fernando",
@@ -457,7 +462,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "Aston Martin",
+        "name": "function Object() { [native code] }",
         "fullName": "Aston Martin",
         "nationality": null
       }
@@ -466,7 +471,7 @@
       "position": "P22",
       "positionNumber": 22,
       "points": 0,
-      "wins": "-",
+      "wins": 0,
       "driver": {
         "code": "STR",
         "firstName": "Lance",
@@ -478,7 +483,7 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "Aston Martin",
+        "name": "function Object() { [native code] }",
         "fullName": "Aston Martin",
         "nationality": null
       }
