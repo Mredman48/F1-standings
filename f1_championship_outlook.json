@@ -2,7 +2,7 @@
   "header": "F1 championship outlook",
   "season": 2026,
   "previousSeason": 2025,
-  "lastUpdated": "2026-05-17T02:24:05.489Z",
+  "lastUpdated": "2026-05-17T02:29:34.971Z",
   "mode": "race-weekend",
   "sources": {
     "driverStandings": "https://mredman48.github.io/F1-standings/f1_driver_standings.json",
@@ -53,6 +53,26 @@
       "winner": "Oscar Piastri",
       "constructor": "McLaren",
       "source": "jolpica"
+    },
+    "preWeekendNotes": {
+      "winStreak": {
+        "driverName": "Antonelli",
+        "count": 2
+      },
+      "podiumStreak": {
+        "driverName": "Antonelli",
+        "count": 3
+      },
+      "leaderRecentForm": {
+        "driverName": "Antonelli",
+        "positions": [
+          2,
+          1,
+          1
+        ],
+        "label": "P2 P1 P1 in last 3 races"
+      },
+      "defenderNote": "Oscar Piastri won here in 2025 (McLaren)"
     },
     "drivers": {
       "leader": "Antonelli",
@@ -122,6 +142,12 @@
         "winner": "Lando Norris",
         "constructor": "McLaren",
         "source": "jolpica"
+      },
+      "preWeekendNotes": {
+        "winStreak": null,
+        "podiumStreak": null,
+        "leaderRecentForm": null,
+        "defenderNote": "Lando Norris won here in 2025 (McLaren)"
       },
       "drivers": {
         "leader": "Russell",
@@ -198,6 +224,18 @@
         "constructor": "McLaren",
         "source": "jolpica"
       },
+      "preWeekendNotes": {
+        "winStreak": null,
+        "podiumStreak": null,
+        "leaderRecentForm": {
+          "driverName": "Russell",
+          "positions": [
+            1
+          ],
+          "label": "P1 in last 1 race"
+        },
+        "defenderNote": "Oscar Piastri won here in 2025 (McLaren)"
+      },
       "drivers": {
         "leader": "Russell",
         "second": "Antonelli",
@@ -265,6 +303,19 @@
         "winner": "Max Verstappen",
         "constructor": "Red Bull",
         "source": "jolpica"
+      },
+      "preWeekendNotes": {
+        "winStreak": null,
+        "podiumStreak": null,
+        "leaderRecentForm": {
+          "driverName": "Russell",
+          "positions": [
+            1,
+            2
+          ],
+          "label": "P1 P2 in last 2 races"
+        },
+        "defenderNote": "Max Verstappen won here in 2025 (Red Bull)"
       },
       "drivers": {
         "leader": "Antonelli",
@@ -340,6 +391,26 @@
         "winner": "Oscar Piastri",
         "constructor": "McLaren",
         "source": "jolpica"
+      },
+      "preWeekendNotes": {
+        "winStreak": {
+          "driverName": "Antonelli",
+          "count": 2
+        },
+        "podiumStreak": {
+          "driverName": "Antonelli",
+          "count": 3
+        },
+        "leaderRecentForm": {
+          "driverName": "Antonelli",
+          "positions": [
+            2,
+            1,
+            1
+          ],
+          "label": "P2 P1 P1 in last 3 races"
+        },
+        "defenderNote": "Oscar Piastri won here in 2025 (McLaren)"
       },
       "drivers": {
         "leader": "Antonelli",
