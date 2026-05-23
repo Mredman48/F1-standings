@@ -1,6 +1,6 @@
 {
   "header": "Constructors standings",
-  "generatedAtUtc": "2026-05-23T17:10:35.540Z",
+  "generatedAtUtc": "2026-05-23T18:11:05.016Z",
   "meta": {
     "seasonUsed": "2026",
     "source": "f1_driver_standings.json",
@@ -9,13 +9,13 @@
   },
   "lastRace": {
     "season": "2026",
-    "round": "6",
-    "raceName": "Miami Grand Prix",
-    "date": "2026-05-03",
+    "round": "7",
+    "raceName": "Canadian Grand Prix Sprint",
+    "date": "2026-05-23",
     "circuit": {
-      "name": "Miami",
-      "locality": "Miami Gardens",
-      "country": "United States"
+      "name": "Montreal",
+      "locality": "Montréal",
+      "country": "Canada"
     },
     "winner": {
       "firstName": "-",
@@ -29,7 +29,7 @@
     {
       "team": "Mercedes",
       "position": "P1",
-      "points": 180,
+      "points": 194,
       "wins": 4,
       "driverCount": 2,
       "placeholder": false
@@ -37,7 +37,7 @@
     {
       "team": "Ferrari",
       "position": "P2",
-      "points": 110,
+      "points": 117,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
@@ -45,7 +45,7 @@
     {
       "team": "McLaren",
       "position": "P3",
-      "points": 94,
+      "points": 106,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
@@ -53,7 +53,7 @@
     {
       "team": "Red Bull",
       "position": "P4",
-      "points": 30,
+      "points": 32,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
@@ -77,7 +77,7 @@
     {
       "team": "VCARB",
       "position": "P7",
-      "points": 14,
+      "points": 15,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
