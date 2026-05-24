@@ -1,6 +1,6 @@
 {
   "header": "Ferrari standings",
-  "generatedAtUtc": "2026-05-24T21:39:19.560Z",
+  "generatedAtUtc": "2026-05-24T22:23:25.422Z",
   "ferrari": {
     "team": "Ferrari",
     "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_ferrari_color_v2.png",
@@ -71,20 +71,20 @@
       "points": 54,
       "wins": 0,
       "raceWins": 0,
-      "racePodiums": 1,
+      "racePodiums": 2,
       "sprintWins": 0,
       "sprintPodiums": 1,
       "team": "Ferrari",
       "bestResult": {
-        "position": "P3",
-        "eventType": "sprint",
-        "raceName": "Chinese Grand Prix Sprint",
-        "round": "2",
-        "date": "2026-03-14",
-        "circuit": "Shanghai",
+        "position": "P2",
+        "eventType": "race",
+        "raceName": "Canadian Grand Prix",
+        "round": "7",
+        "date": "2026-05-24",
+        "circuit": "Montreal",
         "location": {
-          "locality": "Shanghai",
-          "country": "China"
+          "locality": "Montréal",
+          "country": "Canada"
         }
       }
     }

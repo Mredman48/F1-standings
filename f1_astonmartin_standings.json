@@ -1,6 +1,6 @@
 {
   "header": "Aston Martin standings",
-  "generatedAtUtc": "2026-05-24T21:39:19.565Z",
+  "generatedAtUtc": "2026-05-24T22:23:25.426Z",
   "astonMartin": {
     "team": "Aston Martin",
     "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_aston-martin_color_v2.png",
@@ -23,6 +23,39 @@
   },
   "drivers": [
     {
+      "firstName": "Lance",
+      "lastName": "Stroll",
+      "code": "STR",
+      "driverNumber": 18,
+      "nationality": "Canadian",
+      "countryCode": "ca",
+      "countryName": "Canada",
+      "flagUrl": "https://flagcdn.com/w80/ca.png",
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-18.png",
+      "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-18-2.png",
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lance-stroll.png",
+      "position": "P21",
+      "points": 0,
+      "wins": 0,
+      "raceWins": 0,
+      "racePodiums": 0,
+      "sprintWins": 0,
+      "sprintPodiums": 0,
+      "team": "Aston Martin",
+      "bestResult": {
+        "position": "P15",
+        "eventType": "race",
+        "raceName": "Canadian Grand Prix",
+        "round": "7",
+        "date": "2026-05-24",
+        "circuit": "Montreal",
+        "location": {
+          "locality": "Montréal",
+          "country": "Canada"
+        }
+      }
+    },
+    {
       "firstName": "Fernando",
       "lastName": "Alonso",
       "code": "ALO",
@@ -34,7 +67,7 @@
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-14.png",
       "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-14-2.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/fernando-alonso.png",
-      "position": "P21",
+      "position": "P22",
       "points": 0,
       "wins": 0,
       "raceWins": 0,
@@ -52,39 +85,6 @@
         "location": {
           "locality": "Miami Gardens",
           "country": "United States"
-        }
-      }
-    },
-    {
-      "firstName": "Lance",
-      "lastName": "Stroll",
-      "code": "STR",
-      "driverNumber": 18,
-      "nationality": "Canadian",
-      "countryCode": "ca",
-      "countryName": "Canada",
-      "flagUrl": "https://flagcdn.com/w80/ca.png",
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-18.png",
-      "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-18-2.png",
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lance-stroll.png",
-      "position": "P22",
-      "points": 0,
-      "wins": 0,
-      "raceWins": 0,
-      "racePodiums": 0,
-      "sprintWins": 0,
-      "sprintPodiums": 0,
-      "team": "Aston Martin",
-      "bestResult": {
-        "position": "P16",
-        "eventType": "sprint",
-        "raceName": "Canadian Grand Prix Sprint",
-        "round": "7",
-        "date": "2026-05-23",
-        "circuit": "Montreal",
-        "location": {
-          "locality": "Montréal",
-          "country": "Canada"
         }
       }
     }
