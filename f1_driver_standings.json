@@ -1,6 +1,6 @@
 {
   "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-05-24T22:21:30.768Z",
+  "generatedAtUtc": "2026-05-24T22:37:27.232Z",
   "season": 2026,
   "source": {
     "primary": "f1_season_event_results.json",
@@ -10,8 +10,8 @@
   "lastRace": {
     "season": "2026",
     "round": "7",
-    "raceName": "Canadian Grand Prix Sprint",
-    "date": "2026-05-23",
+    "raceName": "Canadian Grand Prix",
+    "date": "2026-05-24",
     "circuit": {
       "name": "Montreal",
       "locality": "Montréal",
@@ -29,8 +29,8 @@
     {
       "position": "P1",
       "positionNumber": 1,
-      "points": 106,
-      "wins": 3,
+      "points": 131,
+      "wins": 4,
       "driver": {
         "code": "ANT",
         "firstName": "Kimi",
@@ -71,7 +71,7 @@
     {
       "position": "P3",
       "positionNumber": 3,
-      "points": 63,
+      "points": 75,
       "wins": 0,
       "driver": {
         "code": "LEC",
@@ -92,6 +92,27 @@
     {
       "position": "P4",
       "positionNumber": 4,
+      "points": 72,
+      "wins": 0,
+      "driver": {
+        "code": "HAM",
+        "firstName": "Lewis",
+        "lastName": "Hamilton",
+        "fullName": "Lewis Hamilton",
+        "nationality": "GBR",
+        "driverNumber": 44,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lewis-hamilton.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Ferrari",
+        "fullName": "Ferrari",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P5",
+      "positionNumber": 5,
       "points": 58,
       "wins": 0,
       "driver": {
@@ -107,27 +128,6 @@
       "constructor": {
         "name": "McLaren",
         "fullName": "McLaren",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P5",
-      "positionNumber": 5,
-      "points": 54,
-      "wins": 0,
-      "driver": {
-        "code": "HAM",
-        "firstName": "Lewis",
-        "lastName": "Hamilton",
-        "fullName": "Lewis Hamilton",
-        "nationality": "GBR",
-        "driverNumber": 44,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lewis-hamilton.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Ferrari",
-        "fullName": "Ferrari",
         "nationality": null
       }
     },
@@ -155,7 +155,7 @@
     {
       "position": "P7",
       "positionNumber": 7,
-      "points": 28,
+      "points": 43,
       "wins": 0,
       "driver": {
         "code": "VER",
@@ -176,28 +176,7 @@
     {
       "position": "P8",
       "positionNumber": 8,
-      "points": 17,
-      "wins": 0,
-      "driver": {
-        "code": "BEA",
-        "firstName": "Oliver",
-        "lastName": "Bearman",
-        "fullName": "Oliver Bearman",
-        "nationality": "GBR",
-        "driverNumber": 87,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/oliver-bearman.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Haas",
-        "fullName": "Haas",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P9",
-      "positionNumber": 9,
-      "points": 16,
+      "points": 20,
       "wins": 0,
       "driver": {
         "code": "GAS",
@@ -216,9 +195,30 @@
       }
     },
     {
+      "position": "P9",
+      "positionNumber": 9,
+      "points": 18,
+      "wins": 0,
+      "driver": {
+        "code": "BEA",
+        "firstName": "Oliver",
+        "lastName": "Bearman",
+        "fullName": "Oliver Bearman",
+        "nationality": "GBR",
+        "driverNumber": 87,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/oliver-bearman.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Haas",
+        "fullName": "Haas",
+        "nationality": null
+      }
+    },
+    {
       "position": "P10",
       "positionNumber": 10,
-      "points": 10,
+      "points": 16,
       "wins": 0,
       "driver": {
         "code": "LAW",
@@ -239,7 +239,7 @@
     {
       "position": "P11",
       "positionNumber": 11,
-      "points": 7,
+      "points": 15,
       "wins": 0,
       "driver": {
         "code": "COL",
@@ -260,28 +260,7 @@
     {
       "position": "P12",
       "positionNumber": 12,
-      "points": 5,
-      "wins": 0,
-      "driver": {
-        "code": "LIN",
-        "firstName": "Arvid",
-        "lastName": "Lindblad",
-        "fullName": "Arvid Lindblad",
-        "nationality": "GBR",
-        "driverNumber": 41,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/arvid-lindblad.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "VCARB",
-        "fullName": "VCARB",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P13",
-      "positionNumber": 13,
-      "points": 4,
+      "points": 14,
       "wins": 0,
       "driver": {
         "code": "HAD",
@@ -300,9 +279,9 @@
       }
     },
     {
-      "position": "P14",
-      "positionNumber": 14,
-      "points": 4,
+      "position": "P13",
+      "positionNumber": 13,
+      "points": 6,
       "wins": 0,
       "driver": {
         "code": "SAI",
@@ -317,6 +296,27 @@
       "constructor": {
         "name": "Williams",
         "fullName": "Williams",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P14",
+      "positionNumber": 14,
+      "points": 5,
+      "wins": 0,
+      "driver": {
+        "code": "LIN",
+        "firstName": "Arvid",
+        "lastName": "Lindblad",
+        "fullName": "Arvid Lindblad",
+        "nationality": "GBR",
+        "driverNumber": 41,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/arvid-lindblad.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "VCARB",
+        "fullName": "VCARB",
         "nationality": null
       }
     },

@@ -2,7 +2,7 @@
   "header": "F1 championship outlook",
   "season": 2026,
   "previousSeason": 2025,
-  "lastUpdated": "2026-05-24T22:23:26.205Z",
+  "lastUpdated": "2026-05-24T22:39:20.901Z",
   "mode": "race-weekend",
   "sources": {
     "driverStandings": "public-repo/f1_driver_standings.json",
@@ -64,24 +64,24 @@
         "count": 4
       },
       "leaderRecentForm": {
-        "driverName": "Russell",
+        "driverName": "Antonelli",
         "positions": [
-          2,
-          4,
-          4
+          1,
+          1,
+          1
         ],
-        "label": "P2 P4 P4 in last 3 races"
+        "label": "P1 P1 P1 in last 3 races"
       },
       "defenderNote": "Max Verstappen won here in 2025 (Red Bull)"
     },
     "drivers": {
       "leader": "Antonelli",
       "second": "Russell",
-      "gap": 18,
-      "standingsText": "Antonelli leads by 18 pts over Russell",
-      "raceImpact": "Antonelli moved ahead of Russell to P1",
-      "scenarioText": "Antonelli moved ahead of Russell to P1",
-      "p1Changed": true,
+      "gap": 43,
+      "standingsText": "Antonelli leads by 43 pts over Russell",
+      "raceImpact": "Antonelli extended lead by 23 pts over Russell",
+      "scenarioText": "Antonelli extended lead by 23 pts over Russell",
+      "p1Changed": false,
       "leaderWeekendPoints": 31,
       "secondWeekendPoints": 8,
       "weekendDelta": 23,
@@ -92,8 +92,8 @@
     "constructors": {
       "leader": "Mercedes",
       "second": "Ferrari",
-      "gap": 77,
-      "standingsText": "Mercedes leads by 77 pts over Ferrari",
+      "gap": 72,
+      "standingsText": "Mercedes leads by 72 pts over Ferrari",
       "raceImpact": "Mercedes extended its constructors' lead by 2 pts over Ferrari",
       "scenarioText": "Mercedes extended its constructors' lead by 2 pts over Ferrari",
       "p1Changed": false,
@@ -151,33 +151,33 @@
       },
       "drivers": {
         "leader": "Russell",
-        "second": "Norris",
-        "gap": 15,
-        "standingsText": "Russell leads by 15 pts over Norris",
+        "second": "Antonelli",
+        "gap": 7,
+        "standingsText": "Russell leads by 7 pts over Antonelli",
         "raceImpact": "Russell moved ahead of Albon to P1",
         "scenarioText": "Russell moved ahead of Albon to P1",
         "p1Changed": true,
         "leaderWeekendPoints": 25,
-        "secondWeekendPoints": 10,
-        "weekendDelta": 15,
+        "secondWeekendPoints": 18,
+        "weekendDelta": 7,
         "leaderRacePoints": 25,
-        "secondRacePoints": 10,
-        "raceDelta": 15
+        "secondRacePoints": 18,
+        "raceDelta": 7
       },
       "constructors": {
         "leader": "Mercedes",
-        "second": "McLaren",
-        "gap": 8,
-        "standingsText": "Mercedes leads by 8 pts over McLaren",
+        "second": "Ferrari",
+        "gap": 16,
+        "standingsText": "Mercedes leads by 16 pts over Ferrari",
         "raceImpact": "Mercedes moved ahead of Alpine to P1",
         "scenarioText": "Mercedes moved ahead of Alpine to P1",
         "p1Changed": true,
         "leaderWeekendPoints": 43,
-        "secondWeekendPoints": 10,
-        "weekendDelta": 33,
+        "secondWeekendPoints": 27,
+        "weekendDelta": 16,
         "leaderRacePoints": 43,
-        "secondRacePoints": 10,
-        "raceDelta": 33
+        "secondRacePoints": 27,
+        "raceDelta": 16
       }
     },
     {
@@ -239,8 +239,8 @@
       "drivers": {
         "leader": "Russell",
         "second": "Antonelli",
-        "gap": 29,
-        "standingsText": "Russell leads by 29 pts over Antonelli",
+        "gap": 4,
+        "standingsText": "Russell leads by 4 pts over Antonelli",
         "raceImpact": "Antonelli cut Russell's lead by 3 pts",
         "scenarioText": "Antonelli cut Russell's lead by 3 pts",
         "p1Changed": false,
@@ -254,8 +254,8 @@
       "constructors": {
         "leader": "Mercedes",
         "second": "Ferrari",
-        "gap": 36,
-        "standingsText": "Mercedes leads by 36 pts over Ferrari",
+        "gap": 31,
+        "standingsText": "Mercedes leads by 31 pts over Ferrari",
         "raceImpact": "Mercedes extended its constructors' lead by 15 pts over Ferrari",
         "scenarioText": "Mercedes extended its constructors' lead by 15 pts over Ferrari",
         "p1Changed": false,
@@ -318,25 +318,25 @@
         "defenderNote": "Max Verstappen won here in 2025 (Red Bull)"
       },
       "drivers": {
-        "leader": "Russell",
-        "second": "Antonelli",
-        "gap": 16,
-        "standingsText": "Russell leads by 16 pts over Antonelli",
-        "raceImpact": "Antonelli cut Russell's lead by 13 pts",
-        "scenarioText": "Antonelli cut Russell's lead by 13 pts",
-        "p1Changed": false,
-        "leaderWeekendPoints": 12,
-        "secondWeekendPoints": 25,
-        "weekendDelta": -13,
-        "leaderRacePoints": 12,
-        "secondRacePoints": 25,
-        "raceDelta": -13
+        "leader": "Antonelli",
+        "second": "Russell",
+        "gap": 9,
+        "standingsText": "Antonelli leads by 9 pts over Russell",
+        "raceImpact": "Antonelli moved ahead of Russell to P1",
+        "scenarioText": "Antonelli moved ahead of Russell to P1",
+        "p1Changed": true,
+        "leaderWeekendPoints": 25,
+        "secondWeekendPoints": 12,
+        "weekendDelta": 13,
+        "leaderRacePoints": 25,
+        "secondRacePoints": 12,
+        "raceDelta": 13
       },
       "constructors": {
         "leader": "Mercedes",
         "second": "Ferrari",
-        "gap": 50,
-        "standingsText": "Mercedes leads by 50 pts over Ferrari",
+        "gap": 45,
+        "standingsText": "Mercedes leads by 45 pts over Ferrari",
         "raceImpact": "Mercedes extended its constructors' lead by 14 pts over Ferrari",
         "scenarioText": "Mercedes extended its constructors' lead by 14 pts over Ferrari",
         "p1Changed": false,
@@ -402,45 +402,45 @@
           "count": 3
         },
         "leaderRecentForm": {
-          "driverName": "Russell",
+          "driverName": "Antonelli",
           "positions": [
-            1,
             2,
-            4
+            1,
+            1
           ],
-          "label": "P1 P2 P4 in last 3 races"
+          "label": "P2 P1 P1 in last 3 races"
         },
         "defenderNote": "Oscar Piastri won here in 2025 (McLaren)"
       },
       "drivers": {
-        "leader": "Russell",
-        "second": "Antonelli",
-        "gap": 5,
-        "standingsText": "Russell leads by 5 pts over Antonelli",
-        "raceImpact": "Antonelli cut Russell's lead by 11 pts",
-        "scenarioText": "Antonelli cut Russell's lead by 11 pts",
+        "leader": "Antonelli",
+        "second": "Russell",
+        "gap": 20,
+        "standingsText": "Antonelli leads by 20 pts over Russell",
+        "raceImpact": "Antonelli extended lead by 11 pts over Russell",
+        "scenarioText": "Antonelli extended lead by 11 pts over Russell",
         "p1Changed": false,
-        "leaderWeekendPoints": 17,
-        "secondWeekendPoints": 28,
-        "weekendDelta": -11,
-        "leaderRacePoints": 17,
-        "secondRacePoints": 28,
-        "raceDelta": -11
+        "leaderWeekendPoints": 28,
+        "secondWeekendPoints": 17,
+        "weekendDelta": 11,
+        "leaderRacePoints": 28,
+        "secondRacePoints": 17,
+        "raceDelta": 11
       },
       "constructors": {
         "leader": "Mercedes",
-        "second": "McLaren",
-        "gap": 61,
-        "standingsText": "Mercedes leads by 61 pts over McLaren",
-        "raceImpact": "McLaren cut Mercedes's constructors' lead by 3 pts",
-        "scenarioText": "McLaren cut Mercedes's constructors' lead by 3 pts",
+        "second": "Ferrari",
+        "gap": 70,
+        "standingsText": "Mercedes leads by 70 pts over Ferrari",
+        "raceImpact": "Mercedes extended its constructors' lead by 25 pts over Ferrari",
+        "scenarioText": "Mercedes extended its constructors' lead by 25 pts over Ferrari",
         "p1Changed": false,
         "leaderWeekendPoints": 45,
-        "secondWeekendPoints": 48,
-        "weekendDelta": -3,
+        "secondWeekendPoints": 20,
+        "weekendDelta": 25,
         "leaderRacePoints": 45,
-        "secondRacePoints": 48,
-        "raceDelta": -3
+        "secondRacePoints": 20,
+        "raceDelta": 25
       }
     },
     {
@@ -497,24 +497,24 @@
           "count": 4
         },
         "leaderRecentForm": {
-          "driverName": "Russell",
+          "driverName": "Antonelli",
           "positions": [
-            2,
-            4,
-            4
+            1,
+            1,
+            1
           ],
-          "label": "P2 P4 P4 in last 3 races"
+          "label": "P1 P1 P1 in last 3 races"
         },
         "defenderNote": "Max Verstappen won here in 2025 (Red Bull)"
       },
       "drivers": {
         "leader": "Antonelli",
         "second": "Russell",
-        "gap": 18,
-        "standingsText": "Antonelli leads by 18 pts over Russell",
-        "raceImpact": "Antonelli moved ahead of Russell to P1",
-        "scenarioText": "Antonelli moved ahead of Russell to P1",
-        "p1Changed": true,
+        "gap": 43,
+        "standingsText": "Antonelli leads by 43 pts over Russell",
+        "raceImpact": "Antonelli extended lead by 23 pts over Russell",
+        "scenarioText": "Antonelli extended lead by 23 pts over Russell",
+        "p1Changed": false,
         "leaderWeekendPoints": 31,
         "secondWeekendPoints": 8,
         "weekendDelta": 23,
@@ -525,8 +525,8 @@
       "constructors": {
         "leader": "Mercedes",
         "second": "Ferrari",
-        "gap": 77,
-        "standingsText": "Mercedes leads by 77 pts over Ferrari",
+        "gap": 72,
+        "standingsText": "Mercedes leads by 72 pts over Ferrari",
         "raceImpact": "Mercedes extended its constructors' lead by 2 pts over Ferrari",
         "scenarioText": "Mercedes extended its constructors' lead by 2 pts over Ferrari",
         "p1Changed": false,
