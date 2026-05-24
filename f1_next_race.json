@@ -1,90 +1,90 @@
 {
   "header": "Next F1 event",
-  "generatedAtUtc": "2026-05-24T19:38:42.578Z",
+  "generatedAtUtc": "2026-05-24T20:34:25.945Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics+formula1",
     "url": "https://better-f1-calendar.vercel.app/api/calendar.ics",
-    "officialRacePage": "https://www.formula1.com/en/racing/2026/miami"
+    "officialRacePage": "https://www.formula1.com/en/racing/2026/monaco"
   },
   "nextEvent": {
     "type": "RACE_WEEKEND",
-    "title": "FORMULA 1 CRYPTO.COM MIAMI GRAND PRIX 2026",
+    "title": "Monaco Grand Prix 2026",
     "season": "2026",
     "location": {
       "raw": null,
-      "city": "Miami",
-      "country": "United States",
+      "city": "Montecarlo",
+      "country": "Monaco",
       "flag": {
-        "iso2": "us",
-        "png": "https://flagcdn.com/w160/us.png",
-        "svg": "https://flagcdn.com/us.svg"
+        "iso2": "mc",
+        "png": "https://flagcdn.com/w160/mc.png",
+        "svg": "https://flagcdn.com/mc.svg"
       }
     },
     "racePage": {
-      "slug": "miami",
-      "url": "https://www.formula1.com/en/racing/2026/miami"
+      "slug": "monaco",
+      "url": "https://www.formula1.com/en/racing/2026/monaco"
     },
     "trackMap": {
       "found": true,
-      "pageUrl": "https://www.formula1.com/en/racing/2026/miami",
-      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmiamidetailed.webp",
-      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_miami_detailed.png",
+      "pageUrl": "https://www.formula1.com/en/racing/2026/monaco",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmontecarlodetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_monaco_detailed.png",
       "note": "Using existing saved track map file. No download performed."
     },
     "map": {
       "found": true,
-      "filename": "miami.png",
-      "pngUrl": "https://mredman48.github.io/F1-standings/maps/miami.png",
+      "filename": "monaco.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/monaco.png",
       "note": null
     },
     "countdowns": {
-      "startsInDays": -2
+      "startsInDays": 12
     },
     "weekend": {
-      "startUtc": "2026-05-22T16:30:00.000Z",
-      "endUtc": "2026-05-24T22:00:00.000Z"
+      "startUtc": "2026-06-05T11:30:00.000Z",
+      "endUtc": "2026-06-07T15:00:00.000Z"
     },
     "sessions": [
       {
         "type": "FP1",
-        "startUtc": "2026-05-22T16:30:00.000Z",
-        "endUtc": "2026-05-22T17:30:00.000Z",
-        "startLocalDateShort": "Fri, May 22",
-        "startLocalTimeShort": "10:30",
-        "startLocalDateTimeShort": "Fri, May 22 10:30"
+        "startUtc": "2026-06-05T11:30:00.000Z",
+        "endUtc": "2026-06-05T12:30:00.000Z",
+        "startLocalDateShort": "Fri, Jun 05",
+        "startLocalTimeShort": "05:30",
+        "startLocalDateTimeShort": "Fri, Jun 05 05:30"
       },
       {
-        "type": "Sprint Quali",
-        "startUtc": "2026-05-22T20:30:00.000Z",
-        "endUtc": "2026-05-22T21:14:00.000Z",
-        "startLocalDateShort": "Fri, May 22",
-        "startLocalTimeShort": "14:30",
-        "startLocalDateTimeShort": "Fri, May 22 14:30"
+        "type": "FP2",
+        "startUtc": "2026-06-05T15:00:00.000Z",
+        "endUtc": "2026-06-05T16:00:00.000Z",
+        "startLocalDateShort": "Fri, Jun 05",
+        "startLocalTimeShort": "09:00",
+        "startLocalDateTimeShort": "Fri, Jun 05 09:00"
       },
       {
-        "type": "Sprint",
-        "startUtc": "2026-05-23T16:00:00.000Z",
-        "endUtc": "2026-05-23T17:00:00.000Z",
-        "startLocalDateShort": "Sat, May 23",
-        "startLocalTimeShort": "10:00",
-        "startLocalDateTimeShort": "Sat, May 23 10:00"
+        "type": "FP3",
+        "startUtc": "2026-06-06T10:30:00.000Z",
+        "endUtc": "2026-06-06T11:30:00.000Z",
+        "startLocalDateShort": "Sat, Jun 06",
+        "startLocalTimeShort": "04:30",
+        "startLocalDateTimeShort": "Sat, Jun 06 04:30"
       },
       {
         "type": "Quali",
-        "startUtc": "2026-05-23T20:00:00.000Z",
-        "endUtc": "2026-05-23T21:00:00.000Z",
-        "startLocalDateShort": "Sat, May 23",
-        "startLocalTimeShort": "14:00",
-        "startLocalDateTimeShort": "Sat, May 23 14:00"
+        "startUtc": "2026-06-06T14:00:00.000Z",
+        "endUtc": "2026-06-06T15:00:00.000Z",
+        "startLocalDateShort": "Sat, Jun 06",
+        "startLocalTimeShort": "08:00",
+        "startLocalDateTimeShort": "Sat, Jun 06 08:00"
       },
       {
         "type": "Race",
-        "startUtc": "2026-05-24T20:00:00.000Z",
-        "endUtc": "2026-05-24T22:00:00.000Z",
-        "startLocalDateShort": "Sun, May 24",
-        "startLocalTimeShort": "14:00",
-        "startLocalDateTimeShort": "Sun, May 24 14:00"
+        "startUtc": "2026-06-07T13:00:00.000Z",
+        "endUtc": "2026-06-07T15:00:00.000Z",
+        "startLocalDateShort": "Sun, Jun 07",
+        "startLocalTimeShort": "07:00",
+        "startLocalDateTimeShort": "Sun, Jun 07 07:00"
       }
     ]
   }
