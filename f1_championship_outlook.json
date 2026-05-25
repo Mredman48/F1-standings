@@ -2,12 +2,12 @@
   "header": "F1 championship outlook",
   "season": 2026,
   "previousSeason": 2025,
-  "lastUpdated": "2026-05-25T22:16:25.492Z",
+  "lastUpdated": "2026-05-25T22:52:55.443Z",
   "mode": "race-weekend",
   "sources": {
-    "driverStandings": "public-repo/f1_driver_standings.json",
-    "constructorStandings": "public-repo/f1_constructors_standings.json",
-    "seasonResults": "public-repo/f1_season_event_results.json",
+    "driverStandings": "https://mredman48.github.io/F1-standings/f1_driver_standings.json",
+    "constructorStandings": "https://mredman48.github.io/F1-standings/f1_constructors_standings.json",
+    "seasonResults": "https://mredman48.github.io/F1-standings/f1_season_event_results.json",
     "previousYearWinners": "https://api.jolpi.ca/ergast/f1/2025/results/1.json"
   },
   "latest": {
@@ -21,11 +21,11 @@
       "meetingKey": 1285,
       "previousYearWinner": {
         "season": 2025,
-        "round": 7,
-        "raceName": "Emilia Romagna Grand Prix",
-        "date": "2025-05-18",
-        "winner": "Max Verstappen",
-        "constructor": "Red Bull",
+        "round": 10,
+        "raceName": "Canadian Grand Prix",
+        "date": "2025-06-15",
+        "winner": "George Russell",
+        "constructor": "Mercedes",
         "source": "jolpica"
       },
       "sessionsIncluded": [
@@ -47,11 +47,11 @@
     },
     "previousYearWinner": {
       "season": 2025,
-      "round": 7,
-      "raceName": "Emilia Romagna Grand Prix",
-      "date": "2025-05-18",
-      "winner": "Max Verstappen",
-      "constructor": "Red Bull",
+      "round": 10,
+      "raceName": "Canadian Grand Prix",
+      "date": "2025-06-15",
+      "winner": "George Russell",
+      "constructor": "Mercedes",
       "source": "jolpica"
     },
     "preWeekendNotes": {
@@ -72,7 +72,7 @@
         ],
         "label": "P1 P1 P1 in last 3 races"
       },
-      "defenderNote": "Max Verstappen won here in 2025 (Red Bull)"
+      "defenderNote": "George Russell won here in 2025 (Mercedes)"
     },
     "drivers": {
       "leader": "Antonelli",
@@ -454,11 +454,11 @@
         "meetingKey": 1285,
         "previousYearWinner": {
           "season": 2025,
-          "round": 7,
-          "raceName": "Emilia Romagna Grand Prix",
-          "date": "2025-05-18",
-          "winner": "Max Verstappen",
-          "constructor": "Red Bull",
+          "round": 10,
+          "raceName": "Canadian Grand Prix",
+          "date": "2025-06-15",
+          "winner": "George Russell",
+          "constructor": "Mercedes",
           "source": "jolpica"
         },
         "sessionsIncluded": [
@@ -480,11 +480,11 @@
       },
       "previousYearWinner": {
         "season": 2025,
-        "round": 7,
-        "raceName": "Emilia Romagna Grand Prix",
-        "date": "2025-05-18",
-        "winner": "Max Verstappen",
-        "constructor": "Red Bull",
+        "round": 10,
+        "raceName": "Canadian Grand Prix",
+        "date": "2025-06-15",
+        "winner": "George Russell",
+        "constructor": "Mercedes",
         "source": "jolpica"
       },
       "preWeekendNotes": {
@@ -505,7 +505,7 @@
           ],
           "label": "P1 P1 P1 in last 3 races"
         },
-        "defenderNote": "Max Verstappen won here in 2025 (Red Bull)"
+        "defenderNote": "George Russell won here in 2025 (Mercedes)"
       },
       "drivers": {
         "leader": "Antonelli",
