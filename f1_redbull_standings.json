@@ -1,19 +1,19 @@
 {
   "header": "Red Bull standings",
-  "generatedAtUtc": "2026-06-07T22:45:22.105Z",
+  "generatedAtUtc": "2026-06-07T23:36:45.285Z",
   "redBull": {
     "team": "Red Bull",
     "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_red-bull_color_v2.png",
     "teamStanding": {
       "team": "Red Bull",
       "position": "P4",
-      "points": 77,
+      "points": 72,
       "wins": 0
     }
   },
   "lastRace": {
     "raceName": "Monaco Grand Prix",
-    "round": "8",
+    "round": "6",
     "date": "2026-06-07",
     "circuit": "Monte Carlo",
     "location": {
@@ -22,39 +22,6 @@
     }
   },
   "drivers": [
-    {
-      "firstName": "Isack",
-      "lastName": "Hadjar",
-      "code": "HAD",
-      "driverNumber": 6,
-      "nationality": "French",
-      "countryCode": "fr",
-      "countryName": "France",
-      "flagUrl": "https://flagcdn.com/w80/fr.png",
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-6.png",
-      "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-6-2.png",
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/isack-hadjar.png",
-      "position": "P6",
-      "points": 44,
-      "wins": 0,
-      "raceWins": 0,
-      "racePodiums": 2,
-      "sprintWins": 0,
-      "sprintPodiums": 0,
-      "team": "Red Bull",
-      "bestResult": {
-        "position": "P3",
-        "eventType": "race",
-        "raceName": "Monaco Grand Prix",
-        "round": "8",
-        "date": "2026-06-07",
-        "circuit": "Monte Carlo",
-        "location": {
-          "locality": "Monte Carlo",
-          "country": "Monaco"
-        }
-      }
-    },
     {
       "firstName": "Max",
       "lastName": "Verstappen",
@@ -67,8 +34,8 @@
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-3.png",
       "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-3-2.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/max-verstappen.png",
-      "position": "P9",
-      "points": 33,
+      "position": "P7",
+      "points": 43,
       "wins": 0,
       "raceWins": 0,
       "racePodiums": 1,
@@ -79,12 +46,45 @@
         "position": "P3",
         "eventType": "race",
         "raceName": "Canadian Grand Prix",
-        "round": "7",
+        "round": "5",
         "date": "2026-05-24",
         "circuit": "Montreal",
         "location": {
           "locality": "Montréal",
           "country": "Canada"
+        }
+      }
+    },
+    {
+      "firstName": "Isack",
+      "lastName": "Hadjar",
+      "code": "HAD",
+      "driverNumber": 6,
+      "nationality": "French",
+      "countryCode": "fr",
+      "countryName": "France",
+      "flagUrl": "https://flagcdn.com/w80/fr.png",
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-6.png",
+      "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-6-2.png",
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/isack-hadjar.png",
+      "position": "P8",
+      "points": 29,
+      "wins": 0,
+      "raceWins": 0,
+      "racePodiums": 1,
+      "sprintWins": 0,
+      "sprintPodiums": 0,
+      "team": "Red Bull",
+      "bestResult": {
+        "position": "P3",
+        "eventType": "race",
+        "raceName": "Monaco Grand Prix",
+        "round": "6",
+        "date": "2026-06-07",
+        "circuit": "Monte Carlo",
+        "location": {
+          "locality": "Monte Carlo",
+          "country": "Monaco"
         }
       }
     }

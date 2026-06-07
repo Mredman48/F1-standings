@@ -1,6 +1,6 @@
 {
   "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-06-07T22:43:11.570Z",
+  "generatedAtUtc": "2026-06-07T23:34:30.783Z",
   "season": 2026,
   "source": {
     "primary": "f1_season_event_results.json",
@@ -9,7 +9,7 @@
   },
   "lastRace": {
     "season": "2026",
-    "round": "8",
+    "round": "6",
     "raceName": "Monaco Grand Prix",
     "date": "2026-06-07",
     "circuit": {
@@ -50,7 +50,7 @@
     {
       "position": "P2",
       "positionNumber": 2,
-      "points": 100,
+      "points": 90,
       "wins": 0,
       "driver": {
         "code": "HAM",
@@ -71,7 +71,7 @@
     {
       "position": "P3",
       "positionNumber": 3,
-      "points": 76,
+      "points": 88,
       "wins": 1,
       "driver": {
         "code": "RUS",
@@ -92,7 +92,7 @@
     {
       "position": "P4",
       "positionNumber": 4,
-      "points": 71,
+      "points": 75,
       "wins": 0,
       "driver": {
         "code": "LEC",
@@ -113,7 +113,7 @@
     {
       "position": "P5",
       "positionNumber": 5,
-      "points": 57,
+      "points": 60,
       "wins": 0,
       "driver": {
         "code": "PIA",
@@ -134,28 +134,7 @@
     {
       "position": "P6",
       "positionNumber": 6,
-      "points": 44,
-      "wins": 0,
-      "driver": {
-        "code": "HAD",
-        "firstName": "Isack",
-        "lastName": "Hadjar",
-        "fullName": "Isack Hadjar",
-        "nationality": "FRA",
-        "driverNumber": 6,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/isack-hadjar.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Red Bull",
-        "fullName": "Red Bull",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P7",
-      "positionNumber": 7,
-      "points": 40,
+      "points": 58,
       "wins": 0,
       "driver": {
         "code": "NOR",
@@ -174,30 +153,9 @@
       }
     },
     {
-      "position": "P8",
-      "positionNumber": 8,
-      "points": 36,
-      "wins": 0,
-      "driver": {
-        "code": "LAW",
-        "firstName": "Liam",
-        "lastName": "Lawson",
-        "fullName": "Liam Lawson",
-        "nationality": "NZL",
-        "driverNumber": 30,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/liam-lawson.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "VCARB",
-        "fullName": "VCARB",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P9",
-      "positionNumber": 9,
-      "points": 33,
+      "position": "P7",
+      "positionNumber": 7,
+      "points": 43,
       "wins": 0,
       "driver": {
         "code": "VER",
@@ -216,9 +174,51 @@
       }
     },
     {
+      "position": "P8",
+      "positionNumber": 8,
+      "points": 29,
+      "wins": 0,
+      "driver": {
+        "code": "HAD",
+        "firstName": "Isack",
+        "lastName": "Hadjar",
+        "fullName": "Isack Hadjar",
+        "nationality": "FRA",
+        "driverNumber": 6,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/isack-hadjar.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Red Bull",
+        "fullName": "Red Bull",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P9",
+      "positionNumber": 9,
+      "points": 26,
+      "wins": 0,
+      "driver": {
+        "code": "LAW",
+        "firstName": "Liam",
+        "lastName": "Lawson",
+        "fullName": "Liam Lawson",
+        "nationality": "NZL",
+        "driverNumber": 30,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/liam-lawson.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "VCARB",
+        "fullName": "VCARB",
+        "nationality": null
+      }
+    },
+    {
       "position": "P10",
       "positionNumber": 10,
-      "points": 32,
+      "points": 26,
       "wins": 0,
       "driver": {
         "code": "GAS",
@@ -239,27 +239,6 @@
     {
       "position": "P11",
       "positionNumber": 11,
-      "points": 21,
-      "wins": 0,
-      "driver": {
-        "code": "LIN",
-        "firstName": "Arvid",
-        "lastName": "Lindblad",
-        "fullName": "Arvid Lindblad",
-        "nationality": "GBR",
-        "driverNumber": 41,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/arvid-lindblad.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "VCARB",
-        "fullName": "VCARB",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P12",
-      "positionNumber": 12,
       "points": 18,
       "wins": 0,
       "driver": {
@@ -279,9 +258,9 @@
       }
     },
     {
-      "position": "P13",
-      "positionNumber": 13,
-      "points": 9,
+      "position": "P12",
+      "positionNumber": 12,
+      "points": 15,
       "wins": 0,
       "driver": {
         "code": "COL",
@@ -300,9 +279,51 @@
       }
     },
     {
+      "position": "P13",
+      "positionNumber": 13,
+      "points": 13,
+      "wins": 0,
+      "driver": {
+        "code": "LIN",
+        "firstName": "Arvid",
+        "lastName": "Lindblad",
+        "fullName": "Arvid Lindblad",
+        "nationality": "GBR",
+        "driverNumber": 41,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/arvid-lindblad.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "VCARB",
+        "fullName": "VCARB",
+        "nationality": null
+      }
+    },
+    {
       "position": "P14",
       "positionNumber": 14,
-      "points": 8,
+      "points": 6,
+      "wins": 0,
+      "driver": {
+        "code": "SAI",
+        "firstName": "Carlos",
+        "lastName": "Sainz",
+        "fullName": "Carlos Sainz",
+        "nationality": "ESP",
+        "driverNumber": 55,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/carlos-sainz.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Williams",
+        "fullName": "Williams",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P15",
+      "positionNumber": 15,
+      "points": 5,
       "wins": 0,
       "driver": {
         "code": "ALB",
@@ -321,9 +342,9 @@
       }
     },
     {
-      "position": "P15",
-      "positionNumber": 15,
-      "points": 5,
+      "position": "P16",
+      "positionNumber": 16,
+      "points": 3,
       "wins": 0,
       "driver": {
         "code": "OCO",
@@ -338,27 +359,6 @@
       "constructor": {
         "name": "Haas",
         "fullName": "Haas",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P16",
-      "positionNumber": 16,
-      "points": 4,
-      "wins": 0,
-      "driver": {
-        "code": "SAI",
-        "firstName": "Carlos",
-        "lastName": "Sainz",
-        "fullName": "Carlos Sainz",
-        "nationality": "ESP",
-        "driverNumber": 55,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/carlos-sainz.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Williams",
-        "fullName": "Williams",
         "nationality": null
       }
     },
@@ -386,7 +386,7 @@
     {
       "position": "P18",
       "positionNumber": 18,
-      "points": 2,
+      "points": 1,
       "wins": 0,
       "driver": {
         "code": "ALO",
