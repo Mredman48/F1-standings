@@ -1,6 +1,6 @@
 {
   "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-06-07T21:20:14.629Z",
+  "generatedAtUtc": "2026-06-07T21:34:26.428Z",
   "season": 2026,
   "source": {
     "primary": "f1_season_event_results.json",
@@ -386,28 +386,7 @@
     {
       "position": "P18",
       "positionNumber": 18,
-      "points": 1,
-      "wins": 0,
-      "driver": {
-        "code": "PER",
-        "firstName": "Sergio",
-        "lastName": "Perez",
-        "fullName": "Sergio Perez",
-        "nationality": "MEX",
-        "driverNumber": 11,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/sergio-perez.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Cadillac",
-        "fullName": "Cadillac",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P19",
-      "positionNumber": 19,
-      "points": 1,
+      "points": 2,
       "wins": 0,
       "driver": {
         "code": "ALO",
@@ -422,6 +401,27 @@
       "constructor": {
         "name": "Aston Martin",
         "fullName": "Aston Martin",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P19",
+      "positionNumber": 19,
+      "points": 0,
+      "wins": 0,
+      "driver": {
+        "code": "PER",
+        "firstName": "Sergio",
+        "lastName": "Perez",
+        "fullName": "Sergio Perez",
+        "nationality": "MEX",
+        "driverNumber": 11,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/sergio-perez.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Cadillac",
+        "fullName": "Cadillac",
         "nationality": null
       }
     },
