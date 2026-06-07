@@ -1,6 +1,6 @@
 {
   "header": "Constructors standings",
-  "generatedAtUtc": "2026-06-07T17:39:13.514Z",
+  "generatedAtUtc": "2026-06-07T17:47:27.736Z",
   "meta": {
     "seasonUsed": "2026",
     "source": "f1_driver_standings.json",
@@ -9,13 +9,13 @@
   },
   "lastRace": {
     "season": "2026",
-    "round": "7",
-    "raceName": "Canadian Grand Prix",
-    "date": "2026-05-24",
+    "round": "8",
+    "raceName": "Monaco Grand Prix",
+    "date": "2026-06-07",
     "circuit": {
-      "name": "Montreal",
-      "locality": "Montréal",
-      "country": "Canada"
+      "name": "Monte Carlo",
+      "locality": "Monte Carlo",
+      "country": "Monaco"
     },
     "winner": {
       "firstName": "-",
@@ -29,15 +29,15 @@
     {
       "team": "Mercedes",
       "position": "P1",
-      "points": 219,
-      "wins": 5,
+      "points": 244,
+      "wins": 6,
       "driverCount": 2,
       "placeholder": false
     },
     {
       "team": "Ferrari",
       "position": "P2",
-      "points": 147,
+      "points": 165,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
@@ -45,7 +45,7 @@
     {
       "team": "McLaren",
       "position": "P3",
-      "points": 106,
+      "points": 118,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
@@ -53,7 +53,7 @@
     {
       "team": "Red Bull",
       "position": "P4",
-      "points": 57,
+      "points": 72,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
@@ -61,7 +61,7 @@
     {
       "team": "Alpine",
       "position": "P5",
-      "points": 35,
+      "points": 41,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
@@ -69,7 +69,7 @@
     {
       "team": "VCARB",
       "position": "P6",
-      "points": 21,
+      "points": 39,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
@@ -77,7 +77,7 @@
     {
       "team": "Haas",
       "position": "P7",
-      "points": 19,
+      "points": 21,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
@@ -85,7 +85,7 @@
     {
       "team": "Williams",
       "position": "P8",
-      "points": 7,
+      "points": 11,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
@@ -101,7 +101,7 @@
     {
       "team": "Cadillac",
       "position": "P10",
-      "points": 0,
+      "points": 1,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false

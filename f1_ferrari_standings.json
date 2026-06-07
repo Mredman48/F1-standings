@@ -1,27 +1,60 @@
 {
   "header": "Ferrari standings",
-  "generatedAtUtc": "2026-06-07T17:41:20.635Z",
+  "generatedAtUtc": "2026-06-07T17:49:34.210Z",
   "ferrari": {
     "team": "Ferrari",
     "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_ferrari_color_v2.png",
     "teamStanding": {
       "team": "Ferrari",
       "position": "P2",
-      "points": 147,
+      "points": 165,
       "wins": 0
     }
   },
   "lastRace": {
-    "raceName": "Canadian Grand Prix",
-    "round": "7",
-    "date": "2026-05-24",
-    "circuit": "Montreal",
+    "raceName": "Monaco Grand Prix",
+    "round": "8",
+    "date": "2026-06-07",
+    "circuit": "Monte Carlo",
     "location": {
       "locality": "-",
       "country": "-"
     }
   },
   "drivers": [
+    {
+      "firstName": "Lewis",
+      "lastName": "Hamilton",
+      "code": "HAM",
+      "driverNumber": 44,
+      "nationality": "British",
+      "countryCode": "gb",
+      "countryName": "United Kingdom",
+      "flagUrl": "https://flagcdn.com/w80/gb.png",
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-44.png",
+      "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-44-2.png",
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lewis-hamilton.png",
+      "position": "P2",
+      "points": 90,
+      "wins": 0,
+      "raceWins": 0,
+      "racePodiums": 3,
+      "sprintWins": 0,
+      "sprintPodiums": 1,
+      "team": "Ferrari",
+      "bestResult": {
+        "position": "P2",
+        "eventType": "race",
+        "raceName": "Monaco Grand Prix",
+        "round": "8",
+        "date": "2026-06-07",
+        "circuit": "Monte Carlo",
+        "location": {
+          "locality": "Monte Carlo",
+          "country": "Monaco"
+        }
+      }
+    },
     {
       "firstName": "Charles",
       "lastName": "Leclerc",
@@ -34,7 +67,7 @@
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-16.png",
       "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-16-2.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/charles-leclerc.png",
-      "position": "P3",
+      "position": "P4",
       "points": 75,
       "wins": 0,
       "raceWins": 0,
@@ -52,39 +85,6 @@
         "location": {
           "locality": "Shanghai",
           "country": "China"
-        }
-      }
-    },
-    {
-      "firstName": "Lewis",
-      "lastName": "Hamilton",
-      "code": "HAM",
-      "driverNumber": 44,
-      "nationality": "British",
-      "countryCode": "gb",
-      "countryName": "United Kingdom",
-      "flagUrl": "https://flagcdn.com/w80/gb.png",
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-44.png",
-      "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-44-2.png",
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lewis-hamilton.png",
-      "position": "P4",
-      "points": 72,
-      "wins": 0,
-      "raceWins": 0,
-      "racePodiums": 3,
-      "sprintWins": 0,
-      "sprintPodiums": 1,
-      "team": "Ferrari",
-      "bestResult": {
-        "position": "P2",
-        "eventType": "race",
-        "raceName": "Monaco Grand Prix",
-        "round": "8",
-        "date": "2026-06-07",
-        "circuit": "Monte Carlo",
-        "location": {
-          "locality": "Monte Carlo",
-          "country": "Monaco"
         }
       }
     }

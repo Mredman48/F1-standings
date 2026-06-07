@@ -1,27 +1,60 @@
 {
   "header": "McLaren standings",
-  "generatedAtUtc": "2026-06-07T17:41:20.637Z",
+  "generatedAtUtc": "2026-06-07T17:49:34.212Z",
   "mclaren": {
     "team": "McLaren",
     "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_mclaren_color_v2.png",
     "teamStanding": {
       "team": "McLaren",
       "position": "P3",
-      "points": 106,
+      "points": 118,
       "wins": 0
     }
   },
   "lastRace": {
-    "raceName": "Canadian Grand Prix",
-    "round": "7",
-    "date": "2026-05-24",
-    "circuit": "Montreal",
+    "raceName": "Monaco Grand Prix",
+    "round": "8",
+    "date": "2026-06-07",
+    "circuit": "Monte Carlo",
     "location": {
       "locality": "-",
       "country": "-"
     }
   },
   "drivers": [
+    {
+      "firstName": "Oscar",
+      "lastName": "Piastri",
+      "code": "PIA",
+      "driverNumber": 81,
+      "nationality": "Australian",
+      "countryCode": "au",
+      "countryName": "Australia",
+      "flagUrl": "https://flagcdn.com/w80/au.png",
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-81.png",
+      "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-81-2.png",
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/oscar-piastri.png",
+      "position": "P5",
+      "points": 60,
+      "wins": 0,
+      "raceWins": 0,
+      "racePodiums": 2,
+      "sprintWins": 0,
+      "sprintPodiums": 1,
+      "team": "McLaren",
+      "bestResult": {
+        "position": "P2",
+        "eventType": "race",
+        "raceName": "Japanese Grand Prix",
+        "round": "3",
+        "date": "2026-03-29",
+        "circuit": "Suzuka",
+        "location": {
+          "locality": "Suzuka",
+          "country": "Japan"
+        }
+      }
+    },
     {
       "firstName": "Lando",
       "lastName": "Norris",
@@ -34,7 +67,7 @@
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-1.png",
       "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-1-2.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lando-norris.png",
-      "position": "P5",
+      "position": "P6",
       "points": 58,
       "wins": 0,
       "raceWins": 0,
@@ -52,39 +85,6 @@
         "location": {
           "locality": "Miami Gardens",
           "country": "United States"
-        }
-      }
-    },
-    {
-      "firstName": "Oscar",
-      "lastName": "Piastri",
-      "code": "PIA",
-      "driverNumber": 81,
-      "nationality": "Australian",
-      "countryCode": "au",
-      "countryName": "Australia",
-      "flagUrl": "https://flagcdn.com/w80/au.png",
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-81.png",
-      "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-81-2.png",
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/oscar-piastri.png",
-      "position": "P6",
-      "points": 48,
-      "wins": 0,
-      "raceWins": 0,
-      "racePodiums": 2,
-      "sprintWins": 0,
-      "sprintPodiums": 1,
-      "team": "McLaren",
-      "bestResult": {
-        "position": "P2",
-        "eventType": "race",
-        "raceName": "Japanese Grand Prix",
-        "round": "3",
-        "date": "2026-03-29",
-        "circuit": "Suzuka",
-        "location": {
-          "locality": "Suzuka",
-          "country": "Japan"
         }
       }
     }
