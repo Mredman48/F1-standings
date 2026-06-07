@@ -1,13 +1,13 @@
 {
   "header": "Williams standings",
-  "generatedAtUtc": "2026-06-07T18:55:35.492Z",
+  "generatedAtUtc": "2026-06-07T19:58:52.531Z",
   "williams": {
     "team": "Williams",
     "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_williams_color_v2.png",
     "teamStanding": {
       "team": "Williams",
       "position": "P8",
-      "points": 11,
+      "points": 12,
       "wins": 0
     }
   },
@@ -23,39 +23,6 @@
   },
   "drivers": [
     {
-      "firstName": "Carlos",
-      "lastName": "Sainz",
-      "code": "SAI",
-      "driverNumber": 55,
-      "nationality": "Spanish",
-      "countryCode": "es",
-      "countryName": "Spain",
-      "flagUrl": "https://flagcdn.com/w80/es.png",
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-55.png",
-      "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-55-2.png",
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/carlos-sainz.png",
-      "position": "P14",
-      "points": 6,
-      "wins": 0,
-      "raceWins": 0,
-      "racePodiums": 0,
-      "sprintWins": 0,
-      "sprintPodiums": 0,
-      "team": "Williams",
-      "bestResult": {
-        "position": "P9",
-        "eventType": "race",
-        "raceName": "Canadian Grand Prix",
-        "round": "7",
-        "date": "2026-05-24",
-        "circuit": "Montreal",
-        "location": {
-          "locality": "Montréal",
-          "country": "Canada"
-        }
-      }
-    },
-    {
       "firstName": "Alexander",
       "lastName": "Albon",
       "code": "ALB",
@@ -67,8 +34,8 @@
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-23.png",
       "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-23-2.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/alex-albon.png",
-      "position": "P15",
-      "points": 5,
+      "position": "P14",
+      "points": 8,
       "wins": 0,
       "raceWins": 0,
       "racePodiums": 0,
@@ -85,6 +52,39 @@
         "location": {
           "locality": "Monte Carlo",
           "country": "Monaco"
+        }
+      }
+    },
+    {
+      "firstName": "Carlos",
+      "lastName": "Sainz",
+      "code": "SAI",
+      "driverNumber": 55,
+      "nationality": "Spanish",
+      "countryCode": "es",
+      "countryName": "Spain",
+      "flagUrl": "https://flagcdn.com/w80/es.png",
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-55.png",
+      "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-55-2.png",
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/carlos-sainz.png",
+      "position": "P16",
+      "points": 4,
+      "wins": 0,
+      "raceWins": 0,
+      "racePodiums": 0,
+      "sprintWins": 0,
+      "sprintPodiums": 0,
+      "team": "Williams",
+      "bestResult": {
+        "position": "P9",
+        "eventType": "race",
+        "raceName": "Canadian Grand Prix",
+        "round": "7",
+        "date": "2026-05-24",
+        "circuit": "Montreal",
+        "location": {
+          "locality": "Montréal",
+          "country": "Canada"
         }
       }
     }
