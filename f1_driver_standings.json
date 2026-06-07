@@ -1,6 +1,6 @@
 {
   "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-06-07T14:45:44.310Z",
+  "generatedAtUtc": "2026-06-07T17:39:13.167Z",
   "season": 2026,
   "source": {
     "primary": "f1_season_event_results.json",
@@ -347,27 +347,6 @@
       "points": 1,
       "wins": 0,
       "driver": {
-        "code": "OCO",
-        "firstName": "Esteban",
-        "lastName": "Ocon",
-        "fullName": "Esteban Ocon",
-        "nationality": "FRA",
-        "driverNumber": 31,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/esteban-ocon.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Haas",
-        "fullName": "Haas",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P17",
-      "positionNumber": 17,
-      "points": 1,
-      "wins": 0,
-      "driver": {
         "code": "ALB",
         "firstName": "Alexander",
         "lastName": "Albon",
@@ -384,50 +363,29 @@
       }
     },
     {
+      "position": "P17",
+      "positionNumber": 17,
+      "points": 1,
+      "wins": 0,
+      "driver": {
+        "code": "OCO",
+        "firstName": "Esteban",
+        "lastName": "Ocon",
+        "fullName": "Esteban Ocon",
+        "nationality": "FRA",
+        "driverNumber": 31,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/esteban-ocon.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Haas",
+        "fullName": "Haas",
+        "nationality": null
+      }
+    },
+    {
       "position": "P18",
       "positionNumber": 18,
-      "points": 0,
-      "wins": 0,
-      "driver": {
-        "code": "HUL",
-        "firstName": "Nico",
-        "lastName": "Hulkenberg",
-        "fullName": "Nico Hulkenberg",
-        "nationality": "GER",
-        "driverNumber": 27,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/nico-hulkenberg.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Audi",
-        "fullName": "Audi",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P19",
-      "positionNumber": 19,
-      "points": 0,
-      "wins": 0,
-      "driver": {
-        "code": "BOT",
-        "firstName": "Valtteri",
-        "lastName": "Bottas",
-        "fullName": "Valtteri Bottas",
-        "nationality": "FIN",
-        "driverNumber": 77,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/valtteri-bottas.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Cadillac",
-        "fullName": "Cadillac",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P20",
-      "positionNumber": 20,
       "points": 0,
       "wins": 0,
       "driver": {
@@ -447,29 +405,29 @@
       }
     },
     {
-      "position": "P21",
-      "positionNumber": 21,
+      "position": "P19",
+      "positionNumber": 19,
       "points": 0,
       "wins": 0,
       "driver": {
-        "code": "STR",
-        "firstName": "Lance",
-        "lastName": "Stroll",
-        "fullName": "Lance Stroll",
-        "nationality": "CAN",
-        "driverNumber": 18,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lance-stroll.png",
+        "code": "HUL",
+        "firstName": "Nico",
+        "lastName": "Hulkenberg",
+        "fullName": "Nico Hulkenberg",
+        "nationality": "GER",
+        "driverNumber": 27,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/nico-hulkenberg.png",
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "Aston Martin",
-        "fullName": "Aston Martin",
+        "name": "Audi",
+        "fullName": "Audi",
         "nationality": null
       }
     },
     {
-      "position": "P22",
-      "positionNumber": 22,
+      "position": "P20",
+      "positionNumber": 20,
       "points": 0,
       "wins": 0,
       "driver": {
@@ -480,6 +438,48 @@
         "nationality": "ESP",
         "driverNumber": 14,
         "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/fernando-alonso.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Aston Martin",
+        "fullName": "Aston Martin",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P21",
+      "positionNumber": 21,
+      "points": 0,
+      "wins": 0,
+      "driver": {
+        "code": "BOT",
+        "firstName": "Valtteri",
+        "lastName": "Bottas",
+        "fullName": "Valtteri Bottas",
+        "nationality": "FIN",
+        "driverNumber": 77,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/valtteri-bottas.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Cadillac",
+        "fullName": "Cadillac",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P22",
+      "positionNumber": 22,
+      "points": 0,
+      "wins": 0,
+      "driver": {
+        "code": "STR",
+        "firstName": "Lance",
+        "lastName": "Stroll",
+        "fullName": "Lance Stroll",
+        "nationality": "CAN",
+        "driverNumber": 18,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lance-stroll.png",
         "openf1HeadshotUrl": null
       },
       "constructor": {
