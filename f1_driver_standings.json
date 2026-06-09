@@ -1,6 +1,6 @@
 {
   "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-06-09T02:31:51.030Z",
+  "generatedAtUtc": "2026-06-09T12:12:23.591Z",
   "season": 2026,
   "source": {
     "primary": "f1_season_event_results.json",
@@ -410,27 +410,6 @@
       "points": 0,
       "wins": 0,
       "driver": {
-        "code": "PER",
-        "firstName": "Sergio",
-        "lastName": "Perez",
-        "fullName": "Sergio Perez",
-        "nationality": "MEX",
-        "driverNumber": 11,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/sergio-perez.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Cadillac",
-        "fullName": "Cadillac",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P20",
-      "positionNumber": 20,
-      "points": 0,
-      "wins": 0,
-      "driver": {
         "code": "HUL",
         "firstName": "Nico",
         "lastName": "Hulkenberg",
@@ -447,8 +426,8 @@
       }
     },
     {
-      "position": "P21",
-      "positionNumber": 21,
+      "position": "P20",
+      "positionNumber": 20,
       "points": 0,
       "wins": 0,
       "driver": {
@@ -459,6 +438,27 @@
         "nationality": "FIN",
         "driverNumber": 77,
         "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/valtteri-bottas.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Cadillac",
+        "fullName": "Cadillac",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P21",
+      "positionNumber": 21,
+      "points": 0,
+      "wins": 0,
+      "driver": {
+        "code": "PER",
+        "firstName": "Sergio",
+        "lastName": "Perez",
+        "fullName": "Sergio Perez",
+        "nationality": "MEX",
+        "driverNumber": 11,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/sergio-perez.png",
         "openf1HeadshotUrl": null
       },
       "constructor": {

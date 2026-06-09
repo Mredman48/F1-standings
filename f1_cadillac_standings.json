@@ -1,6 +1,6 @@
 {
   "header": "Cadillac standings",
-  "generatedAtUtc": "2026-06-09T02:31:52.512Z",
+  "generatedAtUtc": "2026-06-09T12:14:35.185Z",
   "cadillac": {
     "team": "Cadillac",
     "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_cadillac_color_v2.png",
@@ -23,39 +23,6 @@
   },
   "drivers": [
     {
-      "firstName": "Sergio",
-      "lastName": "Perez",
-      "code": "PER",
-      "driverNumber": 11,
-      "nationality": "Mexican",
-      "countryCode": "mx",
-      "countryName": "Mexico",
-      "flagUrl": "https://flagcdn.com/w80/mx.png",
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-11.png",
-      "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-11-2.png",
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/sergio-perez.png",
-      "position": "P19",
-      "points": 0,
-      "wins": 0,
-      "raceWins": 0,
-      "racePodiums": 0,
-      "sprintWins": 0,
-      "sprintPodiums": 0,
-      "team": "Cadillac",
-      "bestResult": {
-        "position": "P14",
-        "eventType": "sprint",
-        "raceName": "Canadian Grand Prix Sprint",
-        "round": "5",
-        "date": "2026-05-23",
-        "circuit": "Montreal",
-        "location": {
-          "locality": "Montréal",
-          "country": "Canada"
-        }
-      }
-    },
-    {
       "firstName": "Valtteri",
       "lastName": "Bottas",
       "code": "BOT",
@@ -67,7 +34,7 @@
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-77.png",
       "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-77-2.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/valtteri-bottas.png",
-      "position": "P21",
+      "position": "P20",
       "points": 0,
       "wins": 0,
       "raceWins": 0,
@@ -85,6 +52,39 @@
         "location": {
           "locality": "Shanghai",
           "country": "China"
+        }
+      }
+    },
+    {
+      "firstName": "Sergio",
+      "lastName": "Perez",
+      "code": "PER",
+      "driverNumber": 11,
+      "nationality": "Mexican",
+      "countryCode": "mx",
+      "countryName": "Mexico",
+      "flagUrl": "https://flagcdn.com/w80/mx.png",
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-11.png",
+      "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-11-2.png",
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/sergio-perez.png",
+      "position": "P21",
+      "points": 0,
+      "wins": 0,
+      "raceWins": 0,
+      "racePodiums": 0,
+      "sprintWins": 0,
+      "sprintPodiums": 0,
+      "team": "Cadillac",
+      "bestResult": {
+        "position": "P14",
+        "eventType": "sprint",
+        "raceName": "Canadian Grand Prix Sprint",
+        "round": "5",
+        "date": "2026-05-23",
+        "circuit": "Montreal",
+        "location": {
+          "locality": "Montréal",
+          "country": "Canada"
         }
       }
     }
