@@ -26,6 +26,13 @@
     "team": "Ferrari", 
     "position": "Reserve Driver" 
   },
+
+    "7": { 
+    "firstName": "Dino", 
+    "lastName": "Beganovic", 
+    "team": "Ferrari", 
+    "position": "Test Driver" 
+  },
   
   "72": { 
     "firstName": "Fred", 
@@ -66,7 +73,7 @@
     "firstName": "Ayumu", 
     "lastName": "Iwasa",
     "team": ["Red Bull", "Racing Bulls"], 
-    "position": "Reserve Driver" 
+    "position": ["Test Driver", "Test Driver"]
   },
   
   "7": { 
@@ -80,7 +87,7 @@
     "firstName": "Paul", 
     "lastName": "Aron",
     "team": ["Alpine", "Audi"], 
-    "position": "Reserve Driver" 
+    "position": ["Reserve Driver", "Test Driver"]
   },
   
     "25": { 
