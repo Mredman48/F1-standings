@@ -58,21 +58,14 @@
   "22": { 
     "firstName": "Yuki", 
     "lastName": "Tsunoda",
-    "team": "Red Bull", 
-    "position": "Reserve Driver" 
-  },
-  
-  "22": { 
-    "firstName": "Yuki", 
-    "lastName": "Tsunoda",
-    "team": "Racing Bulls", 
+    "team": ["Red Bull", "Racing Bulls"], 
     "position": "Reserve Driver"
   },
   
   "37": { 
     "firstName": "Ayumu", 
     "lastName": "Iwasa",
-    "team": "Racing Bulls", 
+    "team": ["Red Bull", "Racing Bulls"], 
     "position": "Reserve Driver" 
   },
   
@@ -86,7 +79,7 @@
   "61": { 
     "firstName": "Paul", 
     "lastName": "Aron",
-    "team": "Alpine", 
+    "team": ["Alpine", "Audi"], 
     "position": "Reserve Driver" 
   },
   
