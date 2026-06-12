@@ -1,6 +1,6 @@
 {
   "header": "2026 F1 all session results",
-  "generatedAtUtc": "2026-06-12T12:29:48.583Z",
+  "generatedAtUtc": "2026-06-12T12:42:01.340Z",
   "season": 2026,
   "events": [
     {
@@ -15588,6 +15588,25 @@
           "qualifyingLapTime": 72.094
         }
       ]
+    },
+    {
+      "eventType": "fp1",
+      "sessionKey": 11300,
+      "meetingKey": 1287,
+      "meetingName": "Barcelona Grand Prix",
+      "raceName": "Barcelona Grand Prix",
+      "sessionName": "Practice 1",
+      "officialName": "Practice 1",
+      "round": 7,
+      "dateStartUtc": "2026-06-12T11:30:00+00:00",
+      "dateEndUtc": "2026-06-12T12:30:00+00:00",
+      "date": "2026-06-12",
+      "circuit": "Catalunya",
+      "location": {
+        "locality": "Barcelona",
+        "country": "Spain"
+      },
+      "drivers": []
     }
   ],
   "bestByDriverNumber": {
