@@ -1,11 +1,12 @@
 {
   "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-06-12T11:55:47.282Z",
+  "generatedAtUtc": "2026-06-12T12:14:10.838Z",
   "season": 2026,
   "source": {
     "primary": "f1_season_event_results.json",
+    "overrides": "f1_session_results_overrides.json",
     "tieBreakFallback": "https://www.skysports.com/f1/standings",
-    "note": "Points are calculated from completed race/sprint events. Sky Sports is only used for tied-point ordering fallback and missing metadata."
+    "note": "Points are calculated from completed race/sprint events. Overrides from f1_session_results_overrides.json are applied first. Sky Sports is only used for tied-point ordering fallback and missing metadata."
   },
   "lastRace": {
     "season": "2026",
@@ -113,7 +114,7 @@
     {
       "position": "P5",
       "positionNumber": 5,
-      "points": 60,
+      "points": 58,
       "wins": 0,
       "driver": {
         "code": "PIA",
@@ -176,7 +177,28 @@
     {
       "position": "P8",
       "positionNumber": 8,
-      "points": 29,
+      "points": 35,
+      "wins": 0,
+      "driver": {
+        "code": "GAS",
+        "firstName": "Pierre",
+        "lastName": "GASLY",
+        "fullName": "Pierre GASLY",
+        "nationality": "FRA",
+        "driverNumber": 10,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/pierre-gasly.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Alpine",
+        "fullName": "Alpine",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P9",
+      "positionNumber": 9,
+      "points": 26,
       "wins": 0,
       "driver": {
         "code": "HAD",
@@ -195,9 +217,9 @@
       }
     },
     {
-      "position": "P9",
-      "positionNumber": 9,
-      "points": 26,
+      "position": "P10",
+      "positionNumber": 10,
+      "points": 24,
       "wins": 0,
       "driver": {
         "code": "LAW",
@@ -212,27 +234,6 @@
       "constructor": {
         "name": "VCARB",
         "fullName": "VCARB",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P10",
-      "positionNumber": 10,
-      "points": 26,
-      "wins": 0,
-      "driver": {
-        "code": "GAS",
-        "firstName": "Pierre",
-        "lastName": "GASLY",
-        "fullName": "Pierre GASLY",
-        "nationality": "FRA",
-        "driverNumber": 10,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/pierre-gasly.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Alpine",
-        "fullName": "Alpine",
         "nationality": null
       }
     },
@@ -281,7 +282,7 @@
     {
       "position": "P13",
       "positionNumber": 13,
-      "points": 13,
+      "points": 11,
       "wins": 0,
       "driver": {
         "code": "LIN",
