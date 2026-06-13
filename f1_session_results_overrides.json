@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-13T15:27:57.157Z",
+  "generatedAt": "2026-06-13T15:29:18.745Z",
   "events": [
     {
       "eventType": "race",
@@ -1171,12 +1171,35 @@
           "meetingKey": 1287
         },
         {
-          "driverNumber": 30,
-          "driverName": "Liam LAWSON",
-          "teamName": "Racing Bulls",
+          "driverNumber": 16,
+          "driverName": "Charles LECLERC",
+          "teamName": "Ferrari",
           "position": "P8",
           "positionRank": 8,
           "classifiedPosition": 8,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 75.281,
+            "q2": null,
+            "q3": null,
+            "bestQualifyingTime": 75.281
+          },
+          "gapToLeader": null,
+          "laps": 8,
+          "points": null,
+          "sessionKey": 11303,
+          "meetingKey": 1287
+        },
+        {
+          "driverNumber": 30,
+          "driverName": "Liam LAWSON",
+          "teamName": "Racing Bulls",
+          "position": "P9",
+          "positionRank": 9,
+          "classifiedPosition": 9,
           "dnf": false,
           "dns": false,
           "dsq": false,
@@ -1197,9 +1220,9 @@
           "driverNumber": 27,
           "driverName": "Nico HULKENBERG",
           "teamName": "Audi",
-          "position": "P9",
-          "positionRank": 9,
-          "classifiedPosition": 9,
+          "position": "P10",
+          "positionRank": 10,
+          "classifiedPosition": 10,
           "dnf": false,
           "dns": false,
           "dsq": false,
@@ -1212,29 +1235,6 @@
           },
           "gapToLeader": null,
           "laps": 17,
-          "points": null,
-          "sessionKey": 11303,
-          "meetingKey": 1287
-        },
-        {
-          "driverNumber": 16,
-          "driverName": "Charles LECLERC",
-          "teamName": "Ferrari",
-          "position": "P10",
-          "positionRank": 10,
-          "classifiedPosition": 10,
-          "dnf": false,
-          "dns": false,
-          "dsq": false,
-          "duration": null,
-          "qualifyingTimes": {
-            "q1": null,
-            "q2": null,
-            "q3": null,
-            "bestQualifyingTime": null
-          },
-          "gapToLeader": null,
-          "laps": 8,
           "points": null,
           "sessionKey": 11303,
           "meetingKey": 1287
