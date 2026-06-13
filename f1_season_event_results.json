@@ -1,6 +1,6 @@
 {
   "header": "2026 F1 all session results",
-  "generatedAtUtc": "2026-06-13T15:31:59.923Z",
+  "generatedAtUtc": "2026-06-13T15:52:11.534Z",
   "season": 2026,
   "events": [
     {
@@ -15077,14 +15077,14 @@
           "dnf": false,
           "dns": false,
           "dsq": false,
-          "duration": 8641.612,
+          "duration": 8631.612,
           "qualifyingTimes": {
             "q1": 74.469,
             "q2": 73.762,
             "q3": 73.226,
             "bestQualifyingTime": 73.226
           },
-          "gapToLeader": 30.369,
+          "gapToLeader": 20.369,
           "laps": 78,
           "points": 15,
           "sessionKey": 11299,
@@ -16849,12 +16849,16 @@
           "dsq": false,
           "duration": null,
           "qualifyingTimes": {
-            "q1": 74.679,
-            "q2": null,
-            "q3": null,
+            "q1": 75.717,
+            "q2": 75.228,
+            "q3": 74.679,
             "bestQualifyingTime": 74.679
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0.092,
+            0,
+            0
+          ],
           "laps": 13,
           "points": null,
           "sessionKey": 11303,
@@ -16872,12 +16876,16 @@
           "dsq": false,
           "duration": null,
           "qualifyingTimes": {
-            "q1": 74.743,
-            "q2": null,
-            "q3": null,
+            "q1": 75.625,
+            "q2": 75.418,
+            "q3": 74.743,
             "bestQualifyingTime": 74.743
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0,
+            0.19,
+            0.064
+          ],
           "laps": 14,
           "points": null,
           "sessionKey": 11303,
@@ -16895,12 +16903,16 @@
           "dsq": false,
           "duration": null,
           "qualifyingTimes": {
-            "q1": 74.998,
-            "q2": null,
-            "q3": null,
+            "q1": 75.977,
+            "q2": 75.295,
+            "q3": 74.998,
             "bestQualifyingTime": 74.998
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0.352,
+            0.067,
+            0.319
+          ],
           "laps": 14,
           "points": null,
           "sessionKey": 11303,
@@ -16918,12 +16930,16 @@
           "dsq": false,
           "duration": null,
           "qualifyingTimes": {
-            "q1": 75.001,
-            "q2": null,
-            "q3": null,
+            "q1": 76.287,
+            "q2": 75.361,
+            "q3": 75.001,
             "bestQualifyingTime": 75.001
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0.662,
+            0.133,
+            0.322
+          ],
           "laps": 14,
           "points": null,
           "sessionKey": 11303,
@@ -16941,12 +16957,16 @@
           "dsq": false,
           "duration": null,
           "qualifyingTimes": {
-            "q1": 75.021,
-            "q2": null,
-            "q3": null,
+            "q1": 76.352,
+            "q2": 75.484,
+            "q3": 75.021,
             "bestQualifyingTime": 75.021
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0.727,
+            0.256,
+            0.342
+          ],
           "laps": 12,
           "points": null,
           "sessionKey": 11303,
@@ -16964,12 +16984,16 @@
           "dsq": false,
           "duration": null,
           "qualifyingTimes": {
-            "q1": 75.077,
-            "q2": null,
-            "q3": null,
+            "q1": 76.427,
+            "q2": 75.754,
+            "q3": 75.077,
             "bestQualifyingTime": 75.077
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0.802,
+            0.526,
+            0.398
+          ],
           "laps": 14,
           "points": null,
           "sessionKey": 11303,
@@ -16987,36 +17011,17 @@
           "dsq": false,
           "duration": null,
           "qualifyingTimes": {
-            "q1": 75.09,
-            "q2": null,
-            "q3": null,
+            "q1": 76.138,
+            "q2": 75.518,
+            "q3": 75.09,
             "bestQualifyingTime": 75.09
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0.513,
+            0.29,
+            0.411
+          ],
           "laps": 15,
-          "points": null,
-          "sessionKey": 11303,
-          "meetingKey": 1287
-        },
-        {
-          "driverNumber": 16,
-          "driverName": "Charles LECLERC",
-          "teamName": "Ferrari",
-          "position": "P8",
-          "positionRank": 8,
-          "classifiedPosition": 8,
-          "dnf": false,
-          "dns": false,
-          "dsq": false,
-          "duration": null,
-          "qualifyingTimes": {
-            "q1": 75.281,
-            "q2": null,
-            "q3": null,
-            "bestQualifyingTime": 75.281
-          },
-          "gapToLeader": null,
-          "laps": 8,
           "points": null,
           "sessionKey": 11303,
           "meetingKey": 1287
@@ -17025,20 +17030,24 @@
           "driverNumber": 30,
           "driverName": "Liam LAWSON",
           "teamName": "Racing Bulls",
-          "position": "P9",
-          "positionRank": 9,
-          "classifiedPosition": 9,
+          "position": "P8",
+          "positionRank": 8,
+          "classifiedPosition": 8,
           "dnf": false,
           "dns": false,
           "dsq": false,
           "duration": null,
           "qualifyingTimes": {
-            "q1": 75.585,
-            "q2": null,
-            "q3": null,
+            "q1": 76.673,
+            "q2": 75.585,
+            "q3": 76.542,
             "bestQualifyingTime": 75.585
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            1.048,
+            0.357,
+            1.863
+          ],
           "laps": 14,
           "points": null,
           "sessionKey": 11303,
@@ -17048,20 +17057,24 @@
           "driverNumber": 27,
           "driverName": "Nico HULKENBERG",
           "teamName": "Audi",
-          "position": "P10",
-          "positionRank": 10,
-          "classifiedPosition": 10,
+          "position": "P9",
+          "positionRank": 9,
+          "classifiedPosition": 9,
           "dnf": false,
           "dns": false,
           "dsq": false,
           "duration": null,
           "qualifyingTimes": {
-            "q1": 75.768,
-            "q2": null,
-            "q3": null,
+            "q1": 76.066,
+            "q2": 75.768,
+            "q3": 76.657,
             "bestQualifyingTime": 75.768
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0.441,
+            0.54,
+            1.978
+          ],
           "laps": 17,
           "points": null,
           "sessionKey": 11303,
@@ -17079,12 +17092,16 @@
           "dsq": false,
           "duration": null,
           "qualifyingTimes": {
-            "q1": 75.84,
-            "q2": null,
-            "q3": null,
-            "bestQualifyingTime": 75.84
+            "q1": 76.425,
+            "q2": 75.84,
+            "q3": 0,
+            "bestQualifyingTime": 0
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0.8,
+            0.612,
+            null
+          ],
           "laps": 8,
           "points": null,
           "sessionKey": 11303,
@@ -17102,12 +17119,16 @@
           "dsq": false,
           "duration": null,
           "qualifyingTimes": {
-            "q1": 76.001,
-            "q2": null,
-            "q3": null,
-            "bestQualifyingTime": 76.001
+            "q1": 76.616,
+            "q2": 76.001,
+            "q3": 0,
+            "bestQualifyingTime": 0
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0.991,
+            0.773,
+            null
+          ],
           "laps": 9,
           "points": null,
           "sessionKey": 11303,
@@ -17125,12 +17146,16 @@
           "dsq": false,
           "duration": null,
           "qualifyingTimes": {
-            "q1": 76.191,
-            "q2": null,
-            "q3": null,
-            "bestQualifyingTime": 76.191
+            "q1": 76.59,
+            "q2": 76.191,
+            "q3": 0,
+            "bestQualifyingTime": 0
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0.965,
+            0.963,
+            null
+          ],
           "laps": 12,
           "points": null,
           "sessionKey": 11303,
@@ -17148,12 +17173,16 @@
           "dsq": false,
           "duration": null,
           "qualifyingTimes": {
-            "q1": 76.261,
-            "q2": null,
-            "q3": null,
-            "bestQualifyingTime": 76.261
+            "q1": 76.599,
+            "q2": 76.261,
+            "q3": 0,
+            "bestQualifyingTime": 0
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0.974,
+            1.033,
+            null
+          ],
           "laps": 12,
           "points": null,
           "sessionKey": 11303,
@@ -17171,12 +17200,16 @@
           "dsq": false,
           "duration": null,
           "qualifyingTimes": {
-            "q1": 76.389,
-            "q2": null,
-            "q3": null,
-            "bestQualifyingTime": 76.389
+            "q1": 76.571,
+            "q2": 76.389,
+            "q3": 0,
+            "bestQualifyingTime": 0
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0.946,
+            1.161,
+            null
+          ],
           "laps": 15,
           "points": null,
           "sessionKey": 11303,
@@ -17195,11 +17228,15 @@
           "duration": null,
           "qualifyingTimes": {
             "q1": 76.881,
-            "q2": null,
-            "q3": null,
-            "bestQualifyingTime": 76.881
+            "q2": 77.827,
+            "q3": 0,
+            "bestQualifyingTime": 0
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            1.256,
+            2.599,
+            null
+          ],
           "laps": 15,
           "points": null,
           "sessionKey": 11303,
@@ -17218,11 +17255,15 @@
           "duration": null,
           "qualifyingTimes": {
             "q1": 77.073,
-            "q2": null,
-            "q3": null,
-            "bestQualifyingTime": 77.073
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            1.448,
+            null,
+            null
+          ],
           "laps": 9,
           "points": null,
           "sessionKey": 11303,
@@ -17241,11 +17282,15 @@
           "duration": null,
           "qualifyingTimes": {
             "q1": 77.424,
-            "q2": null,
-            "q3": null,
-            "bestQualifyingTime": 77.424
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            1.799,
+            null,
+            null
+          ],
           "laps": 9,
           "points": null,
           "sessionKey": 11303,
@@ -17264,11 +17309,15 @@
           "duration": null,
           "qualifyingTimes": {
             "q1": 77.545,
-            "q2": null,
-            "q3": null,
-            "bestQualifyingTime": 77.545
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            1.92,
+            null,
+            null
+          ],
           "laps": 6,
           "points": null,
           "sessionKey": 11303,
@@ -17287,11 +17336,15 @@
           "duration": null,
           "qualifyingTimes": {
             "q1": 77.757,
-            "q2": null,
-            "q3": null,
-            "bestQualifyingTime": 77.757
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            2.132,
+            null,
+            null
+          ],
           "laps": 9,
           "points": null,
           "sessionKey": 11303,
@@ -17310,11 +17363,15 @@
           "duration": null,
           "qualifyingTimes": {
             "q1": 78.758,
-            "q2": null,
-            "q3": null,
-            "bestQualifyingTime": 78.758
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            3.133,
+            null,
+            null
+          ],
           "laps": 8,
           "points": null,
           "sessionKey": 11303,
@@ -17333,11 +17390,42 @@
           "duration": null,
           "qualifyingTimes": {
             "q1": 78.815,
-            "q2": null,
-            "q3": null,
-            "bestQualifyingTime": 78.815
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            3.19,
+            null,
+            null
+          ],
+          "laps": 8,
+          "points": null,
+          "sessionKey": 11303,
+          "meetingKey": 1287
+        },
+        {
+          "driverNumber": 16,
+          "driverName": "Charles LECLERC",
+          "teamName": "Ferrari",
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": 10,
+          "dnf": true,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 75.964,
+            "q2": 75.281,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            0.339,
+            0.053,
+            null
+          ],
           "laps": 8,
           "points": null,
           "sessionKey": 11303,
