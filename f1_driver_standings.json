@@ -1,6 +1,6 @@
 {
   "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-06-14T15:02:07.502Z",
+  "generatedAtUtc": "2026-06-14T15:17:05.512Z",
   "season": 2026,
   "source": {
     "primary": "f1_season_event_results.json",
@@ -10,20 +10,20 @@
   },
   "lastRace": {
     "season": "2026",
-    "round": "6",
-    "raceName": "Monaco Grand Prix",
-    "date": "2026-06-07",
+    "round": "7",
+    "raceName": "Barcelona Grand Prix",
+    "date": "2026-06-14",
     "circuit": {
-      "name": "Monte Carlo",
-      "locality": "Monte Carlo",
-      "country": "Monaco"
+      "name": "Catalunya",
+      "locality": "Barcelona",
+      "country": "Spain"
     },
     "winner": {
-      "firstName": "Kimi",
-      "lastName": "ANTONELLI",
-      "fullName": "Kimi ANTONELLI",
+      "firstName": "Lewis",
+      "lastName": "HAMILTON",
+      "fullName": "Lewis HAMILTON",
       "code": null,
-      "team": "Mercedes"
+      "team": "Ferrari"
     }
   },
   "drivers": [
@@ -51,8 +51,8 @@
     {
       "position": "P2",
       "positionNumber": 2,
-      "points": 90,
-      "wins": 0,
+      "points": 115,
+      "wins": 1,
       "driver": {
         "code": "HAM",
         "firstName": "Lewis",
@@ -72,7 +72,7 @@
     {
       "position": "P3",
       "positionNumber": 3,
-      "points": 88,
+      "points": 106,
       "wins": 1,
       "driver": {
         "code": "RUS",
@@ -114,7 +114,7 @@
     {
       "position": "P5",
       "positionNumber": 5,
-      "points": 58,
+      "points": 73,
       "wins": 0,
       "driver": {
         "code": "NOR",
@@ -135,7 +135,7 @@
     {
       "position": "P6",
       "positionNumber": 6,
-      "points": 58,
+      "points": 68,
       "wins": 0,
       "driver": {
         "code": "PIA",
@@ -156,7 +156,7 @@
     {
       "position": "P7",
       "positionNumber": 7,
-      "points": 43,
+      "points": 55,
       "wins": 0,
       "driver": {
         "code": "VER",
@@ -177,7 +177,7 @@
     {
       "position": "P8",
       "positionNumber": 8,
-      "points": 35,
+      "points": 41,
       "wins": 0,
       "driver": {
         "code": "GAS",
@@ -198,7 +198,7 @@
     {
       "position": "P9",
       "positionNumber": 9,
-      "points": 26,
+      "points": 34,
       "wins": 0,
       "driver": {
         "code": "HAD",
@@ -219,7 +219,7 @@
     {
       "position": "P10",
       "positionNumber": 10,
-      "points": 24,
+      "points": 26,
       "wins": 0,
       "driver": {
         "code": "LAW",
@@ -240,6 +240,27 @@
     {
       "position": "P11",
       "positionNumber": 11,
+      "points": 19,
+      "wins": 0,
+      "driver": {
+        "code": "COL",
+        "firstName": "Franco",
+        "lastName": "COLAPINTO",
+        "fullName": "Franco COLAPINTO",
+        "nationality": "ARG",
+        "driverNumber": 43,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/franco-colapinto.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Alpine",
+        "fullName": "Alpine",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P12",
+      "positionNumber": 12,
       "points": 18,
       "wins": 0,
       "driver": {
@@ -259,30 +280,9 @@
       }
     },
     {
-      "position": "P12",
-      "positionNumber": 12,
-      "points": 15,
-      "wins": 0,
-      "driver": {
-        "code": "COL",
-        "firstName": "Franco",
-        "lastName": "COLAPINTO",
-        "fullName": "Franco COLAPINTO",
-        "nationality": "ARG",
-        "driverNumber": 43,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/franco-colapinto.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Alpine",
-        "fullName": "Alpine",
-        "nationality": null
-      }
-    },
-    {
       "position": "P13",
       "positionNumber": 13,
-      "points": 11,
+      "points": 12,
       "wins": 0,
       "driver": {
         "code": "LIN",

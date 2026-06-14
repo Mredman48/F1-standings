@@ -2,7 +2,7 @@
   "header": "F1 championship outlook",
   "season": 2026,
   "previousSeason": 2025,
-  "lastUpdated": "2026-06-14T15:02:09.115Z",
+  "lastUpdated": "2026-06-14T15:17:07.439Z",
   "mode": "race-weekend",
   "sources": {
     "driverStandings": "public-repo/f1_driver_standings.json",
@@ -11,52 +11,36 @@
     "previousYearWinners": "https://api.jolpi.ca/ergast/f1/2025/results/1.json"
   },
   "latest": {
-    "id": "round-6-monacograndprix-2026-06-07",
+    "id": "round-7-barcelonagrandprix-2026-06-14",
     "sourceRace": {
-      "raceName": "Monaco Grand Prix",
-      "meetingName": "Monaco Grand Prix",
-      "round": 6,
-      "date": "2026-06-07",
-      "dateStartUtc": "2026-06-07T13:00:00+00:00",
-      "meetingKey": 1286,
-      "previousYearWinner": {
-        "season": 2025,
-        "round": 8,
-        "raceName": "Monaco Grand Prix",
-        "date": "2025-05-25",
-        "winner": "Lando Norris",
-        "constructor": "McLaren",
-        "source": "jolpica"
-      },
+      "raceName": "Barcelona Grand Prix",
+      "meetingName": "Barcelona Grand Prix",
+      "round": 7,
+      "date": "2026-06-14",
+      "dateStartUtc": "2026-06-14T13:00:00+00:00",
+      "meetingKey": 1287,
+      "previousYearWinner": null,
       "sessionsIncluded": [
         {
           "eventType": "race",
           "sessionName": "Race",
-          "sessionKey": 11299,
-          "date": "2026-06-07",
-          "dateStartUtc": "2026-06-07T13:00:00+00:00",
+          "sessionKey": 11307,
+          "date": "2026-06-14",
+          "dateStartUtc": "2026-06-14T13:00:00+00:00",
           "isRace": true,
           "isSprint": false
         }
       ]
     },
-    "previousYearWinner": {
-      "season": 2025,
-      "round": 8,
-      "raceName": "Monaco Grand Prix",
-      "date": "2025-05-25",
-      "winner": "Lando Norris",
-      "constructor": "McLaren",
-      "source": "jolpica"
-    },
+    "previousYearWinner": null,
     "preWeekendNotes": {
       "winStreak": {
         "driverName": "ANTONELLI",
-        "count": 4
+        "count": 5
       },
       "podiumStreak": {
         "driverName": "ANTONELLI",
-        "count": 5
+        "count": 6
       },
       "leaderRecentForm": {
         "driverName": "ANTONELLI",
@@ -67,37 +51,37 @@
         ],
         "label": "P1 P1 P1 in last 3 races"
       },
-      "defenderNote": "Lando Norris won here in 2025 (McLaren)"
+      "defenderNote": null
     },
     "drivers": {
       "leader": "ANTONELLI",
       "second": "HAMILTON",
-      "gap": 66,
-      "standingsText": "ANTONELLI leads by 66 pts over HAMILTON",
-      "raceImpact": "ANTONELLI extended lead by 7 pts over HAMILTON",
-      "scenarioText": "ANTONELLI extended lead by 7 pts over HAMILTON",
+      "gap": 41,
+      "standingsText": "ANTONELLI leads by 41 pts over HAMILTON",
+      "raceImpact": "HAMILTON cut ANTONELLI's lead by 25 pts",
+      "scenarioText": "HAMILTON cut ANTONELLI's lead by 25 pts",
       "p1Changed": false,
-      "leaderWeekendPoints": 25,
-      "secondWeekendPoints": 18,
-      "weekendDelta": 7,
-      "leaderRacePoints": 25,
-      "secondRacePoints": 18,
-      "raceDelta": 7
+      "leaderWeekendPoints": 0,
+      "secondWeekendPoints": 25,
+      "weekendDelta": -25,
+      "leaderRacePoints": 0,
+      "secondRacePoints": 25,
+      "raceDelta": -25
     },
     "constructors": {
       "leader": "Mercedes",
       "second": "Ferrari",
-      "gap": 79,
-      "standingsText": "Mercedes leads by 79 pts over Ferrari",
-      "raceImpact": "Mercedes extended its constructors' lead by 7 pts over Ferrari",
-      "scenarioText": "Mercedes extended its constructors' lead by 7 pts over Ferrari",
+      "gap": 72,
+      "standingsText": "Mercedes leads by 72 pts over Ferrari",
+      "raceImpact": "Ferrari cut Mercedes's constructors' lead by 7 pts",
+      "scenarioText": "Ferrari cut Mercedes's constructors' lead by 7 pts",
       "p1Changed": false,
-      "leaderWeekendPoints": 25,
-      "secondWeekendPoints": 18,
-      "weekendDelta": 7,
-      "leaderRacePoints": 25,
-      "secondRacePoints": 18,
-      "raceDelta": 7
+      "leaderWeekendPoints": 18,
+      "secondWeekendPoints": 25,
+      "weekendDelta": -7,
+      "leaderRacePoints": 18,
+      "secondRacePoints": 25,
+      "raceDelta": -7
     }
   },
   "races": [
@@ -664,6 +648,80 @@
         "leaderRacePoints": 25,
         "secondRacePoints": 18,
         "raceDelta": 7
+      }
+    },
+    {
+      "id": "round-7-barcelonagrandprix-2026-06-14",
+      "sourceRace": {
+        "raceName": "Barcelona Grand Prix",
+        "meetingName": "Barcelona Grand Prix",
+        "round": 7,
+        "date": "2026-06-14",
+        "dateStartUtc": "2026-06-14T13:00:00+00:00",
+        "meetingKey": 1287,
+        "previousYearWinner": null,
+        "sessionsIncluded": [
+          {
+            "eventType": "race",
+            "sessionName": "Race",
+            "sessionKey": 11307,
+            "date": "2026-06-14",
+            "dateStartUtc": "2026-06-14T13:00:00+00:00",
+            "isRace": true,
+            "isSprint": false
+          }
+        ]
+      },
+      "previousYearWinner": null,
+      "preWeekendNotes": {
+        "winStreak": {
+          "driverName": "ANTONELLI",
+          "count": 5
+        },
+        "podiumStreak": {
+          "driverName": "ANTONELLI",
+          "count": 6
+        },
+        "leaderRecentForm": {
+          "driverName": "ANTONELLI",
+          "positions": [
+            1,
+            1,
+            1
+          ],
+          "label": "P1 P1 P1 in last 3 races"
+        },
+        "defenderNote": null
+      },
+      "drivers": {
+        "leader": "ANTONELLI",
+        "second": "HAMILTON",
+        "gap": 41,
+        "standingsText": "ANTONELLI leads by 41 pts over HAMILTON",
+        "raceImpact": "HAMILTON cut ANTONELLI's lead by 25 pts",
+        "scenarioText": "HAMILTON cut ANTONELLI's lead by 25 pts",
+        "p1Changed": false,
+        "leaderWeekendPoints": 0,
+        "secondWeekendPoints": 25,
+        "weekendDelta": -25,
+        "leaderRacePoints": 0,
+        "secondRacePoints": 25,
+        "raceDelta": -25
+      },
+      "constructors": {
+        "leader": "Mercedes",
+        "second": "Ferrari",
+        "gap": 72,
+        "standingsText": "Mercedes leads by 72 pts over Ferrari",
+        "raceImpact": "Ferrari cut Mercedes's constructors' lead by 7 pts",
+        "scenarioText": "Ferrari cut Mercedes's constructors' lead by 7 pts",
+        "p1Changed": false,
+        "leaderWeekendPoints": 18,
+        "secondWeekendPoints": 25,
+        "weekendDelta": -7,
+        "leaderRacePoints": 18,
+        "secondRacePoints": 25,
+        "raceDelta": -7
       }
     }
   ]

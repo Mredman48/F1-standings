@@ -1,21 +1,21 @@
 {
   "header": "Ferrari standings",
-  "generatedAtUtc": "2026-06-14T15:02:08.611Z",
+  "generatedAtUtc": "2026-06-14T15:17:07.065Z",
   "ferrari": {
     "team": "Ferrari",
     "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_ferrari_color_v2.png",
     "teamStanding": {
       "team": "Ferrari",
       "position": "P2",
-      "points": 165,
-      "wins": 0
+      "points": 190,
+      "wins": 1
     }
   },
   "lastRace": {
-    "raceName": "Monaco Grand Prix",
-    "round": "6",
-    "date": "2026-06-07",
-    "circuit": "Monte Carlo",
+    "raceName": "Barcelona Grand Prix",
+    "round": "7",
+    "date": "2026-06-14",
+    "circuit": "Catalunya",
     "location": {
       "locality": "-",
       "country": "-"
@@ -35,23 +35,23 @@
       "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-44-2.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lewis-hamilton.png",
       "position": "P2",
-      "points": 90,
-      "wins": 0,
-      "raceWins": 0,
-      "racePodiums": 3,
+      "points": 115,
+      "wins": 1,
+      "raceWins": 1,
+      "racePodiums": 4,
       "sprintWins": 0,
       "sprintPodiums": 1,
       "team": "Ferrari",
       "bestResult": {
-        "position": "P2",
+        "position": "P1",
         "eventType": "race",
-        "raceName": "Monaco Grand Prix",
-        "round": "6",
-        "date": "2026-06-07",
-        "circuit": "Monte Carlo",
+        "raceName": "Barcelona Grand Prix",
+        "round": "7",
+        "date": "2026-06-14",
+        "circuit": "Catalunya",
         "location": {
-          "locality": "Monte Carlo",
-          "country": "Monaco"
+          "locality": "Barcelona",
+          "country": "Spain"
         }
       }
     },

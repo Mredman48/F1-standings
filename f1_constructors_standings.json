@@ -1,6 +1,6 @@
 {
   "header": "Constructors standings",
-  "generatedAtUtc": "2026-06-14T15:02:07.874Z",
+  "generatedAtUtc": "2026-06-14T15:17:06.085Z",
   "meta": {
     "seasonUsed": "2026",
     "source": "f1_driver_standings.json",
@@ -9,27 +9,27 @@
   },
   "lastRace": {
     "season": "2026",
-    "round": "6",
-    "raceName": "Monaco Grand Prix",
-    "date": "2026-06-07",
+    "round": "7",
+    "raceName": "Barcelona Grand Prix",
+    "date": "2026-06-14",
     "circuit": {
-      "name": "Monte Carlo",
-      "locality": "Monte Carlo",
-      "country": "Monaco"
+      "name": "Catalunya",
+      "locality": "Barcelona",
+      "country": "Spain"
     },
     "winner": {
-      "firstName": "Kimi",
-      "lastName": "ANTONELLI",
-      "fullName": "Kimi ANTONELLI",
+      "firstName": "Lewis",
+      "lastName": "HAMILTON",
+      "fullName": "Lewis HAMILTON",
       "code": null,
-      "team": "Mercedes"
+      "team": "Ferrari"
     }
   },
   "constructors": [
     {
       "team": "Mercedes",
       "position": "P1",
-      "points": 244,
+      "points": 262,
       "wins": 6,
       "driverCount": 2,
       "placeholder": false
@@ -37,15 +37,15 @@
     {
       "team": "Ferrari",
       "position": "P2",
-      "points": 165,
-      "wins": 0,
+      "points": 190,
+      "wins": 1,
       "driverCount": 2,
       "placeholder": false
     },
     {
       "team": "McLaren",
       "position": "P3",
-      "points": 116,
+      "points": 141,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
@@ -53,7 +53,7 @@
     {
       "team": "Red Bull",
       "position": "P4",
-      "points": 69,
+      "points": 89,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
@@ -61,7 +61,7 @@
     {
       "team": "Alpine",
       "position": "P5",
-      "points": 50,
+      "points": 60,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
@@ -69,7 +69,7 @@
     {
       "team": "VCARB",
       "position": "P6",
-      "points": 35,
+      "points": 38,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
