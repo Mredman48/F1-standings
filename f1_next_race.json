@@ -1,42 +1,42 @@
 {
   "header": "Next F1 event",
-  "generatedAtUtc": "2026-06-14T19:02:01.922Z",
+  "generatedAtUtc": "2026-06-14T19:17:04.830Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics+formula1",
     "url": "https://better-f1-calendar.vercel.app/api/calendar.ics",
-    "officialRacePage": "https://www.formula1.com/en/racing/2026/monaco"
+    "officialRacePage": "https://www.formula1.com/en/racing/2026/barcelona-catalunya"
   },
   "nextEvent": {
     "type": "RACE_WEEKEND",
-    "title": "Monaco Grand Prix 2026",
+    "title": "Barcelona-Catalunya Grand Prix 2026",
     "season": "2026",
     "location": {
       "raw": null,
-      "city": "Montecarlo",
-      "country": "Monaco",
+      "city": "Catalunya",
+      "country": null,
       "flag": {
-        "iso2": "mc",
-        "png": "https://flagcdn.com/w160/mc.png",
-        "svg": "https://flagcdn.com/mc.svg"
+        "iso2": null,
+        "png": null,
+        "svg": null
       }
     },
     "racePage": {
-      "slug": "monaco",
-      "url": "https://www.formula1.com/en/racing/2026/monaco"
+      "slug": "barcelona-catalunya",
+      "url": "https://www.formula1.com/en/racing/2026/barcelona-catalunya"
     },
     "trackMap": {
       "found": true,
-      "pageUrl": "https://www.formula1.com/en/racing/2026/monaco",
-      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmontecarlodetailed.webp",
-      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_monaco_detailed.png",
+      "pageUrl": "https://www.formula1.com/en/racing/2026/barcelona-catalunya",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackcatalunyadetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_barcelona-catalunya_detailed.png",
       "note": "Using existing saved track map file. No download performed."
     },
     "map": {
-      "found": true,
-      "filename": "monaco.png",
-      "pngUrl": "https://mredman48.github.io/F1-standings/maps/monaco.png",
-      "note": null
+      "found": false,
+      "filename": null,
+      "pngUrl": null,
+      "note": "No custom map file configured for slug \"barcelona-catalunya\"."
     },
     "countdowns": {
       "startsInDays": 12

@@ -1,6 +1,6 @@
 {
   "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-06-14T19:02:01.229Z",
+  "generatedAtUtc": "2026-06-14T19:17:04.301Z",
   "season": 2026,
   "source": {
     "primary": "f1_season_event_results.json",
@@ -219,7 +219,7 @@
     {
       "position": "P10",
       "positionNumber": 10,
-      "points": 26,
+      "points": 28,
       "wins": 0,
       "driver": {
         "code": "LAW",
@@ -240,27 +240,6 @@
     {
       "position": "P11",
       "positionNumber": 11,
-      "points": 19,
-      "wins": 0,
-      "driver": {
-        "code": "COL",
-        "firstName": "Franco",
-        "lastName": "COLAPINTO",
-        "fullName": "Franco COLAPINTO",
-        "nationality": "ARG",
-        "driverNumber": 43,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/franco-colapinto.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Alpine",
-        "fullName": "Alpine",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P12",
-      "positionNumber": 12,
       "points": 18,
       "wins": 0,
       "driver": {
@@ -280,9 +259,30 @@
       }
     },
     {
+      "position": "P12",
+      "positionNumber": 12,
+      "points": 16,
+      "wins": 0,
+      "driver": {
+        "code": "COL",
+        "firstName": "Franco",
+        "lastName": "COLAPINTO",
+        "fullName": "Franco COLAPINTO",
+        "nationality": "ARG",
+        "driverNumber": 43,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/franco-colapinto.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Alpine",
+        "fullName": "Alpine",
+        "nationality": null
+      }
+    },
+    {
       "position": "P13",
       "positionNumber": 13,
-      "points": 12,
+      "points": 13,
       "wins": 0,
       "driver": {
         "code": "LIN",
