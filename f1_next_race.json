@@ -1,90 +1,90 @@
 {
   "header": "Next F1 event",
-  "generatedAtUtc": "2026-06-14T16:47:08.112Z",
+  "generatedAtUtc": "2026-06-14T17:02:16.657Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics+formula1",
     "url": "https://better-f1-calendar.vercel.app/api/calendar.ics",
-    "officialRacePage": "https://www.formula1.com/en/racing/2026/barcelona-catalunya"
+    "officialRacePage": "https://www.formula1.com/en/racing/2026/monaco"
   },
   "nextEvent": {
     "type": "RACE_WEEKEND",
-    "title": "Barcelona-Catalunya Grand Prix 2026",
+    "title": "Monaco Grand Prix 2026",
     "season": "2026",
     "location": {
       "raw": null,
-      "city": "Catalunya",
-      "country": null,
+      "city": "Montecarlo",
+      "country": "Monaco",
       "flag": {
-        "iso2": null,
-        "png": null,
-        "svg": null
+        "iso2": "mc",
+        "png": "https://flagcdn.com/w160/mc.png",
+        "svg": "https://flagcdn.com/mc.svg"
       }
     },
     "racePage": {
-      "slug": "barcelona-catalunya",
-      "url": "https://www.formula1.com/en/racing/2026/barcelona-catalunya"
+      "slug": "monaco",
+      "url": "https://www.formula1.com/en/racing/2026/monaco"
     },
     "trackMap": {
       "found": true,
-      "pageUrl": "https://www.formula1.com/en/racing/2026/barcelona-catalunya",
-      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackcatalunyadetailed.webp",
-      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_barcelona-catalunya_detailed.png",
+      "pageUrl": "https://www.formula1.com/en/racing/2026/monaco",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmontecarlodetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_monaco_detailed.png",
       "note": "Using existing saved track map file. No download performed."
     },
     "map": {
-      "found": false,
-      "filename": null,
-      "pngUrl": null,
-      "note": "No custom map file configured for slug \"barcelona-catalunya\"."
+      "found": true,
+      "filename": "monaco.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/monaco.png",
+      "note": null
     },
     "countdowns": {
-      "startsInDays": -2
+      "startsInDays": 12
     },
     "weekend": {
-      "startUtc": "2026-06-12T11:30:00.000Z",
-      "endUtc": "2026-06-14T15:00:00.000Z"
+      "startUtc": "2026-06-26T11:30:00.000Z",
+      "endUtc": "2026-06-28T15:00:00.000Z"
     },
     "sessions": [
       {
         "type": "FP1",
-        "startUtc": "2026-06-12T11:30:00.000Z",
-        "endUtc": "2026-06-12T12:30:00.000Z",
-        "startLocalDateShort": "Fri, Jun 12",
+        "startUtc": "2026-06-26T11:30:00.000Z",
+        "endUtc": "2026-06-26T12:30:00.000Z",
+        "startLocalDateShort": "Fri, Jun 26",
         "startLocalTimeShort": "05:30",
-        "startLocalDateTimeShort": "Fri, Jun 12 05:30"
+        "startLocalDateTimeShort": "Fri, Jun 26 05:30"
       },
       {
         "type": "FP2",
-        "startUtc": "2026-06-12T15:00:00.000Z",
-        "endUtc": "2026-06-12T16:00:00.000Z",
-        "startLocalDateShort": "Fri, Jun 12",
+        "startUtc": "2026-06-26T15:00:00.000Z",
+        "endUtc": "2026-06-26T16:00:00.000Z",
+        "startLocalDateShort": "Fri, Jun 26",
         "startLocalTimeShort": "09:00",
-        "startLocalDateTimeShort": "Fri, Jun 12 09:00"
+        "startLocalDateTimeShort": "Fri, Jun 26 09:00"
       },
       {
         "type": "FP3",
-        "startUtc": "2026-06-13T10:30:00.000Z",
-        "endUtc": "2026-06-13T11:30:00.000Z",
-        "startLocalDateShort": "Sat, Jun 13",
+        "startUtc": "2026-06-27T10:30:00.000Z",
+        "endUtc": "2026-06-27T11:30:00.000Z",
+        "startLocalDateShort": "Sat, Jun 27",
         "startLocalTimeShort": "04:30",
-        "startLocalDateTimeShort": "Sat, Jun 13 04:30"
+        "startLocalDateTimeShort": "Sat, Jun 27 04:30"
       },
       {
         "type": "Quali",
-        "startUtc": "2026-06-13T14:00:00.000Z",
-        "endUtc": "2026-06-13T15:00:00.000Z",
-        "startLocalDateShort": "Sat, Jun 13",
+        "startUtc": "2026-06-27T14:00:00.000Z",
+        "endUtc": "2026-06-27T15:00:00.000Z",
+        "startLocalDateShort": "Sat, Jun 27",
         "startLocalTimeShort": "08:00",
-        "startLocalDateTimeShort": "Sat, Jun 13 08:00"
+        "startLocalDateTimeShort": "Sat, Jun 27 08:00"
       },
       {
         "type": "Race",
-        "startUtc": "2026-06-14T13:00:00.000Z",
-        "endUtc": "2026-06-14T15:00:00.000Z",
-        "startLocalDateShort": "Sun, Jun 14",
+        "startUtc": "2026-06-28T13:00:00.000Z",
+        "endUtc": "2026-06-28T15:00:00.000Z",
+        "startLocalDateShort": "Sun, Jun 28",
         "startLocalTimeShort": "07:00",
-        "startLocalDateTimeShort": "Sun, Jun 14 07:00"
+        "startLocalDateTimeShort": "Sun, Jun 28 07:00"
       }
     ]
   }
