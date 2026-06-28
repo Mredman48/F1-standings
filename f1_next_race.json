@@ -1,90 +1,90 @@
 {
   "header": "Next F1 event",
-  "generatedAtUtc": "2026-06-28T16:47:10.678Z",
+  "generatedAtUtc": "2026-06-28T17:01:14.840Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics+formula1",
     "url": "https://better-f1-calendar.vercel.app/api/calendar.ics",
-    "officialRacePage": "https://www.formula1.com/en/racing/2026/barcelona-catalunya"
+    "officialRacePage": "https://www.formula1.com/en/racing/2026/great-britain"
   },
   "nextEvent": {
     "type": "RACE_WEEKEND",
-    "title": "Barcelona-Catalunya Grand Prix 2026",
+    "title": "FORMULA 1 PIRELLI BRITISH GRAND PRIX 2026",
     "season": "2026",
     "location": {
       "raw": null,
-      "city": "Catalunya",
-      "country": null,
+      "city": "Silverstone",
+      "country": "United Kingdom",
       "flag": {
-        "iso2": null,
-        "png": null,
-        "svg": null
+        "iso2": "gb",
+        "png": "https://flagcdn.com/w160/gb.png",
+        "svg": "https://flagcdn.com/gb.svg"
       }
     },
     "racePage": {
-      "slug": "barcelona-catalunya",
-      "url": "https://www.formula1.com/en/racing/2026/barcelona-catalunya"
+      "slug": "great-britain",
+      "url": "https://www.formula1.com/en/racing/2026/great-britain"
     },
     "trackMap": {
       "found": true,
-      "pageUrl": "https://www.formula1.com/en/racing/2026/barcelona-catalunya",
-      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackcatalunyadetailed.webp",
-      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_barcelona-catalunya_detailed.png",
+      "pageUrl": "https://www.formula1.com/en/racing/2026/great-britain",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026tracksilverstonedetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_great-britain_detailed.png",
       "note": "Using existing saved track map file. No download performed."
     },
     "map": {
-      "found": false,
-      "filename": null,
-      "pngUrl": null,
-      "note": "No custom map file configured for slug \"barcelona-catalunya\"."
+      "found": true,
+      "filename": "silverstone.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/silverstone.png",
+      "note": null
     },
     "countdowns": {
-      "startsInDays": -2
+      "startsInDays": 5
     },
     "weekend": {
-      "startUtc": "2026-06-26T11:30:00.000Z",
-      "endUtc": "2026-06-28T15:00:00.000Z"
+      "startUtc": "2026-07-03T11:30:00.000Z",
+      "endUtc": "2026-07-05T16:00:00.000Z"
     },
     "sessions": [
       {
         "type": "FP1",
-        "startUtc": "2026-06-26T11:30:00.000Z",
-        "endUtc": "2026-06-26T12:30:00.000Z",
-        "startLocalDateShort": "Fri, Jun 26",
+        "startUtc": "2026-07-03T11:30:00.000Z",
+        "endUtc": "2026-07-03T12:30:00.000Z",
+        "startLocalDateShort": "Fri, Jul 03",
         "startLocalTimeShort": "05:30",
-        "startLocalDateTimeShort": "Fri, Jun 26 05:30"
+        "startLocalDateTimeShort": "Fri, Jul 03 05:30"
       },
       {
-        "type": "FP2",
-        "startUtc": "2026-06-26T15:00:00.000Z",
-        "endUtc": "2026-06-26T16:00:00.000Z",
-        "startLocalDateShort": "Fri, Jun 26",
-        "startLocalTimeShort": "09:00",
-        "startLocalDateTimeShort": "Fri, Jun 26 09:00"
+        "type": "Sprint Quali",
+        "startUtc": "2026-07-03T15:30:00.000Z",
+        "endUtc": "2026-07-03T16:14:00.000Z",
+        "startLocalDateShort": "Fri, Jul 03",
+        "startLocalTimeShort": "09:30",
+        "startLocalDateTimeShort": "Fri, Jul 03 09:30"
       },
       {
-        "type": "FP3",
-        "startUtc": "2026-06-27T10:30:00.000Z",
-        "endUtc": "2026-06-27T11:30:00.000Z",
-        "startLocalDateShort": "Sat, Jun 27",
-        "startLocalTimeShort": "04:30",
-        "startLocalDateTimeShort": "Sat, Jun 27 04:30"
+        "type": "Sprint",
+        "startUtc": "2026-07-04T11:00:00.000Z",
+        "endUtc": "2026-07-04T12:00:00.000Z",
+        "startLocalDateShort": "Sat, Jul 04",
+        "startLocalTimeShort": "05:00",
+        "startLocalDateTimeShort": "Sat, Jul 04 05:00"
       },
       {
         "type": "Quali",
-        "startUtc": "2026-06-27T14:00:00.000Z",
-        "endUtc": "2026-06-27T15:00:00.000Z",
-        "startLocalDateShort": "Sat, Jun 27",
-        "startLocalTimeShort": "08:00",
-        "startLocalDateTimeShort": "Sat, Jun 27 08:00"
+        "startUtc": "2026-07-04T15:00:00.000Z",
+        "endUtc": "2026-07-04T16:00:00.000Z",
+        "startLocalDateShort": "Sat, Jul 04",
+        "startLocalTimeShort": "09:00",
+        "startLocalDateTimeShort": "Sat, Jul 04 09:00"
       },
       {
         "type": "Race",
-        "startUtc": "2026-06-28T13:00:00.000Z",
-        "endUtc": "2026-06-28T15:00:00.000Z",
-        "startLocalDateShort": "Sun, Jun 28",
-        "startLocalTimeShort": "07:00",
-        "startLocalDateTimeShort": "Sun, Jun 28 07:00"
+        "startUtc": "2026-07-05T14:00:00.000Z",
+        "endUtc": "2026-07-05T16:00:00.000Z",
+        "startLocalDateShort": "Sun, Jul 05",
+        "startLocalTimeShort": "08:00",
+        "startLocalDateTimeShort": "Sun, Jul 05 08:00"
       }
     ]
   }
