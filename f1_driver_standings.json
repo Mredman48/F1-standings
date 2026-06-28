@@ -1,6 +1,6 @@
 {
   "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-06-28T15:02:10.348Z",
+  "generatedAtUtc": "2026-06-28T15:17:05.854Z",
   "season": 2026,
   "source": {
     "primary": "f1_season_event_results.json",
@@ -10,27 +10,27 @@
   },
   "lastRace": {
     "season": "2026",
-    "round": "7",
-    "raceName": "Barcelona Grand Prix",
-    "date": "2026-06-14",
+    "round": "8",
+    "raceName": "Austrian Grand Prix",
+    "date": "2026-06-28",
     "circuit": {
-      "name": "Catalunya",
-      "locality": "Barcelona",
-      "country": "Spain"
+      "name": "Spielberg",
+      "locality": "Spielberg",
+      "country": "Austria"
     },
     "winner": {
-      "firstName": "Lewis",
-      "lastName": "HAMILTON",
-      "fullName": "Lewis HAMILTON",
+      "firstName": "George",
+      "lastName": "RUSSELL",
+      "fullName": "George RUSSELL",
       "code": null,
-      "team": "Ferrari"
+      "team": "Mercedes"
     }
   },
   "drivers": [
     {
       "position": "P1",
       "positionNumber": 1,
-      "points": 156,
+      "points": 171,
       "wins": 5,
       "driver": {
         "code": "ANT",
@@ -51,7 +51,28 @@
     {
       "position": "P2",
       "positionNumber": 2,
-      "points": 115,
+      "points": 131,
+      "wins": 2,
+      "driver": {
+        "code": "RUS",
+        "firstName": "George",
+        "lastName": "RUSSELL",
+        "fullName": "George RUSSELL",
+        "nationality": "GBR",
+        "driverNumber": 63,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/george-russell.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Mercedes",
+        "fullName": "Mercedes",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P3",
+      "positionNumber": 3,
+      "points": 125,
       "wins": 1,
       "driver": {
         "code": "HAM",
@@ -70,51 +91,30 @@
       }
     },
     {
-      "position": "P3",
-      "positionNumber": 3,
-      "points": 106,
-      "wins": 1,
-      "driver": {
-        "code": "RUS",
-        "firstName": "George",
-        "lastName": "RUSSELL",
-        "fullName": "George RUSSELL",
-        "nationality": "GBR",
-        "driverNumber": 63,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/george-russell.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Mercedes",
-        "fullName": "Mercedes",
-        "nationality": null
-      }
-    },
-    {
       "position": "P4",
       "positionNumber": 4,
-      "points": 75,
+      "points": 80,
       "wins": 0,
       "driver": {
-        "code": "LEC",
-        "firstName": "Charles",
-        "lastName": "LECLERC",
-        "fullName": "Charles LECLERC",
-        "nationality": "MON",
-        "driverNumber": 16,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/charles-leclerc.png",
+        "code": "PIA",
+        "firstName": "Oscar",
+        "lastName": "PIASTRI",
+        "fullName": "Oscar PIASTRI",
+        "nationality": "AUS",
+        "driverNumber": 81,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/oscar-piastri.png",
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "Ferrari",
-        "fullName": "Ferrari",
+        "name": "McLaren",
+        "fullName": "McLaren",
         "nationality": null
       }
     },
     {
       "position": "P5",
       "positionNumber": 5,
-      "points": 73,
+      "points": 79,
       "wins": 0,
       "driver": {
         "code": "NOR",
@@ -135,28 +135,28 @@
     {
       "position": "P6",
       "positionNumber": 6,
-      "points": 68,
+      "points": 79,
       "wins": 0,
       "driver": {
-        "code": "PIA",
-        "firstName": "Oscar",
-        "lastName": "PIASTRI",
-        "fullName": "Oscar PIASTRI",
-        "nationality": "AUS",
-        "driverNumber": 81,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/oscar-piastri.png",
+        "code": "LEC",
+        "firstName": "Charles",
+        "lastName": "LECLERC",
+        "fullName": "Charles LECLERC",
+        "nationality": "MON",
+        "driverNumber": 16,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/charles-leclerc.png",
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "McLaren",
-        "fullName": "McLaren",
+        "name": "Ferrari",
+        "fullName": "Ferrari",
         "nationality": null
       }
     },
     {
       "position": "P7",
       "positionNumber": 7,
-      "points": 55,
+      "points": 73,
       "wins": 0,
       "driver": {
         "code": "VER",
@@ -177,6 +177,27 @@
     {
       "position": "P8",
       "positionNumber": 8,
+      "points": 42,
+      "wins": 0,
+      "driver": {
+        "code": "HAD",
+        "firstName": "Isack",
+        "lastName": "HADJAR",
+        "fullName": "Isack HADJAR",
+        "nationality": "FRA",
+        "driverNumber": 6,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/isack-hadjar.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Red Bull",
+        "fullName": "Red Bull",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P9",
+      "positionNumber": 9,
       "points": 41,
       "wins": 0,
       "driver": {
@@ -196,30 +217,9 @@
       }
     },
     {
-      "position": "P9",
-      "positionNumber": 9,
-      "points": 34,
-      "wins": 0,
-      "driver": {
-        "code": "HAD",
-        "firstName": "Isack",
-        "lastName": "HADJAR",
-        "fullName": "Isack HADJAR",
-        "nationality": "FRA",
-        "driverNumber": 6,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/isack-hadjar.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Red Bull",
-        "fullName": "Red Bull",
-        "nationality": null
-      }
-    },
-    {
       "position": "P10",
       "positionNumber": 10,
-      "points": 28,
+      "points": 30,
       "wins": 0,
       "driver": {
         "code": "LAW",
@@ -282,7 +282,7 @@
     {
       "position": "P13",
       "positionNumber": 13,
-      "points": 13,
+      "points": 14,
       "wins": 0,
       "driver": {
         "code": "LIN",

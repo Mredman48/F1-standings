@@ -1,21 +1,21 @@
 {
   "header": "Mercedes standings",
-  "generatedAtUtc": "2026-06-28T15:02:11.982Z",
+  "generatedAtUtc": "2026-06-28T15:17:07.020Z",
   "mercedes": {
     "team": "Mercedes",
     "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_mercedes_color_v2.png",
     "teamStanding": {
       "team": "Mercedes",
       "position": "P1",
-      "points": 262,
-      "wins": 6
+      "points": 302,
+      "wins": 7
     }
   },
   "lastRace": {
-    "raceName": "Barcelona Grand Prix",
-    "round": "7",
-    "date": "2026-06-14",
-    "circuit": "Catalunya",
+    "raceName": "Austrian Grand Prix",
+    "round": "8",
+    "date": "2026-06-28",
+    "circuit": "Spielberg",
     "location": {
       "locality": "-",
       "country": "-"
@@ -35,10 +35,10 @@
       "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-12-2.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/kimi-antonelli.png",
       "position": "P1",
-      "points": 156,
+      "points": 171,
       "wins": 5,
       "raceWins": 5,
-      "racePodiums": 6,
+      "racePodiums": 7,
       "sprintWins": 0,
       "sprintPodiums": 1,
       "team": "Mercedes",
@@ -67,24 +67,24 @@
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-63.png",
       "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-63-2.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/george-russell.png",
-      "position": "P3",
-      "points": 106,
-      "wins": 1,
-      "raceWins": 1,
-      "racePodiums": 3,
+      "position": "P2",
+      "points": 131,
+      "wins": 2,
+      "raceWins": 2,
+      "racePodiums": 4,
       "sprintWins": 2,
       "sprintPodiums": 2,
       "team": "Mercedes",
       "bestResult": {
         "position": "P1",
-        "eventType": "sprint",
-        "raceName": "Canadian Grand Prix Sprint",
-        "round": "5",
-        "date": "2026-05-23",
-        "circuit": "Montreal",
+        "eventType": "race",
+        "raceName": "Austrian Grand Prix",
+        "round": "8",
+        "date": "2026-06-28",
+        "circuit": "Spielberg",
         "location": {
-          "locality": "Montréal",
-          "country": "Canada"
+          "locality": "Spielberg",
+          "country": "Austria"
         }
       }
     }

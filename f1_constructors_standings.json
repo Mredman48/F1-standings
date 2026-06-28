@@ -1,6 +1,6 @@
 {
   "header": "Constructors standings",
-  "generatedAtUtc": "2026-06-28T15:02:10.784Z",
+  "generatedAtUtc": "2026-06-28T15:17:06.196Z",
   "meta": {
     "seasonUsed": "2026",
     "source": "f1_driver_standings.json",
@@ -9,35 +9,35 @@
   },
   "lastRace": {
     "season": "2026",
-    "round": "7",
-    "raceName": "Barcelona Grand Prix",
-    "date": "2026-06-14",
+    "round": "8",
+    "raceName": "Austrian Grand Prix",
+    "date": "2026-06-28",
     "circuit": {
-      "name": "Catalunya",
-      "locality": "Barcelona",
-      "country": "Spain"
+      "name": "Spielberg",
+      "locality": "Spielberg",
+      "country": "Austria"
     },
     "winner": {
-      "firstName": "Lewis",
-      "lastName": "HAMILTON",
-      "fullName": "Lewis HAMILTON",
+      "firstName": "George",
+      "lastName": "RUSSELL",
+      "fullName": "George RUSSELL",
       "code": null,
-      "team": "Ferrari"
+      "team": "Mercedes"
     }
   },
   "constructors": [
     {
       "team": "Mercedes",
       "position": "P1",
-      "points": 262,
-      "wins": 6,
+      "points": 302,
+      "wins": 7,
       "driverCount": 2,
       "placeholder": false
     },
     {
       "team": "Ferrari",
       "position": "P2",
-      "points": 190,
+      "points": 204,
       "wins": 1,
       "driverCount": 2,
       "placeholder": false
@@ -45,7 +45,7 @@
     {
       "team": "McLaren",
       "position": "P3",
-      "points": 141,
+      "points": 159,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
@@ -53,7 +53,7 @@
     {
       "team": "Red Bull",
       "position": "P4",
-      "points": 89,
+      "points": 115,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
@@ -69,7 +69,7 @@
     {
       "team": "VCARB",
       "position": "P6",
-      "points": 41,
+      "points": 44,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
