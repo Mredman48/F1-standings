@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-08T11:52:43.473Z",
+  "generatedAt": "2026-06-30T23:38:55.271Z",
   "liveries": {
     "audi": {
       "label": "Monaco Nuvolari 2026",
@@ -18,6 +18,26 @@
         },
         "bortoleto": {
           "background": "https://mredman48.github.io/F1-standings/liveries/bortoleto-monaco-bg.webp"
+        }
+      }
+    },
+    "mclaren": {
+      "label": "Silverstone 2026 Livery",
+      "validFrom": "",
+      "validUntil": "2026-07-06T00:00:00Z",
+      "color": "2F473A",
+      "background": "https://mredman48.github.io/F1-standings/liveries/mclaren-card-bg.webp",
+      "profileBackground": "https://mredman48.github.io/F1-standings/liveries/mclaren-profile-bg.webp",
+      "car": "https://mredman48.github.io/F1-standings/liveries/mclaren-car.webp",
+      "logo": "https://mredman48.github.io/F1-standings/liveries/mclaren-logo.webp",
+      "logoLight": "https://mredman48.github.io/F1-standings/liveries/mclaren-logo-light.webp",
+      "icon": "",
+      "drivers": {
+        "norris": {
+          "background": ""
+        },
+        "piastri": {
+          "background": ""
         }
       }
     }
