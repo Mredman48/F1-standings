@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T01:52:11.977Z",
+  "generatedAt": "2026-07-01T14:53:06.143Z",
   "liveries": {
     "audi": {
       "label": "Monaco Nuvolari 2026",
@@ -38,6 +38,26 @@
         },
         "piastri": {
           "background": "https://mredman48.github.io/F1-standings/liveries/piastri-silverstone-bg.webp"
+        }
+      }
+    },
+    "cadillac": {
+      "label": "Silverstone USA 250",
+      "validFrom": "2026-07-01T00:00:00Z",
+      "validUntil": "2026-07-06T00:00:00Z",
+      "color": "#B31942",
+      "background": "https://mredman48.github.io/F1-standings/liveries/cadillac-card-bg.webp",
+      "profileBackground": "https://mredman48.github.io/F1-standings/liveries/cadillac-profile-bg.webp",
+      "car": "https://mredman48.github.io/F1-standings/liveries/cadillac-car.webp",
+      "logo": "https://mredman48.github.io/F1-standings/liveries/cadillac-logo.webp",
+      "logoLight": "https://mredman48.github.io/F1-standings/liveries/cadillac-logo-light.webp",
+      "icon": "",
+      "drivers": {
+        "bottas": {
+          "background": "https://mredman48.github.io/F1-standings/liveries/bottas-cadillac-bg.webp"
+        },
+        "perez": {
+          "background": "https://mredman48.github.io/F1-standings/liveries/perez-cadillac-bg.webp"
         }
       }
     }
