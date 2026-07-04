@@ -1,6 +1,6 @@
 {
   "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-07-04T12:02:32.479Z",
+  "generatedAtUtc": "2026-07-04T12:12:12.539Z",
   "season": 2026,
   "source": {
     "primary": "f1_season_event_results.json",
@@ -10,18 +10,18 @@
   },
   "lastRace": {
     "season": "2026",
-    "round": "8",
-    "raceName": "Austrian Grand Prix",
-    "date": "2026-06-28",
+    "round": "9",
+    "raceName": "British Grand Prix Sprint",
+    "date": "2026-07-04",
     "circuit": {
-      "name": "Spielberg",
-      "locality": "Spielberg",
-      "country": "Austria"
+      "name": "Silverstone",
+      "locality": "Silverstone",
+      "country": "United Kingdom"
     },
     "winner": {
-      "firstName": "George",
-      "lastName": "RUSSELL",
-      "fullName": "George RUSSELL",
+      "firstName": "Kimi",
+      "lastName": "ANTONELLI",
+      "fullName": "Kimi ANTONELLI",
       "code": null,
       "team": "Mercedes"
     }
@@ -30,7 +30,7 @@
     {
       "position": "P1",
       "positionNumber": 1,
-      "points": 171,
+      "points": 179,
       "wins": 5,
       "driver": {
         "code": "ANT",
@@ -51,7 +51,7 @@
     {
       "position": "P2",
       "positionNumber": 2,
-      "points": 131,
+      "points": 136,
       "wins": 2,
       "driver": {
         "code": "RUS",
@@ -72,7 +72,7 @@
     {
       "position": "P3",
       "positionNumber": 3,
-      "points": 125,
+      "points": 132,
       "wins": 1,
       "driver": {
         "code": "HAM",
@@ -93,28 +93,7 @@
     {
       "position": "P4",
       "positionNumber": 4,
-      "points": 80,
-      "wins": 0,
-      "driver": {
-        "code": "PIA",
-        "firstName": "Oscar",
-        "lastName": "PIASTRI",
-        "fullName": "Oscar PIASTRI",
-        "nationality": "AUS",
-        "driverNumber": 81,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/oscar-piastri.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "McLaren",
-        "fullName": "McLaren",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P5",
-      "positionNumber": 5,
-      "points": 79,
+      "points": 85,
       "wins": 0,
       "driver": {
         "code": "NOR",
@@ -133,9 +112,9 @@
       }
     },
     {
-      "position": "P6",
-      "positionNumber": 6,
-      "points": 79,
+      "position": "P5",
+      "positionNumber": 5,
+      "points": 83,
       "wins": 0,
       "driver": {
         "code": "LEC",
@@ -154,9 +133,30 @@
       }
     },
     {
+      "position": "P6",
+      "positionNumber": 6,
+      "points": 82,
+      "wins": 0,
+      "driver": {
+        "code": "PIA",
+        "firstName": "Oscar",
+        "lastName": "PIASTRI",
+        "fullName": "Oscar PIASTRI",
+        "nationality": "AUS",
+        "driverNumber": 81,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/oscar-piastri.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "McLaren",
+        "fullName": "McLaren",
+        "nationality": null
+      }
+    },
+    {
       "position": "P7",
       "positionNumber": 7,
-      "points": 73,
+      "points": 76,
       "wins": 0,
       "driver": {
         "code": "VER",
@@ -219,7 +219,7 @@
     {
       "position": "P10",
       "positionNumber": 10,
-      "points": 30,
+      "points": 31,
       "wins": 0,
       "driver": {
         "code": "LAW",

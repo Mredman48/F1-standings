@@ -1,21 +1,21 @@
 {
   "header": "Mercedes standings",
-  "generatedAtUtc": "2026-07-04T12:02:33.670Z",
+  "generatedAtUtc": "2026-07-04T12:12:13.824Z",
   "mercedes": {
     "team": "Mercedes",
     "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_mercedes_color_v2.png",
     "teamStanding": {
       "team": "Mercedes",
       "position": "P1",
-      "points": 302,
+      "points": 315,
       "wins": 7
     }
   },
   "lastRace": {
-    "raceName": "Austrian Grand Prix",
-    "round": "8",
-    "date": "2026-06-28",
-    "circuit": "Spielberg",
+    "raceName": "British Grand Prix Sprint",
+    "round": "9",
+    "date": "2026-07-04",
+    "circuit": "Silverstone",
     "location": {
       "locality": "-",
       "country": "-"
@@ -35,23 +35,23 @@
       "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-12-2.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/kimi-antonelli.png",
       "position": "P1",
-      "points": 171,
+      "points": 179,
       "wins": 5,
       "raceWins": 5,
       "racePodiums": 7,
-      "sprintWins": 0,
-      "sprintPodiums": 1,
+      "sprintWins": 1,
+      "sprintPodiums": 2,
       "team": "Mercedes",
       "bestResult": {
         "position": "P1",
-        "eventType": "race",
-        "raceName": "Monaco Grand Prix",
-        "round": "6",
-        "date": "2026-06-07",
-        "circuit": "Monte Carlo",
+        "eventType": "sprint",
+        "raceName": "British Grand Prix Sprint",
+        "round": "9",
+        "date": "2026-07-04",
+        "circuit": "Silverstone",
         "location": {
-          "locality": "Monte Carlo",
-          "country": "Monaco"
+          "locality": "Silverstone",
+          "country": "United Kingdom"
         }
       }
     },
@@ -68,7 +68,7 @@
       "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-63-2.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/george-russell.png",
       "position": "P2",
-      "points": 131,
+      "points": 136,
       "wins": 2,
       "raceWins": 2,
       "racePodiums": 4,

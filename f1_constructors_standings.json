@@ -1,6 +1,6 @@
 {
   "header": "Constructors standings",
-  "generatedAtUtc": "2026-07-04T12:02:32.829Z",
+  "generatedAtUtc": "2026-07-04T12:12:12.915Z",
   "meta": {
     "seasonUsed": "2026",
     "source": "f1_driver_standings.json",
@@ -9,18 +9,18 @@
   },
   "lastRace": {
     "season": "2026",
-    "round": "8",
-    "raceName": "Austrian Grand Prix",
-    "date": "2026-06-28",
+    "round": "9",
+    "raceName": "British Grand Prix Sprint",
+    "date": "2026-07-04",
     "circuit": {
-      "name": "Spielberg",
-      "locality": "Spielberg",
-      "country": "Austria"
+      "name": "Silverstone",
+      "locality": "Silverstone",
+      "country": "United Kingdom"
     },
     "winner": {
-      "firstName": "George",
-      "lastName": "RUSSELL",
-      "fullName": "George RUSSELL",
+      "firstName": "Kimi",
+      "lastName": "ANTONELLI",
+      "fullName": "Kimi ANTONELLI",
       "code": null,
       "team": "Mercedes"
     }
@@ -29,7 +29,7 @@
     {
       "team": "Mercedes",
       "position": "P1",
-      "points": 302,
+      "points": 315,
       "wins": 7,
       "driverCount": 2,
       "placeholder": false
@@ -37,7 +37,7 @@
     {
       "team": "Ferrari",
       "position": "P2",
-      "points": 204,
+      "points": 215,
       "wins": 1,
       "driverCount": 2,
       "placeholder": false
@@ -45,7 +45,7 @@
     {
       "team": "McLaren",
       "position": "P3",
-      "points": 159,
+      "points": 167,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
@@ -53,7 +53,7 @@
     {
       "team": "Red Bull",
       "position": "P4",
-      "points": 115,
+      "points": 118,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
@@ -69,7 +69,7 @@
     {
       "team": "VCARB",
       "position": "P6",
-      "points": 44,
+      "points": 45,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
