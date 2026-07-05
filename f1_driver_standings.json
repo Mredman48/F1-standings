@@ -1,6 +1,6 @@
 {
   "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-07-05T16:12:17.125Z",
+  "generatedAtUtc": "2026-07-05T16:22:24.571Z",
   "season": 2026,
   "source": {
     "primary": "f1_season_event_results.json",
@@ -11,19 +11,19 @@
   "lastRace": {
     "season": "2026",
     "round": "9",
-    "raceName": "British Grand Prix Sprint",
-    "date": "2026-07-04",
+    "raceName": "British Grand Prix",
+    "date": "2026-07-05",
     "circuit": {
       "name": "Silverstone",
       "locality": "Silverstone",
       "country": "United Kingdom"
     },
     "winner": {
-      "firstName": "Kimi",
-      "lastName": "ANTONELLI",
-      "fullName": "Kimi ANTONELLI",
+      "firstName": "Charles",
+      "lastName": "LECLERC",
+      "fullName": "Charles LECLERC",
       "code": null,
-      "team": "Mercedes"
+      "team": "Ferrari"
     }
   },
   "drivers": [
@@ -51,7 +51,7 @@
     {
       "position": "P2",
       "positionNumber": 2,
-      "points": 136,
+      "points": 154,
       "wins": 2,
       "driver": {
         "code": "RUS",
@@ -72,7 +72,7 @@
     {
       "position": "P3",
       "positionNumber": 3,
-      "points": 132,
+      "points": 147,
       "wins": 1,
       "driver": {
         "code": "HAM",
@@ -93,7 +93,28 @@
     {
       "position": "P4",
       "positionNumber": 4,
-      "points": 85,
+      "points": 108,
+      "wins": 1,
+      "driver": {
+        "code": "LEC",
+        "firstName": "Charles",
+        "lastName": "LECLERC",
+        "fullName": "Charles LECLERC",
+        "nationality": "MON",
+        "driverNumber": 16,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/charles-leclerc.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Ferrari",
+        "fullName": "Ferrari",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P5",
+      "positionNumber": 5,
+      "points": 97,
       "wins": 0,
       "driver": {
         "code": "NOR",
@@ -108,27 +129,6 @@
       "constructor": {
         "name": "McLaren",
         "fullName": "McLaren",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P5",
-      "positionNumber": 5,
-      "points": 83,
-      "wins": 0,
-      "driver": {
-        "code": "LEC",
-        "firstName": "Charles",
-        "lastName": "LECLERC",
-        "fullName": "Charles LECLERC",
-        "nationality": "MON",
-        "driverNumber": 16,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/charles-leclerc.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Ferrari",
-        "fullName": "Ferrari",
         "nationality": null
       }
     },
@@ -177,7 +177,7 @@
     {
       "position": "P8",
       "positionNumber": 8,
-      "points": 42,
+      "points": 52,
       "wins": 0,
       "driver": {
         "code": "HAD",
@@ -198,7 +198,7 @@
     {
       "position": "P9",
       "positionNumber": 9,
-      "points": 41,
+      "points": 42,
       "wins": 0,
       "driver": {
         "code": "GAS",
@@ -219,7 +219,7 @@
     {
       "position": "P10",
       "positionNumber": 10,
-      "points": 31,
+      "points": 39,
       "wins": 0,
       "driver": {
         "code": "LAW",
@@ -240,6 +240,27 @@
     {
       "position": "P11",
       "positionNumber": 11,
+      "points": 20,
+      "wins": 0,
+      "driver": {
+        "code": "LIN",
+        "firstName": "Arvid",
+        "lastName": "LINDBLAD",
+        "fullName": "Arvid LINDBLAD",
+        "nationality": "GBR",
+        "driverNumber": 41,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/arvid-lindblad.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "VCARB",
+        "fullName": "VCARB",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P12",
+      "positionNumber": 12,
       "points": 18,
       "wins": 0,
       "driver": {
@@ -259,9 +280,9 @@
       }
     },
     {
-      "position": "P12",
-      "positionNumber": 12,
-      "points": 16,
+      "position": "P13",
+      "positionNumber": 13,
+      "points": 18,
       "wins": 0,
       "driver": {
         "code": "COL",
@@ -280,29 +301,29 @@
       }
     },
     {
-      "position": "P13",
-      "positionNumber": 13,
-      "points": 14,
+      "position": "P14",
+      "positionNumber": 14,
+      "points": 6,
       "wins": 0,
       "driver": {
-        "code": "LIN",
-        "firstName": "Arvid",
-        "lastName": "LINDBLAD",
-        "fullName": "Arvid LINDBLAD",
-        "nationality": "GBR",
-        "driverNumber": 41,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/arvid-lindblad.png",
+        "code": "BOR",
+        "firstName": "Gabriel",
+        "lastName": "BORTOLETO",
+        "fullName": "Gabriel BORTOLETO",
+        "nationality": "BRA",
+        "driverNumber": 5,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/gabriel-bortoleto.png",
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "VCARB",
-        "fullName": "VCARB",
+        "name": "Audi",
+        "fullName": "Audi",
         "nationality": null
       }
     },
     {
-      "position": "P14",
-      "positionNumber": 14,
+      "position": "P15",
+      "positionNumber": 15,
       "points": 6,
       "wins": 0,
       "driver": {
@@ -322,8 +343,8 @@
       }
     },
     {
-      "position": "P15",
-      "positionNumber": 15,
+      "position": "P16",
+      "positionNumber": 16,
       "points": 5,
       "wins": 0,
       "driver": {
@@ -343,8 +364,8 @@
       }
     },
     {
-      "position": "P16",
-      "positionNumber": 16,
+      "position": "P17",
+      "positionNumber": 17,
       "points": 3,
       "wins": 0,
       "driver": {
@@ -360,27 +381,6 @@
       "constructor": {
         "name": "Haas",
         "fullName": "Haas",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P17",
-      "positionNumber": 17,
-      "points": 2,
-      "wins": 0,
-      "driver": {
-        "code": "BOR",
-        "firstName": "Gabriel",
-        "lastName": "BORTOLETO",
-        "fullName": "Gabriel BORTOLETO",
-        "nationality": "BRA",
-        "driverNumber": 5,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/gabriel-bortoleto.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Audi",
-        "fullName": "Audi",
         "nationality": null
       }
     },

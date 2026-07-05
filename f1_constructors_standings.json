@@ -1,6 +1,6 @@
 {
   "header": "Constructors standings",
-  "generatedAtUtc": "2026-07-05T16:12:17.412Z",
+  "generatedAtUtc": "2026-07-05T16:22:25.111Z",
   "meta": {
     "seasonUsed": "2026",
     "source": "f1_driver_standings.json",
@@ -10,26 +10,26 @@
   "lastRace": {
     "season": "2026",
     "round": "9",
-    "raceName": "British Grand Prix Sprint",
-    "date": "2026-07-04",
+    "raceName": "British Grand Prix",
+    "date": "2026-07-05",
     "circuit": {
       "name": "Silverstone",
       "locality": "Silverstone",
       "country": "United Kingdom"
     },
     "winner": {
-      "firstName": "Kimi",
-      "lastName": "ANTONELLI",
-      "fullName": "Kimi ANTONELLI",
+      "firstName": "Charles",
+      "lastName": "LECLERC",
+      "fullName": "Charles LECLERC",
       "code": null,
-      "team": "Mercedes"
+      "team": "Ferrari"
     }
   },
   "constructors": [
     {
       "team": "Mercedes",
       "position": "P1",
-      "points": 315,
+      "points": 333,
       "wins": 7,
       "driverCount": 2,
       "placeholder": false
@@ -37,15 +37,15 @@
     {
       "team": "Ferrari",
       "position": "P2",
-      "points": 215,
-      "wins": 1,
+      "points": 255,
+      "wins": 2,
       "driverCount": 2,
       "placeholder": false
     },
     {
       "team": "McLaren",
       "position": "P3",
-      "points": 167,
+      "points": 179,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
@@ -53,7 +53,7 @@
     {
       "team": "Red Bull",
       "position": "P4",
-      "points": 118,
+      "points": 128,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
@@ -61,7 +61,7 @@
     {
       "team": "Alpine",
       "position": "P5",
-      "points": 57,
+      "points": 60,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
@@ -69,7 +69,7 @@
     {
       "team": "VCARB",
       "position": "P6",
-      "points": 45,
+      "points": 59,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
@@ -93,7 +93,7 @@
     {
       "team": "Audi",
       "position": "P9",
-      "points": 2,
+      "points": 6,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false

@@ -2,7 +2,7 @@
   "header": "F1 championship outlook",
   "season": 2026,
   "previousSeason": 2025,
-  "lastUpdated": "2026-07-05T16:12:18.749Z",
+  "lastUpdated": "2026-07-05T16:22:26.488Z",
   "mode": "race-weekend",
   "sources": {
     "driverStandings": "public-repo/f1_driver_standings.json",
@@ -11,30 +11,48 @@
     "previousYearWinners": "https://api.jolpi.ca/ergast/f1/2025/results/1.json"
   },
   "latest": {
-    "id": "round-8-austriangrandprix-2026-06-28",
+    "id": "round-9-britishgrandprix-2026-07-03",
     "sourceRace": {
-      "raceName": "Austrian Grand Prix",
-      "meetingName": "Austrian Grand Prix",
-      "round": 8,
-      "date": "2026-06-28",
-      "dateStartUtc": "2026-06-28T13:00:00+00:00",
-      "meetingKey": 1288,
+      "raceName": "British Grand Prix",
+      "meetingName": "British Grand Prix",
+      "round": 9,
+      "date": "2026-07-03",
+      "dateStartUtc": "2026-07-03T15:30:00+00:00",
+      "meetingKey": 1289,
       "previousYearWinner": {
         "season": 2025,
-        "round": 11,
-        "raceName": "Austrian Grand Prix",
-        "date": "2025-06-29",
+        "round": 12,
+        "raceName": "British Grand Prix",
+        "date": "2025-07-06",
         "winner": "Lando Norris",
         "constructor": "McLaren",
         "source": "jolpica"
       },
       "sessionsIncluded": [
         {
+          "eventType": "sprint_shootout",
+          "sessionName": "Sprint Qualifying",
+          "sessionKey": 11317,
+          "date": "2026-07-03",
+          "dateStartUtc": "2026-07-03T15:30:00+00:00",
+          "isRace": false,
+          "isSprint": true
+        },
+        {
+          "eventType": "sprint",
+          "sessionName": "Sprint",
+          "sessionKey": 11321,
+          "date": "2026-07-04",
+          "dateStartUtc": "2026-07-04T11:00:00+00:00",
+          "isRace": false,
+          "isSprint": true
+        },
+        {
           "eventType": "race",
           "sessionName": "Race",
-          "sessionKey": 11315,
-          "date": "2026-06-28",
-          "dateStartUtc": "2026-06-28T13:00:00+00:00",
+          "sessionKey": 11326,
+          "date": "2026-07-05",
+          "dateStartUtc": "2026-07-05T14:00:00+00:00",
           "isRace": true,
           "isSprint": false
         }
@@ -42,59 +60,56 @@
     },
     "previousYearWinner": {
       "season": 2025,
-      "round": 11,
-      "raceName": "Austrian Grand Prix",
-      "date": "2025-06-29",
+      "round": 12,
+      "raceName": "British Grand Prix",
+      "date": "2025-07-06",
       "winner": "Lando Norris",
       "constructor": "McLaren",
       "source": "jolpica"
     },
     "preWeekendNotes": {
       "winStreak": null,
-      "podiumStreak": {
-        "driverName": "HAMILTON",
-        "count": 3
-      },
+      "podiumStreak": null,
       "leaderRecentForm": {
         "driverName": "ANTONELLI",
         "positions": [
           1,
-          1,
-          16
+          16,
+          3
         ],
-        "label": "P1 P1 P16 in last 3 races"
+        "label": "P1 P16 P3 in last 3 races"
       },
       "defenderNote": "Lando Norris won here in 2025 (McLaren)"
     },
     "drivers": {
       "leader": "ANTONELLI",
       "second": "RUSSELL",
-      "gap": 43,
-      "standingsText": "ANTONELLI leads by 43 pts over RUSSELL",
-      "raceImpact": "RUSSELL cut ANTONELLI's lead by 10 pts",
-      "scenarioText": "RUSSELL cut ANTONELLI's lead by 10 pts",
+      "gap": 25,
+      "standingsText": "ANTONELLI leads by 25 pts over RUSSELL",
+      "raceImpact": "RUSSELL cut ANTONELLI's lead by 12 pts",
+      "scenarioText": "RUSSELL cut ANTONELLI's lead by 12 pts",
       "p1Changed": false,
       "leaderWeekendPoints": 15,
-      "secondWeekendPoints": 25,
-      "weekendDelta": -10,
+      "secondWeekendPoints": 27,
+      "weekendDelta": -12,
       "leaderRacePoints": 15,
-      "secondRacePoints": 25,
-      "raceDelta": -10
+      "secondRacePoints": 27,
+      "raceDelta": -12
     },
     "constructors": {
       "leader": "Mercedes",
       "second": "Ferrari",
-      "gap": 100,
-      "standingsText": "Mercedes leads by 100 pts over Ferrari",
-      "raceImpact": "Mercedes extended its constructors' lead by 26 pts over Ferrari",
-      "scenarioText": "Mercedes extended its constructors' lead by 26 pts over Ferrari",
+      "gap": 78,
+      "standingsText": "Mercedes leads by 78 pts over Ferrari",
+      "raceImpact": "Ferrari cut Mercedes's constructors' lead by 22 pts",
+      "scenarioText": "Ferrari cut Mercedes's constructors' lead by 22 pts",
       "p1Changed": false,
-      "leaderWeekendPoints": 40,
-      "secondWeekendPoints": 14,
-      "weekendDelta": 26,
-      "leaderRacePoints": 40,
-      "secondRacePoints": 14,
-      "raceDelta": 26
+      "leaderWeekendPoints": 42,
+      "secondWeekendPoints": 64,
+      "weekendDelta": -22,
+      "leaderRacePoints": 42,
+      "secondRacePoints": 64,
+      "raceDelta": -22
     }
   },
   "races": [
@@ -329,8 +344,8 @@
       "drivers": {
         "leader": "ANTONELLI",
         "second": "RUSSELL",
-        "gap": 9,
-        "standingsText": "ANTONELLI leads by 9 pts over RUSSELL",
+        "gap": 3,
+        "standingsText": "ANTONELLI leads by 3 pts over RUSSELL",
         "raceImpact": "ANTONELLI moved ahead of RUSSELL to lead the championship",
         "scenarioText": "ANTONELLI moved ahead of RUSSELL to lead the championship",
         "p1Changed": true,
@@ -437,8 +452,8 @@
       "drivers": {
         "leader": "ANTONELLI",
         "second": "RUSSELL",
-        "gap": 24,
-        "standingsText": "ANTONELLI leads by 24 pts over RUSSELL",
+        "gap": 18,
+        "standingsText": "ANTONELLI leads by 18 pts over RUSSELL",
         "raceImpact": "ANTONELLI extended lead by 15 pts over RUSSELL",
         "scenarioText": "ANTONELLI extended lead by 15 pts over RUSSELL",
         "p1Changed": false,
@@ -545,8 +560,8 @@
       "drivers": {
         "leader": "ANTONELLI",
         "second": "RUSSELL",
-        "gap": 46,
-        "standingsText": "ANTONELLI leads by 46 pts over RUSSELL",
+        "gap": 40,
+        "standingsText": "ANTONELLI leads by 40 pts over RUSSELL",
         "raceImpact": "ANTONELLI extended lead by 22 pts over RUSSELL",
         "scenarioText": "ANTONELLI extended lead by 22 pts over RUSSELL",
         "p1Changed": false,
@@ -634,18 +649,18 @@
       },
       "drivers": {
         "leader": "ANTONELLI",
-        "second": "HAMILTON",
-        "gap": 67,
-        "standingsText": "ANTONELLI leads by 67 pts over HAMILTON",
-        "raceImpact": "ANTONELLI extended lead by 7 pts over HAMILTON",
-        "scenarioText": "ANTONELLI extended lead by 7 pts over HAMILTON",
+        "second": "RUSSELL",
+        "gap": 65,
+        "standingsText": "ANTONELLI leads by 65 pts over RUSSELL",
+        "raceImpact": "ANTONELLI extended lead by 25 pts over RUSSELL",
+        "scenarioText": "ANTONELLI extended lead by 25 pts over RUSSELL",
         "p1Changed": false,
         "leaderWeekendPoints": 25,
-        "secondWeekendPoints": 18,
-        "weekendDelta": 7,
+        "secondWeekendPoints": 0,
+        "weekendDelta": 25,
         "leaderRacePoints": 25,
-        "secondRacePoints": 18,
-        "raceDelta": 7
+        "secondRacePoints": 0,
+        "raceDelta": 25
       },
       "constructors": {
         "leader": "Mercedes",
@@ -796,8 +811,8 @@
       "drivers": {
         "leader": "ANTONELLI",
         "second": "RUSSELL",
-        "gap": 43,
-        "standingsText": "ANTONELLI leads by 43 pts over RUSSELL",
+        "gap": 37,
+        "standingsText": "ANTONELLI leads by 37 pts over RUSSELL",
         "raceImpact": "RUSSELL cut ANTONELLI's lead by 10 pts",
         "scenarioText": "RUSSELL cut ANTONELLI's lead by 10 pts",
         "p1Changed": false,
@@ -822,6 +837,108 @@
         "leaderRacePoints": 40,
         "secondRacePoints": 14,
         "raceDelta": 26
+      }
+    },
+    {
+      "id": "round-9-britishgrandprix-2026-07-03",
+      "sourceRace": {
+        "raceName": "British Grand Prix",
+        "meetingName": "British Grand Prix",
+        "round": 9,
+        "date": "2026-07-03",
+        "dateStartUtc": "2026-07-03T15:30:00+00:00",
+        "meetingKey": 1289,
+        "previousYearWinner": {
+          "season": 2025,
+          "round": 12,
+          "raceName": "British Grand Prix",
+          "date": "2025-07-06",
+          "winner": "Lando Norris",
+          "constructor": "McLaren",
+          "source": "jolpica"
+        },
+        "sessionsIncluded": [
+          {
+            "eventType": "sprint_shootout",
+            "sessionName": "Sprint Qualifying",
+            "sessionKey": 11317,
+            "date": "2026-07-03",
+            "dateStartUtc": "2026-07-03T15:30:00+00:00",
+            "isRace": false,
+            "isSprint": true
+          },
+          {
+            "eventType": "sprint",
+            "sessionName": "Sprint",
+            "sessionKey": 11321,
+            "date": "2026-07-04",
+            "dateStartUtc": "2026-07-04T11:00:00+00:00",
+            "isRace": false,
+            "isSprint": true
+          },
+          {
+            "eventType": "race",
+            "sessionName": "Race",
+            "sessionKey": 11326,
+            "date": "2026-07-05",
+            "dateStartUtc": "2026-07-05T14:00:00+00:00",
+            "isRace": true,
+            "isSprint": false
+          }
+        ]
+      },
+      "previousYearWinner": {
+        "season": 2025,
+        "round": 12,
+        "raceName": "British Grand Prix",
+        "date": "2025-07-06",
+        "winner": "Lando Norris",
+        "constructor": "McLaren",
+        "source": "jolpica"
+      },
+      "preWeekendNotes": {
+        "winStreak": null,
+        "podiumStreak": null,
+        "leaderRecentForm": {
+          "driverName": "ANTONELLI",
+          "positions": [
+            1,
+            16,
+            3
+          ],
+          "label": "P1 P16 P3 in last 3 races"
+        },
+        "defenderNote": "Lando Norris won here in 2025 (McLaren)"
+      },
+      "drivers": {
+        "leader": "ANTONELLI",
+        "second": "RUSSELL",
+        "gap": 25,
+        "standingsText": "ANTONELLI leads by 25 pts over RUSSELL",
+        "raceImpact": "RUSSELL cut ANTONELLI's lead by 12 pts",
+        "scenarioText": "RUSSELL cut ANTONELLI's lead by 12 pts",
+        "p1Changed": false,
+        "leaderWeekendPoints": 15,
+        "secondWeekendPoints": 27,
+        "weekendDelta": -12,
+        "leaderRacePoints": 15,
+        "secondRacePoints": 27,
+        "raceDelta": -12
+      },
+      "constructors": {
+        "leader": "Mercedes",
+        "second": "Ferrari",
+        "gap": 78,
+        "standingsText": "Mercedes leads by 78 pts over Ferrari",
+        "raceImpact": "Ferrari cut Mercedes's constructors' lead by 22 pts",
+        "scenarioText": "Ferrari cut Mercedes's constructors' lead by 22 pts",
+        "p1Changed": false,
+        "leaderWeekendPoints": 42,
+        "secondWeekendPoints": 64,
+        "weekendDelta": -22,
+        "leaderRacePoints": 42,
+        "secondRacePoints": 64,
+        "raceDelta": -22
       }
     }
   ]
