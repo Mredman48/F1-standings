@@ -1,6 +1,6 @@
 {
   "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-07-19T14:51:43.032Z",
+  "generatedAtUtc": "2026-07-19T15:01:51.208Z",
   "season": 2026,
   "source": {
     "primary": "f1_season_event_results.json",
@@ -10,28 +10,28 @@
   },
   "lastRace": {
     "season": "2026",
-    "round": "9",
-    "raceName": "British Grand Prix",
-    "date": "2026-07-05",
+    "round": "10",
+    "raceName": "Belgian Grand Prix",
+    "date": "2026-07-19",
     "circuit": {
-      "name": "Silverstone",
-      "locality": "Silverstone",
-      "country": "United Kingdom"
+      "name": "Spa-Francorchamps",
+      "locality": "Spa-Francorchamps",
+      "country": "Belgium"
     },
     "winner": {
-      "firstName": "Charles",
-      "lastName": "LECLERC",
-      "fullName": "Charles LECLERC",
+      "firstName": "Kimi",
+      "lastName": "ANTONELLI",
+      "fullName": "Kimi ANTONELLI",
       "code": null,
-      "team": "Ferrari"
+      "team": "Mercedes"
     }
   },
   "drivers": [
     {
       "position": "P1",
       "positionNumber": 1,
-      "points": 179,
-      "wins": 5,
+      "points": 204,
+      "wins": 6,
       "driver": {
         "code": "ANT",
         "firstName": "Kimi",
@@ -51,6 +51,27 @@
     {
       "position": "P2",
       "positionNumber": 2,
+      "points": 159,
+      "wins": 1,
+      "driver": {
+        "code": "HAM",
+        "firstName": "Lewis",
+        "lastName": "HAMILTON",
+        "fullName": "Lewis HAMILTON",
+        "nationality": "GBR",
+        "driverNumber": 44,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lewis-hamilton.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Ferrari",
+        "fullName": "Ferrari",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P3",
+      "positionNumber": 3,
       "points": 154,
       "wins": 2,
       "driver": {
@@ -70,30 +91,9 @@
       }
     },
     {
-      "position": "P3",
-      "positionNumber": 3,
-      "points": 147,
-      "wins": 1,
-      "driver": {
-        "code": "HAM",
-        "firstName": "Lewis",
-        "lastName": "HAMILTON",
-        "fullName": "Lewis HAMILTON",
-        "nationality": "GBR",
-        "driverNumber": 44,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lewis-hamilton.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Ferrari",
-        "fullName": "Ferrari",
-        "nationality": null
-      }
-    },
-    {
       "position": "P4",
       "positionNumber": 4,
-      "points": 108,
+      "points": 126,
       "wins": 1,
       "driver": {
         "code": "LEC",
@@ -114,7 +114,7 @@
     {
       "position": "P5",
       "positionNumber": 5,
-      "points": 97,
+      "points": 103,
       "wins": 0,
       "driver": {
         "code": "NOR",
@@ -135,7 +135,7 @@
     {
       "position": "P6",
       "positionNumber": 6,
-      "points": 82,
+      "points": 92,
       "wins": 0,
       "driver": {
         "code": "PIA",
@@ -156,7 +156,7 @@
     {
       "position": "P7",
       "positionNumber": 7,
-      "points": 76,
+      "points": 91,
       "wins": 0,
       "driver": {
         "code": "VER",
@@ -177,7 +177,7 @@
     {
       "position": "P8",
       "positionNumber": 8,
-      "points": 52,
+      "points": 60,
       "wins": 0,
       "driver": {
         "code": "HAD",
@@ -240,7 +240,7 @@
     {
       "position": "P11",
       "positionNumber": 11,
-      "points": 20,
+      "points": 22,
       "wins": 0,
       "driver": {
         "code": "LIN",
@@ -261,7 +261,7 @@
     {
       "position": "P12",
       "positionNumber": 12,
-      "points": 18,
+      "points": 19,
       "wins": 0,
       "driver": {
         "code": "COL",
@@ -303,7 +303,7 @@
     {
       "position": "P14",
       "positionNumber": 14,
-      "points": 6,
+      "points": 10,
       "wins": 0,
       "driver": {
         "code": "BOR",

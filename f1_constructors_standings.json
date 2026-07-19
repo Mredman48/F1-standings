@@ -1,6 +1,6 @@
 {
   "header": "Constructors standings",
-  "generatedAtUtc": "2026-07-19T14:51:43.423Z",
+  "generatedAtUtc": "2026-07-19T15:01:51.772Z",
   "meta": {
     "seasonUsed": "2026",
     "source": "f1_driver_standings.json",
@@ -9,35 +9,35 @@
   },
   "lastRace": {
     "season": "2026",
-    "round": "9",
-    "raceName": "British Grand Prix",
-    "date": "2026-07-05",
+    "round": "10",
+    "raceName": "Belgian Grand Prix",
+    "date": "2026-07-19",
     "circuit": {
-      "name": "Silverstone",
-      "locality": "Silverstone",
-      "country": "United Kingdom"
+      "name": "Spa-Francorchamps",
+      "locality": "Spa-Francorchamps",
+      "country": "Belgium"
     },
     "winner": {
-      "firstName": "Charles",
-      "lastName": "LECLERC",
-      "fullName": "Charles LECLERC",
+      "firstName": "Kimi",
+      "lastName": "ANTONELLI",
+      "fullName": "Kimi ANTONELLI",
       "code": null,
-      "team": "Ferrari"
+      "team": "Mercedes"
     }
   },
   "constructors": [
     {
       "team": "Mercedes",
       "position": "P1",
-      "points": 333,
-      "wins": 7,
+      "points": 358,
+      "wins": 8,
       "driverCount": 2,
       "placeholder": false
     },
     {
       "team": "Ferrari",
       "position": "P2",
-      "points": 255,
+      "points": 285,
       "wins": 2,
       "driverCount": 2,
       "placeholder": false
@@ -45,7 +45,7 @@
     {
       "team": "McLaren",
       "position": "P3",
-      "points": 179,
+      "points": 195,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
@@ -53,7 +53,7 @@
     {
       "team": "Red Bull",
       "position": "P4",
-      "points": 128,
+      "points": 151,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
@@ -61,7 +61,7 @@
     {
       "team": "Alpine",
       "position": "P5",
-      "points": 60,
+      "points": 61,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
@@ -69,7 +69,7 @@
     {
       "team": "VCARB",
       "position": "P6",
-      "points": 59,
+      "points": 61,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
@@ -93,7 +93,7 @@
     {
       "team": "Audi",
       "position": "P9",
-      "points": 6,
+      "points": 10,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false

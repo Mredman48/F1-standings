@@ -2,7 +2,7 @@
   "header": "F1 championship outlook",
   "season": 2026,
   "previousSeason": 2025,
-  "lastUpdated": "2026-07-19T14:51:44.751Z",
+  "lastUpdated": "2026-07-19T15:01:53.373Z",
   "mode": "race-weekend",
   "sources": {
     "driverStandings": "public-repo/f1_driver_standings.json",
@@ -11,48 +11,30 @@
     "previousYearWinners": "https://api.jolpi.ca/ergast/f1/2025/results/1.json"
   },
   "latest": {
-    "id": "round-9-britishgrandprix-2026-07-03",
+    "id": "round-10-belgiangrandprix-2026-07-19",
     "sourceRace": {
-      "raceName": "British Grand Prix",
-      "meetingName": "British Grand Prix",
-      "round": 9,
-      "date": "2026-07-03",
-      "dateStartUtc": "2026-07-03T15:30:00+00:00",
-      "meetingKey": 1289,
+      "raceName": "Belgian Grand Prix",
+      "meetingName": "Belgian Grand Prix",
+      "round": 10,
+      "date": "2026-07-19",
+      "dateStartUtc": "2026-07-19T13:00:00+00:00",
+      "meetingKey": 1290,
       "previousYearWinner": {
         "season": 2025,
-        "round": 12,
-        "raceName": "British Grand Prix",
-        "date": "2025-07-06",
-        "winner": "Lando Norris",
+        "round": 13,
+        "raceName": "Belgian Grand Prix",
+        "date": "2025-07-27",
+        "winner": "Oscar Piastri",
         "constructor": "McLaren",
         "source": "jolpica"
       },
       "sessionsIncluded": [
         {
-          "eventType": "sprint_shootout",
-          "sessionName": "Sprint Qualifying",
-          "sessionKey": 11317,
-          "date": "2026-07-03",
-          "dateStartUtc": "2026-07-03T15:30:00+00:00",
-          "isRace": false,
-          "isSprint": true
-        },
-        {
-          "eventType": "sprint",
-          "sessionName": "Sprint",
-          "sessionKey": 11321,
-          "date": "2026-07-04",
-          "dateStartUtc": "2026-07-04T11:00:00+00:00",
-          "isRace": false,
-          "isSprint": true
-        },
-        {
           "eventType": "race",
           "sessionName": "Race",
-          "sessionKey": 11326,
-          "date": "2026-07-05",
-          "dateStartUtc": "2026-07-05T14:00:00+00:00",
+          "sessionKey": 11334,
+          "date": "2026-07-19",
+          "dateStartUtc": "2026-07-19T13:00:00+00:00",
           "isRace": true,
           "isSprint": false
         }
@@ -60,56 +42,59 @@
     },
     "previousYearWinner": {
       "season": 2025,
-      "round": 12,
-      "raceName": "British Grand Prix",
-      "date": "2025-07-06",
-      "winner": "Lando Norris",
+      "round": 13,
+      "raceName": "Belgian Grand Prix",
+      "date": "2025-07-27",
+      "winner": "Oscar Piastri",
       "constructor": "McLaren",
       "source": "jolpica"
     },
     "preWeekendNotes": {
       "winStreak": null,
-      "podiumStreak": null,
+      "podiumStreak": {
+        "driverName": "RUSSELL",
+        "count": 3
+      },
       "leaderRecentForm": {
         "driverName": "ANTONELLI",
         "positions": [
-          1,
           16,
-          3
+          3,
+          15
         ],
-        "label": "P1 P16 P3 in last 3 races"
+        "label": "P16 P3 P15 in last 3 races"
       },
-      "defenderNote": "Lando Norris won here in 2025 (McLaren)"
+      "defenderNote": "Oscar Piastri won here in 2025 (McLaren)"
     },
     "drivers": {
       "leader": "ANTONELLI",
-      "second": "RUSSELL",
-      "gap": 25,
-      "standingsText": "ANTONELLI leads by 25 pts over RUSSELL",
-      "raceImpact": "RUSSELL cut ANTONELLI's lead by 12 pts",
-      "scenarioText": "RUSSELL cut ANTONELLI's lead by 12 pts",
+      "second": "HAMILTON",
+      "gap": 45,
+      "standingsText": "ANTONELLI leads by 45 pts over HAMILTON",
+      "raceImpact": "ANTONELLI extended lead by 13 pts over HAMILTON",
+      "scenarioText": "ANTONELLI extended lead by 13 pts over HAMILTON",
       "p1Changed": false,
-      "leaderWeekendPoints": 15,
-      "secondWeekendPoints": 27,
-      "weekendDelta": -12,
-      "leaderRacePoints": 15,
-      "secondRacePoints": 27,
-      "raceDelta": -12
+      "leaderWeekendPoints": 25,
+      "secondWeekendPoints": 12,
+      "weekendDelta": 13,
+      "leaderRacePoints": 25,
+      "secondRacePoints": 12,
+      "raceDelta": 13
     },
     "constructors": {
       "leader": "Mercedes",
       "second": "Ferrari",
-      "gap": 78,
-      "standingsText": "Mercedes leads by 78 pts over Ferrari",
-      "raceImpact": "Ferrari cut Mercedes's constructors' lead by 22 pts",
-      "scenarioText": "Ferrari cut Mercedes's constructors' lead by 22 pts",
+      "gap": 73,
+      "standingsText": "Mercedes leads by 73 pts over Ferrari",
+      "raceImpact": "Ferrari cut Mercedes's constructors' lead by 5 pts",
+      "scenarioText": "Ferrari cut Mercedes's constructors' lead by 5 pts",
       "p1Changed": false,
-      "leaderWeekendPoints": 42,
-      "secondWeekendPoints": 64,
-      "weekendDelta": -22,
-      "leaderRacePoints": 42,
-      "secondRacePoints": 64,
-      "raceDelta": -22
+      "leaderWeekendPoints": 25,
+      "secondWeekendPoints": 30,
+      "weekendDelta": -5,
+      "leaderRacePoints": 25,
+      "secondRacePoints": 30,
+      "raceDelta": -5
     }
   },
   "races": [
@@ -939,6 +924,93 @@
         "leaderRacePoints": 42,
         "secondRacePoints": 64,
         "raceDelta": -22
+      }
+    },
+    {
+      "id": "round-10-belgiangrandprix-2026-07-19",
+      "sourceRace": {
+        "raceName": "Belgian Grand Prix",
+        "meetingName": "Belgian Grand Prix",
+        "round": 10,
+        "date": "2026-07-19",
+        "dateStartUtc": "2026-07-19T13:00:00+00:00",
+        "meetingKey": 1290,
+        "previousYearWinner": {
+          "season": 2025,
+          "round": 13,
+          "raceName": "Belgian Grand Prix",
+          "date": "2025-07-27",
+          "winner": "Oscar Piastri",
+          "constructor": "McLaren",
+          "source": "jolpica"
+        },
+        "sessionsIncluded": [
+          {
+            "eventType": "race",
+            "sessionName": "Race",
+            "sessionKey": 11334,
+            "date": "2026-07-19",
+            "dateStartUtc": "2026-07-19T13:00:00+00:00",
+            "isRace": true,
+            "isSprint": false
+          }
+        ]
+      },
+      "previousYearWinner": {
+        "season": 2025,
+        "round": 13,
+        "raceName": "Belgian Grand Prix",
+        "date": "2025-07-27",
+        "winner": "Oscar Piastri",
+        "constructor": "McLaren",
+        "source": "jolpica"
+      },
+      "preWeekendNotes": {
+        "winStreak": null,
+        "podiumStreak": {
+          "driverName": "RUSSELL",
+          "count": 3
+        },
+        "leaderRecentForm": {
+          "driverName": "ANTONELLI",
+          "positions": [
+            16,
+            3,
+            15
+          ],
+          "label": "P16 P3 P15 in last 3 races"
+        },
+        "defenderNote": "Oscar Piastri won here in 2025 (McLaren)"
+      },
+      "drivers": {
+        "leader": "ANTONELLI",
+        "second": "HAMILTON",
+        "gap": 45,
+        "standingsText": "ANTONELLI leads by 45 pts over HAMILTON",
+        "raceImpact": "ANTONELLI extended lead by 13 pts over HAMILTON",
+        "scenarioText": "ANTONELLI extended lead by 13 pts over HAMILTON",
+        "p1Changed": false,
+        "leaderWeekendPoints": 25,
+        "secondWeekendPoints": 12,
+        "weekendDelta": 13,
+        "leaderRacePoints": 25,
+        "secondRacePoints": 12,
+        "raceDelta": 13
+      },
+      "constructors": {
+        "leader": "Mercedes",
+        "second": "Ferrari",
+        "gap": 73,
+        "standingsText": "Mercedes leads by 73 pts over Ferrari",
+        "raceImpact": "Ferrari cut Mercedes's constructors' lead by 5 pts",
+        "scenarioText": "Ferrari cut Mercedes's constructors' lead by 5 pts",
+        "p1Changed": false,
+        "leaderWeekendPoints": 25,
+        "secondWeekendPoints": 30,
+        "weekendDelta": -5,
+        "leaderRacePoints": 25,
+        "secondRacePoints": 30,
+        "raceDelta": -5
       }
     }
   ]
