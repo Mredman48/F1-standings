@@ -1,41 +1,41 @@
 {
   "header": "Next F1 event",
-  "generatedAtUtc": "2026-07-19T17:01:55.477Z",
+  "generatedAtUtc": "2026-07-19T17:11:52.223Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics+formula1",
     "url": "https://better-f1-calendar.vercel.app/api/calendar.ics",
-    "officialRacePage": "https://www.formula1.com/en/racing/2026/great-britain"
+    "officialRacePage": "https://www.formula1.com/en/racing/2026/belgium"
   },
   "nextEvent": {
     "type": "RACE_WEEKEND",
-    "title": "FORMULA 1 PIRELLI BRITISH GRAND PRIX 2026",
+    "title": "Belgian Grand Prix 2026",
     "season": "2026",
     "location": {
       "raw": null,
-      "city": "Silverstone",
-      "country": "United Kingdom",
+      "city": "Spafrancorchamps",
+      "country": "Belgium",
       "flag": {
-        "iso2": "gb",
-        "png": "https://flagcdn.com/w160/gb.png",
-        "svg": "https://flagcdn.com/gb.svg"
+        "iso2": "be",
+        "png": "https://flagcdn.com/w160/be.png",
+        "svg": "https://flagcdn.com/be.svg"
       }
     },
     "racePage": {
-      "slug": "great-britain",
-      "url": "https://www.formula1.com/en/racing/2026/great-britain"
+      "slug": "belgium",
+      "url": "https://www.formula1.com/en/racing/2026/belgium"
     },
     "trackMap": {
       "found": true,
-      "pageUrl": "https://www.formula1.com/en/racing/2026/great-britain",
-      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026tracksilverstonedetailed.webp",
-      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_great-britain_detailed.png",
+      "pageUrl": "https://www.formula1.com/en/racing/2026/belgium",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackspafrancorchampsdetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_belgium_detailed.png",
       "note": "Using existing saved track map file. No download performed."
     },
     "map": {
       "found": true,
-      "filename": "silverstone.png",
-      "pngUrl": "https://mredman48.github.io/F1-standings/maps/silverstone.png",
+      "filename": "spa.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/spa.png",
       "note": null
     },
     "countdowns": {
