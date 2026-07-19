@@ -1,6 +1,6 @@
 {
   "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-07-19T14:31:53.099Z",
+  "generatedAtUtc": "2026-07-19T14:41:50.399Z",
   "season": 2026,
   "source": {
     "primary": "f1_season_event_results.json",
@@ -264,27 +264,6 @@
       "points": 18,
       "wins": 0,
       "driver": {
-        "code": "BEA",
-        "firstName": "Oliver",
-        "lastName": "BEARMAN",
-        "fullName": "Oliver BEARMAN",
-        "nationality": "GBR",
-        "driverNumber": 87,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/oliver-bearman.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Haas",
-        "fullName": "Haas",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P13",
-      "positionNumber": 13,
-      "points": 18,
-      "wins": 0,
-      "driver": {
         "code": "COL",
         "firstName": "Franco",
         "lastName": "COLAPINTO",
@@ -297,6 +276,27 @@
       "constructor": {
         "name": "Alpine",
         "fullName": "Alpine",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P13",
+      "positionNumber": 13,
+      "points": 18,
+      "wins": 0,
+      "driver": {
+        "code": "BEA",
+        "firstName": "Oliver",
+        "lastName": "BEARMAN",
+        "fullName": "Oliver BEARMAN",
+        "nationality": "GBR",
+        "driverNumber": 87,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/oliver-bearman.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Haas",
+        "fullName": "Haas",
         "nationality": null
       }
     },
