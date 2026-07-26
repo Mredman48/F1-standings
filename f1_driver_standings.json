@@ -1,6 +1,6 @@
 {
   "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-07-26T14:46:48.217Z",
+  "generatedAtUtc": "2026-07-26T15:01:46.142Z",
   "season": 2026,
   "source": {
     "primary": "f1_season_event_results.json",
@@ -432,6 +432,27 @@
       "points": 0,
       "wins": 0,
       "driver": {
+        "code": "STR",
+        "firstName": "Lance",
+        "lastName": "STROLL",
+        "fullName": "Lance STROLL",
+        "nationality": "CAN",
+        "driverNumber": 18,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lance-stroll.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Aston Martin",
+        "fullName": "Aston Martin",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P21",
+      "positionNumber": 21,
+      "points": 0,
+      "wins": 0,
+      "driver": {
         "code": "BOT",
         "firstName": "Valtteri",
         "lastName": "BOTTAS",
@@ -448,8 +469,8 @@
       }
     },
     {
-      "position": "P21",
-      "positionNumber": 21,
+      "position": "P22",
+      "positionNumber": 22,
       "points": 0,
       "wins": 0,
       "driver": {
@@ -465,27 +486,6 @@
       "constructor": {
         "name": "Cadillac",
         "fullName": "Cadillac",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P22",
-      "positionNumber": 22,
-      "points": 0,
-      "wins": 0,
-      "driver": {
-        "code": "STR",
-        "firstName": "Lance",
-        "lastName": "STROLL",
-        "fullName": "Lance STROLL",
-        "nationality": "CAN",
-        "driverNumber": 18,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lance-stroll.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Aston Martin",
-        "fullName": "Aston Martin",
         "nationality": null
       }
     }
