@@ -2,7 +2,7 @@
   "header": "F1 championship outlook",
   "season": 2026,
   "previousSeason": 2025,
-  "lastUpdated": "2026-07-26T15:01:48.043Z",
+  "lastUpdated": "2026-07-26T15:16:52.676Z",
   "mode": "race-weekend",
   "sources": {
     "driverStandings": "public-repo/f1_driver_standings.json",
@@ -11,20 +11,20 @@
     "previousYearWinners": "https://api.jolpi.ca/ergast/f1/2025/results/1.json"
   },
   "latest": {
-    "id": "round-10-belgiangrandprix-2026-07-19",
+    "id": "round-11-hungariangrandprix-2026-07-26",
     "sourceRace": {
-      "raceName": "Belgian Grand Prix",
-      "meetingName": "Belgian Grand Prix",
-      "round": 10,
-      "date": "2026-07-19",
-      "dateStartUtc": "2026-07-19T13:00:00+00:00",
-      "meetingKey": 1290,
+      "raceName": "Hungarian Grand Prix",
+      "meetingName": "Hungarian Grand Prix",
+      "round": 11,
+      "date": "2026-07-26",
+      "dateStartUtc": "2026-07-26T13:00:00+00:00",
+      "meetingKey": 1291,
       "previousYearWinner": {
         "season": 2025,
-        "round": 13,
-        "raceName": "Belgian Grand Prix",
-        "date": "2025-07-27",
-        "winner": "Oscar Piastri",
+        "round": 14,
+        "raceName": "Hungarian Grand Prix",
+        "date": "2025-08-03",
+        "winner": "Lando Norris",
         "constructor": "McLaren",
         "source": "jolpica"
       },
@@ -32,9 +32,9 @@
         {
           "eventType": "race",
           "sessionName": "Race",
-          "sessionKey": 11334,
-          "date": "2026-07-19",
-          "dateStartUtc": "2026-07-19T13:00:00+00:00",
+          "sessionKey": 11342,
+          "date": "2026-07-26",
+          "dateStartUtc": "2026-07-26T13:00:00+00:00",
           "isRace": true,
           "isSprint": false
         }
@@ -42,59 +42,56 @@
     },
     "previousYearWinner": {
       "season": 2025,
-      "round": 13,
-      "raceName": "Belgian Grand Prix",
-      "date": "2025-07-27",
-      "winner": "Oscar Piastri",
+      "round": 14,
+      "raceName": "Hungarian Grand Prix",
+      "date": "2025-08-03",
+      "winner": "Lando Norris",
       "constructor": "McLaren",
       "source": "jolpica"
     },
     "preWeekendNotes": {
       "winStreak": null,
-      "podiumStreak": {
-        "driverName": "RUSSELL",
-        "count": 3
-      },
+      "podiumStreak": null,
       "leaderRecentForm": {
         "driverName": "ANTONELLI",
         "positions": [
-          16,
           3,
-          15
+          15,
+          1
         ],
-        "label": "P16 P3 P15 in last 3 races"
+        "label": "P3 P15 P1 in last 3 races"
       },
-      "defenderNote": "Oscar Piastri won here in 2025 (McLaren)"
+      "defenderNote": "Lando Norris won here in 2025 (McLaren)"
     },
     "drivers": {
       "leader": "ANTONELLI",
       "second": "HAMILTON",
-      "gap": 45,
-      "standingsText": "ANTONELLI leads by 45 pts over HAMILTON",
-      "raceImpact": "ANTONELLI extended lead by 13 pts over HAMILTON",
-      "scenarioText": "ANTONELLI extended lead by 13 pts over HAMILTON",
+      "gap": 50,
+      "standingsText": "ANTONELLI leads by 50 pts over HAMILTON",
+      "raceImpact": "ANTONELLI extended lead by 5 pts over HAMILTON",
+      "scenarioText": "ANTONELLI extended lead by 5 pts over HAMILTON",
       "p1Changed": false,
-      "leaderWeekendPoints": 25,
-      "secondWeekendPoints": 12,
-      "weekendDelta": 13,
-      "leaderRacePoints": 25,
-      "secondRacePoints": 12,
-      "raceDelta": 13
+      "leaderWeekendPoints": 15,
+      "secondWeekendPoints": 10,
+      "weekendDelta": 5,
+      "leaderRacePoints": 15,
+      "secondRacePoints": 10,
+      "raceDelta": 5
     },
     "constructors": {
       "leader": "Mercedes",
       "second": "Ferrari",
-      "gap": 73,
-      "standingsText": "Mercedes leads by 73 pts over Ferrari",
-      "raceImpact": "Ferrari cut Mercedes's constructors' lead by 5 pts",
-      "scenarioText": "Ferrari cut Mercedes's constructors' lead by 5 pts",
+      "gap": 72,
+      "standingsText": "Mercedes leads by 72 pts over Ferrari",
+      "raceImpact": "Ferrari cut Mercedes's constructors' lead by 1 pts",
+      "scenarioText": "Ferrari cut Mercedes's constructors' lead by 1 pts",
       "p1Changed": false,
-      "leaderWeekendPoints": 25,
-      "secondWeekendPoints": 30,
-      "weekendDelta": -5,
-      "leaderRacePoints": 25,
-      "secondRacePoints": 30,
-      "raceDelta": -5
+      "leaderWeekendPoints": 21,
+      "secondWeekendPoints": 22,
+      "weekendDelta": -1,
+      "leaderRacePoints": 21,
+      "secondRacePoints": 22,
+      "raceDelta": -1
     }
   },
   "races": [
@@ -1011,6 +1008,90 @@
         "leaderRacePoints": 25,
         "secondRacePoints": 30,
         "raceDelta": -5
+      }
+    },
+    {
+      "id": "round-11-hungariangrandprix-2026-07-26",
+      "sourceRace": {
+        "raceName": "Hungarian Grand Prix",
+        "meetingName": "Hungarian Grand Prix",
+        "round": 11,
+        "date": "2026-07-26",
+        "dateStartUtc": "2026-07-26T13:00:00+00:00",
+        "meetingKey": 1291,
+        "previousYearWinner": {
+          "season": 2025,
+          "round": 14,
+          "raceName": "Hungarian Grand Prix",
+          "date": "2025-08-03",
+          "winner": "Lando Norris",
+          "constructor": "McLaren",
+          "source": "jolpica"
+        },
+        "sessionsIncluded": [
+          {
+            "eventType": "race",
+            "sessionName": "Race",
+            "sessionKey": 11342,
+            "date": "2026-07-26",
+            "dateStartUtc": "2026-07-26T13:00:00+00:00",
+            "isRace": true,
+            "isSprint": false
+          }
+        ]
+      },
+      "previousYearWinner": {
+        "season": 2025,
+        "round": 14,
+        "raceName": "Hungarian Grand Prix",
+        "date": "2025-08-03",
+        "winner": "Lando Norris",
+        "constructor": "McLaren",
+        "source": "jolpica"
+      },
+      "preWeekendNotes": {
+        "winStreak": null,
+        "podiumStreak": null,
+        "leaderRecentForm": {
+          "driverName": "ANTONELLI",
+          "positions": [
+            3,
+            15,
+            1
+          ],
+          "label": "P3 P15 P1 in last 3 races"
+        },
+        "defenderNote": "Lando Norris won here in 2025 (McLaren)"
+      },
+      "drivers": {
+        "leader": "ANTONELLI",
+        "second": "HAMILTON",
+        "gap": 50,
+        "standingsText": "ANTONELLI leads by 50 pts over HAMILTON",
+        "raceImpact": "ANTONELLI extended lead by 5 pts over HAMILTON",
+        "scenarioText": "ANTONELLI extended lead by 5 pts over HAMILTON",
+        "p1Changed": false,
+        "leaderWeekendPoints": 15,
+        "secondWeekendPoints": 10,
+        "weekendDelta": 5,
+        "leaderRacePoints": 15,
+        "secondRacePoints": 10,
+        "raceDelta": 5
+      },
+      "constructors": {
+        "leader": "Mercedes",
+        "second": "Ferrari",
+        "gap": 72,
+        "standingsText": "Mercedes leads by 72 pts over Ferrari",
+        "raceImpact": "Ferrari cut Mercedes's constructors' lead by 1 pts",
+        "scenarioText": "Ferrari cut Mercedes's constructors' lead by 1 pts",
+        "p1Changed": false,
+        "leaderWeekendPoints": 21,
+        "secondWeekendPoints": 22,
+        "weekendDelta": -1,
+        "leaderRacePoints": 21,
+        "secondRacePoints": 22,
+        "raceDelta": -1
       }
     }
   ]

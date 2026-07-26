@@ -1,21 +1,21 @@
 {
   "header": "McLaren standings",
-  "generatedAtUtc": "2026-07-26T15:01:47.733Z",
+  "generatedAtUtc": "2026-07-26T15:16:52.307Z",
   "mclaren": {
     "team": "McLaren",
     "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_mclaren_color_v2.png",
     "teamStanding": {
       "team": "McLaren",
       "position": "P3",
-      "points": 195,
-      "wins": 0
+      "points": 220,
+      "wins": 1
     }
   },
   "lastRace": {
-    "raceName": "Belgian Grand Prix",
-    "round": "10",
-    "date": "2026-07-19",
-    "circuit": "Spa-Francorchamps",
+    "raceName": "Hungarian Grand Prix",
+    "round": "11",
+    "date": "2026-07-26",
+    "circuit": "Hungaroring",
     "location": {
       "locality": "-",
       "country": "-"
@@ -35,23 +35,23 @@
       "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-1-2.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lando-norris.png",
       "position": "P5",
-      "points": 103,
-      "wins": 0,
-      "raceWins": 0,
-      "racePodiums": 2,
+      "points": 128,
+      "wins": 1,
+      "raceWins": 1,
+      "racePodiums": 3,
       "sprintWins": 1,
       "sprintPodiums": 3,
       "team": "McLaren",
       "bestResult": {
         "position": "P1",
-        "eventType": "sprint",
-        "raceName": "Miami Grand Prix Sprint",
-        "round": "4",
-        "date": "2026-05-02",
-        "circuit": "Miami",
+        "eventType": "race",
+        "raceName": "Hungarian Grand Prix",
+        "round": "11",
+        "date": "2026-07-26",
+        "circuit": "Hungaroring",
         "location": {
-          "locality": "Miami Gardens",
-          "country": "United States"
+          "locality": "Budapest",
+          "country": "Hungary"
         }
       }
     },
@@ -67,7 +67,7 @@
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-81.png",
       "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-81-2.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/oscar-piastri.png",
-      "position": "P6",
+      "position": "P7",
       "points": 92,
       "wins": 0,
       "raceWins": 0,
