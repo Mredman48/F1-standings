@@ -1,41 +1,41 @@
 {
   "header": "Next F1 event",
-  "generatedAtUtc": "2026-07-26T17:46:46.086Z",
+  "generatedAtUtc": "2026-07-26T18:01:47.940Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics+formula1",
     "url": "https://better-f1-calendar.vercel.app/api/calendar.ics",
-    "officialRacePage": "https://www.formula1.com/en/racing/2026/belgium"
+    "officialRacePage": "https://www.formula1.com/en/racing/2026/hungary"
   },
   "nextEvent": {
     "type": "RACE_WEEKEND",
-    "title": "Belgian Grand Prix 2026",
+    "title": "FORMULA 1 AWS HUNGARIAN GRAND PRIX 2026",
     "season": "2026",
     "location": {
       "raw": null,
-      "city": "Spafrancorchamps",
-      "country": "Belgium",
+      "city": "Hungaroring",
+      "country": "Hungary",
       "flag": {
-        "iso2": "be",
-        "png": "https://flagcdn.com/w160/be.png",
-        "svg": "https://flagcdn.com/be.svg"
+        "iso2": "hu",
+        "png": "https://flagcdn.com/w160/hu.png",
+        "svg": "https://flagcdn.com/hu.svg"
       }
     },
     "racePage": {
-      "slug": "belgium",
-      "url": "https://www.formula1.com/en/racing/2026/belgium"
+      "slug": "hungary",
+      "url": "https://www.formula1.com/en/racing/2026/hungary"
     },
     "trackMap": {
       "found": true,
-      "pageUrl": "https://www.formula1.com/en/racing/2026/belgium",
-      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackspafrancorchampsdetailed.webp",
-      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_belgium_detailed.png",
+      "pageUrl": "https://www.formula1.com/en/racing/2026/hungary",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackhungaroringdetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_hungary_detailed.png",
       "note": "Using existing saved track map file. No download performed."
     },
     "map": {
       "found": true,
-      "filename": "spa.png",
-      "pngUrl": "https://mredman48.github.io/F1-standings/maps/spa.png",
+      "filename": "hungaroring.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/hungaroring.png",
       "note": null
     },
     "countdowns": {
