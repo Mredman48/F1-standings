@@ -2,18 +2,20 @@
   "generatedAt": "2026-04-25T12:28:58.746Z",
   "circuits": [
     {
-      "id": "bahrain",
-      "displayName": "Bahrain Grand Prix",
-      "matchKeys": [
-        "bahrain",
-        "sakhir"
-      ],
-      "specs": {
-        "turns": 15,
-        "longestStraightKm": 1.1,
-        "averageSpeed": "Medium",
-        "raceLaps": 57
-      },
+  "id": "Bahrain",
+  "displayName": "Bahrain Grand Prix inMalaysia",
+  "matchKeys": [
+    "sepang",
+    "malaysia",
+    "kuala lumpur",
+    "bahrain"
+  ],
+  "specs": {
+    "turns": 15,
+    "longestStraightKm": 0.927,
+    "averageSpeed": "High",
+    "raceLaps": 56
+  },
       "raceLapRecord": {
         "time": "1:31.447",
         "driver": "Pedro de la Rosa",
