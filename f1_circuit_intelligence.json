@@ -1,33 +1,35 @@
 {
   "generatedAt": "STATIC",
   "circuits": [
-    {
-      "displayName": "Bahrain Grand Prix",
-      "dna": {
-        "cornerProfile": "Stop-start traction",
-        "overtaking": "High",
-        "tireWear": "High",
-        "trackEvolution": "High",
-        "strategyBias": "Undercut",
-        "safetyCarRisk": "Low"
-      },
-      "intelligence": [
-        "Rear tire degradation usually drives strategy.",
-        "Turn 1 and Turn 4 are the main overtaking zones.",
-        "The undercut is often powerful because tires drop off quickly.",
-        "Wind can make braking and traction inconsistent."
-      ],
-      "id": "bahrain",
-      "matchKeys": [
-        "bahrain",
-        "sakhir"
-      ],
-      "specs": {
-        "turns": 15,
-        "longestStraightKm": 1.1,
-        "averageSpeed": "Medium",
-        "raceLaps": 57
-      },
+{
+  "displayName": "Bahrain Grand Prix in Malaysia",
+  "dna": {
+    "cornerProfile": "High-speed sweepers, heavy braking",
+    "overtaking": "High",
+    "tireWear": "High",
+    "trackEvolution": "Medium",
+    "strategyBias": "Undercut",
+    "safetyCarRisk": "Medium"
+  },
+  "intelligence": [
+    "Turn 1 and Turn 15 are the main overtaking zones.",
+    "Heat and humidity push tire wear higher than most tracks.",
+    "Tropical storms are common and can flip strategy fast.",
+    "Undercut is strong once the abrasive surface wears tires down."
+  ],
+  "id": "sepang",
+  "matchKeys": [
+    "sepang",
+    "malaysia",
+    "kuala lumpur",
+    "bahrain"
+  ],
+  "specs": {
+    "turns": 15,
+    "longestStraightKm": 0.927,
+    "averageSpeed": "High",
+    "raceLaps": 56
+  },
       "raceLapRecord": {
         "time": "1:31.447",
         "driver": "Pedro de la Rosa",
