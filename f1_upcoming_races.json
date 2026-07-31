@@ -6,7 +6,7 @@
     "kind": "ics+formula1",
     "url": "https://better-f1-calendar.vercel.app/api/calendar.ics"
  },
-  "totalRaces": 22,
+  "totalRaces": 23,
   "upcomingEvents": [
     {
       "round": 1,
@@ -1271,6 +1271,91 @@
     {
       "round": 16,
       "type": "RACE_WEEKEND",
+      "title": "BAHRAIN GRAND PRIX IN MALAYSIA 2026",
+      "shortTitle": "BAHRAIN IN MALAYSIA GP",
+      "circuit": "Sepang International Circuit",
+      "season": "2026",
+      "location": {
+        "raw": null,
+        "city": "Sepang",
+        "country": "Malaysia",
+        "flag": {
+          "iso2": "sg",
+          "png": "https://flagcdn.com/w160/my.png",
+          "svg": "https://flagcdn.com/my.svg"
+        }
+      },
+      "racePage": {
+        "slug": "bahrain",
+        "url": "https://www.formula1.com/en/racing/2026/bahrain"
+      },
+      "trackMap": {
+        "found": true,
+        "pageUrl": "https://www.formula1.com/en/racing/2026/bahrain",
+        "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackkualalumpurdetailed.webp",
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_bahrainmalaysia_detailed.png",
+        "note": null
+      },
+      "map": {
+        "found": true,
+        "filename": "malaysia.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/malaysia.png",
+        "note": null
+      },
+      "countdowns": {
+        "startsInDays": 194
+      },
+      "weekend": {
+        "startUtc": "2026-10-02T04:30:00.000Z",
+        "endUtc": "2026-10-04T09:00:00.000Z"
+      },
+      "sessions": [
+        {
+          "type": "FP1",
+          "startUtc": "2026-10-02T04:30:00.000Z",
+          "endUtc": "2026-10-02T05:30:00.000Z",
+          "startLocalDateShort": "Thurs, Oct 02",
+          "startLocalTimeShort": "22:30",
+          "startLocalDateTimeShort": "Thurs, Oct 02 22:30"
+        },
+        {
+          "type": "FP2",
+          "startUtc": "2026-10-02T08:00:00.000Z",
+          "endUtc": "2026-10-02T09:30:00.000Z",
+          "startLocalDateShort": "Fri, Oct 03",
+          "startLocalTimeShort": "02:00",
+          "startLocalDateTimeShort": "Fri, Oct 03 02:00"
+        },
+        {
+          "type": "FP3",
+          "startUtc": "2026-10-03T06:00:00.000Z",
+          "endUtc": "2026-10-03T07:00:00.000Z",
+          "startLocalDateShort": "Sat, Oct 3",
+          "startLocalTimeShort": "00:00",
+          "startLocalDateTimeShort": "Sat, Oct 3 00:00"
+        },
+        {
+          "type": "Quali",
+          "startUtc": "2026-10-03T09:00:00.000Z",
+          "endUtc": "2026-10-03T10:00:00.000Z",
+          "startLocalDateShort": "Sat, Oct 3",
+          "startLocalTimeShort": "03:00",
+          "startLocalDateTimeShort": "Sat, Oct 3 03:00"
+        },
+        {
+          "type": "Race",
+          "startUtc": "2026-10-04T07:00:00.000Z",
+          "endUtc": "2026-10-04T09:00:00.000Z",
+          "startLocalDateShort": "Sun, Oct 4",
+          "startLocalTimeShort": "01:00",
+          "startLocalDateTimeShort": "Sun, Oct 4 01:00"
+        }
+      ]
+    },
+
+    {
+      "round": 17,
+      "type": "RACE_WEEKEND",
       "title": "SINGAPORE GRAND PRIX 2026",
       "shortTitle": "Singapore GP",
       "circuit": "Marina Bay Street Circuit",
@@ -1353,7 +1438,7 @@
       ]
     },
     {
-      "round": 17,
+      "round": 18,
       "type": "RACE_WEEKEND",
       "title": "UNITED STATES GRAND PRIX 2026",
       "shortTitle": "United States GP",
@@ -1437,7 +1522,7 @@
       ]
     },
     {
-      "round": 18,
+      "round": 19,
       "type": "RACE_WEEKEND",
       "title": "GRAN PREMIO DE LA CIUDAD DE MÉXICO 2026",
       "shortTitle": "Mexico City GP",
@@ -1521,7 +1606,7 @@
       ]
     },
     {
-      "round": 19,
+      "round": 20,
       "type": "RACE_WEEKEND",
       "title": "GRANDE PRÊMIO DE SÃO PAULO 2026",
       "shortTitle": "Sao Paulo GP",
@@ -1605,7 +1690,7 @@
       ]
     },
     {
-      "round": 20,
+      "round": 21,
       "type": "RACE_WEEKEND",
       "title": "LAS VEGAS GRAND PRIX 2026",
       "shortTitle": "Las Vegas GP",
@@ -1689,7 +1774,7 @@
       ]
     },
     {
-      "round": 21,
+      "round": 22,
       "type": "RACE_WEEKEND",
       "title": "QATAR GRAND PRIX 2026",
       "shortTitle": "Qatar GP",
@@ -1773,7 +1858,7 @@
       ]
     },
     {
-      "round": 22,
+      "round": 23,
       "type": "RACE_WEEKEND",
       "title": "ABU DHABI GRAND PRIX 2026",
       "shortTitle": "Abu Dhabi GP",
