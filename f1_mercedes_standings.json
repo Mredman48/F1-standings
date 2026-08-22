@@ -1,21 +1,21 @@
 {
   "header": "Mercedes standings",
-  "generatedAtUtc": "2026-08-22T10:46:51.361Z",
+  "generatedAtUtc": "2026-08-22T11:02:00.544Z",
   "mercedes": {
     "team": "Mercedes",
     "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_mercedes_color_v2.png",
     "teamStanding": {
       "team": "Mercedes",
       "position": "P1",
-      "points": 379,
+      "points": 392,
       "wins": 8
     }
   },
   "lastRace": {
-    "raceName": "Hungarian Grand Prix",
-    "round": "11",
-    "date": "2026-07-26",
-    "circuit": "Hungaroring",
+    "raceName": "Dutch Grand Prix Sprint",
+    "round": "12",
+    "date": "2026-08-22",
+    "circuit": "Zandvoort",
     "location": {
       "locality": "-",
       "country": "-"
@@ -35,7 +35,7 @@
       "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-12-2.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/kimi-antonelli.png",
       "position": "P1",
-      "points": 219,
+      "points": 224,
       "wins": 6,
       "raceWins": 6,
       "racePodiums": 9,
@@ -68,23 +68,23 @@
       "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-63-2.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/george-russell.png",
       "position": "P3",
-      "points": 160,
+      "points": 168,
       "wins": 2,
       "raceWins": 2,
       "racePodiums": 5,
-      "sprintWins": 2,
-      "sprintPodiums": 2,
+      "sprintWins": 3,
+      "sprintPodiums": 3,
       "team": "Mercedes",
       "bestResult": {
         "position": "P1",
-        "eventType": "race",
-        "raceName": "Austrian Grand Prix",
-        "round": "8",
-        "date": "2026-06-28",
-        "circuit": "Spielberg",
+        "eventType": "sprint",
+        "raceName": "Dutch Grand Prix Sprint",
+        "round": "12",
+        "date": "2026-08-22",
+        "circuit": "Zandvoort",
         "location": {
-          "locality": "Spielberg",
-          "country": "Austria"
+          "locality": "Zandvoort",
+          "country": "Netherlands"
         }
       }
     }

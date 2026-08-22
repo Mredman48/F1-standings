@@ -1,6 +1,6 @@
 {
   "header": "Constructors standings",
-  "generatedAtUtc": "2026-08-22T10:46:50.391Z",
+  "generatedAtUtc": "2026-08-22T11:01:59.573Z",
   "meta": {
     "seasonUsed": "2026",
     "source": "f1_driver_standings.json",
@@ -9,27 +9,27 @@
   },
   "lastRace": {
     "season": "2026",
-    "round": "11",
-    "raceName": "Hungarian Grand Prix",
-    "date": "2026-07-26",
+    "round": "12",
+    "raceName": "Dutch Grand Prix Sprint",
+    "date": "2026-08-22",
     "circuit": {
-      "name": "Hungaroring",
-      "locality": "Budapest",
-      "country": "Hungary"
+      "name": "Zandvoort",
+      "locality": "Zandvoort",
+      "country": "Netherlands"
     },
     "winner": {
-      "firstName": "Lando",
-      "lastName": "NORRIS",
-      "fullName": "Lando NORRIS",
+      "firstName": "George",
+      "lastName": "RUSSELL",
+      "fullName": "George RUSSELL",
       "code": null,
-      "team": "McLaren"
+      "team": "Mercedes"
     }
   },
   "constructors": [
     {
       "team": "Mercedes",
       "position": "P1",
-      "points": 379,
+      "points": 392,
       "wins": 8,
       "driverCount": 2,
       "placeholder": false
@@ -37,7 +37,7 @@
     {
       "team": "Ferrari",
       "position": "P2",
-      "points": 307,
+      "points": 316,
       "wins": 2,
       "driverCount": 2,
       "placeholder": false
@@ -45,7 +45,7 @@
     {
       "team": "McLaren",
       "position": "P3",
-      "points": 220,
+      "points": 230,
       "wins": 1,
       "driverCount": 2,
       "placeholder": false
@@ -53,7 +53,7 @@
     {
       "team": "Red Bull",
       "position": "P4",
-      "points": 177,
+      "points": 180,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
@@ -63,13 +63,13 @@
       "position": "P5",
       "points": 66,
       "wins": 0,
-      "driverCount": 2,
+      "driverCount": 3,
       "placeholder": false
     },
     {
       "team": "Alpine",
       "position": "P6",
-      "points": 61,
+      "points": 62,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
