@@ -1,9 +1,9 @@
 {
-  "generatedAtUtc": "2026-08-22T10:38:43.450495+00:00",
+  "generatedAtUtc": "2026-08-22T10:41:06.929028+00:00",
   "sessionKey": 11348,
   "sessionType": "Sprint",
   "eventName": "Netherlands",
-  "totalMessages": 51,
+  "totalMessages": 58,
   "messages": [
     {
       "meeting_key": 1292,
@@ -667,6 +667,97 @@
       "sector": 1,
       "qualifying_phase": null,
       "message": "YELLOW IN TRACK SECTOR 1"
+    },
+    {
+      "meeting_key": 1292,
+      "session_key": 11348,
+      "date": "2026-08-22T10:38:49+00:00",
+      "driver_number": null,
+      "lap_number": 24,
+      "category": "Flag",
+      "flag": "CLEAR",
+      "scope": "Sector",
+      "sector": 18,
+      "qualifying_phase": null,
+      "message": "CLEAR IN TRACK SECTOR 18"
+    },
+    {
+      "meeting_key": 1292,
+      "session_key": 11348,
+      "date": "2026-08-22T10:38:50+00:00",
+      "driver_number": null,
+      "lap_number": 24,
+      "category": "Flag",
+      "flag": "DOUBLE YELLOW",
+      "scope": "Sector",
+      "sector": 2,
+      "qualifying_phase": null,
+      "message": "DOUBLE YELLOW IN TRACK SECTOR 2"
+    },
+    {
+      "meeting_key": 1292,
+      "session_key": 11348,
+      "date": "2026-08-22T10:39:00+00:00",
+      "driver_number": null,
+      "lap_number": 24,
+      "category": "Flag",
+      "flag": "DOUBLE YELLOW",
+      "scope": "Sector",
+      "sector": 15,
+      "qualifying_phase": null,
+      "message": "DOUBLE YELLOW IN TRACK SECTOR 15"
+    },
+    {
+      "meeting_key": 1292,
+      "session_key": 11348,
+      "date": "2026-08-22T10:39:28+00:00",
+      "driver_number": null,
+      "lap_number": 24,
+      "category": "Flag",
+      "flag": "DOUBLE YELLOW",
+      "scope": "Sector",
+      "sector": 8,
+      "qualifying_phase": null,
+      "message": "DOUBLE YELLOW IN TRACK SECTOR 8"
+    },
+    {
+      "meeting_key": 1292,
+      "session_key": 11348,
+      "date": "2026-08-22T10:39:32+00:00",
+      "driver_number": null,
+      "lap_number": 24,
+      "category": "Flag",
+      "flag": "DOUBLE YELLOW",
+      "scope": "Sector",
+      "sector": 17,
+      "qualifying_phase": null,
+      "message": "DOUBLE YELLOW IN TRACK SECTOR 17"
+    },
+    {
+      "meeting_key": 1292,
+      "session_key": 11348,
+      "date": "2026-08-22T10:40:00+00:00",
+      "driver_number": null,
+      "lap_number": 24,
+      "category": "Flag",
+      "flag": "CLEAR",
+      "scope": "Sector",
+      "sector": 15,
+      "qualifying_phase": null,
+      "message": "CLEAR IN TRACK SECTOR 15"
+    },
+    {
+      "meeting_key": 1292,
+      "session_key": 11348,
+      "date": "2026-08-22T10:40:52+00:00",
+      "driver_number": null,
+      "lap_number": 24,
+      "category": "Flag",
+      "flag": "CLEAR",
+      "scope": "Sector",
+      "sector": 11,
+      "qualifying_phase": null,
+      "message": "CLEAR IN TRACK SECTOR 11"
     }
   ]
 }
