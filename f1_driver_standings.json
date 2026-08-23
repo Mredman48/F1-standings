@@ -1,6 +1,6 @@
 {
   "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-08-23T15:31:51.154Z",
+  "generatedAtUtc": "2026-08-23T15:46:46.232Z",
   "season": 2026,
   "source": {
     "primary": "f1_season_event_results.json",
@@ -11,26 +11,26 @@
   "lastRace": {
     "season": "2026",
     "round": "12",
-    "raceName": "Dutch Grand Prix Sprint",
-    "date": "2026-08-22",
+    "raceName": "Dutch Grand Prix",
+    "date": "2026-08-23",
     "circuit": {
       "name": "Zandvoort",
       "locality": "Zandvoort",
       "country": "Netherlands"
     },
     "winner": {
-      "firstName": "George",
-      "lastName": "RUSSELL",
-      "fullName": "George RUSSELL",
+      "firstName": "Lando",
+      "lastName": "NORRIS",
+      "fullName": "Lando NORRIS",
       "code": null,
-      "team": "Mercedes"
+      "team": "McLaren"
     }
   },
   "drivers": [
     {
       "position": "P1",
       "positionNumber": 1,
-      "points": 224,
+      "points": 242,
       "wins": 6,
       "driver": {
         "code": "ANT",
@@ -51,28 +51,7 @@
     {
       "position": "P2",
       "positionNumber": 2,
-      "points": 171,
-      "wins": 1,
-      "driver": {
-        "code": "HAM",
-        "firstName": "Lewis",
-        "lastName": "HAMILTON",
-        "fullName": "Lewis HAMILTON",
-        "nationality": "GBR",
-        "driverNumber": 44,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lewis-hamilton.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Ferrari",
-        "fullName": "Ferrari",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P3",
-      "positionNumber": 3,
-      "points": 168,
+      "points": 183,
       "wins": 2,
       "driver": {
         "code": "RUS",
@@ -91,9 +70,51 @@
       }
     },
     {
+      "position": "P3",
+      "positionNumber": 3,
+      "points": 183,
+      "wins": 1,
+      "driver": {
+        "code": "HAM",
+        "firstName": "Lewis",
+        "lastName": "HAMILTON",
+        "fullName": "Lewis HAMILTON",
+        "nationality": "GBR",
+        "driverNumber": 44,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lewis-hamilton.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Ferrari",
+        "fullName": "Ferrari",
+        "nationality": null
+      }
+    },
+    {
       "position": "P4",
       "positionNumber": 4,
-      "points": 145,
+      "points": 159,
+      "wins": 2,
+      "driver": {
+        "code": "NOR",
+        "firstName": "Lando",
+        "lastName": "NORRIS",
+        "fullName": "Lando NORRIS",
+        "nationality": "GBR",
+        "driverNumber": 1,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lando-norris.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "McLaren",
+        "fullName": "McLaren",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P5",
+      "positionNumber": 5,
+      "points": 155,
       "wins": 1,
       "driver": {
         "code": "LEC",
@@ -108,27 +129,6 @@
       "constructor": {
         "name": "Ferrari",
         "fullName": "Ferrari",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P5",
-      "positionNumber": 5,
-      "points": 134,
-      "wins": 1,
-      "driver": {
-        "code": "NOR",
-        "firstName": "Lando",
-        "lastName": "NORRIS",
-        "fullName": "Lando NORRIS",
-        "nationality": "GBR",
-        "driverNumber": 1,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lando-norris.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "McLaren",
-        "fullName": "McLaren",
         "nationality": null
       }
     },
@@ -156,7 +156,7 @@
     {
       "position": "P7",
       "positionNumber": 7,
-      "points": 96,
+      "points": 104,
       "wins": 0,
       "driver": {
         "code": "PIA",
@@ -198,7 +198,7 @@
     {
       "position": "P9",
       "positionNumber": 9,
-      "points": 43,
+      "points": 49,
       "wins": 0,
       "driver": {
         "code": "LAW",
@@ -219,7 +219,7 @@
     {
       "position": "P10",
       "positionNumber": 10,
-      "points": 43,
+      "points": 44,
       "wins": 0,
       "driver": {
         "code": "GAS",
@@ -327,6 +327,27 @@
       "points": 6,
       "wins": 0,
       "driver": {
+        "code": "HUL",
+        "firstName": "Nico",
+        "lastName": "HULKENBERG",
+        "fullName": "Nico HULKENBERG",
+        "nationality": "GER",
+        "driverNumber": 27,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/nico-hulkenberg.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Audi",
+        "fullName": "Audi",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P16",
+      "positionNumber": 16,
+      "points": 6,
+      "wins": 0,
+      "driver": {
         "code": "SAI",
         "firstName": "Carlos",
         "lastName": "SAINZ",
@@ -343,8 +364,8 @@
       }
     },
     {
-      "position": "P16",
-      "positionNumber": 16,
+      "position": "P17",
+      "positionNumber": 17,
       "points": 5,
       "wins": 0,
       "driver": {
@@ -364,8 +385,8 @@
       }
     },
     {
-      "position": "P17",
-      "positionNumber": 17,
+      "position": "P18",
+      "positionNumber": 18,
       "points": 3,
       "wins": 0,
       "driver": {
@@ -385,30 +406,9 @@
       }
     },
     {
-      "position": "P18",
-      "positionNumber": 18,
-      "points": 2,
-      "wins": 0,
-      "driver": {
-        "code": "HUL",
-        "firstName": "Nico",
-        "lastName": "HULKENBERG",
-        "fullName": "Nico HULKENBERG",
-        "nationality": "GER",
-        "driverNumber": 27,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/nico-hulkenberg.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Audi",
-        "fullName": "Audi",
-        "nationality": null
-      }
-    },
-    {
       "position": "P19",
       "positionNumber": 19,
-      "points": 1,
+      "points": 3,
       "wins": 0,
       "driver": {
         "code": "ALO",

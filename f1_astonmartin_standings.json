@@ -1,20 +1,20 @@
 {
   "header": "Aston Martin standings",
-  "generatedAtUtc": "2026-08-23T15:31:52.609Z",
+  "generatedAtUtc": "2026-08-23T15:46:47.678Z",
   "astonMartin": {
     "team": "Aston Martin",
     "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_aston-martin_color_v2.png",
     "teamStanding": {
       "team": "Aston Martin",
       "position": "P10",
-      "points": 1,
+      "points": 3,
       "wins": 0
     }
   },
   "lastRace": {
-    "raceName": "Dutch Grand Prix Sprint",
+    "raceName": "Dutch Grand Prix",
     "round": "12",
-    "date": "2026-08-22",
+    "date": "2026-08-23",
     "circuit": "Zandvoort",
     "location": {
       "locality": "-",
@@ -35,7 +35,7 @@
       "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-14-2.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/fernando-alonso.png",
       "position": "P19",
-      "points": 1,
+      "points": 3,
       "wins": 0,
       "raceWins": 0,
       "racePodiums": 0,
@@ -43,15 +43,15 @@
       "sprintPodiums": 0,
       "team": "Aston Martin",
       "bestResult": {
-        "position": "P10",
+        "position": "P9",
         "eventType": "race",
-        "raceName": "Monaco Grand Prix",
-        "round": "6",
-        "date": "2026-06-07",
-        "circuit": "Monte Carlo",
+        "raceName": "Dutch Grand Prix",
+        "round": "12",
+        "date": "2026-08-23",
+        "circuit": "Zandvoort",
         "location": {
-          "locality": "Monte Carlo",
-          "country": "Monaco"
+          "locality": "Zandvoort",
+          "country": "Netherlands"
         }
       }
     },
