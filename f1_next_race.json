@@ -1,90 +1,90 @@
 {
   "header": "Next F1 event",
-  "generatedAtUtc": "2026-08-23T16:46:45.848Z",
+  "generatedAtUtc": "2026-08-23T17:01:55.020Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics+formula1",
     "url": "https://better-f1-calendar.vercel.app/api/calendar.ics",
-    "officialRacePage": "https://www.formula1.com/en/racing/2026/hungary"
+    "officialRacePage": "https://www.formula1.com/en/racing/2026/netherlands"
   },
   "nextEvent": {
     "type": "RACE_WEEKEND",
-    "title": "FORMULA 1 AWS HUNGARIAN GRAND PRIX 2026",
+    "title": "FORMULA 1 HEINEKEN DUTCH GRAND PRIX 2026",
     "season": "2026",
     "location": {
       "raw": null,
-      "city": "Hungaroring",
-      "country": "Hungary",
+      "city": "Zandvoort",
+      "country": "Netherlands",
       "flag": {
-        "iso2": "hu",
-        "png": "https://flagcdn.com/w160/hu.png",
-        "svg": "https://flagcdn.com/hu.svg"
+        "iso2": "nl",
+        "png": "https://flagcdn.com/w160/nl.png",
+        "svg": "https://flagcdn.com/nl.svg"
       }
     },
     "racePage": {
-      "slug": "hungary",
-      "url": "https://www.formula1.com/en/racing/2026/hungary"
+      "slug": "netherlands",
+      "url": "https://www.formula1.com/en/racing/2026/netherlands"
     },
     "trackMap": {
       "found": true,
-      "pageUrl": "https://www.formula1.com/en/racing/2026/hungary",
-      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackhungaroringdetailed.webp",
-      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_hungary_detailed.png",
+      "pageUrl": "https://www.formula1.com/en/racing/2026/netherlands",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackzandvoortdetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_netherlands_detailed.png",
       "note": "Using existing saved track map file. No download performed."
     },
     "map": {
       "found": true,
-      "filename": "hungaroring.png",
-      "pngUrl": "https://mredman48.github.io/F1-standings/maps/hungaroring.png",
+      "filename": "zandvoort.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/zandvoort.png",
       "note": null
     },
     "countdowns": {
-      "startsInDays": -2
+      "startsInDays": 12
     },
     "weekend": {
-      "startUtc": "2026-08-21T10:30:00.000Z",
-      "endUtc": "2026-08-23T15:00:00.000Z"
+      "startUtc": "2026-09-04T10:30:00.000Z",
+      "endUtc": "2026-09-06T15:00:00.000Z"
     },
     "sessions": [
       {
         "type": "FP1",
-        "startUtc": "2026-08-21T10:30:00.000Z",
-        "endUtc": "2026-08-21T11:30:00.000Z",
-        "startLocalDateShort": "Fri, Aug 21",
+        "startUtc": "2026-09-04T10:30:00.000Z",
+        "endUtc": "2026-09-04T11:30:00.000Z",
+        "startLocalDateShort": "Fri, Sep 04",
         "startLocalTimeShort": "04:30",
-        "startLocalDateTimeShort": "Fri, Aug 21 04:30"
+        "startLocalDateTimeShort": "Fri, Sep 04 04:30"
       },
       {
-        "type": "Sprint Quali",
-        "startUtc": "2026-08-21T14:30:00.000Z",
-        "endUtc": "2026-08-21T15:14:00.000Z",
-        "startLocalDateShort": "Fri, Aug 21",
-        "startLocalTimeShort": "08:30",
-        "startLocalDateTimeShort": "Fri, Aug 21 08:30"
+        "type": "FP2",
+        "startUtc": "2026-09-04T14:00:00.000Z",
+        "endUtc": "2026-09-04T15:00:00.000Z",
+        "startLocalDateShort": "Fri, Sep 04",
+        "startLocalTimeShort": "08:00",
+        "startLocalDateTimeShort": "Fri, Sep 04 08:00"
       },
       {
-        "type": "Sprint",
-        "startUtc": "2026-08-22T10:00:00.000Z",
-        "endUtc": "2026-08-22T11:00:00.000Z",
-        "startLocalDateShort": "Sat, Aug 22",
-        "startLocalTimeShort": "04:00",
-        "startLocalDateTimeShort": "Sat, Aug 22 04:00"
+        "type": "FP3",
+        "startUtc": "2026-09-05T10:30:00.000Z",
+        "endUtc": "2026-09-05T11:30:00.000Z",
+        "startLocalDateShort": "Sat, Sep 05",
+        "startLocalTimeShort": "04:30",
+        "startLocalDateTimeShort": "Sat, Sep 05 04:30"
       },
       {
         "type": "Quali",
-        "startUtc": "2026-08-22T14:00:00.000Z",
-        "endUtc": "2026-08-22T15:00:00.000Z",
-        "startLocalDateShort": "Sat, Aug 22",
+        "startUtc": "2026-09-05T14:00:00.000Z",
+        "endUtc": "2026-09-05T15:00:00.000Z",
+        "startLocalDateShort": "Sat, Sep 05",
         "startLocalTimeShort": "08:00",
-        "startLocalDateTimeShort": "Sat, Aug 22 08:00"
+        "startLocalDateTimeShort": "Sat, Sep 05 08:00"
       },
       {
         "type": "Race",
-        "startUtc": "2026-08-23T13:00:00.000Z",
-        "endUtc": "2026-08-23T15:00:00.000Z",
-        "startLocalDateShort": "Sun, Aug 23",
+        "startUtc": "2026-09-06T13:00:00.000Z",
+        "endUtc": "2026-09-06T15:00:00.000Z",
+        "startLocalDateShort": "Sun, Sep 06",
         "startLocalTimeShort": "07:00",
-        "startLocalDateTimeShort": "Sun, Aug 23 07:00"
+        "startLocalDateTimeShort": "Sun, Sep 06 07:00"
       }
     ]
   }
