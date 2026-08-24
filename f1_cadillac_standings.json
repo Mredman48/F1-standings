@@ -1,6 +1,6 @@
 {
   "header": "Cadillac standings",
-  "generatedAtUtc": "2026-08-24T09:56:28.165Z",
+  "generatedAtUtc": "2026-08-24T15:48:58.262Z",
   "cadillac": {
     "team": "Cadillac",
     "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_cadillac_color_v2.png",
@@ -23,51 +23,18 @@
   },
   "drivers": [
     {
-      "firstName": "Valtteri",
-      "lastName": "BOTTAS",
-      "code": "BOT",
-      "driverNumber": 77,
-      "nationality": "Finnish",
-      "countryCode": "fi",
-      "countryName": "Finland",
-      "flagUrl": "https://flagcdn.com/w80/fi.png",
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-77.png",
-      "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-77-2.png",
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/valtteri-bottas.png",
-      "position": "P21",
-      "points": 0,
-      "wins": 0,
-      "raceWins": 0,
-      "racePodiums": 0,
-      "sprintWins": 0,
-      "sprintPodiums": 0,
-      "team": "Cadillac",
-      "bestResult": {
-        "position": "P13",
-        "eventType": "race",
-        "raceName": "Chinese Grand Prix",
-        "round": "2",
-        "date": "2026-03-15",
-        "circuit": "Shanghai",
-        "location": {
-          "locality": "Shanghai",
-          "country": "China"
-        }
-      }
-    },
-    {
       "firstName": "Sergio",
       "lastName": "PEREZ",
-      "code": "PER",
+      "code": "-",
       "driverNumber": 11,
-      "nationality": "Mexican",
-      "countryCode": "mx",
-      "countryName": "Mexico",
-      "flagUrl": "https://flagcdn.com/w80/mx.png",
+      "nationality": "-",
+      "countryCode": null,
+      "countryName": null,
+      "flagUrl": null,
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-11.png",
       "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-11-2.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/sergio-perez.png",
-      "position": "P22",
+      "position": "P21",
       "points": 0,
       "wins": 0,
       "raceWins": 0,
@@ -85,6 +52,39 @@
         "location": {
           "locality": "Silverstone",
           "country": "United Kingdom"
+        }
+      }
+    },
+    {
+      "firstName": "Valtteri",
+      "lastName": "BOTTAS",
+      "code": "-",
+      "driverNumber": 77,
+      "nationality": "-",
+      "countryCode": null,
+      "countryName": null,
+      "flagUrl": null,
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-77.png",
+      "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-77-2.png",
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/valtteri-bottas.png",
+      "position": "P22",
+      "points": 0,
+      "wins": 0,
+      "raceWins": 0,
+      "racePodiums": 0,
+      "sprintWins": 0,
+      "sprintPodiums": 0,
+      "team": "Cadillac",
+      "bestResult": {
+        "position": "P13",
+        "eventType": "race",
+        "raceName": "Chinese Grand Prix",
+        "round": "2",
+        "date": "2026-03-15",
+        "circuit": "Shanghai",
+        "location": {
+          "locality": "Shanghai",
+          "country": "China"
         }
       }
     }
