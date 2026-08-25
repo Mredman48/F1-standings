@@ -1,6 +1,6 @@
 {
   "header": "Cadillac standings",
-  "generatedAtUtc": "2026-08-24T21:37:48.415Z",
+  "generatedAtUtc": "2026-08-25T09:44:36.300Z",
   "cadillac": {
     "team": "Cadillac",
     "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_cadillac_color_v2.png",
@@ -23,47 +23,14 @@
   },
   "drivers": [
     {
-      "firstName": "Sergio",
-      "lastName": "PEREZ",
-      "code": "-",
-      "driverNumber": 11,
-      "nationality": "-",
-      "countryCode": null,
-      "countryName": null,
-      "flagUrl": null,
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-11.png",
-      "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-11-2.png",
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/sergio-perez.png",
-      "position": "P21",
-      "points": 0,
-      "wins": 0,
-      "raceWins": 0,
-      "racePodiums": 0,
-      "sprintWins": 0,
-      "sprintPodiums": 0,
-      "team": "Cadillac",
-      "bestResult": {
-        "position": "P14",
-        "eventType": "race",
-        "raceName": "British Grand Prix",
-        "round": "9",
-        "date": "2026-07-05",
-        "circuit": "Silverstone",
-        "location": {
-          "locality": "Silverstone",
-          "country": "United Kingdom"
-        }
-      }
-    },
-    {
       "firstName": "Valtteri",
       "lastName": "BOTTAS",
-      "code": "-",
+      "code": "BOT",
       "driverNumber": 77,
-      "nationality": "-",
-      "countryCode": null,
-      "countryName": null,
-      "flagUrl": null,
+      "nationality": "Finnish",
+      "countryCode": "fi",
+      "countryName": "Finland",
+      "flagUrl": "https://flagcdn.com/w80/fi.png",
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-77.png",
       "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-77-2.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/valtteri-bottas.png",
@@ -85,6 +52,39 @@
         "location": {
           "locality": "Shanghai",
           "country": "China"
+        }
+      }
+    },
+    {
+      "firstName": "Sergio",
+      "lastName": "PEREZ",
+      "code": "PER",
+      "driverNumber": 11,
+      "nationality": "Mexican",
+      "countryCode": "mx",
+      "countryName": "Mexico",
+      "flagUrl": "https://flagcdn.com/w80/mx.png",
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-11.png",
+      "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-11-2.png",
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/sergio-perez.png",
+      "position": "P23",
+      "points": 0,
+      "wins": 0,
+      "raceWins": 0,
+      "racePodiums": 0,
+      "sprintWins": 0,
+      "sprintPodiums": 0,
+      "team": "Cadillac",
+      "bestResult": {
+        "position": "P14",
+        "eventType": "race",
+        "raceName": "British Grand Prix",
+        "round": "9",
+        "date": "2026-07-05",
+        "circuit": "Silverstone",
+        "location": {
+          "locality": "Silverstone",
+          "country": "United Kingdom"
         }
       }
     }
