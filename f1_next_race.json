@@ -1,41 +1,41 @@
 {
   "header": "Next F1 event",
-  "generatedAtUtc": "2026-09-06T17:26:00.092Z",
+  "generatedAtUtc": "2026-09-06T17:37:50.719Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics+formula1",
     "url": "https://better-f1-calendar.vercel.app/api/calendar.ics",
-    "officialRacePage": "https://www.formula1.com/en/racing/2026/netherlands"
+    "officialRacePage": "https://www.formula1.com/en/racing/2026/italy"
   },
   "nextEvent": {
     "type": "RACE_WEEKEND",
-    "title": "FORMULA 1 HEINEKEN DUTCH GRAND PRIX 2026",
+    "title": "Italian Grand Prix 2026",
     "season": "2026",
     "location": {
       "raw": null,
-      "city": "Zandvoort",
-      "country": "Netherlands",
+      "city": "Monza",
+      "country": "Italy",
       "flag": {
-        "iso2": "nl",
-        "png": "https://flagcdn.com/w160/nl.png",
-        "svg": "https://flagcdn.com/nl.svg"
+        "iso2": "it",
+        "png": "https://flagcdn.com/w160/it.png",
+        "svg": "https://flagcdn.com/it.svg"
       }
     },
     "racePage": {
-      "slug": "netherlands",
-      "url": "https://www.formula1.com/en/racing/2026/netherlands"
+      "slug": "italy",
+      "url": "https://www.formula1.com/en/racing/2026/italy"
     },
     "trackMap": {
       "found": true,
-      "pageUrl": "https://www.formula1.com/en/racing/2026/netherlands",
-      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackzandvoortdetailed.webp",
-      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_netherlands_detailed.png",
+      "pageUrl": "https://www.formula1.com/en/racing/2026/italy",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmonzadetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_italy_detailed.png",
       "note": "Using existing saved track map file. No download performed."
     },
     "map": {
       "found": true,
-      "filename": "zandvoort.png",
-      "pngUrl": "https://mredman48.github.io/F1-standings/maps/zandvoort.png",
+      "filename": "monza.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/monza.png",
       "note": null
     },
     "countdowns": {
