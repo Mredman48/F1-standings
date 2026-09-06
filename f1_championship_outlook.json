@@ -2,7 +2,7 @@
   "header": "F1 championship outlook",
   "season": 2026,
   "previousSeason": 2025,
-  "lastUpdated": "2026-09-06T15:13:48.429Z",
+  "lastUpdated": "2026-09-06T15:25:49.557Z",
   "mode": "race-weekend",
   "sources": {
     "driverStandings": "public-repo/f1_driver_standings.json",
@@ -11,48 +11,30 @@
     "previousYearWinners": "https://api.jolpi.ca/ergast/f1/2025/results/1.json"
   },
   "latest": {
-    "id": "round-12-dutchgrandprix-2026-08-21",
+    "id": "round-13-italiangrandprix-2026-09-06",
     "sourceRace": {
-      "raceName": "Dutch Grand Prix",
-      "meetingName": "Dutch Grand Prix",
-      "round": 12,
-      "date": "2026-08-21",
-      "dateStartUtc": "2026-08-21T14:30:00+00:00",
-      "meetingKey": 1292,
+      "raceName": "Italian Grand Prix",
+      "meetingName": "Italian Grand Prix",
+      "round": 13,
+      "date": "2026-09-06",
+      "dateStartUtc": "2026-09-06T13:00:00+00:00",
+      "meetingKey": 1293,
       "previousYearWinner": {
         "season": 2025,
-        "round": 15,
-        "raceName": "Dutch Grand Prix",
-        "date": "2025-08-31",
-        "winner": "Oscar Piastri",
-        "constructor": "McLaren",
+        "round": 16,
+        "raceName": "Italian Grand Prix",
+        "date": "2025-09-07",
+        "winner": "Max Verstappen",
+        "constructor": "Red Bull",
         "source": "jolpica"
       },
       "sessionsIncluded": [
         {
-          "eventType": "sprint_shootout",
-          "sessionName": "Sprint Qualifying",
-          "sessionKey": 11344,
-          "date": "2026-08-21",
-          "dateStartUtc": "2026-08-21T14:30:00+00:00",
-          "isRace": false,
-          "isSprint": true
-        },
-        {
-          "eventType": "sprint",
-          "sessionName": "Sprint",
-          "sessionKey": 11348,
-          "date": "2026-08-22",
-          "dateStartUtc": "2026-08-22T10:00:00+00:00",
-          "isRace": false,
-          "isSprint": true
-        },
-        {
           "eventType": "race",
           "sessionName": "Race",
-          "sessionKey": 11353,
-          "date": "2026-08-23",
-          "dateStartUtc": "2026-08-23T13:00:00+00:00",
+          "sessionKey": 11361,
+          "date": "2026-09-06",
+          "dateStartUtc": "2026-09-06T13:00:00+00:00",
           "isRace": true,
           "isSprint": false
         }
@@ -60,56 +42,62 @@
     },
     "previousYearWinner": {
       "season": 2025,
-      "round": 15,
-      "raceName": "Dutch Grand Prix",
-      "date": "2025-08-31",
-      "winner": "Oscar Piastri",
-      "constructor": "McLaren",
+      "round": 16,
+      "raceName": "Italian Grand Prix",
+      "date": "2025-09-07",
+      "winner": "Max Verstappen",
+      "constructor": "Red Bull",
       "source": "jolpica"
     },
     "preWeekendNotes": {
-      "winStreak": null,
-      "podiumStreak": null,
+      "winStreak": {
+        "driverName": "NORRIS",
+        "count": 2
+      },
+      "podiumStreak": {
+        "driverName": "ANTONELLI",
+        "count": 3
+      },
       "leaderRecentForm": {
         "driverName": "ANTONELLI",
         "positions": [
-          15,
           1,
-          3
+          3,
+          2
         ],
-        "label": "P15 P1 P3 in last 3 races"
+        "label": "P1 P3 P2 in last 3 races"
       },
-      "defenderNote": "Oscar Piastri won here in 2025 (McLaren)"
+      "defenderNote": "Max Verstappen won here in 2025 (Red Bull)"
     },
     "drivers": {
       "leader": "ANTONELLI",
-      "second": "HAMILTON",
-      "gap": 59,
-      "standingsText": "ANTONELLI leads by 59 pts over HAMILTON",
-      "raceImpact": "ANTONELLI extended lead by 11 pts over HAMILTON",
-      "scenarioText": "ANTONELLI extended lead by 11 pts over HAMILTON",
+      "second": "RUSSELL",
+      "gap": 66,
+      "standingsText": "ANTONELLI leads by 66 pts over RUSSELL",
+      "raceImpact": "ANTONELLI extended lead by 7 pts over RUSSELL",
+      "scenarioText": "ANTONELLI extended lead by 7 pts over RUSSELL",
       "p1Changed": false,
-      "leaderWeekendPoints": 27,
-      "secondWeekendPoints": 16,
-      "weekendDelta": 11,
-      "leaderRacePoints": 27,
-      "secondRacePoints": 16,
-      "raceDelta": 11
+      "leaderWeekendPoints": 25,
+      "secondWeekendPoints": 18,
+      "weekendDelta": 7,
+      "leaderRacePoints": 25,
+      "secondRacePoints": 18,
+      "raceDelta": 7
     },
     "constructors": {
       "leader": "Mercedes",
       "second": "Ferrari",
-      "gap": 87,
-      "standingsText": "Mercedes leads by 87 pts over Ferrari",
-      "raceImpact": "Mercedes extended its constructors' lead by 19 pts over Ferrari",
-      "scenarioText": "Mercedes extended its constructors' lead by 19 pts over Ferrari",
+      "gap": 122,
+      "standingsText": "Mercedes leads by 122 pts over Ferrari",
+      "raceImpact": "Mercedes extended its constructors' lead by 35 pts over Ferrari",
+      "scenarioText": "Mercedes extended its constructors' lead by 35 pts over Ferrari",
       "p1Changed": false,
-      "leaderWeekendPoints": 58,
-      "secondWeekendPoints": 39,
-      "weekendDelta": 19,
-      "leaderRacePoints": 58,
-      "secondRacePoints": 39,
-      "raceDelta": 19
+      "leaderWeekendPoints": 43,
+      "secondWeekendPoints": 8,
+      "weekendDelta": 35,
+      "leaderRacePoints": 43,
+      "secondRacePoints": 8,
+      "raceDelta": 35
     }
   },
   "races": [
@@ -1212,6 +1200,96 @@
         "leaderRacePoints": 58,
         "secondRacePoints": 39,
         "raceDelta": 19
+      }
+    },
+    {
+      "id": "round-13-italiangrandprix-2026-09-06",
+      "sourceRace": {
+        "raceName": "Italian Grand Prix",
+        "meetingName": "Italian Grand Prix",
+        "round": 13,
+        "date": "2026-09-06",
+        "dateStartUtc": "2026-09-06T13:00:00+00:00",
+        "meetingKey": 1293,
+        "previousYearWinner": {
+          "season": 2025,
+          "round": 16,
+          "raceName": "Italian Grand Prix",
+          "date": "2025-09-07",
+          "winner": "Max Verstappen",
+          "constructor": "Red Bull",
+          "source": "jolpica"
+        },
+        "sessionsIncluded": [
+          {
+            "eventType": "race",
+            "sessionName": "Race",
+            "sessionKey": 11361,
+            "date": "2026-09-06",
+            "dateStartUtc": "2026-09-06T13:00:00+00:00",
+            "isRace": true,
+            "isSprint": false
+          }
+        ]
+      },
+      "previousYearWinner": {
+        "season": 2025,
+        "round": 16,
+        "raceName": "Italian Grand Prix",
+        "date": "2025-09-07",
+        "winner": "Max Verstappen",
+        "constructor": "Red Bull",
+        "source": "jolpica"
+      },
+      "preWeekendNotes": {
+        "winStreak": {
+          "driverName": "NORRIS",
+          "count": 2
+        },
+        "podiumStreak": {
+          "driverName": "ANTONELLI",
+          "count": 3
+        },
+        "leaderRecentForm": {
+          "driverName": "ANTONELLI",
+          "positions": [
+            1,
+            3,
+            2
+          ],
+          "label": "P1 P3 P2 in last 3 races"
+        },
+        "defenderNote": "Max Verstappen won here in 2025 (Red Bull)"
+      },
+      "drivers": {
+        "leader": "ANTONELLI",
+        "second": "RUSSELL",
+        "gap": 66,
+        "standingsText": "ANTONELLI leads by 66 pts over RUSSELL",
+        "raceImpact": "ANTONELLI extended lead by 7 pts over RUSSELL",
+        "scenarioText": "ANTONELLI extended lead by 7 pts over RUSSELL",
+        "p1Changed": false,
+        "leaderWeekendPoints": 25,
+        "secondWeekendPoints": 18,
+        "weekendDelta": 7,
+        "leaderRacePoints": 25,
+        "secondRacePoints": 18,
+        "raceDelta": 7
+      },
+      "constructors": {
+        "leader": "Mercedes",
+        "second": "Ferrari",
+        "gap": 122,
+        "standingsText": "Mercedes leads by 122 pts over Ferrari",
+        "raceImpact": "Mercedes extended its constructors' lead by 35 pts over Ferrari",
+        "scenarioText": "Mercedes extended its constructors' lead by 35 pts over Ferrari",
+        "p1Changed": false,
+        "leaderWeekendPoints": 43,
+        "secondWeekendPoints": 8,
+        "weekendDelta": 35,
+        "leaderRacePoints": 43,
+        "secondRacePoints": 8,
+        "raceDelta": 35
       }
     }
   ]

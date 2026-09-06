@@ -1,6 +1,6 @@
 {
   "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-09-06T15:13:46.226Z",
+  "generatedAtUtc": "2026-09-06T15:25:47.209Z",
   "season": 2026,
   "source": {
     "primary": "f1_season_event_results.json",
@@ -10,28 +10,28 @@
   },
   "lastRace": {
     "season": "2026",
-    "round": "12",
-    "raceName": "Dutch Grand Prix",
-    "date": "2026-08-23",
+    "round": "13",
+    "raceName": "Italian Grand Prix",
+    "date": "2026-09-06",
     "circuit": {
-      "name": "Zandvoort",
-      "locality": "Zandvoort",
-      "country": "Netherlands"
+      "name": "Monza",
+      "locality": "Monza",
+      "country": "Italy"
     },
     "winner": {
-      "firstName": "Lando",
-      "lastName": "NORRIS",
-      "fullName": "Lando NORRIS",
+      "firstName": "Kimi",
+      "lastName": "ANTONELLI",
+      "fullName": "Kimi ANTONELLI",
       "code": null,
-      "team": "McLaren"
+      "team": "Mercedes"
     }
   },
   "drivers": [
     {
       "position": "P1",
       "positionNumber": 1,
-      "points": 242,
-      "wins": 6,
+      "points": 267,
+      "wins": 7,
       "driver": {
         "code": "ANT",
         "firstName": "Kimi",
@@ -51,7 +51,7 @@
     {
       "position": "P2",
       "positionNumber": 2,
-      "points": 183,
+      "points": 201,
       "wins": 2,
       "driver": {
         "code": "RUS",
@@ -72,7 +72,7 @@
     {
       "position": "P3",
       "positionNumber": 3,
-      "points": 183,
+      "points": 191,
       "wins": 1,
       "driver": {
         "code": "HAM",
@@ -93,7 +93,7 @@
     {
       "position": "P4",
       "positionNumber": 4,
-      "points": 159,
+      "points": 171,
       "wins": 2,
       "driver": {
         "code": "NOR",
@@ -135,7 +135,7 @@
     {
       "position": "P6",
       "positionNumber": 6,
-      "points": 112,
+      "points": 127,
       "wins": 0,
       "driver": {
         "code": "VER",
@@ -156,7 +156,7 @@
     {
       "position": "P7",
       "positionNumber": 7,
-      "points": 106,
+      "points": 116,
       "wins": 0,
       "driver": {
         "code": "PIA",
@@ -219,7 +219,7 @@
     {
       "position": "P10",
       "positionNumber": 10,
-      "points": 35,
+      "points": 41,
       "wins": 0,
       "driver": {
         "code": "GAS",
@@ -240,7 +240,7 @@
     {
       "position": "P11",
       "positionNumber": 11,
-      "points": 25,
+      "points": 29,
       "wins": 0,
       "driver": {
         "code": "LIN",
@@ -261,7 +261,7 @@
     {
       "position": "P12",
       "positionNumber": 12,
-      "points": 19,
+      "points": 21,
       "wins": 0,
       "driver": {
         "code": "COL",
@@ -429,7 +429,7 @@
     {
       "position": "P20",
       "positionNumber": 20,
-      "points": 0,
+      "points": 1,
       "wins": 0,
       "driver": {
         "code": "TSU",
