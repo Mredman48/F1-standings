@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T15:13:41.040Z",
+  "generatedAt": "2026-09-08T23:35:09.947Z",
   "liveries": {
     "audi": {
       "label": "Monaco Nuvolari 2026",
@@ -58,6 +58,26 @@
         },
         "perez": {
           "background": "https://mredman48.github.io/F1-standings/liveries/perez-cadillac-bg.webp"
+        }
+      }
+    },
+    "williams": {
+      "label": "Madrid Special Livery",
+      "validFrom": "",
+      "validUntil": "2026-09-14T00:00:00Z",
+      "color": "#97B656",
+      "background": "https://mredman48.github.io/F1-standings/liveries/williams-card-bg.webp",
+      "profileBackground": "https://mredman48.github.io/F1-standings/liveries/williams-profile-bg.webp",
+      "car": "https://mredman48.github.io/F1-standings/liveries/williams-car.webp",
+      "logo": "https://mredman48.github.io/F1-standings/liveries/williams-logo.webp",
+      "logoLight": "https://mredman48.github.io/F1-standings/liveries/williams-logo-light.webp",
+      "icon": "",
+      "drivers": {
+        "sainz": {
+          "background": "https://mredman48.github.io/F1-standings/liveries/sainz-williams-bg.webp"
+        },
+        "abon": {
+          "background": "https://mredman48.github.io/F1-standings/liveries/abon-williams-bg.webp"
         }
       }
     }
