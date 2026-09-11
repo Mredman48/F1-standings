@@ -2,7 +2,7 @@
   "header": "F1 championship outlook",
   "season": 2026,
   "previousSeason": 2025,
-  "lastUpdated": "2026-09-11T15:25:50.358Z",
+  "lastUpdated": "2026-09-11T15:38:53.326Z",
   "mode": "race-weekend",
   "sources": {
     "driverStandings": "public-repo/f1_driver_standings.json",
@@ -54,23 +54,26 @@
         "driverName": "NORRIS",
         "count": 2
       },
-      "podiumStreak": null,
+      "podiumStreak": {
+        "driverName": "ANTONELLI",
+        "count": 3
+      },
       "leaderRecentForm": {
         "driverName": "ANTONELLI",
         "positions": [
-          15,
+          1,
           3,
           2
         ],
-        "label": "P15 P3 P2 in last 3 races"
+        "label": "P1 P3 P2 in last 3 races"
       },
       "defenderNote": "Max Verstappen won here in 2025 (Red Bull)"
     },
     "drivers": {
       "leader": "ANTONELLI",
       "second": "RUSSELL",
-      "gap": 41,
-      "standingsText": "ANTONELLI leads by 41 pts over RUSSELL",
+      "gap": 66,
+      "standingsText": "ANTONELLI leads by 66 pts over RUSSELL",
       "raceImpact": "ANTONELLI extended lead by 7 pts over RUSSELL",
       "scenarioText": "ANTONELLI extended lead by 7 pts over RUSSELL",
       "p1Changed": false,
@@ -84,8 +87,8 @@
     "constructors": {
       "leader": "Mercedes",
       "second": "Ferrari",
-      "gap": 127,
-      "standingsText": "Mercedes leads by 127 pts over Ferrari",
+      "gap": 122,
+      "standingsText": "Mercedes leads by 122 pts over Ferrari",
       "raceImpact": "Mercedes extended its constructors' lead by 35 pts over Ferrari",
       "scenarioText": "Mercedes extended its constructors' lead by 35 pts over Ferrari",
       "p1Changed": false,
@@ -927,6 +930,93 @@
       }
     },
     {
+      "id": "round-10-belgiangrandprix-2026-07-19",
+      "sourceRace": {
+        "raceName": "Belgian Grand Prix",
+        "meetingName": "Belgian Grand Prix",
+        "round": 10,
+        "date": "2026-07-19",
+        "dateStartUtc": "2026-07-19T13:00:00+00:00",
+        "meetingKey": 1290,
+        "previousYearWinner": {
+          "season": 2025,
+          "round": 13,
+          "raceName": "Belgian Grand Prix",
+          "date": "2025-07-27",
+          "winner": "Oscar Piastri",
+          "constructor": "McLaren",
+          "source": "jolpica"
+        },
+        "sessionsIncluded": [
+          {
+            "eventType": "race",
+            "sessionName": "Race",
+            "sessionKey": 11334,
+            "date": "2026-07-19",
+            "dateStartUtc": "2026-07-19T13:00:00+00:00",
+            "isRace": true,
+            "isSprint": false
+          }
+        ]
+      },
+      "previousYearWinner": {
+        "season": 2025,
+        "round": 13,
+        "raceName": "Belgian Grand Prix",
+        "date": "2025-07-27",
+        "winner": "Oscar Piastri",
+        "constructor": "McLaren",
+        "source": "jolpica"
+      },
+      "preWeekendNotes": {
+        "winStreak": null,
+        "podiumStreak": {
+          "driverName": "RUSSELL",
+          "count": 3
+        },
+        "leaderRecentForm": {
+          "driverName": "ANTONELLI",
+          "positions": [
+            16,
+            3,
+            15
+          ],
+          "label": "P16 P3 P15 in last 3 races"
+        },
+        "defenderNote": "Oscar Piastri won here in 2025 (McLaren)"
+      },
+      "drivers": {
+        "leader": "ANTONELLI",
+        "second": "HAMILTON",
+        "gap": 43,
+        "standingsText": "ANTONELLI leads by 43 pts over HAMILTON",
+        "raceImpact": "ANTONELLI extended lead by 13 pts over HAMILTON",
+        "scenarioText": "ANTONELLI extended lead by 13 pts over HAMILTON",
+        "p1Changed": false,
+        "leaderWeekendPoints": 25,
+        "secondWeekendPoints": 12,
+        "weekendDelta": 13,
+        "leaderRacePoints": 25,
+        "secondRacePoints": 12,
+        "raceDelta": 13
+      },
+      "constructors": {
+        "leader": "Mercedes",
+        "second": "Ferrari",
+        "gap": 69,
+        "standingsText": "Mercedes leads by 69 pts over Ferrari",
+        "raceImpact": "Ferrari cut Mercedes's constructors' lead by 5 pts",
+        "scenarioText": "Ferrari cut Mercedes's constructors' lead by 5 pts",
+        "p1Changed": false,
+        "leaderWeekendPoints": 25,
+        "secondWeekendPoints": 30,
+        "weekendDelta": -5,
+        "leaderRacePoints": 25,
+        "secondRacePoints": 30,
+        "raceDelta": -5
+      }
+    },
+    {
       "id": "round-11-hungariangrandprix-2026-07-26",
       "sourceRace": {
         "raceName": "Hungarian Grand Prix",
@@ -967,26 +1057,23 @@
       },
       "preWeekendNotes": {
         "winStreak": null,
-        "podiumStreak": {
-          "driverName": "RUSSELL",
-          "count": 3
-        },
+        "podiumStreak": null,
         "leaderRecentForm": {
           "driverName": "ANTONELLI",
           "positions": [
-            16,
             3,
-            15
+            15,
+            1
           ],
-          "label": "P16 P3 P15 in last 3 races"
+          "label": "P3 P15 P1 in last 3 races"
         },
         "defenderNote": "Lando Norris won here in 2025 (McLaren)"
       },
       "drivers": {
         "leader": "ANTONELLI",
         "second": "HAMILTON",
-        "gap": 35,
-        "standingsText": "ANTONELLI leads by 35 pts over HAMILTON",
+        "gap": 48,
+        "standingsText": "ANTONELLI leads by 48 pts over HAMILTON",
         "raceImpact": "ANTONELLI extended lead by 5 pts over HAMILTON",
         "scenarioText": "ANTONELLI extended lead by 5 pts over HAMILTON",
         "p1Changed": false,
@@ -1000,8 +1087,8 @@
       "constructors": {
         "leader": "Mercedes",
         "second": "Ferrari",
-        "gap": 73,
-        "standingsText": "Mercedes leads by 73 pts over Ferrari",
+        "gap": 68,
+        "standingsText": "Mercedes leads by 68 pts over Ferrari",
         "raceImpact": "Ferrari cut Mercedes's constructors' lead by 1 pts",
         "scenarioText": "Ferrari cut Mercedes's constructors' lead by 1 pts",
         "p1Changed": false,
@@ -1076,34 +1163,34 @@
         "leaderRecentForm": {
           "driverName": "ANTONELLI",
           "positions": [
-            3,
             15,
+            1,
             3
           ],
-          "label": "P3 P15 P3 in last 3 races"
+          "label": "P15 P1 P3 in last 3 races"
         },
         "defenderNote": "Oscar Piastri won here in 2025 (McLaren)"
       },
       "drivers": {
         "leader": "ANTONELLI",
-        "second": "RUSSELL",
-        "gap": 34,
-        "standingsText": "ANTONELLI leads by 34 pts over RUSSELL",
-        "raceImpact": "RUSSELL cut ANTONELLI's lead by 4 pts",
-        "scenarioText": "RUSSELL cut ANTONELLI's lead by 4 pts",
+        "second": "HAMILTON",
+        "gap": 59,
+        "standingsText": "ANTONELLI leads by 59 pts over HAMILTON",
+        "raceImpact": "ANTONELLI extended lead by 11 pts over HAMILTON",
+        "scenarioText": "ANTONELLI extended lead by 11 pts over HAMILTON",
         "p1Changed": false,
         "leaderWeekendPoints": 27,
-        "secondWeekendPoints": 31,
-        "weekendDelta": -4,
+        "secondWeekendPoints": 16,
+        "weekendDelta": 11,
         "leaderRacePoints": 27,
-        "secondRacePoints": 31,
-        "raceDelta": -4
+        "secondRacePoints": 16,
+        "raceDelta": 11
       },
       "constructors": {
         "leader": "Mercedes",
         "second": "Ferrari",
-        "gap": 92,
-        "standingsText": "Mercedes leads by 92 pts over Ferrari",
+        "gap": 87,
+        "standingsText": "Mercedes leads by 87 pts over Ferrari",
         "raceImpact": "Mercedes extended its constructors' lead by 19 pts over Ferrari",
         "scenarioText": "Mercedes extended its constructors' lead by 19 pts over Ferrari",
         "p1Changed": false,
@@ -1159,23 +1246,26 @@
           "driverName": "NORRIS",
           "count": 2
         },
-        "podiumStreak": null,
+        "podiumStreak": {
+          "driverName": "ANTONELLI",
+          "count": 3
+        },
         "leaderRecentForm": {
           "driverName": "ANTONELLI",
           "positions": [
-            15,
+            1,
             3,
             2
           ],
-          "label": "P15 P3 P2 in last 3 races"
+          "label": "P1 P3 P2 in last 3 races"
         },
         "defenderNote": "Max Verstappen won here in 2025 (Red Bull)"
       },
       "drivers": {
         "leader": "ANTONELLI",
         "second": "RUSSELL",
-        "gap": 41,
-        "standingsText": "ANTONELLI leads by 41 pts over RUSSELL",
+        "gap": 66,
+        "standingsText": "ANTONELLI leads by 66 pts over RUSSELL",
         "raceImpact": "ANTONELLI extended lead by 7 pts over RUSSELL",
         "scenarioText": "ANTONELLI extended lead by 7 pts over RUSSELL",
         "p1Changed": false,
@@ -1189,8 +1279,8 @@
       "constructors": {
         "leader": "Mercedes",
         "second": "Ferrari",
-        "gap": 127,
-        "standingsText": "Mercedes leads by 127 pts over Ferrari",
+        "gap": 122,
+        "standingsText": "Mercedes leads by 122 pts over Ferrari",
         "raceImpact": "Mercedes extended its constructors' lead by 35 pts over Ferrari",
         "scenarioText": "Mercedes extended its constructors' lead by 35 pts over Ferrari",
         "p1Changed": false,
