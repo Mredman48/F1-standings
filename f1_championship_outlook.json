@@ -2,7 +2,7 @@
   "header": "F1 championship outlook",
   "season": 2026,
   "previousSeason": 2025,
-  "lastUpdated": "2026-09-12T11:02:02.605Z",
+  "lastUpdated": "2026-09-12T11:13:48.981Z",
   "mode": "race-weekend",
   "sources": {
     "driverStandings": "public-repo/f1_driver_standings.json",
@@ -19,15 +19,7 @@
       "date": "2026-09-06",
       "dateStartUtc": "2026-09-06T13:00:00+00:00",
       "meetingKey": 1293,
-      "previousYearWinner": {
-        "season": 2025,
-        "round": 16,
-        "raceName": "Italian Grand Prix",
-        "date": "2025-09-07",
-        "winner": "Max Verstappen",
-        "constructor": "Red Bull",
-        "source": "jolpica"
-      },
+      "previousYearWinner": null,
       "sessionsIncluded": [
         {
           "eventType": "race",
@@ -40,15 +32,7 @@
         }
       ]
     },
-    "previousYearWinner": {
-      "season": 2025,
-      "round": 16,
-      "raceName": "Italian Grand Prix",
-      "date": "2025-09-07",
-      "winner": "Max Verstappen",
-      "constructor": "Red Bull",
-      "source": "jolpica"
-    },
+    "previousYearWinner": null,
     "preWeekendNotes": {
       "winStreak": {
         "driverName": "NORRIS",
@@ -67,7 +51,7 @@
         ],
         "label": "P1 P3 P2 in last 3 races"
       },
-      "defenderNote": "Max Verstappen won here in 2025 (Red Bull)"
+      "defenderNote": null
     },
     "drivers": {
       "leader": "ANTONELLI",
@@ -110,15 +94,7 @@
         "date": "2026-03-08",
         "dateStartUtc": "2026-03-08T04:00:00+00:00",
         "meetingKey": 1279,
-        "previousYearWinner": {
-          "season": 2025,
-          "round": 1,
-          "raceName": "Australian Grand Prix",
-          "date": "2025-03-16",
-          "winner": "Lando Norris",
-          "constructor": "McLaren",
-          "source": "jolpica"
-        },
+        "previousYearWinner": null,
         "sessionsIncluded": [
           {
             "eventType": "race",
@@ -131,20 +107,12 @@
           }
         ]
       },
-      "previousYearWinner": {
-        "season": 2025,
-        "round": 1,
-        "raceName": "Australian Grand Prix",
-        "date": "2025-03-16",
-        "winner": "Lando Norris",
-        "constructor": "McLaren",
-        "source": "jolpica"
-      },
+      "previousYearWinner": null,
       "preWeekendNotes": {
         "winStreak": null,
         "podiumStreak": null,
         "leaderRecentForm": null,
-        "defenderNote": "Lando Norris won here in 2025 (McLaren)"
+        "defenderNote": null
       },
       "drivers": {
         "leader": "RUSSELL",
@@ -186,15 +154,7 @@
         "date": "2026-03-13",
         "dateStartUtc": "2026-03-13T07:30:00+00:00",
         "meetingKey": 1280,
-        "previousYearWinner": {
-          "season": 2025,
-          "round": 2,
-          "raceName": "Chinese Grand Prix",
-          "date": "2025-03-23",
-          "winner": "Oscar Piastri",
-          "constructor": "McLaren",
-          "source": "jolpica"
-        },
+        "previousYearWinner": null,
         "sessionsIncluded": [
           {
             "eventType": "sprint_shootout",
@@ -225,15 +185,7 @@
           }
         ]
       },
-      "previousYearWinner": {
-        "season": 2025,
-        "round": 2,
-        "raceName": "Chinese Grand Prix",
-        "date": "2025-03-23",
-        "winner": "Oscar Piastri",
-        "constructor": "McLaren",
-        "source": "jolpica"
-      },
+      "previousYearWinner": null,
       "preWeekendNotes": {
         "winStreak": null,
         "podiumStreak": null,
@@ -244,7 +196,7 @@
           ],
           "label": "P1 in last 1 race"
         },
-        "defenderNote": "Oscar Piastri won here in 2025 (McLaren)"
+        "defenderNote": null
       },
       "drivers": {
         "leader": "RUSSELL",
@@ -286,15 +238,7 @@
         "date": "2026-03-29",
         "dateStartUtc": "2026-03-29T05:00:00+00:00",
         "meetingKey": 1281,
-        "previousYearWinner": {
-          "season": 2025,
-          "round": 3,
-          "raceName": "Japanese Grand Prix",
-          "date": "2025-04-06",
-          "winner": "Max Verstappen",
-          "constructor": "Red Bull",
-          "source": "jolpica"
-        },
+        "previousYearWinner": null,
         "sessionsIncluded": [
           {
             "eventType": "race",
@@ -307,15 +251,7 @@
           }
         ]
       },
-      "previousYearWinner": {
-        "season": 2025,
-        "round": 3,
-        "raceName": "Japanese Grand Prix",
-        "date": "2025-04-06",
-        "winner": "Max Verstappen",
-        "constructor": "Red Bull",
-        "source": "jolpica"
-      },
+      "previousYearWinner": null,
       "preWeekendNotes": {
         "winStreak": null,
         "podiumStreak": null,
@@ -327,7 +263,7 @@
           ],
           "label": "P1 P2 in last 2 races"
         },
-        "defenderNote": "Max Verstappen won here in 2025 (Red Bull)"
+        "defenderNote": null
       },
       "drivers": {
         "leader": "ANTONELLI",
@@ -369,15 +305,7 @@
         "date": "2026-05-01",
         "dateStartUtc": "2026-05-01T20:30:00+00:00",
         "meetingKey": 1284,
-        "previousYearWinner": {
-          "season": 2025,
-          "round": 6,
-          "raceName": "Miami Grand Prix",
-          "date": "2025-05-04",
-          "winner": "Oscar Piastri",
-          "constructor": "McLaren",
-          "source": "jolpica"
-        },
+        "previousYearWinner": null,
         "sessionsIncluded": [
           {
             "eventType": "sprint_shootout",
@@ -408,15 +336,7 @@
           }
         ]
       },
-      "previousYearWinner": {
-        "season": 2025,
-        "round": 6,
-        "raceName": "Miami Grand Prix",
-        "date": "2025-05-04",
-        "winner": "Oscar Piastri",
-        "constructor": "McLaren",
-        "source": "jolpica"
-      },
+      "previousYearWinner": null,
       "preWeekendNotes": {
         "winStreak": {
           "driverName": "ANTONELLI",
@@ -435,7 +355,7 @@
           ],
           "label": "P2 P1 P1 in last 3 races"
         },
-        "defenderNote": "Oscar Piastri won here in 2025 (McLaren)"
+        "defenderNote": null
       },
       "drivers": {
         "leader": "ANTONELLI",
@@ -477,15 +397,7 @@
         "date": "2026-05-22",
         "dateStartUtc": "2026-05-22T20:30:00+00:00",
         "meetingKey": 1285,
-        "previousYearWinner": {
-          "season": 2025,
-          "round": 10,
-          "raceName": "Canadian Grand Prix",
-          "date": "2025-06-15",
-          "winner": "George Russell",
-          "constructor": "Mercedes",
-          "source": "jolpica"
-        },
+        "previousYearWinner": null,
         "sessionsIncluded": [
           {
             "eventType": "sprint_shootout",
@@ -516,15 +428,7 @@
           }
         ]
       },
-      "previousYearWinner": {
-        "season": 2025,
-        "round": 10,
-        "raceName": "Canadian Grand Prix",
-        "date": "2025-06-15",
-        "winner": "George Russell",
-        "constructor": "Mercedes",
-        "source": "jolpica"
-      },
+      "previousYearWinner": null,
       "preWeekendNotes": {
         "winStreak": {
           "driverName": "ANTONELLI",
@@ -543,7 +447,7 @@
           ],
           "label": "P1 P1 P1 in last 3 races"
         },
-        "defenderNote": "George Russell won here in 2025 (Mercedes)"
+        "defenderNote": null
       },
       "drivers": {
         "leader": "ANTONELLI",
@@ -585,15 +489,7 @@
         "date": "2026-06-07",
         "dateStartUtc": "2026-06-07T13:00:00+00:00",
         "meetingKey": 1286,
-        "previousYearWinner": {
-          "season": 2025,
-          "round": 8,
-          "raceName": "Monaco Grand Prix",
-          "date": "2025-05-25",
-          "winner": "Lando Norris",
-          "constructor": "McLaren",
-          "source": "jolpica"
-        },
+        "previousYearWinner": null,
         "sessionsIncluded": [
           {
             "eventType": "race",
@@ -606,15 +502,7 @@
           }
         ]
       },
-      "previousYearWinner": {
-        "season": 2025,
-        "round": 8,
-        "raceName": "Monaco Grand Prix",
-        "date": "2025-05-25",
-        "winner": "Lando Norris",
-        "constructor": "McLaren",
-        "source": "jolpica"
-      },
+      "previousYearWinner": null,
       "preWeekendNotes": {
         "winStreak": {
           "driverName": "ANTONELLI",
@@ -633,7 +521,7 @@
           ],
           "label": "P1 P1 P1 in last 3 races"
         },
-        "defenderNote": "Lando Norris won here in 2025 (McLaren)"
+        "defenderNote": null
       },
       "drivers": {
         "leader": "ANTONELLI",
@@ -749,15 +637,7 @@
         "date": "2026-06-28",
         "dateStartUtc": "2026-06-28T13:00:00+00:00",
         "meetingKey": 1288,
-        "previousYearWinner": {
-          "season": 2025,
-          "round": 11,
-          "raceName": "Austrian Grand Prix",
-          "date": "2025-06-29",
-          "winner": "Lando Norris",
-          "constructor": "McLaren",
-          "source": "jolpica"
-        },
+        "previousYearWinner": null,
         "sessionsIncluded": [
           {
             "eventType": "race",
@@ -770,15 +650,7 @@
           }
         ]
       },
-      "previousYearWinner": {
-        "season": 2025,
-        "round": 11,
-        "raceName": "Austrian Grand Prix",
-        "date": "2025-06-29",
-        "winner": "Lando Norris",
-        "constructor": "McLaren",
-        "source": "jolpica"
-      },
+      "previousYearWinner": null,
       "preWeekendNotes": {
         "winStreak": null,
         "podiumStreak": {
@@ -794,7 +666,7 @@
           ],
           "label": "P1 P1 P16 in last 3 races"
         },
-        "defenderNote": "Lando Norris won here in 2025 (McLaren)"
+        "defenderNote": null
       },
       "drivers": {
         "leader": "ANTONELLI",
@@ -836,15 +708,7 @@
         "date": "2026-07-03",
         "dateStartUtc": "2026-07-03T15:30:00+00:00",
         "meetingKey": 1289,
-        "previousYearWinner": {
-          "season": 2025,
-          "round": 12,
-          "raceName": "British Grand Prix",
-          "date": "2025-07-06",
-          "winner": "Lando Norris",
-          "constructor": "McLaren",
-          "source": "jolpica"
-        },
+        "previousYearWinner": null,
         "sessionsIncluded": [
           {
             "eventType": "sprint_shootout",
@@ -875,15 +739,7 @@
           }
         ]
       },
-      "previousYearWinner": {
-        "season": 2025,
-        "round": 12,
-        "raceName": "British Grand Prix",
-        "date": "2025-07-06",
-        "winner": "Lando Norris",
-        "constructor": "McLaren",
-        "source": "jolpica"
-      },
+      "previousYearWinner": null,
       "preWeekendNotes": {
         "winStreak": null,
         "podiumStreak": null,
@@ -896,7 +752,7 @@
           ],
           "label": "P1 P16 P3 in last 3 races"
         },
-        "defenderNote": "Lando Norris won here in 2025 (McLaren)"
+        "defenderNote": null
       },
       "drivers": {
         "leader": "ANTONELLI",
@@ -938,15 +794,7 @@
         "date": "2026-07-19",
         "dateStartUtc": "2026-07-19T13:00:00+00:00",
         "meetingKey": 1290,
-        "previousYearWinner": {
-          "season": 2025,
-          "round": 13,
-          "raceName": "Belgian Grand Prix",
-          "date": "2025-07-27",
-          "winner": "Oscar Piastri",
-          "constructor": "McLaren",
-          "source": "jolpica"
-        },
+        "previousYearWinner": null,
         "sessionsIncluded": [
           {
             "eventType": "race",
@@ -959,15 +807,7 @@
           }
         ]
       },
-      "previousYearWinner": {
-        "season": 2025,
-        "round": 13,
-        "raceName": "Belgian Grand Prix",
-        "date": "2025-07-27",
-        "winner": "Oscar Piastri",
-        "constructor": "McLaren",
-        "source": "jolpica"
-      },
+      "previousYearWinner": null,
       "preWeekendNotes": {
         "winStreak": null,
         "podiumStreak": {
@@ -983,7 +823,7 @@
           ],
           "label": "P16 P3 P15 in last 3 races"
         },
-        "defenderNote": "Oscar Piastri won here in 2025 (McLaren)"
+        "defenderNote": null
       },
       "drivers": {
         "leader": "ANTONELLI",
@@ -1025,15 +865,7 @@
         "date": "2026-07-26",
         "dateStartUtc": "2026-07-26T13:00:00+00:00",
         "meetingKey": 1291,
-        "previousYearWinner": {
-          "season": 2025,
-          "round": 14,
-          "raceName": "Hungarian Grand Prix",
-          "date": "2025-08-03",
-          "winner": "Lando Norris",
-          "constructor": "McLaren",
-          "source": "jolpica"
-        },
+        "previousYearWinner": null,
         "sessionsIncluded": [
           {
             "eventType": "race",
@@ -1046,15 +878,7 @@
           }
         ]
       },
-      "previousYearWinner": {
-        "season": 2025,
-        "round": 14,
-        "raceName": "Hungarian Grand Prix",
-        "date": "2025-08-03",
-        "winner": "Lando Norris",
-        "constructor": "McLaren",
-        "source": "jolpica"
-      },
+      "previousYearWinner": null,
       "preWeekendNotes": {
         "winStreak": null,
         "podiumStreak": null,
@@ -1067,7 +891,7 @@
           ],
           "label": "P3 P15 P1 in last 3 races"
         },
-        "defenderNote": "Lando Norris won here in 2025 (McLaren)"
+        "defenderNote": null
       },
       "drivers": {
         "leader": "ANTONELLI",
@@ -1109,15 +933,7 @@
         "date": "2026-08-21",
         "dateStartUtc": "2026-08-21T14:30:00+00:00",
         "meetingKey": 1292,
-        "previousYearWinner": {
-          "season": 2025,
-          "round": 15,
-          "raceName": "Dutch Grand Prix",
-          "date": "2025-08-31",
-          "winner": "Oscar Piastri",
-          "constructor": "McLaren",
-          "source": "jolpica"
-        },
+        "previousYearWinner": null,
         "sessionsIncluded": [
           {
             "eventType": "sprint_shootout",
@@ -1148,15 +964,7 @@
           }
         ]
       },
-      "previousYearWinner": {
-        "season": 2025,
-        "round": 15,
-        "raceName": "Dutch Grand Prix",
-        "date": "2025-08-31",
-        "winner": "Oscar Piastri",
-        "constructor": "McLaren",
-        "source": "jolpica"
-      },
+      "previousYearWinner": null,
       "preWeekendNotes": {
         "winStreak": null,
         "podiumStreak": null,
@@ -1169,7 +977,7 @@
           ],
           "label": "P15 P1 P3 in last 3 races"
         },
-        "defenderNote": "Oscar Piastri won here in 2025 (McLaren)"
+        "defenderNote": null
       },
       "drivers": {
         "leader": "ANTONELLI",
@@ -1211,15 +1019,7 @@
         "date": "2026-09-06",
         "dateStartUtc": "2026-09-06T13:00:00+00:00",
         "meetingKey": 1293,
-        "previousYearWinner": {
-          "season": 2025,
-          "round": 16,
-          "raceName": "Italian Grand Prix",
-          "date": "2025-09-07",
-          "winner": "Max Verstappen",
-          "constructor": "Red Bull",
-          "source": "jolpica"
-        },
+        "previousYearWinner": null,
         "sessionsIncluded": [
           {
             "eventType": "race",
@@ -1232,15 +1032,7 @@
           }
         ]
       },
-      "previousYearWinner": {
-        "season": 2025,
-        "round": 16,
-        "raceName": "Italian Grand Prix",
-        "date": "2025-09-07",
-        "winner": "Max Verstappen",
-        "constructor": "Red Bull",
-        "source": "jolpica"
-      },
+      "previousYearWinner": null,
       "preWeekendNotes": {
         "winStreak": {
           "driverName": "NORRIS",
@@ -1259,7 +1051,7 @@
           ],
           "label": "P1 P3 P2 in last 3 races"
         },
-        "defenderNote": "Max Verstappen won here in 2025 (Red Bull)"
+        "defenderNote": null
       },
       "drivers": {
         "leader": "ANTONELLI",
