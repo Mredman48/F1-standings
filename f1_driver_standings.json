@@ -1,6 +1,6 @@
 {
   "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-09-12T09:13:46.225Z",
+  "generatedAtUtc": "2026-09-12T09:25:45.181Z",
   "season": 2026,
   "source": {
     "primary": "f1_season_event_results.json",
@@ -30,8 +30,8 @@
     {
       "position": "P1",
       "positionNumber": 1,
-      "points": 267,
-      "wins": 7,
+      "points": 242,
+      "wins": 6,
       "driver": {
         "code": "ANT",
         "firstName": "Kimi",
@@ -72,7 +72,7 @@
     {
       "position": "P3",
       "positionNumber": 3,
-      "points": 191,
+      "points": 173,
       "wins": 1,
       "driver": {
         "code": "HAM",
@@ -114,7 +114,7 @@
     {
       "position": "P5",
       "positionNumber": 5,
-      "points": 155,
+      "points": 143,
       "wins": 1,
       "driver": {
         "code": "LEC",
@@ -135,27 +135,6 @@
     {
       "position": "P6",
       "positionNumber": 6,
-      "points": 127,
-      "wins": 0,
-      "driver": {
-        "code": "VER",
-        "firstName": "Max",
-        "lastName": "VERSTAPPEN",
-        "fullName": "Max VERSTAPPEN",
-        "nationality": "NED",
-        "driverNumber": 3,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/max-verstappen.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Red Bull",
-        "fullName": "Red Bull",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P7",
-      "positionNumber": 7,
       "points": 116,
       "wins": 0,
       "driver": {
@@ -175,9 +154,30 @@
       }
     },
     {
+      "position": "P7",
+      "positionNumber": 7,
+      "points": 112,
+      "wins": 0,
+      "driver": {
+        "code": "VER",
+        "firstName": "Max",
+        "lastName": "VERSTAPPEN",
+        "fullName": "Max VERSTAPPEN",
+        "nationality": "NED",
+        "driverNumber": 3,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/max-verstappen.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Red Bull",
+        "fullName": "Red Bull",
+        "nationality": null
+      }
+    },
+    {
       "position": "P8",
       "positionNumber": 8,
-      "points": 71,
+      "points": 61,
       "wins": 0,
       "driver": {
         "code": "HAD",
@@ -198,7 +198,7 @@
     {
       "position": "P9",
       "positionNumber": 9,
-      "points": 51,
+      "points": 45,
       "wins": 0,
       "driver": {
         "code": "LAW",
@@ -219,7 +219,7 @@
     {
       "position": "P10",
       "positionNumber": 10,
-      "points": 41,
+      "points": 37,
       "wins": 0,
       "driver": {
         "code": "GAS",
@@ -261,28 +261,7 @@
     {
       "position": "P12",
       "positionNumber": 12,
-      "points": 21,
-      "wins": 0,
-      "driver": {
-        "code": "COL",
-        "firstName": "Franco",
-        "lastName": "COLAPINTO",
-        "fullName": "Franco COLAPINTO",
-        "nationality": "ARG",
-        "driverNumber": 43,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/franco-colapinto.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Alpine",
-        "fullName": "Alpine",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P13",
-      "positionNumber": 13,
-      "points": 18,
+      "points": 17,
       "wins": 0,
       "driver": {
         "code": "BEA",
@@ -297,6 +276,27 @@
       "constructor": {
         "name": "Haas",
         "fullName": "Haas",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P13",
+      "positionNumber": 13,
+      "points": 13,
+      "wins": 0,
+      "driver": {
+        "code": "COL",
+        "firstName": "Franco",
+        "lastName": "COLAPINTO",
+        "fullName": "Franco COLAPINTO",
+        "nationality": "ARG",
+        "driverNumber": 43,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/franco-colapinto.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Alpine",
+        "fullName": "Alpine",
         "nationality": null
       }
     },
@@ -345,16 +345,16 @@
     {
       "position": "P16",
       "positionNumber": 16,
-      "points": 6,
+      "points": 5,
       "wins": 0,
       "driver": {
-        "code": "SAI",
-        "firstName": "Carlos",
-        "lastName": "SAINZ",
-        "fullName": "Carlos SAINZ",
-        "nationality": "ESP",
-        "driverNumber": 55,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/carlos-sainz.png",
+        "code": "ALB",
+        "firstName": "Alexander",
+        "lastName": "ALBON",
+        "fullName": "Alexander ALBON",
+        "nationality": "THA",
+        "driverNumber": 23,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/alex-albon.png",
         "openf1HeadshotUrl": null
       },
       "constructor": {
@@ -366,16 +366,16 @@
     {
       "position": "P17",
       "positionNumber": 17,
-      "points": 5,
+      "points": 4,
       "wins": 0,
       "driver": {
-        "code": "ALB",
-        "firstName": "Alexander",
-        "lastName": "ALBON",
-        "fullName": "Alexander ALBON",
-        "nationality": "THA",
-        "driverNumber": 23,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/alex-albon.png",
+        "code": "SAI",
+        "firstName": "Carlos",
+        "lastName": "SAINZ",
+        "fullName": "Carlos SAINZ",
+        "nationality": "ESP",
+        "driverNumber": 55,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/carlos-sainz.png",
         "openf1HeadshotUrl": null
       },
       "constructor": {
