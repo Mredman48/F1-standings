@@ -1,6 +1,6 @@
 {
   "header": "Constructors standings",
-  "generatedAtUtc": "2026-09-13T15:37:52.563Z",
+  "generatedAtUtc": "2026-09-13T15:49:47.228Z",
   "meta": {
     "seasonUsed": "2026",
     "source": "f1_driver_standings.json",
@@ -9,13 +9,13 @@
   },
   "lastRace": {
     "season": "2026",
-    "round": "13",
-    "raceName": "Italian Grand Prix",
-    "date": "2026-09-06",
+    "round": "14",
+    "raceName": "Spanish Grand Prix",
+    "date": "2026-09-13",
     "circuit": {
-      "name": "Monza",
-      "locality": "Monza",
-      "country": "Italy"
+      "name": "Madring",
+      "locality": "Madrid",
+      "country": "Spain"
     },
     "winner": {
       "firstName": "Kimi",
@@ -29,15 +29,15 @@
     {
       "team": "Mercedes",
       "position": "P1",
-      "points": 468,
-      "wins": 9,
+      "points": 503,
+      "wins": 10,
       "driverCount": 2,
       "placeholder": false
     },
     {
       "team": "Ferrari",
       "position": "P2",
-      "points": 346,
+      "points": 358,
       "wins": 2,
       "driverCount": 2,
       "placeholder": false
@@ -45,7 +45,7 @@
     {
       "team": "McLaren",
       "position": "P3",
-      "points": 287,
+      "points": 306,
       "wins": 2,
       "driverCount": 2,
       "placeholder": false
@@ -53,7 +53,7 @@
     {
       "team": "Red Bull",
       "position": "P4",
-      "points": 198,
+      "points": 216,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
@@ -61,7 +61,7 @@
     {
       "team": "VCARB",
       "position": "P5",
-      "points": 81,
+      "points": 91,
       "wins": 0,
       "driverCount": 3,
       "placeholder": false
@@ -69,7 +69,7 @@
     {
       "team": "Alpine",
       "position": "P6",
-      "points": 62,
+      "points": 68,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
@@ -85,7 +85,7 @@
     {
       "team": "Audi",
       "position": "P8",
-      "points": 16,
+      "points": 17,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false

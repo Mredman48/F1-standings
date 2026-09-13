@@ -1,6 +1,6 @@
 {
   "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-09-13T15:37:52.194Z",
+  "generatedAtUtc": "2026-09-13T15:49:46.823Z",
   "season": 2026,
   "source": {
     "primary": "f1_season_event_results.json",
@@ -10,13 +10,13 @@
   },
   "lastRace": {
     "season": "2026",
-    "round": "13",
-    "raceName": "Italian Grand Prix",
-    "date": "2026-09-06",
+    "round": "14",
+    "raceName": "Spanish Grand Prix",
+    "date": "2026-09-13",
     "circuit": {
-      "name": "Monza",
-      "locality": "Monza",
-      "country": "Italy"
+      "name": "Madring",
+      "locality": "Madrid",
+      "country": "Spain"
     },
     "winner": {
       "firstName": "Kimi",
@@ -30,8 +30,8 @@
     {
       "position": "P1",
       "positionNumber": 1,
-      "points": 267,
-      "wins": 7,
+      "points": 292,
+      "wins": 8,
       "driver": {
         "code": "ANT",
         "firstName": "Kimi",
@@ -51,7 +51,7 @@
     {
       "position": "P2",
       "positionNumber": 2,
-      "points": 201,
+      "points": 211,
       "wins": 2,
       "driver": {
         "code": "RUS",
@@ -93,7 +93,7 @@
     {
       "position": "P4",
       "positionNumber": 4,
-      "points": 171,
+      "points": 186,
       "wins": 2,
       "driver": {
         "code": "NOR",
@@ -114,7 +114,7 @@
     {
       "position": "P5",
       "positionNumber": 5,
-      "points": 155,
+      "points": 167,
       "wins": 1,
       "driver": {
         "code": "LEC",
@@ -135,7 +135,7 @@
     {
       "position": "P6",
       "positionNumber": 6,
-      "points": 127,
+      "points": 145,
       "wins": 0,
       "driver": {
         "code": "VER",
@@ -156,7 +156,7 @@
     {
       "position": "P7",
       "positionNumber": 7,
-      "points": 116,
+      "points": 120,
       "wins": 0,
       "driver": {
         "code": "PIA",
@@ -198,7 +198,7 @@
     {
       "position": "P9",
       "positionNumber": 9,
-      "points": 51,
+      "points": 59,
       "wins": 0,
       "driver": {
         "code": "LAW",
@@ -212,7 +212,7 @@
       },
       "constructor": {
         "name": "VCARB",
-        "fullName": "VCARB",
+        "fullName": "Red Bull",
         "nationality": null
       }
     },
@@ -240,7 +240,7 @@
     {
       "position": "P11",
       "positionNumber": 11,
-      "points": 29,
+      "points": 31,
       "wins": 0,
       "driver": {
         "code": "LIN",
@@ -261,7 +261,7 @@
     {
       "position": "P12",
       "positionNumber": 12,
-      "points": 21,
+      "points": 27,
       "wins": 0,
       "driver": {
         "code": "COL",
@@ -324,7 +324,7 @@
     {
       "position": "P15",
       "positionNumber": 15,
-      "points": 6,
+      "points": 7,
       "wins": 0,
       "driver": {
         "code": "HUL",
