@@ -1,90 +1,90 @@
 {
   "header": "Next F1 event",
-  "generatedAtUtc": "2026-09-13T16:49:50.076Z",
+  "generatedAtUtc": "2026-09-13T17:01:54.955Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics+formula1",
     "url": "https://better-f1-calendar.vercel.app/api/calendar.ics",
-    "officialRacePage": "https://www.formula1.com/en/racing/2026/italy"
+    "officialRacePage": "https://www.formula1.com/en/racing/2026/azerbaijan"
   },
   "nextEvent": {
     "type": "RACE_WEEKEND",
-    "title": "Italian Grand Prix 2026",
+    "title": "FORMULA 1 QATAR AIRWAYS AZERBAIJAN GRAND PRIX 2026",
     "season": "2026",
     "location": {
       "raw": null,
-      "city": "Monza",
-      "country": "Italy",
+      "city": "Baku",
+      "country": "Azerbaijan",
       "flag": {
-        "iso2": "it",
-        "png": "https://flagcdn.com/w160/it.png",
-        "svg": "https://flagcdn.com/it.svg"
+        "iso2": "az",
+        "png": "https://flagcdn.com/w160/az.png",
+        "svg": "https://flagcdn.com/az.svg"
       }
     },
     "racePage": {
-      "slug": "italy",
-      "url": "https://www.formula1.com/en/racing/2026/italy"
+      "slug": "azerbaijan",
+      "url": "https://www.formula1.com/en/racing/2026/azerbaijan"
     },
     "trackMap": {
       "found": true,
-      "pageUrl": "https://www.formula1.com/en/racing/2026/italy",
-      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmonzadetailed.webp",
-      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_italy_detailed.png",
+      "pageUrl": "https://www.formula1.com/en/racing/2026/azerbaijan",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackbakudetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_azerbaijan_detailed.png",
       "note": "Using existing saved track map file. No download performed."
     },
     "map": {
       "found": true,
-      "filename": "monza.png",
-      "pngUrl": "https://mredman48.github.io/F1-standings/maps/monza.png",
+      "filename": "baku.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/baku.png",
       "note": null
     },
     "countdowns": {
-      "startsInDays": -2
+      "startsInDays": 11
     },
     "weekend": {
-      "startUtc": "2026-09-11T11:30:00.000Z",
-      "endUtc": "2026-09-13T15:00:00.000Z"
+      "startUtc": "2026-09-24T08:30:00.000Z",
+      "endUtc": "2026-09-26T13:00:00.000Z"
     },
     "sessions": [
       {
         "type": "FP1",
-        "startUtc": "2026-09-11T11:30:00.000Z",
-        "endUtc": "2026-09-11T12:30:00.000Z",
-        "startLocalDateShort": "Fri, Sep 11",
-        "startLocalTimeShort": "05:30",
-        "startLocalDateTimeShort": "Fri, Sep 11 05:30"
+        "startUtc": "2026-09-24T08:30:00.000Z",
+        "endUtc": "2026-09-24T09:30:00.000Z",
+        "startLocalDateShort": "Thu, Sep 24",
+        "startLocalTimeShort": "02:30",
+        "startLocalDateTimeShort": "Thu, Sep 24 02:30"
       },
       {
         "type": "FP2",
-        "startUtc": "2026-09-11T15:00:00.000Z",
-        "endUtc": "2026-09-11T16:00:00.000Z",
-        "startLocalDateShort": "Fri, Sep 11",
-        "startLocalTimeShort": "09:00",
-        "startLocalDateTimeShort": "Fri, Sep 11 09:00"
+        "startUtc": "2026-09-24T12:00:00.000Z",
+        "endUtc": "2026-09-24T13:00:00.000Z",
+        "startLocalDateShort": "Thu, Sep 24",
+        "startLocalTimeShort": "06:00",
+        "startLocalDateTimeShort": "Thu, Sep 24 06:00"
       },
       {
         "type": "FP3",
-        "startUtc": "2026-09-12T10:30:00.000Z",
-        "endUtc": "2026-09-12T11:30:00.000Z",
-        "startLocalDateShort": "Sat, Sep 12",
-        "startLocalTimeShort": "04:30",
-        "startLocalDateTimeShort": "Sat, Sep 12 04:30"
+        "startUtc": "2026-09-25T08:30:00.000Z",
+        "endUtc": "2026-09-25T09:30:00.000Z",
+        "startLocalDateShort": "Fri, Sep 25",
+        "startLocalTimeShort": "02:30",
+        "startLocalDateTimeShort": "Fri, Sep 25 02:30"
       },
       {
         "type": "Quali",
-        "startUtc": "2026-09-12T14:00:00.000Z",
-        "endUtc": "2026-09-12T15:00:00.000Z",
-        "startLocalDateShort": "Sat, Sep 12",
-        "startLocalTimeShort": "08:00",
-        "startLocalDateTimeShort": "Sat, Sep 12 08:00"
+        "startUtc": "2026-09-25T12:00:00.000Z",
+        "endUtc": "2026-09-25T13:00:00.000Z",
+        "startLocalDateShort": "Fri, Sep 25",
+        "startLocalTimeShort": "06:00",
+        "startLocalDateTimeShort": "Fri, Sep 25 06:00"
       },
       {
         "type": "Race",
-        "startUtc": "2026-09-13T13:00:00.000Z",
-        "endUtc": "2026-09-13T15:00:00.000Z",
-        "startLocalDateShort": "Sun, Sep 13",
-        "startLocalTimeShort": "07:00",
-        "startLocalDateTimeShort": "Sun, Sep 13 07:00"
+        "startUtc": "2026-09-26T11:00:00.000Z",
+        "endUtc": "2026-09-26T13:00:00.000Z",
+        "startLocalDateShort": "Sat, Sep 26",
+        "startLocalTimeShort": "05:00",
+        "startLocalDateTimeShort": "Sat, Sep 26 05:00"
       }
     ]
   }
