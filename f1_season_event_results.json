@@ -1,6 +1,6 @@
 {
   "header": "2026 F1 all session results",
-  "generatedAtUtc": "2026-09-17T23:30:50.151Z",
+  "generatedAtUtc": "2026-09-18T21:42:37.385Z",
   "season": 2026,
   "events": [
     {
@@ -2323,7 +2323,14 @@
           "startPositionRank": 11,
           "qualifyingLapTime": 0
         }
-      ]
+      ],
+      "fastestLap": {
+        "driverNumber": 3,
+        "driverName": "Max VERSTAPPEN",
+        "teamName": "Red Bull Racing",
+        "lapTime": 82.091,
+        "lapNumber": 42
+      }
     },
     {
       "eventType": "fp1",
@@ -5119,7 +5126,14 @@
           "startPositionRank": 18,
           "qualifyingLapTime": 0
         }
-      ]
+      ],
+      "fastestLap": {
+        "driverNumber": 12,
+        "driverName": "Kimi ANTONELLI",
+        "teamName": "Mercedes",
+        "lapTime": 95.275,
+        "lapNumber": 52
+      }
     },
     {
       "eventType": "fp1",
@@ -7573,7 +7587,14 @@
           "startPositionRank": 18,
           "qualifyingLapTime": 0
         }
-      ]
+      ],
+      "fastestLap": {
+        "driverNumber": 12,
+        "driverName": "Kimi ANTONELLI",
+        "teamName": "Mercedes",
+        "lapTime": 92.432,
+        "lapNumber": 49
+      }
     },
     {
       "eventType": "fp1",
@@ -10369,7 +10390,14 @@
           "startPositionRank": null,
           "qualifyingLapTime": 0
         }
-      ]
+      ],
+      "fastestLap": {
+        "driverNumber": 1,
+        "driverName": "Lando NORRIS",
+        "teamName": "McLaren",
+        "lapTime": 91.869,
+        "lapNumber": 35
+      }
     },
     {
       "eventType": "fp1",
@@ -13133,7 +13161,14 @@
           "startPositionRank": 9,
           "qualifyingLapTime": 73.28
         }
-      ]
+      ],
+      "fastestLap": {
+        "driverNumber": 12,
+        "driverName": "Kimi ANTONELLI",
+        "teamName": "Mercedes",
+        "lapTime": 74.21,
+        "lapNumber": 68
+      }
     },
     {
       "eventType": "fp1",
@@ -15409,10 +15444,10 @@
           "driverNumber": 55,
           "driverName": "Carlos SAINZ",
           "teamName": "Williams",
-          "position": "P16",
-          "positionRank": 16,
+          "position": "DNF",
+          "positionRank": null,
           "classifiedPosition": 16,
-          "dnf": true,
+          "dnf": false,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -15435,10 +15470,10 @@
           "driverNumber": 16,
           "driverName": "Charles LECLERC",
           "teamName": "Ferrari",
-          "position": "P17",
-          "positionRank": 17,
-          "classifiedPosition": 17,
-          "dnf": true,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
+          "dnf": false,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -15461,10 +15496,10 @@
           "driverNumber": 18,
           "driverName": "Lance STROLL",
           "teamName": "Aston Martin",
-          "position": "P18",
-          "positionRank": 18,
-          "classifiedPosition": 18,
-          "dnf": true,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
+          "dnf": false,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -15487,10 +15522,10 @@
           "driverNumber": 1,
           "driverName": "Lando NORRIS",
           "teamName": "McLaren",
-          "position": "P19",
-          "positionRank": 19,
-          "classifiedPosition": 19,
-          "dnf": true,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
+          "dnf": false,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -15513,10 +15548,10 @@
           "driverNumber": 87,
           "driverName": "Oliver BEARMAN",
           "teamName": "Haas F1 Team",
-          "position": "P20",
-          "positionRank": 20,
-          "classifiedPosition": 20,
-          "dnf": true,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
+          "dnf": false,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -15539,10 +15574,10 @@
           "driverNumber": 77,
           "driverName": "Valtteri BOTTAS",
           "teamName": "Cadillac",
-          "position": "P21",
-          "positionRank": 21,
-          "classifiedPosition": 21,
-          "dnf": true,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
+          "dnf": false,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -15565,10 +15600,10 @@
           "driverNumber": 3,
           "driverName": "Max VERSTAPPEN",
           "teamName": "Red Bull Racing",
-          "position": "P22",
-          "positionRank": 22,
-          "classifiedPosition": 22,
-          "dnf": true,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
+          "dnf": false,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -15587,7 +15622,14 @@
           "startPositionRank": 2,
           "qualifyingLapTime": 72.094
         }
-      ]
+      ],
+      "fastestLap": {
+        "driverNumber": 12,
+        "driverName": "Kimi ANTONELLI",
+        "teamName": "Mercedes",
+        "lapTime": 73.481,
+        "lapNumber": 76
+      }
     },
     {
       "eventType": "fp1",
@@ -17819,10 +17861,10 @@
           "driverNumber": 16,
           "driverName": "Charles LECLERC",
           "teamName": "Ferrari",
-          "position": "DNF",
-          "positionRank": null,
+          "position": "P15",
+          "positionRank": 15,
           "classifiedPosition": 15,
-          "dnf": false,
+          "dnf": true,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -17845,10 +17887,10 @@
           "driverNumber": 12,
           "driverName": null,
           "teamName": null,
-          "position": "DNF",
-          "positionRank": null,
+          "position": "P16",
+          "positionRank": 16,
           "classifiedPosition": 16,
-          "dnf": false,
+          "dnf": true,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -17871,10 +17913,10 @@
           "driverNumber": 87,
           "driverName": "Oliver BEARMAN",
           "teamName": "Haas F1 Team",
-          "position": "DNF",
-          "positionRank": null,
+          "position": "P17",
+          "positionRank": 17,
           "classifiedPosition": 17,
-          "dnf": false,
+          "dnf": true,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -17897,9 +17939,9 @@
           "driverNumber": 23,
           "driverName": null,
           "teamName": null,
-          "position": "-",
-          "positionRank": null,
-          "classifiedPosition": null,
+          "position": "P18",
+          "positionRank": 18,
+          "classifiedPosition": 18,
           "dnf": false,
           "dns": false,
           "dsq": false,
@@ -17923,10 +17965,10 @@
           "driverNumber": 14,
           "driverName": "Fernando ALONSO",
           "teamName": "Aston Martin",
-          "position": "DNF",
-          "positionRank": null,
-          "classifiedPosition": null,
-          "dnf": false,
+          "position": "P19",
+          "positionRank": 19,
+          "classifiedPosition": 19,
+          "dnf": true,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -17949,10 +17991,10 @@
           "driverNumber": 27,
           "driverName": null,
           "teamName": null,
-          "position": "DNF",
-          "positionRank": null,
-          "classifiedPosition": null,
-          "dnf": false,
+          "position": "P20",
+          "positionRank": 20,
+          "classifiedPosition": 20,
+          "dnf": true,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -17975,10 +18017,10 @@
           "driverNumber": 77,
           "driverName": "Valtteri BOTTAS",
           "teamName": "Cadillac",
-          "position": "DNF",
-          "positionRank": null,
-          "classifiedPosition": null,
-          "dnf": false,
+          "position": "P21",
+          "positionRank": 21,
+          "classifiedPosition": 21,
+          "dnf": true,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -18001,10 +18043,10 @@
           "driverNumber": 18,
           "driverName": "Lance STROLL",
           "teamName": "Aston Martin",
-          "position": "DNF",
-          "positionRank": null,
-          "classifiedPosition": null,
-          "dnf": false,
+          "position": "P22",
+          "positionRank": 22,
+          "classifiedPosition": 22,
+          "dnf": true,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -18023,7 +18065,14 @@
           "startPositionRank": 21,
           "qualifyingLapTime": 0
         }
-      ]
+      ],
+      "fastestLap": {
+        "driverNumber": 44,
+        "driverName": null,
+        "teamName": null,
+        "lapTime": 80.122,
+        "lapNumber": 44
+      }
     },
     {
       "eventType": "fp1",
@@ -20377,10 +20426,10 @@
           "driverNumber": 18,
           "driverName": null,
           "teamName": null,
-          "position": "P19",
-          "positionRank": 19,
-          "classifiedPosition": 19,
-          "dnf": true,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
+          "dnf": false,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -20403,10 +20452,10 @@
           "driverNumber": 55,
           "driverName": null,
           "teamName": null,
-          "position": "P20",
-          "positionRank": 20,
-          "classifiedPosition": 20,
-          "dnf": true,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
+          "dnf": false,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -20429,10 +20478,10 @@
           "driverNumber": 11,
           "driverName": "Sergio PEREZ",
           "teamName": "Cadillac",
-          "position": "P21",
-          "positionRank": 21,
-          "classifiedPosition": 21,
-          "dnf": true,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
+          "dnf": false,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -20455,10 +20504,10 @@
           "driverNumber": 77,
           "driverName": "Valtteri BOTTAS",
           "teamName": "Cadillac",
-          "position": "P22",
-          "positionRank": 22,
-          "classifiedPosition": 22,
-          "dnf": true,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
+          "dnf": false,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -20477,7 +20526,14 @@
           "startPositionRank": 20,
           "qualifyingLapTime": 0
         }
-      ]
+      ],
+      "fastestLap": {
+        "driverNumber": 12,
+        "driverName": "Kimi ANTONELLI",
+        "teamName": "Mercedes",
+        "lapTime": 70.374,
+        "lapNumber": 59
+      }
     },
     {
       "eventType": "fp1",
@@ -22054,7 +22110,7 @@
           "position": "P21",
           "positionRank": 21,
           "classifiedPosition": 21,
-          "dnf": true,
+          "dnf": false,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -22080,7 +22136,7 @@
           "position": "P22",
           "positionRank": 22,
           "classifiedPosition": 22,
-          "dnf": true,
+          "dnf": false,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -23305,7 +23361,14 @@
           "startPositionRank": 13,
           "qualifyingLapTime": 0
         }
-      ]
+      ],
+      "fastestLap": {
+        "driverNumber": 12,
+        "driverName": "Kimi ANTONELLI",
+        "teamName": "Mercedes",
+        "lapTime": 91.777,
+        "lapNumber": 37
+      }
     },
     {
       "eventType": "fp1",
@@ -25685,10 +25748,10 @@
           "driverNumber": 18,
           "driverName": "Lance STROLL",
           "teamName": "Aston Martin",
-          "position": "P20",
-          "positionRank": 20,
-          "classifiedPosition": 20,
-          "dnf": true,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
+          "dnf": false,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -25711,10 +25774,10 @@
           "driverNumber": 11,
           "driverName": "Sergio PEREZ",
           "teamName": "Cadillac",
-          "position": "P21",
-          "positionRank": 21,
-          "classifiedPosition": 21,
-          "dnf": true,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
+          "dnf": false,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -25737,10 +25800,10 @@
           "driverNumber": 63,
           "driverName": "George RUSSELL",
           "teamName": "Mercedes",
-          "position": "P22",
-          "positionRank": 22,
-          "classifiedPosition": 22,
-          "dnf": true,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
+          "dnf": false,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -25759,7 +25822,14 @@
           "startPositionRank": 4,
           "qualifyingLapTime": 104.869
         }
-      ]
+      ],
+      "fastestLap": {
+        "driverNumber": 1,
+        "driverName": "Lando NORRIS",
+        "teamName": "McLaren",
+        "lapTime": 108.89,
+        "lapNumber": 44
+      }
     },
     {
       "eventType": "fp1",
@@ -28121,10 +28191,10 @@
           "driverNumber": 81,
           "driverName": null,
           "teamName": null,
-          "position": "P20",
-          "positionRank": 20,
-          "classifiedPosition": 20,
-          "dnf": true,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
+          "dnf": false,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -28147,10 +28217,10 @@
           "driverNumber": 11,
           "driverName": "Sergio PEREZ",
           "teamName": "Cadillac",
-          "position": "P21",
-          "positionRank": 21,
-          "classifiedPosition": 21,
-          "dnf": true,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
+          "dnf": false,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -28173,10 +28243,10 @@
           "driverNumber": 77,
           "driverName": null,
           "teamName": null,
-          "position": "P22",
-          "positionRank": 22,
-          "classifiedPosition": 22,
-          "dnf": true,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
+          "dnf": false,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -28195,7 +28265,14 @@
           "startPositionRank": 21,
           "qualifyingLapTime": 0
         }
-      ]
+      ],
+      "fastestLap": {
+        "driverNumber": 16,
+        "driverName": "Charles LECLERC",
+        "teamName": "Ferrari",
+        "lapTime": 82,
+        "lapNumber": 58
+      }
     },
     {
       "eventType": "fp1",
@@ -29720,7 +29797,7 @@
           "position": "P19",
           "positionRank": 19,
           "classifiedPosition": 19,
-          "dnf": false,
+          "dnf": true,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -29746,7 +29823,7 @@
           "position": "P20",
           "positionRank": 20,
           "classifiedPosition": 20,
-          "dnf": false,
+          "dnf": true,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -29772,7 +29849,7 @@
           "position": "P21",
           "positionRank": 21,
           "classifiedPosition": 21,
-          "dnf": false,
+          "dnf": true,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -29795,10 +29872,10 @@
           "driverNumber": 27,
           "driverName": "Nico HULKENBERG",
           "teamName": "Audi",
-          "position": "-",
-          "positionRank": null,
-          "classifiedPosition": null,
-          "dnf": false,
+          "position": "P22",
+          "positionRank": 22,
+          "classifiedPosition": 22,
+          "dnf": true,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -31023,7 +31100,14 @@
           "startPositionRank": 7,
           "qualifyingLapTime": 71.618
         }
-      ]
+      ],
+      "fastestLap": {
+        "driverNumber": 16,
+        "driverName": "Charles LECLERC",
+        "teamName": "Ferrari",
+        "lapTime": 74.23,
+        "lapNumber": 60
+      }
     },
     {
       "eventType": "fp1",
@@ -33477,7 +33561,14 @@
           "startPositionRank": 4,
           "qualifyingLapTime": 82.004
         }
-      ]
+      ],
+      "fastestLap": {
+        "driverNumber": 12,
+        "driverName": "Kimi ANTONELLI",
+        "teamName": "Mercedes",
+        "lapTime": 83.504,
+        "lapNumber": 53
+      }
     },
     {
       "eventType": "fp1",
@@ -35867,7 +35958,14 @@
           "startPositionRank": 4,
           "qualifyingLapTime": 92.013
         }
-      ]
+      ],
+      "fastestLap": {
+        "driverNumber": 63,
+        "driverName": "George RUSSELL",
+        "teamName": "Mercedes",
+        "lapTime": 95.587,
+        "lapNumber": 49
+      }
     }
   ],
   "bestByDriverNumber": {
