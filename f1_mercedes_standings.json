@@ -1,21 +1,21 @@
 {
   "header": "Mercedes standings",
-  "generatedAtUtc": "2026-09-26T13:04:07.383Z",
+  "generatedAtUtc": "2026-09-26T13:15:01.753Z",
   "mercedes": {
     "team": "Mercedes",
     "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_mercedes_color_v2.png",
     "teamStanding": {
       "team": "Mercedes",
       "position": "P1",
-      "points": 503,
-      "wins": 10
+      "points": 538,
+      "wins": 11
     }
   },
   "lastRace": {
-    "raceName": "Spanish Grand Prix",
-    "round": "14",
-    "date": "2026-09-13",
-    "circuit": "Madring",
+    "raceName": "Azerbaijan Grand Prix",
+    "round": "15",
+    "date": "2026-09-26",
+    "circuit": "Baku",
     "location": {
       "locality": "-",
       "country": "-"
@@ -35,7 +35,7 @@
       "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-12-2.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/kimi-antonelli.png",
       "position": "P1",
-      "points": 292,
+      "points": 302,
       "wins": 8,
       "raceWins": 8,
       "racePodiums": 12,
@@ -68,23 +68,23 @@
       "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-63-2.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/george-russell.png",
       "position": "P2",
-      "points": 211,
-      "wins": 2,
-      "raceWins": 2,
-      "racePodiums": 7,
+      "points": 236,
+      "wins": 3,
+      "raceWins": 3,
+      "racePodiums": 8,
       "sprintWins": 3,
       "sprintPodiums": 3,
       "team": "Mercedes",
       "bestResult": {
         "position": "P1",
-        "eventType": "sprint",
-        "raceName": "Dutch Grand Prix Sprint",
-        "round": "12",
-        "date": "2026-08-22",
-        "circuit": "Zandvoort",
+        "eventType": "race",
+        "raceName": "Azerbaijan Grand Prix",
+        "round": "15",
+        "date": "2026-09-26",
+        "circuit": "Baku",
         "location": {
-          "locality": "Zandvoort",
-          "country": "Netherlands"
+          "locality": "Baku",
+          "country": "Azerbaijan"
         }
       }
     }

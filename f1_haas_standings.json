@@ -1,21 +1,21 @@
 {
   "header": "Haas standings",
-  "generatedAtUtc": "2026-09-26T13:04:07.398Z",
+  "generatedAtUtc": "2026-09-26T13:15:01.766Z",
   "haas": {
     "team": "Haas",
     "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_haas_color_v2.png",
     "teamStanding": {
       "team": "Haas",
       "position": "P7",
-      "points": 21,
+      "points": 27,
       "wins": 0
     }
   },
   "lastRace": {
-    "raceName": "Spanish Grand Prix",
-    "round": "14",
-    "date": "2026-09-13",
-    "circuit": "Madring",
+    "raceName": "Azerbaijan Grand Prix",
+    "round": "15",
+    "date": "2026-09-26",
+    "circuit": "Baku",
     "location": {
       "locality": "-",
       "country": "-"
@@ -35,7 +35,7 @@
       "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-87-2.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/oliver-bearman.png",
       "position": "P13",
-      "points": 18,
+      "points": 20,
       "wins": 0,
       "raceWins": 0,
       "racePodiums": 0,
@@ -67,8 +67,8 @@
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-31.png",
       "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-31-2.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/esteban-ocon.png",
-      "position": "P18",
-      "points": 3,
+      "position": "P16",
+      "points": 7,
       "wins": 0,
       "raceWins": 0,
       "racePodiums": 0,
@@ -76,15 +76,15 @@
       "sprintPodiums": 0,
       "team": "Haas",
       "bestResult": {
-        "position": "P9",
+        "position": "P8",
         "eventType": "race",
-        "raceName": "Monaco Grand Prix",
-        "round": "6",
-        "date": "2026-06-07",
-        "circuit": "Monte Carlo",
+        "raceName": "Azerbaijan Grand Prix",
+        "round": "15",
+        "date": "2026-09-26",
+        "circuit": "Baku",
         "location": {
-          "locality": "Monte Carlo",
-          "country": "Monaco"
+          "locality": "Baku",
+          "country": "Azerbaijan"
         }
       }
     }

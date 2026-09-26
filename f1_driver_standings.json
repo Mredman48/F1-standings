@@ -1,6 +1,6 @@
 {
   "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-09-26T13:04:06.159Z",
+  "generatedAtUtc": "2026-09-26T13:15:00.292Z",
   "season": 2026,
   "source": {
     "primary": "f1_season_event_results.json",
@@ -10,18 +10,18 @@
   },
   "lastRace": {
     "season": "2026",
-    "round": "14",
-    "raceName": "Spanish Grand Prix",
-    "date": "2026-09-13",
+    "round": "15",
+    "raceName": "Azerbaijan Grand Prix",
+    "date": "2026-09-26",
     "circuit": {
-      "name": "Madring",
-      "locality": "Madrid",
-      "country": "Spain"
+      "name": "Baku",
+      "locality": "Baku",
+      "country": "Azerbaijan"
     },
     "winner": {
-      "firstName": "Kimi",
-      "lastName": "ANTONELLI",
-      "fullName": "Kimi ANTONELLI",
+      "firstName": "George",
+      "lastName": "RUSSELL",
+      "fullName": "George RUSSELL",
       "code": null,
       "team": "Mercedes"
     }
@@ -30,7 +30,7 @@
     {
       "position": "P1",
       "positionNumber": 1,
-      "points": 292,
+      "points": 302,
       "wins": 8,
       "driver": {
         "code": "ANT",
@@ -51,8 +51,8 @@
     {
       "position": "P2",
       "positionNumber": 2,
-      "points": 211,
-      "wins": 2,
+      "points": 236,
+      "wins": 3,
       "driver": {
         "code": "RUS",
         "firstName": "George",
@@ -72,7 +72,7 @@
     {
       "position": "P3",
       "positionNumber": 3,
-      "points": 191,
+      "points": 199,
       "wins": 1,
       "driver": {
         "code": "HAM",
@@ -114,7 +114,7 @@
     {
       "position": "P5",
       "positionNumber": 5,
-      "points": 167,
+      "points": 179,
       "wins": 1,
       "driver": {
         "code": "LEC",
@@ -135,7 +135,7 @@
     {
       "position": "P6",
       "positionNumber": 6,
-      "points": 145,
+      "points": 163,
       "wins": 0,
       "driver": {
         "code": "VER",
@@ -177,7 +177,7 @@
     {
       "position": "P8",
       "positionNumber": 8,
-      "points": 71,
+      "points": 86,
       "wins": 0,
       "driver": {
         "code": "HAD",
@@ -240,7 +240,7 @@
     {
       "position": "P11",
       "positionNumber": 11,
-      "points": 31,
+      "points": 37,
       "wins": 0,
       "driver": {
         "code": "LIN",
@@ -282,7 +282,7 @@
     {
       "position": "P13",
       "positionNumber": 13,
-      "points": 18,
+      "points": 20,
       "wins": 0,
       "driver": {
         "code": "BEA",
@@ -345,7 +345,28 @@
     {
       "position": "P16",
       "positionNumber": 16,
-      "points": 6,
+      "points": 7,
+      "wins": 0,
+      "driver": {
+        "code": "OCO",
+        "firstName": "Esteban",
+        "lastName": "OCON",
+        "fullName": "Esteban OCON",
+        "nationality": "FRA",
+        "driverNumber": 31,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/esteban-ocon.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Haas",
+        "fullName": "Haas",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P17",
+      "positionNumber": 17,
+      "points": 7,
       "wins": 0,
       "driver": {
         "code": "SAI",
@@ -364,8 +385,8 @@
       }
     },
     {
-      "position": "P17",
-      "positionNumber": 17,
+      "position": "P18",
+      "positionNumber": 18,
       "points": 5,
       "wins": 0,
       "driver": {
@@ -381,27 +402,6 @@
       "constructor": {
         "name": "Williams",
         "fullName": "Williams",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P18",
-      "positionNumber": 18,
-      "points": 3,
-      "wins": 0,
-      "driver": {
-        "code": "OCO",
-        "firstName": "Esteban",
-        "lastName": "OCON",
-        "fullName": "Esteban OCON",
-        "nationality": "FRA",
-        "driverNumber": 31,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/esteban-ocon.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Haas",
-        "fullName": "Haas",
         "nationality": null
       }
     },
