@@ -1,90 +1,90 @@
 {
   "header": "Next F1 event",
-  "generatedAtUtc": "2026-09-26T14:54:08.264Z",
+  "generatedAtUtc": "2026-09-26T17:52:49.267Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics+formula1",
     "url": "https://better-f1-calendar.vercel.app/api/calendar.ics",
-    "officialRacePage": "https://www.formula1.com/en/racing/2026/azerbaijan"
+    "officialRacePage": "https://www.formula1.com/en/racing/2026/singapore"
   },
   "nextEvent": {
     "type": "RACE_WEEKEND",
-    "title": "FORMULA 1 QATAR AIRWAYS AZERBAIJAN GRAND PRIX 2026",
+    "title": "FORMULA 1 SINGAPORE AIRLINES SINGAPORE GRAND PRIX 2026",
     "season": "2026",
     "location": {
       "raw": null,
-      "city": "Baku",
-      "country": "Azerbaijan",
+      "city": "Singapore",
+      "country": "Singapore",
       "flag": {
-        "iso2": "az",
-        "png": "https://flagcdn.com/w160/az.png",
-        "svg": "https://flagcdn.com/az.svg"
+        "iso2": "sg",
+        "png": "https://flagcdn.com/w160/sg.png",
+        "svg": "https://flagcdn.com/sg.svg"
       }
     },
     "racePage": {
-      "slug": "azerbaijan",
-      "url": "https://www.formula1.com/en/racing/2026/azerbaijan"
+      "slug": "singapore",
+      "url": "https://www.formula1.com/en/racing/2026/singapore"
     },
     "trackMap": {
       "found": true,
-      "pageUrl": "https://www.formula1.com/en/racing/2026/azerbaijan",
-      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackbakudetailed.webp",
-      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_azerbaijan_detailed.png",
+      "pageUrl": "https://www.formula1.com/en/racing/2026/singapore",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026tracksingaporedetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_singapore_detailed.png",
       "note": "Using existing saved track map file. No download performed."
     },
     "map": {
       "found": true,
-      "filename": "baku.png",
-      "pngUrl": "https://mredman48.github.io/F1-standings/maps/baku.png",
+      "filename": "singapore.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/singapore.png",
       "note": null
     },
     "countdowns": {
-      "startsInDays": -2
+      "startsInDays": 13
     },
     "weekend": {
-      "startUtc": "2026-09-24T08:30:00.000Z",
-      "endUtc": "2026-09-26T13:00:00.000Z"
+      "startUtc": "2026-10-09T08:30:00.000Z",
+      "endUtc": "2026-10-11T14:00:00.000Z"
     },
     "sessions": [
       {
         "type": "FP1",
-        "startUtc": "2026-09-24T08:30:00.000Z",
-        "endUtc": "2026-09-24T09:30:00.000Z",
-        "startLocalDateShort": "Thu, Sep 24",
+        "startUtc": "2026-10-09T08:30:00.000Z",
+        "endUtc": "2026-10-09T09:30:00.000Z",
+        "startLocalDateShort": "Fri, Oct 09",
         "startLocalTimeShort": "02:30",
-        "startLocalDateTimeShort": "Thu, Sep 24 02:30"
+        "startLocalDateTimeShort": "Fri, Oct 09 02:30"
       },
       {
-        "type": "FP2",
-        "startUtc": "2026-09-24T12:00:00.000Z",
-        "endUtc": "2026-09-24T13:00:00.000Z",
-        "startLocalDateShort": "Thu, Sep 24",
-        "startLocalTimeShort": "06:00",
-        "startLocalDateTimeShort": "Thu, Sep 24 06:00"
+        "type": "Sprint Quali",
+        "startUtc": "2026-10-09T12:30:00.000Z",
+        "endUtc": "2026-10-09T13:14:00.000Z",
+        "startLocalDateShort": "Fri, Oct 09",
+        "startLocalTimeShort": "06:30",
+        "startLocalDateTimeShort": "Fri, Oct 09 06:30"
       },
       {
-        "type": "FP3",
-        "startUtc": "2026-09-25T08:30:00.000Z",
-        "endUtc": "2026-09-25T09:30:00.000Z",
-        "startLocalDateShort": "Fri, Sep 25",
-        "startLocalTimeShort": "02:30",
-        "startLocalDateTimeShort": "Fri, Sep 25 02:30"
+        "type": "Sprint",
+        "startUtc": "2026-10-10T09:00:00.000Z",
+        "endUtc": "2026-10-10T10:00:00.000Z",
+        "startLocalDateShort": "Sat, Oct 10",
+        "startLocalTimeShort": "03:00",
+        "startLocalDateTimeShort": "Sat, Oct 10 03:00"
       },
       {
         "type": "Quali",
-        "startUtc": "2026-09-25T12:00:00.000Z",
-        "endUtc": "2026-09-25T13:00:00.000Z",
-        "startLocalDateShort": "Fri, Sep 25",
-        "startLocalTimeShort": "06:00",
-        "startLocalDateTimeShort": "Fri, Sep 25 06:00"
+        "startUtc": "2026-10-10T13:00:00.000Z",
+        "endUtc": "2026-10-10T14:00:00.000Z",
+        "startLocalDateShort": "Sat, Oct 10",
+        "startLocalTimeShort": "07:00",
+        "startLocalDateTimeShort": "Sat, Oct 10 07:00"
       },
       {
         "type": "Race",
-        "startUtc": "2026-09-26T11:00:00.000Z",
-        "endUtc": "2026-09-26T13:00:00.000Z",
-        "startLocalDateShort": "Sat, Sep 26",
-        "startLocalTimeShort": "05:00",
-        "startLocalDateTimeShort": "Sat, Sep 26 05:00"
+        "startUtc": "2026-10-11T12:00:00.000Z",
+        "endUtc": "2026-10-11T14:00:00.000Z",
+        "startLocalDateShort": "Sun, Oct 11",
+        "startLocalTimeShort": "06:00",
+        "startLocalDateTimeShort": "Sun, Oct 11 06:00"
       }
     ]
   }
