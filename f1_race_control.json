@@ -1,9 +1,9 @@
 {
-  "generatedAtUtc": "2026-10-03T05:35:05.384068+00:00",
+  "generatedAtUtc": "2026-10-03T05:53:50.934216+00:00",
   "sessionKey": 11729,
   "sessionType": "FP3",
   "eventName": "Bahrain",
-  "totalMessages": 34,
+  "totalMessages": 43,
   "messages": [
     {
       "meeting_key": 1308,
@@ -446,6 +446,123 @@
       "sector": null,
       "qualifying_phase": null,
       "message": "BLACK AND WHITE FLAG FOR CAR 3 (VER) - CROSSING THE LINE AT PIT ENTRY (13:27:01)"
+    },
+    {
+      "meeting_key": 1308,
+      "session_key": 11729,
+      "date": "2026-10-03T05:36:46+00:00",
+      "driver_number": null,
+      "lap_number": null,
+      "category": "Flag",
+      "flag": "DOUBLE YELLOW",
+      "scope": "Sector",
+      "sector": 2,
+      "qualifying_phase": null,
+      "message": "DOUBLE YELLOW IN TRACK SECTOR 2"
+    },
+    {
+      "meeting_key": 1308,
+      "session_key": 11729,
+      "date": "2026-10-03T05:36:47+00:00",
+      "driver_number": null,
+      "lap_number": null,
+      "category": "Flag",
+      "flag": "YELLOW",
+      "scope": "Sector",
+      "sector": 1,
+      "qualifying_phase": null,
+      "message": "YELLOW IN TRACK SECTOR 1"
+    },
+    {
+      "meeting_key": 1308,
+      "session_key": 11729,
+      "date": "2026-10-03T05:38:42+00:00",
+      "driver_number": 12,
+      "lap_number": null,
+      "category": "Flag",
+      "flag": "BLACK AND WHITE",
+      "scope": "Driver",
+      "sector": null,
+      "qualifying_phase": null,
+      "message": "BLACK AND WHITE FLAG FOR CAR 12 (ANT) - CROSSING THE LINE AT PIT ENTRY (13:37:07)"
+    },
+    {
+      "meeting_key": 1308,
+      "session_key": 11729,
+      "date": "2026-10-03T05:39:34+00:00",
+      "driver_number": null,
+      "lap_number": null,
+      "category": "Flag",
+      "flag": "CLEAR",
+      "scope": "Sector",
+      "sector": 2,
+      "qualifying_phase": null,
+      "message": "CLEAR IN TRACK SECTOR 2"
+    },
+    {
+      "meeting_key": 1308,
+      "session_key": 11729,
+      "date": "2026-10-03T05:39:34+00:00",
+      "driver_number": null,
+      "lap_number": null,
+      "category": "Flag",
+      "flag": "CLEAR",
+      "scope": "Sector",
+      "sector": 1,
+      "qualifying_phase": null,
+      "message": "CLEAR IN TRACK SECTOR 1"
+    },
+    {
+      "meeting_key": 1308,
+      "session_key": 11729,
+      "date": "2026-10-03T05:41:00+00:00",
+      "driver_number": 77,
+      "lap_number": null,
+      "category": "Flag",
+      "flag": "BLACK AND WHITE",
+      "scope": "Driver",
+      "sector": null,
+      "qualifying_phase": null,
+      "message": "BLACK AND WHITE FLAG FOR CAR 77 (BOT) - CROSSING THE LINE AT PIT ENTRY (13:26:02)"
+    },
+    {
+      "meeting_key": 1308,
+      "session_key": 11729,
+      "date": "2026-10-03T05:44:08+00:00",
+      "driver_number": 23,
+      "lap_number": null,
+      "category": "Flag",
+      "flag": "BLACK AND WHITE",
+      "scope": "Driver",
+      "sector": null,
+      "qualifying_phase": null,
+      "message": "BLACK AND WHITE FLAG FOR CAR 23 (ALB) - CROSSING THE LINE AT PIT ENTRY (13:12:50)"
+    },
+    {
+      "meeting_key": 1308,
+      "session_key": 11729,
+      "date": "2026-10-03T05:47:41+00:00",
+      "driver_number": 27,
+      "lap_number": null,
+      "category": "Flag",
+      "flag": "BLACK AND WHITE",
+      "scope": "Driver",
+      "sector": null,
+      "qualifying_phase": null,
+      "message": "BLACK AND WHITE FLAG FOR CAR 27 (HUL) - CROSSING THE LINE AT PIT ENTRY (13:35:03)"
+    },
+    {
+      "meeting_key": 1308,
+      "session_key": 11729,
+      "date": "2026-10-03T05:48:02+00:00",
+      "driver_number": 11,
+      "lap_number": null,
+      "category": "Flag",
+      "flag": "BLACK AND WHITE",
+      "scope": "Driver",
+      "sector": null,
+      "qualifying_phase": null,
+      "message": "BLACK AND WHITE FLAG FOR CAR 11 - CROSSING THE LINE AT PIT ENTRY (13:35:01)"
     }
   ]
 }
