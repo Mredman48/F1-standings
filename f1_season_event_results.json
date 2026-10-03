@@ -1,6 +1,6 @@
 {
   "header": "2026 F1 all session results",
-  "generatedAtUtc": "2026-10-03T05:23:39.460Z",
+  "generatedAtUtc": "2026-10-03T05:33:40.110Z",
   "season": 2026,
   "events": [
     {
@@ -39259,6 +39259,25 @@
           "meetingKey": 1308
         }
       ]
+    },
+    {
+      "eventType": "fp3",
+      "sessionKey": 11729,
+      "meetingKey": 1308,
+      "meetingName": "Bahrain Grand Prix",
+      "raceName": "Bahrain Grand Prix",
+      "sessionName": "Practice 3",
+      "officialName": "Practice 3",
+      "round": 16,
+      "dateStartUtc": "2026-10-03T04:30:00+00:00",
+      "dateEndUtc": "2026-10-03T05:30:00+00:00",
+      "date": "2026-10-03",
+      "circuit": "Kuala Lumpur",
+      "location": {
+        "locality": "Kuala Lumpur",
+        "country": "Bahrain"
+      },
+      "drivers": []
     }
   ],
   "bestByDriverNumber": {
