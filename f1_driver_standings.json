@@ -1,6 +1,6 @@
 {
   "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-10-04T10:47:36.242Z",
+  "generatedAtUtc": "2026-10-04T10:55:42.445Z",
   "season": 2026,
   "source": {
     "primary": "f1_season_event_results.json",
@@ -10,27 +10,27 @@
   },
   "lastRace": {
     "season": "2026",
-    "round": "15",
-    "raceName": "Azerbaijan Grand Prix",
-    "date": "2026-09-26",
+    "round": "16",
+    "raceName": "Bahrain Grand Prix",
+    "date": "2026-10-04",
     "circuit": {
-      "name": "Baku",
-      "locality": "Baku",
-      "country": "Azerbaijan"
+      "name": "Kuala Lumpur",
+      "locality": "Kuala Lumpur",
+      "country": "Bahrain"
     },
     "winner": {
-      "firstName": "George",
-      "lastName": "RUSSELL",
-      "fullName": "George RUSSELL",
+      "firstName": "Max",
+      "lastName": "VERSTAPPEN",
+      "fullName": "Max VERSTAPPEN",
       "code": null,
-      "team": "Mercedes"
+      "team": "Red Bull"
     }
   },
   "drivers": [
     {
       "position": "P1",
       "positionNumber": 1,
-      "points": 302,
+      "points": 320,
       "wins": 8,
       "driver": {
         "code": "ANT",
@@ -72,7 +72,7 @@
     {
       "position": "P3",
       "positionNumber": 3,
-      "points": 199,
+      "points": 214,
       "wins": 1,
       "driver": {
         "code": "HAM",
@@ -93,28 +93,7 @@
     {
       "position": "P4",
       "positionNumber": 4,
-      "points": 186,
-      "wins": 2,
-      "driver": {
-        "code": "NOR",
-        "firstName": "Lando",
-        "lastName": "NORRIS",
-        "fullName": "Lando NORRIS",
-        "nationality": "GBR",
-        "driverNumber": 1,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lando-norris.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "McLaren",
-        "fullName": "McLaren",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P5",
-      "positionNumber": 5,
-      "points": 179,
+      "points": 191,
       "wins": 1,
       "driver": {
         "code": "LEC",
@@ -133,10 +112,31 @@
       }
     },
     {
+      "position": "P5",
+      "positionNumber": 5,
+      "points": 188,
+      "wins": 2,
+      "driver": {
+        "code": "NOR",
+        "firstName": "Lando",
+        "lastName": "NORRIS",
+        "fullName": "Lando NORRIS",
+        "nationality": "GBR",
+        "driverNumber": 1,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lando-norris.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "McLaren",
+        "fullName": "McLaren",
+        "nationality": null
+      }
+    },
+    {
       "position": "P6",
       "positionNumber": 6,
-      "points": 163,
-      "wins": 0,
+      "points": 188,
+      "wins": 1,
       "driver": {
         "code": "VER",
         "firstName": "Max",
@@ -156,7 +156,7 @@
     {
       "position": "P7",
       "positionNumber": 7,
-      "points": 120,
+      "points": 128,
       "wins": 0,
       "driver": {
         "code": "PIA",
@@ -177,7 +177,7 @@
     {
       "position": "P8",
       "positionNumber": 8,
-      "points": 86,
+      "points": 96,
       "wins": 0,
       "driver": {
         "code": "HAD",
@@ -198,7 +198,7 @@
     {
       "position": "P9",
       "positionNumber": 9,
-      "points": 59,
+      "points": 65,
       "wins": 0,
       "driver": {
         "code": "LAW",
@@ -240,7 +240,7 @@
     {
       "position": "P11",
       "positionNumber": 11,
-      "points": 37,
+      "points": 38,
       "wins": 0,
       "driver": {
         "code": "LIN",
@@ -369,6 +369,27 @@
       "points": 7,
       "wins": 0,
       "driver": {
+        "code": "ALO",
+        "firstName": "Fernando",
+        "lastName": "ALONSO",
+        "fullName": "Fernando ALONSO",
+        "nationality": "ESP",
+        "driverNumber": 14,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/fernando-alonso.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Aston Martin",
+        "fullName": "Aston Martin",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P18",
+      "positionNumber": 18,
+      "points": 7,
+      "wins": 0,
+      "driver": {
         "code": "SAI",
         "firstName": "Carlos",
         "lastName": "SAINZ",
@@ -385,8 +406,8 @@
       }
     },
     {
-      "position": "P18",
-      "positionNumber": 18,
+      "position": "P19",
+      "positionNumber": 19,
       "points": 5,
       "wins": 0,
       "driver": {
@@ -402,27 +423,6 @@
       "constructor": {
         "name": "Williams",
         "fullName": "Williams",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P19",
-      "positionNumber": 19,
-      "points": 3,
-      "wins": 0,
-      "driver": {
-        "code": "ALO",
-        "firstName": "Fernando",
-        "lastName": "ALONSO",
-        "fullName": "Fernando ALONSO",
-        "nationality": "ESP",
-        "driverNumber": 14,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/fernando-alonso.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Aston Martin",
-        "fullName": "Aston Martin",
         "nationality": null
       }
     },

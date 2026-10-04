@@ -2,7 +2,7 @@
   "header": "F1 championship outlook",
   "season": 2026,
   "previousSeason": 2025,
-  "lastUpdated": "2026-10-04T10:47:38.017Z",
+  "lastUpdated": "2026-10-04T10:55:45.439Z",
   "mode": "race-weekend",
   "sources": {
     "driverStandings": "public-repo/f1_driver_standings.json",
@@ -11,30 +11,30 @@
     "previousYearWinners": "https://api.jolpi.ca/ergast/f1/2025/results/1.json"
   },
   "latest": {
-    "id": "round-15-azerbaijangrandprix-2026-09-26",
+    "id": "round-16-bahraingrandprix-2026-10-04",
     "sourceRace": {
-      "raceName": "Azerbaijan Grand Prix",
-      "meetingName": "Azerbaijan Grand Prix",
-      "round": 15,
-      "date": "2026-09-26",
-      "dateStartUtc": "2026-09-26T11:00:00+00:00",
-      "meetingKey": 1295,
+      "raceName": "Bahrain Grand Prix",
+      "meetingName": "Bahrain Grand Prix",
+      "round": 16,
+      "date": "2026-10-04",
+      "dateStartUtc": "2026-10-04T07:00:00+00:00",
+      "meetingKey": 1308,
       "previousYearWinner": {
         "season": 2025,
-        "round": 17,
-        "raceName": "Azerbaijan Grand Prix",
-        "date": "2025-09-21",
-        "winner": "Max Verstappen",
-        "constructor": "Red Bull",
+        "round": 4,
+        "raceName": "Bahrain Grand Prix",
+        "date": "2025-04-13",
+        "winner": "Oscar Piastri",
+        "constructor": "McLaren",
         "source": "jolpica"
       },
       "sessionsIncluded": [
         {
           "eventType": "race",
           "sessionName": "Race",
-          "sessionKey": 11377,
-          "date": "2026-09-26",
-          "dateStartUtc": "2026-09-26T11:00:00+00:00",
+          "sessionKey": 11731,
+          "date": "2026-10-04",
+          "dateStartUtc": "2026-10-04T07:00:00+00:00",
           "isRace": true,
           "isSprint": false
         }
@@ -42,62 +42,59 @@
     },
     "previousYearWinner": {
       "season": 2025,
-      "round": 17,
-      "raceName": "Azerbaijan Grand Prix",
-      "date": "2025-09-21",
-      "winner": "Max Verstappen",
-      "constructor": "Red Bull",
+      "round": 4,
+      "raceName": "Bahrain Grand Prix",
+      "date": "2025-04-13",
+      "winner": "Oscar Piastri",
+      "constructor": "McLaren",
       "source": "jolpica"
     },
     "preWeekendNotes": {
-      "winStreak": {
-        "driverName": "ANTONELLI",
-        "count": 2
-      },
+      "winStreak": null,
       "podiumStreak": {
-        "driverName": "ANTONELLI",
-        "count": 5
+        "driverName": "VERSTAPPEN",
+        "count": 3
       },
       "leaderRecentForm": {
         "driverName": "ANTONELLI",
         "positions": [
-          2,
           1,
-          1
+          1,
+          5
         ],
-        "label": "P2 P1 P1 in last 3 races"
+        "label": "P1 P1 P5 in last 3 races"
       },
-      "defenderNote": "Max Verstappen won here in 2025 (Red Bull)"
+      "defenderNote": "Oscar Piastri won here in 2025 (McLaren)"
     },
     "drivers": {
       "leader": "ANTONELLI",
       "second": "RUSSELL",
-      "gap": 66,
-      "standingsText": "ANTONELLI leads by 66 pts over RUSSELL",
-      "raceImpact": "RUSSELL cut ANTONELLI's lead by 15 pts",
-      "scenarioText": "RUSSELL cut ANTONELLI's lead by 15 pts",
+      "gap": 84,
+      "standingsText": "ANTONELLI leads by 84 pts over RUSSELL",
+      "raceImpact": "ANTONELLI extended lead by 18 pts over RUSSELL",
+      "scenarioText": "ANTONELLI extended lead by 18 pts over RUSSELL",
       "p1Changed": false,
-      "leaderWeekendPoints": 10,
-      "secondWeekendPoints": 25,
-      "weekendDelta": -15,
-      "leaderRacePoints": 10,
-      "secondRacePoints": 25,
-      "raceDelta": -15
+      "leaderWeekendPoints": 18,
+      "secondWeekendPoints": 0,
+      "weekendDelta": 18,
+      "leaderRacePoints": 18,
+      "secondRacePoints": 0,
+      "raceDelta": 18
     },
     "constructors": {
       "leader": "Mercedes",
       "second": "Ferrari",
-      "gap": 160,
-      "standingsText": "Mercedes leads by 160 pts over Ferrari",
-      "raceImpact": "Mercedes extended its constructors' lead by 15 pts over Ferrari",
-      "scenarioText": "Mercedes extended its constructors' lead by 15 pts over Ferrari",
+      "gap": 151,
+      "standingsText": "Mercedes leads by 151 pts over Ferrari",
+      "raceImpact": "Ferrari cut Mercedes's constructors' lead by 9 pts",
+      "scenarioText": "Ferrari cut Mercedes's constructors' lead by 9 pts",
       "p1Changed": false,
-      "leaderWeekendPoints": 35,
-      "secondWeekendPoints": 20,
-      "weekendDelta": 15,
-      "leaderRacePoints": 35,
-      "secondRacePoints": 20,
-      "raceDelta": 15
+      "leaderWeekendPoints": 18,
+      "secondWeekendPoints": 27,
+      "weekendDelta": -9,
+      "leaderRacePoints": 18,
+      "secondRacePoints": 27,
+      "raceDelta": -9
     }
   },
   "races": [
@@ -1467,6 +1464,93 @@
         "leaderRacePoints": 35,
         "secondRacePoints": 20,
         "raceDelta": 15
+      }
+    },
+    {
+      "id": "round-16-bahraingrandprix-2026-10-04",
+      "sourceRace": {
+        "raceName": "Bahrain Grand Prix",
+        "meetingName": "Bahrain Grand Prix",
+        "round": 16,
+        "date": "2026-10-04",
+        "dateStartUtc": "2026-10-04T07:00:00+00:00",
+        "meetingKey": 1308,
+        "previousYearWinner": {
+          "season": 2025,
+          "round": 4,
+          "raceName": "Bahrain Grand Prix",
+          "date": "2025-04-13",
+          "winner": "Oscar Piastri",
+          "constructor": "McLaren",
+          "source": "jolpica"
+        },
+        "sessionsIncluded": [
+          {
+            "eventType": "race",
+            "sessionName": "Race",
+            "sessionKey": 11731,
+            "date": "2026-10-04",
+            "dateStartUtc": "2026-10-04T07:00:00+00:00",
+            "isRace": true,
+            "isSprint": false
+          }
+        ]
+      },
+      "previousYearWinner": {
+        "season": 2025,
+        "round": 4,
+        "raceName": "Bahrain Grand Prix",
+        "date": "2025-04-13",
+        "winner": "Oscar Piastri",
+        "constructor": "McLaren",
+        "source": "jolpica"
+      },
+      "preWeekendNotes": {
+        "winStreak": null,
+        "podiumStreak": {
+          "driverName": "VERSTAPPEN",
+          "count": 3
+        },
+        "leaderRecentForm": {
+          "driverName": "ANTONELLI",
+          "positions": [
+            1,
+            1,
+            5
+          ],
+          "label": "P1 P1 P5 in last 3 races"
+        },
+        "defenderNote": "Oscar Piastri won here in 2025 (McLaren)"
+      },
+      "drivers": {
+        "leader": "ANTONELLI",
+        "second": "RUSSELL",
+        "gap": 84,
+        "standingsText": "ANTONELLI leads by 84 pts over RUSSELL",
+        "raceImpact": "ANTONELLI extended lead by 18 pts over RUSSELL",
+        "scenarioText": "ANTONELLI extended lead by 18 pts over RUSSELL",
+        "p1Changed": false,
+        "leaderWeekendPoints": 18,
+        "secondWeekendPoints": 0,
+        "weekendDelta": 18,
+        "leaderRacePoints": 18,
+        "secondRacePoints": 0,
+        "raceDelta": 18
+      },
+      "constructors": {
+        "leader": "Mercedes",
+        "second": "Ferrari",
+        "gap": 151,
+        "standingsText": "Mercedes leads by 151 pts over Ferrari",
+        "raceImpact": "Ferrari cut Mercedes's constructors' lead by 9 pts",
+        "scenarioText": "Ferrari cut Mercedes's constructors' lead by 9 pts",
+        "p1Changed": false,
+        "leaderWeekendPoints": 18,
+        "secondWeekendPoints": 27,
+        "weekendDelta": -9,
+        "leaderRacePoints": 18,
+        "secondRacePoints": 27,
+        "raceDelta": -9
       }
     }
   ]
