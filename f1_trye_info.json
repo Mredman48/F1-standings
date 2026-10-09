@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-09T04:12:07.552Z",
-  "count": 3,
+  "updatedAt": "2026-10-09T04:13:49.699Z",
+  "count": 4,
   "entries": [
     {
       "round": 1,
@@ -54,6 +54,32 @@
         "trackEvolution": 4
       },
       "updatedAt": "2026-10-09T04:12:07.550Z"
+    },
+    {
+      "round": 3,
+      "raceSlug": "japan",
+      "title": "Japanese GP",
+      "season": 2026,
+      "country": "Japan",
+      "flag": "jp",
+      "raceStart": "2026-03-29T05:00:00.000Z",
+      "compounds": {
+        "soft": "C3",
+        "medium": "C2",
+        "hard": "C1"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2026,
+        "pastYear": false,
+        "traction": 3,
+        "tyreStress": 5,
+        "asphaltGrip": 4,
+        "braking": 2,
+        "asphaltAbrasion": 3,
+        "lateral": 5,
+        "trackEvolution": 4
+      },
+      "updatedAt": "2026-10-09T04:13:49.698Z"
     },
     {
       "round": 17,
