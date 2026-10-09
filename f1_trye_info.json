@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-09T04:39:28.607Z",
-  "count": 18,
+  "updatedAt": "2026-10-09T04:41:03.549Z",
+  "count": 19,
   "entries": [
     {
       "round": 1,
@@ -470,6 +470,32 @@
         "trackEvolution": 4
       },
       "updatedAt": "2026-10-09T04:39:28.606Z"
+    },
+    {
+      "round": 19,
+      "raceSlug": "mexico",
+      "title": "Mexico City GP",
+      "season": 2026,
+      "country": "Mexico",
+      "flag": "mx",
+      "raceStart": "2026-11-01T20:00:00.000Z",
+      "compounds": {
+        "soft": null,
+        "medium": null,
+        "hard": null
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2025,
+        "pastYear": true,
+        "traction": 3,
+        "tyreStress": 2,
+        "asphaltGrip": 2,
+        "braking": 3,
+        "asphaltAbrasion": 2,
+        "lateral": 2,
+        "trackEvolution": 5
+      },
+      "updatedAt": "2026-10-09T04:41:03.548Z"
     }
   ]
 }
