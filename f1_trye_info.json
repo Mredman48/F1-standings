@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-09T04:18:57.577Z",
-  "count": 7,
+  "updatedAt": "2026-10-09T04:20:25.915Z",
+  "count": 8,
   "entries": [
     {
       "round": 1,
@@ -158,6 +158,32 @@
         "trackEvolution": 5
       },
       "updatedAt": "2026-10-09T04:18:57.573Z"
+    },
+    {
+      "round": 7,
+      "raceSlug": "barcelona",
+      "title": "Barcelona-Cataluyna GP",
+      "season": 2026,
+      "country": "Spain",
+      "flag": "es",
+      "raceStart": "2026-06-14T13:00:00.000Z",
+      "compounds": {
+        "soft": "C4",
+        "medium": "C3",
+        "hard": "C2"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2026,
+        "pastYear": false,
+        "traction": 3,
+        "tyreStress": 5,
+        "asphaltGrip": 2,
+        "braking": 3,
+        "asphaltAbrasion": 4,
+        "lateral": 5,
+        "trackEvolution": 3
+      },
+      "updatedAt": "2026-10-09T04:20:25.914Z"
     },
     {
       "round": 17,
