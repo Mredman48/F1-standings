@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-09T04:30:16.392Z",
-  "count": 13,
+  "updatedAt": "2026-10-09T04:31:59.151Z",
+  "count": 14,
   "entries": [
     {
       "round": 1,
@@ -314,6 +314,32 @@
         "trackEvolution": 4
       },
       "updatedAt": "2026-10-09T04:30:16.391Z"
+    },
+    {
+      "round": 13,
+      "raceSlug": "italy",
+      "title": "Italian GP",
+      "season": 2026,
+      "country": "Italy",
+      "flag": "it",
+      "raceStart": "2026-09-06T13:00:00.000Z",
+      "compounds": {
+        "soft": "C5",
+        "medium": "C4",
+        "hard": "C3"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2026,
+        "pastYear": false,
+        "traction": 3,
+        "tyreStress": 3,
+        "asphaltGrip": 3,
+        "braking": 4,
+        "asphaltAbrasion": 2,
+        "lateral": 2,
+        "trackEvolution": 4
+      },
+      "updatedAt": "2026-10-09T04:31:59.150Z"
     },
     {
       "round": 17,
