@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-09T04:41:03.549Z",
-  "count": 19,
+  "updatedAt": "2026-10-09T04:41:48.281Z",
+  "count": 20,
   "entries": [
     {
       "round": 1,
@@ -496,6 +496,32 @@
         "trackEvolution": 5
       },
       "updatedAt": "2026-10-09T04:41:03.548Z"
+    },
+    {
+      "round": 20,
+      "raceSlug": "brazil",
+      "title": "Sao Paulo GP",
+      "season": 2026,
+      "country": "Brazil",
+      "flag": "br",
+      "raceStart": "2026-11-08T17:00:00.000Z",
+      "compounds": {
+        "soft": null,
+        "medium": null,
+        "hard": null
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2025,
+        "pastYear": true,
+        "traction": 3,
+        "tyreStress": 3,
+        "asphaltGrip": 3,
+        "braking": 3,
+        "asphaltAbrasion": 2,
+        "lateral": 3,
+        "trackEvolution": 5
+      },
+      "updatedAt": "2026-10-09T04:41:48.281Z"
     }
   ]
 }
