@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-09T04:41:48.281Z",
-  "count": 20,
+  "updatedAt": "2026-10-09T04:42:57.074Z",
+  "count": 21,
   "entries": [
     {
       "round": 1,
@@ -522,6 +522,32 @@
         "trackEvolution": 5
       },
       "updatedAt": "2026-10-09T04:41:48.281Z"
+    },
+    {
+      "round": 21,
+      "raceSlug": "las-vegas",
+      "title": "Las Vegas GP",
+      "season": 2026,
+      "country": "United States",
+      "flag": "us",
+      "raceStart": "2026-11-22T04:00:00.000Z",
+      "compounds": {
+        "soft": null,
+        "medium": null,
+        "hard": null
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2025,
+        "pastYear": true,
+        "traction": 2,
+        "tyreStress": 4,
+        "asphaltGrip": 1,
+        "braking": 3,
+        "asphaltAbrasion": 2,
+        "lateral": 2,
+        "trackEvolution": 5
+      },
+      "updatedAt": "2026-10-09T04:42:57.074Z"
     }
   ]
 }
