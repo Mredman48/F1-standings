@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-09T04:15:32.480Z",
-  "count": 5,
+  "updatedAt": "2026-10-09T04:16:09.314Z",
+  "count": 6,
   "entries": [
     {
       "round": 1,
@@ -106,6 +106,32 @@
         "trackEvolution": 5
       },
       "updatedAt": "2026-10-09T04:15:32.479Z"
+    },
+    {
+      "round": 5,
+      "raceSlug": "canada",
+      "title": "Canadian GP",
+      "season": 2026,
+      "country": "Canada",
+      "flag": "ca",
+      "raceStart": "2026-05-24T20:00:00.000Z",
+      "compounds": {
+        "soft": null,
+        "medium": null,
+        "hard": null
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2026,
+        "pastYear": false,
+        "traction": 4,
+        "tyreStress": 3,
+        "asphaltGrip": 2,
+        "braking": 5,
+        "asphaltAbrasion": 1,
+        "lateral": 1,
+        "trackEvolution": 5
+      },
+      "updatedAt": "2026-10-09T04:16:09.313Z"
     },
     {
       "round": 17,
