@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-09T04:34:44.977Z",
-  "count": 16,
+  "updatedAt": "2026-10-09T04:35:53.772Z",
+  "count": 17,
   "entries": [
     {
       "round": 1,
@@ -392,6 +392,32 @@
         "trackEvolution": 5
       },
       "updatedAt": "2026-10-09T04:34:44.976Z"
+    },
+    {
+      "round": 16,
+      "raceSlug": "Bahrain in Malaysia",
+      "title": "Bahrain GP in Malaysia",
+      "season": 2026,
+      "country": "Malaysia",
+      "flag": "sg",
+      "raceStart": "2026-10-04T07:00:00.000Z",
+      "compounds": {
+        "soft": "C4",
+        "medium": "C3",
+        "hard": "C2"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2026,
+        "pastYear": false,
+        "traction": 3,
+        "tyreStress": 4,
+        "asphaltGrip": 2,
+        "braking": 4,
+        "asphaltAbrasion": 4,
+        "lateral": 4,
+        "trackEvolution": 4
+      },
+      "updatedAt": "2026-10-09T04:35:53.771Z"
     },
     {
       "round": 17,
