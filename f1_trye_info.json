@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-09T04:16:42.914Z",
-  "count": 6,
+  "updatedAt": "2026-10-09T04:18:57.577Z",
+  "count": 7,
   "entries": [
     {
       "round": 1,
@@ -132,6 +132,32 @@
         "trackEvolution": 5
       },
       "updatedAt": "2026-10-09T04:16:42.913Z"
+    },
+    {
+      "round": 6,
+      "raceSlug": "monaco",
+      "title": "Monaco GP",
+      "season": 2026,
+      "country": "Monaco",
+      "flag": "mc",
+      "raceStart": "2026-06-07T13:00:00.000Z",
+      "compounds": {
+        "soft": "C5",
+        "medium": "C4",
+        "hard": "C3"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2026,
+        "pastYear": false,
+        "traction": 5,
+        "tyreStress": 1,
+        "asphaltGrip": 2,
+        "braking": 2,
+        "asphaltAbrasion": 1,
+        "lateral": 1,
+        "trackEvolution": 5
+      },
+      "updatedAt": "2026-10-09T04:18:57.573Z"
     },
     {
       "round": 17,
