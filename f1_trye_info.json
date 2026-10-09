@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-09T04:07:38.683Z",
-  "count": 2,
+  "updatedAt": "2026-10-09T04:12:07.552Z",
+  "count": 3,
   "entries": [
     {
       "round": 1,
@@ -28,6 +28,32 @@
         "trackEvolution": 4
       },
       "updatedAt": "2026-10-09T04:07:38.678Z"
+    },
+    {
+      "round": 2,
+      "raceSlug": "china",
+      "title": "Chinese GP",
+      "season": 2026,
+      "country": "China",
+      "flag": "cn",
+      "raceStart": "2026-03-15T07:00:00.000Z",
+      "compounds": {
+        "soft": "C4",
+        "medium": "C3",
+        "hard": "C2"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2026,
+        "pastYear": false,
+        "traction": 3,
+        "tyreStress": 4,
+        "asphaltGrip": 3,
+        "braking": 4,
+        "asphaltAbrasion": 2,
+        "lateral": 4,
+        "trackEvolution": 4
+      },
+      "updatedAt": "2026-10-09T04:12:07.550Z"
     },
     {
       "round": 17,
