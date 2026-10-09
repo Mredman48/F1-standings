@@ -1,6 +1,6 @@
 {
   "header": "2026 F1 all session results",
-  "generatedAtUtc": "2026-10-09T13:22:45.001Z",
+  "generatedAtUtc": "2026-10-09T13:32:50.912Z",
   "season": 2026,
   "events": [
     {
@@ -41335,21 +41335,21 @@
           "dsq": false,
           "duration": null,
           "qualifyingTimes": {
-            "q1": 92.246,
+            "q1": 91.568,
             "q2": null,
             "q3": null,
-            "bestQualifyingTime": 92.246
+            "bestQualifyingTime": 91.568
           },
           "gapToLeader": null,
-          "laps": 14,
+          "laps": 17,
           "points": null,
           "sessionKey": 11379,
           "meetingKey": 1296
         },
         {
-          "driverNumber": 44,
-          "driverName": "Lewis HAMILTON",
-          "teamName": "Ferrari",
+          "driverNumber": 1,
+          "driverName": "Lando NORRIS",
+          "teamName": "McLaren",
           "position": "P2",
           "positionRank": 2,
           "classifiedPosition": 2,
@@ -41358,20 +41358,20 @@
           "dsq": false,
           "duration": null,
           "qualifyingTimes": {
-            "q1": 92.562,
+            "q1": 91.587,
             "q2": null,
             "q3": null,
-            "bestQualifyingTime": 92.562
+            "bestQualifyingTime": 91.587
           },
           "gapToLeader": null,
-          "laps": 11,
+          "laps": 12,
           "points": null,
           "sessionKey": 11379,
           "meetingKey": 1296
         },
         {
-          "driverNumber": 1,
-          "driverName": "Lando NORRIS",
+          "driverNumber": 81,
+          "driverName": "Oscar PIASTRI",
           "teamName": "McLaren",
           "position": "P3",
           "positionRank": 3,
@@ -41381,13 +41381,13 @@
           "dsq": false,
           "duration": null,
           "qualifyingTimes": {
-            "q1": 92.572,
+            "q1": 91.776,
             "q2": null,
             "q3": null,
-            "bestQualifyingTime": 92.572
+            "bestQualifyingTime": 91.776
           },
           "gapToLeader": null,
-          "laps": 9,
+          "laps": 16,
           "points": null,
           "sessionKey": 11379,
           "meetingKey": 1296
@@ -41404,13 +41404,59 @@
           "dsq": false,
           "duration": null,
           "qualifyingTimes": {
-            "q1": 92.614,
+            "q1": 91.837,
             "q2": null,
             "q3": null,
-            "bestQualifyingTime": 92.614
+            "bestQualifyingTime": 91.837
           },
           "gapToLeader": null,
-          "laps": 15,
+          "laps": 18,
+          "points": null,
+          "sessionKey": 11379,
+          "meetingKey": 1296
+        },
+        {
+          "driverNumber": 12,
+          "driverName": "Kimi ANTONELLI",
+          "teamName": "Mercedes",
+          "position": "P5",
+          "positionRank": 5,
+          "classifiedPosition": 5,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 92.105,
+            "q2": null,
+            "q3": null,
+            "bestQualifyingTime": 92.105
+          },
+          "gapToLeader": null,
+          "laps": 17,
+          "points": null,
+          "sessionKey": 11379,
+          "meetingKey": 1296
+        },
+        {
+          "driverNumber": 44,
+          "driverName": "Lewis HAMILTON",
+          "teamName": "Ferrari",
+          "position": "P6",
+          "positionRank": 6,
+          "classifiedPosition": 6,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 92.562,
+            "q2": null,
+            "q3": null,
+            "bestQualifyingTime": 92.562
+          },
+          "gapToLeader": null,
+          "laps": 12,
           "points": null,
           "sessionKey": 11379,
           "meetingKey": 1296
@@ -41419,9 +41465,9 @@
           "driverNumber": 3,
           "driverName": "Max VERSTAPPEN",
           "teamName": "Red Bull Racing",
-          "position": "P5",
-          "positionRank": 5,
-          "classifiedPosition": 5,
+          "position": "P7",
+          "positionRank": 7,
+          "classifiedPosition": 7,
           "dnf": false,
           "dns": false,
           "dsq": false,
@@ -41442,9 +41488,9 @@
           "driverNumber": 6,
           "driverName": "Isack HADJAR",
           "teamName": "Red Bull Racing",
-          "position": "P6",
-          "positionRank": 6,
-          "classifiedPosition": 6,
+          "position": "P8",
+          "positionRank": 8,
+          "classifiedPosition": 8,
           "dnf": false,
           "dns": false,
           "dsq": false,
@@ -41457,52 +41503,6 @@
           },
           "gapToLeader": null,
           "laps": 12,
-          "points": null,
-          "sessionKey": 11379,
-          "meetingKey": 1296
-        },
-        {
-          "driverNumber": 12,
-          "driverName": "Kimi ANTONELLI",
-          "teamName": "Mercedes",
-          "position": "P7",
-          "positionRank": 7,
-          "classifiedPosition": 7,
-          "dnf": false,
-          "dns": false,
-          "dsq": false,
-          "duration": null,
-          "qualifyingTimes": {
-            "q1": 92.998,
-            "q2": null,
-            "q3": null,
-            "bestQualifyingTime": 92.998
-          },
-          "gapToLeader": null,
-          "laps": 14,
-          "points": null,
-          "sessionKey": 11379,
-          "meetingKey": 1296
-        },
-        {
-          "driverNumber": 81,
-          "driverName": "Oscar PIASTRI",
-          "teamName": "McLaren",
-          "position": "P8",
-          "positionRank": 8,
-          "classifiedPosition": 8,
-          "dnf": false,
-          "dns": false,
-          "dsq": false,
-          "duration": null,
-          "qualifyingTimes": {
-            "q1": 93.106,
-            "q2": null,
-            "q3": null,
-            "bestQualifyingTime": 93.106
-          },
-          "gapToLeader": null,
-          "laps": 13,
           "points": null,
           "sessionKey": 11379,
           "meetingKey": 1296
