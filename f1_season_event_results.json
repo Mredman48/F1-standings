@@ -1,6 +1,6 @@
 {
   "header": "2026 F1 all session results",
-  "generatedAtUtc": "2026-10-09T15:12:49.770Z",
+  "generatedAtUtc": "2026-10-09T16:23:18.351Z",
   "season": 2026,
   "events": [
     {
@@ -40073,6 +40073,60 @@
           "meetingKey": 1308
         },
         {
+          "driverNumber": 43,
+          "driverName": "Franco COLAPINTO",
+          "teamName": "Alpine",
+          "position": "P15",
+          "positionRank": 15,
+          "classifiedPosition": 15,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 97.179,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            0.702,
+            null,
+            null
+          ],
+          "laps": 8,
+          "points": null,
+          "sessionKey": 11730,
+          "meetingKey": 1308
+        },
+        {
+          "driverNumber": 41,
+          "driverName": "Arvid LINDBLAD",
+          "teamName": "Racing Bulls",
+          "position": "P16",
+          "positionRank": 16,
+          "classifiedPosition": 16,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 97.883,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            1.406,
+            null,
+            null
+          ],
+          "laps": 9,
+          "points": null,
+          "sessionKey": 11730,
+          "meetingKey": 1308
+        },
+        {
           "driverNumber": 27,
           "driverName": "Nico HULKENBERG",
           "teamName": "Audi",
@@ -40230,60 +40284,6 @@
             null
           ],
           "laps": 6,
-          "points": null,
-          "sessionKey": 11730,
-          "meetingKey": 1308
-        },
-        {
-          "driverNumber": 43,
-          "driverName": "Franco COLAPINTO",
-          "teamName": "Alpine",
-          "position": "DNF",
-          "positionRank": null,
-          "classifiedPosition": 15,
-          "dnf": true,
-          "dns": false,
-          "dsq": false,
-          "duration": null,
-          "qualifyingTimes": {
-            "q1": 97.179,
-            "q2": 0,
-            "q3": 0,
-            "bestQualifyingTime": 0
-          },
-          "gapToLeader": [
-            0.702,
-            null,
-            null
-          ],
-          "laps": 8,
-          "points": null,
-          "sessionKey": 11730,
-          "meetingKey": 1308
-        },
-        {
-          "driverNumber": 41,
-          "driverName": "Arvid LINDBLAD",
-          "teamName": "Racing Bulls",
-          "position": "DNF",
-          "positionRank": null,
-          "classifiedPosition": 16,
-          "dnf": true,
-          "dns": false,
-          "dsq": false,
-          "duration": null,
-          "qualifyingTimes": {
-            "q1": 97.883,
-            "q2": 0,
-            "q3": 0,
-            "bestQualifyingTime": 0
-          },
-          "gapToLeader": [
-            1.406,
-            null,
-            null
-          ],
-          "laps": 9,
           "points": null,
           "sessionKey": 11730,
           "meetingKey": 1308
@@ -40564,8 +40564,8 @@
           "points": 1,
           "sessionKey": 11731,
           "meetingKey": 1308,
-          "startPosition": "DNF",
-          "startPositionRank": null,
+          "startPosition": "P16",
+          "startPositionRank": 16,
           "qualifyingLapTime": 0
         },
         {
@@ -40642,8 +40642,8 @@
           "points": 0,
           "sessionKey": 11731,
           "meetingKey": 1308,
-          "startPosition": "DNF",
-          "startPositionRank": null,
+          "startPosition": "P15",
+          "startPositionRank": 15,
           "qualifyingLapTime": 0
         },
         {
@@ -41540,6 +41540,60 @@
           "meetingKey": 1296
         },
         {
+          "driverNumber": 6,
+          "driverName": "Isack HADJAR",
+          "teamName": "Red Bull Racing",
+          "position": "P9",
+          "positionRank": 9,
+          "classifiedPosition": 9,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 94.182,
+            "q2": 92.947,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            0.705,
+            0.701,
+            null
+          ],
+          "laps": 15,
+          "points": null,
+          "sessionKey": 11379,
+          "meetingKey": 1296
+        },
+        {
+          "driverNumber": 10,
+          "driverName": "Pierre GASLY",
+          "teamName": "Alpine",
+          "position": "P10",
+          "positionRank": 10,
+          "classifiedPosition": 10,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 94.673,
+            "q2": 93.155,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            1.196,
+            0.909,
+            null
+          ],
+          "laps": 15,
+          "points": null,
+          "sessionKey": 11379,
+          "meetingKey": 1296
+        },
+        {
           "driverNumber": 43,
           "driverName": "Franco COLAPINTO",
           "teamName": "Alpine",
@@ -41859,60 +41913,6 @@
             null
           ],
           "laps": 7,
-          "points": null,
-          "sessionKey": 11379,
-          "meetingKey": 1296
-        },
-        {
-          "driverNumber": 6,
-          "driverName": "Isack HADJAR",
-          "teamName": "Red Bull Racing",
-          "position": "DNF",
-          "positionRank": null,
-          "classifiedPosition": 9,
-          "dnf": true,
-          "dns": false,
-          "dsq": false,
-          "duration": null,
-          "qualifyingTimes": {
-            "q1": 94.182,
-            "q2": 92.947,
-            "q3": 0,
-            "bestQualifyingTime": 0
-          },
-          "gapToLeader": [
-            0.705,
-            0.701,
-            null
-          ],
-          "laps": 15,
-          "points": null,
-          "sessionKey": 11379,
-          "meetingKey": 1296
-        },
-        {
-          "driverNumber": 10,
-          "driverName": "Pierre GASLY",
-          "teamName": "Alpine",
-          "position": "DNF",
-          "positionRank": null,
-          "classifiedPosition": 10,
-          "dnf": true,
-          "dns": false,
-          "dsq": false,
-          "duration": null,
-          "qualifyingTimes": {
-            "q1": 94.673,
-            "q2": 93.155,
-            "q3": 0,
-            "bestQualifyingTime": 0
-          },
-          "gapToLeader": [
-            1.196,
-            0.909,
-            null
-          ],
-          "laps": 15,
           "points": null,
           "sessionKey": 11379,
           "meetingKey": 1296
