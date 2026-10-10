@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-10T16:53:58.161Z",
+  "generatedAt": "2026-10-10T16:54:54.235Z",
   "season": 2026,
   "teams": {
     "audi": {
@@ -194,12 +194,12 @@
           "label": "Madrid Special Livery",
           "type": "one-off",
           "description": "",
-          "round": null,
+          "round": 14,
           "validFrom": "",
           "validUntil": "2026-09-14T00:00:00Z",
           "colors": {
             "primary": "#97B656",
-            "secondary": "",
+            "secondary": "#FEFBEA",
             "onPrimary": "#0A0C0F"
           },
           "drivers": {
