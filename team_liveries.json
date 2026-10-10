@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-10T18:16:04.197Z",
+  "generatedAt": "2026-10-10T18:22:14.966Z",
   "liveries": {
     "audi": {
       "label": "Singapore Special Livery",
@@ -81,7 +81,7 @@
         }
       }
     },
-    "vcarb": {
+    "racingbulls": {
       "label": "Suzuka Special Livery 2026",
       "validFrom": "2026-03-26T00:00:00Z",
       "validUntil": "2026-03-29T00:00:00Z",
@@ -92,7 +92,14 @@
       "logo": "",
       "logoLight": "",
       "icon": "",
-      "drivers": {}
+      "drivers": {
+        "lawson": {
+          "background": ""
+        },
+        "lindblad": {
+          "background": ""
+        }
+      }
     }
   }
 }
