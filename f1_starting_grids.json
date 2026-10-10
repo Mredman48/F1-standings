@@ -1,10 +1,10 @@
 {
   "header": "2026 F1 starting grids",
-  "generatedAtUtc": "2026-10-10T18:17:21.822Z",
+  "generatedAtUtc": "2026-10-10T21:50:29.880Z",
   "season": 2026,
   "upcoming": {
     "gridType": "race",
-    "provisional": true,
+    "provisional": false,
     "round": 15,
     "meetingKey": 1296,
     "meetingName": "Singapore Grand Prix",
@@ -89,19 +89,6 @@
       {
         "position": 6,
         "positionLabel": "P6",
-        "driverNumber": 63,
-        "driverName": "George RUSSELL",
-        "nameAcronym": "RUS",
-        "teamName": "Mercedes",
-        "teamColour": "#00D7B6",
-        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/G/GEORUS01_George_Russell/georus01.png.transform/1col/image.png",
-        "qualifyingLapTime": 91.747,
-        "qualifyingPosition": 6,
-        "placesVsQualifying": 0
-      },
-      {
-        "position": 7,
-        "positionLabel": "P7",
         "driverNumber": 81,
         "driverName": "Oscar PIASTRI",
         "nameAcronym": "PIA",
@@ -110,11 +97,11 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/O/OSCPIA01_Oscar_Piastri/oscpia01.png.transform/1col/image.png",
         "qualifyingLapTime": 91.86,
         "qualifyingPosition": 7,
-        "placesVsQualifying": 0
+        "placesVsQualifying": -1
       },
       {
-        "position": 8,
-        "positionLabel": "P8",
+        "position": 7,
+        "positionLabel": "P7",
         "driverNumber": 10,
         "driverName": "Pierre GASLY",
         "nameAcronym": "GAS",
@@ -123,37 +110,37 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/P/PIEGAS01_Pierre_Gasly/piegas01.png.transform/1col/image.png",
         "qualifyingLapTime": 92.225,
         "qualifyingPosition": 8,
-        "placesVsQualifying": 0
+        "placesVsQualifying": -1
       },
       {
-        "position": 9,
-        "positionLabel": "P9",
+        "position": 8,
+        "positionLabel": "P8",
         "driverNumber": 30,
         "driverName": "Liam LAWSON",
         "nameAcronym": "LAW",
         "teamName": "Racing Bulls",
         "teamColour": "#6C98FF",
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LIALAW01_Liam_Lawson/lialaw01.png.transform/1col/image.png",
-        "qualifyingLapTime": 92.319,
+        "qualifyingLapTime": 92.369,
         "qualifyingPosition": 9,
-        "placesVsQualifying": 0
+        "placesVsQualifying": -1
       },
       {
-        "position": 10,
-        "positionLabel": "P10",
+        "position": 9,
+        "positionLabel": "P9",
         "driverNumber": 41,
         "driverName": "Arvid LINDBLAD",
         "nameAcronym": "LIN",
         "teamName": "Racing Bulls",
         "teamColour": "#6C98FF",
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/A/ARVLIN01_Arvid_Lindblad/arvlin01.png.transform/1col/image.png",
-        "qualifyingLapTime": 92.498,
+        "qualifyingLapTime": 92.781,
         "qualifyingPosition": 10,
-        "placesVsQualifying": 0
+        "placesVsQualifying": -1
       },
       {
-        "position": 11,
-        "positionLabel": "P11",
+        "position": 10,
+        "positionLabel": "P10",
         "driverNumber": 27,
         "driverName": "Nico HULKENBERG",
         "nameAcronym": "HUL",
@@ -162,11 +149,11 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/N/NICHUL01_Nico_Hulkenberg/nichul01.png.transform/1col/image.png",
         "qualifyingLapTime": 92.784,
         "qualifyingPosition": 11,
-        "placesVsQualifying": 0
+        "placesVsQualifying": -1
       },
       {
-        "position": 12,
-        "positionLabel": "P12",
+        "position": 11,
+        "positionLabel": "P11",
         "driverNumber": 87,
         "driverName": "Oliver BEARMAN",
         "nameAcronym": "BEA",
@@ -175,11 +162,11 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/O/OLIBEA01_Oliver_Bearman/olibea01.png.transform/1col/image.png",
         "qualifyingLapTime": 92.908,
         "qualifyingPosition": 12,
-        "placesVsQualifying": 0
+        "placesVsQualifying": -1
       },
       {
-        "position": 13,
-        "positionLabel": "P13",
+        "position": 12,
+        "positionLabel": "P12",
         "driverNumber": 31,
         "driverName": "Esteban OCON",
         "nameAcronym": "OCO",
@@ -188,11 +175,11 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/E/ESTOCO01_Esteban_Ocon/estoco01.png.transform/1col/image.png",
         "qualifyingLapTime": 93.323,
         "qualifyingPosition": 13,
-        "placesVsQualifying": 0
+        "placesVsQualifying": -1
       },
       {
-        "position": 14,
-        "positionLabel": "P14",
+        "position": 13,
+        "positionLabel": "P13",
         "driverNumber": 55,
         "driverName": "Carlos SAINZ",
         "nameAcronym": "SAI",
@@ -201,11 +188,11 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/C/CARSAI01_Carlos_Sainz/carsai01.png.transform/1col/image.png",
         "qualifyingLapTime": 93.526,
         "qualifyingPosition": 14,
-        "placesVsQualifying": 0
+        "placesVsQualifying": -1
       },
       {
-        "position": 15,
-        "positionLabel": "P15",
+        "position": 14,
+        "positionLabel": "P14",
         "driverNumber": 5,
         "driverName": "Gabriel BORTOLETO",
         "nameAcronym": "BOR",
@@ -214,24 +201,24 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/G/GABBOR01_Gabriel_Bortoleto/gabbor01.png.transform/1col/image.png",
         "qualifyingLapTime": 93.658,
         "qualifyingPosition": 15,
-        "placesVsQualifying": 0
+        "placesVsQualifying": -1
       },
       {
-        "position": 16,
-        "positionLabel": "P16",
+        "position": 15,
+        "positionLabel": "P15",
         "driverNumber": 43,
         "driverName": "Franco COLAPINTO",
         "nameAcronym": "COL",
         "teamName": "Alpine",
         "teamColour": "#00A1E8",
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/F/FRACOL01_Franco_Colapinto/fracol01.png.transform/1col/image.png",
-        "qualifyingLapTime": 93.261,
+        "qualifyingLapTime": 93.787,
         "qualifyingPosition": 16,
-        "placesVsQualifying": 0
+        "placesVsQualifying": -1
       },
       {
-        "position": 17,
-        "positionLabel": "P17",
+        "position": 16,
+        "positionLabel": "P16",
         "driverNumber": 14,
         "driverName": "Fernando ALONSO",
         "nameAcronym": "ALO",
@@ -240,11 +227,11 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/F/FERALO01_Fernando_Alonso/feralo01.png.transform/1col/image.png",
         "qualifyingLapTime": 94.223,
         "qualifyingPosition": 17,
-        "placesVsQualifying": 0
+        "placesVsQualifying": -1
       },
       {
-        "position": 18,
-        "positionLabel": "P18",
+        "position": 17,
+        "positionLabel": "P17",
         "driverNumber": 23,
         "driverName": "Alexander ALBON",
         "nameAcronym": "ALB",
@@ -253,11 +240,11 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/A/ALEALB01_Alexander_Albon/alealb01.png.transform/1col/image.png",
         "qualifyingLapTime": 94.289,
         "qualifyingPosition": 18,
-        "placesVsQualifying": 0
+        "placesVsQualifying": -1
       },
       {
-        "position": 19,
-        "positionLabel": "P19",
+        "position": 18,
+        "positionLabel": "P18",
         "driverNumber": 18,
         "driverName": "Lance STROLL",
         "nameAcronym": "STR",
@@ -266,11 +253,11 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LANSTR01_Lance_Stroll/lanstr01.png.transform/1col/image.png",
         "qualifyingLapTime": 94.946,
         "qualifyingPosition": 19,
-        "placesVsQualifying": 0
+        "placesVsQualifying": -1
       },
       {
-        "position": 20,
-        "positionLabel": "P20",
+        "position": 19,
+        "positionLabel": "P19",
         "driverNumber": 11,
         "driverName": "Sergio PEREZ",
         "nameAcronym": "PER",
@@ -279,11 +266,11 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/S/SERPER01_Sergio_Perez/serper01.png.transform/1col/image.png",
         "qualifyingLapTime": 95.123,
         "qualifyingPosition": 20,
-        "placesVsQualifying": 0
+        "placesVsQualifying": -1
       },
       {
-        "position": 21,
-        "positionLabel": "P21",
+        "position": 20,
+        "positionLabel": "P20",
         "driverNumber": 77,
         "driverName": "Valtteri BOTTAS",
         "nameAcronym": "BOT",
@@ -292,13 +279,39 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/V/VALBOT01_Valtteri_Bottas/valbot01.png.transform/1col/image.png",
         "qualifyingLapTime": 95.984,
         "qualifyingPosition": 21,
-        "placesVsQualifying": 0
+        "placesVsQualifying": -1
+      },
+      {
+        "position": 21,
+        "positionLabel": "P21",
+        "driverNumber": 63,
+        "driverName": "George RUSSELL",
+        "nameAcronym": "RUS",
+        "teamName": "Mercedes",
+        "teamColour": "#00D7B6",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/G/GEORUS01_George_Russell/georus01.png.transform/1col/image.png",
+        "qualifyingLapTime": 91.747,
+        "qualifyingPosition": 6,
+        "placesVsQualifying": 15
+      },
+      {
+        "position": 22,
+        "positionLabel": "P22",
+        "driverNumber": 6,
+        "driverName": "Isack HADJAR",
+        "nameAcronym": "HAD",
+        "teamName": "Red Bull Racing",
+        "teamColour": "#4781D7",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/I/ISAHAD01_Isack_Hadjar/isahad01.png.transform/1col/image.png",
+        "qualifyingLapTime": null,
+        "qualifyingPosition": null,
+        "placesVsQualifying": null
       }
     ]
   },
   "latest": {
     "gridType": "race",
-    "provisional": true,
+    "provisional": false,
     "round": 15,
     "meetingKey": 1296,
     "meetingName": "Singapore Grand Prix",
@@ -383,19 +396,6 @@
       {
         "position": 6,
         "positionLabel": "P6",
-        "driverNumber": 63,
-        "driverName": "George RUSSELL",
-        "nameAcronym": "RUS",
-        "teamName": "Mercedes",
-        "teamColour": "#00D7B6",
-        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/G/GEORUS01_George_Russell/georus01.png.transform/1col/image.png",
-        "qualifyingLapTime": 91.747,
-        "qualifyingPosition": 6,
-        "placesVsQualifying": 0
-      },
-      {
-        "position": 7,
-        "positionLabel": "P7",
         "driverNumber": 81,
         "driverName": "Oscar PIASTRI",
         "nameAcronym": "PIA",
@@ -404,11 +404,11 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/O/OSCPIA01_Oscar_Piastri/oscpia01.png.transform/1col/image.png",
         "qualifyingLapTime": 91.86,
         "qualifyingPosition": 7,
-        "placesVsQualifying": 0
+        "placesVsQualifying": -1
       },
       {
-        "position": 8,
-        "positionLabel": "P8",
+        "position": 7,
+        "positionLabel": "P7",
         "driverNumber": 10,
         "driverName": "Pierre GASLY",
         "nameAcronym": "GAS",
@@ -417,37 +417,37 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/P/PIEGAS01_Pierre_Gasly/piegas01.png.transform/1col/image.png",
         "qualifyingLapTime": 92.225,
         "qualifyingPosition": 8,
-        "placesVsQualifying": 0
+        "placesVsQualifying": -1
       },
       {
-        "position": 9,
-        "positionLabel": "P9",
+        "position": 8,
+        "positionLabel": "P8",
         "driverNumber": 30,
         "driverName": "Liam LAWSON",
         "nameAcronym": "LAW",
         "teamName": "Racing Bulls",
         "teamColour": "#6C98FF",
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LIALAW01_Liam_Lawson/lialaw01.png.transform/1col/image.png",
-        "qualifyingLapTime": 92.319,
+        "qualifyingLapTime": 92.369,
         "qualifyingPosition": 9,
-        "placesVsQualifying": 0
+        "placesVsQualifying": -1
       },
       {
-        "position": 10,
-        "positionLabel": "P10",
+        "position": 9,
+        "positionLabel": "P9",
         "driverNumber": 41,
         "driverName": "Arvid LINDBLAD",
         "nameAcronym": "LIN",
         "teamName": "Racing Bulls",
         "teamColour": "#6C98FF",
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/A/ARVLIN01_Arvid_Lindblad/arvlin01.png.transform/1col/image.png",
-        "qualifyingLapTime": 92.498,
+        "qualifyingLapTime": 92.781,
         "qualifyingPosition": 10,
-        "placesVsQualifying": 0
+        "placesVsQualifying": -1
       },
       {
-        "position": 11,
-        "positionLabel": "P11",
+        "position": 10,
+        "positionLabel": "P10",
         "driverNumber": 27,
         "driverName": "Nico HULKENBERG",
         "nameAcronym": "HUL",
@@ -456,11 +456,11 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/N/NICHUL01_Nico_Hulkenberg/nichul01.png.transform/1col/image.png",
         "qualifyingLapTime": 92.784,
         "qualifyingPosition": 11,
-        "placesVsQualifying": 0
+        "placesVsQualifying": -1
       },
       {
-        "position": 12,
-        "positionLabel": "P12",
+        "position": 11,
+        "positionLabel": "P11",
         "driverNumber": 87,
         "driverName": "Oliver BEARMAN",
         "nameAcronym": "BEA",
@@ -469,11 +469,11 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/O/OLIBEA01_Oliver_Bearman/olibea01.png.transform/1col/image.png",
         "qualifyingLapTime": 92.908,
         "qualifyingPosition": 12,
-        "placesVsQualifying": 0
+        "placesVsQualifying": -1
       },
       {
-        "position": 13,
-        "positionLabel": "P13",
+        "position": 12,
+        "positionLabel": "P12",
         "driverNumber": 31,
         "driverName": "Esteban OCON",
         "nameAcronym": "OCO",
@@ -482,11 +482,11 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/E/ESTOCO01_Esteban_Ocon/estoco01.png.transform/1col/image.png",
         "qualifyingLapTime": 93.323,
         "qualifyingPosition": 13,
-        "placesVsQualifying": 0
+        "placesVsQualifying": -1
       },
       {
-        "position": 14,
-        "positionLabel": "P14",
+        "position": 13,
+        "positionLabel": "P13",
         "driverNumber": 55,
         "driverName": "Carlos SAINZ",
         "nameAcronym": "SAI",
@@ -495,11 +495,11 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/C/CARSAI01_Carlos_Sainz/carsai01.png.transform/1col/image.png",
         "qualifyingLapTime": 93.526,
         "qualifyingPosition": 14,
-        "placesVsQualifying": 0
+        "placesVsQualifying": -1
       },
       {
-        "position": 15,
-        "positionLabel": "P15",
+        "position": 14,
+        "positionLabel": "P14",
         "driverNumber": 5,
         "driverName": "Gabriel BORTOLETO",
         "nameAcronym": "BOR",
@@ -508,24 +508,24 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/G/GABBOR01_Gabriel_Bortoleto/gabbor01.png.transform/1col/image.png",
         "qualifyingLapTime": 93.658,
         "qualifyingPosition": 15,
-        "placesVsQualifying": 0
+        "placesVsQualifying": -1
       },
       {
-        "position": 16,
-        "positionLabel": "P16",
+        "position": 15,
+        "positionLabel": "P15",
         "driverNumber": 43,
         "driverName": "Franco COLAPINTO",
         "nameAcronym": "COL",
         "teamName": "Alpine",
         "teamColour": "#00A1E8",
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/F/FRACOL01_Franco_Colapinto/fracol01.png.transform/1col/image.png",
-        "qualifyingLapTime": 93.261,
+        "qualifyingLapTime": 93.787,
         "qualifyingPosition": 16,
-        "placesVsQualifying": 0
+        "placesVsQualifying": -1
       },
       {
-        "position": 17,
-        "positionLabel": "P17",
+        "position": 16,
+        "positionLabel": "P16",
         "driverNumber": 14,
         "driverName": "Fernando ALONSO",
         "nameAcronym": "ALO",
@@ -534,11 +534,11 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/F/FERALO01_Fernando_Alonso/feralo01.png.transform/1col/image.png",
         "qualifyingLapTime": 94.223,
         "qualifyingPosition": 17,
-        "placesVsQualifying": 0
+        "placesVsQualifying": -1
       },
       {
-        "position": 18,
-        "positionLabel": "P18",
+        "position": 17,
+        "positionLabel": "P17",
         "driverNumber": 23,
         "driverName": "Alexander ALBON",
         "nameAcronym": "ALB",
@@ -547,11 +547,11 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/A/ALEALB01_Alexander_Albon/alealb01.png.transform/1col/image.png",
         "qualifyingLapTime": 94.289,
         "qualifyingPosition": 18,
-        "placesVsQualifying": 0
+        "placesVsQualifying": -1
       },
       {
-        "position": 19,
-        "positionLabel": "P19",
+        "position": 18,
+        "positionLabel": "P18",
         "driverNumber": 18,
         "driverName": "Lance STROLL",
         "nameAcronym": "STR",
@@ -560,11 +560,11 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LANSTR01_Lance_Stroll/lanstr01.png.transform/1col/image.png",
         "qualifyingLapTime": 94.946,
         "qualifyingPosition": 19,
-        "placesVsQualifying": 0
+        "placesVsQualifying": -1
       },
       {
-        "position": 20,
-        "positionLabel": "P20",
+        "position": 19,
+        "positionLabel": "P19",
         "driverNumber": 11,
         "driverName": "Sergio PEREZ",
         "nameAcronym": "PER",
@@ -573,11 +573,11 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/S/SERPER01_Sergio_Perez/serper01.png.transform/1col/image.png",
         "qualifyingLapTime": 95.123,
         "qualifyingPosition": 20,
-        "placesVsQualifying": 0
+        "placesVsQualifying": -1
       },
       {
-        "position": 21,
-        "positionLabel": "P21",
+        "position": 20,
+        "positionLabel": "P20",
         "driverNumber": 77,
         "driverName": "Valtteri BOTTAS",
         "nameAcronym": "BOT",
@@ -586,7 +586,33 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/V/VALBOT01_Valtteri_Bottas/valbot01.png.transform/1col/image.png",
         "qualifyingLapTime": 95.984,
         "qualifyingPosition": 21,
-        "placesVsQualifying": 0
+        "placesVsQualifying": -1
+      },
+      {
+        "position": 21,
+        "positionLabel": "P21",
+        "driverNumber": 63,
+        "driverName": "George RUSSELL",
+        "nameAcronym": "RUS",
+        "teamName": "Mercedes",
+        "teamColour": "#00D7B6",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/G/GEORUS01_George_Russell/georus01.png.transform/1col/image.png",
+        "qualifyingLapTime": 91.747,
+        "qualifyingPosition": 6,
+        "placesVsQualifying": 15
+      },
+      {
+        "position": 22,
+        "positionLabel": "P22",
+        "driverNumber": 6,
+        "driverName": "Isack HADJAR",
+        "nameAcronym": "HAD",
+        "teamName": "Red Bull Racing",
+        "teamColour": "#4781D7",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/I/ISAHAD01_Isack_Hadjar/isahad01.png.transform/1col/image.png",
+        "qualifyingLapTime": null,
+        "qualifyingPosition": null,
+        "placesVsQualifying": null
       }
     ]
   },
@@ -7347,7 +7373,7 @@
     },
     {
       "gridType": "race",
-      "provisional": true,
+      "provisional": false,
       "round": 15,
       "meetingKey": 1296,
       "meetingName": "Singapore Grand Prix",
@@ -7432,19 +7458,6 @@
         {
           "position": 6,
           "positionLabel": "P6",
-          "driverNumber": 63,
-          "driverName": "George RUSSELL",
-          "nameAcronym": "RUS",
-          "teamName": "Mercedes",
-          "teamColour": "#00D7B6",
-          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/G/GEORUS01_George_Russell/georus01.png.transform/1col/image.png",
-          "qualifyingLapTime": 91.747,
-          "qualifyingPosition": 6,
-          "placesVsQualifying": 0
-        },
-        {
-          "position": 7,
-          "positionLabel": "P7",
           "driverNumber": 81,
           "driverName": "Oscar PIASTRI",
           "nameAcronym": "PIA",
@@ -7453,11 +7466,11 @@
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/O/OSCPIA01_Oscar_Piastri/oscpia01.png.transform/1col/image.png",
           "qualifyingLapTime": 91.86,
           "qualifyingPosition": 7,
-          "placesVsQualifying": 0
+          "placesVsQualifying": -1
         },
         {
-          "position": 8,
-          "positionLabel": "P8",
+          "position": 7,
+          "positionLabel": "P7",
           "driverNumber": 10,
           "driverName": "Pierre GASLY",
           "nameAcronym": "GAS",
@@ -7466,37 +7479,37 @@
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/P/PIEGAS01_Pierre_Gasly/piegas01.png.transform/1col/image.png",
           "qualifyingLapTime": 92.225,
           "qualifyingPosition": 8,
-          "placesVsQualifying": 0
+          "placesVsQualifying": -1
         },
         {
-          "position": 9,
-          "positionLabel": "P9",
+          "position": 8,
+          "positionLabel": "P8",
           "driverNumber": 30,
           "driverName": "Liam LAWSON",
           "nameAcronym": "LAW",
           "teamName": "Racing Bulls",
           "teamColour": "#6C98FF",
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LIALAW01_Liam_Lawson/lialaw01.png.transform/1col/image.png",
-          "qualifyingLapTime": 92.319,
+          "qualifyingLapTime": 92.369,
           "qualifyingPosition": 9,
-          "placesVsQualifying": 0
+          "placesVsQualifying": -1
         },
         {
-          "position": 10,
-          "positionLabel": "P10",
+          "position": 9,
+          "positionLabel": "P9",
           "driverNumber": 41,
           "driverName": "Arvid LINDBLAD",
           "nameAcronym": "LIN",
           "teamName": "Racing Bulls",
           "teamColour": "#6C98FF",
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/A/ARVLIN01_Arvid_Lindblad/arvlin01.png.transform/1col/image.png",
-          "qualifyingLapTime": 92.498,
+          "qualifyingLapTime": 92.781,
           "qualifyingPosition": 10,
-          "placesVsQualifying": 0
+          "placesVsQualifying": -1
         },
         {
-          "position": 11,
-          "positionLabel": "P11",
+          "position": 10,
+          "positionLabel": "P10",
           "driverNumber": 27,
           "driverName": "Nico HULKENBERG",
           "nameAcronym": "HUL",
@@ -7505,11 +7518,11 @@
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/N/NICHUL01_Nico_Hulkenberg/nichul01.png.transform/1col/image.png",
           "qualifyingLapTime": 92.784,
           "qualifyingPosition": 11,
-          "placesVsQualifying": 0
+          "placesVsQualifying": -1
         },
         {
-          "position": 12,
-          "positionLabel": "P12",
+          "position": 11,
+          "positionLabel": "P11",
           "driverNumber": 87,
           "driverName": "Oliver BEARMAN",
           "nameAcronym": "BEA",
@@ -7518,11 +7531,11 @@
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/O/OLIBEA01_Oliver_Bearman/olibea01.png.transform/1col/image.png",
           "qualifyingLapTime": 92.908,
           "qualifyingPosition": 12,
-          "placesVsQualifying": 0
+          "placesVsQualifying": -1
         },
         {
-          "position": 13,
-          "positionLabel": "P13",
+          "position": 12,
+          "positionLabel": "P12",
           "driverNumber": 31,
           "driverName": "Esteban OCON",
           "nameAcronym": "OCO",
@@ -7531,11 +7544,11 @@
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/E/ESTOCO01_Esteban_Ocon/estoco01.png.transform/1col/image.png",
           "qualifyingLapTime": 93.323,
           "qualifyingPosition": 13,
-          "placesVsQualifying": 0
+          "placesVsQualifying": -1
         },
         {
-          "position": 14,
-          "positionLabel": "P14",
+          "position": 13,
+          "positionLabel": "P13",
           "driverNumber": 55,
           "driverName": "Carlos SAINZ",
           "nameAcronym": "SAI",
@@ -7544,11 +7557,11 @@
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/C/CARSAI01_Carlos_Sainz/carsai01.png.transform/1col/image.png",
           "qualifyingLapTime": 93.526,
           "qualifyingPosition": 14,
-          "placesVsQualifying": 0
+          "placesVsQualifying": -1
         },
         {
-          "position": 15,
-          "positionLabel": "P15",
+          "position": 14,
+          "positionLabel": "P14",
           "driverNumber": 5,
           "driverName": "Gabriel BORTOLETO",
           "nameAcronym": "BOR",
@@ -7557,24 +7570,24 @@
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/G/GABBOR01_Gabriel_Bortoleto/gabbor01.png.transform/1col/image.png",
           "qualifyingLapTime": 93.658,
           "qualifyingPosition": 15,
-          "placesVsQualifying": 0
+          "placesVsQualifying": -1
         },
         {
-          "position": 16,
-          "positionLabel": "P16",
+          "position": 15,
+          "positionLabel": "P15",
           "driverNumber": 43,
           "driverName": "Franco COLAPINTO",
           "nameAcronym": "COL",
           "teamName": "Alpine",
           "teamColour": "#00A1E8",
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/F/FRACOL01_Franco_Colapinto/fracol01.png.transform/1col/image.png",
-          "qualifyingLapTime": 93.261,
+          "qualifyingLapTime": 93.787,
           "qualifyingPosition": 16,
-          "placesVsQualifying": 0
+          "placesVsQualifying": -1
         },
         {
-          "position": 17,
-          "positionLabel": "P17",
+          "position": 16,
+          "positionLabel": "P16",
           "driverNumber": 14,
           "driverName": "Fernando ALONSO",
           "nameAcronym": "ALO",
@@ -7583,11 +7596,11 @@
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/F/FERALO01_Fernando_Alonso/feralo01.png.transform/1col/image.png",
           "qualifyingLapTime": 94.223,
           "qualifyingPosition": 17,
-          "placesVsQualifying": 0
+          "placesVsQualifying": -1
         },
         {
-          "position": 18,
-          "positionLabel": "P18",
+          "position": 17,
+          "positionLabel": "P17",
           "driverNumber": 23,
           "driverName": "Alexander ALBON",
           "nameAcronym": "ALB",
@@ -7596,11 +7609,11 @@
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/A/ALEALB01_Alexander_Albon/alealb01.png.transform/1col/image.png",
           "qualifyingLapTime": 94.289,
           "qualifyingPosition": 18,
-          "placesVsQualifying": 0
+          "placesVsQualifying": -1
         },
         {
-          "position": 19,
-          "positionLabel": "P19",
+          "position": 18,
+          "positionLabel": "P18",
           "driverNumber": 18,
           "driverName": "Lance STROLL",
           "nameAcronym": "STR",
@@ -7609,11 +7622,11 @@
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LANSTR01_Lance_Stroll/lanstr01.png.transform/1col/image.png",
           "qualifyingLapTime": 94.946,
           "qualifyingPosition": 19,
-          "placesVsQualifying": 0
+          "placesVsQualifying": -1
         },
         {
-          "position": 20,
-          "positionLabel": "P20",
+          "position": 19,
+          "positionLabel": "P19",
           "driverNumber": 11,
           "driverName": "Sergio PEREZ",
           "nameAcronym": "PER",
@@ -7622,11 +7635,11 @@
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/S/SERPER01_Sergio_Perez/serper01.png.transform/1col/image.png",
           "qualifyingLapTime": 95.123,
           "qualifyingPosition": 20,
-          "placesVsQualifying": 0
+          "placesVsQualifying": -1
         },
         {
-          "position": 21,
-          "positionLabel": "P21",
+          "position": 20,
+          "positionLabel": "P20",
           "driverNumber": 77,
           "driverName": "Valtteri BOTTAS",
           "nameAcronym": "BOT",
@@ -7635,7 +7648,33 @@
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/V/VALBOT01_Valtteri_Bottas/valbot01.png.transform/1col/image.png",
           "qualifyingLapTime": 95.984,
           "qualifyingPosition": 21,
-          "placesVsQualifying": 0
+          "placesVsQualifying": -1
+        },
+        {
+          "position": 21,
+          "positionLabel": "P21",
+          "driverNumber": 63,
+          "driverName": "George RUSSELL",
+          "nameAcronym": "RUS",
+          "teamName": "Mercedes",
+          "teamColour": "#00D7B6",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/G/GEORUS01_George_Russell/georus01.png.transform/1col/image.png",
+          "qualifyingLapTime": 91.747,
+          "qualifyingPosition": 6,
+          "placesVsQualifying": 15
+        },
+        {
+          "position": 22,
+          "positionLabel": "P22",
+          "driverNumber": 6,
+          "driverName": "Isack HADJAR",
+          "nameAcronym": "HAD",
+          "teamName": "Red Bull Racing",
+          "teamColour": "#4781D7",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/I/ISAHAD01_Isack_Hadjar/isahad01.png.transform/1col/image.png",
+          "qualifyingLapTime": null,
+          "qualifyingPosition": null,
+          "placesVsQualifying": null
         }
       ]
     }
