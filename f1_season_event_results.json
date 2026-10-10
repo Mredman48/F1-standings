@@ -1,6 +1,6 @@
 {
   "header": "2026 F1 all session results",
-  "generatedAtUtc": "2026-10-10T14:30:46.076Z",
+  "generatedAtUtc": "2026-10-10T14:41:04.131Z",
   "season": 2026,
   "events": [
     {
@@ -42547,7 +42547,7 @@
             "bestQualifyingTime": 91.373
           },
           "gapToLeader": null,
-          "laps": 14,
+          "laps": 15,
           "points": null,
           "sessionKey": 11384,
           "meetingKey": 1296
@@ -42691,12 +42691,35 @@
           "meetingKey": 1296
         },
         {
-          "driverNumber": 30,
-          "driverName": "Liam LAWSON",
-          "teamName": "Racing Bulls",
+          "driverNumber": 10,
+          "driverName": "Pierre GASLY",
+          "teamName": "Alpine",
           "position": "P8",
           "positionRank": 8,
           "classifiedPosition": 8,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 92.225,
+            "q2": null,
+            "q3": null,
+            "bestQualifyingTime": 92.225
+          },
+          "gapToLeader": null,
+          "laps": 22,
+          "points": null,
+          "sessionKey": 11384,
+          "meetingKey": 1296
+        },
+        {
+          "driverNumber": 30,
+          "driverName": "Liam LAWSON",
+          "teamName": "Racing Bulls",
+          "position": "P9",
+          "positionRank": 9,
+          "classifiedPosition": 9,
           "dnf": false,
           "dns": false,
           "dsq": false,
@@ -42708,7 +42731,7 @@
             "bestQualifyingTime": 92.319
           },
           "gapToLeader": null,
-          "laps": 20,
+          "laps": 21,
           "points": null,
           "sessionKey": 11384,
           "meetingKey": 1296
@@ -42717,9 +42740,9 @@
           "driverNumber": 41,
           "driverName": "Arvid LINDBLAD",
           "teamName": "Racing Bulls",
-          "position": "P9",
-          "positionRank": 9,
-          "classifiedPosition": 9,
+          "position": "P10",
+          "positionRank": 10,
+          "classifiedPosition": 10,
           "dnf": false,
           "dns": false,
           "dsq": false,
@@ -42729,29 +42752,6 @@
             "q2": null,
             "q3": null,
             "bestQualifyingTime": 92.498
-          },
-          "gapToLeader": null,
-          "laps": 21,
-          "points": null,
-          "sessionKey": 11384,
-          "meetingKey": 1296
-        },
-        {
-          "driverNumber": 10,
-          "driverName": "Pierre GASLY",
-          "teamName": "Alpine",
-          "position": "P10",
-          "positionRank": 10,
-          "classifiedPosition": 10,
-          "dnf": false,
-          "dns": false,
-          "dsq": false,
-          "duration": null,
-          "qualifyingTimes": {
-            "q1": 92.502,
-            "q2": null,
-            "q3": null,
-            "bestQualifyingTime": 92.502
           },
           "gapToLeader": null,
           "laps": 21,
