@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-10T17:31:17.713Z",
+  "generatedAt": "2026-10-10T18:07:59.898Z",
   "season": 2026,
   "teams": {
     "audi": {
@@ -236,6 +236,50 @@
         }
       },
       "liveries": []
+    },
+    "racing-bulls": {
+      "standard": {
+        "colors": {
+          "primary": "#E8002D",
+          "secondary": "#5A616C",
+          "onPrimary": "#FFFFFF"
+        },
+        "assets": {
+          "car": "",
+          "logo": "",
+          "logoLight": "",
+          "icon": ""
+        }
+      },
+      "liveries": [
+        {
+          "id": "racing-bulls-2026-suzuka-special-livery-2026",
+          "label": "Suzuka Special Livery 2026",
+          "type": "one-off",
+          "description": "",
+          "round": 3,
+          "validFrom": "2026-03-26T00:00:00Z",
+          "validUntil": "2026-03-29T00:00:00Z",
+          "colors": {
+            "primary": "#A8161B",
+            "secondary": "#FAC33D",
+            "onPrimary": "#FFFFFF"
+          },
+          "drivers": {},
+          "background": {
+            "style": "dotGradient",
+            "origin": "topTrailing",
+            "intensity": 0.6,
+            "spacing": 6
+          },
+          "assets": {
+            "car": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/liveries/racing-bulls-2026-suzuka-special-livery-2026-car.webp",
+            "logo": "",
+            "logoLight": "",
+            "icon": ""
+          }
+        }
+      ]
     }
   }
 }
