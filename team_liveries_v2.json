@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-10T17:29:37.202Z",
+  "generatedAt": "2026-10-10T17:31:17.713Z",
   "season": 2026,
   "teams": {
     "audi": {
@@ -220,6 +220,22 @@
           }
         }
       ]
+    },
+    "mercedes": {
+      "standard": {
+        "colors": {
+          "primary": "#00A19B",
+          "secondary": "#5C6C6C",
+          "onPrimary": "#0A0C0F"
+        },
+        "assets": {
+          "car": "",
+          "logo": "",
+          "logoLight": "",
+          "icon": ""
+        }
+      },
+      "liveries": []
     }
   }
 }
