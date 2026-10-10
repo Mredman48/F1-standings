@@ -1,6 +1,6 @@
 {
   "header": "Next F1 event",
-  "generatedAtUtc": "2026-10-10T13:10:50.604Z",
+  "generatedAtUtc": "2026-10-10T13:20:58.282Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics+formula1",
@@ -77,6 +77,14 @@
         "startLocalDateShort": "Sat, Oct 10",
         "startLocalTimeShort": "07:00",
         "startLocalDateTimeShort": "Sat, Oct 10 07:00"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2026-10-10T13:30:00.000Z",
+        "endUtc": "2026-10-10T14:30:00.000Z",
+        "startLocalDateShort": "Sat, Oct 10",
+        "startLocalTimeShort": "07:30",
+        "startLocalDateTimeShort": "Sat, Oct 10 07:30"
       },
       {
         "type": "Race",
