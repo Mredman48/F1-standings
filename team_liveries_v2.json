@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-10T14:04:56.119Z",
+  "season": 2026,
+  "teams": {
+    "audi": {
+      "standard": {
+        "colors": {
+          "primary": "#E8002D",
+          "secondary": "#5A616C",
+          "onPrimary": "#FFFFFF"
+        },
+        "assets": {
+          "car": "",
+          "logo": "",
+          "logoLight": "",
+          "icon": ""
+        }
+      },
+      "liveries": [
+        {
+          "id": "audi-2026-monaco-nuvolari-2026",
+          "label": "Monaco Nuvolari 2026",
+          "type": "one-off",
+          "description": "",
+          "round": null,
+          "validFrom": "2026-06-04T00:00:00Z",
+          "validUntil": "2026-06-08T00:00:00Z",
+          "colors": {
+            "primary": "#F1D648",
+            "secondary": "",
+            "onPrimary": "#0A0C0F"
+          },
+          "drivers": {
+            "hulkenberg": "primary",
+            "bortoleto": "secondary"
+          },
+          "background": {
+            "style": "dotGradient",
+            "origin": "topTrailing",
+            "intensity": 0.6,
+            "spacing": 10
+          },
+          "assets": {
+            "car": "https://mredman48.github.io/F1-standings/liveries/audi-monaco-car.webp",
+            "logo": "https://mredman48.github.io/F1-standings/liveries/audi-monaco-logo.webp",
+            "logoLight": "https://mredman48.github.io/F1-standings/liveries/audi-monaco-logo-light.webp",
+            "icon": "https://mredman48.github.io/F1-standings/liveries/audi-monaco-icon.webp"
+          }
+        }
+      ]
+    },
+    "mclaren": {
+      "standard": {
+        "colors": {
+          "primary": "#E8002D",
+          "secondary": "#5A616C",
+          "onPrimary": "#FFFFFF"
+        },
+        "assets": {
+          "car": "",
+          "logo": "",
+          "logoLight": "",
+          "icon": ""
+        }
+      },
+      "liveries": [
+        {
+          "id": "mclaren-2026-silverstone-2026-livery",
+          "label": "Silverstone 2026 Livery",
+          "type": "one-off",
+          "description": "",
+          "round": null,
+          "validFrom": "",
+          "validUntil": "2026-07-06T00:00:00Z",
+          "colors": {
+            "primary": "#2F473A",
+            "secondary": "",
+            "onPrimary": "#FFFFFF"
+          },
+          "drivers": {
+            "norris": "primary",
+            "piastri": "secondary"
+          },
+          "background": {
+            "style": "dotGradient",
+            "origin": "topTrailing",
+            "intensity": 0.6,
+            "spacing": 10
+          },
+          "assets": {
+            "car": "https://mredman48.github.io/F1-standings/liveries/mclaren-car.webp",
+            "logo": "https://mredman48.github.io/F1-standings/liveries/mclaren-logo.webp",
+            "logoLight": "https://mredman48.github.io/F1-standings/liveries/mclaren-logo-light.webp",
+            "icon": "https://mredman48.github.io/F1-standings/liveries/mclaren-icon.webp"
+          }
+        }
+      ]
+    },
+    "cadillac": {
+      "standard": {
+        "colors": {
+          "primary": "#E8002D",
+          "secondary": "#5A616C",
+          "onPrimary": "#FFFFFF"
+        },
+        "assets": {
+          "car": "",
+          "logo": "",
+          "logoLight": "",
+          "icon": ""
+        }
+      },
+      "liveries": [
+        {
+          "id": "cadillac-2026-silverstone-usa-250",
+          "label": "Silverstone USA 250",
+          "type": "one-off",
+          "description": "",
+          "round": null,
+          "validFrom": "2026-07-01T00:00:00Z",
+          "validUntil": "2026-07-06T00:00:00Z",
+          "colors": {
+            "primary": "#B31942",
+            "secondary": "",
+            "onPrimary": "#FFFFFF"
+          },
+          "drivers": {
+            "bottas": "primary",
+            "perez": "secondary"
+          },
+          "background": {
+            "style": "dotGradient",
+            "origin": "topTrailing",
+            "intensity": 0.6,
+            "spacing": 10
+          },
+          "assets": {
+            "car": "https://mredman48.github.io/F1-standings/liveries/cadillac-car.webp",
+            "logo": "https://mredman48.github.io/F1-standings/liveries/cadillac-logo.webp",
+            "logoLight": "https://mredman48.github.io/F1-standings/liveries/cadillac-logo-light.webp",
+            "icon": ""
+          }
+        }
+      ]
+    },
+    "williams": {
+      "standard": {
+        "colors": {
+          "primary": "#E8002D",
+          "secondary": "#5A616C",
+          "onPrimary": "#FFFFFF"
+        },
+        "assets": {
+          "car": "",
+          "logo": "",
+          "logoLight": "",
+          "icon": ""
+        }
+      },
+      "liveries": [
+        {
+          "id": "williams-2026-madrid-special-livery",
+          "label": "Madrid Special Livery",
+          "type": "one-off",
+          "description": "",
+          "round": null,
+          "validFrom": "",
+          "validUntil": "2026-09-14T00:00:00Z",
+          "colors": {
+            "primary": "#97B656",
+            "secondary": "",
+            "onPrimary": "#0A0C0F"
+          },
+          "drivers": {
+            "sainz": "primary",
+            "albon": "secondary"
+          },
+          "background": {
+            "style": "dotGradient",
+            "origin": "topTrailing",
+            "intensity": 0.6,
+            "spacing": 10
+          },
+          "assets": {
+            "car": "https://raw.githubusercontent.com/mredman48/F1-standings/main/liveries/williams-car.webp",
+            "logo": "https://raw.githubusercontent.com/mredman48/F1-standings/main/liveries/williams-logo.webp",
+            "logoLight": "https://raw.githubusercontent.com/mredman48/F1-standings/main/liveries/williams-logo-light.webp",
+            "icon": ""
+          }
+        }
+      ]
+    }
+  }
+}
