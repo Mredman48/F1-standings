@@ -1,6 +1,6 @@
 {
   "header": "Constructors standings",
-  "generatedAtUtc": "2026-10-10T10:41:45.625Z",
+  "generatedAtUtc": "2026-10-10T10:51:43.420Z",
   "meta": {
     "seasonUsed": "2026",
     "source": "f1_driver_standings.json",
@@ -9,13 +9,13 @@
   },
   "lastRace": {
     "season": "2026",
-    "round": "16",
-    "raceName": "Bahrain Grand Prix",
-    "date": "2026-10-04",
+    "round": "17",
+    "raceName": "Singapore Grand Prix Sprint",
+    "date": "2026-10-10",
     "circuit": {
-      "name": "Kuala Lumpur",
-      "locality": "Kuala Lumpur",
-      "country": "Bahrain"
+      "name": "Singapore",
+      "locality": "Marina Bay",
+      "country": "Singapore"
     },
     "winner": {
       "firstName": "Max",
@@ -29,7 +29,7 @@
     {
       "team": "Mercedes",
       "position": "P1",
-      "points": 556,
+      "points": 561,
       "wins": 11,
       "driverCount": 2,
       "placeholder": false
@@ -37,7 +37,7 @@
     {
       "team": "Ferrari",
       "position": "P2",
-      "points": 405,
+      "points": 418,
       "wins": 2,
       "driverCount": 2,
       "placeholder": false
@@ -45,7 +45,7 @@
     {
       "team": "McLaren",
       "position": "P3",
-      "points": 316,
+      "points": 317,
       "wins": 2,
       "driverCount": 2,
       "placeholder": false
@@ -53,7 +53,7 @@
     {
       "team": "Red Bull",
       "position": "P4",
-      "points": 284,
+      "points": 292,
       "wins": 1,
       "driverCount": 2,
       "placeholder": false
@@ -61,7 +61,7 @@
     {
       "team": "VCARB",
       "position": "P5",
-      "points": 104,
+      "points": 108,
       "wins": 0,
       "driverCount": 3,
       "placeholder": false
@@ -77,7 +77,7 @@
     {
       "team": "Haas",
       "position": "P7",
-      "points": 27,
+      "points": 30,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
@@ -85,7 +85,7 @@
     {
       "team": "Audi",
       "position": "P8",
-      "points": 17,
+      "points": 19,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false

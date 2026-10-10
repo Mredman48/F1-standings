@@ -1,21 +1,21 @@
 {
   "header": "Red Bull standings",
-  "generatedAtUtc": "2026-10-10T10:41:46.753Z",
+  "generatedAtUtc": "2026-10-10T10:51:44.760Z",
   "redBull": {
     "team": "Red Bull",
     "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_red-bull_color_v2.png",
     "teamStanding": {
       "team": "Red Bull",
       "position": "P4",
-      "points": 284,
+      "points": 292,
       "wins": 1
     }
   },
   "lastRace": {
-    "raceName": "Bahrain Grand Prix",
-    "round": "16",
-    "date": "2026-10-04",
-    "circuit": "Kuala Lumpur",
+    "raceName": "Singapore Grand Prix Sprint",
+    "round": "17",
+    "date": "2026-10-10",
+    "circuit": "Singapore",
     "location": {
       "locality": "-",
       "country": "-"
@@ -34,24 +34,24 @@
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-3.png",
       "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-3-2.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/max-verstappen.png",
-      "position": "P6",
-      "points": 188,
+      "position": "P5",
+      "points": 196,
       "wins": 1,
       "raceWins": 1,
       "racePodiums": 8,
-      "sprintWins": 0,
-      "sprintPodiums": 0,
+      "sprintWins": 1,
+      "sprintPodiums": 1,
       "team": "Red Bull",
       "bestResult": {
         "position": "P1",
-        "eventType": "race",
-        "raceName": "Bahrain Grand Prix",
-        "round": "16",
-        "date": "2026-10-04",
-        "circuit": "Kuala Lumpur",
+        "eventType": "sprint",
+        "raceName": "Singapore Grand Prix Sprint",
+        "round": "17",
+        "date": "2026-10-10",
+        "circuit": "Singapore",
         "location": {
-          "locality": "Kuala Lumpur",
-          "country": "Bahrain"
+          "locality": "Marina Bay",
+          "country": "Singapore"
         }
       }
     },
