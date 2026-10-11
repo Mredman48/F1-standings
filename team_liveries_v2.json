@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-11T04:19:37.168Z",
+  "generatedAt": "2026-10-11T04:36:19.130Z",
   "season": 2026,
   "teams": {
     "audi": {
@@ -309,6 +309,22 @@
         },
         "assets": {
           "car": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/liveries/ferrari-standard-car.webp",
+          "logo": "",
+          "logoLight": "",
+          "icon": ""
+        }
+      },
+      "liveries": []
+    },
+    "astonmartin": {
+      "standard": {
+        "colors": {
+          "primary": "#0A7968",
+          "secondary": "#CEDC00",
+          "onPrimary": "#FFFFFF"
+        },
+        "assets": {
+          "car": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/liveries/astonmartin-standard-car.webp",
           "logo": "",
           "logoLight": "",
           "icon": ""
