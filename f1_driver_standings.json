@@ -1,6 +1,6 @@
 {
   "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-10-11T14:01:07.950Z",
+  "generatedAtUtc": "2026-10-11T14:10:47.043Z",
   "season": 2026,
   "source": {
     "primary": "f1_season_event_results.json",
@@ -11,8 +11,8 @@
   "lastRace": {
     "season": "2026",
     "round": "17",
-    "raceName": "Singapore Grand Prix Sprint",
-    "date": "2026-10-10",
+    "raceName": "Singapore Grand Prix",
+    "date": "2026-10-11",
     "circuit": {
       "name": "Singapore",
       "locality": "Marina Bay",
@@ -30,7 +30,7 @@
     {
       "position": "P1",
       "positionNumber": 1,
-      "points": 325,
+      "points": 340,
       "wins": 8,
       "driver": {
         "code": "ANT",
@@ -51,7 +51,7 @@
     {
       "position": "P2",
       "positionNumber": 2,
-      "points": 236,
+      "points": 238,
       "wins": 3,
       "driver": {
         "code": "RUS",
@@ -72,7 +72,7 @@
     {
       "position": "P3",
       "positionNumber": 3,
-      "points": 221,
+      "points": 229,
       "wins": 1,
       "driver": {
         "code": "HAM",
@@ -93,7 +93,28 @@
     {
       "position": "P4",
       "positionNumber": 4,
-      "points": 197,
+      "points": 221,
+      "wins": 2,
+      "driver": {
+        "code": "VER",
+        "firstName": "Max",
+        "lastName": "VERSTAPPEN",
+        "fullName": "Max VERSTAPPEN",
+        "nationality": "NED",
+        "driverNumber": 3,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/max-verstappen.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Red Bull",
+        "fullName": "Red Bull",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P5",
+      "positionNumber": 5,
+      "points": 215,
       "wins": 1,
       "driver": {
         "code": "LEC",
@@ -112,30 +133,9 @@
       }
     },
     {
-      "position": "P5",
-      "positionNumber": 5,
-      "points": 196,
-      "wins": 1,
-      "driver": {
-        "code": "VER",
-        "firstName": "Max",
-        "lastName": "VERSTAPPEN",
-        "fullName": "Max VERSTAPPEN",
-        "nationality": "NED",
-        "driverNumber": 3,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/max-verstappen.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Red Bull",
-        "fullName": "Red Bull",
-        "nationality": null
-      }
-    },
-    {
       "position": "P6",
       "positionNumber": 6,
-      "points": 189,
+      "points": 201,
       "wins": 2,
       "driver": {
         "code": "NOR",
@@ -156,7 +156,7 @@
     {
       "position": "P7",
       "positionNumber": 7,
-      "points": 128,
+      "points": 138,
       "wins": 0,
       "driver": {
         "code": "PIA",
@@ -177,7 +177,7 @@
     {
       "position": "P8",
       "positionNumber": 8,
-      "points": 96,
+      "points": 97,
       "wins": 0,
       "driver": {
         "code": "HAD",
@@ -198,7 +198,7 @@
     {
       "position": "P9",
       "positionNumber": 9,
-      "points": 69,
+      "points": 75,
       "wins": 0,
       "driver": {
         "code": "LAW",
@@ -303,16 +303,16 @@
     {
       "position": "P14",
       "positionNumber": 14,
-      "points": 10,
+      "points": 13,
       "wins": 0,
       "driver": {
-        "code": "BOR",
-        "firstName": "Gabriel",
-        "lastName": "BORTOLETO",
-        "fullName": "Gabriel BORTOLETO",
-        "nationality": "BRA",
-        "driverNumber": 5,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/gabriel-bortoleto.png",
+        "code": "HUL",
+        "firstName": "Nico",
+        "lastName": "HULKENBERG",
+        "fullName": "Nico HULKENBERG",
+        "nationality": "GER",
+        "driverNumber": 27,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/nico-hulkenberg.png",
         "openf1HeadshotUrl": null
       },
       "constructor": {
@@ -324,16 +324,16 @@
     {
       "position": "P15",
       "positionNumber": 15,
-      "points": 9,
+      "points": 10,
       "wins": 0,
       "driver": {
-        "code": "HUL",
-        "firstName": "Nico",
-        "lastName": "HULKENBERG",
-        "fullName": "Nico HULKENBERG",
-        "nationality": "GER",
-        "driverNumber": 27,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/nico-hulkenberg.png",
+        "code": "BOR",
+        "firstName": "Gabriel",
+        "lastName": "BORTOLETO",
+        "fullName": "Gabriel BORTOLETO",
+        "nationality": "BRA",
+        "driverNumber": 5,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/gabriel-bortoleto.png",
         "openf1HeadshotUrl": null
       },
       "constructor": {
