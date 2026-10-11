@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-11T12:46:10.790Z",
+  "generatedAt": "2026-10-11T17:09:58.330Z",
   "season": 2026,
   "teams": {
     "audi": {
@@ -191,7 +191,7 @@
       "liveries": [
         {
           "id": "williams-2026-madrid-special-livery",
-          "label": "Madrid Special Livery",
+          "label": "Madrid Historical Livery",
           "type": "one-off",
           "description": "",
           "round": 14,
@@ -199,7 +199,7 @@
           "validUntil": "2026-09-14T00:00:00Z",
           "colors": {
             "primary": "#97B656",
-            "secondary": "#FEFBEA",
+            "secondary": "#004225",
             "onPrimary": "#0A0C0F"
           },
           "drivers": {
@@ -213,7 +213,7 @@
             "spacing": 10
           },
           "assets": {
-            "car": "https://raw.githubusercontent.com/mredman48/F1-standings/main/liveries/williams-car.webp",
+            "car": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/liveries/williams-2026-madrid-special-livery-car.webp",
             "logo": "https://raw.githubusercontent.com/mredman48/F1-standings/main/liveries/williams-logo.webp",
             "logoLight": "https://raw.githubusercontent.com/mredman48/F1-standings/main/liveries/williams-logo-light.webp",
             "icon": ""
