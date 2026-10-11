@@ -1,6 +1,6 @@
 {
   "header": "2026 F1 starting grids",
-  "generatedAtUtc": "2026-10-10T21:50:29.880Z",
+  "generatedAtUtc": "2026-10-11T11:31:12.644Z",
   "season": 2026,
   "upcoming": {
     "gridType": "race",
@@ -16,7 +16,7 @@
     },
     "qualifyingSessionKey": 11384,
     "qualifyingSessionName": "Qualifying",
-    "qualifyingDateStartUtc": "2026-10-10T13:30:00+00:00",
+    "qualifyingDateStartUtc": "2026-10-10T13:00:00+00:00",
     "raceSessionKey": 11388,
     "raceDateStartUtc": "2026-10-11T12:00:00+00:00",
     "raceCompleted": false,
@@ -219,19 +219,6 @@
       {
         "position": 16,
         "positionLabel": "P16",
-        "driverNumber": 14,
-        "driverName": "Fernando ALONSO",
-        "nameAcronym": "ALO",
-        "teamName": "Aston Martin",
-        "teamColour": "#229971",
-        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/F/FERALO01_Fernando_Alonso/feralo01.png.transform/1col/image.png",
-        "qualifyingLapTime": 94.223,
-        "qualifyingPosition": 17,
-        "placesVsQualifying": -1
-      },
-      {
-        "position": 17,
-        "positionLabel": "P17",
         "driverNumber": 23,
         "driverName": "Alexander ALBON",
         "nameAcronym": "ALB",
@@ -240,24 +227,11 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/A/ALEALB01_Alexander_Albon/alealb01.png.transform/1col/image.png",
         "qualifyingLapTime": 94.289,
         "qualifyingPosition": 18,
-        "placesVsQualifying": -1
+        "placesVsQualifying": -2
       },
       {
-        "position": 18,
-        "positionLabel": "P18",
-        "driverNumber": 18,
-        "driverName": "Lance STROLL",
-        "nameAcronym": "STR",
-        "teamName": "Aston Martin",
-        "teamColour": "#229971",
-        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LANSTR01_Lance_Stroll/lanstr01.png.transform/1col/image.png",
-        "qualifyingLapTime": 94.946,
-        "qualifyingPosition": 19,
-        "placesVsQualifying": -1
-      },
-      {
-        "position": 19,
-        "positionLabel": "P19",
+        "position": 17,
+        "positionLabel": "P17",
         "driverNumber": 11,
         "driverName": "Sergio PEREZ",
         "nameAcronym": "PER",
@@ -266,11 +240,11 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/S/SERPER01_Sergio_Perez/serper01.png.transform/1col/image.png",
         "qualifyingLapTime": 95.123,
         "qualifyingPosition": 20,
-        "placesVsQualifying": -1
+        "placesVsQualifying": -3
       },
       {
-        "position": 20,
-        "positionLabel": "P20",
+        "position": 18,
+        "positionLabel": "P18",
         "driverNumber": 77,
         "driverName": "Valtteri BOTTAS",
         "nameAcronym": "BOT",
@@ -279,11 +253,11 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/V/VALBOT01_Valtteri_Bottas/valbot01.png.transform/1col/image.png",
         "qualifyingLapTime": 95.984,
         "qualifyingPosition": 21,
-        "placesVsQualifying": -1
+        "placesVsQualifying": -3
       },
       {
-        "position": 21,
-        "positionLabel": "P21",
+        "position": 19,
+        "positionLabel": "P19",
         "driverNumber": 63,
         "driverName": "George RUSSELL",
         "nameAcronym": "RUS",
@@ -292,7 +266,33 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/G/GEORUS01_George_Russell/georus01.png.transform/1col/image.png",
         "qualifyingLapTime": 91.747,
         "qualifyingPosition": 6,
-        "placesVsQualifying": 15
+        "placesVsQualifying": 13
+      },
+      {
+        "position": 20,
+        "positionLabel": "P20",
+        "driverNumber": 18,
+        "driverName": "Lance STROLL",
+        "nameAcronym": "STR",
+        "teamName": "Aston Martin",
+        "teamColour": "#229971",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LANSTR01_Lance_Stroll/lanstr01.png.transform/1col/image.png",
+        "qualifyingLapTime": 94.946,
+        "qualifyingPosition": 19,
+        "placesVsQualifying": 1
+      },
+      {
+        "position": 21,
+        "positionLabel": "P21",
+        "driverNumber": 14,
+        "driverName": "Fernando ALONSO",
+        "nameAcronym": "ALO",
+        "teamName": "Aston Martin",
+        "teamColour": "#229971",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/F/FERALO01_Fernando_Alonso/feralo01.png.transform/1col/image.png",
+        "qualifyingLapTime": 94.223,
+        "qualifyingPosition": 17,
+        "placesVsQualifying": 4
       },
       {
         "position": 22,
@@ -323,7 +323,7 @@
     },
     "qualifyingSessionKey": 11384,
     "qualifyingSessionName": "Qualifying",
-    "qualifyingDateStartUtc": "2026-10-10T13:30:00+00:00",
+    "qualifyingDateStartUtc": "2026-10-10T13:00:00+00:00",
     "raceSessionKey": 11388,
     "raceDateStartUtc": "2026-10-11T12:00:00+00:00",
     "raceCompleted": false,
@@ -526,19 +526,6 @@
       {
         "position": 16,
         "positionLabel": "P16",
-        "driverNumber": 14,
-        "driverName": "Fernando ALONSO",
-        "nameAcronym": "ALO",
-        "teamName": "Aston Martin",
-        "teamColour": "#229971",
-        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/F/FERALO01_Fernando_Alonso/feralo01.png.transform/1col/image.png",
-        "qualifyingLapTime": 94.223,
-        "qualifyingPosition": 17,
-        "placesVsQualifying": -1
-      },
-      {
-        "position": 17,
-        "positionLabel": "P17",
         "driverNumber": 23,
         "driverName": "Alexander ALBON",
         "nameAcronym": "ALB",
@@ -547,24 +534,11 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/A/ALEALB01_Alexander_Albon/alealb01.png.transform/1col/image.png",
         "qualifyingLapTime": 94.289,
         "qualifyingPosition": 18,
-        "placesVsQualifying": -1
+        "placesVsQualifying": -2
       },
       {
-        "position": 18,
-        "positionLabel": "P18",
-        "driverNumber": 18,
-        "driverName": "Lance STROLL",
-        "nameAcronym": "STR",
-        "teamName": "Aston Martin",
-        "teamColour": "#229971",
-        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LANSTR01_Lance_Stroll/lanstr01.png.transform/1col/image.png",
-        "qualifyingLapTime": 94.946,
-        "qualifyingPosition": 19,
-        "placesVsQualifying": -1
-      },
-      {
-        "position": 19,
-        "positionLabel": "P19",
+        "position": 17,
+        "positionLabel": "P17",
         "driverNumber": 11,
         "driverName": "Sergio PEREZ",
         "nameAcronym": "PER",
@@ -573,11 +547,11 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/S/SERPER01_Sergio_Perez/serper01.png.transform/1col/image.png",
         "qualifyingLapTime": 95.123,
         "qualifyingPosition": 20,
-        "placesVsQualifying": -1
+        "placesVsQualifying": -3
       },
       {
-        "position": 20,
-        "positionLabel": "P20",
+        "position": 18,
+        "positionLabel": "P18",
         "driverNumber": 77,
         "driverName": "Valtteri BOTTAS",
         "nameAcronym": "BOT",
@@ -586,11 +560,11 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/V/VALBOT01_Valtteri_Bottas/valbot01.png.transform/1col/image.png",
         "qualifyingLapTime": 95.984,
         "qualifyingPosition": 21,
-        "placesVsQualifying": -1
+        "placesVsQualifying": -3
       },
       {
-        "position": 21,
-        "positionLabel": "P21",
+        "position": 19,
+        "positionLabel": "P19",
         "driverNumber": 63,
         "driverName": "George RUSSELL",
         "nameAcronym": "RUS",
@@ -599,7 +573,33 @@
         "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/G/GEORUS01_George_Russell/georus01.png.transform/1col/image.png",
         "qualifyingLapTime": 91.747,
         "qualifyingPosition": 6,
-        "placesVsQualifying": 15
+        "placesVsQualifying": 13
+      },
+      {
+        "position": 20,
+        "positionLabel": "P20",
+        "driverNumber": 18,
+        "driverName": "Lance STROLL",
+        "nameAcronym": "STR",
+        "teamName": "Aston Martin",
+        "teamColour": "#229971",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LANSTR01_Lance_Stroll/lanstr01.png.transform/1col/image.png",
+        "qualifyingLapTime": 94.946,
+        "qualifyingPosition": 19,
+        "placesVsQualifying": 1
+      },
+      {
+        "position": 21,
+        "positionLabel": "P21",
+        "driverNumber": 14,
+        "driverName": "Fernando ALONSO",
+        "nameAcronym": "ALO",
+        "teamName": "Aston Martin",
+        "teamColour": "#229971",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/F/FERALO01_Fernando_Alonso/feralo01.png.transform/1col/image.png",
+        "qualifyingLapTime": 94.223,
+        "qualifyingPosition": 17,
+        "placesVsQualifying": 4
       },
       {
         "position": 22,
@@ -7385,7 +7385,7 @@
       },
       "qualifyingSessionKey": 11384,
       "qualifyingSessionName": "Qualifying",
-      "qualifyingDateStartUtc": "2026-10-10T13:30:00+00:00",
+      "qualifyingDateStartUtc": "2026-10-10T13:00:00+00:00",
       "raceSessionKey": 11388,
       "raceDateStartUtc": "2026-10-11T12:00:00+00:00",
       "raceCompleted": false,
@@ -7588,19 +7588,6 @@
         {
           "position": 16,
           "positionLabel": "P16",
-          "driverNumber": 14,
-          "driverName": "Fernando ALONSO",
-          "nameAcronym": "ALO",
-          "teamName": "Aston Martin",
-          "teamColour": "#229971",
-          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/F/FERALO01_Fernando_Alonso/feralo01.png.transform/1col/image.png",
-          "qualifyingLapTime": 94.223,
-          "qualifyingPosition": 17,
-          "placesVsQualifying": -1
-        },
-        {
-          "position": 17,
-          "positionLabel": "P17",
           "driverNumber": 23,
           "driverName": "Alexander ALBON",
           "nameAcronym": "ALB",
@@ -7609,24 +7596,11 @@
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/A/ALEALB01_Alexander_Albon/alealb01.png.transform/1col/image.png",
           "qualifyingLapTime": 94.289,
           "qualifyingPosition": 18,
-          "placesVsQualifying": -1
+          "placesVsQualifying": -2
         },
         {
-          "position": 18,
-          "positionLabel": "P18",
-          "driverNumber": 18,
-          "driverName": "Lance STROLL",
-          "nameAcronym": "STR",
-          "teamName": "Aston Martin",
-          "teamColour": "#229971",
-          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LANSTR01_Lance_Stroll/lanstr01.png.transform/1col/image.png",
-          "qualifyingLapTime": 94.946,
-          "qualifyingPosition": 19,
-          "placesVsQualifying": -1
-        },
-        {
-          "position": 19,
-          "positionLabel": "P19",
+          "position": 17,
+          "positionLabel": "P17",
           "driverNumber": 11,
           "driverName": "Sergio PEREZ",
           "nameAcronym": "PER",
@@ -7635,11 +7609,11 @@
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/S/SERPER01_Sergio_Perez/serper01.png.transform/1col/image.png",
           "qualifyingLapTime": 95.123,
           "qualifyingPosition": 20,
-          "placesVsQualifying": -1
+          "placesVsQualifying": -3
         },
         {
-          "position": 20,
-          "positionLabel": "P20",
+          "position": 18,
+          "positionLabel": "P18",
           "driverNumber": 77,
           "driverName": "Valtteri BOTTAS",
           "nameAcronym": "BOT",
@@ -7648,11 +7622,11 @@
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/V/VALBOT01_Valtteri_Bottas/valbot01.png.transform/1col/image.png",
           "qualifyingLapTime": 95.984,
           "qualifyingPosition": 21,
-          "placesVsQualifying": -1
+          "placesVsQualifying": -3
         },
         {
-          "position": 21,
-          "positionLabel": "P21",
+          "position": 19,
+          "positionLabel": "P19",
           "driverNumber": 63,
           "driverName": "George RUSSELL",
           "nameAcronym": "RUS",
@@ -7661,7 +7635,33 @@
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/G/GEORUS01_George_Russell/georus01.png.transform/1col/image.png",
           "qualifyingLapTime": 91.747,
           "qualifyingPosition": 6,
-          "placesVsQualifying": 15
+          "placesVsQualifying": 13
+        },
+        {
+          "position": 20,
+          "positionLabel": "P20",
+          "driverNumber": 18,
+          "driverName": "Lance STROLL",
+          "nameAcronym": "STR",
+          "teamName": "Aston Martin",
+          "teamColour": "#229971",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LANSTR01_Lance_Stroll/lanstr01.png.transform/1col/image.png",
+          "qualifyingLapTime": 94.946,
+          "qualifyingPosition": 19,
+          "placesVsQualifying": 1
+        },
+        {
+          "position": 21,
+          "positionLabel": "P21",
+          "driverNumber": 14,
+          "driverName": "Fernando ALONSO",
+          "nameAcronym": "ALO",
+          "teamName": "Aston Martin",
+          "teamColour": "#229971",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/F/FERALO01_Fernando_Alonso/feralo01.png.transform/1col/image.png",
+          "qualifyingLapTime": 94.223,
+          "qualifyingPosition": 17,
+          "placesVsQualifying": 4
         },
         {
           "position": 22,
