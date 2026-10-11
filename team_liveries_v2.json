@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-11T12:16:30.168Z",
+  "generatedAt": "2026-10-11T12:29:46.170Z",
   "season": 2026,
   "teams": {
     "audi": {
@@ -341,6 +341,22 @@
         },
         "assets": {
           "car": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/liveries/haas-standard-car.webp",
+          "logo": "",
+          "logoLight": "",
+          "icon": ""
+        }
+      },
+      "liveries": []
+    },
+    "redbull": {
+      "standard": {
+        "colors": {
+          "primary": "#040C8F",
+          "secondary": "#C5323C",
+          "onPrimary": "#FFFFFF"
+        },
+        "assets": {
+          "car": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/liveries/redbull-standard-car.webp",
           "logo": "",
           "logoLight": "",
           "icon": ""
