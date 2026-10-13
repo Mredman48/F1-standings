@@ -1,6 +1,6 @@
 {
   "header": "2026 F1 pit stops and tyre strategy",
-  "generatedAtUtc": "2026-10-13T03:55:45.352Z",
+  "generatedAtUtc": "2026-10-13T04:08:12.820Z",
   "season": 2026,
   "latest": {
     "sessionType": "race",
@@ -37795,43 +37795,25 @@
           "teamName": "Red Bull Racing",
           "teamColour": "#4781D7",
           "lapsCompleted": 20,
-          "stops": 3,
+          "stops": 1,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 2,
-              "laps": 2,
+              "lapEnd": 3,
+              "laps": 3,
               "tyreAgeAtStart": 0,
               "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "INTERMEDIATE",
-              "lapStart": 3,
-              "lapEnd": 3,
-              "laps": 1,
-              "tyreAgeAtStart": 2,
-              "newTyre": false
             },
             {
               "stint": 3,
               "compound": "INTERMEDIATE",
               "lapStart": 4,
-              "lapEnd": 4,
-              "laps": 1,
+              "lapEnd": 20,
+              "laps": 17,
               "tyreAgeAtStart": 0,
               "newTyre": true
-            },
-            {
-              "stint": 4,
-              "compound": "INTERMEDIATE",
-              "lapStart": 5,
-              "lapEnd": 20,
-              "laps": 16,
-              "tyreAgeAtStart": 4,
-              "newTyre": false
             }
           ]
         },
@@ -37845,41 +37827,23 @@
           "teamName": "Ferrari",
           "teamColour": "#ED1131",
           "lapsCompleted": 20,
-          "stops": 3,
+          "stops": 1,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 2,
-              "laps": 2,
+              "lapEnd": 3,
+              "laps": 3,
               "tyreAgeAtStart": 0,
               "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "INTERMEDIATE",
-              "lapStart": 3,
-              "lapEnd": 3,
-              "laps": 1,
-              "tyreAgeAtStart": 2,
-              "newTyre": false
             },
             {
               "stint": 3,
               "compound": "INTERMEDIATE",
               "lapStart": 4,
-              "lapEnd": 4,
-              "laps": 1,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 4,
-              "compound": "INTERMEDIATE",
-              "lapStart": 5,
               "lapEnd": 20,
-              "laps": 16,
+              "laps": 17,
               "tyreAgeAtStart": 0,
               "newTyre": true
             }
@@ -37895,34 +37859,16 @@
           "teamName": "Ferrari",
           "teamColour": "#ED1131",
           "lapsCompleted": 20,
-          "stops": 3,
+          "stops": 1,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 2,
-              "laps": 2,
+              "lapEnd": 4,
+              "laps": 4,
               "tyreAgeAtStart": 0,
               "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "INTERMEDIATE",
-              "lapStart": 3,
-              "lapEnd": 3,
-              "laps": 1,
-              "tyreAgeAtStart": 2,
-              "newTyre": false
-            },
-            {
-              "stint": 3,
-              "compound": "INTERMEDIATE",
-              "lapStart": 4,
-              "lapEnd": 4,
-              "laps": 1,
-              "tyreAgeAtStart": 3,
-              "newTyre": false
             },
             {
               "stint": 4,
@@ -37945,43 +37891,16 @@
           "teamName": "Mercedes",
           "teamColour": "#00D7B6",
           "lapsCompleted": 20,
-          "stops": 3,
+          "stops": 0,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 2,
-              "laps": 2,
+              "lapEnd": 20,
+              "laps": 20,
               "tyreAgeAtStart": 0,
               "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "INTERMEDIATE",
-              "lapStart": 3,
-              "lapEnd": 3,
-              "laps": 1,
-              "tyreAgeAtStart": 2,
-              "newTyre": false
-            },
-            {
-              "stint": 3,
-              "compound": "INTERMEDIATE",
-              "lapStart": 4,
-              "lapEnd": 4,
-              "laps": 1,
-              "tyreAgeAtStart": 3,
-              "newTyre": false
-            },
-            {
-              "stint": 4,
-              "compound": "INTERMEDIATE",
-              "lapStart": 5,
-              "lapEnd": 20,
-              "laps": 16,
-              "tyreAgeAtStart": 4,
-              "newTyre": false
             }
           ]
         },
@@ -37995,41 +37914,23 @@
           "teamName": "Racing Bulls",
           "teamColour": "#6C98FF",
           "lapsCompleted": 20,
-          "stops": 3,
+          "stops": 1,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 2,
-              "laps": 2,
+              "lapEnd": 3,
+              "laps": 3,
               "tyreAgeAtStart": 0,
               "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "INTERMEDIATE",
-              "lapStart": 3,
-              "lapEnd": 3,
-              "laps": 1,
-              "tyreAgeAtStart": 2,
-              "newTyre": false
             },
             {
               "stint": 3,
               "compound": "INTERMEDIATE",
               "lapStart": 4,
-              "lapEnd": 4,
-              "laps": 1,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 4,
-              "compound": "INTERMEDIATE",
-              "lapStart": 5,
               "lapEnd": 20,
-              "laps": 16,
+              "laps": 17,
               "tyreAgeAtStart": 0,
               "newTyre": true
             }
@@ -38045,43 +37946,25 @@
           "teamName": "Haas F1 Team",
           "teamColour": "#9C9FA2",
           "lapsCompleted": 20,
-          "stops": 3,
+          "stops": 1,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 2,
-              "laps": 2,
+              "lapEnd": 3,
+              "laps": 3,
               "tyreAgeAtStart": 0,
               "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "INTERMEDIATE",
-              "lapStart": 3,
-              "lapEnd": 3,
-              "laps": 1,
-              "tyreAgeAtStart": 2,
-              "newTyre": false
             },
             {
               "stint": 3,
               "compound": "INTERMEDIATE",
               "lapStart": 4,
-              "lapEnd": 4,
-              "laps": 1,
+              "lapEnd": 20,
+              "laps": 17,
               "tyreAgeAtStart": 0,
               "newTyre": true
-            },
-            {
-              "stint": 4,
-              "compound": "INTERMEDIATE",
-              "lapStart": 5,
-              "lapEnd": 20,
-              "laps": 16,
-              "tyreAgeAtStart": 4,
-              "newTyre": false
             }
           ]
         },
@@ -38095,23 +37978,14 @@
           "teamName": "Audi",
           "teamColour": "#F50537",
           "lapsCompleted": 20,
-          "stops": 3,
+          "stops": 1,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 2,
-              "laps": 2,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "INTERMEDIATE",
-              "lapStart": 3,
               "lapEnd": 3,
-              "laps": 1,
+              "laps": 3,
               "tyreAgeAtStart": 0,
               "newTyre": true
             },
@@ -38119,19 +37993,10 @@
               "stint": 3,
               "compound": "INTERMEDIATE",
               "lapStart": 4,
-              "lapEnd": 4,
-              "laps": 1,
+              "lapEnd": 20,
+              "laps": 17,
               "tyreAgeAtStart": 0,
               "newTyre": true
-            },
-            {
-              "stint": 4,
-              "compound": "INTERMEDIATE",
-              "lapStart": 5,
-              "lapEnd": 20,
-              "laps": 16,
-              "tyreAgeAtStart": 4,
-              "newTyre": false
             }
           ]
         },
@@ -38145,23 +38010,14 @@
           "teamName": "McLaren",
           "teamColour": "#F47600",
           "lapsCompleted": 20,
-          "stops": 3,
+          "stops": 1,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 2,
-              "laps": 2,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "INTERMEDIATE",
-              "lapStart": 3,
               "lapEnd": 3,
-              "laps": 1,
+              "laps": 3,
               "tyreAgeAtStart": 0,
               "newTyre": true
             },
@@ -38169,17 +38025,8 @@
               "stint": 3,
               "compound": "INTERMEDIATE",
               "lapStart": 4,
-              "lapEnd": 4,
-              "laps": 1,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 4,
-              "compound": "INTERMEDIATE",
-              "lapStart": 5,
               "lapEnd": 20,
-              "laps": 16,
+              "laps": 17,
               "tyreAgeAtStart": 0,
               "newTyre": true
             }
@@ -38195,23 +38042,14 @@
           "teamName": "Alpine",
           "teamColour": "#00A1E8",
           "lapsCompleted": 20,
-          "stops": 3,
+          "stops": 1,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 2,
-              "laps": 2,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "INTERMEDIATE",
-              "lapStart": 3,
               "lapEnd": 3,
-              "laps": 1,
+              "laps": 3,
               "tyreAgeAtStart": 0,
               "newTyre": true
             },
@@ -38219,19 +38057,10 @@
               "stint": 3,
               "compound": "INTERMEDIATE",
               "lapStart": 4,
-              "lapEnd": 4,
-              "laps": 1,
+              "lapEnd": 20,
+              "laps": 17,
               "tyreAgeAtStart": 0,
               "newTyre": true
-            },
-            {
-              "stint": 4,
-              "compound": "INTERMEDIATE",
-              "lapStart": 5,
-              "lapEnd": 20,
-              "laps": 16,
-              "tyreAgeAtStart": 4,
-              "newTyre": false
             }
           ]
         },
@@ -38245,34 +38074,16 @@
           "teamName": "Haas F1 Team",
           "teamColour": "#9C9FA2",
           "lapsCompleted": 20,
-          "stops": 3,
+          "stops": 1,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 2,
-              "laps": 2,
+              "lapEnd": 4,
+              "laps": 4,
               "tyreAgeAtStart": 0,
               "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "INTERMEDIATE",
-              "lapStart": 3,
-              "lapEnd": 3,
-              "laps": 1,
-              "tyreAgeAtStart": 2,
-              "newTyre": false
-            },
-            {
-              "stint": 3,
-              "compound": "INTERMEDIATE",
-              "lapStart": 4,
-              "lapEnd": 4,
-              "laps": 1,
-              "tyreAgeAtStart": 3,
-              "newTyre": false
             },
             {
               "stint": 4,
@@ -38295,43 +38106,16 @@
           "teamName": "Aston Martin",
           "teamColour": "#229971",
           "lapsCompleted": 20,
-          "stops": 3,
+          "stops": 0,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 2,
-              "laps": 2,
+              "lapEnd": 20,
+              "laps": 20,
               "tyreAgeAtStart": 0,
               "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "INTERMEDIATE",
-              "lapStart": 3,
-              "lapEnd": 3,
-              "laps": 1,
-              "tyreAgeAtStart": 2,
-              "newTyre": false
-            },
-            {
-              "stint": 3,
-              "compound": "INTERMEDIATE",
-              "lapStart": 4,
-              "lapEnd": 4,
-              "laps": 1,
-              "tyreAgeAtStart": 3,
-              "newTyre": false
-            },
-            {
-              "stint": 4,
-              "compound": "INTERMEDIATE",
-              "lapStart": 5,
-              "lapEnd": 20,
-              "laps": 16,
-              "tyreAgeAtStart": 4,
-              "newTyre": false
             }
           ]
         },
@@ -38345,43 +38129,25 @@
           "teamName": "Williams",
           "teamColour": "#1868DB",
           "lapsCompleted": 20,
-          "stops": 3,
+          "stops": 1,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 2,
-              "laps": 2,
+              "lapEnd": 3,
+              "laps": 3,
               "tyreAgeAtStart": 0,
               "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "INTERMEDIATE",
-              "lapStart": 3,
-              "lapEnd": 3,
-              "laps": 1,
-              "tyreAgeAtStart": 2,
-              "newTyre": false
             },
             {
               "stint": 3,
               "compound": "INTERMEDIATE",
               "lapStart": 4,
-              "lapEnd": 4,
-              "laps": 1,
+              "lapEnd": 20,
+              "laps": 17,
               "tyreAgeAtStart": 0,
               "newTyre": true
-            },
-            {
-              "stint": 4,
-              "compound": "INTERMEDIATE",
-              "lapStart": 5,
-              "lapEnd": 20,
-              "laps": 16,
-              "tyreAgeAtStart": 4,
-              "newTyre": false
             }
           ]
         },
@@ -38395,23 +38161,14 @@
           "teamName": "Racing Bulls",
           "teamColour": "#6C98FF",
           "lapsCompleted": 20,
-          "stops": 3,
+          "stops": 1,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 2,
-              "laps": 2,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "INTERMEDIATE",
-              "lapStart": 3,
               "lapEnd": 3,
-              "laps": 1,
+              "laps": 3,
               "tyreAgeAtStart": 0,
               "newTyre": true
             },
@@ -38419,17 +38176,8 @@
               "stint": 3,
               "compound": "INTERMEDIATE",
               "lapStart": 4,
-              "lapEnd": 4,
-              "laps": 1,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 4,
-              "compound": "INTERMEDIATE",
-              "lapStart": 5,
               "lapEnd": 20,
-              "laps": 16,
+              "laps": 17,
               "tyreAgeAtStart": 0,
               "newTyre": true
             }
@@ -38445,43 +38193,16 @@
           "teamName": "McLaren",
           "teamColour": "#F47600",
           "lapsCompleted": 19,
-          "stops": 3,
+          "stops": 0,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 2,
-              "laps": 2,
+              "lapEnd": 19,
+              "laps": 19,
               "tyreAgeAtStart": 0,
               "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "INTERMEDIATE",
-              "lapStart": 3,
-              "lapEnd": 3,
-              "laps": 1,
-              "tyreAgeAtStart": 2,
-              "newTyre": false
-            },
-            {
-              "stint": 3,
-              "compound": "INTERMEDIATE",
-              "lapStart": 4,
-              "lapEnd": 4,
-              "laps": 1,
-              "tyreAgeAtStart": 3,
-              "newTyre": false
-            },
-            {
-              "stint": 4,
-              "compound": "INTERMEDIATE",
-              "lapStart": 5,
-              "lapEnd": 19,
-              "laps": 15,
-              "tyreAgeAtStart": 4,
-              "newTyre": false
             }
           ]
         },
@@ -38495,43 +38216,25 @@
           "teamName": "Williams",
           "teamColour": "#1868DB",
           "lapsCompleted": 14,
-          "stops": 4,
+          "stops": 2,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 2,
-              "laps": 2,
+              "lapEnd": 3,
+              "laps": 3,
               "tyreAgeAtStart": 0,
               "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "INTERMEDIATE",
-              "lapStart": 3,
-              "lapEnd": 3,
-              "laps": 1,
-              "tyreAgeAtStart": 2,
-              "newTyre": false
             },
             {
               "stint": 3,
               "compound": "INTERMEDIATE",
               "lapStart": 4,
-              "lapEnd": 4,
-              "laps": 1,
+              "lapEnd": 6,
+              "laps": 3,
               "tyreAgeAtStart": 0,
               "newTyre": true
-            },
-            {
-              "stint": 4,
-              "compound": "INTERMEDIATE",
-              "lapStart": 5,
-              "lapEnd": 6,
-              "laps": 2,
-              "tyreAgeAtStart": 4,
-              "newTyre": false
             },
             {
               "stint": 5,
@@ -38554,23 +38257,14 @@
           "teamName": "Audi",
           "teamColour": "#F50537",
           "lapsCompleted": 6,
-          "stops": 3,
+          "stops": 1,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 2,
-              "laps": 2,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "INTERMEDIATE",
-              "lapStart": 3,
               "lapEnd": 3,
-              "laps": 1,
+              "laps": 3,
               "tyreAgeAtStart": 0,
               "newTyre": true
             },
@@ -38578,17 +38272,8 @@
               "stint": 3,
               "compound": "INTERMEDIATE",
               "lapStart": 4,
-              "lapEnd": 4,
-              "laps": 1,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 4,
-              "compound": "INTERMEDIATE",
-              "lapStart": 5,
               "lapEnd": 6,
-              "laps": 2,
+              "laps": 3,
               "tyreAgeAtStart": 0,
               "newTyre": true
             }
@@ -38604,43 +38289,16 @@
           "teamName": "Cadillac",
           "teamColour": "#909090",
           "lapsCompleted": 6,
-          "stops": 3,
+          "stops": 0,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 2,
-              "laps": 2,
+              "lapEnd": 6,
+              "laps": 6,
               "tyreAgeAtStart": 0,
               "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "INTERMEDIATE",
-              "lapStart": 3,
-              "lapEnd": 3,
-              "laps": 1,
-              "tyreAgeAtStart": 2,
-              "newTyre": false
-            },
-            {
-              "stint": 3,
-              "compound": "INTERMEDIATE",
-              "lapStart": 4,
-              "lapEnd": 4,
-              "laps": 1,
-              "tyreAgeAtStart": 3,
-              "newTyre": false
-            },
-            {
-              "stint": 4,
-              "compound": "INTERMEDIATE",
-              "lapStart": 5,
-              "lapEnd": 6,
-              "laps": 2,
-              "tyreAgeAtStart": 4,
-              "newTyre": false
             }
           ]
         },
@@ -38654,25 +38312,16 @@
           "teamName": "Red Bull Racing",
           "teamColour": "#4781D7",
           "lapsCompleted": 2,
-          "stops": 1,
+          "stops": 0,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 2,
-              "laps": 2,
+              "lapEnd": 3,
+              "laps": 3,
               "tyreAgeAtStart": 0,
               "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "INTERMEDIATE",
-              "lapStart": 3,
-              "lapEnd": 3,
-              "laps": 1,
-              "tyreAgeAtStart": 2,
-              "newTyre": false
             }
           ]
         },
@@ -38686,23 +38335,14 @@
           "teamName": "Alpine",
           "teamColour": "#00A1E8",
           "lapsCompleted": 2,
-          "stops": 1,
+          "stops": 0,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 2,
-              "laps": 2,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "INTERMEDIATE",
-              "lapStart": 3,
               "lapEnd": 3,
-              "laps": 1,
+              "laps": 3,
               "tyreAgeAtStart": 0,
               "newTyre": true
             }
