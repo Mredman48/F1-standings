@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-11T22:34:42.521Z",
+  "generatedAt": "2026-10-14T16:25:24.721Z",
   "season": 2026,
   "teams": {
     "audi": {
@@ -314,7 +314,35 @@
           "icon": ""
         }
       },
-      "liveries": []
+      "liveries": [
+        {
+          "id": "ferrari-2026-schumacher-monza-tribute",
+          "label": "Schumacher Monza Tribute",
+          "type": "tribute",
+          "description": "",
+          "round": 13,
+          "validFrom": "2026-09-04T00:00:00Z",
+          "validUntil": "2026-09-07T00:00:00Z",
+          "colors": {
+            "primary": "#F70D1A",
+            "secondary": "#F70D1A",
+            "onPrimary": "#0A0C0F"
+          },
+          "drivers": {},
+          "background": {
+            "style": "dotGradient",
+            "origin": "topTrailing",
+            "intensity": 0.6,
+            "spacing": 10
+          },
+          "assets": {
+            "car": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/liveries/ferrari-2026-schumacher-monza-tribute-car.webp",
+            "logo": "",
+            "logoLight": "",
+            "icon": ""
+          }
+        }
+      ]
     },
     "astonmartin": {
       "standard": {
