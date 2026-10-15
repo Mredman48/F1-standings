@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T15:26:14.057Z",
+  "generatedAt": "2026-10-15T19:35:42.770Z",
   "liveries": {
     "audi": {
       "label": "Singapore Special Livery",
@@ -80,6 +80,19 @@
           "background": ""
         }
       }
+    },
+    "mercedes": {
+      "label": "Malaysia Petronas Livery",
+      "validFrom": "2026-10-01T00:00:00Z",
+      "validUntil": "2026-10-05T00:00:00Z",
+      "color": "#00A19B",
+      "background": "",
+      "profileBackground": "",
+      "car": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/liveries/mercedes-2026-malaysia-petronas-livery-car.webp",
+      "logo": "",
+      "logoLight": "",
+      "icon": "",
+      "drivers": {}
     },
     "racingbulls": {
       "label": "Suzuka Special Livery 2026",
