@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-14T23:53:54.267Z",
+  "generatedAt": "2026-10-15T14:22:02.582Z",
   "season": 2026,
   "teams": {
     "audi": {
@@ -169,6 +169,36 @@
             "car": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/liveries/cadillac-2026-silverstone-usa-250-car.webp",
             "logo": "https://mredman48.github.io/F1-standings/liveries/cadillac-logo.webp",
             "logoLight": "https://mredman48.github.io/F1-standings/liveries/cadillac-logo-light.webp",
+            "icon": ""
+          }
+        },
+        {
+          "id": "cadillac-2026-miami-first-home-race",
+          "label": "Miami First Home Race",
+          "type": "one-off",
+          "description": "",
+          "round": 4,
+          "validFrom": "2026-05-01T00:00:00Z",
+          "validUntil": "2026-05-04T00:00:00Z",
+          "colors": {
+            "primary": "#FFFFFF",
+            "secondary": "#828788",
+            "onPrimary": "#FFFFFF"
+          },
+          "drivers": {
+            "bottas": "primary",
+            "perez": "secondary"
+          },
+          "background": {
+            "style": "dotGradient",
+            "origin": "topTrailing",
+            "intensity": 0.6,
+            "spacing": 10
+          },
+          "assets": {
+            "car": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/liveries/cadillac-2026-miami-first-home-race-car.webp",
+            "logo": "",
+            "logoLight": "",
             "icon": ""
           }
         }
