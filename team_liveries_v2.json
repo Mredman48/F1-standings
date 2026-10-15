@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-15T15:26:13.185Z",
+  "generatedAt": "2026-10-15T19:35:41.647Z",
   "season": 2026,
   "teams": {
     "audi": {
@@ -271,7 +271,35 @@
           "icon": ""
         }
       },
-      "liveries": []
+      "liveries": [
+        {
+          "id": "mercedes-2026-malaysia-petronas-livery",
+          "label": "Malaysia Petronas Livery",
+          "type": "sponsor",
+          "description": "",
+          "round": 16,
+          "validFrom": "2026-10-01T00:00:00Z",
+          "validUntil": "2026-10-05T00:00:00Z",
+          "colors": {
+            "primary": "#00A19B",
+            "secondary": "#00A19B",
+            "onPrimary": "#0A0C0F"
+          },
+          "drivers": {},
+          "background": {
+            "style": "dotGradient",
+            "origin": "topTrailing",
+            "intensity": 0.6,
+            "spacing": 10
+          },
+          "assets": {
+            "car": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/liveries/mercedes-2026-malaysia-petronas-livery-car.webp",
+            "logo": "",
+            "logoLight": "",
+            "icon": ""
+          }
+        }
+      ]
     },
     "racingbulls": {
       "standard": {
