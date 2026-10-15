@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-15T14:22:02.582Z",
+  "generatedAt": "2026-10-15T15:26:13.185Z",
   "season": 2026,
   "teams": {
     "audi": {
@@ -133,6 +133,12 @@
           "primary": "#FFFFFF",
           "secondary": "#828788",
           "onPrimary": "#FFFFFF"
+        },
+        "background": {
+          "style": "dotGradient",
+          "origin": "topTrailing",
+          "intensity": 0.6,
+          "spacing": 10
         },
         "assets": {
           "car": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/liveries/cadillac-standard-car.webp",
