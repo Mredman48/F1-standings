@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-09T04:44:26.643Z",
+  "updatedAt": "2026-10-20T14:57:56.067Z",
   "count": 23,
   "entries": [
     {
@@ -454,14 +454,14 @@
       "flag": "us",
       "raceStart": "2026-10-25T20:00:00.000Z",
       "compounds": {
-        "soft": null,
-        "medium": null,
-        "hard": null
+        "soft": "C4",
+        "medium": "C3",
+        "hard": "C2"
       },
       "trackCharacteristics": {
-        "ratingsSeason": 2025,
-        "pastYear": true,
-        "traction": 4,
+        "ratingsSeason": 2026,
+        "pastYear": false,
+        "traction": 3,
         "tyreStress": 4,
         "asphaltGrip": 3,
         "braking": 3,
@@ -469,7 +469,7 @@
         "lateral": 4,
         "trackEvolution": 4
       },
-      "updatedAt": "2026-10-09T04:39:28.606Z"
+      "updatedAt": "2026-10-20T14:57:56.065Z"
     },
     {
       "round": 19,
