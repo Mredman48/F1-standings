@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T22:01:08.011Z",
+  "generatedAt": "2026-10-21T14:56:03.090Z",
   "liveries": {
     "audi": {
       "label": "Singapore Special Livery",
@@ -82,17 +82,24 @@
       }
     },
     "mercedes": {
-      "label": "Malaysia Petronas Livery",
-      "validFrom": "2026-10-01T00:00:00Z",
-      "validUntil": "2026-10-05T00:00:00Z",
-      "color": "#00A19B",
+      "label": "MANUFAKTUR USGP Livery",
+      "validFrom": "2026-10-21T00:00:00Z",
+      "validUntil": "2026-10-26T00:00:00Z",
+      "color": "#F7FAFE",
       "background": "",
       "profileBackground": "",
-      "car": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/liveries/mercedes-2026-malaysia-petronas-livery-car.webp",
+      "car": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/liveries/mercedes-2026-manufaktur-usgp-livery-car.webp",
       "logo": "",
       "logoLight": "",
       "icon": "",
-      "drivers": {}
+      "drivers": {
+        "antonelli": {
+          "background": ""
+        },
+        "russell": {
+          "background": ""
+        }
+      }
     },
     "racingbulls": {
       "label": "Suzuka Special Livery 2026",
