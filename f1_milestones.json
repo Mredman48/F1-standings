@@ -1,0 +1,1397 @@
+{
+  "schema": "apex-milestones",
+  "version": 1,
+  "generatedAt": "2026-10-21T01:12:13.192Z",
+  "year": 2026,
+  "throughRound": 15,
+  "latestRace": "Singapore Grand Prix",
+  "nextRace": {
+    "round": 16,
+    "raceName": "United States Grand Prix",
+    "date": "2026-10-25"
+  },
+  "roundsLeft": 6,
+  "hub": {
+    "headline": {
+      "id": "perez_starts_300",
+      "driverId": "perez",
+      "code": "PER",
+      "name": "Sergio Pérez",
+      "team": "Cadillac",
+      "stat": "starts",
+      "label": "Grand Prix starts",
+      "current": 299,
+      "target": 300,
+      "previousMilestone": 250,
+      "toGo": 1,
+      "toGoLabel": "THIS SUNDAY",
+      "progress": 0.98,
+      "status": "next_race"
+    },
+    "moreCount": 18,
+    "totalCount": 20
+  },
+  "groups": [
+    {
+      "id": "next_race",
+      "label": "UNITED STATES GP · JUST NEEDS TO START",
+      "items": [
+        {
+          "id": "perez_starts_300",
+          "driverId": "perez",
+          "code": "PER",
+          "name": "Sergio Pérez",
+          "team": "Cadillac",
+          "stat": "starts",
+          "label": "Grand Prix starts",
+          "current": 299,
+          "target": 300,
+          "previousMilestone": 250,
+          "toGo": 1,
+          "toGoLabel": "THIS SUNDAY",
+          "progress": 0.98,
+          "status": "next_race"
+        }
+      ]
+    },
+    {
+      "id": "within_reach",
+      "label": "WITHIN REACH BEFORE ABU DHABI",
+      "items": [
+        {
+          "id": "leclerc_wins_10",
+          "driverId": "leclerc",
+          "code": "LEC",
+          "name": "Charles Leclerc",
+          "team": "Ferrari",
+          "stat": "wins",
+          "label": "Race wins",
+          "current": 9,
+          "target": 10,
+          "previousMilestone": 5,
+          "toGo": 1,
+          "toGoLabel": "1 WIN",
+          "progress": 0.8,
+          "status": "within_reach"
+        },
+        {
+          "id": "hadjar_wins_1",
+          "driverId": "hadjar",
+          "code": "HAD",
+          "name": "Isack Hadjar",
+          "team": "Red Bull",
+          "stat": "wins",
+          "label": "Race wins",
+          "current": 0,
+          "target": 1,
+          "previousMilestone": 0,
+          "toGo": 1,
+          "toGoLabel": "1 WIN",
+          "progress": 0,
+          "status": "within_reach"
+        },
+        {
+          "id": "norris_podiums_50",
+          "driverId": "norris",
+          "code": "NOR",
+          "name": "Lando Norris",
+          "team": "McLaren",
+          "stat": "podiums",
+          "label": "Podiums",
+          "current": 49,
+          "target": 50,
+          "previousMilestone": 25,
+          "toGo": 1,
+          "toGoLabel": "1 PODIUM",
+          "progress": 0.96,
+          "status": "within_reach"
+        },
+        {
+          "id": "lawson_podiums_1",
+          "driverId": "lawson",
+          "code": "LAW",
+          "name": "Liam Lawson",
+          "team": "Racing Bulls",
+          "stat": "podiums",
+          "label": "Podiums",
+          "current": 0,
+          "target": 1,
+          "previousMilestone": 0,
+          "toGo": 1,
+          "toGoLabel": "1 PODIUM",
+          "progress": 0,
+          "status": "within_reach"
+        },
+        {
+          "id": "bearman_podiums_1",
+          "driverId": "bearman",
+          "code": "BEA",
+          "name": "Oliver Bearman",
+          "team": "Haas",
+          "stat": "podiums",
+          "label": "Podiums",
+          "current": 0,
+          "target": 1,
+          "previousMilestone": 0,
+          "toGo": 1,
+          "toGoLabel": "1 PODIUM",
+          "progress": 0,
+          "status": "within_reach"
+        },
+        {
+          "id": "max_verstappen_wins_75",
+          "driverId": "max_verstappen",
+          "code": "VER",
+          "name": "Max Verstappen",
+          "team": "Red Bull",
+          "stat": "wins",
+          "label": "Race wins",
+          "current": 73,
+          "target": 75,
+          "previousMilestone": 50,
+          "toGo": 2,
+          "toGoLabel": "2 WINS",
+          "progress": 0.92,
+          "status": "within_reach"
+        },
+        {
+          "id": "norris_wins_15",
+          "driverId": "norris",
+          "code": "NOR",
+          "name": "Lando Norris",
+          "team": "McLaren",
+          "stat": "wins",
+          "label": "Race wins",
+          "current": 13,
+          "target": 15,
+          "previousMilestone": 10,
+          "toGo": 2,
+          "toGoLabel": "2 WINS",
+          "progress": 0.6,
+          "status": "within_reach"
+        },
+        {
+          "id": "antonelli_wins_10",
+          "driverId": "antonelli",
+          "code": "ANT",
+          "name": "Andrea Kimi Antonelli",
+          "team": "Mercedes",
+          "stat": "wins",
+          "label": "Race wins",
+          "current": 8,
+          "target": 10,
+          "previousMilestone": 5,
+          "toGo": 2,
+          "toGoLabel": "2 WINS",
+          "progress": 0.6,
+          "status": "within_reach"
+        },
+        {
+          "id": "russell_wins_10",
+          "driverId": "russell",
+          "code": "RUS",
+          "name": "George Russell",
+          "team": "Mercedes",
+          "stat": "wins",
+          "label": "Race wins",
+          "current": 8,
+          "target": 10,
+          "previousMilestone": 5,
+          "toGo": 2,
+          "toGoLabel": "2 WINS",
+          "progress": 0.6,
+          "status": "within_reach"
+        },
+        {
+          "id": "russell_poles_20",
+          "driverId": "russell",
+          "code": "RUS",
+          "name": "George Russell",
+          "team": "Mercedes",
+          "stat": "poles",
+          "label": "Pole positions",
+          "current": 17,
+          "target": 20,
+          "previousMilestone": 10,
+          "toGo": 3,
+          "toGoLabel": "3 POLES",
+          "progress": 0.7,
+          "status": "within_reach"
+        },
+        {
+          "id": "hamilton_starts_400",
+          "driverId": "hamilton",
+          "code": "HAM",
+          "name": "Lewis Hamilton",
+          "team": "Ferrari",
+          "stat": "starts",
+          "label": "Grand Prix starts",
+          "current": 397,
+          "target": 400,
+          "previousMilestone": 350,
+          "toGo": 3,
+          "toGoLabel": "3 STARTS",
+          "progress": 0.94,
+          "status": "within_reach"
+        },
+        {
+          "id": "sainz_starts_250",
+          "driverId": "sainz",
+          "code": "SAI",
+          "name": "Carlos Sainz",
+          "team": "Williams",
+          "stat": "starts",
+          "label": "Grand Prix starts",
+          "current": 247,
+          "target": 250,
+          "previousMilestone": 200,
+          "toGo": 3,
+          "toGoLabel": "3 STARTS",
+          "progress": 0.94,
+          "status": "within_reach"
+        },
+        {
+          "id": "ocon_starts_200",
+          "driverId": "ocon",
+          "code": "OCO",
+          "name": "Esteban Ocon",
+          "team": "Haas",
+          "stat": "starts",
+          "label": "Grand Prix starts",
+          "current": 197,
+          "target": 200,
+          "previousMilestone": 150,
+          "toGo": 3,
+          "toGoLabel": "3 STARTS",
+          "progress": 0.94,
+          "status": "within_reach"
+        },
+        {
+          "id": "antonelli_poles_10",
+          "driverId": "antonelli",
+          "code": "ANT",
+          "name": "Andrea Kimi Antonelli",
+          "team": "Mercedes",
+          "stat": "poles",
+          "label": "Pole positions",
+          "current": 6,
+          "target": 10,
+          "previousMilestone": 5,
+          "toGo": 4,
+          "toGoLabel": "4 POLES",
+          "progress": 0.2,
+          "status": "within_reach"
+        },
+        {
+          "id": "gasly_poles_5",
+          "driverId": "gasly",
+          "code": "GAS",
+          "name": "Pierre Gasly",
+          "team": "Alpine",
+          "stat": "poles",
+          "label": "Pole positions",
+          "current": 1,
+          "target": 5,
+          "previousMilestone": 1,
+          "toGo": 4,
+          "toGoLabel": "4 POLES",
+          "progress": 0,
+          "status": "within_reach"
+        },
+        {
+          "id": "gasly_starts_200",
+          "driverId": "gasly",
+          "code": "GAS",
+          "name": "Pierre Gasly",
+          "team": "Alpine",
+          "stat": "starts",
+          "label": "Grand Prix starts",
+          "current": 194,
+          "target": 200,
+          "previousMilestone": 150,
+          "toGo": 6,
+          "toGoLabel": "6 STARTS",
+          "progress": 0.88,
+          "status": "within_reach"
+        },
+        {
+          "id": "albon_starts_150",
+          "driverId": "albon",
+          "code": "ALB",
+          "name": "Alexander Albon",
+          "team": "Williams",
+          "stat": "starts",
+          "label": "Grand Prix starts",
+          "current": 144,
+          "target": 150,
+          "previousMilestone": 100,
+          "toGo": 6,
+          "toGoLabel": "6 STARTS",
+          "progress": 0.88,
+          "status": "within_reach"
+        },
+        {
+          "id": "bearman_starts_50",
+          "driverId": "bearman",
+          "code": "BEA",
+          "name": "Oliver Bearman",
+          "team": "Haas",
+          "stat": "starts",
+          "label": "Grand Prix starts",
+          "current": 44,
+          "target": 50,
+          "previousMilestone": 0,
+          "toGo": 6,
+          "toGoLabel": "6 STARTS",
+          "progress": 0.88,
+          "status": "within_reach"
+        }
+      ]
+    },
+    {
+      "id": "just_reached",
+      "label": "JUST REACHED · SINGAPORE",
+      "items": [
+        {
+          "id": "max_verstappen_starts_250",
+          "driverId": "max_verstappen",
+          "code": "VER",
+          "name": "Max Verstappen",
+          "team": "Red Bull",
+          "stat": "starts",
+          "label": "Grand Prix starts",
+          "current": 250,
+          "target": 250,
+          "previousMilestone": 200,
+          "toGo": 0,
+          "toGoLabel": "REACHED",
+          "progress": 1,
+          "status": "reached",
+          "reachedAt": {
+            "round": 15,
+            "raceName": "Singapore Grand Prix"
+          }
+        }
+      ]
+    }
+  ],
+  "drivers": [
+    {
+      "driverId": "alonso",
+      "code": "ALO",
+      "name": "Fernando Alonso",
+      "team": "Aston Martin",
+      "career": {
+        "wins": 32,
+        "poles": 23,
+        "podiums": 106,
+        "starts": 443
+      },
+      "season": {
+        "starts": 17,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0
+      },
+      "next": {
+        "wins": {
+          "target": 35,
+          "toGo": 3,
+          "reachable": false
+        },
+        "poles": {
+          "target": 30,
+          "toGo": 7,
+          "reachable": false
+        },
+        "podiums": {
+          "target": 125,
+          "toGo": 19,
+          "reachable": false
+        },
+        "starts": {
+          "target": 450,
+          "toGo": 7,
+          "reachable": false
+        }
+      }
+    },
+    {
+      "driverId": "hamilton",
+      "code": "HAM",
+      "name": "Lewis Hamilton",
+      "team": "Ferrari",
+      "career": {
+        "wins": 106,
+        "poles": 117,
+        "podiums": 208,
+        "starts": 397
+      },
+      "season": {
+        "starts": 17,
+        "wins": 1,
+        "podiums": 6,
+        "poles": 0
+      },
+      "next": {
+        "wins": {
+          "target": 125,
+          "toGo": 19,
+          "reachable": false
+        },
+        "poles": {
+          "target": 125,
+          "toGo": 8,
+          "reachable": false
+        },
+        "podiums": {
+          "target": 225,
+          "toGo": 17,
+          "reachable": false
+        },
+        "starts": {
+          "target": 400,
+          "toGo": 3,
+          "reachable": true
+        }
+      }
+    },
+    {
+      "driverId": "perez",
+      "code": "PER",
+      "name": "Sergio Pérez",
+      "team": "Cadillac",
+      "career": {
+        "wins": 6,
+        "poles": 4,
+        "podiums": 39,
+        "starts": 299
+      },
+      "season": {
+        "starts": 17,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0
+      },
+      "next": {
+        "wins": {
+          "target": 10,
+          "toGo": 4,
+          "reachable": false
+        },
+        "poles": {
+          "target": 5,
+          "toGo": 1,
+          "reachable": false
+        },
+        "podiums": {
+          "target": 50,
+          "toGo": 11,
+          "reachable": false
+        },
+        "starts": {
+          "target": 300,
+          "toGo": 1,
+          "reachable": true
+        }
+      }
+    },
+    {
+      "driverId": "hulkenberg",
+      "code": "HUL",
+      "name": "Nico Hülkenberg",
+      "team": "Audi",
+      "career": {
+        "wins": 0,
+        "poles": 1,
+        "podiums": 1,
+        "starts": 269
+      },
+      "season": {
+        "starts": 16,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0
+      },
+      "next": {
+        "wins": {
+          "target": 1,
+          "toGo": 1,
+          "reachable": false
+        },
+        "poles": {
+          "target": 5,
+          "toGo": 4,
+          "reachable": false
+        },
+        "podiums": {
+          "target": 10,
+          "toGo": 9,
+          "reachable": false
+        },
+        "starts": {
+          "target": 300,
+          "toGo": 31,
+          "reachable": false
+        }
+      }
+    },
+    {
+      "driverId": "bottas",
+      "code": "BOT",
+      "name": "Valtteri Bottas",
+      "team": "Cadillac",
+      "career": {
+        "wins": 10,
+        "poles": 19,
+        "podiums": 67,
+        "starts": 263
+      },
+      "season": {
+        "starts": 17,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0
+      },
+      "next": {
+        "wins": {
+          "target": 15,
+          "toGo": 5,
+          "reachable": false
+        },
+        "poles": {
+          "target": 20,
+          "toGo": 1,
+          "reachable": false
+        },
+        "podiums": {
+          "target": 75,
+          "toGo": 8,
+          "reachable": false
+        },
+        "starts": {
+          "target": 300,
+          "toGo": 37,
+          "reachable": false
+        }
+      }
+    },
+    {
+      "driverId": "max_verstappen",
+      "code": "VER",
+      "name": "Max Verstappen",
+      "team": "Red Bull",
+      "career": {
+        "wins": 73,
+        "poles": 64,
+        "podiums": 136,
+        "starts": 250
+      },
+      "season": {
+        "starts": 17,
+        "wins": 2,
+        "podiums": 9,
+        "poles": 2
+      },
+      "next": {
+        "wins": {
+          "target": 75,
+          "toGo": 2,
+          "reachable": true
+        },
+        "poles": {
+          "target": 75,
+          "toGo": 11,
+          "reachable": false
+        },
+        "podiums": {
+          "target": 150,
+          "toGo": 14,
+          "reachable": false
+        },
+        "starts": {
+          "target": 300,
+          "toGo": 50,
+          "reachable": false
+        }
+      }
+    },
+    {
+      "driverId": "sainz",
+      "code": "SAI",
+      "name": "Carlos Sainz",
+      "team": "Williams",
+      "career": {
+        "wins": 4,
+        "poles": 11,
+        "podiums": 29,
+        "starts": 247
+      },
+      "season": {
+        "starts": 17,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0
+      },
+      "next": {
+        "wins": {
+          "target": 5,
+          "toGo": 1,
+          "reachable": false
+        },
+        "poles": {
+          "target": 20,
+          "toGo": 9,
+          "reachable": false
+        },
+        "podiums": {
+          "target": 50,
+          "toGo": 21,
+          "reachable": false
+        },
+        "starts": {
+          "target": 250,
+          "toGo": 3,
+          "reachable": true
+        }
+      }
+    },
+    {
+      "driverId": "stroll",
+      "code": "STR",
+      "name": "Lance Stroll",
+      "team": "Aston Martin",
+      "career": {
+        "wins": 0,
+        "poles": 1,
+        "podiums": 3,
+        "starts": 206
+      },
+      "season": {
+        "starts": 17,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0
+      },
+      "next": {
+        "wins": {
+          "target": 1,
+          "toGo": 1,
+          "reachable": false
+        },
+        "poles": {
+          "target": 5,
+          "toGo": 4,
+          "reachable": false
+        },
+        "podiums": {
+          "target": 10,
+          "toGo": 7,
+          "reachable": false
+        },
+        "starts": {
+          "target": 250,
+          "toGo": 44,
+          "reachable": false
+        }
+      }
+    },
+    {
+      "driverId": "ocon",
+      "code": "OCO",
+      "name": "Esteban Ocon",
+      "team": "Haas",
+      "career": {
+        "wins": 1,
+        "poles": 0,
+        "podiums": 4,
+        "starts": 197
+      },
+      "season": {
+        "starts": 17,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0
+      },
+      "next": {
+        "wins": {
+          "target": 5,
+          "toGo": 4,
+          "reachable": false
+        },
+        "poles": {
+          "target": 1,
+          "toGo": 1,
+          "reachable": false
+        },
+        "podiums": {
+          "target": 10,
+          "toGo": 6,
+          "reachable": false
+        },
+        "starts": {
+          "target": 200,
+          "toGo": 3,
+          "reachable": true
+        }
+      }
+    },
+    {
+      "driverId": "gasly",
+      "code": "GAS",
+      "name": "Pierre Gasly",
+      "team": "Alpine",
+      "career": {
+        "wins": 1,
+        "poles": 1,
+        "podiums": 5,
+        "starts": 194
+      },
+      "season": {
+        "starts": 17,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 1
+      },
+      "next": {
+        "wins": {
+          "target": 5,
+          "toGo": 4,
+          "reachable": false
+        },
+        "poles": {
+          "target": 5,
+          "toGo": 4,
+          "reachable": true
+        },
+        "podiums": {
+          "target": 10,
+          "toGo": 5,
+          "reachable": false
+        },
+        "starts": {
+          "target": 200,
+          "toGo": 6,
+          "reachable": true
+        }
+      }
+    },
+    {
+      "driverId": "leclerc",
+      "code": "LEC",
+      "name": "Charles Leclerc",
+      "team": "Ferrari",
+      "career": {
+        "wins": 9,
+        "poles": 31,
+        "podiums": 55,
+        "starts": 189
+      },
+      "season": {
+        "starts": 17,
+        "wins": 1,
+        "podiums": 5,
+        "poles": 0
+      },
+      "next": {
+        "wins": {
+          "target": 10,
+          "toGo": 1,
+          "reachable": true
+        },
+        "poles": {
+          "target": 40,
+          "toGo": 9,
+          "reachable": false
+        },
+        "podiums": {
+          "target": 75,
+          "toGo": 20,
+          "reachable": false
+        },
+        "starts": {
+          "target": 200,
+          "toGo": 11,
+          "reachable": false
+        }
+      }
+    },
+    {
+      "driverId": "russell",
+      "code": "RUS",
+      "name": "George Russell",
+      "team": "Mercedes",
+      "career": {
+        "wins": 8,
+        "poles": 17,
+        "podiums": 32,
+        "starts": 169
+      },
+      "season": {
+        "starts": 17,
+        "wins": 3,
+        "podiums": 8,
+        "poles": 5
+      },
+      "next": {
+        "wins": {
+          "target": 10,
+          "toGo": 2,
+          "reachable": true
+        },
+        "poles": {
+          "target": 20,
+          "toGo": 3,
+          "reachable": true
+        },
+        "podiums": {
+          "target": 50,
+          "toGo": 18,
+          "reachable": false
+        },
+        "starts": {
+          "target": 200,
+          "toGo": 31,
+          "reachable": false
+        }
+      }
+    },
+    {
+      "driverId": "norris",
+      "code": "NOR",
+      "name": "Lando Norris",
+      "team": "McLaren",
+      "career": {
+        "wins": 13,
+        "poles": 32,
+        "podiums": 49,
+        "starts": 167
+      },
+      "season": {
+        "starts": 16,
+        "wins": 2,
+        "podiums": 5,
+        "poles": 3
+      },
+      "next": {
+        "wins": {
+          "target": 15,
+          "toGo": 2,
+          "reachable": true
+        },
+        "poles": {
+          "target": 40,
+          "toGo": 8,
+          "reachable": false
+        },
+        "podiums": {
+          "target": 50,
+          "toGo": 1,
+          "reachable": true
+        },
+        "starts": {
+          "target": 200,
+          "toGo": 33,
+          "reachable": false
+        }
+      }
+    },
+    {
+      "driverId": "albon",
+      "code": "ALB",
+      "name": "Alexander Albon",
+      "team": "Williams",
+      "career": {
+        "wins": 0,
+        "poles": 1,
+        "podiums": 2,
+        "starts": 144
+      },
+      "season": {
+        "starts": 16,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0
+      },
+      "next": {
+        "wins": {
+          "target": 1,
+          "toGo": 1,
+          "reachable": false
+        },
+        "poles": {
+          "target": 5,
+          "toGo": 4,
+          "reachable": false
+        },
+        "podiums": {
+          "target": 10,
+          "toGo": 8,
+          "reachable": false
+        },
+        "starts": {
+          "target": 150,
+          "toGo": 6,
+          "reachable": true
+        }
+      }
+    },
+    {
+      "driverId": "piastri",
+      "code": "PIA",
+      "name": "Oscar Piastri",
+      "team": "McLaren",
+      "career": {
+        "wins": 9,
+        "poles": 14,
+        "podiums": 28,
+        "starts": 85
+      },
+      "season": {
+        "starts": 15,
+        "wins": 0,
+        "podiums": 2,
+        "poles": 0
+      },
+      "next": {
+        "wins": {
+          "target": 10,
+          "toGo": 1,
+          "reachable": false
+        },
+        "poles": {
+          "target": 20,
+          "toGo": 6,
+          "reachable": false
+        },
+        "podiums": {
+          "target": 50,
+          "toGo": 22,
+          "reachable": false
+        },
+        "starts": {
+          "target": 100,
+          "toGo": 15,
+          "reachable": false
+        }
+      }
+    },
+    {
+      "driverId": "lawson",
+      "code": "LAW",
+      "name": "Liam Lawson",
+      "team": "Racing Bulls",
+      "career": {
+        "wins": 0,
+        "poles": 0,
+        "podiums": 0,
+        "starts": 52
+      },
+      "season": {
+        "starts": 17,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0
+      },
+      "next": {
+        "wins": {
+          "target": 1,
+          "toGo": 1,
+          "reachable": false
+        },
+        "poles": {
+          "target": 1,
+          "toGo": 1,
+          "reachable": false
+        },
+        "podiums": {
+          "target": 1,
+          "toGo": 1,
+          "reachable": true
+        },
+        "starts": {
+          "target": 100,
+          "toGo": 48,
+          "reachable": false
+        }
+      }
+    },
+    {
+      "driverId": "bearman",
+      "code": "BEA",
+      "name": "Oliver Bearman",
+      "team": "Haas",
+      "career": {
+        "wins": 0,
+        "poles": 0,
+        "podiums": 0,
+        "starts": 44
+      },
+      "season": {
+        "starts": 17,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0
+      },
+      "next": {
+        "wins": {
+          "target": 1,
+          "toGo": 1,
+          "reachable": false
+        },
+        "poles": {
+          "target": 1,
+          "toGo": 1,
+          "reachable": false
+        },
+        "podiums": {
+          "target": 1,
+          "toGo": 1,
+          "reachable": true
+        },
+        "starts": {
+          "target": 50,
+          "toGo": 6,
+          "reachable": true
+        }
+      }
+    },
+    {
+      "driverId": "colapinto",
+      "code": "COL",
+      "name": "Franco Colapinto",
+      "team": "Alpine",
+      "career": {
+        "wins": 0,
+        "poles": 0,
+        "podiums": 0,
+        "starts": 43
+      },
+      "season": {
+        "starts": 17,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0
+      },
+      "next": {
+        "wins": {
+          "target": 1,
+          "toGo": 1,
+          "reachable": false
+        },
+        "poles": {
+          "target": 1,
+          "toGo": 1,
+          "reachable": false
+        },
+        "podiums": {
+          "target": 1,
+          "toGo": 1,
+          "reachable": false
+        },
+        "starts": {
+          "target": 50,
+          "toGo": 7,
+          "reachable": false
+        }
+      }
+    },
+    {
+      "driverId": "antonelli",
+      "code": "ANT",
+      "name": "Andrea Kimi Antonelli",
+      "team": "Mercedes",
+      "career": {
+        "wins": 8,
+        "poles": 6,
+        "podiums": 17,
+        "starts": 41
+      },
+      "season": {
+        "starts": 17,
+        "wins": 8,
+        "podiums": 14,
+        "poles": 6
+      },
+      "next": {
+        "wins": {
+          "target": 10,
+          "toGo": 2,
+          "reachable": true
+        },
+        "poles": {
+          "target": 10,
+          "toGo": 4,
+          "reachable": true
+        },
+        "podiums": {
+          "target": 25,
+          "toGo": 8,
+          "reachable": false
+        },
+        "starts": {
+          "target": 50,
+          "toGo": 9,
+          "reachable": false
+        }
+      }
+    },
+    {
+      "driverId": "bortoleto",
+      "code": "BOR",
+      "name": "Gabriel Bortoleto",
+      "team": "Audi",
+      "career": {
+        "wins": 0,
+        "poles": 0,
+        "podiums": 0,
+        "starts": 40
+      },
+      "season": {
+        "starts": 16,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0
+      },
+      "next": {
+        "wins": {
+          "target": 1,
+          "toGo": 1,
+          "reachable": false
+        },
+        "poles": {
+          "target": 1,
+          "toGo": 1,
+          "reachable": false
+        },
+        "podiums": {
+          "target": 1,
+          "toGo": 1,
+          "reachable": false
+        },
+        "starts": {
+          "target": 50,
+          "toGo": 10,
+          "reachable": false
+        }
+      }
+    },
+    {
+      "driverId": "hadjar",
+      "code": "HAD",
+      "name": "Isack Hadjar",
+      "team": "Red Bull",
+      "career": {
+        "wins": 0,
+        "poles": 1,
+        "podiums": 3,
+        "starts": 38
+      },
+      "season": {
+        "starts": 14,
+        "wins": 0,
+        "podiums": 2,
+        "poles": 0
+      },
+      "next": {
+        "wins": {
+          "target": 1,
+          "toGo": 1,
+          "reachable": true
+        },
+        "poles": {
+          "target": 5,
+          "toGo": 4,
+          "reachable": false
+        },
+        "podiums": {
+          "target": 10,
+          "toGo": 7,
+          "reachable": false
+        },
+        "starts": {
+          "target": 50,
+          "toGo": 12,
+          "reachable": false
+        }
+      }
+    },
+    {
+      "driverId": "arvid_lindblad",
+      "code": "LIN",
+      "name": "Arvid Lindblad",
+      "team": "Racing Bulls",
+      "career": {
+        "wins": 0,
+        "poles": 0,
+        "podiums": 0,
+        "starts": 16
+      },
+      "season": {
+        "starts": 16,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0
+      },
+      "next": {
+        "wins": {
+          "target": 1,
+          "toGo": 1,
+          "reachable": false
+        },
+        "poles": {
+          "target": 1,
+          "toGo": 1,
+          "reachable": false
+        },
+        "podiums": {
+          "target": 1,
+          "toGo": 1,
+          "reachable": false
+        },
+        "starts": {
+          "target": 50,
+          "toGo": 34,
+          "reachable": false
+        }
+      }
+    }
+  ],
+  "baseline": {
+    "season": 2026,
+    "drivers": {
+      "max_verstappen": {
+        "starts": 233,
+        "wins": 71,
+        "podiums": 127,
+        "poles": 62
+      },
+      "leclerc": {
+        "starts": 172,
+        "wins": 8,
+        "podiums": 50,
+        "poles": 31
+      },
+      "antonelli": {
+        "starts": 24,
+        "wins": 0,
+        "podiums": 3,
+        "poles": 0
+      },
+      "norris": {
+        "starts": 151,
+        "wins": 11,
+        "podiums": 44,
+        "poles": 29
+      },
+      "piastri": {
+        "starts": 70,
+        "wins": 9,
+        "podiums": 26,
+        "poles": 14
+      },
+      "hamilton": {
+        "starts": 380,
+        "wins": 105,
+        "podiums": 202,
+        "poles": 117
+      },
+      "lawson": {
+        "starts": 35,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0
+      },
+      "hulkenberg": {
+        "starts": 253,
+        "wins": 0,
+        "podiums": 1,
+        "poles": 1
+      },
+      "russell": {
+        "starts": 152,
+        "wins": 5,
+        "podiums": 24,
+        "poles": 12
+      },
+      "hadjar": {
+        "starts": 24,
+        "wins": 0,
+        "podiums": 1,
+        "poles": 1
+      },
+      "gasly": {
+        "starts": 177,
+        "wins": 1,
+        "podiums": 5,
+        "poles": 0
+      },
+      "bearman": {
+        "starts": 27,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0
+      },
+      "ocon": {
+        "starts": 180,
+        "wins": 1,
+        "podiums": 4,
+        "poles": 0
+      },
+      "sainz": {
+        "starts": 230,
+        "wins": 4,
+        "podiums": 29,
+        "poles": 11
+      },
+      "arvid_lindblad": {
+        "starts": 0,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0
+      },
+      "alonso": {
+        "starts": 426,
+        "wins": 32,
+        "podiums": 106,
+        "poles": 23
+      },
+      "perez": {
+        "starts": 282,
+        "wins": 6,
+        "podiums": 39,
+        "poles": 4
+      },
+      "albon": {
+        "starts": 128,
+        "wins": 0,
+        "podiums": 2,
+        "poles": 1
+      },
+      "bottas": {
+        "starts": 246,
+        "wins": 10,
+        "podiums": 67,
+        "poles": 19
+      },
+      "stroll": {
+        "starts": 189,
+        "wins": 0,
+        "podiums": 3,
+        "poles": 1
+      },
+      "colapinto": {
+        "starts": 26,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0
+      },
+      "bortoleto": {
+        "starts": 24,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0
+      }
+    }
+  }
+}
