@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-18T22:01:06.851Z",
+  "generatedAt": "2026-10-21T14:56:00.916Z",
   "season": 2026,
   "teams": {
     "audi": {
@@ -294,6 +294,36 @@
           },
           "assets": {
             "car": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/liveries/mercedes-2026-malaysia-petronas-livery-car.webp",
+            "logo": "",
+            "logoLight": "",
+            "icon": ""
+          }
+        },
+        {
+          "id": "mercedes-2026-manufaktur-usgp-livery",
+          "label": "MANUFAKTUR USGP Livery",
+          "type": "sponsor",
+          "description": "",
+          "round": 18,
+          "validFrom": "2026-10-21T00:00:00Z",
+          "validUntil": "2026-10-26T00:00:00Z",
+          "colors": {
+            "primary": "#F7FAFE",
+            "secondary": "#24496B",
+            "onPrimary": "#0A0C0F"
+          },
+          "drivers": {
+            "antonelli": "primary",
+            "russell": "secondary"
+          },
+          "background": {
+            "style": "dotGradient",
+            "origin": "topTrailing",
+            "intensity": 0.6,
+            "spacing": 10
+          },
+          "assets": {
+            "car": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/liveries/mercedes-2026-manufaktur-usgp-livery-car.webp",
             "logo": "",
             "logoLight": "",
             "icon": ""
