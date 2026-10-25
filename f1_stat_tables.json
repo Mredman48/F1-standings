@@ -1,12 +1,12 @@
 {
  "schema": "apex-stat-tables",
  "version": 2,
- "generatedAt": "2026-10-21T05:22:39+00:00",
+ "generatedAt": "2026-10-25T23:52:32+00:00",
  "year": 2026,
- "latestRound": 17,
- "latestRace": "Singapore Grand Prix",
+ "latestRound": 18,
+ "latestRace": "United States Grand Prix",
  "season": {
-  "throughRound": 17,
+  "throughRound": 18,
   "stats": [
    {
     "id": "avg_pit_stop_season",
@@ -15,7 +15,7 @@
     "order": "low",
     "tag": "PIT STOPS",
     "headline": "AVERAGE PIT STOP",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: DHL",
     "teamRows": [
      {
@@ -115,12 +115,12 @@
     "order": "high",
     "tag": "LAPS LED",
     "headline": "MOST LAPS LED",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: F1 live timing via OpenF1",
     "rows": [
      {
       "rank": "1",
-      "value": "365",
+      "value": "414",
       "unit": "laps",
       "note": "",
       "code": "ANT",
@@ -138,21 +138,21 @@
      },
      {
       "rank": "3",
+      "value": "124",
+      "unit": "laps",
+      "note": "",
+      "code": "VER",
+      "text": "",
+      "team": "Red Bull"
+     },
+     {
+      "rank": "4",
       "value": "120",
       "unit": "laps",
       "note": "",
       "code": "LEC",
       "text": "",
       "team": "Ferrari"
-     },
-     {
-      "rank": "4",
-      "value": "117",
-      "unit": "laps",
-      "note": "",
-      "code": "VER",
-      "text": "",
-      "team": "Red Bull"
      },
      {
       "rank": "5",
@@ -208,12 +208,12 @@
     "order": "low",
     "tag": "FORM",
     "headline": "AVERAGE FINISH",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
       "rank": "1",
-      "value": "2.7",
+      "value": "2.6",
       "unit": "",
       "note": "",
       "code": "ANT",
@@ -234,21 +234,12 @@
       "value": "3.9",
       "unit": "",
       "note": "",
-      "code": "RUS",
-      "text": "",
-      "team": "Mercedes"
-     },
-     {
-      "rank": "4",
-      "value": "4.0",
-      "unit": "",
-      "note": "",
       "code": "LEC",
       "text": "",
       "team": "Ferrari"
      },
      {
-      "rank": "5",
+      "rank": "4",
       "value": "4.1",
       "unit": "",
       "note": "",
@@ -257,8 +248,17 @@
       "team": "Ferrari"
      },
      {
-      "rank": "6",
+      "rank": "5",
       "value": "4.2",
+      "unit": "",
+      "note": "",
+      "code": "RUS",
+      "text": "",
+      "team": "Mercedes"
+     },
+     {
+      "rank": "6",
+      "value": "4.3",
       "unit": "",
       "note": "",
       "code": "NOR",
@@ -267,7 +267,7 @@
      },
      {
       "rank": "7",
-      "value": "6.3",
+      "value": "6.2",
       "unit": "",
       "note": "",
       "code": "HAD",
@@ -310,13 +310,13 @@
     "order": "high",
     "tag": "LAPS LED",
     "headline": "MOST LAPS LED",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: F1 live timing via OpenF1",
     "heroTag": "LEADER",
     "rows": [
      {
       "rank": "1",
-      "value": "365",
+      "value": "414",
       "unit": "laps",
       "note": "",
       "code": "ANT",
@@ -334,21 +334,21 @@
      },
      {
       "rank": "3",
+      "value": "124",
+      "unit": "laps",
+      "note": "",
+      "code": "VER",
+      "text": "",
+      "team": "Red Bull"
+     },
+     {
+      "rank": "4",
       "value": "120",
       "unit": "laps",
       "note": "",
       "code": "LEC",
       "text": "",
       "team": "Ferrari"
-     },
-     {
-      "rank": "4",
-      "value": "117",
-      "unit": "laps",
-      "note": "",
-      "code": "VER",
-      "text": "",
-      "team": "Red Bull"
      },
      {
       "rank": "5",
@@ -404,7 +404,7 @@
     "order": "high",
     "tag": "FORM",
     "headline": "POINTS, LAST 5 ROUNDS",
-    "sub": "Last 5 rounds · ITA, ESP, AZE, BHR, SIN",
+    "sub": "Last 5 rounds · ESP, AZE, BHR, SIN, USA",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
@@ -427,7 +427,7 @@
      },
      {
       "rank": "3",
-      "value": "60",
+      "value": "78",
       "unit": "pts",
       "note": "",
       "code": "LEC",
@@ -436,16 +436,7 @@
      },
      {
       "rank": "4",
-      "value": "55",
-      "unit": "pts",
-      "note": "",
-      "code": "RUS",
-      "text": "",
-      "team": "Mercedes"
-     },
-     {
-      "rank": "5",
-      "value": "46",
+      "value": "50",
       "unit": "pts",
       "note": "",
       "code": "HAM",
@@ -453,8 +444,17 @@
       "team": "Ferrari"
      },
      {
+      "rank": "5",
+      "value": "41",
+      "unit": "pts",
+      "note": "",
+      "code": "RUS",
+      "text": "",
+      "team": "Mercedes"
+     },
+     {
       "rank": "6",
-      "value": "42",
+      "value": "40",
       "unit": "pts",
       "note": "",
       "code": "NOR",
@@ -463,21 +463,21 @@
      },
      {
       "rank": "7",
-      "value": "32",
-      "unit": "pts",
-      "note": "",
-      "code": "PIA",
-      "text": "",
-      "team": "McLaren"
-     },
-     {
-      "rank": "8",
-      "value": "26",
+      "value": "34",
       "unit": "pts",
       "note": "",
       "code": "HAD",
       "text": "",
       "team": "Red Bull"
+     },
+     {
+      "rank": "8",
+      "value": "28",
+      "unit": "pts",
+      "note": "",
+      "code": "PIA",
+      "text": "",
+      "team": "McLaren"
      }
     ]
    },
@@ -488,28 +488,28 @@
     "order": "high",
     "tag": "FORM",
     "headline": "POINTS, LAST 5 ROUNDS",
-    "sub": "Last 5 rounds · ITA, ESP, AZE, BHR, SIN",
+    "sub": "Last 5 rounds · ESP, AZE, BHR, SIN, USA",
     "source": "Source: Jolpica / FIA results",
     "teamRows": [
      {
       "rank": "1",
-      "value": "153",
-      "unit": "pts",
-      "note": "",
-      "code": "team",
-      "team": "Mercedes"
-     },
-     {
-      "rank": "2",
-      "value": "143",
+      "value": "151",
       "unit": "pts",
       "note": "",
       "code": "team",
       "team": "Red Bull"
      },
      {
+      "rank": "2",
+      "value": "139",
+      "unit": "pts",
+      "note": "",
+      "code": "team",
+      "team": "Mercedes"
+     },
+     {
       "rank": "3",
-      "value": "106",
+      "value": "128",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -517,7 +517,7 @@
      },
      {
       "rank": "4",
-      "value": "74",
+      "value": "68",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -525,7 +525,7 @@
      },
      {
       "rank": "5",
-      "value": "30",
+      "value": "27",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -533,14 +533,6 @@
      },
      {
       "rank": "6",
-      "value": "14",
-      "unit": "pts",
-      "note": "",
-      "code": "team",
-      "team": "Alpine"
-     },
-     {
-      "rank": "7",
       "value": "9",
       "unit": "pts",
       "note": "",
@@ -548,7 +540,15 @@
       "team": "Haas"
      },
      {
-      "rank": "8",
+      "rank": "7",
+      "value": "7",
+      "unit": "pts",
+      "note": "",
+      "code": "team",
+      "team": "Alpine"
+     },
+     {
+      "rank": "7",
       "value": "7",
       "unit": "pts",
       "note": "",
@@ -564,12 +564,12 @@
     "order": "high",
     "tag": "PODIUMS",
     "headline": "MOST PODIUMS",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
       "rank": "1",
-      "value": "14",
+      "value": "15",
       "unit": "",
       "note": "",
       "code": "ANT",
@@ -578,7 +578,7 @@
      },
      {
       "rank": "2",
-      "value": "9",
+      "value": "10",
       "unit": "",
       "note": "",
       "code": "VER",
@@ -599,21 +599,21 @@
       "value": "6",
       "unit": "",
       "note": "",
-      "code": "HAM",
-      "text": "",
-      "team": "Ferrari"
-     },
-     {
-      "rank": "5",
-      "value": "5",
-      "unit": "",
-      "note": "",
       "code": "LEC",
       "text": "",
       "team": "Ferrari"
      },
      {
-      "rank": "5",
+      "rank": "4",
+      "value": "6",
+      "unit": "",
+      "note": "",
+      "code": "HAM",
+      "text": "",
+      "team": "Ferrari"
+     },
+     {
+      "rank": "6",
       "value": "5",
       "unit": "",
       "note": "",
@@ -648,12 +648,12 @@
     "order": "high",
     "tag": "PODIUMS",
     "headline": "MOST PODIUMS",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: Jolpica / FIA results",
     "teamRows": [
      {
       "rank": "1",
-      "value": "22",
+      "value": "23",
       "unit": "",
       "note": "",
       "code": "team",
@@ -661,7 +661,7 @@
      },
      {
       "rank": "2",
-      "value": "11",
+      "value": "12",
       "unit": "",
       "note": "",
       "code": "team",
@@ -669,7 +669,7 @@
      },
      {
       "rank": "2",
-      "value": "11",
+      "value": "12",
       "unit": "",
       "note": "",
       "code": "team",
@@ -692,12 +692,12 @@
     "order": "high",
     "tag": "QUALIFYING",
     "headline": "MOST POLE POSITIONS",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
       "rank": "1",
-      "value": "6",
+      "value": "7",
       "unit": "",
       "note": "",
       "code": "ANT",
@@ -749,7 +749,7 @@
     "order": "high",
     "tag": "RELIABILITY",
     "headline": "MOST DNFS",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
@@ -763,7 +763,7 @@
      },
      {
       "rank": "2",
-      "value": "8",
+      "value": "9",
       "unit": "",
       "note": "",
       "code": "BOT",
@@ -793,12 +793,21 @@
       "value": "5",
       "unit": "",
       "note": "",
+      "code": "BEA",
+      "text": "",
+      "team": "Haas"
+     },
+     {
+      "rank": "5",
+      "value": "5",
+      "unit": "",
+      "note": "",
       "code": "PER",
       "text": "",
       "team": "Cadillac"
      },
      {
-      "rank": "6",
+      "rank": "7",
       "value": "4",
       "unit": "",
       "note": "",
@@ -807,22 +816,13 @@
       "team": "Audi"
      },
      {
-      "rank": "6",
+      "rank": "7",
       "value": "4",
       "unit": "",
       "note": "",
       "code": "VER",
       "text": "",
       "team": "Red Bull"
-     },
-     {
-      "rank": "6",
-      "value": "4",
-      "unit": "",
-      "note": "",
-      "code": "NOR",
-      "text": "",
-      "team": "McLaren"
      }
     ]
    },
@@ -833,7 +833,7 @@
     "order": "high",
     "tag": "RELIABILITY",
     "headline": "MOST DNFS",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: Jolpica / FIA results",
     "teamRows": [
      {
@@ -846,7 +846,7 @@
      },
      {
       "rank": "2",
-      "value": "13",
+      "value": "14",
       "unit": "",
       "note": "",
       "code": "team",
@@ -885,8 +885,8 @@
       "team": "Audi"
      },
      {
-      "rank": "7",
-      "value": "5",
+      "rank": "5",
+      "value": "6",
       "unit": "",
       "note": "",
       "code": "team",
@@ -894,7 +894,7 @@
      },
      {
       "rank": "8",
-      "value": "4",
+      "value": "5",
       "unit": "",
       "note": "",
       "code": "team",
@@ -909,12 +909,12 @@
     "order": "high",
     "tag": "QUALIFYING",
     "headline": "Q3 APPEARANCES",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
       "rank": "1",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "RUS",
@@ -923,7 +923,7 @@
      },
      {
       "rank": "1",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "PIA",
@@ -932,7 +932,7 @@
      },
      {
       "rank": "1",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "NOR",
@@ -941,7 +941,7 @@
      },
      {
       "rank": "1",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "HAM",
@@ -950,7 +950,7 @@
      },
      {
       "rank": "5",
-      "value": "16",
+      "value": "17",
       "unit": "",
       "note": "",
       "code": "ANT",
@@ -959,7 +959,7 @@
      },
      {
       "rank": "5",
-      "value": "16",
+      "value": "17",
       "unit": "",
       "note": "",
       "code": "LEC",
@@ -968,7 +968,7 @@
      },
      {
       "rank": "7",
-      "value": "15",
+      "value": "16",
       "unit": "",
       "note": "",
       "code": "VER",
@@ -977,7 +977,7 @@
      },
      {
       "rank": "8",
-      "value": "11",
+      "value": "12",
       "unit": "",
       "note": "",
       "code": "HAD",
@@ -993,7 +993,7 @@
     "order": "low",
     "tag": "CHAMPIONSHIP",
     "headline": "GAP TO THE LEADER",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
@@ -1007,7 +1007,7 @@
      },
      {
       "rank": "2",
-      "value": "102",
+      "value": "123",
       "unit": "pts",
       "note": "",
       "code": "RUS",
@@ -1016,7 +1016,7 @@
      },
      {
       "rank": "3",
-      "value": "111",
+      "value": "124",
       "unit": "pts",
       "note": "",
       "code": "HAM",
@@ -1025,7 +1025,7 @@
      },
      {
       "rank": "4",
-      "value": "119",
+      "value": "129",
       "unit": "pts",
       "note": "",
       "code": "VER",
@@ -1034,7 +1034,7 @@
      },
      {
       "rank": "5",
-      "value": "125",
+      "value": "132",
       "unit": "pts",
       "note": "",
       "code": "LEC",
@@ -1043,7 +1043,7 @@
      },
      {
       "rank": "6",
-      "value": "139",
+      "value": "154",
       "unit": "pts",
       "note": "",
       "code": "NOR",
@@ -1052,7 +1052,7 @@
      },
      {
       "rank": "7",
-      "value": "202",
+      "value": "221",
       "unit": "pts",
       "note": "",
       "code": "PIA",
@@ -1061,7 +1061,7 @@
      },
      {
       "rank": "8",
-      "value": "243",
+      "value": "260",
       "unit": "pts",
       "note": "",
       "code": "HAD",
@@ -1070,7 +1070,7 @@
      },
      {
       "rank": "9",
-      "value": "265",
+      "value": "288",
       "unit": "pts",
       "note": "",
       "code": "LAW",
@@ -1079,7 +1079,7 @@
      },
      {
       "rank": "10",
-      "value": "299",
+      "value": "323",
       "unit": "pts",
       "note": "",
       "code": "GAS",
@@ -1095,7 +1095,7 @@
     "order": "low",
     "tag": "CHAMPIONSHIP",
     "headline": "GAP TO THE LEADER",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: Jolpica / FIA results",
     "teamRows": [
      {
@@ -1108,7 +1108,7 @@
      },
      {
       "rank": "2",
-      "value": "134",
+      "value": "133",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -1116,15 +1116,15 @@
      },
      {
       "rank": "3",
-      "value": "239",
+      "value": "252",
       "unit": "pts",
       "note": "",
       "code": "team",
       "team": "McLaren"
      },
      {
-      "rank": "4",
-      "value": "246",
+      "rank": "3",
+      "value": "252",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -1132,7 +1132,7 @@
      },
      {
       "rank": "5",
-      "value": "478",
+      "value": "505",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -1140,7 +1140,7 @@
      },
      {
       "rank": "6",
-      "value": "510",
+      "value": "538",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -1148,7 +1148,7 @@
      },
      {
       "rank": "7",
-      "value": "548",
+      "value": "577",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -1156,7 +1156,7 @@
      },
      {
       "rank": "8",
-      "value": "555",
+      "value": "584",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -1164,7 +1164,7 @@
      },
      {
       "rank": "9",
-      "value": "566",
+      "value": "595",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -1172,7 +1172,7 @@
      },
      {
       "rank": "10",
-      "value": "571",
+      "value": "600",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -1180,7 +1180,7 @@
      },
      {
       "rank": "11",
-      "value": "578",
+      "value": "607",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -1195,12 +1195,12 @@
     "order": "low",
     "tag": "TEAMMATES",
     "headline": "AVERAGE GAP TO TEAMMATE",
-    "sub": "2026 season · after Round 17 · minus = ahead",
+    "sub": "2026 season · after Round 18 · minus = ahead",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
       "rank": "1",
-      "value": "-0.387",
+      "value": "-0.390",
       "unit": "s",
       "note": "",
       "code": "ALO",
@@ -1209,16 +1209,7 @@
      },
      {
       "rank": "2",
-      "value": "-0.355",
-      "unit": "s",
-      "note": "",
-      "code": "SAI",
-      "text": "",
-      "team": "Williams"
-     },
-     {
-      "rank": "3",
-      "value": "-0.343",
+      "value": "-0.360",
       "unit": "s",
       "note": "",
       "code": "GAS",
@@ -1226,8 +1217,17 @@
       "team": "Alpine"
      },
      {
+      "rank": "3",
+      "value": "-0.346",
+      "unit": "s",
+      "note": "",
+      "code": "SAI",
+      "text": "",
+      "team": "Williams"
+     },
+     {
       "rank": "4",
-      "value": "-0.222",
+      "value": "-0.239",
       "unit": "s",
       "note": "",
       "code": "HUL",
@@ -1236,7 +1236,7 @@
      },
      {
       "rank": "5",
-      "value": "-0.222",
+      "value": "-0.230",
       "unit": "s",
       "note": "",
       "code": "BEA",
@@ -1245,7 +1245,7 @@
      },
      {
       "rank": "6",
-      "value": "-0.214",
+      "value": "-0.207",
       "unit": "s",
       "note": "",
       "code": "PER",
@@ -1254,7 +1254,7 @@
      },
      {
       "rank": "7",
-      "value": "-0.122",
+      "value": "-0.116",
       "unit": "s",
       "note": "",
       "code": "VER",
@@ -1263,7 +1263,7 @@
      },
      {
       "rank": "8",
-      "value": "-0.057",
+      "value": "-0.047",
       "unit": "s",
       "note": "",
       "code": "LAW",
@@ -1272,21 +1272,21 @@
      },
      {
       "rank": "9",
-      "value": "-0.054",
-      "unit": "s",
-      "note": "",
-      "code": "NOR",
-      "text": "",
-      "team": "McLaren"
-     },
-     {
-      "rank": "10",
-      "value": "-0.041",
+      "value": "-0.042",
       "unit": "s",
       "note": "",
       "code": "LEC",
       "text": "",
       "team": "Ferrari"
+     },
+     {
+      "rank": "10",
+      "value": "-0.037",
+      "unit": "s",
+      "note": "",
+      "code": "NOR",
+      "text": "",
+      "team": "McLaren"
      }
     ]
    },
@@ -1297,12 +1297,12 @@
     "order": "high",
     "tag": "WINS",
     "headline": "SHARE OF WINS",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: Jolpica / FIA results",
     "teamRows": [
      {
       "rank": "1",
-      "value": "11",
+      "value": "12",
       "unit": "wins",
       "note": "",
       "code": "team",
@@ -1341,12 +1341,12 @@
     "order": "high",
     "tag": "LAPS LED",
     "headline": "SHARE OF LAPS LED",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: F1 live timing via OpenF1",
     "rows": [
      {
       "rank": "1",
-      "value": "365",
+      "value": "414",
       "unit": "laps",
       "note": "",
       "code": "ANT",
@@ -1364,21 +1364,21 @@
      },
      {
       "rank": "3",
+      "value": "124",
+      "unit": "laps",
+      "note": "",
+      "code": "VER",
+      "text": "",
+      "team": "Red Bull"
+     },
+     {
+      "rank": "4",
       "value": "120",
       "unit": "laps",
       "note": "",
       "code": "LEC",
       "text": "",
       "team": "Ferrari"
-     },
-     {
-      "rank": "4",
-      "value": "117",
-      "unit": "laps",
-      "note": "",
-      "code": "VER",
-      "text": "",
-      "team": "Red Bull"
      },
      {
       "rank": "5",
@@ -1425,12 +1425,12 @@
     "order": "high",
     "tag": "LAPS LED",
     "headline": "SHARE OF LAPS LED",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: F1 live timing via OpenF1",
     "teamRows": [
      {
       "rank": "1",
-      "value": "600",
+      "value": "649",
       "unit": "laps",
       "note": "",
       "code": "team",
@@ -1454,7 +1454,7 @@
      },
      {
       "rank": "4",
-      "value": "119",
+      "value": "126",
       "unit": "laps",
       "note": "",
       "code": "team",
@@ -1477,12 +1477,12 @@
     "order": "high",
     "tag": "POINTS",
     "headline": "SHARE OF POINTS",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: Jolpica / FIA results",
     "teamRows": [
      {
       "rank": "1",
-      "value": "578",
+      "value": "607",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -1490,7 +1490,7 @@
      },
      {
       "rank": "2",
-      "value": "444",
+      "value": "474",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -1498,15 +1498,15 @@
      },
      {
       "rank": "3",
-      "value": "339",
+      "value": "355",
       "unit": "pts",
       "note": "",
       "code": "team",
       "team": "McLaren"
      },
      {
-      "rank": "4",
-      "value": "332",
+      "rank": "3",
+      "value": "355",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -1514,7 +1514,7 @@
      },
      {
       "rank": "5",
-      "value": "100",
+      "value": "102",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -1522,7 +1522,7 @@
      },
      {
       "rank": "6",
-      "value": "68",
+      "value": "69",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -1569,12 +1569,12 @@
     "order": "high",
     "tag": "PODIUMS",
     "headline": "SHARE OF PODIUMS",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: Jolpica / FIA results",
     "teamRows": [
      {
       "rank": "1",
-      "value": "22",
+      "value": "23",
       "unit": "",
       "note": "",
       "code": "team",
@@ -1582,7 +1582,7 @@
      },
      {
       "rank": "2",
-      "value": "11",
+      "value": "12",
       "unit": "",
       "note": "",
       "code": "team",
@@ -1590,7 +1590,7 @@
      },
      {
       "rank": "2",
-      "value": "11",
+      "value": "12",
       "unit": "",
       "note": "",
       "code": "team",
@@ -1615,68 +1615,68 @@
     "headline": "RECENT RESULTS",
     "sub": "Last 6 rounds",
     "source": "Source: Jolpica / FIA results",
-    "rounds": "NED, ITA, ESP, AZE, BHR, SIN",
+    "rounds": "ITA, ESP, AZE, BHR, SIN, USA",
     "formKind": "pos",
     "rows": [
      {
       "rank": "1",
-      "value": "1.8",
+      "value": "2.0",
       "unit": "",
       "note": "",
       "code": "VER",
       "text": "",
       "team": "Red Bull",
-      "series": "DNF, 3, 2, 2, 1, 1"
+      "series": "3, 2, 2, 1, 1, 3"
      },
      {
       "rank": "2",
-      "value": "2.3",
+      "value": "2.2",
       "unit": "",
       "note": "",
       "code": "ANT",
       "text": "",
       "team": "Mercedes",
-      "series": "2, 1, 1, 5, 2, 3"
+      "series": "1, 1, 5, 2, 3, 1"
      },
      {
       "rank": "3",
-      "value": "3.8",
+      "value": "3.2",
       "unit": "",
       "note": "",
       "code": "LEC",
       "text": "",
       "team": "Ferrari",
-      "series": "5, DNF, 4, 4, 4, 2"
+      "series": "DNF, 4, 4, 4, 2, 2"
      },
      {
       "rank": "4",
-      "value": "4.0",
+      "value": "5.0",
       "unit": "",
       "note": "",
       "code": "RUS",
       "text": "",
       "team": "Mercedes",
-      "series": "3, 2, 5, 1, DNF, 9"
+      "series": "2, 5, 1, DNF, 9, 8"
      },
      {
-      "rank": "5",
-      "value": "4.2",
-      "unit": "",
-      "note": "",
-      "code": "NOR",
-      "text": "",
-      "team": "McLaren",
-      "series": "1, 4, 3, DNF, 9, 4"
-     },
-     {
-      "rank": "6",
+      "rank": "4",
       "value": "5.0",
       "unit": "",
       "note": "",
       "code": "HAM",
       "text": "",
       "team": "Ferrari",
-      "series": "4, 6, DNF, 6, 3, 6"
+      "series": "6, DNF, 6, 3, 6, 4"
+     },
+     {
+      "rank": "4",
+      "value": "5.0",
+      "unit": "",
+      "note": "",
+      "code": "NOR",
+      "text": "",
+      "team": "McLaren",
+      "series": "4, 3, DNF, 9, 4, 5"
      },
      {
       "rank": "7",
@@ -1686,27 +1686,27 @@
       "code": "HAD",
       "text": "",
       "team": "Red Bull",
-      "series": "-, -, -, 3, 5, 10"
+      "series": "-, -, 3, 5, 10, 6"
      },
      {
       "rank": "8",
-      "value": "7.2",
+      "value": "7.3",
       "unit": "",
       "note": "",
       "code": "PIA",
       "text": "",
       "team": "McLaren",
-      "series": "6, 5, 8, 13, 6, 5"
+      "series": "5, 8, 13, 6, 5, 7"
      },
      {
       "rank": "9",
-      "value": "8.8",
+      "value": "9.2",
       "unit": "",
       "note": "",
       "code": "LAW",
       "text": "",
       "team": "Racing Bulls",
-      "series": "7, 14, 6, 12, 7, 7"
+      "series": "14, 6, 12, 7, 7, 9"
      },
      {
       "rank": "10",
@@ -1716,7 +1716,7 @@
       "code": "GAS",
       "text": "",
       "team": "Alpine",
-      "series": "10, 7, 12, DNF, 16, 11"
+      "series": "7, 12, DNF, 16, 11, 10"
      }
     ]
    },
@@ -1729,108 +1729,108 @@
     "headline": "QUALIFYING FORM",
     "sub": "Last 6 rounds",
     "source": "Source: Jolpica / FIA results",
-    "rounds": "NED, ITA, ESP, AZE, BHR, SIN",
+    "rounds": "ITA, ESP, AZE, BHR, SIN, USA",
     "formKind": "pos",
     "rows": [
      {
       "rank": "1",
-      "value": "4.0",
+      "value": "3.5",
+      "unit": "",
+      "note": "",
+      "code": "VER",
+      "text": "",
+      "team": "Red Bull",
+      "series": "6, 3, 8, 1, 1, 2"
+     },
+     {
+      "rank": "2",
+      "value": "3.7",
       "unit": "",
       "note": "",
       "code": "LEC",
       "text": "",
       "team": "Ferrari",
-      "series": "6, 4, 5, 2, 5, 2"
+      "series": "4, 5, 2, 5, 2, 4"
      },
      {
-      "rank": "2",
-      "value": "4.2",
-      "unit": "",
-      "note": "",
-      "code": "RUS",
-      "text": "",
-      "team": "Mercedes",
-      "series": "2, 2, 6, 1, 8, 6"
-     },
-     {
-      "rank": "2",
+      "rank": "3",
       "value": "4.2",
       "unit": "",
       "note": "",
       "code": "HAM",
       "text": "",
       "team": "Ferrari",
-      "series": "5, 5, 4, 6, 2, 3"
+      "series": "5, 4, 6, 2, 3, 5"
      },
      {
       "rank": "4",
-      "value": "4.3",
+      "value": "4.8",
       "unit": "",
       "note": "",
-      "code": "VER",
+      "code": "RUS",
       "text": "",
-      "team": "Red Bull",
-      "series": "7, 6, 3, 8, 1, 1"
+      "team": "Mercedes",
+      "series": "2, 6, 1, 8, 6, 6"
      },
      {
       "rank": "5",
-      "value": "4.5",
-      "unit": "",
-      "note": "",
-      "code": "NOR",
-      "text": "",
-      "team": "McLaren",
-      "series": "1, 9, 1, 5, 6, 5"
-     },
-     {
-      "rank": "6",
-      "value": "5.2",
-      "unit": "",
-      "note": "",
-      "code": "PIA",
-      "text": "",
-      "team": "McLaren",
-      "series": "4, 3, 7, 3, 7, 7"
-     },
-     {
-      "rank": "7",
-      "value": "6.0",
+      "value": "5.7",
       "unit": "",
       "note": "",
       "code": "ANT",
       "text": "",
       "team": "Mercedes",
-      "series": "3, 7, 2, 16, 4, 4"
+      "series": "7, 2, 16, 4, 4, 1"
+     },
+     {
+      "rank": "5",
+      "value": "5.7",
+      "unit": "",
+      "note": "",
+      "code": "NOR",
+      "text": "",
+      "team": "McLaren",
+      "series": "9, 1, 5, 6, 5, 8"
+     },
+     {
+      "rank": "5",
+      "value": "5.7",
+      "unit": "",
+      "note": "",
+      "code": "PIA",
+      "text": "",
+      "team": "McLaren",
+      "series": "3, 7, 3, 7, 7, 7"
      },
      {
       "rank": "8",
+      "value": "8.0",
+      "unit": "",
+      "note": "",
+      "code": "HAD",
+      "text": "",
+      "team": "Red Bull",
+      "series": "-, -, 4, 3, 22, 3"
+     },
+     {
+      "rank": "9",
       "value": "8.3",
       "unit": "",
       "note": "",
       "code": "GAS",
       "text": "",
       "team": "Alpine",
-      "series": "11, 1, 14, 7, 9, 8"
-     },
-     {
-      "rank": "9",
-      "value": "9.7",
-      "unit": "",
-      "note": "",
-      "code": "HAD",
-      "text": "",
-      "team": "Red Bull",
-      "series": "-, -, -, 4, 3, 22"
+      "series": "1, 14, 7, 9, 8, 11"
      },
      {
       "rank": "10",
-      "value": "10.3",
+      "value": "10.7",
       "unit": "",
       "note": "",
       "code": "LAW",
       "text": "",
       "team": "Racing Bulls",
-      "series": "8, 14, 8, 12, 11, 9"
+      "series": "14, 8, 12, 11, 9, 10"
      }
     ]
    },
@@ -1843,108 +1843,108 @@
     "headline": "POINTS PER ROUND",
     "sub": "Last 6 rounds",
     "source": "Source: Jolpica / FIA results",
-    "rounds": "NED, ITA, ESP, AZE, BHR, SIN",
+    "rounds": "ITA, ESP, AZE, BHR, SIN, USA",
     "formKind": "points",
     "rows": [
      {
       "rank": "1",
-      "value": "121",
-      "unit": "pts",
-      "note": "",
-      "code": "ANT",
-      "text": "",
-      "team": "Mercedes",
-      "series": "23, 25, 25, 10, 18, 20"
-     },
-     {
-      "rank": "2",
-      "value": "112",
+      "value": "124",
       "unit": "pts",
       "note": "",
       "code": "VER",
       "text": "",
       "team": "Red Bull",
-      "series": "3, 15, 18, 18, 25, 33"
+      "series": "15, 18, 18, 25, 33, 15"
+     },
+     {
+      "rank": "2",
+      "value": "123",
+      "unit": "pts",
+      "note": "",
+      "code": "ANT",
+      "text": "",
+      "team": "Mercedes",
+      "series": "25, 25, 10, 18, 20, 25"
      },
      {
       "rank": "3",
       "value": "78",
       "unit": "pts",
       "note": "",
-      "code": "RUS",
-      "text": "",
-      "team": "Mercedes",
-      "series": "23, 18, 10, 25, 0, 2"
-     },
-     {
-      "rank": "4",
-      "value": "77",
-      "unit": "pts",
-      "note": "",
       "code": "LEC",
       "text": "",
       "team": "Ferrari",
-      "series": "17, 0, 12, 12, 12, 24"
+      "series": "0, 12, 12, 12, 24, 18"
+     },
+     {
+      "rank": "4",
+      "value": "59",
+      "unit": "pts",
+      "note": "",
+      "code": "RUS",
+      "text": "",
+      "team": "Mercedes",
+      "series": "18, 10, 25, 0, 2, 4"
      },
      {
       "rank": "5",
-      "value": "73",
-      "unit": "pts",
-      "note": "",
-      "code": "NOR",
-      "text": "",
-      "team": "McLaren",
-      "series": "31, 12, 15, 0, 2, 13"
-     },
-     {
-      "rank": "6",
-      "value": "60",
+      "value": "58",
       "unit": "pts",
       "note": "",
       "code": "HAM",
       "text": "",
       "team": "Ferrari",
-      "series": "14, 8, 0, 8, 15, 15"
+      "series": "8, 0, 8, 15, 15, 12"
+     },
+     {
+      "rank": "6",
+      "value": "52",
+      "unit": "pts",
+      "note": "",
+      "code": "NOR",
+      "text": "",
+      "team": "McLaren",
+      "series": "12, 15, 0, 2, 13, 10"
      },
      {
       "rank": "7",
-      "value": "44",
+      "value": "38",
       "unit": "pts",
       "note": "",
       "code": "PIA",
       "text": "",
       "team": "McLaren",
-      "series": "12, 10, 4, 0, 8, 10"
+      "series": "10, 4, 0, 8, 10, 6"
      },
      {
       "rank": "8",
-      "value": "30",
+      "value": "34",
       "unit": "pts",
       "note": "",
-      "code": "LAW",
+      "code": "HAD",
       "text": "",
-      "team": "Racing Bulls",
-      "series": "6, 0, 8, 0, 6, 10"
+      "team": "Red Bull",
+      "series": "0, 0, 15, 10, 1, 8"
      },
      {
       "rank": "9",
       "value": "26",
       "unit": "pts",
       "note": "",
-      "code": "HAD",
+      "code": "LAW",
       "text": "",
-      "team": "Red Bull",
-      "series": "0, 0, 0, 15, 10, 1"
+      "team": "Racing Bulls",
+      "series": "0, 8, 0, 6, 10, 2"
      },
      {
       "rank": "10",
-      "value": "8",
+      "value": "7",
       "unit": "pts",
       "note": "",
       "code": "GAS",
       "text": "",
       "team": "Alpine",
-      "series": "2, 6, 0, 0, 0, 0"
+      "series": "6, 0, 0, 0, 0, 1"
      }
     ]
    },
@@ -1957,108 +1957,108 @@
     "headline": "BEAT THE TEAMMATE",
     "sub": "Race finish · last 6 rounds",
     "source": "Source: Jolpica / FIA results",
-    "rounds": "NED, ITA, ESP, AZE, BHR, SIN",
+    "rounds": "ITA, ESP, AZE, BHR, SIN, USA",
     "formKind": "wl",
     "rows": [
      {
       "rank": "1",
-      "value": "5",
+      "value": "6",
       "unit": "W",
       "note": "",
-      "code": "ALO",
+      "code": "VER",
       "text": "",
-      "team": "Aston Martin",
-      "series": "W, L, W, W, W, W"
+      "team": "Red Bull",
+      "series": "W, W, W, W, W, W"
      },
      {
-      "rank": "1",
+      "rank": "2",
       "value": "5",
       "unit": "W",
       "note": "",
       "code": "ANT",
       "text": "",
       "team": "Mercedes",
-      "series": "W, W, W, L, W, W"
+      "series": "W, W, L, W, W, W"
      },
      {
-      "rank": "1",
+      "rank": "2",
       "value": "5",
       "unit": "W",
       "note": "",
       "code": "HUL",
       "text": "",
       "team": "Audi",
-      "series": "W, L, W, W, W, W"
+      "series": "L, W, W, W, W, W"
      },
      {
-      "rank": "1",
+      "rank": "2",
       "value": "5",
       "unit": "W",
       "note": "",
       "code": "PER",
       "text": "",
       "team": "Cadillac",
-      "series": "W, W, L, W, W, W"
+      "series": "W, L, W, W, W, W"
      },
      {
-      "rank": "1",
-      "value": "5",
+      "rank": "5",
+      "value": "4",
       "unit": "W",
       "note": "",
-      "code": "SAI",
+      "code": "ALO",
       "text": "",
-      "team": "Williams",
-      "series": "W, W, L, W, W, W"
+      "team": "Aston Martin",
+      "series": "L, W, W, W, W, L"
      },
      {
-      "rank": "1",
-      "value": "5",
+      "rank": "5",
+      "value": "4",
       "unit": "W",
       "note": "",
-      "code": "VER",
+      "code": "LEC",
       "text": "",
-      "team": "Red Bull",
-      "series": "L, W, W, W, W, W"
+      "team": "Ferrari",
+      "series": "L, W, W, L, W, W"
      },
      {
-      "rank": "7",
+      "rank": "5",
       "value": "4",
       "unit": "W",
       "note": "",
       "code": "NOR",
       "text": "",
       "team": "McLaren",
-      "series": "W, W, W, L, L, W"
+      "series": "W, W, L, L, W, W"
      },
      {
-      "rank": "8",
+      "rank": "5",
+      "value": "4",
+      "unit": "W",
+      "note": "",
+      "code": "SAI",
+      "text": "",
+      "team": "Williams",
+      "series": "W, L, W, W, W, L"
+     },
+     {
+      "rank": "9",
       "value": "3",
       "unit": "W",
       "note": "",
       "code": "BEA",
       "text": "",
       "team": "Haas",
-      "series": "L, W, L, L, W, W"
+      "series": "W, L, L, W, W, L"
      },
      {
-      "rank": "8",
+      "rank": "9",
       "value": "3",
       "unit": "W",
       "note": "",
       "code": "COL",
       "text": "",
       "team": "Alpine",
-      "series": "L, L, W, W, W, L"
-     },
-     {
-      "rank": "8",
-      "value": "3",
-      "unit": "W",
-      "note": "",
-      "code": "GAS",
-      "text": "",
-      "team": "Alpine",
-      "series": "W, W, L, L, L, W"
+      "series": "L, W, W, W, L, L"
      }
     ]
    },
@@ -2071,78 +2071,78 @@
     "headline": "PLACES GAINED PER ROUND",
     "sub": "Last 6 rounds",
     "source": "Source: Jolpica / FIA results",
-    "rounds": "NED, ITA, ESP, AZE, BHR, SIN",
+    "rounds": "ITA, ESP, AZE, BHR, SIN, USA",
     "formKind": "delta",
     "rows": [
      {
       "rank": "1",
-      "value": "33",
+      "value": "32",
       "unit": "places",
       "note": "",
       "code": "ANT",
       "text": "",
       "team": "Mercedes",
-      "series": "+1, +18, +1, +11, +1, +1"
+      "series": "+18, +1, +11, +1, +1, +0"
      },
      {
       "rank": "2",
-      "value": "16",
-      "unit": "places",
-      "note": "",
-      "code": "HAD",
-      "text": "",
-      "team": "Red Bull",
-      "series": "DNF, DNF, DNF, +1, +3, +12"
-     },
-     {
-      "rank": "3",
-      "value": "15",
+      "value": "14",
       "unit": "places",
       "note": "",
       "code": "LAW",
       "text": "",
       "team": "Racing Bulls",
-      "series": "+1, +8, +2, -1, +4, +1"
+      "series": "+8, +2, -1, +4, +1, +0"
+     },
+     {
+      "rank": "3",
+      "value": "13",
+      "unit": "places",
+      "note": "",
+      "code": "HAD",
+      "text": "",
+      "team": "Red Bull",
+      "series": "DNF, DNF, +1, +3, +12, -3"
      },
      {
       "rank": "4",
-      "value": "10",
+      "value": "9",
       "unit": "places",
       "note": "",
       "code": "RUS",
       "text": "",
       "team": "Mercedes",
-      "series": "-1, +0, +1, +0, DNF, +10"
+      "series": "+0, +1, +0, DNF, +10, -2"
      },
      {
       "rank": "5",
-      "value": "9",
+      "value": "8",
       "unit": "places",
       "note": "",
       "code": "VER",
       "text": "",
       "team": "Red Bull",
-      "series": "DNF, +2, +1, +6, +0, +0"
+      "series": "+2, +1, +6, +0, +0, -1"
      },
      {
       "rank": "6",
-      "value": "0",
-      "unit": "places",
-      "note": "",
-      "code": "LEC",
-      "text": "",
-      "team": "Ferrari",
-      "series": "+1, DNF, +1, -2, +0, +0"
-     },
-     {
-      "rank": "7",
-      "value": "-1",
+      "value": "2",
       "unit": "places",
       "note": "",
       "code": "NOR",
       "text": "",
       "team": "McLaren",
-      "series": "+0, +4, -2, DNF, -4, +1"
+      "series": "+4, -2, DNF, -4, +1, +3"
+     },
+     {
+      "rank": "7",
+      "value": "1",
+      "unit": "places",
+      "note": "",
+      "code": "LEC",
+      "text": "",
+      "team": "Ferrari",
+      "series": "DNF, +1, -2, +0, +0, +2"
      },
      {
       "rank": "8",
@@ -2152,27 +2152,27 @@
       "code": "HAM",
       "text": "",
       "team": "Ferrari",
-      "series": "+1, -2, DNF, +0, -1, -3"
+      "series": "-2, DNF, +0, -1, -3, +1"
      },
      {
       "rank": "9",
-      "value": "-11",
+      "value": "-9",
       "unit": "places",
       "note": "",
       "code": "PIA",
       "text": "",
       "team": "McLaren",
-      "series": "-2, +1, -1, -10, +0, +1"
+      "series": "+1, -1, -10, +0, +1, +0"
      },
      {
       "rank": "10",
-      "value": "-14",
+      "value": "-15",
       "unit": "places",
       "note": "",
       "code": "GAS",
       "text": "",
       "team": "Alpine",
-      "series": "+1, -6, +2, DNF, -7, -4"
+      "series": "-6, +2, DNF, -7, -4, +0"
      }
     ]
    },
@@ -2183,70 +2183,70 @@
     "order": "high",
     "tag": "CHAMPIONSHIP",
     "headline": "THE TITLE FIGHT",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: Jolpica / FIA results",
-    "rounds": "AUS, CHN, JPN, MIA, CAN, MON, BAR, AUT, GBR, BEL, HUN, NED, ITA, ESP, AZE, BHR, SIN",
+    "rounds": "AUS, CHN, JPN, MIA, CAN, MON, BAR, AUT, GBR, BEL, HUN, NED, ITA, ESP, AZE, BHR, SIN, USA",
     "cum2": true,
     "rows": [
      {
       "rank": "1",
-      "value": "340",
+      "value": "365",
       "unit": "pts",
       "note": "",
       "code": "ANT",
       "text": "",
       "team": "Mercedes",
-      "series": "18, 29, 25, 28, 31, 25, 0, 15, 8, 25, 15, 23, 25, 25, 10, 18, 20"
+      "series": "18, 29, 25, 28, 31, 25, 0, 15, 8, 25, 15, 23, 25, 25, 10, 18, 20, 25"
      },
      {
       "rank": "2",
-      "value": "238",
+      "value": "242",
       "unit": "pts",
       "note": "",
       "code": "RUS",
       "text": "",
       "team": "Mercedes",
-      "series": "25, 26, 12, 17, 8, 0, 18, 25, 23, 0, 6, 23, 18, 10, 25, 0, 2"
+      "series": "25, 26, 12, 17, 8, 0, 18, 25, 23, 0, 6, 23, 18, 10, 25, 0, 2, 4"
      },
      {
       "rank": "3",
-      "value": "229",
+      "value": "241",
       "unit": "pts",
       "note": "",
       "code": "HAM",
       "text": "",
       "team": "Ferrari",
-      "series": "12, 21, 8, 10, 21, 18, 25, 10, 22, 12, 10, 14, 8, 0, 8, 15, 15"
+      "series": "12, 21, 8, 10, 21, 18, 25, 10, 22, 12, 10, 14, 8, 0, 8, 15, 15, 12"
      },
      {
       "rank": "4",
-      "value": "221",
+      "value": "236",
       "unit": "pts",
       "note": "",
       "code": "VER",
       "text": "",
       "team": "Red Bull",
-      "series": "8, 0, 4, 14, 17, 0, 12, 18, 3, 15, 18, 3, 15, 18, 18, 25, 33"
+      "series": "8, 0, 4, 14, 17, 0, 12, 18, 3, 15, 18, 3, 15, 18, 18, 25, 33, 15"
      },
      {
       "rank": "5",
-      "value": "215",
+      "value": "233",
       "unit": "pts",
       "note": "",
       "code": "LEC",
       "text": "",
       "team": "Ferrari",
-      "series": "15, 19, 15, 10, 16, 0, 0, 4, 29, 18, 12, 17, 0, 12, 12, 12, 24"
+      "series": "15, 19, 15, 10, 16, 0, 0, 4, 29, 18, 12, 17, 0, 12, 12, 12, 24, 18"
      },
      {
       "rank": "6",
-      "value": "201",
+      "value": "211",
       "unit": "pts",
       "note": "",
       "code": "NOR",
       "text": "",
       "team": "McLaren",
-      "series": "10, 5, 10, 26, 7, 0, 15, 6, 18, 6, 25, 31, 12, 15, 0, 2, 13"
+      "series": "10, 5, 10, 26, 7, 0, 15, 6, 18, 6, 25, 31, 12, 15, 0, 2, 13, 10"
      }
     ]
    },
@@ -2257,64 +2257,64 @@
     "order": "high",
     "tag": "CHAMPIONSHIP",
     "headline": "CONSTRUCTORS RACE",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: Jolpica / FIA results",
-    "rounds": "AUS, CHN, JPN, MIA, CAN, MON, BAR, AUT, GBR, BEL, HUN, NED, ITA, ESP, AZE, BHR, SIN",
+    "rounds": "AUS, CHN, JPN, MIA, CAN, MON, BAR, AUT, GBR, BEL, HUN, NED, ITA, ESP, AZE, BHR, SIN, USA",
     "cum2": true,
     "teamRows": [
      {
       "rank": "1",
-      "value": "578",
+      "value": "607",
       "unit": "pts",
       "note": "",
       "code": "team",
       "team": "Mercedes",
-      "series": "43, 55, 37, 45, 39, 25, 18, 40, 31, 25, 21, 46, 43, 35, 35, 18, 22"
+      "series": "43, 55, 37, 45, 39, 25, 18, 40, 31, 25, 21, 46, 43, 35, 35, 18, 22, 29"
      },
      {
       "rank": "2",
-      "value": "444",
+      "value": "474",
       "unit": "pts",
       "note": "",
       "code": "team",
       "team": "Ferrari",
-      "series": "27, 40, 23, 20, 37, 18, 25, 14, 51, 30, 22, 31, 8, 12, 20, 27, 39"
+      "series": "27, 40, 23, 20, 37, 18, 25, 14, 51, 30, 22, 31, 8, 12, 20, 27, 39, 30"
      },
      {
       "rank": "3",
-      "value": "339",
+      "value": "355",
       "unit": "pts",
       "note": "",
       "code": "team",
       "team": "McLaren",
-      "series": "10, 8, 28, 48, 12, 12, 25, 18, 20, 16, 25, 43, 22, 19, 0, 10, 23"
+      "series": "10, 8, 28, 48, 12, 12, 25, 18, 20, 16, 25, 43, 22, 19, 0, 10, 23, 16"
      },
      {
-      "rank": "4",
-      "value": "332",
+      "rank": "3",
+      "value": "355",
       "unit": "pts",
       "note": "",
       "code": "team",
       "team": "Red Bull",
-      "series": "8, 4, 4, 14, 27, 15, 20, 26, 13, 23, 26, 9, 15, 26, 33, 35, 34"
+      "series": "8, 4, 4, 14, 27, 15, 20, 26, 13, 23, 26, 9, 15, 26, 33, 35, 34, 23"
      },
      {
       "rank": "5",
-      "value": "100",
+      "value": "102",
       "unit": "pts",
       "note": "",
       "code": "team",
       "team": "Racing Bulls",
-      "series": "4, 8, 2, 0, 7, 18, 6, 3, 15, 2, 5, 0, 5, 2, 6, 7, 10"
+      "series": "4, 8, 2, 0, 7, 18, 6, 3, 15, 2, 5, 0, 5, 2, 6, 7, 10, 2"
      },
      {
       "rank": "6",
-      "value": "68",
+      "value": "69",
       "unit": "pts",
       "note": "",
       "code": "team",
       "team": "Alpine",
-      "series": "1, 9, 6, 7, 12, 6, 7, 0, 3, 1, 0, 2, 8, 6, 0, 0, 0"
+      "series": "1, 9, 6, 7, 12, 6, 7, 0, 3, 1, 0, 2, 8, 6, 0, 0, 0, 1"
      }
     ]
    },
@@ -2325,9 +2325,9 @@
     "order": "low",
     "tag": "CHAMPIONSHIP",
     "headline": "CHAMPIONSHIP POSITION",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: Jolpica / FIA results",
-    "rounds": "AUS, CHN, JPN, MIA, CAN, MON, BAR, AUT, GBR, BEL, HUN, NED, ITA, ESP, AZE, BHR, SIN",
+    "rounds": "AUS, CHN, JPN, MIA, CAN, MON, BAR, AUT, GBR, BEL, HUN, NED, ITA, ESP, AZE, BHR, SIN, USA",
     "cum2": false,
     "rows": [
      {
@@ -2338,7 +2338,7 @@
       "code": "ANT",
       "text": "",
       "team": "Mercedes",
-      "series": "2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1"
+      "series": "2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1"
      },
      {
       "rank": "2",
@@ -2348,7 +2348,7 @@
       "code": "RUS",
       "text": "",
       "team": "Mercedes",
-      "series": "1, 1, 2, 2, 2, 3, 3, 2, 2, 3, 3, 2, 2, 2, 2, 2, 2"
+      "series": "1, 1, 2, 2, 2, 3, 3, 2, 2, 3, 3, 2, 2, 2, 2, 2, 2, 2"
      },
      {
       "rank": "3",
@@ -2358,7 +2358,7 @@
       "code": "HAM",
       "text": "",
       "team": "Ferrari",
-      "series": "4, 4, 4, 4, 4, 2, 2, 3, 3, 2, 2, 3, 3, 3, 3, 3, 3"
+      "series": "4, 4, 4, 4, 4, 2, 2, 3, 3, 2, 2, 3, 3, 3, 3, 3, 3, 3"
      },
      {
       "rank": "4",
@@ -2368,7 +2368,7 @@
       "code": "VER",
       "text": "",
       "team": "Red Bull",
-      "series": "6, 9, 9, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, 6, 4"
+      "series": "6, 9, 9, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, 6, 4, 4"
      },
      {
       "rank": "5",
@@ -2378,7 +2378,7 @@
       "code": "LEC",
       "text": "",
       "team": "Ferrari",
-      "series": "3, 3, 3, 3, 3, 4, 4, 5, 4, 4, 4, 5, 5, 5, 5, 4, 5"
+      "series": "3, 3, 3, 3, 3, 4, 4, 5, 4, 4, 4, 5, 5, 5, 5, 4, 5, 5"
      },
      {
       "rank": "6",
@@ -2388,7 +2388,7 @@
       "code": "NOR",
       "text": "",
       "team": "McLaren",
-      "series": "5, 6, 5, 5, 5, 6, 5, 6, 5, 5, 5, 4, 4, 4, 4, 5, 6"
+      "series": "5, 6, 5, 5, 5, 6, 5, 6, 5, 5, 5, 4, 4, 4, 4, 5, 6, 6"
      },
      {
       "rank": "7",
@@ -2398,7 +2398,7 @@
       "code": "PIA",
       "text": "",
       "team": "McLaren",
-      "series": "20, 12, 6, 6, 6, 5, 6, 4, 6, 6, 7, 7, 7, 7, 7, 7, 7"
+      "series": "20, 12, 6, 6, 6, 5, 6, 4, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7"
      },
      {
       "rank": "8",
@@ -2408,7 +2408,7 @@
       "code": "HAD",
       "text": "",
       "team": "Red Bull",
-      "series": "15, 10, 11, 12, 12, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8"
+      "series": "15, 10, 11, 12, 12, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8"
      },
      {
       "rank": "9",
@@ -2418,7 +2418,7 @@
       "code": "LAW",
       "text": "",
       "team": "Racing Bulls",
-      "series": "17, 8, 10, 10, 10, 10, 10, 10, 9, 9, 9, 9, 9, 9, 9, 9, 9"
+      "series": "17, 8, 10, 10, 10, 10, 10, 10, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9"
      },
      {
       "rank": "10",
@@ -2428,7 +2428,7 @@
       "code": "GAS",
       "text": "",
       "team": "Alpine",
-      "series": "10, 7, 8, 9, 8, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10"
+      "series": "10, 7, 8, 9, 8, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10"
      },
      {
       "rank": "11",
@@ -2438,7 +2438,7 @@
       "code": "LIN",
       "text": "",
       "team": "Racing Bulls",
-      "series": "8, 11, 12, 13, 14, 13, 13, 13, 11, 11, 11, 11, 11, 11, 11, 11, 11"
+      "series": "8, 11, 12, 13, 14, 13, 13, 13, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11"
      },
      {
       "rank": "12",
@@ -2448,7 +2448,7 @@
       "code": "COL",
       "text": "",
       "team": "Alpine",
-      "series": "14, 15, 15, 11, 11, 12, 12, 12, 13, 12, 12, 12, 12, 12, 12, 12, 12"
+      "series": "14, 15, 15, 11, 11, 12, 12, 12, 13, 12, 12, 12, 12, 12, 12, 12, 12, 12"
      },
      {
       "rank": "13",
@@ -2458,7 +2458,7 @@
       "code": "BEA",
       "text": "",
       "team": "Haas",
-      "series": "7, 5, 7, 8, 9, 11, 11, 11, 12, 13, 13, 13, 13, 13, 13, 13, 13"
+      "series": "7, 5, 7, 8, 9, 11, 11, 11, 12, 13, 13, 13, 13, 13, 13, 13, 13, 13"
      },
      {
       "rank": "14",
@@ -2468,7 +2468,7 @@
       "code": "HUL",
       "text": "",
       "team": "Audi",
-      "series": "16, 19, 20, 20, 20, 20, 20, 20, 20, 20, 18, 15, 15, 15, 15, 16, 14"
+      "series": "16, 19, 20, 20, 20, 20, 20, 20, 20, 20, 18, 15, 15, 15, 15, 16, 14, 14"
      },
      {
       "rank": "15",
@@ -2478,7 +2478,7 @@
       "code": "BOR",
       "text": "",
       "team": "Audi",
-      "series": "9, 13, 13, 15, 15, 17, 17, 17, 14, 14, 14, 14, 14, 14, 14, 14, 15"
+      "series": "9, 13, 13, 15, 15, 17, 17, 17, 14, 14, 14, 14, 14, 14, 14, 14, 15, 15"
      },
      {
       "rank": "16",
@@ -2488,7 +2488,7 @@
       "code": "ALO",
       "text": "",
       "team": "Aston Martin",
-      "series": "12, 17, 18, 18, 18, 18, 18, 18, 18, 18, 19, 18, 18, 18, 19, 15, 16"
+      "series": "12, 17, 18, 18, 18, 18, 18, 18, 18, 18, 19, 18, 18, 18, 19, 15, 16, 16"
      },
      {
       "rank": "17",
@@ -2498,7 +2498,7 @@
       "code": "OCO",
       "text": "",
       "team": "Haas",
-      "series": "18, 20, 16, 17, 17, 16, 16, 16, 17, 17, 17, 19, 19, 19, 16, 17, 17"
+      "series": "18, 20, 16, 17, 17, 16, 16, 16, 17, 17, 17, 19, 19, 19, 16, 17, 17, 17"
      },
      {
       "rank": "18",
@@ -2508,7 +2508,7 @@
       "code": "SAI",
       "text": "",
       "team": "Williams",
-      "series": "21, 14, 14, 14, 13, 14, 14, 14, 15, 15, 15, 16, 16, 16, 17, 18, 18"
+      "series": "21, 14, 14, 14, 13, 14, 14, 14, 15, 15, 15, 16, 16, 16, 17, 18, 18, 18"
      },
      {
       "rank": "19",
@@ -2518,7 +2518,7 @@
       "code": "ALB",
       "text": "",
       "team": "Williams",
-      "series": "11, 16, 17, 16, 16, 15, 15, 15, 16, 16, 16, 17, 17, 17, 18, 19, 19"
+      "series": "11, 16, 17, 16, 16, 15, 15, 15, 16, 16, 16, 17, 17, 17, 18, 19, 19, 19"
      },
      {
       "rank": "20",
@@ -2528,7 +2528,7 @@
       "code": "BOT",
       "text": "",
       "team": "Cadillac",
-      "series": "13, 18, 19, 19, 19, 19, 19, 19, 19, 19, 20, 20, 21, 21, 21, 21, 21"
+      "series": "13, 18, 19, 19, 19, 19, 19, 19, 19, 19, 20, 20, 21, 21, 21, 21, 21, 21"
      },
      {
       "rank": "21",
@@ -2538,7 +2538,7 @@
       "code": "PER",
       "text": "",
       "team": "Cadillac",
-      "series": "19, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 22, 22, 22, 22, 22"
+      "series": "19, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 21, 22, 22, 22, 22, 22, 22"
      },
      {
       "rank": "22",
@@ -2548,7 +2548,7 @@
       "code": "STR",
       "text": "",
       "team": "Aston Martin",
-      "series": "22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 23, 23, 23, 23, 23"
+      "series": "22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 22, 23, 23, 23, 23, 23, 23"
      }
     ]
    },
@@ -2559,9 +2559,9 @@
     "order": "low",
     "tag": "QUALIFYING",
     "headline": "GAP TO POLE BY ROUND",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: Jolpica / FIA results",
-    "rounds": "AUS, CHN, JPN, MIA, CAN, MON, BAR, AUT, GBR, BEL, HUN, NED, ITA, ESP, AZE, BHR, SIN",
+    "rounds": "AUS, CHN, JPN, MIA, CAN, MON, BAR, AUT, GBR, BEL, HUN, NED, ITA, ESP, AZE, BHR, SIN, USA",
     "cum2": false,
     "rows": [
      {
@@ -2572,57 +2572,57 @@
       "code": "RUS",
       "text": "",
       "team": "Mercedes",
-      "series": "0.000, 0.222, 0.298, 0.399, 0.000, 0.394, 0.000, 0.000, 0.370, 0.508, 0.553, 0.102, 0.060, 0.325, 0.000, 0.741, 0.374"
+      "series": "0.000, 0.222, 0.298, 0.399, 0.000, 0.394, 0.000, 0.000, 0.370, 0.508, 0.553, 0.102, 0.060, 0.325, 0.000, 0.741, 0.374, 0.270"
      },
      {
       "rank": "2",
-      "value": "0.304",
+      "value": "0.287",
       "unit": "s",
       "note": "",
       "code": "ANT",
       "text": "",
       "team": "Mercedes",
-      "series": "0.293, 0.000, 0.000, 0.000, 0.068, 0.000, 0.319, 0.301, 0.000, 0.000, 0.272, 0.133, 0.096, 0.011, 2.978, 0.501, 0.189"
+      "series": "0.293, 0.000, 0.000, 0.000, 0.068, 0.000, 0.319, 0.301, 0.000, 0.000, 0.272, 0.133, 0.096, 0.011, 2.978, 0.501, 0.189, 0.000"
      },
      {
       "rank": "3",
-      "value": "0.398",
+      "value": "0.385",
       "unit": "s",
       "note": "",
       "code": "LEC",
       "text": "",
       "team": "Ferrari",
-      "series": "0.809, 0.364, 0.525, 0.345, 0.398, 0.300, 0.602, 0.236, 0.175, 0.532, 0.238, 0.395, 0.218, 0.195, 0.837, 0.536, 0.054"
+      "series": "0.809, 0.364, 0.525, 0.345, 0.398, 0.300, 0.602, 0.236, 0.175, 0.532, 0.238, 0.395, 0.218, 0.195, 0.837, 0.536, 0.054, 0.163"
      },
      {
       "rank": "4",
-      "value": "0.405",
+      "value": "0.398",
       "unit": "s",
       "note": "",
       "code": "HAM",
       "text": "",
       "team": "Ferrari",
-      "series": "0.960, 0.351, 0.789, 0.521, 0.290, 0.228, 0.064, 0.295, 0.347, 0.534, 0.012, 0.331, 0.225, 0.189, 1.332, 0.298, 0.123"
+      "series": "0.960, 0.351, 0.789, 0.521, 0.290, 0.228, 0.064, 0.295, 0.347, 0.534, 0.012, 0.331, 0.225, 0.189, 1.332, 0.298, 0.123, 0.276"
      },
      {
       "rank": "5",
-      "value": "0.452",
-      "unit": "s",
-      "note": "",
-      "code": "NOR",
-      "text": "",
-      "team": "McLaren",
-      "series": "0.957, 0.544, 0.631, 0.385, 0.151, 0.714, 0.322, 0.389, 0.766, 0.440, 0.000, 0.000, 0.281, 0.000, 1.146, 0.627, 0.339"
-     },
-     {
-      "rank": "6",
-      "value": "0.459",
+      "value": "0.442",
       "unit": "s",
       "note": "",
       "code": "VER",
       "text": "",
       "team": "Red Bull",
-      "series": ", 0.938, 1.484, 0.166, 0.329, 0.043, 0.342, 0.362, 0.782, 0.317, 0.518, 0.455, 0.284, 0.140, 1.180, 0.000, 0.000"
+      "series": ", 0.938, 1.484, 0.166, 0.329, 0.043, 0.342, 0.362, 0.782, 0.317, 0.518, 0.455, 0.284, 0.140, 1.180, 0.000, 0.000, 0.179"
+     },
+     {
+      "rank": "6",
+      "value": "0.455",
+      "unit": "s",
+      "note": "",
+      "code": "NOR",
+      "text": "",
+      "team": "McLaren",
+      "series": "0.957, 0.544, 0.631, 0.385, 0.151, 0.714, 0.322, 0.389, 0.766, 0.440, 0.000, 0.000, 0.281, 0.000, 1.146, 0.627, 0.339, 0.504"
      }
     ]
    },
@@ -2633,7 +2633,7 @@
     "order": "low",
     "tag": "PIT STOPS",
     "headline": "AVERAGE STOP BY ROUND",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: DHL",
     "rounds": "AUS, CHN, JPN, MIA, CAN, MON, BAR, AUT, GBR, BEL, HUN, NED, ITA, ESP, AZE, BHR, SIN",
     "cum2": false,
@@ -2701,22 +2701,22 @@
     "order": "high",
     "tag": "WINS",
     "headline": "RACE WINS",
-    "sub": "2026 season · after Round 17 · out of 17",
+    "sub": "2026 season · after Round 18 · out of 18",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
       "rank": "1",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "ANT",
       "text": "",
       "team": "Mercedes",
-      "fill": "8"
+      "fill": "9"
      },
      {
       "rank": "2",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "RUS",
@@ -2726,7 +2726,7 @@
      },
      {
       "rank": "3",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "NOR",
@@ -2736,7 +2736,7 @@
      },
      {
       "rank": "3",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "VER",
@@ -2746,7 +2746,7 @@
      },
      {
       "rank": "5",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "HAM",
@@ -2756,7 +2756,7 @@
      },
      {
       "rank": "5",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "LEC",
@@ -2773,32 +2773,32 @@
     "order": "high",
     "tag": "PODIUMS",
     "headline": "PODIUM FINISHES",
-    "sub": "2026 season · after Round 17 · out of 17",
+    "sub": "2026 season · after Round 18 · out of 18",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
       "rank": "1",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "ANT",
       "text": "",
       "team": "Mercedes",
-      "fill": "14"
+      "fill": "15"
      },
      {
       "rank": "2",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "VER",
       "text": "",
       "team": "Red Bull",
-      "fill": "9"
+      "fill": "10"
      },
      {
       "rank": "3",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "RUS",
@@ -2808,7 +2808,17 @@
      },
      {
       "rank": "4",
-      "value": "17",
+      "value": "18",
+      "unit": "",
+      "note": "",
+      "code": "LEC",
+      "text": "",
+      "team": "Ferrari",
+      "fill": "6"
+     },
+     {
+      "rank": "4",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "HAM",
@@ -2817,18 +2827,8 @@
       "fill": "6"
      },
      {
-      "rank": "5",
-      "value": "17",
-      "unit": "",
-      "note": "",
-      "code": "LEC",
-      "text": "",
-      "team": "Ferrari",
-      "fill": "5"
-     },
-     {
-      "rank": "5",
-      "value": "17",
+      "rank": "6",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "NOR",
@@ -2838,7 +2838,7 @@
      },
      {
       "rank": "7",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "PIA",
@@ -2848,7 +2848,7 @@
      },
      {
       "rank": "7",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "HAD",
@@ -2865,107 +2865,107 @@
     "order": "high",
     "tag": "POINTS",
     "headline": "POINTS FINISHES",
-    "sub": "2026 season · after Round 17 · out of 17",
+    "sub": "2026 season · after Round 18 · out of 18",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
       "rank": "1",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "HAM",
       "text": "",
       "team": "Ferrari",
-      "fill": "16"
+      "fill": "17"
      },
      {
       "rank": "2",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "ANT",
       "text": "",
       "team": "Mercedes",
-      "fill": "15"
+      "fill": "16"
      },
      {
       "rank": "3",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "LEC",
       "text": "",
       "team": "Ferrari",
-      "fill": "14"
+      "fill": "15"
      },
      {
       "rank": "4",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "RUS",
       "text": "",
       "team": "Mercedes",
-      "fill": "13"
+      "fill": "14"
      },
      {
       "rank": "4",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "NOR",
       "text": "",
       "team": "McLaren",
-      "fill": "13"
+      "fill": "14"
      },
      {
       "rank": "4",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "VER",
       "text": "",
       "team": "Red Bull",
-      "fill": "13"
+      "fill": "14"
      },
      {
       "rank": "7",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "LAW",
       "text": "",
       "team": "Racing Bulls",
-      "fill": "12"
+      "fill": "13"
      },
      {
       "rank": "8",
-      "value": "17",
-      "unit": "",
-      "note": "",
-      "code": "LIN",
-      "text": "",
-      "team": "Racing Bulls",
-      "fill": "11"
-     },
-     {
-      "rank": "8",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "HAD",
       "text": "",
       "team": "Red Bull",
-      "fill": "11"
+      "fill": "12"
      },
      {
       "rank": "8",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "PIA",
       "text": "",
       "team": "McLaren",
+      "fill": "12"
+     },
+     {
+      "rank": "10",
+      "value": "18",
+      "unit": "",
+      "note": "",
+      "code": "LIN",
+      "text": "",
+      "team": "Racing Bulls",
       "fill": "11"
      }
     ]
@@ -2977,22 +2977,22 @@
     "order": "high",
     "tag": "QUALIFYING",
     "headline": "POLE POSITIONS",
-    "sub": "2026 season · after Round 17 · out of 17",
+    "sub": "2026 season · after Round 18 · out of 18",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
       "rank": "1",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "ANT",
       "text": "",
       "team": "Mercedes",
-      "fill": "6"
+      "fill": "7"
      },
      {
       "rank": "2",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "RUS",
@@ -3002,7 +3002,7 @@
      },
      {
       "rank": "3",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "NOR",
@@ -3012,7 +3012,7 @@
      },
      {
       "rank": "4",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "VER",
@@ -3022,7 +3022,7 @@
      },
      {
       "rank": "5",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "GAS",
@@ -3039,102 +3039,102 @@
     "order": "high",
     "tag": "QUALIFYING",
     "headline": "Q3 APPEARANCES",
-    "sub": "2026 season · after Round 17 · out of 17",
+    "sub": "2026 season · after Round 18 · out of 18",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
       "rank": "1",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "RUS",
       "text": "",
       "team": "Mercedes",
-      "fill": "17"
+      "fill": "18"
      },
      {
       "rank": "1",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "PIA",
       "text": "",
       "team": "McLaren",
-      "fill": "17"
+      "fill": "18"
      },
      {
       "rank": "1",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "NOR",
       "text": "",
       "team": "McLaren",
-      "fill": "17"
+      "fill": "18"
      },
      {
       "rank": "1",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "HAM",
       "text": "",
       "team": "Ferrari",
-      "fill": "17"
+      "fill": "18"
      },
      {
       "rank": "5",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "ANT",
       "text": "",
       "team": "Mercedes",
-      "fill": "16"
+      "fill": "17"
      },
      {
       "rank": "5",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "LEC",
       "text": "",
       "team": "Ferrari",
-      "fill": "16"
+      "fill": "17"
      },
      {
       "rank": "7",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "VER",
       "text": "",
       "team": "Red Bull",
-      "fill": "15"
+      "fill": "16"
      },
      {
       "rank": "8",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "HAD",
       "text": "",
       "team": "Red Bull",
-      "fill": "11"
+      "fill": "12"
      },
      {
       "rank": "8",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "LIN",
       "text": "",
       "team": "Racing Bulls",
-      "fill": "11"
+      "fill": "12"
      },
      {
       "rank": "10",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "LAW",
@@ -3151,12 +3151,12 @@
     "order": "high",
     "tag": "FASTEST LAPS",
     "headline": "FASTEST LAPS",
-    "sub": "2026 season · after Round 17 · out of 17",
+    "sub": "2026 season · after Round 18 · out of 18",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
       "rank": "1",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "ANT",
@@ -3166,17 +3166,17 @@
      },
      {
       "rank": "2",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "LEC",
       "text": "",
       "team": "Ferrari",
-      "fill": "3"
+      "fill": "4"
      },
      {
       "rank": "3",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "VER",
@@ -3186,7 +3186,7 @@
      },
      {
       "rank": "3",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "NOR",
@@ -3196,7 +3196,7 @@
      },
      {
       "rank": "3",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "RUS",
@@ -3206,7 +3206,7 @@
      },
      {
       "rank": "6",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "HAM",
@@ -3223,110 +3223,110 @@
     "order": "high",
     "tag": "CHAMPIONSHIP",
     "headline": "POINTS SINCE MID-SEASON",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: Jolpica / FIA results",
-    "shiftL": "R8",
-    "shiftR": "R17",
+    "shiftL": "R9",
+    "shiftR": "R18",
     "rows": [
      {
       "rank": "1",
-      "value": "340",
+      "value": "365",
       "unit": "pts",
       "note": "",
       "code": "ANT",
       "text": "",
       "team": "Mercedes",
-      "v2": "171"
+      "v2": "179"
      },
      {
       "rank": "2",
-      "value": "238",
+      "value": "242",
       "unit": "pts",
       "note": "",
       "code": "RUS",
       "text": "",
       "team": "Mercedes",
-      "v2": "131"
+      "v2": "154"
      },
      {
       "rank": "3",
-      "value": "229",
+      "value": "241",
       "unit": "pts",
       "note": "",
       "code": "HAM",
       "text": "",
       "team": "Ferrari",
-      "v2": "125"
+      "v2": "147"
      },
      {
       "rank": "4",
-      "value": "221",
+      "value": "236",
       "unit": "pts",
       "note": "",
       "code": "VER",
       "text": "",
       "team": "Red Bull",
-      "v2": "73"
+      "v2": "76"
      },
      {
       "rank": "5",
-      "value": "215",
+      "value": "233",
       "unit": "pts",
       "note": "",
       "code": "LEC",
       "text": "",
       "team": "Ferrari",
-      "v2": "79"
+      "v2": "108"
      },
      {
       "rank": "6",
-      "value": "201",
+      "value": "211",
       "unit": "pts",
       "note": "",
       "code": "NOR",
       "text": "",
       "team": "McLaren",
-      "v2": "79"
+      "v2": "97"
      },
      {
       "rank": "7",
-      "value": "138",
+      "value": "144",
       "unit": "pts",
       "note": "",
       "code": "PIA",
       "text": "",
       "team": "McLaren",
-      "v2": "82"
+      "v2": "84"
      },
      {
       "rank": "8",
-      "value": "97",
+      "value": "105",
       "unit": "pts",
       "note": "",
       "code": "HAD",
       "text": "",
       "team": "Red Bull",
-      "v2": "45"
+      "v2": "55"
      },
      {
       "rank": "9",
-      "value": "75",
+      "value": "77",
       "unit": "pts",
       "note": "",
       "code": "LAW",
       "text": "",
       "team": "Racing Bulls",
-      "v2": "32"
+      "v2": "41"
      },
      {
       "rank": "10",
-      "value": "41",
+      "value": "42",
       "unit": "pts",
       "note": "",
       "code": "GAS",
       "text": "",
       "team": "Alpine",
-      "v2": "32"
+      "v2": "33"
      }
     ]
    },
@@ -3337,7 +3337,7 @@
     "order": "high",
     "tag": "CAREER",
     "headline": "CAREER WINS ON THE GRID",
-    "sub": "Current grid · up to Round 17",
+    "sub": "Current grid · up to Round 18",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
@@ -3390,6 +3390,15 @@
       "value": "9",
       "unit": "wins",
       "note": "",
+      "code": "ANT",
+      "text": "",
+      "team": "Mercedes"
+     },
+     {
+      "rank": "6",
+      "value": "9",
+      "unit": "wins",
+      "note": "",
       "code": "LEC",
       "text": "",
       "team": "Ferrari"
@@ -3404,16 +3413,7 @@
       "team": "McLaren"
      },
      {
-      "rank": "8",
-      "value": "8",
-      "unit": "wins",
-      "note": "",
-      "code": "ANT",
-      "text": "",
-      "team": "Mercedes"
-     },
-     {
-      "rank": "8",
+      "rank": "9",
       "value": "8",
       "unit": "wins",
       "note": "",
@@ -3439,12 +3439,12 @@
     "order": "high",
     "tag": "LAPS LED",
     "headline": "MOST LAPS LED",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: F1 live timing via OpenF1",
     "rows": [
      {
       "rank": "1",
-      "value": "365",
+      "value": "414",
       "unit": "laps",
       "note": "",
       "code": "ANT",
@@ -3462,21 +3462,21 @@
      },
      {
       "rank": "3",
+      "value": "124",
+      "unit": "laps",
+      "note": "",
+      "code": "VER",
+      "text": "",
+      "team": "Red Bull"
+     },
+     {
+      "rank": "4",
       "value": "120",
       "unit": "laps",
       "note": "",
       "code": "LEC",
       "text": "",
       "team": "Ferrari"
-     },
-     {
-      "rank": "4",
-      "value": "117",
-      "unit": "laps",
-      "note": "",
-      "code": "VER",
-      "text": "",
-      "team": "Red Bull"
      },
      {
       "rank": "5",
@@ -3532,12 +3532,12 @@
     "order": "high",
     "tag": "POINTS",
     "headline": "POINTS SCORED",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
       "rank": "1",
-      "value": "340",
+      "value": "365",
       "unit": "pts",
       "note": "",
       "code": "ANT",
@@ -3546,7 +3546,7 @@
      },
      {
       "rank": "2",
-      "value": "238",
+      "value": "242",
       "unit": "pts",
       "note": "",
       "code": "RUS",
@@ -3555,7 +3555,7 @@
      },
      {
       "rank": "3",
-      "value": "229",
+      "value": "241",
       "unit": "pts",
       "note": "",
       "code": "HAM",
@@ -3564,7 +3564,7 @@
      },
      {
       "rank": "4",
-      "value": "221",
+      "value": "236",
       "unit": "pts",
       "note": "",
       "code": "VER",
@@ -3573,7 +3573,7 @@
      },
      {
       "rank": "5",
-      "value": "215",
+      "value": "233",
       "unit": "pts",
       "note": "",
       "code": "LEC",
@@ -3582,7 +3582,7 @@
      },
      {
       "rank": "6",
-      "value": "201",
+      "value": "211",
       "unit": "pts",
       "note": "",
       "code": "NOR",
@@ -3591,7 +3591,7 @@
      },
      {
       "rank": "7",
-      "value": "138",
+      "value": "144",
       "unit": "pts",
       "note": "",
       "code": "PIA",
@@ -3600,7 +3600,7 @@
      },
      {
       "rank": "8",
-      "value": "97",
+      "value": "105",
       "unit": "pts",
       "note": "",
       "code": "HAD",
@@ -3609,7 +3609,7 @@
      },
      {
       "rank": "9",
-      "value": "75",
+      "value": "77",
       "unit": "pts",
       "note": "",
       "code": "LAW",
@@ -3618,7 +3618,7 @@
      },
      {
       "rank": "10",
-      "value": "41",
+      "value": "42",
       "unit": "pts",
       "note": "",
       "code": "GAS",
@@ -3634,12 +3634,12 @@
     "order": "high",
     "tag": "OVERTAKES",
     "headline": "MOST OVERTAKES",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: OpenF1",
     "rows": [
      {
       "rank": "1",
-      "value": "257",
+      "value": "268",
       "unit": "passes",
       "note": "",
       "code": "SAI",
@@ -3648,7 +3648,7 @@
      },
      {
       "rank": "2",
-      "value": "245",
+      "value": "259",
       "unit": "passes",
       "note": "",
       "code": "OCO",
@@ -3657,7 +3657,7 @@
      },
      {
       "rank": "3",
-      "value": "233",
+      "value": "249",
       "unit": "passes",
       "note": "",
       "code": "BOR",
@@ -3666,7 +3666,7 @@
      },
      {
       "rank": "4",
-      "value": "228",
+      "value": "240",
       "unit": "passes",
       "note": "",
       "code": "ALO",
@@ -3675,16 +3675,7 @@
      },
      {
       "rank": "5",
-      "value": "225",
-      "unit": "passes",
-      "note": "",
-      "code": "LAW",
-      "text": "",
-      "team": "Racing Bulls"
-     },
-     {
-      "rank": "6",
-      "value": "223",
+      "value": "233",
       "unit": "passes",
       "note": "",
       "code": "BEA",
@@ -3692,8 +3683,17 @@
       "team": "Haas"
      },
      {
+      "rank": "5",
+      "value": "233",
+      "unit": "passes",
+      "note": "",
+      "code": "LAW",
+      "text": "",
+      "team": "Racing Bulls"
+     },
+     {
       "rank": "7",
-      "value": "218",
+      "value": "229",
       "unit": "passes",
       "note": "",
       "code": "HUL",
@@ -3702,7 +3702,7 @@
      },
      {
       "rank": "8",
-      "value": "215",
+      "value": "223",
       "unit": "passes",
       "note": "",
       "code": "COL",
@@ -3711,21 +3711,21 @@
      },
      {
       "rank": "9",
-      "value": "211",
-      "unit": "passes",
-      "note": "",
-      "code": "PER",
-      "text": "",
-      "team": "Cadillac"
-     },
-     {
-      "rank": "10",
-      "value": "206",
+      "value": "220",
       "unit": "passes",
       "note": "",
       "code": "LIN",
       "text": "",
       "team": "Racing Bulls"
+     },
+     {
+      "rank": "10",
+      "value": "219",
+      "unit": "passes",
+      "note": "",
+      "code": "PER",
+      "text": "",
+      "team": "Cadillac"
      }
     ]
    },
@@ -3741,7 +3741,7 @@
     "rows": [
      {
       "rank": "1",
-      "value": "442",
+      "value": "443",
       "unit": "starts",
       "note": "",
       "code": "ALO",
@@ -3750,7 +3750,7 @@
      },
      {
       "rank": "2",
-      "value": "397",
+      "value": "398",
       "unit": "starts",
       "note": "",
       "code": "HAM",
@@ -3759,7 +3759,7 @@
      },
      {
       "rank": "3",
-      "value": "298",
+      "value": "299",
       "unit": "starts",
       "note": "",
       "code": "PER",
@@ -3768,7 +3768,7 @@
      },
      {
       "rank": "4",
-      "value": "266",
+      "value": "267",
       "unit": "starts",
       "note": "",
       "code": "HUL",
@@ -3777,7 +3777,7 @@
      },
      {
       "rank": "5",
-      "value": "263",
+      "value": "264",
       "unit": "starts",
       "note": "",
       "code": "BOT",
@@ -3786,7 +3786,7 @@
      },
      {
       "rank": "6",
-      "value": "250",
+      "value": "251",
       "unit": "starts",
       "note": "",
       "code": "VER",
@@ -3795,7 +3795,7 @@
      },
      {
       "rank": "7",
-      "value": "246",
+      "value": "247",
       "unit": "starts",
       "note": "",
       "code": "SAI",
@@ -3804,7 +3804,7 @@
      },
      {
       "rank": "8",
-      "value": "206",
+      "value": "207",
       "unit": "starts",
       "note": "",
       "code": "STR",
@@ -3813,7 +3813,7 @@
      },
      {
       "rank": "9",
-      "value": "197",
+      "value": "198",
       "unit": "starts",
       "note": "",
       "code": "OCO",
@@ -3822,7 +3822,7 @@
      },
      {
       "rank": "10",
-      "value": "194",
+      "value": "195",
       "unit": "starts",
       "note": "",
       "code": "GAS",
@@ -3838,13 +3838,13 @@
     "order": "high",
     "tag": "TEAMMATES",
     "headline": "QUALIFYING HEAD-TO-HEAD",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: Jolpica / FIA results",
     "gaugeMax": "100",
     "rows": [
      {
       "rank": "1",
-      "value": "87",
+      "value": "88",
       "unit": "%",
       "note": "",
       "code": "ALO",
@@ -3853,7 +3853,7 @@
      },
      {
       "rank": "2",
-      "value": "81",
+      "value": "82",
       "unit": "%",
       "note": "",
       "code": "VER",
@@ -3862,7 +3862,7 @@
      },
      {
       "rank": "2",
-      "value": "81",
+      "value": "82",
       "unit": "%",
       "note": "",
       "code": "SAI",
@@ -3871,7 +3871,7 @@
      },
      {
       "rank": "4",
-      "value": "76",
+      "value": "78",
       "unit": "%",
       "note": "",
       "code": "GAS",
@@ -3880,7 +3880,7 @@
      },
      {
       "rank": "5",
-      "value": "75",
+      "value": "76",
       "unit": "%",
       "note": "",
       "code": "BEA",
@@ -3889,16 +3889,7 @@
      },
      {
       "rank": "6",
-      "value": "65",
-      "unit": "%",
-      "note": "",
-      "code": "NOR",
-      "text": "",
-      "team": "McLaren"
-     },
-     {
-      "rank": "7",
-      "value": "59",
+      "value": "61",
       "unit": "%",
       "note": "",
       "code": "ANT",
@@ -3906,8 +3897,17 @@
       "team": "Mercedes"
      },
      {
+      "rank": "6",
+      "value": "61",
+      "unit": "%",
+      "note": "",
+      "code": "NOR",
+      "text": "",
+      "team": "McLaren"
+     },
+     {
       "rank": "8",
-      "value": "53",
+      "value": "56",
       "unit": "%",
       "note": "",
       "code": "LEC",
@@ -3916,12 +3916,12 @@
      },
      {
       "rank": "8",
-      "value": "53",
+      "value": "56",
       "unit": "%",
       "note": "",
-      "code": "LAW",
+      "code": "PER",
       "text": "",
-      "team": "Racing Bulls"
+      "team": "Cadillac"
      }
     ]
    },
@@ -3932,7 +3932,7 @@
     "order": "high",
     "tag": "CONSISTENCY",
     "headline": "POINTS-FINISH RATE",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: Jolpica / FIA results",
     "gaugeMax": "100",
     "rows": [
@@ -3947,7 +3947,7 @@
      },
      {
       "rank": "2",
-      "value": "88",
+      "value": "89",
       "unit": "%",
       "note": "",
       "code": "ANT",
@@ -3956,7 +3956,7 @@
      },
      {
       "rank": "3",
-      "value": "82",
+      "value": "83",
       "unit": "%",
       "note": "",
       "code": "LEC",
@@ -3965,7 +3965,7 @@
      },
      {
       "rank": "4",
-      "value": "79",
+      "value": "80",
       "unit": "%",
       "note": "",
       "code": "HAD",
@@ -3974,7 +3974,7 @@
      },
      {
       "rank": "5",
-      "value": "76",
+      "value": "78",
       "unit": "%",
       "note": "",
       "code": "RUS",
@@ -3983,7 +3983,7 @@
      },
      {
       "rank": "5",
-      "value": "76",
+      "value": "78",
       "unit": "%",
       "note": "",
       "code": "NOR",
@@ -3992,7 +3992,7 @@
      },
      {
       "rank": "5",
-      "value": "76",
+      "value": "78",
       "unit": "%",
       "note": "",
       "code": "VER",
@@ -4001,7 +4001,7 @@
      },
      {
       "rank": "8",
-      "value": "71",
+      "value": "72",
       "unit": "%",
       "note": "",
       "code": "LAW",
@@ -4010,12 +4010,12 @@
      },
      {
       "rank": "9",
-      "value": "65",
+      "value": "67",
       "unit": "%",
       "note": "",
-      "code": "LIN",
+      "code": "PIA",
       "text": "",
-      "team": "Racing Bulls"
+      "team": "McLaren"
      }
     ]
    },
@@ -4026,7 +4026,7 @@
     "order": "high",
     "tag": "RELIABILITY",
     "headline": "FINISH RATE",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: Jolpica / FIA results",
     "gaugeMax": "100",
     "teamRows": [
@@ -4040,7 +4040,7 @@
      },
      {
       "rank": "2",
-      "value": "88",
+      "value": "89",
       "unit": "%",
       "note": "",
       "code": "team",
@@ -4048,15 +4048,15 @@
      },
      {
       "rank": "2",
-      "value": "88",
+      "value": "89",
       "unit": "%",
       "note": "",
       "code": "team",
       "team": "Ferrari"
      },
      {
-      "rank": "2",
-      "value": "88",
+      "rank": "4",
+      "value": "86",
       "unit": "%",
       "note": "",
       "code": "team",
@@ -4064,23 +4064,23 @@
      },
      {
       "rank": "5",
-      "value": "85",
-      "unit": "%",
-      "note": "",
-      "code": "team",
-      "team": "Haas"
-     },
-     {
-      "rank": "6",
-      "value": "82",
+      "value": "83",
       "unit": "%",
       "note": "",
       "code": "team",
       "team": "Red Bull"
      },
      {
-      "rank": "6",
-      "value": "82",
+      "rank": "5",
+      "value": "83",
+      "unit": "%",
+      "note": "",
+      "code": "team",
+      "team": "Haas"
+     },
+     {
+      "rank": "5",
+      "value": "83",
       "unit": "%",
       "note": "",
       "code": "team",
@@ -4088,7 +4088,7 @@
      },
      {
       "rank": "8",
-      "value": "79",
+      "value": "81",
       "unit": "%",
       "note": "",
       "code": "team",
@@ -4096,7 +4096,7 @@
      },
      {
       "rank": "9",
-      "value": "71",
+      "value": "72",
       "unit": "%",
       "note": "",
       "code": "team",
@@ -4104,7 +4104,7 @@
      },
      {
       "rank": "10",
-      "value": "62",
+      "value": "61",
       "unit": "%",
       "note": "",
       "code": "team",
@@ -4112,7 +4112,7 @@
      },
      {
       "rank": "11",
-      "value": "50",
+      "value": "53",
       "unit": "%",
       "note": "",
       "code": "team",
@@ -4127,12 +4127,12 @@
     "order": "high",
     "tag": "RELIABILITY",
     "headline": "LAPS COMPLETED",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
       "rank": "1",
-      "value": "1018",
+      "value": "1074",
       "unit": "laps",
       "note": "",
       "code": "ANT",
@@ -4141,7 +4141,7 @@
      },
      {
       "rank": "2",
-      "value": "989",
+      "value": "1044",
       "unit": "laps",
       "note": "",
       "code": "OCO",
@@ -4150,7 +4150,7 @@
      },
      {
       "rank": "3",
-      "value": "972",
+      "value": "1028",
       "unit": "laps",
       "note": "",
       "code": "HAM",
@@ -4159,7 +4159,7 @@
      },
      {
       "rank": "4",
-      "value": "967",
+      "value": "1023",
       "unit": "laps",
       "note": "",
       "code": "LAW",
@@ -4168,16 +4168,7 @@
      },
      {
       "rank": "5",
-      "value": "965",
-      "unit": "laps",
-      "note": "",
-      "code": "COL",
-      "text": "",
-      "team": "Alpine"
-     },
-     {
-      "rank": "6",
-      "value": "953",
+      "value": "1009",
       "unit": "laps",
       "note": "",
       "code": "LEC",
@@ -4185,8 +4176,17 @@
       "team": "Ferrari"
      },
      {
+      "rank": "6",
+      "value": "1002",
+      "unit": "laps",
+      "note": "",
+      "code": "GAS",
+      "text": "",
+      "team": "Alpine"
+     },
+     {
       "rank": "7",
-      "value": "946",
+      "value": "1001",
       "unit": "laps",
       "note": "",
       "code": "LIN",
@@ -4194,11 +4194,11 @@
       "team": "Racing Bulls"
      },
      {
-      "rank": "7",
-      "value": "946",
+      "rank": "8",
+      "value": "1000",
       "unit": "laps",
       "note": "",
-      "code": "GAS",
+      "code": "COL",
       "text": "",
       "team": "Alpine"
      }
@@ -4211,12 +4211,12 @@
     "order": "high",
     "tag": "WINNERS",
     "headline": "2026 RACE WINNERS",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
       "rank": "1",
-      "value": "8",
+      "value": "9",
       "unit": "wins",
       "note": "",
       "code": "ANT",
@@ -4277,12 +4277,12 @@
     "order": "high",
     "tag": "QUALIFYING",
     "headline": "2026 POLE SITTERS",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
       "rank": "1",
-      "value": "6",
+      "value": "7",
       "unit": "poles",
       "note": "",
       "code": "ANT",
@@ -4334,7 +4334,7 @@
     "order": "high",
     "tag": "FAN VOTE",
     "headline": "DRIVER OF THE DAY",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: F1.com (enter manually)",
     "rows": []
    },
@@ -4345,7 +4345,7 @@
     "order": "low",
     "tag": "PIT STOPS",
     "headline": "EACH TEAM'S FASTEST STOP",
-    "sub": "2026 season · after Round 17",
+    "sub": "2026 season · after Round 18",
     "source": "Source: DHL",
     "teamRows": [
      {
@@ -47462,6 +47462,2430 @@
       {
        "rank": "1",
        "value": "62",
+       "unit": "laps",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "round": 18,
+   "name": "United States Grand Prix",
+   "short": "USA",
+   "date": "2026-10-25",
+   "stats": [
+    {
+     "id": "top_speed_drivers",
+     "layout": "bars",
+     "mode": "drivers",
+     "order": "high",
+     "tag": "SPEED TRAP",
+     "headline": "TOP SPEED",
+     "sub": "Round 18 · United States Grand Prix",
+     "source": "Source: F1 live timing via OpenF1",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "349",
+       "unit": "km/h",
+       "note": "",
+       "code": "ALO",
+       "text": "",
+       "team": "Aston Martin"
+      },
+      {
+       "rank": "1",
+       "value": "349",
+       "unit": "km/h",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "3",
+       "value": "347",
+       "unit": "km/h",
+       "note": "",
+       "code": "COL",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "4",
+       "value": "345",
+       "unit": "km/h",
+       "note": "",
+       "code": "LIN",
+       "text": "",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "5",
+       "value": "344",
+       "unit": "km/h",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "5",
+       "value": "344",
+       "unit": "km/h",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "5",
+       "value": "344",
+       "unit": "km/h",
+       "note": "",
+       "code": "BEA",
+       "text": "",
+       "team": "Haas"
+      },
+      {
+       "rank": "8",
+       "value": "343",
+       "unit": "km/h",
+       "note": "",
+       "code": "STR",
+       "text": "",
+       "team": "Aston Martin"
+      },
+      {
+       "rank": "8",
+       "value": "343",
+       "unit": "km/h",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "10",
+       "value": "342",
+       "unit": "km/h",
+       "note": "",
+       "code": "LEC",
+       "text": "",
+       "team": "Ferrari"
+      }
+     ]
+    },
+    {
+     "id": "top_speed_teams",
+     "layout": "bars",
+     "mode": "teams",
+     "order": "high",
+     "tag": "SPEED TRAP",
+     "headline": "TOP SPEED BY TEAM",
+     "sub": "Round 18 · United States Grand Prix",
+     "source": "Source: F1 live timing via OpenF1",
+     "teamRows": [
+      {
+       "rank": "1",
+       "value": "349",
+       "unit": "km/h",
+       "note": "",
+       "code": "team",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "1",
+       "value": "349",
+       "unit": "km/h",
+       "note": "",
+       "code": "team",
+       "team": "Aston Martin"
+      },
+      {
+       "rank": "3",
+       "value": "347",
+       "unit": "km/h",
+       "note": "",
+       "code": "team",
+       "team": "Alpine"
+      },
+      {
+       "rank": "4",
+       "value": "345",
+       "unit": "km/h",
+       "note": "",
+       "code": "team",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "5",
+       "value": "344",
+       "unit": "km/h",
+       "note": "",
+       "code": "team",
+       "team": "McLaren"
+      },
+      {
+       "rank": "5",
+       "value": "344",
+       "unit": "km/h",
+       "note": "",
+       "code": "team",
+       "team": "Haas"
+      },
+      {
+       "rank": "7",
+       "value": "343",
+       "unit": "km/h",
+       "note": "",
+       "code": "team",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "8",
+       "value": "341",
+       "unit": "km/h",
+       "note": "",
+       "code": "team",
+       "team": "Williams"
+      },
+      {
+       "rank": "9",
+       "value": "340",
+       "unit": "km/h",
+       "note": "",
+       "code": "team",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "10",
+       "value": "337",
+       "unit": "km/h",
+       "note": "",
+       "code": "team",
+       "team": "Audi"
+      },
+      {
+       "rank": "11",
+       "value": "336",
+       "unit": "km/h",
+       "note": "",
+       "code": "team",
+       "team": "Cadillac"
+      }
+     ]
+    },
+    {
+     "id": "fastest_race_lap",
+     "layout": "bars",
+     "mode": "drivers",
+     "order": "low",
+     "tag": "FASTEST LAPS",
+     "headline": "FASTEST RACE LAPS",
+     "sub": "Round 18 · United States Grand Prix",
+     "source": "Source: F1 live timing via OpenF1",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "1:37.976",
+       "unit": "",
+       "note": "",
+       "code": "LEC",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "2",
+       "value": "1:38.393",
+       "unit": "",
+       "note": "",
+       "code": "BOR",
+       "text": "",
+       "team": "Audi"
+      },
+      {
+       "rank": "3",
+       "value": "1:38.457",
+       "unit": "",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "4",
+       "value": "1:39.086",
+       "unit": "",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "5",
+       "value": "1:39.231",
+       "unit": "",
+       "note": "",
+       "code": "VER",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "6",
+       "value": "1:39.399",
+       "unit": "",
+       "note": "",
+       "code": "HAD",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "7",
+       "value": "1:39.422",
+       "unit": "",
+       "note": "",
+       "code": "LIN",
+       "text": "",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "8",
+       "value": "1:39.652",
+       "unit": "",
+       "note": "",
+       "code": "LAW",
+       "text": "",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "9",
+       "value": "1:39.811",
+       "unit": "",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "10",
+       "value": "1:39.841",
+       "unit": "",
+       "note": "",
+       "code": "ALO",
+       "text": "",
+       "team": "Aston Martin"
+      }
+     ]
+    },
+    {
+     "id": "positions_gained_race",
+     "layout": "bars",
+     "mode": "drivers",
+     "order": "high",
+     "tag": "RACE CRAFT",
+     "headline": "MOST POSITIONS GAINED",
+     "sub": "Round 18 · United States Grand Prix",
+     "source": "Source: Jolpica / FIA results",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "8",
+       "unit": "places",
+       "note": "",
+       "code": "BOR",
+       "text": "",
+       "team": "Audi"
+      },
+      {
+       "rank": "2",
+       "value": "7",
+       "unit": "places",
+       "note": "",
+       "code": "STR",
+       "text": "",
+       "team": "Aston Martin"
+      },
+      {
+       "rank": "3",
+       "value": "3",
+       "unit": "places",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "4",
+       "value": "2",
+       "unit": "places",
+       "note": "",
+       "code": "LEC",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "4",
+       "value": "2",
+       "unit": "places",
+       "note": "",
+       "code": "LIN",
+       "text": "",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "6",
+       "value": "1",
+       "unit": "places",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "6",
+       "value": "1",
+       "unit": "places",
+       "note": "",
+       "code": "OCO",
+       "text": "",
+       "team": "Haas"
+      }
+     ]
+    },
+    {
+     "id": "overtakes_race",
+     "layout": "bars",
+     "mode": "drivers",
+     "order": "high",
+     "tag": "OVERTAKES",
+     "headline": "MOST OVERTAKES",
+     "sub": "Round 18 · United States Grand Prix",
+     "source": "Source: OpenF1",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "17",
+       "unit": "passes",
+       "note": "",
+       "code": "ALB",
+       "text": "",
+       "team": "Williams"
+      },
+      {
+       "rank": "2",
+       "value": "16",
+       "unit": "passes",
+       "note": "",
+       "code": "BOR",
+       "text": "",
+       "team": "Audi"
+      },
+      {
+       "rank": "3",
+       "value": "14",
+       "unit": "passes",
+       "note": "",
+       "code": "OCO",
+       "text": "",
+       "team": "Haas"
+      },
+      {
+       "rank": "3",
+       "value": "14",
+       "unit": "passes",
+       "note": "",
+       "code": "LIN",
+       "text": "",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "5",
+       "value": "12",
+       "unit": "passes",
+       "note": "",
+       "code": "ALO",
+       "text": "",
+       "team": "Aston Martin"
+      },
+      {
+       "rank": "6",
+       "value": "11",
+       "unit": "passes",
+       "note": "",
+       "code": "SAI",
+       "text": "",
+       "team": "Williams"
+      },
+      {
+       "rank": "6",
+       "value": "11",
+       "unit": "passes",
+       "note": "",
+       "code": "HUL",
+       "text": "",
+       "team": "Audi"
+      },
+      {
+       "rank": "6",
+       "value": "11",
+       "unit": "passes",
+       "note": "",
+       "code": "VER",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "6",
+       "value": "11",
+       "unit": "passes",
+       "note": "",
+       "code": "STR",
+       "text": "",
+       "team": "Aston Martin"
+      },
+      {
+       "rank": "6",
+       "value": "11",
+       "unit": "passes",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      }
+     ]
+    },
+    {
+     "id": "hero_fastest_lap",
+     "layout": "hero",
+     "mode": "drivers",
+     "order": "low",
+     "tag": "FASTEST LAP",
+     "headline": "FASTEST LAP OF THE RACE",
+     "sub": "Round 18 · United States Grand Prix",
+     "source": "Source: F1 live timing via OpenF1",
+     "heroTag": "FASTEST",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "1:37.976",
+       "unit": "",
+       "note": "",
+       "code": "LEC",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "2",
+       "value": "1:38.393",
+       "unit": "",
+       "note": "",
+       "code": "BOR",
+       "text": "",
+       "team": "Audi"
+      },
+      {
+       "rank": "3",
+       "value": "1:38.457",
+       "unit": "",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "4",
+       "value": "1:39.086",
+       "unit": "",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "5",
+       "value": "1:39.231",
+       "unit": "",
+       "note": "",
+       "code": "VER",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "6",
+       "value": "1:39.399",
+       "unit": "",
+       "note": "",
+       "code": "HAD",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "7",
+       "value": "1:39.422",
+       "unit": "",
+       "note": "",
+       "code": "LIN",
+       "text": "",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "8",
+       "value": "1:39.652",
+       "unit": "",
+       "note": "",
+       "code": "LAW",
+       "text": "",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "9",
+       "value": "1:39.811",
+       "unit": "",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "10",
+       "value": "1:39.841",
+       "unit": "",
+       "note": "",
+       "code": "ALO",
+       "text": "",
+       "team": "Aston Martin"
+      }
+     ]
+    },
+    {
+     "id": "hero_top_speed",
+     "layout": "hero",
+     "mode": "drivers",
+     "order": "high",
+     "tag": "SPEED TRAP",
+     "headline": "QUICKEST THROUGH THE TRAP",
+     "sub": "Round 18 · United States Grand Prix",
+     "source": "Source: F1 live timing via OpenF1",
+     "heroTag": "QUICKEST",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "349",
+       "unit": "km/h",
+       "note": "",
+       "code": "ALO",
+       "text": "",
+       "team": "Aston Martin"
+      },
+      {
+       "rank": "1",
+       "value": "349",
+       "unit": "km/h",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "3",
+       "value": "347",
+       "unit": "km/h",
+       "note": "",
+       "code": "COL",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "4",
+       "value": "345",
+       "unit": "km/h",
+       "note": "",
+       "code": "LIN",
+       "text": "",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "5",
+       "value": "344",
+       "unit": "km/h",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "5",
+       "value": "344",
+       "unit": "km/h",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "5",
+       "value": "344",
+       "unit": "km/h",
+       "note": "",
+       "code": "BEA",
+       "text": "",
+       "team": "Haas"
+      },
+      {
+       "rank": "8",
+       "value": "343",
+       "unit": "km/h",
+       "note": "",
+       "code": "STR",
+       "text": "",
+       "team": "Aston Martin"
+      },
+      {
+       "rank": "8",
+       "value": "343",
+       "unit": "km/h",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "10",
+       "value": "342",
+       "unit": "km/h",
+       "note": "",
+       "code": "LEC",
+       "text": "",
+       "team": "Ferrari"
+      }
+     ]
+    },
+    {
+     "id": "hero_longest_stint",
+     "layout": "hero",
+     "mode": "drivers",
+     "order": "high",
+     "tag": "TYRES",
+     "headline": "LONGEST STINT",
+     "sub": "Round 18 · United States Grand Prix",
+     "source": "Source: F1 live timing via OpenF1",
+     "heroTag": "ENDURANCE",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "41",
+       "unit": "laps",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "2",
+       "value": "40",
+       "unit": "laps",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "3",
+       "value": "34",
+       "unit": "laps",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "3",
+       "value": "34",
+       "unit": "laps",
+       "note": "",
+       "code": "OCO",
+       "text": "",
+       "team": "Haas"
+      },
+      {
+       "rank": "5",
+       "value": "32",
+       "unit": "laps",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "5",
+       "value": "32",
+       "unit": "laps",
+       "note": "",
+       "code": "GAS",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "5",
+       "value": "32",
+       "unit": "laps",
+       "note": "",
+       "code": "PER",
+       "text": "",
+       "team": "Cadillac"
+      },
+      {
+       "rank": "8",
+       "value": "31",
+       "unit": "laps",
+       "note": "",
+       "code": "HAD",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "8",
+       "value": "31",
+       "unit": "laps",
+       "note": "",
+       "code": "LAW",
+       "text": "",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "10",
+       "value": "30",
+       "unit": "laps",
+       "note": "",
+       "code": "COL",
+       "text": "",
+       "team": "Alpine"
+      }
+     ]
+    },
+    {
+     "id": "hero_most_gained",
+     "layout": "hero",
+     "mode": "drivers",
+     "order": "high",
+     "tag": "RACE CRAFT",
+     "headline": "BIGGEST CHARGE",
+     "sub": "Round 18 · United States Grand Prix",
+     "source": "Source: Jolpica / FIA results",
+     "heroTag": "CHARGER",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "8",
+       "unit": "places",
+       "note": "",
+       "code": "BOR",
+       "text": "",
+       "team": "Audi"
+      },
+      {
+       "rank": "2",
+       "value": "7",
+       "unit": "places",
+       "note": "",
+       "code": "STR",
+       "text": "",
+       "team": "Aston Martin"
+      },
+      {
+       "rank": "3",
+       "value": "3",
+       "unit": "places",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "4",
+       "value": "2",
+       "unit": "places",
+       "note": "",
+       "code": "LEC",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "4",
+       "value": "2",
+       "unit": "places",
+       "note": "",
+       "code": "LIN",
+       "text": "",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "6",
+       "value": "1",
+       "unit": "places",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "6",
+       "value": "1",
+       "unit": "places",
+       "note": "",
+       "code": "OCO",
+       "text": "",
+       "team": "Haas"
+      }
+     ]
+    },
+    {
+     "id": "hero_weekend_points",
+     "layout": "hero",
+     "mode": "drivers",
+     "order": "high",
+     "tag": "POINTS",
+     "headline": "TOP SCORER THIS WEEKEND",
+     "sub": "Round 18 · United States Grand Prix",
+     "source": "Source: Jolpica / FIA results",
+     "heroTag": "TOP SCORER",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "25",
+       "unit": "pts",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "2",
+       "value": "18",
+       "unit": "pts",
+       "note": "",
+       "code": "LEC",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "3",
+       "value": "15",
+       "unit": "pts",
+       "note": "",
+       "code": "VER",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "4",
+       "value": "12",
+       "unit": "pts",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "5",
+       "value": "10",
+       "unit": "pts",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "6",
+       "value": "8",
+       "unit": "pts",
+       "note": "",
+       "code": "HAD",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "7",
+       "value": "6",
+       "unit": "pts",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "8",
+       "value": "4",
+       "unit": "pts",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "9",
+       "value": "2",
+       "unit": "pts",
+       "note": "",
+       "code": "LAW",
+       "text": "",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "10",
+       "value": "1",
+       "unit": "pts",
+       "note": "",
+       "code": "GAS",
+       "text": "",
+       "team": "Alpine"
+      }
+     ]
+    },
+    {
+     "id": "pit_stops_made",
+     "layout": "columns",
+     "mode": "drivers",
+     "order": "high",
+     "tag": "PIT STOPS",
+     "headline": "PIT STOPS MADE",
+     "sub": "Round 18 · United States Grand Prix",
+     "source": "Source: F1 live timing via OpenF1",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "2",
+       "unit": "stops",
+       "note": "",
+       "code": "LEC",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "1",
+       "value": "2",
+       "unit": "stops",
+       "note": "",
+       "code": "VER",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "1",
+       "value": "2",
+       "unit": "stops",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "1",
+       "value": "2",
+       "unit": "stops",
+       "note": "",
+       "code": "LIN",
+       "text": "",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "1",
+       "value": "2",
+       "unit": "stops",
+       "note": "",
+       "code": "BOR",
+       "text": "",
+       "team": "Audi"
+      },
+      {
+       "rank": "1",
+       "value": "2",
+       "unit": "stops",
+       "note": "",
+       "code": "STR",
+       "text": "",
+       "team": "Aston Martin"
+      },
+      {
+       "rank": "1",
+       "value": "2",
+       "unit": "stops",
+       "note": "",
+       "code": "ALO",
+       "text": "",
+       "team": "Aston Martin"
+      },
+      {
+       "rank": "1",
+       "value": "2",
+       "unit": "stops",
+       "note": "",
+       "code": "ALB",
+       "text": "",
+       "team": "Williams"
+      }
+     ]
+    },
+    {
+     "id": "quali_gap_pole",
+     "layout": "ladder",
+     "mode": "drivers",
+     "order": "low",
+     "tag": "QUALIFYING",
+     "headline": "GAP TO POLE",
+     "sub": "Round 18 · United States Grand Prix",
+     "source": "Source: Jolpica / FIA results",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "0.000",
+       "unit": "s",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "2",
+       "value": "0.163",
+       "unit": "s",
+       "note": "",
+       "code": "LEC",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "3",
+       "value": "0.179",
+       "unit": "s",
+       "note": "",
+       "code": "VER",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "4",
+       "value": "0.215",
+       "unit": "s",
+       "note": "",
+       "code": "HAD",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "5",
+       "value": "0.270",
+       "unit": "s",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "6",
+       "value": "0.276",
+       "unit": "s",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "7",
+       "value": "0.504",
+       "unit": "s",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "8",
+       "value": "0.768",
+       "unit": "s",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "9",
+       "value": "0.915",
+       "unit": "s",
+       "note": "",
+       "code": "LIN",
+       "text": "",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "10",
+       "value": "1.023",
+       "unit": "s",
+       "note": "",
+       "code": "LAW",
+       "text": "",
+       "team": "Racing Bulls"
+      }
+     ]
+    },
+    {
+     "id": "race_gap_winner",
+     "layout": "ladder",
+     "mode": "drivers",
+     "order": "low",
+     "tag": "RACE",
+     "headline": "GAP TO THE WINNER",
+     "sub": "Round 18 · United States Grand Prix",
+     "source": "Source: Jolpica / FIA results",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "0.000",
+       "unit": "s",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "2",
+       "value": "13.078",
+       "unit": "s",
+       "note": "",
+       "code": "LEC",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "3",
+       "value": "17.485",
+       "unit": "s",
+       "note": "",
+       "code": "VER",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "4",
+       "value": "18.515",
+       "unit": "s",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "5",
+       "value": "30.521",
+       "unit": "s",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "6",
+       "value": "34.373",
+       "unit": "s",
+       "note": "",
+       "code": "HAD",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "7",
+       "value": "52.674",
+       "unit": "s",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "8",
+       "value": "54.303",
+       "unit": "s",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "9",
+       "value": "79.183",
+       "unit": "s",
+       "note": "",
+       "code": "LAW",
+       "text": "",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "10",
+       "value": "87.516",
+       "unit": "s",
+       "note": "",
+       "code": "GAS",
+       "text": "",
+       "team": "Alpine"
+      }
+     ]
+    },
+    {
+     "id": "long_run_pace",
+     "layout": "ladder",
+     "mode": "drivers",
+     "order": "low",
+     "tag": "PRACTICE",
+     "headline": "LONG-RUN PACE",
+     "sub": "United States Grand Prix · Friday long runs",
+     "source": "Source: F1 live timing via OpenF1",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "0.000",
+       "unit": "s/lap",
+       "note": "",
+       "code": "LIN",
+       "text": "",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "2",
+       "value": "2.431",
+       "unit": "s/lap",
+       "note": "",
+       "code": "ALB",
+       "text": "",
+       "team": "Williams"
+      },
+      {
+       "rank": "3",
+       "value": "2.980",
+       "unit": "s/lap",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "4",
+       "value": "3.141",
+       "unit": "s/lap",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "5",
+       "value": "3.277",
+       "unit": "s/lap",
+       "note": "",
+       "code": "VER",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "6",
+       "value": "3.279",
+       "unit": "s/lap",
+       "note": "",
+       "code": "LEC",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "7",
+       "value": "3.475",
+       "unit": "s/lap",
+       "note": "",
+       "code": "COL",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "8",
+       "value": "3.532",
+       "unit": "s/lap",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "9",
+       "value": "3.658",
+       "unit": "s/lap",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "10",
+       "value": "3.724",
+       "unit": "s/lap",
+       "note": "",
+       "code": "HAD",
+       "text": "",
+       "team": "Red Bull"
+      }
+     ]
+    },
+    {
+     "id": "ideal_lap_gap",
+     "layout": "ladder",
+     "mode": "drivers",
+     "order": "low",
+     "tag": "QUALIFYING",
+     "headline": "IDEAL LAP GAP",
+     "sub": "Round 18 · United States Grand Prix · best sectors combined",
+     "source": "Source: F1 live timing via OpenF1",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "0.000",
+       "unit": "s",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "2",
+       "value": "0.214",
+       "unit": "s",
+       "note": "",
+       "code": "LEC",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "3",
+       "value": "0.258",
+       "unit": "s",
+       "note": "",
+       "code": "HAD",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "4",
+       "value": "0.296",
+       "unit": "s",
+       "note": "",
+       "code": "VER",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "5",
+       "value": "0.327",
+       "unit": "s",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "6",
+       "value": "0.365",
+       "unit": "s",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "7",
+       "value": "0.367",
+       "unit": "s",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "8",
+       "value": "0.809",
+       "unit": "s",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "9",
+       "value": "1.045",
+       "unit": "s",
+       "note": "",
+       "code": "LIN",
+       "text": "",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "10",
+       "value": "1.052",
+       "unit": "s",
+       "note": "",
+       "code": "LAW",
+       "text": "",
+       "team": "Racing Bulls"
+      }
+     ]
+    },
+    {
+     "id": "compound_usage",
+     "layout": "ring",
+     "mode": "drivers",
+     "order": "high",
+     "tag": "TYRES",
+     "headline": "TYRE USAGE",
+     "sub": "Round 18 · United States Grand Prix",
+     "source": "Source: F1 live timing via OpenF1",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "506",
+       "unit": "laps",
+       "note": "",
+       "code": "text",
+       "text": "Hard",
+       "team": ""
+      },
+      {
+       "rank": "2",
+       "value": "454",
+       "unit": "laps",
+       "note": "",
+       "code": "text",
+       "text": "Soft",
+       "team": ""
+      },
+      {
+       "rank": "3",
+       "value": "203",
+       "unit": "laps",
+       "note": "",
+       "code": "text",
+       "text": "Medium",
+       "team": ""
+      }
+     ]
+    },
+    {
+     "id": "champ_position_shift",
+     "layout": "shift",
+     "mode": "drivers",
+     "order": "low",
+     "tag": "CHAMPIONSHIP",
+     "headline": "CHAMPIONSHIP MOVERS",
+     "sub": "Round 18 · United States Grand Prix",
+     "source": "Source: Jolpica / FIA results",
+     "shiftL": "R17",
+     "shiftR": "R18",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "1",
+       "unit": "",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes",
+       "v2": "1"
+      },
+      {
+       "rank": "2",
+       "value": "2",
+       "unit": "",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes",
+       "v2": "2"
+      },
+      {
+       "rank": "3",
+       "value": "3",
+       "unit": "",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari",
+       "v2": "3"
+      },
+      {
+       "rank": "4",
+       "value": "4",
+       "unit": "",
+       "note": "",
+       "code": "VER",
+       "text": "",
+       "team": "Red Bull",
+       "v2": "4"
+      },
+      {
+       "rank": "5",
+       "value": "5",
+       "unit": "",
+       "note": "",
+       "code": "LEC",
+       "text": "",
+       "team": "Ferrari",
+       "v2": "5"
+      },
+      {
+       "rank": "6",
+       "value": "6",
+       "unit": "",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren",
+       "v2": "6"
+      },
+      {
+       "rank": "7",
+       "value": "7",
+       "unit": "",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren",
+       "v2": "7"
+      },
+      {
+       "rank": "8",
+       "value": "8",
+       "unit": "",
+       "note": "",
+       "code": "HAD",
+       "text": "",
+       "team": "Red Bull",
+       "v2": "8"
+      },
+      {
+       "rank": "9",
+       "value": "9",
+       "unit": "",
+       "note": "",
+       "code": "LAW",
+       "text": "",
+       "team": "Racing Bulls",
+       "v2": "9"
+      },
+      {
+       "rank": "10",
+       "value": "10",
+       "unit": "",
+       "note": "",
+       "code": "GAS",
+       "text": "",
+       "team": "Alpine",
+       "v2": "10"
+      }
+     ]
+    },
+    {
+     "id": "constructors_position_shift",
+     "layout": "shift",
+     "mode": "teams",
+     "order": "low",
+     "tag": "CHAMPIONSHIP",
+     "headline": "CONSTRUCTORS MOVERS",
+     "sub": "Round 18 · United States Grand Prix",
+     "source": "Source: Jolpica / FIA results",
+     "shiftL": "R17",
+     "shiftR": "R18",
+     "teamRows": [
+      {
+       "rank": "1",
+       "value": "1",
+       "unit": "",
+       "note": "",
+       "code": "team",
+       "team": "Mercedes",
+       "v2": "1"
+      },
+      {
+       "rank": "2",
+       "value": "2",
+       "unit": "",
+       "note": "",
+       "code": "team",
+       "team": "Ferrari",
+       "v2": "2"
+      },
+      {
+       "rank": "3",
+       "value": "3",
+       "unit": "",
+       "note": "",
+       "code": "team",
+       "team": "McLaren",
+       "v2": "3"
+      },
+      {
+       "rank": "4",
+       "value": "4",
+       "unit": "",
+       "note": "",
+       "code": "team",
+       "team": "Red Bull",
+       "v2": "4"
+      },
+      {
+       "rank": "5",
+       "value": "5",
+       "unit": "",
+       "note": "",
+       "code": "team",
+       "team": "Racing Bulls",
+       "v2": "5"
+      },
+      {
+       "rank": "6",
+       "value": "6",
+       "unit": "",
+       "note": "",
+       "code": "team",
+       "team": "Alpine",
+       "v2": "6"
+      },
+      {
+       "rank": "7",
+       "value": "7",
+       "unit": "",
+       "note": "",
+       "code": "team",
+       "team": "Haas",
+       "v2": "7"
+      },
+      {
+       "rank": "8",
+       "value": "8",
+       "unit": "",
+       "note": "",
+       "code": "team",
+       "team": "Audi",
+       "v2": "8"
+      },
+      {
+       "rank": "9",
+       "value": "9",
+       "unit": "",
+       "note": "",
+       "code": "team",
+       "team": "Williams",
+       "v2": "9"
+      },
+      {
+       "rank": "10",
+       "value": "10",
+       "unit": "",
+       "note": "",
+       "code": "team",
+       "team": "Aston Martin",
+       "v2": "10"
+      },
+      {
+       "rank": "11",
+       "value": "11",
+       "unit": "",
+       "note": "",
+       "code": "team",
+       "team": "Cadillac",
+       "v2": "11"
+      }
+     ]
+    },
+    {
+     "id": "grid_to_finish",
+     "layout": "shift",
+     "mode": "drivers",
+     "order": "low",
+     "tag": "RACE",
+     "headline": "GRID TO FLAG",
+     "sub": "Round 18 · United States Grand Prix",
+     "source": "Source: Jolpica / FIA results",
+     "shiftL": "GRID",
+     "shiftR": "FINISH",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "1",
+       "unit": "",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes",
+       "v2": "1"
+      },
+      {
+       "rank": "2",
+       "value": "2",
+       "unit": "",
+       "note": "",
+       "code": "LEC",
+       "text": "",
+       "team": "Ferrari",
+       "v2": "4"
+      },
+      {
+       "rank": "3",
+       "value": "3",
+       "unit": "",
+       "note": "",
+       "code": "VER",
+       "text": "",
+       "team": "Red Bull",
+       "v2": "2"
+      },
+      {
+       "rank": "4",
+       "value": "4",
+       "unit": "",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari",
+       "v2": "5"
+      },
+      {
+       "rank": "5",
+       "value": "5",
+       "unit": "",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren",
+       "v2": "8"
+      },
+      {
+       "rank": "6",
+       "value": "6",
+       "unit": "",
+       "note": "",
+       "code": "HAD",
+       "text": "",
+       "team": "Red Bull",
+       "v2": "3"
+      },
+      {
+       "rank": "7",
+       "value": "7",
+       "unit": "",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren",
+       "v2": "7"
+      },
+      {
+       "rank": "8",
+       "value": "8",
+       "unit": "",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes",
+       "v2": "6"
+      },
+      {
+       "rank": "9",
+       "value": "9",
+       "unit": "",
+       "note": "",
+       "code": "LAW",
+       "text": "",
+       "team": "Racing Bulls",
+       "v2": "9"
+      },
+      {
+       "rank": "10",
+       "value": "10",
+       "unit": "",
+       "note": "",
+       "code": "GAS",
+       "text": "",
+       "team": "Alpine",
+       "v2": "10"
+      }
+     ]
+    },
+    {
+     "id": "lap1_movers",
+     "layout": "shift",
+     "mode": "drivers",
+     "order": "low",
+     "tag": "RACE",
+     "headline": "LAP 1 MOVERS",
+     "sub": "Round 18 · United States Grand Prix",
+     "source": "Source: F1 live timing via OpenF1",
+     "shiftL": "GRID",
+     "shiftR": "LAP 1",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "3",
+       "unit": "",
+       "note": "",
+       "code": "LEC",
+       "text": "",
+       "team": "Ferrari",
+       "v2": "4"
+      },
+      {
+       "rank": "2",
+       "value": "5",
+       "unit": "",
+       "note": "",
+       "code": "HAD",
+       "text": "",
+       "team": "Red Bull",
+       "v2": "3"
+      },
+      {
+       "rank": "3",
+       "value": "11",
+       "unit": "",
+       "note": "",
+       "code": "BEA",
+       "text": "",
+       "team": "Haas",
+       "v2": "13"
+      },
+      {
+       "rank": "4",
+       "value": "12",
+       "unit": "",
+       "note": "",
+       "code": "OCO",
+       "text": "",
+       "team": "Haas",
+       "v2": "15"
+      },
+      {
+       "rank": "5",
+       "value": "13",
+       "unit": "",
+       "note": "",
+       "code": "LIN",
+       "text": "",
+       "team": "Racing Bulls",
+       "v2": "14"
+      },
+      {
+       "rank": "6",
+       "value": "14",
+       "unit": "",
+       "note": "",
+       "code": "ALB",
+       "text": "",
+       "team": "Williams",
+       "v2": "17"
+      },
+      {
+       "rank": "7",
+       "value": "16",
+       "unit": "",
+       "note": "",
+       "code": "HUL",
+       "text": "",
+       "team": "Audi",
+       "v2": "11"
+      },
+      {
+       "rank": "8",
+       "value": "17",
+       "unit": "",
+       "note": "",
+       "code": "ALO",
+       "text": "",
+       "team": "Aston Martin",
+       "v2": "12"
+      },
+      {
+       "rank": "9",
+       "value": "20",
+       "unit": "",
+       "note": "",
+       "code": "BOR",
+       "text": "",
+       "team": "Audi",
+       "v2": "21"
+      },
+      {
+       "rank": "10",
+       "value": "21",
+       "unit": "",
+       "note": "",
+       "code": "BOT",
+       "text": "",
+       "team": "Cadillac",
+       "v2": "19"
+      }
+     ]
+    },
+    {
+     "id": "full_throttle",
+     "layout": "gauge",
+     "mode": "drivers",
+     "order": "high",
+     "tag": "QUALIFYING",
+     "headline": "FULL THROTTLE",
+     "sub": "Round 18 · United States Grand Prix · best qualifying lap",
+     "source": "Source: F1 live timing via OpenF1",
+     "gaugeMax": "100",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "60",
+       "unit": "%",
+       "note": "",
+       "code": "LEC",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "2",
+       "value": "56",
+       "unit": "%",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "3",
+       "value": "56",
+       "unit": "%",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "4",
+       "value": "55",
+       "unit": "%",
+       "note": "",
+       "code": "VER",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "5",
+       "value": "55",
+       "unit": "%",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "6",
+       "value": "55",
+       "unit": "%",
+       "note": "",
+       "code": "LIN",
+       "text": "",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "7",
+       "value": "54",
+       "unit": "%",
+       "note": "",
+       "code": "HAD",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "8",
+       "value": "53",
+       "unit": "%",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "9",
+       "value": "51",
+       "unit": "%",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren"
+      }
+     ]
+    },
+    {
+     "id": "top_speed_gauge",
+     "layout": "gauge",
+     "mode": "drivers",
+     "order": "high",
+     "tag": "SPEED TRAP",
+     "headline": "TOP SPEED",
+     "sub": "Round 18 · United States Grand Prix",
+     "source": "Source: F1 live timing via OpenF1",
+     "gaugeMax": "349",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "349",
+       "unit": "km/h",
+       "note": "",
+       "code": "ALO",
+       "text": "",
+       "team": "Aston Martin"
+      },
+      {
+       "rank": "1",
+       "value": "349",
+       "unit": "km/h",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "3",
+       "value": "347",
+       "unit": "km/h",
+       "note": "",
+       "code": "COL",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "4",
+       "value": "345",
+       "unit": "km/h",
+       "note": "",
+       "code": "LIN",
+       "text": "",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "5",
+       "value": "344",
+       "unit": "km/h",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "5",
+       "value": "344",
+       "unit": "km/h",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "5",
+       "value": "344",
+       "unit": "km/h",
+       "note": "",
+       "code": "BEA",
+       "text": "",
+       "team": "Haas"
+      },
+      {
+       "rank": "8",
+       "value": "343",
+       "unit": "km/h",
+       "note": "",
+       "code": "STR",
+       "text": "",
+       "team": "Aston Martin"
+      },
+      {
+       "rank": "8",
+       "value": "343",
+       "unit": "km/h",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari"
+      }
+     ]
+    },
+    {
+     "id": "laps_led_race",
+     "layout": "laps",
+     "mode": "drivers",
+     "order": "high",
+     "tag": "LAPS LED",
+     "headline": "LAPS LED",
+     "sub": "Round 18 · United States Grand Prix · 56 laps",
+     "source": "Source: F1 live timing via OpenF1",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "49",
+       "unit": "laps",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "2",
+       "value": "7",
+       "unit": "laps",
+       "note": "",
+       "code": "VER",
+       "text": "",
+       "team": "Red Bull"
+      }
+     ]
+    },
+    {
+     "id": "longest_stint_rings",
+     "layout": "laps",
+     "mode": "drivers",
+     "order": "high",
+     "tag": "TYRES",
+     "headline": "LONGEST STINT",
+     "sub": "Round 18 · United States Grand Prix · 56 laps",
+     "source": "Source: F1 live timing via OpenF1",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "41",
+       "unit": "laps",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "2",
+       "value": "40",
+       "unit": "laps",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "3",
+       "value": "34",
+       "unit": "laps",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "3",
+       "value": "34",
+       "unit": "laps",
+       "note": "",
+       "code": "OCO",
+       "text": "",
+       "team": "Haas"
+      },
+      {
+       "rank": "5",
+       "value": "32",
+       "unit": "laps",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "5",
+       "value": "32",
+       "unit": "laps",
+       "note": "",
+       "code": "GAS",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "5",
+       "value": "32",
+       "unit": "laps",
+       "note": "",
+       "code": "PER",
+       "text": "",
+       "team": "Cadillac"
+      },
+      {
+       "rank": "8",
+       "value": "31",
+       "unit": "laps",
+       "note": "",
+       "code": "HAD",
+       "text": "",
+       "team": "Red Bull"
+      }
+     ]
+    },
+    {
+     "id": "laps_top3",
+     "layout": "laps",
+     "mode": "drivers",
+     "order": "high",
+     "tag": "RACE",
+     "headline": "LAPS IN THE TOP 3",
+     "sub": "Round 18 · United States Grand Prix · 56 laps",
+     "source": "Source: F1 live timing via OpenF1",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "55",
+       "unit": "laps",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "2",
+       "value": "44",
+       "unit": "laps",
+       "note": "",
+       "code": "VER",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "3",
+       "value": "40",
+       "unit": "laps",
+       "note": "",
+       "code": "LEC",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "4",
+       "value": "11",
+       "unit": "laps",
+       "note": "",
+       "code": "HAD",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "5",
+       "value": "8",
+       "unit": "laps",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "5",
+       "value": "8",
+       "unit": "laps",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "7",
+       "value": "2",
+       "unit": "laps",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes"
+      }
+     ]
+    },
+    {
+     "id": "laps_in_points",
+     "layout": "laps",
+     "mode": "drivers",
+     "order": "high",
+     "tag": "RACE",
+     "headline": "LAPS IN THE POINTS",
+     "sub": "Round 18 · United States Grand Prix · 56 laps",
+     "source": "Source: F1 live timing via OpenF1",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "56",
+       "unit": "laps",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "1",
+       "value": "56",
+       "unit": "laps",
+       "note": "",
+       "code": "VER",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "1",
+       "value": "56",
+       "unit": "laps",
+       "note": "",
+       "code": "HAD",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "1",
+       "value": "56",
+       "unit": "laps",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "1",
+       "value": "56",
+       "unit": "laps",
+       "note": "",
+       "code": "LEC",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "1",
+       "value": "56",
+       "unit": "laps",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "1",
+       "value": "56",
+       "unit": "laps",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "8",
+       "value": "54",
        "unit": "laps",
        "note": "",
        "code": "PIA",
