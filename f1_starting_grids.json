@@ -1,10 +1,1569 @@
 {
   "header": "2026 F1 starting grids",
-  "generatedAtUtc": "2026-10-25T21:32:58.216Z",
+  "generatedAtUtc": "2026-10-25T21:43:02.183Z",
   "season": 2026,
-  "upcoming": null,
-  "latest": null,
-  "grids": [],
+  "upcoming": {
+    "gridType": "race",
+    "provisional": false,
+    "round": 16,
+    "meetingKey": 1297,
+    "meetingName": "United States Grand Prix",
+    "raceName": "United States Grand Prix",
+    "circuit": "Austin",
+    "location": {
+      "locality": "Austin",
+      "country": "United States"
+    },
+    "qualifyingSessionKey": 11392,
+    "qualifyingSessionName": "Qualifying",
+    "qualifyingDateStartUtc": "2026-10-24T21:00:00+00:00",
+    "raceSessionKey": 11396,
+    "raceDateStartUtc": "2026-10-25T20:00:00+00:00",
+    "raceCompleted": false,
+    "grid": [
+      {
+        "position": 1,
+        "positionLabel": "P1",
+        "driverNumber": 12,
+        "driverName": "Kimi ANTONELLI",
+        "nameAcronym": "ANT",
+        "teamName": "Mercedes",
+        "teamColour": "#00D7B6",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/K/ANDANT01_Kimi_Antonelli/andant01.png.transform/1col/image.png",
+        "qualifyingLapTime": 94.035,
+        "qualifyingPosition": 1,
+        "placesVsQualifying": 0,
+        "penalty": {
+          "places": 3,
+          "backOfGrid": false,
+          "pitLane": false,
+          "reason": "yellow flag infringement",
+          "source": "fia",
+          "documents": [
+            {
+              "title": "Infringement - Car 12 - Yellow flag infringement",
+              "url": "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_infringement_-_car_12_-_yellow_flag_infringement.pdf",
+              "decision": "Drop of 3 grid positions for the next Sprint/Race in which the driver participates. 1 penalty point (total of 4 for the 12 month period)."
+            }
+          ]
+        },
+        "note": "3 place grid penalty for yellow flag infringement"
+      },
+      {
+        "position": 2,
+        "positionLabel": "P2",
+        "driverNumber": 3,
+        "driverName": "Max VERSTAPPEN",
+        "nameAcronym": "VER",
+        "teamName": "Red Bull Racing",
+        "teamColour": "#4781D7",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/M/MAXVER01_Max_Verstappen/maxver01.png.transform/1col/image.png",
+        "qualifyingLapTime": 94.214,
+        "qualifyingPosition": 2,
+        "placesVsQualifying": 0,
+        "penalty": null,
+        "note": null
+      },
+      {
+        "position": 3,
+        "positionLabel": "P3",
+        "driverNumber": 6,
+        "driverName": "Isack HADJAR",
+        "nameAcronym": "HAD",
+        "teamName": "Red Bull Racing",
+        "teamColour": "#4781D7",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/I/ISAHAD01_Isack_Hadjar/isahad01.png.transform/1col/image.png",
+        "qualifyingLapTime": 94.25,
+        "qualifyingPosition": 3,
+        "placesVsQualifying": 0,
+        "penalty": {
+          "places": 30,
+          "backOfGrid": false,
+          "pitLane": true,
+          "reason": "new power unit elements",
+          "source": "fia",
+          "documents": [
+            {
+              "title": "Infringement - Car 6 - PU Elements changed under Parc Ferme",
+              "url": "https://www.fia.com/system/files/decision-document/2026_miami_grand_prix_-_infringement_-_car_6_-_pu_elements_changed_under_parc_ferme.pdf",
+              "decision": "Required to start the Race from the pit lane."
+            },
+            {
+              "title": "Corrected Infringement - Car 6 - Changes to PU elements",
+              "url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_corrected_infringement_-_car_6_-_changes_to_pu_elements.pdf",
+              "decision": "Drop of 30 grid positions for the next Race in which the driver participates. (Subject to Car 6 being classified in the results of qualifying, Car 6 will be allocated a grid position in the race in accordance with Article B2.5.4b.iv of the FIA F1 Regulations)"
+            }
+          ]
+        },
+        "note": "Starts from the pit lane for new power unit elements"
+      },
+      {
+        "position": 4,
+        "positionLabel": "P4",
+        "driverNumber": 16,
+        "driverName": "Charles LECLERC",
+        "nameAcronym": "LEC",
+        "teamName": "Ferrari",
+        "teamColour": "#ED1131",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/C/CHALEC01_Charles_Leclerc/chalec01.png.transform/1col/image.png",
+        "qualifyingLapTime": 94.267,
+        "qualifyingPosition": 4,
+        "placesVsQualifying": 0,
+        "penalty": null,
+        "note": null
+      },
+      {
+        "position": 5,
+        "positionLabel": "P5",
+        "driverNumber": 44,
+        "driverName": "Lewis HAMILTON",
+        "nameAcronym": "HAM",
+        "teamName": "Ferrari",
+        "teamColour": "#ED1131",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LEWHAM01_Lewis_Hamilton/lewham01.png.transform/1col/image.png",
+        "qualifyingLapTime": 94.311,
+        "qualifyingPosition": 5,
+        "placesVsQualifying": 0,
+        "penalty": null,
+        "note": null
+      },
+      {
+        "position": 6,
+        "positionLabel": "P6",
+        "driverNumber": 63,
+        "driverName": "George RUSSELL",
+        "nameAcronym": "RUS",
+        "teamName": "Mercedes",
+        "teamColour": "#00D7B6",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/G/GEORUS01_George_Russell/georus01.png.transform/1col/image.png",
+        "qualifyingLapTime": 94.476,
+        "qualifyingPosition": 6,
+        "placesVsQualifying": 0,
+        "penalty": null,
+        "note": null
+      },
+      {
+        "position": 7,
+        "positionLabel": "P7",
+        "driverNumber": 81,
+        "driverName": "Oscar PIASTRI",
+        "nameAcronym": "PIA",
+        "teamName": "McLaren",
+        "teamColour": "#F47600",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/O/OSCPIA01_Oscar_Piastri/oscpia01.png.transform/1col/image.png",
+        "qualifyingLapTime": 94.803,
+        "qualifyingPosition": 7,
+        "placesVsQualifying": 0,
+        "penalty": null,
+        "note": null
+      },
+      {
+        "position": 8,
+        "positionLabel": "P8",
+        "driverNumber": 1,
+        "driverName": "Lando NORRIS",
+        "nameAcronym": "NOR",
+        "teamName": "McLaren",
+        "teamColour": "#F47600",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LANNOR01_Lando_Norris/lannor01.png.transform/1col/image.png",
+        "qualifyingLapTime": 95.049,
+        "qualifyingPosition": 8,
+        "placesVsQualifying": 0,
+        "penalty": {
+          "places": 10,
+          "backOfGrid": false,
+          "pitLane": false,
+          "reason": "new power unit elements",
+          "source": "fia",
+          "documents": [
+            {
+              "title": "Infringement - Car 1 - Change to PU element",
+              "url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_car_1_-_change_to_pu_element.pdf",
+              "decision": "Drop of 10 grid positions for the next Race in which the driver participates."
+            }
+          ]
+        },
+        "note": "10 place grid penalty for new power unit elements"
+      },
+      {
+        "position": 9,
+        "positionLabel": "P9",
+        "driverNumber": 30,
+        "driverName": "Liam LAWSON",
+        "nameAcronym": "LAW",
+        "teamName": "Racing Bulls",
+        "teamColour": "#6C98FF",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LIALAW01_Liam_Lawson/lialaw01.png.transform/1col/image.png",
+        "qualifyingLapTime": 95.058,
+        "qualifyingPosition": 10,
+        "placesVsQualifying": -1,
+        "penalty": null,
+        "note": null
+      },
+      {
+        "position": 10,
+        "positionLabel": "P10",
+        "driverNumber": 10,
+        "driverName": "Pierre GASLY",
+        "nameAcronym": "GAS",
+        "teamName": "Alpine",
+        "teamColour": "#00A1E8",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/P/PIEGAS01_Pierre_Gasly/piegas01.png.transform/1col/image.png",
+        "qualifyingLapTime": 95.08,
+        "qualifyingPosition": 11,
+        "placesVsQualifying": -1,
+        "penalty": {
+          "places": 3,
+          "backOfGrid": false,
+          "pitLane": false,
+          "reason": "impeding",
+          "source": "fia",
+          "documents": [
+            {
+              "title": "Infringement - Car 10 - Impeding of Car 18",
+              "url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_10_-_impeding_of_car_18.pdf",
+              "decision": "Drop of 3 grid positions for the next Race in which the driver participates."
+            }
+          ]
+        },
+        "note": "3 place grid penalty for impeding"
+      },
+      {
+        "position": 11,
+        "positionLabel": "P11",
+        "driverNumber": 27,
+        "driverName": "Nico HULKENBERG",
+        "nameAcronym": "HUL",
+        "teamName": "Audi",
+        "teamColour": "#F50537",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/N/NICHUL01_Nico_Hulkenberg/nichul01.png.transform/1col/image.png",
+        "qualifyingLapTime": 95.158,
+        "qualifyingPosition": 12,
+        "placesVsQualifying": -1,
+        "penalty": null,
+        "note": null
+      },
+      {
+        "position": 12,
+        "positionLabel": "P12",
+        "driverNumber": 14,
+        "driverName": "Fernando ALONSO",
+        "nameAcronym": "ALO",
+        "teamName": "Aston Martin",
+        "teamColour": "#229971",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/F/FERALO01_Fernando_Alonso/feralo01.png.transform/1col/image.png",
+        "qualifyingLapTime": 95.818,
+        "qualifyingPosition": 15,
+        "placesVsQualifying": -3,
+        "penalty": {
+          "places": 20,
+          "backOfGrid": false,
+          "pitLane": true,
+          "reason": "new power unit elements",
+          "source": "fia",
+          "documents": [
+            {
+              "title": "Infringement - Car 14 - PU elements and changes used during Parc Ferme",
+              "url": "https://www.fia.com/system/files/decision-document/2026_barcelona-catalunya_grand_prix_-_infringement_-_car_14_-_pu_elements_and_changes_used_during_parc_ferme.pdf",
+              "decision": "Required to start the Race from the pit lane."
+            },
+            {
+              "title": "Corrected Infringement - Car 14 - Change to PU elements",
+              "url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_corrected_infringement_-_car_14_-_change_to_pu_elements.pdf",
+              "decision": "Drop of 20 grid positions for the next Race in which the driver participates. (Subject to Car 14 being classified in the results of qualifying, Car 14 will be allocated a grid position in the race in accordance with Article B2.5.4b.iv of the FIA F1 Regulations)"
+            }
+          ]
+        },
+        "note": "Starts from the pit lane for new power unit elements"
+      },
+      {
+        "position": 13,
+        "positionLabel": "P13",
+        "driverNumber": 87,
+        "driverName": "Oliver BEARMAN",
+        "nameAcronym": "BEA",
+        "teamName": "Haas F1 Team",
+        "teamColour": "#9C9FA2",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/O/OLIBEA01_Oliver_Bearman/olibea01.png.transform/1col/image.png",
+        "qualifyingLapTime": 96.031,
+        "qualifyingPosition": 16,
+        "placesVsQualifying": -3,
+        "penalty": null,
+        "note": null
+      },
+      {
+        "position": 14,
+        "positionLabel": "P14",
+        "driverNumber": 41,
+        "driverName": "Arvid LINDBLAD",
+        "nameAcronym": "LIN",
+        "teamName": "Racing Bulls",
+        "teamColour": "#6C98FF",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/A/ARVLIN01_Arvid_Lindblad/arvlin01.png.transform/1col/image.png",
+        "qualifyingLapTime": 96.049,
+        "qualifyingPosition": 9,
+        "placesVsQualifying": 5,
+        "penalty": null,
+        "note": null
+      },
+      {
+        "position": 15,
+        "positionLabel": "P15",
+        "driverNumber": 31,
+        "driverName": "Esteban OCON",
+        "nameAcronym": "OCO",
+        "teamName": "Haas F1 Team",
+        "teamColour": "#9C9FA2",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/E/ESTOCO01_Esteban_Ocon/estoco01.png.transform/1col/image.png",
+        "qualifyingLapTime": 96.531,
+        "qualifyingPosition": 17,
+        "placesVsQualifying": -2,
+        "penalty": null,
+        "note": null
+      },
+      {
+        "position": 16,
+        "positionLabel": "P16",
+        "driverNumber": 18,
+        "driverName": "Lance STROLL",
+        "nameAcronym": "STR",
+        "teamName": "Aston Martin",
+        "teamColour": "#229971",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LANSTR01_Lance_Stroll/lanstr01.png.transform/1col/image.png",
+        "qualifyingLapTime": 96.677,
+        "qualifyingPosition": 18,
+        "placesVsQualifying": -2,
+        "penalty": {
+          "places": 20,
+          "backOfGrid": false,
+          "pitLane": true,
+          "reason": "new power unit elements",
+          "source": "fia",
+          "documents": [
+            {
+              "title": "Infringement - Car 18 - PU Elements changed under Parc Ferme",
+              "url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_car_18_-_pu_elements_changed_under_parc_ferme.pdf",
+              "decision": "Required to start the Race from the pit lane."
+            },
+            {
+              "title": "Infringement - Car 18 - PU Elements changed",
+              "url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_pu_elements_changed.pdf",
+              "decision": "Drop of 10 grid positions for the next Race in which the driver participates."
+            },
+            {
+              "title": "Infringement - Car 18 - Change to PU element",
+              "url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_car_18_-_change_to_pu_element.pdf",
+              "decision": "Drop of 10 grid positions for the next Race in which the driver participates."
+            }
+          ]
+        },
+        "note": "Starts from the pit lane for new power unit elements"
+      },
+      {
+        "position": 17,
+        "positionLabel": "P17",
+        "driverNumber": 55,
+        "driverName": "Carlos SAINZ",
+        "nameAcronym": "SAI",
+        "teamName": "Williams",
+        "teamColour": "#1868DB",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/C/CARSAI01_Carlos_Sainz/carsai01.png.transform/1col/image.png",
+        "qualifyingLapTime": 96.77,
+        "qualifyingPosition": 19,
+        "placesVsQualifying": -2,
+        "penalty": {
+          "places": 10,
+          "backOfGrid": false,
+          "pitLane": false,
+          "reason": "new power unit elements",
+          "source": "fia",
+          "documents": [
+            {
+              "title": "Infringement - Car 55 - Change to PU elements",
+              "url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_car_55_-_change_to_pu_elements.pdf",
+              "decision": "Drop of 10 grid positions for the next Race in which the driver participates."
+            }
+          ]
+        },
+        "note": "10 place grid penalty for new power unit elements"
+      },
+      {
+        "position": 18,
+        "positionLabel": "P18",
+        "driverNumber": 23,
+        "driverName": "Alexander ALBON",
+        "nameAcronym": "ALB",
+        "teamName": "Williams",
+        "teamColour": "#1868DB",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/A/ALEALB01_Alexander_Albon/alealb01.png.transform/1col/image.png",
+        "qualifyingLapTime": 96.967,
+        "qualifyingPosition": 20,
+        "placesVsQualifying": -2,
+        "penalty": {
+          "places": null,
+          "backOfGrid": false,
+          "pitLane": true,
+          "reason": "parc fermé changes",
+          "source": "fia",
+          "documents": [
+            {
+              "title": "Infringement - Car 23 - Changes made during Parc Ferme",
+              "url": "https://www.fia.com/system/files/decision-document/2026_chinese_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme_0.pdf",
+              "decision": "Required to start the Race from the pit lane under Article B3.5.7b of the FIA F1 Regulations."
+            }
+          ]
+        },
+        "note": "Starts from the pit lane for parc fermé changes"
+      },
+      {
+        "position": 19,
+        "positionLabel": "P19",
+        "driverNumber": 11,
+        "driverName": "Sergio PEREZ",
+        "nameAcronym": "PER",
+        "teamName": "Cadillac",
+        "teamColour": "#909090",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/S/SERPER01_Sergio_Perez/serper01.png.transform/1col/image.png",
+        "qualifyingLapTime": 97.433,
+        "qualifyingPosition": 21,
+        "placesVsQualifying": -2,
+        "penalty": {
+          "places": null,
+          "backOfGrid": false,
+          "pitLane": true,
+          "reason": "parc fermé changes",
+          "source": "fia",
+          "documents": [
+            {
+              "title": "Infringement - Car 11 - Changes made under Parc Ferme",
+              "url": "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_infringement_-_car_11_-_changes_made_under_parc_ferme.pdf",
+              "decision": "Required to start the Race from the pit lane."
+            }
+          ]
+        },
+        "note": "Starts from the pit lane for parc fermé changes"
+      },
+      {
+        "position": 20,
+        "positionLabel": "P20",
+        "driverNumber": 77,
+        "driverName": "Valtteri BOTTAS",
+        "nameAcronym": "BOT",
+        "teamName": "Cadillac",
+        "teamColour": "#909090",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/V/VALBOT01_Valtteri_Bottas/valbot01.png.transform/1col/image.png",
+        "qualifyingLapTime": 97.523,
+        "qualifyingPosition": 22,
+        "placesVsQualifying": -2,
+        "penalty": null,
+        "note": null
+      },
+      {
+        "position": 21,
+        "positionLabel": "P21",
+        "driverNumber": 43,
+        "driverName": "Franco COLAPINTO",
+        "nameAcronym": "COL",
+        "teamName": "Alpine",
+        "teamColour": "#00A1E8",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/F/FRACOL01_Franco_Colapinto/fracol01.png.transform/1col/image.png",
+        "qualifyingLapTime": 95.722,
+        "qualifyingPosition": 14,
+        "placesVsQualifying": 7,
+        "penalty": {
+          "places": 10,
+          "backOfGrid": false,
+          "pitLane": false,
+          "reason": "new power unit elements",
+          "source": "fia",
+          "documents": [
+            {
+              "title": "Infringement - Car 43 - PU Element",
+              "url": "https://www.fia.com/system/files/decision-document/2026_united_states_grand_prix_-_infringement_-_car_43_-_pu_element.pdf",
+              "decision": "Drop of 10 grid positions for the next Race in which the driver participates."
+            }
+          ]
+        },
+        "note": "10 place grid penalty for new power unit elements"
+      },
+      {
+        "position": 22,
+        "positionLabel": "P22",
+        "driverNumber": 5,
+        "driverName": "Gabriel BORTOLETO",
+        "nameAcronym": "BOR",
+        "teamName": "Audi",
+        "teamColour": "#F50537",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/G/GABBOR01_Gabriel_Bortoleto/gabbor01.png.transform/1col/image.png",
+        "qualifyingLapTime": 95.691,
+        "qualifyingPosition": 13,
+        "placesVsQualifying": 9,
+        "penalty": {
+          "places": 80,
+          "backOfGrid": false,
+          "pitLane": false,
+          "reason": "new power unit elements",
+          "source": "fia",
+          "documents": [
+            {
+              "title": "Infringement - Car 5 - PU Elements",
+              "url": "https://www.fia.com/system/files/decision-document/2026_united_states_grand_prix_-_infringement_-_car_5_-_pu_elements.pdf",
+              "decision": "Drop of 20 grid positions for the next Race in which the driver participates."
+            },
+            {
+              "title": "Infringement - Car 5 - Additional changes to PU elements",
+              "url": "https://www.fia.com/system/files/decision-document/2026_united_states_grand_prix_-_infringement_-_car_5_-_additional_changes_to_pu_elements.pdf",
+              "decision": "Drop of 60 grid positions for the next Race in which the driver participates."
+            }
+          ]
+        },
+        "note": "80 place grid penalty for new power unit elements"
+      }
+    ],
+    "gridPenaltiesChecked": true
+  },
+  "latest": {
+    "gridType": "race",
+    "provisional": false,
+    "round": 16,
+    "meetingKey": 1297,
+    "meetingName": "United States Grand Prix",
+    "raceName": "United States Grand Prix",
+    "circuit": "Austin",
+    "location": {
+      "locality": "Austin",
+      "country": "United States"
+    },
+    "qualifyingSessionKey": 11392,
+    "qualifyingSessionName": "Qualifying",
+    "qualifyingDateStartUtc": "2026-10-24T21:00:00+00:00",
+    "raceSessionKey": 11396,
+    "raceDateStartUtc": "2026-10-25T20:00:00+00:00",
+    "raceCompleted": false,
+    "grid": [
+      {
+        "position": 1,
+        "positionLabel": "P1",
+        "driverNumber": 12,
+        "driverName": "Kimi ANTONELLI",
+        "nameAcronym": "ANT",
+        "teamName": "Mercedes",
+        "teamColour": "#00D7B6",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/K/ANDANT01_Kimi_Antonelli/andant01.png.transform/1col/image.png",
+        "qualifyingLapTime": 94.035,
+        "qualifyingPosition": 1,
+        "placesVsQualifying": 0,
+        "penalty": {
+          "places": 3,
+          "backOfGrid": false,
+          "pitLane": false,
+          "reason": "yellow flag infringement",
+          "source": "fia",
+          "documents": [
+            {
+              "title": "Infringement - Car 12 - Yellow flag infringement",
+              "url": "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_infringement_-_car_12_-_yellow_flag_infringement.pdf",
+              "decision": "Drop of 3 grid positions for the next Sprint/Race in which the driver participates. 1 penalty point (total of 4 for the 12 month period)."
+            }
+          ]
+        },
+        "note": "3 place grid penalty for yellow flag infringement"
+      },
+      {
+        "position": 2,
+        "positionLabel": "P2",
+        "driverNumber": 3,
+        "driverName": "Max VERSTAPPEN",
+        "nameAcronym": "VER",
+        "teamName": "Red Bull Racing",
+        "teamColour": "#4781D7",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/M/MAXVER01_Max_Verstappen/maxver01.png.transform/1col/image.png",
+        "qualifyingLapTime": 94.214,
+        "qualifyingPosition": 2,
+        "placesVsQualifying": 0,
+        "penalty": null,
+        "note": null
+      },
+      {
+        "position": 3,
+        "positionLabel": "P3",
+        "driverNumber": 6,
+        "driverName": "Isack HADJAR",
+        "nameAcronym": "HAD",
+        "teamName": "Red Bull Racing",
+        "teamColour": "#4781D7",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/I/ISAHAD01_Isack_Hadjar/isahad01.png.transform/1col/image.png",
+        "qualifyingLapTime": 94.25,
+        "qualifyingPosition": 3,
+        "placesVsQualifying": 0,
+        "penalty": {
+          "places": 30,
+          "backOfGrid": false,
+          "pitLane": true,
+          "reason": "new power unit elements",
+          "source": "fia",
+          "documents": [
+            {
+              "title": "Infringement - Car 6 - PU Elements changed under Parc Ferme",
+              "url": "https://www.fia.com/system/files/decision-document/2026_miami_grand_prix_-_infringement_-_car_6_-_pu_elements_changed_under_parc_ferme.pdf",
+              "decision": "Required to start the Race from the pit lane."
+            },
+            {
+              "title": "Corrected Infringement - Car 6 - Changes to PU elements",
+              "url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_corrected_infringement_-_car_6_-_changes_to_pu_elements.pdf",
+              "decision": "Drop of 30 grid positions for the next Race in which the driver participates. (Subject to Car 6 being classified in the results of qualifying, Car 6 will be allocated a grid position in the race in accordance with Article B2.5.4b.iv of the FIA F1 Regulations)"
+            }
+          ]
+        },
+        "note": "Starts from the pit lane for new power unit elements"
+      },
+      {
+        "position": 4,
+        "positionLabel": "P4",
+        "driverNumber": 16,
+        "driverName": "Charles LECLERC",
+        "nameAcronym": "LEC",
+        "teamName": "Ferrari",
+        "teamColour": "#ED1131",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/C/CHALEC01_Charles_Leclerc/chalec01.png.transform/1col/image.png",
+        "qualifyingLapTime": 94.267,
+        "qualifyingPosition": 4,
+        "placesVsQualifying": 0,
+        "penalty": null,
+        "note": null
+      },
+      {
+        "position": 5,
+        "positionLabel": "P5",
+        "driverNumber": 44,
+        "driverName": "Lewis HAMILTON",
+        "nameAcronym": "HAM",
+        "teamName": "Ferrari",
+        "teamColour": "#ED1131",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LEWHAM01_Lewis_Hamilton/lewham01.png.transform/1col/image.png",
+        "qualifyingLapTime": 94.311,
+        "qualifyingPosition": 5,
+        "placesVsQualifying": 0,
+        "penalty": null,
+        "note": null
+      },
+      {
+        "position": 6,
+        "positionLabel": "P6",
+        "driverNumber": 63,
+        "driverName": "George RUSSELL",
+        "nameAcronym": "RUS",
+        "teamName": "Mercedes",
+        "teamColour": "#00D7B6",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/G/GEORUS01_George_Russell/georus01.png.transform/1col/image.png",
+        "qualifyingLapTime": 94.476,
+        "qualifyingPosition": 6,
+        "placesVsQualifying": 0,
+        "penalty": null,
+        "note": null
+      },
+      {
+        "position": 7,
+        "positionLabel": "P7",
+        "driverNumber": 81,
+        "driverName": "Oscar PIASTRI",
+        "nameAcronym": "PIA",
+        "teamName": "McLaren",
+        "teamColour": "#F47600",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/O/OSCPIA01_Oscar_Piastri/oscpia01.png.transform/1col/image.png",
+        "qualifyingLapTime": 94.803,
+        "qualifyingPosition": 7,
+        "placesVsQualifying": 0,
+        "penalty": null,
+        "note": null
+      },
+      {
+        "position": 8,
+        "positionLabel": "P8",
+        "driverNumber": 1,
+        "driverName": "Lando NORRIS",
+        "nameAcronym": "NOR",
+        "teamName": "McLaren",
+        "teamColour": "#F47600",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LANNOR01_Lando_Norris/lannor01.png.transform/1col/image.png",
+        "qualifyingLapTime": 95.049,
+        "qualifyingPosition": 8,
+        "placesVsQualifying": 0,
+        "penalty": {
+          "places": 10,
+          "backOfGrid": false,
+          "pitLane": false,
+          "reason": "new power unit elements",
+          "source": "fia",
+          "documents": [
+            {
+              "title": "Infringement - Car 1 - Change to PU element",
+              "url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_car_1_-_change_to_pu_element.pdf",
+              "decision": "Drop of 10 grid positions for the next Race in which the driver participates."
+            }
+          ]
+        },
+        "note": "10 place grid penalty for new power unit elements"
+      },
+      {
+        "position": 9,
+        "positionLabel": "P9",
+        "driverNumber": 30,
+        "driverName": "Liam LAWSON",
+        "nameAcronym": "LAW",
+        "teamName": "Racing Bulls",
+        "teamColour": "#6C98FF",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LIALAW01_Liam_Lawson/lialaw01.png.transform/1col/image.png",
+        "qualifyingLapTime": 95.058,
+        "qualifyingPosition": 10,
+        "placesVsQualifying": -1,
+        "penalty": null,
+        "note": null
+      },
+      {
+        "position": 10,
+        "positionLabel": "P10",
+        "driverNumber": 10,
+        "driverName": "Pierre GASLY",
+        "nameAcronym": "GAS",
+        "teamName": "Alpine",
+        "teamColour": "#00A1E8",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/P/PIEGAS01_Pierre_Gasly/piegas01.png.transform/1col/image.png",
+        "qualifyingLapTime": 95.08,
+        "qualifyingPosition": 11,
+        "placesVsQualifying": -1,
+        "penalty": {
+          "places": 3,
+          "backOfGrid": false,
+          "pitLane": false,
+          "reason": "impeding",
+          "source": "fia",
+          "documents": [
+            {
+              "title": "Infringement - Car 10 - Impeding of Car 18",
+              "url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_10_-_impeding_of_car_18.pdf",
+              "decision": "Drop of 3 grid positions for the next Race in which the driver participates."
+            }
+          ]
+        },
+        "note": "3 place grid penalty for impeding"
+      },
+      {
+        "position": 11,
+        "positionLabel": "P11",
+        "driverNumber": 27,
+        "driverName": "Nico HULKENBERG",
+        "nameAcronym": "HUL",
+        "teamName": "Audi",
+        "teamColour": "#F50537",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/N/NICHUL01_Nico_Hulkenberg/nichul01.png.transform/1col/image.png",
+        "qualifyingLapTime": 95.158,
+        "qualifyingPosition": 12,
+        "placesVsQualifying": -1,
+        "penalty": null,
+        "note": null
+      },
+      {
+        "position": 12,
+        "positionLabel": "P12",
+        "driverNumber": 14,
+        "driverName": "Fernando ALONSO",
+        "nameAcronym": "ALO",
+        "teamName": "Aston Martin",
+        "teamColour": "#229971",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/F/FERALO01_Fernando_Alonso/feralo01.png.transform/1col/image.png",
+        "qualifyingLapTime": 95.818,
+        "qualifyingPosition": 15,
+        "placesVsQualifying": -3,
+        "penalty": {
+          "places": 20,
+          "backOfGrid": false,
+          "pitLane": true,
+          "reason": "new power unit elements",
+          "source": "fia",
+          "documents": [
+            {
+              "title": "Infringement - Car 14 - PU elements and changes used during Parc Ferme",
+              "url": "https://www.fia.com/system/files/decision-document/2026_barcelona-catalunya_grand_prix_-_infringement_-_car_14_-_pu_elements_and_changes_used_during_parc_ferme.pdf",
+              "decision": "Required to start the Race from the pit lane."
+            },
+            {
+              "title": "Corrected Infringement - Car 14 - Change to PU elements",
+              "url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_corrected_infringement_-_car_14_-_change_to_pu_elements.pdf",
+              "decision": "Drop of 20 grid positions for the next Race in which the driver participates. (Subject to Car 14 being classified in the results of qualifying, Car 14 will be allocated a grid position in the race in accordance with Article B2.5.4b.iv of the FIA F1 Regulations)"
+            }
+          ]
+        },
+        "note": "Starts from the pit lane for new power unit elements"
+      },
+      {
+        "position": 13,
+        "positionLabel": "P13",
+        "driverNumber": 87,
+        "driverName": "Oliver BEARMAN",
+        "nameAcronym": "BEA",
+        "teamName": "Haas F1 Team",
+        "teamColour": "#9C9FA2",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/O/OLIBEA01_Oliver_Bearman/olibea01.png.transform/1col/image.png",
+        "qualifyingLapTime": 96.031,
+        "qualifyingPosition": 16,
+        "placesVsQualifying": -3,
+        "penalty": null,
+        "note": null
+      },
+      {
+        "position": 14,
+        "positionLabel": "P14",
+        "driverNumber": 41,
+        "driverName": "Arvid LINDBLAD",
+        "nameAcronym": "LIN",
+        "teamName": "Racing Bulls",
+        "teamColour": "#6C98FF",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/A/ARVLIN01_Arvid_Lindblad/arvlin01.png.transform/1col/image.png",
+        "qualifyingLapTime": 96.049,
+        "qualifyingPosition": 9,
+        "placesVsQualifying": 5,
+        "penalty": null,
+        "note": null
+      },
+      {
+        "position": 15,
+        "positionLabel": "P15",
+        "driverNumber": 31,
+        "driverName": "Esteban OCON",
+        "nameAcronym": "OCO",
+        "teamName": "Haas F1 Team",
+        "teamColour": "#9C9FA2",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/E/ESTOCO01_Esteban_Ocon/estoco01.png.transform/1col/image.png",
+        "qualifyingLapTime": 96.531,
+        "qualifyingPosition": 17,
+        "placesVsQualifying": -2,
+        "penalty": null,
+        "note": null
+      },
+      {
+        "position": 16,
+        "positionLabel": "P16",
+        "driverNumber": 18,
+        "driverName": "Lance STROLL",
+        "nameAcronym": "STR",
+        "teamName": "Aston Martin",
+        "teamColour": "#229971",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LANSTR01_Lance_Stroll/lanstr01.png.transform/1col/image.png",
+        "qualifyingLapTime": 96.677,
+        "qualifyingPosition": 18,
+        "placesVsQualifying": -2,
+        "penalty": {
+          "places": 20,
+          "backOfGrid": false,
+          "pitLane": true,
+          "reason": "new power unit elements",
+          "source": "fia",
+          "documents": [
+            {
+              "title": "Infringement - Car 18 - PU Elements changed under Parc Ferme",
+              "url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_car_18_-_pu_elements_changed_under_parc_ferme.pdf",
+              "decision": "Required to start the Race from the pit lane."
+            },
+            {
+              "title": "Infringement - Car 18 - PU Elements changed",
+              "url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_pu_elements_changed.pdf",
+              "decision": "Drop of 10 grid positions for the next Race in which the driver participates."
+            },
+            {
+              "title": "Infringement - Car 18 - Change to PU element",
+              "url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_car_18_-_change_to_pu_element.pdf",
+              "decision": "Drop of 10 grid positions for the next Race in which the driver participates."
+            }
+          ]
+        },
+        "note": "Starts from the pit lane for new power unit elements"
+      },
+      {
+        "position": 17,
+        "positionLabel": "P17",
+        "driverNumber": 55,
+        "driverName": "Carlos SAINZ",
+        "nameAcronym": "SAI",
+        "teamName": "Williams",
+        "teamColour": "#1868DB",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/C/CARSAI01_Carlos_Sainz/carsai01.png.transform/1col/image.png",
+        "qualifyingLapTime": 96.77,
+        "qualifyingPosition": 19,
+        "placesVsQualifying": -2,
+        "penalty": {
+          "places": 10,
+          "backOfGrid": false,
+          "pitLane": false,
+          "reason": "new power unit elements",
+          "source": "fia",
+          "documents": [
+            {
+              "title": "Infringement - Car 55 - Change to PU elements",
+              "url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_car_55_-_change_to_pu_elements.pdf",
+              "decision": "Drop of 10 grid positions for the next Race in which the driver participates."
+            }
+          ]
+        },
+        "note": "10 place grid penalty for new power unit elements"
+      },
+      {
+        "position": 18,
+        "positionLabel": "P18",
+        "driverNumber": 23,
+        "driverName": "Alexander ALBON",
+        "nameAcronym": "ALB",
+        "teamName": "Williams",
+        "teamColour": "#1868DB",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/A/ALEALB01_Alexander_Albon/alealb01.png.transform/1col/image.png",
+        "qualifyingLapTime": 96.967,
+        "qualifyingPosition": 20,
+        "placesVsQualifying": -2,
+        "penalty": {
+          "places": null,
+          "backOfGrid": false,
+          "pitLane": true,
+          "reason": "parc fermé changes",
+          "source": "fia",
+          "documents": [
+            {
+              "title": "Infringement - Car 23 - Changes made during Parc Ferme",
+              "url": "https://www.fia.com/system/files/decision-document/2026_chinese_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme_0.pdf",
+              "decision": "Required to start the Race from the pit lane under Article B3.5.7b of the FIA F1 Regulations."
+            }
+          ]
+        },
+        "note": "Starts from the pit lane for parc fermé changes"
+      },
+      {
+        "position": 19,
+        "positionLabel": "P19",
+        "driverNumber": 11,
+        "driverName": "Sergio PEREZ",
+        "nameAcronym": "PER",
+        "teamName": "Cadillac",
+        "teamColour": "#909090",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/S/SERPER01_Sergio_Perez/serper01.png.transform/1col/image.png",
+        "qualifyingLapTime": 97.433,
+        "qualifyingPosition": 21,
+        "placesVsQualifying": -2,
+        "penalty": {
+          "places": null,
+          "backOfGrid": false,
+          "pitLane": true,
+          "reason": "parc fermé changes",
+          "source": "fia",
+          "documents": [
+            {
+              "title": "Infringement - Car 11 - Changes made under Parc Ferme",
+              "url": "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_infringement_-_car_11_-_changes_made_under_parc_ferme.pdf",
+              "decision": "Required to start the Race from the pit lane."
+            }
+          ]
+        },
+        "note": "Starts from the pit lane for parc fermé changes"
+      },
+      {
+        "position": 20,
+        "positionLabel": "P20",
+        "driverNumber": 77,
+        "driverName": "Valtteri BOTTAS",
+        "nameAcronym": "BOT",
+        "teamName": "Cadillac",
+        "teamColour": "#909090",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/V/VALBOT01_Valtteri_Bottas/valbot01.png.transform/1col/image.png",
+        "qualifyingLapTime": 97.523,
+        "qualifyingPosition": 22,
+        "placesVsQualifying": -2,
+        "penalty": null,
+        "note": null
+      },
+      {
+        "position": 21,
+        "positionLabel": "P21",
+        "driverNumber": 43,
+        "driverName": "Franco COLAPINTO",
+        "nameAcronym": "COL",
+        "teamName": "Alpine",
+        "teamColour": "#00A1E8",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/F/FRACOL01_Franco_Colapinto/fracol01.png.transform/1col/image.png",
+        "qualifyingLapTime": 95.722,
+        "qualifyingPosition": 14,
+        "placesVsQualifying": 7,
+        "penalty": {
+          "places": 10,
+          "backOfGrid": false,
+          "pitLane": false,
+          "reason": "new power unit elements",
+          "source": "fia",
+          "documents": [
+            {
+              "title": "Infringement - Car 43 - PU Element",
+              "url": "https://www.fia.com/system/files/decision-document/2026_united_states_grand_prix_-_infringement_-_car_43_-_pu_element.pdf",
+              "decision": "Drop of 10 grid positions for the next Race in which the driver participates."
+            }
+          ]
+        },
+        "note": "10 place grid penalty for new power unit elements"
+      },
+      {
+        "position": 22,
+        "positionLabel": "P22",
+        "driverNumber": 5,
+        "driverName": "Gabriel BORTOLETO",
+        "nameAcronym": "BOR",
+        "teamName": "Audi",
+        "teamColour": "#F50537",
+        "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/G/GABBOR01_Gabriel_Bortoleto/gabbor01.png.transform/1col/image.png",
+        "qualifyingLapTime": 95.691,
+        "qualifyingPosition": 13,
+        "placesVsQualifying": 9,
+        "penalty": {
+          "places": 80,
+          "backOfGrid": false,
+          "pitLane": false,
+          "reason": "new power unit elements",
+          "source": "fia",
+          "documents": [
+            {
+              "title": "Infringement - Car 5 - PU Elements",
+              "url": "https://www.fia.com/system/files/decision-document/2026_united_states_grand_prix_-_infringement_-_car_5_-_pu_elements.pdf",
+              "decision": "Drop of 20 grid positions for the next Race in which the driver participates."
+            },
+            {
+              "title": "Infringement - Car 5 - Additional changes to PU elements",
+              "url": "https://www.fia.com/system/files/decision-document/2026_united_states_grand_prix_-_infringement_-_car_5_-_additional_changes_to_pu_elements.pdf",
+              "decision": "Drop of 60 grid positions for the next Race in which the driver participates."
+            }
+          ]
+        },
+        "note": "80 place grid penalty for new power unit elements"
+      }
+    ],
+    "gridPenaltiesChecked": true
+  },
+  "grids": [
+    {
+      "gridType": "race",
+      "provisional": false,
+      "round": 16,
+      "meetingKey": 1297,
+      "meetingName": "United States Grand Prix",
+      "raceName": "United States Grand Prix",
+      "circuit": "Austin",
+      "location": {
+        "locality": "Austin",
+        "country": "United States"
+      },
+      "qualifyingSessionKey": 11392,
+      "qualifyingSessionName": "Qualifying",
+      "qualifyingDateStartUtc": "2026-10-24T21:00:00+00:00",
+      "raceSessionKey": 11396,
+      "raceDateStartUtc": "2026-10-25T20:00:00+00:00",
+      "raceCompleted": false,
+      "grid": [
+        {
+          "position": 1,
+          "positionLabel": "P1",
+          "driverNumber": 12,
+          "driverName": "Kimi ANTONELLI",
+          "nameAcronym": "ANT",
+          "teamName": "Mercedes",
+          "teamColour": "#00D7B6",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/K/ANDANT01_Kimi_Antonelli/andant01.png.transform/1col/image.png",
+          "qualifyingLapTime": 94.035,
+          "qualifyingPosition": 1,
+          "placesVsQualifying": 0,
+          "penalty": {
+            "places": 3,
+            "backOfGrid": false,
+            "pitLane": false,
+            "reason": "yellow flag infringement",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 12 - Yellow flag infringement",
+                "url": "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_infringement_-_car_12_-_yellow_flag_infringement.pdf",
+                "decision": "Drop of 3 grid positions for the next Sprint/Race in which the driver participates. 1 penalty point (total of 4 for the 12 month period)."
+              }
+            ]
+          },
+          "note": "3 place grid penalty for yellow flag infringement"
+        },
+        {
+          "position": 2,
+          "positionLabel": "P2",
+          "driverNumber": 3,
+          "driverName": "Max VERSTAPPEN",
+          "nameAcronym": "VER",
+          "teamName": "Red Bull Racing",
+          "teamColour": "#4781D7",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/M/MAXVER01_Max_Verstappen/maxver01.png.transform/1col/image.png",
+          "qualifyingLapTime": 94.214,
+          "qualifyingPosition": 2,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 3,
+          "positionLabel": "P3",
+          "driverNumber": 6,
+          "driverName": "Isack HADJAR",
+          "nameAcronym": "HAD",
+          "teamName": "Red Bull Racing",
+          "teamColour": "#4781D7",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/I/ISAHAD01_Isack_Hadjar/isahad01.png.transform/1col/image.png",
+          "qualifyingLapTime": 94.25,
+          "qualifyingPosition": 3,
+          "placesVsQualifying": 0,
+          "penalty": {
+            "places": 30,
+            "backOfGrid": false,
+            "pitLane": true,
+            "reason": "new power unit elements",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 6 - PU Elements changed under Parc Ferme",
+                "url": "https://www.fia.com/system/files/decision-document/2026_miami_grand_prix_-_infringement_-_car_6_-_pu_elements_changed_under_parc_ferme.pdf",
+                "decision": "Required to start the Race from the pit lane."
+              },
+              {
+                "title": "Corrected Infringement - Car 6 - Changes to PU elements",
+                "url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_corrected_infringement_-_car_6_-_changes_to_pu_elements.pdf",
+                "decision": "Drop of 30 grid positions for the next Race in which the driver participates. (Subject to Car 6 being classified in the results of qualifying, Car 6 will be allocated a grid position in the race in accordance with Article B2.5.4b.iv of the FIA F1 Regulations)"
+              }
+            ]
+          },
+          "note": "Starts from the pit lane for new power unit elements"
+        },
+        {
+          "position": 4,
+          "positionLabel": "P4",
+          "driverNumber": 16,
+          "driverName": "Charles LECLERC",
+          "nameAcronym": "LEC",
+          "teamName": "Ferrari",
+          "teamColour": "#ED1131",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/C/CHALEC01_Charles_Leclerc/chalec01.png.transform/1col/image.png",
+          "qualifyingLapTime": 94.267,
+          "qualifyingPosition": 4,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 5,
+          "positionLabel": "P5",
+          "driverNumber": 44,
+          "driverName": "Lewis HAMILTON",
+          "nameAcronym": "HAM",
+          "teamName": "Ferrari",
+          "teamColour": "#ED1131",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LEWHAM01_Lewis_Hamilton/lewham01.png.transform/1col/image.png",
+          "qualifyingLapTime": 94.311,
+          "qualifyingPosition": 5,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 6,
+          "positionLabel": "P6",
+          "driverNumber": 63,
+          "driverName": "George RUSSELL",
+          "nameAcronym": "RUS",
+          "teamName": "Mercedes",
+          "teamColour": "#00D7B6",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/G/GEORUS01_George_Russell/georus01.png.transform/1col/image.png",
+          "qualifyingLapTime": 94.476,
+          "qualifyingPosition": 6,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 7,
+          "positionLabel": "P7",
+          "driverNumber": 81,
+          "driverName": "Oscar PIASTRI",
+          "nameAcronym": "PIA",
+          "teamName": "McLaren",
+          "teamColour": "#F47600",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/O/OSCPIA01_Oscar_Piastri/oscpia01.png.transform/1col/image.png",
+          "qualifyingLapTime": 94.803,
+          "qualifyingPosition": 7,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 8,
+          "positionLabel": "P8",
+          "driverNumber": 1,
+          "driverName": "Lando NORRIS",
+          "nameAcronym": "NOR",
+          "teamName": "McLaren",
+          "teamColour": "#F47600",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LANNOR01_Lando_Norris/lannor01.png.transform/1col/image.png",
+          "qualifyingLapTime": 95.049,
+          "qualifyingPosition": 8,
+          "placesVsQualifying": 0,
+          "penalty": {
+            "places": 10,
+            "backOfGrid": false,
+            "pitLane": false,
+            "reason": "new power unit elements",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 1 - Change to PU element",
+                "url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_car_1_-_change_to_pu_element.pdf",
+                "decision": "Drop of 10 grid positions for the next Race in which the driver participates."
+              }
+            ]
+          },
+          "note": "10 place grid penalty for new power unit elements"
+        },
+        {
+          "position": 9,
+          "positionLabel": "P9",
+          "driverNumber": 30,
+          "driverName": "Liam LAWSON",
+          "nameAcronym": "LAW",
+          "teamName": "Racing Bulls",
+          "teamColour": "#6C98FF",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LIALAW01_Liam_Lawson/lialaw01.png.transform/1col/image.png",
+          "qualifyingLapTime": 95.058,
+          "qualifyingPosition": 10,
+          "placesVsQualifying": -1,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 10,
+          "positionLabel": "P10",
+          "driverNumber": 10,
+          "driverName": "Pierre GASLY",
+          "nameAcronym": "GAS",
+          "teamName": "Alpine",
+          "teamColour": "#00A1E8",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/P/PIEGAS01_Pierre_Gasly/piegas01.png.transform/1col/image.png",
+          "qualifyingLapTime": 95.08,
+          "qualifyingPosition": 11,
+          "placesVsQualifying": -1,
+          "penalty": {
+            "places": 3,
+            "backOfGrid": false,
+            "pitLane": false,
+            "reason": "impeding",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 10 - Impeding of Car 18",
+                "url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_10_-_impeding_of_car_18.pdf",
+                "decision": "Drop of 3 grid positions for the next Race in which the driver participates."
+              }
+            ]
+          },
+          "note": "3 place grid penalty for impeding"
+        },
+        {
+          "position": 11,
+          "positionLabel": "P11",
+          "driverNumber": 27,
+          "driverName": "Nico HULKENBERG",
+          "nameAcronym": "HUL",
+          "teamName": "Audi",
+          "teamColour": "#F50537",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/N/NICHUL01_Nico_Hulkenberg/nichul01.png.transform/1col/image.png",
+          "qualifyingLapTime": 95.158,
+          "qualifyingPosition": 12,
+          "placesVsQualifying": -1,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 12,
+          "positionLabel": "P12",
+          "driverNumber": 14,
+          "driverName": "Fernando ALONSO",
+          "nameAcronym": "ALO",
+          "teamName": "Aston Martin",
+          "teamColour": "#229971",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/F/FERALO01_Fernando_Alonso/feralo01.png.transform/1col/image.png",
+          "qualifyingLapTime": 95.818,
+          "qualifyingPosition": 15,
+          "placesVsQualifying": -3,
+          "penalty": {
+            "places": 20,
+            "backOfGrid": false,
+            "pitLane": true,
+            "reason": "new power unit elements",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 14 - PU elements and changes used during Parc Ferme",
+                "url": "https://www.fia.com/system/files/decision-document/2026_barcelona-catalunya_grand_prix_-_infringement_-_car_14_-_pu_elements_and_changes_used_during_parc_ferme.pdf",
+                "decision": "Required to start the Race from the pit lane."
+              },
+              {
+                "title": "Corrected Infringement - Car 14 - Change to PU elements",
+                "url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_corrected_infringement_-_car_14_-_change_to_pu_elements.pdf",
+                "decision": "Drop of 20 grid positions for the next Race in which the driver participates. (Subject to Car 14 being classified in the results of qualifying, Car 14 will be allocated a grid position in the race in accordance with Article B2.5.4b.iv of the FIA F1 Regulations)"
+              }
+            ]
+          },
+          "note": "Starts from the pit lane for new power unit elements"
+        },
+        {
+          "position": 13,
+          "positionLabel": "P13",
+          "driverNumber": 87,
+          "driverName": "Oliver BEARMAN",
+          "nameAcronym": "BEA",
+          "teamName": "Haas F1 Team",
+          "teamColour": "#9C9FA2",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/O/OLIBEA01_Oliver_Bearman/olibea01.png.transform/1col/image.png",
+          "qualifyingLapTime": 96.031,
+          "qualifyingPosition": 16,
+          "placesVsQualifying": -3,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 14,
+          "positionLabel": "P14",
+          "driverNumber": 41,
+          "driverName": "Arvid LINDBLAD",
+          "nameAcronym": "LIN",
+          "teamName": "Racing Bulls",
+          "teamColour": "#6C98FF",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/A/ARVLIN01_Arvid_Lindblad/arvlin01.png.transform/1col/image.png",
+          "qualifyingLapTime": 96.049,
+          "qualifyingPosition": 9,
+          "placesVsQualifying": 5,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 15,
+          "positionLabel": "P15",
+          "driverNumber": 31,
+          "driverName": "Esteban OCON",
+          "nameAcronym": "OCO",
+          "teamName": "Haas F1 Team",
+          "teamColour": "#9C9FA2",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/E/ESTOCO01_Esteban_Ocon/estoco01.png.transform/1col/image.png",
+          "qualifyingLapTime": 96.531,
+          "qualifyingPosition": 17,
+          "placesVsQualifying": -2,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 16,
+          "positionLabel": "P16",
+          "driverNumber": 18,
+          "driverName": "Lance STROLL",
+          "nameAcronym": "STR",
+          "teamName": "Aston Martin",
+          "teamColour": "#229971",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LANSTR01_Lance_Stroll/lanstr01.png.transform/1col/image.png",
+          "qualifyingLapTime": 96.677,
+          "qualifyingPosition": 18,
+          "placesVsQualifying": -2,
+          "penalty": {
+            "places": 20,
+            "backOfGrid": false,
+            "pitLane": true,
+            "reason": "new power unit elements",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 18 - PU Elements changed under Parc Ferme",
+                "url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_car_18_-_pu_elements_changed_under_parc_ferme.pdf",
+                "decision": "Required to start the Race from the pit lane."
+              },
+              {
+                "title": "Infringement - Car 18 - PU Elements changed",
+                "url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_pu_elements_changed.pdf",
+                "decision": "Drop of 10 grid positions for the next Race in which the driver participates."
+              },
+              {
+                "title": "Infringement - Car 18 - Change to PU element",
+                "url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_car_18_-_change_to_pu_element.pdf",
+                "decision": "Drop of 10 grid positions for the next Race in which the driver participates."
+              }
+            ]
+          },
+          "note": "Starts from the pit lane for new power unit elements"
+        },
+        {
+          "position": 17,
+          "positionLabel": "P17",
+          "driverNumber": 55,
+          "driverName": "Carlos SAINZ",
+          "nameAcronym": "SAI",
+          "teamName": "Williams",
+          "teamColour": "#1868DB",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/C/CARSAI01_Carlos_Sainz/carsai01.png.transform/1col/image.png",
+          "qualifyingLapTime": 96.77,
+          "qualifyingPosition": 19,
+          "placesVsQualifying": -2,
+          "penalty": {
+            "places": 10,
+            "backOfGrid": false,
+            "pitLane": false,
+            "reason": "new power unit elements",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 55 - Change to PU elements",
+                "url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_car_55_-_change_to_pu_elements.pdf",
+                "decision": "Drop of 10 grid positions for the next Race in which the driver participates."
+              }
+            ]
+          },
+          "note": "10 place grid penalty for new power unit elements"
+        },
+        {
+          "position": 18,
+          "positionLabel": "P18",
+          "driverNumber": 23,
+          "driverName": "Alexander ALBON",
+          "nameAcronym": "ALB",
+          "teamName": "Williams",
+          "teamColour": "#1868DB",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/A/ALEALB01_Alexander_Albon/alealb01.png.transform/1col/image.png",
+          "qualifyingLapTime": 96.967,
+          "qualifyingPosition": 20,
+          "placesVsQualifying": -2,
+          "penalty": {
+            "places": null,
+            "backOfGrid": false,
+            "pitLane": true,
+            "reason": "parc fermé changes",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 23 - Changes made during Parc Ferme",
+                "url": "https://www.fia.com/system/files/decision-document/2026_chinese_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme_0.pdf",
+                "decision": "Required to start the Race from the pit lane under Article B3.5.7b of the FIA F1 Regulations."
+              }
+            ]
+          },
+          "note": "Starts from the pit lane for parc fermé changes"
+        },
+        {
+          "position": 19,
+          "positionLabel": "P19",
+          "driverNumber": 11,
+          "driverName": "Sergio PEREZ",
+          "nameAcronym": "PER",
+          "teamName": "Cadillac",
+          "teamColour": "#909090",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/S/SERPER01_Sergio_Perez/serper01.png.transform/1col/image.png",
+          "qualifyingLapTime": 97.433,
+          "qualifyingPosition": 21,
+          "placesVsQualifying": -2,
+          "penalty": {
+            "places": null,
+            "backOfGrid": false,
+            "pitLane": true,
+            "reason": "parc fermé changes",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 11 - Changes made under Parc Ferme",
+                "url": "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_infringement_-_car_11_-_changes_made_under_parc_ferme.pdf",
+                "decision": "Required to start the Race from the pit lane."
+              }
+            ]
+          },
+          "note": "Starts from the pit lane for parc fermé changes"
+        },
+        {
+          "position": 20,
+          "positionLabel": "P20",
+          "driverNumber": 77,
+          "driverName": "Valtteri BOTTAS",
+          "nameAcronym": "BOT",
+          "teamName": "Cadillac",
+          "teamColour": "#909090",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/V/VALBOT01_Valtteri_Bottas/valbot01.png.transform/1col/image.png",
+          "qualifyingLapTime": 97.523,
+          "qualifyingPosition": 22,
+          "placesVsQualifying": -2,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 21,
+          "positionLabel": "P21",
+          "driverNumber": 43,
+          "driverName": "Franco COLAPINTO",
+          "nameAcronym": "COL",
+          "teamName": "Alpine",
+          "teamColour": "#00A1E8",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/F/FRACOL01_Franco_Colapinto/fracol01.png.transform/1col/image.png",
+          "qualifyingLapTime": 95.722,
+          "qualifyingPosition": 14,
+          "placesVsQualifying": 7,
+          "penalty": {
+            "places": 10,
+            "backOfGrid": false,
+            "pitLane": false,
+            "reason": "new power unit elements",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 43 - PU Element",
+                "url": "https://www.fia.com/system/files/decision-document/2026_united_states_grand_prix_-_infringement_-_car_43_-_pu_element.pdf",
+                "decision": "Drop of 10 grid positions for the next Race in which the driver participates."
+              }
+            ]
+          },
+          "note": "10 place grid penalty for new power unit elements"
+        },
+        {
+          "position": 22,
+          "positionLabel": "P22",
+          "driverNumber": 5,
+          "driverName": "Gabriel BORTOLETO",
+          "nameAcronym": "BOR",
+          "teamName": "Audi",
+          "teamColour": "#F50537",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/G/GABBOR01_Gabriel_Bortoleto/gabbor01.png.transform/1col/image.png",
+          "qualifyingLapTime": 95.691,
+          "qualifyingPosition": 13,
+          "placesVsQualifying": 9,
+          "penalty": {
+            "places": 80,
+            "backOfGrid": false,
+            "pitLane": false,
+            "reason": "new power unit elements",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 5 - PU Elements",
+                "url": "https://www.fia.com/system/files/decision-document/2026_united_states_grand_prix_-_infringement_-_car_5_-_pu_elements.pdf",
+                "decision": "Drop of 20 grid positions for the next Race in which the driver participates."
+              },
+              {
+                "title": "Infringement - Car 5 - Additional changes to PU elements",
+                "url": "https://www.fia.com/system/files/decision-document/2026_united_states_grand_prix_-_infringement_-_car_5_-_additional_changes_to_pu_elements.pdf",
+                "decision": "Drop of 60 grid positions for the next Race in which the driver participates."
+              }
+            ]
+          },
+          "note": "80 place grid penalty for new power unit elements"
+        }
+      ],
+      "gridPenaltiesChecked": true
+    }
+  ],
   "penaltyDocs": {
     "https://www.fia.com/system/files/decision-document/2026_united_states_grand_prix_-_infringement_-_car_5_-_impeding_of_car_44.pdf": {
       "none": true,
