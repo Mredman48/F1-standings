@@ -2,7 +2,7 @@
   "header": "F1 championship outlook",
   "season": 2026,
   "previousSeason": 2025,
-  "lastUpdated": "2026-10-25T22:02:37.691Z",
+  "lastUpdated": "2026-10-25T22:12:45.199Z",
   "mode": "race-weekend",
   "sources": {
     "driverStandings": "public-repo/f1_driver_standings.json",
@@ -11,48 +11,30 @@
     "previousYearWinners": "https://api.jolpi.ca/ergast/f1/2025/results/1.json"
   },
   "latest": {
-    "id": "round-17-singaporegrandprix-2026-10-09",
+    "id": "round-18-unitedstatesgrandprix-2026-10-25",
     "sourceRace": {
-      "raceName": "Singapore Grand Prix",
-      "meetingName": "Singapore Grand Prix",
-      "round": 17,
-      "date": "2026-10-09",
-      "dateStartUtc": "2026-10-09T12:30:00+00:00",
-      "meetingKey": 1296,
+      "raceName": "United States Grand Prix",
+      "meetingName": "United States Grand Prix",
+      "round": 18,
+      "date": "2026-10-25",
+      "dateStartUtc": "2026-10-25T20:00:00+00:00",
+      "meetingKey": 1297,
       "previousYearWinner": {
         "season": 2025,
-        "round": 18,
-        "raceName": "Singapore Grand Prix",
-        "date": "2025-10-05",
-        "winner": "George Russell",
-        "constructor": "Mercedes",
+        "round": 19,
+        "raceName": "United States Grand Prix",
+        "date": "2025-10-19",
+        "winner": "Max Verstappen",
+        "constructor": "Red Bull",
         "source": "jolpica"
       },
       "sessionsIncluded": [
         {
-          "eventType": "sprint_shootout",
-          "sessionName": "Sprint Qualifying",
-          "sessionKey": 11379,
-          "date": "2026-10-09",
-          "dateStartUtc": "2026-10-09T12:30:00+00:00",
-          "isRace": false,
-          "isSprint": true
-        },
-        {
-          "eventType": "sprint",
-          "sessionName": "Sprint",
-          "sessionKey": 11383,
-          "date": "2026-10-10",
-          "dateStartUtc": "2026-10-10T09:00:00+00:00",
-          "isRace": false,
-          "isSprint": true
-        },
-        {
           "eventType": "race",
           "sessionName": "Race",
-          "sessionKey": 11388,
-          "date": "2026-10-11",
-          "dateStartUtc": "2026-10-11T12:00:00+00:00",
+          "sessionKey": 11396,
+          "date": "2026-10-25",
+          "dateStartUtc": "2026-10-25T20:00:00+00:00",
           "isRace": true,
           "isSprint": false
         }
@@ -60,59 +42,62 @@
     },
     "previousYearWinner": {
       "season": 2025,
-      "round": 18,
-      "raceName": "Singapore Grand Prix",
-      "date": "2025-10-05",
-      "winner": "George Russell",
-      "constructor": "Mercedes",
+      "round": 19,
+      "raceName": "United States Grand Prix",
+      "date": "2025-10-19",
+      "winner": "Max Verstappen",
+      "constructor": "Red Bull",
       "source": "jolpica"
     },
     "preWeekendNotes": {
-      "winStreak": null,
+      "winStreak": {
+        "driverName": "VERSTAPPEN",
+        "count": 2
+      },
       "podiumStreak": {
         "driverName": "VERSTAPPEN",
-        "count": 4
+        "count": 5
       },
       "leaderRecentForm": {
         "driverName": "ANTONELLI",
         "positions": [
-          1,
           5,
-          2
+          2,
+          3
         ],
-        "label": "P1 P5 P2 in last 3 races"
+        "label": "P5 P2 P3 in last 3 races"
       },
-      "defenderNote": "George Russell won here in 2025 (Mercedes)"
+      "defenderNote": "Max Verstappen won here in 2025 (Red Bull)"
     },
     "drivers": {
       "leader": "ANTONELLI",
       "second": "RUSSELL",
-      "gap": 102,
-      "standingsText": "ANTONELLI leads by 102 pts over RUSSELL",
-      "raceImpact": "ANTONELLI extended lead by 13 pts over RUSSELL",
-      "scenarioText": "ANTONELLI extended lead by 13 pts over RUSSELL",
+      "gap": 123,
+      "standingsText": "ANTONELLI leads by 123 pts over RUSSELL",
+      "raceImpact": "ANTONELLI extended lead by 21 pts over RUSSELL",
+      "scenarioText": "ANTONELLI extended lead by 21 pts over RUSSELL",
       "p1Changed": false,
-      "leaderWeekendPoints": 22,
-      "secondWeekendPoints": 9,
-      "weekendDelta": 13,
-      "leaderRacePoints": 22,
-      "secondRacePoints": 9,
-      "raceDelta": 13
+      "leaderWeekendPoints": 25,
+      "secondWeekendPoints": 4,
+      "weekendDelta": 21,
+      "leaderRacePoints": 25,
+      "secondRacePoints": 4,
+      "raceDelta": 21
     },
     "constructors": {
       "leader": "Mercedes",
       "second": "Ferrari",
-      "gap": 134,
-      "standingsText": "Mercedes leads by 134 pts over Ferrari",
-      "raceImpact": "Ferrari cut Mercedes's constructors' lead by 17 pts",
-      "scenarioText": "Ferrari cut Mercedes's constructors' lead by 17 pts",
+      "gap": 133,
+      "standingsText": "Mercedes leads by 133 pts over Ferrari",
+      "raceImpact": "Ferrari cut Mercedes's constructors' lead by 1 pts",
+      "scenarioText": "Ferrari cut Mercedes's constructors' lead by 1 pts",
       "p1Changed": false,
-      "leaderWeekendPoints": 31,
-      "secondWeekendPoints": 48,
-      "weekendDelta": -17,
-      "leaderRacePoints": 31,
-      "secondRacePoints": 48,
-      "raceDelta": -17
+      "leaderWeekendPoints": 29,
+      "secondWeekendPoints": 30,
+      "weekendDelta": -1,
+      "leaderRacePoints": 29,
+      "secondRacePoints": 30,
+      "raceDelta": -1
     }
   },
   "races": [
@@ -1674,6 +1659,96 @@
         "leaderRacePoints": 31,
         "secondRacePoints": 48,
         "raceDelta": -17
+      }
+    },
+    {
+      "id": "round-18-unitedstatesgrandprix-2026-10-25",
+      "sourceRace": {
+        "raceName": "United States Grand Prix",
+        "meetingName": "United States Grand Prix",
+        "round": 18,
+        "date": "2026-10-25",
+        "dateStartUtc": "2026-10-25T20:00:00+00:00",
+        "meetingKey": 1297,
+        "previousYearWinner": {
+          "season": 2025,
+          "round": 19,
+          "raceName": "United States Grand Prix",
+          "date": "2025-10-19",
+          "winner": "Max Verstappen",
+          "constructor": "Red Bull",
+          "source": "jolpica"
+        },
+        "sessionsIncluded": [
+          {
+            "eventType": "race",
+            "sessionName": "Race",
+            "sessionKey": 11396,
+            "date": "2026-10-25",
+            "dateStartUtc": "2026-10-25T20:00:00+00:00",
+            "isRace": true,
+            "isSprint": false
+          }
+        ]
+      },
+      "previousYearWinner": {
+        "season": 2025,
+        "round": 19,
+        "raceName": "United States Grand Prix",
+        "date": "2025-10-19",
+        "winner": "Max Verstappen",
+        "constructor": "Red Bull",
+        "source": "jolpica"
+      },
+      "preWeekendNotes": {
+        "winStreak": {
+          "driverName": "VERSTAPPEN",
+          "count": 2
+        },
+        "podiumStreak": {
+          "driverName": "VERSTAPPEN",
+          "count": 5
+        },
+        "leaderRecentForm": {
+          "driverName": "ANTONELLI",
+          "positions": [
+            5,
+            2,
+            3
+          ],
+          "label": "P5 P2 P3 in last 3 races"
+        },
+        "defenderNote": "Max Verstappen won here in 2025 (Red Bull)"
+      },
+      "drivers": {
+        "leader": "ANTONELLI",
+        "second": "RUSSELL",
+        "gap": 123,
+        "standingsText": "ANTONELLI leads by 123 pts over RUSSELL",
+        "raceImpact": "ANTONELLI extended lead by 21 pts over RUSSELL",
+        "scenarioText": "ANTONELLI extended lead by 21 pts over RUSSELL",
+        "p1Changed": false,
+        "leaderWeekendPoints": 25,
+        "secondWeekendPoints": 4,
+        "weekendDelta": 21,
+        "leaderRacePoints": 25,
+        "secondRacePoints": 4,
+        "raceDelta": 21
+      },
+      "constructors": {
+        "leader": "Mercedes",
+        "second": "Ferrari",
+        "gap": 133,
+        "standingsText": "Mercedes leads by 133 pts over Ferrari",
+        "raceImpact": "Ferrari cut Mercedes's constructors' lead by 1 pts",
+        "scenarioText": "Ferrari cut Mercedes's constructors' lead by 1 pts",
+        "p1Changed": false,
+        "leaderWeekendPoints": 29,
+        "secondWeekendPoints": 30,
+        "weekendDelta": -1,
+        "leaderRacePoints": 29,
+        "secondRacePoints": 30,
+        "raceDelta": -1
       }
     }
   ]
