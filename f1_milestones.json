@@ -1,7 +1,7 @@
 {
   "schema": "apex-milestones",
   "version": 1,
-  "generatedAt": "2026-10-24T23:54:58.584Z",
+  "generatedAt": "2026-10-25T19:31:25.015Z",
   "year": 2026,
   "throughRound": 15,
   "latestRace": "Singapore Grand Prix",
@@ -213,6 +213,22 @@
           "status": "within_reach"
         },
         {
+          "id": "antonelli_poles_10",
+          "driverId": "antonelli",
+          "code": "ANT",
+          "name": "Andrea Kimi Antonelli",
+          "team": "Mercedes",
+          "stat": "poles",
+          "label": "Pole positions",
+          "current": 7,
+          "target": 10,
+          "previousMilestone": 5,
+          "toGo": 3,
+          "toGoLabel": "3 POLES",
+          "progress": 0.4,
+          "status": "within_reach"
+        },
+        {
           "id": "hamilton_starts_400",
           "driverId": "hamilton",
           "code": "HAM",
@@ -242,22 +258,6 @@
           "toGo": 3,
           "toGoLabel": "3 STARTS",
           "progress": 0.94,
-          "status": "within_reach"
-        },
-        {
-          "id": "antonelli_poles_10",
-          "driverId": "antonelli",
-          "code": "ANT",
-          "name": "Andrea Kimi Antonelli",
-          "team": "Mercedes",
-          "stat": "poles",
-          "label": "Pole positions",
-          "current": 6,
-          "target": 10,
-          "previousMilestone": 5,
-          "toGo": 4,
-          "toGoLabel": "4 POLES",
-          "progress": 0.2,
           "status": "within_reach"
         },
         {
@@ -1097,7 +1097,7 @@
       "team": "Mercedes",
       "career": {
         "wins": 8,
-        "poles": 6,
+        "poles": 7,
         "podiums": 17,
         "starts": 41
       },
@@ -1105,7 +1105,7 @@
         "starts": 17,
         "wins": 8,
         "podiums": 14,
-        "poles": 6
+        "poles": 7
       },
       "next": {
         "wins": {
@@ -1115,7 +1115,7 @@
         },
         "poles": {
           "target": 10,
-          "toGo": 4,
+          "toGo": 3,
           "reachable": true
         },
         "podiums": {
