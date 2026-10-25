@@ -1,6 +1,6 @@
 {
   "header": "2026 F1 starting grids",
-  "generatedAtUtc": "2026-10-25T03:28:30.031Z",
+  "generatedAtUtc": "2026-10-25T04:35:05.647Z",
   "season": 2026,
   "upcoming": {
     "gridType": "race",
@@ -3631,8 +3631,21 @@
           "qualifyingLapTime": 76.195,
           "qualifyingPosition": 21,
           "placesVsQualifying": 1,
-          "penalty": null,
-          "note": null
+          "penalty": {
+            "places": null,
+            "backOfGrid": false,
+            "pitLane": true,
+            "reason": "new power unit elements",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 18 - PU Elements changed under Parc Ferme",
+                "url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_car_18_-_pu_elements_changed_under_parc_ferme.pdf",
+                "decision": "Required to start the Race from the pit lane."
+              }
+            ]
+          },
+          "note": "Starts from the pit lane for new power unit elements"
         }
       ],
       "gridPenaltiesChecked": true
@@ -4335,8 +4348,21 @@
           "qualifyingLapTime": 78.815,
           "qualifyingPosition": 22,
           "placesVsQualifying": 0,
-          "penalty": null,
-          "note": null
+          "penalty": {
+            "places": null,
+            "backOfGrid": false,
+            "pitLane": true,
+            "reason": "new power unit elements",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 14 - PU elements and changes used during Parc Ferme",
+                "url": "https://www.fia.com/system/files/decision-document/2026_barcelona-catalunya_grand_prix_-_infringement_-_car_14_-_pu_elements_and_changes_used_during_parc_ferme.pdf",
+                "decision": "Required to start the Race from the pit lane."
+              }
+            ]
+          },
+          "note": "Starts from the pit lane for new power unit elements"
         }
       ],
       "gridPenaltiesChecked": true
@@ -4874,8 +4900,21 @@
           "qualifyingLapTime": 89.482,
           "qualifyingPosition": null,
           "placesVsQualifying": null,
-          "penalty": null,
-          "note": null
+          "penalty": {
+            "places": null,
+            "backOfGrid": false,
+            "pitLane": true,
+            "reason": "parc fermé changes",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 10 - Parc Ferme",
+                "url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_car_10_-_parc_ferme.pdf",
+                "decision": "Required to start the Sprint from the pit lane."
+              }
+            ]
+          },
+          "note": "Starts from the pit lane for parc fermé changes"
         },
         {
           "position": 12,
@@ -4994,8 +5033,21 @@
           "qualifyingLapTime": 92.02,
           "qualifyingPosition": null,
           "placesVsQualifying": null,
-          "penalty": null,
-          "note": null
+          "penalty": {
+            "places": null,
+            "backOfGrid": false,
+            "pitLane": true,
+            "reason": "parc fermé changes",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 77 - Parc Ferme",
+                "url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_car_77_-_parc_ferme.pdf",
+                "decision": "Required to start the Sprint from the pit lane."
+              }
+            ]
+          },
+          "note": "Starts from the pit lane for parc fermé changes"
         },
         {
           "position": 20,
@@ -5039,8 +5091,26 @@
           "qualifyingLapTime": 90.65,
           "qualifyingPosition": null,
           "placesVsQualifying": null,
-          "penalty": null,
-          "note": null
+          "penalty": {
+            "places": null,
+            "backOfGrid": false,
+            "pitLane": true,
+            "reason": "parc fermé changes",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 23 - Parc Ferme",
+                "url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_car_23_-_parc_ferme.pdf",
+                "decision": "Required to start the Sprint from the pit lane."
+              },
+              {
+                "title": "Infringement - Car 23 - Changes made during Parc Ferme",
+                "url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
+                "decision": "Required to start the Sprint from the pit lane."
+              }
+            ]
+          },
+          "note": "Starts from the pit lane for parc fermé changes"
         }
       ],
       "gridPenaltiesChecked": true
@@ -5286,8 +5356,21 @@
           "qualifyingLapTime": 90.063,
           "qualifyingPosition": 12,
           "placesVsQualifying": 3,
-          "penalty": null,
-          "note": null
+          "penalty": {
+            "places": 3,
+            "backOfGrid": false,
+            "pitLane": false,
+            "reason": "impeding",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 10 - Impeding of Car 18",
+                "url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_10_-_impeding_of_car_18.pdf",
+                "decision": "Drop of 3 grid positions for the next Race in which the driver participates."
+              }
+            ]
+          },
+          "note": "3 place grid penalty for impeding"
         },
         {
           "position": 16,
@@ -5391,8 +5474,21 @@
           "qualifyingLapTime": 92.863,
           "qualifyingPosition": 21,
           "placesVsQualifying": 1,
-          "penalty": null,
-          "note": null
+          "penalty": {
+            "places": 10,
+            "backOfGrid": false,
+            "pitLane": false,
+            "reason": "new power unit elements",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 18 - PU Elements changed",
+                "url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_pu_elements_changed.pdf",
+                "decision": "Drop of 10 grid positions for the next Race in which the driver participates."
+              }
+            ]
+          },
+          "note": "10 place grid penalty for new power unit elements"
         }
       ],
       "gridPenaltiesChecked": true
@@ -5608,8 +5704,21 @@
           "qualifyingLapTime": 104.801,
           "qualifyingPosition": 3,
           "placesVsQualifying": 10,
-          "penalty": null,
-          "note": null
+          "penalty": {
+            "places": 10,
+            "backOfGrid": false,
+            "pitLane": false,
+            "reason": "new power unit elements",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 1 - Change to PU element",
+                "url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_car_1_-_change_to_pu_element.pdf",
+                "decision": "Drop of 10 grid positions for the next Race in which the driver participates."
+              }
+            ]
+          },
+          "note": "10 place grid penalty for new power unit elements"
         },
         {
           "position": 14,
@@ -5698,8 +5807,21 @@
           "qualifyingLapTime": 106.777,
           "qualifyingPosition": 15,
           "placesVsQualifying": 4,
-          "penalty": null,
-          "note": null
+          "penalty": {
+            "places": 10,
+            "backOfGrid": false,
+            "pitLane": false,
+            "reason": "new power unit elements",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 55 - Change to PU elements",
+                "url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_car_55_-_change_to_pu_elements.pdf",
+                "decision": "Drop of 10 grid positions for the next Race in which the driver participates."
+              }
+            ]
+          },
+          "note": "10 place grid penalty for new power unit elements"
         },
         {
           "position": 20,
@@ -5713,8 +5835,21 @@
           "qualifyingLapTime": 110.177,
           "qualifyingPosition": 22,
           "placesVsQualifying": -2,
-          "penalty": null,
-          "note": null
+          "penalty": {
+            "places": 10,
+            "backOfGrid": false,
+            "pitLane": false,
+            "reason": "new power unit elements",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 18 - Change to PU element",
+                "url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_car_18_-_change_to_pu_element.pdf",
+                "decision": "Drop of 10 grid positions for the next Race in which the driver participates."
+              }
+            ]
+          },
+          "note": "10 place grid penalty for new power unit elements"
         },
         {
           "position": 21,
@@ -5728,8 +5863,21 @@
           "qualifyingLapTime": 105.823,
           "qualifyingPosition": 10,
           "placesVsQualifying": 11,
-          "penalty": null,
-          "note": null
+          "penalty": {
+            "places": 30,
+            "backOfGrid": false,
+            "pitLane": false,
+            "reason": "new power unit elements",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Corrected Infringement - Car 6 - Changes to PU elements",
+                "url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_corrected_infringement_-_car_6_-_changes_to_pu_elements.pdf",
+                "decision": "Drop of 30 grid positions for the next Race in which the driver participates. (Subject to Car 6 being classified in the results of qualifying, Car 6 will be allocated a grid position in the race in accordance with Article B2.5.4b.iv of the FIA F1 Regulations)"
+              }
+            ]
+          },
+          "note": "30 place grid penalty for new power unit elements"
         },
         {
           "position": 22,
@@ -5743,8 +5891,21 @@
           "qualifyingLapTime": 110.002,
           "qualifyingPosition": 21,
           "placesVsQualifying": 1,
-          "penalty": null,
-          "note": null
+          "penalty": {
+            "places": 20,
+            "backOfGrid": false,
+            "pitLane": false,
+            "reason": "new power unit elements",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Corrected Infringement - Car 14 - Change to PU elements",
+                "url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_corrected_infringement_-_car_14_-_change_to_pu_elements.pdf",
+                "decision": "Drop of 20 grid positions for the next Race in which the driver participates. (Subject to Car 14 being classified in the results of qualifying, Car 14 will be allocated a grid position in the race in accordance with Article B2.5.4b.iv of the FIA F1 Regulations)"
+              }
+            ]
+          },
+          "note": "20 place grid penalty for new power unit elements"
         }
       ],
       "gridPenaltiesChecked": true
@@ -5870,8 +6031,21 @@
           "qualifyingLapTime": 77.479,
           "qualifyingPosition": 4,
           "placesVsQualifying": 3,
-          "penalty": null,
-          "note": null
+          "penalty": {
+            "places": 3,
+            "backOfGrid": false,
+            "pitLane": false,
+            "reason": "yellow flag infringement",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 12 - Yellow flag infringement",
+                "url": "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_infringement_-_car_12_-_yellow_flag_infringement.pdf",
+                "decision": "Drop of 3 grid positions for the next Sprint/Race in which the driver participates. 1 penalty point (total of 4 for the 12 month period)."
+              }
+            ]
+          },
+          "note": "3 place grid penalty for yellow flag infringement"
         },
         {
           "position": 8,
@@ -6095,8 +6269,21 @@
           "qualifyingLapTime": 81.322,
           "qualifyingPosition": 22,
           "placesVsQualifying": 0,
-          "penalty": null,
-          "note": null
+          "penalty": {
+            "places": null,
+            "backOfGrid": false,
+            "pitLane": true,
+            "reason": "parc fermé changes",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 11 - Changes made under Parc Ferme",
+                "url": "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_infringement_-_car_11_-_changes_made_under_parc_ferme.pdf",
+                "decision": "Required to start the Race from the pit lane."
+              }
+            ]
+          },
+          "note": "Starts from the pit lane for parc fermé changes"
         }
       ],
       "gridPenaltiesChecked": true
@@ -9692,6 +9879,426 @@
       "none": true,
       "title": "Infringement - Car 27 - Starting procedure infringement",
       "publishedAt": "2026-05-25T01:08:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_car_5_-_driving_unnecessarily_slowly_during_vsc.pdf": {
+      "none": true,
+      "title": "Infringement - Car 5 - Driving unnecessarily slowly during VSC.",
+      "publishedAt": "2026-05-25T00:59:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_car_18_-_pu_elements_changed_under_parc_ferme.pdf": {
+      "driverNumber": 18,
+      "driverName": "Lance Stroll",
+      "places": null,
+      "backOfGrid": false,
+      "pitLane": true,
+      "appliesTo": "race",
+      "reason": "new power unit elements",
+      "decision": "Required to start the Race from the pit lane.",
+      "title": "Infringement - Car 18 - PU Elements changed under Parc Ferme",
+      "url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_car_18_-_pu_elements_changed_under_parc_ferme.pdf",
+      "publishedAt": "2026-05-24T18:08:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_decision_-_car_18_-_allegedly_impeded_car_27.pdf": {
+      "none": true,
+      "title": "Decision - Car 18 - Allegedly impeded Car 27",
+      "publishedAt": "2026-05-24T00:23:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_decision_-_car_44_-_alleged_impeding_of_car_10.pdf": {
+      "none": true,
+      "title": "Decision - Car 44 - Alleged impeding of Car 10",
+      "publishedAt": "2026-05-24T00:23:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_car_18_-_released_in_an_unsafe_condition.pdf": {
+      "none": true,
+      "title": "Infringement - Car 18 - Released in an unsafe condition",
+      "publishedAt": "2026-05-24T00:10:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_car_14_-_unsafe_release_from_garage.pdf": {
+      "none": true,
+      "title": "Infringement - Car 14 - Unsafe release from garage",
+      "publishedAt": "2026-05-24T00:05:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_car_18_-_starting_procedure_infringement.pdf": {
+      "none": true,
+      "title": "Infringement - Car 18 - Starting procedure infringement",
+      "publishedAt": "2026-05-23T18:49:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_car_23_-_parc_ferme.pdf": {
+      "driverNumber": 23,
+      "driverName": "Alexander Albon",
+      "places": null,
+      "backOfGrid": false,
+      "pitLane": true,
+      "appliesTo": "sprint",
+      "reason": "parc fermé changes",
+      "decision": "Required to start the Sprint from the pit lane.",
+      "title": "Infringement - Car 23 - Parc Ferme",
+      "url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_car_23_-_parc_ferme.pdf",
+      "publishedAt": "2026-05-23T16:18:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_car_10_-_parc_ferme.pdf": {
+      "driverNumber": 10,
+      "driverName": "Pierre Gasly",
+      "places": null,
+      "backOfGrid": false,
+      "pitLane": true,
+      "appliesTo": "sprint",
+      "reason": "parc fermé changes",
+      "decision": "Required to start the Sprint from the pit lane.",
+      "title": "Infringement - Car 10 - Parc Ferme",
+      "url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_car_10_-_parc_ferme.pdf",
+      "publishedAt": "2026-05-23T16:17:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_car_87_-_parc_ferme.pdf": {
+      "none": true,
+      "title": "Infringement - Car 87 - Parc Ferme",
+      "publishedAt": "2026-05-23T16:14:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_car_77_-_parc_ferme.pdf": {
+      "driverNumber": 77,
+      "driverName": "Valtteri Bottas",
+      "places": null,
+      "backOfGrid": false,
+      "pitLane": true,
+      "appliesTo": "sprint",
+      "reason": "parc fermé changes",
+      "decision": "Required to start the Sprint from the pit lane.",
+      "title": "Infringement - Car 77 - Parc Ferme",
+      "url": "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_car_77_-_parc_ferme.pdf",
+      "publishedAt": "2026-05-23T16:14:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_infringement_-_car_12_-_failure_to_follow_race_directors_instructions_sc2-sc1_time.pdf": {
+      "none": true,
+      "title": "Infringement - Car 12 - Failure to follow Race Director's instructions (SC2-SC1 Time)",
+      "publishedAt": "2026-05-23T14:09:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_decision_-_car_23_-_failing_to_set_a_lap_time_within_107.pdf": {
+      "none": true,
+      "title": "Decision - Car 23 - Failing to set a lap time within 107%",
+      "publishedAt": "2026-05-22T23:47:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_canadian_grand_prix_-_decision_-_car_30_-_failing_to_set_a_lap_time_within_107.pdf": {
+      "none": true,
+      "title": "Decision - Car 30 - Failing to set a lap time within 107%",
+      "publishedAt": "2026-05-22T22:50:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_decision_-_car_43_-_allegedly_causing_a_collision_with_car_55.pdf": {
+      "none": true,
+      "title": "Decision - Car 43 - Allegedly causing a collision with Car 55",
+      "publishedAt": "2026-06-07T19:28:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_infringement_-_car_27_-_causing_a_collision_with_car_55.pdf": {
+      "none": true,
+      "title": "Infringement - Car 27 - Causing a collision with Car 55",
+      "publishedAt": "2026-06-07T19:28:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_decision_-_car_44_-_alleged_safety_car_infringement.pdf": {
+      "none": true,
+      "title": "Decision - Car 44 - Alleged Safety Car infringement",
+      "publishedAt": "2026-06-07T18:42:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_decision_-_car_6_-_alleged_safety_car_infringement.pdf": {
+      "none": true,
+      "title": "Decision - Car 6 - Alleged Safety Car infringement",
+      "publishedAt": "2026-06-07T18:42:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_car_6_-_alleged_race_suspension_infringement.pdf": {
+      "none": true,
+      "title": "Car 6 - Alleged Race suspension infringement",
+      "publishedAt": "2026-06-07T17:15:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_infringement_-_car_1_-_technical_non-conformity_cds.pdf": {
+      "none": true,
+      "title": "Infringement - Car 1 - Technical non-conformity (CDS)",
+      "publishedAt": "2026-06-05T19:17:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_infringement_-_car_41_-_impeding_of_car_81.pdf": {
+      "none": true,
+      "title": "Infringement - Car 41 - Impeding of Car 81",
+      "publishedAt": "2026-06-05T15:35:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_monaco_grand_prix_-_infringement_-_car_16_-_impeding_of_car_30.pdf": {
+      "none": true,
+      "title": "Infringement - Car 16 - Impeding of Car 30",
+      "publishedAt": "2026-06-05T15:19:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_barcelona-catalunya_grand_prix_-_infringement_-_car_55_-_start_procedure_infringement.pdf": {
+      "none": true,
+      "title": "Infringement - Car 55 - Start Procedure Infringement",
+      "publishedAt": "2026-06-14T18:08:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_barcelona-catalunya_grand_prix_-_infringement_-_car_23_-_start_procedure_infringement.pdf": {
+      "none": true,
+      "title": "Infringement - Car 23 - Start Procedure Infringement",
+      "publishedAt": "2026-06-14T18:07:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_barcelona-catalunya_grand_prix_-_infringement_-_car_43_-_failing_to_slow_for_yellow_flags.pdf": {
+      "none": true,
+      "title": "Infringement - Car 43 - Failing to slow for yellow flags",
+      "publishedAt": "2026-06-14T18:06:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_barcelona-catalunya_grand_prix_-_infringement_-_car_14_-_pu_elements_and_changes_used_during_parc_ferme.pdf": {
+      "driverNumber": 14,
+      "driverName": "Fernando Alonso",
+      "places": null,
+      "backOfGrid": false,
+      "pitLane": true,
+      "appliesTo": "race",
+      "reason": "new power unit elements",
+      "decision": "Required to start the Race from the pit lane.",
+      "title": "Infringement - Car 14 - PU elements and changes used during Parc Ferme",
+      "url": "https://www.fia.com/system/files/decision-document/2026_barcelona-catalunya_grand_prix_-_infringement_-_car_14_-_pu_elements_and_changes_used_during_parc_ferme.pdf",
+      "publishedAt": "2026-06-14T11:56:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_barcelona-catalunya_grand_prix_-_infringement_-_car_16_-_impeding_of_car_27.pdf": {
+      "none": true,
+      "title": "Infringement - Car 16 - Impeding of Car 27",
+      "publishedAt": "2026-06-13T14:38:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_barcelona-catalunya_grand_prix_-_infringement_-_car_14_-_pit_exit_incident.pdf": {
+      "none": true,
+      "title": "Infringement - Car 14 - Pit exit incident",
+      "publishedAt": "2026-06-12T17:02:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_austrian_grand_prix_-_decision_-_car_81_-_alleged_failing_to_follow_race_directors_instructions_sc2-sc1.pdf": {
+      "none": true,
+      "title": "Decision - Car 81 - Alleged failing to follow Race Directors Instructions (SC2-SC1)",
+      "publishedAt": "2026-06-28T16:41:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_austrian_grand_prix_-_decision_-_car_23_-_alleged_yellow_flag_infringement.pdf": {
+      "none": true,
+      "title": "Decision - Car 23 - Alleged yellow flag infringement",
+      "publishedAt": "2026-06-28T16:00:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_austrian_grand_prix_-_infringement_-_car_6_-_failing_to_follow_race_directors_instructions_sc2-sc1.pdf": {
+      "none": true,
+      "title": "Infringement - Car 6 - Failing to follow Race Directors Instructions (SC2-SC1)",
+      "publishedAt": "2026-06-27T17:13:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_55_-_overtaking_the_safety_car.pdf": {
+      "none": true,
+      "title": "Infringement - Car 55 - Overtaking the Safety Car",
+      "publishedAt": "2026-07-05T19:57:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_44_-_yellow_flags_-_failing_to_slow.pdf": {
+      "none": true,
+      "title": "Infringement - Car 44 - Yellow flags - Failing to slow",
+      "publishedAt": "2026-07-05T18:37:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_causing_a_collision_with_car_87.pdf": {
+      "none": true,
+      "title": "Infringement - Car 23 - Causing a collision with Car 87",
+      "publishedAt": "2026-07-05T16:20:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_pu_elements_changed.pdf": {
+      "driverNumber": 18,
+      "driverName": "Lance Stroll",
+      "places": 10,
+      "backOfGrid": false,
+      "pitLane": false,
+      "appliesTo": "race",
+      "reason": "new power unit elements",
+      "decision": "Drop of 10 grid positions for the next Race in which the driver participates.",
+      "title": "Infringement - Car 18 - PU Elements changed",
+      "url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_18_-_pu_elements_changed.pdf",
+      "publishedAt": "2026-07-05T12:48:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_41_-_unsafe_release.pdf": {
+      "none": true,
+      "title": "Infringement - Car 41 - Unsafe release",
+      "publishedAt": "2026-07-04T19:13:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_10_-_impeding_of_car_18.pdf": {
+      "driverNumber": 10,
+      "driverName": "Pierre Gasly",
+      "places": 3,
+      "backOfGrid": false,
+      "pitLane": false,
+      "appliesTo": "race",
+      "reason": "impeding",
+      "decision": "Drop of 3 grid positions for the next Race in which the driver participates.",
+      "title": "Infringement - Car 10 - Impeding of Car 18",
+      "url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_10_-_impeding_of_car_18.pdf",
+      "publishedAt": "2026-07-04T19:01:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_decision_-_car_31_-_alleged_yellow_flag_infringement.pdf": {
+      "none": true,
+      "title": "Decision - Car 31 - Alleged yellow flag infringement",
+      "publishedAt": "2026-07-04T18:42:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_11_-_causing_a_collision_with_car_14.pdf": {
+      "none": true,
+      "title": "Infringement - Car 11 - Causing a collision with Car 14",
+      "publishedAt": "2026-07-04T13:45:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf": {
+      "driverNumber": 23,
+      "driverName": "Alexander Albon",
+      "places": null,
+      "backOfGrid": false,
+      "pitLane": true,
+      "appliesTo": "sprint",
+      "reason": "parc fermé changes",
+      "decision": "Required to start the Sprint from the pit lane.",
+      "title": "Infringement - Car 23 - Changes made during Parc Ferme",
+      "url": "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_changes_made_during_parc_ferme.pdf",
+      "publishedAt": "2026-07-04T10:55:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_23_-_failing_to_follow_race_directors_instructions_sc2-sc1.pdf": {
+      "none": true,
+      "title": "Infringement - Car 23 - Failing to follow Race Directors Instructions (SC2-SC1)",
+      "publishedAt": "2026-07-03T19:47:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_british_grand_prix_-_infringement_-_car_41_-_failing_to_follow_race_directors_instructions_sc2-sc1.pdf": {
+      "none": true,
+      "title": "Infringement - Car 41 - Failing to follow Race Directors Instructions (SC2-SC1)",
+      "publishedAt": "2026-07-03T19:47:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_ferrari_-_unsafe_release_of_car_44.pdf": {
+      "none": true,
+      "title": "Infringement - Ferrari - Unsafe Release of Car 44",
+      "publishedAt": "2026-07-19T17:50:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_decision_-_car_16_-_collision_with_car_81_in_turn_5.pdf": {
+      "none": true,
+      "title": "Decision - Car 16 - Collision with Car 81 in turn 5",
+      "publishedAt": "2026-07-19T15:21:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_car_44_-_causing_a_collision_with_car_63_in_turn_5.pdf": {
+      "none": true,
+      "title": "Infringement - Car 44 - Causing a collision with Car 63 in turn 5",
+      "publishedAt": "2026-07-19T15:20:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_car_55_-_change_to_pu_elements.pdf": {
+      "driverNumber": 55,
+      "driverName": "Carlos Sainz",
+      "places": 10,
+      "backOfGrid": false,
+      "pitLane": false,
+      "appliesTo": "race",
+      "reason": "new power unit elements",
+      "decision": "Drop of 10 grid positions for the next Race in which the driver participates.",
+      "title": "Infringement - Car 55 - Change to PU elements",
+      "url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_car_55_-_change_to_pu_elements.pdf",
+      "publishedAt": "2026-07-19T11:22:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_corrected_infringement_-_car_14_-_change_to_pu_elements.pdf": {
+      "driverNumber": 14,
+      "driverName": "Fernando Alonso",
+      "places": 20,
+      "backOfGrid": false,
+      "pitLane": false,
+      "appliesTo": "race",
+      "reason": "new power unit elements",
+      "decision": "Drop of 20 grid positions for the next Race in which the driver participates. (Subject to Car 14 being classified in the results of qualifying, Car 14 will be allocated a grid position in the race in accordance with Article B2.5.4b.iv of the FIA F1 Regulations)",
+      "title": "Corrected Infringement - Car 14 - Change to PU elements",
+      "url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_corrected_infringement_-_car_14_-_change_to_pu_elements.pdf",
+      "publishedAt": "2026-07-18T14:52:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_corrected_infringement_-_car_6_-_changes_to_pu_elements.pdf": {
+      "driverNumber": 6,
+      "driverName": "Isack Hadjar",
+      "places": 30,
+      "backOfGrid": false,
+      "pitLane": false,
+      "appliesTo": "race",
+      "reason": "new power unit elements",
+      "decision": "Drop of 30 grid positions for the next Race in which the driver participates. (Subject to Car 6 being classified in the results of qualifying, Car 6 will be allocated a grid position in the race in accordance with Article B2.5.4b.iv of the FIA F1 Regulations)",
+      "title": "Corrected Infringement - Car 6 - Changes to PU elements",
+      "url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_corrected_infringement_-_car_6_-_changes_to_pu_elements.pdf",
+      "publishedAt": "2026-07-18T14:51:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_decision_-_car_55_-_alleged_failure_to_slow_for_double_yellow_flags_.pdf": {
+      "none": true,
+      "title": "Decision - Car 55 - Alleged failure to slow for double yellow flags",
+      "publishedAt": "2026-07-18T14:09:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_ferrari_-_car_44_return_of_tyres.pdf": {
+      "none": true,
+      "title": "Infringement - Ferrari - Car 44 Return of tyres",
+      "publishedAt": "2026-07-17T18:38:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_ferrari_-_car_16_return_of_tyres.pdf": {
+      "none": true,
+      "title": "Infringement - Ferrari - Car 16 Return of tyres",
+      "publishedAt": "2026-07-17T18:38:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_car_27_-_failure_to_slow_under_double_yellow_flags.pdf": {
+      "none": true,
+      "title": "Infringement - Car 27 - Failure to slow under double yellow flags",
+      "publishedAt": "2026-07-17T17:58:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_car_1_-_change_to_pu_element.pdf": {
+      "driverNumber": 1,
+      "driverName": "Lando Norris",
+      "places": 10,
+      "backOfGrid": false,
+      "pitLane": false,
+      "appliesTo": "race",
+      "reason": "new power unit elements",
+      "decision": "Drop of 10 grid positions for the next Race in which the driver participates.",
+      "title": "Infringement - Car 1 - Change to PU element",
+      "url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_car_1_-_change_to_pu_element.pdf",
+      "publishedAt": "2026-07-17T15:53:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_car_18_-_change_to_pu_element.pdf": {
+      "driverNumber": 18,
+      "driverName": "Lance Stroll",
+      "places": 10,
+      "backOfGrid": false,
+      "pitLane": false,
+      "appliesTo": "race",
+      "reason": "new power unit elements",
+      "decision": "Drop of 10 grid positions for the next Race in which the driver participates.",
+      "title": "Infringement - Car 18 - Change to PU element",
+      "url": "https://www.fia.com/system/files/decision-document/2026_belgian_grand_prix_-_infringement_-_car_18_-_change_to_pu_element.pdf",
+      "publishedAt": "2026-07-17T15:53:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_infringement_-_car_11_-_starting_procedure_infringement.pdf": {
+      "none": true,
+      "title": "Infringement - Car 11 - Starting procedure infringement",
+      "publishedAt": "2026-07-26T17:12:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_decision_-_car_16_-_alleged_failure_to_slow_for_yellow_flags.pdf": {
+      "none": true,
+      "title": "Decision - Car 16 - Alleged failure to slow for yellow flags",
+      "publishedAt": "2026-07-26T16:03:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_infringement_-_car_55_-_collision_with_car_81.pdf": {
+      "none": true,
+      "title": "Infringement - Car 55 - Collision with car 81",
+      "publishedAt": "2026-07-26T15:55:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_infringement_-_car_11_-_changes_made_under_parc_ferme.pdf": {
+      "driverNumber": 11,
+      "driverName": "Sergio Perez",
+      "places": null,
+      "backOfGrid": false,
+      "pitLane": true,
+      "appliesTo": "race",
+      "reason": "parc fermé changes",
+      "decision": "Required to start the Race from the pit lane.",
+      "title": "Infringement - Car 11 - Changes made under Parc Ferme",
+      "url": "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_infringement_-_car_11_-_changes_made_under_parc_ferme.pdf",
+      "publishedAt": "2026-07-26T11:38:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_infringement_-_car_12_-_alleged_failure_to_follow_race_directors_instructions_sc2-sc1_time.pdf": {
+      "none": true,
+      "title": "Infringement - Car 12 - Alleged failure to follow Race Director's instructions (SC2-SC1 Time)",
+      "publishedAt": "2026-07-25T18:39:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_infringement_-_car_12_-_yellow_flag_infringement.pdf": {
+      "driverNumber": 12,
+      "driverName": "Kimi Antonelli",
+      "places": 3,
+      "backOfGrid": false,
+      "pitLane": false,
+      "appliesTo": "race",
+      "reason": "yellow flag infringement",
+      "decision": "Drop of 3 grid positions for the next Sprint/Race in which the driver participates. 1 penalty point (total of 4 for the 12 month period).",
+      "title": "Infringement - Car 12 - Yellow flag infringement",
+      "url": "https://www.fia.com/system/files/decision-document/2026_hungarian_grand_prix_-_infringement_-_car_12_-_yellow_flag_infringement.pdf",
+      "publishedAt": "2026-07-25T18:31:00.000Z"
     }
   },
   "penaltyEventsRead": {}
