@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-21T21:48:24.599Z",
+  "generatedAt": "2026-10-28T14:36:07.083Z",
   "season": 2026,
   "teams": {
     "audi": {
@@ -123,6 +123,36 @@
             "logo": "https://mredman48.github.io/F1-standings/liveries/mclaren-logo.webp",
             "logoLight": "https://mredman48.github.io/F1-standings/liveries/mclaren-logo-light.webp",
             "icon": "https://mredman48.github.io/F1-standings/liveries/mclaren-icon.webp"
+          }
+        },
+        {
+          "id": "mclaren-2026-velo-mexico-livery",
+          "label": "Velo Mexico Livery",
+          "type": "sponsor",
+          "description": "",
+          "round": 19,
+          "validFrom": "2026-10-28T00:00:00Z",
+          "validUntil": "2026-11-02T00:00:00Z",
+          "colors": {
+            "primary": "#4698BA",
+            "secondary": "#E7CC42",
+            "onPrimary": "#0A0C0F"
+          },
+          "drivers": {
+            "norris": "primary",
+            "piastri": "secondary"
+          },
+          "background": {
+            "style": "dotGradient",
+            "origin": "topTrailing",
+            "intensity": 0.6,
+            "spacing": 10
+          },
+          "assets": {
+            "car": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/liveries/mclaren-2026-velo-mexico-livery-car.webp",
+            "logo": "",
+            "logoLight": "",
+            "icon": ""
           }
         }
       ]
