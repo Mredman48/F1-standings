@@ -145,8 +145,50 @@
     "constructor": "McLaren",
     "date": "2025-08-31"
   },
-  "tyreInfo": null,
-  "racePreview": null,
+  "tyreInfo": {
+    "round": 12,
+    "raceSlug": "netherlands",
+    "title": "Dutch GP",
+    "season": 2026,
+    "country": "Netherlands",
+    "flag": "nl",
+    "raceStart": "2026-08-23T13:00:00.000Z",
+    "compounds": {
+      "soft": "C4",
+      "medium": "C3",
+      "hard": "C2"
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2026,
+      "pastYear": false,
+      "traction": 3,
+      "tyreStress": 5,
+      "asphaltGrip": 3,
+      "braking": 3,
+      "asphaltAbrasion": 3,
+      "lateral": 4,
+      "trackEvolution": 4
+    },
+    "updatedAt": "2026-10-09T04:30:16.391Z"
+  },
+  "racePreview": {
+    "slug": "zandvoort-s-farewell-max-s-last-home-hurrah-msxw1i1e",
+    "round": 12,
+    "raceSlug": "netherlands",
+    "title": "Dutch GP",
+    "season": "2026",
+    "country": "Netherlands",
+    "flag": "nl",
+    "raceStart": "2026-08-23T13:00:00.000Z",
+    "publishedAt": "2026-08-17",
+    "headline": "Zandvoort's Farewell: Max's Last Home Hurrah?",
+    "summary": "Antonelli's cruising at the top, but Zandvoort's a wild card, especially as it's the last dance here. Can Max break his duck at home, or will rival upgrades steal the show?",
+    "body": "Kimi Antonelli has been absolutely crushing it this season with six wins, building a massive lead in the championship, but Mercedes' iron grip has definitely loosened up a bit lately—they've only bagged two wins in the last five races after a dominant start. Ferrari's already tasted victory twice, and McLaren, fresh off Lando Norris's win in Hungary with their latest upgrades, look like serious contenders too. But man, the big story has to be Max Verstappen, sitting P6 without a single win so far this year! That’s gotta sting, especially heading into his home race, which also happens to be the *final* Dutch Grand Prix at Zandvoort. He's been on the podium three times recently, so he's knocking on the door. Keep an eye on those looming engine penalties for both Mercedes drivers, Antonelli and Russell—that could seriously shake up the championship fight later on.\n\nNow, Zandvoort itself is a beast of a track—bumpy, super tight, and those banked corners make it feel like a rollercoaster. Overtaking is notoriously tricky here, so qualifying is absolutely crucial, especially with it being a Sprint weekend, meaning less practice time. Adding to the chaos, there's rain on the forecast for all three days, which could really mix things up. On the upgrade front, McLaren are completing their latest package, Ferrari are bringing some aero goodies, and even Alpine and Aston Martin have significant updates planned. It's going to be a wild one, with everyone pushing for a big result at Zandvoort's farewell party.",
+    "picks": {
+      "winner": "Antonelli",
+      "wildcard": "Verstappen"
+    }
+  },
   "startingGrids": [
     {
       "gridType": "sprint",
@@ -6802,7 +6844,26 @@
       ]
     }
   ],
-  "raceRecap": null,
+  "raceRecap": {
+    "slug": "norris-wins-chaotic-dutch-gp-max-crashes-mercedes-orders-spa-mt6daumx",
+    "round": 12,
+    "raceSlug": "netherlands",
+    "title": "Dutch GP",
+    "season": "2026",
+    "country": "Netherlands",
+    "flag": "nl",
+    "raceStart": "2026-08-23T13:00:00.000Z",
+    "publishedAt": "2026-08-23",
+    "headline": "Norris Wins Chaotic Dutch GP; Max Crashes, Mercedes Orders Spark Drama",
+    "summary": "Lando Norris snatched victory at a wild Dutch GP following Max Verstappen's huge crash, with Mercedes navigating team orders to secure a double podium.",
+    "body": "Saturday's sprint kicked off the weekend with George Russell taking a lights-to-flag victory, leading every lap from pole. Charles Leclerc secured P2 after McLaren's Lando Norris — initially P2 — lost out to him on a contra-strategy with soft tyres. Max Verstappen finished P6, while Carlos Sainz, Sergio Perez, and Nico Hulkenberg faced issues, with Hulkenberg rejoining after an early problem. The Zandvoort circuit thankfully stayed dry for the sprint despite earlier threats of rain.\n\nSunday was pure chaos at what turned out to be the last-ever Dutch Grand Prix. Lando Norris clinched a fantastic win after a massive early crash from Max Verstappen brought out the red flag — a cruel irony given Verstappen's comments about cars being \"easier\" to drive just yesterday. Norris attributed his win to \"committing to the outside of Turn 1\", ultimately passing Kimi Antonelli, who Norris later \"outfoxed... beautifully\" after an \"ill-advised half-move\" on Lewis Hamilton. Mercedes saw Antonelli take P2 and Russell P3, though not without drama; Russell initially expressed \"team orders angst\" but later \"U-turned,\" explaining they needed to \"maximise the result for the team\" and protect against the Ferraris behind. Lewis Hamilton, frustrated with Ferrari's strategy, was heard calling out the team for \"wasting time\" over the radio. Nico Hulkenberg had a sterling drive to P8, impressively dodging a spinning Gabriel Bortoleto early on. Norris, despite his win, noted, \"I'm not fully satisfied. We still have weaknesses... we need more performance\".",
+    "result": {
+      "p1": "Norris",
+      "p2": "Antonelli",
+      "p3": "Russell",
+      "driverOfDay": ""
+    }
+  },
   "meta": {
     "fia": {
       "eventName": "Dutch Grand Prix",
