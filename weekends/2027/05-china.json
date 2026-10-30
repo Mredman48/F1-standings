@@ -134,8 +134,40 @@
       "raceName": "Chinese Grand Prix"
     }
   },
-  "previousWinner": null,
-  "tyreInfo": null,
+  "previousWinner": {
+    "round": 5,
+    "raceName": "Chinese Grand Prix",
+    "city": "Shanghai",
+    "country": "China",
+    "previousWinner": "Kimi Antonelli",
+    "constructor": "Mercedes",
+    "date": "2026-03-15"
+  },
+  "tyreInfo": {
+    "round": 5,
+    "raceSlug": "china",
+    "title": "Chinese GP",
+    "season": 2027,
+    "country": "China",
+    "flag": "cn",
+    "raceStart": "2027-04-18T06:00:00.000Z",
+    "compounds": {
+      "soft": "",
+      "medium": "",
+      "hard": ""
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2026,
+      "pastYear": true,
+      "traction": 3,
+      "tyreStress": 4,
+      "asphaltGrip": 3,
+      "braking": 4,
+      "asphaltAbrasion": 2,
+      "lateral": 4,
+      "trackEvolution": 4
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},
