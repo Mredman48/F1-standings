@@ -146,8 +146,50 @@
     "constructor": "McLaren",
     "date": "2025-06-29"
   },
-  "tyreInfo": null,
-  "racePreview": null,
+  "tyreInfo": {
+    "round": 8,
+    "raceSlug": "austria",
+    "title": "Austrian GP",
+    "season": 2026,
+    "country": "Austria",
+    "flag": "at",
+    "raceStart": "2026-06-28T13:00:00.000Z",
+    "compounds": {
+      "soft": "C5",
+      "medium": "C4",
+      "hard": "C3"
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2026,
+      "pastYear": false,
+      "traction": 2,
+      "tyreStress": 3,
+      "asphaltGrip": 3,
+      "braking": 3,
+      "asphaltAbrasion": 3,
+      "lateral": 3,
+      "trackEvolution": 3
+    },
+    "updatedAt": "2026-10-09T04:22:07.235Z"
+  },
+  "racePreview": {
+    "slug": "antonelli-bounce-back-hamilton-momentum-meets-red-bull-home--mqkdxdz3",
+    "round": 8,
+    "raceSlug": "austria",
+    "title": "Austrian GP",
+    "season": "2026",
+    "country": "Austria",
+    "flag": "at",
+    "raceStart": "2026-06-28T13:00:00.000Z",
+    "publishedAt": "2026-06-19",
+    "headline": "Ferrari's Charge, Red Bull's Home Hopes, and Mercedes Reliability Fears",
+    "summary": "After Hamilton's Barcelona win, Ferrari rolls into Austria with a massive engine upgrade. Red Bull seeks a home breakthrough with a new package, while Mercedes faces reliability concerns.",
+    "body": "Kimi Antonelli's championship lead took a hit after his DNF in Barcelona, but he's still sitting pretty with 156 points, though the gap to Lewis Hamilton is now just 41. Hamilton just snatched his first Ferrari win in Spain – a genuinely impressive drive that’s got the whole paddock talking about Ferrari’s recent upgrades and their ability to manage those hot conditions. Mercedes has to be a bit wary, though, with both Antonelli and George Russell retiring from strong positions in recent races due to reliability woes. McLaren has had their own share of mechanical issues but has shown flashes of pace that could see them fighting for strong points here. Meanwhile, Max Verstappen is still looking for his first win of the season, which is wild, but Red Bull is bringing a significant weight-reduction upgrade to their home race. \n\nThe Red Bull Ring is a proper short, sharp circuit, demanding a lot from the cars with its big braking zones, elevation changes, and mix of high and low-speed corners – plus it’s known for being tricky on tyres. Ferrari's rocking up with a hefty power unit upgrade, rumoured to be a solid 8-15 horsepower gain, which should seriously help them on the straights and build on that Barcelona momentum, especially if the hot temperatures stick around. Mercedes, on the other hand, might find the heat and altitude a real challenge, given those recent reliability headaches and battery concerns. Red Bull, with their new weight-loss package designed to shed a significant 12kg penalty, will be gunning for a big result on their home turf, where they've historically performed well if they nail the setup. McLaren also has a good track record here, so keep an eye on Norris and Piastri if their car holds together. Off-track, there's buzz about Alonso and Sainz eyeing 2027 moves, and the FIA just confirmed some big changes to the 2027/2028 power unit regulations, shifting more towards the internal combustion engine to keep the racing tight.",
+    "picks": {
+      "winner": "Antonelli",
+      "wildcard": "Verstappen"
+    }
+  },
   "startingGrids": [
     {
       "gridType": "race",
@@ -4898,7 +4940,26 @@
       ]
     }
   ],
-  "raceRecap": null,
+  "raceRecap": {
+    "slug": "russell-reigns-in-red-bull-ring-chaos-mqxxmezz",
+    "round": 8,
+    "raceSlug": "austria",
+    "title": "Austrian GP",
+    "season": "2026",
+    "country": "Austria",
+    "flag": "at",
+    "raceStart": "2026-06-28T13:00:00.000Z",
+    "publishedAt": "2026-06-28",
+    "headline": "Russell Reigns in Red Bull Ring Chaos",
+    "summary": "George Russell held off a charging Max Verstappen and Kimi Antonelli to win a fiery Austrian GP, cutting Antonelli's championship lead.",
+    "body": "The Austrian GP was a scorcher — both literally and figuratively. Saturday qualifying was proper drama, with George Russell bagging pole under a yellow flag after Max Verstappen binned it at Turn 9. Ferrari boss Fred Vasseur called it \"a bit strange\", but the FIA cleared Russell, saying he'd slowed enough. Kimi Antonelli, though, was fuming at himself after mistakenly thinking it was a double yellow and aborting his final flying lap, costing him a potential front-row start. \"No, I should not have done that. That was my mistake,\" he admitted. Race day kicked off with absolute chaos, as three cars went up in flames in the opening five laps thanks to the blistering 34-degree heat — Valtteri Bottas and Sergio Perez both retired their Cadillacs with fires, while Liam Lawson somehow kept his Racing Bulls going despite reporting \"fire in my car\".\n\nOut front, Russell managed to hold his nerve, despite having to push \"every single lap\" to fend off a persistent Max Verstappen. It was a hard-fought win for Russell, his first since the season opener, and he celebrated by saying, \"It's incredible to be back on the top step\". Verstappen, who clawed his way to P2 despite some \"issues\", still found positives in being \"that close to a win\". Antonelli rounded out the podium in third, just a whisker behind Max, but his championship lead over Russell — once 50 points — has now shrunk to 40. Ferrari, on the other hand, had a tough Sunday — their questionable three-stop strategy for Lewis Hamilton saw him drop to fifth, while Charles Leclerc could only manage P8 after being passed by Lando Norris.",
+    "result": {
+      "p1": "Russell",
+      "p2": "Verstappen",
+      "p3": "Antonelli",
+      "driverOfDay": "Max Verstappen"
+    }
+  },
   "meta": {
     "fia": {
       "eventName": "Austrian Grand Prix",
