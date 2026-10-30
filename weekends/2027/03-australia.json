@@ -90,9 +90,77 @@
       }
     ]
   },
-  "circuitIntelligence": null,
+  "circuitIntelligence": {
+    "displayName": "Australian Grand Prix",
+    "dna": {
+      "cornerProfile": "Fast street-parkland",
+      "overtaking": "Medium",
+      "tireWear": "Medium",
+      "trackEvolution": "High",
+      "strategyBias": "Undercut",
+      "safetyCarRisk": "Medium"
+    },
+    "intelligence": [
+      "Track evolution is usually significant across the weekend.",
+      "Multiple straights can create passing chances with overtake mode.",
+      "Mistakes often carry consequences because walls are close.",
+      "Balance through medium-speed corners is important."
+    ],
+    "id": "australia",
+    "matchKeys": [
+      "australia",
+      "melbourne",
+      "albertpark"
+    ],
+    "specs": {
+      "turns": 14,
+      "longestStraightKm": 1.2,
+      "averageSpeed": "Medium",
+      "raceLaps": 58,
+      "trackLength": "5.807 km",
+      "raceDistance": "307.471 km"
+    },
+    "raceLapRecord": {
+      "time": "1:19.813",
+      "driver": "Charles Leclerc",
+      "constructor": "Ferrari",
+      "year": 2024,
+      "raceName": "Australian Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "George Russell",
+      "constructor": "Mercedes",
+      "season": 2026,
+      "date": "2026-03-08",
+      "raceName": "Australian Grand Prix"
+    }
+  },
   "previousWinner": null,
-  "tyreInfo": null,
+  "tyreInfo": {
+    "round": 3,
+    "raceSlug": "australia",
+    "title": "Australian GP",
+    "season": 2027,
+    "country": "Australia",
+    "flag": "au",
+    "raceStart": "2027-04-04T04:00:00.000Z",
+    "compounds": {
+      "soft": "",
+      "medium": "",
+      "hard": ""
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2026,
+      "pastYear": true,
+      "traction": 2,
+      "tyreStress": 3,
+      "asphaltGrip": 2,
+      "braking": 2,
+      "asphaltAbrasion": 2,
+      "lateral": 3,
+      "trackEvolution": 4
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},
