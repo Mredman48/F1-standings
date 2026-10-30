@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-30T21:18:27.231Z",
-  "count": 30,
+  "updatedAt": "2026-10-30T21:18:40.535Z",
+  "count": 31,
   "entries": [
     {
       "round": 1,
@@ -463,6 +463,31 @@
         "trackEvolution": 4
       },
       "updatedAt": "2026-10-09T04:29:09.604Z"
+    },
+    {
+      "round": 11,
+      "raceSlug": "austria",
+      "title": "Austrian GP",
+      "season": 2027,
+      "country": "Austria",
+      "flag": "at",
+      "raceStart": "2027-07-11T13:00:00.000Z",
+      "compounds": {
+        "soft": "",
+        "medium": "",
+        "hard": ""
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2026,
+        "pastYear": true,
+        "traction": 2,
+        "tyreStress": 3,
+        "asphaltGrip": 3,
+        "braking": 3,
+        "asphaltAbrasion": 3,
+        "lateral": 3,
+        "trackEvolution": 3
+      }
     },
     {
       "round": 12,
