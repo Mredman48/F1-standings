@@ -145,8 +145,50 @@
     "constructor": "McLaren",
     "date": "2025-10-26"
   },
-  "tyreInfo": null,
-  "racePreview": null,
+  "tyreInfo": {
+    "round": 19,
+    "raceSlug": "mexico",
+    "title": "Mexico City GP",
+    "season": 2026,
+    "country": "Mexico",
+    "flag": "mx",
+    "raceStart": "2026-11-01T20:00:00.000Z",
+    "compounds": {
+      "soft": "C5",
+      "medium": "C4",
+      "hard": "C3"
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2026,
+      "pastYear": false,
+      "traction": 3,
+      "tyreStress": 2,
+      "asphaltGrip": 2,
+      "braking": 3,
+      "asphaltAbrasion": 2,
+      "lateral": 2,
+      "trackEvolution": 5
+    },
+    "updatedAt": "2026-10-28T15:06:42.070Z"
+  },
+  "racePreview": {
+    "slug": "altitude-ambition-antonelli-mexico-city-beckons-mvpjdjd2",
+    "round": 19,
+    "raceSlug": "mexico",
+    "title": "Mexico City GP",
+    "season": "2026",
+    "country": "Mexico",
+    "flag": "mx",
+    "raceStart": "2026-11-01T20:00:00.000Z",
+    "publishedAt": "2026-10-26",
+    "headline": "Altitude, Ambition, Antonelli: Mexico City Beckons",
+    "summary": "Kimi Antonelli is on the verge of a championship win in Mexico, but the high-altitude circuit always throws up surprises. Expect intense battles and tricky conditions at the Autódromo Hermanos Rodríguez.",
+    "body": "Kimi Antonelli is absolutely running away with this thing, already bagging nine wins and sitting pretty on 365 points. He could even wrap up the championship here in Mexico, which would be wild! George Russell's P2 in the standings is solid, but Lewis Hamilton, Max Verstappen, and Charles Leclerc are all breathing down his neck for second place after some tight battles in the US. Ferrari looked pretty good in Austin with their latest upgrades – Leclerc snagging P2 and Hamilton P4 – showing they're definitely in the mix. Meanwhile, Red Bull just edged out McLaren in the Constructors' after the US GP, tying them on points, so that battle is proper tight.\n\nNow, Mexico City, that's a whole different beast. Autódromo Hermanos Rodríguez is all about that insane altitude – it makes everything a headache for the engineers, from engine power to aero balance, and teams bring specific cooling upgrades for it. We're talking thinner air, so cars run max downforce but still struggle for grip. The long main straight rewards power and efficient drag, but then you've got the super technical stadium section that demands precision. Tyre management is always a huge factor here, with higher track temperatures testing durability. Keep an eye on Max Verstappen, who's historically crushed it here, and Lando Norris, who won last year's race – they know how to handle these unique conditions.",
+    "picks": {
+      "winner": "Antonelli",
+      "wildcard": "Verstappen"
+    }
+  },
   "startingGrids": [],
   "penaltyDocs": {},
   "sessionResults": [],
