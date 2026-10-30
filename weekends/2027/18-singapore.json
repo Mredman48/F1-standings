@@ -1,7 +1,7 @@
 {
   "header": "2027 Singapore Grand Prix 2027 weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T20:39:54.401Z",
+  "generatedAtUtc": "2026-10-30T21:14:10.440Z",
   "season": 2027,
   "round": 18,
   "meetingKey": 1327,
@@ -90,7 +90,50 @@
       }
     ]
   },
-  "circuitIntelligence": null,
+  "circuitIntelligence": {
+    "displayName": "Singapore Grand Prix",
+    "dna": {
+      "cornerProfile": "Technical street",
+      "overtaking": "Low",
+      "tireWear": "High",
+      "trackEvolution": "High",
+      "strategyBias": "Safety Car",
+      "safetyCarRisk": "Very High"
+    },
+    "intelligence": [
+      "Safety Cars frequently reshape the race.",
+      "Heat and humidity make this one of the most physical races.",
+      "Track position is very valuable.",
+      "Tire management and concentration are critical over a long race."
+    ],
+    "id": "singapore",
+    "matchKeys": [
+      "singapore",
+      "marinabay"
+    ],
+    "specs": {
+      "turns": 19,
+      "longestStraightKm": 0.8,
+      "averageSpeed": "Low",
+      "raceLaps": null,
+      "trackLength": "4.927 km",
+      "raceDistance": null
+    },
+    "raceLapRecord": {
+      "time": "1:33.808",
+      "driver": "Lewis Hamilton",
+      "constructor": "Ferrari",
+      "year": 2025,
+      "raceName": "Singapore Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "George Russell",
+      "constructor": "Mercedes",
+      "season": 2025,
+      "date": "2025-10-05",
+      "raceName": "Singapore Grand Prix"
+    }
+  },
   "previousWinner": null,
   "tyreInfo": null,
   "racePreview": null,

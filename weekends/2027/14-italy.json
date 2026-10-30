@@ -1,7 +1,7 @@
 {
   "header": "2027 Italian Grand Prix 2027 weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T20:39:54.398Z",
+  "generatedAtUtc": "2026-10-30T21:14:10.438Z",
   "season": 2027,
   "round": 14,
   "meetingKey": 1323,
@@ -90,7 +90,51 @@
       }
     ]
   },
-  "circuitIntelligence": null,
+  "circuitIntelligence": {
+    "displayName": "Italian Grand Prix",
+    "dna": {
+      "cornerProfile": "Low-downforce power",
+      "overtaking": "High",
+      "tireWear": "Low",
+      "trackEvolution": "Low",
+      "strategyBias": "Straight-Line Speed",
+      "safetyCarRisk": "Medium"
+    },
+    "intelligence": [
+      "Straight-line speed is the dominant performance factor.",
+      "Slipstream battles are common.",
+      "Low-downforce setup choices define competitiveness.",
+      "Braking stability into chicanes is important."
+    ],
+    "id": "italy",
+    "matchKeys": [
+      "italy",
+      "italian",
+      "monza"
+    ],
+    "specs": {
+      "turns": 11,
+      "longestStraightKm": 1.1,
+      "averageSpeed": "Very High",
+      "raceLaps": null,
+      "trackLength": "5.793 km",
+      "raceDistance": null
+    },
+    "raceLapRecord": {
+      "time": "1:20.901",
+      "driver": "Lando Norris",
+      "constructor": "McLaren",
+      "year": 2025,
+      "raceName": "Italian Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "Max Verstappen",
+      "constructor": "Red Bull",
+      "season": 2025,
+      "date": "2025-09-07",
+      "raceName": "Italian Grand Prix"
+    }
+  },
   "previousWinner": null,
   "tyreInfo": null,
   "racePreview": null,

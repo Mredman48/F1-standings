@@ -1,7 +1,7 @@
 {
   "header": "2027 Mexico City Grand Prix 2027 weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T20:39:54.402Z",
+  "generatedAtUtc": "2026-10-30T21:14:10.441Z",
   "season": 2027,
   "round": 20,
   "meetingKey": 1329,
@@ -90,7 +90,51 @@
       }
     ]
   },
-  "circuitIntelligence": null,
+  "circuitIntelligence": {
+    "displayName": "Mexico City Grand Prix",
+    "dna": {
+      "cornerProfile": "Altitude traction",
+      "overtaking": "High",
+      "tireWear": "Low",
+      "trackEvolution": "Medium",
+      "strategyBias": "Cooling",
+      "safetyCarRisk": "Low"
+    },
+    "intelligence": [
+      "High altitude reduces downforce and cooling efficiency.",
+      "Straight-line speed is influenced by thin air.",
+      "The long run to Turn 1 creates major opening-lap opportunity.",
+      "Power unit and brake cooling can be a major concern."
+    ],
+    "id": "mexico",
+    "matchKeys": [
+      "mexico",
+      "mexicocity",
+      "autodromohermanosrodriguez"
+    ],
+    "specs": {
+      "turns": 17,
+      "longestStraightKm": 1.2,
+      "averageSpeed": "Medium",
+      "raceLaps": null,
+      "trackLength": "4.304 km",
+      "raceDistance": null
+    },
+    "raceLapRecord": {
+      "time": "1:17.774",
+      "driver": "Valtteri Bottas",
+      "constructor": "Mercedes",
+      "year": 2021,
+      "raceName": "Mexico City Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "Lando Norris",
+      "constructor": "McLaren",
+      "season": 2025,
+      "date": "2025-10-26",
+      "raceName": "Mexico City Grand Prix"
+    }
+  },
   "previousWinner": null,
   "tyreInfo": null,
   "racePreview": null,

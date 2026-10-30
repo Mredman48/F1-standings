@@ -1,7 +1,7 @@
 {
   "header": "2027 Japanese Grand Prix 2027 weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T20:39:54.389Z",
+  "generatedAtUtc": "2026-10-30T21:14:10.434Z",
   "season": 2027,
   "round": 4,
   "meetingKey": 1313,
@@ -90,7 +90,51 @@
       }
     ]
   },
-  "circuitIntelligence": null,
+  "circuitIntelligence": {
+    "displayName": "Japanese Grand Prix",
+    "dna": {
+      "cornerProfile": "High-speed flowing",
+      "overtaking": "Low",
+      "tireWear": "High",
+      "trackEvolution": "Medium",
+      "strategyBias": "Tire Management",
+      "safetyCarRisk": "Low"
+    },
+    "intelligence": [
+      "Sector 1 rewards aerodynamic stability and driver confidence.",
+      "Dirty air can make overtaking difficult.",
+      "Tire management is critical through long high-load corners.",
+      "Qualifying position is very important."
+    ],
+    "id": "japan",
+    "matchKeys": [
+      "japan",
+      "japanese",
+      "suzuka"
+    ],
+    "specs": {
+      "turns": 18,
+      "longestStraightKm": 1.2,
+      "averageSpeed": "High",
+      "raceLaps": null,
+      "trackLength": "5.451 km",
+      "raceDistance": null
+    },
+    "raceLapRecord": {
+      "time": "1:30.965",
+      "driver": "Andrea Kimi Antonelli",
+      "constructor": "Mercedes",
+      "year": 2025,
+      "raceName": "Japanese Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "Max Verstappen",
+      "constructor": "Red Bull",
+      "season": 2025,
+      "date": "2025-04-06",
+      "raceName": "Japanese Grand Prix"
+    }
+  },
   "previousWinner": null,
   "tyreInfo": null,
   "racePreview": null,

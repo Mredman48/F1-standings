@@ -1,7 +1,7 @@
 {
   "header": "2027 Austrian Grand Prix 2027 weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T20:39:54.396Z",
+  "generatedAtUtc": "2026-10-30T21:14:10.437Z",
   "season": 2027,
   "round": 11,
   "meetingKey": 1320,
@@ -90,7 +90,52 @@
       }
     ]
   },
-  "circuitIntelligence": null,
+  "circuitIntelligence": {
+    "displayName": "Austrian Grand Prix",
+    "dna": {
+      "cornerProfile": "Short high-speed braking",
+      "overtaking": "High",
+      "tireWear": "Medium",
+      "trackEvolution": "Medium",
+      "strategyBias": "Track Limits",
+      "safetyCarRisk": "Medium"
+    },
+    "intelligence": [
+      "Short lap times make qualifying gaps extremely tight.",
+      "Heavy braking zones create multiple overtaking chances.",
+      "Track limits can heavily affect results.",
+      "Traffic management is important because the lap is so short."
+    ],
+    "id": "austria",
+    "matchKeys": [
+      "austria",
+      "austrian",
+      "spielberg",
+      "redbullring"
+    ],
+    "specs": {
+      "turns": 10,
+      "longestStraightKm": 0.9,
+      "averageSpeed": "High",
+      "raceLaps": null,
+      "trackLength": "4.326 km",
+      "raceDistance": null
+    },
+    "raceLapRecord": {
+      "time": "1:07.924",
+      "driver": "Oscar Piastri",
+      "constructor": "McLaren",
+      "year": 2025,
+      "raceName": "Austrian Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "Lando Norris",
+      "constructor": "McLaren",
+      "season": 2025,
+      "date": "2025-06-29",
+      "raceName": "Austrian Grand Prix"
+    }
+  },
   "previousWinner": null,
   "tyreInfo": null,
   "racePreview": null,

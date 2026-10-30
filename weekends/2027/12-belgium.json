@@ -1,7 +1,7 @@
 {
   "header": "2027 Belgian Grand Prix 2027 weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T20:39:54.397Z",
+  "generatedAtUtc": "2026-10-30T21:14:10.437Z",
   "season": 2027,
   "round": 12,
   "meetingKey": 1321,
@@ -90,7 +90,52 @@
       }
     ]
   },
-  "circuitIntelligence": null,
+  "circuitIntelligence": {
+    "displayName": "Belgian Grand Prix",
+    "dna": {
+      "cornerProfile": "High-speed elevation",
+      "overtaking": "High",
+      "tireWear": "Medium",
+      "trackEvolution": "Medium",
+      "strategyBias": "Weather",
+      "safetyCarRisk": "Medium"
+    },
+    "intelligence": [
+      "Weather can vary across different parts of the track.",
+      "Slipstream & overtake are powerful on long straights.",
+      "Setup is a compromise of sector speed and straight-line performance.",
+      "Elevation changes reward commitment and confidence."
+    ],
+    "id": "belgium",
+    "matchKeys": [
+      "belgium",
+      "belgian",
+      "spa",
+      "spafrancorchamps"
+    ],
+    "specs": {
+      "turns": 19,
+      "longestStraightKm": 1.9,
+      "averageSpeed": "High",
+      "raceLaps": null,
+      "trackLength": "7.004 km",
+      "raceDistance": null
+    },
+    "raceLapRecord": {
+      "time": "1:44.701",
+      "driver": "Sergio Perez",
+      "constructor": "Red Bull",
+      "year": 2024,
+      "raceName": "Belgian Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "Oscar Piastri",
+      "constructor": "McLaren",
+      "season": 2025,
+      "date": "2025-07-27",
+      "raceName": "Belgian Grand Prix"
+    }
+  },
   "previousWinner": null,
   "tyreInfo": null,
   "racePreview": null,

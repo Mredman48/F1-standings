@@ -1,7 +1,7 @@
 {
   "header": "2027 Canadian Grand Prix 2027 weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T20:39:54.392Z",
+  "generatedAtUtc": "2026-10-30T21:14:10.436Z",
   "season": 2027,
   "round": 7,
   "meetingKey": 1316,
@@ -90,7 +90,52 @@
       }
     ]
   },
-  "circuitIntelligence": null,
+  "circuitIntelligence": {
+    "displayName": "Canadian Grand Prix",
+    "dna": {
+      "cornerProfile": "Stop-start braking",
+      "overtaking": "High",
+      "tireWear": "Medium",
+      "trackEvolution": "Medium",
+      "strategyBias": "Undercut",
+      "safetyCarRisk": "High"
+    },
+    "intelligence": [
+      "Heavy braking zones create real passing opportunities.",
+      "Wall proximity increases Safety Car chances.",
+      "Traction out of slow corners is key.",
+      "Brake management can influence race pace."
+    ],
+    "id": "canada",
+    "matchKeys": [
+      "canada",
+      "canadian",
+      "montreal",
+      "gillesvilleneuve"
+    ],
+    "specs": {
+      "turns": 14,
+      "longestStraightKm": 1.2,
+      "averageSpeed": "Medium",
+      "raceLaps": null,
+      "trackLength": "4.361 km",
+      "raceDistance": null
+    },
+    "raceLapRecord": {
+      "time": "1:13.078",
+      "driver": "Valtteri Bottas",
+      "constructor": "Mercedes",
+      "year": 2019,
+      "raceName": "Canadian Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "George Russell",
+      "constructor": "Mercedes",
+      "season": 2025,
+      "date": "2025-06-15",
+      "raceName": "Canadian Grand Prix"
+    }
+  },
   "previousWinner": null,
   "tyreInfo": null,
   "racePreview": null,

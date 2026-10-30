@@ -1,7 +1,7 @@
 {
   "header": "2027 United States Grand Prix 2027 weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T20:39:54.402Z",
+  "generatedAtUtc": "2026-10-30T21:14:10.440Z",
   "season": 2027,
   "round": 19,
   "meetingKey": 1328,
@@ -90,7 +90,53 @@
       }
     ]
   },
-  "circuitIntelligence": null,
+  "circuitIntelligence": {
+    "displayName": "United States Grand Prix",
+    "dna": {
+      "cornerProfile": "Mixed technical",
+      "overtaking": "High",
+      "tireWear": "Medium",
+      "trackEvolution": "Medium",
+      "strategyBias": "Balanced",
+      "safetyCarRisk": "Medium"
+    },
+    "intelligence": [
+      "Sector 1 rewards high-speed aero stability.",
+      "The long back straight creates strong overtaking chances.",
+      "Bumpy sections can affect balance and tire life.",
+      "This is a strong all-round car test."
+    ],
+    "id": "usa",
+    "matchKeys": [
+      "unitedstates",
+      "usa",
+      "austin",
+      "cota",
+      "circuitoftheamericas"
+    ],
+    "specs": {
+      "turns": 20,
+      "longestStraightKm": 1.2,
+      "averageSpeed": "Medium",
+      "raceLaps": null,
+      "trackLength": "5.513 km",
+      "raceDistance": null
+    },
+    "raceLapRecord": {
+      "time": "1:36.169",
+      "driver": "Charles Leclerc",
+      "constructor": "Ferrari",
+      "year": 2019,
+      "raceName": "United States Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "Max Verstappen",
+      "constructor": "Red Bull",
+      "season": 2025,
+      "date": "2025-10-19",
+      "raceName": "United States Grand Prix"
+    }
+  },
   "previousWinner": null,
   "tyreInfo": null,
   "racePreview": null,

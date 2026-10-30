@@ -1,7 +1,7 @@
 {
   "header": "2027 Madrid Grand Prix 2027 weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T20:39:54.399Z",
+  "generatedAtUtc": "2026-10-30T21:14:10.438Z",
   "season": 2027,
   "round": 15,
   "meetingKey": 1324,
@@ -90,7 +90,40 @@
       }
     ]
   },
-  "circuitIntelligence": null,
+  "circuitIntelligence": {
+    "displayName": "Spanish Grand Prix",
+    "dna": {
+      "cornerProfile": "New street-hybrid",
+      "overtaking": "Very Low",
+      "tireWear": "Medium",
+      "trackEvolution": "High",
+      "strategyBias": "Track Position",
+      "safetyCarRisk": "Medium"
+    },
+    "intelligence": [
+      "As a new venue, early sessions will be key.",
+      "Track evolution is likely to be high across the weekend.",
+      "Setup confidence may matter more than historical form.",
+      "More will be known after the first weekend at this track."
+    ],
+    "id": "madrid",
+    "matchKeys": [
+      "spain",
+      "spanish",
+      "madrid",
+      "madring"
+    ],
+    "specs": {
+      "turns": 22,
+      "longestStraightKm": 0.8,
+      "averageSpeed": "Unknown",
+      "raceLaps": null,
+      "trackLength": "5.416 km",
+      "raceDistance": null
+    },
+    "raceLapRecord": null,
+    "previousWinner": null
+  },
   "previousWinner": null,
   "tyreInfo": null,
   "racePreview": null,

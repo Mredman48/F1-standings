@@ -1,7 +1,7 @@
 {
   "header": "2027 Chinese Grand Prix 2027 weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T20:39:54.390Z",
+  "generatedAtUtc": "2026-10-30T21:14:10.435Z",
   "season": 2027,
   "round": 5,
   "meetingKey": 1314,
@@ -90,7 +90,50 @@
       }
     ]
   },
-  "circuitIntelligence": null,
+  "circuitIntelligence": {
+    "displayName": "Chinese Grand Prix",
+    "dna": {
+      "cornerProfile": "Technical with long straight",
+      "overtaking": "High",
+      "tireWear": "High",
+      "trackEvolution": "Medium",
+      "strategyBias": "Tire Management",
+      "safetyCarRisk": "Low"
+    },
+    "intelligence": [
+      "The long back straight creates strong overtaking opportunities.",
+      "Front tire wear can become a limiting factor.",
+      "Long-radius corners punish poor balance.",
+      "Strategy flexibility matters if degradation is high."
+    ],
+    "id": "china",
+    "matchKeys": [
+      "china",
+      "shanghai"
+    ],
+    "specs": {
+      "turns": 16,
+      "longestStraightKm": 1.2,
+      "averageSpeed": "Medium",
+      "raceLaps": null,
+      "trackLength": "5.451 km",
+      "raceDistance": null
+    },
+    "raceLapRecord": {
+      "time": "1:32.238",
+      "driver": "Michael Schumacher",
+      "constructor": "Ferrari",
+      "year": 2004,
+      "raceName": "Chinese Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "Oscar Piastri",
+      "constructor": "McLaren",
+      "season": 2025,
+      "date": "2025-03-23",
+      "raceName": "Chinese Grand Prix"
+    }
+  },
   "previousWinner": null,
   "tyreInfo": null,
   "racePreview": null,

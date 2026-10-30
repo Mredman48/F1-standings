@@ -1,7 +1,7 @@
 {
   "header": "2027 Monaco Grand Prix 2027 weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T20:39:54.394Z",
+  "generatedAtUtc": "2026-10-30T21:14:10.436Z",
   "season": 2027,
   "round": 8,
   "meetingKey": 1317,
@@ -90,7 +90,50 @@
       }
     ]
   },
-  "circuitIntelligence": null,
+  "circuitIntelligence": {
+    "displayName": "Monaco Grand Prix",
+    "dna": {
+      "cornerProfile": "Tight street",
+      "overtaking": "Very Low",
+      "tireWear": "Low",
+      "trackEvolution": "High",
+      "strategyBias": "Track Position",
+      "safetyCarRisk": "High"
+    },
+    "intelligence": [
+      "Qualifying is often more important than race pace.",
+      "Track position dominates strategy.",
+      "Overtaking is extremely difficult.",
+      "Safety Car timing can completely change the race."
+    ],
+    "id": "monaco",
+    "matchKeys": [
+      "monaco",
+      "montecarlo"
+    ],
+    "specs": {
+      "turns": 19,
+      "longestStraightKm": 0.5,
+      "averageSpeed": "Low",
+      "raceLaps": null,
+      "trackLength": "3.337 km",
+      "raceDistance": null
+    },
+    "raceLapRecord": {
+      "time": "1:12.909",
+      "driver": "Lewis Hamilton",
+      "constructor": "Mercedes",
+      "year": 2021,
+      "raceName": "Monaco Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "Lando Norris",
+      "constructor": "McLaren",
+      "season": 2025,
+      "date": "2025-05-25",
+      "raceName": "Monaco Grand Prix"
+    }
+  },
   "previousWinner": null,
   "tyreInfo": null,
   "racePreview": null,

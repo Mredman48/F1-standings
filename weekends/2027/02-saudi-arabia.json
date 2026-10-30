@@ -1,7 +1,7 @@
 {
   "header": "2027 Saudi Arabian Grand Prix 2027 weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T20:39:54.386Z",
+  "generatedAtUtc": "2026-10-30T21:14:10.433Z",
   "season": 2027,
   "round": 2,
   "meetingKey": 1311,
@@ -90,7 +90,49 @@
       }
     ]
   },
-  "circuitIntelligence": null,
+  "circuitIntelligence": {
+    "displayName": "Saudi Arabian Grand Prix",
+    "dna": {
+      "cornerProfile": "High-speed street",
+      "overtaking": "Medium",
+      "tireWear": "Low",
+      "trackEvolution": "High",
+      "strategyBias": "Track Position",
+      "safetyCarRisk": "High"
+    },
+    "intelligence": [
+      "High-speed walls make mistakes costly.",
+      "Safety Cars can quickly reshape strategy.",
+      "Qualifying position matters because overtaking is risky.",
+      "Low degradation can limit strategic variation."
+    ],
+    "id": "saudi",
+    "matchKeys": [
+      "saudi",
+      "jeddah"
+    ],
+    "specs": {
+      "turns": 27,
+      "longestStraightKm": 0.9,
+      "averageSpeed": "High",
+      "raceLaps": null,
+      "raceDistance": null
+    },
+    "raceLapRecord": {
+      "time": "1:30.734",
+      "driver": "Lewis Hamilton",
+      "constructor": "Mercedes",
+      "year": 2021,
+      "raceName": "Saudi Arabian Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "Oscar Piastri",
+      "constructor": "McLaren",
+      "season": 2025,
+      "date": "2025-04-20",
+      "raceName": "Saudi Arabian Grand Prix"
+    }
+  },
   "previousWinner": null,
   "tyreInfo": null,
   "racePreview": null,

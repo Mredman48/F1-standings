@@ -1,7 +1,7 @@
 {
   "header": "2027 Miami Grand Prix 2027 weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T20:39:54.390Z",
+  "generatedAtUtc": "2026-10-30T21:14:10.435Z",
   "season": 2027,
   "round": 6,
   "meetingKey": 1315,
@@ -90,7 +90,49 @@
       }
     ]
   },
-  "circuitIntelligence": null,
+  "circuitIntelligence": {
+    "displayName": "Miami Grand Prix",
+    "dna": {
+      "cornerProfile": "Mixed street-style",
+      "overtaking": "Medium",
+      "tireWear": "Medium",
+      "trackEvolution": "High",
+      "strategyBias": "Neutral",
+      "safetyCarRisk": "Medium"
+    },
+    "intelligence": [
+      "Grip can vary across the lap.",
+      "The long straight creates the best overtaking chance.",
+      "Track evolution is usually noticeable.",
+      "Balance between traction and top speed matters."
+    ],
+    "id": "miami",
+    "matchKeys": [
+      "miami"
+    ],
+    "specs": {
+      "turns": 19,
+      "longestStraightKm": 1.2,
+      "averageSpeed": "Medium",
+      "raceLaps": null,
+      "trackLength": "5.412 km",
+      "raceDistance": null
+    },
+    "raceLapRecord": {
+      "time": "1:29.708",
+      "driver": "Max Verstappen",
+      "constructor": "Red Bull",
+      "year": 2023,
+      "raceName": "Miami Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "Oscar Piastri",
+      "constructor": "McLaren",
+      "season": 2025,
+      "date": "2025-05-04",
+      "raceName": "Miami Grand Prix"
+    }
+  },
   "previousWinner": null,
   "tyreInfo": null,
   "racePreview": null,

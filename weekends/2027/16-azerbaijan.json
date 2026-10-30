@@ -1,7 +1,7 @@
 {
   "header": "2027 Azerbaijan Grand Prix 2027 weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T20:39:54.399Z",
+  "generatedAtUtc": "2026-10-30T21:14:10.439Z",
   "season": 2027,
   "round": 16,
   "meetingKey": 1325,
@@ -90,7 +90,50 @@
       }
     ]
   },
-  "circuitIntelligence": null,
+  "circuitIntelligence": {
+    "displayName": "Azerbaijan Grand Prix",
+    "dna": {
+      "cornerProfile": "Street with long straight",
+      "overtaking": "High",
+      "tireWear": "Low",
+      "trackEvolution": "High",
+      "strategyBias": "Safety Car",
+      "safetyCarRisk": "High"
+    },
+    "intelligence": [
+      "The long main straight creates major passing opportunities.",
+      "Safety Cars are a constant strategic threat.",
+      "Low-speed castle sections punish mistakes.",
+      "Top speed and braking confidence are both critical."
+    ],
+    "id": "azerbaijan",
+    "matchKeys": [
+      "azerbaijan",
+      "baku"
+    ],
+    "specs": {
+      "turns": 20,
+      "longestStraightKm": 2.2,
+      "averageSpeed": "High",
+      "raceLaps": null,
+      "trackLength": "6.003 km",
+      "raceDistance": null
+    },
+    "raceLapRecord": {
+      "time": "1:43.009",
+      "driver": "Charles Leclerc",
+      "constructor": "Ferrari",
+      "year": 2019,
+      "raceName": "Azerbaijan Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "Max Verstappen",
+      "constructor": "Red Bull",
+      "season": 2025,
+      "date": "2025-09-21",
+      "raceName": "Azerbaijan Grand Prix"
+    }
+  },
   "previousWinner": null,
   "tyreInfo": null,
   "racePreview": null,

@@ -1,7 +1,7 @@
 {
   "header": "2027 Las Vegas Grand Prix 2027 weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T20:39:54.404Z",
+  "generatedAtUtc": "2026-10-30T21:14:10.441Z",
   "season": 2027,
   "round": 22,
   "meetingKey": 1331,
@@ -90,7 +90,50 @@
       }
     ]
   },
-  "circuitIntelligence": null,
+  "circuitIntelligence": {
+    "displayName": "Las Vegas Grand Prix",
+    "dna": {
+      "cornerProfile": "Low-grip street",
+      "overtaking": "High",
+      "tireWear": "Low",
+      "trackEvolution": "High",
+      "strategyBias": "Tire Temperature",
+      "safetyCarRisk": "Medium"
+    },
+    "intelligence": [
+      "Cold track temperatures can make tire warm-up difficult.",
+      "The long straight creates strong overtaking chances.",
+      "Low grip makes braking stability important.",
+      "Track evolution can be significant across the weekend."
+    ],
+    "id": "lasvegas",
+    "matchKeys": [
+      "lasvegas",
+      "vegas"
+    ],
+    "specs": {
+      "turns": 17,
+      "longestStraightKm": 1.9,
+      "averageSpeed": "High",
+      "raceLaps": null,
+      "trackLength": "6.201 km",
+      "raceDistance": null
+    },
+    "raceLapRecord": {
+      "time": "1:33.365",
+      "driver": "Max Verstappen",
+      "constructor": "Red Bull",
+      "year": 2025,
+      "raceName": "Las Vegas Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "Max Verstappen",
+      "constructor": "Red Bull",
+      "season": 2025,
+      "date": "2025-11-23",
+      "raceName": "Las Vegas Grand Prix"
+    }
+  },
   "previousWinner": null,
   "tyreInfo": null,
   "racePreview": null,
