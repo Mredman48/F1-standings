@@ -1,7 +1,7 @@
 {
   "header": "2026 Bahrain GP in Malaysia weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T16:54:07.575Z",
+  "generatedAtUtc": "2026-10-30T17:07:57.839Z",
   "season": 2026,
   "round": 16,
   "meetingKey": 1308,
@@ -4641,32 +4641,41 @@
           "teamName": "Red Bull Racing",
           "teamColour": "#4781D7",
           "lapsCompleted": 55,
-          "stops": 2,
+          "stops": 3,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 1,
-              "laps": 1,
+              "lapEnd": 9,
+              "laps": 9,
               "tyreAgeAtStart": 0,
               "newTyre": true
             },
             {
               "stint": 2,
               "compound": "SOFT",
-              "lapStart": 2,
-              "lapEnd": 9,
-              "laps": 8,
+              "lapStart": 10,
+              "lapEnd": 33,
+              "laps": 24,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 3,
+              "compound": "SOFT",
+              "lapStart": 34,
+              "lapEnd": 43,
+              "laps": 10,
               "tyreAgeAtStart": 0,
               "newTyre": true
             },
             {
               "stint": 4,
               "compound": "SOFT",
-              "lapStart": 10,
+              "lapStart": 44,
               "lapEnd": 55,
-              "laps": 46,
+              "laps": 12,
               "tyreAgeAtStart": 3,
               "newTyre": false
             }
@@ -4991,32 +5000,41 @@
           "teamName": "Aston Martin",
           "teamColour": "#229971",
           "lapsCompleted": 55,
-          "stops": 2,
+          "stops": 3,
           "stints": [
             {
               "stint": 1,
               "compound": "MEDIUM",
               "lapStart": 1,
-              "lapEnd": 1,
-              "laps": 1,
+              "lapEnd": 9,
+              "laps": 9,
               "tyreAgeAtStart": 0,
               "newTyre": true
             },
             {
               "stint": 2,
               "compound": "HARD",
-              "lapStart": 2,
-              "lapEnd": 9,
-              "laps": 8,
+              "lapStart": 10,
+              "lapEnd": 31,
+              "laps": 22,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 3,
+              "compound": "HARD",
+              "lapStart": 32,
+              "lapEnd": 45,
+              "laps": 14,
               "tyreAgeAtStart": 0,
               "newTyre": true
             },
             {
               "stint": 4,
               "compound": "SOFT",
-              "lapStart": 10,
+              "lapStart": 46,
               "lapEnd": 55,
-              "laps": 46,
+              "laps": 10,
               "tyreAgeAtStart": 0,
               "newTyre": true
             }
@@ -5577,7 +5595,7 @@
           "teamName": "Cadillac",
           "teamColour": "#909090",
           "lapsCompleted": 55,
-          "stops": 6,
+          "stops": 7,
           "stints": [
             {
               "stint": 1,
@@ -5589,7 +5607,7 @@
               "newTyre": true
             },
             {
-              "stint": 3,
+              "stint": 2,
               "compound": "INTERMEDIATE",
               "lapStart": 2,
               "lapEnd": 2,
@@ -5598,8 +5616,8 @@
               "newTyre": true
             },
             {
-              "stint": 4,
-              "compound": "MEDIUM",
+              "stint": 3,
+              "compound": "INTERMEDIATE",
               "lapStart": 3,
               "lapEnd": 9,
               "laps": 7,
@@ -5607,8 +5625,8 @@
               "newTyre": true
             },
             {
-              "stint": 5,
-              "compound": "HARD",
+              "stint": 4,
+              "compound": "MEDIUM",
               "lapStart": 10,
               "lapEnd": 18,
               "laps": 9,
@@ -5616,7 +5634,7 @@
               "newTyre": true
             },
             {
-              "stint": 6,
+              "stint": 5,
               "compound": "HARD",
               "lapStart": 19,
               "lapEnd": 21,
@@ -5625,8 +5643,8 @@
               "newTyre": true
             },
             {
-              "stint": 7,
-              "compound": "MEDIUM",
+              "stint": 6,
+              "compound": "HARD",
               "lapStart": 22,
               "lapEnd": 39,
               "laps": 18,
@@ -5634,11 +5652,20 @@
               "newTyre": true
             },
             {
+              "stint": 7,
+              "compound": "MEDIUM",
+              "lapStart": 40,
+              "lapEnd": 44,
+              "laps": 5,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
               "stint": 8,
               "compound": "SOFT",
-              "lapStart": 40,
+              "lapStart": 45,
               "lapEnd": 55,
-              "laps": 16,
+              "laps": 11,
               "tyreAgeAtStart": 1,
               "newTyre": false
             }
@@ -5774,10 +5801,11 @@
   "meta": {
     "fia": {
       "eventName": "Bahrain Grand Prix",
-      "done": "2026-10-30T16:54:05.346Z"
+      "done": "2026-10-30T17:07:56.383Z"
     },
     "final": {
       "weekend": "2026-10-30T16:54:07.574Z"
-    }
+    },
+    "buildVersion": "2026-10-30.4"
   }
 }

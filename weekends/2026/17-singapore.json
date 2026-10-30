@@ -1,7 +1,7 @@
 {
   "header": "2026 Singapore GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T16:43:00.942Z",
+  "generatedAtUtc": "2026-10-30T17:08:04.773Z",
   "season": 2026,
   "round": 17,
   "meetingKey": 1296,
@@ -3888,11 +3888,53 @@
       "sessionName": "Sprint",
       "dateStartUtc": "2026-10-10T09:00:00+00:00",
       "dhlEventId": null,
-      "stopTimesSource": null,
+      "stopTimesSource": "openf1",
       "totalLaps": 20,
-      "fastestStop": null,
-      "fastestStops": [],
-      "bestStopPerTeam": [],
+      "fastestStop": {
+        "driverNumber": 55,
+        "driverName": "Carlos SAINZ",
+        "nameAcronym": "SAI",
+        "teamName": "Williams",
+        "teamColour": "#1868DB",
+        "lap": 4,
+        "stopDuration": 5.4,
+        "stopDurationLabel": "5.40s",
+        "laneDuration": 35.511,
+        "validStop": true,
+        "dateUtc": "2026-10-10T09:47:04.809000+00:00"
+      },
+      "fastestStops": [
+        {
+          "rank": 1,
+          "driverNumber": 55,
+          "driverName": "Carlos SAINZ",
+          "nameAcronym": "SAI",
+          "teamName": "Williams",
+          "teamColour": "#1868DB",
+          "lap": 4,
+          "stopDuration": 5.4,
+          "stopDurationLabel": "5.40s",
+          "laneDuration": 35.511,
+          "validStop": true,
+          "dateUtc": "2026-10-10T09:47:04.809000+00:00"
+        }
+      ],
+      "bestStopPerTeam": [
+        {
+          "rank": 1,
+          "driverNumber": 55,
+          "driverName": "Carlos SAINZ",
+          "nameAcronym": "SAI",
+          "teamName": "Williams",
+          "teamColour": "#1868DB",
+          "lap": 4,
+          "stopDuration": 5.4,
+          "stopDurationLabel": "5.40s",
+          "laneDuration": 35.511,
+          "validStop": true,
+          "dateUtc": "2026-10-10T09:47:04.809000+00:00"
+        }
+      ],
       "pitStops": [
         {
           "driverNumber": 3,
@@ -4564,11 +4606,11 @@
           "teamName": "Williams",
           "teamColour": "#1868DB",
           "lap": 4,
-          "stopDuration": null,
-          "stopDurationLabel": null,
-          "laneDuration": 35.5,
-          "validStop": false,
-          "dateUtc": "2026-10-10T09:47:04.794000+00:00"
+          "stopDuration": 5.4,
+          "stopDurationLabel": "5.40s",
+          "laneDuration": 35.511,
+          "validStop": true,
+          "dateUtc": "2026-10-10T09:47:04.809000+00:00"
         },
         {
           "driverNumber": 41,
@@ -4590,9 +4632,9 @@
           "teamName": "Williams",
           "teamColour": "#1868DB",
           "lap": 6,
-          "stopDuration": null,
-          "stopDurationLabel": null,
-          "laneDuration": 45.8,
+          "stopDuration": 24.5,
+          "stopDurationLabel": "24.50s",
+          "laneDuration": 45.878,
           "validStop": false,
           "dateUtc": "2026-10-10T09:52:24.616000+00:00"
         }
@@ -4608,16 +4650,43 @@
           "teamName": "Red Bull Racing",
           "teamColour": "#4781D7",
           "lapsCompleted": 20,
-          "stops": 0,
+          "stops": 3,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 20,
-              "laps": 20,
+              "lapEnd": 2,
+              "laps": 2,
               "tyreAgeAtStart": 0,
               "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "INTERMEDIATE",
+              "lapStart": 3,
+              "lapEnd": 3,
+              "laps": 1,
+              "tyreAgeAtStart": 2,
+              "newTyre": false
+            },
+            {
+              "stint": 3,
+              "compound": "INTERMEDIATE",
+              "lapStart": 4,
+              "lapEnd": 4,
+              "laps": 1,
+              "tyreAgeAtStart": 3,
+              "newTyre": false
+            },
+            {
+              "stint": 4,
+              "compound": "INTERMEDIATE",
+              "lapStart": 5,
+              "lapEnd": 20,
+              "laps": 16,
+              "tyreAgeAtStart": 4,
+              "newTyre": false
             }
           ]
         },
@@ -4631,16 +4700,43 @@
           "teamName": "Ferrari",
           "teamColour": "#ED1131",
           "lapsCompleted": 20,
-          "stops": 0,
+          "stops": 3,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 20,
-              "laps": 20,
+              "lapEnd": 2,
+              "laps": 2,
               "tyreAgeAtStart": 0,
               "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "INTERMEDIATE",
+              "lapStart": 3,
+              "lapEnd": 3,
+              "laps": 1,
+              "tyreAgeAtStart": 2,
+              "newTyre": false
+            },
+            {
+              "stint": 3,
+              "compound": "INTERMEDIATE",
+              "lapStart": 4,
+              "lapEnd": 4,
+              "laps": 1,
+              "tyreAgeAtStart": 3,
+              "newTyre": false
+            },
+            {
+              "stint": 4,
+              "compound": "INTERMEDIATE",
+              "lapStart": 5,
+              "lapEnd": 20,
+              "laps": 16,
+              "tyreAgeAtStart": 4,
+              "newTyre": false
             }
           ]
         },
@@ -4654,16 +4750,43 @@
           "teamName": "Ferrari",
           "teamColour": "#ED1131",
           "lapsCompleted": 20,
-          "stops": 0,
+          "stops": 3,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 20,
-              "laps": 20,
+              "lapEnd": 2,
+              "laps": 2,
               "tyreAgeAtStart": 0,
               "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "INTERMEDIATE",
+              "lapStart": 3,
+              "lapEnd": 3,
+              "laps": 1,
+              "tyreAgeAtStart": 2,
+              "newTyre": false
+            },
+            {
+              "stint": 3,
+              "compound": "INTERMEDIATE",
+              "lapStart": 4,
+              "lapEnd": 4,
+              "laps": 1,
+              "tyreAgeAtStart": 3,
+              "newTyre": false
+            },
+            {
+              "stint": 4,
+              "compound": "INTERMEDIATE",
+              "lapStart": 5,
+              "lapEnd": 20,
+              "laps": 16,
+              "tyreAgeAtStart": 4,
+              "newTyre": false
             }
           ]
         },
@@ -4677,16 +4800,43 @@
           "teamName": "Mercedes",
           "teamColour": "#00D7B6",
           "lapsCompleted": 20,
-          "stops": 0,
+          "stops": 3,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 20,
-              "laps": 20,
+              "lapEnd": 2,
+              "laps": 2,
               "tyreAgeAtStart": 0,
               "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "INTERMEDIATE",
+              "lapStart": 3,
+              "lapEnd": 3,
+              "laps": 1,
+              "tyreAgeAtStart": 2,
+              "newTyre": false
+            },
+            {
+              "stint": 3,
+              "compound": "INTERMEDIATE",
+              "lapStart": 4,
+              "lapEnd": 4,
+              "laps": 1,
+              "tyreAgeAtStart": 3,
+              "newTyre": false
+            },
+            {
+              "stint": 4,
+              "compound": "INTERMEDIATE",
+              "lapStart": 5,
+              "lapEnd": 20,
+              "laps": 16,
+              "tyreAgeAtStart": 4,
+              "newTyre": false
             }
           ]
         },
@@ -4700,16 +4850,43 @@
           "teamName": "Racing Bulls",
           "teamColour": "#6C98FF",
           "lapsCompleted": 20,
-          "stops": 0,
+          "stops": 3,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 20,
-              "laps": 20,
+              "lapEnd": 2,
+              "laps": 2,
               "tyreAgeAtStart": 0,
               "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "INTERMEDIATE",
+              "lapStart": 3,
+              "lapEnd": 3,
+              "laps": 1,
+              "tyreAgeAtStart": 2,
+              "newTyre": false
+            },
+            {
+              "stint": 3,
+              "compound": "INTERMEDIATE",
+              "lapStart": 4,
+              "lapEnd": 4,
+              "laps": 1,
+              "tyreAgeAtStart": 3,
+              "newTyre": false
+            },
+            {
+              "stint": 4,
+              "compound": "INTERMEDIATE",
+              "lapStart": 5,
+              "lapEnd": 20,
+              "laps": 16,
+              "tyreAgeAtStart": 4,
+              "newTyre": false
             }
           ]
         },
@@ -4723,16 +4900,43 @@
           "teamName": "Haas F1 Team",
           "teamColour": "#9C9FA2",
           "lapsCompleted": 20,
-          "stops": 0,
+          "stops": 3,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 20,
-              "laps": 20,
+              "lapEnd": 2,
+              "laps": 2,
               "tyreAgeAtStart": 0,
               "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "INTERMEDIATE",
+              "lapStart": 3,
+              "lapEnd": 3,
+              "laps": 1,
+              "tyreAgeAtStart": 2,
+              "newTyre": false
+            },
+            {
+              "stint": 3,
+              "compound": "INTERMEDIATE",
+              "lapStart": 4,
+              "lapEnd": 4,
+              "laps": 1,
+              "tyreAgeAtStart": 3,
+              "newTyre": false
+            },
+            {
+              "stint": 4,
+              "compound": "INTERMEDIATE",
+              "lapStart": 5,
+              "lapEnd": 20,
+              "laps": 16,
+              "tyreAgeAtStart": 4,
+              "newTyre": false
             }
           ]
         },
@@ -4746,16 +4950,43 @@
           "teamName": "Audi",
           "teamColour": "#F50537",
           "lapsCompleted": 20,
-          "stops": 0,
+          "stops": 3,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 20,
-              "laps": 20,
+              "lapEnd": 2,
+              "laps": 2,
               "tyreAgeAtStart": 0,
               "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "INTERMEDIATE",
+              "lapStart": 3,
+              "lapEnd": 3,
+              "laps": 1,
+              "tyreAgeAtStart": 2,
+              "newTyre": false
+            },
+            {
+              "stint": 3,
+              "compound": "INTERMEDIATE",
+              "lapStart": 4,
+              "lapEnd": 4,
+              "laps": 1,
+              "tyreAgeAtStart": 3,
+              "newTyre": false
+            },
+            {
+              "stint": 4,
+              "compound": "INTERMEDIATE",
+              "lapStart": 5,
+              "lapEnd": 20,
+              "laps": 16,
+              "tyreAgeAtStart": 4,
+              "newTyre": false
             }
           ]
         },
@@ -4769,16 +5000,43 @@
           "teamName": "McLaren",
           "teamColour": "#F47600",
           "lapsCompleted": 20,
-          "stops": 0,
+          "stops": 3,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 20,
-              "laps": 20,
+              "lapEnd": 2,
+              "laps": 2,
               "tyreAgeAtStart": 0,
               "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "INTERMEDIATE",
+              "lapStart": 3,
+              "lapEnd": 3,
+              "laps": 1,
+              "tyreAgeAtStart": 2,
+              "newTyre": false
+            },
+            {
+              "stint": 3,
+              "compound": "INTERMEDIATE",
+              "lapStart": 4,
+              "lapEnd": 4,
+              "laps": 1,
+              "tyreAgeAtStart": 3,
+              "newTyre": false
+            },
+            {
+              "stint": 4,
+              "compound": "INTERMEDIATE",
+              "lapStart": 5,
+              "lapEnd": 20,
+              "laps": 16,
+              "tyreAgeAtStart": 4,
+              "newTyre": false
             }
           ]
         },
@@ -4792,16 +5050,43 @@
           "teamName": "Alpine",
           "teamColour": "#00A1E8",
           "lapsCompleted": 20,
-          "stops": 0,
+          "stops": 3,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 20,
-              "laps": 20,
+              "lapEnd": 2,
+              "laps": 2,
               "tyreAgeAtStart": 0,
               "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "INTERMEDIATE",
+              "lapStart": 3,
+              "lapEnd": 3,
+              "laps": 1,
+              "tyreAgeAtStart": 2,
+              "newTyre": false
+            },
+            {
+              "stint": 3,
+              "compound": "INTERMEDIATE",
+              "lapStart": 4,
+              "lapEnd": 4,
+              "laps": 1,
+              "tyreAgeAtStart": 3,
+              "newTyre": false
+            },
+            {
+              "stint": 4,
+              "compound": "INTERMEDIATE",
+              "lapStart": 5,
+              "lapEnd": 20,
+              "laps": 16,
+              "tyreAgeAtStart": 4,
+              "newTyre": false
             }
           ]
         },
@@ -4815,16 +5100,43 @@
           "teamName": "Haas F1 Team",
           "teamColour": "#9C9FA2",
           "lapsCompleted": 20,
-          "stops": 0,
+          "stops": 3,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 20,
-              "laps": 20,
+              "lapEnd": 2,
+              "laps": 2,
               "tyreAgeAtStart": 0,
               "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "INTERMEDIATE",
+              "lapStart": 3,
+              "lapEnd": 3,
+              "laps": 1,
+              "tyreAgeAtStart": 2,
+              "newTyre": false
+            },
+            {
+              "stint": 3,
+              "compound": "INTERMEDIATE",
+              "lapStart": 4,
+              "lapEnd": 4,
+              "laps": 1,
+              "tyreAgeAtStart": 3,
+              "newTyre": false
+            },
+            {
+              "stint": 4,
+              "compound": "INTERMEDIATE",
+              "lapStart": 5,
+              "lapEnd": 20,
+              "laps": 16,
+              "tyreAgeAtStart": 4,
+              "newTyre": false
             }
           ]
         },
@@ -4838,16 +5150,43 @@
           "teamName": "Aston Martin",
           "teamColour": "#229971",
           "lapsCompleted": 20,
-          "stops": 0,
+          "stops": 3,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 20,
-              "laps": 20,
+              "lapEnd": 2,
+              "laps": 2,
               "tyreAgeAtStart": 0,
               "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "INTERMEDIATE",
+              "lapStart": 3,
+              "lapEnd": 3,
+              "laps": 1,
+              "tyreAgeAtStart": 2,
+              "newTyre": false
+            },
+            {
+              "stint": 3,
+              "compound": "INTERMEDIATE",
+              "lapStart": 4,
+              "lapEnd": 4,
+              "laps": 1,
+              "tyreAgeAtStart": 3,
+              "newTyre": false
+            },
+            {
+              "stint": 4,
+              "compound": "INTERMEDIATE",
+              "lapStart": 5,
+              "lapEnd": 20,
+              "laps": 16,
+              "tyreAgeAtStart": 4,
+              "newTyre": false
             }
           ]
         },
@@ -4861,16 +5200,43 @@
           "teamName": "Williams",
           "teamColour": "#1868DB",
           "lapsCompleted": 20,
-          "stops": 0,
+          "stops": 3,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 20,
-              "laps": 20,
+              "lapEnd": 2,
+              "laps": 2,
               "tyreAgeAtStart": 0,
               "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "INTERMEDIATE",
+              "lapStart": 3,
+              "lapEnd": 3,
+              "laps": 1,
+              "tyreAgeAtStart": 2,
+              "newTyre": false
+            },
+            {
+              "stint": 3,
+              "compound": "INTERMEDIATE",
+              "lapStart": 4,
+              "lapEnd": 4,
+              "laps": 1,
+              "tyreAgeAtStart": 3,
+              "newTyre": false
+            },
+            {
+              "stint": 4,
+              "compound": "INTERMEDIATE",
+              "lapStart": 5,
+              "lapEnd": 20,
+              "laps": 16,
+              "tyreAgeAtStart": 4,
+              "newTyre": false
             }
           ]
         },
@@ -4884,16 +5250,43 @@
           "teamName": "Racing Bulls",
           "teamColour": "#6C98FF",
           "lapsCompleted": 20,
-          "stops": 0,
+          "stops": 3,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 20,
-              "laps": 20,
+              "lapEnd": 2,
+              "laps": 2,
               "tyreAgeAtStart": 0,
               "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "INTERMEDIATE",
+              "lapStart": 3,
+              "lapEnd": 3,
+              "laps": 1,
+              "tyreAgeAtStart": 2,
+              "newTyre": false
+            },
+            {
+              "stint": 3,
+              "compound": "INTERMEDIATE",
+              "lapStart": 4,
+              "lapEnd": 4,
+              "laps": 1,
+              "tyreAgeAtStart": 3,
+              "newTyre": false
+            },
+            {
+              "stint": 4,
+              "compound": "INTERMEDIATE",
+              "lapStart": 5,
+              "lapEnd": 20,
+              "laps": 16,
+              "tyreAgeAtStart": 4,
+              "newTyre": false
             }
           ]
         },
@@ -4907,16 +5300,43 @@
           "teamName": "McLaren",
           "teamColour": "#F47600",
           "lapsCompleted": 19,
-          "stops": 0,
+          "stops": 3,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 19,
-              "laps": 19,
+              "lapEnd": 2,
+              "laps": 2,
               "tyreAgeAtStart": 0,
               "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "INTERMEDIATE",
+              "lapStart": 3,
+              "lapEnd": 3,
+              "laps": 1,
+              "tyreAgeAtStart": 2,
+              "newTyre": false
+            },
+            {
+              "stint": 3,
+              "compound": "INTERMEDIATE",
+              "lapStart": 4,
+              "lapEnd": 4,
+              "laps": 1,
+              "tyreAgeAtStart": 3,
+              "newTyre": false
+            },
+            {
+              "stint": 4,
+              "compound": "INTERMEDIATE",
+              "lapStart": 5,
+              "lapEnd": 19,
+              "laps": 15,
+              "tyreAgeAtStart": 4,
+              "newTyre": false
             }
           ]
         },
@@ -4930,16 +5350,43 @@
           "teamName": "Williams",
           "teamColour": "#1868DB",
           "lapsCompleted": 14,
-          "stops": 1,
+          "stops": 4,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 6,
-              "laps": 6,
+              "lapEnd": 2,
+              "laps": 2,
               "tyreAgeAtStart": 0,
               "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "INTERMEDIATE",
+              "lapStart": 3,
+              "lapEnd": 3,
+              "laps": 1,
+              "tyreAgeAtStart": 2,
+              "newTyre": false
+            },
+            {
+              "stint": 3,
+              "compound": "INTERMEDIATE",
+              "lapStart": 4,
+              "lapEnd": 4,
+              "laps": 1,
+              "tyreAgeAtStart": 3,
+              "newTyre": false
+            },
+            {
+              "stint": 4,
+              "compound": "INTERMEDIATE",
+              "lapStart": 5,
+              "lapEnd": 6,
+              "laps": 2,
+              "tyreAgeAtStart": 4,
+              "newTyre": false
             },
             {
               "stint": 5,
@@ -4962,25 +5409,43 @@
           "teamName": "Audi",
           "teamColour": "#F50537",
           "lapsCompleted": 6,
-          "stops": 1,
+          "stops": 3,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 3,
-              "laps": 3,
+              "lapEnd": 2,
+              "laps": 2,
               "tyreAgeAtStart": 0,
               "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "INTERMEDIATE",
+              "lapStart": 3,
+              "lapEnd": 3,
+              "laps": 1,
+              "tyreAgeAtStart": 2,
+              "newTyre": false
             },
             {
               "stint": 3,
               "compound": "INTERMEDIATE",
               "lapStart": 4,
-              "lapEnd": 6,
-              "laps": 3,
+              "lapEnd": 4,
+              "laps": 1,
               "tyreAgeAtStart": 0,
               "newTyre": true
+            },
+            {
+              "stint": 4,
+              "compound": "INTERMEDIATE",
+              "lapStart": 5,
+              "lapEnd": 6,
+              "laps": 2,
+              "tyreAgeAtStart": 4,
+              "newTyre": false
             }
           ]
         },
@@ -4994,16 +5459,43 @@
           "teamName": "Cadillac",
           "teamColour": "#909090",
           "lapsCompleted": 6,
-          "stops": 0,
+          "stops": 3,
           "stints": [
             {
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 6,
-              "laps": 6,
+              "lapEnd": 2,
+              "laps": 2,
               "tyreAgeAtStart": 0,
               "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "INTERMEDIATE",
+              "lapStart": 3,
+              "lapEnd": 3,
+              "laps": 1,
+              "tyreAgeAtStart": 2,
+              "newTyre": false
+            },
+            {
+              "stint": 3,
+              "compound": "INTERMEDIATE",
+              "lapStart": 4,
+              "lapEnd": 4,
+              "laps": 1,
+              "tyreAgeAtStart": 3,
+              "newTyre": false
+            },
+            {
+              "stint": 4,
+              "compound": "INTERMEDIATE",
+              "lapStart": 5,
+              "lapEnd": 6,
+              "laps": 2,
+              "tyreAgeAtStart": 4,
+              "newTyre": false
             }
           ]
         },
@@ -5023,8 +5515,8 @@
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 3,
-              "laps": 3,
+              "lapEnd": 2,
+              "laps": 2,
               "tyreAgeAtStart": 0,
               "newTyre": true
             }
@@ -5046,8 +5538,8 @@
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 3,
-              "laps": 3,
+              "lapEnd": 2,
+              "laps": 2,
               "tyreAgeAtStart": 0,
               "newTyre": true
             }
@@ -5115,8 +5607,8 @@
               "stint": 1,
               "compound": "INTERMEDIATE",
               "lapStart": 1,
-              "lapEnd": 1,
-              "laps": 1,
+              "lapEnd": 0,
+              "laps": 0,
               "tyreAgeAtStart": 0,
               "newTyre": true
             }
@@ -5151,9 +5643,9 @@
         "lap": 32,
         "stopDuration": 2.2,
         "stopDurationLabel": "2.20s",
-        "laneDuration": 23.6,
+        "laneDuration": 23.698,
         "validStop": true,
-        "dateUtc": "2026-10-11T12:56:37.997000+00:00",
+        "dateUtc": "2026-10-11T12:56:38.023000+00:00",
         "stopSource": "dhl",
         "dhlRank": 1,
         "dhlPoints": 25
@@ -5169,9 +5661,9 @@
           "lap": 32,
           "stopDuration": 2.2,
           "stopDurationLabel": "2.20s",
-          "laneDuration": 23.6,
+          "laneDuration": 23.698,
           "validStop": true,
-          "dateUtc": "2026-10-11T12:56:37.997000+00:00",
+          "dateUtc": "2026-10-11T12:56:38.023000+00:00",
           "stopSource": "dhl",
           "dhlRank": 1,
           "dhlPoints": 25
@@ -5186,9 +5678,9 @@
           "lap": 26,
           "stopDuration": 2.24,
           "stopDurationLabel": "2.24s",
-          "laneDuration": 23.6,
+          "laneDuration": 23.601,
           "validStop": true,
-          "dateUtc": "2026-10-11T12:48:24.831000+00:00",
+          "dateUtc": "2026-10-11T12:48:25.318000+00:00",
           "stopSource": "dhl",
           "dhlRank": 2,
           "dhlPoints": 18
@@ -5203,9 +5695,9 @@
           "lap": 39,
           "stopDuration": 2.26,
           "stopDurationLabel": "2.26s",
-          "laneDuration": 23.5,
+          "laneDuration": 23.591,
           "validStop": true,
-          "dateUtc": "2026-10-11T13:08:53.738000+00:00",
+          "dateUtc": "2026-10-11T13:08:53.743000+00:00",
           "stopSource": "dhl",
           "dhlRank": 3,
           "dhlPoints": 15
@@ -5220,9 +5712,9 @@
           "lap": 26,
           "stopDuration": 2.4,
           "stopDurationLabel": "2.40s",
-          "laneDuration": 24.3,
+          "laneDuration": 24.372,
           "validStop": true,
-          "dateUtc": "2026-10-11T12:48:09.193000+00:00",
+          "dateUtc": "2026-10-11T12:48:09.196000+00:00",
           "stopSource": "dhl",
           "dhlRank": 4,
           "dhlPoints": 12
@@ -5237,7 +5729,7 @@
           "lap": 18,
           "stopDuration": 2.44,
           "stopDurationLabel": "2.44s",
-          "laneDuration": 24,
+          "laneDuration": 24.048,
           "validStop": true,
           "dateUtc": "2026-10-11T12:34:00.094000+00:00",
           "stopSource": "dhl",
@@ -5254,9 +5746,9 @@
           "lap": 23,
           "stopDuration": 2.45,
           "stopDurationLabel": "2.45s",
-          "laneDuration": 24.1,
+          "laneDuration": 24.115,
           "validStop": true,
-          "dateUtc": "2026-10-11T12:42:09.841000+00:00",
+          "dateUtc": "2026-10-11T12:42:09.859000+00:00",
           "stopSource": "dhl",
           "dhlRank": 6,
           "dhlPoints": 0
@@ -5271,9 +5763,9 @@
           "lap": 32,
           "stopDuration": 2.56,
           "stopDurationLabel": "2.56s",
-          "laneDuration": 23.9,
+          "laneDuration": 23.922,
           "validStop": true,
-          "dateUtc": "2026-10-11T12:56:58.386000+00:00",
+          "dateUtc": "2026-10-11T12:56:58.389000+00:00",
           "stopSource": "dhl",
           "dhlRank": 7,
           "dhlPoints": 8
@@ -5288,9 +5780,9 @@
           "lap": 39,
           "stopDuration": 2.6,
           "stopDurationLabel": "2.60s",
-          "laneDuration": 23.6,
+          "laneDuration": 23.648,
           "validStop": true,
-          "dateUtc": "2026-10-11T13:09:42.467000+00:00",
+          "dateUtc": "2026-10-11T13:09:42.489000+00:00",
           "stopSource": "dhl",
           "dhlRank": 8,
           "dhlPoints": 6
@@ -5305,7 +5797,7 @@
           "lap": 31,
           "stopDuration": 2.64,
           "stopDurationLabel": "2.64s",
-          "laneDuration": 24.2,
+          "laneDuration": 24.202,
           "validStop": true,
           "dateUtc": "2026-10-11T12:56:20.225000+00:00",
           "stopSource": "dhl",
@@ -5322,7 +5814,7 @@
           "lap": 39,
           "stopDuration": 2.7,
           "stopDurationLabel": "2.70s",
-          "laneDuration": 24.1,
+          "laneDuration": 24.109,
           "validStop": true,
           "dateUtc": "2026-10-11T13:08:43.002000+00:00",
           "stopSource": "dhl",
@@ -5341,9 +5833,9 @@
           "lap": 32,
           "stopDuration": 2.2,
           "stopDurationLabel": "2.20s",
-          "laneDuration": 23.6,
+          "laneDuration": 23.698,
           "validStop": true,
-          "dateUtc": "2026-10-11T12:56:37.997000+00:00",
+          "dateUtc": "2026-10-11T12:56:38.023000+00:00",
           "stopSource": "dhl",
           "dhlRank": 1,
           "dhlPoints": 25
@@ -5358,9 +5850,9 @@
           "lap": 26,
           "stopDuration": 2.24,
           "stopDurationLabel": "2.24s",
-          "laneDuration": 23.6,
+          "laneDuration": 23.601,
           "validStop": true,
-          "dateUtc": "2026-10-11T12:48:24.831000+00:00",
+          "dateUtc": "2026-10-11T12:48:25.318000+00:00",
           "stopSource": "dhl",
           "dhlRank": 2,
           "dhlPoints": 18
@@ -5375,9 +5867,9 @@
           "lap": 39,
           "stopDuration": 2.26,
           "stopDurationLabel": "2.26s",
-          "laneDuration": 23.5,
+          "laneDuration": 23.591,
           "validStop": true,
-          "dateUtc": "2026-10-11T13:08:53.738000+00:00",
+          "dateUtc": "2026-10-11T13:08:53.743000+00:00",
           "stopSource": "dhl",
           "dhlRank": 3,
           "dhlPoints": 15
@@ -5392,9 +5884,9 @@
           "lap": 26,
           "stopDuration": 2.4,
           "stopDurationLabel": "2.40s",
-          "laneDuration": 24.3,
+          "laneDuration": 24.372,
           "validStop": true,
-          "dateUtc": "2026-10-11T12:48:09.193000+00:00",
+          "dateUtc": "2026-10-11T12:48:09.196000+00:00",
           "stopSource": "dhl",
           "dhlRank": 4,
           "dhlPoints": 12
@@ -5409,7 +5901,7 @@
           "lap": 18,
           "stopDuration": 2.44,
           "stopDurationLabel": "2.44s",
-          "laneDuration": 24,
+          "laneDuration": 24.048,
           "validStop": true,
           "dateUtc": "2026-10-11T12:34:00.094000+00:00",
           "stopSource": "dhl",
@@ -5426,9 +5918,9 @@
           "lap": 32,
           "stopDuration": 2.56,
           "stopDurationLabel": "2.56s",
-          "laneDuration": 23.9,
+          "laneDuration": 23.922,
           "validStop": true,
-          "dateUtc": "2026-10-11T12:56:58.386000+00:00",
+          "dateUtc": "2026-10-11T12:56:58.389000+00:00",
           "stopSource": "dhl",
           "dhlRank": 7,
           "dhlPoints": 8
@@ -5443,7 +5935,7 @@
           "lap": 31,
           "stopDuration": 2.64,
           "stopDurationLabel": "2.64s",
-          "laneDuration": 24.2,
+          "laneDuration": 24.202,
           "validStop": true,
           "dateUtc": "2026-10-11T12:56:20.225000+00:00",
           "stopSource": "dhl",
@@ -5460,7 +5952,7 @@
           "lap": 28,
           "stopDuration": 2.96,
           "stopDurationLabel": "2.96s",
-          "laneDuration": 24.9,
+          "laneDuration": 24.931,
           "validStop": true,
           "dateUtc": "2026-10-11T12:51:07.283000+00:00",
           "stopSource": "dhl",
@@ -5477,7 +5969,7 @@
           "lap": 38,
           "stopDuration": 3.13,
           "stopDurationLabel": "3.13s",
-          "laneDuration": 24.8,
+          "laneDuration": 24.85,
           "validStop": true,
           "dateUtc": "2026-10-11T13:09:26.323000+00:00",
           "stopSource": "dhl",
@@ -5494,7 +5986,7 @@
           "lap": 29,
           "stopDuration": 3.16,
           "stopDurationLabel": "3.16s",
-          "laneDuration": 24.5,
+          "laneDuration": 24.581,
           "validStop": true,
           "dateUtc": "2026-10-11T12:52:40.520000+00:00",
           "stopSource": "dhl",
@@ -5511,9 +6003,9 @@
           "lap": 30,
           "stopDuration": 3.42,
           "stopDurationLabel": "3.42s",
-          "laneDuration": 24.3,
+          "laneDuration": 24.375,
           "validStop": true,
-          "dateUtc": "2026-10-11T12:54:17.075000+00:00",
+          "dateUtc": "2026-10-11T12:54:17.090000+00:00",
           "stopSource": "dhl",
           "dhlRank": 20,
           "dhlPoints": 0
@@ -5529,7 +6021,7 @@
           "lap": 18,
           "stopDuration": 2.44,
           "stopDurationLabel": "2.44s",
-          "laneDuration": 24,
+          "laneDuration": 24.048,
           "validStop": true,
           "dateUtc": "2026-10-11T12:34:00.094000+00:00",
           "stopSource": "dhl",
@@ -5545,9 +6037,9 @@
           "lap": 21,
           "stopDuration": 3.44,
           "stopDurationLabel": "3.44s",
-          "laneDuration": 25.2,
+          "laneDuration": 25.287,
           "validStop": true,
-          "dateUtc": "2026-10-11T12:39:58.063000+00:00",
+          "dateUtc": "2026-10-11T12:39:58.074000+00:00",
           "stopSource": "dhl",
           "dhlRank": 21,
           "dhlPoints": 0
@@ -5561,7 +6053,7 @@
           "lap": 22,
           "stopDuration": 2.92,
           "stopDurationLabel": "2.92s",
-          "laneDuration": 24,
+          "laneDuration": 24.093,
           "validStop": true,
           "dateUtc": "2026-10-11T12:41:34.430000+00:00",
           "stopSource": "dhl",
@@ -5577,9 +6069,9 @@
           "lap": 23,
           "stopDuration": 2.45,
           "stopDurationLabel": "2.45s",
-          "laneDuration": 24.1,
+          "laneDuration": 24.115,
           "validStop": true,
-          "dateUtc": "2026-10-11T12:42:09.841000+00:00",
+          "dateUtc": "2026-10-11T12:42:09.859000+00:00",
           "stopSource": "dhl",
           "dhlRank": 6,
           "dhlPoints": 0
@@ -5593,7 +6085,7 @@
           "lap": 24,
           "stopDuration": 3.18,
           "stopDurationLabel": "3.18s",
-          "laneDuration": 24.6,
+          "laneDuration": 24.641,
           "validStop": true,
           "dateUtc": "2026-10-11T12:43:44.154000+00:00",
           "stopSource": "dhl",
@@ -5609,9 +6101,9 @@
           "lap": 26,
           "stopDuration": 2.4,
           "stopDurationLabel": "2.40s",
-          "laneDuration": 24.3,
+          "laneDuration": 24.372,
           "validStop": true,
-          "dateUtc": "2026-10-11T12:48:09.193000+00:00",
+          "dateUtc": "2026-10-11T12:48:09.196000+00:00",
           "stopSource": "dhl",
           "dhlRank": 4,
           "dhlPoints": 12
@@ -5625,9 +6117,9 @@
           "lap": 26,
           "stopDuration": 2.24,
           "stopDurationLabel": "2.24s",
-          "laneDuration": 23.6,
+          "laneDuration": 23.601,
           "validStop": true,
-          "dateUtc": "2026-10-11T12:48:24.831000+00:00",
+          "dateUtc": "2026-10-11T12:48:25.318000+00:00",
           "stopSource": "dhl",
           "dhlRank": 2,
           "dhlPoints": 18
@@ -5641,7 +6133,7 @@
           "lap": 28,
           "stopDuration": 2.96,
           "stopDurationLabel": "2.96s",
-          "laneDuration": 24.9,
+          "laneDuration": 24.931,
           "validStop": true,
           "dateUtc": "2026-10-11T12:51:07.283000+00:00",
           "stopSource": "dhl",
@@ -5657,9 +6149,9 @@
           "lap": 28,
           "stopDuration": 7.43,
           "stopDurationLabel": "7.43s",
-          "laneDuration": 29.2,
+          "laneDuration": 29.266,
           "validStop": true,
-          "dateUtc": "2026-10-11T12:52:37.080000+00:00",
+          "dateUtc": "2026-10-11T12:52:37.085000+00:00",
           "stopSource": "dhl",
           "dhlRank": 25,
           "dhlPoints": 0
@@ -5673,7 +6165,7 @@
           "lap": 29,
           "stopDuration": 3.16,
           "stopDurationLabel": "3.16s",
-          "laneDuration": 24.5,
+          "laneDuration": 24.581,
           "validStop": true,
           "dateUtc": "2026-10-11T12:52:40.520000+00:00",
           "stopSource": "dhl",
@@ -5689,9 +6181,9 @@
           "lap": 30,
           "stopDuration": 3.42,
           "stopDurationLabel": "3.42s",
-          "laneDuration": 24.3,
+          "laneDuration": 24.375,
           "validStop": true,
-          "dateUtc": "2026-10-11T12:54:17.075000+00:00",
+          "dateUtc": "2026-10-11T12:54:17.090000+00:00",
           "stopSource": "dhl",
           "dhlRank": 20,
           "dhlPoints": 0
@@ -5705,7 +6197,7 @@
           "lap": 31,
           "stopDuration": 2.74,
           "stopDurationLabel": "2.74s",
-          "laneDuration": 24.6,
+          "laneDuration": 24.663,
           "validStop": true,
           "dateUtc": "2026-10-11T12:55:54.605000+00:00",
           "stopSource": "dhl",
@@ -5721,7 +6213,7 @@
           "lap": 31,
           "stopDuration": 2.64,
           "stopDurationLabel": "2.64s",
-          "laneDuration": 24.2,
+          "laneDuration": 24.202,
           "validStop": true,
           "dateUtc": "2026-10-11T12:56:20.225000+00:00",
           "stopSource": "dhl",
@@ -5737,9 +6229,9 @@
           "lap": 32,
           "stopDuration": 2.2,
           "stopDurationLabel": "2.20s",
-          "laneDuration": 23.6,
+          "laneDuration": 23.698,
           "validStop": true,
-          "dateUtc": "2026-10-11T12:56:37.997000+00:00",
+          "dateUtc": "2026-10-11T12:56:38.023000+00:00",
           "stopSource": "dhl",
           "dhlRank": 1,
           "dhlPoints": 25
@@ -5753,9 +6245,9 @@
           "lap": 32,
           "stopDuration": 2.56,
           "stopDurationLabel": "2.56s",
-          "laneDuration": 23.9,
+          "laneDuration": 23.922,
           "validStop": true,
-          "dateUtc": "2026-10-11T12:56:58.386000+00:00",
+          "dateUtc": "2026-10-11T12:56:58.389000+00:00",
           "stopSource": "dhl",
           "dhlRank": 7,
           "dhlPoints": 8
@@ -5769,9 +6261,9 @@
           "lap": 33,
           "stopDuration": 4.28,
           "stopDurationLabel": "4.28s",
-          "laneDuration": 25.7,
+          "laneDuration": 25.713,
           "validStop": true,
-          "dateUtc": "2026-10-11T12:58:42.687000+00:00",
+          "dateUtc": "2026-10-11T12:58:42.693000+00:00",
           "stopSource": "dhl",
           "dhlRank": 23,
           "dhlPoints": 0
@@ -5785,7 +6277,7 @@
           "lap": 33,
           "stopDuration": 3.66,
           "stopDurationLabel": "3.66s",
-          "laneDuration": 24.8,
+          "laneDuration": 24.871,
           "validStop": true,
           "dateUtc": "2026-10-11T12:59:19.525000+00:00",
           "stopSource": "dhl",
@@ -5801,9 +6293,9 @@
           "lap": 33,
           "stopDuration": 3.06,
           "stopDurationLabel": "3.06s",
-          "laneDuration": 24.5,
+          "laneDuration": 24.549,
           "validStop": true,
-          "dateUtc": "2026-10-11T12:59:41.195000+00:00",
+          "dateUtc": "2026-10-11T12:59:41.207000+00:00",
           "stopSource": "dhl",
           "dhlRank": 16,
           "dhlPoints": 0
@@ -5817,9 +6309,9 @@
           "lap": 35,
           "stopDuration": 2.8,
           "stopDurationLabel": "2.80s",
-          "laneDuration": 24.3,
+          "laneDuration": 24.33,
           "validStop": true,
-          "dateUtc": "2026-10-11T13:03:20.561000+00:00",
+          "dateUtc": "2026-10-11T13:03:20.577000+00:00",
           "stopSource": "dhl",
           "dhlRank": 13,
           "dhlPoints": 0
@@ -5833,9 +6325,9 @@
           "lap": 37,
           "stopDuration": 4.78,
           "stopDurationLabel": "4.78s",
-          "laneDuration": 25.8,
+          "laneDuration": 25.872,
           "validStop": true,
-          "dateUtc": "2026-10-11T13:06:47.682000+00:00",
+          "dateUtc": "2026-10-11T13:06:47.683000+00:00",
           "stopSource": "dhl",
           "dhlRank": 24,
           "dhlPoints": 0
@@ -5849,7 +6341,7 @@
           "lap": 38,
           "stopDuration": 3.13,
           "stopDurationLabel": "3.13s",
-          "laneDuration": 24.8,
+          "laneDuration": 24.85,
           "validStop": true,
           "dateUtc": "2026-10-11T13:09:26.323000+00:00",
           "stopSource": "dhl",
@@ -5865,7 +6357,7 @@
           "lap": 39,
           "stopDuration": 2.7,
           "stopDurationLabel": "2.70s",
-          "laneDuration": 24.1,
+          "laneDuration": 24.109,
           "validStop": true,
           "dateUtc": "2026-10-11T13:08:43.002000+00:00",
           "stopSource": "dhl",
@@ -5881,9 +6373,9 @@
           "lap": 39,
           "stopDuration": 2.26,
           "stopDurationLabel": "2.26s",
-          "laneDuration": 23.5,
+          "laneDuration": 23.591,
           "validStop": true,
-          "dateUtc": "2026-10-11T13:08:53.738000+00:00",
+          "dateUtc": "2026-10-11T13:08:53.743000+00:00",
           "stopSource": "dhl",
           "dhlRank": 3,
           "dhlPoints": 15
@@ -5897,9 +6389,9 @@
           "lap": 39,
           "stopDuration": 2.6,
           "stopDurationLabel": "2.60s",
-          "laneDuration": 23.6,
+          "laneDuration": 23.648,
           "validStop": true,
-          "dateUtc": "2026-10-11T13:09:42.467000+00:00",
+          "dateUtc": "2026-10-11T13:09:42.489000+00:00",
           "stopSource": "dhl",
           "dhlRank": 8,
           "dhlPoints": 6
@@ -5913,7 +6405,7 @@
           "lap": 41,
           "stopDuration": 2.76,
           "stopDurationLabel": "2.76s",
-          "laneDuration": 24,
+          "laneDuration": 24.076,
           "validStop": true,
           "dateUtc": "2026-10-11T13:12:41.701000+00:00",
           "stopSource": "dhl",
@@ -6660,10 +7152,11 @@
   "meta": {
     "fia": {
       "eventName": "Singapore Grand Prix",
-      "done": "2026-10-30T16:42:58.488Z"
+      "done": "2026-10-30T17:08:02.541Z"
     },
     "final": {
       "weekend": "2026-10-30T16:43:00.941Z"
-    }
+    },
+    "buildVersion": "2026-10-30.4"
   }
 }
