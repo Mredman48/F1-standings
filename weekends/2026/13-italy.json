@@ -145,8 +145,50 @@
     "constructor": "Red Bull",
     "date": "2025-09-07"
   },
-  "tyreInfo": null,
-  "racePreview": null,
+  "tyreInfo": {
+    "round": 13,
+    "raceSlug": "italy",
+    "title": "Italian GP",
+    "season": 2026,
+    "country": "Italy",
+    "flag": "it",
+    "raceStart": "2026-09-06T13:00:00.000Z",
+    "compounds": {
+      "soft": "C5",
+      "medium": "C4",
+      "hard": "C3"
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2026,
+      "pastYear": false,
+      "traction": 3,
+      "tyreStress": 3,
+      "asphaltGrip": 3,
+      "braking": 4,
+      "asphaltAbrasion": 2,
+      "lateral": 2,
+      "trackEvolution": 4
+    },
+    "updatedAt": "2026-10-09T04:31:59.150Z"
+  },
+  "racePreview": {
+    "slug": "monza-s-high-speed-gamble-can-anyone-stop-mclaren-mtimdkp8",
+    "round": 13,
+    "raceSlug": "italy",
+    "title": "Italian GP",
+    "season": "2026",
+    "country": "Italy",
+    "flag": "it",
+    "raceStart": "2026-09-06T13:00:00.000Z",
+    "publishedAt": "2026-09-01",
+    "headline": "Monza's High-Speed Gamble: Can Anyone Stop McLaren?",
+    "summary": "Antonelli takes a grid penalty at his home race, while Ferrari push upgrades. McLaren's Lando Norris is on a roll — can he make it three in a row at the Temple of Speed?",
+    "body": "Kimi Antonelli has built a hefty 59-point lead at the top of the Drivers' Championship, but he's taking a calculated hit this weekend — a deliberate power unit penalty at his home race, meaning he'll start from the back. Mercedes reckons Monza is the best place to swallow that pill, banking on their engine's strength at the high-speed circuit to limit the damage. While George Russell is joint-second in the standings with Lewis Hamilton, Lando Norris has been on fire, winning the last two GPs for McLaren. He's looking like a serious contender, and Monza will be the ultimate test of McLaren's resurgence on a low-downforce track. Meanwhile, Red Bull had a tough time in Zandvoort, admitting they took a step backward, so Max Verstappen will be pushing hard to reclaim his 2025 Monza glory.\n\nMonza is the 'Temple of Speed' for a reason, all about flat-out straights and big braking zones. Ferrari are expected to roll out an upgraded power unit for Hamilton and Charles Leclerc — talk about perfect timing for their home race, especially with Leclerc being a two-time winner here. This circuit will really test the 2026 regulations and their hybrid power units, with less opportunity for energy harvesting on those long straights. With Antonelli starting from the back, it throws the door wide open for the likes of Norris, Leclerc, or even Russell. Keep an eye on Liam Lawson too — he impressed at Zandvoort subbing for the injured Isack Hadjar, and could be a dark horse if he gets the call again.",
+    "picks": {
+      "winner": "Norris",
+      "wildcard": "Lawson"
+    }
+  },
   "startingGrids": [
     {
       "gridType": "race",
@@ -4637,7 +4679,26 @@
       ]
     }
   ],
-  "raceRecap": null,
+  "raceRecap": {
+    "slug": "antonelli-s-miracle-from-p19-stuns-monza-leclerc-s-home-race-mtq7g8ac",
+    "round": 13,
+    "raceSlug": "italy",
+    "title": "Italian GP",
+    "season": "2026",
+    "country": "Italy",
+    "flag": "it",
+    "raceStart": "2026-09-06T13:00:00.000Z",
+    "publishedAt": "2026-09-06",
+    "headline": "Antonelli's Miracle From P19 Stuns Monza; Leclerc's Home Race Ends in Turn 1 Carnage",
+    "summary": "Kimi Antonelli produced one of the great Monza comebacks, storming from 19th on the grid to beat Mercedes teammate George Russell for a home win, while Charles Leclerc's Italian GP ended in the barriers before lap two was even over.",
+    "body": "Monza barely got going before it turned into a mess. Charles Leclerc shoved teammate Lewis Hamilton into the gravel at the first chicane, then lost the back end at Parabolica trying to recover ground, smashing into the wall and bringing out the red flag on lap two. He later admitted the move on Hamilton \"went too far.\" That handed the spotlight to Kimi Antonelli, who started his home race down in 19th after Mercedes gambled on a fresh power unit, and what followed was one of the great Monza drives. He sliced through the field after the restart while Russell, Verstappen and pole man Pierre Gasly swapped the lead in the slipstream battles this year's cars produce down the straights.\n\nThe race flipped on lap 29 when a VSC for Lance Stroll's dead Aston Martin sent Antonelli and Verstappen into the pits for fresh mediums. Russell, leading at the time, stayed out on tired hards, a call that looked smart until his tyres started going away late on. Antonelli caught him with five laps left and immediately ran wide through the gravel trying a move at the first chicane, but he didn't panic, sat in the tow, and made it stick for real with three to go. Russell had nothing left to answer with, crossing 3.857s back for a Mercedes one-two, while Verstappen fended off both McLarens to grab third.\n\nNorris edged Piastri in a scrappy fight for fourth, Hamilton salvaged sixth after his rough start, and Gasly's maiden pole came to nothing as he slipped to seventh. Alonso and Stroll both retired, and Antonelli walked away 66 points clear at the top, the first Italian to win his home race since 1966. \"I did not expect it,\" he said after. \"It's a dream coming true.\"",
+    "result": {
+      "p1": "Antonelli",
+      "p2": "Russell",
+      "p3": "Verstappen",
+      "driverOfDay": "Kimi Antonelli"
+    }
+  },
   "meta": {
     "fia": {
       "eventName": "Italian Grand Prix",
