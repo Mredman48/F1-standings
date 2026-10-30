@@ -90,8 +90,52 @@
       }
     ]
   },
-  "circuitIntelligence": null,
-  "previousWinner": null,
+  "circuitIntelligence": {
+    "displayName": "Bahrain Grand Prix",
+    "id": "bahrain",
+    "dna": {
+      "cornerProfile": "Stop-start, heavy breaking",
+      "overtaking": "High",
+      "tireWear": "High",
+      "trackEvolution": "Medium",
+      "strategyBias": "Tire Management",
+      "safetyCarRisk": "Medium"
+    },
+    "specs": {
+      "turns": 15,
+      "averageSpeed": "Medium",
+      "trackLength": "5.412 km",
+      "longestStraightKm": 1.09
+    },
+    "previousWinner": {
+      "driver": "Oscar Piastri",
+      "constructor": "Mclaren",
+      "season": 2025,
+      "date": "2025-04-13",
+      "raceName": "Bahrain Grand Prix"
+    },
+    "raceLapRecord": {
+      "time": "1:31.447",
+      "driver": "Pedro de la Rosa",
+      "constructor": "McLaren",
+      "year": 2005,
+      "raceName": "Bahrain Grand Prix"
+    },
+    "intelligence": [
+      "Turn 1 is the main overtaking zone.",
+      "The abrasive surface overheats the rear tyres.",
+      "Wind can blow sand onto the track.",
+      "Track temperature drops as the night race goes on."
+    ]
+  },
+  "previousWinner": {
+    "raceName": "Bahrain Grand Prix",
+    "city": "Sakhir",
+    "country": "Bahrain",
+    "previousWinner": "Oscar Piastri",
+    "constructor": "McLaren",
+    "date": "2025-04-13"
+  },
   "tyreInfo": null,
   "racePreview": null,
   "startingGrids": [],
