@@ -93,7 +93,32 @@
   },
   "circuitIntelligence": null,
   "previousWinner": null,
-  "tyreInfo": null,
+  "tyreInfo": {
+    "round": 23,
+    "raceSlug": "abu-dhabi",
+    "title": "Abu Dhabi GP",
+    "season": 2026,
+    "country": "United Arab Emirates",
+    "flag": "ae",
+    "raceStart": "2026-12-06T13:00:00.000Z",
+    "compounds": {
+      "soft": null,
+      "medium": null,
+      "hard": null
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2026,
+      "pastYear": false,
+      "traction": 4,
+      "tyreStress": 3,
+      "asphaltGrip": 3,
+      "braking": 4,
+      "asphaltAbrasion": 3,
+      "lateral": 3,
+      "trackEvolution": 4
+    },
+    "updatedAt": "2026-10-09T04:44:26.643Z"
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},
