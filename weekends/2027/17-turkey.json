@@ -88,10 +88,63 @@
         "startLocalTimeShort": "05:00",
         "startLocalDateTimeShort": "Sun, Oct 03 05:00"
       }
+    ],
+    "shortTitle": "Turkish GP",
+    "circuit": "Istanbul Park"
+  },
+  "circuitIntelligence": {
+    "displayName": "Turkish Grand Prix",
+    "id": "turkey",
+    "dna": {
+      "cornerProfile": "Fast multi-apex, elevation",
+      "overtaking": "Medium",
+      "tireWear": "High",
+      "trackEvolution": "High",
+      "strategyBias": "Tire Management",
+      "safetyCarRisk": "Medium"
+    },
+    "specs": {
+      "turns": 14,
+      "longestStraightKm": 0.72,
+      "averageSpeed": "High",
+      "trackLength": "5.338 km"
+    },
+    "raceLapRecord": {
+      "time": "1:24.770",
+      "driver": "Juan Pablo Montoya",
+      "constructor": "McLaren",
+      "year": 2005,
+      "raceName": "Turkish Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "Valtteri Bottas",
+      "constructor": "Mercedes",
+      "season": 2021,
+      "date": "2021-10-10",
+      "raceName": "Turkish Grand Prix"
+    },
+    "intelligence": [
+      "Turn 8 is a fast four-apex left-hander.",
+      "Turn 8’s heavy loads drive high tyre wear.",
+      "The downhill Turn 1 often causes incidents.",
+      "Surface grip is unknown after five years away."
+    ],
+    "matchKeys": [
+      "turkey",
+      "turkish",
+      "turkiye",
+      "istanbul",
+      "istanbulpark"
     ]
   },
-  "circuitIntelligence": null,
-  "previousWinner": null,
+  "previousWinner": {
+    "previousWinner": "Valtteri Bottas",
+    "constructor": "Mercedes",
+    "date": "2021-10-10",
+    "city": "Istanbul",
+    "country": "Turkey",
+    "raceName": "Turkish Grand Prix"
+  },
   "tyreInfo": null,
   "racePreview": null,
   "startingGrids": [],
