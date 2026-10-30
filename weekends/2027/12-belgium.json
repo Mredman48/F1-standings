@@ -136,8 +136,40 @@
       "raceName": "Belgian Grand Prix"
     }
   },
-  "previousWinner": null,
-  "tyreInfo": null,
+  "previousWinner": {
+    "round": 12,
+    "raceName": "Belgian Grand Prix",
+    "city": "Spa-Francorchamps",
+    "country": "Belgium",
+    "previousWinner": "Kimi Antonelli",
+    "constructor": "Mercedes",
+    "date": "2026-07-19"
+  },
+  "tyreInfo": {
+    "round": 12,
+    "raceSlug": "belgium",
+    "title": "Belgian GP",
+    "season": 2027,
+    "country": "Belgium",
+    "flag": "be",
+    "raceStart": "2027-07-25T13:00:00.000Z",
+    "compounds": {
+      "soft": "",
+      "medium": "",
+      "hard": ""
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2026,
+      "pastYear": true,
+      "traction": 4,
+      "tyreStress": 5,
+      "asphaltGrip": 3,
+      "braking": 4,
+      "asphaltAbrasion": 3,
+      "lateral": 5,
+      "trackEvolution": 3
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},
