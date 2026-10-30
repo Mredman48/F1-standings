@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-30T21:18:50.937Z",
-  "count": 32,
+  "updatedAt": "2026-10-30T21:19:02.226Z",
+  "count": 33,
   "entries": [
     {
       "round": 1,
@@ -565,6 +565,31 @@
         "trackEvolution": 4
       },
       "updatedAt": "2026-10-09T04:31:59.150Z"
+    },
+    {
+      "round": 13,
+      "raceSlug": "hungary",
+      "title": "Hungarian GP",
+      "season": 2027,
+      "country": "Hungary",
+      "flag": "hu",
+      "raceStart": "2027-08-01T13:00:00.000Z",
+      "compounds": {
+        "soft": "",
+        "medium": "",
+        "hard": ""
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2026,
+        "pastYear": true,
+        "traction": 4,
+        "tyreStress": 3,
+        "asphaltGrip": 3,
+        "braking": 3,
+        "asphaltAbrasion": 3,
+        "lateral": 3,
+        "trackEvolution": 4
+      }
     },
     {
       "round": 14,
