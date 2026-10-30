@@ -1,7 +1,7 @@
 {
   "header": "2026 Australian GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T19:04:26.820Z",
+  "generatedAtUtc": "2026-10-30T19:33:49.798Z",
   "season": 2026,
   "round": 1,
   "meetingKey": 1279,
@@ -2494,8 +2494,8 @@
           "points": 8,
           "sessionKey": 11234,
           "meetingKey": 1279,
-          "startPosition": null,
-          "startPositionRank": null,
+          "startPosition": "P20",
+          "startPositionRank": 20,
           "qualifyingLapTime": null
         },
         {
@@ -2723,8 +2723,8 @@
           "points": 0,
           "sessionKey": 11234,
           "meetingKey": 1279,
-          "startPosition": null,
-          "startPositionRank": null,
+          "startPosition": "P21",
+          "startPositionRank": 21,
           "qualifyingLapTime": null
         },
         {
@@ -2770,8 +2770,8 @@
           "points": 0,
           "sessionKey": 11234,
           "meetingKey": 1279,
-          "startPosition": null,
-          "startPositionRank": null,
+          "startPosition": "P22",
+          "startPositionRank": 22,
           "qualifyingLapTime": null
         },
         {
@@ -4567,11 +4567,13 @@
   "meta": {
     "fia": {
       "eventName": "Australian Grand Prix",
-      "done": "2026-10-30T19:04:25.582Z"
+      "done": "2026-10-30T19:33:48.433Z"
     },
     "final": {
       "weekend": "2026-10-30T17:22:53.739Z"
     },
-    "buildVersion": "2026-10-30.7"
-  }
+    "buildVersion": "2026-10-30.8"
+  },
+  "locked": false,
+  "lockedSections": []
 }

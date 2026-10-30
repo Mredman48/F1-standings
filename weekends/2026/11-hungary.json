@@ -1,7 +1,7 @@
 {
   "header": "2026 Hungarian GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T19:08:22.946Z",
+  "generatedAtUtc": "2026-10-30T19:35:46.950Z",
   "season": 2026,
   "round": 11,
   "meetingKey": 1291,
@@ -2555,8 +2555,8 @@
           "points": 18,
           "sessionKey": 11342,
           "meetingKey": 1291,
-          "startPosition": "P6",
-          "startPositionRank": 6,
+          "startPosition": "P4",
+          "startPositionRank": 4,
           "qualifyingLapTime": 77.725
         },
         {
@@ -2581,8 +2581,8 @@
           "points": 15,
           "sessionKey": 11342,
           "meetingKey": 1291,
-          "startPosition": "P4",
-          "startPositionRank": 4,
+          "startPosition": "P7",
+          "startPositionRank": 7,
           "qualifyingLapTime": 77.479
         },
         {
@@ -2607,8 +2607,8 @@
           "points": 12,
           "sessionKey": 11342,
           "meetingKey": 1291,
-          "startPosition": "P3",
-          "startPositionRank": 3,
+          "startPosition": "P2",
+          "startPositionRank": 2,
           "qualifyingLapTime": 77.445
         },
         {
@@ -2633,8 +2633,8 @@
           "points": 10,
           "sessionKey": 11342,
           "meetingKey": 1291,
-          "startPosition": "P2",
-          "startPositionRank": 2,
+          "startPosition": "P5",
+          "startPositionRank": 5,
           "qualifyingLapTime": 77.219
         },
         {
@@ -2685,8 +2685,8 @@
           "points": 6,
           "sessionKey": 11342,
           "meetingKey": 1291,
-          "startPosition": "P7",
-          "startPositionRank": 7,
+          "startPosition": "P6",
+          "startPositionRank": 6,
           "qualifyingLapTime": 77.76
         },
         {
@@ -3023,8 +3023,8 @@
           "points": 0,
           "sessionKey": 11342,
           "meetingKey": 1291,
-          "startPosition": "P5",
-          "startPositionRank": 5,
+          "startPosition": "P3",
+          "startPositionRank": 3,
           "qualifyingLapTime": 77.684
         },
         {
@@ -5145,11 +5145,13 @@
   "meta": {
     "fia": {
       "eventName": "Hungarian Grand Prix",
-      "done": "2026-10-30T19:08:22.315Z"
+      "done": "2026-10-30T19:35:45.682Z"
     },
     "final": {
       "weekend": "2026-10-30T17:26:16.571Z"
     },
-    "buildVersion": "2026-10-30.7"
-  }
+    "buildVersion": "2026-10-30.8"
+  },
+  "locked": false,
+  "lockedSections": []
 }

@@ -1,7 +1,7 @@
 {
   "header": "2026 Dutch GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T19:09:30.099Z",
+  "generatedAtUtc": "2026-10-30T19:35:53.407Z",
   "season": 2026,
   "round": 12,
   "meetingKey": 1292,
@@ -2542,8 +2542,8 @@
           "points": 0,
           "sessionKey": 11348,
           "meetingKey": 1292,
-          "startPosition": "P19",
-          "startPositionRank": 19,
+          "startPosition": "P18",
+          "startPositionRank": 18,
           "qualifyingLapTime": 75.391
         },
         {
@@ -2594,8 +2594,8 @@
           "points": 0,
           "sessionKey": 11348,
           "meetingKey": 1292,
-          "startPosition": "P20",
-          "startPositionRank": 20,
+          "startPosition": "P19",
+          "startPositionRank": 19,
           "qualifyingLapTime": 75.472
         },
         {
@@ -2620,8 +2620,8 @@
           "points": 0,
           "sessionKey": 11348,
           "meetingKey": 1292,
-          "startPosition": "P18",
-          "startPositionRank": 18,
+          "startPosition": "P21",
+          "startPositionRank": 21,
           "qualifyingLapTime": 74.738
         },
         {
@@ -2646,8 +2646,8 @@
           "points": 0,
           "sessionKey": 11348,
           "meetingKey": 1292,
-          "startPosition": "P21",
-          "startPositionRank": 21,
+          "startPosition": "P20",
+          "startPositionRank": 20,
           "qualifyingLapTime": 75.545
         },
         {
@@ -6867,11 +6867,13 @@
   "meta": {
     "fia": {
       "eventName": "Dutch Grand Prix",
-      "done": "2026-10-30T19:09:28.393Z"
+      "done": "2026-10-30T19:35:51.658Z"
     },
     "final": {
       "weekend": "2026-10-30T17:28:19.446Z"
     },
-    "buildVersion": "2026-10-30.7"
-  }
+    "buildVersion": "2026-10-30.8"
+  },
+  "locked": false,
+  "lockedSections": []
 }

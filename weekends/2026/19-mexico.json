@@ -1,12 +1,12 @@
 {
   "header": "2026 Mexico City GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T19:12:02.975Z",
+  "generatedAtUtc": "2026-10-30T19:37:25.519Z",
   "season": 2026,
   "round": 19,
   "meetingKey": 1298,
   "raceSlug": "mexico",
-  "status": "upcoming",
+  "status": "in_progress",
   "weekend": {
     "round": 19,
     "type": "RACE_WEEKEND",
@@ -191,7 +191,27 @@
   },
   "startingGrids": [],
   "penaltyDocs": {},
-  "sessionResults": [],
+  "sessionResults": [
+    {
+      "eventType": "fp1",
+      "sessionKey": 11397,
+      "meetingKey": 1298,
+      "meetingName": "Mexico City Grand Prix",
+      "raceName": "Mexico City Grand Prix",
+      "sessionName": "Practice 1",
+      "officialName": "Practice 1",
+      "round": 19,
+      "dateStartUtc": "2026-10-30T18:30:00+00:00",
+      "dateEndUtc": "2026-10-30T19:30:00+00:00",
+      "date": "2026-10-30",
+      "circuit": "Mexico City",
+      "location": {
+        "locality": "Mexico City",
+        "country": "Mexico"
+      },
+      "drivers": []
+    }
+  ],
   "raceStrategy": [],
   "raceRecap": null,
   "meta": {
@@ -201,6 +221,8 @@
     "final": {
       "weekend": null
     },
-    "buildVersion": "2026-10-30.7"
-  }
+    "buildVersion": "2026-10-30.8"
+  },
+  "locked": false,
+  "lockedSections": []
 }

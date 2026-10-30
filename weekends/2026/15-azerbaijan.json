@@ -1,7 +1,7 @@
 {
   "header": "2026 Azerbaijan GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T19:10:44.372Z",
+  "generatedAtUtc": "2026-10-30T19:37:08.211Z",
   "season": 2026,
   "round": 15,
   "meetingKey": 1295,
@@ -2789,8 +2789,8 @@
           "points": 4,
           "sessionKey": 11377,
           "meetingKey": 1295,
-          "startPosition": "P14",
-          "startPositionRank": 14,
+          "startPosition": "P13",
+          "startPositionRank": 13,
           "qualifyingLapTime": 105.016
         },
         {
@@ -2815,8 +2815,8 @@
           "points": 2,
           "sessionKey": 11377,
           "meetingKey": 1295,
-          "startPosition": "P11",
-          "startPositionRank": 11,
+          "startPosition": "P10",
+          "startPositionRank": 10,
           "qualifyingLapTime": 104.775
         },
         {
@@ -2841,8 +2841,8 @@
           "points": 1,
           "sessionKey": 11377,
           "meetingKey": 1295,
-          "startPosition": "P9",
-          "startPositionRank": 9,
+          "startPosition": "P14",
+          "startPositionRank": 14,
           "qualifyingLapTime": 104.566
         },
         {
@@ -2893,8 +2893,8 @@
           "points": 0,
           "sessionKey": 11377,
           "meetingKey": 1295,
-          "startPosition": "P12",
-          "startPositionRank": 12,
+          "startPosition": "P11",
+          "startPositionRank": 11,
           "qualifyingLapTime": 104.86
         },
         {
@@ -2997,8 +2997,8 @@
           "points": 0,
           "sessionKey": 11377,
           "meetingKey": 1295,
-          "startPosition": "P22",
-          "startPositionRank": 22,
+          "startPosition": "P19",
+          "startPositionRank": 19,
           "qualifyingLapTime": 108.29
         },
         {
@@ -3023,8 +3023,8 @@
           "points": 0,
           "sessionKey": 11377,
           "meetingKey": 1295,
-          "startPosition": "P10",
-          "startPositionRank": 10,
+          "startPosition": "P9",
+          "startPositionRank": 9,
           "qualifyingLapTime": 104.683
         },
         {
@@ -3101,8 +3101,8 @@
           "points": 0,
           "sessionKey": 11377,
           "meetingKey": 1295,
-          "startPosition": "P13",
-          "startPositionRank": 13,
+          "startPosition": "P12",
+          "startPositionRank": 12,
           "qualifyingLapTime": 105.001
         },
         {
@@ -3127,8 +3127,8 @@
           "points": 0,
           "sessionKey": 11377,
           "meetingKey": 1295,
-          "startPosition": "P19",
-          "startPositionRank": 19,
+          "startPosition": "P21",
+          "startPositionRank": 21,
           "qualifyingLapTime": 106.593
         },
         {
@@ -3153,8 +3153,8 @@
           "points": 0,
           "sessionKey": 11377,
           "meetingKey": 1295,
-          "startPosition": "P21",
-          "startPositionRank": 21,
+          "startPosition": "P22",
+          "startPositionRank": 22,
           "qualifyingLapTime": 107.337
         }
       ],
@@ -4816,11 +4816,13 @@
   "meta": {
     "fia": {
       "eventName": "Azerbaijan Grand Prix",
-      "done": "2026-10-30T19:09:42.594Z"
+      "done": "2026-10-30T19:37:07.209Z"
     },
     "final": {
       "weekend": "2026-10-30T17:11:13.269Z"
     },
-    "buildVersion": "2026-10-30.7"
-  }
+    "buildVersion": "2026-10-30.8"
+  },
+  "locked": false,
+  "lockedSections": []
 }

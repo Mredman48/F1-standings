@@ -1,7 +1,7 @@
 {
   "header": "2026 Bahrain GP in Malaysia weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T19:10:49.909Z",
+  "generatedAtUtc": "2026-10-30T19:37:12.451Z",
   "season": 2026,
   "round": 16,
   "meetingKey": 1308,
@@ -2579,8 +2579,8 @@
           "points": 18,
           "sessionKey": 11731,
           "meetingKey": 1308,
-          "startPosition": "P4",
-          "startPositionRank": 4,
+          "startPosition": "P3",
+          "startPositionRank": 3,
           "qualifyingLapTime": 95.631
         },
         {
@@ -2631,8 +2631,8 @@
           "points": 12,
           "sessionKey": 11731,
           "meetingKey": 1308,
-          "startPosition": "P5",
-          "startPositionRank": 5,
+          "startPosition": "P4",
+          "startPositionRank": 4,
           "qualifyingLapTime": 95.666
         },
         {
@@ -2657,8 +2657,8 @@
           "points": 10,
           "sessionKey": 11731,
           "meetingKey": 1308,
-          "startPosition": "P3",
-          "startPositionRank": 3,
+          "startPosition": "P8",
+          "startPositionRank": 8,
           "qualifyingLapTime": 95.558
         },
         {
@@ -2683,8 +2683,8 @@
           "points": 8,
           "sessionKey": 11731,
           "meetingKey": 1308,
-          "startPosition": "P7",
-          "startPositionRank": 7,
+          "startPosition": "P6",
+          "startPositionRank": 6,
           "qualifyingLapTime": 95.762
         },
         {
@@ -2761,8 +2761,8 @@
           "points": 2,
           "sessionKey": 11731,
           "meetingKey": 1308,
-          "startPosition": "P6",
-          "startPositionRank": 6,
+          "startPosition": "P5",
+          "startPositionRank": 5,
           "qualifyingLapTime": 95.757
         },
         {
@@ -2787,8 +2787,8 @@
           "points": 1,
           "sessionKey": 11731,
           "meetingKey": 1308,
-          "startPosition": "P16",
-          "startPositionRank": 16,
+          "startPosition": "P22",
+          "startPositionRank": 22,
           "qualifyingLapTime": 97.883
         },
         {
@@ -2813,8 +2813,8 @@
           "points": 0,
           "sessionKey": 11731,
           "meetingKey": 1308,
-          "startPosition": "P17",
-          "startPositionRank": 17,
+          "startPosition": "P15",
+          "startPositionRank": 15,
           "qualifyingLapTime": 97.97
         },
         {
@@ -2865,8 +2865,8 @@
           "points": 0,
           "sessionKey": 11731,
           "meetingKey": 1308,
-          "startPosition": "P15",
-          "startPositionRank": 15,
+          "startPosition": "P21",
+          "startPositionRank": 21,
           "qualifyingLapTime": 97.179
         },
         {
@@ -2891,8 +2891,8 @@
           "points": 0,
           "sessionKey": 11731,
           "meetingKey": 1308,
-          "startPosition": "P18",
-          "startPositionRank": 18,
+          "startPosition": "P16",
+          "startPositionRank": 16,
           "qualifyingLapTime": 97.98
         },
         {
@@ -2917,8 +2917,8 @@
           "points": 0,
           "sessionKey": 11731,
           "meetingKey": 1308,
-          "startPosition": "P19",
-          "startPositionRank": 19,
+          "startPosition": "P17",
+          "startPositionRank": 17,
           "qualifyingLapTime": 98.233
         },
         {
@@ -3021,8 +3021,8 @@
           "points": 0,
           "sessionKey": 11731,
           "meetingKey": 1308,
-          "startPosition": "P22",
-          "startPositionRank": 22,
+          "startPosition": "P20",
+          "startPositionRank": 20,
           "qualifyingLapTime": 98.933
         },
         {
@@ -3047,8 +3047,8 @@
           "points": 0,
           "sessionKey": 11731,
           "meetingKey": 1308,
-          "startPosition": "P8",
-          "startPositionRank": 8,
+          "startPosition": "P7",
+          "startPositionRank": 7,
           "qualifyingLapTime": 95.871
         },
         {
@@ -3073,8 +3073,8 @@
           "points": 0,
           "sessionKey": 11731,
           "meetingKey": 1308,
-          "startPosition": "P20",
-          "startPositionRank": 20,
+          "startPosition": "P18",
+          "startPositionRank": 18,
           "qualifyingLapTime": 98.6
         },
         {
@@ -3099,8 +3099,8 @@
           "points": 0,
           "sessionKey": 11731,
           "meetingKey": 1308,
-          "startPosition": "P21",
-          "startPositionRank": 21,
+          "startPosition": "P19",
+          "startPositionRank": 19,
           "qualifyingLapTime": 98.611
         }
       ],
@@ -5867,11 +5867,13 @@
   "meta": {
     "fia": {
       "eventName": "Bahrain Grand Prix",
-      "done": "2026-10-30T19:10:48.830Z"
+      "done": "2026-10-30T19:37:11.696Z"
     },
     "final": {
       "weekend": "2026-10-30T16:54:07.574Z"
     },
-    "buildVersion": "2026-10-30.7"
-  }
+    "buildVersion": "2026-10-30.8"
+  },
+  "locked": false,
+  "lockedSections": []
 }

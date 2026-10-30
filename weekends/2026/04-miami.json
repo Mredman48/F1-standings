@@ -1,7 +1,7 @@
 {
   "header": "2026 Miami GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T19:05:43.683Z",
+  "generatedAtUtc": "2026-10-30T19:34:07.633Z",
   "season": 2026,
   "round": 4,
   "meetingKey": 1284,
@@ -2269,8 +2269,8 @@
           "points": 0,
           "sessionKey": 11275,
           "meetingKey": 1284,
-          "startPosition": "P17",
-          "startPositionRank": 17,
+          "startPosition": "P16",
+          "startPositionRank": 16,
           "qualifyingLapTime": 91.245
         },
         {
@@ -2347,8 +2347,8 @@
           "points": 0,
           "sessionKey": 11275,
           "meetingKey": 1284,
-          "startPosition": "P16",
-          "startPositionRank": 16,
+          "startPosition": "P15",
+          "startPositionRank": 15,
           "qualifyingLapTime": 91.043
         },
         {
@@ -2373,8 +2373,8 @@
           "points": 0,
           "sessionKey": 11275,
           "meetingKey": 1284,
-          "startPosition": "-",
-          "startPositionRank": null,
+          "startPosition": "P20",
+          "startPositionRank": 20,
           "qualifyingLapTime": 101.311
         },
         {
@@ -2399,8 +2399,8 @@
           "points": 0,
           "sessionKey": 11275,
           "meetingKey": 1284,
-          "startPosition": "P18",
-          "startPositionRank": 18,
+          "startPosition": "P17",
+          "startPositionRank": 17,
           "qualifyingLapTime": 91.255
         },
         {
@@ -2420,8 +2420,8 @@
           "points": 0,
           "sessionKey": 11275,
           "meetingKey": 1284,
-          "startPosition": null,
-          "startPositionRank": null,
+          "startPosition": "P21",
+          "startPositionRank": 21,
           "qualifyingLapTime": null
         },
         {
@@ -2446,8 +2446,8 @@
           "points": 0,
           "sessionKey": 11275,
           "meetingKey": 1284,
-          "startPosition": "P19",
-          "startPositionRank": 19,
+          "startPosition": "P18",
+          "startPositionRank": 18,
           "qualifyingLapTime": 90.216
         },
         {
@@ -2472,8 +2472,8 @@
           "points": 0,
           "sessionKey": 11275,
           "meetingKey": 1284,
-          "startPosition": "P20",
-          "startPositionRank": 20,
+          "startPosition": "P19",
+          "startPositionRank": 19,
           "qualifyingLapTime": 91.826
         },
         {
@@ -2524,8 +2524,8 @@
           "points": 0,
           "sessionKey": 11275,
           "meetingKey": 1284,
-          "startPosition": "P15",
-          "startPositionRank": 15,
+          "startPosition": "P22",
+          "startPositionRank": 22,
           "qualifyingLapTime": 90.573
         },
         {
@@ -3756,8 +3756,8 @@
           "points": 0,
           "sessionKey": 11280,
           "meetingKey": 1284,
-          "startPosition": "-",
-          "startPositionRank": null,
+          "startPosition": "P22",
+          "startPositionRank": 22,
           "qualifyingLapTime": 88.789
         }
       ],
@@ -5794,11 +5794,13 @@
   "meta": {
     "fia": {
       "eventName": "Miami Grand Prix",
-      "done": "2026-10-30T19:05:42.020Z"
+      "done": "2026-10-30T19:34:05.834Z"
     },
     "final": {
       "weekend": "2026-10-30T17:23:45.764Z"
     },
-    "buildVersion": "2026-10-30.7"
-  }
+    "buildVersion": "2026-10-30.8"
+  },
+  "locked": false,
+  "lockedSections": []
 }

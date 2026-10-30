@@ -1,7 +1,7 @@
 {
   "header": "2026 United States GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T19:12:02.225Z",
+  "generatedAtUtc": "2026-10-30T19:37:24.461Z",
   "season": 2026,
   "round": 18,
   "meetingKey": 1297,
@@ -2790,8 +2790,8 @@
           "points": 2,
           "sessionKey": 11396,
           "meetingKey": 1297,
-          "startPosition": "P10",
-          "startPositionRank": 10,
+          "startPosition": "P9",
+          "startPositionRank": 9,
           "qualifyingLapTime": 95.058
         },
         {
@@ -2816,8 +2816,8 @@
           "points": 1,
           "sessionKey": 11396,
           "meetingKey": 1297,
-          "startPosition": "P11",
-          "startPositionRank": 11,
+          "startPosition": "P10",
+          "startPositionRank": 10,
           "qualifyingLapTime": 95.08
         },
         {
@@ -2842,8 +2842,8 @@
           "points": 0,
           "sessionKey": 11396,
           "meetingKey": 1297,
-          "startPosition": "P12",
-          "startPositionRank": 12,
+          "startPosition": "P11",
+          "startPositionRank": 11,
           "qualifyingLapTime": 95.158
         },
         {
@@ -2868,8 +2868,8 @@
           "points": 0,
           "sessionKey": 11396,
           "meetingKey": 1297,
-          "startPosition": "P9",
-          "startPositionRank": 9,
+          "startPosition": "P14",
+          "startPositionRank": 14,
           "qualifyingLapTime": 94.95
         },
         {
@@ -2894,8 +2894,8 @@
           "points": 0,
           "sessionKey": 11396,
           "meetingKey": 1297,
-          "startPosition": "P13",
-          "startPositionRank": 13,
+          "startPosition": "P22",
+          "startPositionRank": 22,
           "qualifyingLapTime": 95.632
         },
         {
@@ -2920,8 +2920,8 @@
           "points": 0,
           "sessionKey": 11396,
           "meetingKey": 1297,
-          "startPosition": "P17",
-          "startPositionRank": 17,
+          "startPosition": "P15",
+          "startPositionRank": 15,
           "qualifyingLapTime": 96.531
         },
         {
@@ -2946,8 +2946,8 @@
           "points": 0,
           "sessionKey": 11396,
           "meetingKey": 1297,
-          "startPosition": "P18",
-          "startPositionRank": 18,
+          "startPosition": "P16",
+          "startPositionRank": 16,
           "qualifyingLapTime": 96.677
         },
         {
@@ -2972,8 +2972,8 @@
           "points": 0,
           "sessionKey": 11396,
           "meetingKey": 1297,
-          "startPosition": "P15",
-          "startPositionRank": 15,
+          "startPosition": "P12",
+          "startPositionRank": 12,
           "qualifyingLapTime": 95.818
         },
         {
@@ -2998,8 +2998,8 @@
           "points": 0,
           "sessionKey": 11396,
           "meetingKey": 1297,
-          "startPosition": "P20",
-          "startPositionRank": 20,
+          "startPosition": "P18",
+          "startPositionRank": 18,
           "qualifyingLapTime": 96.967
         },
         {
@@ -3024,8 +3024,8 @@
           "points": 0,
           "sessionKey": 11396,
           "meetingKey": 1297,
-          "startPosition": "P19",
-          "startPositionRank": 19,
+          "startPosition": "P17",
+          "startPositionRank": 17,
           "qualifyingLapTime": 96.77
         },
         {
@@ -3050,8 +3050,8 @@
           "points": 0,
           "sessionKey": 11396,
           "meetingKey": 1297,
-          "startPosition": "P21",
-          "startPositionRank": 21,
+          "startPosition": "P19",
+          "startPositionRank": 19,
           "qualifyingLapTime": 97.433
         },
         {
@@ -3076,8 +3076,8 @@
           "points": 0,
           "sessionKey": 11396,
           "meetingKey": 1297,
-          "startPosition": "P22",
-          "startPositionRank": 22,
+          "startPosition": "P20",
+          "startPositionRank": 20,
           "qualifyingLapTime": 97.523
         },
         {
@@ -3102,8 +3102,8 @@
           "points": 0,
           "sessionKey": 11396,
           "meetingKey": 1297,
-          "startPosition": "P14",
-          "startPositionRank": 14,
+          "startPosition": "P21",
+          "startPositionRank": 21,
           "qualifyingLapTime": 95.722
         },
         {
@@ -3128,8 +3128,8 @@
           "points": 0,
           "sessionKey": 11396,
           "meetingKey": 1297,
-          "startPosition": "P16",
-          "startPositionRank": 16,
+          "startPosition": "P13",
+          "startPositionRank": 13,
           "qualifyingLapTime": 96.031
         }
       ],
@@ -4873,11 +4873,13 @@
   "meta": {
     "fia": {
       "eventName": "United States Grand Prix",
-      "done": "2026-10-30T19:12:01.036Z"
+      "done": "2026-10-30T19:37:23.347Z"
     },
     "final": {
       "weekend": "2026-10-30T16:26:06.978Z"
     },
-    "buildVersion": "2026-10-30.7"
-  }
+    "buildVersion": "2026-10-30.8"
+  },
+  "locked": false,
+  "lockedSections": []
 }

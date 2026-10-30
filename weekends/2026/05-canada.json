@@ -1,7 +1,7 @@
 {
   "header": "2026 Canadian GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T19:05:49.631Z",
+  "generatedAtUtc": "2026-10-30T19:34:14.550Z",
   "season": 2026,
   "round": 5,
   "meetingKey": 1285,
@@ -2293,8 +2293,8 @@
           "points": 0,
           "sessionKey": 11286,
           "meetingKey": 1285,
-          "startPosition": null,
-          "startPositionRank": null,
+          "startPosition": "P18",
+          "startPositionRank": 18,
           "qualifyingLapTime": null
         },
         {
@@ -2371,8 +2371,8 @@
           "points": 0,
           "sessionKey": 11286,
           "meetingKey": 1285,
-          "startPosition": "P17",
-          "startPositionRank": 17,
+          "startPosition": "P16",
+          "startPositionRank": 16,
           "qualifyingLapTime": 76.002
         },
         {
@@ -2423,8 +2423,8 @@
           "points": 0,
           "sessionKey": 11286,
           "meetingKey": 1285,
-          "startPosition": "P18",
-          "startPositionRank": 18,
+          "startPosition": "P17",
+          "startPositionRank": 17,
           "qualifyingLapTime": 76.354
         },
         {
@@ -2449,8 +2449,8 @@
           "points": 0,
           "sessionKey": 11286,
           "meetingKey": 1285,
-          "startPosition": "P20",
-          "startPositionRank": 20,
+          "startPosition": "P21",
+          "startPositionRank": 21,
           "qualifyingLapTime": 76.866
         },
         {
@@ -2475,8 +2475,8 @@
           "points": 0,
           "sessionKey": 11286,
           "meetingKey": 1285,
-          "startPosition": "P15",
-          "startPositionRank": 15,
+          "startPosition": "P19",
+          "startPositionRank": 19,
           "qualifyingLapTime": 75.197
         },
         {
@@ -2496,8 +2496,8 @@
           "points": 0,
           "sessionKey": 11286,
           "meetingKey": 1285,
-          "startPosition": null,
-          "startPositionRank": null,
+          "startPosition": "P22",
+          "startPositionRank": 22,
           "qualifyingLapTime": null
         },
         {
@@ -2522,8 +2522,8 @@
           "points": 0,
           "sessionKey": 11286,
           "meetingKey": 1285,
-          "startPosition": "P19",
-          "startPositionRank": 19,
+          "startPosition": "P20",
+          "startPositionRank": 20,
           "qualifyingLapTime": 76.642
         },
         {
@@ -2574,8 +2574,8 @@
           "points": 0,
           "sessionKey": 11286,
           "meetingKey": 1285,
-          "startPosition": "P16",
-          "startPositionRank": 16,
+          "startPosition": "P15",
+          "startPositionRank": 15,
           "qualifyingLapTime": 75.76
         }
       ]
@@ -3598,8 +3598,8 @@
           "points": 0,
           "sessionKey": 11291,
           "meetingKey": 1285,
-          "startPosition": "P21",
-          "startPositionRank": 21,
+          "startPosition": "P22",
+          "startPositionRank": 22,
           "qualifyingLapTime": 76.195
         },
         {
@@ -3624,8 +3624,8 @@
           "points": 0,
           "sessionKey": 11291,
           "meetingKey": 1285,
-          "startPosition": "P22",
-          "startPositionRank": 22,
+          "startPosition": "P21",
+          "startPositionRank": 21,
           "qualifyingLapTime": 76.272
         },
         {
@@ -6319,11 +6319,13 @@
   "meta": {
     "fia": {
       "eventName": "Canadian Grand Prix",
-      "done": "2026-10-30T19:05:47.929Z"
+      "done": "2026-10-30T19:34:12.490Z"
     },
     "final": {
       "weekend": "2026-10-30T17:24:22.721Z"
     },
-    "buildVersion": "2026-10-30.7"
-  }
+    "buildVersion": "2026-10-30.8"
+  },
+  "locked": false,
+  "lockedSections": []
 }

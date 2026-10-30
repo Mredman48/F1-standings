@@ -1,7 +1,7 @@
 {
   "header": "2026 Spanish GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T19:09:39.063Z",
+  "generatedAtUtc": "2026-10-30T19:37:03.426Z",
   "season": 2026,
   "round": 14,
   "meetingKey": 1294,
@@ -2843,8 +2843,8 @@
           "points": 0,
           "sessionKey": 11369,
           "meetingKey": 1294,
-          "startPosition": null,
-          "startPositionRank": null,
+          "startPosition": "P22",
+          "startPositionRank": 22,
           "qualifyingLapTime": null
         },
         {
@@ -2869,8 +2869,8 @@
           "points": 0,
           "sessionKey": 11369,
           "meetingKey": 1294,
-          "startPosition": "P18",
-          "startPositionRank": 18,
+          "startPosition": "P17",
+          "startPositionRank": 17,
           "qualifyingLapTime": 95.388
         },
         {
@@ -2895,8 +2895,8 @@
           "points": 0,
           "sessionKey": 11369,
           "meetingKey": 1294,
-          "startPosition": "P20",
-          "startPositionRank": 20,
+          "startPosition": "P19",
+          "startPositionRank": 19,
           "qualifyingLapTime": 98.011
         },
         {
@@ -2921,8 +2921,8 @@
           "points": 0,
           "sessionKey": 11369,
           "meetingKey": 1294,
-          "startPosition": "P17",
-          "startPositionRank": 17,
+          "startPosition": "P20",
+          "startPositionRank": 20,
           "qualifyingLapTime": 95.312
         },
         {
@@ -2947,8 +2947,8 @@
           "points": 0,
           "sessionKey": 11369,
           "meetingKey": 1294,
-          "startPosition": "P19",
-          "startPositionRank": 19,
+          "startPosition": "P18",
+          "startPositionRank": 18,
           "qualifyingLapTime": 95.913
         },
         {
@@ -2968,8 +2968,8 @@
           "points": 0,
           "sessionKey": 11369,
           "meetingKey": 1294,
-          "startPosition": null,
-          "startPositionRank": null,
+          "startPosition": "P21",
+          "startPositionRank": 21,
           "qualifyingLapTime": null
         },
         {
@@ -4564,11 +4564,13 @@
   "meta": {
     "fia": {
       "eventName": "Spanish Grand Prix",
-      "done": "2026-10-30T19:09:38.348Z"
+      "done": "2026-10-30T19:37:02.164Z"
     },
     "final": {
       "weekend": "2026-10-30T17:17:57.988Z"
     },
-    "buildVersion": "2026-10-30.7"
-  }
+    "buildVersion": "2026-10-30.8"
+  },
+  "locked": false,
+  "lockedSections": []
 }
