@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-30T22:14:59.027Z",
+  "generatedAt": "2026-10-30T22:15:09.150Z",
   "season": 2026,
   "teams": {
     "audi": {
@@ -424,33 +424,6 @@
       },
       "liveries": [
         {
-          "id": "alpine-2026-mercado-libre-livery",
-          "label": "Mercado Libre Livery",
-          "type": "sponsor",
-          "description": "",
-          "round": 19,
-          "validFrom": "2026-10-29T00:00:00Z",
-          "validUntil": "2026-10-30T00:00:00Z",
-          "colors": {
-            "primary": "#FF87BC",
-            "secondary": "#015094",
-            "onPrimary": "#0A0C0F"
-          },
-          "drivers": {},
-          "background": {
-            "style": "dotGradient",
-            "origin": "topTrailing",
-            "intensity": 0.6,
-            "spacing": 10
-          },
-          "assets": {
-            "car": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/liveries/alpine-2026-mercado-libre-livery-car.webp",
-            "logo": "",
-            "logoLight": "",
-            "icon": ""
-          }
-        },
-        {
           "id": "alpine-2026-mercado-libre-livery-austin",
           "label": "Mercado Libre Livery Austin",
           "type": "sponsor",
@@ -472,6 +445,33 @@
           },
           "assets": {
             "car": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/liveries/alpine-2026-mercado-libre-livery-austin-car.webp",
+            "logo": "",
+            "logoLight": "",
+            "icon": ""
+          }
+        },
+        {
+          "id": "alpine-2026-mercado-libre-livery",
+          "label": "Mercado Libre Livery Mexico City",
+          "type": "sponsor",
+          "description": "",
+          "round": 19,
+          "validFrom": "2026-10-29T00:00:00Z",
+          "validUntil": "2026-10-30T00:00:00Z",
+          "colors": {
+            "primary": "#FF87BC",
+            "secondary": "#015094",
+            "onPrimary": "#0A0C0F"
+          },
+          "drivers": {},
+          "background": {
+            "style": "dotGradient",
+            "origin": "topTrailing",
+            "intensity": 0.6,
+            "spacing": 10
+          },
+          "assets": {
+            "car": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/liveries/alpine-2026-mercado-libre-livery-car.webp",
             "logo": "",
             "logoLight": "",
             "icon": ""
