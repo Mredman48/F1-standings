@@ -1,7 +1,7 @@
 {
   "header": "2026 Dutch GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T17:26:36.023Z",
+  "generatedAtUtc": "2026-10-30T17:28:19.446Z",
   "season": 2026,
   "round": 12,
   "meetingKey": 1292,
@@ -479,8 +479,21 @@
           "qualifyingLapTime": 74.738,
           "qualifyingPosition": 18,
           "placesVsQualifying": 3,
-          "penalty": null,
-          "note": null
+          "penalty": {
+            "places": null,
+            "backOfGrid": false,
+            "pitLane": true,
+            "reason": "parc fermé changes",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 55 - Changes made during Parc Ferme",
+                "url": "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_infringement_-_car_55_-_changes_made_during_parc_ferme.pdf",
+                "decision": "Required to start the Sprint from the pit lane."
+              }
+            ]
+          },
+          "note": "Starts from the pit lane for parc fermé changes"
         },
         {
           "position": 22,
@@ -494,8 +507,21 @@
           "qualifyingLapTime": 76.014,
           "qualifyingPosition": 22,
           "placesVsQualifying": 0,
-          "penalty": null,
-          "note": null
+          "penalty": {
+            "places": null,
+            "backOfGrid": false,
+            "pitLane": true,
+            "reason": "parc fermé changes",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 14 - Changes made during Parc Ferme",
+                "url": "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_infringement_-_car_14_-_changes_made_during_parc_ferme.pdf",
+                "decision": "Required to start the Sprint from the pit lane."
+              }
+            ]
+          },
+          "note": "Starts from the pit lane for parc fermé changes"
         }
       ],
       "gridPenaltiesChecked": true
@@ -846,8 +872,21 @@
           "qualifyingLapTime": 74.6,
           "qualifyingPosition": 22,
           "placesVsQualifying": 0,
-          "penalty": null,
-          "note": null
+          "penalty": {
+            "places": null,
+            "backOfGrid": false,
+            "pitLane": true,
+            "reason": "parc fermé changes",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 11 - Changes made in Parc Ferme",
+                "url": "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_infringement_-_car_11_-_changes_made_in_parc_ferme.pdf",
+                "decision": "Required to start the Race from the pit lane."
+              }
+            ]
+          },
+          "note": "Starts from the pit lane for parc fermé changes"
         }
       ],
       "gridPenaltiesChecked": true
@@ -863,6 +902,115 @@
       "none": true,
       "title": "Infringement - Car 87 - Red Light at Pit Exit",
       "publishedAt": "2026-08-23T17:55:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_infringement_-_car_55_-_collision_with_car_23.pdf": {
+      "none": true,
+      "title": "Infringement - Car 55 - Collision with Car 23",
+      "publishedAt": "2026-08-23T17:09:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_infringement_-_car_30_-_failure_to_follow_for_yellow_flags.pdf": {
+      "none": true,
+      "title": "Infringement - Car 30 - Failure to follow for yellow flags",
+      "publishedAt": "2026-08-23T16:37:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_infringement_-_car_43_-_failure_to_slow_for_yellow_flags.pdf": {
+      "none": true,
+      "title": "Infringement - Car 43 - Failure to slow for yellow flags",
+      "publishedAt": "2026-08-23T16:36:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_infringement_-_car_43_-_overtaking_under_yellow_flags.pdf": {
+      "none": true,
+      "title": "Infringement - Car 43 - Overtaking under yellow flags",
+      "publishedAt": "2026-08-23T15:48:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_infringement_-_car_41_-_overtaking_under_yellow_flags.pdf": {
+      "none": true,
+      "title": "Infringement - Car 41 - Overtaking under yellow flags",
+      "publishedAt": "2026-08-23T16:14:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_infringement_-_car_11_-_changes_made_in_parc_ferme.pdf": {
+      "driverNumber": 11,
+      "driverName": "Sergio Perez",
+      "places": null,
+      "backOfGrid": false,
+      "pitLane": true,
+      "appliesTo": "race",
+      "reason": "parc fermé changes",
+      "decision": "Required to start the Race from the pit lane.",
+      "title": "Infringement - Car 11 - Changes made in Parc Ferme",
+      "url": "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_infringement_-_car_11_-_changes_made_in_parc_ferme.pdf",
+      "publishedAt": "2026-08-23T11:34:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_decision_-_car_10_-_alleged_unsafe_release.pdf": {
+      "none": true,
+      "title": "Decision - Car 10 - alleged unsafe release",
+      "publishedAt": "2026-08-22T17:15:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_infringement_-_car_5_-_unsafe_release.pdf": {
+      "none": true,
+      "title": "Infringement - Car 5 - Unsafe release",
+      "publishedAt": "2026-08-22T13:17:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_infringement_-_car_18_-_failure_to_follow_race_directors_instructions_reaching_the_grid.pdf": {
+      "none": true,
+      "title": "Infringement - Car 18 - Failure to follow Race Director's Instructions (Reaching the Grid)",
+      "publishedAt": "2026-08-22T12:35:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_infringement_-_car_22_-_failure_to_follow_race_directors_instructions_reaching_the_grid.pdf": {
+      "none": true,
+      "title": "Infringement - Car 22 - Failure to follow Race Director's Instructions (Reaching the Grid)",
+      "publishedAt": "2026-08-22T12:32:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_infringement_-_car_3_-_failure_to_follow_race_directors_instructions_reaching_the_grid.pdf": {
+      "none": true,
+      "title": "Infringement - Car 3 - Failure to follow Race Director's Instructions (Reaching the Grid)",
+      "publishedAt": "2026-08-22T12:29:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_infringement_-_car_44_-_failure_to_follow_race_directors_instructions_reaching_the_grid.pdf": {
+      "none": true,
+      "title": "Infringement - Car 44 - Failure to follow Race Director's Instructions (Reaching the Grid)",
+      "publishedAt": "2026-08-22T12:29:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_infringement_-_car_77_-_failure_to_follow_race_directors_instructions_reaching_the_grid.pdf": {
+      "none": true,
+      "title": "Infringement - Car 77 - Failure to follow Race Director's Instructions (Reaching the Grid)",
+      "publishedAt": "2026-08-22T12:28:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_infringement_-_car_55_-_starting_procedure_infringement.pdf": {
+      "none": true,
+      "title": "Infringement - Car 55 - Starting procedure infringement",
+      "publishedAt": "2026-08-22T11:39:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_infringement_-_car_14_-_changes_made_during_parc_ferme.pdf": {
+      "driverNumber": 14,
+      "driverName": "Fernando Alonso",
+      "places": null,
+      "backOfGrid": false,
+      "pitLane": true,
+      "appliesTo": "sprint",
+      "reason": "parc fermé changes",
+      "decision": "Required to start the Sprint from the pit lane.",
+      "title": "Infringement - Car 14 - Changes made during Parc Ferme",
+      "url": "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_infringement_-_car_14_-_changes_made_during_parc_ferme.pdf",
+      "publishedAt": "2026-08-22T09:45:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_infringement_-_car_55_-_changes_made_during_parc_ferme.pdf": {
+      "driverNumber": 55,
+      "driverName": "Carlos Sainz",
+      "places": null,
+      "backOfGrid": false,
+      "pitLane": true,
+      "appliesTo": "sprint",
+      "reason": "parc fermé changes",
+      "decision": "Required to start the Sprint from the pit lane.",
+      "title": "Infringement - Car 55 - Changes made during Parc Ferme",
+      "url": "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_infringement_-_car_55_-_changes_made_during_parc_ferme.pdf",
+      "publishedAt": "2026-08-22T09:44:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_dutch_grand_prix_-_infringement-_car_55_-_driving_unnecessarily_slowly_during_sprint_qualifying.pdf": {
+      "none": true,
+      "title": "Infringement- Car 55 - driving unnecessarily slowly during sprint qualifying",
+      "publishedAt": "2026-08-21T18:13:00.000Z"
     }
   },
   "sessionResults": [
@@ -6657,10 +6805,11 @@
   "raceRecap": null,
   "meta": {
     "fia": {
-      "eventName": "Dutch Grand Prix"
+      "eventName": "Dutch Grand Prix",
+      "done": "2026-10-30T17:28:19.442Z"
     },
     "final": {
-      "weekend": null
+      "weekend": "2026-10-30T17:28:19.446Z"
     },
     "buildVersion": "2026-10-30.5"
   }
