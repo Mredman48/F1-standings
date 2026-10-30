@@ -1,7 +1,7 @@
 {
   "header": "2026 Qatar GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T20:59:00.679Z",
+  "generatedAtUtc": "2026-10-30T21:11:36.009Z",
   "season": 2026,
   "round": 22,
   "meetingKey": 1301,
@@ -91,7 +91,51 @@
       }
     ]
   },
-  "circuitIntelligence": null,
+  "circuitIntelligence": {
+    "displayName": "Qatar Grand Prix",
+    "dna": {
+      "cornerProfile": "Fast flowing",
+      "overtaking": "Medium",
+      "tireWear": "High",
+      "trackEvolution": "Low",
+      "strategyBias": "Tire Management",
+      "safetyCarRisk": "Low"
+    },
+    "intelligence": [
+      "High-speed corners place heavy sustained load on tires.",
+      "Track limits can become a major storyline.",
+      "Tire management is central to race execution.",
+      "Cars with stable aero balance are rewarded."
+    ],
+    "id": "qatar",
+    "matchKeys": [
+      "qatar",
+      "lusail",
+      "doha"
+    ],
+    "specs": {
+      "turns": 16,
+      "longestStraightKm": 1.1,
+      "averageSpeed": "High",
+      "raceLaps": 57,
+      "trackLength": "5.419 km",
+      "raceDistance": "308.611 km"
+    },
+    "raceLapRecord": {
+      "time": "1:22.384",
+      "driver": "Lando Norris",
+      "constructor": "McLaren",
+      "year": 2024,
+      "raceName": "Qatar Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "Max Verstappen",
+      "constructor": "Red Bull",
+      "season": 2025,
+      "date": "2025-11-30",
+      "raceName": "Qatar Grand Prix"
+    }
+  },
   "previousWinner": null,
   "tyreInfo": {
     "round": 22,

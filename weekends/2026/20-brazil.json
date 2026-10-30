@@ -1,7 +1,7 @@
 {
   "header": "2026 Sao Paulo GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T20:59:00.673Z",
+  "generatedAtUtc": "2026-10-30T21:11:36.006Z",
   "season": 2026,
   "round": 20,
   "meetingKey": 1299,
@@ -91,7 +91,52 @@
       }
     ]
   },
-  "circuitIntelligence": null,
+  "circuitIntelligence": {
+    "displayName": "São Paulo Grand Prix",
+    "dna": {
+      "cornerProfile": "Short flowing elevation",
+      "overtaking": "High",
+      "tireWear": "Medium",
+      "trackEvolution": "Medium",
+      "strategyBias": "Weather",
+      "safetyCarRisk": "Medium"
+    },
+    "intelligence": [
+      "Weather can quickly change strategy.",
+      "Short lap length keeps the field compressed.",
+      "Overtaking is possible into Turn 1 and Turn 4.",
+      "Traction through the final sector is important for straight-line attacks."
+    ],
+    "id": "brazil",
+    "matchKeys": [
+      "brazil",
+      "brazilian",
+      "saopaulo",
+      "interlagos"
+    ],
+    "specs": {
+      "turns": 15,
+      "longestStraightKm": 0.9,
+      "averageSpeed": "Medium",
+      "raceLaps": 71,
+      "trackLength": "4.309 km",
+      "raceDistance": "305.879 km"
+    },
+    "raceLapRecord": {
+      "time": "1:10.540",
+      "driver": "Valtteri Bottas",
+      "constructor": "Mercedes",
+      "year": 2018,
+      "raceName": "Sao Paulo Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "Lando Norris",
+      "constructor": "McLaren",
+      "season": 2025,
+      "date": "2025-11-09",
+      "raceName": "São Paulo Grand Prix"
+    }
+  },
   "previousWinner": null,
   "tyreInfo": {
     "round": 20,

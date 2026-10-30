@@ -1,7 +1,7 @@
 {
   "header": "2026 Abu Dhabi GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T20:59:00.681Z",
+  "generatedAtUtc": "2026-10-30T21:11:36.010Z",
   "season": 2026,
   "round": 23,
   "meetingKey": 1302,
@@ -91,7 +91,50 @@
       }
     ]
   },
-  "circuitIntelligence": null,
+  "circuitIntelligence": {
+    "displayName": "Abu Dhabi Grand Prix",
+    "dna": {
+      "cornerProfile": "Modern traction",
+      "overtaking": "Medium",
+      "tireWear": "Low",
+      "trackEvolution": "Medium",
+      "strategyBias": "Neutral",
+      "safetyCarRisk": "Low"
+    },
+    "intelligence": [
+      "Race conditions change as the event moves from daylight to night.",
+      "Traction out of slow corners is important.",
+      "Strategy is often straightforward without interruption.",
+      "Qualifying remains important because overtaking can be limited."
+    ],
+    "id": "abudhabi",
+    "matchKeys": [
+      "abudhabi",
+      "yasmarina"
+    ],
+    "specs": {
+      "turns": 16,
+      "longestStraightKm": 1.2,
+      "averageSpeed": "Medium",
+      "raceLaps": 58,
+      "trackLength": "5.281 km",
+      "raceDistance": "306.183 km"
+    },
+    "raceLapRecord": {
+      "time": "1:25.637",
+      "driver": "Kevin Magnussen",
+      "constructor": "Haas",
+      "year": 2024,
+      "raceName": "Abu Dhabi Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "Max Verstappen",
+      "constructor": "Red Bull",
+      "season": 2025,
+      "date": "2025-12-07",
+      "raceName": "Abu Dhabi Grand Prix"
+    }
+  },
   "previousWinner": null,
   "tyreInfo": {
     "round": 23,
