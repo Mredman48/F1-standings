@@ -144,8 +144,50 @@
     "constructor": "Red Bull",
     "date": "2025-09-21"
   },
-  "tyreInfo": null,
-  "racePreview": null,
+  "tyreInfo": {
+    "round": 15,
+    "raceSlug": "azerbaijan",
+    "title": "Azerbaijan GP",
+    "season": 2026,
+    "country": "Azerbaijan",
+    "flag": "az",
+    "raceStart": "2026-09-26T11:00:00.000Z",
+    "compounds": {
+      "soft": "C5",
+      "medium": "C4",
+      "hard": "C3"
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2026,
+      "pastYear": false,
+      "traction": 5,
+      "tyreStress": 3,
+      "asphaltGrip": 2,
+      "braking": 4,
+      "asphaltAbrasion": 1,
+      "lateral": 1,
+      "trackEvolution": 5
+    },
+    "updatedAt": "2026-10-09T04:34:44.976Z"
+  },
+  "racePreview": {
+    "slug": "baku-battle-antonelli-s-reign-meets-street-circuit-chaos-mu8dlbzv",
+    "round": 15,
+    "raceSlug": "azerbaijan",
+    "title": "Azerbaijan GP",
+    "season": "2026",
+    "country": "Azerbaijan",
+    "flag": "az",
+    "raceStart": "2026-09-26T11:00:00.000Z",
+    "publishedAt": "2026-09-19",
+    "headline": "Baku Battle: Antonelli's Reign Meets Street Circuit Chaos",
+    "summary": "Antonelli's leading the pack, but Baku's a wild card. It's all about threading the needle between those tight walls and going flat-out on the straights—anything can happen!",
+    "body": "Kimi Antonelli is absolutely bossing it this season with eight wins and a massive lead in the standings—he's looking unstoppable right now. George Russell is doing alright in second, keeping that Mercedes 1-2 locked down, though he's lost some ground to his teammate recently. Over at Ferrari, they had a tough one in Spain, and word is Charles Leclerc might even cop a grid penalty here in Baku for an engine swap, which would be a huge blow—Fred Vasseur even said Baku looks \"quite suitable\" for it. On the flip side, Lando Norris and McLaren are seriously on the pace, especially on street circuits, with Lando bagging two wins recently. Even Max Verstappen's getting on the podium consistently for Red Bull, with three in his last four races, so don't count him out.\n\nBaku is pure chaos—a proper street fight with a crazy mix of mega-long straights and those super-tight sections through the Old City walls. That run from the final corner to Turn 1 is where all the action happens, perfect for slingshot overtakes, with it being the longest full-throttle section of the year. But get it wrong through the Castle section—the narrowest bit on the calendar at just 7.6m wide—and you're in the wall, mate. Qualifying is huge here; Saturday's grid order often dictates Sunday's result, so track position is everything. Keep an eye on Williams too, they've got some big upgrades coming, though their team principal is managing expectations, saying they won't be enough to consistently fight for points this season.",
+    "picks": {
+      "winner": "Antonelli",
+      "wildcard": "Norris"
+    }
+  },
   "startingGrids": [
     {
       "gridType": "race",
@@ -4751,7 +4793,26 @@
       ]
     }
   ],
-  "raceRecap": null,
+  "raceRecap": {
+    "slug": "russell-holds-off-verstappen-in-wild-azerbaijan-gp-finish-muixih4v",
+    "round": 15,
+    "raceSlug": "azerbaijan",
+    "title": "Azerbaijan GP",
+    "season": "2026",
+    "country": "Azerbaijan",
+    "flag": "az",
+    "raceStart": "2026-09-26T11:00:00.000Z",
+    "publishedAt": "2026-09-26",
+    "headline": "Russell Holds Off Verstappen in Wild Azerbaijan GP Finish",
+    "summary": "George Russell snatched a wild win in Azerbaijan, fending off Max Verstappen by less than two-tenths after multiple safety cars and team-mate drama. Antonelli salvaged P5 after a qualifying crash.",
+    "body": "George Russell absolutely nailed the Azerbaijan GP, taking a pole-to-flag win after a truly mental race in Baku. He had a solid gap early on, while championship leader Kimi Antonelli—starting way back in 16th after binning it in Q1—began his long climb to limit the damage to his points lead. The first safety car came out on Lap 31 when Alex Albon piled into the Tecpro barriers, bunching everyone up and letting Max Verstappen, who was already on a tear from P8, get right into the mix.\n\nThings got properly spicy on the restart with a multi-car pile-up at Turn 1—Alpine's Franco Colapinto totally binned it, taking out teammate Pierre Gasly, who then collected Lando Norris. Gasly was fuming on the radio, yelling, \"Oh my f*****g God. So many f*****g points gone\", while Norris was apparently calling for a race ban for Colapinto. Meanwhile, Racing Bulls teammates Lindblad and Lawson also tangled, with Lawson sarcastically commenting, \"I love getting taken out by my team mate. That's pretty sick\". Russell held off a proper charge from Verstappen right to the flag—only a tenth separated them at the end, partly thanks to a late yellow flag for Bottas's stricken car. Russell was buzzing, saying he feels \"more like myself again\" after the summer break. Isack Hadjar got a wicked podium in his return from injury, and Antonelli managed to pull off a crucial P5.",
+    "result": {
+      "p1": "RUSSELL",
+      "p2": "VERSTAPPEN",
+      "p3": "HADJAR",
+      "driverOfDay": "VERSTAPPEN"
+    }
+  },
   "meta": {
     "fia": {
       "eventName": "Azerbaijan Grand Prix",
