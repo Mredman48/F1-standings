@@ -136,8 +136,40 @@
       "raceName": "Hungarian Grand Prix"
     }
   },
-  "previousWinner": null,
-  "tyreInfo": null,
+  "previousWinner": {
+    "round": 13,
+    "raceName": "Hungarian Grand Prix",
+    "city": "Budapest",
+    "country": "Hungary",
+    "previousWinner": "Lando Norris",
+    "constructor": "McLaren",
+    "date": "2026-07-26"
+  },
+  "tyreInfo": {
+    "round": 13,
+    "raceSlug": "hungary",
+    "title": "Hungarian GP",
+    "season": 2027,
+    "country": "Hungary",
+    "flag": "hu",
+    "raceStart": "2027-08-01T13:00:00.000Z",
+    "compounds": {
+      "soft": "",
+      "medium": "",
+      "hard": ""
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2026,
+      "pastYear": true,
+      "traction": 4,
+      "tyreStress": 3,
+      "asphaltGrip": 3,
+      "braking": 3,
+      "asphaltAbrasion": 3,
+      "lateral": 3,
+      "trackEvolution": 4
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},
