@@ -92,8 +92,52 @@
     "circuit": "Autódromo Internacional do Algarve",
     "shortTitle": "Portuguese GP"
   },
-  "circuitIntelligence": null,
-  "previousWinner": null,
+  "circuitIntelligence": {
+    "displayName": "Portuguese Grand Prix",
+    "id": "portugal",
+    "specs": {
+      "turns": 15,
+      "longestStraightKm": 0.969,
+      "averageSpeed": "Medium",
+      "trackLength": "4.653"
+    },
+    "dna": {
+      "cornerProfile": "Rollercoaster, blind crests",
+      "overtaking": "Medium",
+      "tireWear": "Low",
+      "trackEvolution": "High",
+      "strategyBias": "Neutral",
+      "safetyCarRisk": "Low"
+    },
+    "raceLapRecord": {
+      "time": "1:18.750",
+      "driver": "Lewis Hamilton",
+      "constructor": "Mercedes",
+      "year": 2020,
+      "raceName": "Portuguese Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "Lewis Hamilton",
+      "constructor": "Mercedes",
+      "season": 2021,
+      "date": "2021-05-02",
+      "raceName": "Portuguese Grand Prix"
+    },
+    "intelligence": [
+      "Big elevation changes and many blind corners.",
+      "Low wear made a one-stop work in 2020.",
+      "The wide track allows different racing lines.",
+      "First F1 visit since 2021, so grip will build fast."
+    ]
+  },
+  "previousWinner": {
+    "previousWinner": "Lewis Hamilton",
+    "constructor": "Mercedes",
+    "raceName": "Portuguese Grand Prix",
+    "country": "Portugal",
+    "date": "2021-05-02",
+    "city": "Portimão"
+  },
   "tyreInfo": null,
   "racePreview": null,
   "startingGrids": [],
