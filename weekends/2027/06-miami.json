@@ -133,8 +133,40 @@
       "raceName": "Miami Grand Prix"
     }
   },
-  "previousWinner": null,
-  "tyreInfo": null,
+  "previousWinner": {
+    "round": 6,
+    "raceName": "Miami Grand Prix",
+    "city": "Miami",
+    "country": "United States",
+    "previousWinner": "Kimi Antonelli",
+    "constructor": "Mercedes",
+    "date": "2026-05-03"
+  },
+  "tyreInfo": {
+    "round": 6,
+    "raceSlug": "miami",
+    "title": "Miami GP",
+    "season": 2027,
+    "country": "United States",
+    "flag": "us",
+    "raceStart": "2027-05-02T20:00:00.000Z",
+    "compounds": {
+      "soft": "",
+      "medium": "",
+      "hard": ""
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2026,
+      "pastYear": true,
+      "traction": 3,
+      "tyreStress": 3,
+      "asphaltGrip": 3,
+      "braking": 3,
+      "asphaltAbrasion": 3,
+      "lateral": 3,
+      "trackEvolution": 5
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},
