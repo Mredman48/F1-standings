@@ -1,0 +1,108 @@
+{
+  "header": "2027 Australian Grand Prix 2027 weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-10-30T20:28:39.777Z",
+  "season": 2027,
+  "round": 3,
+  "meetingKey": null,
+  "raceSlug": "australia",
+  "status": "upcoming",
+  "weekend": {
+    "round": 3,
+    "id": "australia",
+    "type": "RACE_WEEKEND",
+    "title": "Australian Grand Prix 2027",
+    "season": "2027",
+    "location": {
+      "raw": null,
+      "city": "Melbourne",
+      "country": "Australia",
+      "flag": {
+        "iso2": "au",
+        "png": "https://flagcdn.com/w160/au.png",
+        "svg": "https://flagcdn.com/au.svg"
+      }
+    },
+    "racePage": {
+      "slug": "australia",
+      "url": "https://www.formula1.com/en/racing/2027/australia"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2027/australia",
+      "mediaUrl": null,
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_australia_detailed.png",
+      "note": "Using existing saved track map file. No download performed."
+    },
+    "map": {
+      "found": true,
+      "filename": "melbourne.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/melbourne.png",
+      "note": "Using saved map file. No download performed."
+    },
+    "countdowns": {
+      "startsInDays": 159
+    },
+    "weekend": {
+      "startUtc": null,
+      "endUtc": null
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Apr 02",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Sprint Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Apr 02",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Sprint",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Apr 03",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Apr 03",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Race",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sun, Apr 04",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      }
+    ]
+  },
+  "circuitIntelligence": null,
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

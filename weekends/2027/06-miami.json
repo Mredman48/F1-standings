@@ -1,0 +1,108 @@
+{
+  "header": "2027 Miami Grand Prix 2027 weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-10-30T20:28:39.780Z",
+  "season": 2027,
+  "round": 6,
+  "meetingKey": null,
+  "raceSlug": "miami",
+  "status": "upcoming",
+  "weekend": {
+    "round": 6,
+    "id": "miami",
+    "type": "RACE_WEEKEND",
+    "title": "Miami Grand Prix 2027",
+    "season": "2027",
+    "location": {
+      "raw": null,
+      "city": "Miami",
+      "country": "United States",
+      "flag": {
+        "iso2": "us",
+        "png": "https://flagcdn.com/w160/us.png",
+        "svg": "https://flagcdn.com/us.svg"
+      }
+    },
+    "racePage": {
+      "slug": "miami",
+      "url": "https://www.formula1.com/en/racing/2027/miami"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2027/miami",
+      "mediaUrl": null,
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_miami_detailed.png",
+      "note": "Using existing saved track map file. No download performed."
+    },
+    "map": {
+      "found": true,
+      "filename": "miami.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/miami.png",
+      "note": "Using saved map file. No download performed."
+    },
+    "countdowns": {
+      "startsInDays": 187
+    },
+    "weekend": {
+      "startUtc": null,
+      "endUtc": null
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Apr 30",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP2",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Apr 30",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP3",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, May 01",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, May 01",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Race",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sun, May 02",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      }
+    ]
+  },
+  "circuitIntelligence": null,
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

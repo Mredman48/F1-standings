@@ -1,0 +1,108 @@
+{
+  "header": "2027 Portuguese Grand Prix 2027 weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-10-30T20:28:39.782Z",
+  "season": 2027,
+  "round": 9,
+  "meetingKey": null,
+  "raceSlug": "portugal",
+  "status": "upcoming",
+  "weekend": {
+    "round": 9,
+    "id": "portugal",
+    "type": "RACE_WEEKEND",
+    "title": "Portuguese Grand Prix 2027",
+    "season": "2027",
+    "location": {
+      "raw": null,
+      "city": "Portimão",
+      "country": "Portugal",
+      "flag": {
+        "iso2": "pt",
+        "png": "https://flagcdn.com/w160/pt.png",
+        "svg": "https://flagcdn.com/pt.svg"
+      }
+    },
+    "racePage": {
+      "slug": "portugal",
+      "url": "https://www.formula1.com/en/racing/2027/portugal"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2027/portugal",
+      "mediaUrl": null,
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2027_portugal_detailed.png",
+      "note": "Using existing saved track map file. No download performed."
+    },
+    "map": {
+      "found": true,
+      "filename": "portimao.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/portimao.png",
+      "note": "Using saved map file. No download performed."
+    },
+    "countdowns": {
+      "startsInDays": 236
+    },
+    "weekend": {
+      "startUtc": null,
+      "endUtc": null
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Jun 18",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP2",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Jun 18",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP3",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Jun 19",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Jun 19",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Race",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sun, Jun 20",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      }
+    ]
+  },
+  "circuitIntelligence": null,
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

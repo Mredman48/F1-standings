@@ -1,0 +1,108 @@
+{
+  "header": "2027 Japanese Grand Prix 2027 weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-10-30T20:28:39.779Z",
+  "season": 2027,
+  "round": 4,
+  "meetingKey": null,
+  "raceSlug": "japan",
+  "status": "upcoming",
+  "weekend": {
+    "round": 4,
+    "id": "japan",
+    "type": "RACE_WEEKEND",
+    "title": "Japanese Grand Prix 2027",
+    "season": "2027",
+    "location": {
+      "raw": null,
+      "city": "Suzuka",
+      "country": "Japan",
+      "flag": {
+        "iso2": "jp",
+        "png": "https://flagcdn.com/w160/jp.png",
+        "svg": "https://flagcdn.com/jp.svg"
+      }
+    },
+    "racePage": {
+      "slug": "japan",
+      "url": "https://www.formula1.com/en/racing/2027/japan"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2027/japan",
+      "mediaUrl": null,
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_japan_detailed.png",
+      "note": "Using existing saved track map file. No download performed."
+    },
+    "map": {
+      "found": true,
+      "filename": "suzuka.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/suzuka.png",
+      "note": "Using saved map file. No download performed."
+    },
+    "countdowns": {
+      "startsInDays": 166
+    },
+    "weekend": {
+      "startUtc": null,
+      "endUtc": null
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Apr 09",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Sprint Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Apr 09",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Sprint",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Apr 10",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Apr 10",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Race",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sun, Apr 11",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      }
+    ]
+  },
+  "circuitIntelligence": null,
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

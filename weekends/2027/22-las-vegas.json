@@ -1,0 +1,108 @@
+{
+  "header": "2027 Las Vegas Grand Prix 2027 weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-10-30T20:28:39.790Z",
+  "season": 2027,
+  "round": 22,
+  "meetingKey": null,
+  "raceSlug": "las-vegas",
+  "status": "upcoming",
+  "weekend": {
+    "round": 22,
+    "id": "las-vegas",
+    "type": "RACE_WEEKEND",
+    "title": "Las Vegas Grand Prix 2027",
+    "season": "2027",
+    "location": {
+      "raw": null,
+      "city": "Las Vegas",
+      "country": "United States",
+      "flag": {
+        "iso2": "us",
+        "png": "https://flagcdn.com/w160/us.png",
+        "svg": "https://flagcdn.com/us.svg"
+      }
+    },
+    "racePage": {
+      "slug": "las-vegas",
+      "url": "https://www.formula1.com/en/racing/2027/las-vegas"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2027/las-vegas",
+      "mediaUrl": null,
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_las-vegas_detailed.png",
+      "note": "Using existing saved track map file. No download performed."
+    },
+    "map": {
+      "found": true,
+      "filename": "las-vegas.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/las-vegas.png",
+      "note": "Using saved map file. No download performed."
+    },
+    "countdowns": {
+      "startsInDays": 389
+    },
+    "weekend": {
+      "startUtc": null,
+      "endUtc": null
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Thu, Nov 18",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP2",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Thu, Nov 18",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP3",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Nov 19",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Nov 19",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Race",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Nov 20",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      }
+    ]
+  },
+  "circuitIntelligence": null,
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

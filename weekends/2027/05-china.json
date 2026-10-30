@@ -1,0 +1,108 @@
+{
+  "header": "2027 Chinese Grand Prix 2027 weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-10-30T20:28:39.779Z",
+  "season": 2027,
+  "round": 5,
+  "meetingKey": null,
+  "raceSlug": "china",
+  "status": "upcoming",
+  "weekend": {
+    "round": 5,
+    "id": "china",
+    "type": "RACE_WEEKEND",
+    "title": "Chinese Grand Prix 2027",
+    "season": "2027",
+    "location": {
+      "raw": null,
+      "city": "Shanghai",
+      "country": "China",
+      "flag": {
+        "iso2": "cn",
+        "png": "https://flagcdn.com/w160/cn.png",
+        "svg": "https://flagcdn.com/cn.svg"
+      }
+    },
+    "racePage": {
+      "slug": "china",
+      "url": "https://www.formula1.com/en/racing/2027/china"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2027/china",
+      "mediaUrl": null,
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_china_detailed.png",
+      "note": "Using existing saved track map file. No download performed."
+    },
+    "map": {
+      "found": true,
+      "filename": "shanghai.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/shanghai.png",
+      "note": "Using saved map file. No download performed."
+    },
+    "countdowns": {
+      "startsInDays": 173
+    },
+    "weekend": {
+      "startUtc": null,
+      "endUtc": null
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Apr 16",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP2",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Apr 16",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP3",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Apr 17",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Apr 17",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Race",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sun, Apr 18",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      }
+    ]
+  },
+  "circuitIntelligence": null,
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

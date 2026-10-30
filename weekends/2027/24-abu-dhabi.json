@@ -1,0 +1,108 @@
+{
+  "header": "2027 Abu Dhabi Grand Prix 2027 weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-10-30T20:28:39.791Z",
+  "season": 2027,
+  "round": 24,
+  "meetingKey": null,
+  "raceSlug": "abu-dhabi",
+  "status": "upcoming",
+  "weekend": {
+    "round": 24,
+    "id": "abu-dhabi",
+    "type": "RACE_WEEKEND",
+    "title": "Abu Dhabi Grand Prix 2027",
+    "season": "2027",
+    "location": {
+      "raw": null,
+      "city": "Abu Dhabi",
+      "country": "United Arab Emirates",
+      "flag": {
+        "iso2": "ae",
+        "png": "https://flagcdn.com/w160/ae.png",
+        "svg": "https://flagcdn.com/ae.svg"
+      }
+    },
+    "racePage": {
+      "slug": "abu-dhabi",
+      "url": "https://www.formula1.com/en/racing/2027/abu-dhabi"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2027/abu-dhabi",
+      "mediaUrl": null,
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_abu-dhabi_detailed.png",
+      "note": "Using existing saved track map file. No download performed."
+    },
+    "map": {
+      "found": true,
+      "filename": "yas-marina.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/yas-marina.png",
+      "note": "Using saved map file. No download performed."
+    },
+    "countdowns": {
+      "startsInDays": 411
+    },
+    "weekend": {
+      "startUtc": null,
+      "endUtc": null
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Dec 10",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Sprint Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Dec 10",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Sprint",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Dec 11",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Dec 11",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Race",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sun, Dec 12",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      }
+    ]
+  },
+  "circuitIntelligence": null,
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

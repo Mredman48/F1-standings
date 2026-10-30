@@ -1,0 +1,108 @@
+{
+  "header": "2027 British Grand Prix 2027 weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-10-30T20:28:39.783Z",
+  "season": 2027,
+  "round": 10,
+  "meetingKey": null,
+  "raceSlug": "great-britain",
+  "status": "upcoming",
+  "weekend": {
+    "round": 10,
+    "id": "great-britain",
+    "type": "RACE_WEEKEND",
+    "title": "British Grand Prix 2027",
+    "season": "2027",
+    "location": {
+      "raw": null,
+      "city": "Silverstone",
+      "country": "United Kingdom",
+      "flag": {
+        "iso2": "gb",
+        "png": "https://flagcdn.com/w160/gb.png",
+        "svg": "https://flagcdn.com/gb.svg"
+      }
+    },
+    "racePage": {
+      "slug": "great-britain",
+      "url": "https://www.formula1.com/en/racing/2027/great-britain"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2027/great-britain",
+      "mediaUrl": null,
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_great-britain_detailed.png",
+      "note": "Using existing saved track map file. No download performed."
+    },
+    "map": {
+      "found": true,
+      "filename": "silverstone.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/silverstone.png",
+      "note": "Using saved map file. No download performed."
+    },
+    "countdowns": {
+      "startsInDays": 250
+    },
+    "weekend": {
+      "startUtc": null,
+      "endUtc": null
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Jul 02",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Sprint Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Jul 02",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Sprint",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Jul 03",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Jul 03",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Race",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sun, Jul 04",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      }
+    ]
+  },
+  "circuitIntelligence": null,
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "header": "2027 Monaco Grand Prix 2027 weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-10-30T20:28:39.781Z",
+  "season": 2027,
+  "round": 8,
+  "meetingKey": null,
+  "raceSlug": "monaco",
+  "status": "upcoming",
+  "weekend": {
+    "round": 8,
+    "id": "monaco",
+    "type": "RACE_WEEKEND",
+    "title": "Monaco Grand Prix 2027",
+    "season": "2027",
+    "location": {
+      "raw": null,
+      "city": "Monaco",
+      "country": "Monaco",
+      "flag": {
+        "iso2": "mc",
+        "png": "https://flagcdn.com/w160/mc.png",
+        "svg": "https://flagcdn.com/mc.svg"
+      }
+    },
+    "racePage": {
+      "slug": "monaco",
+      "url": "https://www.formula1.com/en/racing/2027/monaco"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2027/monaco",
+      "mediaUrl": null,
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_monaco_detailed.png",
+      "note": "Using existing saved track map file. No download performed."
+    },
+    "map": {
+      "found": true,
+      "filename": "monaco.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/monaco.png",
+      "note": "Using saved map file. No download performed."
+    },
+    "countdowns": {
+      "startsInDays": 222
+    },
+    "weekend": {
+      "startUtc": null,
+      "endUtc": null
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Jun 04",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Sprint Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Jun 04",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Sprint",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Jun 05",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Jun 05",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Race",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sun, Jun 06",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      }
+    ]
+  },
+  "circuitIntelligence": null,
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

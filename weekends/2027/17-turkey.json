@@ -1,0 +1,108 @@
+{
+  "header": "2027 Turkish Grand Prix 2027 weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-10-30T20:28:39.786Z",
+  "season": 2027,
+  "round": 17,
+  "meetingKey": null,
+  "raceSlug": "turkey",
+  "status": "upcoming",
+  "weekend": {
+    "round": 17,
+    "id": "turkey",
+    "type": "RACE_WEEKEND",
+    "title": "Turkish Grand Prix 2027",
+    "season": "2027",
+    "location": {
+      "raw": null,
+      "city": "Istanbul",
+      "country": "Türkiye",
+      "flag": {
+        "iso2": "tr",
+        "png": "https://flagcdn.com/w160/tr.png",
+        "svg": "https://flagcdn.com/tr.svg"
+      }
+    },
+    "racePage": {
+      "slug": "turkey",
+      "url": "https://www.formula1.com/en/racing/2027/turkey"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2027/turkey",
+      "mediaUrl": null,
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2027_turkey_detailed.png",
+      "note": "Using existing saved track map file. No download performed."
+    },
+    "map": {
+      "found": true,
+      "filename": "istanbul.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/istanbul.png",
+      "note": "Using saved map file. No download performed."
+    },
+    "countdowns": {
+      "startsInDays": 341
+    },
+    "weekend": {
+      "startUtc": null,
+      "endUtc": null
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Oct 01",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP2",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Oct 01",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP3",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Oct 02",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Oct 02",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Race",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sun, Oct 03",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      }
+    ]
+  },
+  "circuitIntelligence": null,
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

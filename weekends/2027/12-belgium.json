@@ -1,0 +1,108 @@
+{
+  "header": "2027 Belgian Grand Prix 2027 weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-10-30T20:28:39.784Z",
+  "season": 2027,
+  "round": 12,
+  "meetingKey": null,
+  "raceSlug": "belgium",
+  "status": "upcoming",
+  "weekend": {
+    "round": 12,
+    "id": "belgium",
+    "type": "RACE_WEEKEND",
+    "title": "Belgian Grand Prix 2027",
+    "season": "2027",
+    "location": {
+      "raw": null,
+      "city": "Spa-Francorchamps",
+      "country": "Belgium",
+      "flag": {
+        "iso2": "be",
+        "png": "https://flagcdn.com/w160/be.png",
+        "svg": "https://flagcdn.com/be.svg"
+      }
+    },
+    "racePage": {
+      "slug": "belgium",
+      "url": "https://www.formula1.com/en/racing/2027/belgium"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2027/belgium",
+      "mediaUrl": null,
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_belgium_detailed.png",
+      "note": "Using existing saved track map file. No download performed."
+    },
+    "map": {
+      "found": true,
+      "filename": "spa.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/spa.png",
+      "note": "Using saved map file. No download performed."
+    },
+    "countdowns": {
+      "startsInDays": 271
+    },
+    "weekend": {
+      "startUtc": null,
+      "endUtc": null
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Jul 23",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP2",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Jul 23",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP3",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Jul 24",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Jul 24",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Race",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sun, Jul 25",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      }
+    ]
+  },
+  "circuitIntelligence": null,
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

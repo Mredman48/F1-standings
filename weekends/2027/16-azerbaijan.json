@@ -1,0 +1,108 @@
+{
+  "header": "2027 Azerbaijan Grand Prix 2027 weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-10-30T20:28:39.786Z",
+  "season": 2027,
+  "round": 16,
+  "meetingKey": null,
+  "raceSlug": "azerbaijan",
+  "status": "upcoming",
+  "weekend": {
+    "round": 16,
+    "id": "azerbaijan",
+    "type": "RACE_WEEKEND",
+    "title": "Azerbaijan Grand Prix 2027",
+    "season": "2027",
+    "location": {
+      "raw": null,
+      "city": "Baku",
+      "country": "Azerbaijan",
+      "flag": {
+        "iso2": "az",
+        "png": "https://flagcdn.com/w160/az.png",
+        "svg": "https://flagcdn.com/az.svg"
+      }
+    },
+    "racePage": {
+      "slug": "azerbaijan",
+      "url": "https://www.formula1.com/en/racing/2027/azerbaijan"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2027/azerbaijan",
+      "mediaUrl": null,
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_azerbaijan_detailed.png",
+      "note": "Using existing saved track map file. No download performed."
+    },
+    "map": {
+      "found": true,
+      "filename": "baku.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/baku.png",
+      "note": "Using saved map file. No download performed."
+    },
+    "countdowns": {
+      "startsInDays": 334
+    },
+    "weekend": {
+      "startUtc": null,
+      "endUtc": null
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Sep 24",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP2",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Sep 24",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP3",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Sep 25",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Sep 25",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Race",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sun, Sep 26",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      }
+    ]
+  },
+  "circuitIntelligence": null,
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

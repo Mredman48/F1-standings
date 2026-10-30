@@ -1,0 +1,108 @@
+{
+  "header": "2027 Bahrain Grand Prix 2027 weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-10-30T20:28:39.758Z",
+  "season": 2027,
+  "round": 1,
+  "meetingKey": null,
+  "raceSlug": "bahrain",
+  "status": "upcoming",
+  "weekend": {
+    "round": 1,
+    "id": "bahrain",
+    "type": "RACE_WEEKEND",
+    "title": "Bahrain Grand Prix 2027",
+    "season": "2027",
+    "location": {
+      "raw": null,
+      "city": "Sakhir",
+      "country": "Bahrain",
+      "flag": {
+        "iso2": "bh",
+        "png": "https://flagcdn.com/w160/bh.png",
+        "svg": "https://flagcdn.com/bh.svg"
+      }
+    },
+    "racePage": {
+      "slug": "bahrain",
+      "url": "https://www.formula1.com/en/racing/2027/bahrain"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2027/bahrain",
+      "mediaUrl": null,
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_bahrain_detailed.png",
+      "note": "Using existing saved track map file. No download performed."
+    },
+    "map": {
+      "found": true,
+      "filename": "bahrain.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/bahrain.png",
+      "note": "Using saved map file. No download performed."
+    },
+    "countdowns": {
+      "startsInDays": 138
+    },
+    "weekend": {
+      "startUtc": null,
+      "endUtc": null
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Mar 12",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Sprint Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Mar 12",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Sprint",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Mar 13",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Mar 13",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Race",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sun, Mar 14",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      }
+    ]
+  },
+  "circuitIntelligence": null,
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}
