@@ -137,8 +137,40 @@
       "raceName": "United States Grand Prix"
     }
   },
-  "previousWinner": null,
-  "tyreInfo": null,
+  "previousWinner": {
+    "round": 19,
+    "raceName": "United States Grand Prix",
+    "city": "Austin",
+    "country": "United States",
+    "previousWinner": "Kimi Antonelli",
+    "constructor": "Mercedes",
+    "date": "2026-10-25"
+  },
+  "tyreInfo": {
+    "round": 19,
+    "raceSlug": "united-states",
+    "title": "United States GP",
+    "season": 2027,
+    "country": "United States",
+    "flag": "us",
+    "raceStart": "2027-10-24T21:00:00.000Z",
+    "compounds": {
+      "soft": "",
+      "medium": "",
+      "hard": ""
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2026,
+      "pastYear": true,
+      "traction": 3,
+      "tyreStress": 4,
+      "asphaltGrip": 3,
+      "braking": 3,
+      "asphaltAbrasion": 3,
+      "lateral": 4,
+      "trackEvolution": 4
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},
