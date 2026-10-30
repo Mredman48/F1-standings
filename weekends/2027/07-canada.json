@@ -1,10 +1,10 @@
 {
   "header": "2027 Canadian Grand Prix 2027 weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T20:28:39.780Z",
+  "generatedAtUtc": "2026-10-30T20:39:54.392Z",
   "season": 2027,
   "round": 7,
-  "meetingKey": null,
+  "meetingKey": 1316,
   "raceSlug": "canada",
   "status": "upcoming",
   "weekend": {
@@ -44,49 +44,49 @@
       "startsInDays": 208
     },
     "weekend": {
-      "startUtc": null,
-      "endUtc": null
+      "startUtc": "2027-05-21T17:00:00.000Z",
+      "endUtc": "2027-05-23T22:00:00.000Z"
     },
     "sessions": [
       {
         "type": "FP1",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-05-21T17:00:00.000Z",
+        "endUtc": "2027-05-21T18:00:00.000Z",
         "startLocalDateShort": "Fri, May 21",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "11:00",
+        "startLocalDateTimeShort": "Fri, May 21 11:00"
       },
       {
         "type": "Sprint Quali",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-05-21T20:00:00.000Z",
+        "endUtc": "2027-05-21T21:00:00.000Z",
         "startLocalDateShort": "Fri, May 21",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "14:00",
+        "startLocalDateTimeShort": "Fri, May 21 14:00"
       },
       {
         "type": "Sprint",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-05-22T17:00:00.000Z",
+        "endUtc": "2027-05-22T18:00:00.000Z",
         "startLocalDateShort": "Sat, May 22",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "11:00",
+        "startLocalDateTimeShort": "Sat, May 22 11:00"
       },
       {
         "type": "Quali",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-05-22T20:00:00.000Z",
+        "endUtc": "2027-05-22T21:00:00.000Z",
         "startLocalDateShort": "Sat, May 22",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "14:00",
+        "startLocalDateTimeShort": "Sat, May 22 14:00"
       },
       {
         "type": "Race",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-05-23T20:00:00.000Z",
+        "endUtc": "2027-05-23T22:00:00.000Z",
         "startLocalDateShort": "Sun, May 23",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "14:00",
+        "startLocalDateTimeShort": "Sun, May 23 14:00"
       }
     ]
   },

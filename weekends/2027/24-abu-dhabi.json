@@ -1,10 +1,10 @@
 {
   "header": "2027 Abu Dhabi Grand Prix 2027 weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T20:28:39.791Z",
+  "generatedAtUtc": "2026-10-30T20:39:54.406Z",
   "season": 2027,
   "round": 24,
-  "meetingKey": null,
+  "meetingKey": 1333,
   "raceSlug": "abu-dhabi",
   "status": "upcoming",
   "weekend": {
@@ -44,49 +44,49 @@
       "startsInDays": 411
     },
     "weekend": {
-      "startUtc": null,
-      "endUtc": null
+      "startUtc": "2027-12-10T07:00:00.000Z",
+      "endUtc": "2027-12-12T12:00:00.000Z"
     },
     "sessions": [
       {
         "type": "FP1",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-12-10T07:00:00.000Z",
+        "endUtc": "2027-12-10T08:00:00.000Z",
         "startLocalDateShort": "Fri, Dec 10",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "01:00",
+        "startLocalDateTimeShort": "Fri, Dec 10 01:00"
       },
       {
         "type": "Sprint Quali",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-12-10T10:00:00.000Z",
+        "endUtc": "2027-12-10T11:00:00.000Z",
         "startLocalDateShort": "Fri, Dec 10",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "04:00",
+        "startLocalDateTimeShort": "Fri, Dec 10 04:00"
       },
       {
         "type": "Sprint",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-12-11T07:00:00.000Z",
+        "endUtc": "2027-12-11T08:00:00.000Z",
         "startLocalDateShort": "Sat, Dec 11",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "01:00",
+        "startLocalDateTimeShort": "Sat, Dec 11 01:00"
       },
       {
         "type": "Quali",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-12-11T10:00:00.000Z",
+        "endUtc": "2027-12-11T11:00:00.000Z",
         "startLocalDateShort": "Sat, Dec 11",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "04:00",
+        "startLocalDateTimeShort": "Sat, Dec 11 04:00"
       },
       {
         "type": "Race",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-12-12T10:00:00.000Z",
+        "endUtc": "2027-12-12T12:00:00.000Z",
         "startLocalDateShort": "Sun, Dec 12",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "04:00",
+        "startLocalDateTimeShort": "Sun, Dec 12 04:00"
       }
     ]
   },

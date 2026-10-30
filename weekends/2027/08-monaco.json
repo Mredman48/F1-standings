@@ -1,10 +1,10 @@
 {
   "header": "2027 Monaco Grand Prix 2027 weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T20:28:39.781Z",
+  "generatedAtUtc": "2026-10-30T20:39:54.394Z",
   "season": 2027,
   "round": 8,
-  "meetingKey": null,
+  "meetingKey": 1317,
   "raceSlug": "monaco",
   "status": "upcoming",
   "weekend": {
@@ -44,49 +44,49 @@
       "startsInDays": 222
     },
     "weekend": {
-      "startUtc": null,
-      "endUtc": null
+      "startUtc": "2027-06-04T10:00:00.000Z",
+      "endUtc": "2027-06-06T15:00:00.000Z"
     },
     "sessions": [
       {
         "type": "FP1",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-06-04T10:00:00.000Z",
+        "endUtc": "2027-06-04T11:00:00.000Z",
         "startLocalDateShort": "Fri, Jun 04",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "04:00",
+        "startLocalDateTimeShort": "Fri, Jun 04 04:00"
       },
       {
         "type": "Sprint Quali",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-06-04T13:00:00.000Z",
+        "endUtc": "2027-06-04T14:00:00.000Z",
         "startLocalDateShort": "Fri, Jun 04",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "07:00",
+        "startLocalDateTimeShort": "Fri, Jun 04 07:00"
       },
       {
         "type": "Sprint",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-06-05T10:00:00.000Z",
+        "endUtc": "2027-06-05T11:00:00.000Z",
         "startLocalDateShort": "Sat, Jun 05",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "04:00",
+        "startLocalDateTimeShort": "Sat, Jun 05 04:00"
       },
       {
         "type": "Quali",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-06-05T13:00:00.000Z",
+        "endUtc": "2027-06-05T14:00:00.000Z",
         "startLocalDateShort": "Sat, Jun 05",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "07:00",
+        "startLocalDateTimeShort": "Sat, Jun 05 07:00"
       },
       {
         "type": "Race",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-06-06T13:00:00.000Z",
+        "endUtc": "2027-06-06T15:00:00.000Z",
         "startLocalDateShort": "Sun, Jun 06",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "07:00",
+        "startLocalDateTimeShort": "Sun, Jun 06 07:00"
       }
     ]
   },

@@ -1,10 +1,10 @@
 {
   "header": "2027 Chinese Grand Prix 2027 weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T20:28:39.779Z",
+  "generatedAtUtc": "2026-10-30T20:39:54.390Z",
   "season": 2027,
   "round": 5,
-  "meetingKey": null,
+  "meetingKey": 1314,
   "raceSlug": "china",
   "status": "upcoming",
   "weekend": {
@@ -44,49 +44,49 @@
       "startsInDays": 173
     },
     "weekend": {
-      "startUtc": null,
-      "endUtc": null
+      "startUtc": "2027-04-16T03:00:00.000Z",
+      "endUtc": "2027-04-18T08:00:00.000Z"
     },
     "sessions": [
       {
         "type": "FP1",
-        "startUtc": null,
-        "endUtc": null,
-        "startLocalDateShort": "Fri, Apr 16",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startUtc": "2027-04-16T03:00:00.000Z",
+        "endUtc": "2027-04-16T04:00:00.000Z",
+        "startLocalDateShort": "Thu, Apr 15",
+        "startLocalTimeShort": "21:00",
+        "startLocalDateTimeShort": "Thu, Apr 15 21:00"
       },
       {
         "type": "FP2",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-04-16T06:00:00.000Z",
+        "endUtc": "2027-04-16T07:00:00.000Z",
         "startLocalDateShort": "Fri, Apr 16",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "00:00",
+        "startLocalDateTimeShort": "Fri, Apr 16 00:00"
       },
       {
         "type": "FP3",
-        "startUtc": null,
-        "endUtc": null,
-        "startLocalDateShort": "Sat, Apr 17",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startUtc": "2027-04-17T03:00:00.000Z",
+        "endUtc": "2027-04-17T04:00:00.000Z",
+        "startLocalDateShort": "Fri, Apr 16",
+        "startLocalTimeShort": "21:00",
+        "startLocalDateTimeShort": "Fri, Apr 16 21:00"
       },
       {
         "type": "Quali",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-04-17T06:00:00.000Z",
+        "endUtc": "2027-04-17T07:00:00.000Z",
         "startLocalDateShort": "Sat, Apr 17",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "00:00",
+        "startLocalDateTimeShort": "Sat, Apr 17 00:00"
       },
       {
         "type": "Race",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-04-18T06:00:00.000Z",
+        "endUtc": "2027-04-18T08:00:00.000Z",
         "startLocalDateShort": "Sun, Apr 18",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "00:00",
+        "startLocalDateTimeShort": "Sun, Apr 18 00:00"
       }
     ]
   },

@@ -1,10 +1,10 @@
 {
   "header": "2027 Turkish Grand Prix 2027 weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T20:28:39.786Z",
+  "generatedAtUtc": "2026-10-30T20:39:54.400Z",
   "season": 2027,
   "round": 17,
-  "meetingKey": null,
+  "meetingKey": 1326,
   "raceSlug": "turkey",
   "status": "upcoming",
   "weekend": {
@@ -44,49 +44,49 @@
       "startsInDays": 341
     },
     "weekend": {
-      "startUtc": null,
-      "endUtc": null
+      "startUtc": "2027-10-01T08:00:00.000Z",
+      "endUtc": "2027-10-03T13:00:00.000Z"
     },
     "sessions": [
       {
         "type": "FP1",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-10-01T08:00:00.000Z",
+        "endUtc": "2027-10-01T09:00:00.000Z",
         "startLocalDateShort": "Fri, Oct 01",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "02:00",
+        "startLocalDateTimeShort": "Fri, Oct 01 02:00"
       },
       {
         "type": "FP2",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-10-01T11:00:00.000Z",
+        "endUtc": "2027-10-01T12:00:00.000Z",
         "startLocalDateShort": "Fri, Oct 01",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "05:00",
+        "startLocalDateTimeShort": "Fri, Oct 01 05:00"
       },
       {
         "type": "FP3",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-10-02T08:00:00.000Z",
+        "endUtc": "2027-10-02T09:00:00.000Z",
         "startLocalDateShort": "Sat, Oct 02",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "02:00",
+        "startLocalDateTimeShort": "Sat, Oct 02 02:00"
       },
       {
         "type": "Quali",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-10-02T11:00:00.000Z",
+        "endUtc": "2027-10-02T12:00:00.000Z",
         "startLocalDateShort": "Sat, Oct 02",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "05:00",
+        "startLocalDateTimeShort": "Sat, Oct 02 05:00"
       },
       {
         "type": "Race",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-10-03T11:00:00.000Z",
+        "endUtc": "2027-10-03T13:00:00.000Z",
         "startLocalDateShort": "Sun, Oct 03",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "05:00",
+        "startLocalDateTimeShort": "Sun, Oct 03 05:00"
       }
     ]
   },

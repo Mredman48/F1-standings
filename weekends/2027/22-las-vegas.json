@@ -1,10 +1,10 @@
 {
   "header": "2027 Las Vegas Grand Prix 2027 weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T20:28:39.790Z",
+  "generatedAtUtc": "2026-10-30T20:39:54.404Z",
   "season": 2027,
   "round": 22,
-  "meetingKey": null,
+  "meetingKey": 1331,
   "raceSlug": "las-vegas",
   "status": "upcoming",
   "weekend": {
@@ -44,49 +44,49 @@
       "startsInDays": 389
     },
     "weekend": {
-      "startUtc": null,
-      "endUtc": null
+      "startUtc": "2027-11-18T20:00:00.000Z",
+      "endUtc": "2027-11-21T01:00:00.000Z"
     },
     "sessions": [
       {
         "type": "FP1",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-11-18T20:00:00.000Z",
+        "endUtc": "2027-11-18T21:00:00.000Z",
         "startLocalDateShort": "Thu, Nov 18",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "14:00",
+        "startLocalDateTimeShort": "Thu, Nov 18 14:00"
       },
       {
         "type": "FP2",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-11-18T23:00:00.000Z",
+        "endUtc": "2027-11-19T00:00:00.000Z",
         "startLocalDateShort": "Thu, Nov 18",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "17:00",
+        "startLocalDateTimeShort": "Thu, Nov 18 17:00"
       },
       {
         "type": "FP3",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-11-19T20:00:00.000Z",
+        "endUtc": "2027-11-19T21:00:00.000Z",
         "startLocalDateShort": "Fri, Nov 19",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "14:00",
+        "startLocalDateTimeShort": "Fri, Nov 19 14:00"
       },
       {
         "type": "Quali",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-11-19T23:00:00.000Z",
+        "endUtc": "2027-11-20T00:00:00.000Z",
         "startLocalDateShort": "Fri, Nov 19",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "17:00",
+        "startLocalDateTimeShort": "Fri, Nov 19 17:00"
       },
       {
         "type": "Race",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-11-20T23:00:00.000Z",
+        "endUtc": "2027-11-21T01:00:00.000Z",
         "startLocalDateShort": "Sat, Nov 20",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "17:00",
+        "startLocalDateTimeShort": "Sat, Nov 20 17:00"
       }
     ]
   },

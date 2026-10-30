@@ -1,10 +1,10 @@
 {
   "header": "2027 Australian Grand Prix 2027 weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T20:28:39.777Z",
+  "generatedAtUtc": "2026-10-30T20:39:54.388Z",
   "season": 2027,
   "round": 3,
-  "meetingKey": null,
+  "meetingKey": 1312,
   "raceSlug": "australia",
   "status": "upcoming",
   "weekend": {
@@ -44,49 +44,49 @@
       "startsInDays": 159
     },
     "weekend": {
-      "startUtc": null,
-      "endUtc": null
+      "startUtc": "2027-04-02T01:00:00.000Z",
+      "endUtc": "2027-04-04T06:00:00.000Z"
     },
     "sessions": [
       {
         "type": "FP1",
-        "startUtc": null,
-        "endUtc": null,
-        "startLocalDateShort": "Fri, Apr 02",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startUtc": "2027-04-02T01:00:00.000Z",
+        "endUtc": "2027-04-02T02:00:00.000Z",
+        "startLocalDateShort": "Thu, Apr 01",
+        "startLocalTimeShort": "19:00",
+        "startLocalDateTimeShort": "Thu, Apr 01 19:00"
       },
       {
         "type": "Sprint Quali",
-        "startUtc": null,
-        "endUtc": null,
-        "startLocalDateShort": "Fri, Apr 02",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startUtc": "2027-04-02T04:00:00.000Z",
+        "endUtc": "2027-04-02T05:00:00.000Z",
+        "startLocalDateShort": "Thu, Apr 01",
+        "startLocalTimeShort": "22:00",
+        "startLocalDateTimeShort": "Thu, Apr 01 22:00"
       },
       {
         "type": "Sprint",
-        "startUtc": null,
-        "endUtc": null,
-        "startLocalDateShort": "Sat, Apr 03",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startUtc": "2027-04-03T01:00:00.000Z",
+        "endUtc": "2027-04-03T02:00:00.000Z",
+        "startLocalDateShort": "Fri, Apr 02",
+        "startLocalTimeShort": "19:00",
+        "startLocalDateTimeShort": "Fri, Apr 02 19:00"
       },
       {
         "type": "Quali",
-        "startUtc": null,
-        "endUtc": null,
-        "startLocalDateShort": "Sat, Apr 03",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startUtc": "2027-04-03T04:00:00.000Z",
+        "endUtc": "2027-04-03T05:00:00.000Z",
+        "startLocalDateShort": "Fri, Apr 02",
+        "startLocalTimeShort": "22:00",
+        "startLocalDateTimeShort": "Fri, Apr 02 22:00"
       },
       {
         "type": "Race",
-        "startUtc": null,
-        "endUtc": null,
-        "startLocalDateShort": "Sun, Apr 04",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startUtc": "2027-04-04T04:00:00.000Z",
+        "endUtc": "2027-04-04T06:00:00.000Z",
+        "startLocalDateShort": "Sat, Apr 03",
+        "startLocalTimeShort": "22:00",
+        "startLocalDateTimeShort": "Sat, Apr 03 22:00"
       }
     ]
   },

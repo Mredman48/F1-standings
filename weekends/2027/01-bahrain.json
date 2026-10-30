@@ -1,10 +1,10 @@
 {
   "header": "2027 Bahrain Grand Prix 2027 weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T20:28:39.758Z",
+  "generatedAtUtc": "2026-10-30T20:39:54.385Z",
   "season": 2027,
   "round": 1,
-  "meetingKey": null,
+  "meetingKey": 1310,
   "raceSlug": "bahrain",
   "status": "upcoming",
   "weekend": {
@@ -44,49 +44,49 @@
       "startsInDays": 138
     },
     "weekend": {
-      "startUtc": null,
-      "endUtc": null
+      "startUtc": "2027-03-12T08:00:00.000Z",
+      "endUtc": "2027-03-14T13:00:00.000Z"
     },
     "sessions": [
       {
         "type": "FP1",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-03-12T08:00:00.000Z",
+        "endUtc": "2027-03-12T09:00:00.000Z",
         "startLocalDateShort": "Fri, Mar 12",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "02:00",
+        "startLocalDateTimeShort": "Fri, Mar 12 02:00"
       },
       {
         "type": "Sprint Quali",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-03-12T11:00:00.000Z",
+        "endUtc": "2027-03-12T12:00:00.000Z",
         "startLocalDateShort": "Fri, Mar 12",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "05:00",
+        "startLocalDateTimeShort": "Fri, Mar 12 05:00"
       },
       {
         "type": "Sprint",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-03-13T08:00:00.000Z",
+        "endUtc": "2027-03-13T09:00:00.000Z",
         "startLocalDateShort": "Sat, Mar 13",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "02:00",
+        "startLocalDateTimeShort": "Sat, Mar 13 02:00"
       },
       {
         "type": "Quali",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-03-13T11:00:00.000Z",
+        "endUtc": "2027-03-13T12:00:00.000Z",
         "startLocalDateShort": "Sat, Mar 13",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "05:00",
+        "startLocalDateTimeShort": "Sat, Mar 13 05:00"
       },
       {
         "type": "Race",
-        "startUtc": null,
-        "endUtc": null,
+        "startUtc": "2027-03-14T11:00:00.000Z",
+        "endUtc": "2027-03-14T13:00:00.000Z",
         "startLocalDateShort": "Sun, Mar 14",
-        "startLocalTimeShort": null,
-        "startLocalDateTimeShort": null
+        "startLocalTimeShort": "05:00",
+        "startLocalDateTimeShort": "Sun, Mar 14 05:00"
       }
     ]
   },
