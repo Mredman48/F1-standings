@@ -136,8 +136,40 @@
       "raceName": "Austrian Grand Prix"
     }
   },
-  "previousWinner": null,
-  "tyreInfo": null,
+  "previousWinner": {
+    "round": 11,
+    "raceName": "Austrian Grand Prix",
+    "city": "Spielberg",
+    "country": "Austria",
+    "previousWinner": "George Russell",
+    "constructor": "Mercedes",
+    "date": "2026-06-28"
+  },
+  "tyreInfo": {
+    "round": 11,
+    "raceSlug": "austria",
+    "title": "Austrian GP",
+    "season": 2027,
+    "country": "Austria",
+    "flag": "at",
+    "raceStart": "2027-07-11T13:00:00.000Z",
+    "compounds": {
+      "soft": "",
+      "medium": "",
+      "hard": ""
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2026,
+      "pastYear": true,
+      "traction": 2,
+      "tyreStress": 3,
+      "asphaltGrip": 3,
+      "braking": 3,
+      "asphaltAbrasion": 3,
+      "lateral": 3,
+      "trackEvolution": 3
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},
