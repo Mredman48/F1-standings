@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-30T21:18:03.570Z",
-  "count": 29,
+  "updatedAt": "2026-10-30T21:18:27.231Z",
+  "count": 30,
   "entries": [
     {
       "round": 1,
@@ -412,6 +412,31 @@
         "trackEvolution": 3
       },
       "updatedAt": "2026-10-09T04:26:16.956Z"
+    },
+    {
+      "round": 10,
+      "raceSlug": "great-britain",
+      "title": "British GP",
+      "season": 2027,
+      "country": "United Kingdom",
+      "flag": "gb",
+      "raceStart": "2027-07-04T14:00:00.000Z",
+      "compounds": {
+        "soft": "",
+        "medium": "",
+        "hard": ""
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2026,
+        "pastYear": true,
+        "traction": 3,
+        "tyreStress": 5,
+        "asphaltGrip": 4,
+        "braking": 2,
+        "asphaltAbrasion": 2,
+        "lateral": 5,
+        "trackEvolution": 2
+      }
     },
     {
       "round": 11,
