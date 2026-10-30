@@ -90,7 +90,7 @@
       }
     ],
     "shortTitle": "Spanish GP",
-    "circuit": "Baku City Circuit"
+    "circuit": "Circuito de Madring"
   },
   "circuitIntelligence": {
     "displayName": "Spanish Grand Prix",
@@ -123,8 +123,20 @@
       "trackLength": "5.416 km",
       "raceDistance": null
     },
-    "raceLapRecord": null,
-    "previousWinner": null
+    "raceLapRecord": {
+      "time": "1:35.587",
+      "driver": "George Russell",
+      "constructor": "Mercedes",
+      "year": 2026,
+      "raceName": "Spanish Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "Kimi Antonelli",
+      "constructor": "Mercedes",
+      "season": 2026,
+      "date": "2026-09-13",
+      "raceName": "Spanish Grand Prix"
+    }
   },
   "previousWinner": {
     "round": 15,
@@ -167,7 +179,9 @@
   "raceStrategy": [],
   "raceRecap": null,
   "locked": false,
-  "lockedSections": [],
+  "lockedSections": [
+    "weekend"
+  ],
   "meta": {
     "fia": {},
     "final": {}
