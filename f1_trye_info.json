@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-30T21:17:26.752Z",
-  "count": 26,
+  "updatedAt": "2026-10-30T21:17:36.188Z",
+  "count": 27,
   "entries": [
     {
       "round": 1,
@@ -233,6 +233,31 @@
         "trackEvolution": 5
       },
       "updatedAt": "2026-10-09T04:18:57.573Z"
+    },
+    {
+      "round": 6,
+      "raceSlug": "miami",
+      "title": "Miami GP",
+      "season": 2027,
+      "country": "United States",
+      "flag": "us",
+      "raceStart": "2027-05-02T20:00:00.000Z",
+      "compounds": {
+        "soft": "",
+        "medium": "",
+        "hard": ""
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2026,
+        "pastYear": true,
+        "traction": 3,
+        "tyreStress": 3,
+        "asphaltGrip": 3,
+        "braking": 3,
+        "asphaltAbrasion": 3,
+        "lateral": 3,
+        "trackEvolution": 5
+      }
     },
     {
       "round": 7,
