@@ -1,10 +1,10 @@
 {
   "header": "2026 Mexico City GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T16:19:24.432Z",
+  "generatedAtUtc": "2026-10-30T17:26:47.617Z",
   "season": 2026,
   "round": 19,
-  "meetingKey": null,
+  "meetingKey": 1298,
   "raceSlug": "mexico",
   "status": "upcoming",
   "weekend": {
@@ -91,8 +91,60 @@
       }
     ]
   },
-  "circuitIntelligence": null,
-  "previousWinner": null,
+  "circuitIntelligence": {
+    "displayName": "Mexico City Grand Prix",
+    "dna": {
+      "cornerProfile": "Altitude traction",
+      "overtaking": "High",
+      "tireWear": "Low",
+      "trackEvolution": "Medium",
+      "strategyBias": "Cooling",
+      "safetyCarRisk": "Low"
+    },
+    "intelligence": [
+      "High altitude reduces downforce and cooling efficiency.",
+      "Straight-line speed is influenced by thin air.",
+      "The long run to Turn 1 creates major opening-lap opportunity.",
+      "Power unit and brake cooling can be a major concern."
+    ],
+    "id": "mexico",
+    "matchKeys": [
+      "mexico",
+      "mexicocity",
+      "autodromohermanosrodriguez"
+    ],
+    "specs": {
+      "turns": 17,
+      "longestStraightKm": 1.2,
+      "averageSpeed": "Medium",
+      "raceLaps": 71,
+      "trackLength": "4.304 km",
+      "raceDistance": "305.354 km"
+    },
+    "raceLapRecord": {
+      "time": "1:17.774",
+      "driver": "Valtteri Bottas",
+      "constructor": "Mercedes",
+      "year": 2021,
+      "raceName": "Mexico City Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "Lando Norris",
+      "constructor": "McLaren",
+      "season": 2025,
+      "date": "2025-10-26",
+      "raceName": "Mexico City Grand Prix"
+    }
+  },
+  "previousWinner": {
+    "round": 20,
+    "raceName": "Mexico City Grand Prix",
+    "city": "Mexico City",
+    "country": "Mexico",
+    "previousWinner": "Lando Norris",
+    "constructor": "McLaren",
+    "date": "2025-10-26"
+  },
   "tyreInfo": null,
   "racePreview": null,
   "startingGrids": [],
@@ -101,7 +153,12 @@
   "raceStrategy": [],
   "raceRecap": null,
   "meta": {
-    "fia": {},
-    "final": {}
+    "fia": {
+      "eventName": "Mexico City Grand Prix"
+    },
+    "final": {
+      "weekend": null
+    },
+    "buildVersion": "2026-10-30.5"
   }
 }
