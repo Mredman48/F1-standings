@@ -144,8 +144,50 @@
     "constructor": "Mercedes",
     "date": "2025-10-05"
   },
-  "tyreInfo": null,
-  "racePreview": null,
+  "tyreInfo": {
+    "round": 17,
+    "raceSlug": "singapore",
+    "title": "Singapore GP",
+    "season": 2026,
+    "country": "Singapore",
+    "flag": "sg",
+    "raceStart": "2026-10-11T12:00:00.000Z",
+    "compounds": {
+      "soft": "C5",
+      "medium": "C4",
+      "hard": "C3"
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2026,
+      "pastYear": false,
+      "traction": 4,
+      "tyreStress": 2,
+      "asphaltGrip": 3,
+      "braking": 5,
+      "asphaltAbrasion": 3,
+      "lateral": 2,
+      "trackEvolution": 5
+    },
+    "updatedAt": "2026-10-09T03:23:56.952Z"
+  },
+  "racePreview": {
+    "slug": "antonelli-s-charge-meets-singapore-streets-can-anyone-stop-h-muvu6x7y",
+    "round": 17,
+    "raceSlug": "singapore",
+    "title": "Singapore GP",
+    "season": "2026",
+    "country": "Singapore",
+    "flag": "sg",
+    "raceStart": "2026-10-11T12:00:00.000Z",
+    "publishedAt": "2026-10-05",
+    "headline": "Antonelli's Charge Meets Singapore Streets — Can Anyone Stop Him?",
+    "summary": "Kimi Antonelli leads the championship by a mile, but Singapore's tight street circuit and a tricky Mercedes upgrade could open the door for Russell, Verstappen, or Ferrari.",
+    "body": "Kimi Antonelli is absolutely flying this season, racking up eight wins and a massive 84-point lead over teammate George Russell. He finished second in Malaysia last time out, but Mercedes' new aero package reportedly struggled in slow corners there — which is a bit of a worry for Marina Bay, given it's practically *all* slow corners. This weekend's the real test for that upgrade. Russell, the defending Singapore winner and a sprint specialist, needs a big result here to keep any title hopes alive. Max Verstappen just bagged Red Bull Ford Powertrains' first win in Malaysia, but get this — he's never won in Singapore. That's a stat he'll be desperate to shake off. Meanwhile, Lewis Hamilton pulled off a wicked drive from 18th to third in Malaysia, so Ferrari could be in the mix too, especially with their car usually loving the slow stuff.\n\nSingapore is always a brutal challenge under the lights — high humidity, concrete walls just inches away, and super physically demanding. It's also the first time Marina Bay has hosted a Sprint weekend, and the last of the season. That means just one hour of practice before parc fermé kicks in, so teams need to nail the setup straight away. The circuit demands precision and rewards confidence under braking, so every millimetre counts. We've seen Safety Cars play a huge role here historically, though the last two races went green throughout. Keep an eye on tyre management too — repeated acceleration on this twisty circuit can really punish the rears. McLaren's bringing a higher downforce beam wing, and Ferrari's got a front wing tweak for better airflow, so it'll be interesting to see who's got their car dialled in for the unique demands of this street fight.",
+    "picks": {
+      "winner": "Antonelli",
+      "wildcard": "Verstappen"
+    }
+  },
   "startingGrids": [
     {
       "gridType": "sprint",
@@ -6698,7 +6740,26 @@
       ]
     }
   ],
-  "raceRecap": null,
+  "raceRecap": {
+    "slug": "verstappen-finally-conquers-marina-bay-with-lights-to-flag-m-mv3wdh7j",
+    "round": 17,
+    "raceSlug": "singapore",
+    "title": "Singapore GP",
+    "season": "2026",
+    "country": "Singapore",
+    "flag": "sg",
+    "raceStart": "2026-10-11T12:00:00.000Z",
+    "publishedAt": "2026-10-12",
+    "headline": "Verstappen Finally Conquers Marina Bay With Lights-to-Flag Masterclass",
+    "summary": "Max Verstappen led every lap from pole to win the Singapore Grand Prix for the first time, finishing 7.3 seconds ahead of Charles Leclerc. Kimi Antonelli took third, which pushes his championship lead to 102 points.",
+    "body": "Singapore was the one track that had always beaten Max Verstappen. On Sunday night that changed. Leclerc got a great launch from the front row, but Verstappen held the inside into Turn 1 and was never headed after that. Every time Ferrari tried to close the gap, the Red Bull pulled away again. He pitted on lap 33, came out still in the lead, and drove home 7.3 seconds clear. With the rain-soaked Sprint already won on Saturday, he left Marina Bay with the full set, and it was his second Grand Prix win in a row.\n\nThe fight behind him was much tighter. Bortoleto's Audi stopped at the pit exit on lap 8 with a gearbox failure and then caught fire while marshals pushed it away, which brought out the Virtual Safety Car and briefly closed the pit lane. Ferrari split its strategies, and Hamilton paid for it. Running a long stint on old softs, he came under heavy pressure from Lando Norris, ran wide, and his tyres were finished. Antonelli passed him for third in the closing laps while complaining he had \"no brakes.\" He also collected repeated track-limits warnings, but pulled away from Norris to stay clear of a five-second penalty. Then Oscar Piastri passed Hamilton on the final lap and dropped him to sixth.\n\nAntonelli now looks hard to stop in the title race. He leaves Singapore on 340 points, a massive 102 clear of Mercedes teammate George Russell. Russell started 19th after a power unit penalty and battled back to ninth. Lawson, Hulkenberg and Hadjar picked up the rest of the points. Stroll, Colapinto and Bortoleto all retired. Verstappen is now fourth in the standings, just 17 points behind Russell, and he's in red-hot form heading into the final stretch of the season.",
+    "result": {
+      "p1": "Verstappen",
+      "p2": "Leclerc",
+      "p3": "Antonelli",
+      "driverOfDay": "Verstappen"
+    }
+  },
   "meta": {
     "fia": {
       "eventName": "Singapore Grand Prix",
