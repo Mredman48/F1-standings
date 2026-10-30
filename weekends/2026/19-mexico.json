@@ -1,7 +1,7 @@
 {
   "header": "2026 Mexico City GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T20:07:47.507Z",
+  "generatedAtUtc": "2026-10-30T23:16:45.376Z",
   "season": 2026,
   "round": 19,
   "meetingKey": 1298,
@@ -203,6 +203,11 @@
       "title": "Infringement - Car 77 - PU elements",
       "url": "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_infringement_-_car_77_-_pu_elements.pdf",
       "publishedAt": "2026-10-30T19:52:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_infringement_-_car_98_-_released_in_an_unsafe_condition.pdf": {
+      "none": true,
+      "title": "Infringement - Car 98 - Released in an unsafe condition",
+      "publishedAt": "2026-10-30T22:38:00.000Z"
     }
   },
   "sessionResults": [
@@ -621,6 +626,25 @@
           "meetingKey": 1298
         }
       ]
+    },
+    {
+      "eventType": "fp2",
+      "sessionKey": 11398,
+      "meetingKey": 1298,
+      "meetingName": "Mexico City Grand Prix",
+      "raceName": "Mexico City Grand Prix",
+      "sessionName": "Practice 2",
+      "officialName": "Practice 2",
+      "round": 19,
+      "dateStartUtc": "2026-10-30T22:00:00+00:00",
+      "dateEndUtc": "2026-10-30T23:00:00+00:00",
+      "date": "2026-10-30",
+      "circuit": "Mexico City",
+      "location": {
+        "locality": "Mexico City",
+        "country": "Mexico"
+      },
+      "drivers": []
     }
   ],
   "raceStrategy": [],
