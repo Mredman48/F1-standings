@@ -144,7 +144,31 @@
     "constructor": "Mercedes",
     "date": "2026-03-29"
   },
-  "tyreInfo": null,
+  "tyreInfo": {
+    "round": 4,
+    "raceSlug": "japan",
+    "title": "Japanese GP",
+    "season": 2027,
+    "country": "Japan",
+    "flag": "jp",
+    "raceStart": "2027-04-11T05:00:00.000Z",
+    "compounds": {
+      "soft": "",
+      "medium": "",
+      "hard": ""
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2026,
+      "pastYear": true,
+      "traction": 3,
+      "tyreStress": 5,
+      "asphaltGrip": 4,
+      "braking": 2,
+      "asphaltAbrasion": 3,
+      "lateral": 5,
+      "trackEvolution": 4
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},
