@@ -134,8 +134,40 @@
       "raceName": "Singapore Grand Prix"
     }
   },
-  "previousWinner": null,
-  "tyreInfo": null,
+  "previousWinner": {
+    "round": 18,
+    "raceName": "Singapore Grand Prix",
+    "city": "Singapore",
+    "country": "Singapore",
+    "previousWinner": "Max Verstappen",
+    "constructor": "Red Bull Racing",
+    "date": "2026-10-11"
+  },
+  "tyreInfo": {
+    "round": 18,
+    "raceSlug": "singapore",
+    "title": "Singapore GP",
+    "season": 2027,
+    "country": "Singapore",
+    "flag": "sg",
+    "raceStart": "2027-10-10T06:00:00.000Z",
+    "compounds": {
+      "soft": "",
+      "medium": "",
+      "hard": ""
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2026,
+      "pastYear": true,
+      "traction": 4,
+      "tyreStress": 2,
+      "asphaltGrip": 3,
+      "braking": 5,
+      "asphaltAbrasion": 3,
+      "lateral": 2,
+      "trackEvolution": 5
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},
