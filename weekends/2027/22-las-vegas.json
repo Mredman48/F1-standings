@@ -135,7 +135,31 @@
     }
   },
   "previousWinner": null,
-  "tyreInfo": null,
+  "tyreInfo": {
+    "round": 22,
+    "raceSlug": "las-vegas",
+    "title": "Las Vegas GP",
+    "season": 2027,
+    "country": "United States",
+    "flag": "us",
+    "raceStart": "2027-11-20T23:00:00.000Z",
+    "compounds": {
+      "soft": "",
+      "medium": "",
+      "hard": ""
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2025,
+      "pastYear": true,
+      "traction": 2,
+      "tyreStress": 4,
+      "asphaltGrip": 1,
+      "braking": 3,
+      "asphaltAbrasion": 2,
+      "lateral": 2,
+      "trackEvolution": 5
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},
