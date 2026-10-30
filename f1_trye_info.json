@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-30T21:19:48.454Z",
-  "count": 36,
+  "updatedAt": "2026-10-30T21:20:00.517Z",
+  "count": 37,
   "entries": [
     {
       "round": 1,
@@ -795,6 +795,31 @@
         "trackEvolution": 4
       },
       "updatedAt": "2026-10-20T14:57:56.065Z"
+    },
+    {
+      "round": 18,
+      "raceSlug": "singapore",
+      "title": "Singapore GP",
+      "season": 2027,
+      "country": "Singapore",
+      "flag": "sg",
+      "raceStart": "2027-10-10T06:00:00.000Z",
+      "compounds": {
+        "soft": "",
+        "medium": "",
+        "hard": ""
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2026,
+        "pastYear": true,
+        "traction": 4,
+        "tyreStress": 2,
+        "asphaltGrip": 3,
+        "braking": 5,
+        "asphaltAbrasion": 3,
+        "lateral": 2,
+        "trackEvolution": 5
+      }
     },
     {
       "round": 19,
