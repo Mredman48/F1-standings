@@ -136,8 +136,40 @@
       "raceName": "Canadian Grand Prix"
     }
   },
-  "previousWinner": null,
-  "tyreInfo": null,
+  "previousWinner": {
+    "round": 7,
+    "raceName": "Canadian Grand Prix",
+    "city": "Montreal",
+    "country": "Canada",
+    "previousWinner": "Kimi Antonelli",
+    "constructor": "Mercedes",
+    "date": "2026-05-24"
+  },
+  "tyreInfo": {
+    "round": 7,
+    "raceSlug": "canada",
+    "title": "Canadian GP",
+    "season": 2027,
+    "country": "Canada",
+    "flag": "ca",
+    "raceStart": "2027-05-23T20:00:00.000Z",
+    "compounds": {
+      "soft": "",
+      "medium": "",
+      "hard": ""
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2026,
+      "pastYear": true,
+      "traction": 4,
+      "tyreStress": 3,
+      "asphaltGrip": 2,
+      "braking": 5,
+      "asphaltAbrasion": 1,
+      "lateral": 1,
+      "trackEvolution": 5
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},
