@@ -134,8 +134,40 @@
       "raceName": "Azerbaijan Grand Prix"
     }
   },
-  "previousWinner": null,
-  "tyreInfo": null,
+  "previousWinner": {
+    "round": 16,
+    "raceName": "Azerbaijan Grand Prix",
+    "city": "Baku",
+    "country": "Azerbaijan",
+    "previousWinner": "George Russell",
+    "constructor": "Mercedes",
+    "date": "2026-09-26"
+  },
+  "tyreInfo": {
+    "round": 16,
+    "raceSlug": "azerbaijan",
+    "title": "Azerbaijan GP",
+    "season": 2027,
+    "country": "Azerbaijan",
+    "flag": "az",
+    "raceStart": "2027-09-26T10:00:00.000Z",
+    "compounds": {
+      "soft": "",
+      "medium": "",
+      "hard": ""
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2026,
+      "pastYear": true,
+      "traction": 5,
+      "tyreStress": 3,
+      "asphaltGrip": 2,
+      "braking": 4,
+      "asphaltAbrasion": 1,
+      "lateral": 1,
+      "trackEvolution": 5
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},
