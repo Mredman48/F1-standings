@@ -142,8 +142,50 @@
     }
   },
   "previousWinner": null,
-  "tyreInfo": null,
-  "racePreview": null,
+  "tyreInfo": {
+    "round": 16,
+    "raceSlug": "Bahrain in Malaysia",
+    "title": "Bahrain GP in Malaysia",
+    "season": 2026,
+    "country": "Malaysia",
+    "flag": "sg",
+    "raceStart": "2026-10-04T07:00:00.000Z",
+    "compounds": {
+      "soft": "C4",
+      "medium": "C3",
+      "hard": "C2"
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2026,
+      "pastYear": false,
+      "traction": 3,
+      "tyreStress": 4,
+      "asphaltGrip": 2,
+      "braking": 4,
+      "asphaltAbrasion": 4,
+      "lateral": 4,
+      "trackEvolution": 4
+    },
+    "updatedAt": "2026-10-09T04:35:53.771Z"
+  },
+  "racePreview": {
+    "slug": "sepang-s-back-mercedes-ready-rain-incoming-mulvieqz",
+    "round": 16,
+    "raceSlug": "Bahrain in Malaysia",
+    "title": "Bahrain GP in Malaysia",
+    "season": "2026",
+    "country": "Malaysia",
+    "flag": "sg",
+    "raceStart": "2026-10-04T07:00:00.000Z",
+    "publishedAt": "2026-09-28",
+    "headline": "Sepang's Back: Mercedes Ready, Rain Incoming!",
+    "summary": "Antonelli still leads the charge, but Sepang's return brings wild weather and big Mercedes upgrades, setting up a potentially epic race in Malaysia.",
+    "body": "Kimi Antonelli is still bossing the championship with eight wins under his belt, but teammate George Russell just bagged a win in Azerbaijan, which helps chip away at that massive lead. Mercedes are miles ahead in the constructors', but Ferrari and McLaren have been snapping at their heels, with Lewis Hamilton and Lando Norris both grabbing victories this season. What's wild is Max Verstappen is still sitting on zero wins down in P6 — a definite storyline to watch.\n\nSepang is back, and get ready for a challenge. This circuit's wide layout and twin long straights mean there'll be plenty of wheel-to-wheel action and overtaking opportunities. But it's October in Malaysia, so expect brutal heat, crazy humidity, and those sudden tropical downpours. Rain is actually forecast for all three days, meaning we could see a chaotic, wet race like 2009. Mercedes are rolling out a \"meaningful\" upgrade package, so they're looking strong. But with Sepang demanding a balanced car and good tyre management on its abrasive surface, Red Bull and Ferrari could really shine if they get the setup right for these wild conditions.",
+    "picks": {
+      "winner": "Antonelli",
+      "wildcard": "Verstappen"
+    }
+  },
   "startingGrids": [
     {
       "gridType": "race",
@@ -5802,7 +5844,26 @@
       ]
     }
   ],
-  "raceRecap": null,
+  "raceRecap": {
+    "slug": "chaos-in-malaysia-verstappen-wins-wild-bahrain-gp-mutq04l3",
+    "round": 16,
+    "raceSlug": "Bahrain in Malaysia",
+    "title": "Bahrain GP in Malaysia",
+    "season": "2026",
+    "country": "Malaysia",
+    "flag": "sg",
+    "raceStart": "2026-10-04T07:00:00.000Z",
+    "publishedAt": "2026-10-04",
+    "headline": "Chaos in Malaysia: Verstappen Wins Wild Bahrain GP",
+    "summary": "Max Verstappen clinched his first win of the season at a rain-hit, chaotic Bahrain GP in Malaysia, as Kimi Antonelli extended his championship lead after a brutal late retirement for George Russell.",
+    "body": "This year's Bahrain Grand Prix, hosted in Malaysia due to global disruptions, and with a pole position painted on the wrong side of the track to boot — was a total \"s***show\" from the get-go. Heavy rain and lightning caused an hour-and-a-half delay, and the chaos continued on the formation lap, with Hadjar spinning into the gravel and Lewis Hamilton crawling to a halt due to a software glitch. The race even had to be red-flagged before it properly started, as F1 teams received new software codes just to get going. When it finally got underway, polesitter Max Verstappen had a sluggish start on intermediates, letting Kimi Antonelli and George Russell jump him. Valtteri Bottas then spun into the gravel, prompting a safety car that saw many drivers switch to slicks on a rapidly drying track, which allowed Verstappen to swoop past the Mercedes duo and reclaim the lead.\n\nFrom there, Verstappen pulled away, but the drama wasn't over. Antonelli – telling his team \"I have more pace\" – eventually passed Russell for second. But the real heartbreak came for George Russell, whose power unit failed under a late safety car with just five laps to go, forcing him to retire from third place and dealing a massive blow to his title hopes. Lando Norris also had an off, getting caught out as cars backed up behind Russell's stricken Mercedes. Meanwhile, Lewis Hamilton, who started on dry tyres and plummeted down the order, showed some serious class by working his way back through the field to grab a brilliant third place. Ultimately, Max Verstappen secured his first victory of the season, with Antonelli extending his championship lead in second. Max was also named Driver of the Day for his efforts in Kuala Lumpur.",
+    "result": {
+      "p1": "Verstappen",
+      "p2": "Antonelli",
+      "p3": "Hamilton",
+      "driverOfDay": "Verstappen"
+    }
+  },
   "meta": {
     "fia": {
       "eventName": "Bahrain Grand Prix",
