@@ -1,0 +1,107 @@
+{
+  "header": "2026 Chinese GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-10-30T16:19:24.424Z",
+  "season": 2026,
+  "round": 2,
+  "meetingKey": null,
+  "raceSlug": "china",
+  "status": "upcoming",
+  "weekend": {
+    "round": 2,
+    "type": "RACE_WEEKEND",
+    "title": "CHINESE GRAND PRIX 2026",
+    "shortTitle": "Chinese GP",
+    "circuit": "Shanghai International Circuit",
+    "season": "2026",
+    "location": {
+      "raw": null,
+      "city": "Shanghai",
+      "country": "China",
+      "flag": {
+        "iso2": "cn",
+        "png": "https://flagcdn.com/w160/cn.png",
+        "svg": "https://flagcdn.com/cn.svg"
+      }
+    },
+    "racePage": {
+      "slug": "china",
+      "url": "https://www.formula1.com/en/racing/2026/china"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2026/china",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackshanghaidetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_china_detailed.png",
+      "note": null
+    },
+    "map": {
+      "found": true,
+      "filename": "shanghai.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/shanghai.png",
+      "note": null
+    },
+    "countdowns": {
+      "startsInDays": -16
+    },
+    "weekend": {
+      "startUtc": "2026-03-13T03:30:00.000Z",
+      "endUtc": "2026-03-15T09:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2026-03-13T03:30:00.000Z",
+        "endUtc": "2026-03-13T04:30:00.000Z",
+        "startLocalDateShort": "Thu, Mar 12",
+        "startLocalTimeShort": "21:30",
+        "startLocalDateTimeShort": "Thu, Mar 12 21:30"
+      },
+      {
+        "type": "Sprint Quali",
+        "startUtc": "2026-03-13T07:30:00.000Z",
+        "endUtc": "2026-03-13T08:14:00.000Z",
+        "startLocalDateShort": "Fri, Mar 13",
+        "startLocalTimeShort": "01:30",
+        "startLocalDateTimeShort": "Fri, Mar 13 01:30"
+      },
+      {
+        "type": "Sprint",
+        "startUtc": "2026-03-14T03:00:00.000Z",
+        "endUtc": "2026-03-14T04:00:00.000Z",
+        "startLocalDateShort": "Fri, Mar 13",
+        "startLocalTimeShort": "21:00",
+        "startLocalDateTimeShort": "Fri, Mar 13 21:00"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2026-03-14T07:00:00.000Z",
+        "endUtc": "2026-03-14T08:00:00.000Z",
+        "startLocalDateShort": "Sat, Mar 14",
+        "startLocalTimeShort": "01:00",
+        "startLocalDateTimeShort": "Sat, Mar 14 01:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2026-03-15T07:00:00.000Z",
+        "endUtc": "2026-03-15T09:00:00.000Z",
+        "startLocalDateShort": "Sun, Mar 15",
+        "startLocalTimeShort": "01:00",
+        "startLocalDateTimeShort": "Sun, Mar 15 01:00"
+      }
+    ]
+  },
+  "circuitIntelligence": null,
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

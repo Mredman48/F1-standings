@@ -1,0 +1,107 @@
+{
+  "header": "2026 British GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-10-30T16:19:24.429Z",
+  "season": 2026,
+  "round": 9,
+  "meetingKey": null,
+  "raceSlug": "great-britain",
+  "status": "upcoming",
+  "weekend": {
+    "round": 9,
+    "type": "RACE_WEEKEND",
+    "title": "BRITISH GRAND PRIX 2026",
+    "shortTitle": "British GP",
+    "circuit": "Silverstone Circuit",
+    "season": "2026",
+    "location": {
+      "raw": null,
+      "city": "Silverstone",
+      "country": "United Kingdom",
+      "flag": {
+        "iso2": "gb",
+        "png": "https://flagcdn.com/w160/gb.png",
+        "svg": "https://flagcdn.com/gb.svg"
+      }
+    },
+    "racePage": {
+      "slug": "great-britain",
+      "url": "https://www.formula1.com/en/racing/2026/great-britain"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2026/great-britain",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026tracksilverstonedetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_great-britain_detailed.png",
+      "note": null
+    },
+    "map": {
+      "found": true,
+      "filename": "silverstone.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/silverstone.png",
+      "note": null
+    },
+    "countdowns": {
+      "startsInDays": 96
+    },
+    "weekend": {
+      "startUtc": "2026-07-03T11:30:00.000Z",
+      "endUtc": "2026-07-05T16:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2026-07-03T11:30:00.000Z",
+        "endUtc": "2026-07-03T12:30:00.000Z",
+        "startLocalDateShort": "Fri, Jul 03",
+        "startLocalTimeShort": "05:30",
+        "startLocalDateTimeShort": "Fri, Jul 03 05:30"
+      },
+      {
+        "type": "Sprint Quali",
+        "startUtc": "2026-07-03T15:30:00.000Z",
+        "endUtc": "2026-07-03T16:14:00.000Z",
+        "startLocalDateShort": "Fri, Jul 03",
+        "startLocalTimeShort": "09:30",
+        "startLocalDateTimeShort": "Fri, Jul 03 09:30"
+      },
+      {
+        "type": "Sprint",
+        "startUtc": "2026-07-04T11:00:00.000Z",
+        "endUtc": "2026-07-04T12:00:00.000Z",
+        "startLocalDateShort": "Sat, Jul 04",
+        "startLocalTimeShort": "05:00",
+        "startLocalDateTimeShort": "Sat, Jul 04 05:00"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2026-07-04T15:00:00.000Z",
+        "endUtc": "2026-07-04T16:00:00.000Z",
+        "startLocalDateShort": "Sat, Jul 04",
+        "startLocalTimeShort": "09:00",
+        "startLocalDateTimeShort": "Sat, Jul 04 09:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2026-07-05T14:00:00.000Z",
+        "endUtc": "2026-07-05T16:00:00.000Z",
+        "startLocalDateShort": "Sun, Jul 05",
+        "startLocalTimeShort": "08:00",
+        "startLocalDateTimeShort": "Sun, Jul 05 08:00"
+      }
+    ]
+  },
+  "circuitIntelligence": null,
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}
