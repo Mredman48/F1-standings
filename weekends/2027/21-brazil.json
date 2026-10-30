@@ -137,7 +137,31 @@
     }
   },
   "previousWinner": null,
-  "tyreInfo": null,
+  "tyreInfo": {
+    "round": 21,
+    "raceSlug": "brazil",
+    "title": "São Paulo GP",
+    "season": 2027,
+    "country": "Brazil",
+    "flag": "br",
+    "raceStart": "2027-11-07T18:00:00.000Z",
+    "compounds": {
+      "soft": "",
+      "medium": "",
+      "hard": ""
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2025,
+      "pastYear": true,
+      "traction": 3,
+      "tyreStress": 3,
+      "asphaltGrip": 3,
+      "braking": 3,
+      "asphaltAbrasion": 2,
+      "lateral": 3,
+      "trackEvolution": 5
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},
