@@ -2,10 +2,10 @@
   "header": "2026 race weekends",
   "schemaVersion": 1,
   "season": 2026,
-  "generatedAtUtc": "2026-10-30T16:19:24.458Z",
+  "generatedAtUtc": "2026-10-30T16:26:06.983Z",
   "count": 23,
   "nextRound": 19,
-  "latestCompletedRound": null,
+  "latestCompletedRound": 18,
   "weekends": [
     {
       "round": 1,
@@ -215,13 +215,13 @@
       "round": 18,
       "raceSlug": "united-states",
       "title": "United States GP",
-      "meetingKey": null,
-      "status": "upcoming",
+      "meetingKey": 1297,
+      "status": "completed",
       "weekendStartUtc": "2026-10-23T17:30:00.000Z",
       "weekendEndUtc": "2026-10-25T22:00:00.000Z",
       "file": "18-united-states.json",
       "url": "https://mredman48.github.io/F1-standings/weekends/2026/18-united-states.json",
-      "updatedAtUtc": "2026-10-30T16:19:24.432Z"
+      "updatedAtUtc": "2026-10-30T16:26:06.979Z"
     },
     {
       "round": 19,
@@ -284,5 +284,446 @@
       "updatedAtUtc": "2026-10-30T16:19:24.433Z"
     }
   ],
-  "bestByDriverNumber": {}
+  "bestByDriverNumber": {
+    "1": {
+      "driverNumber": 1,
+      "driverName": "Lando NORRIS",
+      "teamName": "McLaren",
+      "position": "P5",
+      "eventType": "race",
+      "meetingName": "United States Grand Prix",
+      "raceName": "United States Grand Prix",
+      "sessionName": "Race",
+      "round": 18,
+      "date": "2026-10-25",
+      "dateStartUtc": "2026-10-25T20:00:00+00:00",
+      "circuit": "Austin",
+      "location": {
+        "locality": "Austin",
+        "country": "United States"
+      },
+      "sessionKey": 11396,
+      "meetingKey": 1297
+    },
+    "3": {
+      "driverNumber": 3,
+      "driverName": "Max VERSTAPPEN",
+      "teamName": "Red Bull Racing",
+      "position": "P3",
+      "eventType": "race",
+      "meetingName": "United States Grand Prix",
+      "raceName": "United States Grand Prix",
+      "sessionName": "Race",
+      "round": 18,
+      "date": "2026-10-25",
+      "dateStartUtc": "2026-10-25T20:00:00+00:00",
+      "circuit": "Austin",
+      "location": {
+        "locality": "Austin",
+        "country": "United States"
+      },
+      "sessionKey": 11396,
+      "meetingKey": 1297
+    },
+    "5": {
+      "driverNumber": 5,
+      "driverName": "Gabriel BORTOLETO",
+      "teamName": "Audi",
+      "position": "P13",
+      "eventType": "race",
+      "meetingName": "United States Grand Prix",
+      "raceName": "United States Grand Prix",
+      "sessionName": "Race",
+      "round": 18,
+      "date": "2026-10-25",
+      "dateStartUtc": "2026-10-25T20:00:00+00:00",
+      "circuit": "Austin",
+      "location": {
+        "locality": "Austin",
+        "country": "United States"
+      },
+      "sessionKey": 11396,
+      "meetingKey": 1297
+    },
+    "6": {
+      "driverNumber": 6,
+      "driverName": "Isack HADJAR",
+      "teamName": "Red Bull Racing",
+      "position": "P6",
+      "eventType": "race",
+      "meetingName": "United States Grand Prix",
+      "raceName": "United States Grand Prix",
+      "sessionName": "Race",
+      "round": 18,
+      "date": "2026-10-25",
+      "dateStartUtc": "2026-10-25T20:00:00+00:00",
+      "circuit": "Austin",
+      "location": {
+        "locality": "Austin",
+        "country": "United States"
+      },
+      "sessionKey": 11396,
+      "meetingKey": 1297
+    },
+    "10": {
+      "driverNumber": 10,
+      "driverName": "Pierre GASLY",
+      "teamName": "Alpine",
+      "position": "P10",
+      "eventType": "race",
+      "meetingName": "United States Grand Prix",
+      "raceName": "United States Grand Prix",
+      "sessionName": "Race",
+      "round": 18,
+      "date": "2026-10-25",
+      "dateStartUtc": "2026-10-25T20:00:00+00:00",
+      "circuit": "Austin",
+      "location": {
+        "locality": "Austin",
+        "country": "United States"
+      },
+      "sessionKey": 11396,
+      "meetingKey": 1297
+    },
+    "11": {
+      "driverNumber": 11,
+      "driverName": null,
+      "teamName": null,
+      "position": "P19",
+      "eventType": "race",
+      "meetingName": "United States Grand Prix",
+      "raceName": "United States Grand Prix",
+      "sessionName": "Race",
+      "round": 18,
+      "date": "2026-10-25",
+      "dateStartUtc": "2026-10-25T20:00:00+00:00",
+      "circuit": "Austin",
+      "location": {
+        "locality": "Austin",
+        "country": "United States"
+      },
+      "sessionKey": 11396,
+      "meetingKey": 1297
+    },
+    "12": {
+      "driverNumber": 12,
+      "driverName": "Kimi ANTONELLI",
+      "teamName": "Mercedes",
+      "position": "P1",
+      "eventType": "race",
+      "meetingName": "United States Grand Prix",
+      "raceName": "United States Grand Prix",
+      "sessionName": "Race",
+      "round": 18,
+      "date": "2026-10-25",
+      "dateStartUtc": "2026-10-25T20:00:00+00:00",
+      "circuit": "Austin",
+      "location": {
+        "locality": "Austin",
+        "country": "United States"
+      },
+      "sessionKey": 11396,
+      "meetingKey": 1297
+    },
+    "14": {
+      "driverNumber": 14,
+      "driverName": "Fernando ALONSO",
+      "teamName": "Aston Martin",
+      "position": "P16",
+      "eventType": "race",
+      "meetingName": "United States Grand Prix",
+      "raceName": "United States Grand Prix",
+      "sessionName": "Race",
+      "round": 18,
+      "date": "2026-10-25",
+      "dateStartUtc": "2026-10-25T20:00:00+00:00",
+      "circuit": "Austin",
+      "location": {
+        "locality": "Austin",
+        "country": "United States"
+      },
+      "sessionKey": 11396,
+      "meetingKey": 1297
+    },
+    "16": {
+      "driverNumber": 16,
+      "driverName": "Charles LECLERC",
+      "teamName": "Ferrari",
+      "position": "P2",
+      "eventType": "race",
+      "meetingName": "United States Grand Prix",
+      "raceName": "United States Grand Prix",
+      "sessionName": "Race",
+      "round": 18,
+      "date": "2026-10-25",
+      "dateStartUtc": "2026-10-25T20:00:00+00:00",
+      "circuit": "Austin",
+      "location": {
+        "locality": "Austin",
+        "country": "United States"
+      },
+      "sessionKey": 11396,
+      "meetingKey": 1297
+    },
+    "18": {
+      "driverNumber": 18,
+      "driverName": "Lance STROLL",
+      "teamName": "Aston Martin",
+      "position": "P15",
+      "eventType": "race",
+      "meetingName": "United States Grand Prix",
+      "raceName": "United States Grand Prix",
+      "sessionName": "Race",
+      "round": 18,
+      "date": "2026-10-25",
+      "dateStartUtc": "2026-10-25T20:00:00+00:00",
+      "circuit": "Austin",
+      "location": {
+        "locality": "Austin",
+        "country": "United States"
+      },
+      "sessionKey": 11396,
+      "meetingKey": 1297
+    },
+    "23": {
+      "driverNumber": 23,
+      "driverName": "Alexander ALBON",
+      "teamName": "Williams",
+      "position": "P17",
+      "eventType": "race",
+      "meetingName": "United States Grand Prix",
+      "raceName": "United States Grand Prix",
+      "sessionName": "Race",
+      "round": 18,
+      "date": "2026-10-25",
+      "dateStartUtc": "2026-10-25T20:00:00+00:00",
+      "circuit": "Austin",
+      "location": {
+        "locality": "Austin",
+        "country": "United States"
+      },
+      "sessionKey": 11396,
+      "meetingKey": 1297
+    },
+    "27": {
+      "driverNumber": 27,
+      "driverName": "Nico HULKENBERG",
+      "teamName": "Audi",
+      "position": "P11",
+      "eventType": "race",
+      "meetingName": "United States Grand Prix",
+      "raceName": "United States Grand Prix",
+      "sessionName": "Race",
+      "round": 18,
+      "date": "2026-10-25",
+      "dateStartUtc": "2026-10-25T20:00:00+00:00",
+      "circuit": "Austin",
+      "location": {
+        "locality": "Austin",
+        "country": "United States"
+      },
+      "sessionKey": 11396,
+      "meetingKey": 1297
+    },
+    "30": {
+      "driverNumber": 30,
+      "driverName": "Liam LAWSON",
+      "teamName": "Racing Bulls",
+      "position": "P9",
+      "eventType": "race",
+      "meetingName": "United States Grand Prix",
+      "raceName": "United States Grand Prix",
+      "sessionName": "Race",
+      "round": 18,
+      "date": "2026-10-25",
+      "dateStartUtc": "2026-10-25T20:00:00+00:00",
+      "circuit": "Austin",
+      "location": {
+        "locality": "Austin",
+        "country": "United States"
+      },
+      "sessionKey": 11396,
+      "meetingKey": 1297
+    },
+    "31": {
+      "driverNumber": 31,
+      "driverName": "Esteban OCON",
+      "teamName": "Haas F1 Team",
+      "position": "P14",
+      "eventType": "race",
+      "meetingName": "United States Grand Prix",
+      "raceName": "United States Grand Prix",
+      "sessionName": "Race",
+      "round": 18,
+      "date": "2026-10-25",
+      "dateStartUtc": "2026-10-25T20:00:00+00:00",
+      "circuit": "Austin",
+      "location": {
+        "locality": "Austin",
+        "country": "United States"
+      },
+      "sessionKey": 11396,
+      "meetingKey": 1297
+    },
+    "41": {
+      "driverNumber": 41,
+      "driverName": "Arvid LINDBLAD",
+      "teamName": "Racing Bulls",
+      "position": "P12",
+      "eventType": "race",
+      "meetingName": "United States Grand Prix",
+      "raceName": "United States Grand Prix",
+      "sessionName": "Race",
+      "round": 18,
+      "date": "2026-10-25",
+      "dateStartUtc": "2026-10-25T20:00:00+00:00",
+      "circuit": "Austin",
+      "location": {
+        "locality": "Austin",
+        "country": "United States"
+      },
+      "sessionKey": 11396,
+      "meetingKey": 1297
+    },
+    "43": {
+      "driverNumber": 43,
+      "driverName": "Franco COLAPINTO",
+      "teamName": "Alpine",
+      "position": "P21",
+      "eventType": "race",
+      "meetingName": "United States Grand Prix",
+      "raceName": "United States Grand Prix",
+      "sessionName": "Race",
+      "round": 18,
+      "date": "2026-10-25",
+      "dateStartUtc": "2026-10-25T20:00:00+00:00",
+      "circuit": "Austin",
+      "location": {
+        "locality": "Austin",
+        "country": "United States"
+      },
+      "sessionKey": 11396,
+      "meetingKey": 1297
+    },
+    "44": {
+      "driverNumber": 44,
+      "driverName": "Lewis HAMILTON",
+      "teamName": "Ferrari",
+      "position": "P4",
+      "eventType": "race",
+      "meetingName": "United States Grand Prix",
+      "raceName": "United States Grand Prix",
+      "sessionName": "Race",
+      "round": 18,
+      "date": "2026-10-25",
+      "dateStartUtc": "2026-10-25T20:00:00+00:00",
+      "circuit": "Austin",
+      "location": {
+        "locality": "Austin",
+        "country": "United States"
+      },
+      "sessionKey": 11396,
+      "meetingKey": 1297
+    },
+    "55": {
+      "driverNumber": 55,
+      "driverName": "Carlos SAINZ",
+      "teamName": "Williams",
+      "position": "P18",
+      "eventType": "race",
+      "meetingName": "United States Grand Prix",
+      "raceName": "United States Grand Prix",
+      "sessionName": "Race",
+      "round": 18,
+      "date": "2026-10-25",
+      "dateStartUtc": "2026-10-25T20:00:00+00:00",
+      "circuit": "Austin",
+      "location": {
+        "locality": "Austin",
+        "country": "United States"
+      },
+      "sessionKey": 11396,
+      "meetingKey": 1297
+    },
+    "63": {
+      "driverNumber": 63,
+      "driverName": "George RUSSELL",
+      "teamName": "Mercedes",
+      "position": "P8",
+      "eventType": "race",
+      "meetingName": "United States Grand Prix",
+      "raceName": "United States Grand Prix",
+      "sessionName": "Race",
+      "round": 18,
+      "date": "2026-10-25",
+      "dateStartUtc": "2026-10-25T20:00:00+00:00",
+      "circuit": "Austin",
+      "location": {
+        "locality": "Austin",
+        "country": "United States"
+      },
+      "sessionKey": 11396,
+      "meetingKey": 1297
+    },
+    "77": {
+      "driverNumber": 77,
+      "driverName": "Valtteri BOTTAS",
+      "teamName": "Cadillac",
+      "position": "P20",
+      "eventType": "race",
+      "meetingName": "United States Grand Prix",
+      "raceName": "United States Grand Prix",
+      "sessionName": "Race",
+      "round": 18,
+      "date": "2026-10-25",
+      "dateStartUtc": "2026-10-25T20:00:00+00:00",
+      "circuit": "Austin",
+      "location": {
+        "locality": "Austin",
+        "country": "United States"
+      },
+      "sessionKey": 11396,
+      "meetingKey": 1297
+    },
+    "81": {
+      "driverNumber": 81,
+      "driverName": "Oscar PIASTRI",
+      "teamName": "McLaren",
+      "position": "P7",
+      "eventType": "race",
+      "meetingName": "United States Grand Prix",
+      "raceName": "United States Grand Prix",
+      "sessionName": "Race",
+      "round": 18,
+      "date": "2026-10-25",
+      "dateStartUtc": "2026-10-25T20:00:00+00:00",
+      "circuit": "Austin",
+      "location": {
+        "locality": "Austin",
+        "country": "United States"
+      },
+      "sessionKey": 11396,
+      "meetingKey": 1297
+    },
+    "87": {
+      "driverNumber": 87,
+      "driverName": "Oliver BEARMAN",
+      "teamName": "Haas F1 Team",
+      "position": "P22",
+      "eventType": "race",
+      "meetingName": "United States Grand Prix",
+      "raceName": "United States Grand Prix",
+      "sessionName": "Race",
+      "round": 18,
+      "date": "2026-10-25",
+      "dateStartUtc": "2026-10-25T20:00:00+00:00",
+      "circuit": "Austin",
+      "location": {
+        "locality": "Austin",
+        "country": "United States"
+      },
+      "sessionKey": 11396,
+      "meetingKey": 1297
+    }
+  }
 }
