@@ -2,7 +2,7 @@
   "header": "2026 race weekends",
   "schemaVersion": 1,
   "season": 2026,
-  "generatedAtUtc": "2026-10-30T17:08:04.779Z",
+  "generatedAtUtc": "2026-10-30T17:11:13.276Z",
   "count": 23,
   "nextRound": 19,
   "latestCompletedRound": 18,
@@ -179,13 +179,13 @@
       "round": 15,
       "raceSlug": "azerbaijan",
       "title": "Azerbaijan GP",
-      "meetingKey": null,
-      "status": "upcoming",
+      "meetingKey": 1295,
+      "status": "completed",
       "weekendStartUtc": "2026-09-24T08:30:00.000Z",
       "weekendEndUtc": "2026-09-26T13:00:00.000Z",
       "file": "15-azerbaijan.json",
       "url": "https://mredman48.github.io/F1-standings/weekends/2026/15-azerbaijan.json",
-      "updatedAtUtc": "2026-10-30T16:19:24.431Z"
+      "updatedAtUtc": "2026-10-30T17:11:13.269Z"
     },
     {
       "round": 16,
@@ -349,21 +349,21 @@
       "driverNumber": 6,
       "driverName": "Isack HADJAR",
       "teamName": "Red Bull Racing",
-      "position": "P5",
+      "position": "P3",
       "eventType": "race",
-      "meetingName": "Bahrain Grand Prix",
-      "raceName": "Bahrain Grand Prix",
+      "meetingName": "Azerbaijan Grand Prix",
+      "raceName": "Azerbaijan Grand Prix",
       "sessionName": "Race",
-      "round": 16,
-      "date": "2026-10-04",
-      "dateStartUtc": "2026-10-04T07:00:00+00:00",
-      "circuit": "Kuala Lumpur",
+      "round": 15,
+      "date": "2026-09-26",
+      "dateStartUtc": "2026-09-26T11:00:00+00:00",
+      "circuit": "Baku",
       "location": {
-        "locality": "Kuala Lumpur",
-        "country": "Bahrain"
+        "locality": "Baku",
+        "country": "Azerbaijan"
       },
-      "sessionKey": 11731,
-      "meetingKey": 1308
+      "sessionKey": 11377,
+      "meetingKey": 1295
     },
     "10": {
       "driverNumber": 10,
@@ -389,21 +389,21 @@
       "driverNumber": 11,
       "driverName": "Sergio PEREZ",
       "teamName": "Cadillac",
-      "position": "P17",
+      "position": "P14",
       "eventType": "race",
-      "meetingName": "Singapore Grand Prix",
-      "raceName": "Singapore Grand Prix",
+      "meetingName": "Azerbaijan Grand Prix",
+      "raceName": "Azerbaijan Grand Prix",
       "sessionName": "Race",
-      "round": 17,
-      "date": "2026-10-11",
-      "dateStartUtc": "2026-10-11T12:00:00+00:00",
-      "circuit": "Singapore",
+      "round": 15,
+      "date": "2026-09-26",
+      "dateStartUtc": "2026-09-26T11:00:00+00:00",
+      "circuit": "Baku",
       "location": {
-        "locality": "Marina Bay",
-        "country": "Singapore"
+        "locality": "Baku",
+        "country": "Azerbaijan"
       },
-      "sessionKey": 11388,
-      "meetingKey": 1296
+      "sessionKey": 11377,
+      "meetingKey": 1295
     },
     "12": {
       "driverNumber": 12,
@@ -549,41 +549,41 @@
       "driverNumber": 31,
       "driverName": "Esteban OCON",
       "teamName": "Haas F1 Team",
-      "position": "P10",
-      "eventType": "sprint",
-      "meetingName": "Singapore Grand Prix",
-      "raceName": "Singapore Grand Prix Sprint",
-      "sessionName": "Sprint",
-      "round": 17,
-      "date": "2026-10-10",
-      "dateStartUtc": "2026-10-10T09:00:00+00:00",
-      "circuit": "Singapore",
+      "position": "P8",
+      "eventType": "race",
+      "meetingName": "Azerbaijan Grand Prix",
+      "raceName": "Azerbaijan Grand Prix",
+      "sessionName": "Race",
+      "round": 15,
+      "date": "2026-09-26",
+      "dateStartUtc": "2026-09-26T11:00:00+00:00",
+      "circuit": "Baku",
       "location": {
-        "locality": "Marina Bay",
-        "country": "Singapore"
+        "locality": "Baku",
+        "country": "Azerbaijan"
       },
-      "sessionKey": 11383,
-      "meetingKey": 1296
+      "sessionKey": 11377,
+      "meetingKey": 1295
     },
     "41": {
       "driverNumber": 41,
       "driverName": "Arvid LINDBLAD",
       "teamName": "Racing Bulls",
-      "position": "P10",
+      "position": "P7",
       "eventType": "race",
-      "meetingName": "Bahrain Grand Prix",
-      "raceName": "Bahrain Grand Prix",
+      "meetingName": "Azerbaijan Grand Prix",
+      "raceName": "Azerbaijan Grand Prix",
       "sessionName": "Race",
-      "round": 16,
-      "date": "2026-10-04",
-      "dateStartUtc": "2026-10-04T07:00:00+00:00",
-      "circuit": "Kuala Lumpur",
+      "round": 15,
+      "date": "2026-09-26",
+      "dateStartUtc": "2026-09-26T11:00:00+00:00",
+      "circuit": "Baku",
       "location": {
-        "locality": "Kuala Lumpur",
-        "country": "Bahrain"
+        "locality": "Baku",
+        "country": "Azerbaijan"
       },
-      "sessionKey": 11731,
-      "meetingKey": 1308
+      "sessionKey": 11377,
+      "meetingKey": 1295
     },
     "43": {
       "driverNumber": 43,
@@ -629,61 +629,61 @@
       "driverNumber": 55,
       "driverName": "Carlos SAINZ",
       "teamName": "Williams",
-      "position": "P12",
-      "eventType": "sprint",
-      "meetingName": "Singapore Grand Prix",
-      "raceName": "Singapore Grand Prix Sprint",
-      "sessionName": "Sprint",
-      "round": 17,
-      "date": "2026-10-10",
-      "dateStartUtc": "2026-10-10T09:00:00+00:00",
-      "circuit": "Singapore",
+      "position": "P10",
+      "eventType": "race",
+      "meetingName": "Azerbaijan Grand Prix",
+      "raceName": "Azerbaijan Grand Prix",
+      "sessionName": "Race",
+      "round": 15,
+      "date": "2026-09-26",
+      "dateStartUtc": "2026-09-26T11:00:00+00:00",
+      "circuit": "Baku",
       "location": {
-        "locality": "Marina Bay",
-        "country": "Singapore"
+        "locality": "Baku",
+        "country": "Azerbaijan"
       },
-      "sessionKey": 11383,
-      "meetingKey": 1296
+      "sessionKey": 11377,
+      "meetingKey": 1295
     },
     "63": {
       "driverNumber": 63,
       "driverName": "George RUSSELL",
       "teamName": "Mercedes",
-      "position": "P8",
+      "position": "P1",
       "eventType": "race",
-      "meetingName": "United States Grand Prix",
-      "raceName": "United States Grand Prix",
+      "meetingName": "Azerbaijan Grand Prix",
+      "raceName": "Azerbaijan Grand Prix",
       "sessionName": "Race",
-      "round": 18,
-      "date": "2026-10-25",
-      "dateStartUtc": "2026-10-25T20:00:00+00:00",
-      "circuit": "Austin",
+      "round": 15,
+      "date": "2026-09-26",
+      "dateStartUtc": "2026-09-26T11:00:00+00:00",
+      "circuit": "Baku",
       "location": {
-        "locality": "Austin",
-        "country": "United States"
+        "locality": "Baku",
+        "country": "Azerbaijan"
       },
-      "sessionKey": 11396,
-      "meetingKey": 1297
+      "sessionKey": 11377,
+      "meetingKey": 1295
     },
     "77": {
       "driverNumber": 77,
       "driverName": "Valtteri BOTTAS",
       "teamName": "Cadillac",
-      "position": "P17",
-      "eventType": "sprint",
-      "meetingName": "Singapore Grand Prix",
-      "raceName": "Singapore Grand Prix Sprint",
-      "sessionName": "Sprint",
-      "round": 17,
-      "date": "2026-10-10",
-      "dateStartUtc": "2026-10-10T09:00:00+00:00",
-      "circuit": "Singapore",
+      "position": "P16",
+      "eventType": "race",
+      "meetingName": "Azerbaijan Grand Prix",
+      "raceName": "Azerbaijan Grand Prix",
+      "sessionName": "Race",
+      "round": 15,
+      "date": "2026-09-26",
+      "dateStartUtc": "2026-09-26T11:00:00+00:00",
+      "circuit": "Baku",
       "location": {
-        "locality": "Marina Bay",
-        "country": "Singapore"
+        "locality": "Baku",
+        "country": "Azerbaijan"
       },
-      "sessionKey": 11383,
-      "meetingKey": 1296
+      "sessionKey": 11377,
+      "meetingKey": 1295
     },
     "81": {
       "driverNumber": 81,
