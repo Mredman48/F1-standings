@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T14:36:08.063Z",
+  "generatedAt": "2026-10-30T22:12:53.971Z",
   "liveries": {
     "audi": {
       "label": "Singapore Special Livery",
@@ -120,6 +120,19 @@
           "background": ""
         }
       }
+    },
+    "alpine": {
+      "label": "Mercado Libre Livery",
+      "validFrom": "2026-10-29T00:00:00Z",
+      "validUntil": "2026-10-30T00:00:00Z",
+      "color": "#FF87BC",
+      "background": "",
+      "profileBackground": "",
+      "car": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/liveries/alpine-2026-mercado-libre-livery-car.webp",
+      "logo": "",
+      "logoLight": "",
+      "icon": "",
+      "drivers": {}
     },
     "ferrari": {
       "label": "Schumacher Monza Tribute",
