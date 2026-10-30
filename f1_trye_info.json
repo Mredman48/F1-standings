@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-30T19:28:55.936Z",
-  "count": 23,
+  "updatedAt": "2026-10-30T20:53:44.947Z",
+  "count": 24,
   "entries": [
     {
       "round": 1,
@@ -80,6 +80,31 @@
         "trackEvolution": 4
       },
       "updatedAt": "2026-10-09T04:13:49.698Z"
+    },
+    {
+      "round": 3,
+      "raceSlug": "australia",
+      "title": "Australian GP",
+      "season": 2027,
+      "country": "Australia",
+      "flag": "au",
+      "raceStart": "2027-04-04T04:00:00.000Z",
+      "compounds": {
+        "soft": "",
+        "medium": "",
+        "hard": ""
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2026,
+        "pastYear": true,
+        "traction": 2,
+        "tyreStress": 3,
+        "asphaltGrip": 2,
+        "braking": 2,
+        "asphaltAbrasion": 2,
+        "lateral": 3,
+        "trackEvolution": 4
+      }
     },
     {
       "round": 4,
