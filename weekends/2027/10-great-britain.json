@@ -135,8 +135,40 @@
       "raceName": "British Grand Prix"
     }
   },
-  "previousWinner": null,
-  "tyreInfo": null,
+  "previousWinner": {
+    "round": 10,
+    "raceName": "British Grand Prix",
+    "city": "Silverstone",
+    "country": "United Kingdom",
+    "previousWinner": "Charles Leclerc",
+    "constructor": "Ferrari",
+    "date": "2026-07-05"
+  },
+  "tyreInfo": {
+    "round": 10,
+    "raceSlug": "great-britain",
+    "title": "British GP",
+    "season": 2027,
+    "country": "United Kingdom",
+    "flag": "gb",
+    "raceStart": "2027-07-04T14:00:00.000Z",
+    "compounds": {
+      "soft": "",
+      "medium": "",
+      "hard": ""
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2026,
+      "pastYear": true,
+      "traction": 3,
+      "tyreStress": 5,
+      "asphaltGrip": 4,
+      "braking": 2,
+      "asphaltAbrasion": 2,
+      "lateral": 5,
+      "trackEvolution": 2
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},
