@@ -134,8 +134,40 @@
       "raceName": "Monaco Grand Prix"
     }
   },
-  "previousWinner": null,
-  "tyreInfo": null,
+  "previousWinner": {
+    "round": 8,
+    "raceName": "Monaco Grand Prix",
+    "city": "Monaco",
+    "country": "Monaco",
+    "previousWinner": "Kimi Antonelli",
+    "constructor": "Mercedes",
+    "date": "2026-06-07"
+  },
+  "tyreInfo": {
+    "round": 8,
+    "raceSlug": "monaco",
+    "title": "Monaco GP",
+    "season": 2027,
+    "country": "Monaco",
+    "flag": "mc",
+    "raceStart": "2027-06-06T13:00:00.000Z",
+    "compounds": {
+      "soft": "",
+      "medium": "",
+      "hard": ""
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2026,
+      "pastYear": true,
+      "traction": 5,
+      "tyreStress": 1,
+      "asphaltGrip": 2,
+      "braking": 2,
+      "asphaltAbrasion": 1,
+      "lateral": 1,
+      "trackEvolution": 5
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},
