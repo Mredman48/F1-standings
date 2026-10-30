@@ -1,10 +1,10 @@
 {
   "header": "2026 Las Vegas GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T16:19:24.433Z",
+  "generatedAtUtc": "2026-10-30T20:59:00.677Z",
   "season": 2026,
   "round": 21,
-  "meetingKey": null,
+  "meetingKey": 1300,
   "raceSlug": "las-vegas",
   "status": "upcoming",
   "weekend": {
@@ -54,40 +54,40 @@
         "startUtc": "2026-11-20T00:30:00.000Z",
         "endUtc": "2026-11-20T01:30:00.000Z",
         "startLocalDateShort": "Thu, Nov 19",
-        "startLocalTimeShort": "17:30",
-        "startLocalDateTimeShort": "Thu, Nov 19 17:30"
+        "startLocalTimeShort": "18:30",
+        "startLocalDateTimeShort": "Thu, Nov 19 18:30"
       },
       {
         "type": "FP2",
         "startUtc": "2026-11-20T04:00:00.000Z",
         "endUtc": "2026-11-20T05:00:00.000Z",
         "startLocalDateShort": "Thu, Nov 19",
-        "startLocalTimeShort": "21:00",
-        "startLocalDateTimeShort": "Thu, Nov 19 21:00"
+        "startLocalTimeShort": "22:00",
+        "startLocalDateTimeShort": "Thu, Nov 19 22:00"
       },
       {
         "type": "FP3",
         "startUtc": "2026-11-21T00:30:00.000Z",
         "endUtc": "2026-11-21T01:30:00.000Z",
         "startLocalDateShort": "Fri, Nov 20",
-        "startLocalTimeShort": "17:30",
-        "startLocalDateTimeShort": "Fri, Nov 20 17:30"
+        "startLocalTimeShort": "18:30",
+        "startLocalDateTimeShort": "Fri, Nov 20 18:30"
       },
       {
         "type": "Quali",
         "startUtc": "2026-11-21T04:00:00.000Z",
         "endUtc": "2026-11-21T05:00:00.000Z",
         "startLocalDateShort": "Fri, Nov 20",
-        "startLocalTimeShort": "21:00",
-        "startLocalDateTimeShort": "Fri, Nov 20 21:00"
+        "startLocalTimeShort": "22:00",
+        "startLocalDateTimeShort": "Fri, Nov 20 22:00"
       },
       {
         "type": "Race",
         "startUtc": "2026-11-22T04:00:00.000Z",
         "endUtc": "2026-11-22T06:00:00.000Z",
         "startLocalDateShort": "Sat, Nov 21",
-        "startLocalTimeShort": "21:00",
-        "startLocalDateTimeShort": "Sat, Nov 21 21:00"
+        "startLocalTimeShort": "22:00",
+        "startLocalDateTimeShort": "Sat, Nov 21 22:00"
       }
     ]
   },
