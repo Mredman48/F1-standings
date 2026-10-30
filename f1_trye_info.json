@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-30T21:18:40.535Z",
-  "count": 31,
+  "updatedAt": "2026-10-30T21:18:50.937Z",
+  "count": 32,
   "entries": [
     {
       "round": 1,
@@ -514,6 +514,31 @@
         "trackEvolution": 4
       },
       "updatedAt": "2026-10-09T04:30:16.391Z"
+    },
+    {
+      "round": 12,
+      "raceSlug": "belgium",
+      "title": "Belgian GP",
+      "season": 2027,
+      "country": "Belgium",
+      "flag": "be",
+      "raceStart": "2027-07-25T13:00:00.000Z",
+      "compounds": {
+        "soft": "",
+        "medium": "",
+        "hard": ""
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2026,
+        "pastYear": true,
+        "traction": 4,
+        "tyreStress": 5,
+        "asphaltGrip": 3,
+        "braking": 4,
+        "asphaltAbrasion": 3,
+        "lateral": 5,
+        "trackEvolution": 3
+      }
     },
     {
       "round": 13,
