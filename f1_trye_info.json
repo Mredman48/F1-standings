@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-30T21:19:02.226Z",
-  "count": 33,
+  "updatedAt": "2026-10-30T21:19:24.640Z",
+  "count": 34,
   "entries": [
     {
       "round": 1,
@@ -616,6 +616,31 @@
         "trackEvolution": 5
       },
       "updatedAt": "2026-10-09T04:32:57.113Z"
+    },
+    {
+      "round": 14,
+      "raceSlug": "italy",
+      "title": "Italian GP",
+      "season": 2027,
+      "country": "Italy",
+      "flag": "it",
+      "raceStart": "2027-09-05T13:00:00.000Z",
+      "compounds": {
+        "soft": "",
+        "medium": "",
+        "hard": ""
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2026,
+        "pastYear": true,
+        "traction": 3,
+        "tyreStress": 3,
+        "asphaltGrip": 3,
+        "braking": 4,
+        "asphaltAbrasion": 2,
+        "lateral": 2,
+        "trackEvolution": 4
+      }
     },
     {
       "round": 15,
