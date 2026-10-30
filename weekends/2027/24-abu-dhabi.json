@@ -135,7 +135,31 @@
     }
   },
   "previousWinner": null,
-  "tyreInfo": null,
+  "tyreInfo": {
+    "round": 24,
+    "raceSlug": "abu-dhabi",
+    "title": "Abu Dhabi GP",
+    "season": 2027,
+    "country": "United Arab Emirates",
+    "flag": "ae",
+    "raceStart": "2027-12-12T10:00:00.000Z",
+    "compounds": {
+      "soft": "",
+      "medium": "",
+      "hard": ""
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2026,
+      "pastYear": true,
+      "traction": 4,
+      "tyreStress": 3,
+      "asphaltGrip": 3,
+      "braking": 4,
+      "asphaltAbrasion": 3,
+      "lateral": 3,
+      "trackEvolution": 4
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},
