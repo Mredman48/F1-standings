@@ -136,7 +136,31 @@
     }
   },
   "previousWinner": null,
-  "tyreInfo": null,
+  "tyreInfo": {
+    "round": 20,
+    "raceSlug": "mexico",
+    "title": "Mexico City GP",
+    "season": 2027,
+    "country": "Mexico",
+    "flag": "mx",
+    "raceStart": "2027-10-31T21:00:00.000Z",
+    "compounds": {
+      "soft": "",
+      "medium": "",
+      "hard": ""
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2026,
+      "pastYear": true,
+      "traction": 3,
+      "tyreStress": 2,
+      "asphaltGrip": 2,
+      "braking": 3,
+      "asphaltAbrasion": 2,
+      "lateral": 2,
+      "trackEvolution": 5
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},
