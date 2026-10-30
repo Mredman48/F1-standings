@@ -1,0 +1,111 @@
+{
+  "header": "2026 Bahrain GP in Malaysia weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-10-30T16:19:24.431Z",
+  "season": 2026,
+  "round": 16,
+  "meetingKey": null,
+  "raceSlug": "bahrain-in-malaysia",
+  "status": "upcoming",
+  "weekend": {
+    "round": 16,
+    "type": "RACE_WEEKEND",
+    "title": "BAHRAIN GRAND PRIX IN MALAYSIA 2026",
+    "shortTitle": "Bahrain GP in Malaysia",
+    "circuit": "Sepang International Circuit",
+    "season": "2026",
+    "location": {
+      "raw": null,
+      "city": "Sepang",
+      "country": "Malaysia",
+      "flag": {
+        "iso2": "sg",
+        "png": "https://flagcdn.com/w160/my.png",
+        "svg": "https://flagcdn.com/my.svg",
+        "cityGraphic": "",
+        "cityGraphicSmall": "",
+        "widgetMap": "",
+        "countryFlag": ""
+      }
+    },
+    "racePage": {
+      "slug": "Bahrain in Malaysia",
+      "url": "https://www.formula1.com/en/racing/2026/bahrain"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2026/bahrain",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackkualalumpurdetailed.webp",
+      "pngUrl": "https://github.com/Mredman48/F1-standings/blob/main/trackmaps/f1_2026_bahrainmalaysia_detailed.png?raw=true",
+      "note": null
+    },
+    "map": {
+      "found": true,
+      "filename": "malaysia.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/malaysia.png",
+      "note": null
+    },
+    "countdowns": {
+      "startsInDays": 194
+    },
+    "weekend": {
+      "startUtc": "2026-10-02T04:30:00.000Z",
+      "endUtc": "2026-10-04T09:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2026-10-02T04:30:00.000Z",
+        "endUtc": "2026-10-02T05:30:00.000Z",
+        "startLocalDateShort": "Thurs, Oct 02",
+        "startLocalTimeShort": "22:30",
+        "startLocalDateTimeShort": "Thurs, Oct 02 22:30"
+      },
+      {
+        "type": "FP2",
+        "startUtc": "2026-10-02T08:00:00.000Z",
+        "endUtc": "2026-10-02T09:30:00.000Z",
+        "startLocalDateShort": "Fri, Oct 03",
+        "startLocalTimeShort": "02:00",
+        "startLocalDateTimeShort": "Fri, Oct 03 02:00"
+      },
+      {
+        "type": "FP3",
+        "startUtc": "2026-10-03T04:30:00.000Z",
+        "endUtc": "2026-10-03T05:30:00.000Z",
+        "startLocalDateShort": "Sat, Oct 3",
+        "startLocalTimeShort": "00:00",
+        "startLocalDateTimeShort": "Sat, Oct 3 00:00"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2026-10-03T08:00:00.000Z",
+        "endUtc": "2026-10-03T09:00:00.000Z",
+        "startLocalDateShort": "Sat, Oct 3",
+        "startLocalTimeShort": "03:00",
+        "startLocalDateTimeShort": "Sat, Oct 3 03:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2026-10-04T07:00:00.000Z",
+        "endUtc": "2026-10-04T09:00:00.000Z",
+        "startLocalDateShort": "Sun, Oct 4",
+        "startLocalTimeShort": "01:00",
+        "startLocalDateTimeShort": "Sun, Oct 4 01:00"
+      }
+    ]
+  },
+  "circuitIntelligence": null,
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}
