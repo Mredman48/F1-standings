@@ -116,9 +116,9 @@
       "turns": 14,
       "longestStraightKm": 1.2,
       "averageSpeed": "Medium",
-      "raceLaps": 58,
+      "raceLaps": null,
       "trackLength": "5.807 km",
-      "raceDistance": "307.471 km"
+      "raceDistance": ""
     },
     "raceLapRecord": {
       "time": "1:19.813",
@@ -135,7 +135,15 @@
       "raceName": "Australian Grand Prix"
     }
   },
-  "previousWinner": null,
+  "previousWinner": {
+    "round": 3,
+    "raceName": "Australian Grand Prix",
+    "city": "Melbourne",
+    "country": "Australia",
+    "previousWinner": "George Russell",
+    "constructor": "Mercedes",
+    "date": "2026-03-08"
+  },
   "tyreInfo": {
     "round": 3,
     "raceSlug": "australia",
