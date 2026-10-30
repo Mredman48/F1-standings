@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-30T21:16:56.195Z",
-  "count": 25,
+  "updatedAt": "2026-10-30T21:17:26.752Z",
+  "count": 26,
   "entries": [
     {
       "round": 1,
@@ -182,6 +182,31 @@
         "trackEvolution": 5
       },
       "updatedAt": "2026-10-09T04:16:42.913Z"
+    },
+    {
+      "round": 5,
+      "raceSlug": "china",
+      "title": "Chinese GP",
+      "season": 2027,
+      "country": "China",
+      "flag": "cn",
+      "raceStart": "2027-04-18T06:00:00.000Z",
+      "compounds": {
+        "soft": "",
+        "medium": "",
+        "hard": ""
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2026,
+        "pastYear": true,
+        "traction": 3,
+        "tyreStress": 4,
+        "asphaltGrip": 3,
+        "braking": 4,
+        "asphaltAbrasion": 2,
+        "lateral": 4,
+        "trackEvolution": 4
+      }
     },
     {
       "round": 6,
