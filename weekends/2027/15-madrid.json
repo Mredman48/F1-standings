@@ -124,8 +124,40 @@
     "raceLapRecord": null,
     "previousWinner": null
   },
-  "previousWinner": null,
-  "tyreInfo": null,
+  "previousWinner": {
+    "round": 15,
+    "raceName": "Spanish Grand Prix",
+    "city": "Madrid",
+    "country": "Spain",
+    "previousWinner": "Kimi Antonelli",
+    "constructor": "Mercedes",
+    "date": "2026-09-13"
+  },
+  "tyreInfo": {
+    "round": 15,
+    "raceSlug": "madrid",
+    "title": "Madrid GP",
+    "season": 2027,
+    "country": "Spain",
+    "flag": "es",
+    "raceStart": "2027-09-12T13:00:00.000Z",
+    "compounds": {
+      "soft": "",
+      "medium": "",
+      "hard": ""
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2026,
+      "pastYear": true,
+      "traction": 3,
+      "tyreStress": 3,
+      "asphaltGrip": 4,
+      "braking": 3,
+      "asphaltAbrasion": 2,
+      "lateral": 4,
+      "trackEvolution": 5
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},
