@@ -2,7 +2,7 @@
   "header": "2026 race weekends",
   "schemaVersion": 1,
   "season": 2026,
-  "generatedAtUtc": "2026-10-30T16:47:32.552Z",
+  "generatedAtUtc": "2026-10-30T16:54:07.584Z",
   "count": 23,
   "nextRound": 19,
   "latestCompletedRound": 18,
@@ -191,13 +191,13 @@
       "round": 16,
       "raceSlug": "bahrain-in-malaysia",
       "title": "Bahrain GP in Malaysia",
-      "meetingKey": null,
-      "status": "upcoming",
+      "meetingKey": 1308,
+      "status": "completed",
       "weekendStartUtc": "2026-10-02T04:30:00.000Z",
       "weekendEndUtc": "2026-10-04T09:00:00.000Z",
       "file": "16-bahrain-in-malaysia.json",
       "url": "https://mredman48.github.io/F1-standings/weekends/2026/16-bahrain-in-malaysia.json",
-      "updatedAtUtc": "2026-10-30T16:19:24.431Z"
+      "updatedAtUtc": "2026-10-30T16:54:07.575Z"
     },
     {
       "round": 17,
@@ -310,20 +310,20 @@
       "driverName": "Max VERSTAPPEN",
       "teamName": "Red Bull Racing",
       "position": "P1",
-      "eventType": "sprint",
-      "meetingName": "Singapore Grand Prix",
-      "raceName": "Singapore Grand Prix Sprint",
-      "sessionName": "Sprint",
-      "round": 17,
-      "date": "2026-10-10",
-      "dateStartUtc": "2026-10-10T09:00:00+00:00",
-      "circuit": "Singapore",
+      "eventType": "race",
+      "meetingName": "Bahrain Grand Prix",
+      "raceName": "Bahrain Grand Prix",
+      "sessionName": "Race",
+      "round": 16,
+      "date": "2026-10-04",
+      "dateStartUtc": "2026-10-04T07:00:00+00:00",
+      "circuit": "Kuala Lumpur",
       "location": {
-        "locality": "Marina Bay",
-        "country": "Singapore"
+        "locality": "Kuala Lumpur",
+        "country": "Bahrain"
       },
-      "sessionKey": 11383,
-      "meetingKey": 1296
+      "sessionKey": 11731,
+      "meetingKey": 1308
     },
     "5": {
       "driverNumber": 5,
@@ -349,21 +349,21 @@
       "driverNumber": 6,
       "driverName": "Isack HADJAR",
       "teamName": "Red Bull Racing",
-      "position": "P6",
+      "position": "P5",
       "eventType": "race",
-      "meetingName": "United States Grand Prix",
-      "raceName": "United States Grand Prix",
+      "meetingName": "Bahrain Grand Prix",
+      "raceName": "Bahrain Grand Prix",
       "sessionName": "Race",
-      "round": 18,
-      "date": "2026-10-25",
-      "dateStartUtc": "2026-10-25T20:00:00+00:00",
-      "circuit": "Austin",
+      "round": 16,
+      "date": "2026-10-04",
+      "dateStartUtc": "2026-10-04T07:00:00+00:00",
+      "circuit": "Kuala Lumpur",
       "location": {
-        "locality": "Austin",
-        "country": "United States"
+        "locality": "Kuala Lumpur",
+        "country": "Bahrain"
       },
-      "sessionKey": 11396,
-      "meetingKey": 1297
+      "sessionKey": 11731,
+      "meetingKey": 1308
     },
     "10": {
       "driverNumber": 10,
@@ -429,21 +429,21 @@
       "driverNumber": 14,
       "driverName": "Fernando ALONSO",
       "teamName": "Aston Martin",
-      "position": "P11",
-      "eventType": "sprint",
-      "meetingName": "Singapore Grand Prix",
-      "raceName": "Singapore Grand Prix Sprint",
-      "sessionName": "Sprint",
-      "round": 17,
-      "date": "2026-10-10",
-      "dateStartUtc": "2026-10-10T09:00:00+00:00",
-      "circuit": "Singapore",
+      "position": "P8",
+      "eventType": "race",
+      "meetingName": "Bahrain Grand Prix",
+      "raceName": "Bahrain Grand Prix",
+      "sessionName": "Race",
+      "round": 16,
+      "date": "2026-10-04",
+      "dateStartUtc": "2026-10-04T07:00:00+00:00",
+      "circuit": "Kuala Lumpur",
       "location": {
-        "locality": "Marina Bay",
-        "country": "Singapore"
+        "locality": "Kuala Lumpur",
+        "country": "Bahrain"
       },
-      "sessionKey": 11383,
-      "meetingKey": 1296
+      "sessionKey": 11731,
+      "meetingKey": 1308
     },
     "16": {
       "driverNumber": 16,
@@ -469,21 +469,21 @@
       "driverNumber": 18,
       "driverName": "Lance STROLL",
       "teamName": "Aston Martin",
-      "position": "P15",
+      "position": "P12",
       "eventType": "race",
-      "meetingName": "United States Grand Prix",
-      "raceName": "United States Grand Prix",
+      "meetingName": "Bahrain Grand Prix",
+      "raceName": "Bahrain Grand Prix",
       "sessionName": "Race",
-      "round": 18,
-      "date": "2026-10-25",
-      "dateStartUtc": "2026-10-25T20:00:00+00:00",
-      "circuit": "Austin",
+      "round": 16,
+      "date": "2026-10-04",
+      "dateStartUtc": "2026-10-04T07:00:00+00:00",
+      "circuit": "Kuala Lumpur",
       "location": {
-        "locality": "Austin",
-        "country": "United States"
+        "locality": "Kuala Lumpur",
+        "country": "Bahrain"
       },
-      "sessionKey": 11396,
-      "meetingKey": 1297
+      "sessionKey": 11731,
+      "meetingKey": 1308
     },
     "23": {
       "driverNumber": 23,
@@ -569,41 +569,41 @@
       "driverNumber": 41,
       "driverName": "Arvid LINDBLAD",
       "teamName": "Racing Bulls",
-      "position": "P12",
+      "position": "P10",
       "eventType": "race",
-      "meetingName": "United States Grand Prix",
-      "raceName": "United States Grand Prix",
+      "meetingName": "Bahrain Grand Prix",
+      "raceName": "Bahrain Grand Prix",
       "sessionName": "Race",
-      "round": 18,
-      "date": "2026-10-25",
-      "dateStartUtc": "2026-10-25T20:00:00+00:00",
-      "circuit": "Austin",
+      "round": 16,
+      "date": "2026-10-04",
+      "dateStartUtc": "2026-10-04T07:00:00+00:00",
+      "circuit": "Kuala Lumpur",
       "location": {
-        "locality": "Austin",
-        "country": "United States"
+        "locality": "Kuala Lumpur",
+        "country": "Bahrain"
       },
-      "sessionKey": 11396,
-      "meetingKey": 1297
+      "sessionKey": 11731,
+      "meetingKey": 1308
     },
     "43": {
       "driverNumber": 43,
       "driverName": "Franco COLAPINTO",
       "teamName": "Alpine",
-      "position": "P19",
-      "eventType": "sprint",
-      "meetingName": "Singapore Grand Prix",
-      "raceName": "Singapore Grand Prix Sprint",
-      "sessionName": "Sprint",
-      "round": 17,
-      "date": "2026-10-10",
-      "dateStartUtc": "2026-10-10T09:00:00+00:00",
-      "circuit": "Singapore",
+      "position": "P13",
+      "eventType": "race",
+      "meetingName": "Bahrain Grand Prix",
+      "raceName": "Bahrain Grand Prix",
+      "sessionName": "Race",
+      "round": 16,
+      "date": "2026-10-04",
+      "dateStartUtc": "2026-10-04T07:00:00+00:00",
+      "circuit": "Kuala Lumpur",
       "location": {
-        "locality": "Marina Bay",
-        "country": "Singapore"
+        "locality": "Kuala Lumpur",
+        "country": "Bahrain"
       },
-      "sessionKey": 11383,
-      "meetingKey": 1296
+      "sessionKey": 11731,
+      "meetingKey": 1308
     },
     "44": {
       "driverNumber": 44,
