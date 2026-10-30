@@ -135,8 +135,40 @@
       "raceName": "Italian Grand Prix"
     }
   },
-  "previousWinner": null,
-  "tyreInfo": null,
+  "previousWinner": {
+    "round": 14,
+    "raceName": "Italian Grand Prix",
+    "city": "Monza",
+    "country": "Italy",
+    "previousWinner": "Kimi Antonelli",
+    "constructor": "Mercedes",
+    "date": "2026-09-06"
+  },
+  "tyreInfo": {
+    "round": 14,
+    "raceSlug": "italy",
+    "title": "Italian GP",
+    "season": 2027,
+    "country": "Italy",
+    "flag": "it",
+    "raceStart": "2027-09-05T13:00:00.000Z",
+    "compounds": {
+      "soft": "",
+      "medium": "",
+      "hard": ""
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2026,
+      "pastYear": true,
+      "traction": 3,
+      "tyreStress": 3,
+      "asphaltGrip": 3,
+      "braking": 4,
+      "asphaltAbrasion": 2,
+      "lateral": 2,
+      "trackEvolution": 4
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},
