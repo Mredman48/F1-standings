@@ -126,8 +126,50 @@
     "previousWinner": null
   },
   "previousWinner": null,
-  "tyreInfo": null,
-  "racePreview": null,
+  "tyreInfo": {
+    "round": 14,
+    "raceSlug": "madrid",
+    "title": "Spanish GP",
+    "season": 2026,
+    "country": "Spain",
+    "flag": "es",
+    "raceStart": "2026-09-13T13:00:00.000Z",
+    "compounds": {
+      "soft": "C4",
+      "medium": "C3",
+      "hard": "C2"
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2026,
+      "pastYear": false,
+      "traction": 3,
+      "tyreStress": 3,
+      "asphaltGrip": 4,
+      "braking": 3,
+      "asphaltAbrasion": 2,
+      "lateral": 4,
+      "trackEvolution": 5
+    },
+    "updatedAt": "2026-10-09T04:32:57.113Z"
+  },
+  "racePreview": {
+    "slug": "antonelli-s-reign-at-madring-mercedes-battle-heats-up-mtqpk0za",
+    "round": 14,
+    "raceSlug": "madrid",
+    "title": "Spanish GP",
+    "season": "2026",
+    "country": "Spain",
+    "flag": "es",
+    "raceStart": "2026-09-13T13:00:00.000Z",
+    "publishedAt": "2026-09-07",
+    "headline": "Antonelli's Reign at Madring? Mercedes Battle Heats Up!",
+    "summary": "Kimi Antonelli looks to extend his lead at the Spanish GP, but teammate Russell is desperate. Expect fireworks as Mercedes battle while rivals push upgrades.",
+    "body": "Kimi Antonelli is absolutely flying this season, racking up an insane seven wins already and holding a massive lead over teammate George Russell. Mercedes are just on another level right now, dominating the Constructors' standings. Russell, with his two wins, is clearly feeling the pressure to close that gap – the tension between them is palpable and this weekend could be a boiling point. Ferrari, with Hamilton and Leclerc both grabbing a win, are trying to stay in the hunt, while Lando Norris has bagged a couple for McLaren. Poor Max Verstappen is still waiting for his first win, which is wild for a driver of his calibre.\n\nNow we're headed to the Circuito de Madring for the Spanish GP — a brand new track thats certain to bring drama and excitement over the weekend. This circuit could leads to some spicy internal battles, especially when teammates are vying for every tenth. With so many unknowns going into this new track, we could see fireworks as early as FP1 on Friday, that continues through the entire weekend!",
+    "picks": {
+      "winner": "Antonelli",
+      "wildcard": "Norris"
+    }
+  },
   "startingGrids": [
     {
       "gridType": "race",
@@ -4499,7 +4541,26 @@
       ]
     }
   ],
-  "raceRecap": null,
+  "raceRecap": {
+    "slug": "antonelli-snags-win-in-vsc-marred-spanish-gp-mu8dispj",
+    "round": 14,
+    "raceSlug": "madrid",
+    "title": "Spanish GP",
+    "season": "2026",
+    "country": "Spain",
+    "flag": "es",
+    "raceStart": "2026-09-13T13:00:00.000Z",
+    "publishedAt": "2026-09-19",
+    "headline": "Antonelli Snags Win in VSC-Marred Spanish GP",
+    "summary": "Kimi Antonelli clinched victory at the new Madring circuit, but a controversial Virtual Safety Car call wrecked Lando Norris's winning chances, sparking fury and 'mickey-mouse' racing remarks.",
+    "body": "The inaugural Spanish GP at the Madring circuit was a wild one, with Kimi Antonelli snatching the win, but not without some serious drama – a perfectly timed Virtual Safety Car (VSC) totally wrecked Lando Norris’s race. Norris, who started on pole and was leading comfortably, got caught outside the pit window when the VSC came out after Lance Stroll's brake failure. Antonelli, meanwhile, was able to pit under the VSC, gaining the net lead. McLaren's slow pit stop didn't help Norris either, leaving him furious and questioning the fairness of the VSC rules. Mercedes boss Toto Wolff even conceded, \"the racing gods were with us\". Antonelli himself had a tricky start, going off twice in the opening lap but managed to stay in contention.\n\nThe VSC wasn't the only talking point, though. Max Verstappen had his own frustrations, calling the racing \"mickey-mouse\" after being told to give a position back to Lewis Hamilton following a Turn 1 incident. Verstappen was particularly annoyed because Hamilton was already struggling badly with brake issues and his Ferrari was \"out of control\". Hamilton eventually retired due to brake failure, as did Sergio Perez and local hero Carlos Sainz. The new Madring circuit also drew some harsh criticism – a Spanish Government Minister slammed it as a \"total dud,\" with many bemoaning the \"lack of excitement\" and \"virtually no opportunities for overtaking\". However, Franco Colapinto had a stellar weekend for Alpine, qualifying ninth and finishing P7, stating, \"The quali was one of the best I've done. With very, very, very perfect laps\".",
+    "result": {
+      "p1": "Antonelli",
+      "p2": "Verstappen",
+      "p3": "Norris",
+      "driverOfDay": "Verstappen"
+    }
+  },
   "meta": {
     "fia": {
       "eventName": "Spanish Grand Prix",
