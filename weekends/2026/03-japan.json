@@ -145,7 +145,32 @@
     "constructor": "Red Bull",
     "date": "2025-04-06"
   },
-  "tyreInfo": null,
+  "tyreInfo": {
+    "round": 3,
+    "raceSlug": "japan",
+    "title": "Japanese GP",
+    "season": 2026,
+    "country": "Japan",
+    "flag": "jp",
+    "raceStart": "2026-03-29T05:00:00.000Z",
+    "compounds": {
+      "soft": "C3",
+      "medium": "C2",
+      "hard": "C1"
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2026,
+      "pastYear": false,
+      "traction": 3,
+      "tyreStress": 5,
+      "asphaltGrip": 4,
+      "braking": 2,
+      "asphaltAbrasion": 3,
+      "lateral": 5,
+      "trackEvolution": 4
+    },
+    "updatedAt": "2026-10-09T04:13:49.698Z"
+  },
   "racePreview": null,
   "startingGrids": [
     {
@@ -4576,7 +4601,26 @@
       ]
     }
   ],
-  "raceRecap": null,
+  "raceRecap": {
+    "slug": "antonelli-does-it-again-history-made-at-suzuka-as-teen-takes-mq1u061p",
+    "round": 3,
+    "raceSlug": "japan",
+    "title": "Japanese GP",
+    "season": "2026",
+    "country": "Japan",
+    "flag": "jp",
+    "raceStart": "2026-03-29T05:00:00.000Z",
+    "publishedAt": "2026-03-29",
+    "headline": "Antonelli Does It Again — History Made at Suzuka as Teen Takes Championship Lead",
+    "summary": "Kimi Antonelli recovered from a terrible start to win his second race in a row at Suzuka, becoming the youngest championship leader in F1 history. Piastri finally finished a race in second, while Russell had a weekend to forget.",
+    "body": "Japan was messy from the start — literally. Antonelli bogged down off the line from pole and dropped all the way to sixth in the first few corners, with Russell also losing ground. Piastri pounced brilliantly to lead, and for a while it looked like McLaren might finally get their first win of the season. Piastri and Russell traded positions at the front while Antonelli quietly worked his way back through the field, and when Ollie Bearman crashed heavily on lap 22 to bring out the safety car, the timing couldn't have been better for Mercedes. Antonelli was the only front-runner yet to pit, so he came in under the safety car and emerged in the lead — much to Piastri's frustration, who'd done everything right up to that point.\n\nFrom the restart Antonelli was untouchable, pulling away to win by 13 seconds and take the championship lead for the first time in his career. At 19 years and 216 days old, he became the first teenager in history to win back-to-back races and the youngest driver ever to lead the drivers' standings — overtaking Ascari as the first Italian to do so since 1953. Piastri took a well-deserved second in what was actually his first race finish of the season after crashing out in Australia and a DNF in China, with Leclerc rounding out the podium. Russell crossed the line fourth and was noticeably unhappy on the radio, with Mercedes acknowledging their rivals are catching up fast heading into the Miami break.",
+    "result": {
+      "p1": "",
+      "p2": "",
+      "p3": "",
+      "driverOfDay": "Oscar Piastri"
+    }
+  },
   "meta": {
     "fia": {
       "eventName": "Japanese Grand Prix",
