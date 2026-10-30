@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-30T21:21:15.384Z",
-  "count": 42,
+  "updatedAt": "2026-10-30T21:21:30.811Z",
+  "count": 43,
   "entries": [
     {
       "round": 1,
@@ -1073,6 +1073,31 @@
         "braking": 3,
         "asphaltAbrasion": 2,
         "lateral": 5,
+        "trackEvolution": 4
+      }
+    },
+    {
+      "round": 24,
+      "raceSlug": "abu-dhabi",
+      "title": "Abu Dhabi GP",
+      "season": 2027,
+      "country": "United Arab Emirates",
+      "flag": "ae",
+      "raceStart": "2027-12-12T10:00:00.000Z",
+      "compounds": {
+        "soft": "",
+        "medium": "",
+        "hard": ""
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2026,
+        "pastYear": true,
+        "traction": 4,
+        "tyreStress": 3,
+        "asphaltGrip": 3,
+        "braking": 4,
+        "asphaltAbrasion": 3,
+        "lateral": 3,
         "trackEvolution": 4
       }
     }
