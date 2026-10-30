@@ -146,8 +146,50 @@
     "constructor": "McLaren",
     "date": "2025-07-27"
   },
-  "tyreInfo": null,
-  "racePreview": null,
+  "tyreInfo": {
+    "round": 10,
+    "raceSlug": "belgium",
+    "title": "Belgian GP",
+    "season": 2026,
+    "country": "Belgium",
+    "flag": "be",
+    "raceStart": "2026-07-19T13:00:00.000Z",
+    "compounds": {
+      "soft": "C4",
+      "medium": "C3",
+      "hard": "C2"
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2026,
+      "pastYear": false,
+      "traction": 4,
+      "tyreStress": 5,
+      "asphaltGrip": 3,
+      "braking": 4,
+      "asphaltAbrasion": 3,
+      "lateral": 5,
+      "trackEvolution": 3
+    },
+    "updatedAt": "2026-10-09T04:26:16.956Z"
+  },
+  "racePreview": {
+    "slug": "belgian-gp-mercedes-under-pressure-ferrari-on-the-charge-mrgg9t4j",
+    "round": 10,
+    "raceSlug": "belgium",
+    "title": "Belgian GP",
+    "season": "2026",
+    "country": "Belgium",
+    "flag": "be",
+    "raceStart": "2026-07-19T13:00:00.000Z",
+    "publishedAt": "2026-07-11",
+    "headline": "Belgian GP: Mercedes Under Pressure, Ferrari on the Charge",
+    "summary": "Kimi Antonelli's championship lead is shrinking, while Ferrari's momentum is building after a Silverstone win. Spa's high-speed demands and unpredictable weather could shake up the title fight.",
+    "body": "Kimi Antonelli's massive championship lead has shrunk to just 25 points, thanks to a tough British GP where car issues dropped him to P15 after winning the Sprint. Meanwhile, his Mercedes teammate George Russell grabbed second at Silverstone and is fresh off a recent Austrian GP victory, making him a serious contender. Ferrari are breathing down their necks in the constructors' after Charles Leclerc finally bagged a win at Silverstone—his first in over two years, and Ferrari's 250th. Plus, Lewis Hamilton's been racking up podiums, scoring his fourth in five rounds at the last race. Red Bull are having a shocker of a season; Max Verstappen crashed out at Silverstone for his third DNF this year, and there's even talk of him having contract clauses to bail out due to their poor performance.\n\nNow we hit Spa-Francorchamps, a proper old-school, high-speed circuit that's seven kilometres of pure adrenaline, with those iconic sections like Eau Rouge and the Kemmel Straight. You need serious top-end speed here, and Ferrari are bringing a low-drag \"Macarena\" rear wing upgrade that could boost their straight-line speed by up to 11 km/h—that’s massive. McLaren might finally debut their new upside-down rear wing too. But Spa being Spa, you can never count on the weather—it's got its own microclimate, so rain is always a threat to spice things up and a Safety Car is practically a given with a 61% chance. Keep an eye on Hamilton, he’s won here six times, more than anyone else on the grid. And with the 2026 regulations tweaking power unit management and even reintroducing a \"boost mode\" in low-grip conditions, strategy and adaptability are going to be key.",
+    "picks": {
+      "winner": "Hamilton",
+      "wildcard": "Verstappen"
+    }
+  },
   "startingGrids": [
     {
       "gridType": "race",
@@ -4740,7 +4782,26 @@
       ]
     }
   ],
-  "raceRecap": null,
+  "raceRecap": {
+    "slug": "antonelli-conquers-spa-after-russell-s-early-exit-drama-mrs2poa8",
+    "round": 10,
+    "raceSlug": "belgium",
+    "title": "Belgian GP",
+    "season": "2026",
+    "country": "Belgium",
+    "flag": "be",
+    "raceStart": "2026-07-19T13:00:00.000Z",
+    "publishedAt": "2026-07-19",
+    "headline": "Antonelli Conquers Spa After Russell's Early Exit Drama",
+    "summary": "Kimi Antonelli bagged his sixth win of the season at Spa, but it wasn't easy — Charles Leclerc pushed him hard. George Russell's title hopes took a huge hit with a Lap 1 DNF after contact with Lewis Hamilton.",
+    "body": "Chaos erupted on Lap 1 at Spa-Francorchamps as George Russell's Belgian GP — and potentially his championship hopes — ended abruptly. Going side-by-side with Lewis Hamilton at Les Combes, Hamilton clipped Russell's rear wheel, sending the Mercedes spinning into the gravel. Hamilton copped a five-second penalty for the collision, admitting he \"lacked front-end grip\", while a visibly emotional Russell told Sky Sports he had \"no words at the moment\" but pointed to his car's lack of straight-line speed as the root cause, saying, \"The incident shouldn't have happened if I had the speed down the straight\". The resulting Safety Car and a perfectly timed Virtual Safety Car then played into Ferrari's hands, allowing both Charles Leclerc and Hamilton to take 'cheap' pit stops, propelling Leclerc into the lead. Fred Vasseur, Ferrari Team Principal, was surprised by their strong showing at a track not suited to their car, admitting they were \"not expecting this kind of result\".\n\nDespite the strategic setback, Antonelli, who started on pole, reeled in Leclerc and made the decisive overtake in the closing stages to clinch his sixth victory of the season. He called it a \"hard-fought race\" and acknowledged that \"Charles was quick, and we had to hold on to that\". Max Verstappen, who charged past Antonelli at Eau Rouge on the opening lap, ultimately secured a solid third place, while Hamilton recovered to fourth but now faces a post-race investigation for an unsafe release where he knocked a mechanic during his pit stop. Isack Hadjar and Lando Norris both put in impressive drives to P6 and P7 respectively, recovering well from grid penalties, while Leclerc reflected on his race, noting he was \"struggling with the front axle\" on the hard tyres before finding more comfort later.",
+    "result": {
+      "p1": "Antonelli",
+      "p2": "Leclerc",
+      "p3": "Verstappen",
+      "driverOfDay": "Leclerc"
+    }
+  },
   "meta": {
     "fia": {
       "eventName": "Belgian Grand Prix",
