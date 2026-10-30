@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-30T21:19:24.640Z",
-  "count": 34,
+  "updatedAt": "2026-10-30T21:19:38.143Z",
+  "count": 35,
   "entries": [
     {
       "round": 1,
@@ -667,6 +667,31 @@
         "trackEvolution": 5
       },
       "updatedAt": "2026-10-09T04:34:44.976Z"
+    },
+    {
+      "round": 15,
+      "raceSlug": "madrid",
+      "title": "Madrid GP",
+      "season": 2027,
+      "country": "Spain",
+      "flag": "es",
+      "raceStart": "2027-09-12T13:00:00.000Z",
+      "compounds": {
+        "soft": "",
+        "medium": "",
+        "hard": ""
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2026,
+        "pastYear": true,
+        "traction": 3,
+        "tyreStress": 3,
+        "asphaltGrip": 4,
+        "braking": 3,
+        "asphaltAbrasion": 2,
+        "lateral": 4,
+        "trackEvolution": 5
+      }
     },
     {
       "round": 16,
