@@ -145,8 +145,50 @@
     "constructor": "McLaren",
     "date": "2025-07-06"
   },
-  "tyreInfo": null,
-  "racePreview": null,
+  "tyreInfo": {
+    "round": 9,
+    "raceSlug": "great-britain",
+    "title": "British GP",
+    "season": 2026,
+    "country": "United Kingdom",
+    "flag": "gb",
+    "raceStart": "2026-07-05T14:00:00.000Z",
+    "compounds": {
+      "soft": "C3",
+      "medium": "C2",
+      "hard": "C1"
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2026,
+      "pastYear": false,
+      "traction": 3,
+      "tyreStress": 5,
+      "asphaltGrip": 4,
+      "braking": 2,
+      "asphaltAbrasion": 2,
+      "lateral": 5,
+      "trackEvolution": 2
+    },
+    "updatedAt": "2026-10-09T04:23:18.550Z"
+  },
+  "racePreview": {
+    "slug": "silverstone-sprint-showdown-antonelli-leads-hamilton-hunts-h-mqz7ori9",
+    "round": 9,
+    "raceSlug": "great-britain",
+    "title": "British GP",
+    "season": "2026",
+    "country": "United Kingdom",
+    "flag": "gb",
+    "raceStart": "2026-07-05T14:00:00.000Z",
+    "publishedAt": "2026-06-29",
+    "headline": "Silverstone Sprint Showdown: Antonelli Leads, Hamilton Hunts Home Glory",
+    "summary": "Mercedes are still running away with it, but the British GP Sprint weekend could shake things up. Antonelli leads Russell, while home hero Hamilton eyes a Silverstone record.",
+    "body": "Kimi Antonelli's absolutely flying, still holding a solid 40-point lead over teammate George Russell, even after Russell snagged the win in Austria. Mercedes are just miles ahead, dominating with seven out of eight wins this season, though Antonelli's Austrian Grand Prix was hampered by a clumsy pit stop — he had the pace, no doubt. Lewis Hamilton's P3 in the standings feels a bit distant, but his Barcelona win for Ferrari shows they've got some fight, even if Austria saw them chewing through tires. McLaren's consistent, but Oscar Piastri and Lando Norris are still hunting that first win, while Max Verstappen and Red Bull? Zero wins this year is just wild, and Max reckons the current car rules could make Silverstone even stranger.\n\nNow, Silverstone is a proper high-speed classic with those legendary corners like Copse and Maggotts — it’s a front-limited circuit, so tire management is key. This is a Sprint weekend too, meaning there's only one practice session before the action kicks off, and loads of points are up for grabs even before Sunday. Keep an eye on Lewis Hamilton, who's a nine-time winner here and has an insane record at his home race; George Russell also gets a boost from the home crowd and his knack for the Sprint format. Interestingly, McLaren and Red Bull are bringing new floor upgrades to tackle this track, but Mercedes and Ferrari haven't got anything fresh, so that could be a real wildcard.",
+    "picks": {
+      "winner": "Antonelli",
+      "wildcard": "Norris"
+    }
+  },
   "startingGrids": [
     {
       "gridType": "sprint",
@@ -6611,7 +6653,26 @@
       ]
     }
   ],
-  "raceRecap": null,
+  "raceRecap": {
+    "slug": "leclerc-capitalises-on-antonelli-heartbreak-at-dramatic-brit-mr7z57n5",
+    "round": 9,
+    "raceSlug": "great-britain",
+    "title": "British GP",
+    "season": "2026",
+    "country": "United Kingdom",
+    "flag": "gb",
+    "raceStart": "2026-07-05T14:00:00.000Z",
+    "publishedAt": "2026-07-05",
+    "headline": "Leclerc Capitalises on Antonelli Heartbreak at Dramatic British GP",
+    "summary": "Charles Leclerc bagged his first win in over a year at the British GP after championship leader Kimi Antonelli suffered a late mechanical failure,, with the race finishing under Safety Car conditions.",
+    "body": "Saturday's sprint was a lively one, with Kimi Antonelli snatching his first Sprint win after a good scrap with polesitter Lewis Hamilton, who initially squeezed him off the line. Antonelli's Mercedes teammate George Russell finished fourth, just ahead of Charles Leclerc. The main race kicked off with immediate drama—Leclerc and Hamilton both jumped Antonelli at the start. Things got spicy quickly, with Ocon, Lawson, and Albon all going off early, and Oscar Piastri reporting damage. To add to the chaos, Hamilton later copped a five-second penalty for a false start.\n\nAntonelli soon took the lead and looked set to extend his championship advantage, despite drivers—like Lewis Hamilton—commenting pre-race on \"how poor the power is going to be through this track\" with units running out of battery. But Silverstone had other plans. Late in the race, disaster struck for Kimi, who suffered a mechanical failure — a total gut punch for his title hopes. He limped home in ninth, only to then get relegated to sixteenth by a track limits penalty. This opened the door for Leclerc, who hadn't won in over a year, to bag a crucial victory. George Russell picked up P2, and Hamilton salvaged P3 despite his earlier penalty. Even Max Verstappen, who was heard grumbling about \"my downshifts are s***\" earlier in the race, went off near the end, bringing out the Safety Car and cementing Leclerc's win.",
+    "result": {
+      "p1": "Leclerc",
+      "p2": "Russell",
+      "p3": "Hamilton",
+      "driverOfDay": "Leclerc"
+    }
+  },
   "meta": {
     "fia": {
       "eventName": "British Grand Prix",
