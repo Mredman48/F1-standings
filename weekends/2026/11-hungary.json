@@ -1,7 +1,7 @@
 {
   "header": "2026 Hungarian GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T17:26:16.572Z",
+  "generatedAtUtc": "2026-10-30T17:42:34.430Z",
   "season": 2026,
   "round": 11,
   "meetingKey": 1291,
@@ -2963,9 +2963,9 @@
           "driverNumber": 81,
           "driverName": "Oscar PIASTRI",
           "teamName": "McLaren",
-          "position": "P20",
-          "positionRank": 20,
-          "classifiedPosition": 20,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
           "dnf": true,
           "dns": false,
           "dsq": false,
@@ -2989,9 +2989,9 @@
           "driverNumber": 11,
           "driverName": "Sergio PEREZ",
           "teamName": "Cadillac",
-          "position": "P21",
-          "positionRank": 21,
-          "classifiedPosition": 21,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
           "dnf": true,
           "dns": false,
           "dsq": false,
@@ -3015,9 +3015,9 @@
           "driverNumber": 77,
           "driverName": "Valtteri BOTTAS",
           "teamName": "Cadillac",
-          "position": "P22",
-          "positionRank": 22,
-          "classifiedPosition": 22,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
           "dnf": true,
           "dns": false,
           "dsq": false,
@@ -5084,11 +5084,11 @@
   "meta": {
     "fia": {
       "eventName": "Hungarian Grand Prix",
-      "done": "2026-10-30T17:26:14.515Z"
+      "done": "2026-10-30T17:42:33.962Z"
     },
     "final": {
       "weekend": "2026-10-30T17:26:16.571Z"
     },
-    "buildVersion": "2026-10-30.5"
+    "buildVersion": "2026-10-30.6"
   }
 }

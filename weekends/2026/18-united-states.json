@@ -1,7 +1,7 @@
 {
   "header": "2026 United States GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T17:26:46.474Z",
+  "generatedAtUtc": "2026-10-30T17:43:07.221Z",
   "season": 2026,
   "round": 18,
   "meetingKey": 1297,
@@ -3016,9 +3016,9 @@
           "driverNumber": 77,
           "driverName": "Valtteri BOTTAS",
           "teamName": "Cadillac",
-          "position": "P20",
-          "positionRank": 20,
-          "classifiedPosition": 20,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
           "dnf": true,
           "dns": false,
           "dsq": false,
@@ -3042,9 +3042,9 @@
           "driverNumber": 43,
           "driverName": "Franco COLAPINTO",
           "teamName": "Alpine",
-          "position": "P21",
-          "positionRank": 21,
-          "classifiedPosition": 21,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
           "dnf": true,
           "dns": false,
           "dsq": false,
@@ -3068,9 +3068,9 @@
           "driverNumber": 87,
           "driverName": "Oliver BEARMAN",
           "teamName": "Haas F1 Team",
-          "position": "P22",
-          "positionRank": 22,
-          "classifiedPosition": 22,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
           "dnf": true,
           "dns": false,
           "dsq": false,
@@ -4812,11 +4812,11 @@
   "meta": {
     "fia": {
       "eventName": "United States Grand Prix",
-      "done": "2026-10-30T17:26:45.407Z"
+      "done": "2026-10-30T17:43:06.067Z"
     },
     "final": {
       "weekend": "2026-10-30T16:26:06.978Z"
     },
-    "buildVersion": "2026-10-30.5"
+    "buildVersion": "2026-10-30.6"
   }
 }

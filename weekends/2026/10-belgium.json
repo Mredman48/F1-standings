@@ -1,7 +1,7 @@
 {
   "header": "2026 Belgian GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T17:25:59.268Z",
+  "generatedAtUtc": "2026-10-30T17:42:30.826Z",
   "season": 2026,
   "round": 10,
   "meetingKey": 1290,
@@ -3048,9 +3048,9 @@
           "driverNumber": 18,
           "driverName": "Lance STROLL",
           "teamName": "Aston Martin",
-          "position": "P20",
-          "positionRank": 20,
-          "classifiedPosition": 20,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
           "dnf": true,
           "dns": false,
           "dsq": false,
@@ -3074,9 +3074,9 @@
           "driverNumber": 11,
           "driverName": "Sergio PEREZ",
           "teamName": "Cadillac",
-          "position": "P21",
-          "positionRank": 21,
-          "classifiedPosition": 21,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
           "dnf": true,
           "dns": false,
           "dsq": false,
@@ -3100,9 +3100,9 @@
           "driverNumber": 63,
           "driverName": "George RUSSELL",
           "teamName": "Mercedes",
-          "position": "P22",
-          "positionRank": 22,
-          "classifiedPosition": 22,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
           "dnf": true,
           "dns": false,
           "dsq": false,
@@ -4744,11 +4744,11 @@
   "meta": {
     "fia": {
       "eventName": "Belgian Grand Prix",
-      "done": "2026-10-30T17:25:57.659Z"
+      "done": "2026-10-30T17:42:29.706Z"
     },
     "final": {
       "weekend": "2026-10-30T17:25:59.268Z"
     },
-    "buildVersion": "2026-10-30.5"
+    "buildVersion": "2026-10-30.6"
   }
 }

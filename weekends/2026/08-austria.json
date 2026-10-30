@@ -1,7 +1,7 @@
 {
   "header": "2026 Austrian GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T17:25:10.359Z",
+  "generatedAtUtc": "2026-10-30T17:42:18.134Z",
   "season": 2026,
   "round": 8,
   "meetingKey": 1288,
@@ -2872,9 +2872,9 @@
           "driverNumber": 18,
           "driverName": "Lance STROLL",
           "teamName": "Aston Martin",
-          "position": "P19",
-          "positionRank": 19,
-          "classifiedPosition": 19,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
           "dnf": true,
           "dns": false,
           "dsq": false,
@@ -2898,9 +2898,9 @@
           "driverNumber": 55,
           "driverName": "Carlos SAINZ",
           "teamName": "Williams",
-          "position": "P20",
-          "positionRank": 20,
-          "classifiedPosition": 20,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
           "dnf": true,
           "dns": false,
           "dsq": false,
@@ -2924,9 +2924,9 @@
           "driverNumber": 11,
           "driverName": "Sergio PEREZ",
           "teamName": "Cadillac",
-          "position": "P21",
-          "positionRank": 21,
-          "classifiedPosition": 21,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
           "dnf": true,
           "dns": false,
           "dsq": false,
@@ -2950,9 +2950,9 @@
           "driverNumber": 77,
           "driverName": "Valtteri BOTTAS",
           "teamName": "Cadillac",
-          "position": "P22",
-          "positionRank": 22,
-          "classifiedPosition": 22,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
           "dnf": true,
           "dns": false,
           "dsq": false,
@@ -4902,11 +4902,11 @@
   "meta": {
     "fia": {
       "eventName": "Austrian Grand Prix",
-      "done": "2026-10-30T17:25:08.480Z"
+      "done": "2026-10-30T17:42:16.896Z"
     },
     "final": {
       "weekend": "2026-10-30T17:25:10.358Z"
     },
-    "buildVersion": "2026-10-30.5"
+    "buildVersion": "2026-10-30.6"
   }
 }

@@ -1,7 +1,7 @@
 {
   "header": "2026 Japanese GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T17:23:25.065Z",
+  "generatedAtUtc": "2026-10-30T17:41:49.482Z",
   "season": 2026,
   "round": 3,
   "meetingKey": 1281,
@@ -2918,9 +2918,9 @@
           "driverNumber": 18,
           "driverName": "Lance STROLL",
           "teamName": "Aston Martin",
-          "position": "P21",
-          "positionRank": 21,
-          "classifiedPosition": 21,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
           "dnf": true,
           "dns": false,
           "dsq": false,
@@ -2944,9 +2944,9 @@
           "driverNumber": 87,
           "driverName": "Oliver BEARMAN",
           "teamName": "Haas F1 Team",
-          "position": "P22",
-          "positionRank": 22,
-          "classifiedPosition": 22,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
           "dnf": true,
           "dns": false,
           "dsq": false,
@@ -4490,7 +4490,7 @@
               "newTyre": true
             },
             {
-              "stint": 7,
+              "stint": 4,
               "compound": "MEDIUM",
               "lapStart": 50,
               "lapEnd": 51,
@@ -4580,11 +4580,11 @@
   "meta": {
     "fia": {
       "eventName": "Japanese Grand Prix",
-      "done": "2026-10-30T17:23:23.631Z"
+      "done": "2026-10-30T17:41:47.812Z"
     },
     "final": {
       "weekend": "2026-10-30T17:23:25.064Z"
     },
-    "buildVersion": "2026-10-30.5"
+    "buildVersion": "2026-10-30.6"
   }
 }

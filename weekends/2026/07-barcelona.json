@@ -1,7 +1,7 @@
 {
   "header": "2026 Barcelona-Cataluyna GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T17:24:59.151Z",
+  "generatedAtUtc": "2026-10-30T17:42:12.815Z",
   "season": 2026,
   "round": 7,
   "meetingKey": 1287,
@@ -2863,9 +2863,9 @@
           "driverNumber": 23,
           "driverName": "Alexander ALBON",
           "teamName": "Williams",
-          "position": "P18",
-          "positionRank": 18,
-          "classifiedPosition": 18,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
           "dnf": false,
           "dns": false,
           "dsq": false,
@@ -2889,9 +2889,9 @@
           "driverNumber": 14,
           "driverName": "Fernando ALONSO",
           "teamName": "Aston Martin",
-          "position": "P19",
-          "positionRank": 19,
-          "classifiedPosition": 19,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
           "dnf": true,
           "dns": false,
           "dsq": false,
@@ -2915,9 +2915,9 @@
           "driverNumber": 27,
           "driverName": "Nico HULKENBERG",
           "teamName": "Audi",
-          "position": "P20",
-          "positionRank": 20,
-          "classifiedPosition": 20,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
           "dnf": true,
           "dns": false,
           "dsq": false,
@@ -2941,9 +2941,9 @@
           "driverNumber": 77,
           "driverName": "Valtteri BOTTAS",
           "teamName": "Cadillac",
-          "position": "P21",
-          "positionRank": 21,
-          "classifiedPosition": 21,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
           "dnf": true,
           "dns": false,
           "dsq": false,
@@ -2967,9 +2967,9 @@
           "driverNumber": 18,
           "driverName": "Lance STROLL",
           "teamName": "Aston Martin",
-          "position": "P22",
-          "positionRank": 22,
-          "classifiedPosition": 22,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
           "dnf": true,
           "dns": false,
           "dsq": false,
@@ -5109,11 +5109,11 @@
   "meta": {
     "fia": {
       "eventName": "Barcelona-Catalunya Grand Prix",
-      "done": "2026-10-30T17:24:57.351Z"
+      "done": "2026-10-30T17:42:11.830Z"
     },
     "final": {
       "weekend": "2026-10-30T17:24:59.151Z"
     },
-    "buildVersion": "2026-10-30.5"
+    "buildVersion": "2026-10-30.6"
   }
 }

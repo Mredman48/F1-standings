@@ -1,7 +1,7 @@
 {
   "header": "2026 Monaco GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T17:24:43.522Z",
+  "generatedAtUtc": "2026-10-30T17:42:08.013Z",
   "season": 2026,
   "round": 6,
   "meetingKey": 1286,
@@ -2843,9 +2843,9 @@
           "driverNumber": 16,
           "driverName": "Charles LECLERC",
           "teamName": "Ferrari",
-          "position": "P17",
-          "positionRank": 17,
-          "classifiedPosition": 17,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
           "dnf": true,
           "dns": false,
           "dsq": false,
@@ -2869,9 +2869,9 @@
           "driverNumber": 18,
           "driverName": "Lance STROLL",
           "teamName": "Aston Martin",
-          "position": "P18",
-          "positionRank": 18,
-          "classifiedPosition": 18,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
           "dnf": true,
           "dns": false,
           "dsq": false,
@@ -2895,9 +2895,9 @@
           "driverNumber": 1,
           "driverName": "Lando NORRIS",
           "teamName": "McLaren",
-          "position": "P19",
-          "positionRank": 19,
-          "classifiedPosition": 19,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
           "dnf": true,
           "dns": false,
           "dsq": false,
@@ -2921,9 +2921,9 @@
           "driverNumber": 87,
           "driverName": "Oliver BEARMAN",
           "teamName": "Haas F1 Team",
-          "position": "P20",
-          "positionRank": 20,
-          "classifiedPosition": 20,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
           "dnf": true,
           "dns": false,
           "dsq": false,
@@ -2947,9 +2947,9 @@
           "driverNumber": 77,
           "driverName": "Valtteri BOTTAS",
           "teamName": "Cadillac",
-          "position": "P21",
-          "positionRank": 21,
-          "classifiedPosition": 21,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
           "dnf": true,
           "dns": false,
           "dsq": false,
@@ -2973,9 +2973,9 @@
           "driverNumber": 3,
           "driverName": "Max VERSTAPPEN",
           "teamName": "Red Bull Racing",
-          "position": "P22",
-          "positionRank": 22,
-          "classifiedPosition": 22,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
           "dnf": true,
           "dns": false,
           "dsq": false,
@@ -4786,7 +4786,7 @@
               "newTyre": true
             },
             {
-              "stint": 5,
+              "stint": 3,
               "compound": "SOFT",
               "lapStart": 69,
               "lapEnd": 78,
@@ -4900,7 +4900,7 @@
               "newTyre": true
             },
             {
-              "stint": 4,
+              "stint": 2,
               "compound": "SOFT",
               "lapStart": 69,
               "lapEnd": 78,
@@ -4941,7 +4941,7 @@
               "newTyre": true
             },
             {
-              "stint": 5,
+              "stint": 3,
               "compound": "SOFT",
               "lapStart": 69,
               "lapEnd": 78,
@@ -5014,7 +5014,7 @@
               "newTyre": true
             },
             {
-              "stint": 5,
+              "stint": 3,
               "compound": "SOFT",
               "lapStart": 69,
               "lapEnd": 78,
@@ -5055,7 +5055,7 @@
               "newTyre": true
             },
             {
-              "stint": 4,
+              "stint": 3,
               "compound": "SOFT",
               "lapStart": 59,
               "lapEnd": 78,
@@ -5105,7 +5105,7 @@
               "newTyre": true
             },
             {
-              "stint": 5,
+              "stint": 4,
               "compound": "SOFT",
               "lapStart": 60,
               "lapEnd": 78,
@@ -5187,7 +5187,7 @@
               "newTyre": true
             },
             {
-              "stint": 6,
+              "stint": 3,
               "compound": "SOFT",
               "lapStart": 69,
               "lapEnd": 78,
@@ -5228,7 +5228,7 @@
               "newTyre": true
             },
             {
-              "stint": 5,
+              "stint": 3,
               "compound": "SOFT",
               "lapStart": 67,
               "lapEnd": 78,
@@ -5269,7 +5269,7 @@
               "newTyre": true
             },
             {
-              "stint": 4,
+              "stint": 3,
               "compound": "SOFT",
               "lapStart": 59,
               "lapEnd": 78,
@@ -5510,11 +5510,11 @@
   "meta": {
     "fia": {
       "eventName": "Monaco Grand Prix",
-      "done": "2026-10-30T17:24:39.477Z"
+      "done": "2026-10-30T17:42:06.919Z"
     },
     "final": {
       "weekend": "2026-10-30T17:24:43.522Z"
     },
-    "buildVersion": "2026-10-30.5"
+    "buildVersion": "2026-10-30.6"
   }
 }

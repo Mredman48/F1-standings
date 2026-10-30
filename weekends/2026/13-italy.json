@@ -1,7 +1,7 @@
 {
   "header": "2026 Italian GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T17:17:46.355Z",
+  "generatedAtUtc": "2026-10-30T17:42:44.927Z",
   "season": 2026,
   "round": 13,
   "meetingKey": 1293,
@@ -3065,9 +3065,9 @@
           "driverNumber": 18,
           "driverName": "Lance STROLL",
           "teamName": "Aston Martin",
-          "position": "P20",
-          "positionRank": 20,
-          "classifiedPosition": 20,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
           "dnf": true,
           "dns": false,
           "dsq": false,
@@ -3091,9 +3091,9 @@
           "driverNumber": 14,
           "driverName": "Fernando ALONSO",
           "teamName": "Aston Martin",
-          "position": "P21",
-          "positionRank": 21,
-          "classifiedPosition": 21,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
           "dnf": true,
           "dns": false,
           "dsq": false,
@@ -3117,9 +3117,9 @@
           "driverNumber": 16,
           "driverName": "Charles LECLERC",
           "teamName": "Ferrari",
-          "position": "P22",
-          "positionRank": 22,
-          "classifiedPosition": 22,
+          "position": "DNF",
+          "positionRank": null,
+          "classifiedPosition": null,
           "dnf": true,
           "dns": false,
           "dsq": false,
@@ -4641,11 +4641,11 @@
   "meta": {
     "fia": {
       "eventName": "Italian Grand Prix",
-      "done": "2026-10-30T17:17:44.506Z"
+      "done": "2026-10-30T17:42:44.460Z"
     },
     "final": {
       "weekend": "2026-10-30T17:17:46.354Z"
     },
-    "buildVersion": "2026-10-30.5"
+    "buildVersion": "2026-10-30.6"
   }
 }
