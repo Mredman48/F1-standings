@@ -145,8 +145,50 @@
     "constructor": "McLaren",
     "date": "2025-06-01"
   },
-  "tyreInfo": null,
-  "racePreview": null,
+  "tyreInfo": {
+    "round": 7,
+    "raceSlug": "barcelona",
+    "title": "Barcelona-Cataluyna GP",
+    "season": 2026,
+    "country": "Spain",
+    "flag": "es",
+    "raceStart": "2026-06-14T13:00:00.000Z",
+    "compounds": {
+      "soft": "C4",
+      "medium": "C3",
+      "hard": "C2"
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2026,
+      "pastYear": false,
+      "traction": 3,
+      "tyreStress": 5,
+      "asphaltGrip": 2,
+      "braking": 3,
+      "asphaltAbrasion": 4,
+      "lateral": 5,
+      "trackEvolution": 3
+    },
+    "updatedAt": "2026-10-09T04:20:25.914Z"
+  },
+  "racePreview": {
+    "slug": "five-in-a-row-can-anyone-stop-antonelli-before-barcelona-mq46isb6",
+    "round": 7,
+    "raceSlug": "barcelona-catalunya",
+    "title": "Barcelona-Cataluyna GP",
+    "season": "2026",
+    "country": "Spain",
+    "flag": "es",
+    "raceStart": "2026-06-14T13:00:00.000Z",
+    "publishedAt": "2026-06-07",
+    "headline": "Barcelona’s Flashpoint: Antonelli’s Dominance, Ferrari’s Fightback, and Verstappen Under Pressure",
+    "summary": "Kimi Antonelli arrives in Barcelona on a winning streak and leading the championship, with Mercedes setting the benchmark. Ferrari chase their first breakthrough win of the season, while Verstappen, McLaren, and the rest of the grid fight to stay in touch.",
+    "body": "The story of the 2026 season so far has been the rise of Kimi Antonelli, and Barcelona is his next test as the benchmark driver in Formula 1. After winning again in Monaco amid chaos and restarts, he now leads the championship by a significant margin over Lewis Hamilton, who continues to be Ferrari’s closest challenger but still lacks a breakthrough win in red. George Russell sits third in the standings after a mixed run of results, but Mercedes arrive in Spain as the clear reference point for race pace and execution.\n\nFerrari’s weekend revolves around whether they can finally convert raw speed into a victory fight against Mercedes. Charles Leclerc, now firmly established as one of the season’s most consistent podium threats, has been outpaced in the standings but remains Ferrari’s sharpest weapon at a circuit that rewards precision and confidence in high-speed direction changes. Hamilton, meanwhile, is under growing pressure to turn repeated second-place finishes into something more decisive, especially as Ferrari’s development push intensifies.\n\nFurther back, Red Bull’s position is becoming uncomfortable. Max Verstappen has struggled to match the consistency of the front three and enters Barcelona needing both a clean weekend and a strong upgrade step to stay relevant in the title fight. McLaren sit in a similar zone of tension, with Oscar Piastri and Lando Norris trading results but still lacking the outright pace to consistently challenge Mercedes and Ferrari at the front.\n\nBarcelona’s long, loaded corners will force everything to the surface — who has the best tyre management, who actually improved over the European upgrade cycle, and who is starting to fall behind. With the field converging and the championship already taking shape, this isn’t just another race weekend in Spain — it’s a clarity test for the entire grid.",
+    "picks": {
+      "winner": "Kimi Antonelli",
+      "wildcard": "Charles Leclerc"
+    }
+  },
   "startingGrids": [
     {
       "gridType": "race",
@@ -5105,7 +5147,26 @@
       ]
     }
   ],
-  "raceRecap": null,
+  "raceRecap": {
+    "slug": "hamilton-finally-wins-for-ferrari-as-antonelli-suffers-disas-mqdxrywa",
+    "round": 7,
+    "raceSlug": "barcelona",
+    "title": "Barcelona-Cataluyna GP",
+    "season": "2026",
+    "country": "Spain",
+    "flag": "es",
+    "raceStart": "2026-06-14T13:00:00.000Z",
+    "publishedAt": "2026-06-14",
+    "headline": "Hamilton Ends Mercedes' Streak With Stunning Barcelona Victory",
+    "summary": "Lewis Hamilton delivered Ferrari's first win of 2026 in Barcelona, capitalising on a three-stop strategy and a timely VSC to beat George Russell and Lando Norris while championship leader Kimi Antonelli retired late on.",
+    "body": "Hamilton had the pace all race — Ferrari's three-stop call had him pulling 1.3 seconds a lap faster than Russell in the middle stint, but the VSC triggered by Alonso's Aston Martin dying on lap 40 was what sealed it. He got a free stop, came out ahead of the Mercedes pair, and that was that. His 106th career win and first ever in red.\n\nThe championship story is the big one though. Antonelli had just cleared Russell for second with three laps to go when his power unit gave up — and Leclerc retired moments later with power steering failure. Ferrari took maximum points while Mercedes fell apart at exactly the wrong time. Antonelli's lead in the standings took a significant hit, and with Russell P2 and Norris P3, it's the first all-British podium since 1968. Mercedes will be asking serious questions about why they let Russell and Antonelli race each other the way they did — Toto Wolff called it a \"useless race\" afterwards. Austria can't come soon enough for Hamilton.",
+    "result": {
+      "p1": "HAMILTON",
+      "p2": "RUSSELL",
+      "p3": "NORRIS",
+      "driverOfDay": "HAMILTON"
+    }
+  },
   "meta": {
     "fia": {
       "eventName": "Barcelona-Catalunya Grand Prix",
