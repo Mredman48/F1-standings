@@ -1,7 +1,7 @@
 {
   "header": "2026 United States GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T16:41:20.896Z",
+  "generatedAtUtc": "2026-10-30T16:47:32.543Z",
   "season": 2026,
   "round": 18,
   "meetingKey": 1297,
@@ -211,8 +211,21 @@
           "qualifyingLapTime": 94.25,
           "qualifyingPosition": 3,
           "placesVsQualifying": 0,
-          "penalty": null,
-          "note": null
+          "penalty": {
+            "places": null,
+            "backOfGrid": false,
+            "pitLane": true,
+            "reason": "new power unit elements",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 6 - PU elements and changes made during Parc Ferme",
+                "url": "https://www.fia.com/system/files/decision-document/2026_singapore_grand_prix_-_infringement_-_car_6_-_pu_elements_and_changes_made_during_parc_ferme.pdf",
+                "decision": "Required to start the Race from the pit lane."
+              }
+            ]
+          },
+          "note": "Starts from the pit lane for new power unit elements"
         },
         {
           "position": 4,
@@ -456,11 +469,11 @@
           "position": 19,
           "positionLabel": "P19",
           "driverNumber": 11,
-          "driverName": null,
-          "nameAcronym": null,
-          "teamName": null,
-          "teamColour": null,
-          "headshotUrl": null,
+          "driverName": "Sergio PEREZ",
+          "nameAcronym": "PER",
+          "teamName": "Cadillac",
+          "teamColour": "#909090",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/S/SERPER01_Sergio_Perez/serper01.png.transform/1col/image.png",
           "qualifyingLapTime": 97.433,
           "qualifyingPosition": 21,
           "placesVsQualifying": -2,
@@ -3694,30 +3707,16 @@
         },
         {
           "driverNumber": 11,
-          "driverName": null,
-          "nameAcronym": null,
-          "teamName": null,
-          "teamColour": null,
-          "lap": 23,
-          "stopDuration": null,
-          "stopDurationLabel": null,
-          "laneDuration": 25.1,
-          "validStop": false,
-          "dateUtc": "2026-10-25T20:44:30.730000+00:00",
-          "stopSource": null
-        },
-        {
-          "driverNumber": null,
-          "driverName": "Perez",
-          "nameAcronym": null,
+          "driverName": "Sergio PEREZ",
+          "nameAcronym": "PER",
           "teamName": "Cadillac",
-          "teamColour": null,
+          "teamColour": "#909090",
           "lap": 23,
-          "laneDuration": null,
-          "dateUtc": null,
           "stopDuration": 3.37,
           "stopDurationLabel": "3.37s",
+          "laneDuration": 25.1,
           "validStop": true,
+          "dateUtc": "2026-10-25T20:44:30.730000+00:00",
           "stopSource": "dhl",
           "dhlRank": 25,
           "dhlPoints": 0
@@ -4674,10 +4673,10 @@
           "positionLabel": "P19",
           "status": null,
           "driverNumber": 11,
-          "driverName": null,
-          "nameAcronym": null,
-          "teamName": null,
-          "teamColour": null,
+          "driverName": "Sergio PEREZ",
+          "nameAcronym": "PER",
+          "teamName": "Cadillac",
+          "teamColour": "#909090",
           "lapsCompleted": 55,
           "stops": 1,
           "stints": [
