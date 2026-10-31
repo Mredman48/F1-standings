@@ -1,7 +1,7 @@
 {
   "header": "2026 Mexico City GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-31T17:52:17.405Z",
+  "generatedAtUtc": "2026-10-31T18:45:16.520Z",
   "season": 2026,
   "round": 19,
   "meetingKey": 1298,
@@ -1103,6 +1103,25 @@
           "meetingKey": 1298
         }
       ]
+    },
+    {
+      "eventType": "fp3",
+      "sessionKey": 11399,
+      "meetingKey": 1298,
+      "meetingName": "Mexico City Grand Prix",
+      "raceName": "Mexico City Grand Prix",
+      "sessionName": "Practice 3",
+      "officialName": "Practice 3",
+      "round": 19,
+      "dateStartUtc": "2026-10-31T17:30:00+00:00",
+      "dateEndUtc": "2026-10-31T18:30:00+00:00",
+      "date": "2026-10-31",
+      "circuit": "Mexico City",
+      "location": {
+        "locality": "Mexico City",
+        "country": "Mexico"
+      },
+      "drivers": []
     }
   ],
   "raceStrategy": [],
