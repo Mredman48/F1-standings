@@ -1,6 +1,6 @@
 {
   "header": "2026 F1 pit stops and tyre strategy",
-  "generatedAtUtc": "2026-11-01T22:04:12.351Z",
+  "generatedAtUtc": "2026-11-01T22:11:10.867Z",
   "season": 2026,
   "latest": {
     "sessionType": "race",
@@ -19,7 +19,7 @@
     "dateStartUtc": "2026-11-01T20:00:00+00:00",
     "dhlEventId": null,
     "stopTimesSource": null,
-    "totalLaps": 57,
+    "totalLaps": 61,
     "fastestStop": null,
     "fastestStops": [],
     "bestStopPerTeam": [],
@@ -855,6 +855,45 @@
         "laneDuration": 54.8,
         "validStop": false,
         "dateUtc": "2026-11-01T21:45:53.158000+00:00"
+      },
+      {
+        "driverNumber": 50,
+        "driverName": "Ryo HIRAKAWA",
+        "nameAcronym": "HIR",
+        "teamName": null,
+        "teamColour": null,
+        "lap": 59,
+        "stopDuration": null,
+        "stopDurationLabel": null,
+        "laneDuration": 22.9,
+        "validStop": false,
+        "dateUtc": "2026-11-01T22:07:04.069000+00:00"
+      },
+      {
+        "driverNumber": 27,
+        "driverName": "Nico HULKENBERG",
+        "nameAcronym": "HUL",
+        "teamName": "Audi",
+        "teamColour": "#F50537",
+        "lap": 59,
+        "stopDuration": null,
+        "stopDurationLabel": null,
+        "laneDuration": 34.5,
+        "validStop": false,
+        "dateUtc": "2026-11-01T22:07:08.498000+00:00"
+      },
+      {
+        "driverNumber": 11,
+        "driverName": "Sergio PEREZ",
+        "nameAcronym": "PER",
+        "teamName": "Cadillac",
+        "teamColour": "#909090",
+        "lap": 59,
+        "stopDuration": null,
+        "stopDurationLabel": null,
+        "laneDuration": 29.8,
+        "validStop": false,
+        "dateUtc": "2026-11-01T22:07:08.889000+00:00"
       }
     ],
     "drivers": [
@@ -867,7 +906,7 @@
         "nameAcronym": "LAW",
         "teamName": "Racing Bulls",
         "teamColour": "#6C98FF",
-        "lapsCompleted": 57,
+        "lapsCompleted": 61,
         "stops": 2,
         "stints": [
           {
@@ -892,8 +931,8 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 43,
-            "lapEnd": 57,
-            "laps": 15,
+            "lapEnd": 61,
+            "laps": 19,
             "tyreAgeAtStart": 0,
             "newTyre": true
           }
@@ -908,8 +947,8 @@
         "nameAcronym": "HIR",
         "teamName": null,
         "teamColour": null,
-        "lapsCompleted": 57,
-        "stops": 2,
+        "lapsCompleted": 61,
+        "stops": 3,
         "stints": [
           {
             "stint": 1,
@@ -933,9 +972,18 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 44,
-            "lapEnd": 57,
-            "laps": 14,
+            "lapEnd": 59,
+            "laps": 16,
             "tyreAgeAtStart": 3,
+            "newTyre": false
+          },
+          {
+            "stint": 6,
+            "compound": "SOFT",
+            "lapStart": 60,
+            "lapEnd": 61,
+            "laps": 2,
+            "tyreAgeAtStart": 8,
             "newTyre": false
           }
         ]
@@ -949,7 +997,7 @@
         "nameAcronym": "HAD",
         "teamName": "Red Bull Racing",
         "teamColour": "#4781D7",
-        "lapsCompleted": 57,
+        "lapsCompleted": 61,
         "stops": 3,
         "stints": [
           {
@@ -983,8 +1031,8 @@
             "stint": 4,
             "compound": "SOFT",
             "lapStart": 46,
-            "lapEnd": 57,
-            "laps": 12,
+            "lapEnd": 61,
+            "laps": 16,
             "tyreAgeAtStart": 3,
             "newTyre": false
           }
@@ -999,7 +1047,7 @@
         "nameAcronym": "GAS",
         "teamName": "Alpine",
         "teamColour": "#00A1E8",
-        "lapsCompleted": 57,
+        "lapsCompleted": 61,
         "stops": 2,
         "stints": [
           {
@@ -1024,8 +1072,8 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 45,
-            "lapEnd": 57,
-            "laps": 13,
+            "lapEnd": 61,
+            "laps": 17,
             "tyreAgeAtStart": 3,
             "newTyre": false
           }
@@ -1040,7 +1088,7 @@
         "nameAcronym": "ALB",
         "teamName": "Williams",
         "teamColour": "#1868DB",
-        "lapsCompleted": 57,
+        "lapsCompleted": 61,
         "stops": 3,
         "stints": [
           {
@@ -1074,8 +1122,8 @@
             "stint": 4,
             "compound": "SOFT",
             "lapStart": 45,
-            "lapEnd": 57,
-            "laps": 13,
+            "lapEnd": 61,
+            "laps": 17,
             "tyreAgeAtStart": 4,
             "newTyre": false
           }
@@ -1090,7 +1138,7 @@
         "nameAcronym": "PIA",
         "teamName": "McLaren",
         "teamColour": "#F47600",
-        "lapsCompleted": 57,
+        "lapsCompleted": 61,
         "stops": 2,
         "stints": [
           {
@@ -1115,8 +1163,8 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 45,
-            "lapEnd": 57,
-            "laps": 13,
+            "lapEnd": 61,
+            "laps": 17,
             "tyreAgeAtStart": 0,
             "newTyre": true
           }
@@ -1131,7 +1179,7 @@
         "nameAcronym": "LEC",
         "teamName": "Ferrari",
         "teamColour": "#ED1131",
-        "lapsCompleted": 57,
+        "lapsCompleted": 61,
         "stops": 2,
         "stints": [
           {
@@ -1156,8 +1204,8 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 46,
-            "lapEnd": 57,
-            "laps": 12,
+            "lapEnd": 61,
+            "laps": 16,
             "tyreAgeAtStart": 3,
             "newTyre": false
           }
@@ -1172,7 +1220,7 @@
         "nameAcronym": "VER",
         "teamName": "Red Bull Racing",
         "teamColour": "#4781D7",
-        "lapsCompleted": 57,
+        "lapsCompleted": 61,
         "stops": 2,
         "stints": [
           {
@@ -1197,8 +1245,8 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 46,
-            "lapEnd": 57,
-            "laps": 12,
+            "lapEnd": 61,
+            "laps": 16,
             "tyreAgeAtStart": 3,
             "newTyre": false
           }
@@ -1213,7 +1261,7 @@
         "nameAcronym": "HAM",
         "teamName": "Ferrari",
         "teamColour": "#ED1131",
-        "lapsCompleted": 57,
+        "lapsCompleted": 61,
         "stops": 2,
         "stints": [
           {
@@ -1238,8 +1286,8 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 45,
-            "lapEnd": 57,
-            "laps": 13,
+            "lapEnd": 61,
+            "laps": 17,
             "tyreAgeAtStart": 3,
             "newTyre": false
           }
@@ -1254,8 +1302,8 @@
         "nameAcronym": "PER",
         "teamName": "Cadillac",
         "teamColour": "#909090",
-        "lapsCompleted": 57,
-        "stops": 2,
+        "lapsCompleted": 61,
+        "stops": 3,
         "stints": [
           {
             "stint": 1,
@@ -1279,10 +1327,19 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 44,
-            "lapEnd": 57,
-            "laps": 14,
+            "lapEnd": 59,
+            "laps": 16,
             "tyreAgeAtStart": 0,
             "newTyre": true
+          },
+          {
+            "stint": 6,
+            "compound": "SOFT",
+            "lapStart": 60,
+            "lapEnd": 61,
+            "laps": 2,
+            "tyreAgeAtStart": 3,
+            "newTyre": false
           }
         ]
       },
@@ -1295,7 +1352,7 @@
         "nameAcronym": "HUL",
         "teamName": "Audi",
         "teamColour": "#F50537",
-        "lapsCompleted": 57,
+        "lapsCompleted": 61,
         "stops": 2,
         "stints": [
           {
@@ -1320,8 +1377,8 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 46,
-            "lapEnd": 57,
-            "laps": 12,
+            "lapEnd": 61,
+            "laps": 16,
             "tyreAgeAtStart": 3,
             "newTyre": false
           }
@@ -1336,7 +1393,7 @@
         "nameAcronym": "RUS",
         "teamName": "Mercedes",
         "teamColour": "#00D7B6",
-        "lapsCompleted": 57,
+        "lapsCompleted": 61,
         "stops": 2,
         "stints": [
           {
@@ -1361,8 +1418,8 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 45,
-            "lapEnd": 57,
-            "laps": 13,
+            "lapEnd": 61,
+            "laps": 17,
             "tyreAgeAtStart": 3,
             "newTyre": false
           }
@@ -1377,7 +1434,7 @@
         "nameAcronym": "COL",
         "teamName": "Alpine",
         "teamColour": "#00A1E8",
-        "lapsCompleted": 57,
+        "lapsCompleted": 61,
         "stops": 2,
         "stints": [
           {
@@ -1402,50 +1459,9 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 46,
-            "lapEnd": 57,
-            "laps": 12,
+            "lapEnd": 61,
+            "laps": 16,
             "tyreAgeAtStart": 2,
-            "newTyre": false
-          }
-        ]
-      },
-      {
-        "position": null,
-        "positionLabel": "NC",
-        "status": null,
-        "driverNumber": 41,
-        "driverName": "Arvid LINDBLAD",
-        "nameAcronym": "LIN",
-        "teamName": "Racing Bulls",
-        "teamColour": "#6C98FF",
-        "lapsCompleted": 57,
-        "stops": 2,
-        "stints": [
-          {
-            "stint": 1,
-            "compound": "SOFT",
-            "lapStart": 1,
-            "lapEnd": 35,
-            "laps": 35,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 2,
-            "compound": "MEDIUM",
-            "lapStart": 36,
-            "lapEnd": 45,
-            "laps": 10,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 3,
-            "compound": "SOFT",
-            "lapStart": 46,
-            "lapEnd": 57,
-            "laps": 12,
-            "tyreAgeAtStart": 3,
             "newTyre": false
           }
         ]
@@ -1459,7 +1475,7 @@
         "nameAcronym": "SAI",
         "teamName": "Williams",
         "teamColour": "#1868DB",
-        "lapsCompleted": 57,
+        "lapsCompleted": 61,
         "stops": 2,
         "stints": [
           {
@@ -1484,8 +1500,8 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 45,
-            "lapEnd": 57,
-            "laps": 13,
+            "lapEnd": 61,
+            "laps": 17,
             "tyreAgeAtStart": 0,
             "newTyre": true
           }
@@ -1500,7 +1516,7 @@
         "nameAcronym": "BOR",
         "teamName": "Audi",
         "teamColour": "#F50537",
-        "lapsCompleted": 57,
+        "lapsCompleted": 61,
         "stops": 2,
         "stints": [
           {
@@ -1525,8 +1541,8 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 46,
-            "lapEnd": 57,
-            "laps": 12,
+            "lapEnd": 61,
+            "laps": 16,
             "tyreAgeAtStart": 3,
             "newTyre": false
           }
@@ -1541,7 +1557,7 @@
         "nameAcronym": "NOR",
         "teamName": "McLaren",
         "teamColour": "#F47600",
-        "lapsCompleted": 57,
+        "lapsCompleted": 61,
         "stops": 2,
         "stints": [
           {
@@ -1566,8 +1582,8 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 46,
-            "lapEnd": 57,
-            "laps": 12,
+            "lapEnd": 61,
+            "laps": 16,
             "tyreAgeAtStart": 2,
             "newTyre": false
           }
@@ -1582,7 +1598,7 @@
         "nameAcronym": "ANT",
         "teamName": "Mercedes",
         "teamColour": "#00D7B6",
-        "lapsCompleted": 57,
+        "lapsCompleted": 61,
         "stops": 2,
         "stints": [
           {
@@ -1607,9 +1623,50 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 46,
-            "lapEnd": 57,
-            "laps": 12,
+            "lapEnd": 61,
+            "laps": 16,
             "tyreAgeAtStart": 4,
+            "newTyre": false
+          }
+        ]
+      },
+      {
+        "position": null,
+        "positionLabel": "NC",
+        "status": null,
+        "driverNumber": 41,
+        "driverName": "Arvid LINDBLAD",
+        "nameAcronym": "LIN",
+        "teamName": "Racing Bulls",
+        "teamColour": "#6C98FF",
+        "lapsCompleted": 58,
+        "stops": 2,
+        "stints": [
+          {
+            "stint": 1,
+            "compound": "SOFT",
+            "lapStart": 1,
+            "lapEnd": 35,
+            "laps": 35,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 2,
+            "compound": "MEDIUM",
+            "lapStart": 36,
+            "lapEnd": 45,
+            "laps": 10,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 3,
+            "compound": "SOFT",
+            "lapStart": 46,
+            "lapEnd": 58,
+            "laps": 13,
+            "tyreAgeAtStart": 3,
             "newTyre": false
           }
         ]
@@ -1770,7 +1827,7 @@
     "dateStartUtc": "2026-11-01T20:00:00+00:00",
     "dhlEventId": null,
     "stopTimesSource": null,
-    "totalLaps": 57,
+    "totalLaps": 61,
     "fastestStop": null,
     "fastestStops": [],
     "bestStopPerTeam": [],
@@ -2606,6 +2663,45 @@
         "laneDuration": 54.8,
         "validStop": false,
         "dateUtc": "2026-11-01T21:45:53.158000+00:00"
+      },
+      {
+        "driverNumber": 50,
+        "driverName": "Ryo HIRAKAWA",
+        "nameAcronym": "HIR",
+        "teamName": null,
+        "teamColour": null,
+        "lap": 59,
+        "stopDuration": null,
+        "stopDurationLabel": null,
+        "laneDuration": 22.9,
+        "validStop": false,
+        "dateUtc": "2026-11-01T22:07:04.069000+00:00"
+      },
+      {
+        "driverNumber": 27,
+        "driverName": "Nico HULKENBERG",
+        "nameAcronym": "HUL",
+        "teamName": "Audi",
+        "teamColour": "#F50537",
+        "lap": 59,
+        "stopDuration": null,
+        "stopDurationLabel": null,
+        "laneDuration": 34.5,
+        "validStop": false,
+        "dateUtc": "2026-11-01T22:07:08.498000+00:00"
+      },
+      {
+        "driverNumber": 11,
+        "driverName": "Sergio PEREZ",
+        "nameAcronym": "PER",
+        "teamName": "Cadillac",
+        "teamColour": "#909090",
+        "lap": 59,
+        "stopDuration": null,
+        "stopDurationLabel": null,
+        "laneDuration": 29.8,
+        "validStop": false,
+        "dateUtc": "2026-11-01T22:07:08.889000+00:00"
       }
     ],
     "drivers": [
@@ -2618,7 +2714,7 @@
         "nameAcronym": "LAW",
         "teamName": "Racing Bulls",
         "teamColour": "#6C98FF",
-        "lapsCompleted": 57,
+        "lapsCompleted": 61,
         "stops": 2,
         "stints": [
           {
@@ -2643,8 +2739,8 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 43,
-            "lapEnd": 57,
-            "laps": 15,
+            "lapEnd": 61,
+            "laps": 19,
             "tyreAgeAtStart": 0,
             "newTyre": true
           }
@@ -2659,8 +2755,8 @@
         "nameAcronym": "HIR",
         "teamName": null,
         "teamColour": null,
-        "lapsCompleted": 57,
-        "stops": 2,
+        "lapsCompleted": 61,
+        "stops": 3,
         "stints": [
           {
             "stint": 1,
@@ -2684,9 +2780,18 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 44,
-            "lapEnd": 57,
-            "laps": 14,
+            "lapEnd": 59,
+            "laps": 16,
             "tyreAgeAtStart": 3,
+            "newTyre": false
+          },
+          {
+            "stint": 6,
+            "compound": "SOFT",
+            "lapStart": 60,
+            "lapEnd": 61,
+            "laps": 2,
+            "tyreAgeAtStart": 8,
             "newTyre": false
           }
         ]
@@ -2700,7 +2805,7 @@
         "nameAcronym": "HAD",
         "teamName": "Red Bull Racing",
         "teamColour": "#4781D7",
-        "lapsCompleted": 57,
+        "lapsCompleted": 61,
         "stops": 3,
         "stints": [
           {
@@ -2734,8 +2839,8 @@
             "stint": 4,
             "compound": "SOFT",
             "lapStart": 46,
-            "lapEnd": 57,
-            "laps": 12,
+            "lapEnd": 61,
+            "laps": 16,
             "tyreAgeAtStart": 3,
             "newTyre": false
           }
@@ -2750,7 +2855,7 @@
         "nameAcronym": "GAS",
         "teamName": "Alpine",
         "teamColour": "#00A1E8",
-        "lapsCompleted": 57,
+        "lapsCompleted": 61,
         "stops": 2,
         "stints": [
           {
@@ -2775,8 +2880,8 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 45,
-            "lapEnd": 57,
-            "laps": 13,
+            "lapEnd": 61,
+            "laps": 17,
             "tyreAgeAtStart": 3,
             "newTyre": false
           }
@@ -2791,7 +2896,7 @@
         "nameAcronym": "ALB",
         "teamName": "Williams",
         "teamColour": "#1868DB",
-        "lapsCompleted": 57,
+        "lapsCompleted": 61,
         "stops": 3,
         "stints": [
           {
@@ -2825,8 +2930,8 @@
             "stint": 4,
             "compound": "SOFT",
             "lapStart": 45,
-            "lapEnd": 57,
-            "laps": 13,
+            "lapEnd": 61,
+            "laps": 17,
             "tyreAgeAtStart": 4,
             "newTyre": false
           }
@@ -2841,7 +2946,7 @@
         "nameAcronym": "PIA",
         "teamName": "McLaren",
         "teamColour": "#F47600",
-        "lapsCompleted": 57,
+        "lapsCompleted": 61,
         "stops": 2,
         "stints": [
           {
@@ -2866,8 +2971,8 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 45,
-            "lapEnd": 57,
-            "laps": 13,
+            "lapEnd": 61,
+            "laps": 17,
             "tyreAgeAtStart": 0,
             "newTyre": true
           }
@@ -2882,7 +2987,7 @@
         "nameAcronym": "LEC",
         "teamName": "Ferrari",
         "teamColour": "#ED1131",
-        "lapsCompleted": 57,
+        "lapsCompleted": 61,
         "stops": 2,
         "stints": [
           {
@@ -2907,8 +3012,8 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 46,
-            "lapEnd": 57,
-            "laps": 12,
+            "lapEnd": 61,
+            "laps": 16,
             "tyreAgeAtStart": 3,
             "newTyre": false
           }
@@ -2923,7 +3028,7 @@
         "nameAcronym": "VER",
         "teamName": "Red Bull Racing",
         "teamColour": "#4781D7",
-        "lapsCompleted": 57,
+        "lapsCompleted": 61,
         "stops": 2,
         "stints": [
           {
@@ -2948,8 +3053,8 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 46,
-            "lapEnd": 57,
-            "laps": 12,
+            "lapEnd": 61,
+            "laps": 16,
             "tyreAgeAtStart": 3,
             "newTyre": false
           }
@@ -2964,7 +3069,7 @@
         "nameAcronym": "HAM",
         "teamName": "Ferrari",
         "teamColour": "#ED1131",
-        "lapsCompleted": 57,
+        "lapsCompleted": 61,
         "stops": 2,
         "stints": [
           {
@@ -2989,8 +3094,8 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 45,
-            "lapEnd": 57,
-            "laps": 13,
+            "lapEnd": 61,
+            "laps": 17,
             "tyreAgeAtStart": 3,
             "newTyre": false
           }
@@ -3005,8 +3110,8 @@
         "nameAcronym": "PER",
         "teamName": "Cadillac",
         "teamColour": "#909090",
-        "lapsCompleted": 57,
-        "stops": 2,
+        "lapsCompleted": 61,
+        "stops": 3,
         "stints": [
           {
             "stint": 1,
@@ -3030,10 +3135,19 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 44,
-            "lapEnd": 57,
-            "laps": 14,
+            "lapEnd": 59,
+            "laps": 16,
             "tyreAgeAtStart": 0,
             "newTyre": true
+          },
+          {
+            "stint": 6,
+            "compound": "SOFT",
+            "lapStart": 60,
+            "lapEnd": 61,
+            "laps": 2,
+            "tyreAgeAtStart": 3,
+            "newTyre": false
           }
         ]
       },
@@ -3046,7 +3160,7 @@
         "nameAcronym": "HUL",
         "teamName": "Audi",
         "teamColour": "#F50537",
-        "lapsCompleted": 57,
+        "lapsCompleted": 61,
         "stops": 2,
         "stints": [
           {
@@ -3071,8 +3185,8 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 46,
-            "lapEnd": 57,
-            "laps": 12,
+            "lapEnd": 61,
+            "laps": 16,
             "tyreAgeAtStart": 3,
             "newTyre": false
           }
@@ -3087,7 +3201,7 @@
         "nameAcronym": "RUS",
         "teamName": "Mercedes",
         "teamColour": "#00D7B6",
-        "lapsCompleted": 57,
+        "lapsCompleted": 61,
         "stops": 2,
         "stints": [
           {
@@ -3112,8 +3226,8 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 45,
-            "lapEnd": 57,
-            "laps": 13,
+            "lapEnd": 61,
+            "laps": 17,
             "tyreAgeAtStart": 3,
             "newTyre": false
           }
@@ -3128,7 +3242,7 @@
         "nameAcronym": "COL",
         "teamName": "Alpine",
         "teamColour": "#00A1E8",
-        "lapsCompleted": 57,
+        "lapsCompleted": 61,
         "stops": 2,
         "stints": [
           {
@@ -3153,50 +3267,9 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 46,
-            "lapEnd": 57,
-            "laps": 12,
+            "lapEnd": 61,
+            "laps": 16,
             "tyreAgeAtStart": 2,
-            "newTyre": false
-          }
-        ]
-      },
-      {
-        "position": null,
-        "positionLabel": "NC",
-        "status": null,
-        "driverNumber": 41,
-        "driverName": "Arvid LINDBLAD",
-        "nameAcronym": "LIN",
-        "teamName": "Racing Bulls",
-        "teamColour": "#6C98FF",
-        "lapsCompleted": 57,
-        "stops": 2,
-        "stints": [
-          {
-            "stint": 1,
-            "compound": "SOFT",
-            "lapStart": 1,
-            "lapEnd": 35,
-            "laps": 35,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 2,
-            "compound": "MEDIUM",
-            "lapStart": 36,
-            "lapEnd": 45,
-            "laps": 10,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 3,
-            "compound": "SOFT",
-            "lapStart": 46,
-            "lapEnd": 57,
-            "laps": 12,
-            "tyreAgeAtStart": 3,
             "newTyre": false
           }
         ]
@@ -3210,7 +3283,7 @@
         "nameAcronym": "SAI",
         "teamName": "Williams",
         "teamColour": "#1868DB",
-        "lapsCompleted": 57,
+        "lapsCompleted": 61,
         "stops": 2,
         "stints": [
           {
@@ -3235,8 +3308,8 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 45,
-            "lapEnd": 57,
-            "laps": 13,
+            "lapEnd": 61,
+            "laps": 17,
             "tyreAgeAtStart": 0,
             "newTyre": true
           }
@@ -3251,7 +3324,7 @@
         "nameAcronym": "BOR",
         "teamName": "Audi",
         "teamColour": "#F50537",
-        "lapsCompleted": 57,
+        "lapsCompleted": 61,
         "stops": 2,
         "stints": [
           {
@@ -3276,8 +3349,8 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 46,
-            "lapEnd": 57,
-            "laps": 12,
+            "lapEnd": 61,
+            "laps": 16,
             "tyreAgeAtStart": 3,
             "newTyre": false
           }
@@ -3292,7 +3365,7 @@
         "nameAcronym": "NOR",
         "teamName": "McLaren",
         "teamColour": "#F47600",
-        "lapsCompleted": 57,
+        "lapsCompleted": 61,
         "stops": 2,
         "stints": [
           {
@@ -3317,8 +3390,8 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 46,
-            "lapEnd": 57,
-            "laps": 12,
+            "lapEnd": 61,
+            "laps": 16,
             "tyreAgeAtStart": 2,
             "newTyre": false
           }
@@ -3333,7 +3406,7 @@
         "nameAcronym": "ANT",
         "teamName": "Mercedes",
         "teamColour": "#00D7B6",
-        "lapsCompleted": 57,
+        "lapsCompleted": 61,
         "stops": 2,
         "stints": [
           {
@@ -3358,9 +3431,50 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 46,
-            "lapEnd": 57,
-            "laps": 12,
+            "lapEnd": 61,
+            "laps": 16,
             "tyreAgeAtStart": 4,
+            "newTyre": false
+          }
+        ]
+      },
+      {
+        "position": null,
+        "positionLabel": "NC",
+        "status": null,
+        "driverNumber": 41,
+        "driverName": "Arvid LINDBLAD",
+        "nameAcronym": "LIN",
+        "teamName": "Racing Bulls",
+        "teamColour": "#6C98FF",
+        "lapsCompleted": 58,
+        "stops": 2,
+        "stints": [
+          {
+            "stint": 1,
+            "compound": "SOFT",
+            "lapStart": 1,
+            "lapEnd": 35,
+            "laps": 35,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 2,
+            "compound": "MEDIUM",
+            "lapStart": 36,
+            "lapEnd": 45,
+            "laps": 10,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 3,
+            "compound": "SOFT",
+            "lapStart": 46,
+            "lapEnd": 58,
+            "laps": 13,
+            "tyreAgeAtStart": 3,
             "newTyre": false
           }
         ]
@@ -39997,7 +40111,7 @@
       "dateStartUtc": "2026-11-01T20:00:00+00:00",
       "dhlEventId": null,
       "stopTimesSource": null,
-      "totalLaps": 57,
+      "totalLaps": 61,
       "fastestStop": null,
       "fastestStops": [],
       "bestStopPerTeam": [],
@@ -40833,6 +40947,45 @@
           "laneDuration": 54.8,
           "validStop": false,
           "dateUtc": "2026-11-01T21:45:53.158000+00:00"
+        },
+        {
+          "driverNumber": 50,
+          "driverName": "Ryo HIRAKAWA",
+          "nameAcronym": "HIR",
+          "teamName": null,
+          "teamColour": null,
+          "lap": 59,
+          "stopDuration": null,
+          "stopDurationLabel": null,
+          "laneDuration": 22.9,
+          "validStop": false,
+          "dateUtc": "2026-11-01T22:07:04.069000+00:00"
+        },
+        {
+          "driverNumber": 27,
+          "driverName": "Nico HULKENBERG",
+          "nameAcronym": "HUL",
+          "teamName": "Audi",
+          "teamColour": "#F50537",
+          "lap": 59,
+          "stopDuration": null,
+          "stopDurationLabel": null,
+          "laneDuration": 34.5,
+          "validStop": false,
+          "dateUtc": "2026-11-01T22:07:08.498000+00:00"
+        },
+        {
+          "driverNumber": 11,
+          "driverName": "Sergio PEREZ",
+          "nameAcronym": "PER",
+          "teamName": "Cadillac",
+          "teamColour": "#909090",
+          "lap": 59,
+          "stopDuration": null,
+          "stopDurationLabel": null,
+          "laneDuration": 29.8,
+          "validStop": false,
+          "dateUtc": "2026-11-01T22:07:08.889000+00:00"
         }
       ],
       "drivers": [
@@ -40845,7 +40998,7 @@
           "nameAcronym": "LAW",
           "teamName": "Racing Bulls",
           "teamColour": "#6C98FF",
-          "lapsCompleted": 57,
+          "lapsCompleted": 61,
           "stops": 2,
           "stints": [
             {
@@ -40870,8 +41023,8 @@
               "stint": 3,
               "compound": "SOFT",
               "lapStart": 43,
-              "lapEnd": 57,
-              "laps": 15,
+              "lapEnd": 61,
+              "laps": 19,
               "tyreAgeAtStart": 0,
               "newTyre": true
             }
@@ -40886,8 +41039,8 @@
           "nameAcronym": "HIR",
           "teamName": null,
           "teamColour": null,
-          "lapsCompleted": 57,
-          "stops": 2,
+          "lapsCompleted": 61,
+          "stops": 3,
           "stints": [
             {
               "stint": 1,
@@ -40911,9 +41064,18 @@
               "stint": 3,
               "compound": "SOFT",
               "lapStart": 44,
-              "lapEnd": 57,
-              "laps": 14,
+              "lapEnd": 59,
+              "laps": 16,
               "tyreAgeAtStart": 3,
+              "newTyre": false
+            },
+            {
+              "stint": 6,
+              "compound": "SOFT",
+              "lapStart": 60,
+              "lapEnd": 61,
+              "laps": 2,
+              "tyreAgeAtStart": 8,
               "newTyre": false
             }
           ]
@@ -40927,7 +41089,7 @@
           "nameAcronym": "HAD",
           "teamName": "Red Bull Racing",
           "teamColour": "#4781D7",
-          "lapsCompleted": 57,
+          "lapsCompleted": 61,
           "stops": 3,
           "stints": [
             {
@@ -40961,8 +41123,8 @@
               "stint": 4,
               "compound": "SOFT",
               "lapStart": 46,
-              "lapEnd": 57,
-              "laps": 12,
+              "lapEnd": 61,
+              "laps": 16,
               "tyreAgeAtStart": 3,
               "newTyre": false
             }
@@ -40977,7 +41139,7 @@
           "nameAcronym": "GAS",
           "teamName": "Alpine",
           "teamColour": "#00A1E8",
-          "lapsCompleted": 57,
+          "lapsCompleted": 61,
           "stops": 2,
           "stints": [
             {
@@ -41002,8 +41164,8 @@
               "stint": 3,
               "compound": "SOFT",
               "lapStart": 45,
-              "lapEnd": 57,
-              "laps": 13,
+              "lapEnd": 61,
+              "laps": 17,
               "tyreAgeAtStart": 3,
               "newTyre": false
             }
@@ -41018,7 +41180,7 @@
           "nameAcronym": "ALB",
           "teamName": "Williams",
           "teamColour": "#1868DB",
-          "lapsCompleted": 57,
+          "lapsCompleted": 61,
           "stops": 3,
           "stints": [
             {
@@ -41052,8 +41214,8 @@
               "stint": 4,
               "compound": "SOFT",
               "lapStart": 45,
-              "lapEnd": 57,
-              "laps": 13,
+              "lapEnd": 61,
+              "laps": 17,
               "tyreAgeAtStart": 4,
               "newTyre": false
             }
@@ -41068,7 +41230,7 @@
           "nameAcronym": "PIA",
           "teamName": "McLaren",
           "teamColour": "#F47600",
-          "lapsCompleted": 57,
+          "lapsCompleted": 61,
           "stops": 2,
           "stints": [
             {
@@ -41093,8 +41255,8 @@
               "stint": 3,
               "compound": "SOFT",
               "lapStart": 45,
-              "lapEnd": 57,
-              "laps": 13,
+              "lapEnd": 61,
+              "laps": 17,
               "tyreAgeAtStart": 0,
               "newTyre": true
             }
@@ -41109,7 +41271,7 @@
           "nameAcronym": "LEC",
           "teamName": "Ferrari",
           "teamColour": "#ED1131",
-          "lapsCompleted": 57,
+          "lapsCompleted": 61,
           "stops": 2,
           "stints": [
             {
@@ -41134,8 +41296,8 @@
               "stint": 3,
               "compound": "SOFT",
               "lapStart": 46,
-              "lapEnd": 57,
-              "laps": 12,
+              "lapEnd": 61,
+              "laps": 16,
               "tyreAgeAtStart": 3,
               "newTyre": false
             }
@@ -41150,7 +41312,7 @@
           "nameAcronym": "VER",
           "teamName": "Red Bull Racing",
           "teamColour": "#4781D7",
-          "lapsCompleted": 57,
+          "lapsCompleted": 61,
           "stops": 2,
           "stints": [
             {
@@ -41175,8 +41337,8 @@
               "stint": 3,
               "compound": "SOFT",
               "lapStart": 46,
-              "lapEnd": 57,
-              "laps": 12,
+              "lapEnd": 61,
+              "laps": 16,
               "tyreAgeAtStart": 3,
               "newTyre": false
             }
@@ -41191,7 +41353,7 @@
           "nameAcronym": "HAM",
           "teamName": "Ferrari",
           "teamColour": "#ED1131",
-          "lapsCompleted": 57,
+          "lapsCompleted": 61,
           "stops": 2,
           "stints": [
             {
@@ -41216,8 +41378,8 @@
               "stint": 3,
               "compound": "SOFT",
               "lapStart": 45,
-              "lapEnd": 57,
-              "laps": 13,
+              "lapEnd": 61,
+              "laps": 17,
               "tyreAgeAtStart": 3,
               "newTyre": false
             }
@@ -41232,8 +41394,8 @@
           "nameAcronym": "PER",
           "teamName": "Cadillac",
           "teamColour": "#909090",
-          "lapsCompleted": 57,
-          "stops": 2,
+          "lapsCompleted": 61,
+          "stops": 3,
           "stints": [
             {
               "stint": 1,
@@ -41257,10 +41419,19 @@
               "stint": 3,
               "compound": "SOFT",
               "lapStart": 44,
-              "lapEnd": 57,
-              "laps": 14,
+              "lapEnd": 59,
+              "laps": 16,
               "tyreAgeAtStart": 0,
               "newTyre": true
+            },
+            {
+              "stint": 6,
+              "compound": "SOFT",
+              "lapStart": 60,
+              "lapEnd": 61,
+              "laps": 2,
+              "tyreAgeAtStart": 3,
+              "newTyre": false
             }
           ]
         },
@@ -41273,7 +41444,7 @@
           "nameAcronym": "HUL",
           "teamName": "Audi",
           "teamColour": "#F50537",
-          "lapsCompleted": 57,
+          "lapsCompleted": 61,
           "stops": 2,
           "stints": [
             {
@@ -41298,8 +41469,8 @@
               "stint": 3,
               "compound": "SOFT",
               "lapStart": 46,
-              "lapEnd": 57,
-              "laps": 12,
+              "lapEnd": 61,
+              "laps": 16,
               "tyreAgeAtStart": 3,
               "newTyre": false
             }
@@ -41314,7 +41485,7 @@
           "nameAcronym": "RUS",
           "teamName": "Mercedes",
           "teamColour": "#00D7B6",
-          "lapsCompleted": 57,
+          "lapsCompleted": 61,
           "stops": 2,
           "stints": [
             {
@@ -41339,8 +41510,8 @@
               "stint": 3,
               "compound": "SOFT",
               "lapStart": 45,
-              "lapEnd": 57,
-              "laps": 13,
+              "lapEnd": 61,
+              "laps": 17,
               "tyreAgeAtStart": 3,
               "newTyre": false
             }
@@ -41355,7 +41526,7 @@
           "nameAcronym": "COL",
           "teamName": "Alpine",
           "teamColour": "#00A1E8",
-          "lapsCompleted": 57,
+          "lapsCompleted": 61,
           "stops": 2,
           "stints": [
             {
@@ -41380,50 +41551,9 @@
               "stint": 3,
               "compound": "SOFT",
               "lapStart": 46,
-              "lapEnd": 57,
-              "laps": 12,
+              "lapEnd": 61,
+              "laps": 16,
               "tyreAgeAtStart": 2,
-              "newTyre": false
-            }
-          ]
-        },
-        {
-          "position": null,
-          "positionLabel": "NC",
-          "status": null,
-          "driverNumber": 41,
-          "driverName": "Arvid LINDBLAD",
-          "nameAcronym": "LIN",
-          "teamName": "Racing Bulls",
-          "teamColour": "#6C98FF",
-          "lapsCompleted": 57,
-          "stops": 2,
-          "stints": [
-            {
-              "stint": 1,
-              "compound": "SOFT",
-              "lapStart": 1,
-              "lapEnd": 35,
-              "laps": 35,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "MEDIUM",
-              "lapStart": 36,
-              "lapEnd": 45,
-              "laps": 10,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 3,
-              "compound": "SOFT",
-              "lapStart": 46,
-              "lapEnd": 57,
-              "laps": 12,
-              "tyreAgeAtStart": 3,
               "newTyre": false
             }
           ]
@@ -41437,7 +41567,7 @@
           "nameAcronym": "SAI",
           "teamName": "Williams",
           "teamColour": "#1868DB",
-          "lapsCompleted": 57,
+          "lapsCompleted": 61,
           "stops": 2,
           "stints": [
             {
@@ -41462,8 +41592,8 @@
               "stint": 3,
               "compound": "SOFT",
               "lapStart": 45,
-              "lapEnd": 57,
-              "laps": 13,
+              "lapEnd": 61,
+              "laps": 17,
               "tyreAgeAtStart": 0,
               "newTyre": true
             }
@@ -41478,7 +41608,7 @@
           "nameAcronym": "BOR",
           "teamName": "Audi",
           "teamColour": "#F50537",
-          "lapsCompleted": 57,
+          "lapsCompleted": 61,
           "stops": 2,
           "stints": [
             {
@@ -41503,8 +41633,8 @@
               "stint": 3,
               "compound": "SOFT",
               "lapStart": 46,
-              "lapEnd": 57,
-              "laps": 12,
+              "lapEnd": 61,
+              "laps": 16,
               "tyreAgeAtStart": 3,
               "newTyre": false
             }
@@ -41519,7 +41649,7 @@
           "nameAcronym": "NOR",
           "teamName": "McLaren",
           "teamColour": "#F47600",
-          "lapsCompleted": 57,
+          "lapsCompleted": 61,
           "stops": 2,
           "stints": [
             {
@@ -41544,8 +41674,8 @@
               "stint": 3,
               "compound": "SOFT",
               "lapStart": 46,
-              "lapEnd": 57,
-              "laps": 12,
+              "lapEnd": 61,
+              "laps": 16,
               "tyreAgeAtStart": 2,
               "newTyre": false
             }
@@ -41560,7 +41690,7 @@
           "nameAcronym": "ANT",
           "teamName": "Mercedes",
           "teamColour": "#00D7B6",
-          "lapsCompleted": 57,
+          "lapsCompleted": 61,
           "stops": 2,
           "stints": [
             {
@@ -41585,9 +41715,50 @@
               "stint": 3,
               "compound": "SOFT",
               "lapStart": 46,
-              "lapEnd": 57,
-              "laps": 12,
+              "lapEnd": 61,
+              "laps": 16,
               "tyreAgeAtStart": 4,
+              "newTyre": false
+            }
+          ]
+        },
+        {
+          "position": null,
+          "positionLabel": "NC",
+          "status": null,
+          "driverNumber": 41,
+          "driverName": "Arvid LINDBLAD",
+          "nameAcronym": "LIN",
+          "teamName": "Racing Bulls",
+          "teamColour": "#6C98FF",
+          "lapsCompleted": 58,
+          "stops": 2,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "SOFT",
+              "lapStart": 1,
+              "lapEnd": 35,
+              "laps": 35,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "MEDIUM",
+              "lapStart": 36,
+              "lapEnd": 45,
+              "laps": 10,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 3,
+              "compound": "SOFT",
+              "lapStart": 46,
+              "lapEnd": 58,
+              "laps": 13,
+              "tyreAgeAtStart": 3,
               "newTyre": false
             }
           ]
