@@ -2,7 +2,7 @@
   "header": "2026 race weekends",
   "schemaVersion": 1,
   "season": 2026,
-  "generatedAtUtc": "2026-11-01T22:49:29.401Z",
+  "generatedAtUtc": "2026-11-01T23:16:51.708Z",
   "count": 23,
   "nextRound": 20,
   "latestCompletedRound": 18,
@@ -233,7 +233,7 @@
       "weekendEndUtc": "2026-11-01T22:00:00.000Z",
       "file": "19-mexico.json",
       "url": "https://mredman48.github.io/F1-standings/weekends/2026/19-mexico.json",
-      "updatedAtUtc": "2026-11-01T22:49:29.372Z"
+      "updatedAtUtc": "2026-11-01T23:16:51.679Z"
     },
     {
       "round": 20,
@@ -644,6 +644,26 @@
       },
       "sessionKey": 11307,
       "meetingKey": 1287
+    },
+    "50": {
+      "driverNumber": 50,
+      "driverName": "Ryo HIRAKAWA",
+      "teamName": "Haas F1 Team",
+      "position": "P13",
+      "eventType": "race",
+      "meetingName": "Mexico City Grand Prix",
+      "raceName": "Mexico City Grand Prix",
+      "sessionName": "Race",
+      "round": 19,
+      "date": "2026-11-01",
+      "dateStartUtc": "2026-11-01T20:00:00+00:00",
+      "circuit": "Mexico City",
+      "location": {
+        "locality": "Mexico City",
+        "country": "Mexico"
+      },
+      "sessionKey": 11404,
+      "meetingKey": 1298
     },
     "55": {
       "driverNumber": 55,
