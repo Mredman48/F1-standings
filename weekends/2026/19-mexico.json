@@ -1,7 +1,7 @@
 {
   "header": "2026 Mexico City GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-31T22:57:13.218Z",
+  "generatedAtUtc": "2026-11-01T01:48:48.202Z",
   "season": 2026,
   "round": 19,
   "meetingKey": 1298,
@@ -192,7 +192,7 @@
   "startingGrids": [
     {
       "gridType": "race",
-      "provisional": true,
+      "provisional": false,
       "round": 19,
       "meetingKey": 1298,
       "meetingName": "Mexico City Grand Prix",
@@ -220,6 +220,7 @@
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LEWHAM01_Lewis_Hamilton/lewham01.png.transform/1col/image.png",
           "qualifyingLapTime": 76.514,
           "qualifyingPosition": 1,
+          "qualifyingDsq": false,
           "placesVsQualifying": 0,
           "penalty": null,
           "note": null
@@ -235,6 +236,7 @@
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/G/GEORUS01_George_Russell/georus01.png.transform/1col/image.png",
           "qualifyingLapTime": 76.523,
           "qualifyingPosition": 2,
+          "qualifyingDsq": false,
           "placesVsQualifying": 0,
           "penalty": null,
           "note": null
@@ -250,6 +252,7 @@
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/C/CHALEC01_Charles_Leclerc/chalec01.png.transform/1col/image.png",
           "qualifyingLapTime": 76.633,
           "qualifyingPosition": 3,
+          "qualifyingDsq": false,
           "placesVsQualifying": 0,
           "penalty": null,
           "note": null
@@ -257,6 +260,22 @@
         {
           "position": 4,
           "positionLabel": "P4",
+          "driverNumber": 12,
+          "driverName": "Kimi ANTONELLI",
+          "nameAcronym": "ANT",
+          "teamName": "Mercedes",
+          "teamColour": "#00D7B6",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/K/ANDANT01_Kimi_Antonelli/andant01.png.transform/1col/image.png",
+          "qualifyingLapTime": 76.707,
+          "qualifyingPosition": 5,
+          "qualifyingDsq": false,
+          "placesVsQualifying": -1,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 5,
+          "positionLabel": "P5",
           "driverNumber": 3,
           "driverName": "Max VERSTAPPEN",
           "nameAcronym": "VER",
@@ -265,7 +284,8 @@
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/M/MAXVER01_Max_Verstappen/maxver01.png.transform/1col/image.png",
           "qualifyingLapTime": 76.692,
           "qualifyingPosition": 4,
-          "placesVsQualifying": 0,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 1,
           "penalty": {
             "places": 1,
             "backOfGrid": false,
@@ -276,26 +296,12 @@
               {
                 "title": "Infringement - Car 3 - Turn 14 incident with Car 30",
                 "url": "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_infringement_-_car_3_-_turn_14_incident_with_car_30_.pdf",
-                "decision": "A drop of 1 grid position for the next race in which the driver competes. 1 penalty point is imposed, making a total of 1 for the 12 month period."
+                "decision": "A drop of one grid position for the next race in which the driver competes. One penalty point is imposed, making a total of 1 for the 12 month period.",
+                "session": "Free Practice 2"
               }
             ]
           },
           "note": "1 place grid penalty for turn 14 incident with car 30"
-        },
-        {
-          "position": 5,
-          "positionLabel": "P5",
-          "driverNumber": 12,
-          "driverName": "Kimi ANTONELLI",
-          "nameAcronym": "ANT",
-          "teamName": "Mercedes",
-          "teamColour": "#00D7B6",
-          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/K/ANDANT01_Kimi_Antonelli/andant01.png.transform/1col/image.png",
-          "qualifyingLapTime": 76.707,
-          "qualifyingPosition": 5,
-          "placesVsQualifying": 0,
-          "penalty": null,
-          "note": null
         },
         {
           "position": 6,
@@ -306,8 +312,9 @@
           "teamName": "McLaren",
           "teamColour": "#F47600",
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LANNOR01_Lando_Norris/lannor01.png.transform/1col/image.png",
-          "qualifyingLapTime": 76.728,
+          "qualifyingLapTime": 76.824,
           "qualifyingPosition": 6,
+          "qualifyingDsq": false,
           "placesVsQualifying": 0,
           "penalty": null,
           "note": null
@@ -323,6 +330,7 @@
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/I/ISAHAD01_Isack_Hadjar/isahad01.png.transform/1col/image.png",
           "qualifyingLapTime": 76.9,
           "qualifyingPosition": 7,
+          "qualifyingDsq": false,
           "placesVsQualifying": 0,
           "penalty": null,
           "note": null
@@ -330,34 +338,6 @@
         {
           "position": 8,
           "positionLabel": "P8",
-          "driverNumber": 30,
-          "driverName": "Liam LAWSON",
-          "nameAcronym": "LAW",
-          "teamName": "Racing Bulls",
-          "teamColour": "#6C98FF",
-          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LIALAW01_Liam_Lawson/lialaw01.png.transform/1col/image.png",
-          "qualifyingLapTime": 77.029,
-          "qualifyingPosition": 8,
-          "placesVsQualifying": 0,
-          "penalty": {
-            "places": 1,
-            "backOfGrid": false,
-            "pitLane": false,
-            "reason": "turn 14 incident with car 3",
-            "source": "fia",
-            "documents": [
-              {
-                "title": "Infringement - Car 30 - Turn 14 incident with Car 3",
-                "url": "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_infringement_-_car_30_-_turn_14_incident_with_car_3_.pdf",
-                "decision": "A drop of 1 grid position for the next race in which the driver competes. 1 penalty point is imposed, making a total of 4 for the 12 month period."
-              }
-            ]
-          },
-          "note": "1 place grid penalty for turn 14 incident with car 3"
-        },
-        {
-          "position": 9,
-          "positionLabel": "P9",
           "driverNumber": 41,
           "driverName": "Arvid LINDBLAD",
           "nameAcronym": "LIN",
@@ -365,27 +345,15 @@
           "teamColour": "#6C98FF",
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/A/ARVLIN01_Arvid_Lindblad/arvlin01.png.transform/1col/image.png",
           "qualifyingLapTime": 77.117,
-          "qualifyingPosition": 9,
+          "qualifyingPosition": 8,
+          "qualifyingDsq": false,
           "placesVsQualifying": 0,
-          "penalty": {
-            "places": 5,
-            "backOfGrid": false,
-            "pitLane": false,
-            "reason": "new power unit elements",
-            "source": "fia",
-            "documents": [
-              {
-                "title": "(Infringement - Car 41 - Changes to PU Element (Corrected)",
-                "url": "https://www.fia.com/system/files/decision-document/2026_united_states_grand_prix_-_infringement_-_car_41_-_changes_to_pu_element_corrected.pdf",
-                "decision": "Drop of 5 grid positions for the next Race in which the driver participates."
-              }
-            ]
-          },
-          "note": "5 place grid penalty for new power unit elements"
+          "penalty": null,
+          "note": null
         },
         {
-          "position": 10,
-          "positionLabel": "P10",
+          "position": 9,
+          "positionLabel": "P9",
           "driverNumber": 10,
           "driverName": "Pierre GASLY",
           "nameAcronym": "GAS",
@@ -393,14 +361,15 @@
           "teamColour": "#00A1E8",
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/P/PIEGAS01_Pierre_Gasly/piegas01.png.transform/1col/image.png",
           "qualifyingLapTime": 77.153,
-          "qualifyingPosition": 10,
+          "qualifyingPosition": 9,
+          "qualifyingDsq": false,
           "placesVsQualifying": 0,
           "penalty": null,
           "note": null
         },
         {
-          "position": 11,
-          "positionLabel": "P11",
+          "position": 10,
+          "positionLabel": "P10",
           "driverNumber": 27,
           "driverName": "Nico HULKENBERG",
           "nameAcronym": "HUL",
@@ -408,14 +377,15 @@
           "teamColour": "#F50537",
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/N/NICHUL01_Nico_Hulkenberg/nichul01.png.transform/1col/image.png",
           "qualifyingLapTime": 77.306,
-          "qualifyingPosition": 11,
+          "qualifyingPosition": 10,
+          "qualifyingDsq": false,
           "placesVsQualifying": 0,
           "penalty": null,
           "note": null
         },
         {
-          "position": 12,
-          "positionLabel": "P12",
+          "position": 11,
+          "positionLabel": "P11",
           "driverNumber": 43,
           "driverName": "Franco COLAPINTO",
           "nameAcronym": "COL",
@@ -423,14 +393,15 @@
           "teamColour": "#00A1E8",
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/F/FRACOL01_Franco_Colapinto/fracol01.png.transform/1col/image.png",
           "qualifyingLapTime": 77.64,
-          "qualifyingPosition": 12,
+          "qualifyingPosition": 11,
+          "qualifyingDsq": false,
           "placesVsQualifying": 0,
           "penalty": null,
           "note": null
         },
         {
-          "position": 13,
-          "positionLabel": "P13",
+          "position": 12,
+          "positionLabel": "P12",
           "driverNumber": 81,
           "driverName": "Oscar PIASTRI",
           "nameAcronym": "PIA",
@@ -438,14 +409,15 @@
           "teamColour": "#F47600",
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/O/OSCPIA01_Oscar_Piastri/oscpia01.png.transform/1col/image.png",
           "qualifyingLapTime": 77.646,
-          "qualifyingPosition": 13,
+          "qualifyingPosition": 12,
+          "qualifyingDsq": false,
           "placesVsQualifying": 0,
           "penalty": null,
           "note": null
         },
         {
-          "position": 14,
-          "positionLabel": "P14",
+          "position": 13,
+          "positionLabel": "P13",
           "driverNumber": 5,
           "driverName": "Gabriel BORTOLETO",
           "nameAcronym": "BOR",
@@ -453,14 +425,15 @@
           "teamColour": "#F50537",
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/G/GABBOR01_Gabriel_Bortoleto/gabbor01.png.transform/1col/image.png",
           "qualifyingLapTime": 77.68,
-          "qualifyingPosition": 14,
+          "qualifyingPosition": 13,
+          "qualifyingDsq": false,
           "placesVsQualifying": 0,
           "penalty": null,
           "note": null
         },
         {
-          "position": 15,
-          "positionLabel": "P15",
+          "position": 14,
+          "positionLabel": "P14",
           "driverNumber": 87,
           "driverName": "Oliver BEARMAN",
           "nameAcronym": "BEA",
@@ -468,7 +441,24 @@
           "teamColour": "#9C9FA2",
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/O/OLIBEA01_Oliver_Bearman/olibea01.png.transform/1col/image.png",
           "qualifyingLapTime": 78.083,
+          "qualifyingPosition": 14,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 15,
+          "positionLabel": "P15",
+          "driverNumber": 55,
+          "driverName": "Carlos SAINZ",
+          "nameAcronym": "SAI",
+          "teamName": "Williams",
+          "teamColour": "#1868DB",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/C/CARSAI01_Carlos_Sainz/carsai01.png.transform/1col/image.png",
+          "qualifyingLapTime": 78.885,
           "qualifyingPosition": 15,
+          "qualifyingDsq": false,
           "placesVsQualifying": 0,
           "penalty": null,
           "note": null
@@ -476,21 +466,6 @@
         {
           "position": 16,
           "positionLabel": "P16",
-          "driverNumber": 55,
-          "driverName": "Carlos SAINZ",
-          "nameAcronym": "SAI",
-          "teamName": "Williams",
-          "teamColour": "#1868DB",
-          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/C/CARSAI01_Carlos_Sainz/carsai01.png.transform/1col/image.png",
-          "qualifyingLapTime": 78.521,
-          "qualifyingPosition": 16,
-          "placesVsQualifying": 0,
-          "penalty": null,
-          "note": null
-        },
-        {
-          "position": 17,
-          "positionLabel": "P17",
           "driverNumber": 23,
           "driverName": "Alexander ALBON",
           "nameAcronym": "ALB",
@@ -498,14 +473,15 @@
           "teamColour": "#1868DB",
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/A/ALEALB01_Alexander_Albon/alealb01.png.transform/1col/image.png",
           "qualifyingLapTime": 78.63,
-          "qualifyingPosition": 17,
+          "qualifyingPosition": 16,
+          "qualifyingDsq": false,
           "placesVsQualifying": 0,
           "penalty": null,
           "note": null
         },
         {
-          "position": 18,
-          "positionLabel": "P18",
+          "position": 17,
+          "positionLabel": "P17",
           "driverNumber": 14,
           "driverName": "Fernando ALONSO",
           "nameAcronym": "ALO",
@@ -513,14 +489,15 @@
           "teamColour": "#229971",
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/F/FERALO01_Fernando_Alonso/feralo01.png.transform/1col/image.png",
           "qualifyingLapTime": 78.908,
-          "qualifyingPosition": 18,
+          "qualifyingPosition": 17,
+          "qualifyingDsq": false,
           "placesVsQualifying": 0,
           "penalty": null,
           "note": null
         },
         {
-          "position": 19,
-          "positionLabel": "P19",
+          "position": 18,
+          "positionLabel": "P18",
           "driverNumber": 50,
           "driverName": "Ryo HIRAKAWA",
           "nameAcronym": "HIR",
@@ -528,14 +505,15 @@
           "teamColour": "#9C9FA2",
           "headshotUrl": null,
           "qualifyingLapTime": 78.958,
-          "qualifyingPosition": 19,
+          "qualifyingPosition": 18,
+          "qualifyingDsq": false,
           "placesVsQualifying": 0,
           "penalty": null,
           "note": null
         },
         {
-          "position": 20,
-          "positionLabel": "P20",
+          "position": 19,
+          "positionLabel": "P19",
           "driverNumber": 18,
           "driverName": "Lance STROLL",
           "nameAcronym": "STR",
@@ -543,14 +521,15 @@
           "teamColour": "#229971",
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LANSTR01_Lance_Stroll/lanstr01.png.transform/1col/image.png",
           "qualifyingLapTime": 79.072,
-          "qualifyingPosition": 20,
+          "qualifyingPosition": 19,
+          "qualifyingDsq": false,
           "placesVsQualifying": 0,
           "penalty": null,
           "note": null
         },
         {
-          "position": 21,
-          "positionLabel": "P21",
+          "position": 20,
+          "positionLabel": "P20",
           "driverNumber": 11,
           "driverName": "Sergio PEREZ",
           "nameAcronym": "PER",
@@ -558,14 +537,15 @@
           "teamColour": "#909090",
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/S/SERPER01_Sergio_Perez/serper01.png.transform/1col/image.png",
           "qualifyingLapTime": 79.105,
-          "qualifyingPosition": 21,
+          "qualifyingPosition": 20,
+          "qualifyingDsq": false,
           "placesVsQualifying": 0,
           "penalty": null,
           "note": null
         },
         {
-          "position": 22,
-          "positionLabel": "P22",
+          "position": 21,
+          "positionLabel": "P21",
           "driverNumber": 77,
           "driverName": "Valtteri BOTTAS",
           "nameAcronym": "BOT",
@@ -573,7 +553,8 @@
           "teamColour": "#909090",
           "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/V/VALBOT01_Valtteri_Bottas/valbot01.png.transform/1col/image.png",
           "qualifyingLapTime": 79.852,
-          "qualifyingPosition": 22,
+          "qualifyingPosition": 21,
+          "qualifyingDsq": false,
           "placesVsQualifying": 0,
           "penalty": {
             "places": 50,
@@ -585,14 +566,83 @@
               {
                 "title": "Infringement - Car 77 - PU elements",
                 "url": "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_infringement_-_car_77_-_pu_elements.pdf",
-                "decision": "Drop of 50 grid positions for the next Race in which the driver participates."
+                "decision": "Drop of 50 grid positions for the next Race in which the driver participates.",
+                "session": "Free Practice 1"
               }
             ]
           },
           "note": "50 place grid penalty for new power unit elements"
+        },
+        {
+          "position": 22,
+          "positionLabel": "P22",
+          "driverNumber": 30,
+          "driverName": "Liam LAWSON",
+          "nameAcronym": "LAW",
+          "teamName": "Racing Bulls",
+          "teamColour": "#6C98FF",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LIALAW01_Liam_Lawson/lialaw01.png.transform/1col/image.png",
+          "qualifyingLapTime": 77.029,
+          "qualifyingPosition": null,
+          "qualifyingDsq": false,
+          "placesVsQualifying": null,
+          "penalty": {
+            "places": 1,
+            "backOfGrid": true,
+            "pitLane": false,
+            "reason": "turn 14 incident with car 3, disqualification from qualifying",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 30 - Turn 14 incident with Car 3",
+                "url": "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_infringement_-_car_30_-_turn_14_incident_with_car_3_.pdf",
+                "decision": "A drop of one grid position for the next race in which the driver competes. One penalty point is imposed, making a total of 4 for the 12 month period.",
+                "session": "Free Practice 2"
+              },
+              {
+                "title": "Infringement - Car 30 - Technical nonconformity",
+                "url": "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_infringement_-_car_30_-_technical_nonconformity.pdf",
+                "decision": "Car 30 is disqualified from the results of the Provisional Qualifying Classifications.",
+                "session": "Qualifying"
+              }
+            ]
+          },
+          "note": "1 place grid penalty for turn 14 incident with car 3 and disqualification from qualifying (starts from the back)"
         }
       ],
-      "gridPenaltiesChecked": true
+      "gridPenaltiesChecked": true,
+      "penalties": [
+        {
+          "driverNumber": 3,
+          "driverName": "Max VERSTAPPEN",
+          "nameAcronym": "VER",
+          "qualifyingPosition": 4,
+          "gridPosition": 5,
+          "positionLabel": "P5",
+          "note": "1 place grid penalty for turn 14 incident with car 30",
+          "source": "fia"
+        },
+        {
+          "driverNumber": 77,
+          "driverName": "Valtteri BOTTAS",
+          "nameAcronym": "BOT",
+          "qualifyingPosition": 21,
+          "gridPosition": 21,
+          "positionLabel": "P21",
+          "note": "50 place grid penalty for new power unit elements",
+          "source": "fia"
+        },
+        {
+          "driverNumber": 30,
+          "driverName": "Liam LAWSON",
+          "nameAcronym": "LAW",
+          "qualifyingPosition": null,
+          "gridPosition": 22,
+          "positionLabel": "P22",
+          "note": "1 place grid penalty for turn 14 incident with car 3 and disqualification from qualifying (starts from the back)",
+          "source": "fia"
+        }
+      ]
     }
   ],
   "penaltyDocs": {
@@ -602,40 +652,61 @@
       "places": 50,
       "backOfGrid": false,
       "pitLane": false,
+      "disqualifiedFromQualifying": false,
       "appliesTo": "race",
+      "session": "Free Practice 1",
       "reason": "new power unit elements",
       "decision": "Drop of 50 grid positions for the next Race in which the driver participates.",
       "title": "Infringement - Car 77 - PU elements",
       "url": "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_infringement_-_car_77_-_pu_elements.pdf",
-      "publishedAt": "2026-10-30T19:52:00.000Z"
+      "publishedAt": "2026-10-30T19:52:00.000Z",
+      "parserVersion": 10
     },
     "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_infringement_-_car_98_-_released_in_an_unsafe_condition.pdf": {
       "none": true,
+      "parserVersion": 10,
+      "decision": "The competitor (Audi Revolut F1 Team) is fined €7,500.",
+      "session": "Free Practice 1",
       "title": "Infringement - Car 98 - Released in an unsafe condition",
       "publishedAt": "2026-10-30T22:38:00.000Z"
     },
     "https://www.fia.com/system/files/decision-document/2026_united_states_grand_prix_-_infringement_-_car_63_-_leaving_the_track_and_gaining_an_advantage.pdf": {
       "none": true,
+      "parserVersion": 10,
+      "decision": "5 second time penalty.",
+      "session": "Race",
       "title": "Infringement - Car 63 - Leaving the track and gaining an advantage",
       "publishedAt": "2026-10-25T21:59:00.000Z"
     },
     "https://www.fia.com/system/files/decision-document/2026_united_states_grand_prix_-_decision_-_car_5_-_alleged_leaving_the_track_and_gaining_and_advantage.pdf": {
       "none": true,
+      "parserVersion": 10,
+      "decision": "No further action.",
+      "session": "Race",
       "title": "Decision - Car 5 - Alleged leaving the track and gaining and advantage",
       "publishedAt": "2026-10-25T21:59:00.000Z"
     },
     "https://www.fia.com/system/files/decision-document/2026_united_states_grand_prix_-_infringement_-_car_6_-_driving_erratically.pdf": {
       "none": true,
+      "parserVersion": 10,
+      "decision": "Driver: Formal warning.",
+      "session": "Free Practice 3",
       "title": "Infringement - Car 6 - Driving erratically",
       "publishedAt": "2026-10-24T21:49:00.000Z"
     },
     "https://www.fia.com/system/files/decision-document/2026_united_states_grand_prix_-_infringement_-_car_27_-_alleged_pit_lane_incident.pdf": {
       "none": true,
+      "parserVersion": 10,
+      "decision": "No further action.",
+      "session": "Free Practice 3",
       "title": "Infringement - Car 27 - Alleged Pit Lane Incident",
       "publishedAt": "2026-10-24T21:40:00.000Z"
     },
     "https://www.fia.com/system/files/decision-document/2026_united_states_grand_prix_-_decision_-_car_63_-_alleged_forcing_another_driver_off_the_track.pdf": {
       "none": true,
+      "parserVersion": 10,
+      "decision": "No further action.",
+      "session": "Free Practice 2",
       "title": "Decision - Car 63 - Alleged forcing another driver off the track",
       "publishedAt": "2026-10-23T23:26:00.000Z"
     },
@@ -645,12 +716,15 @@
       "places": 1,
       "backOfGrid": false,
       "pitLane": false,
+      "disqualifiedFromQualifying": false,
       "appliesTo": "race",
+      "session": "Free Practice 2",
       "reason": "turn 14 incident with car 3",
-      "decision": "A drop of 1 grid position for the next race in which the driver competes. 1 penalty point is imposed, making a total of 4 for the 12 month period.",
+      "decision": "A drop of one grid position for the next race in which the driver competes. One penalty point is imposed, making a total of 4 for the 12 month period.",
       "title": "Infringement - Car 30 - Turn 14 incident with Car 3",
       "url": "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_infringement_-_car_30_-_turn_14_incident_with_car_3_.pdf",
-      "publishedAt": "2026-10-31T02:53:00.000Z"
+      "publishedAt": "2026-10-31T02:53:00.000Z",
+      "parserVersion": 10
     },
     "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_infringement_-_car_3_-_turn_14_incident_with_car_30_.pdf": {
       "driverNumber": 3,
@@ -658,42 +732,183 @@
       "places": 1,
       "backOfGrid": false,
       "pitLane": false,
+      "disqualifiedFromQualifying": false,
       "appliesTo": "race",
+      "session": "Free Practice 2",
       "reason": "turn 14 incident with car 30",
-      "decision": "A drop of 1 grid position for the next race in which the driver competes. 1 penalty point is imposed, making a total of 1 for the 12 month period.",
+      "decision": "A drop of one grid position for the next race in which the driver competes. One penalty point is imposed, making a total of 1 for the 12 month period.",
       "title": "Infringement - Car 3 - Turn 14 incident with Car 30",
       "url": "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_infringement_-_car_3_-_turn_14_incident_with_car_30_.pdf",
-      "publishedAt": "2026-10-31T02:52:00.000Z"
+      "publishedAt": "2026-10-31T02:52:00.000Z",
+      "parserVersion": 10
     },
     "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_infringement_-_car_5_-_covering_components.pdf": {
       "none": true,
+      "parserVersion": 10,
+      "decision": "The competitor (Audi Revolut F1 Team) is fined €5,000.",
+      "session": "Free Practice 2",
       "title": "Infringement - Car 5 - Covering components",
       "publishedAt": "2026-10-31T02:50:00.000Z"
     },
     "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_infringement_-_car_6_-_misconduct.pdf": {
       "none": true,
+      "parserVersion": 10,
+      "decision": "Driver: Formal warning.",
+      "session": "Free Practice 1",
       "title": "Infringement - Car 6 - Misconduct",
       "publishedAt": "2026-10-31T16:51:00.000Z"
     },
     "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_mgu-k_infringement_car_30.pdf": {
       "none": true,
+      "parserVersion": 10,
+      "decision": null,
+      "session": null,
       "title": "MGU-K Infringement, Car 30",
       "publishedAt": "2026-10-31T22:54:00.000Z"
     },
     "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_infringement_-_car_6_-_crossing_the_white_line_at_pit_entry.pdf": {
       "none": true,
+      "parserVersion": 10,
+      "decision": "Driver: Reprimand (Driving). This is the driver’s 1st reprimand of the season.",
+      "session": "Qualifying",
       "title": "Infringement - Car 6 - Crossing the white line at pit entry",
       "publishedAt": "2026-10-31T22:53:00.000Z"
     },
     "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_infringement_-_car_55_-_failed_to_follow_race_directors_instructions_-_turn_11.pdf": {
       "none": true,
+      "parserVersion": 10,
+      "decision": "Driver: Warning.",
+      "session": "Qualifying",
       "title": "Infringement - Car 55 - Failed to follow Race Directors instructions - Turn 11",
       "publishedAt": "2026-10-31T22:52:00.000Z"
     },
     "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_infringement_-_car_14_-_failed_to_replace_the_steering_wheel_after_leaving_the_car.pdf": {
       "none": true,
+      "parserVersion": 10,
+      "decision": "Driver: Reprimand (Driving). This is the driver’s 1st reprimand of the season.",
+      "session": "Qualifying",
       "title": "Infringement - Car 14 - Failed to replace the steering wheel after leaving the car",
       "publishedAt": "2026-10-31T21:47:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_united_states_grand_prix_-_infringement_-_car_87_-_causing_a_collision.pdf": {
+      "none": true,
+      "parserVersion": 10,
+      "decision": "10 second time penalty.",
+      "session": "Race",
+      "title": "Infringement - Car 87 - Causing a Collision",
+      "publishedAt": "2026-10-25T21:29:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_united_states_grand_prix_-_infringement_-_car_18_-_changes_made_during_parc_ferme.pdf": {
+      "driverNumber": 18,
+      "driverName": "Lance Stroll",
+      "places": null,
+      "backOfGrid": false,
+      "pitLane": true,
+      "disqualifiedFromQualifying": false,
+      "appliesTo": "race",
+      "session": "Qualifying",
+      "reason": "parc fermé changes",
+      "decision": "Required to start the Race from the pit lane.",
+      "title": "Infringement - Car 18 - Changes made during Parc Ferme",
+      "url": "https://www.fia.com/system/files/decision-document/2026_united_states_grand_prix_-_infringement_-_car_18_-_changes_made_during_parc_ferme.pdf",
+      "publishedAt": "2026-10-25T17:48:00.000Z",
+      "parserVersion": 10
+    },
+    "https://www.fia.com/system/files/decision-document/2026_united_states_grand_prix_-_infringement_-_car_5_-_impeding_of_car_44.pdf": {
+      "none": true,
+      "parserVersion": 10,
+      "decision": "Driver: Warning.",
+      "session": "Free Practice 3",
+      "title": "Infringement - Car 5 - Impeding of Car 44",
+      "publishedAt": "2026-10-24T22:03:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_united_states_grand_prix_-_infringement_-_car_5_-_additional_changes_to_pu_elements.pdf": {
+      "driverNumber": 5,
+      "driverName": "Gabriel Bortoleto",
+      "places": 60,
+      "backOfGrid": false,
+      "pitLane": false,
+      "disqualifiedFromQualifying": false,
+      "appliesTo": "race",
+      "session": "Free Practice 3",
+      "reason": "new power unit elements",
+      "decision": "Drop of 60 grid positions for the next Race in which the driver participates.",
+      "title": "Infringement - Car 5 - Additional changes to PU elements",
+      "url": "https://www.fia.com/system/files/decision-document/2026_united_states_grand_prix_-_infringement_-_car_5_-_additional_changes_to_pu_elements.pdf",
+      "publishedAt": "2026-10-24T21:34:00.000Z",
+      "parserVersion": 10
+    },
+    "https://www.fia.com/system/files/decision-document/2026_united_states_grand_prix_-_infringement_-_car_41_-_changes_to_pu_element_corrected.pdf": {
+      "driverNumber": 41,
+      "driverName": "Arvid Lindblad",
+      "places": 5,
+      "backOfGrid": false,
+      "pitLane": false,
+      "disqualifiedFromQualifying": false,
+      "appliesTo": "race",
+      "session": "Free Practice 1",
+      "reason": "new power unit elements",
+      "decision": "Drop of 5 grid positions for the next Race in which the driver participates.",
+      "title": "(Infringement - Car 41 - Changes to PU Element (Corrected)",
+      "url": "https://www.fia.com/system/files/decision-document/2026_united_states_grand_prix_-_infringement_-_car_41_-_changes_to_pu_element_corrected.pdf",
+      "publishedAt": "2026-10-26T10:30:00.000Z",
+      "parserVersion": 10
+    },
+    "https://www.fia.com/system/files/decision-document/2026_united_states_grand_prix_-_infringement_-_car_5_-_pu_elements.pdf": {
+      "driverNumber": 5,
+      "driverName": "Gabriel Bortoleto",
+      "places": 20,
+      "backOfGrid": false,
+      "pitLane": false,
+      "disqualifiedFromQualifying": false,
+      "appliesTo": "race",
+      "session": null,
+      "reason": "new power unit elements",
+      "decision": "Drop of 20 grid positions for the next Race in which the driver participates.",
+      "title": "Infringement - Car 5 - PU Elements",
+      "url": "https://www.fia.com/system/files/decision-document/2026_united_states_grand_prix_-_infringement_-_car_5_-_pu_elements.pdf",
+      "publishedAt": "2026-10-23T19:52:00.000Z",
+      "parserVersion": 10
+    },
+    "https://www.fia.com/system/files/decision-document/2026_united_states_grand_prix_-_infringement_-_car_43_-_pu_element.pdf": {
+      "driverNumber": 43,
+      "driverName": "Franco Colapinto",
+      "places": 10,
+      "backOfGrid": false,
+      "pitLane": false,
+      "disqualifiedFromQualifying": false,
+      "appliesTo": "race",
+      "session": null,
+      "reason": "new power unit elements",
+      "decision": "Drop of 10 grid positions for the next Race in which the driver participates.",
+      "title": "Infringement - Car 43 - PU Element",
+      "url": "https://www.fia.com/system/files/decision-document/2026_united_states_grand_prix_-_infringement_-_car_43_-_pu_element.pdf",
+      "publishedAt": "2026-10-23T19:44:00.000Z",
+      "parserVersion": 10
+    },
+    "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_decision_-_car_30_-_permission_to_start.pdf": {
+      "none": true,
+      "parserVersion": 10,
+      "decision": null,
+      "session": null,
+      "title": "Decision - Car 30 - Permission to start",
+      "publishedAt": "2026-11-01T01:06:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_infringement_-_car_30_-_technical_nonconformity.pdf": {
+      "driverNumber": 30,
+      "driverName": "Liam Lawson",
+      "places": null,
+      "backOfGrid": true,
+      "pitLane": false,
+      "disqualifiedFromQualifying": true,
+      "appliesTo": "race",
+      "session": "Qualifying",
+      "reason": "disqualification from qualifying",
+      "decision": "Car 30 is disqualified from the results of the Provisional Qualifying Classifications.",
+      "title": "Infringement - Car 30 - Technical nonconformity",
+      "url": "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_infringement_-_car_30_-_technical_nonconformity.pdf",
+      "publishedAt": "2026-11-01T01:06:00.000Z",
+      "parserVersion": 10
     }
   },
   "sessionResults": [
@@ -2153,39 +2368,12 @@
           "meetingKey": 1298
         },
         {
-          "driverNumber": 30,
-          "driverName": "Liam LAWSON",
+          "driverNumber": 41,
+          "driverName": "Arvid LINDBLAD",
           "teamName": "Racing Bulls",
           "position": "P8",
           "positionRank": 8,
           "classifiedPosition": 8,
-          "dnf": false,
-          "dns": false,
-          "dsq": false,
-          "duration": null,
-          "qualifyingTimes": {
-            "q1": 78.097,
-            "q2": 77.207,
-            "q3": 77.029,
-            "bestQualifyingTime": 77.029
-          },
-          "gapToLeader": [
-            0.756,
-            0.479,
-            0.515
-          ],
-          "laps": 21,
-          "points": null,
-          "sessionKey": 11400,
-          "meetingKey": 1298
-        },
-        {
-          "driverNumber": 41,
-          "driverName": "Arvid LINDBLAD",
-          "teamName": "Racing Bulls",
-          "position": "P9",
-          "positionRank": 9,
-          "classifiedPosition": 9,
           "dnf": false,
           "dns": false,
           "dsq": false,
@@ -2210,9 +2398,9 @@
           "driverNumber": 10,
           "driverName": "Pierre GASLY",
           "teamName": "Alpine",
-          "position": "P10",
-          "positionRank": 10,
-          "classifiedPosition": 10,
+          "position": "P9",
+          "positionRank": 9,
+          "classifiedPosition": 9,
           "dnf": false,
           "dns": false,
           "dsq": false,
@@ -2237,9 +2425,9 @@
           "driverNumber": 27,
           "driverName": "Nico HULKENBERG",
           "teamName": "Audi",
-          "position": "P11",
-          "positionRank": 11,
-          "classifiedPosition": 11,
+          "position": "P10",
+          "positionRank": 10,
+          "classifiedPosition": 10,
           "dnf": false,
           "dns": false,
           "dsq": false,
@@ -2264,9 +2452,9 @@
           "driverNumber": 43,
           "driverName": "Franco COLAPINTO",
           "teamName": "Alpine",
-          "position": "P12",
-          "positionRank": 12,
-          "classifiedPosition": 12,
+          "position": "P11",
+          "positionRank": 11,
+          "classifiedPosition": 11,
           "dnf": false,
           "dns": false,
           "dsq": false,
@@ -2291,9 +2479,9 @@
           "driverNumber": 81,
           "driverName": "Oscar PIASTRI",
           "teamName": "McLaren",
-          "position": "P13",
-          "positionRank": 13,
-          "classifiedPosition": 13,
+          "position": "P12",
+          "positionRank": 12,
+          "classifiedPosition": 12,
           "dnf": false,
           "dns": false,
           "dsq": false,
@@ -2318,9 +2506,9 @@
           "driverNumber": 5,
           "driverName": "Gabriel BORTOLETO",
           "teamName": "Audi",
-          "position": "P14",
-          "positionRank": 14,
-          "classifiedPosition": 14,
+          "position": "P13",
+          "positionRank": 13,
+          "classifiedPosition": 13,
           "dnf": false,
           "dns": false,
           "dsq": false,
@@ -2345,9 +2533,9 @@
           "driverNumber": 87,
           "driverName": "Oliver BEARMAN",
           "teamName": "Haas F1 Team",
-          "position": "P15",
-          "positionRank": 15,
-          "classifiedPosition": 15,
+          "position": "P14",
+          "positionRank": 14,
+          "classifiedPosition": 14,
           "dnf": false,
           "dns": false,
           "dsq": false,
@@ -2372,9 +2560,9 @@
           "driverNumber": 55,
           "driverName": "Carlos SAINZ",
           "teamName": "Williams",
-          "position": "P16",
-          "positionRank": 16,
-          "classifiedPosition": 16,
+          "position": "P15",
+          "positionRank": 15,
+          "classifiedPosition": 15,
           "dnf": false,
           "dns": false,
           "dsq": false,
@@ -2399,9 +2587,9 @@
           "driverNumber": 23,
           "driverName": "Alexander ALBON",
           "teamName": "Williams",
-          "position": "P17",
-          "positionRank": 17,
-          "classifiedPosition": 17,
+          "position": "P16",
+          "positionRank": 16,
+          "classifiedPosition": 16,
           "dnf": false,
           "dns": false,
           "dsq": false,
@@ -2426,9 +2614,9 @@
           "driverNumber": 14,
           "driverName": "Fernando ALONSO",
           "teamName": "Aston Martin",
-          "position": "P18",
-          "positionRank": 18,
-          "classifiedPosition": 18,
+          "position": "P17",
+          "positionRank": 17,
+          "classifiedPosition": 17,
           "dnf": false,
           "dns": false,
           "dsq": false,
@@ -2453,9 +2641,9 @@
           "driverNumber": 50,
           "driverName": "Ryo HIRAKAWA",
           "teamName": "Haas F1 Team",
-          "position": "P19",
-          "positionRank": 19,
-          "classifiedPosition": 19,
+          "position": "P18",
+          "positionRank": 18,
+          "classifiedPosition": 18,
           "dnf": false,
           "dns": false,
           "dsq": false,
@@ -2480,9 +2668,9 @@
           "driverNumber": 18,
           "driverName": "Lance STROLL",
           "teamName": "Aston Martin",
-          "position": "P20",
-          "positionRank": 20,
-          "classifiedPosition": 20,
+          "position": "P19",
+          "positionRank": 19,
+          "classifiedPosition": 19,
           "dnf": false,
           "dns": false,
           "dsq": false,
@@ -2507,9 +2695,9 @@
           "driverNumber": 11,
           "driverName": "Sergio PEREZ",
           "teamName": "Cadillac",
-          "position": "P21",
-          "positionRank": 21,
-          "classifiedPosition": 21,
+          "position": "P20",
+          "positionRank": 20,
+          "classifiedPosition": 20,
           "dnf": false,
           "dns": false,
           "dsq": false,
@@ -2534,9 +2722,9 @@
           "driverNumber": 77,
           "driverName": "Valtteri BOTTAS",
           "teamName": "Cadillac",
-          "position": "P22",
-          "positionRank": 22,
-          "classifiedPosition": 22,
+          "position": "P21",
+          "positionRank": 21,
+          "classifiedPosition": 21,
           "dnf": false,
           "dns": false,
           "dsq": false,
@@ -2556,6 +2744,33 @@
           "points": null,
           "sessionKey": 11400,
           "meetingKey": 1298
+        },
+        {
+          "driverNumber": 30,
+          "driverName": "Liam LAWSON",
+          "teamName": "Racing Bulls",
+          "position": "-",
+          "positionRank": null,
+          "classifiedPosition": null,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": null,
+            "q2": 77.207,
+            "q3": 77.029,
+            "bestQualifyingTime": 77.029
+          },
+          "gapToLeader": [
+            null,
+            0.479,
+            0.515
+          ],
+          "laps": 0,
+          "points": null,
+          "sessionKey": 11400,
+          "meetingKey": 1298
         }
       ]
     }
@@ -2569,7 +2784,7 @@
     "final": {
       "weekend": null
     },
-    "buildVersion": "2026-10-30.8"
+    "buildVersion": "2026-10-31.1"
   },
   "locked": false,
   "lockedSections": [
