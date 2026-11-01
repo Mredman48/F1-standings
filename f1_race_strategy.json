@@ -1,6 +1,6 @@
 {
   "header": "2026 F1 pit stops and tyre strategy",
-  "generatedAtUtc": "2026-11-01T22:59:11.094Z",
+  "generatedAtUtc": "2026-11-01T23:08:57.580Z",
   "season": 2026,
   "latest": {
     "sessionType": "race",
@@ -19,7 +19,7 @@
     "dateStartUtc": "2026-11-01T20:00:00+00:00",
     "dhlEventId": null,
     "stopTimesSource": null,
-    "totalLaps": 61,
+    "totalLaps": 71,
     "fastestStop": null,
     "fastestStops": [],
     "bestStopPerTeam": [],
@@ -898,15 +898,343 @@
     ],
     "drivers": [
       {
-        "position": null,
-        "positionLabel": "NC",
+        "position": 1,
+        "positionLabel": "P1",
+        "status": null,
+        "driverNumber": 3,
+        "driverName": "Max VERSTAPPEN",
+        "nameAcronym": "VER",
+        "teamName": "Red Bull Racing",
+        "teamColour": "#4781D7",
+        "lapsCompleted": 71,
+        "stops": 2,
+        "stints": [
+          {
+            "stint": 1,
+            "compound": "MEDIUM",
+            "lapStart": 1,
+            "lapEnd": 27,
+            "laps": 27,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 2,
+            "compound": "SOFT",
+            "lapStart": 28,
+            "lapEnd": 45,
+            "laps": 18,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 3,
+            "compound": "SOFT",
+            "lapStart": 46,
+            "lapEnd": 71,
+            "laps": 26,
+            "tyreAgeAtStart": 3,
+            "newTyre": false
+          }
+        ]
+      },
+      {
+        "position": 2,
+        "positionLabel": "P2",
+        "status": null,
+        "driverNumber": 44,
+        "driverName": "Lewis HAMILTON",
+        "nameAcronym": "HAM",
+        "teamName": "Ferrari",
+        "teamColour": "#ED1131",
+        "lapsCompleted": 71,
+        "stops": 2,
+        "stints": [
+          {
+            "stint": 1,
+            "compound": "SOFT",
+            "lapStart": 1,
+            "lapEnd": 28,
+            "laps": 28,
+            "tyreAgeAtStart": 3,
+            "newTyre": false
+          },
+          {
+            "stint": 2,
+            "compound": "MEDIUM",
+            "lapStart": 29,
+            "lapEnd": 44,
+            "laps": 16,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 3,
+            "compound": "SOFT",
+            "lapStart": 45,
+            "lapEnd": 71,
+            "laps": 27,
+            "tyreAgeAtStart": 3,
+            "newTyre": false
+          }
+        ]
+      },
+      {
+        "position": 3,
+        "positionLabel": "P3",
+        "status": null,
+        "driverNumber": 12,
+        "driverName": "Kimi ANTONELLI",
+        "nameAcronym": "ANT",
+        "teamName": "Mercedes",
+        "teamColour": "#00D7B6",
+        "lapsCompleted": 71,
+        "stops": 2,
+        "stints": [
+          {
+            "stint": 1,
+            "compound": "SOFT",
+            "lapStart": 1,
+            "lapEnd": 43,
+            "laps": 43,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 2,
+            "compound": "MEDIUM",
+            "lapStart": 44,
+            "lapEnd": 45,
+            "laps": 2,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 3,
+            "compound": "SOFT",
+            "lapStart": 46,
+            "lapEnd": 71,
+            "laps": 26,
+            "tyreAgeAtStart": 4,
+            "newTyre": false
+          }
+        ]
+      },
+      {
+        "position": 4,
+        "positionLabel": "P4",
+        "status": null,
+        "driverNumber": 16,
+        "driverName": "Charles LECLERC",
+        "nameAcronym": "LEC",
+        "teamName": "Ferrari",
+        "teamColour": "#ED1131",
+        "lapsCompleted": 71,
+        "stops": 2,
+        "stints": [
+          {
+            "stint": 1,
+            "compound": "SOFT",
+            "lapStart": 1,
+            "lapEnd": 27,
+            "laps": 27,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 2,
+            "compound": "MEDIUM",
+            "lapStart": 28,
+            "lapEnd": 45,
+            "laps": 18,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 3,
+            "compound": "SOFT",
+            "lapStart": 46,
+            "lapEnd": 71,
+            "laps": 26,
+            "tyreAgeAtStart": 3,
+            "newTyre": false
+          }
+        ]
+      },
+      {
+        "position": 5,
+        "positionLabel": "P5",
+        "status": null,
+        "driverNumber": 1,
+        "driverName": "Lando NORRIS",
+        "nameAcronym": "NOR",
+        "teamName": "McLaren",
+        "teamColour": "#F47600",
+        "lapsCompleted": 71,
+        "stops": 2,
+        "stints": [
+          {
+            "stint": 1,
+            "compound": "SOFT",
+            "lapStart": 1,
+            "lapEnd": 39,
+            "laps": 39,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 2,
+            "compound": "MEDIUM",
+            "lapStart": 40,
+            "lapEnd": 45,
+            "laps": 6,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 3,
+            "compound": "SOFT",
+            "lapStart": 46,
+            "lapEnd": 71,
+            "laps": 26,
+            "tyreAgeAtStart": 2,
+            "newTyre": false
+          }
+        ]
+      },
+      {
+        "position": 6,
+        "positionLabel": "P6",
+        "status": null,
+        "driverNumber": 63,
+        "driverName": "George RUSSELL",
+        "nameAcronym": "RUS",
+        "teamName": "Mercedes",
+        "teamColour": "#00D7B6",
+        "lapsCompleted": 71,
+        "stops": 2,
+        "stints": [
+          {
+            "stint": 1,
+            "compound": "SOFT",
+            "lapStart": 1,
+            "lapEnd": 33,
+            "laps": 33,
+            "tyreAgeAtStart": 3,
+            "newTyre": false
+          },
+          {
+            "stint": 2,
+            "compound": "MEDIUM",
+            "lapStart": 34,
+            "lapEnd": 44,
+            "laps": 11,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 3,
+            "compound": "SOFT",
+            "lapStart": 45,
+            "lapEnd": 71,
+            "laps": 27,
+            "tyreAgeAtStart": 3,
+            "newTyre": false
+          }
+        ]
+      },
+      {
+        "position": 7,
+        "positionLabel": "P7",
+        "status": null,
+        "driverNumber": 81,
+        "driverName": "Oscar PIASTRI",
+        "nameAcronym": "PIA",
+        "teamName": "McLaren",
+        "teamColour": "#F47600",
+        "lapsCompleted": 71,
+        "stops": 2,
+        "stints": [
+          {
+            "stint": 1,
+            "compound": "SOFT",
+            "lapStart": 1,
+            "lapEnd": 26,
+            "laps": 26,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 2,
+            "compound": "MEDIUM",
+            "lapStart": 27,
+            "lapEnd": 44,
+            "laps": 18,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 3,
+            "compound": "SOFT",
+            "lapStart": 45,
+            "lapEnd": 71,
+            "laps": 27,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          }
+        ]
+      },
+      {
+        "position": 8,
+        "positionLabel": "P8",
+        "status": null,
+        "driverNumber": 43,
+        "driverName": "Franco COLAPINTO",
+        "nameAcronym": "COL",
+        "teamName": "Alpine",
+        "teamColour": "#00A1E8",
+        "lapsCompleted": 71,
+        "stops": 2,
+        "stints": [
+          {
+            "stint": 1,
+            "compound": "MEDIUM",
+            "lapStart": 1,
+            "lapEnd": 34,
+            "laps": 34,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 2,
+            "compound": "SOFT",
+            "lapStart": 35,
+            "lapEnd": 45,
+            "laps": 11,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 3,
+            "compound": "SOFT",
+            "lapStart": 46,
+            "lapEnd": 71,
+            "laps": 26,
+            "tyreAgeAtStart": 2,
+            "newTyre": false
+          }
+        ]
+      },
+      {
+        "position": 9,
+        "positionLabel": "P9",
         "status": null,
         "driverNumber": 30,
         "driverName": "Liam LAWSON",
         "nameAcronym": "LAW",
         "teamName": "Racing Bulls",
         "teamColour": "#6C98FF",
-        "lapsCompleted": 61,
+        "lapsCompleted": 71,
         "stops": 2,
         "stints": [
           {
@@ -931,73 +1259,105 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 43,
-            "lapEnd": 61,
-            "laps": 19,
+            "lapEnd": 71,
+            "laps": 29,
             "tyreAgeAtStart": 0,
             "newTyre": true
           }
         ]
       },
       {
-        "position": null,
-        "positionLabel": "NC",
+        "position": 10,
+        "positionLabel": "P10",
         "status": null,
-        "driverNumber": 50,
-        "driverName": "Ryo HIRAKAWA",
-        "nameAcronym": "HIR",
-        "teamName": null,
-        "teamColour": null,
-        "lapsCompleted": 61,
-        "stops": 3,
+        "driverNumber": 10,
+        "driverName": "Pierre GASLY",
+        "nameAcronym": "GAS",
+        "teamName": "Alpine",
+        "teamColour": "#00A1E8",
+        "lapsCompleted": 71,
+        "stops": 2,
         "stints": [
           {
             "stint": 1,
-            "compound": "MEDIUM",
+            "compound": "SOFT",
             "lapStart": 1,
-            "lapEnd": 1,
-            "laps": 1,
-            "tyreAgeAtStart": 1,
-            "newTyre": false
+            "lapEnd": 17,
+            "laps": 17,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
           },
           {
             "stint": 2,
-            "compound": "SOFT",
-            "lapStart": 2,
-            "lapEnd": 43,
-            "laps": 42,
+            "compound": "MEDIUM",
+            "lapStart": 18,
+            "lapEnd": 44,
+            "laps": 27,
             "tyreAgeAtStart": 0,
             "newTyre": true
           },
           {
             "stint": 3,
             "compound": "SOFT",
-            "lapStart": 44,
-            "lapEnd": 59,
-            "laps": 16,
+            "lapStart": 45,
+            "lapEnd": 71,
+            "laps": 27,
             "tyreAgeAtStart": 3,
-            "newTyre": false
-          },
-          {
-            "stint": 6,
-            "compound": "SOFT",
-            "lapStart": 60,
-            "lapEnd": 61,
-            "laps": 2,
-            "tyreAgeAtStart": 8,
             "newTyre": false
           }
         ]
       },
       {
-        "position": null,
-        "positionLabel": "NC",
+        "position": 11,
+        "positionLabel": "P11",
+        "status": null,
+        "driverNumber": 5,
+        "driverName": "Gabriel BORTOLETO",
+        "nameAcronym": "BOR",
+        "teamName": "Audi",
+        "teamColour": "#F50537",
+        "lapsCompleted": 71,
+        "stops": 2,
+        "stints": [
+          {
+            "stint": 1,
+            "compound": "MEDIUM",
+            "lapStart": 1,
+            "lapEnd": 38,
+            "laps": 38,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 2,
+            "compound": "SOFT",
+            "lapStart": 39,
+            "lapEnd": 45,
+            "laps": 7,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 3,
+            "compound": "SOFT",
+            "lapStart": 46,
+            "lapEnd": 71,
+            "laps": 26,
+            "tyreAgeAtStart": 3,
+            "newTyre": false
+          }
+        ]
+      },
+      {
+        "position": 12,
+        "positionLabel": "P12",
         "status": null,
         "driverNumber": 6,
         "driverName": "Isack HADJAR",
         "nameAcronym": "HAD",
         "teamName": "Red Bull Racing",
         "teamColour": "#4781D7",
-        "lapsCompleted": 61,
+        "lapsCompleted": 71,
         "stops": 3,
         "stints": [
           {
@@ -1031,64 +1391,73 @@
             "stint": 4,
             "compound": "SOFT",
             "lapStart": 46,
-            "lapEnd": 61,
-            "laps": 16,
+            "lapEnd": 71,
+            "laps": 26,
             "tyreAgeAtStart": 3,
             "newTyre": false
           }
         ]
       },
       {
-        "position": null,
-        "positionLabel": "NC",
+        "position": 13,
+        "positionLabel": "P13",
         "status": null,
-        "driverNumber": 10,
-        "driverName": "Pierre GASLY",
-        "nameAcronym": "GAS",
-        "teamName": "Alpine",
-        "teamColour": "#00A1E8",
-        "lapsCompleted": 61,
-        "stops": 2,
+        "driverNumber": 50,
+        "driverName": "Ryo HIRAKAWA",
+        "nameAcronym": "HIR",
+        "teamName": null,
+        "teamColour": null,
+        "lapsCompleted": 71,
+        "stops": 3,
         "stints": [
           {
             "stint": 1,
-            "compound": "SOFT",
+            "compound": "MEDIUM",
             "lapStart": 1,
-            "lapEnd": 17,
-            "laps": 17,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
+            "lapEnd": 1,
+            "laps": 1,
+            "tyreAgeAtStart": 1,
+            "newTyre": false
           },
           {
             "stint": 2,
-            "compound": "MEDIUM",
-            "lapStart": 18,
-            "lapEnd": 44,
-            "laps": 27,
+            "compound": "SOFT",
+            "lapStart": 2,
+            "lapEnd": 43,
+            "laps": 42,
             "tyreAgeAtStart": 0,
             "newTyre": true
           },
           {
             "stint": 3,
             "compound": "SOFT",
-            "lapStart": 45,
-            "lapEnd": 61,
-            "laps": 17,
+            "lapStart": 44,
+            "lapEnd": 59,
+            "laps": 16,
             "tyreAgeAtStart": 3,
+            "newTyre": false
+          },
+          {
+            "stint": 6,
+            "compound": "SOFT",
+            "lapStart": 60,
+            "lapEnd": 71,
+            "laps": 12,
+            "tyreAgeAtStart": 8,
             "newTyre": false
           }
         ]
       },
       {
-        "position": null,
-        "positionLabel": "NC",
+        "position": 14,
+        "positionLabel": "P14",
         "status": null,
         "driverNumber": 23,
         "driverName": "Alexander ALBON",
         "nameAcronym": "ALB",
         "teamName": "Williams",
         "teamColour": "#1868DB",
-        "lapsCompleted": 61,
+        "lapsCompleted": 71,
         "stops": 3,
         "stints": [
           {
@@ -1122,187 +1491,105 @@
             "stint": 4,
             "compound": "SOFT",
             "lapStart": 45,
-            "lapEnd": 61,
-            "laps": 17,
+            "lapEnd": 71,
+            "laps": 27,
             "tyreAgeAtStart": 4,
             "newTyre": false
           }
         ]
       },
       {
-        "position": null,
-        "positionLabel": "NC",
+        "position": 15,
+        "positionLabel": "P15",
         "status": null,
-        "driverNumber": 81,
-        "driverName": "Oscar PIASTRI",
-        "nameAcronym": "PIA",
-        "teamName": "McLaren",
-        "teamColour": "#F47600",
-        "lapsCompleted": 61,
+        "driverNumber": 55,
+        "driverName": "Carlos SAINZ",
+        "nameAcronym": "SAI",
+        "teamName": "Williams",
+        "teamColour": "#1868DB",
+        "lapsCompleted": 71,
         "stops": 2,
         "stints": [
           {
             "stint": 1,
             "compound": "SOFT",
             "lapStart": 1,
-            "lapEnd": 26,
+            "lapEnd": 36,
+            "laps": 36,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 2,
+            "compound": "MEDIUM",
+            "lapStart": 37,
+            "lapEnd": 44,
+            "laps": 8,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 3,
+            "compound": "SOFT",
+            "lapStart": 45,
+            "lapEnd": 71,
+            "laps": 27,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          }
+        ]
+      },
+      {
+        "position": 16,
+        "positionLabel": "P16",
+        "status": null,
+        "driverNumber": 27,
+        "driverName": "Nico HULKENBERG",
+        "nameAcronym": "HUL",
+        "teamName": "Audi",
+        "teamColour": "#F50537",
+        "lapsCompleted": 71,
+        "stops": 2,
+        "stints": [
+          {
+            "stint": 1,
+            "compound": "MEDIUM",
+            "lapStart": 1,
+            "lapEnd": 31,
+            "laps": 31,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 2,
+            "compound": "SOFT",
+            "lapStart": 32,
+            "lapEnd": 45,
+            "laps": 14,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 3,
+            "compound": "SOFT",
+            "lapStart": 46,
+            "lapEnd": 71,
             "laps": 26,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 2,
-            "compound": "MEDIUM",
-            "lapStart": 27,
-            "lapEnd": 44,
-            "laps": 18,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 3,
-            "compound": "SOFT",
-            "lapStart": 45,
-            "lapEnd": 61,
-            "laps": 17,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          }
-        ]
-      },
-      {
-        "position": null,
-        "positionLabel": "NC",
-        "status": null,
-        "driverNumber": 16,
-        "driverName": "Charles LECLERC",
-        "nameAcronym": "LEC",
-        "teamName": "Ferrari",
-        "teamColour": "#ED1131",
-        "lapsCompleted": 61,
-        "stops": 2,
-        "stints": [
-          {
-            "stint": 1,
-            "compound": "SOFT",
-            "lapStart": 1,
-            "lapEnd": 27,
-            "laps": 27,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 2,
-            "compound": "MEDIUM",
-            "lapStart": 28,
-            "lapEnd": 45,
-            "laps": 18,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 3,
-            "compound": "SOFT",
-            "lapStart": 46,
-            "lapEnd": 61,
-            "laps": 16,
             "tyreAgeAtStart": 3,
             "newTyre": false
           }
         ]
       },
       {
-        "position": null,
-        "positionLabel": "NC",
-        "status": null,
-        "driverNumber": 3,
-        "driverName": "Max VERSTAPPEN",
-        "nameAcronym": "VER",
-        "teamName": "Red Bull Racing",
-        "teamColour": "#4781D7",
-        "lapsCompleted": 61,
-        "stops": 2,
-        "stints": [
-          {
-            "stint": 1,
-            "compound": "MEDIUM",
-            "lapStart": 1,
-            "lapEnd": 27,
-            "laps": 27,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 2,
-            "compound": "SOFT",
-            "lapStart": 28,
-            "lapEnd": 45,
-            "laps": 18,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 3,
-            "compound": "SOFT",
-            "lapStart": 46,
-            "lapEnd": 61,
-            "laps": 16,
-            "tyreAgeAtStart": 3,
-            "newTyre": false
-          }
-        ]
-      },
-      {
-        "position": null,
-        "positionLabel": "NC",
-        "status": null,
-        "driverNumber": 44,
-        "driverName": "Lewis HAMILTON",
-        "nameAcronym": "HAM",
-        "teamName": "Ferrari",
-        "teamColour": "#ED1131",
-        "lapsCompleted": 61,
-        "stops": 2,
-        "stints": [
-          {
-            "stint": 1,
-            "compound": "SOFT",
-            "lapStart": 1,
-            "lapEnd": 28,
-            "laps": 28,
-            "tyreAgeAtStart": 3,
-            "newTyre": false
-          },
-          {
-            "stint": 2,
-            "compound": "MEDIUM",
-            "lapStart": 29,
-            "lapEnd": 44,
-            "laps": 16,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 3,
-            "compound": "SOFT",
-            "lapStart": 45,
-            "lapEnd": 61,
-            "laps": 17,
-            "tyreAgeAtStart": 3,
-            "newTyre": false
-          }
-        ]
-      },
-      {
-        "position": null,
-        "positionLabel": "NC",
+        "position": 17,
+        "positionLabel": "P17",
         "status": null,
         "driverNumber": 11,
         "driverName": "Sergio PEREZ",
         "nameAcronym": "PER",
         "teamName": "Cadillac",
         "teamColour": "#909090",
-        "lapsCompleted": 61,
+        "lapsCompleted": 71,
         "stops": 3,
         "stints": [
           {
@@ -1336,8 +1623,8 @@
             "stint": 6,
             "compound": "SOFT",
             "lapStart": 60,
-            "lapEnd": 61,
-            "laps": 2,
+            "lapEnd": 71,
+            "laps": 12,
             "tyreAgeAtStart": 3,
             "newTyre": false
           }
@@ -1345,295 +1632,8 @@
       },
       {
         "position": null,
-        "positionLabel": "NC",
-        "status": null,
-        "driverNumber": 27,
-        "driverName": "Nico HULKENBERG",
-        "nameAcronym": "HUL",
-        "teamName": "Audi",
-        "teamColour": "#F50537",
-        "lapsCompleted": 61,
-        "stops": 2,
-        "stints": [
-          {
-            "stint": 1,
-            "compound": "MEDIUM",
-            "lapStart": 1,
-            "lapEnd": 31,
-            "laps": 31,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 2,
-            "compound": "SOFT",
-            "lapStart": 32,
-            "lapEnd": 45,
-            "laps": 14,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 3,
-            "compound": "SOFT",
-            "lapStart": 46,
-            "lapEnd": 61,
-            "laps": 16,
-            "tyreAgeAtStart": 3,
-            "newTyre": false
-          }
-        ]
-      },
-      {
-        "position": null,
-        "positionLabel": "NC",
-        "status": null,
-        "driverNumber": 63,
-        "driverName": "George RUSSELL",
-        "nameAcronym": "RUS",
-        "teamName": "Mercedes",
-        "teamColour": "#00D7B6",
-        "lapsCompleted": 61,
-        "stops": 2,
-        "stints": [
-          {
-            "stint": 1,
-            "compound": "SOFT",
-            "lapStart": 1,
-            "lapEnd": 33,
-            "laps": 33,
-            "tyreAgeAtStart": 3,
-            "newTyre": false
-          },
-          {
-            "stint": 2,
-            "compound": "MEDIUM",
-            "lapStart": 34,
-            "lapEnd": 44,
-            "laps": 11,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 3,
-            "compound": "SOFT",
-            "lapStart": 45,
-            "lapEnd": 61,
-            "laps": 17,
-            "tyreAgeAtStart": 3,
-            "newTyre": false
-          }
-        ]
-      },
-      {
-        "position": null,
-        "positionLabel": "NC",
-        "status": null,
-        "driverNumber": 43,
-        "driverName": "Franco COLAPINTO",
-        "nameAcronym": "COL",
-        "teamName": "Alpine",
-        "teamColour": "#00A1E8",
-        "lapsCompleted": 61,
-        "stops": 2,
-        "stints": [
-          {
-            "stint": 1,
-            "compound": "MEDIUM",
-            "lapStart": 1,
-            "lapEnd": 34,
-            "laps": 34,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 2,
-            "compound": "SOFT",
-            "lapStart": 35,
-            "lapEnd": 45,
-            "laps": 11,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 3,
-            "compound": "SOFT",
-            "lapStart": 46,
-            "lapEnd": 61,
-            "laps": 16,
-            "tyreAgeAtStart": 2,
-            "newTyre": false
-          }
-        ]
-      },
-      {
-        "position": null,
-        "positionLabel": "NC",
-        "status": null,
-        "driverNumber": 55,
-        "driverName": "Carlos SAINZ",
-        "nameAcronym": "SAI",
-        "teamName": "Williams",
-        "teamColour": "#1868DB",
-        "lapsCompleted": 61,
-        "stops": 2,
-        "stints": [
-          {
-            "stint": 1,
-            "compound": "SOFT",
-            "lapStart": 1,
-            "lapEnd": 36,
-            "laps": 36,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 2,
-            "compound": "MEDIUM",
-            "lapStart": 37,
-            "lapEnd": 44,
-            "laps": 8,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 3,
-            "compound": "SOFT",
-            "lapStart": 45,
-            "lapEnd": 61,
-            "laps": 17,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          }
-        ]
-      },
-      {
-        "position": null,
-        "positionLabel": "NC",
-        "status": null,
-        "driverNumber": 5,
-        "driverName": "Gabriel BORTOLETO",
-        "nameAcronym": "BOR",
-        "teamName": "Audi",
-        "teamColour": "#F50537",
-        "lapsCompleted": 61,
-        "stops": 2,
-        "stints": [
-          {
-            "stint": 1,
-            "compound": "MEDIUM",
-            "lapStart": 1,
-            "lapEnd": 38,
-            "laps": 38,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 2,
-            "compound": "SOFT",
-            "lapStart": 39,
-            "lapEnd": 45,
-            "laps": 7,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 3,
-            "compound": "SOFT",
-            "lapStart": 46,
-            "lapEnd": 61,
-            "laps": 16,
-            "tyreAgeAtStart": 3,
-            "newTyre": false
-          }
-        ]
-      },
-      {
-        "position": null,
-        "positionLabel": "NC",
-        "status": null,
-        "driverNumber": 1,
-        "driverName": "Lando NORRIS",
-        "nameAcronym": "NOR",
-        "teamName": "McLaren",
-        "teamColour": "#F47600",
-        "lapsCompleted": 61,
-        "stops": 2,
-        "stints": [
-          {
-            "stint": 1,
-            "compound": "SOFT",
-            "lapStart": 1,
-            "lapEnd": 39,
-            "laps": 39,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 2,
-            "compound": "MEDIUM",
-            "lapStart": 40,
-            "lapEnd": 45,
-            "laps": 6,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 3,
-            "compound": "SOFT",
-            "lapStart": 46,
-            "lapEnd": 61,
-            "laps": 16,
-            "tyreAgeAtStart": 2,
-            "newTyre": false
-          }
-        ]
-      },
-      {
-        "position": null,
-        "positionLabel": "NC",
-        "status": null,
-        "driverNumber": 12,
-        "driverName": "Kimi ANTONELLI",
-        "nameAcronym": "ANT",
-        "teamName": "Mercedes",
-        "teamColour": "#00D7B6",
-        "lapsCompleted": 61,
-        "stops": 2,
-        "stints": [
-          {
-            "stint": 1,
-            "compound": "SOFT",
-            "lapStart": 1,
-            "lapEnd": 43,
-            "laps": 43,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 2,
-            "compound": "MEDIUM",
-            "lapStart": 44,
-            "lapEnd": 45,
-            "laps": 2,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 3,
-            "compound": "SOFT",
-            "lapStart": 46,
-            "lapEnd": 61,
-            "laps": 16,
-            "tyreAgeAtStart": 4,
-            "newTyre": false
-          }
-        ]
-      },
-      {
-        "position": null,
-        "positionLabel": "NC",
-        "status": null,
+        "positionLabel": "DNF",
+        "status": "DNF",
         "driverNumber": 41,
         "driverName": "Arvid LINDBLAD",
         "nameAcronym": "LIN",
@@ -1673,8 +1673,8 @@
       },
       {
         "position": null,
-        "positionLabel": "NC",
-        "status": null,
+        "positionLabel": "DNF",
+        "status": "DNF",
         "driverNumber": 87,
         "driverName": "Oliver BEARMAN",
         "nameAcronym": "BEA",
@@ -1714,8 +1714,8 @@
       },
       {
         "position": null,
-        "positionLabel": "NC",
-        "status": null,
+        "positionLabel": "DNF",
+        "status": "DNF",
         "driverNumber": 77,
         "driverName": "Valtteri BOTTAS",
         "nameAcronym": "BOT",
@@ -1746,8 +1746,8 @@
       },
       {
         "position": null,
-        "positionLabel": "NC",
-        "status": null,
+        "positionLabel": "DNF",
+        "status": "DNF",
         "driverNumber": 14,
         "driverName": "Fernando ALONSO",
         "nameAcronym": "ALO",
@@ -1778,8 +1778,8 @@
       },
       {
         "position": null,
-        "positionLabel": "NC",
-        "status": null,
+        "positionLabel": "DNF",
+        "status": "DNF",
         "driverNumber": 18,
         "driverName": "Lance STROLL",
         "nameAcronym": "STR",
@@ -1827,7 +1827,7 @@
     "dateStartUtc": "2026-11-01T20:00:00+00:00",
     "dhlEventId": null,
     "stopTimesSource": null,
-    "totalLaps": 61,
+    "totalLaps": 71,
     "fastestStop": null,
     "fastestStops": [],
     "bestStopPerTeam": [],
@@ -2706,15 +2706,343 @@
     ],
     "drivers": [
       {
-        "position": null,
-        "positionLabel": "NC",
+        "position": 1,
+        "positionLabel": "P1",
+        "status": null,
+        "driverNumber": 3,
+        "driverName": "Max VERSTAPPEN",
+        "nameAcronym": "VER",
+        "teamName": "Red Bull Racing",
+        "teamColour": "#4781D7",
+        "lapsCompleted": 71,
+        "stops": 2,
+        "stints": [
+          {
+            "stint": 1,
+            "compound": "MEDIUM",
+            "lapStart": 1,
+            "lapEnd": 27,
+            "laps": 27,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 2,
+            "compound": "SOFT",
+            "lapStart": 28,
+            "lapEnd": 45,
+            "laps": 18,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 3,
+            "compound": "SOFT",
+            "lapStart": 46,
+            "lapEnd": 71,
+            "laps": 26,
+            "tyreAgeAtStart": 3,
+            "newTyre": false
+          }
+        ]
+      },
+      {
+        "position": 2,
+        "positionLabel": "P2",
+        "status": null,
+        "driverNumber": 44,
+        "driverName": "Lewis HAMILTON",
+        "nameAcronym": "HAM",
+        "teamName": "Ferrari",
+        "teamColour": "#ED1131",
+        "lapsCompleted": 71,
+        "stops": 2,
+        "stints": [
+          {
+            "stint": 1,
+            "compound": "SOFT",
+            "lapStart": 1,
+            "lapEnd": 28,
+            "laps": 28,
+            "tyreAgeAtStart": 3,
+            "newTyre": false
+          },
+          {
+            "stint": 2,
+            "compound": "MEDIUM",
+            "lapStart": 29,
+            "lapEnd": 44,
+            "laps": 16,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 3,
+            "compound": "SOFT",
+            "lapStart": 45,
+            "lapEnd": 71,
+            "laps": 27,
+            "tyreAgeAtStart": 3,
+            "newTyre": false
+          }
+        ]
+      },
+      {
+        "position": 3,
+        "positionLabel": "P3",
+        "status": null,
+        "driverNumber": 12,
+        "driverName": "Kimi ANTONELLI",
+        "nameAcronym": "ANT",
+        "teamName": "Mercedes",
+        "teamColour": "#00D7B6",
+        "lapsCompleted": 71,
+        "stops": 2,
+        "stints": [
+          {
+            "stint": 1,
+            "compound": "SOFT",
+            "lapStart": 1,
+            "lapEnd": 43,
+            "laps": 43,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 2,
+            "compound": "MEDIUM",
+            "lapStart": 44,
+            "lapEnd": 45,
+            "laps": 2,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 3,
+            "compound": "SOFT",
+            "lapStart": 46,
+            "lapEnd": 71,
+            "laps": 26,
+            "tyreAgeAtStart": 4,
+            "newTyre": false
+          }
+        ]
+      },
+      {
+        "position": 4,
+        "positionLabel": "P4",
+        "status": null,
+        "driverNumber": 16,
+        "driverName": "Charles LECLERC",
+        "nameAcronym": "LEC",
+        "teamName": "Ferrari",
+        "teamColour": "#ED1131",
+        "lapsCompleted": 71,
+        "stops": 2,
+        "stints": [
+          {
+            "stint": 1,
+            "compound": "SOFT",
+            "lapStart": 1,
+            "lapEnd": 27,
+            "laps": 27,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 2,
+            "compound": "MEDIUM",
+            "lapStart": 28,
+            "lapEnd": 45,
+            "laps": 18,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 3,
+            "compound": "SOFT",
+            "lapStart": 46,
+            "lapEnd": 71,
+            "laps": 26,
+            "tyreAgeAtStart": 3,
+            "newTyre": false
+          }
+        ]
+      },
+      {
+        "position": 5,
+        "positionLabel": "P5",
+        "status": null,
+        "driverNumber": 1,
+        "driverName": "Lando NORRIS",
+        "nameAcronym": "NOR",
+        "teamName": "McLaren",
+        "teamColour": "#F47600",
+        "lapsCompleted": 71,
+        "stops": 2,
+        "stints": [
+          {
+            "stint": 1,
+            "compound": "SOFT",
+            "lapStart": 1,
+            "lapEnd": 39,
+            "laps": 39,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 2,
+            "compound": "MEDIUM",
+            "lapStart": 40,
+            "lapEnd": 45,
+            "laps": 6,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 3,
+            "compound": "SOFT",
+            "lapStart": 46,
+            "lapEnd": 71,
+            "laps": 26,
+            "tyreAgeAtStart": 2,
+            "newTyre": false
+          }
+        ]
+      },
+      {
+        "position": 6,
+        "positionLabel": "P6",
+        "status": null,
+        "driverNumber": 63,
+        "driverName": "George RUSSELL",
+        "nameAcronym": "RUS",
+        "teamName": "Mercedes",
+        "teamColour": "#00D7B6",
+        "lapsCompleted": 71,
+        "stops": 2,
+        "stints": [
+          {
+            "stint": 1,
+            "compound": "SOFT",
+            "lapStart": 1,
+            "lapEnd": 33,
+            "laps": 33,
+            "tyreAgeAtStart": 3,
+            "newTyre": false
+          },
+          {
+            "stint": 2,
+            "compound": "MEDIUM",
+            "lapStart": 34,
+            "lapEnd": 44,
+            "laps": 11,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 3,
+            "compound": "SOFT",
+            "lapStart": 45,
+            "lapEnd": 71,
+            "laps": 27,
+            "tyreAgeAtStart": 3,
+            "newTyre": false
+          }
+        ]
+      },
+      {
+        "position": 7,
+        "positionLabel": "P7",
+        "status": null,
+        "driverNumber": 81,
+        "driverName": "Oscar PIASTRI",
+        "nameAcronym": "PIA",
+        "teamName": "McLaren",
+        "teamColour": "#F47600",
+        "lapsCompleted": 71,
+        "stops": 2,
+        "stints": [
+          {
+            "stint": 1,
+            "compound": "SOFT",
+            "lapStart": 1,
+            "lapEnd": 26,
+            "laps": 26,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 2,
+            "compound": "MEDIUM",
+            "lapStart": 27,
+            "lapEnd": 44,
+            "laps": 18,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 3,
+            "compound": "SOFT",
+            "lapStart": 45,
+            "lapEnd": 71,
+            "laps": 27,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          }
+        ]
+      },
+      {
+        "position": 8,
+        "positionLabel": "P8",
+        "status": null,
+        "driverNumber": 43,
+        "driverName": "Franco COLAPINTO",
+        "nameAcronym": "COL",
+        "teamName": "Alpine",
+        "teamColour": "#00A1E8",
+        "lapsCompleted": 71,
+        "stops": 2,
+        "stints": [
+          {
+            "stint": 1,
+            "compound": "MEDIUM",
+            "lapStart": 1,
+            "lapEnd": 34,
+            "laps": 34,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 2,
+            "compound": "SOFT",
+            "lapStart": 35,
+            "lapEnd": 45,
+            "laps": 11,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 3,
+            "compound": "SOFT",
+            "lapStart": 46,
+            "lapEnd": 71,
+            "laps": 26,
+            "tyreAgeAtStart": 2,
+            "newTyre": false
+          }
+        ]
+      },
+      {
+        "position": 9,
+        "positionLabel": "P9",
         "status": null,
         "driverNumber": 30,
         "driverName": "Liam LAWSON",
         "nameAcronym": "LAW",
         "teamName": "Racing Bulls",
         "teamColour": "#6C98FF",
-        "lapsCompleted": 61,
+        "lapsCompleted": 71,
         "stops": 2,
         "stints": [
           {
@@ -2739,73 +3067,105 @@
             "stint": 3,
             "compound": "SOFT",
             "lapStart": 43,
-            "lapEnd": 61,
-            "laps": 19,
+            "lapEnd": 71,
+            "laps": 29,
             "tyreAgeAtStart": 0,
             "newTyre": true
           }
         ]
       },
       {
-        "position": null,
-        "positionLabel": "NC",
+        "position": 10,
+        "positionLabel": "P10",
         "status": null,
-        "driverNumber": 50,
-        "driverName": "Ryo HIRAKAWA",
-        "nameAcronym": "HIR",
-        "teamName": null,
-        "teamColour": null,
-        "lapsCompleted": 61,
-        "stops": 3,
+        "driverNumber": 10,
+        "driverName": "Pierre GASLY",
+        "nameAcronym": "GAS",
+        "teamName": "Alpine",
+        "teamColour": "#00A1E8",
+        "lapsCompleted": 71,
+        "stops": 2,
         "stints": [
           {
             "stint": 1,
-            "compound": "MEDIUM",
+            "compound": "SOFT",
             "lapStart": 1,
-            "lapEnd": 1,
-            "laps": 1,
-            "tyreAgeAtStart": 1,
-            "newTyre": false
+            "lapEnd": 17,
+            "laps": 17,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
           },
           {
             "stint": 2,
-            "compound": "SOFT",
-            "lapStart": 2,
-            "lapEnd": 43,
-            "laps": 42,
+            "compound": "MEDIUM",
+            "lapStart": 18,
+            "lapEnd": 44,
+            "laps": 27,
             "tyreAgeAtStart": 0,
             "newTyre": true
           },
           {
             "stint": 3,
             "compound": "SOFT",
-            "lapStart": 44,
-            "lapEnd": 59,
-            "laps": 16,
+            "lapStart": 45,
+            "lapEnd": 71,
+            "laps": 27,
             "tyreAgeAtStart": 3,
-            "newTyre": false
-          },
-          {
-            "stint": 6,
-            "compound": "SOFT",
-            "lapStart": 60,
-            "lapEnd": 61,
-            "laps": 2,
-            "tyreAgeAtStart": 8,
             "newTyre": false
           }
         ]
       },
       {
-        "position": null,
-        "positionLabel": "NC",
+        "position": 11,
+        "positionLabel": "P11",
+        "status": null,
+        "driverNumber": 5,
+        "driverName": "Gabriel BORTOLETO",
+        "nameAcronym": "BOR",
+        "teamName": "Audi",
+        "teamColour": "#F50537",
+        "lapsCompleted": 71,
+        "stops": 2,
+        "stints": [
+          {
+            "stint": 1,
+            "compound": "MEDIUM",
+            "lapStart": 1,
+            "lapEnd": 38,
+            "laps": 38,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 2,
+            "compound": "SOFT",
+            "lapStart": 39,
+            "lapEnd": 45,
+            "laps": 7,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 3,
+            "compound": "SOFT",
+            "lapStart": 46,
+            "lapEnd": 71,
+            "laps": 26,
+            "tyreAgeAtStart": 3,
+            "newTyre": false
+          }
+        ]
+      },
+      {
+        "position": 12,
+        "positionLabel": "P12",
         "status": null,
         "driverNumber": 6,
         "driverName": "Isack HADJAR",
         "nameAcronym": "HAD",
         "teamName": "Red Bull Racing",
         "teamColour": "#4781D7",
-        "lapsCompleted": 61,
+        "lapsCompleted": 71,
         "stops": 3,
         "stints": [
           {
@@ -2839,64 +3199,73 @@
             "stint": 4,
             "compound": "SOFT",
             "lapStart": 46,
-            "lapEnd": 61,
-            "laps": 16,
+            "lapEnd": 71,
+            "laps": 26,
             "tyreAgeAtStart": 3,
             "newTyre": false
           }
         ]
       },
       {
-        "position": null,
-        "positionLabel": "NC",
+        "position": 13,
+        "positionLabel": "P13",
         "status": null,
-        "driverNumber": 10,
-        "driverName": "Pierre GASLY",
-        "nameAcronym": "GAS",
-        "teamName": "Alpine",
-        "teamColour": "#00A1E8",
-        "lapsCompleted": 61,
-        "stops": 2,
+        "driverNumber": 50,
+        "driverName": "Ryo HIRAKAWA",
+        "nameAcronym": "HIR",
+        "teamName": null,
+        "teamColour": null,
+        "lapsCompleted": 71,
+        "stops": 3,
         "stints": [
           {
             "stint": 1,
-            "compound": "SOFT",
+            "compound": "MEDIUM",
             "lapStart": 1,
-            "lapEnd": 17,
-            "laps": 17,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
+            "lapEnd": 1,
+            "laps": 1,
+            "tyreAgeAtStart": 1,
+            "newTyre": false
           },
           {
             "stint": 2,
-            "compound": "MEDIUM",
-            "lapStart": 18,
-            "lapEnd": 44,
-            "laps": 27,
+            "compound": "SOFT",
+            "lapStart": 2,
+            "lapEnd": 43,
+            "laps": 42,
             "tyreAgeAtStart": 0,
             "newTyre": true
           },
           {
             "stint": 3,
             "compound": "SOFT",
-            "lapStart": 45,
-            "lapEnd": 61,
-            "laps": 17,
+            "lapStart": 44,
+            "lapEnd": 59,
+            "laps": 16,
             "tyreAgeAtStart": 3,
+            "newTyre": false
+          },
+          {
+            "stint": 6,
+            "compound": "SOFT",
+            "lapStart": 60,
+            "lapEnd": 71,
+            "laps": 12,
+            "tyreAgeAtStart": 8,
             "newTyre": false
           }
         ]
       },
       {
-        "position": null,
-        "positionLabel": "NC",
+        "position": 14,
+        "positionLabel": "P14",
         "status": null,
         "driverNumber": 23,
         "driverName": "Alexander ALBON",
         "nameAcronym": "ALB",
         "teamName": "Williams",
         "teamColour": "#1868DB",
-        "lapsCompleted": 61,
+        "lapsCompleted": 71,
         "stops": 3,
         "stints": [
           {
@@ -2930,187 +3299,105 @@
             "stint": 4,
             "compound": "SOFT",
             "lapStart": 45,
-            "lapEnd": 61,
-            "laps": 17,
+            "lapEnd": 71,
+            "laps": 27,
             "tyreAgeAtStart": 4,
             "newTyre": false
           }
         ]
       },
       {
-        "position": null,
-        "positionLabel": "NC",
+        "position": 15,
+        "positionLabel": "P15",
         "status": null,
-        "driverNumber": 81,
-        "driverName": "Oscar PIASTRI",
-        "nameAcronym": "PIA",
-        "teamName": "McLaren",
-        "teamColour": "#F47600",
-        "lapsCompleted": 61,
+        "driverNumber": 55,
+        "driverName": "Carlos SAINZ",
+        "nameAcronym": "SAI",
+        "teamName": "Williams",
+        "teamColour": "#1868DB",
+        "lapsCompleted": 71,
         "stops": 2,
         "stints": [
           {
             "stint": 1,
             "compound": "SOFT",
             "lapStart": 1,
-            "lapEnd": 26,
+            "lapEnd": 36,
+            "laps": 36,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 2,
+            "compound": "MEDIUM",
+            "lapStart": 37,
+            "lapEnd": 44,
+            "laps": 8,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 3,
+            "compound": "SOFT",
+            "lapStart": 45,
+            "lapEnd": 71,
+            "laps": 27,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          }
+        ]
+      },
+      {
+        "position": 16,
+        "positionLabel": "P16",
+        "status": null,
+        "driverNumber": 27,
+        "driverName": "Nico HULKENBERG",
+        "nameAcronym": "HUL",
+        "teamName": "Audi",
+        "teamColour": "#F50537",
+        "lapsCompleted": 71,
+        "stops": 2,
+        "stints": [
+          {
+            "stint": 1,
+            "compound": "MEDIUM",
+            "lapStart": 1,
+            "lapEnd": 31,
+            "laps": 31,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 2,
+            "compound": "SOFT",
+            "lapStart": 32,
+            "lapEnd": 45,
+            "laps": 14,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 3,
+            "compound": "SOFT",
+            "lapStart": 46,
+            "lapEnd": 71,
             "laps": 26,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 2,
-            "compound": "MEDIUM",
-            "lapStart": 27,
-            "lapEnd": 44,
-            "laps": 18,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 3,
-            "compound": "SOFT",
-            "lapStart": 45,
-            "lapEnd": 61,
-            "laps": 17,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          }
-        ]
-      },
-      {
-        "position": null,
-        "positionLabel": "NC",
-        "status": null,
-        "driverNumber": 16,
-        "driverName": "Charles LECLERC",
-        "nameAcronym": "LEC",
-        "teamName": "Ferrari",
-        "teamColour": "#ED1131",
-        "lapsCompleted": 61,
-        "stops": 2,
-        "stints": [
-          {
-            "stint": 1,
-            "compound": "SOFT",
-            "lapStart": 1,
-            "lapEnd": 27,
-            "laps": 27,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 2,
-            "compound": "MEDIUM",
-            "lapStart": 28,
-            "lapEnd": 45,
-            "laps": 18,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 3,
-            "compound": "SOFT",
-            "lapStart": 46,
-            "lapEnd": 61,
-            "laps": 16,
             "tyreAgeAtStart": 3,
             "newTyre": false
           }
         ]
       },
       {
-        "position": null,
-        "positionLabel": "NC",
-        "status": null,
-        "driverNumber": 3,
-        "driverName": "Max VERSTAPPEN",
-        "nameAcronym": "VER",
-        "teamName": "Red Bull Racing",
-        "teamColour": "#4781D7",
-        "lapsCompleted": 61,
-        "stops": 2,
-        "stints": [
-          {
-            "stint": 1,
-            "compound": "MEDIUM",
-            "lapStart": 1,
-            "lapEnd": 27,
-            "laps": 27,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 2,
-            "compound": "SOFT",
-            "lapStart": 28,
-            "lapEnd": 45,
-            "laps": 18,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 3,
-            "compound": "SOFT",
-            "lapStart": 46,
-            "lapEnd": 61,
-            "laps": 16,
-            "tyreAgeAtStart": 3,
-            "newTyre": false
-          }
-        ]
-      },
-      {
-        "position": null,
-        "positionLabel": "NC",
-        "status": null,
-        "driverNumber": 44,
-        "driverName": "Lewis HAMILTON",
-        "nameAcronym": "HAM",
-        "teamName": "Ferrari",
-        "teamColour": "#ED1131",
-        "lapsCompleted": 61,
-        "stops": 2,
-        "stints": [
-          {
-            "stint": 1,
-            "compound": "SOFT",
-            "lapStart": 1,
-            "lapEnd": 28,
-            "laps": 28,
-            "tyreAgeAtStart": 3,
-            "newTyre": false
-          },
-          {
-            "stint": 2,
-            "compound": "MEDIUM",
-            "lapStart": 29,
-            "lapEnd": 44,
-            "laps": 16,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 3,
-            "compound": "SOFT",
-            "lapStart": 45,
-            "lapEnd": 61,
-            "laps": 17,
-            "tyreAgeAtStart": 3,
-            "newTyre": false
-          }
-        ]
-      },
-      {
-        "position": null,
-        "positionLabel": "NC",
+        "position": 17,
+        "positionLabel": "P17",
         "status": null,
         "driverNumber": 11,
         "driverName": "Sergio PEREZ",
         "nameAcronym": "PER",
         "teamName": "Cadillac",
         "teamColour": "#909090",
-        "lapsCompleted": 61,
+        "lapsCompleted": 71,
         "stops": 3,
         "stints": [
           {
@@ -3144,8 +3431,8 @@
             "stint": 6,
             "compound": "SOFT",
             "lapStart": 60,
-            "lapEnd": 61,
-            "laps": 2,
+            "lapEnd": 71,
+            "laps": 12,
             "tyreAgeAtStart": 3,
             "newTyre": false
           }
@@ -3153,295 +3440,8 @@
       },
       {
         "position": null,
-        "positionLabel": "NC",
-        "status": null,
-        "driverNumber": 27,
-        "driverName": "Nico HULKENBERG",
-        "nameAcronym": "HUL",
-        "teamName": "Audi",
-        "teamColour": "#F50537",
-        "lapsCompleted": 61,
-        "stops": 2,
-        "stints": [
-          {
-            "stint": 1,
-            "compound": "MEDIUM",
-            "lapStart": 1,
-            "lapEnd": 31,
-            "laps": 31,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 2,
-            "compound": "SOFT",
-            "lapStart": 32,
-            "lapEnd": 45,
-            "laps": 14,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 3,
-            "compound": "SOFT",
-            "lapStart": 46,
-            "lapEnd": 61,
-            "laps": 16,
-            "tyreAgeAtStart": 3,
-            "newTyre": false
-          }
-        ]
-      },
-      {
-        "position": null,
-        "positionLabel": "NC",
-        "status": null,
-        "driverNumber": 63,
-        "driverName": "George RUSSELL",
-        "nameAcronym": "RUS",
-        "teamName": "Mercedes",
-        "teamColour": "#00D7B6",
-        "lapsCompleted": 61,
-        "stops": 2,
-        "stints": [
-          {
-            "stint": 1,
-            "compound": "SOFT",
-            "lapStart": 1,
-            "lapEnd": 33,
-            "laps": 33,
-            "tyreAgeAtStart": 3,
-            "newTyre": false
-          },
-          {
-            "stint": 2,
-            "compound": "MEDIUM",
-            "lapStart": 34,
-            "lapEnd": 44,
-            "laps": 11,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 3,
-            "compound": "SOFT",
-            "lapStart": 45,
-            "lapEnd": 61,
-            "laps": 17,
-            "tyreAgeAtStart": 3,
-            "newTyre": false
-          }
-        ]
-      },
-      {
-        "position": null,
-        "positionLabel": "NC",
-        "status": null,
-        "driverNumber": 43,
-        "driverName": "Franco COLAPINTO",
-        "nameAcronym": "COL",
-        "teamName": "Alpine",
-        "teamColour": "#00A1E8",
-        "lapsCompleted": 61,
-        "stops": 2,
-        "stints": [
-          {
-            "stint": 1,
-            "compound": "MEDIUM",
-            "lapStart": 1,
-            "lapEnd": 34,
-            "laps": 34,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 2,
-            "compound": "SOFT",
-            "lapStart": 35,
-            "lapEnd": 45,
-            "laps": 11,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 3,
-            "compound": "SOFT",
-            "lapStart": 46,
-            "lapEnd": 61,
-            "laps": 16,
-            "tyreAgeAtStart": 2,
-            "newTyre": false
-          }
-        ]
-      },
-      {
-        "position": null,
-        "positionLabel": "NC",
-        "status": null,
-        "driverNumber": 55,
-        "driverName": "Carlos SAINZ",
-        "nameAcronym": "SAI",
-        "teamName": "Williams",
-        "teamColour": "#1868DB",
-        "lapsCompleted": 61,
-        "stops": 2,
-        "stints": [
-          {
-            "stint": 1,
-            "compound": "SOFT",
-            "lapStart": 1,
-            "lapEnd": 36,
-            "laps": 36,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 2,
-            "compound": "MEDIUM",
-            "lapStart": 37,
-            "lapEnd": 44,
-            "laps": 8,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 3,
-            "compound": "SOFT",
-            "lapStart": 45,
-            "lapEnd": 61,
-            "laps": 17,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          }
-        ]
-      },
-      {
-        "position": null,
-        "positionLabel": "NC",
-        "status": null,
-        "driverNumber": 5,
-        "driverName": "Gabriel BORTOLETO",
-        "nameAcronym": "BOR",
-        "teamName": "Audi",
-        "teamColour": "#F50537",
-        "lapsCompleted": 61,
-        "stops": 2,
-        "stints": [
-          {
-            "stint": 1,
-            "compound": "MEDIUM",
-            "lapStart": 1,
-            "lapEnd": 38,
-            "laps": 38,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 2,
-            "compound": "SOFT",
-            "lapStart": 39,
-            "lapEnd": 45,
-            "laps": 7,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 3,
-            "compound": "SOFT",
-            "lapStart": 46,
-            "lapEnd": 61,
-            "laps": 16,
-            "tyreAgeAtStart": 3,
-            "newTyre": false
-          }
-        ]
-      },
-      {
-        "position": null,
-        "positionLabel": "NC",
-        "status": null,
-        "driverNumber": 1,
-        "driverName": "Lando NORRIS",
-        "nameAcronym": "NOR",
-        "teamName": "McLaren",
-        "teamColour": "#F47600",
-        "lapsCompleted": 61,
-        "stops": 2,
-        "stints": [
-          {
-            "stint": 1,
-            "compound": "SOFT",
-            "lapStart": 1,
-            "lapEnd": 39,
-            "laps": 39,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 2,
-            "compound": "MEDIUM",
-            "lapStart": 40,
-            "lapEnd": 45,
-            "laps": 6,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 3,
-            "compound": "SOFT",
-            "lapStart": 46,
-            "lapEnd": 61,
-            "laps": 16,
-            "tyreAgeAtStart": 2,
-            "newTyre": false
-          }
-        ]
-      },
-      {
-        "position": null,
-        "positionLabel": "NC",
-        "status": null,
-        "driverNumber": 12,
-        "driverName": "Kimi ANTONELLI",
-        "nameAcronym": "ANT",
-        "teamName": "Mercedes",
-        "teamColour": "#00D7B6",
-        "lapsCompleted": 61,
-        "stops": 2,
-        "stints": [
-          {
-            "stint": 1,
-            "compound": "SOFT",
-            "lapStart": 1,
-            "lapEnd": 43,
-            "laps": 43,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 2,
-            "compound": "MEDIUM",
-            "lapStart": 44,
-            "lapEnd": 45,
-            "laps": 2,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 3,
-            "compound": "SOFT",
-            "lapStart": 46,
-            "lapEnd": 61,
-            "laps": 16,
-            "tyreAgeAtStart": 4,
-            "newTyre": false
-          }
-        ]
-      },
-      {
-        "position": null,
-        "positionLabel": "NC",
-        "status": null,
+        "positionLabel": "DNF",
+        "status": "DNF",
         "driverNumber": 41,
         "driverName": "Arvid LINDBLAD",
         "nameAcronym": "LIN",
@@ -3481,8 +3481,8 @@
       },
       {
         "position": null,
-        "positionLabel": "NC",
-        "status": null,
+        "positionLabel": "DNF",
+        "status": "DNF",
         "driverNumber": 87,
         "driverName": "Oliver BEARMAN",
         "nameAcronym": "BEA",
@@ -3522,8 +3522,8 @@
       },
       {
         "position": null,
-        "positionLabel": "NC",
-        "status": null,
+        "positionLabel": "DNF",
+        "status": "DNF",
         "driverNumber": 77,
         "driverName": "Valtteri BOTTAS",
         "nameAcronym": "BOT",
@@ -3554,8 +3554,8 @@
       },
       {
         "position": null,
-        "positionLabel": "NC",
-        "status": null,
+        "positionLabel": "DNF",
+        "status": "DNF",
         "driverNumber": 14,
         "driverName": "Fernando ALONSO",
         "nameAcronym": "ALO",
@@ -3586,8 +3586,8 @@
       },
       {
         "position": null,
-        "positionLabel": "NC",
-        "status": null,
+        "positionLabel": "DNF",
+        "status": "DNF",
         "driverNumber": 18,
         "driverName": "Lance STROLL",
         "nameAcronym": "STR",
@@ -40111,7 +40111,7 @@
       "dateStartUtc": "2026-11-01T20:00:00+00:00",
       "dhlEventId": null,
       "stopTimesSource": null,
-      "totalLaps": 61,
+      "totalLaps": 71,
       "fastestStop": null,
       "fastestStops": [],
       "bestStopPerTeam": [],
@@ -40990,15 +40990,343 @@
       ],
       "drivers": [
         {
-          "position": null,
-          "positionLabel": "NC",
+          "position": 1,
+          "positionLabel": "P1",
+          "status": null,
+          "driverNumber": 3,
+          "driverName": "Max VERSTAPPEN",
+          "nameAcronym": "VER",
+          "teamName": "Red Bull Racing",
+          "teamColour": "#4781D7",
+          "lapsCompleted": 71,
+          "stops": 2,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "MEDIUM",
+              "lapStart": 1,
+              "lapEnd": 27,
+              "laps": 27,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "SOFT",
+              "lapStart": 28,
+              "lapEnd": 45,
+              "laps": 18,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 3,
+              "compound": "SOFT",
+              "lapStart": 46,
+              "lapEnd": 71,
+              "laps": 26,
+              "tyreAgeAtStart": 3,
+              "newTyre": false
+            }
+          ]
+        },
+        {
+          "position": 2,
+          "positionLabel": "P2",
+          "status": null,
+          "driverNumber": 44,
+          "driverName": "Lewis HAMILTON",
+          "nameAcronym": "HAM",
+          "teamName": "Ferrari",
+          "teamColour": "#ED1131",
+          "lapsCompleted": 71,
+          "stops": 2,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "SOFT",
+              "lapStart": 1,
+              "lapEnd": 28,
+              "laps": 28,
+              "tyreAgeAtStart": 3,
+              "newTyre": false
+            },
+            {
+              "stint": 2,
+              "compound": "MEDIUM",
+              "lapStart": 29,
+              "lapEnd": 44,
+              "laps": 16,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 3,
+              "compound": "SOFT",
+              "lapStart": 45,
+              "lapEnd": 71,
+              "laps": 27,
+              "tyreAgeAtStart": 3,
+              "newTyre": false
+            }
+          ]
+        },
+        {
+          "position": 3,
+          "positionLabel": "P3",
+          "status": null,
+          "driverNumber": 12,
+          "driverName": "Kimi ANTONELLI",
+          "nameAcronym": "ANT",
+          "teamName": "Mercedes",
+          "teamColour": "#00D7B6",
+          "lapsCompleted": 71,
+          "stops": 2,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "SOFT",
+              "lapStart": 1,
+              "lapEnd": 43,
+              "laps": 43,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "MEDIUM",
+              "lapStart": 44,
+              "lapEnd": 45,
+              "laps": 2,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 3,
+              "compound": "SOFT",
+              "lapStart": 46,
+              "lapEnd": 71,
+              "laps": 26,
+              "tyreAgeAtStart": 4,
+              "newTyre": false
+            }
+          ]
+        },
+        {
+          "position": 4,
+          "positionLabel": "P4",
+          "status": null,
+          "driverNumber": 16,
+          "driverName": "Charles LECLERC",
+          "nameAcronym": "LEC",
+          "teamName": "Ferrari",
+          "teamColour": "#ED1131",
+          "lapsCompleted": 71,
+          "stops": 2,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "SOFT",
+              "lapStart": 1,
+              "lapEnd": 27,
+              "laps": 27,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "MEDIUM",
+              "lapStart": 28,
+              "lapEnd": 45,
+              "laps": 18,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 3,
+              "compound": "SOFT",
+              "lapStart": 46,
+              "lapEnd": 71,
+              "laps": 26,
+              "tyreAgeAtStart": 3,
+              "newTyre": false
+            }
+          ]
+        },
+        {
+          "position": 5,
+          "positionLabel": "P5",
+          "status": null,
+          "driverNumber": 1,
+          "driverName": "Lando NORRIS",
+          "nameAcronym": "NOR",
+          "teamName": "McLaren",
+          "teamColour": "#F47600",
+          "lapsCompleted": 71,
+          "stops": 2,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "SOFT",
+              "lapStart": 1,
+              "lapEnd": 39,
+              "laps": 39,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "MEDIUM",
+              "lapStart": 40,
+              "lapEnd": 45,
+              "laps": 6,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 3,
+              "compound": "SOFT",
+              "lapStart": 46,
+              "lapEnd": 71,
+              "laps": 26,
+              "tyreAgeAtStart": 2,
+              "newTyre": false
+            }
+          ]
+        },
+        {
+          "position": 6,
+          "positionLabel": "P6",
+          "status": null,
+          "driverNumber": 63,
+          "driverName": "George RUSSELL",
+          "nameAcronym": "RUS",
+          "teamName": "Mercedes",
+          "teamColour": "#00D7B6",
+          "lapsCompleted": 71,
+          "stops": 2,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "SOFT",
+              "lapStart": 1,
+              "lapEnd": 33,
+              "laps": 33,
+              "tyreAgeAtStart": 3,
+              "newTyre": false
+            },
+            {
+              "stint": 2,
+              "compound": "MEDIUM",
+              "lapStart": 34,
+              "lapEnd": 44,
+              "laps": 11,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 3,
+              "compound": "SOFT",
+              "lapStart": 45,
+              "lapEnd": 71,
+              "laps": 27,
+              "tyreAgeAtStart": 3,
+              "newTyre": false
+            }
+          ]
+        },
+        {
+          "position": 7,
+          "positionLabel": "P7",
+          "status": null,
+          "driverNumber": 81,
+          "driverName": "Oscar PIASTRI",
+          "nameAcronym": "PIA",
+          "teamName": "McLaren",
+          "teamColour": "#F47600",
+          "lapsCompleted": 71,
+          "stops": 2,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "SOFT",
+              "lapStart": 1,
+              "lapEnd": 26,
+              "laps": 26,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "MEDIUM",
+              "lapStart": 27,
+              "lapEnd": 44,
+              "laps": 18,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 3,
+              "compound": "SOFT",
+              "lapStart": 45,
+              "lapEnd": 71,
+              "laps": 27,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            }
+          ]
+        },
+        {
+          "position": 8,
+          "positionLabel": "P8",
+          "status": null,
+          "driverNumber": 43,
+          "driverName": "Franco COLAPINTO",
+          "nameAcronym": "COL",
+          "teamName": "Alpine",
+          "teamColour": "#00A1E8",
+          "lapsCompleted": 71,
+          "stops": 2,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "MEDIUM",
+              "lapStart": 1,
+              "lapEnd": 34,
+              "laps": 34,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "SOFT",
+              "lapStart": 35,
+              "lapEnd": 45,
+              "laps": 11,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 3,
+              "compound": "SOFT",
+              "lapStart": 46,
+              "lapEnd": 71,
+              "laps": 26,
+              "tyreAgeAtStart": 2,
+              "newTyre": false
+            }
+          ]
+        },
+        {
+          "position": 9,
+          "positionLabel": "P9",
           "status": null,
           "driverNumber": 30,
           "driverName": "Liam LAWSON",
           "nameAcronym": "LAW",
           "teamName": "Racing Bulls",
           "teamColour": "#6C98FF",
-          "lapsCompleted": 61,
+          "lapsCompleted": 71,
           "stops": 2,
           "stints": [
             {
@@ -41023,73 +41351,105 @@
               "stint": 3,
               "compound": "SOFT",
               "lapStart": 43,
-              "lapEnd": 61,
-              "laps": 19,
+              "lapEnd": 71,
+              "laps": 29,
               "tyreAgeAtStart": 0,
               "newTyre": true
             }
           ]
         },
         {
-          "position": null,
-          "positionLabel": "NC",
+          "position": 10,
+          "positionLabel": "P10",
           "status": null,
-          "driverNumber": 50,
-          "driverName": "Ryo HIRAKAWA",
-          "nameAcronym": "HIR",
-          "teamName": null,
-          "teamColour": null,
-          "lapsCompleted": 61,
-          "stops": 3,
+          "driverNumber": 10,
+          "driverName": "Pierre GASLY",
+          "nameAcronym": "GAS",
+          "teamName": "Alpine",
+          "teamColour": "#00A1E8",
+          "lapsCompleted": 71,
+          "stops": 2,
           "stints": [
             {
               "stint": 1,
-              "compound": "MEDIUM",
+              "compound": "SOFT",
               "lapStart": 1,
-              "lapEnd": 1,
-              "laps": 1,
-              "tyreAgeAtStart": 1,
-              "newTyre": false
+              "lapEnd": 17,
+              "laps": 17,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
             },
             {
               "stint": 2,
-              "compound": "SOFT",
-              "lapStart": 2,
-              "lapEnd": 43,
-              "laps": 42,
+              "compound": "MEDIUM",
+              "lapStart": 18,
+              "lapEnd": 44,
+              "laps": 27,
               "tyreAgeAtStart": 0,
               "newTyre": true
             },
             {
               "stint": 3,
               "compound": "SOFT",
-              "lapStart": 44,
-              "lapEnd": 59,
-              "laps": 16,
+              "lapStart": 45,
+              "lapEnd": 71,
+              "laps": 27,
               "tyreAgeAtStart": 3,
-              "newTyre": false
-            },
-            {
-              "stint": 6,
-              "compound": "SOFT",
-              "lapStart": 60,
-              "lapEnd": 61,
-              "laps": 2,
-              "tyreAgeAtStart": 8,
               "newTyre": false
             }
           ]
         },
         {
-          "position": null,
-          "positionLabel": "NC",
+          "position": 11,
+          "positionLabel": "P11",
+          "status": null,
+          "driverNumber": 5,
+          "driverName": "Gabriel BORTOLETO",
+          "nameAcronym": "BOR",
+          "teamName": "Audi",
+          "teamColour": "#F50537",
+          "lapsCompleted": 71,
+          "stops": 2,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "MEDIUM",
+              "lapStart": 1,
+              "lapEnd": 38,
+              "laps": 38,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "SOFT",
+              "lapStart": 39,
+              "lapEnd": 45,
+              "laps": 7,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 3,
+              "compound": "SOFT",
+              "lapStart": 46,
+              "lapEnd": 71,
+              "laps": 26,
+              "tyreAgeAtStart": 3,
+              "newTyre": false
+            }
+          ]
+        },
+        {
+          "position": 12,
+          "positionLabel": "P12",
           "status": null,
           "driverNumber": 6,
           "driverName": "Isack HADJAR",
           "nameAcronym": "HAD",
           "teamName": "Red Bull Racing",
           "teamColour": "#4781D7",
-          "lapsCompleted": 61,
+          "lapsCompleted": 71,
           "stops": 3,
           "stints": [
             {
@@ -41123,64 +41483,73 @@
               "stint": 4,
               "compound": "SOFT",
               "lapStart": 46,
-              "lapEnd": 61,
-              "laps": 16,
+              "lapEnd": 71,
+              "laps": 26,
               "tyreAgeAtStart": 3,
               "newTyre": false
             }
           ]
         },
         {
-          "position": null,
-          "positionLabel": "NC",
+          "position": 13,
+          "positionLabel": "P13",
           "status": null,
-          "driverNumber": 10,
-          "driverName": "Pierre GASLY",
-          "nameAcronym": "GAS",
-          "teamName": "Alpine",
-          "teamColour": "#00A1E8",
-          "lapsCompleted": 61,
-          "stops": 2,
+          "driverNumber": 50,
+          "driverName": "Ryo HIRAKAWA",
+          "nameAcronym": "HIR",
+          "teamName": null,
+          "teamColour": null,
+          "lapsCompleted": 71,
+          "stops": 3,
           "stints": [
             {
               "stint": 1,
-              "compound": "SOFT",
+              "compound": "MEDIUM",
               "lapStart": 1,
-              "lapEnd": 17,
-              "laps": 17,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
+              "lapEnd": 1,
+              "laps": 1,
+              "tyreAgeAtStart": 1,
+              "newTyre": false
             },
             {
               "stint": 2,
-              "compound": "MEDIUM",
-              "lapStart": 18,
-              "lapEnd": 44,
-              "laps": 27,
+              "compound": "SOFT",
+              "lapStart": 2,
+              "lapEnd": 43,
+              "laps": 42,
               "tyreAgeAtStart": 0,
               "newTyre": true
             },
             {
               "stint": 3,
               "compound": "SOFT",
-              "lapStart": 45,
-              "lapEnd": 61,
-              "laps": 17,
+              "lapStart": 44,
+              "lapEnd": 59,
+              "laps": 16,
               "tyreAgeAtStart": 3,
+              "newTyre": false
+            },
+            {
+              "stint": 6,
+              "compound": "SOFT",
+              "lapStart": 60,
+              "lapEnd": 71,
+              "laps": 12,
+              "tyreAgeAtStart": 8,
               "newTyre": false
             }
           ]
         },
         {
-          "position": null,
-          "positionLabel": "NC",
+          "position": 14,
+          "positionLabel": "P14",
           "status": null,
           "driverNumber": 23,
           "driverName": "Alexander ALBON",
           "nameAcronym": "ALB",
           "teamName": "Williams",
           "teamColour": "#1868DB",
-          "lapsCompleted": 61,
+          "lapsCompleted": 71,
           "stops": 3,
           "stints": [
             {
@@ -41214,187 +41583,105 @@
               "stint": 4,
               "compound": "SOFT",
               "lapStart": 45,
-              "lapEnd": 61,
-              "laps": 17,
+              "lapEnd": 71,
+              "laps": 27,
               "tyreAgeAtStart": 4,
               "newTyre": false
             }
           ]
         },
         {
-          "position": null,
-          "positionLabel": "NC",
+          "position": 15,
+          "positionLabel": "P15",
           "status": null,
-          "driverNumber": 81,
-          "driverName": "Oscar PIASTRI",
-          "nameAcronym": "PIA",
-          "teamName": "McLaren",
-          "teamColour": "#F47600",
-          "lapsCompleted": 61,
+          "driverNumber": 55,
+          "driverName": "Carlos SAINZ",
+          "nameAcronym": "SAI",
+          "teamName": "Williams",
+          "teamColour": "#1868DB",
+          "lapsCompleted": 71,
           "stops": 2,
           "stints": [
             {
               "stint": 1,
               "compound": "SOFT",
               "lapStart": 1,
-              "lapEnd": 26,
+              "lapEnd": 36,
+              "laps": 36,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "MEDIUM",
+              "lapStart": 37,
+              "lapEnd": 44,
+              "laps": 8,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 3,
+              "compound": "SOFT",
+              "lapStart": 45,
+              "lapEnd": 71,
+              "laps": 27,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            }
+          ]
+        },
+        {
+          "position": 16,
+          "positionLabel": "P16",
+          "status": null,
+          "driverNumber": 27,
+          "driverName": "Nico HULKENBERG",
+          "nameAcronym": "HUL",
+          "teamName": "Audi",
+          "teamColour": "#F50537",
+          "lapsCompleted": 71,
+          "stops": 2,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "MEDIUM",
+              "lapStart": 1,
+              "lapEnd": 31,
+              "laps": 31,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "SOFT",
+              "lapStart": 32,
+              "lapEnd": 45,
+              "laps": 14,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 3,
+              "compound": "SOFT",
+              "lapStart": 46,
+              "lapEnd": 71,
               "laps": 26,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "MEDIUM",
-              "lapStart": 27,
-              "lapEnd": 44,
-              "laps": 18,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 3,
-              "compound": "SOFT",
-              "lapStart": 45,
-              "lapEnd": 61,
-              "laps": 17,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            }
-          ]
-        },
-        {
-          "position": null,
-          "positionLabel": "NC",
-          "status": null,
-          "driverNumber": 16,
-          "driverName": "Charles LECLERC",
-          "nameAcronym": "LEC",
-          "teamName": "Ferrari",
-          "teamColour": "#ED1131",
-          "lapsCompleted": 61,
-          "stops": 2,
-          "stints": [
-            {
-              "stint": 1,
-              "compound": "SOFT",
-              "lapStart": 1,
-              "lapEnd": 27,
-              "laps": 27,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "MEDIUM",
-              "lapStart": 28,
-              "lapEnd": 45,
-              "laps": 18,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 3,
-              "compound": "SOFT",
-              "lapStart": 46,
-              "lapEnd": 61,
-              "laps": 16,
               "tyreAgeAtStart": 3,
               "newTyre": false
             }
           ]
         },
         {
-          "position": null,
-          "positionLabel": "NC",
-          "status": null,
-          "driverNumber": 3,
-          "driverName": "Max VERSTAPPEN",
-          "nameAcronym": "VER",
-          "teamName": "Red Bull Racing",
-          "teamColour": "#4781D7",
-          "lapsCompleted": 61,
-          "stops": 2,
-          "stints": [
-            {
-              "stint": 1,
-              "compound": "MEDIUM",
-              "lapStart": 1,
-              "lapEnd": 27,
-              "laps": 27,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "SOFT",
-              "lapStart": 28,
-              "lapEnd": 45,
-              "laps": 18,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 3,
-              "compound": "SOFT",
-              "lapStart": 46,
-              "lapEnd": 61,
-              "laps": 16,
-              "tyreAgeAtStart": 3,
-              "newTyre": false
-            }
-          ]
-        },
-        {
-          "position": null,
-          "positionLabel": "NC",
-          "status": null,
-          "driverNumber": 44,
-          "driverName": "Lewis HAMILTON",
-          "nameAcronym": "HAM",
-          "teamName": "Ferrari",
-          "teamColour": "#ED1131",
-          "lapsCompleted": 61,
-          "stops": 2,
-          "stints": [
-            {
-              "stint": 1,
-              "compound": "SOFT",
-              "lapStart": 1,
-              "lapEnd": 28,
-              "laps": 28,
-              "tyreAgeAtStart": 3,
-              "newTyre": false
-            },
-            {
-              "stint": 2,
-              "compound": "MEDIUM",
-              "lapStart": 29,
-              "lapEnd": 44,
-              "laps": 16,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 3,
-              "compound": "SOFT",
-              "lapStart": 45,
-              "lapEnd": 61,
-              "laps": 17,
-              "tyreAgeAtStart": 3,
-              "newTyre": false
-            }
-          ]
-        },
-        {
-          "position": null,
-          "positionLabel": "NC",
+          "position": 17,
+          "positionLabel": "P17",
           "status": null,
           "driverNumber": 11,
           "driverName": "Sergio PEREZ",
           "nameAcronym": "PER",
           "teamName": "Cadillac",
           "teamColour": "#909090",
-          "lapsCompleted": 61,
+          "lapsCompleted": 71,
           "stops": 3,
           "stints": [
             {
@@ -41428,8 +41715,8 @@
               "stint": 6,
               "compound": "SOFT",
               "lapStart": 60,
-              "lapEnd": 61,
-              "laps": 2,
+              "lapEnd": 71,
+              "laps": 12,
               "tyreAgeAtStart": 3,
               "newTyre": false
             }
@@ -41437,295 +41724,8 @@
         },
         {
           "position": null,
-          "positionLabel": "NC",
-          "status": null,
-          "driverNumber": 27,
-          "driverName": "Nico HULKENBERG",
-          "nameAcronym": "HUL",
-          "teamName": "Audi",
-          "teamColour": "#F50537",
-          "lapsCompleted": 61,
-          "stops": 2,
-          "stints": [
-            {
-              "stint": 1,
-              "compound": "MEDIUM",
-              "lapStart": 1,
-              "lapEnd": 31,
-              "laps": 31,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "SOFT",
-              "lapStart": 32,
-              "lapEnd": 45,
-              "laps": 14,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 3,
-              "compound": "SOFT",
-              "lapStart": 46,
-              "lapEnd": 61,
-              "laps": 16,
-              "tyreAgeAtStart": 3,
-              "newTyre": false
-            }
-          ]
-        },
-        {
-          "position": null,
-          "positionLabel": "NC",
-          "status": null,
-          "driverNumber": 63,
-          "driverName": "George RUSSELL",
-          "nameAcronym": "RUS",
-          "teamName": "Mercedes",
-          "teamColour": "#00D7B6",
-          "lapsCompleted": 61,
-          "stops": 2,
-          "stints": [
-            {
-              "stint": 1,
-              "compound": "SOFT",
-              "lapStart": 1,
-              "lapEnd": 33,
-              "laps": 33,
-              "tyreAgeAtStart": 3,
-              "newTyre": false
-            },
-            {
-              "stint": 2,
-              "compound": "MEDIUM",
-              "lapStart": 34,
-              "lapEnd": 44,
-              "laps": 11,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 3,
-              "compound": "SOFT",
-              "lapStart": 45,
-              "lapEnd": 61,
-              "laps": 17,
-              "tyreAgeAtStart": 3,
-              "newTyre": false
-            }
-          ]
-        },
-        {
-          "position": null,
-          "positionLabel": "NC",
-          "status": null,
-          "driverNumber": 43,
-          "driverName": "Franco COLAPINTO",
-          "nameAcronym": "COL",
-          "teamName": "Alpine",
-          "teamColour": "#00A1E8",
-          "lapsCompleted": 61,
-          "stops": 2,
-          "stints": [
-            {
-              "stint": 1,
-              "compound": "MEDIUM",
-              "lapStart": 1,
-              "lapEnd": 34,
-              "laps": 34,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "SOFT",
-              "lapStart": 35,
-              "lapEnd": 45,
-              "laps": 11,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 3,
-              "compound": "SOFT",
-              "lapStart": 46,
-              "lapEnd": 61,
-              "laps": 16,
-              "tyreAgeAtStart": 2,
-              "newTyre": false
-            }
-          ]
-        },
-        {
-          "position": null,
-          "positionLabel": "NC",
-          "status": null,
-          "driverNumber": 55,
-          "driverName": "Carlos SAINZ",
-          "nameAcronym": "SAI",
-          "teamName": "Williams",
-          "teamColour": "#1868DB",
-          "lapsCompleted": 61,
-          "stops": 2,
-          "stints": [
-            {
-              "stint": 1,
-              "compound": "SOFT",
-              "lapStart": 1,
-              "lapEnd": 36,
-              "laps": 36,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "MEDIUM",
-              "lapStart": 37,
-              "lapEnd": 44,
-              "laps": 8,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 3,
-              "compound": "SOFT",
-              "lapStart": 45,
-              "lapEnd": 61,
-              "laps": 17,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            }
-          ]
-        },
-        {
-          "position": null,
-          "positionLabel": "NC",
-          "status": null,
-          "driverNumber": 5,
-          "driverName": "Gabriel BORTOLETO",
-          "nameAcronym": "BOR",
-          "teamName": "Audi",
-          "teamColour": "#F50537",
-          "lapsCompleted": 61,
-          "stops": 2,
-          "stints": [
-            {
-              "stint": 1,
-              "compound": "MEDIUM",
-              "lapStart": 1,
-              "lapEnd": 38,
-              "laps": 38,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "SOFT",
-              "lapStart": 39,
-              "lapEnd": 45,
-              "laps": 7,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 3,
-              "compound": "SOFT",
-              "lapStart": 46,
-              "lapEnd": 61,
-              "laps": 16,
-              "tyreAgeAtStart": 3,
-              "newTyre": false
-            }
-          ]
-        },
-        {
-          "position": null,
-          "positionLabel": "NC",
-          "status": null,
-          "driverNumber": 1,
-          "driverName": "Lando NORRIS",
-          "nameAcronym": "NOR",
-          "teamName": "McLaren",
-          "teamColour": "#F47600",
-          "lapsCompleted": 61,
-          "stops": 2,
-          "stints": [
-            {
-              "stint": 1,
-              "compound": "SOFT",
-              "lapStart": 1,
-              "lapEnd": 39,
-              "laps": 39,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "MEDIUM",
-              "lapStart": 40,
-              "lapEnd": 45,
-              "laps": 6,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 3,
-              "compound": "SOFT",
-              "lapStart": 46,
-              "lapEnd": 61,
-              "laps": 16,
-              "tyreAgeAtStart": 2,
-              "newTyre": false
-            }
-          ]
-        },
-        {
-          "position": null,
-          "positionLabel": "NC",
-          "status": null,
-          "driverNumber": 12,
-          "driverName": "Kimi ANTONELLI",
-          "nameAcronym": "ANT",
-          "teamName": "Mercedes",
-          "teamColour": "#00D7B6",
-          "lapsCompleted": 61,
-          "stops": 2,
-          "stints": [
-            {
-              "stint": 1,
-              "compound": "SOFT",
-              "lapStart": 1,
-              "lapEnd": 43,
-              "laps": 43,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "MEDIUM",
-              "lapStart": 44,
-              "lapEnd": 45,
-              "laps": 2,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 3,
-              "compound": "SOFT",
-              "lapStart": 46,
-              "lapEnd": 61,
-              "laps": 16,
-              "tyreAgeAtStart": 4,
-              "newTyre": false
-            }
-          ]
-        },
-        {
-          "position": null,
-          "positionLabel": "NC",
-          "status": null,
+          "positionLabel": "DNF",
+          "status": "DNF",
           "driverNumber": 41,
           "driverName": "Arvid LINDBLAD",
           "nameAcronym": "LIN",
@@ -41765,8 +41765,8 @@
         },
         {
           "position": null,
-          "positionLabel": "NC",
-          "status": null,
+          "positionLabel": "DNF",
+          "status": "DNF",
           "driverNumber": 87,
           "driverName": "Oliver BEARMAN",
           "nameAcronym": "BEA",
@@ -41806,8 +41806,8 @@
         },
         {
           "position": null,
-          "positionLabel": "NC",
-          "status": null,
+          "positionLabel": "DNF",
+          "status": "DNF",
           "driverNumber": 77,
           "driverName": "Valtteri BOTTAS",
           "nameAcronym": "BOT",
@@ -41838,8 +41838,8 @@
         },
         {
           "position": null,
-          "positionLabel": "NC",
-          "status": null,
+          "positionLabel": "DNF",
+          "status": "DNF",
           "driverNumber": 14,
           "driverName": "Fernando ALONSO",
           "nameAcronym": "ALO",
@@ -41870,8 +41870,8 @@
         },
         {
           "position": null,
-          "positionLabel": "NC",
-          "status": null,
+          "positionLabel": "DNF",
+          "status": "DNF",
           "driverNumber": 18,
           "driverName": "Lance STROLL",
           "nameAcronym": "STR",

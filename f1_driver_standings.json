@@ -1,6 +1,6 @@
 {
   "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-11-01T22:59:01.040Z",
+  "generatedAtUtc": "2026-11-01T23:08:45.622Z",
   "season": 2026,
   "source": {
     "primary": "f1_season_event_results.json",
@@ -10,27 +10,27 @@
   },
   "lastRace": {
     "season": "2026",
-    "round": "18",
-    "raceName": "United States Grand Prix",
-    "date": "2026-10-25",
+    "round": "19",
+    "raceName": "Mexico City Grand Prix",
+    "date": "2026-11-01",
     "circuit": {
-      "name": "Austin",
-      "locality": "Austin",
-      "country": "United States"
+      "name": "Mexico City",
+      "locality": "Mexico City",
+      "country": "Mexico"
     },
     "winner": {
-      "firstName": "Kimi",
-      "lastName": "ANTONELLI",
-      "fullName": "Kimi ANTONELLI",
+      "firstName": "-",
+      "lastName": "-",
+      "fullName": "-",
       "code": null,
-      "team": "Mercedes"
+      "team": "-"
     }
   },
   "drivers": [
     {
       "position": "P1",
       "positionNumber": 1,
-      "points": 365,
+      "points": 380,
       "wins": 9,
       "driver": {
         "code": "ANT",
@@ -51,28 +51,28 @@
     {
       "position": "P2",
       "positionNumber": 2,
-      "points": 242,
+      "points": 261,
       "wins": 3,
       "driver": {
-        "code": "RUS",
-        "firstName": "George",
-        "lastName": "RUSSELL",
-        "fullName": "George RUSSELL",
-        "nationality": "GBR",
-        "driverNumber": 63,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/george-russell.png",
+        "code": "VER",
+        "firstName": "Max",
+        "lastName": "VERSTAPPEN",
+        "fullName": "Max VERSTAPPEN",
+        "nationality": "NED",
+        "driverNumber": 3,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/max-verstappen.png",
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "Mercedes",
-        "fullName": "Mercedes",
+        "name": "Red Bull",
+        "fullName": "Red Bull",
         "nationality": null
       }
     },
     {
       "position": "P3",
       "positionNumber": 3,
-      "points": 241,
+      "points": 259,
       "wins": 1,
       "driver": {
         "code": "HAM",
@@ -93,28 +93,28 @@
     {
       "position": "P4",
       "positionNumber": 4,
-      "points": 236,
-      "wins": 2,
+      "points": 250,
+      "wins": 3,
       "driver": {
-        "code": "VER",
-        "firstName": "Max",
-        "lastName": "VERSTAPPEN",
-        "fullName": "Max VERSTAPPEN",
-        "nationality": "NED",
-        "driverNumber": 3,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/max-verstappen.png",
+        "code": "RUS",
+        "firstName": "George",
+        "lastName": "RUSSELL",
+        "fullName": "George RUSSELL",
+        "nationality": "GBR",
+        "driverNumber": 63,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/george-russell.png",
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "Red Bull",
-        "fullName": "Red Bull",
+        "name": "Mercedes",
+        "fullName": "Mercedes",
         "nationality": null
       }
     },
     {
       "position": "P5",
       "positionNumber": 5,
-      "points": 233,
+      "points": 245,
       "wins": 1,
       "driver": {
         "code": "LEC",
@@ -135,7 +135,7 @@
     {
       "position": "P6",
       "positionNumber": 6,
-      "points": 211,
+      "points": 221,
       "wins": 2,
       "driver": {
         "code": "NOR",
@@ -156,7 +156,7 @@
     {
       "position": "P7",
       "positionNumber": 7,
-      "points": 144,
+      "points": 150,
       "wins": 0,
       "driver": {
         "code": "PIA",
@@ -198,7 +198,7 @@
     {
       "position": "P9",
       "positionNumber": 9,
-      "points": 77,
+      "points": 79,
       "wins": 0,
       "driver": {
         "code": "LAW",
@@ -219,7 +219,7 @@
     {
       "position": "P10",
       "positionNumber": 10,
-      "points": 42,
+      "points": 43,
       "wins": 0,
       "driver": {
         "code": "GAS",
@@ -261,7 +261,7 @@
     {
       "position": "P12",
       "positionNumber": 12,
-      "points": 27,
+      "points": 31,
       "wins": 0,
       "driver": {
         "code": "COL",
@@ -507,6 +507,27 @@
       "constructor": {
         "name": "Cadillac",
         "fullName": "Cadillac",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P24",
+      "positionNumber": 24,
+      "points": 0,
+      "wins": 0,
+      "driver": {
+        "code": "-",
+        "firstName": "Ryo",
+        "lastName": "HIRAKAWA",
+        "fullName": "Ryo HIRAKAWA",
+        "nationality": "-",
+        "driverNumber": 50,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/ryo-hirakawa.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Haas",
+        "fullName": "Haas",
         "nationality": null
       }
     }

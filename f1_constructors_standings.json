@@ -1,6 +1,6 @@
 {
   "header": "Constructors standings",
-  "generatedAtUtc": "2026-11-01T22:59:01.368Z",
+  "generatedAtUtc": "2026-11-01T23:08:45.988Z",
   "meta": {
     "seasonUsed": "2026",
     "source": "f1_season_event_results.json + f1_driver_standings.json",
@@ -9,27 +9,27 @@
   },
   "lastRace": {
     "season": "2026",
-    "round": "18",
-    "raceName": "United States Grand Prix",
-    "date": "2026-10-25",
+    "round": "19",
+    "raceName": "Mexico City Grand Prix",
+    "date": "2026-11-01",
     "circuit": {
-      "name": "Austin",
-      "locality": "Austin",
-      "country": "United States"
+      "name": "Mexico City",
+      "locality": "Mexico City",
+      "country": "Mexico"
     },
     "winner": {
-      "firstName": "Kimi",
-      "lastName": "ANTONELLI",
-      "fullName": "Kimi ANTONELLI",
+      "firstName": "-",
+      "lastName": "-",
+      "fullName": "-",
       "code": null,
-      "team": "Mercedes"
+      "team": "-"
     }
   },
   "constructors": [
     {
       "team": "Mercedes",
       "position": "P1",
-      "points": 607,
+      "points": 630,
       "wins": 12,
       "driverCount": 2,
       "placeholder": false
@@ -37,7 +37,7 @@
     {
       "team": "Ferrari",
       "position": "P2",
-      "points": 474,
+      "points": 504,
       "wins": 2,
       "driverCount": 2,
       "placeholder": false
@@ -45,15 +45,15 @@
     {
       "team": "Red Bull",
       "position": "P3",
-      "points": 355,
-      "wins": 2,
+      "points": 380,
+      "wins": 3,
       "driverCount": 2,
       "placeholder": false
     },
     {
       "team": "McLaren",
       "position": "P4",
-      "points": 355,
+      "points": 371,
       "wins": 2,
       "driverCount": 2,
       "placeholder": false
@@ -61,7 +61,7 @@
     {
       "team": "VCARB",
       "position": "P5",
-      "points": 102,
+      "points": 104,
       "wins": 0,
       "driverCount": 3,
       "placeholder": false
@@ -69,7 +69,7 @@
     {
       "team": "Alpine",
       "position": "P6",
-      "points": 69,
+      "points": 74,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
@@ -79,7 +79,7 @@
       "position": "P7",
       "points": 30,
       "wins": 0,
-      "driverCount": 2,
+      "driverCount": 3,
       "placeholder": false
     },
     {

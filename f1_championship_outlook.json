@@ -2,7 +2,7 @@
   "header": "F1 championship outlook",
   "season": 2026,
   "previousSeason": 2025,
-  "lastUpdated": "2026-11-01T22:59:02.547Z",
+  "lastUpdated": "2026-11-01T23:08:47.769Z",
   "mode": "race-weekend",
   "sources": {
     "driverStandings": "public-repo/f1_driver_standings.json",
@@ -11,30 +11,30 @@
     "previousYearWinners": "https://api.jolpi.ca/ergast/f1/2025/results/1.json"
   },
   "latest": {
-    "id": "round-18-unitedstatesgrandprix-2026-10-25",
+    "id": "round-19-mexicocitygrandprix-2026-11-01",
     "sourceRace": {
-      "raceName": "United States Grand Prix",
-      "meetingName": "United States Grand Prix",
-      "round": 18,
-      "date": "2026-10-25",
-      "dateStartUtc": "2026-10-25T20:00:00+00:00",
-      "meetingKey": 1297,
+      "raceName": "Mexico City Grand Prix",
+      "meetingName": "Mexico City Grand Prix",
+      "round": 19,
+      "date": "2026-11-01",
+      "dateStartUtc": "2026-11-01T20:00:00+00:00",
+      "meetingKey": 1298,
       "previousYearWinner": {
         "season": 2025,
-        "round": 19,
-        "raceName": "United States Grand Prix",
-        "date": "2025-10-19",
-        "winner": "Max Verstappen",
-        "constructor": "Red Bull",
+        "round": 20,
+        "raceName": "Mexico City Grand Prix",
+        "date": "2025-10-26",
+        "winner": "Lando Norris",
+        "constructor": "McLaren",
         "source": "jolpica"
       },
       "sessionsIncluded": [
         {
           "eventType": "race",
           "sessionName": "Race",
-          "sessionKey": 11396,
-          "date": "2026-10-25",
-          "dateStartUtc": "2026-10-25T20:00:00+00:00",
+          "sessionKey": 11404,
+          "date": "2026-11-01",
+          "dateStartUtc": "2026-11-01T20:00:00+00:00",
           "isRace": true,
           "isSprint": false
         }
@@ -42,62 +42,59 @@
     },
     "previousYearWinner": {
       "season": 2025,
-      "round": 19,
-      "raceName": "United States Grand Prix",
-      "date": "2025-10-19",
-      "winner": "Max Verstappen",
-      "constructor": "Red Bull",
+      "round": 20,
+      "raceName": "Mexico City Grand Prix",
+      "date": "2025-10-26",
+      "winner": "Lando Norris",
+      "constructor": "McLaren",
       "source": "jolpica"
     },
     "preWeekendNotes": {
-      "winStreak": {
-        "driverName": "VERSTAPPEN",
-        "count": 2
-      },
+      "winStreak": null,
       "podiumStreak": {
         "driverName": "VERSTAPPEN",
-        "count": 5
+        "count": 6
       },
       "leaderRecentForm": {
         "driverName": "ANTONELLI",
         "positions": [
-          5,
           2,
-          3
+          3,
+          1
         ],
-        "label": "P5 P2 P3 in last 3 races"
+        "label": "P2 P3 P1 in last 3 races"
       },
-      "defenderNote": "Max Verstappen won here in 2025 (Red Bull)"
+      "defenderNote": "Lando Norris won here in 2025 (McLaren)"
     },
     "drivers": {
       "leader": "ANTONELLI",
-      "second": "RUSSELL",
-      "gap": 123,
-      "standingsText": "ANTONELLI leads by 123 pts over RUSSELL",
-      "raceImpact": "ANTONELLI extended lead by 21 pts over RUSSELL",
-      "scenarioText": "ANTONELLI extended lead by 21 pts over RUSSELL",
+      "second": "VERSTAPPEN",
+      "gap": 119,
+      "standingsText": "ANTONELLI leads by 119 pts over VERSTAPPEN",
+      "raceImpact": "VERSTAPPEN cut ANTONELLI's lead by 10 pts",
+      "scenarioText": "VERSTAPPEN cut ANTONELLI's lead by 10 pts",
       "p1Changed": false,
-      "leaderWeekendPoints": 25,
-      "secondWeekendPoints": 4,
-      "weekendDelta": 21,
-      "leaderRacePoints": 25,
-      "secondRacePoints": 4,
-      "raceDelta": 21
+      "leaderWeekendPoints": 15,
+      "secondWeekendPoints": 25,
+      "weekendDelta": -10,
+      "leaderRacePoints": 15,
+      "secondRacePoints": 25,
+      "raceDelta": -10
     },
     "constructors": {
       "leader": "Mercedes",
       "second": "Ferrari",
-      "gap": 133,
-      "standingsText": "Mercedes leads by 133 pts over Ferrari",
-      "raceImpact": "Ferrari cut Mercedes's constructors' lead by 1 pts",
-      "scenarioText": "Ferrari cut Mercedes's constructors' lead by 1 pts",
+      "gap": 126,
+      "standingsText": "Mercedes leads by 126 pts over Ferrari",
+      "raceImpact": "Ferrari cut Mercedes's constructors' lead by 7 pts",
+      "scenarioText": "Ferrari cut Mercedes's constructors' lead by 7 pts",
       "p1Changed": false,
-      "leaderWeekendPoints": 29,
+      "leaderWeekendPoints": 23,
       "secondWeekendPoints": 30,
-      "weekendDelta": -1,
-      "leaderRacePoints": 29,
+      "weekendDelta": -7,
+      "leaderRacePoints": 23,
       "secondRacePoints": 30,
-      "raceDelta": -1
+      "raceDelta": -7
     }
   },
   "races": [
@@ -1749,6 +1746,93 @@
         "leaderRacePoints": 29,
         "secondRacePoints": 30,
         "raceDelta": -1
+      }
+    },
+    {
+      "id": "round-19-mexicocitygrandprix-2026-11-01",
+      "sourceRace": {
+        "raceName": "Mexico City Grand Prix",
+        "meetingName": "Mexico City Grand Prix",
+        "round": 19,
+        "date": "2026-11-01",
+        "dateStartUtc": "2026-11-01T20:00:00+00:00",
+        "meetingKey": 1298,
+        "previousYearWinner": {
+          "season": 2025,
+          "round": 20,
+          "raceName": "Mexico City Grand Prix",
+          "date": "2025-10-26",
+          "winner": "Lando Norris",
+          "constructor": "McLaren",
+          "source": "jolpica"
+        },
+        "sessionsIncluded": [
+          {
+            "eventType": "race",
+            "sessionName": "Race",
+            "sessionKey": 11404,
+            "date": "2026-11-01",
+            "dateStartUtc": "2026-11-01T20:00:00+00:00",
+            "isRace": true,
+            "isSprint": false
+          }
+        ]
+      },
+      "previousYearWinner": {
+        "season": 2025,
+        "round": 20,
+        "raceName": "Mexico City Grand Prix",
+        "date": "2025-10-26",
+        "winner": "Lando Norris",
+        "constructor": "McLaren",
+        "source": "jolpica"
+      },
+      "preWeekendNotes": {
+        "winStreak": null,
+        "podiumStreak": {
+          "driverName": "VERSTAPPEN",
+          "count": 6
+        },
+        "leaderRecentForm": {
+          "driverName": "ANTONELLI",
+          "positions": [
+            2,
+            3,
+            1
+          ],
+          "label": "P2 P3 P1 in last 3 races"
+        },
+        "defenderNote": "Lando Norris won here in 2025 (McLaren)"
+      },
+      "drivers": {
+        "leader": "ANTONELLI",
+        "second": "VERSTAPPEN",
+        "gap": 119,
+        "standingsText": "ANTONELLI leads by 119 pts over VERSTAPPEN",
+        "raceImpact": "VERSTAPPEN cut ANTONELLI's lead by 10 pts",
+        "scenarioText": "VERSTAPPEN cut ANTONELLI's lead by 10 pts",
+        "p1Changed": false,
+        "leaderWeekendPoints": 15,
+        "secondWeekendPoints": 25,
+        "weekendDelta": -10,
+        "leaderRacePoints": 15,
+        "secondRacePoints": 25,
+        "raceDelta": -10
+      },
+      "constructors": {
+        "leader": "Mercedes",
+        "second": "Ferrari",
+        "gap": 126,
+        "standingsText": "Mercedes leads by 126 pts over Ferrari",
+        "raceImpact": "Ferrari cut Mercedes's constructors' lead by 7 pts",
+        "scenarioText": "Ferrari cut Mercedes's constructors' lead by 7 pts",
+        "p1Changed": false,
+        "leaderWeekendPoints": 23,
+        "secondWeekendPoints": 30,
+        "weekendDelta": -7,
+        "leaderRacePoints": 23,
+        "secondRacePoints": 30,
+        "raceDelta": -7
       }
     }
   ]
