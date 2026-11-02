@@ -1,7 +1,7 @@
 {
  "schema": "apex-stat-tables",
  "version": 2,
- "generatedAt": "2026-11-02T01:19:23+00:00",
+ "generatedAt": "2026-11-02T15:46:29+00:00",
  "year": 2026,
  "latestRound": 19,
  "latestRace": "Mexico City Grand Prix",
@@ -20,7 +20,7 @@
     "teamRows": [
      {
       "rank": "1",
-      "value": "2.85",
+      "value": "3.05",
       "unit": "s",
       "note": "",
       "code": "team",
@@ -28,7 +28,7 @@
      },
      {
       "rank": "2",
-      "value": "3.14",
+      "value": "3.09",
       "unit": "s",
       "note": "",
       "code": "team",
@@ -36,15 +36,15 @@
      },
      {
       "rank": "3",
-      "value": "3.23",
+      "value": "3.13",
       "unit": "s",
       "note": "",
       "code": "team",
-      "team": "Ferrari"
+      "team": ""
      },
      {
       "rank": "4",
-      "value": "3.24",
+      "value": "3.20",
       "unit": "s",
       "note": "",
       "code": "team",
@@ -52,15 +52,15 @@
      },
      {
       "rank": "5",
-      "value": "3.30",
+      "value": "3.31",
       "unit": "s",
       "note": "",
       "code": "team",
-      "team": "Audi"
+      "team": "Ferrari"
      },
      {
       "rank": "6",
-      "value": "3.47",
+      "value": "3.44",
       "unit": "s",
       "note": "",
       "code": "team",
@@ -68,14 +68,22 @@
      },
      {
       "rank": "7",
-      "value": "3.70",
+      "value": "3.46",
+      "unit": "s",
+      "note": "",
+      "code": "team",
+      "team": "Audi"
+     },
+     {
+      "rank": "8",
+      "value": "3.66",
       "unit": "s",
       "note": "",
       "code": "team",
       "team": "Aston Martin"
      },
      {
-      "rank": "8",
+      "rank": "9",
       "value": "3.94",
       "unit": "s",
       "note": "",
@@ -83,28 +91,20 @@
       "team": "McLaren"
      },
      {
-      "rank": "9",
-      "value": "4.31",
+      "rank": "10",
+      "value": "4.28",
       "unit": "s",
       "note": "",
       "code": "team",
       "team": "Haas"
      },
      {
-      "rank": "10",
-      "value": "4.42",
+      "rank": "11",
+      "value": "4.38",
       "unit": "s",
       "note": "",
       "code": "team",
       "team": "Williams"
-     },
-     {
-      "rank": "11",
-      "value": "4.45",
-      "unit": "s",
-      "note": "",
-      "code": "team",
-      "team": "Cadillac"
      }
     ]
    },
@@ -2670,62 +2670,62 @@
     "headline": "AVERAGE STOP BY ROUND",
     "sub": "2026 season · after Round 19",
     "source": "Source: DHL",
-    "rounds": "AUS, CHN, JPN, MIA, CAN, MON, BAR, AUT, GBR, BEL, HUN, NED, ITA, ESP, AZE, BHR, SIN, USA",
+    "rounds": "AUS, CHN, JPN, MIA, CAN, MON, BAR, AUT, GBR, BEL, HUN, NED, ITA, ESP, AZE, BHR, SIN, USA, MEX",
     "cum2": false,
     "teamRows": [
      {
       "rank": "1",
-      "value": "2.85",
+      "value": "3.05",
       "unit": "s",
       "note": "",
       "code": "team",
       "team": "Mercedes",
-      "series": "2.33, 3.06, 2.42, 2.17, 3.41, 3.55, 2.42, 2.35, 3.68, 2.39, 2.48, 3.23, 2.76, 2.43, 2.44, 2.51, 2.44, 5.50"
+      "series": "2.33, 3.06, 2.42, 2.17, 3.41, 3.55, 2.42, 2.35, 3.68, 2.39, 2.48, 3.23, 2.76, 2.43, 2.44, 2.51, 2.44, 5.50, 6.56"
      },
      {
       "rank": "2",
-      "value": "3.14",
+      "value": "3.09",
       "unit": "s",
       "note": "",
       "code": "team",
       "team": "Racing Bulls",
-      "series": "2.76, 2.60, 3.79, 2.08, 2.20, 7.52, 4.12, 2.34, 2.72, 3.53, 2.21, 2.57, , 2.71, 4.34, 2.95, 2.57, 2.62"
+      "series": "2.76, 2.60, 3.79, 2.08, 2.20, 7.52, 4.12, 2.34, 2.72, 3.53, 2.21, 2.57, , 2.71, 4.34, 2.95, 2.57, 2.62, 2.25"
      },
      {
       "rank": "3",
-      "value": "3.23",
+      "value": "3.13",
       "unit": "s",
       "note": "",
       "code": "team",
-      "team": "Ferrari",
-      "series": "2.24, 2.84, 2.06, 3.50, 3.77, 4.87, 2.69, 2.52, 4.04, 5.42, 2.49, 3.37, , 2.70, 3.04, 4.11, 2.77, 2.50"
+      "team": "",
+      "series": ", , , , , , , , , , , , , , , , , , 3.13"
      },
      {
       "rank": "4",
-      "value": "3.24",
+      "value": "3.20",
       "unit": "s",
       "note": "",
       "code": "team",
       "team": "Alpine",
-      "series": "6.16, 2.68, 3.29, 2.80, 3.96, 3.25, 3.12, 2.50, 3.96, 3.41, 2.65, 3.38, , 2.76, 2.46, 2.49, 3.16, 4.46"
+      "series": "6.16, 2.68, 3.29, 2.80, 3.96, 3.25, 3.12, 2.50, 3.96, 3.41, 2.65, 3.38, , 2.76, 2.46, 2.49, 3.16, 4.46, 2.61"
      },
      {
       "rank": "5",
-      "value": "3.30",
+      "value": "3.31",
       "unit": "s",
       "note": "",
       "code": "team",
-      "team": "Audi",
-      "series": "4.48, , 2.54, 7.82, 4.24, 2.60, 3.38, 3.10, 2.85, 2.88, 2.58, 3.01, 2.44, 2.36, 2.43, 3.59, 3.42, 2.66"
+      "team": "Ferrari",
+      "series": "2.24, 2.84, 2.06, 3.50, 3.77, 4.87, 2.69, 2.52, 4.04, 5.42, 2.49, 3.37, , 2.70, 3.04, 4.11, 2.77, 2.50, 4.79"
      },
      {
       "rank": "6",
-      "value": "3.47",
+      "value": "3.44",
       "unit": "s",
       "note": "",
       "code": "team",
       "team": "Red Bull",
-      "series": "2.32, 3.85, 3.08, 2.34, 8.10, 6.43, 2.90, 2.55, 4.50, 3.24, 2.52, 2.92, 2.64, 2.38, 2.93, 2.45, 2.63, 2.94"
+      "series": "2.32, 3.85, 3.08, 2.34, 8.10, 6.43, 2.90, 2.55, 4.50, 3.24, 2.52, 2.92, 2.64, 2.38, 2.93, 2.45, 2.63, 2.94, 2.75"
      }
     ]
    },
@@ -4452,7 +4452,15 @@
       "team": "McLaren"
      },
      {
-      "rank": "6",
+      "rank": "5",
+      "value": "2.11",
+      "unit": "s",
+      "note": "",
+      "code": "team",
+      "team": "Williams"
+     },
+     {
+      "rank": "7",
       "value": "2.13",
       "unit": "s",
       "note": "",
@@ -4460,7 +4468,7 @@
       "team": "Alpine"
      },
      {
-      "rank": "7",
+      "rank": "8",
       "value": "2.15",
       "unit": "s",
       "note": "",
@@ -4468,20 +4476,12 @@
       "team": "Aston Martin"
      },
      {
-      "rank": "7",
+      "rank": "8",
       "value": "2.15",
       "unit": "s",
       "note": "",
       "code": "team",
       "team": "Audi"
-     },
-     {
-      "rank": "9",
-      "value": "2.16",
-      "unit": "s",
-      "note": "",
-      "code": "team",
-      "team": "Williams"
      },
      {
       "rank": "10",
@@ -42433,79 +42433,79 @@
      "teamRows": [
       {
        "rank": "1",
-       "value": "2.09",
-       "unit": "s",
-       "note": "",
-       "code": "team",
-       "team": "Red Bull"
-      },
-      {
-       "rank": "2",
-       "value": "2.13",
-       "unit": "s",
-       "note": "",
-       "code": "team",
-       "team": "Alpine"
-      },
-      {
-       "rank": "3",
-       "value": "2.15",
-       "unit": "s",
-       "note": "",
-       "code": "team",
-       "team": "Audi"
-      },
-      {
-       "rank": "4",
-       "value": "2.16",
-       "unit": "s",
-       "note": "",
-       "code": "team",
-       "team": "Williams"
-      },
-      {
-       "rank": "5",
-       "value": "2.23",
-       "unit": "s",
-       "note": "",
-       "code": "team",
-       "team": "Ferrari"
-      },
-      {
-       "rank": "6",
-       "value": "2.24",
-       "unit": "s",
-       "note": "",
-       "code": "team",
-       "team": "Mercedes"
-      },
-      {
-       "rank": "7",
-       "value": "2.26",
-       "unit": "s",
-       "note": "",
-       "code": "team",
-       "team": "Aston Martin"
-      },
-      {
-       "rank": "8",
-       "value": "2.30",
-       "unit": "s",
-       "note": "",
-       "code": "team",
-       "team": "Racing Bulls"
-      },
-      {
-       "rank": "9",
-       "value": "2.53",
+       "value": "2.11",
        "unit": "s",
        "note": "",
        "code": "team",
        "team": "McLaren"
       },
       {
+       "rank": "2",
+       "value": "2.30",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "3",
+       "value": "2.31",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "4",
+       "value": "2.40",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "5",
+       "value": "2.52",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "6",
+       "value": "2.55",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Williams"
+      },
+      {
+       "rank": "7",
+       "value": "2.58",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Audi"
+      },
+      {
+       "rank": "8",
+       "value": "2.65",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Cadillac"
+      },
+      {
+       "rank": "9",
+       "value": "2.76",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Aston Martin"
+      },
+      {
        "rank": "10",
-       "value": "2.70",
+       "value": "2.87",
        "unit": "s",
        "note": "",
        "code": "team",
@@ -42513,11 +42513,11 @@
       },
       {
        "rank": "11",
-       "value": "3.05",
+       "value": "3.29",
        "unit": "s",
        "note": "",
        "code": "team",
-       "team": "Cadillac"
+       "team": "Alpine"
       }
      ]
     },
@@ -43248,16 +43248,16 @@
      "rows": [
       {
        "rank": "1",
-       "value": "31",
+       "value": "41",
        "unit": "laps",
        "note": "",
-       "code": "HAM",
+       "code": "PIA",
        "text": "",
-       "team": "Ferrari"
+       "team": "McLaren"
       },
       {
        "rank": "2",
-       "value": "25",
+       "value": "40",
        "unit": "laps",
        "note": "",
        "code": "NOR",
@@ -43266,43 +43266,7 @@
       },
       {
        "rank": "3",
-       "value": "24",
-       "unit": "laps",
-       "note": "",
-       "code": "VER",
-       "text": "",
-       "team": "Red Bull"
-      },
-      {
-       "rank": "3",
-       "value": "24",
-       "unit": "laps",
-       "note": "",
-       "code": "ANT",
-       "text": "",
-       "team": "Mercedes"
-      },
-      {
-       "rank": "3",
-       "value": "24",
-       "unit": "laps",
-       "note": "",
-       "code": "PIA",
-       "text": "",
-       "team": "McLaren"
-      },
-      {
-       "rank": "3",
-       "value": "24",
-       "unit": "laps",
-       "note": "",
-       "code": "HUL",
-       "text": "",
-       "team": "Audi"
-      },
-      {
-       "rank": "7",
-       "value": "23",
+       "value": "34",
        "unit": "laps",
        "note": "",
        "code": "RUS",
@@ -43310,8 +43274,44 @@
        "team": "Mercedes"
       },
       {
+       "rank": "3",
+       "value": "34",
+       "unit": "laps",
+       "note": "",
+       "code": "OCO",
+       "text": "",
+       "team": "Haas"
+      },
+      {
+       "rank": "5",
+       "value": "32",
+       "unit": "laps",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "5",
+       "value": "32",
+       "unit": "laps",
+       "note": "",
+       "code": "GAS",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "5",
+       "value": "32",
+       "unit": "laps",
+       "note": "",
+       "code": "PER",
+       "text": "",
+       "team": "Cadillac"
+      },
+      {
        "rank": "8",
-       "value": "22",
+       "value": "31",
        "unit": "laps",
        "note": "",
        "code": "HAD",
@@ -43320,16 +43320,16 @@
       },
       {
        "rank": "8",
-       "value": "22",
+       "value": "31",
        "unit": "laps",
        "note": "",
-       "code": "ALO",
+       "code": "LAW",
        "text": "",
-       "team": "Aston Martin"
+       "team": "Racing Bulls"
       },
       {
-       "rank": "8",
-       "value": "22",
+       "rank": "10",
+       "value": "30",
        "unit": "laps",
        "note": "",
        "code": "COL",
@@ -43556,52 +43556,34 @@
      "rows": [
       {
        "rank": "1",
-       "value": "7",
+       "value": "2",
        "unit": "stops",
        "note": "",
-       "code": "PER",
+       "code": "VER",
        "text": "",
-       "team": "Cadillac"
+       "team": "Red Bull"
       },
       {
-       "rank": "2",
-       "value": "4",
+       "rank": "1",
+       "value": "2",
        "unit": "stops",
        "note": "",
-       "code": "BOR",
+       "code": "BEA",
        "text": "",
-       "team": "Audi"
+       "team": "Haas"
       },
       {
-       "rank": "2",
-       "value": "4",
+       "rank": "1",
+       "value": "2",
        "unit": "stops",
        "note": "",
-       "code": "STR",
+       "code": "HAM",
        "text": "",
-       "team": "Aston Martin"
+       "team": "Ferrari"
       },
       {
-       "rank": "2",
-       "value": "4",
-       "unit": "stops",
-       "note": "",
-       "code": "HUL",
-       "text": "",
-       "team": "Audi"
-      },
-      {
-       "rank": "2",
-       "value": "4",
-       "unit": "stops",
-       "note": "",
-       "code": "PIA",
-       "text": "",
-       "team": "McLaren"
-      },
-      {
-       "rank": "2",
-       "value": "4",
+       "rank": "1",
+       "value": "2",
        "unit": "stops",
        "note": "",
        "code": "LEC",
@@ -43609,22 +43591,40 @@
        "team": "Ferrari"
       },
       {
-       "rank": "2",
-       "value": "4",
+       "rank": "1",
+       "value": "2",
        "unit": "stops",
        "note": "",
-       "code": "GAS",
+       "code": "STR",
        "text": "",
-       "team": "Alpine"
+       "team": "Aston Martin"
       },
       {
-       "rank": "8",
-       "value": "3",
+       "rank": "1",
+       "value": "2",
        "unit": "stops",
        "note": "",
-       "code": "NOR",
+       "code": "ALB",
        "text": "",
-       "team": "McLaren"
+       "team": "Williams"
+      },
+      {
+       "rank": "1",
+       "value": "2",
+       "unit": "stops",
+       "note": "",
+       "code": "SAI",
+       "text": "",
+       "team": "Williams"
+      },
+      {
+       "rank": "1",
+       "value": "2",
+       "unit": "stops",
+       "note": "",
+       "code": "LIN",
+       "text": "",
+       "team": "Racing Bulls"
       }
      ]
     },
@@ -44048,16 +44048,7 @@
      "rows": [
       {
        "rank": "1",
-       "value": "512",
-       "unit": "laps",
-       "note": "",
-       "code": "text",
-       "text": "Soft",
-       "team": ""
-      },
-      {
-       "rank": "2",
-       "value": "337",
+       "value": "506",
        "unit": "laps",
        "note": "",
        "code": "text",
@@ -44065,21 +44056,21 @@
        "team": ""
       },
       {
+       "rank": "2",
+       "value": "454",
+       "unit": "laps",
+       "note": "",
+       "code": "text",
+       "text": "Soft",
+       "team": ""
+      },
+      {
        "rank": "3",
-       "value": "170",
+       "value": "203",
        "unit": "laps",
        "note": "",
        "code": "text",
        "text": "Medium",
-       "team": ""
-      },
-      {
-       "rank": "4",
-       "value": "122",
-       "unit": "laps",
-       "note": "",
-       "code": "text",
-       "text": "Intermediate",
        "team": ""
       }
      ]
@@ -44778,16 +44769,16 @@
      "rows": [
       {
        "rank": "1",
-       "value": "31",
+       "value": "41",
        "unit": "laps",
        "note": "",
-       "code": "HAM",
+       "code": "PIA",
        "text": "",
-       "team": "Ferrari"
+       "team": "McLaren"
       },
       {
        "rank": "2",
-       "value": "25",
+       "value": "40",
        "unit": "laps",
        "note": "",
        "code": "NOR",
@@ -44796,43 +44787,7 @@
       },
       {
        "rank": "3",
-       "value": "24",
-       "unit": "laps",
-       "note": "",
-       "code": "VER",
-       "text": "",
-       "team": "Red Bull"
-      },
-      {
-       "rank": "3",
-       "value": "24",
-       "unit": "laps",
-       "note": "",
-       "code": "ANT",
-       "text": "",
-       "team": "Mercedes"
-      },
-      {
-       "rank": "3",
-       "value": "24",
-       "unit": "laps",
-       "note": "",
-       "code": "PIA",
-       "text": "",
-       "team": "McLaren"
-      },
-      {
-       "rank": "3",
-       "value": "24",
-       "unit": "laps",
-       "note": "",
-       "code": "HUL",
-       "text": "",
-       "team": "Audi"
-      },
-      {
-       "rank": "7",
-       "value": "23",
+       "value": "34",
        "unit": "laps",
        "note": "",
        "code": "RUS",
@@ -44840,8 +44795,44 @@
        "team": "Mercedes"
       },
       {
+       "rank": "3",
+       "value": "34",
+       "unit": "laps",
+       "note": "",
+       "code": "OCO",
+       "text": "",
+       "team": "Haas"
+      },
+      {
+       "rank": "5",
+       "value": "32",
+       "unit": "laps",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "5",
+       "value": "32",
+       "unit": "laps",
+       "note": "",
+       "code": "GAS",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "5",
+       "value": "32",
+       "unit": "laps",
+       "note": "",
+       "code": "PER",
+       "text": "",
+       "team": "Cadillac"
+      },
+      {
        "rank": "8",
-       "value": "22",
+       "value": "31",
        "unit": "laps",
        "note": "",
        "code": "HAD",
@@ -45038,91 +45029,91 @@
      "teamRows": [
       {
        "rank": "1",
-       "value": "2.20",
-       "unit": "s",
-       "note": "",
-       "code": "team",
-       "team": "Red Bull"
-      },
-      {
-       "rank": "2",
-       "value": "2.24",
-       "unit": "s",
-       "note": "",
-       "code": "team",
-       "team": "Aston Martin"
-      },
-      {
-       "rank": "3",
-       "value": "2.26",
-       "unit": "s",
-       "note": "",
-       "code": "team",
-       "team": "Mercedes"
-      },
-      {
-       "rank": "4",
-       "value": "2.40",
-       "unit": "s",
-       "note": "",
-       "code": "team",
-       "team": "Racing Bulls"
-      },
-      {
-       "rank": "5",
-       "value": "2.44",
-       "unit": "s",
-       "note": "",
-       "code": "team",
-       "team": "Ferrari"
-      },
-      {
-       "rank": "6",
-       "value": "2.56",
-       "unit": "s",
-       "note": "",
-       "code": "team",
-       "team": "McLaren"
-      },
-      {
-       "rank": "7",
-       "value": "2.64",
+       "value": "2.11",
        "unit": "s",
        "note": "",
        "code": "team",
        "team": "Williams"
       },
       {
-       "rank": "8",
-       "value": "2.96",
+       "rank": "2",
+       "value": "2.14",
        "unit": "s",
        "note": "",
        "code": "team",
-       "team": "Haas"
+       "team": "Red Bull"
       },
       {
-       "rank": "9",
-       "value": "3.13",
+       "rank": "3",
+       "value": "2.18",
        "unit": "s",
        "note": "",
        "code": "team",
-       "team": "Cadillac"
+       "team": "Racing Bulls"
       },
       {
-       "rank": "10",
-       "value": "3.16",
+       "rank": "4",
+       "value": "2.21",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Audi"
+      },
+      {
+       "rank": "5",
+       "value": "2.34",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "5",
+       "value": "2.34",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "7",
+       "value": "2.45",
        "unit": "s",
        "note": "",
        "code": "team",
        "team": "Alpine"
       },
       {
-       "rank": "11",
-       "value": "3.42",
+       "rank": "8",
+       "value": "2.50",
        "unit": "s",
        "note": "",
        "code": "team",
-       "team": "Audi"
+       "team": "McLaren"
+      },
+      {
+       "rank": "9",
+       "value": "2.67",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Haas"
+      },
+      {
+       "rank": "10",
+       "value": "2.68",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Aston Martin"
+      },
+      {
+       "rank": "11",
+       "value": "2.82",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": ""
       }
      ]
     },
@@ -45835,61 +45826,34 @@
      "rows": [
       {
        "rank": "1",
-       "value": "44",
+       "value": "43",
        "unit": "laps",
        "note": "",
-       "code": "HAM",
-       "text": "",
-       "team": "Ferrari"
-      },
-      {
-       "rank": "2",
-       "value": "39",
-       "unit": "laps",
-       "note": "",
-       "code": "RUS",
+       "code": "ANT",
        "text": "",
        "team": "Mercedes"
       },
       {
-       "rank": "3",
-       "value": "35",
+       "rank": "2",
+       "value": "42",
        "unit": "laps",
        "note": "",
-       "code": "LIN",
+       "code": "HIR",
+       "text": "",
+       "team": ""
+      },
+      {
+       "rank": "3",
+       "value": "41",
+       "unit": "laps",
+       "note": "",
+       "code": "LAW",
        "text": "",
        "team": "Racing Bulls"
       },
       {
-       "rank": "3",
-       "value": "35",
-       "unit": "laps",
-       "note": "",
-       "code": "ALO",
-       "text": "",
-       "team": "Aston Martin"
-      },
-      {
-       "rank": "5",
-       "value": "33",
-       "unit": "laps",
-       "note": "",
-       "code": "PIA",
-       "text": "",
-       "team": "McLaren"
-      },
-      {
-       "rank": "5",
-       "value": "33",
-       "unit": "laps",
-       "note": "",
-       "code": "HAD",
-       "text": "",
-       "team": "Red Bull"
-      },
-      {
-       "rank": "5",
-       "value": "33",
+       "rank": "4",
+       "value": "40",
        "unit": "laps",
        "note": "",
        "code": "BEA",
@@ -45898,30 +45862,57 @@
       },
       {
        "rank": "5",
-       "value": "33",
-       "unit": "laps",
-       "note": "",
-       "code": "OCO",
-       "text": "",
-       "team": "Haas"
-      },
-      {
-       "rank": "9",
-       "value": "32",
-       "unit": "laps",
-       "note": "",
-       "code": "VER",
-       "text": "",
-       "team": "Red Bull"
-      },
-      {
-       "rank": "9",
-       "value": "32",
+       "value": "39",
        "unit": "laps",
        "note": "",
        "code": "NOR",
        "text": "",
        "team": "McLaren"
+      },
+      {
+       "rank": "6",
+       "value": "38",
+       "unit": "laps",
+       "note": "",
+       "code": "BOR",
+       "text": "",
+       "team": "Audi"
+      },
+      {
+       "rank": "7",
+       "value": "36",
+       "unit": "laps",
+       "note": "",
+       "code": "SAI",
+       "text": "",
+       "team": "Williams"
+      },
+      {
+       "rank": "8",
+       "value": "35",
+       "unit": "laps",
+       "note": "",
+       "code": "LIN",
+       "text": "",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "9",
+       "value": "34",
+       "unit": "laps",
+       "note": "",
+       "code": "HAD",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "9",
+       "value": "34",
+       "unit": "laps",
+       "note": "",
+       "code": "COL",
+       "text": "",
+       "team": "Alpine"
       }
      ]
     },
@@ -46125,7 +46116,7 @@
      "rows": [
       {
        "rank": "1",
-       "value": "2",
+       "value": "3",
        "unit": "stops",
        "note": "",
        "code": "PER",
@@ -46134,6 +46125,42 @@
       },
       {
        "rank": "1",
+       "value": "3",
+       "unit": "stops",
+       "note": "",
+       "code": "HIR",
+       "text": "",
+       "team": ""
+      },
+      {
+       "rank": "3",
+       "value": "2",
+       "unit": "stops",
+       "note": "",
+       "code": "HAD",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "3",
+       "value": "2",
+       "unit": "stops",
+       "note": "",
+       "code": "LAW",
+       "text": "",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "3",
+       "value": "2",
+       "unit": "stops",
+       "note": "",
+       "code": "GAS",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "3",
        "value": "2",
        "unit": "stops",
        "note": "",
@@ -46142,25 +46169,7 @@
        "team": "Williams"
       },
       {
-       "rank": "1",
-       "value": "2",
-       "unit": "stops",
-       "note": "",
-       "code": "ANT",
-       "text": "",
-       "team": "Mercedes"
-      },
-      {
-       "rank": "1",
-       "value": "2",
-       "unit": "stops",
-       "note": "",
-       "code": "LEC",
-       "text": "",
-       "team": "Ferrari"
-      },
-      {
-       "rank": "1",
+       "rank": "3",
        "value": "2",
        "unit": "stops",
        "note": "",
@@ -46169,31 +46178,13 @@
        "team": "McLaren"
       },
       {
-       "rank": "6",
-       "value": "1",
+       "rank": "3",
+       "value": "2",
        "unit": "stops",
        "note": "",
        "code": "HAM",
        "text": "",
        "team": "Ferrari"
-      },
-      {
-       "rank": "6",
-       "value": "1",
-       "unit": "stops",
-       "note": "",
-       "code": "LIN",
-       "text": "",
-       "team": "Racing Bulls"
-      },
-      {
-       "rank": "6",
-       "value": "1",
-       "unit": "stops",
-       "note": "",
-       "code": "STR",
-       "text": "",
-       "team": "Aston Martin"
       }
      ]
     },
@@ -46617,7 +46608,7 @@
      "rows": [
       {
        "rank": "1",
-       "value": "701",
+       "value": "1047",
        "unit": "laps",
        "note": "",
        "code": "text",
@@ -46626,7 +46617,7 @@
       },
       {
        "rank": "2",
-       "value": "535",
+       "value": "315",
        "unit": "laps",
        "note": "",
        "code": "text",
@@ -47311,61 +47302,34 @@
      "rows": [
       {
        "rank": "1",
-       "value": "44",
+       "value": "43",
        "unit": "laps",
        "note": "",
-       "code": "HAM",
-       "text": "",
-       "team": "Ferrari"
-      },
-      {
-       "rank": "2",
-       "value": "39",
-       "unit": "laps",
-       "note": "",
-       "code": "RUS",
+       "code": "ANT",
        "text": "",
        "team": "Mercedes"
       },
       {
-       "rank": "3",
-       "value": "35",
+       "rank": "2",
+       "value": "42",
        "unit": "laps",
        "note": "",
-       "code": "LIN",
+       "code": "HIR",
+       "text": "",
+       "team": ""
+      },
+      {
+       "rank": "3",
+       "value": "41",
+       "unit": "laps",
+       "note": "",
+       "code": "LAW",
        "text": "",
        "team": "Racing Bulls"
       },
       {
-       "rank": "3",
-       "value": "35",
-       "unit": "laps",
-       "note": "",
-       "code": "ALO",
-       "text": "",
-       "team": "Aston Martin"
-      },
-      {
-       "rank": "5",
-       "value": "33",
-       "unit": "laps",
-       "note": "",
-       "code": "PIA",
-       "text": "",
-       "team": "McLaren"
-      },
-      {
-       "rank": "5",
-       "value": "33",
-       "unit": "laps",
-       "note": "",
-       "code": "HAD",
-       "text": "",
-       "team": "Red Bull"
-      },
-      {
-       "rank": "5",
-       "value": "33",
+       "rank": "4",
+       "value": "40",
        "unit": "laps",
        "note": "",
        "code": "BEA",
@@ -47374,12 +47338,39 @@
       },
       {
        "rank": "5",
-       "value": "33",
+       "value": "39",
        "unit": "laps",
        "note": "",
-       "code": "OCO",
+       "code": "NOR",
        "text": "",
-       "team": "Haas"
+       "team": "McLaren"
+      },
+      {
+       "rank": "6",
+       "value": "38",
+       "unit": "laps",
+       "note": "",
+       "code": "BOR",
+       "text": "",
+       "team": "Audi"
+      },
+      {
+       "rank": "7",
+       "value": "36",
+       "unit": "laps",
+       "note": "",
+       "code": "SAI",
+       "text": "",
+       "team": "Williams"
+      },
+      {
+       "rank": "8",
+       "value": "35",
+       "unit": "laps",
+       "note": "",
+       "code": "LIN",
+       "text": "",
+       "team": "Racing Bulls"
       }
      ]
     },
@@ -50066,6 +50057,106 @@
    "date": "2026-11-01",
    "stats": [
     {
+     "id": "fastest_pit_stop",
+     "layout": "bars",
+     "mode": "teams",
+     "order": "low",
+     "tag": "PIT STOPS",
+     "headline": "FASTEST PIT STOPS",
+     "sub": "Round 19 · Mexico City Grand Prix",
+     "source": "Source: DHL",
+     "teamRows": [
+      {
+       "rank": "1",
+       "value": "2.11",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Williams"
+      },
+      {
+       "rank": "2",
+       "value": "2.14",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "3",
+       "value": "2.18",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "4",
+       "value": "2.21",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Audi"
+      },
+      {
+       "rank": "5",
+       "value": "2.34",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "5",
+       "value": "2.34",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "7",
+       "value": "2.45",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Alpine"
+      },
+      {
+       "rank": "8",
+       "value": "2.50",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "McLaren"
+      },
+      {
+       "rank": "9",
+       "value": "2.67",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Haas"
+      },
+      {
+       "rank": "10",
+       "value": "2.68",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Aston Martin"
+      },
+      {
+       "rank": "11",
+       "value": "2.82",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": ""
+      }
+     ]
+    },
+    {
      "id": "top_speed_drivers",
      "layout": "bars",
      "mode": "drivers",
@@ -50867,18 +50958,18 @@
        "value": "34",
        "unit": "laps",
        "note": "",
-       "code": "COL",
+       "code": "HAD",
        "text": "",
-       "team": "Alpine"
+       "team": "Red Bull"
       },
       {
        "rank": "9",
        "value": "34",
        "unit": "laps",
        "note": "",
-       "code": "HAD",
+       "code": "COL",
        "text": "",
-       "team": "Red Bull"
+       "team": "Alpine"
       }
      ]
     },
@@ -51103,9 +51194,9 @@
        "value": "3",
        "unit": "stops",
        "note": "",
-       "code": "HAD",
+       "code": "PER",
        "text": "",
-       "team": "Red Bull"
+       "team": "Cadillac"
       },
       {
        "rank": "1",
@@ -51117,8 +51208,35 @@
        "team": "Haas"
       },
       {
-       "rank": "1",
-       "value": "3",
+       "rank": "3",
+       "value": "2",
+       "unit": "stops",
+       "note": "",
+       "code": "HAD",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "3",
+       "value": "2",
+       "unit": "stops",
+       "note": "",
+       "code": "LAW",
+       "text": "",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "3",
+       "value": "2",
+       "unit": "stops",
+       "note": "",
+       "code": "GAS",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "3",
+       "value": "2",
        "unit": "stops",
        "note": "",
        "code": "ALB",
@@ -51126,47 +51244,20 @@
        "team": "Williams"
       },
       {
-       "rank": "1",
-       "value": "3",
-       "unit": "stops",
-       "note": "",
-       "code": "PER",
-       "text": "",
-       "team": "Cadillac"
-      },
-      {
-       "rank": "5",
+       "rank": "3",
        "value": "2",
        "unit": "stops",
        "note": "",
-       "code": "VER",
+       "code": "PIA",
        "text": "",
-       "team": "Red Bull"
+       "team": "McLaren"
       },
       {
-       "rank": "5",
+       "rank": "3",
        "value": "2",
        "unit": "stops",
        "note": "",
        "code": "HAM",
-       "text": "",
-       "team": "Ferrari"
-      },
-      {
-       "rank": "5",
-       "value": "2",
-       "unit": "stops",
-       "note": "",
-       "code": "ANT",
-       "text": "",
-       "team": "Mercedes"
-      },
-      {
-       "rank": "5",
-       "value": "2",
-       "unit": "stops",
-       "note": "",
-       "code": "LEC",
        "text": "",
        "team": "Ferrari"
       }
