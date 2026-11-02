@@ -135,7 +135,14 @@
       "raceName": "Las Vegas Grand Prix"
     }
   },
-  "previousWinner": null,
+  "previousWinner": {
+    "raceName": "Las Vegas Grand Prix",
+    "city": "Las Vegas",
+    "country": "USA",
+    "previousWinner": "Max Verstappen",
+    "constructor": "Red Bull",
+    "date": "2025-11-23"
+  },
   "tyreInfo": {
     "round": 21,
     "raceSlug": "las-vegas",
