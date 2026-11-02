@@ -1,7 +1,7 @@
 {
   "header": "2026 Mexico City GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-11-01T23:16:51.679Z",
+  "generatedAtUtc": "2026-11-02T01:22:23.466Z",
   "season": 2026,
   "round": 19,
   "meetingKey": 1298,
@@ -963,6 +963,14 @@
       "session": "Race",
       "title": "Decision - Car 10 - Alleged leaving the track and gaining an advantage",
       "publishedAt": "2026-11-01T23:12:00.000Z"
+    },
+    "https://www.fia.com/system/files/decision-document/2026_mexico_city_grand_prix_-_infringement_-_car_81_-_causing_a_collision.pdf": {
+      "none": true,
+      "parserVersion": 10,
+      "decision": "10 second time penalty imposed after the Race.",
+      "session": "Race",
+      "title": "Infringement - Car 81 - Causing a collision",
+      "publishedAt": "2026-11-01T23:57:00.000Z"
     }
   },
   "sessionResults": [
@@ -3295,7 +3303,7 @@
           "position": "DNF",
           "positionRank": null,
           "classifiedPosition": null,
-          "dnf": false,
+          "dnf": true,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -3321,7 +3329,7 @@
           "position": "DNF",
           "positionRank": null,
           "classifiedPosition": null,
-          "dnf": false,
+          "dnf": true,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -3347,7 +3355,7 @@
           "position": "DNF",
           "positionRank": null,
           "classifiedPosition": null,
-          "dnf": false,
+          "dnf": true,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -3373,7 +3381,7 @@
           "position": "DNF",
           "positionRank": null,
           "classifiedPosition": null,
-          "dnf": false,
+          "dnf": true,
           "dns": false,
           "dsq": false,
           "duration": null,
@@ -3399,7 +3407,7 @@
           "position": "DNF",
           "positionRank": null,
           "classifiedPosition": null,
-          "dnf": false,
+          "dnf": true,
           "dns": false,
           "dsq": false,
           "duration": null,
