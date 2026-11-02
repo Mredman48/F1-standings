@@ -1,10 +1,10 @@
 {
   "header": "2026 F1 pit stops and tyre strategy",
-  "generatedAtUtc": "2026-11-02T05:05:37.839Z",
+  "generatedAtUtc": "2026-11-02T13:54:40.404Z",
   "season": 2026,
   "latest": {
     "sessionType": "race",
-    "final": false,
+    "final": true,
     "round": 17,
     "meetingKey": 1298,
     "meetingName": "Mexico City Grand Prix",
@@ -2338,7 +2338,7 @@
   },
   "latestRace": {
     "sessionType": "race",
-    "final": false,
+    "final": true,
     "round": 17,
     "meetingKey": 1298,
     "meetingName": "Mexico City Grand Prix",
@@ -41148,7 +41148,7 @@
     },
     {
       "sessionType": "race",
-      "final": false,
+      "final": true,
       "round": 17,
       "meetingKey": 1298,
       "meetingName": "Mexico City Grand Prix",
@@ -48896,10 +48896,10 @@
       },
       "1186": {
         "eventId": 1186,
-        "title": "",
-        "sort": null,
+        "title": "Mexico",
+        "sort": 19,
         "dateIso": "2026-11-01",
-        "header": "",
+        "header": "FORMULA 1 GRAN PREMIO DE LA CIUDAD DE MÉXICO 2026",
         "stops": [
           {
             "rank": 1,
