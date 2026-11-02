@@ -1,6 +1,6 @@
 {
   "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-11-02T13:54:28.508Z",
+  "generatedAtUtc": "2026-11-02T14:00:22.217Z",
   "season": 2026,
   "source": {
     "primary": "f1_season_event_results.json",
@@ -156,7 +156,7 @@
     {
       "position": "P7",
       "positionNumber": 7,
-      "points": 150,
+      "points": 144,
       "wins": 0,
       "driver": {
         "code": "PIA",
@@ -177,7 +177,7 @@
     {
       "position": "P8",
       "positionNumber": 8,
-      "points": 105,
+      "points": 107,
       "wins": 0,
       "driver": {
         "code": "HAD",
@@ -198,7 +198,7 @@
     {
       "position": "P9",
       "positionNumber": 9,
-      "points": 79,
+      "points": 83,
       "wins": 0,
       "driver": {
         "code": "LAW",
@@ -219,7 +219,7 @@
     {
       "position": "P10",
       "positionNumber": 10,
-      "points": 43,
+      "points": 42,
       "wins": 0,
       "driver": {
         "code": "GAS",
@@ -261,7 +261,7 @@
     {
       "position": "P12",
       "positionNumber": 12,
-      "points": 31,
+      "points": 27,
       "wins": 0,
       "driver": {
         "code": "COL",
@@ -303,16 +303,16 @@
     {
       "position": "P14",
       "positionNumber": 14,
-      "points": 13,
+      "points": 14,
       "wins": 0,
       "driver": {
-        "code": "HUL",
-        "firstName": "Nico",
-        "lastName": "HULKENBERG",
-        "fullName": "Nico HULKENBERG",
-        "nationality": "GER",
-        "driverNumber": 27,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/nico-hulkenberg.png",
+        "code": "BOR",
+        "firstName": "Gabriel",
+        "lastName": "BORTOLETO",
+        "fullName": "Gabriel BORTOLETO",
+        "nationality": "BRA",
+        "driverNumber": 5,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/gabriel-bortoleto.png",
         "openf1HeadshotUrl": null
       },
       "constructor": {
@@ -324,16 +324,16 @@
     {
       "position": "P15",
       "positionNumber": 15,
-      "points": 10,
+      "points": 13,
       "wins": 0,
       "driver": {
-        "code": "BOR",
-        "firstName": "Gabriel",
-        "lastName": "BORTOLETO",
-        "fullName": "Gabriel BORTOLETO",
-        "nationality": "BRA",
-        "driverNumber": 5,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/gabriel-bortoleto.png",
+        "code": "HUL",
+        "firstName": "Nico",
+        "lastName": "HULKENBERG",
+        "fullName": "Nico HULKENBERG",
+        "nationality": "GER",
+        "driverNumber": 27,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/nico-hulkenberg.png",
         "openf1HeadshotUrl": null
       },
       "constructor": {
@@ -450,6 +450,27 @@
     {
       "position": "P21",
       "positionNumber": 21,
+      "points": 1,
+      "wins": 0,
+      "driver": {
+        "code": "-",
+        "firstName": "Ryo",
+        "lastName": "HIRAKAWA",
+        "fullName": "Ryo HIRAKAWA",
+        "nationality": "-",
+        "driverNumber": 50,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/ryo-hirakawa.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Haas",
+        "fullName": "Haas",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P22",
+      "positionNumber": 22,
       "points": 0,
       "wins": 0,
       "driver": {
@@ -469,8 +490,8 @@
       }
     },
     {
-      "position": "P22",
-      "positionNumber": 22,
+      "position": "P23",
+      "positionNumber": 23,
       "points": 0,
       "wins": 0,
       "driver": {
@@ -490,8 +511,8 @@
       }
     },
     {
-      "position": "P23",
-      "positionNumber": 23,
+      "position": "P24",
+      "positionNumber": 24,
       "points": 0,
       "wins": 0,
       "driver": {
@@ -507,27 +528,6 @@
       "constructor": {
         "name": "Cadillac",
         "fullName": "Cadillac",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P24",
-      "positionNumber": 24,
-      "points": 0,
-      "wins": 0,
-      "driver": {
-        "code": "-",
-        "firstName": "Ryo",
-        "lastName": "HIRAKAWA",
-        "fullName": "Ryo HIRAKAWA",
-        "nationality": "-",
-        "driverNumber": 50,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/ryo-hirakawa.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Haas",
-        "fullName": "Haas",
         "nationality": null
       }
     }

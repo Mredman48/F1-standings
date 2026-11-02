@@ -1,13 +1,13 @@
 {
   "header": "Audi standings",
-  "generatedAtUtc": "2026-11-02T13:54:29.833Z",
+  "generatedAtUtc": "2026-11-02T14:00:23.643Z",
   "audi": {
     "team": "Audi",
     "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/audi_logo_colored.png",
     "teamStanding": {
       "team": "Audi",
       "position": "P8",
-      "points": 23,
+      "points": 27,
       "wins": 0
     }
   },
@@ -23,6 +23,39 @@
   },
   "drivers": [
     {
+      "firstName": "Gabriel",
+      "lastName": "BORTOLETO",
+      "code": "BOR",
+      "driverNumber": 5,
+      "nationality": "Brazilian",
+      "countryCode": "br",
+      "countryName": "Brazil",
+      "flagUrl": "https://flagcdn.com/w80/br.png",
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-5.png",
+      "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-5-2.png",
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/gabriel-bortoleto.png",
+      "position": "P14",
+      "points": 14,
+      "wins": 0,
+      "raceWins": 0,
+      "racePodiums": 0,
+      "sprintWins": 0,
+      "sprintPodiums": 0,
+      "team": "Audi",
+      "bestResult": {
+        "position": "P8",
+        "eventType": "race",
+        "raceName": "Mexico City Grand Prix",
+        "round": "19",
+        "date": "2026-11-01",
+        "circuit": "Mexico City",
+        "location": {
+          "locality": "Mexico City",
+          "country": "Mexico"
+        }
+      }
+    },
+    {
       "firstName": "Nico",
       "lastName": "HULKENBERG",
       "code": "HUL",
@@ -34,7 +67,7 @@
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-27.png",
       "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-27-2.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/nico-hulkenberg.png",
-      "position": "P14",
+      "position": "P15",
       "points": 13,
       "wins": 0,
       "raceWins": 0,
@@ -52,39 +85,6 @@
         "location": {
           "locality": "Marina Bay",
           "country": "Singapore"
-        }
-      }
-    },
-    {
-      "firstName": "Gabriel",
-      "lastName": "BORTOLETO",
-      "code": "BOR",
-      "driverNumber": 5,
-      "nationality": "Brazilian",
-      "countryCode": "br",
-      "countryName": "Brazil",
-      "flagUrl": "https://flagcdn.com/w80/br.png",
-      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-5.png",
-      "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-5-2.png",
-      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/gabriel-bortoleto.png",
-      "position": "P15",
-      "points": 10,
-      "wins": 0,
-      "raceWins": 0,
-      "racePodiums": 0,
-      "sprintWins": 0,
-      "sprintPodiums": 0,
-      "team": "Audi",
-      "bestResult": {
-        "position": "P8",
-        "eventType": "race",
-        "raceName": "Belgian Grand Prix",
-        "round": "10",
-        "date": "2026-07-19",
-        "circuit": "Spa-Francorchamps",
-        "location": {
-          "locality": "Spa-Francorchamps",
-          "country": "Belgium"
         }
       }
     }
