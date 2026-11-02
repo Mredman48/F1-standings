@@ -137,7 +137,15 @@
       "raceName": "Mexico City Grand Prix"
     }
   },
-  "previousWinner": null,
+  "previousWinner": {
+    "round": 20,
+    "raceName": "Mexico City Grand Prix",
+    "city": "Mexico City",
+    "country": "Mexico",
+    "previousWinner": "Max Verstappen",
+    "constructor": "Red Bull Racing",
+    "date": "2026-11-01"
+  },
   "tyreInfo": {
     "round": 20,
     "raceSlug": "mexico",
