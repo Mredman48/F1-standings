@@ -1,6 +1,6 @@
 {
   "header": "2026 F1 pit stops and tyre strategy",
-  "generatedAtUtc": "2026-11-01T23:56:08.981Z",
+  "generatedAtUtc": "2026-11-02T03:19:15.088Z",
   "season": 2026,
   "latest": {
     "sessionType": "race",
@@ -17,12 +17,403 @@
     "sessionKey": 11404,
     "sessionName": "Race",
     "dateStartUtc": "2026-11-01T20:00:00+00:00",
-    "dhlEventId": null,
-    "stopTimesSource": null,
+    "dhlEventId": 1186,
+    "stopTimesSource": "dhl",
     "totalLaps": 71,
-    "fastestStop": null,
-    "fastestStops": [],
-    "bestStopPerTeam": [],
+    "fastestStop": {
+      "driverNumber": 23,
+      "driverName": "Alexander ALBON",
+      "nameAcronym": "ALB",
+      "teamName": "Williams",
+      "teamColour": "#1868DB",
+      "lap": 18,
+      "stopDuration": 2.11,
+      "stopDurationLabel": "2.11s",
+      "laneDuration": 22,
+      "validStop": true,
+      "dateUtc": "2026-11-01T20:29:42.763000+00:00",
+      "stopSource": "dhl",
+      "dhlRank": 1,
+      "dhlPoints": 25
+    },
+    "fastestStops": [
+      {
+        "rank": 1,
+        "driverNumber": 23,
+        "driverName": "Alexander ALBON",
+        "nameAcronym": "ALB",
+        "teamName": "Williams",
+        "teamColour": "#1868DB",
+        "lap": 18,
+        "stopDuration": 2.11,
+        "stopDurationLabel": "2.11s",
+        "laneDuration": 22,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:29:42.763000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 1,
+        "dhlPoints": 25
+      },
+      {
+        "rank": 2,
+        "driverNumber": 3,
+        "driverName": "Max VERSTAPPEN",
+        "nameAcronym": "VER",
+        "teamName": "Red Bull Racing",
+        "teamColour": "#4781D7",
+        "lap": 27,
+        "stopDuration": 2.14,
+        "stopDurationLabel": "2.14s",
+        "laneDuration": 22.4,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:41:17.628000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 2,
+        "dhlPoints": 18
+      },
+      {
+        "rank": 3,
+        "driverNumber": 30,
+        "driverName": "Liam LAWSON",
+        "nameAcronym": "LAW",
+        "teamName": "Racing Bulls",
+        "teamColour": "#6C98FF",
+        "lap": 11,
+        "stopDuration": 2.18,
+        "stopDurationLabel": "2.18s",
+        "laneDuration": 22.8,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:20:04.023000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 3,
+        "dhlPoints": 15
+      },
+      {
+        "rank": 4,
+        "driverNumber": 30,
+        "driverName": "Liam LAWSON",
+        "nameAcronym": "LAW",
+        "teamName": "Racing Bulls",
+        "teamColour": "#6C98FF",
+        "lap": 42,
+        "stopDuration": 2.2,
+        "stopDurationLabel": "2.20s",
+        "laneDuration": 22.5,
+        "validStop": true,
+        "dateUtc": "2026-11-01T21:02:57.347000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 4,
+        "dhlPoints": 0
+      },
+      {
+        "rank": 5,
+        "driverNumber": 27,
+        "driverName": "Nico HULKENBERG",
+        "nameAcronym": "HUL",
+        "teamName": "Audi",
+        "teamColour": "#F50537",
+        "lap": 31,
+        "stopDuration": 2.21,
+        "stopDurationLabel": "2.21s",
+        "laneDuration": 21.9,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:47:27.400000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 5,
+        "dhlPoints": 12
+      },
+      {
+        "rank": 6,
+        "driverNumber": 44,
+        "driverName": "Lewis HAMILTON",
+        "nameAcronym": "HAM",
+        "teamName": "Ferrari",
+        "teamColour": "#ED1131",
+        "lap": 28,
+        "stopDuration": 2.34,
+        "stopDurationLabel": "2.34s",
+        "laneDuration": 22.7,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:42:42.784000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 6,
+        "dhlPoints": 10
+      },
+      {
+        "rank": 7,
+        "driverNumber": 6,
+        "driverName": "Isack HADJAR",
+        "nameAcronym": "HAD",
+        "teamName": "Red Bull Racing",
+        "teamColour": "#4781D7",
+        "lap": 41,
+        "stopDuration": 2.34,
+        "stopDurationLabel": "2.34s",
+        "laneDuration": 22.6,
+        "validStop": true,
+        "dateUtc": "2026-11-01T21:01:25.184000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 7,
+        "dhlPoints": 8
+      },
+      {
+        "rank": 8,
+        "driverNumber": 63,
+        "driverName": "George RUSSELL",
+        "nameAcronym": "RUS",
+        "teamName": "Mercedes",
+        "teamColour": "#00D7B6",
+        "lap": 44,
+        "stopDuration": 2.34,
+        "stopDurationLabel": "2.34s",
+        "laneDuration": 22.2,
+        "validStop": true,
+        "dateUtc": "2026-11-01T21:05:13.217000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 8,
+        "dhlPoints": 6
+      },
+      {
+        "rank": 9,
+        "driverNumber": 41,
+        "driverName": "Arvid LINDBLAD",
+        "nameAcronym": "LIN",
+        "teamName": "Racing Bulls",
+        "teamColour": "#6C98FF",
+        "lap": 35,
+        "stopDuration": 2.37,
+        "stopDurationLabel": "2.37s",
+        "laneDuration": 22.8,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:52:46.053000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 9,
+        "dhlPoints": 4
+      },
+      {
+        "rank": 10,
+        "driverNumber": 10,
+        "driverName": "Pierre GASLY",
+        "nameAcronym": "GAS",
+        "teamName": "Alpine",
+        "teamColour": "#00A1E8",
+        "lap": 17,
+        "stopDuration": 2.45,
+        "stopDurationLabel": "2.45s",
+        "laneDuration": 22.9,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:28:11.357000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 10,
+        "dhlPoints": 2
+      }
+    ],
+    "bestStopPerTeam": [
+      {
+        "rank": 1,
+        "driverNumber": 23,
+        "driverName": "Alexander ALBON",
+        "nameAcronym": "ALB",
+        "teamName": "Williams",
+        "teamColour": "#1868DB",
+        "lap": 18,
+        "stopDuration": 2.11,
+        "stopDurationLabel": "2.11s",
+        "laneDuration": 22,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:29:42.763000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 1,
+        "dhlPoints": 25
+      },
+      {
+        "rank": 2,
+        "driverNumber": 3,
+        "driverName": "Max VERSTAPPEN",
+        "nameAcronym": "VER",
+        "teamName": "Red Bull Racing",
+        "teamColour": "#4781D7",
+        "lap": 27,
+        "stopDuration": 2.14,
+        "stopDurationLabel": "2.14s",
+        "laneDuration": 22.4,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:41:17.628000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 2,
+        "dhlPoints": 18
+      },
+      {
+        "rank": 3,
+        "driverNumber": 30,
+        "driverName": "Liam LAWSON",
+        "nameAcronym": "LAW",
+        "teamName": "Racing Bulls",
+        "teamColour": "#6C98FF",
+        "lap": 11,
+        "stopDuration": 2.18,
+        "stopDurationLabel": "2.18s",
+        "laneDuration": 22.8,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:20:04.023000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 3,
+        "dhlPoints": 15
+      },
+      {
+        "rank": 4,
+        "driverNumber": 27,
+        "driverName": "Nico HULKENBERG",
+        "nameAcronym": "HUL",
+        "teamName": "Audi",
+        "teamColour": "#F50537",
+        "lap": 31,
+        "stopDuration": 2.21,
+        "stopDurationLabel": "2.21s",
+        "laneDuration": 21.9,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:47:27.400000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 5,
+        "dhlPoints": 12
+      },
+      {
+        "rank": 5,
+        "driverNumber": 44,
+        "driverName": "Lewis HAMILTON",
+        "nameAcronym": "HAM",
+        "teamName": "Ferrari",
+        "teamColour": "#ED1131",
+        "lap": 28,
+        "stopDuration": 2.34,
+        "stopDurationLabel": "2.34s",
+        "laneDuration": 22.7,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:42:42.784000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 6,
+        "dhlPoints": 10
+      },
+      {
+        "rank": 6,
+        "driverNumber": 63,
+        "driverName": "George RUSSELL",
+        "nameAcronym": "RUS",
+        "teamName": "Mercedes",
+        "teamColour": "#00D7B6",
+        "lap": 44,
+        "stopDuration": 2.34,
+        "stopDurationLabel": "2.34s",
+        "laneDuration": 22.2,
+        "validStop": true,
+        "dateUtc": "2026-11-01T21:05:13.217000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 8,
+        "dhlPoints": 6
+      },
+      {
+        "rank": 7,
+        "driverNumber": 10,
+        "driverName": "Pierre GASLY",
+        "nameAcronym": "GAS",
+        "teamName": "Alpine",
+        "teamColour": "#00A1E8",
+        "lap": 17,
+        "stopDuration": 2.45,
+        "stopDurationLabel": "2.45s",
+        "laneDuration": 22.9,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:28:11.357000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 10,
+        "dhlPoints": 2
+      },
+      {
+        "rank": 8,
+        "driverNumber": 81,
+        "driverName": "Oscar PIASTRI",
+        "nameAcronym": "PIA",
+        "teamName": "McLaren",
+        "teamColour": "#F47600",
+        "lap": 26,
+        "stopDuration": 2.5,
+        "stopDurationLabel": "2.50s",
+        "laneDuration": 22.6,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:40:15.593000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 11,
+        "dhlPoints": 1
+      },
+      {
+        "rank": 9,
+        "driverNumber": 87,
+        "driverName": "Oliver BEARMAN",
+        "nameAcronym": "BEA",
+        "teamName": "Haas F1 Team",
+        "teamColour": "#9C9FA2",
+        "lap": 40,
+        "stopDuration": 2.67,
+        "stopDurationLabel": "2.67s",
+        "laneDuration": 22.5,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:59:53.747000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 13,
+        "dhlPoints": 0
+      },
+      {
+        "rank": 10,
+        "driverNumber": 14,
+        "driverName": "Fernando ALONSO",
+        "nameAcronym": "ALO",
+        "teamName": "Aston Martin",
+        "teamColour": "#229971",
+        "lap": 3,
+        "stopDuration": 2.68,
+        "stopDurationLabel": "2.68s",
+        "laneDuration": 23.9,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:08:12.601000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 14,
+        "dhlPoints": 0
+      },
+      {
+        "rank": 11,
+        "driverNumber": 50,
+        "driverName": "Ryo HIRAKAWA",
+        "nameAcronym": "HIR",
+        "teamName": null,
+        "teamColour": null,
+        "lap": 35,
+        "stopDuration": 2.82,
+        "stopDurationLabel": "2.82s",
+        "laneDuration": 22.8,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:53:28.391000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 18,
+        "dhlPoints": 0
+      },
+      {
+        "rank": 12,
+        "driverNumber": 11,
+        "driverName": "Sergio PEREZ",
+        "nameAcronym": "PER",
+        "teamName": "Cadillac",
+        "teamColour": "#909090",
+        "lap": 43,
+        "stopDuration": 3.15,
+        "stopDurationLabel": "3.15s",
+        "laneDuration": 24.1,
+        "validStop": true,
+        "dateUtc": "2026-11-01T21:05:06.885000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 21,
+        "dhlPoints": 0
+      }
+    ],
     "pitStops": [
       {
         "driverNumber": 10,
@@ -35,7 +426,8 @@
         "stopDurationLabel": null,
         "laneDuration": null,
         "validStop": false,
-        "dateUtc": "2026-11-01T19:08:59.071000+00:00"
+        "dateUtc": "2026-11-01T19:08:59.071000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 77,
@@ -48,7 +440,8 @@
         "stopDurationLabel": null,
         "laneDuration": null,
         "validStop": false,
-        "dateUtc": "2026-11-01T19:08:59.071000+00:00"
+        "dateUtc": "2026-11-01T19:08:59.071000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 11,
@@ -61,7 +454,8 @@
         "stopDurationLabel": null,
         "laneDuration": null,
         "validStop": false,
-        "dateUtc": "2026-11-01T19:08:59.071000+00:00"
+        "dateUtc": "2026-11-01T19:08:59.071000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 18,
@@ -74,7 +468,8 @@
         "stopDurationLabel": null,
         "laneDuration": null,
         "validStop": false,
-        "dateUtc": "2026-11-01T19:08:59.071000+00:00"
+        "dateUtc": "2026-11-01T19:08:59.071000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 30,
@@ -87,7 +482,8 @@
         "stopDurationLabel": null,
         "laneDuration": null,
         "validStop": false,
-        "dateUtc": "2026-11-01T19:08:59.071000+00:00"
+        "dateUtc": "2026-11-01T19:08:59.071000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 1,
@@ -100,7 +496,8 @@
         "stopDurationLabel": null,
         "laneDuration": null,
         "validStop": false,
-        "dateUtc": "2026-11-01T19:08:59.071000+00:00"
+        "dateUtc": "2026-11-01T19:08:59.071000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 14,
@@ -113,7 +510,8 @@
         "stopDurationLabel": null,
         "laneDuration": null,
         "validStop": false,
-        "dateUtc": "2026-11-01T19:08:59.071000+00:00"
+        "dateUtc": "2026-11-01T19:08:59.071000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 12,
@@ -126,7 +524,8 @@
         "stopDurationLabel": null,
         "laneDuration": null,
         "validStop": false,
-        "dateUtc": "2026-11-01T19:08:59.071000+00:00"
+        "dateUtc": "2026-11-01T19:08:59.071000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 41,
@@ -139,7 +538,8 @@
         "stopDurationLabel": null,
         "laneDuration": null,
         "validStop": false,
-        "dateUtc": "2026-11-01T19:08:59.071000+00:00"
+        "dateUtc": "2026-11-01T19:08:59.071000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 14,
@@ -148,11 +548,14 @@
         "teamName": "Aston Martin",
         "teamColour": "#229971",
         "lap": 3,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.68,
+        "stopDurationLabel": "2.68s",
         "laneDuration": 23.9,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:08:12.601000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:08:12.601000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 14,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 18,
@@ -161,11 +564,14 @@
         "teamName": "Aston Martin",
         "teamColour": "#229971",
         "lap": 3,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.75,
+        "stopDurationLabel": "2.75s",
         "laneDuration": 27.1,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:08:18.149000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:08:18.149000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 17,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 6,
@@ -174,11 +580,14 @@
         "teamName": "Red Bull Racing",
         "teamColour": "#4781D7",
         "lap": 7,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 3.78,
+        "stopDurationLabel": "3.78s",
         "laneDuration": 23.9,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:14:14.119000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:14:14.119000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 25,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 30,
@@ -187,11 +596,14 @@
         "teamName": "Racing Bulls",
         "teamColour": "#6C98FF",
         "lap": 11,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.18,
+        "stopDurationLabel": "2.18s",
         "laneDuration": 22.8,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:20:04.023000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:20:04.023000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 3,
+        "dhlPoints": 15
       },
       {
         "driverNumber": 10,
@@ -200,11 +612,14 @@
         "teamName": "Alpine",
         "teamColour": "#00A1E8",
         "lap": 17,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.45,
+        "stopDurationLabel": "2.45s",
         "laneDuration": 22.9,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:28:11.357000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:28:11.357000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 10,
+        "dhlPoints": 2
       },
       {
         "driverNumber": 23,
@@ -213,11 +628,14 @@
         "teamName": "Williams",
         "teamColour": "#1868DB",
         "lap": 18,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.11,
+        "stopDurationLabel": "2.11s",
         "laneDuration": 22,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:29:42.763000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:29:42.763000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 1,
+        "dhlPoints": 25
       },
       {
         "driverNumber": 81,
@@ -226,11 +644,14 @@
         "teamName": "McLaren",
         "teamColour": "#F47600",
         "lap": 26,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.5,
+        "stopDurationLabel": "2.50s",
         "laneDuration": 22.6,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:40:15.593000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:40:15.593000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 11,
+        "dhlPoints": 1
       },
       {
         "driverNumber": 3,
@@ -239,11 +660,14 @@
         "teamName": "Red Bull Racing",
         "teamColour": "#4781D7",
         "lap": 27,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.14,
+        "stopDurationLabel": "2.14s",
         "laneDuration": 22.4,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:41:17.628000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:41:17.628000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 2,
+        "dhlPoints": 18
       },
       {
         "driverNumber": 16,
@@ -252,11 +676,14 @@
         "teamName": "Ferrari",
         "teamColour": "#ED1131",
         "lap": 27,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 8.49,
+        "stopDurationLabel": "8.49s",
         "laneDuration": 28.7,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:41:19.237000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:41:19.237000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 31,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 44,
@@ -265,11 +692,14 @@
         "teamName": "Ferrari",
         "teamColour": "#ED1131",
         "lap": 28,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.34,
+        "stopDurationLabel": "2.34s",
         "laneDuration": 22.7,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:42:42.784000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:42:42.784000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 6,
+        "dhlPoints": 10
       },
       {
         "driverNumber": 11,
@@ -278,11 +708,14 @@
         "teamName": "Cadillac",
         "teamColour": "#909090",
         "lap": 30,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 8.41,
+        "stopDurationLabel": "8.41s",
         "laneDuration": 28.9,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:46:33.057000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:46:33.057000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 30,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 77,
@@ -291,11 +724,14 @@
         "teamName": "Cadillac",
         "teamColour": "#909090",
         "lap": 30,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 6.28,
+        "stopDurationLabel": "6.28s",
         "laneDuration": 26.7,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:46:56.060000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:46:56.060000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 29,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 27,
@@ -304,11 +740,14 @@
         "teamName": "Audi",
         "teamColour": "#F50537",
         "lap": 31,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.21,
+        "stopDurationLabel": "2.21s",
         "laneDuration": 21.9,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:47:27.400000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:47:27.400000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 5,
+        "dhlPoints": 12
       },
       {
         "driverNumber": 63,
@@ -317,11 +756,14 @@
         "teamName": "Mercedes",
         "teamColour": "#00D7B6",
         "lap": 33,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 13.63,
+        "stopDurationLabel": "13.63s",
         "laneDuration": 33.9,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:49:48.360000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:49:48.360000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 33,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 43,
@@ -330,11 +772,14 @@
         "teamName": "Alpine",
         "teamColour": "#00A1E8",
         "lap": 34,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.84,
+        "stopDurationLabel": "2.84s",
         "laneDuration": 23.3,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:51:31.260000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:51:31.260000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 19,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 41,
@@ -343,11 +788,14 @@
         "teamName": "Racing Bulls",
         "teamColour": "#6C98FF",
         "lap": 35,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.37,
+        "stopDurationLabel": "2.37s",
         "laneDuration": 22.8,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:52:46.053000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:52:46.053000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 9,
+        "dhlPoints": 4
       },
       {
         "driverNumber": 50,
@@ -356,11 +804,14 @@
         "teamName": null,
         "teamColour": null,
         "lap": 35,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.82,
+        "stopDurationLabel": "2.82s",
         "laneDuration": 22.8,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:53:28.391000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:53:28.391000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 18,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 55,
@@ -369,11 +820,14 @@
         "teamName": "Williams",
         "teamColour": "#1868DB",
         "lap": 36,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.71,
+        "stopDurationLabel": "2.71s",
         "laneDuration": 22.5,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:54:47.582000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:54:47.582000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 15,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 5,
@@ -382,11 +836,14 @@
         "teamName": "Audi",
         "teamColour": "#F50537",
         "lap": 38,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.73,
+        "stopDurationLabel": "2.73s",
         "laneDuration": 22.5,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:57:13.791000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:57:13.791000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 16,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 1,
@@ -395,11 +852,14 @@
         "teamName": "McLaren",
         "teamColour": "#F47600",
         "lap": 39,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 4.71,
+        "stopDurationLabel": "4.71s",
         "laneDuration": 24.7,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:57:50.438000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:57:50.438000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 27,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 87,
@@ -408,11 +868,14 @@
         "teamName": "Haas F1 Team",
         "teamColour": "#9C9FA2",
         "lap": 40,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.67,
+        "stopDurationLabel": "2.67s",
         "laneDuration": 22.5,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:59:53.747000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:59:53.747000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 13,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 6,
@@ -421,11 +884,14 @@
         "teamName": "Red Bull Racing",
         "teamColour": "#4781D7",
         "lap": 41,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.34,
+        "stopDurationLabel": "2.34s",
         "laneDuration": 22.6,
-        "validStop": false,
-        "dateUtc": "2026-11-01T21:01:25.184000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T21:01:25.184000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 7,
+        "dhlPoints": 8
       },
       {
         "driverNumber": 23,
@@ -434,11 +900,14 @@
         "teamName": "Williams",
         "teamColour": "#1868DB",
         "lap": 41,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 5.67,
+        "stopDurationLabel": "5.67s",
         "laneDuration": 25.4,
-        "validStop": false,
-        "dateUtc": "2026-11-01T21:01:52.270000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T21:01:52.270000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 28,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 30,
@@ -447,11 +916,14 @@
         "teamName": "Racing Bulls",
         "teamColour": "#6C98FF",
         "lap": 42,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.2,
+        "stopDurationLabel": "2.20s",
         "laneDuration": 22.5,
-        "validStop": false,
-        "dateUtc": "2026-11-01T21:02:57.347000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T21:02:57.347000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 4,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 12,
@@ -460,11 +932,14 @@
         "teamName": "Mercedes",
         "teamColour": "#00D7B6",
         "lap": 43,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 3.71,
+        "stopDurationLabel": "3.71s",
         "laneDuration": 23.7,
-        "validStop": false,
-        "dateUtc": "2026-11-01T21:03:07.064000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T21:03:07.064000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 24,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 50,
@@ -473,11 +948,14 @@
         "teamName": null,
         "teamColour": null,
         "lap": 43,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 3.62,
+        "stopDurationLabel": "3.62s",
         "laneDuration": 23.8,
-        "validStop": false,
-        "dateUtc": "2026-11-01T21:04:53.636000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T21:04:53.636000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 23,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 11,
@@ -486,11 +964,14 @@
         "teamName": "Cadillac",
         "teamColour": "#909090",
         "lap": 43,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 3.15,
+        "stopDurationLabel": "3.15s",
         "laneDuration": 24.1,
-        "validStop": false,
-        "dateUtc": "2026-11-01T21:05:06.885000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T21:05:06.885000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 21,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 44,
@@ -499,11 +980,14 @@
         "teamName": "Ferrari",
         "teamColour": "#ED1131",
         "lap": 44,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 3.54,
+        "stopDurationLabel": "3.54s",
         "laneDuration": 23.8,
-        "validStop": false,
-        "dateUtc": "2026-11-01T21:04:44.336000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T21:04:44.336000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 22,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 63,
@@ -512,11 +996,14 @@
         "teamName": "Mercedes",
         "teamColour": "#00D7B6",
         "lap": 44,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.34,
+        "stopDurationLabel": "2.34s",
         "laneDuration": 22.2,
-        "validStop": false,
-        "dateUtc": "2026-11-01T21:05:13.217000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T21:05:13.217000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 8,
+        "dhlPoints": 6
       },
       {
         "driverNumber": 81,
@@ -525,11 +1012,14 @@
         "teamName": "McLaren",
         "teamColour": "#F47600",
         "lap": 44,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 4.55,
+        "stopDurationLabel": "4.55s",
         "laneDuration": 24.5,
-        "validStop": false,
-        "dateUtc": "2026-11-01T21:05:30.270000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T21:05:30.270000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 26,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 10,
@@ -538,11 +1028,14 @@
         "teamName": "Alpine",
         "teamColour": "#00A1E8",
         "lap": 44,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.55,
+        "stopDurationLabel": "2.55s",
         "laneDuration": 22.8,
-        "validStop": false,
-        "dateUtc": "2026-11-01T21:06:03.169000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T21:06:03.169000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 12,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 30,
@@ -555,7 +1048,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2191.6,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:43:05.921000+00:00"
+        "dateUtc": "2026-11-01T21:43:05.921000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 55,
@@ -568,7 +1062,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2192.4,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:43:08.055000+00:00"
+        "dateUtc": "2026-11-01T21:43:08.055000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 50,
@@ -581,7 +1076,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2178.9,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:43:09.856000+00:00"
+        "dateUtc": "2026-11-01T21:43:09.856000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 11,
@@ -594,7 +1090,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2172.9,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:43:12.544000+00:00"
+        "dateUtc": "2026-11-01T21:43:12.544000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 23,
@@ -607,7 +1104,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2181.8,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:43:16.515000+00:00"
+        "dateUtc": "2026-11-01T21:43:16.515000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 3,
@@ -620,7 +1118,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2314.9,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:05.187000+00:00"
+        "dateUtc": "2026-11-01T21:45:05.187000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 16,
@@ -633,7 +1132,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2315.8,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:07.494000+00:00"
+        "dateUtc": "2026-11-01T21:45:07.494000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 44,
@@ -646,7 +1146,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2309.6,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:09.684000+00:00"
+        "dateUtc": "2026-11-01T21:45:09.684000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 12,
@@ -659,7 +1160,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2315.3,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:12.495000+00:00"
+        "dateUtc": "2026-11-01T21:45:12.495000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 1,
@@ -672,7 +1174,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2312.4,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:15.953000+00:00"
+        "dateUtc": "2026-11-01T21:45:15.953000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 63,
@@ -685,7 +1188,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2295.3,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:19.646000+00:00"
+        "dateUtc": "2026-11-01T21:45:19.646000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 81,
@@ -698,7 +1202,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2272,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:22.257000+00:00"
+        "dateUtc": "2026-11-01T21:45:22.257000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 41,
@@ -711,7 +1216,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2284.6,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:25.021000+00:00"
+        "dateUtc": "2026-11-01T21:45:25.021000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 43,
@@ -724,7 +1230,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2274.5,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:28.013000+00:00"
+        "dateUtc": "2026-11-01T21:45:28.013000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 10,
@@ -737,7 +1244,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2256.2,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:31.697000+00:00"
+        "dateUtc": "2026-11-01T21:45:31.697000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 27,
@@ -750,7 +1258,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2272.9,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:32.993000+00:00"
+        "dateUtc": "2026-11-01T21:45:32.993000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 87,
@@ -763,7 +1272,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2268.4,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:35.416000+00:00"
+        "dateUtc": "2026-11-01T21:45:35.416000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 5,
@@ -776,7 +1286,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2270,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:41.048000+00:00"
+        "dateUtc": "2026-11-01T21:45:41.048000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 6,
@@ -789,7 +1300,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2265.5,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:43.493000+00:00"
+        "dateUtc": "2026-11-01T21:45:43.493000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 30,
@@ -802,7 +1314,8 @@
         "stopDurationLabel": null,
         "laneDuration": 60.5,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:45.265000+00:00"
+        "dateUtc": "2026-11-01T21:45:45.265000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 55,
@@ -815,7 +1328,8 @@
         "stopDurationLabel": null,
         "laneDuration": 58.6,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:47.341000+00:00"
+        "dateUtc": "2026-11-01T21:45:47.341000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 50,
@@ -828,7 +1342,8 @@
         "stopDurationLabel": null,
         "laneDuration": 57.3,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:48.505000+00:00"
+        "dateUtc": "2026-11-01T21:45:48.505000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 11,
@@ -841,7 +1356,8 @@
         "stopDurationLabel": null,
         "laneDuration": 57,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:51.590000+00:00"
+        "dateUtc": "2026-11-01T21:45:51.590000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 23,
@@ -854,7 +1370,8 @@
         "stopDurationLabel": null,
         "laneDuration": 54.8,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:53.158000+00:00"
+        "dateUtc": "2026-11-01T21:45:53.158000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 50,
@@ -863,11 +1380,14 @@
         "teamName": null,
         "teamColour": null,
         "lap": 59,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.96,
+        "stopDurationLabel": "2.96s",
         "laneDuration": 22.9,
-        "validStop": false,
-        "dateUtc": "2026-11-01T22:07:04.069000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T22:07:04.069000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 20,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 27,
@@ -876,11 +1396,14 @@
         "teamName": "Audi",
         "teamColour": "#F50537",
         "lap": 59,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 14.03,
+        "stopDurationLabel": "14.03s",
         "laneDuration": 34.5,
-        "validStop": false,
-        "dateUtc": "2026-11-01T22:07:08.498000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T22:07:08.498000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 34,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 11,
@@ -889,11 +1412,14 @@
         "teamName": "Cadillac",
         "teamColour": "#909090",
         "lap": 59,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 9.22,
+        "stopDurationLabel": "9.22s",
         "laneDuration": 29.8,
-        "validStop": false,
-        "dateUtc": "2026-11-01T22:07:08.889000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T22:07:08.889000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 32,
+        "dhlPoints": 0
       }
     ],
     "drivers": [
@@ -1147,88 +1673,6 @@
         "position": 7,
         "positionLabel": "P7",
         "status": null,
-        "driverNumber": 81,
-        "driverName": "Oscar PIASTRI",
-        "nameAcronym": "PIA",
-        "teamName": "McLaren",
-        "teamColour": "#F47600",
-        "lapsCompleted": 71,
-        "stops": 2,
-        "stints": [
-          {
-            "stint": 1,
-            "compound": "SOFT",
-            "lapStart": 1,
-            "lapEnd": 26,
-            "laps": 26,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 2,
-            "compound": "MEDIUM",
-            "lapStart": 27,
-            "lapEnd": 44,
-            "laps": 18,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 3,
-            "compound": "SOFT",
-            "lapStart": 45,
-            "lapEnd": 71,
-            "laps": 27,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          }
-        ]
-      },
-      {
-        "position": 8,
-        "positionLabel": "P8",
-        "status": null,
-        "driverNumber": 43,
-        "driverName": "Franco COLAPINTO",
-        "nameAcronym": "COL",
-        "teamName": "Alpine",
-        "teamColour": "#00A1E8",
-        "lapsCompleted": 71,
-        "stops": 2,
-        "stints": [
-          {
-            "stint": 1,
-            "compound": "MEDIUM",
-            "lapStart": 1,
-            "lapEnd": 34,
-            "laps": 34,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 2,
-            "compound": "SOFT",
-            "lapStart": 35,
-            "lapEnd": 45,
-            "laps": 11,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 3,
-            "compound": "SOFT",
-            "lapStart": 46,
-            "lapEnd": 71,
-            "laps": 26,
-            "tyreAgeAtStart": 2,
-            "newTyre": false
-          }
-        ]
-      },
-      {
-        "position": 9,
-        "positionLabel": "P9",
-        "status": null,
         "driverNumber": 30,
         "driverName": "Liam LAWSON",
         "nameAcronym": "LAW",
@@ -1267,49 +1711,8 @@
         ]
       },
       {
-        "position": 10,
-        "positionLabel": "P10",
-        "status": null,
-        "driverNumber": 10,
-        "driverName": "Pierre GASLY",
-        "nameAcronym": "GAS",
-        "teamName": "Alpine",
-        "teamColour": "#00A1E8",
-        "lapsCompleted": 71,
-        "stops": 2,
-        "stints": [
-          {
-            "stint": 1,
-            "compound": "SOFT",
-            "lapStart": 1,
-            "lapEnd": 17,
-            "laps": 17,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 2,
-            "compound": "MEDIUM",
-            "lapStart": 18,
-            "lapEnd": 44,
-            "laps": 27,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 3,
-            "compound": "SOFT",
-            "lapStart": 45,
-            "lapEnd": 71,
-            "laps": 27,
-            "tyreAgeAtStart": 3,
-            "newTyre": false
-          }
-        ]
-      },
-      {
-        "position": 11,
-        "positionLabel": "P11",
+        "position": 8,
+        "positionLabel": "P8",
         "status": null,
         "driverNumber": 5,
         "driverName": "Gabriel BORTOLETO",
@@ -1349,8 +1752,8 @@
         ]
       },
       {
-        "position": 12,
-        "positionLabel": "P12",
+        "position": 9,
+        "positionLabel": "P9",
         "status": null,
         "driverNumber": 6,
         "driverName": "Isack HADJAR",
@@ -1399,8 +1802,8 @@
         ]
       },
       {
-        "position": 13,
-        "positionLabel": "P13",
+        "position": 10,
+        "positionLabel": "P10",
         "status": null,
         "driverNumber": 50,
         "driverName": "Ryo HIRAKAWA",
@@ -1449,8 +1852,8 @@
         ]
       },
       {
-        "position": 14,
-        "positionLabel": "P14",
+        "position": 11,
+        "positionLabel": "P11",
         "status": null,
         "driverNumber": 23,
         "driverName": "Alexander ALBON",
@@ -1499,8 +1902,8 @@
         ]
       },
       {
-        "position": 15,
-        "positionLabel": "P15",
+        "position": 12,
+        "positionLabel": "P12",
         "status": null,
         "driverNumber": 55,
         "driverName": "Carlos SAINZ",
@@ -1540,8 +1943,49 @@
         ]
       },
       {
-        "position": 16,
-        "positionLabel": "P16",
+        "position": 13,
+        "positionLabel": "P13",
+        "status": null,
+        "driverNumber": 81,
+        "driverName": "Oscar PIASTRI",
+        "nameAcronym": "PIA",
+        "teamName": "McLaren",
+        "teamColour": "#F47600",
+        "lapsCompleted": 71,
+        "stops": 2,
+        "stints": [
+          {
+            "stint": 1,
+            "compound": "SOFT",
+            "lapStart": 1,
+            "lapEnd": 26,
+            "laps": 26,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 2,
+            "compound": "MEDIUM",
+            "lapStart": 27,
+            "lapEnd": 44,
+            "laps": 18,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 3,
+            "compound": "SOFT",
+            "lapStart": 45,
+            "lapEnd": 71,
+            "laps": 27,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          }
+        ]
+      },
+      {
+        "position": 14,
+        "positionLabel": "P14",
         "status": null,
         "driverNumber": 27,
         "driverName": "Nico HULKENBERG",
@@ -1581,8 +2025,49 @@
         ]
       },
       {
-        "position": 17,
-        "positionLabel": "P17",
+        "position": 15,
+        "positionLabel": "P15",
+        "status": null,
+        "driverNumber": 43,
+        "driverName": "Franco COLAPINTO",
+        "nameAcronym": "COL",
+        "teamName": "Alpine",
+        "teamColour": "#00A1E8",
+        "lapsCompleted": 71,
+        "stops": 2,
+        "stints": [
+          {
+            "stint": 1,
+            "compound": "MEDIUM",
+            "lapStart": 1,
+            "lapEnd": 34,
+            "laps": 34,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 2,
+            "compound": "SOFT",
+            "lapStart": 35,
+            "lapEnd": 45,
+            "laps": 11,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 3,
+            "compound": "SOFT",
+            "lapStart": 46,
+            "lapEnd": 71,
+            "laps": 26,
+            "tyreAgeAtStart": 2,
+            "newTyre": false
+          }
+        ]
+      },
+      {
+        "position": 16,
+        "positionLabel": "P16",
         "status": null,
         "driverNumber": 11,
         "driverName": "Sergio PEREZ",
@@ -1625,6 +2110,47 @@
             "lapStart": 60,
             "lapEnd": 71,
             "laps": 12,
+            "tyreAgeAtStart": 3,
+            "newTyre": false
+          }
+        ]
+      },
+      {
+        "position": 17,
+        "positionLabel": "P17",
+        "status": null,
+        "driverNumber": 10,
+        "driverName": "Pierre GASLY",
+        "nameAcronym": "GAS",
+        "teamName": "Alpine",
+        "teamColour": "#00A1E8",
+        "lapsCompleted": 71,
+        "stops": 2,
+        "stints": [
+          {
+            "stint": 1,
+            "compound": "SOFT",
+            "lapStart": 1,
+            "lapEnd": 17,
+            "laps": 17,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 2,
+            "compound": "MEDIUM",
+            "lapStart": 18,
+            "lapEnd": 44,
+            "laps": 27,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 3,
+            "compound": "SOFT",
+            "lapStart": 45,
+            "lapEnd": 71,
+            "laps": 27,
             "tyreAgeAtStart": 3,
             "newTyre": false
           }
@@ -1825,12 +2351,403 @@
     "sessionKey": 11404,
     "sessionName": "Race",
     "dateStartUtc": "2026-11-01T20:00:00+00:00",
-    "dhlEventId": null,
-    "stopTimesSource": null,
+    "dhlEventId": 1186,
+    "stopTimesSource": "dhl",
     "totalLaps": 71,
-    "fastestStop": null,
-    "fastestStops": [],
-    "bestStopPerTeam": [],
+    "fastestStop": {
+      "driverNumber": 23,
+      "driverName": "Alexander ALBON",
+      "nameAcronym": "ALB",
+      "teamName": "Williams",
+      "teamColour": "#1868DB",
+      "lap": 18,
+      "stopDuration": 2.11,
+      "stopDurationLabel": "2.11s",
+      "laneDuration": 22,
+      "validStop": true,
+      "dateUtc": "2026-11-01T20:29:42.763000+00:00",
+      "stopSource": "dhl",
+      "dhlRank": 1,
+      "dhlPoints": 25
+    },
+    "fastestStops": [
+      {
+        "rank": 1,
+        "driverNumber": 23,
+        "driverName": "Alexander ALBON",
+        "nameAcronym": "ALB",
+        "teamName": "Williams",
+        "teamColour": "#1868DB",
+        "lap": 18,
+        "stopDuration": 2.11,
+        "stopDurationLabel": "2.11s",
+        "laneDuration": 22,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:29:42.763000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 1,
+        "dhlPoints": 25
+      },
+      {
+        "rank": 2,
+        "driverNumber": 3,
+        "driverName": "Max VERSTAPPEN",
+        "nameAcronym": "VER",
+        "teamName": "Red Bull Racing",
+        "teamColour": "#4781D7",
+        "lap": 27,
+        "stopDuration": 2.14,
+        "stopDurationLabel": "2.14s",
+        "laneDuration": 22.4,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:41:17.628000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 2,
+        "dhlPoints": 18
+      },
+      {
+        "rank": 3,
+        "driverNumber": 30,
+        "driverName": "Liam LAWSON",
+        "nameAcronym": "LAW",
+        "teamName": "Racing Bulls",
+        "teamColour": "#6C98FF",
+        "lap": 11,
+        "stopDuration": 2.18,
+        "stopDurationLabel": "2.18s",
+        "laneDuration": 22.8,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:20:04.023000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 3,
+        "dhlPoints": 15
+      },
+      {
+        "rank": 4,
+        "driverNumber": 30,
+        "driverName": "Liam LAWSON",
+        "nameAcronym": "LAW",
+        "teamName": "Racing Bulls",
+        "teamColour": "#6C98FF",
+        "lap": 42,
+        "stopDuration": 2.2,
+        "stopDurationLabel": "2.20s",
+        "laneDuration": 22.5,
+        "validStop": true,
+        "dateUtc": "2026-11-01T21:02:57.347000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 4,
+        "dhlPoints": 0
+      },
+      {
+        "rank": 5,
+        "driverNumber": 27,
+        "driverName": "Nico HULKENBERG",
+        "nameAcronym": "HUL",
+        "teamName": "Audi",
+        "teamColour": "#F50537",
+        "lap": 31,
+        "stopDuration": 2.21,
+        "stopDurationLabel": "2.21s",
+        "laneDuration": 21.9,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:47:27.400000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 5,
+        "dhlPoints": 12
+      },
+      {
+        "rank": 6,
+        "driverNumber": 44,
+        "driverName": "Lewis HAMILTON",
+        "nameAcronym": "HAM",
+        "teamName": "Ferrari",
+        "teamColour": "#ED1131",
+        "lap": 28,
+        "stopDuration": 2.34,
+        "stopDurationLabel": "2.34s",
+        "laneDuration": 22.7,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:42:42.784000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 6,
+        "dhlPoints": 10
+      },
+      {
+        "rank": 7,
+        "driverNumber": 6,
+        "driverName": "Isack HADJAR",
+        "nameAcronym": "HAD",
+        "teamName": "Red Bull Racing",
+        "teamColour": "#4781D7",
+        "lap": 41,
+        "stopDuration": 2.34,
+        "stopDurationLabel": "2.34s",
+        "laneDuration": 22.6,
+        "validStop": true,
+        "dateUtc": "2026-11-01T21:01:25.184000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 7,
+        "dhlPoints": 8
+      },
+      {
+        "rank": 8,
+        "driverNumber": 63,
+        "driverName": "George RUSSELL",
+        "nameAcronym": "RUS",
+        "teamName": "Mercedes",
+        "teamColour": "#00D7B6",
+        "lap": 44,
+        "stopDuration": 2.34,
+        "stopDurationLabel": "2.34s",
+        "laneDuration": 22.2,
+        "validStop": true,
+        "dateUtc": "2026-11-01T21:05:13.217000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 8,
+        "dhlPoints": 6
+      },
+      {
+        "rank": 9,
+        "driverNumber": 41,
+        "driverName": "Arvid LINDBLAD",
+        "nameAcronym": "LIN",
+        "teamName": "Racing Bulls",
+        "teamColour": "#6C98FF",
+        "lap": 35,
+        "stopDuration": 2.37,
+        "stopDurationLabel": "2.37s",
+        "laneDuration": 22.8,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:52:46.053000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 9,
+        "dhlPoints": 4
+      },
+      {
+        "rank": 10,
+        "driverNumber": 10,
+        "driverName": "Pierre GASLY",
+        "nameAcronym": "GAS",
+        "teamName": "Alpine",
+        "teamColour": "#00A1E8",
+        "lap": 17,
+        "stopDuration": 2.45,
+        "stopDurationLabel": "2.45s",
+        "laneDuration": 22.9,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:28:11.357000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 10,
+        "dhlPoints": 2
+      }
+    ],
+    "bestStopPerTeam": [
+      {
+        "rank": 1,
+        "driverNumber": 23,
+        "driverName": "Alexander ALBON",
+        "nameAcronym": "ALB",
+        "teamName": "Williams",
+        "teamColour": "#1868DB",
+        "lap": 18,
+        "stopDuration": 2.11,
+        "stopDurationLabel": "2.11s",
+        "laneDuration": 22,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:29:42.763000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 1,
+        "dhlPoints": 25
+      },
+      {
+        "rank": 2,
+        "driverNumber": 3,
+        "driverName": "Max VERSTAPPEN",
+        "nameAcronym": "VER",
+        "teamName": "Red Bull Racing",
+        "teamColour": "#4781D7",
+        "lap": 27,
+        "stopDuration": 2.14,
+        "stopDurationLabel": "2.14s",
+        "laneDuration": 22.4,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:41:17.628000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 2,
+        "dhlPoints": 18
+      },
+      {
+        "rank": 3,
+        "driverNumber": 30,
+        "driverName": "Liam LAWSON",
+        "nameAcronym": "LAW",
+        "teamName": "Racing Bulls",
+        "teamColour": "#6C98FF",
+        "lap": 11,
+        "stopDuration": 2.18,
+        "stopDurationLabel": "2.18s",
+        "laneDuration": 22.8,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:20:04.023000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 3,
+        "dhlPoints": 15
+      },
+      {
+        "rank": 4,
+        "driverNumber": 27,
+        "driverName": "Nico HULKENBERG",
+        "nameAcronym": "HUL",
+        "teamName": "Audi",
+        "teamColour": "#F50537",
+        "lap": 31,
+        "stopDuration": 2.21,
+        "stopDurationLabel": "2.21s",
+        "laneDuration": 21.9,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:47:27.400000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 5,
+        "dhlPoints": 12
+      },
+      {
+        "rank": 5,
+        "driverNumber": 44,
+        "driverName": "Lewis HAMILTON",
+        "nameAcronym": "HAM",
+        "teamName": "Ferrari",
+        "teamColour": "#ED1131",
+        "lap": 28,
+        "stopDuration": 2.34,
+        "stopDurationLabel": "2.34s",
+        "laneDuration": 22.7,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:42:42.784000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 6,
+        "dhlPoints": 10
+      },
+      {
+        "rank": 6,
+        "driverNumber": 63,
+        "driverName": "George RUSSELL",
+        "nameAcronym": "RUS",
+        "teamName": "Mercedes",
+        "teamColour": "#00D7B6",
+        "lap": 44,
+        "stopDuration": 2.34,
+        "stopDurationLabel": "2.34s",
+        "laneDuration": 22.2,
+        "validStop": true,
+        "dateUtc": "2026-11-01T21:05:13.217000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 8,
+        "dhlPoints": 6
+      },
+      {
+        "rank": 7,
+        "driverNumber": 10,
+        "driverName": "Pierre GASLY",
+        "nameAcronym": "GAS",
+        "teamName": "Alpine",
+        "teamColour": "#00A1E8",
+        "lap": 17,
+        "stopDuration": 2.45,
+        "stopDurationLabel": "2.45s",
+        "laneDuration": 22.9,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:28:11.357000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 10,
+        "dhlPoints": 2
+      },
+      {
+        "rank": 8,
+        "driverNumber": 81,
+        "driverName": "Oscar PIASTRI",
+        "nameAcronym": "PIA",
+        "teamName": "McLaren",
+        "teamColour": "#F47600",
+        "lap": 26,
+        "stopDuration": 2.5,
+        "stopDurationLabel": "2.50s",
+        "laneDuration": 22.6,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:40:15.593000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 11,
+        "dhlPoints": 1
+      },
+      {
+        "rank": 9,
+        "driverNumber": 87,
+        "driverName": "Oliver BEARMAN",
+        "nameAcronym": "BEA",
+        "teamName": "Haas F1 Team",
+        "teamColour": "#9C9FA2",
+        "lap": 40,
+        "stopDuration": 2.67,
+        "stopDurationLabel": "2.67s",
+        "laneDuration": 22.5,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:59:53.747000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 13,
+        "dhlPoints": 0
+      },
+      {
+        "rank": 10,
+        "driverNumber": 14,
+        "driverName": "Fernando ALONSO",
+        "nameAcronym": "ALO",
+        "teamName": "Aston Martin",
+        "teamColour": "#229971",
+        "lap": 3,
+        "stopDuration": 2.68,
+        "stopDurationLabel": "2.68s",
+        "laneDuration": 23.9,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:08:12.601000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 14,
+        "dhlPoints": 0
+      },
+      {
+        "rank": 11,
+        "driverNumber": 50,
+        "driverName": "Ryo HIRAKAWA",
+        "nameAcronym": "HIR",
+        "teamName": null,
+        "teamColour": null,
+        "lap": 35,
+        "stopDuration": 2.82,
+        "stopDurationLabel": "2.82s",
+        "laneDuration": 22.8,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:53:28.391000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 18,
+        "dhlPoints": 0
+      },
+      {
+        "rank": 12,
+        "driverNumber": 11,
+        "driverName": "Sergio PEREZ",
+        "nameAcronym": "PER",
+        "teamName": "Cadillac",
+        "teamColour": "#909090",
+        "lap": 43,
+        "stopDuration": 3.15,
+        "stopDurationLabel": "3.15s",
+        "laneDuration": 24.1,
+        "validStop": true,
+        "dateUtc": "2026-11-01T21:05:06.885000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 21,
+        "dhlPoints": 0
+      }
+    ],
     "pitStops": [
       {
         "driverNumber": 10,
@@ -1843,7 +2760,8 @@
         "stopDurationLabel": null,
         "laneDuration": null,
         "validStop": false,
-        "dateUtc": "2026-11-01T19:08:59.071000+00:00"
+        "dateUtc": "2026-11-01T19:08:59.071000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 77,
@@ -1856,7 +2774,8 @@
         "stopDurationLabel": null,
         "laneDuration": null,
         "validStop": false,
-        "dateUtc": "2026-11-01T19:08:59.071000+00:00"
+        "dateUtc": "2026-11-01T19:08:59.071000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 11,
@@ -1869,7 +2788,8 @@
         "stopDurationLabel": null,
         "laneDuration": null,
         "validStop": false,
-        "dateUtc": "2026-11-01T19:08:59.071000+00:00"
+        "dateUtc": "2026-11-01T19:08:59.071000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 18,
@@ -1882,7 +2802,8 @@
         "stopDurationLabel": null,
         "laneDuration": null,
         "validStop": false,
-        "dateUtc": "2026-11-01T19:08:59.071000+00:00"
+        "dateUtc": "2026-11-01T19:08:59.071000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 30,
@@ -1895,7 +2816,8 @@
         "stopDurationLabel": null,
         "laneDuration": null,
         "validStop": false,
-        "dateUtc": "2026-11-01T19:08:59.071000+00:00"
+        "dateUtc": "2026-11-01T19:08:59.071000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 1,
@@ -1908,7 +2830,8 @@
         "stopDurationLabel": null,
         "laneDuration": null,
         "validStop": false,
-        "dateUtc": "2026-11-01T19:08:59.071000+00:00"
+        "dateUtc": "2026-11-01T19:08:59.071000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 14,
@@ -1921,7 +2844,8 @@
         "stopDurationLabel": null,
         "laneDuration": null,
         "validStop": false,
-        "dateUtc": "2026-11-01T19:08:59.071000+00:00"
+        "dateUtc": "2026-11-01T19:08:59.071000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 12,
@@ -1934,7 +2858,8 @@
         "stopDurationLabel": null,
         "laneDuration": null,
         "validStop": false,
-        "dateUtc": "2026-11-01T19:08:59.071000+00:00"
+        "dateUtc": "2026-11-01T19:08:59.071000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 41,
@@ -1947,7 +2872,8 @@
         "stopDurationLabel": null,
         "laneDuration": null,
         "validStop": false,
-        "dateUtc": "2026-11-01T19:08:59.071000+00:00"
+        "dateUtc": "2026-11-01T19:08:59.071000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 14,
@@ -1956,11 +2882,14 @@
         "teamName": "Aston Martin",
         "teamColour": "#229971",
         "lap": 3,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.68,
+        "stopDurationLabel": "2.68s",
         "laneDuration": 23.9,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:08:12.601000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:08:12.601000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 14,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 18,
@@ -1969,11 +2898,14 @@
         "teamName": "Aston Martin",
         "teamColour": "#229971",
         "lap": 3,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.75,
+        "stopDurationLabel": "2.75s",
         "laneDuration": 27.1,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:08:18.149000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:08:18.149000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 17,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 6,
@@ -1982,11 +2914,14 @@
         "teamName": "Red Bull Racing",
         "teamColour": "#4781D7",
         "lap": 7,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 3.78,
+        "stopDurationLabel": "3.78s",
         "laneDuration": 23.9,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:14:14.119000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:14:14.119000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 25,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 30,
@@ -1995,11 +2930,14 @@
         "teamName": "Racing Bulls",
         "teamColour": "#6C98FF",
         "lap": 11,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.18,
+        "stopDurationLabel": "2.18s",
         "laneDuration": 22.8,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:20:04.023000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:20:04.023000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 3,
+        "dhlPoints": 15
       },
       {
         "driverNumber": 10,
@@ -2008,11 +2946,14 @@
         "teamName": "Alpine",
         "teamColour": "#00A1E8",
         "lap": 17,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.45,
+        "stopDurationLabel": "2.45s",
         "laneDuration": 22.9,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:28:11.357000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:28:11.357000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 10,
+        "dhlPoints": 2
       },
       {
         "driverNumber": 23,
@@ -2021,11 +2962,14 @@
         "teamName": "Williams",
         "teamColour": "#1868DB",
         "lap": 18,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.11,
+        "stopDurationLabel": "2.11s",
         "laneDuration": 22,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:29:42.763000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:29:42.763000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 1,
+        "dhlPoints": 25
       },
       {
         "driverNumber": 81,
@@ -2034,11 +2978,14 @@
         "teamName": "McLaren",
         "teamColour": "#F47600",
         "lap": 26,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.5,
+        "stopDurationLabel": "2.50s",
         "laneDuration": 22.6,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:40:15.593000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:40:15.593000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 11,
+        "dhlPoints": 1
       },
       {
         "driverNumber": 3,
@@ -2047,11 +2994,14 @@
         "teamName": "Red Bull Racing",
         "teamColour": "#4781D7",
         "lap": 27,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.14,
+        "stopDurationLabel": "2.14s",
         "laneDuration": 22.4,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:41:17.628000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:41:17.628000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 2,
+        "dhlPoints": 18
       },
       {
         "driverNumber": 16,
@@ -2060,11 +3010,14 @@
         "teamName": "Ferrari",
         "teamColour": "#ED1131",
         "lap": 27,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 8.49,
+        "stopDurationLabel": "8.49s",
         "laneDuration": 28.7,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:41:19.237000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:41:19.237000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 31,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 44,
@@ -2073,11 +3026,14 @@
         "teamName": "Ferrari",
         "teamColour": "#ED1131",
         "lap": 28,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.34,
+        "stopDurationLabel": "2.34s",
         "laneDuration": 22.7,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:42:42.784000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:42:42.784000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 6,
+        "dhlPoints": 10
       },
       {
         "driverNumber": 11,
@@ -2086,11 +3042,14 @@
         "teamName": "Cadillac",
         "teamColour": "#909090",
         "lap": 30,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 8.41,
+        "stopDurationLabel": "8.41s",
         "laneDuration": 28.9,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:46:33.057000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:46:33.057000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 30,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 77,
@@ -2099,11 +3058,14 @@
         "teamName": "Cadillac",
         "teamColour": "#909090",
         "lap": 30,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 6.28,
+        "stopDurationLabel": "6.28s",
         "laneDuration": 26.7,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:46:56.060000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:46:56.060000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 29,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 27,
@@ -2112,11 +3074,14 @@
         "teamName": "Audi",
         "teamColour": "#F50537",
         "lap": 31,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.21,
+        "stopDurationLabel": "2.21s",
         "laneDuration": 21.9,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:47:27.400000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:47:27.400000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 5,
+        "dhlPoints": 12
       },
       {
         "driverNumber": 63,
@@ -2125,11 +3090,14 @@
         "teamName": "Mercedes",
         "teamColour": "#00D7B6",
         "lap": 33,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 13.63,
+        "stopDurationLabel": "13.63s",
         "laneDuration": 33.9,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:49:48.360000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:49:48.360000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 33,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 43,
@@ -2138,11 +3106,14 @@
         "teamName": "Alpine",
         "teamColour": "#00A1E8",
         "lap": 34,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.84,
+        "stopDurationLabel": "2.84s",
         "laneDuration": 23.3,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:51:31.260000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:51:31.260000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 19,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 41,
@@ -2151,11 +3122,14 @@
         "teamName": "Racing Bulls",
         "teamColour": "#6C98FF",
         "lap": 35,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.37,
+        "stopDurationLabel": "2.37s",
         "laneDuration": 22.8,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:52:46.053000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:52:46.053000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 9,
+        "dhlPoints": 4
       },
       {
         "driverNumber": 50,
@@ -2164,11 +3138,14 @@
         "teamName": null,
         "teamColour": null,
         "lap": 35,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.82,
+        "stopDurationLabel": "2.82s",
         "laneDuration": 22.8,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:53:28.391000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:53:28.391000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 18,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 55,
@@ -2177,11 +3154,14 @@
         "teamName": "Williams",
         "teamColour": "#1868DB",
         "lap": 36,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.71,
+        "stopDurationLabel": "2.71s",
         "laneDuration": 22.5,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:54:47.582000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:54:47.582000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 15,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 5,
@@ -2190,11 +3170,14 @@
         "teamName": "Audi",
         "teamColour": "#F50537",
         "lap": 38,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.73,
+        "stopDurationLabel": "2.73s",
         "laneDuration": 22.5,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:57:13.791000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:57:13.791000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 16,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 1,
@@ -2203,11 +3186,14 @@
         "teamName": "McLaren",
         "teamColour": "#F47600",
         "lap": 39,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 4.71,
+        "stopDurationLabel": "4.71s",
         "laneDuration": 24.7,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:57:50.438000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:57:50.438000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 27,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 87,
@@ -2216,11 +3202,14 @@
         "teamName": "Haas F1 Team",
         "teamColour": "#9C9FA2",
         "lap": 40,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.67,
+        "stopDurationLabel": "2.67s",
         "laneDuration": 22.5,
-        "validStop": false,
-        "dateUtc": "2026-11-01T20:59:53.747000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:59:53.747000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 13,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 6,
@@ -2229,11 +3218,14 @@
         "teamName": "Red Bull Racing",
         "teamColour": "#4781D7",
         "lap": 41,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.34,
+        "stopDurationLabel": "2.34s",
         "laneDuration": 22.6,
-        "validStop": false,
-        "dateUtc": "2026-11-01T21:01:25.184000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T21:01:25.184000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 7,
+        "dhlPoints": 8
       },
       {
         "driverNumber": 23,
@@ -2242,11 +3234,14 @@
         "teamName": "Williams",
         "teamColour": "#1868DB",
         "lap": 41,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 5.67,
+        "stopDurationLabel": "5.67s",
         "laneDuration": 25.4,
-        "validStop": false,
-        "dateUtc": "2026-11-01T21:01:52.270000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T21:01:52.270000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 28,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 30,
@@ -2255,11 +3250,14 @@
         "teamName": "Racing Bulls",
         "teamColour": "#6C98FF",
         "lap": 42,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.2,
+        "stopDurationLabel": "2.20s",
         "laneDuration": 22.5,
-        "validStop": false,
-        "dateUtc": "2026-11-01T21:02:57.347000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T21:02:57.347000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 4,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 12,
@@ -2268,11 +3266,14 @@
         "teamName": "Mercedes",
         "teamColour": "#00D7B6",
         "lap": 43,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 3.71,
+        "stopDurationLabel": "3.71s",
         "laneDuration": 23.7,
-        "validStop": false,
-        "dateUtc": "2026-11-01T21:03:07.064000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T21:03:07.064000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 24,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 50,
@@ -2281,11 +3282,14 @@
         "teamName": null,
         "teamColour": null,
         "lap": 43,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 3.62,
+        "stopDurationLabel": "3.62s",
         "laneDuration": 23.8,
-        "validStop": false,
-        "dateUtc": "2026-11-01T21:04:53.636000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T21:04:53.636000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 23,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 11,
@@ -2294,11 +3298,14 @@
         "teamName": "Cadillac",
         "teamColour": "#909090",
         "lap": 43,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 3.15,
+        "stopDurationLabel": "3.15s",
         "laneDuration": 24.1,
-        "validStop": false,
-        "dateUtc": "2026-11-01T21:05:06.885000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T21:05:06.885000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 21,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 44,
@@ -2307,11 +3314,14 @@
         "teamName": "Ferrari",
         "teamColour": "#ED1131",
         "lap": 44,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 3.54,
+        "stopDurationLabel": "3.54s",
         "laneDuration": 23.8,
-        "validStop": false,
-        "dateUtc": "2026-11-01T21:04:44.336000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T21:04:44.336000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 22,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 63,
@@ -2320,11 +3330,14 @@
         "teamName": "Mercedes",
         "teamColour": "#00D7B6",
         "lap": 44,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.34,
+        "stopDurationLabel": "2.34s",
         "laneDuration": 22.2,
-        "validStop": false,
-        "dateUtc": "2026-11-01T21:05:13.217000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T21:05:13.217000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 8,
+        "dhlPoints": 6
       },
       {
         "driverNumber": 81,
@@ -2333,11 +3346,14 @@
         "teamName": "McLaren",
         "teamColour": "#F47600",
         "lap": 44,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 4.55,
+        "stopDurationLabel": "4.55s",
         "laneDuration": 24.5,
-        "validStop": false,
-        "dateUtc": "2026-11-01T21:05:30.270000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T21:05:30.270000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 26,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 10,
@@ -2346,11 +3362,14 @@
         "teamName": "Alpine",
         "teamColour": "#00A1E8",
         "lap": 44,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.55,
+        "stopDurationLabel": "2.55s",
         "laneDuration": 22.8,
-        "validStop": false,
-        "dateUtc": "2026-11-01T21:06:03.169000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T21:06:03.169000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 12,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 30,
@@ -2363,7 +3382,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2191.6,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:43:05.921000+00:00"
+        "dateUtc": "2026-11-01T21:43:05.921000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 55,
@@ -2376,7 +3396,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2192.4,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:43:08.055000+00:00"
+        "dateUtc": "2026-11-01T21:43:08.055000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 50,
@@ -2389,7 +3410,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2178.9,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:43:09.856000+00:00"
+        "dateUtc": "2026-11-01T21:43:09.856000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 11,
@@ -2402,7 +3424,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2172.9,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:43:12.544000+00:00"
+        "dateUtc": "2026-11-01T21:43:12.544000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 23,
@@ -2415,7 +3438,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2181.8,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:43:16.515000+00:00"
+        "dateUtc": "2026-11-01T21:43:16.515000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 3,
@@ -2428,7 +3452,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2314.9,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:05.187000+00:00"
+        "dateUtc": "2026-11-01T21:45:05.187000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 16,
@@ -2441,7 +3466,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2315.8,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:07.494000+00:00"
+        "dateUtc": "2026-11-01T21:45:07.494000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 44,
@@ -2454,7 +3480,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2309.6,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:09.684000+00:00"
+        "dateUtc": "2026-11-01T21:45:09.684000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 12,
@@ -2467,7 +3494,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2315.3,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:12.495000+00:00"
+        "dateUtc": "2026-11-01T21:45:12.495000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 1,
@@ -2480,7 +3508,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2312.4,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:15.953000+00:00"
+        "dateUtc": "2026-11-01T21:45:15.953000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 63,
@@ -2493,7 +3522,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2295.3,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:19.646000+00:00"
+        "dateUtc": "2026-11-01T21:45:19.646000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 81,
@@ -2506,7 +3536,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2272,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:22.257000+00:00"
+        "dateUtc": "2026-11-01T21:45:22.257000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 41,
@@ -2519,7 +3550,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2284.6,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:25.021000+00:00"
+        "dateUtc": "2026-11-01T21:45:25.021000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 43,
@@ -2532,7 +3564,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2274.5,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:28.013000+00:00"
+        "dateUtc": "2026-11-01T21:45:28.013000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 10,
@@ -2545,7 +3578,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2256.2,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:31.697000+00:00"
+        "dateUtc": "2026-11-01T21:45:31.697000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 27,
@@ -2558,7 +3592,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2272.9,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:32.993000+00:00"
+        "dateUtc": "2026-11-01T21:45:32.993000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 87,
@@ -2571,7 +3606,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2268.4,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:35.416000+00:00"
+        "dateUtc": "2026-11-01T21:45:35.416000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 5,
@@ -2584,7 +3620,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2270,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:41.048000+00:00"
+        "dateUtc": "2026-11-01T21:45:41.048000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 6,
@@ -2597,7 +3634,8 @@
         "stopDurationLabel": null,
         "laneDuration": 2265.5,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:43.493000+00:00"
+        "dateUtc": "2026-11-01T21:45:43.493000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 30,
@@ -2610,7 +3648,8 @@
         "stopDurationLabel": null,
         "laneDuration": 60.5,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:45.265000+00:00"
+        "dateUtc": "2026-11-01T21:45:45.265000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 55,
@@ -2623,7 +3662,8 @@
         "stopDurationLabel": null,
         "laneDuration": 58.6,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:47.341000+00:00"
+        "dateUtc": "2026-11-01T21:45:47.341000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 50,
@@ -2636,7 +3676,8 @@
         "stopDurationLabel": null,
         "laneDuration": 57.3,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:48.505000+00:00"
+        "dateUtc": "2026-11-01T21:45:48.505000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 11,
@@ -2649,7 +3690,8 @@
         "stopDurationLabel": null,
         "laneDuration": 57,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:51.590000+00:00"
+        "dateUtc": "2026-11-01T21:45:51.590000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 23,
@@ -2662,7 +3704,8 @@
         "stopDurationLabel": null,
         "laneDuration": 54.8,
         "validStop": false,
-        "dateUtc": "2026-11-01T21:45:53.158000+00:00"
+        "dateUtc": "2026-11-01T21:45:53.158000+00:00",
+        "stopSource": null
       },
       {
         "driverNumber": 50,
@@ -2671,11 +3714,14 @@
         "teamName": null,
         "teamColour": null,
         "lap": 59,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 2.96,
+        "stopDurationLabel": "2.96s",
         "laneDuration": 22.9,
-        "validStop": false,
-        "dateUtc": "2026-11-01T22:07:04.069000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T22:07:04.069000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 20,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 27,
@@ -2684,11 +3730,14 @@
         "teamName": "Audi",
         "teamColour": "#F50537",
         "lap": 59,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 14.03,
+        "stopDurationLabel": "14.03s",
         "laneDuration": 34.5,
-        "validStop": false,
-        "dateUtc": "2026-11-01T22:07:08.498000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T22:07:08.498000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 34,
+        "dhlPoints": 0
       },
       {
         "driverNumber": 11,
@@ -2697,11 +3746,14 @@
         "teamName": "Cadillac",
         "teamColour": "#909090",
         "lap": 59,
-        "stopDuration": null,
-        "stopDurationLabel": null,
+        "stopDuration": 9.22,
+        "stopDurationLabel": "9.22s",
         "laneDuration": 29.8,
-        "validStop": false,
-        "dateUtc": "2026-11-01T22:07:08.889000+00:00"
+        "validStop": true,
+        "dateUtc": "2026-11-01T22:07:08.889000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 32,
+        "dhlPoints": 0
       }
     ],
     "drivers": [
@@ -2955,88 +4007,6 @@
         "position": 7,
         "positionLabel": "P7",
         "status": null,
-        "driverNumber": 81,
-        "driverName": "Oscar PIASTRI",
-        "nameAcronym": "PIA",
-        "teamName": "McLaren",
-        "teamColour": "#F47600",
-        "lapsCompleted": 71,
-        "stops": 2,
-        "stints": [
-          {
-            "stint": 1,
-            "compound": "SOFT",
-            "lapStart": 1,
-            "lapEnd": 26,
-            "laps": 26,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 2,
-            "compound": "MEDIUM",
-            "lapStart": 27,
-            "lapEnd": 44,
-            "laps": 18,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 3,
-            "compound": "SOFT",
-            "lapStart": 45,
-            "lapEnd": 71,
-            "laps": 27,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          }
-        ]
-      },
-      {
-        "position": 8,
-        "positionLabel": "P8",
-        "status": null,
-        "driverNumber": 43,
-        "driverName": "Franco COLAPINTO",
-        "nameAcronym": "COL",
-        "teamName": "Alpine",
-        "teamColour": "#00A1E8",
-        "lapsCompleted": 71,
-        "stops": 2,
-        "stints": [
-          {
-            "stint": 1,
-            "compound": "MEDIUM",
-            "lapStart": 1,
-            "lapEnd": 34,
-            "laps": 34,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 2,
-            "compound": "SOFT",
-            "lapStart": 35,
-            "lapEnd": 45,
-            "laps": 11,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 3,
-            "compound": "SOFT",
-            "lapStart": 46,
-            "lapEnd": 71,
-            "laps": 26,
-            "tyreAgeAtStart": 2,
-            "newTyre": false
-          }
-        ]
-      },
-      {
-        "position": 9,
-        "positionLabel": "P9",
-        "status": null,
         "driverNumber": 30,
         "driverName": "Liam LAWSON",
         "nameAcronym": "LAW",
@@ -3075,49 +4045,8 @@
         ]
       },
       {
-        "position": 10,
-        "positionLabel": "P10",
-        "status": null,
-        "driverNumber": 10,
-        "driverName": "Pierre GASLY",
-        "nameAcronym": "GAS",
-        "teamName": "Alpine",
-        "teamColour": "#00A1E8",
-        "lapsCompleted": 71,
-        "stops": 2,
-        "stints": [
-          {
-            "stint": 1,
-            "compound": "SOFT",
-            "lapStart": 1,
-            "lapEnd": 17,
-            "laps": 17,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 2,
-            "compound": "MEDIUM",
-            "lapStart": 18,
-            "lapEnd": 44,
-            "laps": 27,
-            "tyreAgeAtStart": 0,
-            "newTyre": true
-          },
-          {
-            "stint": 3,
-            "compound": "SOFT",
-            "lapStart": 45,
-            "lapEnd": 71,
-            "laps": 27,
-            "tyreAgeAtStart": 3,
-            "newTyre": false
-          }
-        ]
-      },
-      {
-        "position": 11,
-        "positionLabel": "P11",
+        "position": 8,
+        "positionLabel": "P8",
         "status": null,
         "driverNumber": 5,
         "driverName": "Gabriel BORTOLETO",
@@ -3157,8 +4086,8 @@
         ]
       },
       {
-        "position": 12,
-        "positionLabel": "P12",
+        "position": 9,
+        "positionLabel": "P9",
         "status": null,
         "driverNumber": 6,
         "driverName": "Isack HADJAR",
@@ -3207,8 +4136,8 @@
         ]
       },
       {
-        "position": 13,
-        "positionLabel": "P13",
+        "position": 10,
+        "positionLabel": "P10",
         "status": null,
         "driverNumber": 50,
         "driverName": "Ryo HIRAKAWA",
@@ -3257,8 +4186,8 @@
         ]
       },
       {
-        "position": 14,
-        "positionLabel": "P14",
+        "position": 11,
+        "positionLabel": "P11",
         "status": null,
         "driverNumber": 23,
         "driverName": "Alexander ALBON",
@@ -3307,8 +4236,8 @@
         ]
       },
       {
-        "position": 15,
-        "positionLabel": "P15",
+        "position": 12,
+        "positionLabel": "P12",
         "status": null,
         "driverNumber": 55,
         "driverName": "Carlos SAINZ",
@@ -3348,8 +4277,49 @@
         ]
       },
       {
-        "position": 16,
-        "positionLabel": "P16",
+        "position": 13,
+        "positionLabel": "P13",
+        "status": null,
+        "driverNumber": 81,
+        "driverName": "Oscar PIASTRI",
+        "nameAcronym": "PIA",
+        "teamName": "McLaren",
+        "teamColour": "#F47600",
+        "lapsCompleted": 71,
+        "stops": 2,
+        "stints": [
+          {
+            "stint": 1,
+            "compound": "SOFT",
+            "lapStart": 1,
+            "lapEnd": 26,
+            "laps": 26,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 2,
+            "compound": "MEDIUM",
+            "lapStart": 27,
+            "lapEnd": 44,
+            "laps": 18,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 3,
+            "compound": "SOFT",
+            "lapStart": 45,
+            "lapEnd": 71,
+            "laps": 27,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          }
+        ]
+      },
+      {
+        "position": 14,
+        "positionLabel": "P14",
         "status": null,
         "driverNumber": 27,
         "driverName": "Nico HULKENBERG",
@@ -3389,8 +4359,49 @@
         ]
       },
       {
-        "position": 17,
-        "positionLabel": "P17",
+        "position": 15,
+        "positionLabel": "P15",
+        "status": null,
+        "driverNumber": 43,
+        "driverName": "Franco COLAPINTO",
+        "nameAcronym": "COL",
+        "teamName": "Alpine",
+        "teamColour": "#00A1E8",
+        "lapsCompleted": 71,
+        "stops": 2,
+        "stints": [
+          {
+            "stint": 1,
+            "compound": "MEDIUM",
+            "lapStart": 1,
+            "lapEnd": 34,
+            "laps": 34,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 2,
+            "compound": "SOFT",
+            "lapStart": 35,
+            "lapEnd": 45,
+            "laps": 11,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 3,
+            "compound": "SOFT",
+            "lapStart": 46,
+            "lapEnd": 71,
+            "laps": 26,
+            "tyreAgeAtStart": 2,
+            "newTyre": false
+          }
+        ]
+      },
+      {
+        "position": 16,
+        "positionLabel": "P16",
         "status": null,
         "driverNumber": 11,
         "driverName": "Sergio PEREZ",
@@ -3433,6 +4444,47 @@
             "lapStart": 60,
             "lapEnd": 71,
             "laps": 12,
+            "tyreAgeAtStart": 3,
+            "newTyre": false
+          }
+        ]
+      },
+      {
+        "position": 17,
+        "positionLabel": "P17",
+        "status": null,
+        "driverNumber": 10,
+        "driverName": "Pierre GASLY",
+        "nameAcronym": "GAS",
+        "teamName": "Alpine",
+        "teamColour": "#00A1E8",
+        "lapsCompleted": 71,
+        "stops": 2,
+        "stints": [
+          {
+            "stint": 1,
+            "compound": "SOFT",
+            "lapStart": 1,
+            "lapEnd": 17,
+            "laps": 17,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 2,
+            "compound": "MEDIUM",
+            "lapStart": 18,
+            "lapEnd": 44,
+            "laps": 27,
+            "tyreAgeAtStart": 0,
+            "newTyre": true
+          },
+          {
+            "stint": 3,
+            "compound": "SOFT",
+            "lapStart": 45,
+            "lapEnd": 71,
+            "laps": 27,
             "tyreAgeAtStart": 3,
             "newTyre": false
           }
@@ -40109,12 +41161,403 @@
       "sessionKey": 11404,
       "sessionName": "Race",
       "dateStartUtc": "2026-11-01T20:00:00+00:00",
-      "dhlEventId": null,
-      "stopTimesSource": null,
+      "dhlEventId": 1186,
+      "stopTimesSource": "dhl",
       "totalLaps": 71,
-      "fastestStop": null,
-      "fastestStops": [],
-      "bestStopPerTeam": [],
+      "fastestStop": {
+        "driverNumber": 23,
+        "driverName": "Alexander ALBON",
+        "nameAcronym": "ALB",
+        "teamName": "Williams",
+        "teamColour": "#1868DB",
+        "lap": 18,
+        "stopDuration": 2.11,
+        "stopDurationLabel": "2.11s",
+        "laneDuration": 22,
+        "validStop": true,
+        "dateUtc": "2026-11-01T20:29:42.763000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 1,
+        "dhlPoints": 25
+      },
+      "fastestStops": [
+        {
+          "rank": 1,
+          "driverNumber": 23,
+          "driverName": "Alexander ALBON",
+          "nameAcronym": "ALB",
+          "teamName": "Williams",
+          "teamColour": "#1868DB",
+          "lap": 18,
+          "stopDuration": 2.11,
+          "stopDurationLabel": "2.11s",
+          "laneDuration": 22,
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:29:42.763000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 1,
+          "dhlPoints": 25
+        },
+        {
+          "rank": 2,
+          "driverNumber": 3,
+          "driverName": "Max VERSTAPPEN",
+          "nameAcronym": "VER",
+          "teamName": "Red Bull Racing",
+          "teamColour": "#4781D7",
+          "lap": 27,
+          "stopDuration": 2.14,
+          "stopDurationLabel": "2.14s",
+          "laneDuration": 22.4,
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:41:17.628000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 2,
+          "dhlPoints": 18
+        },
+        {
+          "rank": 3,
+          "driverNumber": 30,
+          "driverName": "Liam LAWSON",
+          "nameAcronym": "LAW",
+          "teamName": "Racing Bulls",
+          "teamColour": "#6C98FF",
+          "lap": 11,
+          "stopDuration": 2.18,
+          "stopDurationLabel": "2.18s",
+          "laneDuration": 22.8,
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:20:04.023000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 3,
+          "dhlPoints": 15
+        },
+        {
+          "rank": 4,
+          "driverNumber": 30,
+          "driverName": "Liam LAWSON",
+          "nameAcronym": "LAW",
+          "teamName": "Racing Bulls",
+          "teamColour": "#6C98FF",
+          "lap": 42,
+          "stopDuration": 2.2,
+          "stopDurationLabel": "2.20s",
+          "laneDuration": 22.5,
+          "validStop": true,
+          "dateUtc": "2026-11-01T21:02:57.347000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 4,
+          "dhlPoints": 0
+        },
+        {
+          "rank": 5,
+          "driverNumber": 27,
+          "driverName": "Nico HULKENBERG",
+          "nameAcronym": "HUL",
+          "teamName": "Audi",
+          "teamColour": "#F50537",
+          "lap": 31,
+          "stopDuration": 2.21,
+          "stopDurationLabel": "2.21s",
+          "laneDuration": 21.9,
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:47:27.400000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 5,
+          "dhlPoints": 12
+        },
+        {
+          "rank": 6,
+          "driverNumber": 44,
+          "driverName": "Lewis HAMILTON",
+          "nameAcronym": "HAM",
+          "teamName": "Ferrari",
+          "teamColour": "#ED1131",
+          "lap": 28,
+          "stopDuration": 2.34,
+          "stopDurationLabel": "2.34s",
+          "laneDuration": 22.7,
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:42:42.784000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 6,
+          "dhlPoints": 10
+        },
+        {
+          "rank": 7,
+          "driverNumber": 6,
+          "driverName": "Isack HADJAR",
+          "nameAcronym": "HAD",
+          "teamName": "Red Bull Racing",
+          "teamColour": "#4781D7",
+          "lap": 41,
+          "stopDuration": 2.34,
+          "stopDurationLabel": "2.34s",
+          "laneDuration": 22.6,
+          "validStop": true,
+          "dateUtc": "2026-11-01T21:01:25.184000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 7,
+          "dhlPoints": 8
+        },
+        {
+          "rank": 8,
+          "driverNumber": 63,
+          "driverName": "George RUSSELL",
+          "nameAcronym": "RUS",
+          "teamName": "Mercedes",
+          "teamColour": "#00D7B6",
+          "lap": 44,
+          "stopDuration": 2.34,
+          "stopDurationLabel": "2.34s",
+          "laneDuration": 22.2,
+          "validStop": true,
+          "dateUtc": "2026-11-01T21:05:13.217000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 8,
+          "dhlPoints": 6
+        },
+        {
+          "rank": 9,
+          "driverNumber": 41,
+          "driverName": "Arvid LINDBLAD",
+          "nameAcronym": "LIN",
+          "teamName": "Racing Bulls",
+          "teamColour": "#6C98FF",
+          "lap": 35,
+          "stopDuration": 2.37,
+          "stopDurationLabel": "2.37s",
+          "laneDuration": 22.8,
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:52:46.053000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 9,
+          "dhlPoints": 4
+        },
+        {
+          "rank": 10,
+          "driverNumber": 10,
+          "driverName": "Pierre GASLY",
+          "nameAcronym": "GAS",
+          "teamName": "Alpine",
+          "teamColour": "#00A1E8",
+          "lap": 17,
+          "stopDuration": 2.45,
+          "stopDurationLabel": "2.45s",
+          "laneDuration": 22.9,
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:28:11.357000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 10,
+          "dhlPoints": 2
+        }
+      ],
+      "bestStopPerTeam": [
+        {
+          "rank": 1,
+          "driverNumber": 23,
+          "driverName": "Alexander ALBON",
+          "nameAcronym": "ALB",
+          "teamName": "Williams",
+          "teamColour": "#1868DB",
+          "lap": 18,
+          "stopDuration": 2.11,
+          "stopDurationLabel": "2.11s",
+          "laneDuration": 22,
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:29:42.763000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 1,
+          "dhlPoints": 25
+        },
+        {
+          "rank": 2,
+          "driverNumber": 3,
+          "driverName": "Max VERSTAPPEN",
+          "nameAcronym": "VER",
+          "teamName": "Red Bull Racing",
+          "teamColour": "#4781D7",
+          "lap": 27,
+          "stopDuration": 2.14,
+          "stopDurationLabel": "2.14s",
+          "laneDuration": 22.4,
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:41:17.628000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 2,
+          "dhlPoints": 18
+        },
+        {
+          "rank": 3,
+          "driverNumber": 30,
+          "driverName": "Liam LAWSON",
+          "nameAcronym": "LAW",
+          "teamName": "Racing Bulls",
+          "teamColour": "#6C98FF",
+          "lap": 11,
+          "stopDuration": 2.18,
+          "stopDurationLabel": "2.18s",
+          "laneDuration": 22.8,
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:20:04.023000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 3,
+          "dhlPoints": 15
+        },
+        {
+          "rank": 4,
+          "driverNumber": 27,
+          "driverName": "Nico HULKENBERG",
+          "nameAcronym": "HUL",
+          "teamName": "Audi",
+          "teamColour": "#F50537",
+          "lap": 31,
+          "stopDuration": 2.21,
+          "stopDurationLabel": "2.21s",
+          "laneDuration": 21.9,
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:47:27.400000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 5,
+          "dhlPoints": 12
+        },
+        {
+          "rank": 5,
+          "driverNumber": 44,
+          "driverName": "Lewis HAMILTON",
+          "nameAcronym": "HAM",
+          "teamName": "Ferrari",
+          "teamColour": "#ED1131",
+          "lap": 28,
+          "stopDuration": 2.34,
+          "stopDurationLabel": "2.34s",
+          "laneDuration": 22.7,
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:42:42.784000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 6,
+          "dhlPoints": 10
+        },
+        {
+          "rank": 6,
+          "driverNumber": 63,
+          "driverName": "George RUSSELL",
+          "nameAcronym": "RUS",
+          "teamName": "Mercedes",
+          "teamColour": "#00D7B6",
+          "lap": 44,
+          "stopDuration": 2.34,
+          "stopDurationLabel": "2.34s",
+          "laneDuration": 22.2,
+          "validStop": true,
+          "dateUtc": "2026-11-01T21:05:13.217000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 8,
+          "dhlPoints": 6
+        },
+        {
+          "rank": 7,
+          "driverNumber": 10,
+          "driverName": "Pierre GASLY",
+          "nameAcronym": "GAS",
+          "teamName": "Alpine",
+          "teamColour": "#00A1E8",
+          "lap": 17,
+          "stopDuration": 2.45,
+          "stopDurationLabel": "2.45s",
+          "laneDuration": 22.9,
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:28:11.357000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 10,
+          "dhlPoints": 2
+        },
+        {
+          "rank": 8,
+          "driverNumber": 81,
+          "driverName": "Oscar PIASTRI",
+          "nameAcronym": "PIA",
+          "teamName": "McLaren",
+          "teamColour": "#F47600",
+          "lap": 26,
+          "stopDuration": 2.5,
+          "stopDurationLabel": "2.50s",
+          "laneDuration": 22.6,
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:40:15.593000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 11,
+          "dhlPoints": 1
+        },
+        {
+          "rank": 9,
+          "driverNumber": 87,
+          "driverName": "Oliver BEARMAN",
+          "nameAcronym": "BEA",
+          "teamName": "Haas F1 Team",
+          "teamColour": "#9C9FA2",
+          "lap": 40,
+          "stopDuration": 2.67,
+          "stopDurationLabel": "2.67s",
+          "laneDuration": 22.5,
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:59:53.747000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 13,
+          "dhlPoints": 0
+        },
+        {
+          "rank": 10,
+          "driverNumber": 14,
+          "driverName": "Fernando ALONSO",
+          "nameAcronym": "ALO",
+          "teamName": "Aston Martin",
+          "teamColour": "#229971",
+          "lap": 3,
+          "stopDuration": 2.68,
+          "stopDurationLabel": "2.68s",
+          "laneDuration": 23.9,
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:08:12.601000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 14,
+          "dhlPoints": 0
+        },
+        {
+          "rank": 11,
+          "driverNumber": 50,
+          "driverName": "Ryo HIRAKAWA",
+          "nameAcronym": "HIR",
+          "teamName": null,
+          "teamColour": null,
+          "lap": 35,
+          "stopDuration": 2.82,
+          "stopDurationLabel": "2.82s",
+          "laneDuration": 22.8,
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:53:28.391000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 18,
+          "dhlPoints": 0
+        },
+        {
+          "rank": 12,
+          "driverNumber": 11,
+          "driverName": "Sergio PEREZ",
+          "nameAcronym": "PER",
+          "teamName": "Cadillac",
+          "teamColour": "#909090",
+          "lap": 43,
+          "stopDuration": 3.15,
+          "stopDurationLabel": "3.15s",
+          "laneDuration": 24.1,
+          "validStop": true,
+          "dateUtc": "2026-11-01T21:05:06.885000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 21,
+          "dhlPoints": 0
+        }
+      ],
       "pitStops": [
         {
           "driverNumber": 10,
@@ -40127,7 +41570,8 @@
           "stopDurationLabel": null,
           "laneDuration": null,
           "validStop": false,
-          "dateUtc": "2026-11-01T19:08:59.071000+00:00"
+          "dateUtc": "2026-11-01T19:08:59.071000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 77,
@@ -40140,7 +41584,8 @@
           "stopDurationLabel": null,
           "laneDuration": null,
           "validStop": false,
-          "dateUtc": "2026-11-01T19:08:59.071000+00:00"
+          "dateUtc": "2026-11-01T19:08:59.071000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 11,
@@ -40153,7 +41598,8 @@
           "stopDurationLabel": null,
           "laneDuration": null,
           "validStop": false,
-          "dateUtc": "2026-11-01T19:08:59.071000+00:00"
+          "dateUtc": "2026-11-01T19:08:59.071000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 18,
@@ -40166,7 +41612,8 @@
           "stopDurationLabel": null,
           "laneDuration": null,
           "validStop": false,
-          "dateUtc": "2026-11-01T19:08:59.071000+00:00"
+          "dateUtc": "2026-11-01T19:08:59.071000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 30,
@@ -40179,7 +41626,8 @@
           "stopDurationLabel": null,
           "laneDuration": null,
           "validStop": false,
-          "dateUtc": "2026-11-01T19:08:59.071000+00:00"
+          "dateUtc": "2026-11-01T19:08:59.071000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 1,
@@ -40192,7 +41640,8 @@
           "stopDurationLabel": null,
           "laneDuration": null,
           "validStop": false,
-          "dateUtc": "2026-11-01T19:08:59.071000+00:00"
+          "dateUtc": "2026-11-01T19:08:59.071000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 14,
@@ -40205,7 +41654,8 @@
           "stopDurationLabel": null,
           "laneDuration": null,
           "validStop": false,
-          "dateUtc": "2026-11-01T19:08:59.071000+00:00"
+          "dateUtc": "2026-11-01T19:08:59.071000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 12,
@@ -40218,7 +41668,8 @@
           "stopDurationLabel": null,
           "laneDuration": null,
           "validStop": false,
-          "dateUtc": "2026-11-01T19:08:59.071000+00:00"
+          "dateUtc": "2026-11-01T19:08:59.071000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 41,
@@ -40231,7 +41682,8 @@
           "stopDurationLabel": null,
           "laneDuration": null,
           "validStop": false,
-          "dateUtc": "2026-11-01T19:08:59.071000+00:00"
+          "dateUtc": "2026-11-01T19:08:59.071000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 14,
@@ -40240,11 +41692,14 @@
           "teamName": "Aston Martin",
           "teamColour": "#229971",
           "lap": 3,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 2.68,
+          "stopDurationLabel": "2.68s",
           "laneDuration": 23.9,
-          "validStop": false,
-          "dateUtc": "2026-11-01T20:08:12.601000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:08:12.601000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 14,
+          "dhlPoints": 0
         },
         {
           "driverNumber": 18,
@@ -40253,11 +41708,14 @@
           "teamName": "Aston Martin",
           "teamColour": "#229971",
           "lap": 3,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 2.75,
+          "stopDurationLabel": "2.75s",
           "laneDuration": 27.1,
-          "validStop": false,
-          "dateUtc": "2026-11-01T20:08:18.149000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:08:18.149000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 17,
+          "dhlPoints": 0
         },
         {
           "driverNumber": 6,
@@ -40266,11 +41724,14 @@
           "teamName": "Red Bull Racing",
           "teamColour": "#4781D7",
           "lap": 7,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 3.78,
+          "stopDurationLabel": "3.78s",
           "laneDuration": 23.9,
-          "validStop": false,
-          "dateUtc": "2026-11-01T20:14:14.119000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:14:14.119000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 25,
+          "dhlPoints": 0
         },
         {
           "driverNumber": 30,
@@ -40279,11 +41740,14 @@
           "teamName": "Racing Bulls",
           "teamColour": "#6C98FF",
           "lap": 11,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 2.18,
+          "stopDurationLabel": "2.18s",
           "laneDuration": 22.8,
-          "validStop": false,
-          "dateUtc": "2026-11-01T20:20:04.023000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:20:04.023000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 3,
+          "dhlPoints": 15
         },
         {
           "driverNumber": 10,
@@ -40292,11 +41756,14 @@
           "teamName": "Alpine",
           "teamColour": "#00A1E8",
           "lap": 17,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 2.45,
+          "stopDurationLabel": "2.45s",
           "laneDuration": 22.9,
-          "validStop": false,
-          "dateUtc": "2026-11-01T20:28:11.357000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:28:11.357000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 10,
+          "dhlPoints": 2
         },
         {
           "driverNumber": 23,
@@ -40305,11 +41772,14 @@
           "teamName": "Williams",
           "teamColour": "#1868DB",
           "lap": 18,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 2.11,
+          "stopDurationLabel": "2.11s",
           "laneDuration": 22,
-          "validStop": false,
-          "dateUtc": "2026-11-01T20:29:42.763000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:29:42.763000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 1,
+          "dhlPoints": 25
         },
         {
           "driverNumber": 81,
@@ -40318,11 +41788,14 @@
           "teamName": "McLaren",
           "teamColour": "#F47600",
           "lap": 26,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 2.5,
+          "stopDurationLabel": "2.50s",
           "laneDuration": 22.6,
-          "validStop": false,
-          "dateUtc": "2026-11-01T20:40:15.593000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:40:15.593000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 11,
+          "dhlPoints": 1
         },
         {
           "driverNumber": 3,
@@ -40331,11 +41804,14 @@
           "teamName": "Red Bull Racing",
           "teamColour": "#4781D7",
           "lap": 27,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 2.14,
+          "stopDurationLabel": "2.14s",
           "laneDuration": 22.4,
-          "validStop": false,
-          "dateUtc": "2026-11-01T20:41:17.628000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:41:17.628000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 2,
+          "dhlPoints": 18
         },
         {
           "driverNumber": 16,
@@ -40344,11 +41820,14 @@
           "teamName": "Ferrari",
           "teamColour": "#ED1131",
           "lap": 27,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 8.49,
+          "stopDurationLabel": "8.49s",
           "laneDuration": 28.7,
-          "validStop": false,
-          "dateUtc": "2026-11-01T20:41:19.237000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:41:19.237000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 31,
+          "dhlPoints": 0
         },
         {
           "driverNumber": 44,
@@ -40357,11 +41836,14 @@
           "teamName": "Ferrari",
           "teamColour": "#ED1131",
           "lap": 28,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 2.34,
+          "stopDurationLabel": "2.34s",
           "laneDuration": 22.7,
-          "validStop": false,
-          "dateUtc": "2026-11-01T20:42:42.784000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:42:42.784000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 6,
+          "dhlPoints": 10
         },
         {
           "driverNumber": 11,
@@ -40370,11 +41852,14 @@
           "teamName": "Cadillac",
           "teamColour": "#909090",
           "lap": 30,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 8.41,
+          "stopDurationLabel": "8.41s",
           "laneDuration": 28.9,
-          "validStop": false,
-          "dateUtc": "2026-11-01T20:46:33.057000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:46:33.057000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 30,
+          "dhlPoints": 0
         },
         {
           "driverNumber": 77,
@@ -40383,11 +41868,14 @@
           "teamName": "Cadillac",
           "teamColour": "#909090",
           "lap": 30,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 6.28,
+          "stopDurationLabel": "6.28s",
           "laneDuration": 26.7,
-          "validStop": false,
-          "dateUtc": "2026-11-01T20:46:56.060000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:46:56.060000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 29,
+          "dhlPoints": 0
         },
         {
           "driverNumber": 27,
@@ -40396,11 +41884,14 @@
           "teamName": "Audi",
           "teamColour": "#F50537",
           "lap": 31,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 2.21,
+          "stopDurationLabel": "2.21s",
           "laneDuration": 21.9,
-          "validStop": false,
-          "dateUtc": "2026-11-01T20:47:27.400000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:47:27.400000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 5,
+          "dhlPoints": 12
         },
         {
           "driverNumber": 63,
@@ -40409,11 +41900,14 @@
           "teamName": "Mercedes",
           "teamColour": "#00D7B6",
           "lap": 33,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 13.63,
+          "stopDurationLabel": "13.63s",
           "laneDuration": 33.9,
-          "validStop": false,
-          "dateUtc": "2026-11-01T20:49:48.360000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:49:48.360000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 33,
+          "dhlPoints": 0
         },
         {
           "driverNumber": 43,
@@ -40422,11 +41916,14 @@
           "teamName": "Alpine",
           "teamColour": "#00A1E8",
           "lap": 34,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 2.84,
+          "stopDurationLabel": "2.84s",
           "laneDuration": 23.3,
-          "validStop": false,
-          "dateUtc": "2026-11-01T20:51:31.260000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:51:31.260000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 19,
+          "dhlPoints": 0
         },
         {
           "driverNumber": 41,
@@ -40435,11 +41932,14 @@
           "teamName": "Racing Bulls",
           "teamColour": "#6C98FF",
           "lap": 35,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 2.37,
+          "stopDurationLabel": "2.37s",
           "laneDuration": 22.8,
-          "validStop": false,
-          "dateUtc": "2026-11-01T20:52:46.053000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:52:46.053000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 9,
+          "dhlPoints": 4
         },
         {
           "driverNumber": 50,
@@ -40448,11 +41948,14 @@
           "teamName": null,
           "teamColour": null,
           "lap": 35,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 2.82,
+          "stopDurationLabel": "2.82s",
           "laneDuration": 22.8,
-          "validStop": false,
-          "dateUtc": "2026-11-01T20:53:28.391000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:53:28.391000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 18,
+          "dhlPoints": 0
         },
         {
           "driverNumber": 55,
@@ -40461,11 +41964,14 @@
           "teamName": "Williams",
           "teamColour": "#1868DB",
           "lap": 36,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 2.71,
+          "stopDurationLabel": "2.71s",
           "laneDuration": 22.5,
-          "validStop": false,
-          "dateUtc": "2026-11-01T20:54:47.582000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:54:47.582000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 15,
+          "dhlPoints": 0
         },
         {
           "driverNumber": 5,
@@ -40474,11 +41980,14 @@
           "teamName": "Audi",
           "teamColour": "#F50537",
           "lap": 38,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 2.73,
+          "stopDurationLabel": "2.73s",
           "laneDuration": 22.5,
-          "validStop": false,
-          "dateUtc": "2026-11-01T20:57:13.791000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:57:13.791000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 16,
+          "dhlPoints": 0
         },
         {
           "driverNumber": 1,
@@ -40487,11 +41996,14 @@
           "teamName": "McLaren",
           "teamColour": "#F47600",
           "lap": 39,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 4.71,
+          "stopDurationLabel": "4.71s",
           "laneDuration": 24.7,
-          "validStop": false,
-          "dateUtc": "2026-11-01T20:57:50.438000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:57:50.438000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 27,
+          "dhlPoints": 0
         },
         {
           "driverNumber": 87,
@@ -40500,11 +42012,14 @@
           "teamName": "Haas F1 Team",
           "teamColour": "#9C9FA2",
           "lap": 40,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 2.67,
+          "stopDurationLabel": "2.67s",
           "laneDuration": 22.5,
-          "validStop": false,
-          "dateUtc": "2026-11-01T20:59:53.747000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T20:59:53.747000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 13,
+          "dhlPoints": 0
         },
         {
           "driverNumber": 6,
@@ -40513,11 +42028,14 @@
           "teamName": "Red Bull Racing",
           "teamColour": "#4781D7",
           "lap": 41,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 2.34,
+          "stopDurationLabel": "2.34s",
           "laneDuration": 22.6,
-          "validStop": false,
-          "dateUtc": "2026-11-01T21:01:25.184000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T21:01:25.184000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 7,
+          "dhlPoints": 8
         },
         {
           "driverNumber": 23,
@@ -40526,11 +42044,14 @@
           "teamName": "Williams",
           "teamColour": "#1868DB",
           "lap": 41,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 5.67,
+          "stopDurationLabel": "5.67s",
           "laneDuration": 25.4,
-          "validStop": false,
-          "dateUtc": "2026-11-01T21:01:52.270000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T21:01:52.270000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 28,
+          "dhlPoints": 0
         },
         {
           "driverNumber": 30,
@@ -40539,11 +42060,14 @@
           "teamName": "Racing Bulls",
           "teamColour": "#6C98FF",
           "lap": 42,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 2.2,
+          "stopDurationLabel": "2.20s",
           "laneDuration": 22.5,
-          "validStop": false,
-          "dateUtc": "2026-11-01T21:02:57.347000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T21:02:57.347000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 4,
+          "dhlPoints": 0
         },
         {
           "driverNumber": 12,
@@ -40552,11 +42076,14 @@
           "teamName": "Mercedes",
           "teamColour": "#00D7B6",
           "lap": 43,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 3.71,
+          "stopDurationLabel": "3.71s",
           "laneDuration": 23.7,
-          "validStop": false,
-          "dateUtc": "2026-11-01T21:03:07.064000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T21:03:07.064000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 24,
+          "dhlPoints": 0
         },
         {
           "driverNumber": 50,
@@ -40565,11 +42092,14 @@
           "teamName": null,
           "teamColour": null,
           "lap": 43,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 3.62,
+          "stopDurationLabel": "3.62s",
           "laneDuration": 23.8,
-          "validStop": false,
-          "dateUtc": "2026-11-01T21:04:53.636000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T21:04:53.636000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 23,
+          "dhlPoints": 0
         },
         {
           "driverNumber": 11,
@@ -40578,11 +42108,14 @@
           "teamName": "Cadillac",
           "teamColour": "#909090",
           "lap": 43,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 3.15,
+          "stopDurationLabel": "3.15s",
           "laneDuration": 24.1,
-          "validStop": false,
-          "dateUtc": "2026-11-01T21:05:06.885000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T21:05:06.885000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 21,
+          "dhlPoints": 0
         },
         {
           "driverNumber": 44,
@@ -40591,11 +42124,14 @@
           "teamName": "Ferrari",
           "teamColour": "#ED1131",
           "lap": 44,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 3.54,
+          "stopDurationLabel": "3.54s",
           "laneDuration": 23.8,
-          "validStop": false,
-          "dateUtc": "2026-11-01T21:04:44.336000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T21:04:44.336000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 22,
+          "dhlPoints": 0
         },
         {
           "driverNumber": 63,
@@ -40604,11 +42140,14 @@
           "teamName": "Mercedes",
           "teamColour": "#00D7B6",
           "lap": 44,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 2.34,
+          "stopDurationLabel": "2.34s",
           "laneDuration": 22.2,
-          "validStop": false,
-          "dateUtc": "2026-11-01T21:05:13.217000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T21:05:13.217000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 8,
+          "dhlPoints": 6
         },
         {
           "driverNumber": 81,
@@ -40617,11 +42156,14 @@
           "teamName": "McLaren",
           "teamColour": "#F47600",
           "lap": 44,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 4.55,
+          "stopDurationLabel": "4.55s",
           "laneDuration": 24.5,
-          "validStop": false,
-          "dateUtc": "2026-11-01T21:05:30.270000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T21:05:30.270000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 26,
+          "dhlPoints": 0
         },
         {
           "driverNumber": 10,
@@ -40630,11 +42172,14 @@
           "teamName": "Alpine",
           "teamColour": "#00A1E8",
           "lap": 44,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 2.55,
+          "stopDurationLabel": "2.55s",
           "laneDuration": 22.8,
-          "validStop": false,
-          "dateUtc": "2026-11-01T21:06:03.169000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T21:06:03.169000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 12,
+          "dhlPoints": 0
         },
         {
           "driverNumber": 30,
@@ -40647,7 +42192,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2191.6,
           "validStop": false,
-          "dateUtc": "2026-11-01T21:43:05.921000+00:00"
+          "dateUtc": "2026-11-01T21:43:05.921000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 55,
@@ -40660,7 +42206,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2192.4,
           "validStop": false,
-          "dateUtc": "2026-11-01T21:43:08.055000+00:00"
+          "dateUtc": "2026-11-01T21:43:08.055000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 50,
@@ -40673,7 +42220,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2178.9,
           "validStop": false,
-          "dateUtc": "2026-11-01T21:43:09.856000+00:00"
+          "dateUtc": "2026-11-01T21:43:09.856000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 11,
@@ -40686,7 +42234,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2172.9,
           "validStop": false,
-          "dateUtc": "2026-11-01T21:43:12.544000+00:00"
+          "dateUtc": "2026-11-01T21:43:12.544000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 23,
@@ -40699,7 +42248,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2181.8,
           "validStop": false,
-          "dateUtc": "2026-11-01T21:43:16.515000+00:00"
+          "dateUtc": "2026-11-01T21:43:16.515000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 3,
@@ -40712,7 +42262,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2314.9,
           "validStop": false,
-          "dateUtc": "2026-11-01T21:45:05.187000+00:00"
+          "dateUtc": "2026-11-01T21:45:05.187000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 16,
@@ -40725,7 +42276,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2315.8,
           "validStop": false,
-          "dateUtc": "2026-11-01T21:45:07.494000+00:00"
+          "dateUtc": "2026-11-01T21:45:07.494000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 44,
@@ -40738,7 +42290,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2309.6,
           "validStop": false,
-          "dateUtc": "2026-11-01T21:45:09.684000+00:00"
+          "dateUtc": "2026-11-01T21:45:09.684000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 12,
@@ -40751,7 +42304,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2315.3,
           "validStop": false,
-          "dateUtc": "2026-11-01T21:45:12.495000+00:00"
+          "dateUtc": "2026-11-01T21:45:12.495000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 1,
@@ -40764,7 +42318,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2312.4,
           "validStop": false,
-          "dateUtc": "2026-11-01T21:45:15.953000+00:00"
+          "dateUtc": "2026-11-01T21:45:15.953000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 63,
@@ -40777,7 +42332,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2295.3,
           "validStop": false,
-          "dateUtc": "2026-11-01T21:45:19.646000+00:00"
+          "dateUtc": "2026-11-01T21:45:19.646000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 81,
@@ -40790,7 +42346,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2272,
           "validStop": false,
-          "dateUtc": "2026-11-01T21:45:22.257000+00:00"
+          "dateUtc": "2026-11-01T21:45:22.257000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 41,
@@ -40803,7 +42360,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2284.6,
           "validStop": false,
-          "dateUtc": "2026-11-01T21:45:25.021000+00:00"
+          "dateUtc": "2026-11-01T21:45:25.021000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 43,
@@ -40816,7 +42374,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2274.5,
           "validStop": false,
-          "dateUtc": "2026-11-01T21:45:28.013000+00:00"
+          "dateUtc": "2026-11-01T21:45:28.013000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 10,
@@ -40829,7 +42388,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2256.2,
           "validStop": false,
-          "dateUtc": "2026-11-01T21:45:31.697000+00:00"
+          "dateUtc": "2026-11-01T21:45:31.697000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 27,
@@ -40842,7 +42402,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2272.9,
           "validStop": false,
-          "dateUtc": "2026-11-01T21:45:32.993000+00:00"
+          "dateUtc": "2026-11-01T21:45:32.993000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 87,
@@ -40855,7 +42416,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2268.4,
           "validStop": false,
-          "dateUtc": "2026-11-01T21:45:35.416000+00:00"
+          "dateUtc": "2026-11-01T21:45:35.416000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 5,
@@ -40868,7 +42430,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2270,
           "validStop": false,
-          "dateUtc": "2026-11-01T21:45:41.048000+00:00"
+          "dateUtc": "2026-11-01T21:45:41.048000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 6,
@@ -40881,7 +42444,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2265.5,
           "validStop": false,
-          "dateUtc": "2026-11-01T21:45:43.493000+00:00"
+          "dateUtc": "2026-11-01T21:45:43.493000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 30,
@@ -40894,7 +42458,8 @@
           "stopDurationLabel": null,
           "laneDuration": 60.5,
           "validStop": false,
-          "dateUtc": "2026-11-01T21:45:45.265000+00:00"
+          "dateUtc": "2026-11-01T21:45:45.265000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 55,
@@ -40907,7 +42472,8 @@
           "stopDurationLabel": null,
           "laneDuration": 58.6,
           "validStop": false,
-          "dateUtc": "2026-11-01T21:45:47.341000+00:00"
+          "dateUtc": "2026-11-01T21:45:47.341000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 50,
@@ -40920,7 +42486,8 @@
           "stopDurationLabel": null,
           "laneDuration": 57.3,
           "validStop": false,
-          "dateUtc": "2026-11-01T21:45:48.505000+00:00"
+          "dateUtc": "2026-11-01T21:45:48.505000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 11,
@@ -40933,7 +42500,8 @@
           "stopDurationLabel": null,
           "laneDuration": 57,
           "validStop": false,
-          "dateUtc": "2026-11-01T21:45:51.590000+00:00"
+          "dateUtc": "2026-11-01T21:45:51.590000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 23,
@@ -40946,7 +42514,8 @@
           "stopDurationLabel": null,
           "laneDuration": 54.8,
           "validStop": false,
-          "dateUtc": "2026-11-01T21:45:53.158000+00:00"
+          "dateUtc": "2026-11-01T21:45:53.158000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 50,
@@ -40955,11 +42524,14 @@
           "teamName": null,
           "teamColour": null,
           "lap": 59,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 2.96,
+          "stopDurationLabel": "2.96s",
           "laneDuration": 22.9,
-          "validStop": false,
-          "dateUtc": "2026-11-01T22:07:04.069000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T22:07:04.069000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 20,
+          "dhlPoints": 0
         },
         {
           "driverNumber": 27,
@@ -40968,11 +42540,14 @@
           "teamName": "Audi",
           "teamColour": "#F50537",
           "lap": 59,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 14.03,
+          "stopDurationLabel": "14.03s",
           "laneDuration": 34.5,
-          "validStop": false,
-          "dateUtc": "2026-11-01T22:07:08.498000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T22:07:08.498000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 34,
+          "dhlPoints": 0
         },
         {
           "driverNumber": 11,
@@ -40981,11 +42556,14 @@
           "teamName": "Cadillac",
           "teamColour": "#909090",
           "lap": 59,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 9.22,
+          "stopDurationLabel": "9.22s",
           "laneDuration": 29.8,
-          "validStop": false,
-          "dateUtc": "2026-11-01T22:07:08.889000+00:00"
+          "validStop": true,
+          "dateUtc": "2026-11-01T22:07:08.889000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 32,
+          "dhlPoints": 0
         }
       ],
       "drivers": [
@@ -41239,88 +42817,6 @@
           "position": 7,
           "positionLabel": "P7",
           "status": null,
-          "driverNumber": 81,
-          "driverName": "Oscar PIASTRI",
-          "nameAcronym": "PIA",
-          "teamName": "McLaren",
-          "teamColour": "#F47600",
-          "lapsCompleted": 71,
-          "stops": 2,
-          "stints": [
-            {
-              "stint": 1,
-              "compound": "SOFT",
-              "lapStart": 1,
-              "lapEnd": 26,
-              "laps": 26,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "MEDIUM",
-              "lapStart": 27,
-              "lapEnd": 44,
-              "laps": 18,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 3,
-              "compound": "SOFT",
-              "lapStart": 45,
-              "lapEnd": 71,
-              "laps": 27,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            }
-          ]
-        },
-        {
-          "position": 8,
-          "positionLabel": "P8",
-          "status": null,
-          "driverNumber": 43,
-          "driverName": "Franco COLAPINTO",
-          "nameAcronym": "COL",
-          "teamName": "Alpine",
-          "teamColour": "#00A1E8",
-          "lapsCompleted": 71,
-          "stops": 2,
-          "stints": [
-            {
-              "stint": 1,
-              "compound": "MEDIUM",
-              "lapStart": 1,
-              "lapEnd": 34,
-              "laps": 34,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "SOFT",
-              "lapStart": 35,
-              "lapEnd": 45,
-              "laps": 11,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 3,
-              "compound": "SOFT",
-              "lapStart": 46,
-              "lapEnd": 71,
-              "laps": 26,
-              "tyreAgeAtStart": 2,
-              "newTyre": false
-            }
-          ]
-        },
-        {
-          "position": 9,
-          "positionLabel": "P9",
-          "status": null,
           "driverNumber": 30,
           "driverName": "Liam LAWSON",
           "nameAcronym": "LAW",
@@ -41359,49 +42855,8 @@
           ]
         },
         {
-          "position": 10,
-          "positionLabel": "P10",
-          "status": null,
-          "driverNumber": 10,
-          "driverName": "Pierre GASLY",
-          "nameAcronym": "GAS",
-          "teamName": "Alpine",
-          "teamColour": "#00A1E8",
-          "lapsCompleted": 71,
-          "stops": 2,
-          "stints": [
-            {
-              "stint": 1,
-              "compound": "SOFT",
-              "lapStart": 1,
-              "lapEnd": 17,
-              "laps": 17,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 2,
-              "compound": "MEDIUM",
-              "lapStart": 18,
-              "lapEnd": 44,
-              "laps": 27,
-              "tyreAgeAtStart": 0,
-              "newTyre": true
-            },
-            {
-              "stint": 3,
-              "compound": "SOFT",
-              "lapStart": 45,
-              "lapEnd": 71,
-              "laps": 27,
-              "tyreAgeAtStart": 3,
-              "newTyre": false
-            }
-          ]
-        },
-        {
-          "position": 11,
-          "positionLabel": "P11",
+          "position": 8,
+          "positionLabel": "P8",
           "status": null,
           "driverNumber": 5,
           "driverName": "Gabriel BORTOLETO",
@@ -41441,8 +42896,8 @@
           ]
         },
         {
-          "position": 12,
-          "positionLabel": "P12",
+          "position": 9,
+          "positionLabel": "P9",
           "status": null,
           "driverNumber": 6,
           "driverName": "Isack HADJAR",
@@ -41491,8 +42946,8 @@
           ]
         },
         {
-          "position": 13,
-          "positionLabel": "P13",
+          "position": 10,
+          "positionLabel": "P10",
           "status": null,
           "driverNumber": 50,
           "driverName": "Ryo HIRAKAWA",
@@ -41541,8 +42996,8 @@
           ]
         },
         {
-          "position": 14,
-          "positionLabel": "P14",
+          "position": 11,
+          "positionLabel": "P11",
           "status": null,
           "driverNumber": 23,
           "driverName": "Alexander ALBON",
@@ -41591,8 +43046,8 @@
           ]
         },
         {
-          "position": 15,
-          "positionLabel": "P15",
+          "position": 12,
+          "positionLabel": "P12",
           "status": null,
           "driverNumber": 55,
           "driverName": "Carlos SAINZ",
@@ -41632,8 +43087,49 @@
           ]
         },
         {
-          "position": 16,
-          "positionLabel": "P16",
+          "position": 13,
+          "positionLabel": "P13",
+          "status": null,
+          "driverNumber": 81,
+          "driverName": "Oscar PIASTRI",
+          "nameAcronym": "PIA",
+          "teamName": "McLaren",
+          "teamColour": "#F47600",
+          "lapsCompleted": 71,
+          "stops": 2,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "SOFT",
+              "lapStart": 1,
+              "lapEnd": 26,
+              "laps": 26,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "MEDIUM",
+              "lapStart": 27,
+              "lapEnd": 44,
+              "laps": 18,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 3,
+              "compound": "SOFT",
+              "lapStart": 45,
+              "lapEnd": 71,
+              "laps": 27,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            }
+          ]
+        },
+        {
+          "position": 14,
+          "positionLabel": "P14",
           "status": null,
           "driverNumber": 27,
           "driverName": "Nico HULKENBERG",
@@ -41673,8 +43169,49 @@
           ]
         },
         {
-          "position": 17,
-          "positionLabel": "P17",
+          "position": 15,
+          "positionLabel": "P15",
+          "status": null,
+          "driverNumber": 43,
+          "driverName": "Franco COLAPINTO",
+          "nameAcronym": "COL",
+          "teamName": "Alpine",
+          "teamColour": "#00A1E8",
+          "lapsCompleted": 71,
+          "stops": 2,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "MEDIUM",
+              "lapStart": 1,
+              "lapEnd": 34,
+              "laps": 34,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "SOFT",
+              "lapStart": 35,
+              "lapEnd": 45,
+              "laps": 11,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 3,
+              "compound": "SOFT",
+              "lapStart": 46,
+              "lapEnd": 71,
+              "laps": 26,
+              "tyreAgeAtStart": 2,
+              "newTyre": false
+            }
+          ]
+        },
+        {
+          "position": 16,
+          "positionLabel": "P16",
           "status": null,
           "driverNumber": 11,
           "driverName": "Sergio PEREZ",
@@ -41717,6 +43254,47 @@
               "lapStart": 60,
               "lapEnd": 71,
               "laps": 12,
+              "tyreAgeAtStart": 3,
+              "newTyre": false
+            }
+          ]
+        },
+        {
+          "position": 17,
+          "positionLabel": "P17",
+          "status": null,
+          "driverNumber": 10,
+          "driverName": "Pierre GASLY",
+          "nameAcronym": "GAS",
+          "teamName": "Alpine",
+          "teamColour": "#00A1E8",
+          "lapsCompleted": 71,
+          "stops": 2,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "SOFT",
+              "lapStart": 1,
+              "lapEnd": 17,
+              "laps": 17,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "MEDIUM",
+              "lapStart": 18,
+              "lapEnd": 44,
+              "laps": 27,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 3,
+              "compound": "SOFT",
+              "lapStart": 45,
+              "lapEnd": 71,
+              "laps": 27,
               "tyreAgeAtStart": 3,
               "newTyre": false
             }
@@ -47316,6 +48894,357 @@
           }
         ]
       },
+      "1186": {
+        "eventId": 1186,
+        "title": "",
+        "sort": null,
+        "dateIso": "2026-11-01",
+        "header": "",
+        "stops": [
+          {
+            "rank": 1,
+            "team": "Williams",
+            "driver": "Albon",
+            "stopDuration": 2.11,
+            "lap": 18,
+            "dhlPoints": 25,
+            "driverNumber": 23,
+            "tla": "ALB",
+            "irregular": false
+          },
+          {
+            "rank": 2,
+            "team": "Red Bull",
+            "driver": "Verstappen",
+            "stopDuration": 2.14,
+            "lap": 27,
+            "dhlPoints": 18,
+            "driverNumber": 3,
+            "tla": "VER",
+            "irregular": false
+          },
+          {
+            "rank": 3,
+            "team": "Racing Bulls",
+            "driver": "Lawson",
+            "stopDuration": 2.18,
+            "lap": 11,
+            "dhlPoints": 15,
+            "driverNumber": 30,
+            "tla": "LAW",
+            "irregular": false
+          },
+          {
+            "rank": 4,
+            "team": "Racing Bulls",
+            "driver": "Lawson",
+            "stopDuration": 2.2,
+            "lap": 42,
+            "dhlPoints": 0,
+            "driverNumber": 30,
+            "tla": "LAW",
+            "irregular": false
+          },
+          {
+            "rank": 5,
+            "team": "Audi",
+            "driver": "Hulkenberg",
+            "stopDuration": 2.21,
+            "lap": 31,
+            "dhlPoints": 12,
+            "driverNumber": 27,
+            "tla": "HUL",
+            "irregular": false
+          },
+          {
+            "rank": 6,
+            "team": "Ferrari",
+            "driver": "Hamilton",
+            "stopDuration": 2.34,
+            "lap": 28,
+            "dhlPoints": 10,
+            "driverNumber": 44,
+            "tla": "HAM",
+            "irregular": false
+          },
+          {
+            "rank": 7,
+            "team": "Red Bull",
+            "driver": "Hadjar",
+            "stopDuration": 2.34,
+            "lap": 41,
+            "dhlPoints": 8,
+            "driverNumber": 6,
+            "tla": "HAD",
+            "irregular": false
+          },
+          {
+            "rank": 8,
+            "team": "Mercedes",
+            "driver": "Russell",
+            "stopDuration": 2.34,
+            "lap": 44,
+            "dhlPoints": 6,
+            "driverNumber": 63,
+            "tla": "RUS",
+            "irregular": false
+          },
+          {
+            "rank": 9,
+            "team": "Racing Bulls",
+            "driver": "Lindblad",
+            "stopDuration": 2.37,
+            "lap": 35,
+            "dhlPoints": 4,
+            "driverNumber": 41,
+            "tla": "LIN",
+            "irregular": false
+          },
+          {
+            "rank": 10,
+            "team": "Alpine",
+            "driver": "Gasly",
+            "stopDuration": 2.45,
+            "lap": 17,
+            "dhlPoints": 2,
+            "driverNumber": 10,
+            "tla": "GAS",
+            "irregular": false
+          },
+          {
+            "rank": 11,
+            "team": "McLaren",
+            "driver": "Piastri",
+            "stopDuration": 2.5,
+            "lap": 26,
+            "dhlPoints": 1,
+            "driverNumber": 81,
+            "tla": "PIA",
+            "irregular": false
+          },
+          {
+            "rank": 12,
+            "team": "Alpine",
+            "driver": "Gasly",
+            "stopDuration": 2.55,
+            "lap": 44,
+            "dhlPoints": 0,
+            "driverNumber": 10,
+            "tla": "GAS",
+            "irregular": false
+          },
+          {
+            "rank": 13,
+            "team": "Haas",
+            "driver": "Bearman",
+            "stopDuration": 2.67,
+            "lap": 40,
+            "dhlPoints": 0,
+            "irregular": false
+          },
+          {
+            "rank": 14,
+            "team": "Aston Martin",
+            "driver": "Alonso",
+            "stopDuration": 2.68,
+            "lap": 3,
+            "dhlPoints": 0,
+            "irregular": false
+          },
+          {
+            "rank": 15,
+            "team": "Williams",
+            "driver": "Sainz",
+            "stopDuration": 2.71,
+            "lap": 36,
+            "dhlPoints": 0,
+            "irregular": false
+          },
+          {
+            "rank": 16,
+            "team": "Audi",
+            "driver": "Bortoleto",
+            "stopDuration": 2.73,
+            "lap": 38,
+            "dhlPoints": 0,
+            "irregular": false
+          },
+          {
+            "rank": 17,
+            "team": "Aston Martin",
+            "driver": "Stroll",
+            "stopDuration": 2.75,
+            "lap": 3,
+            "dhlPoints": 0,
+            "irregular": false
+          },
+          {
+            "rank": 18,
+            "team": "Haas",
+            "driver": "Hirakawa",
+            "stopDuration": 2.82,
+            "lap": 35,
+            "dhlPoints": 0,
+            "irregular": false
+          },
+          {
+            "rank": 19,
+            "team": "Alpine",
+            "driver": "Colapinto",
+            "stopDuration": 2.84,
+            "lap": 34,
+            "dhlPoints": 0,
+            "irregular": false
+          },
+          {
+            "rank": 20,
+            "team": "Haas",
+            "driver": "Hirakawa",
+            "stopDuration": 2.96,
+            "lap": 59,
+            "dhlPoints": 0,
+            "irregular": false
+          },
+          {
+            "rank": 21,
+            "team": "Cadillac",
+            "driver": "Perez",
+            "stopDuration": 3.15,
+            "lap": 43,
+            "dhlPoints": 0,
+            "irregular": false
+          },
+          {
+            "rank": 22,
+            "team": "Ferrari",
+            "driver": "Hamilton",
+            "stopDuration": 3.54,
+            "lap": 44,
+            "dhlPoints": 0,
+            "driverNumber": 44,
+            "tla": "HAM",
+            "irregular": false
+          },
+          {
+            "rank": 23,
+            "team": "Haas",
+            "driver": "Hirakawa",
+            "stopDuration": 3.62,
+            "lap": 43,
+            "dhlPoints": 0,
+            "irregular": false
+          },
+          {
+            "rank": 24,
+            "team": "Mercedes",
+            "driver": "Antonelli",
+            "stopDuration": 3.71,
+            "lap": 43,
+            "dhlPoints": 0,
+            "irregular": false
+          },
+          {
+            "rank": 25,
+            "team": "Red Bull",
+            "driver": "Hadjar",
+            "stopDuration": 3.78,
+            "lap": 7,
+            "dhlPoints": 0,
+            "driverNumber": 6,
+            "tla": "HAD",
+            "irregular": false
+          },
+          {
+            "rank": 26,
+            "team": "McLaren",
+            "driver": "Piastri",
+            "stopDuration": 4.55,
+            "lap": 44,
+            "dhlPoints": 0,
+            "driverNumber": 81,
+            "tla": "PIA",
+            "irregular": false
+          },
+          {
+            "rank": 27,
+            "team": "McLaren",
+            "driver": "Norris",
+            "stopDuration": 4.71,
+            "lap": 39,
+            "dhlPoints": 0,
+            "irregular": false
+          },
+          {
+            "rank": 28,
+            "team": "Williams",
+            "driver": "Albon",
+            "stopDuration": 5.67,
+            "lap": 41,
+            "dhlPoints": 0,
+            "driverNumber": 23,
+            "tla": "ALB",
+            "irregular": false
+          },
+          {
+            "rank": 29,
+            "team": "Cadillac",
+            "driver": "Bottas",
+            "stopDuration": 6.28,
+            "lap": 30,
+            "dhlPoints": 0,
+            "irregular": false
+          },
+          {
+            "rank": 30,
+            "team": "Cadillac",
+            "driver": "Perez",
+            "stopDuration": 8.41,
+            "lap": 30,
+            "dhlPoints": 0,
+            "irregular": false
+          },
+          {
+            "rank": 31,
+            "team": "Ferrari",
+            "driver": "Leclerc",
+            "stopDuration": 8.49,
+            "lap": 27,
+            "dhlPoints": 0,
+            "irregular": false
+          },
+          {
+            "rank": 32,
+            "team": "Cadillac",
+            "driver": "Perez",
+            "stopDuration": 9.22,
+            "lap": 59,
+            "dhlPoints": 0,
+            "irregular": false
+          },
+          {
+            "rank": 33,
+            "team": "Mercedes",
+            "driver": "Russell",
+            "stopDuration": 13.63,
+            "lap": 33,
+            "dhlPoints": 0,
+            "driverNumber": 63,
+            "tla": "RUS",
+            "irregular": false
+          },
+          {
+            "rank": 34,
+            "team": "Audi",
+            "driver": "Hulkenberg",
+            "stopDuration": 14.03,
+            "lap": 59,
+            "dhlPoints": 0,
+            "driverNumber": 27,
+            "tla": "HUL",
+            "irregular": false
+          }
+        ]
+      },
       "1242": {
         "eventId": 1242,
         "title": "Bahrain",
@@ -48041,7 +49970,6 @@
       }
     },
     "scanned": [
-      1243,
       1244,
       1245,
       1246,

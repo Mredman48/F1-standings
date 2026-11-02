@@ -1,6 +1,6 @@
 {
   "header": "Next F1 event",
-  "generatedAtUtc": "2026-11-01T23:55:56.904Z",
+  "generatedAtUtc": "2026-11-02T03:19:03.584Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
     "kind": "ics+formula1",
@@ -39,52 +39,52 @@
       "note": null
     },
     "countdowns": {
-      "startsInDays": -2
+      "startsInDays": 5
     },
     "weekend": {
-      "startUtc": "2026-10-30T18:30:00.000Z",
-      "endUtc": "2026-11-01T22:00:00.000Z"
+      "startUtc": "2026-11-06T15:30:00.000Z",
+      "endUtc": "2026-11-08T19:00:00.000Z"
     },
     "sessions": [
       {
         "type": "FP1",
-        "startUtc": "2026-10-30T18:30:00.000Z",
-        "endUtc": "2026-10-30T19:30:00.000Z",
-        "startLocalDateShort": "Fri, Oct 30",
-        "startLocalTimeShort": "12:30",
-        "startLocalDateTimeShort": "Fri, Oct 30 12:30"
+        "startUtc": "2026-11-06T15:30:00.000Z",
+        "endUtc": "2026-11-06T16:30:00.000Z",
+        "startLocalDateShort": "Fri, Nov 06",
+        "startLocalTimeShort": "08:30",
+        "startLocalDateTimeShort": "Fri, Nov 06 08:30"
       },
       {
         "type": "FP2",
-        "startUtc": "2026-10-30T22:00:00.000Z",
-        "endUtc": "2026-10-30T23:00:00.000Z",
-        "startLocalDateShort": "Fri, Oct 30",
-        "startLocalTimeShort": "16:00",
-        "startLocalDateTimeShort": "Fri, Oct 30 16:00"
+        "startUtc": "2026-11-06T19:00:00.000Z",
+        "endUtc": "2026-11-06T20:00:00.000Z",
+        "startLocalDateShort": "Fri, Nov 06",
+        "startLocalTimeShort": "12:00",
+        "startLocalDateTimeShort": "Fri, Nov 06 12:00"
       },
       {
         "type": "FP3",
-        "startUtc": "2026-10-31T17:30:00.000Z",
-        "endUtc": "2026-10-31T18:30:00.000Z",
-        "startLocalDateShort": "Sat, Oct 31",
-        "startLocalTimeShort": "11:30",
-        "startLocalDateTimeShort": "Sat, Oct 31 11:30"
+        "startUtc": "2026-11-07T14:30:00.000Z",
+        "endUtc": "2026-11-07T15:30:00.000Z",
+        "startLocalDateShort": "Sat, Nov 07",
+        "startLocalTimeShort": "07:30",
+        "startLocalDateTimeShort": "Sat, Nov 07 07:30"
       },
       {
         "type": "Quali",
-        "startUtc": "2026-10-31T21:00:00.000Z",
-        "endUtc": "2026-10-31T22:00:00.000Z",
-        "startLocalDateShort": "Sat, Oct 31",
-        "startLocalTimeShort": "15:00",
-        "startLocalDateTimeShort": "Sat, Oct 31 15:00"
+        "startUtc": "2026-11-07T18:00:00.000Z",
+        "endUtc": "2026-11-07T19:00:00.000Z",
+        "startLocalDateShort": "Sat, Nov 07",
+        "startLocalTimeShort": "11:00",
+        "startLocalDateTimeShort": "Sat, Nov 07 11:00"
       },
       {
         "type": "Race",
-        "startUtc": "2026-11-01T20:00:00.000Z",
-        "endUtc": "2026-11-01T22:00:00.000Z",
-        "startLocalDateShort": "Sun, Nov 01",
-        "startLocalTimeShort": "13:00",
-        "startLocalDateTimeShort": "Sun, Nov 01 13:00"
+        "startUtc": "2026-11-08T17:00:00.000Z",
+        "endUtc": "2026-11-08T19:00:00.000Z",
+        "startLocalDateShort": "Sun, Nov 08",
+        "startLocalTimeShort": "10:00",
+        "startLocalDateTimeShort": "Sun, Nov 08 10:00"
       }
     ]
   }
