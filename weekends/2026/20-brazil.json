@@ -137,7 +137,14 @@
       "raceName": "São Paulo Grand Prix"
     }
   },
-  "previousWinner": null,
+  "previousWinner": {
+    "previousWinner": "Lando Norris",
+    "constructor": "McLaren",
+    "raceName": "São Paulo Grand Prix",
+    "city": "São Paulo",
+    "country": "Brazil",
+    "date": "2025-11-09"
+  },
   "tyreInfo": {
     "round": 20,
     "raceSlug": "brazil",
