@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-30T21:21:30.811Z",
-  "count": 43,
+  "updatedAt": "2026-11-03T15:11:55.770Z",
+  "count": 42,
   "entries": [
     {
       "round": 1,
@@ -874,32 +874,6 @@
     },
     {
       "round": 20,
-      "raceSlug": "brazil",
-      "title": "Sao Paulo GP",
-      "season": 2026,
-      "country": "Brazil",
-      "flag": "br",
-      "raceStart": "2026-11-08T17:00:00.000Z",
-      "compounds": {
-        "soft": null,
-        "medium": null,
-        "hard": null
-      },
-      "trackCharacteristics": {
-        "ratingsSeason": 2025,
-        "pastYear": true,
-        "traction": 3,
-        "tyreStress": 3,
-        "asphaltGrip": 3,
-        "braking": 3,
-        "asphaltAbrasion": 2,
-        "lateral": 3,
-        "trackEvolution": 5
-      },
-      "updatedAt": "2026-10-09T04:41:48.281Z"
-    },
-    {
-      "round": 20,
       "raceSlug": "mexico",
       "title": "Mexico City GP",
       "season": 2027,
@@ -922,6 +896,32 @@
         "lateral": 2,
         "trackEvolution": 5
       }
+    },
+    {
+      "round": 20,
+      "raceSlug": "brazil",
+      "title": "Sao Paulo GP",
+      "season": 2026,
+      "country": "Brazil",
+      "flag": "br",
+      "raceStart": "2026-11-08T17:00:00.000Z",
+      "compounds": {
+        "soft": "C5",
+        "medium": "C4",
+        "hard": "C3"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2025,
+        "pastYear": true,
+        "traction": 3,
+        "tyreStress": 3,
+        "asphaltGrip": 3,
+        "braking": 3,
+        "asphaltAbrasion": 3,
+        "lateral": 3,
+        "trackEvolution": 5
+      },
+      "updatedAt": "2026-11-03T15:11:55.770Z"
     },
     {
       "round": 21,
@@ -948,31 +948,6 @@
         "trackEvolution": 5
       },
       "updatedAt": "2026-10-09T04:42:57.074Z"
-    },
-    {
-      "round": 21,
-      "raceSlug": "brazil",
-      "title": "São Paulo GP",
-      "season": 2027,
-      "country": "Brazil",
-      "flag": "br",
-      "raceStart": "2027-11-07T18:00:00.000Z",
-      "compounds": {
-        "soft": "",
-        "medium": "",
-        "hard": ""
-      },
-      "trackCharacteristics": {
-        "ratingsSeason": 2025,
-        "pastYear": true,
-        "traction": 3,
-        "tyreStress": 3,
-        "asphaltGrip": 3,
-        "braking": 3,
-        "asphaltAbrasion": 2,
-        "lateral": 3,
-        "trackEvolution": 5
-      }
     },
     {
       "round": 22,
