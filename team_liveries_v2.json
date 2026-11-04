@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-30T22:15:09.150Z",
+  "generatedAt": "2026-11-04T23:08:51.148Z",
   "season": 2026,
   "teams": {
     "audi": {
@@ -75,6 +75,36 @@
             "car": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/liveries/audi-2026-singapore-special-livery-car.webp",
             "logo": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/liveries/audi-2026-singapore-special-livery-logo.webp",
             "logoLight": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/liveries/audi-2026-singapore-special-livery-logo-light.webp",
+            "icon": ""
+          }
+        },
+        {
+          "id": "audi-2026-brazil-special-livery",
+          "label": "Brazil Special Livery",
+          "type": "one-off",
+          "description": "",
+          "round": 20,
+          "validFrom": "2026-11-04T00:00:00Z",
+          "validUntil": "2026-11-09T00:00:00Z",
+          "colors": {
+            "primary": "#1A3A35",
+            "secondary": "#EBD8AF",
+            "onPrimary": "#FFFFFF"
+          },
+          "drivers": {
+            "gabriel-bortoleto": "primary",
+            "nico-hulkenberg": "secondary"
+          },
+          "background": {
+            "style": "dotGradient",
+            "origin": "topTrailing",
+            "intensity": 0.6,
+            "spacing": 10
+          },
+          "assets": {
+            "car": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/liveries/audi-2026-brazil-special-livery-car.webp",
+            "logo": "",
+            "logoLight": "",
             "icon": ""
           }
         }
