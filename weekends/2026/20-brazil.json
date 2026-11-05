@@ -1,7 +1,7 @@
 {
   "header": "2026 Sao Paulo GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-10-30T21:11:36.006Z",
+  "generatedAtUtc": "2026-11-05T05:38:08.854Z",
   "season": 2026,
   "round": 20,
   "meetingKey": 1299,
@@ -138,13 +138,13 @@
     }
   },
   "previousWinner": {
-    "previousWinner": "Lando Norris",
-    "constructor": "McLaren",
+    "round": 21,
     "raceName": "São Paulo Grand Prix",
     "city": "São Paulo",
     "country": "Brazil",
-    "date": "2025-11-09",
-    "round": 21
+    "previousWinner": "Lando Norris",
+    "constructor": "McLaren",
+    "date": "2025-11-09"
   },
   "tyreInfo": {
     "round": 20,
@@ -196,7 +196,14 @@
   "raceStrategy": [],
   "raceRecap": null,
   "meta": {
-    "fia": {},
-    "final": {}
-  }
+    "fia": {
+      "eventName": "São Paulo Grand Prix"
+    },
+    "final": {
+      "weekend": null
+    },
+    "buildVersion": "2026-10-31.1"
+  },
+  "locked": false,
+  "lockedSections": []
 }
