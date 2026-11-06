@@ -1,6 +1,6 @@
 {
   "header": "2026 F1 all session results",
-  "generatedAtUtc": "2026-11-06T16:12:43.720Z",
+  "generatedAtUtc": "2026-11-06T16:33:59.057Z",
   "season": 2026,
   "events": [
     {
@@ -44520,8 +44520,8 @@
         },
         {
           "driverNumber": 11,
-          "driverName": null,
-          "teamName": null,
+          "driverName": "Sergio PEREZ",
+          "teamName": "Cadillac",
           "position": "P21",
           "positionRank": 21,
           "classifiedPosition": 21,
@@ -44936,8 +44936,8 @@
         },
         {
           "driverNumber": 11,
-          "driverName": null,
-          "teamName": null,
+          "driverName": "Sergio PEREZ",
+          "teamName": "Cadillac",
           "position": "P21",
           "positionRank": 21,
           "classifiedPosition": 21,
@@ -45532,8 +45532,8 @@
         },
         {
           "driverNumber": 11,
-          "driverName": null,
-          "teamName": null,
+          "driverName": "Sergio PEREZ",
+          "teamName": "Cadillac",
           "position": "P21",
           "positionRank": 21,
           "classifiedPosition": 21,
@@ -46074,8 +46074,8 @@
         },
         {
           "driverNumber": 11,
-          "driverName": null,
-          "teamName": null,
+          "driverName": "Sergio PEREZ",
+          "teamName": "Cadillac",
           "position": "P19",
           "positionRank": 19,
           "classifiedPosition": 19,
@@ -48645,6 +48645,25 @@
         "lapTime": 79.268,
         "lapNumber": 50
       }
+    },
+    {
+      "eventType": "fp1",
+      "sessionKey": 11405,
+      "meetingKey": 1299,
+      "meetingName": "São Paulo Grand Prix",
+      "raceName": "São Paulo Grand Prix",
+      "sessionName": "Practice 1",
+      "officialName": "Practice 1",
+      "round": 20,
+      "dateStartUtc": "2026-11-06T15:30:00+00:00",
+      "dateEndUtc": "2026-11-06T16:30:00+00:00",
+      "date": "2026-11-06",
+      "circuit": "Interlagos",
+      "location": {
+        "locality": "São Paulo",
+        "country": "Brazil"
+      },
+      "drivers": []
     }
   ],
   "bestByDriverNumber": {
