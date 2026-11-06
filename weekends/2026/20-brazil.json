@@ -1,7 +1,7 @@
 {
   "header": "2026 Sao Paulo GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-11-06T17:39:57.525Z",
+  "generatedAtUtc": "2026-11-06T20:14:05.345Z",
   "season": 2026,
   "round": 20,
   "meetingKey": 1299,
@@ -625,6 +625,25 @@
           "meetingKey": 1299
         }
       ]
+    },
+    {
+      "eventType": "fp2",
+      "sessionKey": 11406,
+      "meetingKey": 1299,
+      "meetingName": "São Paulo Grand Prix",
+      "raceName": "São Paulo Grand Prix",
+      "sessionName": "Practice 2",
+      "officialName": "Practice 2",
+      "round": 20,
+      "dateStartUtc": "2026-11-06T19:00:00+00:00",
+      "dateEndUtc": "2026-11-06T20:00:00+00:00",
+      "date": "2026-11-06",
+      "circuit": "Interlagos",
+      "location": {
+        "locality": "São Paulo",
+        "country": "Brazil"
+      },
+      "drivers": []
     }
   ],
   "raceStrategy": [],
