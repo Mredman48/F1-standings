@@ -1,12 +1,12 @@
 {
   "header": "2026 Sao Paulo GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-11-05T05:38:08.854Z",
+  "generatedAtUtc": "2026-11-06T16:42:58.042Z",
   "season": 2026,
   "round": 20,
   "meetingKey": 1299,
   "raceSlug": "brazil",
-  "status": "upcoming",
+  "status": "in_progress",
   "weekend": {
     "round": 20,
     "type": "RACE_WEEKEND",
@@ -191,8 +191,45 @@
     }
   },
   "startingGrids": [],
-  "penaltyDocs": {},
-  "sessionResults": [],
+  "penaltyDocs": {
+    "https://www.fia.com/system/files/decision-document/2026_sao_paulo_grand_prix_-_infringement_-_car_63_-_changes_to_pu_element.pdf": {
+      "driverNumber": 63,
+      "driverName": "George Russell",
+      "places": 5,
+      "backOfGrid": false,
+      "pitLane": false,
+      "disqualifiedFromQualifying": false,
+      "appliesTo": "race",
+      "session": "Free Practice 1",
+      "reason": "new power unit elements",
+      "decision": "Drop of 5 grid positions for the next Race in which the driver participates.",
+      "title": "Infringement - Car 63 - Changes to PU element",
+      "url": "https://www.fia.com/system/files/decision-document/2026_sao_paulo_grand_prix_-_infringement_-_car_63_-_changes_to_pu_element.pdf",
+      "publishedAt": "2026-11-06T16:25:00.000Z",
+      "parserVersion": 10
+    }
+  },
+  "sessionResults": [
+    {
+      "eventType": "fp1",
+      "sessionKey": 11405,
+      "meetingKey": 1299,
+      "meetingName": "São Paulo Grand Prix",
+      "raceName": "São Paulo Grand Prix",
+      "sessionName": "Practice 1",
+      "officialName": "Practice 1",
+      "round": 20,
+      "dateStartUtc": "2026-11-06T15:30:00+00:00",
+      "dateEndUtc": "2026-11-06T16:30:00+00:00",
+      "date": "2026-11-06",
+      "circuit": "Interlagos",
+      "location": {
+        "locality": "São Paulo",
+        "country": "Brazil"
+      },
+      "drivers": []
+    }
+  ],
   "raceStrategy": [],
   "raceRecap": null,
   "meta": {
