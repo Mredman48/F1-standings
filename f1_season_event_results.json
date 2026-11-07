@@ -1,6 +1,6 @@
 {
   "header": "2026 F1 all session results",
-  "generatedAtUtc": "2026-11-07T20:52:42.356Z",
+  "generatedAtUtc": "2026-11-07T21:38:27.267Z",
   "season": 2026,
   "events": [
     {
@@ -49872,6 +49872,620 @@
           "laps": 7,
           "points": null,
           "sessionKey": 11407,
+          "meetingKey": 1299
+        }
+      ]
+    },
+    {
+      "eventType": "qualifying",
+      "sessionKey": 11408,
+      "meetingKey": 1299,
+      "meetingName": "São Paulo Grand Prix",
+      "raceName": "São Paulo Grand Prix",
+      "sessionName": "Qualifying",
+      "officialName": "Qualifying",
+      "round": 20,
+      "dateStartUtc": "2026-11-07T18:00:00+00:00",
+      "dateEndUtc": "2026-11-07T19:00:00+00:00",
+      "date": "2026-11-07",
+      "circuit": "Interlagos",
+      "location": {
+        "locality": "São Paulo",
+        "country": "Brazil"
+      },
+      "drivers": [
+        {
+          "driverNumber": 1,
+          "driverName": "Lando NORRIS",
+          "teamName": "McLaren",
+          "position": "P1",
+          "positionRank": 1,
+          "classifiedPosition": 1,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 90.939,
+            "q2": 89.207,
+            "q3": 87.47,
+            "bestQualifyingTime": 87.47
+          },
+          "gapToLeader": [
+            0,
+            2.462,
+            0
+          ],
+          "laps": 24,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 63,
+          "driverName": "George RUSSELL",
+          "teamName": "Mercedes",
+          "position": "P2",
+          "positionRank": 2,
+          "classifiedPosition": 2,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 91.206,
+            "q2": 86.745,
+            "q3": 87.674,
+            "bestQualifyingTime": 86.745
+          },
+          "gapToLeader": [
+            0.267,
+            0,
+            0.204
+          ],
+          "laps": 23,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 12,
+          "driverName": "Kimi ANTONELLI",
+          "teamName": "Mercedes",
+          "position": "P3",
+          "positionRank": 3,
+          "classifiedPosition": 3,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 92.229,
+            "q2": 89.302,
+            "q3": 88.095,
+            "bestQualifyingTime": 88.095
+          },
+          "gapToLeader": [
+            1.29,
+            2.557,
+            0.625
+          ],
+          "laps": 23,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 16,
+          "driverName": null,
+          "teamName": null,
+          "position": "P4",
+          "positionRank": 4,
+          "classifiedPosition": 4,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 92.121,
+            "q2": 88.082,
+            "q3": 88.289,
+            "bestQualifyingTime": 88.082
+          },
+          "gapToLeader": [
+            1.182,
+            1.337,
+            0.819
+          ],
+          "laps": 22,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 30,
+          "driverName": "Liam LAWSON",
+          "teamName": "Racing Bulls",
+          "position": "P5",
+          "positionRank": 5,
+          "classifiedPosition": 5,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 92.085,
+            "q2": 87.049,
+            "q3": 88.321,
+            "bestQualifyingTime": 87.049
+          },
+          "gapToLeader": [
+            1.146,
+            0.304,
+            0.851
+          ],
+          "laps": 24,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 27,
+          "driverName": null,
+          "teamName": null,
+          "position": "P6",
+          "positionRank": 6,
+          "classifiedPosition": 6,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 91.693,
+            "q2": 88.361,
+            "q3": 88.668,
+            "bestQualifyingTime": 88.361
+          },
+          "gapToLeader": [
+            0.754,
+            1.616,
+            1.198
+          ],
+          "laps": 23,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 6,
+          "driverName": "Isack HADJAR",
+          "teamName": "Red Bull Racing",
+          "position": "P7",
+          "positionRank": 7,
+          "classifiedPosition": 7,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 92.059,
+            "q2": 87.218,
+            "q3": 88.763,
+            "bestQualifyingTime": 87.218
+          },
+          "gapToLeader": [
+            1.12,
+            0.473,
+            1.293
+          ],
+          "laps": 24,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 87,
+          "driverName": "Oliver BEARMAN",
+          "teamName": "Haas F1 Team",
+          "position": "P8",
+          "positionRank": 8,
+          "classifiedPosition": 8,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.03,
+            "q2": 89.13,
+            "q3": 89.831,
+            "bestQualifyingTime": 89.13
+          },
+          "gapToLeader": [
+            2.091,
+            2.385,
+            2.361
+          ],
+          "laps": 22,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 14,
+          "driverName": "Fernando ALONSO",
+          "teamName": "Aston Martin",
+          "position": "P9",
+          "positionRank": 9,
+          "classifiedPosition": 9,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 92.092,
+            "q2": 89.072,
+            "q3": 90.311,
+            "bestQualifyingTime": 89.072
+          },
+          "gapToLeader": [
+            1.153,
+            2.327,
+            2.841
+          ],
+          "laps": 23,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 23,
+          "driverName": "Alexander ALBON",
+          "teamName": "Williams",
+          "position": "P10",
+          "positionRank": 10,
+          "classifiedPosition": 10,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.15,
+            "q2": 88.918,
+            "q3": 90.456,
+            "bestQualifyingTime": 88.918
+          },
+          "gapToLeader": [
+            2.211,
+            2.173,
+            2.986
+          ],
+          "laps": 24,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 44,
+          "driverName": "Lewis HAMILTON",
+          "teamName": "Ferrari",
+          "position": "P11",
+          "positionRank": 11,
+          "classifiedPosition": 11,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 91.666,
+            "q2": 90.001,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            0.727,
+            3.256,
+            null
+          ],
+          "laps": 13,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 81,
+          "driverName": null,
+          "teamName": null,
+          "position": "P12",
+          "positionRank": 12,
+          "classifiedPosition": 12,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 92.251,
+            "q2": 90.369,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            1.312,
+            3.624,
+            null
+          ],
+          "laps": 20,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 51,
+          "driverName": "Rafael CAMARA",
+          "teamName": "Haas F1 Team",
+          "position": "P13",
+          "positionRank": 13,
+          "classifiedPosition": 13,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 92.809,
+            "q2": 91.515,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            1.87,
+            4.77,
+            null
+          ],
+          "laps": 18,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 41,
+          "driverName": "Arvid LINDBLAD",
+          "teamName": "Racing Bulls",
+          "position": "P14",
+          "positionRank": 14,
+          "classifiedPosition": 14,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 92.306,
+            "q2": 91.687,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            1.367,
+            4.942,
+            null
+          ],
+          "laps": 16,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 55,
+          "driverName": null,
+          "teamName": null,
+          "position": "P15",
+          "positionRank": 15,
+          "classifiedPosition": 15,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 92.959,
+            "q2": 91.785,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            2.02,
+            5.04,
+            null
+          ],
+          "laps": 19,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 3,
+          "driverName": "Max VERSTAPPEN",
+          "teamName": "Red Bull Racing",
+          "position": "P16",
+          "positionRank": 16,
+          "classifiedPosition": 16,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 91.238,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            0.299,
+            null,
+            null
+          ],
+          "laps": 9,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 43,
+          "driverName": "Franco COLAPINTO",
+          "teamName": "Alpine",
+          "position": "P17",
+          "positionRank": 17,
+          "classifiedPosition": 17,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.327,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            2.388,
+            null,
+            null
+          ],
+          "laps": 12,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 10,
+          "driverName": null,
+          "teamName": null,
+          "position": "P18",
+          "positionRank": 18,
+          "classifiedPosition": 18,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.449,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            2.51,
+            null,
+            null
+          ],
+          "laps": 12,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 18,
+          "driverName": "Lance STROLL",
+          "teamName": "Aston Martin",
+          "position": "P19",
+          "positionRank": 19,
+          "classifiedPosition": 19,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.653,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            2.714,
+            null,
+            null
+          ],
+          "laps": 11,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 77,
+          "driverName": "Valtteri BOTTAS",
+          "teamName": "Cadillac",
+          "position": "P20",
+          "positionRank": 20,
+          "classifiedPosition": 20,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.774,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            2.835,
+            null,
+            null
+          ],
+          "laps": 12,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 11,
+          "driverName": null,
+          "teamName": null,
+          "position": "P21",
+          "positionRank": 21,
+          "classifiedPosition": 21,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 94.509,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            3.57,
+            null,
+            null
+          ],
+          "laps": 12,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 5,
+          "driverName": "Gabriel BORTOLETO",
+          "teamName": "Audi",
+          "position": "P22",
+          "positionRank": 22,
+          "classifiedPosition": 22,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 101.564,
+            "q2": 0,
+            "q3": 0,
+            "bestQualifyingTime": 0
+          },
+          "gapToLeader": [
+            10.625,
+            null,
+            null
+          ],
+          "laps": 5,
+          "points": null,
+          "sessionKey": 11408,
           "meetingKey": 1299
         }
       ]
