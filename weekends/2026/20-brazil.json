@@ -1,7 +1,7 @@
 {
   "header": "2026 Sao Paulo GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-11-07T19:09:50.708Z",
+  "generatedAtUtc": "2026-11-07T21:21:28.502Z",
   "season": 2026,
   "round": 20,
   "meetingKey": 1299,
@@ -190,7 +190,510 @@
       "wildcard": "Norris"
     }
   },
-  "startingGrids": [],
+  "startingGrids": [
+    {
+      "gridType": "race",
+      "provisional": true,
+      "round": 20,
+      "meetingKey": 1299,
+      "meetingName": "São Paulo Grand Prix",
+      "raceName": "São Paulo Grand Prix",
+      "circuit": "Interlagos",
+      "location": {
+        "locality": "São Paulo",
+        "country": "Brazil"
+      },
+      "qualifyingSessionKey": 11408,
+      "qualifyingSessionName": "Qualifying",
+      "qualifyingDateStartUtc": "2026-11-07T18:00:00+00:00",
+      "raceSessionKey": 11412,
+      "raceDateStartUtc": "2026-11-08T17:00:00+00:00",
+      "raceCompleted": false,
+      "grid": [
+        {
+          "position": 1,
+          "positionLabel": "P1",
+          "driverNumber": 1,
+          "driverName": "Lando NORRIS",
+          "nameAcronym": "NOR",
+          "teamName": "McLaren",
+          "teamColour": "#F47600",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LANNOR01_Lando_Norris/lannor01.png.transform/1col/image.png",
+          "qualifyingLapTime": 87.47,
+          "qualifyingPosition": 1,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 2,
+          "positionLabel": "P2",
+          "driverNumber": 63,
+          "driverName": "George RUSSELL",
+          "nameAcronym": "RUS",
+          "teamName": "Mercedes",
+          "teamColour": "#00D7B6",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/G/GEORUS01_George_Russell/georus01.png.transform/1col/image.png",
+          "qualifyingLapTime": 86.745,
+          "qualifyingPosition": 2,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": {
+            "places": 5,
+            "backOfGrid": false,
+            "pitLane": false,
+            "reason": "new power unit elements",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 63 - Changes to PU element",
+                "url": "https://www.fia.com/system/files/decision-document/2026_sao_paulo_grand_prix_-_infringement_-_car_63_-_changes_to_pu_element.pdf",
+                "decision": "Drop of 5 grid positions for the next Race in which the driver participates.",
+                "session": "Free Practice 1"
+              }
+            ]
+          },
+          "note": "5 place grid penalty for new power unit elements"
+        },
+        {
+          "position": 3,
+          "positionLabel": "P3",
+          "driverNumber": 12,
+          "driverName": "Kimi ANTONELLI",
+          "nameAcronym": "ANT",
+          "teamName": "Mercedes",
+          "teamColour": "#00D7B6",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/K/ANDANT01_Kimi_Antonelli/andant01.png.transform/1col/image.png",
+          "qualifyingLapTime": 88.095,
+          "qualifyingPosition": 3,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 4,
+          "positionLabel": "P4",
+          "driverNumber": 16,
+          "driverName": "Charles LECLERC",
+          "nameAcronym": "LEC",
+          "teamName": "Ferrari",
+          "teamColour": "#ED1131",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/C/CHALEC01_Charles_Leclerc/chalec01.png.transform/1col/image.png",
+          "qualifyingLapTime": 88.082,
+          "qualifyingPosition": 4,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": {
+            "places": 10,
+            "backOfGrid": false,
+            "pitLane": false,
+            "reason": "new power unit elements",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 16 - Changes to PU element",
+                "url": "https://www.fia.com/system/files/decision-document/2026_sao_paulo_grand_prix_-_infringement_-_car_16_-_changes_to_pu_element.pdf",
+                "decision": "Drop of 10 grid positions for the next Race in which the driver participates.",
+                "session": "Free Practice 3"
+              }
+            ]
+          },
+          "note": "10 place grid penalty for new power unit elements"
+        },
+        {
+          "position": 5,
+          "positionLabel": "P5",
+          "driverNumber": 30,
+          "driverName": "Liam LAWSON",
+          "nameAcronym": "LAW",
+          "teamName": "Racing Bulls",
+          "teamColour": "#6C98FF",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LIALAW01_Liam_Lawson/lialaw01.png.transform/1col/image.png",
+          "qualifyingLapTime": 87.049,
+          "qualifyingPosition": 5,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 6,
+          "positionLabel": "P6",
+          "driverNumber": 27,
+          "driverName": "Nico HULKENBERG",
+          "nameAcronym": "HUL",
+          "teamName": "Audi",
+          "teamColour": "#F50537",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/N/NICHUL01_Nico_Hulkenberg/nichul01.png.transform/1col/image.png",
+          "qualifyingLapTime": 88.361,
+          "qualifyingPosition": 6,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 7,
+          "positionLabel": "P7",
+          "driverNumber": 6,
+          "driverName": "Isack HADJAR",
+          "nameAcronym": "HAD",
+          "teamName": "Red Bull Racing",
+          "teamColour": "#4781D7",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/I/ISAHAD01_Isack_Hadjar/isahad01.png.transform/1col/image.png",
+          "qualifyingLapTime": 87.218,
+          "qualifyingPosition": 7,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 8,
+          "positionLabel": "P8",
+          "driverNumber": 87,
+          "driverName": "Oliver BEARMAN",
+          "nameAcronym": "BEA",
+          "teamName": "Haas F1 Team",
+          "teamColour": "#9C9FA2",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/O/OLIBEA01_Oliver_Bearman/olibea01.png.transform/1col/image.png",
+          "qualifyingLapTime": 89.13,
+          "qualifyingPosition": 8,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 9,
+          "positionLabel": "P9",
+          "driverNumber": 14,
+          "driverName": "Fernando ALONSO",
+          "nameAcronym": "ALO",
+          "teamName": "Aston Martin",
+          "teamColour": "#229971",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/F/FERALO01_Fernando_Alonso/feralo01.png.transform/1col/image.png",
+          "qualifyingLapTime": 89.072,
+          "qualifyingPosition": 9,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 10,
+          "positionLabel": "P10",
+          "driverNumber": 23,
+          "driverName": "Alexander ALBON",
+          "nameAcronym": "ALB",
+          "teamName": "Williams",
+          "teamColour": "#1868DB",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/A/ALEALB01_Alexander_Albon/alealb01.png.transform/1col/image.png",
+          "qualifyingLapTime": 88.918,
+          "qualifyingPosition": 10,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 11,
+          "positionLabel": "P11",
+          "driverNumber": 44,
+          "driverName": "Lewis HAMILTON",
+          "nameAcronym": "HAM",
+          "teamName": "Ferrari",
+          "teamColour": "#ED1131",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LEWHAM01_Lewis_Hamilton/lewham01.png.transform/1col/image.png",
+          "qualifyingLapTime": 90.001,
+          "qualifyingPosition": 11,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": {
+            "places": 75,
+            "backOfGrid": false,
+            "pitLane": false,
+            "reason": "new power unit elements",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 44 - Changes to PU element",
+                "url": "https://www.fia.com/system/files/decision-document/2026_sao_paulo_grand_prix_-_infringement_-_car_44_-_changes_to_pu_element.pdf",
+                "decision": "Drop of 10 grid positions for the next Race in which the driver participates.",
+                "session": "Free Practice 3"
+              },
+              {
+                "title": "Infringement - Car 44 - Additional changes to PU elements",
+                "url": "https://www.fia.com/system/files/decision-document/2026_sao_paulo_grand_prix_-_infringement_-_car_44_-_additional_changes_to_pu_elements.pdf",
+                "decision": "Drop of 65 grid positions for the next Race in which the driver participates.",
+                "session": "Qualifying"
+              }
+            ]
+          },
+          "note": "75 place grid penalty for new power unit elements"
+        },
+        {
+          "position": 12,
+          "positionLabel": "P12",
+          "driverNumber": 81,
+          "driverName": "Oscar PIASTRI",
+          "nameAcronym": "PIA",
+          "teamName": "McLaren",
+          "teamColour": "#F47600",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/O/OSCPIA01_Oscar_Piastri/oscpia01.png.transform/1col/image.png",
+          "qualifyingLapTime": 90.369,
+          "qualifyingPosition": 12,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 13,
+          "positionLabel": "P13",
+          "driverNumber": 51,
+          "driverName": "Rafael CAMARA",
+          "nameAcronym": "CAM",
+          "teamName": "Haas F1 Team",
+          "teamColour": "#9C9FA2",
+          "headshotUrl": null,
+          "qualifyingLapTime": 91.515,
+          "qualifyingPosition": 13,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 14,
+          "positionLabel": "P14",
+          "driverNumber": 41,
+          "driverName": "Arvid LINDBLAD",
+          "nameAcronym": "LIN",
+          "teamName": "Racing Bulls",
+          "teamColour": "#6C98FF",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/A/ARVLIN01_Arvid_Lindblad/arvlin01.png.transform/1col/image.png",
+          "qualifyingLapTime": 91.687,
+          "qualifyingPosition": 14,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 15,
+          "positionLabel": "P15",
+          "driverNumber": 55,
+          "driverName": "Carlos SAINZ",
+          "nameAcronym": "SAI",
+          "teamName": "Williams",
+          "teamColour": "#1868DB",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/C/CARSAI01_Carlos_Sainz/carsai01.png.transform/1col/image.png",
+          "qualifyingLapTime": 91.785,
+          "qualifyingPosition": 15,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 16,
+          "positionLabel": "P16",
+          "driverNumber": 3,
+          "driverName": "Max VERSTAPPEN",
+          "nameAcronym": "VER",
+          "teamName": "Red Bull Racing",
+          "teamColour": "#4781D7",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/M/MAXVER01_Max_Verstappen/maxver01.png.transform/1col/image.png",
+          "qualifyingLapTime": 91.238,
+          "qualifyingPosition": 16,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": {
+            "places": 30,
+            "backOfGrid": false,
+            "pitLane": false,
+            "reason": "new power unit elements",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 3 - Changes to PU elements",
+                "url": "https://www.fia.com/system/files/decision-document/2026_sao_paulo_grand_prix_-_infringement_-_car_3_-_changes_to_pu_elements.pdf",
+                "decision": "Drop of 30 grid positions for the next Race in which the driver participates.",
+                "session": "Free Practice 3"
+              }
+            ]
+          },
+          "note": "30 place grid penalty for new power unit elements"
+        },
+        {
+          "position": 17,
+          "positionLabel": "P17",
+          "driverNumber": 43,
+          "driverName": "Franco COLAPINTO",
+          "nameAcronym": "COL",
+          "teamName": "Alpine",
+          "teamColour": "#00A1E8",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/F/FRACOL01_Franco_Colapinto/fracol01.png.transform/1col/image.png",
+          "qualifyingLapTime": 93.327,
+          "qualifyingPosition": 17,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 18,
+          "positionLabel": "P18",
+          "driverNumber": 10,
+          "driverName": "Pierre GASLY",
+          "nameAcronym": "GAS",
+          "teamName": "Alpine",
+          "teamColour": "#00A1E8",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/P/PIEGAS01_Pierre_Gasly/piegas01.png.transform/1col/image.png",
+          "qualifyingLapTime": 93.449,
+          "qualifyingPosition": 18,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 19,
+          "positionLabel": "P19",
+          "driverNumber": 18,
+          "driverName": "Lance STROLL",
+          "nameAcronym": "STR",
+          "teamName": "Aston Martin",
+          "teamColour": "#229971",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LANSTR01_Lance_Stroll/lanstr01.png.transform/1col/image.png",
+          "qualifyingLapTime": 93.653,
+          "qualifyingPosition": 19,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 20,
+          "positionLabel": "P20",
+          "driverNumber": 77,
+          "driverName": "Valtteri BOTTAS",
+          "nameAcronym": "BOT",
+          "teamName": "Cadillac",
+          "teamColour": "#909090",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/V/VALBOT01_Valtteri_Bottas/valbot01.png.transform/1col/image.png",
+          "qualifyingLapTime": 93.774,
+          "qualifyingPosition": 20,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 21,
+          "positionLabel": "P21",
+          "driverNumber": 11,
+          "driverName": "Sergio PEREZ",
+          "nameAcronym": "PER",
+          "teamName": "Cadillac",
+          "teamColour": "#909090",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/S/SERPER01_Sergio_Perez/serper01.png.transform/1col/image.png",
+          "qualifyingLapTime": 94.509,
+          "qualifyingPosition": 21,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": {
+            "places": 30,
+            "backOfGrid": false,
+            "pitLane": false,
+            "reason": "new power unit elements",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 11 - Changes to PU elements",
+                "url": "https://www.fia.com/system/files/decision-document/2026_sao_paulo_grand_prix_-_infringement_-_car_11_-_changes_to_pu_elements.pdf",
+                "decision": "Drop of 30 grid positions for the next Race in which the driver participates.",
+                "session": "Free Practice 3"
+              }
+            ]
+          },
+          "note": "30 place grid penalty for new power unit elements"
+        },
+        {
+          "position": 22,
+          "positionLabel": "P22",
+          "driverNumber": 5,
+          "driverName": "Gabriel BORTOLETO",
+          "nameAcronym": "BOR",
+          "teamName": "Audi",
+          "teamColour": "#F50537",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/G/GABBOR01_Gabriel_Bortoleto/gabbor01.png.transform/1col/image.png",
+          "qualifyingLapTime": 101.564,
+          "qualifyingPosition": 22,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        }
+      ],
+      "gridPenaltiesChecked": true,
+      "penalties": [
+        {
+          "driverNumber": 63,
+          "driverName": "George RUSSELL",
+          "nameAcronym": "RUS",
+          "qualifyingPosition": 2,
+          "gridPosition": 2,
+          "positionLabel": "P2",
+          "note": "5 place grid penalty for new power unit elements",
+          "source": "fia"
+        },
+        {
+          "driverNumber": 16,
+          "driverName": "Charles LECLERC",
+          "nameAcronym": "LEC",
+          "qualifyingPosition": 4,
+          "gridPosition": 4,
+          "positionLabel": "P4",
+          "note": "10 place grid penalty for new power unit elements",
+          "source": "fia"
+        },
+        {
+          "driverNumber": 44,
+          "driverName": "Lewis HAMILTON",
+          "nameAcronym": "HAM",
+          "qualifyingPosition": 11,
+          "gridPosition": 11,
+          "positionLabel": "P11",
+          "note": "75 place grid penalty for new power unit elements",
+          "source": "fia"
+        },
+        {
+          "driverNumber": 3,
+          "driverName": "Max VERSTAPPEN",
+          "nameAcronym": "VER",
+          "qualifyingPosition": 16,
+          "gridPosition": 16,
+          "positionLabel": "P16",
+          "note": "30 place grid penalty for new power unit elements",
+          "source": "fia"
+        },
+        {
+          "driverNumber": 11,
+          "driverName": "Sergio PEREZ",
+          "nameAcronym": "PER",
+          "qualifyingPosition": 21,
+          "gridPosition": 21,
+          "positionLabel": "P21",
+          "note": "30 place grid penalty for new power unit elements",
+          "source": "fia"
+        }
+      ]
+    }
+  ],
   "penaltyDocs": {
     "https://www.fia.com/system/files/decision-document/2026_sao_paulo_grand_prix_-_infringement_-_car_63_-_changes_to_pu_element.pdf": {
       "driverNumber": 63,
@@ -294,6 +797,22 @@
       "title": "Infringement - Car 3 - Changes to PU elements",
       "url": "https://www.fia.com/system/files/decision-document/2026_sao_paulo_grand_prix_-_infringement_-_car_3_-_changes_to_pu_elements.pdf",
       "publishedAt": "2026-11-07T15:56:00.000Z",
+      "parserVersion": 10
+    },
+    "https://www.fia.com/system/files/decision-document/2026_sao_paulo_grand_prix_-_infringement_-_car_44_-_additional_changes_to_pu_elements.pdf": {
+      "driverNumber": 44,
+      "driverName": "Lewis Hamilton",
+      "places": 65,
+      "backOfGrid": false,
+      "pitLane": false,
+      "disqualifiedFromQualifying": false,
+      "appliesTo": "race",
+      "session": "Qualifying",
+      "reason": "new power unit elements",
+      "decision": "Drop of 65 grid positions for the next Race in which the driver participates.",
+      "title": "Infringement - Car 44 - Additional changes to PU elements",
+      "url": "https://www.fia.com/system/files/decision-document/2026_sao_paulo_grand_prix_-_infringement_-_car_44_-_additional_changes_to_pu_elements.pdf",
+      "publishedAt": "2026-11-07T20:08:00.000Z",
       "parserVersion": 10
     }
   },
@@ -1538,14 +2057,609 @@
       "officialName": "Qualifying",
       "round": 20,
       "dateStartUtc": "2026-11-07T18:00:00+00:00",
-      "dateEndUtc": "2026-11-07T19:00:00+00:00",
+      "dateEndUtc": "2026-11-07T21:00:00+00:00",
       "date": "2026-11-07",
       "circuit": "Interlagos",
       "location": {
         "locality": "São Paulo",
         "country": "Brazil"
       },
-      "drivers": []
+      "drivers": [
+        {
+          "driverNumber": 1,
+          "driverName": "Lando NORRIS",
+          "teamName": "McLaren",
+          "position": "P1",
+          "positionRank": 1,
+          "classifiedPosition": 1,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 90.939,
+            "q2": 89.207,
+            "q3": 87.47,
+            "bestQualifyingTime": 87.47
+          },
+          "gapToLeader": [
+            0,
+            2.462,
+            0
+          ],
+          "laps": 24,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 63,
+          "driverName": "George RUSSELL",
+          "teamName": "Mercedes",
+          "position": "P2",
+          "positionRank": 2,
+          "classifiedPosition": 2,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 91.206,
+            "q2": 86.745,
+            "q3": 87.674,
+            "bestQualifyingTime": 86.745
+          },
+          "gapToLeader": [
+            0.267,
+            0,
+            0.204
+          ],
+          "laps": 23,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 12,
+          "driverName": "Kimi ANTONELLI",
+          "teamName": "Mercedes",
+          "position": "P3",
+          "positionRank": 3,
+          "classifiedPosition": 3,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 92.229,
+            "q2": 89.302,
+            "q3": 88.095,
+            "bestQualifyingTime": 88.095
+          },
+          "gapToLeader": [
+            1.29,
+            2.557,
+            0.625
+          ],
+          "laps": 23,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 16,
+          "driverName": "Charles LECLERC",
+          "teamName": "Ferrari",
+          "position": "P4",
+          "positionRank": 4,
+          "classifiedPosition": 4,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 92.121,
+            "q2": 88.082,
+            "q3": 88.289,
+            "bestQualifyingTime": 88.082
+          },
+          "gapToLeader": [
+            1.182,
+            1.337,
+            0.819
+          ],
+          "laps": 22,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 30,
+          "driverName": "Liam LAWSON",
+          "teamName": "Racing Bulls",
+          "position": "P5",
+          "positionRank": 5,
+          "classifiedPosition": 5,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 92.085,
+            "q2": 87.049,
+            "q3": 88.321,
+            "bestQualifyingTime": 87.049
+          },
+          "gapToLeader": [
+            1.146,
+            0.304,
+            0.851
+          ],
+          "laps": 24,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 27,
+          "driverName": "Nico HULKENBERG",
+          "teamName": "Audi",
+          "position": "P6",
+          "positionRank": 6,
+          "classifiedPosition": 6,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 91.693,
+            "q2": 88.361,
+            "q3": 88.668,
+            "bestQualifyingTime": 88.361
+          },
+          "gapToLeader": [
+            0.754,
+            1.616,
+            1.198
+          ],
+          "laps": 23,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 6,
+          "driverName": "Isack HADJAR",
+          "teamName": "Red Bull Racing",
+          "position": "P7",
+          "positionRank": 7,
+          "classifiedPosition": 7,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 92.059,
+            "q2": 87.218,
+            "q3": 88.763,
+            "bestQualifyingTime": 87.218
+          },
+          "gapToLeader": [
+            1.12,
+            0.473,
+            1.293
+          ],
+          "laps": 24,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 87,
+          "driverName": "Oliver BEARMAN",
+          "teamName": "Haas F1 Team",
+          "position": "P8",
+          "positionRank": 8,
+          "classifiedPosition": 8,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.03,
+            "q2": 89.13,
+            "q3": 89.831,
+            "bestQualifyingTime": 89.13
+          },
+          "gapToLeader": [
+            2.091,
+            2.385,
+            2.361
+          ],
+          "laps": 22,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 14,
+          "driverName": "Fernando ALONSO",
+          "teamName": "Aston Martin",
+          "position": "P9",
+          "positionRank": 9,
+          "classifiedPosition": 9,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 92.092,
+            "q2": 89.072,
+            "q3": 90.311,
+            "bestQualifyingTime": 89.072
+          },
+          "gapToLeader": [
+            1.153,
+            2.327,
+            2.841
+          ],
+          "laps": 23,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 23,
+          "driverName": "Alexander ALBON",
+          "teamName": "Williams",
+          "position": "P10",
+          "positionRank": 10,
+          "classifiedPosition": 10,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.15,
+            "q2": 88.918,
+            "q3": 90.456,
+            "bestQualifyingTime": 88.918
+          },
+          "gapToLeader": [
+            2.211,
+            2.173,
+            2.986
+          ],
+          "laps": 24,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 44,
+          "driverName": "Lewis HAMILTON",
+          "teamName": "Ferrari",
+          "position": "P11",
+          "positionRank": 11,
+          "classifiedPosition": 11,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 91.666,
+            "q2": 90.001,
+            "q3": null,
+            "bestQualifyingTime": 90.001
+          },
+          "gapToLeader": [
+            0.727,
+            3.256,
+            null
+          ],
+          "laps": 13,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 81,
+          "driverName": "Oscar PIASTRI",
+          "teamName": "McLaren",
+          "position": "P12",
+          "positionRank": 12,
+          "classifiedPosition": 12,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 92.251,
+            "q2": 90.369,
+            "q3": null,
+            "bestQualifyingTime": 90.369
+          },
+          "gapToLeader": [
+            1.312,
+            3.624,
+            null
+          ],
+          "laps": 20,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 51,
+          "driverName": "Rafael CAMARA",
+          "teamName": "Haas F1 Team",
+          "position": "P13",
+          "positionRank": 13,
+          "classifiedPosition": 13,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 92.809,
+            "q2": 91.515,
+            "q3": null,
+            "bestQualifyingTime": 91.515
+          },
+          "gapToLeader": [
+            1.87,
+            4.77,
+            null
+          ],
+          "laps": 18,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 41,
+          "driverName": "Arvid LINDBLAD",
+          "teamName": "Racing Bulls",
+          "position": "P14",
+          "positionRank": 14,
+          "classifiedPosition": 14,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 92.306,
+            "q2": 91.687,
+            "q3": null,
+            "bestQualifyingTime": 91.687
+          },
+          "gapToLeader": [
+            1.367,
+            4.942,
+            null
+          ],
+          "laps": 16,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 55,
+          "driverName": "Carlos SAINZ",
+          "teamName": "Williams",
+          "position": "P15",
+          "positionRank": 15,
+          "classifiedPosition": 15,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 92.959,
+            "q2": 91.785,
+            "q3": null,
+            "bestQualifyingTime": 91.785
+          },
+          "gapToLeader": [
+            2.02,
+            5.04,
+            null
+          ],
+          "laps": 19,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 3,
+          "driverName": "Max VERSTAPPEN",
+          "teamName": "Red Bull Racing",
+          "position": "P16",
+          "positionRank": 16,
+          "classifiedPosition": 16,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 91.238,
+            "q2": null,
+            "q3": null,
+            "bestQualifyingTime": 91.238
+          },
+          "gapToLeader": [
+            0.299,
+            null,
+            null
+          ],
+          "laps": 9,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 43,
+          "driverName": "Franco COLAPINTO",
+          "teamName": "Alpine",
+          "position": "P17",
+          "positionRank": 17,
+          "classifiedPosition": 17,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.327,
+            "q2": null,
+            "q3": null,
+            "bestQualifyingTime": 93.327
+          },
+          "gapToLeader": [
+            2.388,
+            null,
+            null
+          ],
+          "laps": 12,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 10,
+          "driverName": "Pierre GASLY",
+          "teamName": "Alpine",
+          "position": "P18",
+          "positionRank": 18,
+          "classifiedPosition": 18,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.449,
+            "q2": null,
+            "q3": null,
+            "bestQualifyingTime": 93.449
+          },
+          "gapToLeader": [
+            2.51,
+            null,
+            null
+          ],
+          "laps": 12,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 18,
+          "driverName": "Lance STROLL",
+          "teamName": "Aston Martin",
+          "position": "P19",
+          "positionRank": 19,
+          "classifiedPosition": 19,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.653,
+            "q2": null,
+            "q3": null,
+            "bestQualifyingTime": 93.653
+          },
+          "gapToLeader": [
+            2.714,
+            null,
+            null
+          ],
+          "laps": 11,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 77,
+          "driverName": "Valtteri BOTTAS",
+          "teamName": "Cadillac",
+          "position": "P20",
+          "positionRank": 20,
+          "classifiedPosition": 20,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 93.774,
+            "q2": null,
+            "q3": null,
+            "bestQualifyingTime": 93.774
+          },
+          "gapToLeader": [
+            2.835,
+            null,
+            null
+          ],
+          "laps": 12,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 11,
+          "driverName": "Sergio PEREZ",
+          "teamName": "Cadillac",
+          "position": "P21",
+          "positionRank": 21,
+          "classifiedPosition": 21,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 94.509,
+            "q2": null,
+            "q3": null,
+            "bestQualifyingTime": 94.509
+          },
+          "gapToLeader": [
+            3.57,
+            null,
+            null
+          ],
+          "laps": 12,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        },
+        {
+          "driverNumber": 5,
+          "driverName": "Gabriel BORTOLETO",
+          "teamName": "Audi",
+          "position": "P22",
+          "positionRank": 22,
+          "classifiedPosition": 22,
+          "dnf": false,
+          "dns": false,
+          "dsq": false,
+          "duration": null,
+          "qualifyingTimes": {
+            "q1": 101.564,
+            "q2": null,
+            "q3": null,
+            "bestQualifyingTime": 101.564
+          },
+          "gapToLeader": [
+            10.625,
+            null,
+            null
+          ],
+          "laps": 5,
+          "points": null,
+          "sessionKey": 11408,
+          "meetingKey": 1299
+        }
+      ]
     }
   ],
   "raceStrategy": [],
