@@ -2,7 +2,7 @@
   "header": "F1 championship outlook",
   "season": 2026,
   "previousSeason": 2025,
-  "lastUpdated": "2026-11-08T20:52:50.594Z",
+  "lastUpdated": "2026-11-08T23:36:10.675Z",
   "mode": "race-weekend",
   "sources": {
     "driverStandings": "public-repo/f1_driver_standings.json",
@@ -84,17 +84,17 @@
     "constructors": {
       "leader": "Mercedes",
       "second": "Ferrari",
-      "gap": 140,
-      "standingsText": "Mercedes leads by 140 pts over Ferrari",
-      "raceImpact": "Mercedes extended its constructors' lead by 14 pts over Ferrari",
-      "scenarioText": "Mercedes extended its constructors' lead by 14 pts over Ferrari",
+      "gap": 142,
+      "standingsText": "Mercedes leads by 142 pts over Ferrari",
+      "raceImpact": "Mercedes extended its constructors' lead by 16 pts over Ferrari",
+      "scenarioText": "Mercedes extended its constructors' lead by 16 pts over Ferrari",
       "p1Changed": false,
       "leaderWeekendPoints": 22,
-      "secondWeekendPoints": 8,
-      "weekendDelta": 14,
+      "secondWeekendPoints": 6,
+      "weekendDelta": 16,
       "leaderRacePoints": 22,
-      "secondRacePoints": 8,
-      "raceDelta": 14
+      "secondRacePoints": 6,
+      "raceDelta": 16
     }
   },
   "races": [
@@ -1909,17 +1909,17 @@
       "constructors": {
         "leader": "Mercedes",
         "second": "Ferrari",
-        "gap": 140,
-        "standingsText": "Mercedes leads by 140 pts over Ferrari",
-        "raceImpact": "Mercedes extended its constructors' lead by 14 pts over Ferrari",
-        "scenarioText": "Mercedes extended its constructors' lead by 14 pts over Ferrari",
+        "gap": 142,
+        "standingsText": "Mercedes leads by 142 pts over Ferrari",
+        "raceImpact": "Mercedes extended its constructors' lead by 16 pts over Ferrari",
+        "scenarioText": "Mercedes extended its constructors' lead by 16 pts over Ferrari",
         "p1Changed": false,
         "leaderWeekendPoints": 22,
-        "secondWeekendPoints": 8,
-        "weekendDelta": 14,
+        "secondWeekendPoints": 6,
+        "weekendDelta": 16,
         "leaderRacePoints": 22,
-        "secondRacePoints": 8,
-        "raceDelta": 14
+        "secondRacePoints": 6,
+        "raceDelta": 16
       }
     }
   ]
