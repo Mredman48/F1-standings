@@ -1,6 +1,6 @@
 {
   "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-11-08T18:52:41.060Z",
+  "generatedAtUtc": "2026-11-08T19:02:25.679Z",
   "season": 2026,
   "source": {
     "primary": "f1_season_event_results.json",
@@ -10,27 +10,27 @@
   },
   "lastRace": {
     "season": "2026",
-    "round": "19",
-    "raceName": "Mexico City Grand Prix",
-    "date": "2026-11-01",
+    "round": "20",
+    "raceName": "São Paulo Grand Prix",
+    "date": "2026-11-08",
     "circuit": {
-      "name": "Mexico City",
-      "locality": "Mexico City",
-      "country": "Mexico"
+      "name": "Interlagos",
+      "locality": "São Paulo",
+      "country": "Brazil"
     },
     "winner": {
-      "firstName": "-",
-      "lastName": "-",
-      "fullName": "-",
+      "firstName": "Lando",
+      "lastName": "NORRIS",
+      "fullName": "Lando NORRIS",
       "code": null,
-      "team": "-"
+      "team": "McLaren"
     }
   },
   "drivers": [
     {
       "position": "P1",
       "positionNumber": 1,
-      "points": 380,
+      "points": 390,
       "wins": 9,
       "driver": {
         "code": "ANT",
@@ -51,7 +51,7 @@
     {
       "position": "P2",
       "positionNumber": 2,
-      "points": 261,
+      "points": 279,
       "wins": 3,
       "driver": {
         "code": "VER",
@@ -72,28 +72,7 @@
     {
       "position": "P3",
       "positionNumber": 3,
-      "points": 259,
-      "wins": 1,
-      "driver": {
-        "code": "HAM",
-        "firstName": "Lewis",
-        "lastName": "HAMILTON",
-        "fullName": "Lewis HAMILTON",
-        "nationality": "GBR",
-        "driverNumber": 44,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lewis-hamilton.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Ferrari",
-        "fullName": "Ferrari",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P4",
-      "positionNumber": 4,
-      "points": 250,
+      "points": 262,
       "wins": 3,
       "driver": {
         "code": "RUS",
@@ -112,9 +91,30 @@
       }
     },
     {
+      "position": "P4",
+      "positionNumber": 4,
+      "points": 261,
+      "wins": 1,
+      "driver": {
+        "code": "HAM",
+        "firstName": "Lewis",
+        "lastName": "HAMILTON",
+        "fullName": "Lewis HAMILTON",
+        "nationality": "GBR",
+        "driverNumber": 44,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lewis-hamilton.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Ferrari",
+        "fullName": "Ferrari",
+        "nationality": null
+      }
+    },
+    {
       "position": "P5",
       "positionNumber": 5,
-      "points": 245,
+      "points": 251,
       "wins": 1,
       "driver": {
         "code": "LEC",
@@ -135,8 +135,8 @@
     {
       "position": "P6",
       "positionNumber": 6,
-      "points": 221,
-      "wins": 2,
+      "points": 246,
+      "wins": 3,
       "driver": {
         "code": "NOR",
         "firstName": "Lando",
@@ -156,7 +156,7 @@
     {
       "position": "P7",
       "positionNumber": 7,
-      "points": 144,
+      "points": 152,
       "wins": 0,
       "driver": {
         "code": "PIA",
@@ -177,7 +177,7 @@
     {
       "position": "P8",
       "positionNumber": 8,
-      "points": 107,
+      "points": 122,
       "wins": 0,
       "driver": {
         "code": "HAD",
@@ -198,7 +198,7 @@
     {
       "position": "P9",
       "positionNumber": 9,
-      "points": 83,
+      "points": 87,
       "wins": 0,
       "driver": {
         "code": "LAW",
@@ -324,7 +324,7 @@
     {
       "position": "P15",
       "positionNumber": 15,
-      "points": 13,
+      "points": 14,
       "wins": 0,
       "driver": {
         "code": "HUL",
@@ -528,6 +528,27 @@
       "constructor": {
         "name": "Cadillac",
         "fullName": "Cadillac",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P25",
+      "positionNumber": 25,
+      "points": 0,
+      "wins": 0,
+      "driver": {
+        "code": "-",
+        "firstName": "Rafael",
+        "lastName": "CAMARA",
+        "fullName": "Rafael CAMARA",
+        "nationality": "-",
+        "driverNumber": 51,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/rafael-camara.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Haas",
+        "fullName": "Haas",
         "nationality": null
       }
     }

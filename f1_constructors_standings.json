@@ -1,6 +1,6 @@
 {
   "header": "Constructors standings",
-  "generatedAtUtc": "2026-11-08T18:52:41.363Z",
+  "generatedAtUtc": "2026-11-08T19:02:26.084Z",
   "meta": {
     "seasonUsed": "2026",
     "source": "f1_season_event_results.json + f1_driver_standings.json",
@@ -9,27 +9,27 @@
   },
   "lastRace": {
     "season": "2026",
-    "round": "19",
-    "raceName": "Mexico City Grand Prix",
-    "date": "2026-11-01",
+    "round": "20",
+    "raceName": "São Paulo Grand Prix",
+    "date": "2026-11-08",
     "circuit": {
-      "name": "Mexico City",
-      "locality": "Mexico City",
-      "country": "Mexico"
+      "name": "Interlagos",
+      "locality": "São Paulo",
+      "country": "Brazil"
     },
     "winner": {
-      "firstName": "-",
-      "lastName": "-",
-      "fullName": "-",
+      "firstName": "Lando",
+      "lastName": "NORRIS",
+      "fullName": "Lando NORRIS",
       "code": null,
-      "team": "-"
+      "team": "McLaren"
     }
   },
   "constructors": [
     {
       "team": "Mercedes",
       "position": "P1",
-      "points": 630,
+      "points": 652,
       "wins": 12,
       "driverCount": 2,
       "placeholder": false
@@ -37,7 +37,7 @@
     {
       "team": "Ferrari",
       "position": "P2",
-      "points": 504,
+      "points": 512,
       "wins": 2,
       "driverCount": 2,
       "placeholder": false
@@ -45,7 +45,7 @@
     {
       "team": "Red Bull",
       "position": "P3",
-      "points": 382,
+      "points": 415,
       "wins": 3,
       "driverCount": 2,
       "placeholder": false
@@ -53,15 +53,15 @@
     {
       "team": "McLaren",
       "position": "P4",
-      "points": 365,
-      "wins": 2,
+      "points": 398,
+      "wins": 3,
       "driverCount": 2,
       "placeholder": false
     },
     {
       "team": "VCARB",
       "position": "P5",
-      "points": 108,
+      "points": 112,
       "wins": 0,
       "driverCount": 3,
       "placeholder": false
@@ -79,13 +79,13 @@
       "position": "P7",
       "points": 31,
       "wins": 0,
-      "driverCount": 3,
+      "driverCount": 4,
       "placeholder": false
     },
     {
       "team": "Audi",
       "position": "P8",
-      "points": 27,
+      "points": 28,
       "wins": 0,
       "driverCount": 2,
       "placeholder": false
