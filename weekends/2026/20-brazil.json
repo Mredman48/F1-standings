@@ -1,7 +1,7 @@
 {
   "header": "2026 Sao Paulo GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-11-07T23:29:16.616Z",
+  "generatedAtUtc": "2026-11-08T16:34:13.920Z",
   "season": 2026,
   "round": 20,
   "meetingKey": 1299,
@@ -403,22 +403,6 @@
         {
           "position": 12,
           "positionLabel": "P12",
-          "driverNumber": 41,
-          "driverName": "Arvid LINDBLAD",
-          "nameAcronym": "LIN",
-          "teamName": "Racing Bulls",
-          "teamColour": "#6C98FF",
-          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/A/ARVLIN01_Arvid_Lindblad/arvlin01.png.transform/1col/image.png",
-          "qualifyingLapTime": 91.687,
-          "qualifyingPosition": 14,
-          "qualifyingDsq": false,
-          "placesVsQualifying": -2,
-          "penalty": null,
-          "note": null
-        },
-        {
-          "position": 13,
-          "positionLabel": "P13",
           "driverNumber": 55,
           "driverName": "Carlos SAINZ",
           "nameAcronym": "SAI",
@@ -428,7 +412,23 @@
           "qualifyingLapTime": 91.785,
           "qualifyingPosition": 15,
           "qualifyingDsq": false,
-          "placesVsQualifying": -2,
+          "placesVsQualifying": -3,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 13,
+          "positionLabel": "P13",
+          "driverNumber": 43,
+          "driverName": "Franco COLAPINTO",
+          "nameAcronym": "COL",
+          "teamName": "Alpine",
+          "teamColour": "#00A1E8",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/F/FRACOL01_Franco_Colapinto/fracol01.png.transform/1col/image.png",
+          "qualifyingLapTime": 93.327,
+          "qualifyingPosition": 17,
+          "qualifyingDsq": false,
+          "placesVsQualifying": -4,
           "penalty": null,
           "note": null
         },
@@ -465,22 +465,6 @@
         {
           "position": 15,
           "positionLabel": "P15",
-          "driverNumber": 43,
-          "driverName": "Franco COLAPINTO",
-          "nameAcronym": "COL",
-          "teamName": "Alpine",
-          "teamColour": "#00A1E8",
-          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/F/FRACOL01_Franco_Colapinto/fracol01.png.transform/1col/image.png",
-          "qualifyingLapTime": 93.327,
-          "qualifyingPosition": 17,
-          "qualifyingDsq": false,
-          "placesVsQualifying": -2,
-          "penalty": null,
-          "note": null
-        },
-        {
-          "position": 16,
-          "positionLabel": "P16",
           "driverNumber": 10,
           "driverName": "Pierre GASLY",
           "nameAcronym": "GAS",
@@ -490,13 +474,13 @@
           "qualifyingLapTime": 93.449,
           "qualifyingPosition": 18,
           "qualifyingDsq": false,
-          "placesVsQualifying": -2,
+          "placesVsQualifying": -3,
           "penalty": null,
           "note": null
         },
         {
-          "position": 17,
-          "positionLabel": "P17",
+          "position": 16,
+          "positionLabel": "P16",
           "driverNumber": 18,
           "driverName": "Lance STROLL",
           "nameAcronym": "STR",
@@ -506,13 +490,13 @@
           "qualifyingLapTime": 93.653,
           "qualifyingPosition": 19,
           "qualifyingDsq": false,
-          "placesVsQualifying": -2,
+          "placesVsQualifying": -3,
           "penalty": null,
           "note": null
         },
         {
-          "position": 18,
-          "positionLabel": "P18",
+          "position": 17,
+          "positionLabel": "P17",
           "driverNumber": 77,
           "driverName": "Valtteri BOTTAS",
           "nameAcronym": "BOT",
@@ -522,9 +506,39 @@
           "qualifyingLapTime": 93.774,
           "qualifyingPosition": 20,
           "qualifyingDsq": false,
-          "placesVsQualifying": -2,
+          "placesVsQualifying": -3,
           "penalty": null,
           "note": null
+        },
+        {
+          "position": 18,
+          "positionLabel": "P18",
+          "driverNumber": 41,
+          "driverName": "Arvid LINDBLAD",
+          "nameAcronym": "LIN",
+          "teamName": "Racing Bulls",
+          "teamColour": "#6C98FF",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/A/ARVLIN01_Arvid_Lindblad/arvlin01.png.transform/1col/image.png",
+          "qualifyingLapTime": 91.687,
+          "qualifyingPosition": 14,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 4,
+          "penalty": {
+            "places": 10,
+            "backOfGrid": false,
+            "pitLane": false,
+            "reason": "new power unit elements",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 41 - Changes to PU elements",
+                "url": "https://www.fia.com/system/files/decision-document/2026_sao_paulo_grand_prix_-_infringement_-_car_41_-_changes_to_pu_elements.pdf",
+                "decision": "Drop of 10 grid positions for the next Race in which the driver participates.",
+                "session": "Qualifying"
+              }
+            ]
+          },
+          "note": "10 place grid penalty for new power unit elements"
         },
         {
           "position": 19,
@@ -539,8 +553,22 @@
           "qualifyingPosition": 22,
           "qualifyingDsq": false,
           "placesVsQualifying": -3,
-          "penalty": null,
-          "note": null
+          "penalty": {
+            "places": 10,
+            "backOfGrid": false,
+            "pitLane": false,
+            "reason": "new power unit elements",
+            "source": "fia",
+            "documents": [
+              {
+                "title": "Infringement - Car 5 - Changes to PU elements",
+                "url": "https://www.fia.com/system/files/decision-document/2026_sao_paulo_grand_prix_-_infringement_-_car_5_-_changes_to_pu_elements.pdf",
+                "decision": "Drop of 10 grid positions for the next Race in which the driver participates.",
+                "session": "Qualifying"
+              }
+            ]
+          },
+          "note": "10 place grid penalty for new power unit elements"
         },
         {
           "position": 20,
@@ -658,6 +686,26 @@
           "qualifyingPosition": 4,
           "gridPosition": 14,
           "positionLabel": "P14",
+          "note": "10 place grid penalty for new power unit elements",
+          "source": "fia"
+        },
+        {
+          "driverNumber": 41,
+          "driverName": "Arvid LINDBLAD",
+          "nameAcronym": "LIN",
+          "qualifyingPosition": 14,
+          "gridPosition": 18,
+          "positionLabel": "P18",
+          "note": "10 place grid penalty for new power unit elements",
+          "source": "fia"
+        },
+        {
+          "driverNumber": 5,
+          "driverName": "Gabriel BORTOLETO",
+          "nameAcronym": "BOR",
+          "qualifyingPosition": 22,
+          "gridPosition": 19,
+          "positionLabel": "P19",
           "note": "10 place grid penalty for new power unit elements",
           "source": "fia"
         },
@@ -813,6 +861,38 @@
       "title": "Infringement - Car 44 - Additional changes to PU elements",
       "url": "https://www.fia.com/system/files/decision-document/2026_sao_paulo_grand_prix_-_infringement_-_car_44_-_additional_changes_to_pu_elements.pdf",
       "publishedAt": "2026-11-07T20:08:00.000Z",
+      "parserVersion": 10
+    },
+    "https://www.fia.com/system/files/decision-document/2026_sao_paulo_grand_prix_-_infringement_-_car_5_-_changes_to_pu_elements.pdf": {
+      "driverNumber": 5,
+      "driverName": "Gabriel Bortoleto",
+      "places": 10,
+      "backOfGrid": false,
+      "pitLane": false,
+      "disqualifiedFromQualifying": false,
+      "appliesTo": "race",
+      "session": "Qualifying",
+      "reason": "new power unit elements",
+      "decision": "Drop of 10 grid positions for the next Race in which the driver participates.",
+      "title": "Infringement - Car 5 - Changes to PU elements",
+      "url": "https://www.fia.com/system/files/decision-document/2026_sao_paulo_grand_prix_-_infringement_-_car_5_-_changes_to_pu_elements.pdf",
+      "publishedAt": "2026-11-08T15:20:00.000Z",
+      "parserVersion": 10
+    },
+    "https://www.fia.com/system/files/decision-document/2026_sao_paulo_grand_prix_-_infringement_-_car_41_-_changes_to_pu_elements.pdf": {
+      "driverNumber": 41,
+      "driverName": "Arvid Lindblad",
+      "places": 10,
+      "backOfGrid": false,
+      "pitLane": false,
+      "disqualifiedFromQualifying": false,
+      "appliesTo": "race",
+      "session": "Qualifying",
+      "reason": "new power unit elements",
+      "decision": "Drop of 10 grid positions for the next Race in which the driver participates.",
+      "title": "Infringement - Car 41 - Changes to PU elements",
+      "url": "https://www.fia.com/system/files/decision-document/2026_sao_paulo_grand_prix_-_infringement_-_car_41_-_changes_to_pu_elements.pdf",
+      "publishedAt": "2026-11-08T15:16:00.000Z",
       "parserVersion": 10
     }
   },
