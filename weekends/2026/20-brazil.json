@@ -1,12 +1,12 @@
 {
   "header": "2026 Sao Paulo GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-11-09T00:44:15.360Z",
+  "generatedAtUtc": "2026-11-09T07:42:50.457Z",
   "season": 2026,
   "round": 20,
   "meetingKey": 1299,
   "raceSlug": "brazil",
-  "status": "in_progress",
+  "status": "completed",
   "weekend": {
     "round": 20,
     "type": "RACE_WEEKEND",
@@ -3440,7 +3440,7 @@
   "raceStrategy": [
     {
       "sessionType": "race",
-      "final": false,
+      "final": true,
       "round": 20,
       "meetingKey": 1299,
       "meetingName": "São Paulo Grand Prix",
