@@ -1,7 +1,7 @@
 {
  "schema": "apex-stat-tables",
  "version": 2,
- "generatedAt": "2026-11-09T01:29:13+00:00",
+ "generatedAt": "2026-11-09T20:16:42+00:00",
  "year": 2026,
  "latestRound": 20,
  "latestRace": "Brazilian Grand Prix",
@@ -941,7 +941,7 @@
     "rows": [
      {
       "rank": "1",
-      "value": "19",
+      "value": "20",
       "unit": "",
       "note": "",
       "code": "RUS",
@@ -950,7 +950,7 @@
      },
      {
       "rank": "1",
-      "value": "19",
+      "value": "20",
       "unit": "",
       "note": "",
       "code": "NOR",
@@ -958,7 +958,25 @@
       "team": "McLaren"
      },
      {
-      "rank": "1",
+      "rank": "3",
+      "value": "19",
+      "unit": "",
+      "note": "",
+      "code": "ANT",
+      "text": "",
+      "team": "Mercedes"
+     },
+     {
+      "rank": "3",
+      "value": "19",
+      "unit": "",
+      "note": "",
+      "code": "LEC",
+      "text": "",
+      "team": "Ferrari"
+     },
+     {
+      "rank": "3",
       "value": "19",
       "unit": "",
       "note": "",
@@ -967,25 +985,7 @@
       "team": "Ferrari"
      },
      {
-      "rank": "4",
-      "value": "18",
-      "unit": "",
-      "note": "",
-      "code": "ANT",
-      "text": "",
-      "team": "Mercedes"
-     },
-     {
-      "rank": "4",
-      "value": "18",
-      "unit": "",
-      "note": "",
-      "code": "LEC",
-      "text": "",
-      "team": "Ferrari"
-     },
-     {
-      "rank": "4",
+      "rank": "6",
       "value": "18",
       "unit": "",
       "note": "",
@@ -1004,7 +1004,7 @@
      },
      {
       "rank": "8",
-      "value": "13",
+      "value": "14",
       "unit": "",
       "note": "",
       "code": "HAD",
@@ -1227,43 +1227,7 @@
     "rows": [
      {
       "rank": "1",
-      "value": "-0.377",
-      "unit": "s",
-      "note": "",
-      "code": "ALO",
-      "text": "",
-      "team": "Aston Martin"
-     },
-     {
-      "rank": "2",
-      "value": "-0.360",
-      "unit": "s",
-      "note": "",
-      "code": "GAS",
-      "text": "",
-      "team": "Alpine"
-     },
-     {
-      "rank": "3",
-      "value": "-0.333",
-      "unit": "s",
-      "note": "",
-      "code": "SAI",
-      "text": "",
-      "team": "Williams"
-     },
-     {
-      "rank": "4",
-      "value": "-0.266",
-      "unit": "s",
-      "note": "",
-      "code": "BEA",
-      "text": "",
-      "team": "Haas"
-     },
-     {
-      "rank": "5",
-      "value": "-0.246",
+      "value": "-0.728",
       "unit": "s",
       "note": "",
       "code": "HUL",
@@ -1271,8 +1235,44 @@
       "team": "Audi"
      },
      {
+      "rank": "2",
+      "value": "-0.443",
+      "unit": "s",
+      "note": "",
+      "code": "ALO",
+      "text": "",
+      "team": "Aston Martin"
+     },
+     {
+      "rank": "3",
+      "value": "-0.377",
+      "unit": "s",
+      "note": "",
+      "code": "BEA",
+      "text": "",
+      "team": "Haas"
+     },
+     {
+      "rank": "4",
+      "value": "-0.336",
+      "unit": "s",
+      "note": "",
+      "code": "GAS",
+      "text": "",
+      "team": "Alpine"
+     },
+     {
+      "rank": "5",
+      "value": "-0.279",
+      "unit": "s",
+      "note": "",
+      "code": "LAW",
+      "text": "",
+      "team": "Racing Bulls"
+     },
+     {
       "rank": "6",
-      "value": "-0.235",
+      "value": "-0.187",
       "unit": "s",
       "note": "",
       "code": "PER",
@@ -1281,7 +1281,16 @@
      },
      {
       "rank": "7",
-      "value": "-0.122",
+      "value": "-0.164",
+      "unit": "s",
+      "note": "",
+      "code": "SAI",
+      "text": "",
+      "team": "Williams"
+     },
+     {
+      "rank": "8",
+      "value": "-0.163",
       "unit": "s",
       "note": "",
       "code": "VER",
@@ -1289,8 +1298,8 @@
       "team": "Red Bull"
      },
      {
-      "rank": "8",
-      "value": "-0.083",
+      "rank": "9",
+      "value": "-0.137",
       "unit": "s",
       "note": "",
       "code": "NOR",
@@ -1298,17 +1307,8 @@
       "team": "McLaren"
      },
      {
-      "rank": "9",
-      "value": "-0.050",
-      "unit": "s",
-      "note": "",
-      "code": "LAW",
-      "text": "",
-      "team": "Racing Bulls"
-     },
-     {
       "rank": "10",
-      "value": "-0.033",
+      "value": "-0.127",
       "unit": "s",
       "note": "",
       "code": "LEC",
@@ -2601,63 +2601,63 @@
     "rows": [
      {
       "rank": "1",
-      "value": "0.243",
+      "value": "0.231",
       "unit": "s",
       "note": "",
       "code": "RUS",
       "text": "",
       "team": "Mercedes",
-      "series": "0.000, 0.222, 0.298, 0.399, 0.000, 0.394, 0.000, 0.000, 0.370, 0.508, 0.553, 0.102, 0.060, 0.325, 0.000, 0.741, 0.374, 0.270, 0.009, "
+      "series": "0.000, 0.222, 0.298, 0.399, 0.000, 0.394, 0.000, 0.000, 0.370, 0.508, 0.553, 0.102, 0.060, 0.325, 0.000, 0.741, 0.374, 0.270, 0.009, 0.000"
      },
      {
       "rank": "2",
-      "value": "0.282",
+      "value": "0.335",
       "unit": "s",
       "note": "",
       "code": "ANT",
       "text": "",
       "team": "Mercedes",
-      "series": "0.293, 0.000, 0.000, 0.000, 0.068, 0.000, 0.319, 0.301, 0.000, 0.000, 0.272, 0.133, 0.096, 0.011, 2.978, 0.501, 0.189, 0.000, 0.193, "
+      "series": "0.293, 0.000, 0.000, 0.000, 0.068, 0.000, 0.319, 0.301, 0.000, 0.000, 0.272, 0.133, 0.096, 0.011, 2.978, 0.501, 0.189, 0.000, 0.193, 1.350"
      },
      {
       "rank": "3",
-      "value": "0.371",
+      "value": "0.419",
       "unit": "s",
       "note": "",
       "code": "LEC",
       "text": "",
       "team": "Ferrari",
-      "series": "0.809, 0.364, 0.525, 0.345, 0.398, 0.300, 0.602, 0.236, 0.175, 0.532, 0.238, 0.395, 0.218, 0.195, 0.837, 0.536, 0.054, 0.163, 0.119, "
+      "series": "0.809, 0.364, 0.525, 0.345, 0.398, 0.300, 0.602, 0.236, 0.175, 0.532, 0.238, 0.395, 0.218, 0.195, 0.837, 0.536, 0.054, 0.163, 0.119, 1.337"
      },
      {
       "rank": "4",
-      "value": "0.377",
-      "unit": "s",
-      "note": "",
-      "code": "HAM",
-      "text": "",
-      "team": "Ferrari",
-      "series": "0.960, 0.351, 0.789, 0.521, 0.290, 0.228, 0.064, 0.295, 0.347, 0.534, 0.012, 0.331, 0.225, 0.189, 1.332, 0.298, 0.123, 0.276, 0.000, "
-     },
-     {
-      "rank": "5",
-      "value": "0.428",
-      "unit": "s",
-      "note": "",
-      "code": "VER",
-      "text": "",
-      "team": "Red Bull",
-      "series": ", 0.938, 1.484, 0.166, 0.329, 0.043, 0.342, 0.362, 0.782, 0.317, 0.518, 0.455, 0.284, 0.140, 1.180, 0.000, 0.000, 0.179, 0.178, "
-     },
-     {
-      "rank": "6",
-      "value": "0.443",
+      "value": "0.457",
       "unit": "s",
       "note": "",
       "code": "NOR",
       "text": "",
       "team": "McLaren",
-      "series": "0.957, 0.544, 0.631, 0.385, 0.151, 0.714, 0.322, 0.389, 0.766, 0.440, 0.000, 0.000, 0.281, 0.000, 1.146, 0.627, 0.339, 0.504, 0.214, "
+      "series": "0.957, 0.544, 0.631, 0.385, 0.151, 0.714, 0.322, 0.389, 0.766, 0.440, 0.000, 0.000, 0.281, 0.000, 1.146, 0.627, 0.339, 0.504, 0.214, 0.725"
+     },
+     {
+      "rank": "5",
+      "value": "0.521",
+      "unit": "s",
+      "note": "",
+      "code": "HAM",
+      "text": "",
+      "team": "Ferrari",
+      "series": "0.960, 0.351, 0.789, 0.521, 0.290, 0.228, 0.064, 0.295, 0.347, 0.534, 0.012, 0.331, 0.225, 0.189, 1.332, 0.298, 0.123, 0.276, 0.000, 3.256"
+     },
+     {
+      "rank": "6",
+      "value": "0.642",
+      "unit": "s",
+      "note": "",
+      "code": "VER",
+      "text": "",
+      "team": "Red Bull",
+      "series": ", 0.938, 1.484, 0.166, 0.329, 0.043, 0.342, 0.362, 0.782, 0.317, 0.518, 0.455, 0.284, 0.140, 1.180, 0.000, 0.000, 0.179, 0.178, 4.493"
      }
     ]
    },
@@ -3095,7 +3095,7 @@
       "code": "RUS",
       "text": "",
       "team": "Mercedes",
-      "fill": "19"
+      "fill": "20"
      },
      {
       "rank": "1",
@@ -3105,10 +3105,30 @@
       "code": "NOR",
       "text": "",
       "team": "McLaren",
+      "fill": "20"
+     },
+     {
+      "rank": "3",
+      "value": "20",
+      "unit": "",
+      "note": "",
+      "code": "ANT",
+      "text": "",
+      "team": "Mercedes",
       "fill": "19"
      },
      {
-      "rank": "1",
+      "rank": "3",
+      "value": "20",
+      "unit": "",
+      "note": "",
+      "code": "LEC",
+      "text": "",
+      "team": "Ferrari",
+      "fill": "19"
+     },
+     {
+      "rank": "3",
       "value": "20",
       "unit": "",
       "note": "",
@@ -3118,27 +3138,7 @@
       "fill": "19"
      },
      {
-      "rank": "4",
-      "value": "20",
-      "unit": "",
-      "note": "",
-      "code": "ANT",
-      "text": "",
-      "team": "Mercedes",
-      "fill": "18"
-     },
-     {
-      "rank": "4",
-      "value": "20",
-      "unit": "",
-      "note": "",
-      "code": "LEC",
-      "text": "",
-      "team": "Ferrari",
-      "fill": "18"
-     },
-     {
-      "rank": "4",
+      "rank": "6",
       "value": "20",
       "unit": "",
       "note": "",
@@ -3165,10 +3165,10 @@
       "code": "HAD",
       "text": "",
       "team": "Red Bull",
-      "fill": "13"
+      "fill": "14"
      },
      {
-      "rank": "8",
+      "rank": "9",
       "value": "20",
       "unit": "",
       "note": "",
@@ -3185,7 +3185,7 @@
       "code": "LAW",
       "text": "",
       "team": "Racing Bulls",
-      "fill": "9"
+      "fill": "10"
      }
     ]
    },
@@ -53842,6 +53842,108 @@
      ]
     },
     {
+     "id": "quali_gap_pole",
+     "layout": "ladder",
+     "mode": "drivers",
+     "order": "low",
+     "tag": "QUALIFYING",
+     "headline": "GAP TO POLE",
+     "sub": "Round 20 · Brazilian Grand Prix",
+     "source": "Source: Jolpica / FIA results",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "0.000",
+       "unit": "s",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "2",
+       "value": "0.304",
+       "unit": "s",
+       "note": "",
+       "code": "LAW",
+       "text": "",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "3",
+       "value": "0.473",
+       "unit": "s",
+       "note": "",
+       "code": "HAD",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "4",
+       "value": "0.725",
+       "unit": "s",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "5",
+       "value": "1.337",
+       "unit": "s",
+       "note": "",
+       "code": "LEC",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "6",
+       "value": "1.350",
+       "unit": "s",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "7",
+       "value": "1.616",
+       "unit": "s",
+       "note": "",
+       "code": "HUL",
+       "text": "",
+       "team": "Audi"
+      },
+      {
+       "rank": "8",
+       "value": "2.173",
+       "unit": "s",
+       "note": "",
+       "code": "ALB",
+       "text": "",
+       "team": "Williams"
+      },
+      {
+       "rank": "9",
+       "value": "2.327",
+       "unit": "s",
+       "note": "",
+       "code": "ALO",
+       "text": "",
+       "team": "Aston Martin"
+      },
+      {
+       "rank": "10",
+       "value": "2.385",
+       "unit": "s",
+       "note": "",
+       "code": "BEA",
+       "text": "",
+       "team": "Haas"
+      }
+     ]
+    },
+    {
      "id": "race_gap_winner",
      "layout": "ladder",
      "mode": "drivers",
@@ -54809,7 +54911,7 @@
      "order": "high",
      "tag": "LAPS LED",
      "headline": "LAPS LED",
-     "sub": "Round 20 · Brazilian Grand Prix · 72 laps",
+     "sub": "Round 20 · Brazilian Grand Prix · 71 laps",
      "source": "Source: F1 live timing via OpenF1",
      "rows": [
       {
@@ -54839,7 +54941,7 @@
      "order": "high",
      "tag": "TYRES",
      "headline": "LONGEST STINT",
-     "sub": "Round 20 · Brazilian Grand Prix · 72 laps",
+     "sub": "Round 20 · Brazilian Grand Prix · 71 laps",
      "source": "Source: F1 live timing via OpenF1",
      "rows": [
       {
@@ -54923,7 +55025,7 @@
      "order": "high",
      "tag": "RACE",
      "headline": "LAPS IN THE TOP 3",
-     "sub": "Round 20 · Brazilian Grand Prix · 72 laps",
+     "sub": "Round 20 · Brazilian Grand Prix · 71 laps",
      "source": "Source: F1 live timing via OpenF1",
      "rows": [
       {
@@ -54989,7 +55091,7 @@
      "order": "high",
      "tag": "RACE",
      "headline": "LAPS IN THE POINTS",
-     "sub": "Round 20 · Brazilian Grand Prix · 72 laps",
+     "sub": "Round 20 · Brazilian Grand Prix · 71 laps",
      "source": "Source: F1 live timing via OpenF1",
      "rows": [
       {
