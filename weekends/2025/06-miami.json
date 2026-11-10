@@ -2691,7 +2691,7 @@
       "weekend": "2026-11-10T19:46:23.687Z"
     }
   },
-  "locked": false,
+  "locked": true,
   "lockedSections": [],
   "raceRecap": {
     "result": {
@@ -5817,5 +5817,28 @@
     "previousWinner": "Lando Norris",
     "constructor": "McLaren",
     "date": "2024-05-05"
+  },
+  "tyreInfo": {
+    "round": 6,
+    "raceSlug": "miami",
+    "title": "Miami GP",
+    "season": 2025,
+    "country": "United States",
+    "flag": "us",
+    "compounds": {
+      "hard": "C3",
+      "medium": "C4",
+      "soft": "C5"
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2025,
+      "traction": 3,
+      "tyreStress": 3,
+      "asphaltGrip": 4,
+      "braking": 3,
+      "asphaltAbrasion": 2,
+      "lateral": 3,
+      "trackEvolution": 5
+    }
   }
 }
