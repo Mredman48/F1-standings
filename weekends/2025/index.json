@@ -2,7 +2,7 @@
   "header": "2025 race weekends",
   "schemaVersion": 1,
   "season": 2025,
-  "generatedAtUtc": "2026-11-10T19:08:03.415Z",
+  "generatedAtUtc": "2026-11-10T19:12:11.460Z",
   "count": 24,
   "nextRound": null,
   "latestCompletedRound": 24,
@@ -97,7 +97,7 @@
       "weekendEndUtc": "2025-03-23T09:00:00.000Z",
       "file": "02-china.json",
       "url": "https://mredman48.github.io/F1-standings/weekends/2025/02-china.json",
-      "updatedAtUtc": "2026-11-10T19:08:03.402Z",
+      "updatedAtUtc": "2026-11-10T19:12:11.439Z",
       "shortTitle": "Chinese GP",
       "circuit": "Shanghai International Circuit",
       "location": {
@@ -1948,6 +1948,26 @@
       },
       "sessionKey": 9693,
       "meetingKey": 1254
+    },
+    "3": {
+      "driverNumber": 3,
+      "driverName": null,
+      "teamName": null,
+      "position": "P3",
+      "eventType": "sprint",
+      "meetingName": "Chinese Grand Prix",
+      "raceName": "Chinese Grand Prix Sprint",
+      "sessionName": "Sprint",
+      "round": 2,
+      "date": "2025-03-22",
+      "dateStartUtc": "2025-03-22T03:00:00+00:00",
+      "circuit": "Shanghai",
+      "location": {
+        "locality": "Shanghai",
+        "country": "China"
+      },
+      "sessionKey": 9993,
+      "meetingKey": 1255
     },
     "4": {
       "driverNumber": 4,
