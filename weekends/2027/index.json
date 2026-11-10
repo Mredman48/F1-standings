@@ -2,7 +2,7 @@
   "header": "2027 race weekends",
   "schemaVersion": 1,
   "season": 2027,
-  "generatedAtUtc": "2026-10-30T21:14:11.799Z",
+  "generatedAtUtc": "2026-11-10T04:02:35.000Z",
   "count": 24,
   "nextRound": 1,
   "latestCompletedRound": null,
@@ -10,16 +10,11 @@
     {
       "round": 1,
       "raceSlug": "bahrain",
-      "title": "Bahrain Grand Prix 2027",
+      "title": "Bahrain GP",
+      "shortTitle": "Bahrain GP",
       "meetingKey": 1310,
       "status": "upcoming",
-      "weekendStartUtc": "2027-03-12T08:00:00.000Z",
-      "weekendEndUtc": "2027-03-14T13:00:00.000Z",
-      "file": "01-bahrain.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2027/01-bahrain.json",
-      "updatedAtUtc": "2026-10-30T20:39:54.385Z",
-      "shortTitle": "Bahrain GP",
-      "circuit": "Bahrain International Circuit\t",
+      "circuit": "Bahrain International Circuit",
       "location": {
         "city": "Sakhir",
         "country": "Bahrain",
@@ -43,6 +38,12 @@
         "found": true,
         "filename": "bahrain.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/bahrain.png"
+      },
+      "weekendStartUtc": "2027-03-12T08:00:00.000Z",
+      "weekendEndUtc": "2027-03-14T13:00:00.000Z",
+      "weekend": {
+        "startUtc": "2027-03-12T08:00:00.000Z",
+        "endUtc": "2027-03-14T13:00:00.000Z"
       },
       "sessions": [
         {
@@ -85,20 +86,18 @@
           "startLocalTimeShort": "05:00",
           "startLocalDateTimeShort": "Sun, Mar 14 05:00"
         }
-      ]
+      ],
+      "file": "01-bahrain.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2027/01-bahrain.json",
+      "updatedAtUtc": "2026-10-30T20:39:54.385Z"
     },
     {
       "round": 2,
       "raceSlug": "saudi-arabia",
-      "title": "Saudi Arabian Grand Prix 2027",
+      "title": "Saudi Arabian GP",
+      "shortTitle": "Saudi Arabian GP",
       "meetingKey": 1311,
       "status": "upcoming",
-      "weekendStartUtc": "2027-03-19T08:00:00.000Z",
-      "weekendEndUtc": "2027-03-21T13:00:00.000Z",
-      "file": "02-saudi-arabia.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2027/02-saudi-arabia.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.433Z",
-      "shortTitle": "Saudi Arabian GP",
       "circuit": "Jeddah Corniche Circuit",
       "location": {
         "city": "Jeddah",
@@ -117,12 +116,18 @@
         "found": true,
         "pageUrl": "https://www.formula1.com/en/racing/2027/saudi-arabia",
         "mediaUrl": "https://www.formula1.com/en/racing/2027/saudi-arabia",
-        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_saudi-arabia_detailed.png"
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_saudiarabia_detailed.png"
       },
       "map": {
         "found": true,
         "filename": "jeddah.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/jeddah.png"
+      },
+      "weekendStartUtc": "2027-03-19T08:00:00.000Z",
+      "weekendEndUtc": "2027-03-21T13:00:00.000Z",
+      "weekend": {
+        "startUtc": "2027-03-19T08:00:00.000Z",
+        "endUtc": "2027-03-21T13:00:00.000Z"
       },
       "sessions": [
         {
@@ -165,20 +170,18 @@
           "startLocalTimeShort": "05:00",
           "startLocalDateTimeShort": "Sun, Mar 21 05:00"
         }
-      ]
+      ],
+      "file": "02-saudi-arabia.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2027/02-saudi-arabia.json",
+      "updatedAtUtc": "2026-10-30T21:14:10.433Z"
     },
     {
       "round": 3,
       "raceSlug": "australia",
-      "title": "Australian Grand Prix 2027",
+      "title": "Australian GP",
+      "shortTitle": "Australian GP",
       "meetingKey": 1312,
       "status": "upcoming",
-      "weekendStartUtc": "2027-04-02T01:00:00.000Z",
-      "weekendEndUtc": "2027-04-04T06:00:00.000Z",
-      "file": "03-australia.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2027/03-australia.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.434Z",
-      "shortTitle": "Australian GP",
       "circuit": "Albert Park Circuit",
       "location": {
         "city": "Melbourne",
@@ -203,6 +206,12 @@
         "found": true,
         "filename": "melbourne.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/melbourne.png"
+      },
+      "weekendStartUtc": "2027-04-02T01:00:00.000Z",
+      "weekendEndUtc": "2027-04-04T06:00:00.000Z",
+      "weekend": {
+        "startUtc": "2027-04-02T01:00:00.000Z",
+        "endUtc": "2027-04-04T06:00:00.000Z"
       },
       "sessions": [
         {
@@ -245,20 +254,18 @@
           "startLocalTimeShort": "22:00",
           "startLocalDateTimeShort": "Sat, Apr 03 22:00"
         }
-      ]
+      ],
+      "file": "03-australia.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2027/03-australia.json",
+      "updatedAtUtc": "2026-10-30T21:14:10.434Z"
     },
     {
       "round": 4,
       "raceSlug": "japan",
-      "title": "Japanese Grand Prix 2027",
+      "title": "Japanese GP",
+      "shortTitle": "Japanese GP",
       "meetingKey": 1313,
       "status": "upcoming",
-      "weekendStartUtc": "2027-04-09T02:00:00.000Z",
-      "weekendEndUtc": "2027-04-11T07:00:00.000Z",
-      "file": "04-japan.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2027/04-japan.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.434Z",
-      "shortTitle": "Japanese GP",
       "circuit": "Suzuka International Racing Course",
       "location": {
         "city": "Suzuka",
@@ -283,6 +290,12 @@
         "found": true,
         "filename": "suzuka.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/suzuka.png"
+      },
+      "weekendStartUtc": "2027-04-09T02:00:00.000Z",
+      "weekendEndUtc": "2027-04-11T07:00:00.000Z",
+      "weekend": {
+        "startUtc": "2027-04-09T02:00:00.000Z",
+        "endUtc": "2027-04-11T07:00:00.000Z"
       },
       "sessions": [
         {
@@ -325,20 +338,18 @@
           "startLocalTimeShort": "23:00",
           "startLocalDateTimeShort": "Sat, Apr 10 23:00"
         }
-      ]
+      ],
+      "file": "04-japan.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2027/04-japan.json",
+      "updatedAtUtc": "2026-10-30T21:14:10.434Z"
     },
     {
       "round": 5,
       "raceSlug": "china",
-      "title": "Chinese Grand Prix 2027",
+      "title": "Chinese GP",
+      "shortTitle": "Chinese GP",
       "meetingKey": 1314,
       "status": "upcoming",
-      "weekendStartUtc": "2027-04-16T03:00:00.000Z",
-      "weekendEndUtc": "2027-04-18T08:00:00.000Z",
-      "file": "05-china.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2027/05-china.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.435Z",
-      "shortTitle": "Chinese GP",
       "circuit": "Shanghai International Circuit",
       "location": {
         "city": "Shanghai",
@@ -363,6 +374,12 @@
         "found": true,
         "filename": "shanghai.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/shanghai.png"
+      },
+      "weekendStartUtc": "2027-04-16T03:00:00.000Z",
+      "weekendEndUtc": "2027-04-18T08:00:00.000Z",
+      "weekend": {
+        "startUtc": "2027-04-16T03:00:00.000Z",
+        "endUtc": "2027-04-18T08:00:00.000Z"
       },
       "sessions": [
         {
@@ -405,20 +422,18 @@
           "startLocalTimeShort": "00:00",
           "startLocalDateTimeShort": "Sun, Apr 18 00:00"
         }
-      ]
+      ],
+      "file": "05-china.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2027/05-china.json",
+      "updatedAtUtc": "2026-10-30T21:14:10.435Z"
     },
     {
       "round": 6,
       "raceSlug": "miami",
-      "title": "Miami Grand Prix 2027",
+      "title": "Miami GP",
+      "shortTitle": "Miami GP",
       "meetingKey": 1315,
       "status": "upcoming",
-      "weekendStartUtc": "2027-04-30T17:00:00.000Z",
-      "weekendEndUtc": "2027-05-02T22:00:00.000Z",
-      "file": "06-miami.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2027/06-miami.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.435Z",
-      "shortTitle": "Miami GP",
       "circuit": "Miami International Autodrome",
       "location": {
         "city": "Miami",
@@ -443,6 +458,12 @@
         "found": true,
         "filename": "miami.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/miami.png"
+      },
+      "weekendStartUtc": "2027-04-30T17:00:00.000Z",
+      "weekendEndUtc": "2027-05-02T22:00:00.000Z",
+      "weekend": {
+        "startUtc": "2027-04-30T17:00:00.000Z",
+        "endUtc": "2027-05-02T22:00:00.000Z"
       },
       "sessions": [
         {
@@ -485,20 +506,18 @@
           "startLocalTimeShort": "14:00",
           "startLocalDateTimeShort": "Sun, May 02 14:00"
         }
-      ]
+      ],
+      "file": "06-miami.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2027/06-miami.json",
+      "updatedAtUtc": "2026-10-30T21:14:10.435Z"
     },
     {
       "round": 7,
       "raceSlug": "canada",
-      "title": "Canadian Grand Prix 2027",
+      "title": "Canadian GP",
+      "shortTitle": "Canadian GP",
       "meetingKey": 1316,
       "status": "upcoming",
-      "weekendStartUtc": "2027-05-21T17:00:00.000Z",
-      "weekendEndUtc": "2027-05-23T22:00:00.000Z",
-      "file": "07-canada.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2027/07-canada.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.436Z",
-      "shortTitle": "Canadian GP",
       "circuit": "Circuit Gilles Villeneuve",
       "location": {
         "city": "Montreal",
@@ -523,6 +542,12 @@
         "found": true,
         "filename": "montreal.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/montreal.png"
+      },
+      "weekendStartUtc": "2027-05-21T17:00:00.000Z",
+      "weekendEndUtc": "2027-05-23T22:00:00.000Z",
+      "weekend": {
+        "startUtc": "2027-05-21T17:00:00.000Z",
+        "endUtc": "2027-05-23T22:00:00.000Z"
       },
       "sessions": [
         {
@@ -565,20 +590,18 @@
           "startLocalTimeShort": "14:00",
           "startLocalDateTimeShort": "Sun, May 23 14:00"
         }
-      ]
+      ],
+      "file": "07-canada.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2027/07-canada.json",
+      "updatedAtUtc": "2026-10-30T21:14:10.436Z"
     },
     {
       "round": 8,
       "raceSlug": "monaco",
-      "title": "Monaco Grand Prix 2027",
+      "title": "Monaco GP",
+      "shortTitle": "Monaco GP",
       "meetingKey": 1317,
       "status": "upcoming",
-      "weekendStartUtc": "2027-06-04T10:00:00.000Z",
-      "weekendEndUtc": "2027-06-06T15:00:00.000Z",
-      "file": "08-monaco.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2027/08-monaco.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.436Z",
-      "shortTitle": "Monaco GP",
       "circuit": "Circuit de Monaco",
       "location": {
         "city": "Monaco",
@@ -603,6 +626,12 @@
         "found": true,
         "filename": "monaco.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/monaco.png"
+      },
+      "weekendStartUtc": "2027-06-04T10:00:00.000Z",
+      "weekendEndUtc": "2027-06-06T15:00:00.000Z",
+      "weekend": {
+        "startUtc": "2027-06-04T10:00:00.000Z",
+        "endUtc": "2027-06-06T15:00:00.000Z"
       },
       "sessions": [
         {
@@ -645,20 +674,18 @@
           "startLocalTimeShort": "07:00",
           "startLocalDateTimeShort": "Sun, Jun 06 07:00"
         }
-      ]
+      ],
+      "file": "08-monaco.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2027/08-monaco.json",
+      "updatedAtUtc": "2026-10-30T21:14:10.436Z"
     },
     {
       "round": 9,
       "raceSlug": "portugal",
-      "title": "Portuguese Grand Prix 2027",
+      "title": "Portuguese GP",
+      "shortTitle": "Portuguese GP",
       "meetingKey": 1318,
       "status": "upcoming",
-      "weekendStartUtc": "2027-06-18T11:00:00.000Z",
-      "weekendEndUtc": "2027-06-20T16:00:00.000Z",
-      "file": "09-portugal.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2027/09-portugal.json",
-      "updatedAtUtc": "2026-10-30T20:39:54.395Z",
-      "shortTitle": "Portuguese GP",
       "circuit": "Autódromo Internacional do Algarve",
       "location": {
         "city": "Portimão",
@@ -674,15 +701,21 @@
         "url": "https://www.formula1.com/en/racing/2027/portugal"
       },
       "trackMap": {
-        "found": true,
+        "found": false,
         "pageUrl": "https://www.formula1.com/en/racing/2027/portugal",
         "mediaUrl": null,
-        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2027_portugal_detailed.png"
+        "pngUrl": null
       },
       "map": {
-        "found": true,
+        "found": false,
         "filename": "portimao.png",
-        "pngUrl": "https://mredman48.github.io/F1-standings/maps/portimao.png"
+        "pngUrl": null
+      },
+      "weekendStartUtc": "2027-06-18T11:00:00.000Z",
+      "weekendEndUtc": "2027-06-20T16:00:00.000Z",
+      "weekend": {
+        "startUtc": "2027-06-18T11:00:00.000Z",
+        "endUtc": "2027-06-20T16:00:00.000Z"
       },
       "sessions": [
         {
@@ -725,20 +758,18 @@
           "startLocalTimeShort": "08:00",
           "startLocalDateTimeShort": "Sun, Jun 20 08:00"
         }
-      ]
+      ],
+      "file": "09-portugal.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2027/09-portugal.json",
+      "updatedAtUtc": "2026-10-30T20:39:54.395Z"
     },
     {
       "round": 10,
       "raceSlug": "great-britain",
-      "title": "British Grand Prix 2027",
+      "title": "British GP",
+      "shortTitle": "British GP",
       "meetingKey": 1319,
       "status": "upcoming",
-      "weekendStartUtc": "2027-07-02T11:00:00.000Z",
-      "weekendEndUtc": "2027-07-04T16:00:00.000Z",
-      "file": "10-great-britain.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2027/10-great-britain.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.436Z",
-      "shortTitle": "British GP",
       "circuit": "Silverstone Circuit",
       "location": {
         "city": "Silverstone",
@@ -763,6 +794,12 @@
         "found": true,
         "filename": "silverstone.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/silverstone.png"
+      },
+      "weekendStartUtc": "2027-07-02T11:00:00.000Z",
+      "weekendEndUtc": "2027-07-04T16:00:00.000Z",
+      "weekend": {
+        "startUtc": "2027-07-02T11:00:00.000Z",
+        "endUtc": "2027-07-04T16:00:00.000Z"
       },
       "sessions": [
         {
@@ -805,20 +842,18 @@
           "startLocalTimeShort": "08:00",
           "startLocalDateTimeShort": "Sun, Jul 04 08:00"
         }
-      ]
+      ],
+      "file": "10-great-britain.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2027/10-great-britain.json",
+      "updatedAtUtc": "2026-10-30T21:14:10.436Z"
     },
     {
       "round": 11,
       "raceSlug": "austria",
-      "title": "Austrian Grand Prix 2027",
+      "title": "Austrian GP",
+      "shortTitle": "Austrian GP",
       "meetingKey": 1320,
       "status": "upcoming",
-      "weekendStartUtc": "2027-07-09T10:00:00.000Z",
-      "weekendEndUtc": "2027-07-11T15:00:00.000Z",
-      "file": "11-austria.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2027/11-austria.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.437Z",
-      "shortTitle": "Austrian GP",
       "circuit": "Red Bull Ring",
       "location": {
         "city": "Spielberg",
@@ -843,6 +878,12 @@
         "found": true,
         "filename": "spielberg.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/spielberg.png"
+      },
+      "weekendStartUtc": "2027-07-09T10:00:00.000Z",
+      "weekendEndUtc": "2027-07-11T15:00:00.000Z",
+      "weekend": {
+        "startUtc": "2027-07-09T10:00:00.000Z",
+        "endUtc": "2027-07-11T15:00:00.000Z"
       },
       "sessions": [
         {
@@ -885,20 +926,18 @@
           "startLocalTimeShort": "07:00",
           "startLocalDateTimeShort": "Sun, Jul 11 07:00"
         }
-      ]
+      ],
+      "file": "11-austria.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2027/11-austria.json",
+      "updatedAtUtc": "2026-10-30T21:14:10.437Z"
     },
     {
       "round": 12,
       "raceSlug": "belgium",
-      "title": "Belgian Grand Prix 2027",
+      "title": "Belgian GP",
+      "shortTitle": "Belgian GP",
       "meetingKey": 1321,
       "status": "upcoming",
-      "weekendStartUtc": "2027-07-23T10:00:00.000Z",
-      "weekendEndUtc": "2027-07-25T15:00:00.000Z",
-      "file": "12-belgium.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2027/12-belgium.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.437Z",
-      "shortTitle": "Belgian GP",
       "circuit": "Circuit de Spa-Francorchamps",
       "location": {
         "city": "Spa-Francorchamps",
@@ -923,6 +962,12 @@
         "found": true,
         "filename": "spa.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/spa.png"
+      },
+      "weekendStartUtc": "2027-07-23T10:00:00.000Z",
+      "weekendEndUtc": "2027-07-25T15:00:00.000Z",
+      "weekend": {
+        "startUtc": "2027-07-23T10:00:00.000Z",
+        "endUtc": "2027-07-25T15:00:00.000Z"
       },
       "sessions": [
         {
@@ -965,20 +1010,18 @@
           "startLocalTimeShort": "07:00",
           "startLocalDateTimeShort": "Sun, Jul 25 07:00"
         }
-      ]
+      ],
+      "file": "12-belgium.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2027/12-belgium.json",
+      "updatedAtUtc": "2026-10-30T21:14:10.437Z"
     },
     {
       "round": 13,
       "raceSlug": "hungary",
-      "title": "Hungarian Grand Prix 2027",
+      "title": "Hungarian GP",
+      "shortTitle": "Hungarian GP",
       "meetingKey": 1322,
       "status": "upcoming",
-      "weekendStartUtc": "2027-07-30T10:00:00.000Z",
-      "weekendEndUtc": "2027-08-01T15:00:00.000Z",
-      "file": "13-hungary.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2027/13-hungary.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.438Z",
-      "shortTitle": "Hungarian GP",
       "circuit": "Hungaroring",
       "location": {
         "city": "Budapest",
@@ -1003,6 +1046,12 @@
         "found": true,
         "filename": "hungaroring.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/hungaroring.png"
+      },
+      "weekendStartUtc": "2027-07-30T10:00:00.000Z",
+      "weekendEndUtc": "2027-08-01T15:00:00.000Z",
+      "weekend": {
+        "startUtc": "2027-07-30T10:00:00.000Z",
+        "endUtc": "2027-08-01T15:00:00.000Z"
       },
       "sessions": [
         {
@@ -1045,20 +1094,18 @@
           "startLocalTimeShort": "07:00",
           "startLocalDateTimeShort": "Sun, Aug 01 07:00"
         }
-      ]
+      ],
+      "file": "13-hungary.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2027/13-hungary.json",
+      "updatedAtUtc": "2026-10-30T21:14:10.438Z"
     },
     {
       "round": 14,
       "raceSlug": "italy",
-      "title": "Italian Grand Prix 2027",
+      "title": "Italian GP",
+      "shortTitle": "Italian GP",
       "meetingKey": 1323,
       "status": "upcoming",
-      "weekendStartUtc": "2027-09-03T10:00:00.000Z",
-      "weekendEndUtc": "2027-09-05T15:00:00.000Z",
-      "file": "14-italy.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2027/14-italy.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.438Z",
-      "shortTitle": "Italian GP",
       "circuit": "Autodromo Nazionale Monza",
       "location": {
         "city": "Monza",
@@ -1083,6 +1130,12 @@
         "found": true,
         "filename": "monza.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/monza.png"
+      },
+      "weekendStartUtc": "2027-09-03T10:00:00.000Z",
+      "weekendEndUtc": "2027-09-05T15:00:00.000Z",
+      "weekend": {
+        "startUtc": "2027-09-03T10:00:00.000Z",
+        "endUtc": "2027-09-05T15:00:00.000Z"
       },
       "sessions": [
         {
@@ -1125,20 +1178,18 @@
           "startLocalTimeShort": "07:00",
           "startLocalDateTimeShort": "Sun, Sep 05 07:00"
         }
-      ]
+      ],
+      "file": "14-italy.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2027/14-italy.json",
+      "updatedAtUtc": "2026-10-30T21:14:10.438Z"
     },
     {
       "round": 15,
       "raceSlug": "madrid",
-      "title": "Madrid Grand Prix 2027",
+      "title": "Spanish GP",
+      "shortTitle": "Spanish GP",
       "meetingKey": 1324,
       "status": "upcoming",
-      "weekendStartUtc": "2027-09-10T10:00:00.000Z",
-      "weekendEndUtc": "2027-09-12T15:00:00.000Z",
-      "file": "15-madrid.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2027/15-madrid.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.438Z",
-      "shortTitle": "Spanish GP",
       "circuit": "Circuito de Madring",
       "location": {
         "city": "Madrid",
@@ -1157,12 +1208,18 @@
         "found": true,
         "pageUrl": "https://www.formula1.com/en/racing/2027/madrid",
         "mediaUrl": null,
-        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_madrid_detailed.png"
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_spain_detailed.png"
       },
       "map": {
         "found": true,
         "filename": "madrid.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/madrid.png"
+      },
+      "weekendStartUtc": "2027-09-10T10:00:00.000Z",
+      "weekendEndUtc": "2027-09-12T15:00:00.000Z",
+      "weekend": {
+        "startUtc": "2027-09-10T10:00:00.000Z",
+        "endUtc": "2027-09-12T15:00:00.000Z"
       },
       "sessions": [
         {
@@ -1205,20 +1262,18 @@
           "startLocalTimeShort": "07:00",
           "startLocalDateTimeShort": "Sun, Sep 12 07:00"
         }
-      ]
+      ],
+      "file": "15-madrid.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2027/15-madrid.json",
+      "updatedAtUtc": "2026-10-30T21:14:10.438Z"
     },
     {
       "round": 16,
       "raceSlug": "azerbaijan",
-      "title": "Azerbaijan Grand Prix 2027",
+      "title": "Azerbaijan GP",
+      "shortTitle": "Azerbaijan GP",
       "meetingKey": 1325,
       "status": "upcoming",
-      "weekendStartUtc": "2027-09-24T07:00:00.000Z",
-      "weekendEndUtc": "2027-09-26T12:00:00.000Z",
-      "file": "16-azerbaijan.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2027/16-azerbaijan.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.439Z",
-      "shortTitle": "Azerbaijan GP",
       "circuit": "Baku City Circuit",
       "location": {
         "city": "Baku",
@@ -1243,6 +1298,12 @@
         "found": true,
         "filename": "baku.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/baku.png"
+      },
+      "weekendStartUtc": "2027-09-24T07:00:00.000Z",
+      "weekendEndUtc": "2027-09-26T12:00:00.000Z",
+      "weekend": {
+        "startUtc": "2027-09-24T07:00:00.000Z",
+        "endUtc": "2027-09-26T12:00:00.000Z"
       },
       "sessions": [
         {
@@ -1285,20 +1346,18 @@
           "startLocalTimeShort": "04:00",
           "startLocalDateTimeShort": "Sun, Sep 26 04:00"
         }
-      ]
+      ],
+      "file": "16-azerbaijan.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2027/16-azerbaijan.json",
+      "updatedAtUtc": "2026-10-30T21:14:10.439Z"
     },
     {
       "round": 17,
       "raceSlug": "turkey",
-      "title": "Turkish Grand Prix 2027",
+      "title": "Turkish GP",
+      "shortTitle": "Turkish GP",
       "meetingKey": 1326,
       "status": "upcoming",
-      "weekendStartUtc": "2027-10-01T08:00:00.000Z",
-      "weekendEndUtc": "2027-10-03T13:00:00.000Z",
-      "file": "17-turkey.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2027/17-turkey.json",
-      "updatedAtUtc": "2026-10-30T20:39:54.400Z",
-      "shortTitle": "Turkish GP",
       "circuit": "Istanbul Park",
       "location": {
         "city": "Istanbul",
@@ -1314,15 +1373,21 @@
         "url": "https://www.formula1.com/en/racing/2027/turkey"
       },
       "trackMap": {
-        "found": true,
+        "found": false,
         "pageUrl": "https://www.formula1.com/en/racing/2027/turkey",
         "mediaUrl": null,
-        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2027_turkey_detailed.png"
+        "pngUrl": null
       },
       "map": {
-        "found": true,
+        "found": false,
         "filename": "istanbul.png",
-        "pngUrl": "https://mredman48.github.io/F1-standings/maps/istanbul.png"
+        "pngUrl": null
+      },
+      "weekendStartUtc": "2027-10-01T08:00:00.000Z",
+      "weekendEndUtc": "2027-10-03T13:00:00.000Z",
+      "weekend": {
+        "startUtc": "2027-10-01T08:00:00.000Z",
+        "endUtc": "2027-10-03T13:00:00.000Z"
       },
       "sessions": [
         {
@@ -1365,20 +1430,18 @@
           "startLocalTimeShort": "05:00",
           "startLocalDateTimeShort": "Sun, Oct 03 05:00"
         }
-      ]
+      ],
+      "file": "17-turkey.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2027/17-turkey.json",
+      "updatedAtUtc": "2026-10-30T20:39:54.400Z"
     },
     {
       "round": 18,
       "raceSlug": "singapore",
-      "title": "Singapore Grand Prix 2027",
+      "title": "Singapore GP",
+      "shortTitle": "Singapore GP",
       "meetingKey": 1327,
       "status": "upcoming",
-      "weekendStartUtc": "2027-10-08T03:00:00.000Z",
-      "weekendEndUtc": "2027-10-10T08:00:00.000Z",
-      "file": "18-singapore.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2027/18-singapore.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.440Z",
-      "shortTitle": "Singapore GP",
       "circuit": "Marina Bay Street Circuit",
       "location": {
         "city": "Singapore",
@@ -1403,6 +1466,12 @@
         "found": true,
         "filename": "singapore.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/singapore.png"
+      },
+      "weekendStartUtc": "2027-10-08T03:00:00.000Z",
+      "weekendEndUtc": "2027-10-10T08:00:00.000Z",
+      "weekend": {
+        "startUtc": "2027-10-08T03:00:00.000Z",
+        "endUtc": "2027-10-10T08:00:00.000Z"
       },
       "sessions": [
         {
@@ -1445,20 +1514,18 @@
           "startLocalTimeShort": "00:00",
           "startLocalDateTimeShort": "Sun, Oct 10 00:00"
         }
-      ]
+      ],
+      "file": "18-singapore.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2027/18-singapore.json",
+      "updatedAtUtc": "2026-10-30T21:14:10.440Z"
     },
     {
       "round": 19,
       "raceSlug": "united-states",
-      "title": "United States Grand Prix 2027",
+      "title": "United States GP",
+      "shortTitle": "United States GP",
       "meetingKey": 1328,
       "status": "upcoming",
-      "weekendStartUtc": "2027-10-22T18:00:00.000Z",
-      "weekendEndUtc": "2027-10-24T23:00:00.000Z",
-      "file": "19-united-states.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2027/19-united-states.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.440Z",
-      "shortTitle": "United States GP",
       "circuit": "Circuit of the Americas",
       "location": {
         "city": "Austin",
@@ -1483,6 +1550,12 @@
         "found": true,
         "filename": "austin.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/austin.png"
+      },
+      "weekendStartUtc": "2027-10-22T18:00:00.000Z",
+      "weekendEndUtc": "2027-10-24T23:00:00.000Z",
+      "weekend": {
+        "startUtc": "2027-10-22T18:00:00.000Z",
+        "endUtc": "2027-10-24T23:00:00.000Z"
       },
       "sessions": [
         {
@@ -1525,20 +1598,18 @@
           "startLocalTimeShort": "15:00",
           "startLocalDateTimeShort": "Sun, Oct 24 15:00"
         }
-      ]
+      ],
+      "file": "19-united-states.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2027/19-united-states.json",
+      "updatedAtUtc": "2026-10-30T21:14:10.440Z"
     },
     {
       "round": 20,
       "raceSlug": "mexico",
-      "title": "Mexico City Grand Prix 2027",
+      "title": "Mexico City GP",
+      "shortTitle": "Mexico City GP",
       "meetingKey": 1329,
       "status": "upcoming",
-      "weekendStartUtc": "2027-10-29T18:00:00.000Z",
-      "weekendEndUtc": "2027-10-31T23:00:00.000Z",
-      "file": "20-mexico.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2027/20-mexico.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.441Z",
-      "shortTitle": "Mexico City GP",
       "circuit": "Autódromo Hermanos Rodríguez",
       "location": {
         "city": "Mexico City",
@@ -1563,6 +1634,12 @@
         "found": true,
         "filename": "mexico-city.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/mexico-city.png"
+      },
+      "weekendStartUtc": "2027-10-29T18:00:00.000Z",
+      "weekendEndUtc": "2027-10-31T23:00:00.000Z",
+      "weekend": {
+        "startUtc": "2027-10-29T18:00:00.000Z",
+        "endUtc": "2027-10-31T23:00:00.000Z"
       },
       "sessions": [
         {
@@ -1605,20 +1682,18 @@
           "startLocalTimeShort": "15:00",
           "startLocalDateTimeShort": "Sun, Oct 31 15:00"
         }
-      ]
+      ],
+      "file": "20-mexico.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2027/20-mexico.json",
+      "updatedAtUtc": "2026-10-30T21:14:10.441Z"
     },
     {
       "round": 21,
       "raceSlug": "brazil",
-      "title": "São Paulo Grand Prix 2027",
+      "title": "Sao Paulo GP",
+      "shortTitle": "Sao Paulo GP",
       "meetingKey": 1330,
       "status": "upcoming",
-      "weekendStartUtc": "2027-11-05T15:00:00.000Z",
-      "weekendEndUtc": "2027-11-07T20:00:00.000Z",
-      "file": "21-brazil.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2027/21-brazil.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.441Z",
-      "shortTitle": "Sao Paulo GP",
       "circuit": "Autódromo José Carlos Pace",
       "location": {
         "city": "São Paulo",
@@ -1643,6 +1718,12 @@
         "found": true,
         "filename": "interlagos.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/interlagos.png"
+      },
+      "weekendStartUtc": "2027-11-05T15:00:00.000Z",
+      "weekendEndUtc": "2027-11-07T20:00:00.000Z",
+      "weekend": {
+        "startUtc": "2027-11-05T15:00:00.000Z",
+        "endUtc": "2027-11-07T20:00:00.000Z"
       },
       "sessions": [
         {
@@ -1685,20 +1766,18 @@
           "startLocalTimeShort": "12:00",
           "startLocalDateTimeShort": "Sun, Nov 07 12:00"
         }
-      ]
+      ],
+      "file": "21-brazil.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2027/21-brazil.json",
+      "updatedAtUtc": "2026-10-30T21:14:10.441Z"
     },
     {
       "round": 22,
       "raceSlug": "las-vegas",
-      "title": "Las Vegas Grand Prix 2027",
+      "title": "Las Vegas GP",
+      "shortTitle": "Las Vegas GP",
       "meetingKey": 1331,
       "status": "upcoming",
-      "weekendStartUtc": "2027-11-18T20:00:00.000Z",
-      "weekendEndUtc": "2027-11-21T01:00:00.000Z",
-      "file": "22-las-vegas.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2027/22-las-vegas.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.441Z",
-      "shortTitle": "Las Vegas GP",
       "circuit": "Las Vegas Strip Circuit",
       "location": {
         "city": "Las Vegas",
@@ -1723,6 +1802,12 @@
         "found": true,
         "filename": "las-vegas.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/las-vegas.png"
+      },
+      "weekendStartUtc": "2027-11-18T20:00:00.000Z",
+      "weekendEndUtc": "2027-11-21T01:00:00.000Z",
+      "weekend": {
+        "startUtc": "2027-11-18T20:00:00.000Z",
+        "endUtc": "2027-11-21T01:00:00.000Z"
       },
       "sessions": [
         {
@@ -1765,20 +1850,18 @@
           "startLocalTimeShort": "17:00",
           "startLocalDateTimeShort": "Sat, Nov 20 17:00"
         }
-      ]
+      ],
+      "file": "22-las-vegas.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2027/22-las-vegas.json",
+      "updatedAtUtc": "2026-10-30T21:14:10.441Z"
     },
     {
       "round": 23,
       "raceSlug": "qatar",
-      "title": "Qatar Grand Prix 2027",
+      "title": "Qatar GP",
+      "shortTitle": "Qatar GP",
       "meetingKey": 1332,
       "status": "upcoming",
-      "weekendStartUtc": "2027-12-03T08:00:00.000Z",
-      "weekendEndUtc": "2027-12-05T13:00:00.000Z",
-      "file": "23-qatar.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2027/23-qatar.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.442Z",
-      "shortTitle": "Qatar GP",
       "circuit": "Lusail International Circuit",
       "location": {
         "city": "Lusail",
@@ -1803,6 +1886,12 @@
         "found": true,
         "filename": "lusail.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/lusail.png"
+      },
+      "weekendStartUtc": "2027-12-03T08:00:00.000Z",
+      "weekendEndUtc": "2027-12-05T13:00:00.000Z",
+      "weekend": {
+        "startUtc": "2027-12-03T08:00:00.000Z",
+        "endUtc": "2027-12-05T13:00:00.000Z"
       },
       "sessions": [
         {
@@ -1845,20 +1934,18 @@
           "startLocalTimeShort": "05:00",
           "startLocalDateTimeShort": "Sun, Dec 05 05:00"
         }
-      ]
+      ],
+      "file": "23-qatar.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2027/23-qatar.json",
+      "updatedAtUtc": "2026-10-30T21:14:10.442Z"
     },
     {
       "round": 24,
       "raceSlug": "abu-dhabi",
-      "title": "Abu Dhabi Grand Prix 2027",
+      "title": "Abu Dhabi GP",
+      "shortTitle": "Abu Dhabi GP",
       "meetingKey": 1333,
       "status": "upcoming",
-      "weekendStartUtc": "2027-12-10T07:00:00.000Z",
-      "weekendEndUtc": "2027-12-12T12:00:00.000Z",
-      "file": "24-abu-dhabi.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2027/24-abu-dhabi.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.442Z",
-      "shortTitle": "Abu Dhabi GP",
       "circuit": "Yas Marina Circuit",
       "location": {
         "city": "Abu Dhabi",
@@ -1877,12 +1964,18 @@
         "found": true,
         "pageUrl": "https://www.formula1.com/en/racing/2027/abu-dhabi",
         "mediaUrl": null,
-        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_abu-dhabi_detailed.png"
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_abudhabi_detailed.png"
       },
       "map": {
         "found": true,
         "filename": "yas-marina.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/yas-marina.png"
+      },
+      "weekendStartUtc": "2027-12-10T07:00:00.000Z",
+      "weekendEndUtc": "2027-12-12T12:00:00.000Z",
+      "weekend": {
+        "startUtc": "2027-12-10T07:00:00.000Z",
+        "endUtc": "2027-12-12T12:00:00.000Z"
       },
       "sessions": [
         {
@@ -1925,7 +2018,10 @@
           "startLocalTimeShort": "04:00",
           "startLocalDateTimeShort": "Sun, Dec 12 04:00"
         }
-      ]
+      ],
+      "file": "24-abu-dhabi.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2027/24-abu-dhabi.json",
+      "updatedAtUtc": "2026-10-30T21:14:10.442Z"
     }
   ],
   "bestByDriverNumber": {}
