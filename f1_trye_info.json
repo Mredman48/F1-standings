@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-10T17:36:18.310Z",
-  "count": 43,
+  "updatedAt": "2026-11-10T17:43:54.308Z",
+  "count": 44,
   "entries": [
     {
       "round": 1,
@@ -333,6 +333,29 @@
         "asphaltAbrasion": 1,
         "lateral": 1,
         "trackEvolution": 5
+      }
+    },
+    {
+      "round": 7,
+      "raceSlug": "emilia-romagna",
+      "title": "Emilia Romagna GP",
+      "season": 2025,
+      "country": "Italy",
+      "flag": "it",
+      "compounds": {
+        "soft": "c6",
+        "medium": "c5",
+        "hard": "c4"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2025,
+        "traction": 2,
+        "tyreStress": 3,
+        "asphaltGrip": 2,
+        "braking": 3,
+        "asphaltAbrasion": 2,
+        "lateral": 3,
+        "trackEvolution": 2
       }
     },
     {
