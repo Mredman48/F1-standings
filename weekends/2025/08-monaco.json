@@ -2351,7 +2351,7 @@
       "weekend": "2026-11-10T19:51:55.327Z"
     }
   },
-  "locked": false,
+  "locked": true,
   "lockedSections": [],
   "raceRecap": {
     "result": {
@@ -4409,5 +4409,28 @@
     "previousWinner": "Charles Leclerc",
     "constructor": "Ferrari",
     "date": "2024-05-26"
+  },
+  "tyreInfo": {
+    "round": 8,
+    "raceSlug": "monaco",
+    "title": "Monaco GP",
+    "season": 2025,
+    "country": "Monaco",
+    "flag": "mc",
+    "compounds": {
+      "soft": "C6",
+      "medium": "C5",
+      "hard": "C4"
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2025,
+      "traction": 5,
+      "tyreStress": 1,
+      "asphaltGrip": 2,
+      "braking": 2,
+      "asphaltAbrasion": 1,
+      "lateral": 1,
+      "trackEvolution": 5
+    }
   }
 }
