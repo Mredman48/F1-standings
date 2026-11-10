@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-10T19:36:13.682Z",
-  "count": 47,
+  "updatedAt": "2026-11-10T19:44:13.524Z",
+  "count": 48,
   "entries": [
     {
       "round": 1,
@@ -297,6 +297,29 @@
         "tyreStress": 4,
         "asphaltGrip": 3,
         "braking": 4,
+        "asphaltAbrasion": 2,
+        "lateral": 4,
+        "trackEvolution": 4
+      }
+    },
+    {
+      "round": 5,
+      "raceSlug": "saudi-arabia",
+      "title": "Saudi Arabian GP",
+      "season": 2025,
+      "country": "Saudi Arabia",
+      "flag": "sa",
+      "compounds": {
+        "soft": "C5",
+        "medium": "C4",
+        "hard": "C3"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2025,
+        "traction": 2,
+        "tyreStress": 3,
+        "asphaltGrip": 4,
+        "braking": 3,
         "asphaltAbrasion": 2,
         "lateral": 4,
         "trackEvolution": 4
