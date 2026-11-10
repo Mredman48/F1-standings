@@ -2,7 +2,7 @@
   "header": "2025 race weekends",
   "schemaVersion": 1,
   "season": 2025,
-  "generatedAtUtc": "2026-11-10T17:38:27.462Z",
+  "generatedAtUtc": "2026-11-10T19:08:03.415Z",
   "count": 24,
   "nextRound": null,
   "latestCompletedRound": 24,
@@ -97,7 +97,7 @@
       "weekendEndUtc": "2025-03-23T09:00:00.000Z",
       "file": "02-china.json",
       "url": "https://mredman48.github.io/F1-standings/weekends/2025/02-china.json",
-      "updatedAtUtc": "2026-11-10T14:01:23.000Z",
+      "updatedAtUtc": "2026-11-10T19:08:03.402Z",
       "shortTitle": "Chinese GP",
       "circuit": "Shanghai International Circuit",
       "location": {
@@ -1949,26 +1949,6 @@
       "sessionKey": 9693,
       "meetingKey": 1254
     },
-    "3": {
-      "driverNumber": 3,
-      "driverName": null,
-      "teamName": null,
-      "position": "P1",
-      "eventType": "race",
-      "meetingName": "Emilia Romagna Grand Prix",
-      "raceName": "Emilia Romagna Grand Prix",
-      "sessionName": "Race",
-      "round": 7,
-      "date": "2025-05-18",
-      "dateStartUtc": "2025-05-18T13:00:00+00:00",
-      "circuit": "Imola",
-      "location": {
-        "locality": "Imola",
-        "country": "Italy"
-      },
-      "sessionKey": 9987,
-      "meetingKey": 1260
-    },
     "4": {
       "driverNumber": 4,
       "driverName": "Lando NORRIS",
@@ -2173,21 +2153,21 @@
       "driverNumber": 23,
       "driverName": "Alexander ALBON",
       "teamName": "Williams",
-      "position": "P5",
+      "position": "P4",
       "eventType": "race",
-      "meetingName": "Australian Grand Prix",
-      "raceName": "Australian Grand Prix",
+      "meetingName": "Emilia Romagna Grand Prix",
+      "raceName": "Emilia Romagna Grand Prix",
       "sessionName": "Race",
-      "round": 1,
-      "date": "2025-03-16",
-      "dateStartUtc": "2025-03-16T04:00:00+00:00",
-      "circuit": "Melbourne",
+      "round": 7,
+      "date": "2025-05-18",
+      "dateStartUtc": "2025-05-18T13:00:00+00:00",
+      "circuit": "Imola",
       "location": {
-        "locality": "Melbourne",
-        "country": "Australia"
+        "locality": "Imola",
+        "country": "Italy"
       },
-      "sessionKey": 9693,
-      "meetingKey": 1254
+      "sessionKey": 9987,
+      "meetingKey": 1260
     },
     "27": {
       "driverNumber": 27,

@@ -1,7 +1,7 @@
 {
   "header": "2025 Chinese GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-11-10T14:01:23.000Z",
+  "generatedAtUtc": "2026-11-10T19:08:03.402Z",
   "season": 2025,
   "round": 2,
   "meetingKey": 1255,
@@ -2497,6 +2497,50 @@
   "raceRecap": {
     "result": {
       "driverOfDay": "Antonelli"
+    }
+  },
+  "circuitIntelligence": {
+    "displayName": "Chinese Grand Prix",
+    "dna": {
+      "cornerProfile": "Technical with long straight",
+      "overtaking": "High",
+      "tireWear": "High",
+      "trackEvolution": "Medium",
+      "strategyBias": "Tire Management",
+      "safetyCarRisk": "Low"
+    },
+    "intelligence": [
+      "The long back straight creates strong overtaking opportunities.",
+      "Front tire wear can become a limiting factor.",
+      "Long-radius corners punish poor balance.",
+      "Strategy flexibility matters if degradation is high."
+    ],
+    "id": "china",
+    "matchKeys": [
+      "china",
+      "shanghai"
+    ],
+    "specs": {
+      "turns": 16,
+      "longestStraightKm": 1.2,
+      "averageSpeed": "Medium",
+      "raceLaps": null,
+      "trackLength": "5.451 km",
+      "raceDistance": null
+    },
+    "raceLapRecord": {
+      "time": "1:32.238",
+      "driver": "Michael Schumacher",
+      "constructor": "Ferrari",
+      "year": 2004,
+      "raceName": "Chinese Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "Oscar Piastri",
+      "constructor": "McLaren",
+      "season": 2025,
+      "date": "2025-03-23",
+      "raceName": "Chinese Grand Prix"
     }
   }
 }
