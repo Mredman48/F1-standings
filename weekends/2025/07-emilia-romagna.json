@@ -4315,7 +4315,16 @@
       ]
     }
   ],
-  "circuitIntelligence": null,
+  "circuitIntelligence": {
+    "displayName": "Emilia Romagna Grand Prix",
+    "previousWinner": {
+      "driver": "Max Verstappen",
+      "constructor": "Red Bull",
+      "season": 2024,
+      "date": "2024-05-19",
+      "raceName": "Emilia Romagna Grand Prix"
+    }
+  },
   "previousWinner": {
     "round": 7,
     "raceName": "Emilia Romagna Grand Prix",
@@ -4324,5 +4333,28 @@
     "previousWinner": "Max Verstappen",
     "constructor": "Red Bull",
     "date": "2024-05-19"
+  },
+  "tyreInfo": {
+    "round": 7,
+    "raceSlug": "emilia-romagna",
+    "title": "Emilia Romagna GP",
+    "season": 2025,
+    "country": "Italy",
+    "flag": "it",
+    "compounds": {
+      "soft": "c6",
+      "medium": "c5",
+      "hard": "c4"
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2025,
+      "traction": 2,
+      "tyreStress": 3,
+      "asphaltGrip": 2,
+      "braking": 3,
+      "asphaltAbrasion": 2,
+      "lateral": 3,
+      "trackEvolution": 2
+    }
   }
 }
