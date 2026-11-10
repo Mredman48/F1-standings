@@ -2333,7 +2333,7 @@
       "weekend": "2026-11-10T19:39:49.497Z"
     }
   },
-  "locked": false,
+  "locked": true,
   "lockedSections": [],
   "raceRecap": {
     "result": {
@@ -2376,10 +2376,10 @@
       "raceName": "Saudi Arabian Grand Prix"
     },
     "previousWinner": {
-      "driver": "Oscar Piastri",
-      "constructor": "McLaren",
-      "season": 2025,
-      "date": "2025-04-20",
+      "driver": "Max Verstappen",
+      "constructor": "Red Bull",
+      "season": 2024,
+      "date": "2024-03-09",
       "raceName": "Saudi Arabian Grand Prix"
     }
   },
@@ -3937,5 +3937,28 @@
     "previousWinner": "Max Verstappen",
     "constructor": "Red Bull",
     "date": "2024-03-09"
+  },
+  "tyreInfo": {
+    "round": 5,
+    "raceSlug": "saudi-arabia",
+    "title": "Saudi Arabian GP",
+    "season": 2025,
+    "country": "Saudi Arabia",
+    "flag": "sa",
+    "compounds": {
+      "soft": "C5",
+      "medium": "C4",
+      "hard": "C3"
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2025,
+      "traction": 2,
+      "tyreStress": 3,
+      "asphaltGrip": 4,
+      "braking": 3,
+      "asphaltAbrasion": 2,
+      "lateral": 4,
+      "trackEvolution": 4
+    }
   }
 }
