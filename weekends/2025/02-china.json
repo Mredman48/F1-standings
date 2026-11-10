@@ -5321,5 +5321,28 @@
     "previousWinner": "Max Verstappen",
     "constructor": "Red Bull",
     "date": "2024-04-21"
+  },
+  "tyreInfo": {
+    "compounds": {
+      "hard": "C2",
+      "medium": "C3",
+      "soft": "C4"
+    },
+    "round": 2,
+    "raceSlug": "china",
+    "title": "Chinese GP",
+    "season": 2025,
+    "country": "China",
+    "flag": "cn",
+    "trackCharacteristics": {
+      "ratingsSeason": 2025,
+      "traction": 3,
+      "tyreStress": 4,
+      "asphaltGrip": 3,
+      "braking": 4,
+      "asphaltAbrasion": 3,
+      "lateral": 4,
+      "trackEvolution": 5
+    }
   }
 }
