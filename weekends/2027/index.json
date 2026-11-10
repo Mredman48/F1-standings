@@ -17,7 +17,75 @@
       "weekendEndUtc": "2027-03-14T13:00:00.000Z",
       "file": "01-bahrain.json",
       "url": "https://mredman48.github.io/F1-standings/weekends/2027/01-bahrain.json",
-      "updatedAtUtc": "2026-10-30T20:39:54.385Z"
+      "updatedAtUtc": "2026-10-30T20:39:54.385Z",
+      "shortTitle": "Bahrain GP",
+      "circuit": "Bahrain International Circuit\t",
+      "location": {
+        "city": "Sakhir",
+        "country": "Bahrain",
+        "flag": {
+          "iso2": "bh",
+          "png": "https://flagcdn.com/w160/bh.png",
+          "svg": "https://flagcdn.com/bh.svg"
+        }
+      },
+      "racePage": {
+        "slug": "bahrain",
+        "url": "https://www.formula1.com/en/racing/2027/bahrain"
+      },
+      "trackMap": {
+        "found": true,
+        "pageUrl": "https://www.formula1.com/en/racing/2027/bahrain",
+        "mediaUrl": null,
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_bahrain_detailed.png"
+      },
+      "map": {
+        "found": true,
+        "filename": "bahrain.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/bahrain.png"
+      },
+      "sessions": [
+        {
+          "type": "FP1",
+          "startUtc": "2027-03-12T08:00:00.000Z",
+          "endUtc": "2027-03-12T09:00:00.000Z",
+          "startLocalDateShort": "Fri, Mar 12",
+          "startLocalTimeShort": "02:00",
+          "startLocalDateTimeShort": "Fri, Mar 12 02:00"
+        },
+        {
+          "type": "Sprint Quali",
+          "startUtc": "2027-03-12T11:00:00.000Z",
+          "endUtc": "2027-03-12T12:00:00.000Z",
+          "startLocalDateShort": "Fri, Mar 12",
+          "startLocalTimeShort": "05:00",
+          "startLocalDateTimeShort": "Fri, Mar 12 05:00"
+        },
+        {
+          "type": "Sprint",
+          "startUtc": "2027-03-13T08:00:00.000Z",
+          "endUtc": "2027-03-13T09:00:00.000Z",
+          "startLocalDateShort": "Sat, Mar 13",
+          "startLocalTimeShort": "02:00",
+          "startLocalDateTimeShort": "Sat, Mar 13 02:00"
+        },
+        {
+          "type": "Quali",
+          "startUtc": "2027-03-13T11:00:00.000Z",
+          "endUtc": "2027-03-13T12:00:00.000Z",
+          "startLocalDateShort": "Sat, Mar 13",
+          "startLocalTimeShort": "05:00",
+          "startLocalDateTimeShort": "Sat, Mar 13 05:00"
+        },
+        {
+          "type": "Race",
+          "startUtc": "2027-03-14T11:00:00.000Z",
+          "endUtc": "2027-03-14T13:00:00.000Z",
+          "startLocalDateShort": "Sun, Mar 14",
+          "startLocalTimeShort": "05:00",
+          "startLocalDateTimeShort": "Sun, Mar 14 05:00"
+        }
+      ]
     },
     {
       "round": 2,
@@ -29,7 +97,75 @@
       "weekendEndUtc": "2027-03-21T13:00:00.000Z",
       "file": "02-saudi-arabia.json",
       "url": "https://mredman48.github.io/F1-standings/weekends/2027/02-saudi-arabia.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.433Z"
+      "updatedAtUtc": "2026-10-30T21:14:10.433Z",
+      "shortTitle": "Saudi Arabian GP",
+      "circuit": "Jeddah Corniche Circuit",
+      "location": {
+        "city": "Jeddah",
+        "country": "Saudi Arabia",
+        "flag": {
+          "iso2": "sa",
+          "png": "https://flagcdn.com/w160/sa.png",
+          "svg": "https://flagcdn.com/sa.svg"
+        }
+      },
+      "racePage": {
+        "slug": "saudi-arabia",
+        "url": "https://www.formula1.com/en/racing/2027/saudi-arabia"
+      },
+      "trackMap": {
+        "found": true,
+        "pageUrl": "https://www.formula1.com/en/racing/2027/saudi-arabia",
+        "mediaUrl": "https://www.formula1.com/en/racing/2027/saudi-arabia",
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_saudi-arabia_detailed.png"
+      },
+      "map": {
+        "found": true,
+        "filename": "jeddah.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/jeddah.png"
+      },
+      "sessions": [
+        {
+          "type": "FP1",
+          "startUtc": "2027-03-19T08:00:00.000Z",
+          "endUtc": "2027-03-19T09:00:00.000Z",
+          "startLocalDateShort": "Fri, Mar 19",
+          "startLocalTimeShort": "02:00",
+          "startLocalDateTimeShort": "Fri, Mar 19 02:00"
+        },
+        {
+          "type": "FP2",
+          "startUtc": "2027-03-19T11:00:00.000Z",
+          "endUtc": "2027-03-19T12:00:00.000Z",
+          "startLocalDateShort": "Fri, Mar 19",
+          "startLocalTimeShort": "05:00",
+          "startLocalDateTimeShort": "Fri, Mar 19 05:00"
+        },
+        {
+          "type": "FP3",
+          "startUtc": "2027-03-20T08:00:00.000Z",
+          "endUtc": "2027-03-20T09:00:00.000Z",
+          "startLocalDateShort": "Sat, Mar 20",
+          "startLocalTimeShort": "02:00",
+          "startLocalDateTimeShort": "Sat, Mar 20 02:00"
+        },
+        {
+          "type": "Quali",
+          "startUtc": "2027-03-20T11:00:00.000Z",
+          "endUtc": "2027-03-20T12:00:00.000Z",
+          "startLocalDateShort": "Sat, Mar 20",
+          "startLocalTimeShort": "05:00",
+          "startLocalDateTimeShort": "Sat, Mar 20 05:00"
+        },
+        {
+          "type": "Race",
+          "startUtc": "2027-03-21T11:00:00.000Z",
+          "endUtc": "2027-03-21T13:00:00.000Z",
+          "startLocalDateShort": "Sun, Mar 21",
+          "startLocalTimeShort": "05:00",
+          "startLocalDateTimeShort": "Sun, Mar 21 05:00"
+        }
+      ]
     },
     {
       "round": 3,
@@ -41,7 +177,75 @@
       "weekendEndUtc": "2027-04-04T06:00:00.000Z",
       "file": "03-australia.json",
       "url": "https://mredman48.github.io/F1-standings/weekends/2027/03-australia.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.434Z"
+      "updatedAtUtc": "2026-10-30T21:14:10.434Z",
+      "shortTitle": "Australian GP",
+      "circuit": "Albert Park Circuit",
+      "location": {
+        "city": "Melbourne",
+        "country": "Australia",
+        "flag": {
+          "iso2": "au",
+          "png": "https://flagcdn.com/w160/au.png",
+          "svg": "https://flagcdn.com/au.svg"
+        }
+      },
+      "racePage": {
+        "slug": "australia",
+        "url": "https://www.formula1.com/en/racing/2027/australia"
+      },
+      "trackMap": {
+        "found": true,
+        "pageUrl": "https://www.formula1.com/en/racing/2027/australia",
+        "mediaUrl": null,
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_australia_detailed.png"
+      },
+      "map": {
+        "found": true,
+        "filename": "melbourne.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/melbourne.png"
+      },
+      "sessions": [
+        {
+          "type": "FP1",
+          "startUtc": "2027-04-02T01:00:00.000Z",
+          "endUtc": "2027-04-02T02:00:00.000Z",
+          "startLocalDateShort": "Thu, Apr 01",
+          "startLocalTimeShort": "19:00",
+          "startLocalDateTimeShort": "Thu, Apr 01 19:00"
+        },
+        {
+          "type": "Sprint Quali",
+          "startUtc": "2027-04-02T04:00:00.000Z",
+          "endUtc": "2027-04-02T05:00:00.000Z",
+          "startLocalDateShort": "Thu, Apr 01",
+          "startLocalTimeShort": "22:00",
+          "startLocalDateTimeShort": "Thu, Apr 01 22:00"
+        },
+        {
+          "type": "Sprint",
+          "startUtc": "2027-04-03T01:00:00.000Z",
+          "endUtc": "2027-04-03T02:00:00.000Z",
+          "startLocalDateShort": "Fri, Apr 02",
+          "startLocalTimeShort": "19:00",
+          "startLocalDateTimeShort": "Fri, Apr 02 19:00"
+        },
+        {
+          "type": "Quali",
+          "startUtc": "2027-04-03T04:00:00.000Z",
+          "endUtc": "2027-04-03T05:00:00.000Z",
+          "startLocalDateShort": "Fri, Apr 02",
+          "startLocalTimeShort": "22:00",
+          "startLocalDateTimeShort": "Fri, Apr 02 22:00"
+        },
+        {
+          "type": "Race",
+          "startUtc": "2027-04-04T04:00:00.000Z",
+          "endUtc": "2027-04-04T06:00:00.000Z",
+          "startLocalDateShort": "Sat, Apr 03",
+          "startLocalTimeShort": "22:00",
+          "startLocalDateTimeShort": "Sat, Apr 03 22:00"
+        }
+      ]
     },
     {
       "round": 4,
@@ -53,7 +257,75 @@
       "weekendEndUtc": "2027-04-11T07:00:00.000Z",
       "file": "04-japan.json",
       "url": "https://mredman48.github.io/F1-standings/weekends/2027/04-japan.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.434Z"
+      "updatedAtUtc": "2026-10-30T21:14:10.434Z",
+      "shortTitle": "Japanese GP",
+      "circuit": "Suzuka International Racing Course",
+      "location": {
+        "city": "Suzuka",
+        "country": "Japan",
+        "flag": {
+          "iso2": "jp",
+          "png": "https://flagcdn.com/w160/jp.png",
+          "svg": "https://flagcdn.com/jp.svg"
+        }
+      },
+      "racePage": {
+        "slug": "japan",
+        "url": "https://www.formula1.com/en/racing/2027/japan"
+      },
+      "trackMap": {
+        "found": true,
+        "pageUrl": "https://www.formula1.com/en/racing/2027/japan",
+        "mediaUrl": null,
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_japan_detailed.png"
+      },
+      "map": {
+        "found": true,
+        "filename": "suzuka.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/suzuka.png"
+      },
+      "sessions": [
+        {
+          "type": "FP1",
+          "startUtc": "2027-04-09T02:00:00.000Z",
+          "endUtc": "2027-04-09T03:00:00.000Z",
+          "startLocalDateShort": "Thu, Apr 08",
+          "startLocalTimeShort": "20:00",
+          "startLocalDateTimeShort": "Thu, Apr 08 20:00"
+        },
+        {
+          "type": "Sprint Quali",
+          "startUtc": "2027-04-09T05:00:00.000Z",
+          "endUtc": "2027-04-09T06:00:00.000Z",
+          "startLocalDateShort": "Thu, Apr 08",
+          "startLocalTimeShort": "23:00",
+          "startLocalDateTimeShort": "Thu, Apr 08 23:00"
+        },
+        {
+          "type": "Sprint",
+          "startUtc": "2027-04-10T02:00:00.000Z",
+          "endUtc": "2027-04-10T03:00:00.000Z",
+          "startLocalDateShort": "Fri, Apr 09",
+          "startLocalTimeShort": "20:00",
+          "startLocalDateTimeShort": "Fri, Apr 09 20:00"
+        },
+        {
+          "type": "Quali",
+          "startUtc": "2027-04-10T05:00:00.000Z",
+          "endUtc": "2027-04-10T06:00:00.000Z",
+          "startLocalDateShort": "Fri, Apr 09",
+          "startLocalTimeShort": "23:00",
+          "startLocalDateTimeShort": "Fri, Apr 09 23:00"
+        },
+        {
+          "type": "Race",
+          "startUtc": "2027-04-11T05:00:00.000Z",
+          "endUtc": "2027-04-11T07:00:00.000Z",
+          "startLocalDateShort": "Sat, Apr 10",
+          "startLocalTimeShort": "23:00",
+          "startLocalDateTimeShort": "Sat, Apr 10 23:00"
+        }
+      ]
     },
     {
       "round": 5,
@@ -65,7 +337,75 @@
       "weekendEndUtc": "2027-04-18T08:00:00.000Z",
       "file": "05-china.json",
       "url": "https://mredman48.github.io/F1-standings/weekends/2027/05-china.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.435Z"
+      "updatedAtUtc": "2026-10-30T21:14:10.435Z",
+      "shortTitle": "Chinese GP",
+      "circuit": "Shanghai International Circuit",
+      "location": {
+        "city": "Shanghai",
+        "country": "China",
+        "flag": {
+          "iso2": "cn",
+          "png": "https://flagcdn.com/w160/cn.png",
+          "svg": "https://flagcdn.com/cn.svg"
+        }
+      },
+      "racePage": {
+        "slug": "china",
+        "url": "https://www.formula1.com/en/racing/2027/china"
+      },
+      "trackMap": {
+        "found": true,
+        "pageUrl": "https://www.formula1.com/en/racing/2027/china",
+        "mediaUrl": null,
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_china_detailed.png"
+      },
+      "map": {
+        "found": true,
+        "filename": "shanghai.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/shanghai.png"
+      },
+      "sessions": [
+        {
+          "type": "FP1",
+          "startUtc": "2027-04-16T03:00:00.000Z",
+          "endUtc": "2027-04-16T04:00:00.000Z",
+          "startLocalDateShort": "Thu, Apr 15",
+          "startLocalTimeShort": "21:00",
+          "startLocalDateTimeShort": "Thu, Apr 15 21:00"
+        },
+        {
+          "type": "FP2",
+          "startUtc": "2027-04-16T06:00:00.000Z",
+          "endUtc": "2027-04-16T07:00:00.000Z",
+          "startLocalDateShort": "Fri, Apr 16",
+          "startLocalTimeShort": "00:00",
+          "startLocalDateTimeShort": "Fri, Apr 16 00:00"
+        },
+        {
+          "type": "FP3",
+          "startUtc": "2027-04-17T03:00:00.000Z",
+          "endUtc": "2027-04-17T04:00:00.000Z",
+          "startLocalDateShort": "Fri, Apr 16",
+          "startLocalTimeShort": "21:00",
+          "startLocalDateTimeShort": "Fri, Apr 16 21:00"
+        },
+        {
+          "type": "Quali",
+          "startUtc": "2027-04-17T06:00:00.000Z",
+          "endUtc": "2027-04-17T07:00:00.000Z",
+          "startLocalDateShort": "Sat, Apr 17",
+          "startLocalTimeShort": "00:00",
+          "startLocalDateTimeShort": "Sat, Apr 17 00:00"
+        },
+        {
+          "type": "Race",
+          "startUtc": "2027-04-18T06:00:00.000Z",
+          "endUtc": "2027-04-18T08:00:00.000Z",
+          "startLocalDateShort": "Sun, Apr 18",
+          "startLocalTimeShort": "00:00",
+          "startLocalDateTimeShort": "Sun, Apr 18 00:00"
+        }
+      ]
     },
     {
       "round": 6,
@@ -77,7 +417,75 @@
       "weekendEndUtc": "2027-05-02T22:00:00.000Z",
       "file": "06-miami.json",
       "url": "https://mredman48.github.io/F1-standings/weekends/2027/06-miami.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.435Z"
+      "updatedAtUtc": "2026-10-30T21:14:10.435Z",
+      "shortTitle": "Miami GP",
+      "circuit": "Miami International Autodrome",
+      "location": {
+        "city": "Miami",
+        "country": "United States",
+        "flag": {
+          "iso2": "us",
+          "png": "https://flagcdn.com/w160/us.png",
+          "svg": "https://flagcdn.com/us.svg"
+        }
+      },
+      "racePage": {
+        "slug": "miami",
+        "url": "https://www.formula1.com/en/racing/2027/miami"
+      },
+      "trackMap": {
+        "found": true,
+        "pageUrl": "https://www.formula1.com/en/racing/2027/miami",
+        "mediaUrl": null,
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_miami_detailed.png"
+      },
+      "map": {
+        "found": true,
+        "filename": "miami.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/miami.png"
+      },
+      "sessions": [
+        {
+          "type": "FP1",
+          "startUtc": "2027-04-30T17:00:00.000Z",
+          "endUtc": "2027-04-30T18:00:00.000Z",
+          "startLocalDateShort": "Fri, Apr 30",
+          "startLocalTimeShort": "11:00",
+          "startLocalDateTimeShort": "Fri, Apr 30 11:00"
+        },
+        {
+          "type": "FP2",
+          "startUtc": "2027-04-30T20:00:00.000Z",
+          "endUtc": "2027-04-30T21:00:00.000Z",
+          "startLocalDateShort": "Fri, Apr 30",
+          "startLocalTimeShort": "14:00",
+          "startLocalDateTimeShort": "Fri, Apr 30 14:00"
+        },
+        {
+          "type": "FP3",
+          "startUtc": "2027-05-01T17:00:00.000Z",
+          "endUtc": "2027-05-01T18:00:00.000Z",
+          "startLocalDateShort": "Sat, May 01",
+          "startLocalTimeShort": "11:00",
+          "startLocalDateTimeShort": "Sat, May 01 11:00"
+        },
+        {
+          "type": "Quali",
+          "startUtc": "2027-05-01T20:00:00.000Z",
+          "endUtc": "2027-05-01T21:00:00.000Z",
+          "startLocalDateShort": "Sat, May 01",
+          "startLocalTimeShort": "14:00",
+          "startLocalDateTimeShort": "Sat, May 01 14:00"
+        },
+        {
+          "type": "Race",
+          "startUtc": "2027-05-02T20:00:00.000Z",
+          "endUtc": "2027-05-02T22:00:00.000Z",
+          "startLocalDateShort": "Sun, May 02",
+          "startLocalTimeShort": "14:00",
+          "startLocalDateTimeShort": "Sun, May 02 14:00"
+        }
+      ]
     },
     {
       "round": 7,
@@ -89,7 +497,75 @@
       "weekendEndUtc": "2027-05-23T22:00:00.000Z",
       "file": "07-canada.json",
       "url": "https://mredman48.github.io/F1-standings/weekends/2027/07-canada.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.436Z"
+      "updatedAtUtc": "2026-10-30T21:14:10.436Z",
+      "shortTitle": "Canadian GP",
+      "circuit": "Circuit Gilles Villeneuve",
+      "location": {
+        "city": "Montreal",
+        "country": "Canada",
+        "flag": {
+          "iso2": "ca",
+          "png": "https://flagcdn.com/w160/ca.png",
+          "svg": "https://flagcdn.com/ca.svg"
+        }
+      },
+      "racePage": {
+        "slug": "canada",
+        "url": "https://www.formula1.com/en/racing/2027/canada"
+      },
+      "trackMap": {
+        "found": true,
+        "pageUrl": "https://www.formula1.com/en/racing/2027/canada",
+        "mediaUrl": null,
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_canada_detailed.png"
+      },
+      "map": {
+        "found": true,
+        "filename": "montreal.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/montreal.png"
+      },
+      "sessions": [
+        {
+          "type": "FP1",
+          "startUtc": "2027-05-21T17:00:00.000Z",
+          "endUtc": "2027-05-21T18:00:00.000Z",
+          "startLocalDateShort": "Fri, May 21",
+          "startLocalTimeShort": "11:00",
+          "startLocalDateTimeShort": "Fri, May 21 11:00"
+        },
+        {
+          "type": "Sprint Quali",
+          "startUtc": "2027-05-21T20:00:00.000Z",
+          "endUtc": "2027-05-21T21:00:00.000Z",
+          "startLocalDateShort": "Fri, May 21",
+          "startLocalTimeShort": "14:00",
+          "startLocalDateTimeShort": "Fri, May 21 14:00"
+        },
+        {
+          "type": "Sprint",
+          "startUtc": "2027-05-22T17:00:00.000Z",
+          "endUtc": "2027-05-22T18:00:00.000Z",
+          "startLocalDateShort": "Sat, May 22",
+          "startLocalTimeShort": "11:00",
+          "startLocalDateTimeShort": "Sat, May 22 11:00"
+        },
+        {
+          "type": "Quali",
+          "startUtc": "2027-05-22T20:00:00.000Z",
+          "endUtc": "2027-05-22T21:00:00.000Z",
+          "startLocalDateShort": "Sat, May 22",
+          "startLocalTimeShort": "14:00",
+          "startLocalDateTimeShort": "Sat, May 22 14:00"
+        },
+        {
+          "type": "Race",
+          "startUtc": "2027-05-23T20:00:00.000Z",
+          "endUtc": "2027-05-23T22:00:00.000Z",
+          "startLocalDateShort": "Sun, May 23",
+          "startLocalTimeShort": "14:00",
+          "startLocalDateTimeShort": "Sun, May 23 14:00"
+        }
+      ]
     },
     {
       "round": 8,
@@ -101,7 +577,75 @@
       "weekendEndUtc": "2027-06-06T15:00:00.000Z",
       "file": "08-monaco.json",
       "url": "https://mredman48.github.io/F1-standings/weekends/2027/08-monaco.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.436Z"
+      "updatedAtUtc": "2026-10-30T21:14:10.436Z",
+      "shortTitle": "Monaco GP",
+      "circuit": "Circuit de Monaco",
+      "location": {
+        "city": "Monaco",
+        "country": "Monaco",
+        "flag": {
+          "iso2": "mc",
+          "png": "https://flagcdn.com/w160/mc.png",
+          "svg": "https://flagcdn.com/mc.svg"
+        }
+      },
+      "racePage": {
+        "slug": "monaco",
+        "url": "https://www.formula1.com/en/racing/2027/monaco"
+      },
+      "trackMap": {
+        "found": true,
+        "pageUrl": "https://www.formula1.com/en/racing/2027/monaco",
+        "mediaUrl": null,
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_monaco_detailed.png"
+      },
+      "map": {
+        "found": true,
+        "filename": "monaco.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/monaco.png"
+      },
+      "sessions": [
+        {
+          "type": "FP1",
+          "startUtc": "2027-06-04T10:00:00.000Z",
+          "endUtc": "2027-06-04T11:00:00.000Z",
+          "startLocalDateShort": "Fri, Jun 04",
+          "startLocalTimeShort": "04:00",
+          "startLocalDateTimeShort": "Fri, Jun 04 04:00"
+        },
+        {
+          "type": "Sprint Quali",
+          "startUtc": "2027-06-04T13:00:00.000Z",
+          "endUtc": "2027-06-04T14:00:00.000Z",
+          "startLocalDateShort": "Fri, Jun 04",
+          "startLocalTimeShort": "07:00",
+          "startLocalDateTimeShort": "Fri, Jun 04 07:00"
+        },
+        {
+          "type": "Sprint",
+          "startUtc": "2027-06-05T10:00:00.000Z",
+          "endUtc": "2027-06-05T11:00:00.000Z",
+          "startLocalDateShort": "Sat, Jun 05",
+          "startLocalTimeShort": "04:00",
+          "startLocalDateTimeShort": "Sat, Jun 05 04:00"
+        },
+        {
+          "type": "Quali",
+          "startUtc": "2027-06-05T13:00:00.000Z",
+          "endUtc": "2027-06-05T14:00:00.000Z",
+          "startLocalDateShort": "Sat, Jun 05",
+          "startLocalTimeShort": "07:00",
+          "startLocalDateTimeShort": "Sat, Jun 05 07:00"
+        },
+        {
+          "type": "Race",
+          "startUtc": "2027-06-06T13:00:00.000Z",
+          "endUtc": "2027-06-06T15:00:00.000Z",
+          "startLocalDateShort": "Sun, Jun 06",
+          "startLocalTimeShort": "07:00",
+          "startLocalDateTimeShort": "Sun, Jun 06 07:00"
+        }
+      ]
     },
     {
       "round": 9,
@@ -113,7 +657,75 @@
       "weekendEndUtc": "2027-06-20T16:00:00.000Z",
       "file": "09-portugal.json",
       "url": "https://mredman48.github.io/F1-standings/weekends/2027/09-portugal.json",
-      "updatedAtUtc": "2026-10-30T20:39:54.395Z"
+      "updatedAtUtc": "2026-10-30T20:39:54.395Z",
+      "shortTitle": "Portuguese GP",
+      "circuit": "Autódromo Internacional do Algarve",
+      "location": {
+        "city": "Portimão",
+        "country": "Portugal",
+        "flag": {
+          "iso2": "pt",
+          "png": "https://flagcdn.com/w160/pt.png",
+          "svg": "https://flagcdn.com/pt.svg"
+        }
+      },
+      "racePage": {
+        "slug": "portugal",
+        "url": "https://www.formula1.com/en/racing/2027/portugal"
+      },
+      "trackMap": {
+        "found": true,
+        "pageUrl": "https://www.formula1.com/en/racing/2027/portugal",
+        "mediaUrl": null,
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2027_portugal_detailed.png"
+      },
+      "map": {
+        "found": true,
+        "filename": "portimao.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/portimao.png"
+      },
+      "sessions": [
+        {
+          "type": "FP1",
+          "startUtc": "2027-06-18T11:00:00.000Z",
+          "endUtc": "2027-06-18T12:00:00.000Z",
+          "startLocalDateShort": "Fri, Jun 18",
+          "startLocalTimeShort": "05:00",
+          "startLocalDateTimeShort": "Fri, Jun 18 05:00"
+        },
+        {
+          "type": "FP2",
+          "startUtc": "2027-06-18T14:00:00.000Z",
+          "endUtc": "2027-06-18T15:00:00.000Z",
+          "startLocalDateShort": "Fri, Jun 18",
+          "startLocalTimeShort": "08:00",
+          "startLocalDateTimeShort": "Fri, Jun 18 08:00"
+        },
+        {
+          "type": "FP3",
+          "startUtc": "2027-06-19T11:00:00.000Z",
+          "endUtc": "2027-06-19T12:00:00.000Z",
+          "startLocalDateShort": "Sat, Jun 19",
+          "startLocalTimeShort": "05:00",
+          "startLocalDateTimeShort": "Sat, Jun 19 05:00"
+        },
+        {
+          "type": "Quali",
+          "startUtc": "2027-06-19T14:00:00.000Z",
+          "endUtc": "2027-06-19T15:00:00.000Z",
+          "startLocalDateShort": "Sat, Jun 19",
+          "startLocalTimeShort": "08:00",
+          "startLocalDateTimeShort": "Sat, Jun 19 08:00"
+        },
+        {
+          "type": "Race",
+          "startUtc": "2027-06-20T14:00:00.000Z",
+          "endUtc": "2027-06-20T16:00:00.000Z",
+          "startLocalDateShort": "Sun, Jun 20",
+          "startLocalTimeShort": "08:00",
+          "startLocalDateTimeShort": "Sun, Jun 20 08:00"
+        }
+      ]
     },
     {
       "round": 10,
@@ -125,7 +737,75 @@
       "weekendEndUtc": "2027-07-04T16:00:00.000Z",
       "file": "10-great-britain.json",
       "url": "https://mredman48.github.io/F1-standings/weekends/2027/10-great-britain.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.436Z"
+      "updatedAtUtc": "2026-10-30T21:14:10.436Z",
+      "shortTitle": "British GP",
+      "circuit": "Silverstone Circuit",
+      "location": {
+        "city": "Silverstone",
+        "country": "United Kingdom",
+        "flag": {
+          "iso2": "gb",
+          "png": "https://flagcdn.com/w160/gb.png",
+          "svg": "https://flagcdn.com/gb.svg"
+        }
+      },
+      "racePage": {
+        "slug": "great-britain",
+        "url": "https://www.formula1.com/en/racing/2027/great-britain"
+      },
+      "trackMap": {
+        "found": true,
+        "pageUrl": "https://www.formula1.com/en/racing/2027/great-britain",
+        "mediaUrl": null,
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_great-britain_detailed.png"
+      },
+      "map": {
+        "found": true,
+        "filename": "silverstone.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/silverstone.png"
+      },
+      "sessions": [
+        {
+          "type": "FP1",
+          "startUtc": "2027-07-02T11:00:00.000Z",
+          "endUtc": "2027-07-02T12:00:00.000Z",
+          "startLocalDateShort": "Fri, Jul 02",
+          "startLocalTimeShort": "05:00",
+          "startLocalDateTimeShort": "Fri, Jul 02 05:00"
+        },
+        {
+          "type": "Sprint Quali",
+          "startUtc": "2027-07-02T14:00:00.000Z",
+          "endUtc": "2027-07-02T15:00:00.000Z",
+          "startLocalDateShort": "Fri, Jul 02",
+          "startLocalTimeShort": "08:00",
+          "startLocalDateTimeShort": "Fri, Jul 02 08:00"
+        },
+        {
+          "type": "Sprint",
+          "startUtc": "2027-07-03T11:00:00.000Z",
+          "endUtc": "2027-07-03T12:00:00.000Z",
+          "startLocalDateShort": "Sat, Jul 03",
+          "startLocalTimeShort": "05:00",
+          "startLocalDateTimeShort": "Sat, Jul 03 05:00"
+        },
+        {
+          "type": "Quali",
+          "startUtc": "2027-07-03T14:00:00.000Z",
+          "endUtc": "2027-07-03T15:00:00.000Z",
+          "startLocalDateShort": "Sat, Jul 03",
+          "startLocalTimeShort": "08:00",
+          "startLocalDateTimeShort": "Sat, Jul 03 08:00"
+        },
+        {
+          "type": "Race",
+          "startUtc": "2027-07-04T14:00:00.000Z",
+          "endUtc": "2027-07-04T16:00:00.000Z",
+          "startLocalDateShort": "Sun, Jul 04",
+          "startLocalTimeShort": "08:00",
+          "startLocalDateTimeShort": "Sun, Jul 04 08:00"
+        }
+      ]
     },
     {
       "round": 11,
@@ -137,7 +817,75 @@
       "weekendEndUtc": "2027-07-11T15:00:00.000Z",
       "file": "11-austria.json",
       "url": "https://mredman48.github.io/F1-standings/weekends/2027/11-austria.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.437Z"
+      "updatedAtUtc": "2026-10-30T21:14:10.437Z",
+      "shortTitle": "Austrian GP",
+      "circuit": "Red Bull Ring",
+      "location": {
+        "city": "Spielberg",
+        "country": "Austria",
+        "flag": {
+          "iso2": "at",
+          "png": "https://flagcdn.com/w160/at.png",
+          "svg": "https://flagcdn.com/at.svg"
+        }
+      },
+      "racePage": {
+        "slug": "austria",
+        "url": "https://www.formula1.com/en/racing/2027/austria"
+      },
+      "trackMap": {
+        "found": true,
+        "pageUrl": "https://www.formula1.com/en/racing/2027/austria",
+        "mediaUrl": null,
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_austria_detailed.png"
+      },
+      "map": {
+        "found": true,
+        "filename": "spielberg.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/spielberg.png"
+      },
+      "sessions": [
+        {
+          "type": "FP1",
+          "startUtc": "2027-07-09T10:00:00.000Z",
+          "endUtc": "2027-07-09T11:00:00.000Z",
+          "startLocalDateShort": "Fri, Jul 09",
+          "startLocalTimeShort": "04:00",
+          "startLocalDateTimeShort": "Fri, Jul 09 04:00"
+        },
+        {
+          "type": "FP2",
+          "startUtc": "2027-07-09T13:00:00.000Z",
+          "endUtc": "2027-07-09T14:00:00.000Z",
+          "startLocalDateShort": "Fri, Jul 09",
+          "startLocalTimeShort": "07:00",
+          "startLocalDateTimeShort": "Fri, Jul 09 07:00"
+        },
+        {
+          "type": "FP3",
+          "startUtc": "2027-07-10T10:00:00.000Z",
+          "endUtc": "2027-07-10T11:00:00.000Z",
+          "startLocalDateShort": "Sat, Jul 10",
+          "startLocalTimeShort": "04:00",
+          "startLocalDateTimeShort": "Sat, Jul 10 04:00"
+        },
+        {
+          "type": "Quali",
+          "startUtc": "2027-07-10T13:00:00.000Z",
+          "endUtc": "2027-07-10T14:00:00.000Z",
+          "startLocalDateShort": "Sat, Jul 10",
+          "startLocalTimeShort": "07:00",
+          "startLocalDateTimeShort": "Sat, Jul 10 07:00"
+        },
+        {
+          "type": "Race",
+          "startUtc": "2027-07-11T13:00:00.000Z",
+          "endUtc": "2027-07-11T15:00:00.000Z",
+          "startLocalDateShort": "Sun, Jul 11",
+          "startLocalTimeShort": "07:00",
+          "startLocalDateTimeShort": "Sun, Jul 11 07:00"
+        }
+      ]
     },
     {
       "round": 12,
@@ -149,7 +897,75 @@
       "weekendEndUtc": "2027-07-25T15:00:00.000Z",
       "file": "12-belgium.json",
       "url": "https://mredman48.github.io/F1-standings/weekends/2027/12-belgium.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.437Z"
+      "updatedAtUtc": "2026-10-30T21:14:10.437Z",
+      "shortTitle": "Belgian GP",
+      "circuit": "Circuit de Spa-Francorchamps",
+      "location": {
+        "city": "Spa-Francorchamps",
+        "country": "Belgium",
+        "flag": {
+          "iso2": "be",
+          "png": "https://flagcdn.com/w160/be.png",
+          "svg": "https://flagcdn.com/be.svg"
+        }
+      },
+      "racePage": {
+        "slug": "belgium",
+        "url": "https://www.formula1.com/en/racing/2027/belgium"
+      },
+      "trackMap": {
+        "found": true,
+        "pageUrl": "https://www.formula1.com/en/racing/2027/belgium",
+        "mediaUrl": null,
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_belgium_detailed.png"
+      },
+      "map": {
+        "found": true,
+        "filename": "spa.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/spa.png"
+      },
+      "sessions": [
+        {
+          "type": "FP1",
+          "startUtc": "2027-07-23T10:00:00.000Z",
+          "endUtc": "2027-07-23T11:00:00.000Z",
+          "startLocalDateShort": "Fri, Jul 23",
+          "startLocalTimeShort": "04:00",
+          "startLocalDateTimeShort": "Fri, Jul 23 04:00"
+        },
+        {
+          "type": "FP2",
+          "startUtc": "2027-07-23T13:00:00.000Z",
+          "endUtc": "2027-07-23T14:00:00.000Z",
+          "startLocalDateShort": "Fri, Jul 23",
+          "startLocalTimeShort": "07:00",
+          "startLocalDateTimeShort": "Fri, Jul 23 07:00"
+        },
+        {
+          "type": "FP3",
+          "startUtc": "2027-07-24T10:00:00.000Z",
+          "endUtc": "2027-07-24T11:00:00.000Z",
+          "startLocalDateShort": "Sat, Jul 24",
+          "startLocalTimeShort": "04:00",
+          "startLocalDateTimeShort": "Sat, Jul 24 04:00"
+        },
+        {
+          "type": "Quali",
+          "startUtc": "2027-07-24T13:00:00.000Z",
+          "endUtc": "2027-07-24T14:00:00.000Z",
+          "startLocalDateShort": "Sat, Jul 24",
+          "startLocalTimeShort": "07:00",
+          "startLocalDateTimeShort": "Sat, Jul 24 07:00"
+        },
+        {
+          "type": "Race",
+          "startUtc": "2027-07-25T13:00:00.000Z",
+          "endUtc": "2027-07-25T15:00:00.000Z",
+          "startLocalDateShort": "Sun, Jul 25",
+          "startLocalTimeShort": "07:00",
+          "startLocalDateTimeShort": "Sun, Jul 25 07:00"
+        }
+      ]
     },
     {
       "round": 13,
@@ -161,7 +977,75 @@
       "weekendEndUtc": "2027-08-01T15:00:00.000Z",
       "file": "13-hungary.json",
       "url": "https://mredman48.github.io/F1-standings/weekends/2027/13-hungary.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.438Z"
+      "updatedAtUtc": "2026-10-30T21:14:10.438Z",
+      "shortTitle": "Hungarian GP",
+      "circuit": "Hungaroring",
+      "location": {
+        "city": "Budapest",
+        "country": "Hungary",
+        "flag": {
+          "iso2": "hu",
+          "png": "https://flagcdn.com/w160/hu.png",
+          "svg": "https://flagcdn.com/hu.svg"
+        }
+      },
+      "racePage": {
+        "slug": "hungary",
+        "url": "https://www.formula1.com/en/racing/2027/hungary"
+      },
+      "trackMap": {
+        "found": true,
+        "pageUrl": "https://www.formula1.com/en/racing/2027/hungary",
+        "mediaUrl": null,
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_hungary_detailed.png"
+      },
+      "map": {
+        "found": true,
+        "filename": "hungaroring.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/hungaroring.png"
+      },
+      "sessions": [
+        {
+          "type": "FP1",
+          "startUtc": "2027-07-30T10:00:00.000Z",
+          "endUtc": "2027-07-30T11:00:00.000Z",
+          "startLocalDateShort": "Fri, Jul 30",
+          "startLocalTimeShort": "04:00",
+          "startLocalDateTimeShort": "Fri, Jul 30 04:00"
+        },
+        {
+          "type": "FP2",
+          "startUtc": "2027-07-30T13:00:00.000Z",
+          "endUtc": "2027-07-30T14:00:00.000Z",
+          "startLocalDateShort": "Fri, Jul 30",
+          "startLocalTimeShort": "07:00",
+          "startLocalDateTimeShort": "Fri, Jul 30 07:00"
+        },
+        {
+          "type": "FP3",
+          "startUtc": "2027-07-31T10:00:00.000Z",
+          "endUtc": "2027-07-31T11:00:00.000Z",
+          "startLocalDateShort": "Sat, Jul 31",
+          "startLocalTimeShort": "04:00",
+          "startLocalDateTimeShort": "Sat, Jul 31 04:00"
+        },
+        {
+          "type": "Quali",
+          "startUtc": "2027-07-31T13:00:00.000Z",
+          "endUtc": "2027-07-31T14:00:00.000Z",
+          "startLocalDateShort": "Sat, Jul 31",
+          "startLocalTimeShort": "07:00",
+          "startLocalDateTimeShort": "Sat, Jul 31 07:00"
+        },
+        {
+          "type": "Race",
+          "startUtc": "2027-08-01T13:00:00.000Z",
+          "endUtc": "2027-08-01T15:00:00.000Z",
+          "startLocalDateShort": "Sun, Aug 01",
+          "startLocalTimeShort": "07:00",
+          "startLocalDateTimeShort": "Sun, Aug 01 07:00"
+        }
+      ]
     },
     {
       "round": 14,
@@ -173,7 +1057,75 @@
       "weekendEndUtc": "2027-09-05T15:00:00.000Z",
       "file": "14-italy.json",
       "url": "https://mredman48.github.io/F1-standings/weekends/2027/14-italy.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.438Z"
+      "updatedAtUtc": "2026-10-30T21:14:10.438Z",
+      "shortTitle": "Italian GP",
+      "circuit": "Autodromo Nazionale Monza",
+      "location": {
+        "city": "Monza",
+        "country": "Italy",
+        "flag": {
+          "iso2": "it",
+          "png": "https://flagcdn.com/w160/it.png",
+          "svg": "https://flagcdn.com/it.svg"
+        }
+      },
+      "racePage": {
+        "slug": "italy",
+        "url": "https://www.formula1.com/en/racing/2027/italy"
+      },
+      "trackMap": {
+        "found": true,
+        "pageUrl": "https://www.formula1.com/en/racing/2027/italy",
+        "mediaUrl": null,
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_italy_detailed.png"
+      },
+      "map": {
+        "found": true,
+        "filename": "monza.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/monza.png"
+      },
+      "sessions": [
+        {
+          "type": "FP1",
+          "startUtc": "2027-09-03T10:00:00.000Z",
+          "endUtc": "2027-09-03T11:00:00.000Z",
+          "startLocalDateShort": "Fri, Sep 03",
+          "startLocalTimeShort": "04:00",
+          "startLocalDateTimeShort": "Fri, Sep 03 04:00"
+        },
+        {
+          "type": "Sprint Quali",
+          "startUtc": "2027-09-03T13:00:00.000Z",
+          "endUtc": "2027-09-03T14:00:00.000Z",
+          "startLocalDateShort": "Fri, Sep 03",
+          "startLocalTimeShort": "07:00",
+          "startLocalDateTimeShort": "Fri, Sep 03 07:00"
+        },
+        {
+          "type": "Sprint",
+          "startUtc": "2027-09-04T10:00:00.000Z",
+          "endUtc": "2027-09-04T11:00:00.000Z",
+          "startLocalDateShort": "Sat, Sep 04",
+          "startLocalTimeShort": "04:00",
+          "startLocalDateTimeShort": "Sat, Sep 04 04:00"
+        },
+        {
+          "type": "Quali",
+          "startUtc": "2027-09-04T13:00:00.000Z",
+          "endUtc": "2027-09-04T14:00:00.000Z",
+          "startLocalDateShort": "Sat, Sep 04",
+          "startLocalTimeShort": "07:00",
+          "startLocalDateTimeShort": "Sat, Sep 04 07:00"
+        },
+        {
+          "type": "Race",
+          "startUtc": "2027-09-05T13:00:00.000Z",
+          "endUtc": "2027-09-05T15:00:00.000Z",
+          "startLocalDateShort": "Sun, Sep 05",
+          "startLocalTimeShort": "07:00",
+          "startLocalDateTimeShort": "Sun, Sep 05 07:00"
+        }
+      ]
     },
     {
       "round": 15,
@@ -185,7 +1137,75 @@
       "weekendEndUtc": "2027-09-12T15:00:00.000Z",
       "file": "15-madrid.json",
       "url": "https://mredman48.github.io/F1-standings/weekends/2027/15-madrid.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.438Z"
+      "updatedAtUtc": "2026-10-30T21:14:10.438Z",
+      "shortTitle": "Spanish GP",
+      "circuit": "Circuito de Madring",
+      "location": {
+        "city": "Madrid",
+        "country": "Spain",
+        "flag": {
+          "iso2": "es",
+          "png": "https://flagcdn.com/w160/es.png",
+          "svg": "https://flagcdn.com/es.svg"
+        }
+      },
+      "racePage": {
+        "slug": "madrid",
+        "url": "https://www.formula1.com/en/racing/2027/madrid"
+      },
+      "trackMap": {
+        "found": true,
+        "pageUrl": "https://www.formula1.com/en/racing/2027/madrid",
+        "mediaUrl": null,
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_madrid_detailed.png"
+      },
+      "map": {
+        "found": true,
+        "filename": "madrid.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/madrid.png"
+      },
+      "sessions": [
+        {
+          "type": "FP1",
+          "startUtc": "2027-09-10T10:00:00.000Z",
+          "endUtc": "2027-09-10T11:00:00.000Z",
+          "startLocalDateShort": "Fri, Sep 10",
+          "startLocalTimeShort": "04:00",
+          "startLocalDateTimeShort": "Fri, Sep 10 04:00"
+        },
+        {
+          "type": "FP2",
+          "startUtc": "2027-09-10T13:00:00.000Z",
+          "endUtc": "2027-09-10T14:00:00.000Z",
+          "startLocalDateShort": "Fri, Sep 10",
+          "startLocalTimeShort": "07:00",
+          "startLocalDateTimeShort": "Fri, Sep 10 07:00"
+        },
+        {
+          "type": "FP3",
+          "startUtc": "2027-09-11T10:00:00.000Z",
+          "endUtc": "2027-09-11T11:00:00.000Z",
+          "startLocalDateShort": "Sat, Sep 11",
+          "startLocalTimeShort": "04:00",
+          "startLocalDateTimeShort": "Sat, Sep 11 04:00"
+        },
+        {
+          "type": "Quali",
+          "startUtc": "2027-09-11T13:00:00.000Z",
+          "endUtc": "2027-09-11T14:00:00.000Z",
+          "startLocalDateShort": "Sat, Sep 11",
+          "startLocalTimeShort": "07:00",
+          "startLocalDateTimeShort": "Sat, Sep 11 07:00"
+        },
+        {
+          "type": "Race",
+          "startUtc": "2027-09-12T13:00:00.000Z",
+          "endUtc": "2027-09-12T15:00:00.000Z",
+          "startLocalDateShort": "Sun, Sep 12",
+          "startLocalTimeShort": "07:00",
+          "startLocalDateTimeShort": "Sun, Sep 12 07:00"
+        }
+      ]
     },
     {
       "round": 16,
@@ -197,7 +1217,75 @@
       "weekendEndUtc": "2027-09-26T12:00:00.000Z",
       "file": "16-azerbaijan.json",
       "url": "https://mredman48.github.io/F1-standings/weekends/2027/16-azerbaijan.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.439Z"
+      "updatedAtUtc": "2026-10-30T21:14:10.439Z",
+      "shortTitle": "Azerbaijan GP",
+      "circuit": "Baku City Circuit",
+      "location": {
+        "city": "Baku",
+        "country": "Azerbaijan",
+        "flag": {
+          "iso2": "az",
+          "png": "https://flagcdn.com/w160/az.png",
+          "svg": "https://flagcdn.com/az.svg"
+        }
+      },
+      "racePage": {
+        "slug": "azerbaijan",
+        "url": "https://www.formula1.com/en/racing/2027/azerbaijan"
+      },
+      "trackMap": {
+        "found": true,
+        "pageUrl": "https://www.formula1.com/en/racing/2027/azerbaijan",
+        "mediaUrl": null,
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_azerbaijan_detailed.png"
+      },
+      "map": {
+        "found": true,
+        "filename": "baku.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/baku.png"
+      },
+      "sessions": [
+        {
+          "type": "FP1",
+          "startUtc": "2027-09-24T07:00:00.000Z",
+          "endUtc": "2027-09-24T08:00:00.000Z",
+          "startLocalDateShort": "Fri, Sep 24",
+          "startLocalTimeShort": "01:00",
+          "startLocalDateTimeShort": "Fri, Sep 24 01:00"
+        },
+        {
+          "type": "FP2",
+          "startUtc": "2027-09-24T10:00:00.000Z",
+          "endUtc": "2027-09-24T11:00:00.000Z",
+          "startLocalDateShort": "Fri, Sep 24",
+          "startLocalTimeShort": "04:00",
+          "startLocalDateTimeShort": "Fri, Sep 24 04:00"
+        },
+        {
+          "type": "FP3",
+          "startUtc": "2027-09-25T07:00:00.000Z",
+          "endUtc": "2027-09-25T08:00:00.000Z",
+          "startLocalDateShort": "Sat, Sep 25",
+          "startLocalTimeShort": "01:00",
+          "startLocalDateTimeShort": "Sat, Sep 25 01:00"
+        },
+        {
+          "type": "Quali",
+          "startUtc": "2027-09-25T10:00:00.000Z",
+          "endUtc": "2027-09-25T11:00:00.000Z",
+          "startLocalDateShort": "Sat, Sep 25",
+          "startLocalTimeShort": "04:00",
+          "startLocalDateTimeShort": "Sat, Sep 25 04:00"
+        },
+        {
+          "type": "Race",
+          "startUtc": "2027-09-26T10:00:00.000Z",
+          "endUtc": "2027-09-26T12:00:00.000Z",
+          "startLocalDateShort": "Sun, Sep 26",
+          "startLocalTimeShort": "04:00",
+          "startLocalDateTimeShort": "Sun, Sep 26 04:00"
+        }
+      ]
     },
     {
       "round": 17,
@@ -209,7 +1297,75 @@
       "weekendEndUtc": "2027-10-03T13:00:00.000Z",
       "file": "17-turkey.json",
       "url": "https://mredman48.github.io/F1-standings/weekends/2027/17-turkey.json",
-      "updatedAtUtc": "2026-10-30T20:39:54.400Z"
+      "updatedAtUtc": "2026-10-30T20:39:54.400Z",
+      "shortTitle": "Turkish GP",
+      "circuit": "Istanbul Park",
+      "location": {
+        "city": "Istanbul",
+        "country": "Türkiye",
+        "flag": {
+          "iso2": "tr",
+          "png": "https://flagcdn.com/w160/tr.png",
+          "svg": "https://flagcdn.com/tr.svg"
+        }
+      },
+      "racePage": {
+        "slug": "turkey",
+        "url": "https://www.formula1.com/en/racing/2027/turkey"
+      },
+      "trackMap": {
+        "found": true,
+        "pageUrl": "https://www.formula1.com/en/racing/2027/turkey",
+        "mediaUrl": null,
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2027_turkey_detailed.png"
+      },
+      "map": {
+        "found": true,
+        "filename": "istanbul.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/istanbul.png"
+      },
+      "sessions": [
+        {
+          "type": "FP1",
+          "startUtc": "2027-10-01T08:00:00.000Z",
+          "endUtc": "2027-10-01T09:00:00.000Z",
+          "startLocalDateShort": "Fri, Oct 01",
+          "startLocalTimeShort": "02:00",
+          "startLocalDateTimeShort": "Fri, Oct 01 02:00"
+        },
+        {
+          "type": "FP2",
+          "startUtc": "2027-10-01T11:00:00.000Z",
+          "endUtc": "2027-10-01T12:00:00.000Z",
+          "startLocalDateShort": "Fri, Oct 01",
+          "startLocalTimeShort": "05:00",
+          "startLocalDateTimeShort": "Fri, Oct 01 05:00"
+        },
+        {
+          "type": "FP3",
+          "startUtc": "2027-10-02T08:00:00.000Z",
+          "endUtc": "2027-10-02T09:00:00.000Z",
+          "startLocalDateShort": "Sat, Oct 02",
+          "startLocalTimeShort": "02:00",
+          "startLocalDateTimeShort": "Sat, Oct 02 02:00"
+        },
+        {
+          "type": "Quali",
+          "startUtc": "2027-10-02T11:00:00.000Z",
+          "endUtc": "2027-10-02T12:00:00.000Z",
+          "startLocalDateShort": "Sat, Oct 02",
+          "startLocalTimeShort": "05:00",
+          "startLocalDateTimeShort": "Sat, Oct 02 05:00"
+        },
+        {
+          "type": "Race",
+          "startUtc": "2027-10-03T11:00:00.000Z",
+          "endUtc": "2027-10-03T13:00:00.000Z",
+          "startLocalDateShort": "Sun, Oct 03",
+          "startLocalTimeShort": "05:00",
+          "startLocalDateTimeShort": "Sun, Oct 03 05:00"
+        }
+      ]
     },
     {
       "round": 18,
@@ -221,7 +1377,75 @@
       "weekendEndUtc": "2027-10-10T08:00:00.000Z",
       "file": "18-singapore.json",
       "url": "https://mredman48.github.io/F1-standings/weekends/2027/18-singapore.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.440Z"
+      "updatedAtUtc": "2026-10-30T21:14:10.440Z",
+      "shortTitle": "Singapore GP",
+      "circuit": "Marina Bay Street Circuit",
+      "location": {
+        "city": "Singapore",
+        "country": "Singapore",
+        "flag": {
+          "iso2": "sg",
+          "png": "https://flagcdn.com/w160/sg.png",
+          "svg": "https://flagcdn.com/sg.svg"
+        }
+      },
+      "racePage": {
+        "slug": "singapore",
+        "url": "https://www.formula1.com/en/racing/2027/singapore"
+      },
+      "trackMap": {
+        "found": true,
+        "pageUrl": "https://www.formula1.com/en/racing/2027/singapore",
+        "mediaUrl": null,
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_singapore_detailed.png"
+      },
+      "map": {
+        "found": true,
+        "filename": "singapore.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/singapore.png"
+      },
+      "sessions": [
+        {
+          "type": "FP1",
+          "startUtc": "2027-10-08T03:00:00.000Z",
+          "endUtc": "2027-10-08T04:00:00.000Z",
+          "startLocalDateShort": "Thu, Oct 07",
+          "startLocalTimeShort": "21:00",
+          "startLocalDateTimeShort": "Thu, Oct 07 21:00"
+        },
+        {
+          "type": "FP2",
+          "startUtc": "2027-10-08T06:00:00.000Z",
+          "endUtc": "2027-10-08T07:00:00.000Z",
+          "startLocalDateShort": "Fri, Oct 08",
+          "startLocalTimeShort": "00:00",
+          "startLocalDateTimeShort": "Fri, Oct 08 00:00"
+        },
+        {
+          "type": "FP3",
+          "startUtc": "2027-10-09T03:00:00.000Z",
+          "endUtc": "2027-10-09T04:00:00.000Z",
+          "startLocalDateShort": "Fri, Oct 08",
+          "startLocalTimeShort": "21:00",
+          "startLocalDateTimeShort": "Fri, Oct 08 21:00"
+        },
+        {
+          "type": "Quali",
+          "startUtc": "2027-10-09T06:00:00.000Z",
+          "endUtc": "2027-10-09T07:00:00.000Z",
+          "startLocalDateShort": "Sat, Oct 09",
+          "startLocalTimeShort": "00:00",
+          "startLocalDateTimeShort": "Sat, Oct 09 00:00"
+        },
+        {
+          "type": "Race",
+          "startUtc": "2027-10-10T06:00:00.000Z",
+          "endUtc": "2027-10-10T08:00:00.000Z",
+          "startLocalDateShort": "Sun, Oct 10",
+          "startLocalTimeShort": "00:00",
+          "startLocalDateTimeShort": "Sun, Oct 10 00:00"
+        }
+      ]
     },
     {
       "round": 19,
@@ -233,7 +1457,75 @@
       "weekendEndUtc": "2027-10-24T23:00:00.000Z",
       "file": "19-united-states.json",
       "url": "https://mredman48.github.io/F1-standings/weekends/2027/19-united-states.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.440Z"
+      "updatedAtUtc": "2026-10-30T21:14:10.440Z",
+      "shortTitle": "United States GP",
+      "circuit": "Circuit of the Americas",
+      "location": {
+        "city": "Austin",
+        "country": "United States",
+        "flag": {
+          "iso2": "us",
+          "png": "https://flagcdn.com/w160/us.png",
+          "svg": "https://flagcdn.com/us.svg"
+        }
+      },
+      "racePage": {
+        "slug": "united-states",
+        "url": "https://www.formula1.com/en/racing/2027/united-states"
+      },
+      "trackMap": {
+        "found": true,
+        "pageUrl": "https://www.formula1.com/en/racing/2027/united-states",
+        "mediaUrl": null,
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_united-states_detailed.png"
+      },
+      "map": {
+        "found": true,
+        "filename": "austin.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/austin.png"
+      },
+      "sessions": [
+        {
+          "type": "FP1",
+          "startUtc": "2027-10-22T18:00:00.000Z",
+          "endUtc": "2027-10-22T19:00:00.000Z",
+          "startLocalDateShort": "Fri, Oct 22",
+          "startLocalTimeShort": "12:00",
+          "startLocalDateTimeShort": "Fri, Oct 22 12:00"
+        },
+        {
+          "type": "FP2",
+          "startUtc": "2027-10-22T21:00:00.000Z",
+          "endUtc": "2027-10-22T22:00:00.000Z",
+          "startLocalDateShort": "Fri, Oct 22",
+          "startLocalTimeShort": "15:00",
+          "startLocalDateTimeShort": "Fri, Oct 22 15:00"
+        },
+        {
+          "type": "FP3",
+          "startUtc": "2027-10-23T18:00:00.000Z",
+          "endUtc": "2027-10-23T19:00:00.000Z",
+          "startLocalDateShort": "Sat, Oct 23",
+          "startLocalTimeShort": "12:00",
+          "startLocalDateTimeShort": "Sat, Oct 23 12:00"
+        },
+        {
+          "type": "Quali",
+          "startUtc": "2027-10-23T21:00:00.000Z",
+          "endUtc": "2027-10-23T22:00:00.000Z",
+          "startLocalDateShort": "Sat, Oct 23",
+          "startLocalTimeShort": "15:00",
+          "startLocalDateTimeShort": "Sat, Oct 23 15:00"
+        },
+        {
+          "type": "Race",
+          "startUtc": "2027-10-24T21:00:00.000Z",
+          "endUtc": "2027-10-24T23:00:00.000Z",
+          "startLocalDateShort": "Sun, Oct 24",
+          "startLocalTimeShort": "15:00",
+          "startLocalDateTimeShort": "Sun, Oct 24 15:00"
+        }
+      ]
     },
     {
       "round": 20,
@@ -245,7 +1537,75 @@
       "weekendEndUtc": "2027-10-31T23:00:00.000Z",
       "file": "20-mexico.json",
       "url": "https://mredman48.github.io/F1-standings/weekends/2027/20-mexico.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.441Z"
+      "updatedAtUtc": "2026-10-30T21:14:10.441Z",
+      "shortTitle": "Mexico City GP",
+      "circuit": "Autódromo Hermanos Rodríguez",
+      "location": {
+        "city": "Mexico City",
+        "country": "Mexico",
+        "flag": {
+          "iso2": "mx",
+          "png": "https://flagcdn.com/w160/mx.png",
+          "svg": "https://flagcdn.com/mx.svg"
+        }
+      },
+      "racePage": {
+        "slug": "mexico",
+        "url": "https://www.formula1.com/en/racing/2027/mexico"
+      },
+      "trackMap": {
+        "found": true,
+        "pageUrl": "https://www.formula1.com/en/racing/2027/mexico",
+        "mediaUrl": null,
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_mexico_detailed.png"
+      },
+      "map": {
+        "found": true,
+        "filename": "mexico-city.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/mexico-city.png"
+      },
+      "sessions": [
+        {
+          "type": "FP1",
+          "startUtc": "2027-10-29T18:00:00.000Z",
+          "endUtc": "2027-10-29T19:00:00.000Z",
+          "startLocalDateShort": "Fri, Oct 29",
+          "startLocalTimeShort": "12:00",
+          "startLocalDateTimeShort": "Fri, Oct 29 12:00"
+        },
+        {
+          "type": "FP2",
+          "startUtc": "2027-10-29T21:00:00.000Z",
+          "endUtc": "2027-10-29T22:00:00.000Z",
+          "startLocalDateShort": "Fri, Oct 29",
+          "startLocalTimeShort": "15:00",
+          "startLocalDateTimeShort": "Fri, Oct 29 15:00"
+        },
+        {
+          "type": "FP3",
+          "startUtc": "2027-10-30T18:00:00.000Z",
+          "endUtc": "2027-10-30T19:00:00.000Z",
+          "startLocalDateShort": "Sat, Oct 30",
+          "startLocalTimeShort": "12:00",
+          "startLocalDateTimeShort": "Sat, Oct 30 12:00"
+        },
+        {
+          "type": "Quali",
+          "startUtc": "2027-10-30T21:00:00.000Z",
+          "endUtc": "2027-10-30T22:00:00.000Z",
+          "startLocalDateShort": "Sat, Oct 30",
+          "startLocalTimeShort": "15:00",
+          "startLocalDateTimeShort": "Sat, Oct 30 15:00"
+        },
+        {
+          "type": "Race",
+          "startUtc": "2027-10-31T21:00:00.000Z",
+          "endUtc": "2027-10-31T23:00:00.000Z",
+          "startLocalDateShort": "Sun, Oct 31",
+          "startLocalTimeShort": "15:00",
+          "startLocalDateTimeShort": "Sun, Oct 31 15:00"
+        }
+      ]
     },
     {
       "round": 21,
@@ -257,7 +1617,75 @@
       "weekendEndUtc": "2027-11-07T20:00:00.000Z",
       "file": "21-brazil.json",
       "url": "https://mredman48.github.io/F1-standings/weekends/2027/21-brazil.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.441Z"
+      "updatedAtUtc": "2026-10-30T21:14:10.441Z",
+      "shortTitle": "Sao Paulo GP",
+      "circuit": "Autódromo José Carlos Pace",
+      "location": {
+        "city": "São Paulo",
+        "country": "Brazil",
+        "flag": {
+          "iso2": "br",
+          "png": "https://flagcdn.com/w160/br.png",
+          "svg": "https://flagcdn.com/br.svg"
+        }
+      },
+      "racePage": {
+        "slug": "brazil",
+        "url": "https://www.formula1.com/en/racing/2027/brazil"
+      },
+      "trackMap": {
+        "found": true,
+        "pageUrl": "https://www.formula1.com/en/racing/2027/brazil",
+        "mediaUrl": null,
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_brazil_detailed.png"
+      },
+      "map": {
+        "found": true,
+        "filename": "interlagos.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/interlagos.png"
+      },
+      "sessions": [
+        {
+          "type": "FP1",
+          "startUtc": "2027-11-05T15:00:00.000Z",
+          "endUtc": "2027-11-05T16:00:00.000Z",
+          "startLocalDateShort": "Fri, Nov 05",
+          "startLocalTimeShort": "09:00",
+          "startLocalDateTimeShort": "Fri, Nov 05 09:00"
+        },
+        {
+          "type": "Sprint Quali",
+          "startUtc": "2027-11-05T18:00:00.000Z",
+          "endUtc": "2027-11-05T19:00:00.000Z",
+          "startLocalDateShort": "Fri, Nov 05",
+          "startLocalTimeShort": "12:00",
+          "startLocalDateTimeShort": "Fri, Nov 05 12:00"
+        },
+        {
+          "type": "Sprint",
+          "startUtc": "2027-11-06T15:00:00.000Z",
+          "endUtc": "2027-11-06T16:00:00.000Z",
+          "startLocalDateShort": "Sat, Nov 06",
+          "startLocalTimeShort": "09:00",
+          "startLocalDateTimeShort": "Sat, Nov 06 09:00"
+        },
+        {
+          "type": "Quali",
+          "startUtc": "2027-11-06T18:00:00.000Z",
+          "endUtc": "2027-11-06T19:00:00.000Z",
+          "startLocalDateShort": "Sat, Nov 06",
+          "startLocalTimeShort": "12:00",
+          "startLocalDateTimeShort": "Sat, Nov 06 12:00"
+        },
+        {
+          "type": "Race",
+          "startUtc": "2027-11-07T18:00:00.000Z",
+          "endUtc": "2027-11-07T20:00:00.000Z",
+          "startLocalDateShort": "Sun, Nov 07",
+          "startLocalTimeShort": "12:00",
+          "startLocalDateTimeShort": "Sun, Nov 07 12:00"
+        }
+      ]
     },
     {
       "round": 22,
@@ -269,7 +1697,75 @@
       "weekendEndUtc": "2027-11-21T01:00:00.000Z",
       "file": "22-las-vegas.json",
       "url": "https://mredman48.github.io/F1-standings/weekends/2027/22-las-vegas.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.441Z"
+      "updatedAtUtc": "2026-10-30T21:14:10.441Z",
+      "shortTitle": "Las Vegas GP",
+      "circuit": "Las Vegas Strip Circuit",
+      "location": {
+        "city": "Las Vegas",
+        "country": "United States",
+        "flag": {
+          "iso2": "us",
+          "png": "https://flagcdn.com/w160/us.png",
+          "svg": "https://flagcdn.com/us.svg"
+        }
+      },
+      "racePage": {
+        "slug": "las-vegas",
+        "url": "https://www.formula1.com/en/racing/2027/las-vegas"
+      },
+      "trackMap": {
+        "found": true,
+        "pageUrl": "https://www.formula1.com/en/racing/2027/las-vegas",
+        "mediaUrl": null,
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_las-vegas_detailed.png"
+      },
+      "map": {
+        "found": true,
+        "filename": "las-vegas.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/las-vegas.png"
+      },
+      "sessions": [
+        {
+          "type": "FP1",
+          "startUtc": "2027-11-18T20:00:00.000Z",
+          "endUtc": "2027-11-18T21:00:00.000Z",
+          "startLocalDateShort": "Thu, Nov 18",
+          "startLocalTimeShort": "14:00",
+          "startLocalDateTimeShort": "Thu, Nov 18 14:00"
+        },
+        {
+          "type": "FP2",
+          "startUtc": "2027-11-18T23:00:00.000Z",
+          "endUtc": "2027-11-19T00:00:00.000Z",
+          "startLocalDateShort": "Thu, Nov 18",
+          "startLocalTimeShort": "17:00",
+          "startLocalDateTimeShort": "Thu, Nov 18 17:00"
+        },
+        {
+          "type": "FP3",
+          "startUtc": "2027-11-19T20:00:00.000Z",
+          "endUtc": "2027-11-19T21:00:00.000Z",
+          "startLocalDateShort": "Fri, Nov 19",
+          "startLocalTimeShort": "14:00",
+          "startLocalDateTimeShort": "Fri, Nov 19 14:00"
+        },
+        {
+          "type": "Quali",
+          "startUtc": "2027-11-19T23:00:00.000Z",
+          "endUtc": "2027-11-20T00:00:00.000Z",
+          "startLocalDateShort": "Fri, Nov 19",
+          "startLocalTimeShort": "17:00",
+          "startLocalDateTimeShort": "Fri, Nov 19 17:00"
+        },
+        {
+          "type": "Race",
+          "startUtc": "2027-11-20T23:00:00.000Z",
+          "endUtc": "2027-11-21T01:00:00.000Z",
+          "startLocalDateShort": "Sat, Nov 20",
+          "startLocalTimeShort": "17:00",
+          "startLocalDateTimeShort": "Sat, Nov 20 17:00"
+        }
+      ]
     },
     {
       "round": 23,
@@ -281,7 +1777,75 @@
       "weekendEndUtc": "2027-12-05T13:00:00.000Z",
       "file": "23-qatar.json",
       "url": "https://mredman48.github.io/F1-standings/weekends/2027/23-qatar.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.442Z"
+      "updatedAtUtc": "2026-10-30T21:14:10.442Z",
+      "shortTitle": "Qatar GP",
+      "circuit": "Lusail International Circuit",
+      "location": {
+        "city": "Lusail",
+        "country": "Qatar",
+        "flag": {
+          "iso2": "qa",
+          "png": "https://flagcdn.com/w160/qa.png",
+          "svg": "https://flagcdn.com/qa.svg"
+        }
+      },
+      "racePage": {
+        "slug": "qatar",
+        "url": "https://www.formula1.com/en/racing/2027/qatar"
+      },
+      "trackMap": {
+        "found": true,
+        "pageUrl": "https://www.formula1.com/en/racing/2027/qatar",
+        "mediaUrl": null,
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_qatar_detailed.png"
+      },
+      "map": {
+        "found": true,
+        "filename": "lusail.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/lusail.png"
+      },
+      "sessions": [
+        {
+          "type": "FP1",
+          "startUtc": "2027-12-03T08:00:00.000Z",
+          "endUtc": "2027-12-03T09:00:00.000Z",
+          "startLocalDateShort": "Fri, Dec 03",
+          "startLocalTimeShort": "02:00",
+          "startLocalDateTimeShort": "Fri, Dec 03 02:00"
+        },
+        {
+          "type": "Sprint Quali",
+          "startUtc": "2027-12-03T11:00:00.000Z",
+          "endUtc": "2027-12-03T12:00:00.000Z",
+          "startLocalDateShort": "Fri, Dec 03",
+          "startLocalTimeShort": "05:00",
+          "startLocalDateTimeShort": "Fri, Dec 03 05:00"
+        },
+        {
+          "type": "Sprint",
+          "startUtc": "2027-12-04T08:00:00.000Z",
+          "endUtc": "2027-12-04T09:00:00.000Z",
+          "startLocalDateShort": "Sat, Dec 04",
+          "startLocalTimeShort": "02:00",
+          "startLocalDateTimeShort": "Sat, Dec 04 02:00"
+        },
+        {
+          "type": "Quali",
+          "startUtc": "2027-12-04T11:00:00.000Z",
+          "endUtc": "2027-12-04T12:00:00.000Z",
+          "startLocalDateShort": "Sat, Dec 04",
+          "startLocalTimeShort": "05:00",
+          "startLocalDateTimeShort": "Sat, Dec 04 05:00"
+        },
+        {
+          "type": "Race",
+          "startUtc": "2027-12-05T11:00:00.000Z",
+          "endUtc": "2027-12-05T13:00:00.000Z",
+          "startLocalDateShort": "Sun, Dec 05",
+          "startLocalTimeShort": "05:00",
+          "startLocalDateTimeShort": "Sun, Dec 05 05:00"
+        }
+      ]
     },
     {
       "round": 24,
@@ -293,7 +1857,75 @@
       "weekendEndUtc": "2027-12-12T12:00:00.000Z",
       "file": "24-abu-dhabi.json",
       "url": "https://mredman48.github.io/F1-standings/weekends/2027/24-abu-dhabi.json",
-      "updatedAtUtc": "2026-10-30T21:14:10.442Z"
+      "updatedAtUtc": "2026-10-30T21:14:10.442Z",
+      "shortTitle": "Abu Dhabi GP",
+      "circuit": "Yas Marina Circuit",
+      "location": {
+        "city": "Abu Dhabi",
+        "country": "United Arab Emirates",
+        "flag": {
+          "iso2": "ae",
+          "png": "https://flagcdn.com/w160/ae.png",
+          "svg": "https://flagcdn.com/ae.svg"
+        }
+      },
+      "racePage": {
+        "slug": "abu-dhabi",
+        "url": "https://www.formula1.com/en/racing/2027/abu-dhabi"
+      },
+      "trackMap": {
+        "found": true,
+        "pageUrl": "https://www.formula1.com/en/racing/2027/abu-dhabi",
+        "mediaUrl": null,
+        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_abu-dhabi_detailed.png"
+      },
+      "map": {
+        "found": true,
+        "filename": "yas-marina.png",
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/yas-marina.png"
+      },
+      "sessions": [
+        {
+          "type": "FP1",
+          "startUtc": "2027-12-10T07:00:00.000Z",
+          "endUtc": "2027-12-10T08:00:00.000Z",
+          "startLocalDateShort": "Fri, Dec 10",
+          "startLocalTimeShort": "01:00",
+          "startLocalDateTimeShort": "Fri, Dec 10 01:00"
+        },
+        {
+          "type": "Sprint Quali",
+          "startUtc": "2027-12-10T10:00:00.000Z",
+          "endUtc": "2027-12-10T11:00:00.000Z",
+          "startLocalDateShort": "Fri, Dec 10",
+          "startLocalTimeShort": "04:00",
+          "startLocalDateTimeShort": "Fri, Dec 10 04:00"
+        },
+        {
+          "type": "Sprint",
+          "startUtc": "2027-12-11T07:00:00.000Z",
+          "endUtc": "2027-12-11T08:00:00.000Z",
+          "startLocalDateShort": "Sat, Dec 11",
+          "startLocalTimeShort": "01:00",
+          "startLocalDateTimeShort": "Sat, Dec 11 01:00"
+        },
+        {
+          "type": "Quali",
+          "startUtc": "2027-12-11T10:00:00.000Z",
+          "endUtc": "2027-12-11T11:00:00.000Z",
+          "startLocalDateShort": "Sat, Dec 11",
+          "startLocalTimeShort": "04:00",
+          "startLocalDateTimeShort": "Sat, Dec 11 04:00"
+        },
+        {
+          "type": "Race",
+          "startUtc": "2027-12-12T10:00:00.000Z",
+          "endUtc": "2027-12-12T12:00:00.000Z",
+          "startLocalDateShort": "Sun, Dec 12",
+          "startLocalTimeShort": "04:00",
+          "startLocalDateTimeShort": "Sun, Dec 12 04:00"
+        }
+      ]
     }
   ],
   "bestByDriverNumber": {}
