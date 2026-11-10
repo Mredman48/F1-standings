@@ -2262,5 +2262,32 @@
     "result": {
       "driverOfDay": "Verstappen"
     }
+  },
+  "circuitIntelligence": {
+    "displayName": "Saudi Arabian Grand Prix",
+    "id": "saudi",
+    "dna": {
+      "cornerProfile": "High-speed street",
+      "overtaking": "Medium",
+      "strategyBias": "Track Position",
+      "tireWear": "Low",
+      "trackEvolution": "High",
+      "safetyCarRisk": "High"
+    },
+    "specs": {
+      "raceDistance": "308.450 km",
+      "raceLaps": 50,
+      "turns": 27,
+      "longestStraightKm": 0.9,
+      "averageSpeed": "High",
+      "trackLength": "6.174 km"
+    },
+    "raceLapRecord": {
+      "time": "1:30.734",
+      "driver": "Lewis Hamilton",
+      "constructor": "Mercedes",
+      "year": 2021,
+      "raceName": "Saudi Arabian Grand Prix"
+    }
   }
 }
