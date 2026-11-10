@@ -1,0 +1,94 @@
+{
+  "header": "VCARB standings",
+  "generatedAtUtc": "2026-11-10T04:29:35.177Z",
+  "vcarb": {
+    "team": "VCARB",
+    "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_vcarb_color_v2.png",
+    "teamStanding": {
+      "team": "VCARB",
+      "position": "P5",
+      "points": 108,
+      "wins": 0
+    }
+  },
+  "lastRace": {
+    "raceName": "Mexico City Grand Prix",
+    "round": "19",
+    "date": "2026-11-01",
+    "circuit": "Mexico City",
+    "location": {
+      "locality": "-",
+      "country": "-"
+    }
+  },
+  "drivers": [
+    {
+      "firstName": "Liam",
+      "lastName": "LAWSON",
+      "code": "LAW",
+      "driverNumber": 30,
+      "nationality": "New Zealander",
+      "countryCode": "nz",
+      "countryName": "New Zealand",
+      "flagUrl": "https://flagcdn.com/w80/nz.png",
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-30.png",
+      "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-30-2.png",
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/liam-lawson.png",
+      "position": "P9",
+      "points": 83,
+      "wins": 0,
+      "raceWins": 0,
+      "racePodiums": 0,
+      "sprintWins": 0,
+      "sprintPodiums": 0,
+      "team": "VCARB",
+      "seat": 1,
+      "bestResult": {
+        "position": "P5",
+        "eventType": "sprint",
+        "raceName": "Singapore Grand Prix Sprint",
+        "round": "17",
+        "date": "2026-10-10",
+        "circuit": "Singapore",
+        "location": {
+          "locality": "Marina Bay",
+          "country": "Singapore"
+        }
+      }
+    },
+    {
+      "firstName": "Arvid",
+      "lastName": "LINDBLAD",
+      "code": "LIN",
+      "driverNumber": 41,
+      "nationality": "British",
+      "countryCode": "gb",
+      "countryName": "United Kingdom",
+      "flagUrl": "https://flagcdn.com/w80/gb.png",
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-41.png",
+      "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-41-2.png",
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/arvid-lindblad.png",
+      "position": "P11",
+      "points": 38,
+      "wins": 0,
+      "raceWins": 0,
+      "racePodiums": 0,
+      "sprintWins": 0,
+      "sprintPodiums": 0,
+      "team": "VCARB",
+      "seat": 2,
+      "bestResult": {
+        "position": "P6",
+        "eventType": "race",
+        "raceName": "Monaco Grand Prix",
+        "round": "6",
+        "date": "2026-06-07",
+        "circuit": "Monte Carlo",
+        "location": {
+          "locality": "Monte Carlo",
+          "country": "Monaco"
+        }
+      }
+    }
+  ]
+}

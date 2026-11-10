@@ -1,0 +1,94 @@
+{
+  "header": "Aston Martin standings",
+  "generatedAtUtc": "2026-11-10T04:29:35.174Z",
+  "astonMartin": {
+    "team": "Aston Martin",
+    "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_aston-martin_color_v2.png",
+    "teamStanding": {
+      "team": "Aston Martin",
+      "position": "P10",
+      "points": 7,
+      "wins": 0
+    }
+  },
+  "lastRace": {
+    "raceName": "Mexico City Grand Prix",
+    "round": "19",
+    "date": "2026-11-01",
+    "circuit": "Mexico City",
+    "location": {
+      "locality": "-",
+      "country": "-"
+    }
+  },
+  "drivers": [
+    {
+      "firstName": "Fernando",
+      "lastName": "ALONSO",
+      "code": "ALO",
+      "driverNumber": 14,
+      "nationality": "Spanish",
+      "countryCode": "es",
+      "countryName": "Spain",
+      "flagUrl": "https://flagcdn.com/w80/es.png",
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-14.png",
+      "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-14-2.png",
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/fernando-alonso.png",
+      "position": "P17",
+      "points": 7,
+      "wins": 0,
+      "raceWins": 0,
+      "racePodiums": 0,
+      "sprintWins": 0,
+      "sprintPodiums": 0,
+      "team": "Aston Martin",
+      "seat": 1,
+      "bestResult": {
+        "position": "P8",
+        "eventType": "race",
+        "raceName": "Bahrain Grand Prix",
+        "round": "16",
+        "date": "2026-10-04",
+        "circuit": "Kuala Lumpur",
+        "location": {
+          "locality": "Kuala Lumpur",
+          "country": "Bahrain"
+        }
+      }
+    },
+    {
+      "firstName": "Lance",
+      "lastName": "STROLL",
+      "code": "STR",
+      "driverNumber": 18,
+      "nationality": "Canadian",
+      "countryCode": "ca",
+      "countryName": "Canada",
+      "flagUrl": "https://flagcdn.com/w80/ca.png",
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-18.png",
+      "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-18-2.png",
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lance-stroll.png",
+      "position": "P22",
+      "points": 0,
+      "wins": 0,
+      "raceWins": 0,
+      "racePodiums": 0,
+      "sprintWins": 0,
+      "sprintPodiums": 0,
+      "team": "Aston Martin",
+      "seat": 2,
+      "bestResult": {
+        "position": "P12",
+        "eventType": "race",
+        "raceName": "Bahrain Grand Prix",
+        "round": "16",
+        "date": "2026-10-04",
+        "circuit": "Kuala Lumpur",
+        "location": {
+          "locality": "Kuala Lumpur",
+          "country": "Bahrain"
+        }
+      }
+    }
+  ]
+}

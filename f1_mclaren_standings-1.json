@@ -1,0 +1,94 @@
+{
+  "header": "McLaren standings",
+  "generatedAtUtc": "2026-11-10T04:29:35.172Z",
+  "mclaren": {
+    "team": "McLaren",
+    "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_mclaren_color_v2.png",
+    "teamStanding": {
+      "team": "McLaren",
+      "position": "P4",
+      "points": 365,
+      "wins": 2
+    }
+  },
+  "lastRace": {
+    "raceName": "Mexico City Grand Prix",
+    "round": "19",
+    "date": "2026-11-01",
+    "circuit": "Mexico City",
+    "location": {
+      "locality": "-",
+      "country": "-"
+    }
+  },
+  "drivers": [
+    {
+      "firstName": "Lando",
+      "lastName": "NORRIS",
+      "code": "NOR",
+      "driverNumber": 1,
+      "nationality": "British",
+      "countryCode": "gb",
+      "countryName": "United Kingdom",
+      "flagUrl": "https://flagcdn.com/w80/gb.png",
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-1.png",
+      "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-1-2.png",
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lando-norris.png",
+      "position": "P6",
+      "points": 221,
+      "wins": 2,
+      "raceWins": 3,
+      "racePodiums": 6,
+      "sprintWins": 1,
+      "sprintPodiums": 4,
+      "team": "McLaren",
+      "seat": 1,
+      "bestResult": {
+        "position": "P1",
+        "eventType": "race",
+        "raceName": "São Paulo Grand Prix",
+        "round": "20",
+        "date": "2026-11-08",
+        "circuit": "Interlagos",
+        "location": {
+          "locality": "São Paulo",
+          "country": "Brazil"
+        }
+      }
+    },
+    {
+      "firstName": "Oscar",
+      "lastName": "PIASTRI",
+      "code": "PIA",
+      "driverNumber": 81,
+      "nationality": "Australian",
+      "countryCode": "au",
+      "countryName": "Australia",
+      "flagUrl": "https://flagcdn.com/w80/au.png",
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-81.png",
+      "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-81-2.png",
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/oscar-piastri.png",
+      "position": "P7",
+      "points": 144,
+      "wins": 0,
+      "raceWins": 0,
+      "racePodiums": 2,
+      "sprintWins": 0,
+      "sprintPodiums": 1,
+      "team": "McLaren",
+      "seat": 2,
+      "bestResult": {
+        "position": "P2",
+        "eventType": "sprint",
+        "raceName": "Miami Grand Prix Sprint",
+        "round": "4",
+        "date": "2026-05-02",
+        "circuit": "Miami",
+        "location": {
+          "locality": "Miami Gardens",
+          "country": "United States"
+        }
+      }
+    }
+  ]
+}

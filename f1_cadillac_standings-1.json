@@ -1,0 +1,94 @@
+{
+  "header": "Cadillac standings",
+  "generatedAtUtc": "2026-11-10T04:29:35.177Z",
+  "cadillac": {
+    "team": "Cadillac",
+    "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_cadillac_color_v2.png",
+    "teamStanding": {
+      "team": "Cadillac",
+      "position": "P11",
+      "points": 0,
+      "wins": 0
+    }
+  },
+  "lastRace": {
+    "raceName": "Mexico City Grand Prix",
+    "round": "19",
+    "date": "2026-11-01",
+    "circuit": "Mexico City",
+    "location": {
+      "locality": "-",
+      "country": "-"
+    }
+  },
+  "drivers": [
+    {
+      "firstName": "Sergio",
+      "lastName": "PEREZ",
+      "code": "PER",
+      "driverNumber": 11,
+      "nationality": "Mexican",
+      "countryCode": "mx",
+      "countryName": "Mexico",
+      "flagUrl": "https://flagcdn.com/w80/mx.png",
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-11.png",
+      "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-11-2.png",
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/sergio-perez.png",
+      "position": "P24",
+      "points": 0,
+      "wins": 0,
+      "raceWins": 0,
+      "racePodiums": 0,
+      "sprintWins": 0,
+      "sprintPodiums": 0,
+      "team": "Cadillac",
+      "seat": 1,
+      "bestResult": {
+        "position": "P14",
+        "eventType": "race",
+        "raceName": "Azerbaijan Grand Prix",
+        "round": "15",
+        "date": "2026-09-26",
+        "circuit": "Baku",
+        "location": {
+          "locality": "Baku",
+          "country": "Azerbaijan"
+        }
+      }
+    },
+    {
+      "firstName": "Valtteri",
+      "lastName": "BOTTAS",
+      "code": "BOT",
+      "driverNumber": 77,
+      "nationality": "Finnish",
+      "countryCode": "fi",
+      "countryName": "Finland",
+      "flagUrl": "https://flagcdn.com/w80/fi.png",
+      "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-77.png",
+      "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-77-2.png",
+      "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/valtteri-bottas.png",
+      "position": "P23",
+      "points": 0,
+      "wins": 0,
+      "raceWins": 0,
+      "racePodiums": 0,
+      "sprintWins": 0,
+      "sprintPodiums": 0,
+      "team": "Cadillac",
+      "seat": 2,
+      "bestResult": {
+        "position": "P13",
+        "eventType": "race",
+        "raceName": "Chinese Grand Prix",
+        "round": "2",
+        "date": "2026-03-15",
+        "circuit": "Shanghai",
+        "location": {
+          "locality": "Shanghai",
+          "country": "China"
+        }
+      }
+    }
+  ]
+}
