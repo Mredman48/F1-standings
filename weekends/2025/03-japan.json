@@ -2272,9 +2272,7 @@
     }
   },
   "locked": false,
-  "lockedSections": [
-    "sessionResults"
-  ],
+  "lockedSections": [],
   "raceRecap": {
     "result": {
       "driverOfDay": "Tsunoda"
@@ -3896,9 +3894,9 @@
       "turns": 18,
       "longestStraightKm": 1.2,
       "averageSpeed": "High",
-      "raceLaps": null,
+      "raceLaps": 53,
       "trackLength": "5.451 km",
-      "raceDistance": null
+      "raceDistance": "307.471"
     },
     "raceLapRecord": {
       "time": "1:30.965",
@@ -3923,5 +3921,28 @@
     "previousWinner": "Max Verstappen",
     "constructor": "Red Bull",
     "date": "2024-04-07"
+  },
+  "tyreInfo": {
+    "round": 3,
+    "raceSlug": "japan",
+    "title": "Japanese GP",
+    "season": 2025,
+    "country": "Japan",
+    "flag": "jp",
+    "compounds": {
+      "hard": "C1",
+      "medium": "C2",
+      "soft": "C3"
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2025,
+      "traction": 3,
+      "tyreStress": 5,
+      "asphaltGrip": 4,
+      "braking": 2,
+      "asphaltAbrasion": 4,
+      "lateral": 5,
+      "trackEvolution": 3
+    }
   }
 }
