@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-10T19:44:13.524Z",
-  "count": 48,
+  "updatedAt": "2026-11-10T19:48:41.151Z",
+  "count": 49,
   "entries": [
     {
       "round": 1,
@@ -372,6 +372,29 @@
         "asphaltGrip": 3,
         "braking": 3,
         "asphaltAbrasion": 3,
+        "lateral": 3,
+        "trackEvolution": 5
+      }
+    },
+    {
+      "round": 6,
+      "raceSlug": "miami",
+      "title": "Miami GP",
+      "season": 2025,
+      "country": "United States",
+      "flag": "us",
+      "compounds": {
+        "hard": "C3",
+        "medium": "C4",
+        "soft": "C5"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2025,
+        "traction": 3,
+        "tyreStress": 3,
+        "asphaltGrip": 4,
+        "braking": 3,
+        "asphaltAbrasion": 2,
         "lateral": 3,
         "trackEvolution": 5
       }
