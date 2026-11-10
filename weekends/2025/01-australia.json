@@ -4880,5 +4880,28 @@
     "previousWinner": "Carlos Sainz",
     "constructor": "Ferrari",
     "date": "2024-03-24"
+  },
+  "tyreInfo": {
+    "round": 1,
+    "raceSlug": "australia",
+    "title": "Australian GP",
+    "season": 2025,
+    "country": "Australia",
+    "flag": "au",
+    "compounds": {
+      "soft": "c5",
+      "medium": "c4",
+      "hard": "c3"
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2025,
+      "traction": 2,
+      "tyreStress": 3,
+      "asphaltGrip": 2,
+      "braking": 2,
+      "asphaltAbrasion": 2,
+      "lateral": 3,
+      "trackEvolution": 3
+    }
   }
 }
