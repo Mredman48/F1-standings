@@ -1,21 +1,21 @@
 {
-  "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-11-10T04:34:02.698Z",
-  "season": 2026,
+  "header": "2024 Driver Standings",
+  "generatedAtUtc": "2026-11-11T06:53:39.541Z",
+  "season": 2024,
   "source": {
-    "primary": "weekends/2026 (sessionResults)",
-    "tieBreakFallback": "https://www.formula1.com/en/results/2026/drivers",
+    "primary": "weekends/2024 (sessionResults)",
+    "tieBreakFallback": "https://www.formula1.com/en/results/2024/drivers",
     "note": "Points are calculated from the race and sprint results in the weekend files, including any corrections made in those files. formula1.com is only used for tied-point ordering and missing metadata (nationality, driver code/number, team name)."
   },
   "lastRace": {
-    "season": "2026",
-    "round": "20",
-    "raceName": "São Paulo Grand Prix",
-    "date": "2026-11-08",
+    "season": "2024",
+    "round": "24",
+    "raceName": "Abu Dhabi Grand Prix",
+    "date": "2024-12-08",
     "circuit": {
-      "name": "Interlagos",
-      "locality": "São Paulo",
-      "country": "Brazil"
+      "name": "Yas Marina Circuit",
+      "locality": "Yas Island",
+      "country": "United Arab Emirates"
     },
     "winner": {
       "firstName": "Lando",
@@ -29,92 +29,50 @@
     {
       "position": "P1",
       "positionNumber": 1,
-      "points": 390,
+      "points": 437,
       "wins": 9,
       "driver": {
-        "code": "ANT",
-        "firstName": "Kimi",
-        "lastName": "ANTONELLI",
-        "fullName": "Kimi ANTONELLI",
-        "nationality": "ITA",
-        "driverNumber": 12,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/kimi-antonelli.png",
+        "code": "NOR",
+        "firstName": "Max",
+        "lastName": "VERSTAPPEN",
+        "fullName": "Max VERSTAPPEN",
+        "nationality": "GBR",
+        "driverNumber": 1,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/max-verstappen.png",
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "Mercedes",
-        "fullName": "Mercedes",
+        "name": "Red Bull",
+        "fullName": "McLaren",
         "nationality": null
       }
     },
     {
       "position": "P2",
       "positionNumber": 2,
-      "points": 279,
-      "wins": 3,
+      "points": 374,
+      "wins": 4,
       "driver": {
-        "code": "VER",
-        "firstName": "Max",
-        "lastName": "VERSTAPPEN",
-        "fullName": "Max VERSTAPPEN",
-        "nationality": "NED",
-        "driverNumber": 3,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/max-verstappen.png",
+        "code": "-",
+        "firstName": "Lando",
+        "lastName": "NORRIS",
+        "fullName": "Lando NORRIS",
+        "nationality": "-",
+        "driverNumber": 4,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lando-norris.png",
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "Red Bull",
-        "fullName": "Red Bull",
+        "name": "McLaren",
+        "fullName": "McLaren",
         "nationality": null
       }
     },
     {
       "position": "P3",
       "positionNumber": 3,
-      "points": 262,
+      "points": 356,
       "wins": 3,
-      "driver": {
-        "code": "RUS",
-        "firstName": "George",
-        "lastName": "RUSSELL",
-        "fullName": "George RUSSELL",
-        "nationality": "GBR",
-        "driverNumber": 63,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/george-russell.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Mercedes",
-        "fullName": "Mercedes",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P4",
-      "positionNumber": 4,
-      "points": 261,
-      "wins": 1,
-      "driver": {
-        "code": "HAM",
-        "firstName": "Lewis",
-        "lastName": "HAMILTON",
-        "fullName": "Lewis HAMILTON",
-        "nationality": "GBR",
-        "driverNumber": 44,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lewis-hamilton.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Ferrari",
-        "fullName": "Ferrari",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P5",
-      "positionNumber": 5,
-      "points": 249,
-      "wins": 1,
       "driver": {
         "code": "LEC",
         "firstName": "Charles",
@@ -132,31 +90,10 @@
       }
     },
     {
-      "position": "P6",
-      "positionNumber": 6,
-      "points": 246,
-      "wins": 3,
-      "driver": {
-        "code": "NOR",
-        "firstName": "Lando",
-        "lastName": "NORRIS",
-        "fullName": "Lando NORRIS",
-        "nationality": "GBR",
-        "driverNumber": 1,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lando-norris.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "McLaren",
-        "fullName": "McLaren",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P7",
-      "positionNumber": 7,
-      "points": 152,
-      "wins": 0,
+      "position": "P4",
+      "positionNumber": 4,
+      "points": 292,
+      "wins": 2,
       "driver": {
         "code": "PIA",
         "firstName": "Oscar",
@@ -174,18 +111,81 @@
       }
     },
     {
+      "position": "P5",
+      "positionNumber": 5,
+      "points": 290,
+      "wins": 2,
+      "driver": {
+        "code": "SAI",
+        "firstName": "Carlos",
+        "lastName": "SAINZ",
+        "fullName": "Carlos SAINZ",
+        "nationality": "ESP",
+        "driverNumber": 55,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/carlos-sainz.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Ferrari",
+        "fullName": "Ferrari",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P6",
+      "positionNumber": 6,
+      "points": 245,
+      "wins": 2,
+      "driver": {
+        "code": "RUS",
+        "firstName": "George",
+        "lastName": "RUSSELL",
+        "fullName": "George RUSSELL",
+        "nationality": "GBR",
+        "driverNumber": 63,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/george-russell.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Mercedes",
+        "fullName": "Mercedes",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P7",
+      "positionNumber": 7,
+      "points": 223,
+      "wins": 2,
+      "driver": {
+        "code": "HAM",
+        "firstName": "Lewis",
+        "lastName": "HAMILTON",
+        "fullName": "Lewis HAMILTON",
+        "nationality": "GBR",
+        "driverNumber": 44,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lewis-hamilton.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Mercedes",
+        "fullName": "Mercedes",
+        "nationality": null
+      }
+    },
+    {
       "position": "P8",
       "positionNumber": 8,
-      "points": 122,
+      "points": 152,
       "wins": 0,
       "driver": {
-        "code": "HAD",
-        "firstName": "Isack",
-        "lastName": "HADJAR",
-        "fullName": "Isack HADJAR",
-        "nationality": "FRA",
-        "driverNumber": 6,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/isack-hadjar.png",
+        "code": "PER",
+        "firstName": "Sergio",
+        "lastName": "PEREZ",
+        "fullName": "Sergio PEREZ",
+        "nationality": "MEX",
+        "driverNumber": 11,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/sergio-perez.png",
         "openf1HeadshotUrl": null
       },
       "constructor": {
@@ -197,21 +197,21 @@
     {
       "position": "P9",
       "positionNumber": 9,
-      "points": 89,
+      "points": 70,
       "wins": 0,
       "driver": {
-        "code": "LAW",
-        "firstName": "Liam",
-        "lastName": "LAWSON",
-        "fullName": "Liam LAWSON",
-        "nationality": "NZL",
-        "driverNumber": 30,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/liam-lawson.png",
+        "code": "ALO",
+        "firstName": "Fernando",
+        "lastName": "ALONSO",
+        "fullName": "Fernando ALONSO",
+        "nationality": "ESP",
+        "driverNumber": 14,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/fernando-alonso.png",
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "VCARB",
-        "fullName": "VCARB",
+        "name": "Aston Martin",
+        "fullName": "Aston Martin",
         "nationality": null
       }
     },
@@ -239,91 +239,7 @@
     {
       "position": "P11",
       "positionNumber": 11,
-      "points": 38,
-      "wins": 0,
-      "driver": {
-        "code": "LIN",
-        "firstName": "Arvid",
-        "lastName": "LINDBLAD",
-        "fullName": "Arvid LINDBLAD",
-        "nationality": "GBR",
-        "driverNumber": 41,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/arvid-lindblad.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "VCARB",
-        "fullName": "VCARB",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P12",
-      "positionNumber": 12,
-      "points": 27,
-      "wins": 0,
-      "driver": {
-        "code": "COL",
-        "firstName": "Franco",
-        "lastName": "COLAPINTO",
-        "fullName": "Franco COLAPINTO",
-        "nationality": "ARG",
-        "driverNumber": 43,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/franco-colapinto.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Alpine",
-        "fullName": "Alpine",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P13",
-      "positionNumber": 13,
-      "points": 23,
-      "wins": 0,
-      "driver": {
-        "code": "BEA",
-        "firstName": "Oliver",
-        "lastName": "BEARMAN",
-        "fullName": "Oliver BEARMAN",
-        "nationality": "GBR",
-        "driverNumber": 87,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/oliver-bearman.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Haas",
-        "fullName": "Haas",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P14",
-      "positionNumber": 14,
-      "points": 14,
-      "wins": 0,
-      "driver": {
-        "code": "BOR",
-        "firstName": "Gabriel",
-        "lastName": "BORTOLETO",
-        "fullName": "Gabriel BORTOLETO",
-        "nationality": "BRA",
-        "driverNumber": 5,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/gabriel-bortoleto.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Audi",
-        "fullName": "Audi",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P15",
-      "positionNumber": 15,
-      "points": 14,
+      "points": 41,
       "wins": 0,
       "driver": {
         "code": "HUL",
@@ -336,15 +252,57 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "Audi",
-        "fullName": "Audi",
+        "name": "Haas",
+        "fullName": "Haas",
         "nationality": null
       }
     },
     {
-      "position": "P16",
-      "positionNumber": 16,
-      "points": 7,
+      "position": "P12",
+      "positionNumber": 12,
+      "points": 30,
+      "wins": 0,
+      "driver": {
+        "code": "TSU",
+        "firstName": "Yuki",
+        "lastName": "TSUNODA",
+        "fullName": "Yuki TSUNODA",
+        "nationality": "JPN",
+        "driverNumber": 22,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/yuki-tsunoda.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "RB",
+        "fullName": "RB Honda RBPT",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P13",
+      "positionNumber": 13,
+      "points": 24,
+      "wins": 0,
+      "driver": {
+        "code": "STR",
+        "firstName": "Lance",
+        "lastName": "STROLL",
+        "fullName": "Lance STROLL",
+        "nationality": "CAN",
+        "driverNumber": 18,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lance-stroll.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Aston Martin",
+        "fullName": "Aston Martin",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P14",
+      "positionNumber": 14,
+      "points": 23,
       "wins": 0,
       "driver": {
         "code": "OCO",
@@ -357,57 +315,57 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
+        "name": "Alpine",
+        "fullName": "Alpine",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P15",
+      "positionNumber": 15,
+      "points": 16,
+      "wins": 0,
+      "driver": {
+        "code": "-",
+        "firstName": "Kevin",
+        "lastName": "MAGNUSSEN",
+        "fullName": "Kevin MAGNUSSEN",
+        "nationality": "-",
+        "driverNumber": 20,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/kevin-magnussen.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
         "name": "Haas",
         "fullName": "Haas",
         "nationality": null
       }
     },
     {
+      "position": "P16",
+      "positionNumber": 16,
+      "points": 12,
+      "wins": 0,
+      "driver": {
+        "code": "VER",
+        "firstName": "Daniel",
+        "lastName": "RICCIARDO",
+        "fullName": "Daniel RICCIARDO",
+        "nationality": "NED",
+        "driverNumber": 3,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/daniel-ricciardo.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "RB",
+        "fullName": "Red Bull",
+        "nationality": null
+      }
+    },
+    {
       "position": "P17",
       "positionNumber": 17,
-      "points": 7,
-      "wins": 0,
-      "driver": {
-        "code": "ALO",
-        "firstName": "Fernando",
-        "lastName": "ALONSO",
-        "fullName": "Fernando ALONSO",
-        "nationality": "ESP",
-        "driverNumber": 14,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/fernando-alonso.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Aston Martin",
-        "fullName": "Aston Martin",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P18",
-      "positionNumber": 18,
-      "points": 7,
-      "wins": 0,
-      "driver": {
-        "code": "SAI",
-        "firstName": "Carlos",
-        "lastName": "SAINZ",
-        "fullName": "Carlos SAINZ",
-        "nationality": "ESP",
-        "driverNumber": 55,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/carlos-sainz.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Williams",
-        "fullName": "Williams",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P19",
-      "positionNumber": 19,
-      "points": 5,
+      "points": 12,
       "wins": 0,
       "driver": {
         "code": "ALB",
@@ -426,65 +384,107 @@
       }
     },
     {
-      "position": "P20",
-      "positionNumber": 20,
-      "points": 1,
+      "position": "P18",
+      "positionNumber": 18,
+      "points": 6,
       "wins": 0,
       "driver": {
-        "code": "TSU",
-        "firstName": "Yuki",
-        "lastName": "TSUNODA",
-        "fullName": "Yuki TSUNODA",
-        "nationality": "JPN",
-        "driverNumber": 22,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/yuki-tsunoda.png",
+        "code": "-",
+        "firstName": "Oliver",
+        "lastName": "BEARMAN",
+        "fullName": "Oliver BEARMAN",
+        "nationality": "-",
+        "driverNumber": 38,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/oliver-bearman.png",
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "VCARB",
-        "fullName": "VCARB",
+        "name": "Ferrari",
+        "fullName": "Ferrari",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P19",
+      "positionNumber": 19,
+      "points": 5,
+      "wins": 0,
+      "driver": {
+        "code": "COL",
+        "firstName": "Franco",
+        "lastName": "COLAPINTO",
+        "fullName": "Franco COLAPINTO",
+        "nationality": "ARG",
+        "driverNumber": 43,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/franco-colapinto.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Williams",
+        "fullName": "Williams",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P20",
+      "positionNumber": 20,
+      "points": 4,
+      "wins": 0,
+      "driver": {
+        "code": "LAW",
+        "firstName": "Liam",
+        "lastName": "LAWSON",
+        "fullName": "Liam LAWSON",
+        "nationality": "NZL",
+        "driverNumber": 30,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/liam-lawson.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "RB",
+        "fullName": "RB Honda RBPT",
         "nationality": null
       }
     },
     {
       "position": "P21",
       "positionNumber": 21,
-      "points": 1,
+      "points": 4,
       "wins": 0,
       "driver": {
         "code": "-",
-        "firstName": "Ryo",
-        "lastName": "HIRAKAWA",
-        "fullName": "Ryo HIRAKAWA",
+        "firstName": "ZHOU",
+        "lastName": "Guanyu",
+        "fullName": "ZHOU Guanyu",
         "nationality": "-",
-        "driverNumber": 50,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/ryo-hirakawa.png",
+        "driverNumber": 24,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/zhou-guanyu.png",
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "Haas",
-        "fullName": "Haas",
+        "name": "Audi",
+        "fullName": "Audi",
         "nationality": null
       }
     },
     {
       "position": "P22",
       "positionNumber": 22,
-      "points": 0,
+      "points": 1,
       "wins": 0,
       "driver": {
-        "code": "STR",
-        "firstName": "Lance",
-        "lastName": "STROLL",
-        "fullName": "Lance STROLL",
-        "nationality": "CAN",
-        "driverNumber": 18,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lance-stroll.png",
+        "code": "-",
+        "firstName": "Oliver",
+        "lastName": "BEARMAN",
+        "fullName": "Oliver BEARMAN",
+        "nationality": "-",
+        "driverNumber": 50,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/oliver-bearman.png",
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "Aston Martin",
-        "fullName": "Aston Martin",
+        "name": "Haas",
+        "fullName": "Haas",
         "nationality": null
       }
     },
@@ -504,8 +504,8 @@
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "Cadillac",
-        "fullName": "Cadillac",
+        "name": "Audi",
+        "fullName": "Kick Sauber Ferrari",
         "nationality": null
       }
     },
@@ -515,18 +515,18 @@
       "points": 0,
       "wins": 0,
       "driver": {
-        "code": "PER",
-        "firstName": "Sergio",
-        "lastName": "PEREZ",
-        "fullName": "Sergio PEREZ",
-        "nationality": "MEX",
-        "driverNumber": 11,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/sergio-perez.png",
+        "code": "-",
+        "firstName": "Jack",
+        "lastName": "DOOHAN",
+        "fullName": "Jack DOOHAN",
+        "nationality": "-",
+        "driverNumber": 61,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/jack-doohan.png",
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "Cadillac",
-        "fullName": "Cadillac",
+        "name": "Alpine",
+        "fullName": "Alpine",
         "nationality": null
       }
     },
@@ -537,17 +537,17 @@
       "wins": 0,
       "driver": {
         "code": "-",
-        "firstName": "Rafael",
-        "lastName": "CAMARA",
-        "fullName": "Rafael CAMARA",
+        "firstName": "Logan",
+        "lastName": "SARGEANT",
+        "fullName": "Logan SARGEANT",
         "nationality": "-",
-        "driverNumber": 51,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/rafael-camara.png",
+        "driverNumber": 2,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/logan-sargeant.png",
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "Haas",
-        "fullName": "Haas",
+        "name": "Williams",
+        "fullName": "Williams",
         "nationality": null
       }
     }
