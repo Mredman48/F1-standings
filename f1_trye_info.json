@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-11T14:40:33.476Z",
-  "count": 85,
+  "updatedAt": "2026-11-11T14:48:57.989Z",
+  "count": 86,
   "entries": [
     {
       "round": 1,
@@ -1753,6 +1753,31 @@
       },
       "trackCharacteristics": {
         "ratingsSeason": 2025,
+        "traction": 4,
+        "tyreStress": 4,
+        "asphaltGrip": 3,
+        "braking": 3,
+        "asphaltAbrasion": 3,
+        "lateral": 4,
+        "trackEvolution": 4
+      }
+    },
+    {
+      "round": 19,
+      "raceSlug": "united-states",
+      "title": "United States GP",
+      "season": 2024,
+      "country": "United States",
+      "flag": "us",
+      "raceStart": "2024-10-20T19:00:00.000Z",
+      "compounds": {
+        "soft": "C4",
+        "medium": "C3",
+        "hard": "C2"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2024,
+        "pastYear": false,
         "traction": 4,
         "tyreStress": 4,
         "asphaltGrip": 3,
