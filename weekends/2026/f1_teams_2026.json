@@ -1,0 +1,288 @@
+{
+  "schemaVersion": 1,
+  "season": 2026,
+  "notes": [
+    "Lives at weekends/<season>/f1_teams_<season>.json.",
+    "FALLBACK: any field that is null, \"\" or missing falls back to the live season's value for the team with the same `key`. Reuse a 2026 key (e.g. \"audi\" for Sauber) to inherit; a key with no live match has nothing to fall back to.",
+    "key: stable lowercase id (letters/digits). name: display name that year. fullName: official entry name. shortName: 2-3 letter code.",
+    "aliases: every spelling of the team in that season's results/standings feeds (matched ignoring case, spaces and punctuation). Fills in only if non-empty.",
+    "base: HQ city, country: team nationality, powerUnit: engine supplier that year.",
+    "colors.primary / colors.secondary: the two team colours for constructors standings and the dot gradient. onPrimary: text colour on primary. primaryLight / secondaryLight: optional paper-mode overrides.",
+    "carUrl: direct link to the side-view car graphic (700:172). null = the app's bundled car art.",
+    "icon: bundled asset name. logoUrl / logoLightUrl: optional remote logos (light = for light mode)."
+  ],
+  "teams": [
+    {
+      "key": "mercedes",
+      "name": "Mercedes",
+      "fullName": "Mercedes-AMG PETRONAS Formula One Team",
+      "shortName": "MER",
+      "aliases": [
+        "Mercedes",
+        "Mercedes-AMG Petronas F1 Team"
+      ],
+      "base": "Brackley, UK",
+      "country": "Germany",
+      "powerUnit": "Mercedes",
+      "colors": {
+        "primary": "#00A19B",
+        "secondary": "#C6C6C6",
+        "onPrimary": "#0A0C0F",
+        "primaryLight": null,
+        "secondaryLight": null
+      },
+      "icon": "mercedes-icon",
+      "logoUrl": null,
+      "logoLightUrl": null,
+      "carUrl": null
+    },
+    {
+      "key": "ferrari",
+      "name": "Ferrari",
+      "fullName": "Scuderia Ferrari HP",
+      "shortName": "FER",
+      "aliases": [
+        "Ferrari",
+        "Scuderia Ferrari"
+      ],
+      "base": "Maranello, Italy",
+      "country": "Italy",
+      "powerUnit": "Ferrari",
+      "colors": {
+        "primary": "#F70D1A",
+        "secondary": "#F4D03F",
+        "onPrimary": "#0A0C0F",
+        "primaryLight": null,
+        "secondaryLight": null
+      },
+      "icon": "ferrari-icon",
+      "logoUrl": null,
+      "logoLightUrl": null,
+      "carUrl": null
+    },
+    {
+      "key": "mclaren",
+      "name": "McLaren",
+      "fullName": "McLaren Mastercard F1 Team",
+      "shortName": "MCL",
+      "aliases": [
+        "McLaren",
+        "McLaren F1 Team"
+      ],
+      "base": "Woking, UK",
+      "country": "United Kingdom",
+      "powerUnit": "Mercedes",
+      "colors": {
+        "primary": "#E56717",
+        "secondary": "#00535C",
+        "onPrimary": "#0A0C0F",
+        "primaryLight": null,
+        "secondaryLight": null
+      },
+      "icon": "mclaren-icon",
+      "logoUrl": null,
+      "logoLightUrl": null,
+      "carUrl": null
+    },
+    {
+      "key": "redbull",
+      "name": "Red Bull Racing",
+      "fullName": "Oracle Red Bull Racing",
+      "shortName": "RBR",
+      "aliases": [
+        "Red Bull",
+        "Red Bull Racing",
+        "Oracle Red Bull Racing"
+      ],
+      "base": "Milton Keynes, UK",
+      "country": "Austria",
+      "powerUnit": "Red Bull Ford",
+      "colors": {
+        "primary": "#3671C6",
+        "secondary": "#C5323C",
+        "onPrimary": "#FFFFFF",
+        "primaryLight": null,
+        "secondaryLight": null
+      },
+      "icon": "red-bull-icon",
+      "logoUrl": null,
+      "logoLightUrl": null,
+      "carUrl": null
+    },
+    {
+      "key": "williams",
+      "name": "Williams",
+      "fullName": "Atlassian Williams F1 Team",
+      "shortName": "WIL",
+      "aliases": [
+        "Williams",
+        "Williams Racing"
+      ],
+      "base": "Grove, UK",
+      "country": "United Kingdom",
+      "powerUnit": "Mercedes",
+      "colors": {
+        "primary": "#0231BD",
+        "secondary": "#009FDC",
+        "onPrimary": "#FFFFFF",
+        "primaryLight": null,
+        "secondaryLight": null
+      },
+      "icon": "williams-icon",
+      "logoUrl": null,
+      "logoLightUrl": null,
+      "carUrl": null
+    },
+    {
+      "key": "racingbulls",
+      "name": "Racing Bulls",
+      "fullName": "Visa Cash App Racing Bulls Formula One Team",
+      "shortName": "RB",
+      "aliases": [
+        "Racing Bulls",
+        "RB F1 Team",
+        "Visa Cash App Racing Bulls F1 Team",
+        "VCARB"
+      ],
+      "base": "Faenza, Italy",
+      "country": "Italy",
+      "powerUnit": "Red Bull Ford",
+      "colors": {
+        "primary": "#1B46A1",
+        "secondary": "#00CF31",
+        "onPrimary": "#FFFFFF",
+        "primaryLight": null,
+        "secondaryLight": null
+      },
+      "icon": "vcarb-icon",
+      "logoUrl": null,
+      "logoLightUrl": null,
+      "carUrl": null
+    },
+    {
+      "key": "astonmartin",
+      "name": "Aston Martin",
+      "fullName": "Aston Martin Aramco Formula One Team",
+      "shortName": "AMR",
+      "aliases": [
+        "Aston Martin",
+        "Aston Martin Aramco",
+        "Aston Martin Aramco F1 Team"
+      ],
+      "base": "Silverstone, UK",
+      "country": "United Kingdom",
+      "powerUnit": "Honda",
+      "colors": {
+        "primary": "#0A7968",
+        "secondary": "#CEDC00",
+        "onPrimary": "#FFFFFF",
+        "primaryLight": null,
+        "secondaryLight": null
+      },
+      "icon": "aston-martin-icon",
+      "logoUrl": null,
+      "logoLightUrl": null,
+      "carUrl": null
+    },
+    {
+      "key": "alpine",
+      "name": "Alpine",
+      "fullName": "BWT Alpine Formula One Team",
+      "shortName": "ALP",
+      "aliases": [
+        "Alpine",
+        "Alpine F1 Team"
+      ],
+      "base": "Enstone, UK",
+      "country": "France",
+      "powerUnit": "Mercedes",
+      "colors": {
+        "primary": "#FF87BC",
+        "secondary": "#007AC1",
+        "onPrimary": "#0A0C0F",
+        "primaryLight": null,
+        "secondaryLight": null
+      },
+      "icon": "alpine-icon",
+      "logoUrl": null,
+      "logoLightUrl": null,
+      "carUrl": null
+    },
+    {
+      "key": "haas",
+      "name": "Haas F1 Team",
+      "fullName": "TGR Haas F1 Team",
+      "shortName": "HAA",
+      "aliases": [
+        "Haas",
+        "Haas F1 Team",
+        "MoneyGram Haas F1 Team"
+      ],
+      "base": "Kannapolis, USA",
+      "country": "USA",
+      "powerUnit": "Ferrari",
+      "colors": {
+        "primary": "#DA291C",
+        "secondary": "#AEAEAE",
+        "onPrimary": "#FFFFFF",
+        "primaryLight": null,
+        "secondaryLight": null
+      },
+      "icon": "haas-icon",
+      "logoUrl": null,
+      "logoLightUrl": null,
+      "carUrl": null
+    },
+    {
+      "key": "audi",
+      "name": "Audi",
+      "fullName": "Audi Revolut F1 Team",
+      "shortName": "AUD",
+      "aliases": [
+        "Audi",
+        "Audi F1 Team",
+        "Kick Sauber",
+        "Stake F1 Team Kick Sauber",
+        "Sauber"
+      ],
+      "base": "Hinwil, Switzerland",
+      "country": "Germany",
+      "powerUnit": "Audi",
+      "colors": {
+        "primary": "#EB3C27",
+        "secondary": "#828788",
+        "onPrimary": "#0A0C0F",
+        "primaryLight": null,
+        "secondaryLight": null
+      },
+      "icon": "audi-icon",
+      "logoUrl": null,
+      "logoLightUrl": null,
+      "carUrl": null
+    },
+    {
+      "key": "cadillac",
+      "name": "Cadillac",
+      "fullName": "Cadillac Formula 1 Team",
+      "shortName": "CAD",
+      "aliases": [
+        "Cadillac",
+        "Cadillac F1 Team"
+      ],
+      "base": "Silverstone, UK",
+      "country": "USA",
+      "powerUnit": "Ferrari",
+      "colors": {
+        "primary": "#828788",
+        "secondary": "#FFFFFF",
+        "onPrimary": "#0A0C0F",
+        "primaryLight": null,
+        "secondaryLight": null
+      },
+      "icon": "cadillac-icon",
+      "logoUrl": null,
+      "logoLightUrl": null,
+      "carUrl": null
+    }
+  ]
+}
