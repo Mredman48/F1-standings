@@ -1,0 +1,142 @@
+{
+  "header": "2023 Canadian GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T18:12:45.917Z",
+  "season": 2023,
+  "round": 8,
+  "meetingKey": null,
+  "raceSlug": "canada",
+  "status": "upcoming",
+  "weekend": {
+    "round": 8,
+    "id": "canada",
+    "type": "RACE_WEEKEND",
+    "title": "Canadian GP",
+    "shortTitle": "Canadian GP",
+    "circuit": "Circuit Gilles Villeneuve",
+    "season": "2023",
+    "location": {
+      "city": "Montreal",
+      "country": "Canada",
+      "flag": {
+        "iso2": "ca",
+        "png": "https://flagcdn.com/w160/ca.png",
+        "svg": "https://flagcdn.com/ca.svg"
+      }
+    },
+    "racePage": {
+      "slug": "canada",
+      "url": "https://www.formula1.com/en/racing/2023/canada"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2023/canada",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmontrealdetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_canada_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "montreal.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/montreal.png"
+    },
+    "weekend": {
+      "startUtc": "2023-06-16T17:30:00.000Z",
+      "endUtc": "2023-06-18T20:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2023-06-16T17:30:00.000Z",
+        "endUtc": "2023-06-16T18:30:00.000Z",
+        "startLocalDateShort": "Fri, Jun 16",
+        "startLocalTimeShort": "11:30",
+        "startLocalDateTimeShort": "Fri, Jun 16 11:30"
+      },
+      {
+        "type": "FP2",
+        "startUtc": "2023-06-16T20:30:00.000Z",
+        "endUtc": "2023-06-16T22:00:00.000Z",
+        "startLocalDateShort": "Fri, Jun 16",
+        "startLocalTimeShort": "14:30",
+        "startLocalDateTimeShort": "Fri, Jun 16 14:30"
+      },
+      {
+        "type": "FP3",
+        "startUtc": "2023-06-17T16:30:00.000Z",
+        "endUtc": "2023-06-17T17:30:00.000Z",
+        "startLocalDateShort": "Sat, Jun 17",
+        "startLocalTimeShort": "10:30",
+        "startLocalDateTimeShort": "Sat, Jun 17 10:30"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2023-06-17T20:00:00.000Z",
+        "endUtc": "2023-06-17T21:00:00.000Z",
+        "startLocalDateShort": "Sat, Jun 17",
+        "startLocalTimeShort": "14:00",
+        "startLocalDateTimeShort": "Sat, Jun 17 14:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2023-06-18T18:00:00.000Z",
+        "endUtc": "2023-06-18T20:00:00.000Z",
+        "startLocalDateShort": "Sun, Jun 18",
+        "startLocalTimeShort": "12:00",
+        "startLocalDateTimeShort": "Sun, Jun 18 12:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Canadian Grand Prix",
+    "dna": {
+      "cornerProfile": "Stop-start braking",
+      "overtaking": "High",
+      "tireWear": "Medium",
+      "trackEvolution": "Medium",
+      "strategyBias": "Undercut",
+      "safetyCarRisk": "High"
+    },
+    "intelligence": [
+      "Heavy braking zones create real passing opportunities.",
+      "Wall proximity increases Safety Car chances.",
+      "Traction out of slow corners is key.",
+      "Brake management can influence race pace."
+    ],
+    "id": "canada",
+    "matchKeys": [
+      "canada",
+      "canadian",
+      "montreal",
+      "gillesvilleneuve"
+    ],
+    "specs": {
+      "turns": 14,
+      "longestStraightKm": 1.2,
+      "averageSpeed": "Medium",
+      "raceLaps": 70,
+      "trackLength": "4.361 km",
+      "raceDistance": "305.27 km"
+    },
+    "raceLapRecord": {
+      "time": "1:13.078",
+      "driver": "Valtteri Bottas",
+      "constructor": "Mercedes",
+      "year": 2019,
+      "raceName": "Canadian Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

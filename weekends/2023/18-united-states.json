@@ -1,0 +1,143 @@
+{
+  "header": "2023 United States GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T18:12:45.920Z",
+  "season": 2023,
+  "round": 18,
+  "meetingKey": null,
+  "raceSlug": "united-states",
+  "status": "upcoming",
+  "weekend": {
+    "round": 18,
+    "id": "united-states",
+    "type": "RACE_WEEKEND",
+    "title": "United States GP",
+    "shortTitle": "United States GP",
+    "circuit": "Circuit of the Americas",
+    "season": "2023",
+    "location": {
+      "city": "Austin",
+      "country": "United States",
+      "flag": {
+        "iso2": "us",
+        "png": "https://flagcdn.com/w160/us.png",
+        "svg": "https://flagcdn.com/us.svg"
+      }
+    },
+    "racePage": {
+      "slug": "united-states",
+      "url": "https://www.formula1.com/en/racing/2023/united-states"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2023/united-states",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackaustindetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_united-states_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "austin.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/austin.png"
+    },
+    "weekend": {
+      "startUtc": "2023-10-20T17:30:00.000Z",
+      "endUtc": "2023-10-22T21:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2023-10-20T17:30:00.000Z",
+        "endUtc": "2023-10-20T18:30:00.000Z",
+        "startLocalDateShort": "Fri, Oct 20",
+        "startLocalTimeShort": "11:30",
+        "startLocalDateTimeShort": "Fri, Oct 20 11:30"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2023-10-20T21:00:00.000Z",
+        "endUtc": "2023-10-20T22:00:00.000Z",
+        "startLocalDateShort": "Fri, Oct 20",
+        "startLocalTimeShort": "15:00",
+        "startLocalDateTimeShort": "Fri, Oct 20 15:00"
+      },
+      {
+        "type": "Sprint Quali",
+        "startUtc": "2023-10-21T17:30:00.000Z",
+        "endUtc": "2023-10-21T18:14:00.000Z",
+        "startLocalDateShort": "Sat, Oct 21",
+        "startLocalTimeShort": "11:30",
+        "startLocalDateTimeShort": "Sat, Oct 21 11:30"
+      },
+      {
+        "type": "Sprint",
+        "startUtc": "2023-10-21T22:00:00.000Z",
+        "endUtc": "2023-10-21T23:00:00.000Z",
+        "startLocalDateShort": "Sat, Oct 21",
+        "startLocalTimeShort": "16:00",
+        "startLocalDateTimeShort": "Sat, Oct 21 16:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2023-10-22T19:00:00.000Z",
+        "endUtc": "2023-10-22T21:00:00.000Z",
+        "startLocalDateShort": "Sun, Oct 22",
+        "startLocalTimeShort": "13:00",
+        "startLocalDateTimeShort": "Sun, Oct 22 13:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "United States Grand Prix",
+    "dna": {
+      "cornerProfile": "Mixed technical",
+      "overtaking": "High",
+      "tireWear": "Medium",
+      "trackEvolution": "Medium",
+      "strategyBias": "Balanced",
+      "safetyCarRisk": "Medium"
+    },
+    "intelligence": [
+      "Sector 1 rewards high-speed aero stability.",
+      "The long back straight creates strong overtaking chances.",
+      "Bumpy sections can affect balance and tire life.",
+      "This is a strong all-round car test."
+    ],
+    "id": "usa",
+    "matchKeys": [
+      "unitedstates",
+      "usa",
+      "austin",
+      "cota",
+      "circuitoftheamericas"
+    ],
+    "specs": {
+      "turns": 20,
+      "longestStraightKm": 1.2,
+      "averageSpeed": "Medium",
+      "raceLaps": 56,
+      "trackLength": "5.513 km",
+      "raceDistance": "308.405 km"
+    },
+    "raceLapRecord": {
+      "time": "1:36.169",
+      "driver": "Charles Leclerc",
+      "constructor": "Ferrari",
+      "year": 2019,
+      "raceName": "United States Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

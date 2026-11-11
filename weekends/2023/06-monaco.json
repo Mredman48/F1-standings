@@ -1,0 +1,140 @@
+{
+  "header": "2023 Monaco GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T18:12:45.916Z",
+  "season": 2023,
+  "round": 6,
+  "meetingKey": null,
+  "raceSlug": "monaco",
+  "status": "upcoming",
+  "weekend": {
+    "round": 6,
+    "id": "monaco",
+    "type": "RACE_WEEKEND",
+    "title": "Monaco GP",
+    "shortTitle": "Monaco GP",
+    "circuit": "Circuit de Monaco",
+    "season": "2023",
+    "location": {
+      "city": "Monte Carlo",
+      "country": "Monaco",
+      "flag": {
+        "iso2": "mc",
+        "png": "https://flagcdn.com/w160/mc.png",
+        "svg": "https://flagcdn.com/mc.svg"
+      }
+    },
+    "racePage": {
+      "slug": "monaco",
+      "url": "https://www.formula1.com/en/racing/2023/monaco"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2023/monaco",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmontecarlodetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_monaco_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "monaco.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/monaco.png"
+    },
+    "weekend": {
+      "startUtc": "2023-05-26T11:30:00.000Z",
+      "endUtc": "2023-05-28T15:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2023-05-26T11:30:00.000Z",
+        "endUtc": "2023-05-26T12:30:00.000Z",
+        "startLocalDateShort": "Fri, May 26",
+        "startLocalTimeShort": "05:30",
+        "startLocalDateTimeShort": "Fri, May 26 05:30"
+      },
+      {
+        "type": "FP2",
+        "startUtc": "2023-05-26T15:00:00.000Z",
+        "endUtc": "2023-05-26T16:00:00.000Z",
+        "startLocalDateShort": "Fri, May 26",
+        "startLocalTimeShort": "09:00",
+        "startLocalDateTimeShort": "Fri, May 26 09:00"
+      },
+      {
+        "type": "FP3",
+        "startUtc": "2023-05-27T10:30:00.000Z",
+        "endUtc": "2023-05-27T11:30:00.000Z",
+        "startLocalDateShort": "Sat, May 27",
+        "startLocalTimeShort": "04:30",
+        "startLocalDateTimeShort": "Sat, May 27 04:30"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2023-05-27T14:00:00.000Z",
+        "endUtc": "2023-05-27T15:00:00.000Z",
+        "startLocalDateShort": "Sat, May 27",
+        "startLocalTimeShort": "08:00",
+        "startLocalDateTimeShort": "Sat, May 27 08:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2023-05-28T13:00:00.000Z",
+        "endUtc": "2023-05-28T15:00:00.000Z",
+        "startLocalDateShort": "Sun, May 28",
+        "startLocalTimeShort": "07:00",
+        "startLocalDateTimeShort": "Sun, May 28 07:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Monaco Grand Prix",
+    "dna": {
+      "cornerProfile": "Tight street",
+      "overtaking": "Very Low",
+      "tireWear": "Low",
+      "trackEvolution": "High",
+      "strategyBias": "Track Position",
+      "safetyCarRisk": "High"
+    },
+    "intelligence": [
+      "Qualifying is often more important than race pace.",
+      "Track position dominates strategy.",
+      "Overtaking is extremely difficult.",
+      "Safety Car timing can completely change the race."
+    ],
+    "id": "monaco",
+    "matchKeys": [
+      "monaco",
+      "montecarlo"
+    ],
+    "specs": {
+      "turns": 19,
+      "longestStraightKm": 0.5,
+      "averageSpeed": "Low",
+      "raceLaps": 78,
+      "trackLength": "3.337 km",
+      "raceDistance": "260.286 km"
+    },
+    "raceLapRecord": {
+      "time": "1:12.909",
+      "driver": "Lewis Hamilton",
+      "constructor": "Mercedes",
+      "year": 2021,
+      "raceName": "Monaco Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

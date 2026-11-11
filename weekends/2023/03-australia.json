@@ -1,0 +1,141 @@
+{
+  "header": "2023 Australian GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T18:12:45.916Z",
+  "season": 2023,
+  "round": 3,
+  "meetingKey": null,
+  "raceSlug": "australia",
+  "status": "upcoming",
+  "weekend": {
+    "round": 3,
+    "id": "australia",
+    "type": "RACE_WEEKEND",
+    "title": "Australian GP",
+    "shortTitle": "Australian GP",
+    "circuit": "Albert Park Circuit",
+    "season": "2023",
+    "location": {
+      "city": "Melbourne",
+      "country": "Australia",
+      "flag": {
+        "iso2": "au",
+        "png": "https://flagcdn.com/w160/au.png",
+        "svg": "https://flagcdn.com/au.svg"
+      }
+    },
+    "racePage": {
+      "slug": "australia",
+      "url": "https://www.formula1.com/en/racing/2023/australia"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2023/australia",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmelbournedetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_australia_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "melbourne.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/melbourne.png"
+    },
+    "weekend": {
+      "startUtc": "2023-03-31T02:30:00.000Z",
+      "endUtc": "2023-04-02T07:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2023-03-31T02:30:00.000Z",
+        "endUtc": "2023-03-31T03:30:00.000Z",
+        "startLocalDateShort": "Thu, Mar 30",
+        "startLocalTimeShort": "20:30",
+        "startLocalDateTimeShort": "Thu, Mar 30 20:30"
+      },
+      {
+        "type": "FP2",
+        "startUtc": "2023-03-31T06:00:00.000Z",
+        "endUtc": "2023-03-31T07:00:00.000Z",
+        "startLocalDateShort": "Fri, Mar 31",
+        "startLocalTimeShort": "00:00",
+        "startLocalDateTimeShort": "Fri, Mar 31 00:00"
+      },
+      {
+        "type": "FP3",
+        "startUtc": "2023-04-01T02:30:00.000Z",
+        "endUtc": "2023-04-01T03:30:00.000Z",
+        "startLocalDateShort": "Fri, Mar 31",
+        "startLocalTimeShort": "20:30",
+        "startLocalDateTimeShort": "Fri, Mar 31 20:30"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2023-04-01T06:00:00.000Z",
+        "endUtc": "2023-04-01T07:00:00.000Z",
+        "startLocalDateShort": "Sat, Apr 01",
+        "startLocalTimeShort": "00:00",
+        "startLocalDateTimeShort": "Sat, Apr 01 00:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2023-04-02T05:00:00.000Z",
+        "endUtc": "2023-04-02T07:00:00.000Z",
+        "startLocalDateShort": "Sat, Apr 01",
+        "startLocalTimeShort": "23:00",
+        "startLocalDateTimeShort": "Sat, Apr 01 23:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Australian Grand Prix",
+    "dna": {
+      "cornerProfile": "Fast street-parkland",
+      "overtaking": "Medium",
+      "tireWear": "Medium",
+      "trackEvolution": "High",
+      "strategyBias": "Undercut",
+      "safetyCarRisk": "Medium"
+    },
+    "intelligence": [
+      "Track evolution is usually significant across the weekend.",
+      "Multiple straights can create passing chances with overtake mode.",
+      "Mistakes often carry consequences because walls are close.",
+      "Balance through medium-speed corners is important."
+    ],
+    "id": "australia",
+    "matchKeys": [
+      "australia",
+      "melbourne",
+      "albertpark"
+    ],
+    "specs": {
+      "turns": 14,
+      "longestStraightKm": 1.2,
+      "averageSpeed": "Medium",
+      "raceLaps": 58,
+      "trackLength": "5.807 km",
+      "raceDistance": "307.471 km"
+    },
+    "raceLapRecord": {
+      "time": "1:19.813",
+      "driver": "Charles Leclerc",
+      "constructor": "Ferrari",
+      "year": 2024,
+      "raceName": "Australian Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

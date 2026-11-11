@@ -1,0 +1,141 @@
+{
+  "header": "2023 Qatar GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T18:12:45.920Z",
+  "season": 2023,
+  "round": 17,
+  "meetingKey": null,
+  "raceSlug": "qatar",
+  "status": "upcoming",
+  "weekend": {
+    "round": 17,
+    "id": "qatar",
+    "type": "RACE_WEEKEND",
+    "title": "Qatar GP",
+    "shortTitle": "Qatar GP",
+    "circuit": "Lusail International Circuit",
+    "season": "2023",
+    "location": {
+      "city": "Lusail",
+      "country": "Qatar",
+      "flag": {
+        "iso2": "qa",
+        "png": "https://flagcdn.com/w160/qa.png",
+        "svg": "https://flagcdn.com/qa.svg"
+      }
+    },
+    "racePage": {
+      "slug": "qatar",
+      "url": "https://www.formula1.com/en/racing/2023/qatar"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2023/qatar",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026tracklusaildetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_qatar_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "lusail.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/lusail.png"
+    },
+    "weekend": {
+      "startUtc": "2023-10-06T13:30:00.000Z",
+      "endUtc": "2023-10-08T19:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2023-10-06T13:30:00.000Z",
+        "endUtc": "2023-10-06T14:30:00.000Z",
+        "startLocalDateShort": "Fri, Oct 06",
+        "startLocalTimeShort": "07:30",
+        "startLocalDateTimeShort": "Fri, Oct 06 07:30"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2023-10-06T17:00:00.000Z",
+        "endUtc": "2023-10-06T18:00:00.000Z",
+        "startLocalDateShort": "Fri, Oct 06",
+        "startLocalTimeShort": "11:00",
+        "startLocalDateTimeShort": "Fri, Oct 06 11:00"
+      },
+      {
+        "type": "Sprint Quali",
+        "startUtc": "2023-10-07T13:00:00.000Z",
+        "endUtc": "2023-10-07T13:44:00.000Z",
+        "startLocalDateShort": "Sat, Oct 07",
+        "startLocalTimeShort": "07:00",
+        "startLocalDateTimeShort": "Sat, Oct 07 07:00"
+      },
+      {
+        "type": "Sprint",
+        "startUtc": "2023-10-07T17:30:00.000Z",
+        "endUtc": "2023-10-07T18:30:00.000Z",
+        "startLocalDateShort": "Sat, Oct 07",
+        "startLocalTimeShort": "11:30",
+        "startLocalDateTimeShort": "Sat, Oct 07 11:30"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2023-10-08T17:00:00.000Z",
+        "endUtc": "2023-10-08T19:00:00.000Z",
+        "startLocalDateShort": "Sun, Oct 08",
+        "startLocalTimeShort": "11:00",
+        "startLocalDateTimeShort": "Sun, Oct 08 11:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Qatar Grand Prix",
+    "dna": {
+      "cornerProfile": "Fast flowing",
+      "overtaking": "Medium",
+      "tireWear": "High",
+      "trackEvolution": "Low",
+      "strategyBias": "Tire Management",
+      "safetyCarRisk": "Low"
+    },
+    "intelligence": [
+      "High-speed corners place heavy sustained load on tires.",
+      "Track limits can become a major storyline.",
+      "Tire management is central to race execution.",
+      "Cars with stable aero balance are rewarded."
+    ],
+    "id": "qatar",
+    "matchKeys": [
+      "qatar",
+      "lusail",
+      "doha"
+    ],
+    "specs": {
+      "turns": 16,
+      "longestStraightKm": 1.1,
+      "averageSpeed": "High",
+      "raceLaps": 57,
+      "trackLength": "5.419 km",
+      "raceDistance": "308.611 km"
+    },
+    "raceLapRecord": {
+      "time": "1:22.384",
+      "driver": "Lando Norris",
+      "constructor": "McLaren",
+      "year": 2024,
+      "raceName": "Qatar Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

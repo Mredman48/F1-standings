@@ -1,0 +1,142 @@
+{
+  "header": "2023 Belgian GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T18:12:45.918Z",
+  "season": 2023,
+  "round": 12,
+  "meetingKey": null,
+  "raceSlug": "belgium",
+  "status": "upcoming",
+  "weekend": {
+    "round": 12,
+    "id": "belgium",
+    "type": "RACE_WEEKEND",
+    "title": "Belgian GP",
+    "shortTitle": "Belgian GP",
+    "circuit": "Circuit de Spa-Francorchamps",
+    "season": "2023",
+    "location": {
+      "city": "Spa-Francorchamps",
+      "country": "Belgium",
+      "flag": {
+        "iso2": "be",
+        "png": "https://flagcdn.com/w160/be.png",
+        "svg": "https://flagcdn.com/be.svg"
+      }
+    },
+    "racePage": {
+      "slug": "belgium",
+      "url": "https://www.formula1.com/en/racing/2023/belgium"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2023/belgium",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackspafrancorchampsdetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_belgium_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "spa.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/spa.png"
+    },
+    "weekend": {
+      "startUtc": "2023-07-28T11:30:00.000Z",
+      "endUtc": "2023-07-30T15:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2023-07-28T11:30:00.000Z",
+        "endUtc": "2023-07-28T12:30:00.000Z",
+        "startLocalDateShort": "Fri, Jul 28",
+        "startLocalTimeShort": "05:30",
+        "startLocalDateTimeShort": "Fri, Jul 28 05:30"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2023-07-28T15:00:00.000Z",
+        "endUtc": "2023-07-28T16:00:00.000Z",
+        "startLocalDateShort": "Fri, Jul 28",
+        "startLocalTimeShort": "09:00",
+        "startLocalDateTimeShort": "Fri, Jul 28 09:00"
+      },
+      {
+        "type": "Sprint Quali",
+        "startUtc": "2023-07-29T10:00:00.000Z",
+        "endUtc": "2023-07-29T10:44:00.000Z",
+        "startLocalDateShort": "Sat, Jul 29",
+        "startLocalTimeShort": "04:00",
+        "startLocalDateTimeShort": "Sat, Jul 29 04:00"
+      },
+      {
+        "type": "Sprint",
+        "startUtc": "2023-07-29T15:05:00.000Z",
+        "endUtc": "2023-07-29T15:35:00.000Z",
+        "startLocalDateShort": "Sat, Jul 29",
+        "startLocalTimeShort": "09:05",
+        "startLocalDateTimeShort": "Sat, Jul 29 09:05"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2023-07-30T13:00:00.000Z",
+        "endUtc": "2023-07-30T15:00:00.000Z",
+        "startLocalDateShort": "Sun, Jul 30",
+        "startLocalTimeShort": "07:00",
+        "startLocalDateTimeShort": "Sun, Jul 30 07:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Belgian Grand Prix",
+    "dna": {
+      "cornerProfile": "High-speed elevation",
+      "overtaking": "High",
+      "tireWear": "Medium",
+      "trackEvolution": "Medium",
+      "strategyBias": "Weather",
+      "safetyCarRisk": "Medium"
+    },
+    "intelligence": [
+      "Weather can vary across different parts of the track.",
+      "Slipstream & overtake are powerful on long straights.",
+      "Setup is a compromise of sector speed and straight-line performance.",
+      "Elevation changes reward commitment and confidence."
+    ],
+    "id": "belgium",
+    "matchKeys": [
+      "belgium",
+      "belgian",
+      "spa",
+      "spafrancorchamps"
+    ],
+    "specs": {
+      "turns": 19,
+      "longestStraightKm": 1.9,
+      "averageSpeed": "High",
+      "raceLaps": 44,
+      "trackLength": "7.004 km",
+      "raceDistance": "308.052 km"
+    },
+    "raceLapRecord": {
+      "time": "1:44.701",
+      "driver": "Sergio Perez",
+      "constructor": "Red Bull",
+      "year": 2024,
+      "raceName": "Belgian Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "header": "2023 Azerbaijan GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T18:12:45.916Z",
+  "season": 2023,
+  "round": 4,
+  "meetingKey": null,
+  "raceSlug": "azerbaijan",
+  "status": "upcoming",
+  "weekend": {
+    "round": 4,
+    "id": "azerbaijan",
+    "type": "RACE_WEEKEND",
+    "title": "Azerbaijan GP",
+    "shortTitle": "Azerbaijan GP",
+    "circuit": "Baku City Circuit",
+    "season": "2023",
+    "location": {
+      "city": "Baku",
+      "country": "Azerbaijan",
+      "flag": {
+        "iso2": "az",
+        "png": "https://flagcdn.com/w160/az.png",
+        "svg": "https://flagcdn.com/az.svg"
+      }
+    },
+    "racePage": {
+      "slug": "azerbaijan",
+      "url": "https://www.formula1.com/en/racing/2023/azerbaijan"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2023/azerbaijan",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackbakudetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_azerbaijan_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "baku.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/baku.png"
+    },
+    "weekend": {
+      "startUtc": "2023-04-28T09:30:00.000Z",
+      "endUtc": "2023-04-30T13:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2023-04-28T09:30:00.000Z",
+        "endUtc": "2023-04-28T10:30:00.000Z",
+        "startLocalDateShort": "Fri, Apr 28",
+        "startLocalTimeShort": "03:30",
+        "startLocalDateTimeShort": "Fri, Apr 28 03:30"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2023-04-28T13:00:00.000Z",
+        "endUtc": "2023-04-28T14:00:00.000Z",
+        "startLocalDateShort": "Fri, Apr 28",
+        "startLocalTimeShort": "07:00",
+        "startLocalDateTimeShort": "Fri, Apr 28 07:00"
+      },
+      {
+        "type": "Sprint Quali",
+        "startUtc": "2023-04-29T08:30:00.000Z",
+        "endUtc": "2023-04-29T09:14:00.000Z",
+        "startLocalDateShort": "Sat, Apr 29",
+        "startLocalTimeShort": "02:30",
+        "startLocalDateTimeShort": "Sat, Apr 29 02:30"
+      },
+      {
+        "type": "Sprint",
+        "startUtc": "2023-04-29T13:30:00.000Z",
+        "endUtc": "2023-04-29T14:00:00.000Z",
+        "startLocalDateShort": "Sat, Apr 29",
+        "startLocalTimeShort": "07:30",
+        "startLocalDateTimeShort": "Sat, Apr 29 07:30"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2023-04-30T11:00:00.000Z",
+        "endUtc": "2023-04-30T13:00:00.000Z",
+        "startLocalDateShort": "Sun, Apr 30",
+        "startLocalTimeShort": "05:00",
+        "startLocalDateTimeShort": "Sun, Apr 30 05:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Azerbaijan Grand Prix",
+    "dna": {
+      "cornerProfile": "Street with long straight",
+      "overtaking": "High",
+      "tireWear": "Low",
+      "trackEvolution": "High",
+      "strategyBias": "Safety Car",
+      "safetyCarRisk": "High"
+    },
+    "intelligence": [
+      "The long main straight creates major passing opportunities.",
+      "Safety Cars are a constant strategic threat.",
+      "Low-speed castle sections punish mistakes.",
+      "Top speed and braking confidence are both critical."
+    ],
+    "id": "azerbaijan",
+    "matchKeys": [
+      "azerbaijan",
+      "baku"
+    ],
+    "specs": {
+      "turns": 20,
+      "longestStraightKm": 2.2,
+      "averageSpeed": "High",
+      "raceLaps": 51,
+      "trackLength": "6.003 km",
+      "raceDistance": "306.049 km"
+    },
+    "raceLapRecord": {
+      "time": "1:43.009",
+      "driver": "Charles Leclerc",
+      "constructor": "Ferrari",
+      "year": 2019,
+      "raceName": "Azerbaijan Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

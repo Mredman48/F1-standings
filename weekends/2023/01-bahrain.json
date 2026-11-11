@@ -1,0 +1,104 @@
+{
+  "header": "2023 Bahrain GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T18:12:45.910Z",
+  "season": 2023,
+  "round": 1,
+  "meetingKey": null,
+  "raceSlug": "bahrain",
+  "status": "upcoming",
+  "weekend": {
+    "round": 1,
+    "id": "bahrain",
+    "type": "RACE_WEEKEND",
+    "title": "Bahrain GP",
+    "shortTitle": "Bahrain GP",
+    "circuit": "Bahrain International Circuit",
+    "season": "2023",
+    "location": {
+      "city": "Sakhir",
+      "country": "Bahrain",
+      "flag": {
+        "iso2": "bh",
+        "png": "https://flagcdn.com/w160/bh.png",
+        "svg": "https://flagcdn.com/bh.svg"
+      }
+    },
+    "racePage": {
+      "slug": "bahrain",
+      "url": "https://www.formula1.com/en/racing/2023/bahrain"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2023/bahrain",
+      "mediaUrl": null,
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_bahrain_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "bahrain.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/bahrain.png"
+    },
+    "weekend": {
+      "startUtc": "2023-03-03T11:30:00.000Z",
+      "endUtc": "2023-03-05T17:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2023-03-03T11:30:00.000Z",
+        "endUtc": "2023-03-03T12:30:00.000Z",
+        "startLocalDateShort": "Fri, Mar 03",
+        "startLocalTimeShort": "04:30",
+        "startLocalDateTimeShort": "Fri, Mar 03 04:30"
+      },
+      {
+        "type": "FP2",
+        "startUtc": "2023-03-03T15:00:00.000Z",
+        "endUtc": "2023-03-03T16:00:00.000Z",
+        "startLocalDateShort": "Fri, Mar 03",
+        "startLocalTimeShort": "08:00",
+        "startLocalDateTimeShort": "Fri, Mar 03 08:00"
+      },
+      {
+        "type": "FP3",
+        "startUtc": "2023-03-04T11:30:00.000Z",
+        "endUtc": "2023-03-04T12:30:00.000Z",
+        "startLocalDateShort": "Sat, Mar 04",
+        "startLocalTimeShort": "04:30",
+        "startLocalDateTimeShort": "Sat, Mar 04 04:30"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2023-03-04T15:00:00.000Z",
+        "endUtc": "2023-03-04T16:00:00.000Z",
+        "startLocalDateShort": "Sat, Mar 04",
+        "startLocalTimeShort": "08:00",
+        "startLocalDateTimeShort": "Sat, Mar 04 08:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2023-03-05T15:00:00.000Z",
+        "endUtc": "2023-03-05T17:00:00.000Z",
+        "startLocalDateShort": "Sun, Mar 05",
+        "startLocalTimeShort": "08:00",
+        "startLocalDateTimeShort": "Sun, Mar 05 08:00"
+      }
+    ]
+  },
+  "circuitIntelligence": null,
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "header": "2023 Singapore GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T18:12:45.919Z",
+  "season": 2023,
+  "round": 15,
+  "meetingKey": null,
+  "raceSlug": "singapore",
+  "status": "upcoming",
+  "weekend": {
+    "round": 15,
+    "id": "singapore",
+    "type": "RACE_WEEKEND",
+    "title": "Singapore GP",
+    "shortTitle": "Singapore GP",
+    "circuit": "Marina Bay Street Circuit",
+    "season": "2023",
+    "location": {
+      "city": "Singapore",
+      "country": "Singapore",
+      "flag": {
+        "iso2": "sg",
+        "png": "https://flagcdn.com/w160/sg.png",
+        "svg": "https://flagcdn.com/sg.svg"
+      }
+    },
+    "racePage": {
+      "slug": "singapore",
+      "url": "https://www.formula1.com/en/racing/2023/singapore"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2023/singapore",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026tracksingaporedetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_singapore_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "singapore.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/singapore.png"
+    },
+    "weekend": {
+      "startUtc": "2023-09-15T09:30:00.000Z",
+      "endUtc": "2023-09-17T14:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2023-09-15T09:30:00.000Z",
+        "endUtc": "2023-09-15T10:30:00.000Z",
+        "startLocalDateShort": "Fri, Sep 15",
+        "startLocalTimeShort": "03:30",
+        "startLocalDateTimeShort": "Fri, Sep 15 03:30"
+      },
+      {
+        "type": "FP2",
+        "startUtc": "2023-09-15T13:00:00.000Z",
+        "endUtc": "2023-09-15T14:00:00.000Z",
+        "startLocalDateShort": "Fri, Sep 15",
+        "startLocalTimeShort": "07:00",
+        "startLocalDateTimeShort": "Fri, Sep 15 07:00"
+      },
+      {
+        "type": "FP3",
+        "startUtc": "2023-09-16T09:30:00.000Z",
+        "endUtc": "2023-09-16T10:30:00.000Z",
+        "startLocalDateShort": "Sat, Sep 16",
+        "startLocalTimeShort": "03:30",
+        "startLocalDateTimeShort": "Sat, Sep 16 03:30"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2023-09-16T13:00:00.000Z",
+        "endUtc": "2023-09-16T14:00:00.000Z",
+        "startLocalDateShort": "Sat, Sep 16",
+        "startLocalTimeShort": "07:00",
+        "startLocalDateTimeShort": "Sat, Sep 16 07:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2023-09-17T12:00:00.000Z",
+        "endUtc": "2023-09-17T14:00:00.000Z",
+        "startLocalDateShort": "Sun, Sep 17",
+        "startLocalTimeShort": "06:00",
+        "startLocalDateTimeShort": "Sun, Sep 17 06:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Singapore Grand Prix",
+    "dna": {
+      "cornerProfile": "Technical street",
+      "overtaking": "Low",
+      "tireWear": "High",
+      "trackEvolution": "High",
+      "strategyBias": "Safety Car",
+      "safetyCarRisk": "Very High"
+    },
+    "intelligence": [
+      "Safety Cars frequently reshape the race.",
+      "Heat and humidity make this one of the most physical races.",
+      "Track position is very valuable.",
+      "Tire management and concentration are critical over a long race."
+    ],
+    "id": "singapore",
+    "matchKeys": [
+      "singapore",
+      "marinabay"
+    ],
+    "specs": {
+      "turns": 19,
+      "longestStraightKm": 0.8,
+      "averageSpeed": "Low",
+      "raceLaps": 62,
+      "trackLength": "4.927 km",
+      "raceDistance": "305.337 km"
+    },
+    "raceLapRecord": {
+      "time": "1:33.808",
+      "driver": "Lewis Hamilton",
+      "constructor": "Ferrari",
+      "year": 2025,
+      "raceName": "Singapore Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}
