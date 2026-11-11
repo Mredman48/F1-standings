@@ -11,7 +11,7 @@
     "round": 22,
     "id": "las-vegas",
     "type": "RACE_WEEKEND",
-    "title": "Las Vegas GP",
+    "title": "2024 Las Vegas Grand Prix",
     "shortTitle": "Las Vegas GP",
     "circuit": "Las Vegas Strip Circuit",
     "season": "2024",
@@ -141,20 +141,20 @@
     "flag": "us",
     "raceStart": "2024-11-24T06:00:00.000Z",
     "compounds": {
-      "soft": null,
-      "medium": null,
-      "hard": null
+      "soft": "C5",
+      "medium": "C4",
+      "hard": "C3"
     },
     "trackCharacteristics": {
-      "ratingsSeason": null,
-      "pastYear": null,
-      "traction": null,
-      "tyreStress": null,
-      "asphaltGrip": null,
-      "braking": null,
-      "asphaltAbrasion": null,
-      "lateral": null,
-      "trackEvolution": null
+      "ratingsSeason": 2024,
+      "pastYear": false,
+      "traction": 2,
+      "tyreStress": 4,
+      "asphaltGrip": 1,
+      "braking": 3,
+      "asphaltAbrasion": 2,
+      "lateral": 2,
+      "trackEvolution": 5
     }
   },
   "racePreview": null,
@@ -4384,7 +4384,11 @@
       ]
     }
   ],
-  "raceRecap": null,
+  "raceRecap": {
+    "result": {
+      "driverOfDay": "Hamilton"
+    }
+  },
   "locked": false,
   "lockedSections": [],
   "meta": {
