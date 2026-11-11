@@ -112,7 +112,8 @@
       "longestStraightKm": 0.9,
       "averageSpeed": "High",
       "raceLaps": 50,
-      "raceDistance": null
+      "raceDistance": "308.450 km",
+      "trackLength": "6.174 km"
     },
     "raceLapRecord": {
       "time": "1:30.734",
@@ -138,23 +139,23 @@
     "season": 2024,
     "country": "Saudi Arabia",
     "flag": "sa",
-    "raceStart": "2024-03-09T17:00:00.000Z",
     "compounds": {
-      "soft": null,
-      "medium": null,
-      "hard": null
+      "soft": "C4",
+      "medium": "C3",
+      "hard": "C2"
     },
     "trackCharacteristics": {
-      "ratingsSeason": null,
-      "pastYear": null,
-      "traction": null,
-      "tyreStress": null,
-      "asphaltGrip": null,
-      "braking": null,
-      "asphaltAbrasion": null,
-      "lateral": null,
-      "trackEvolution": null
-    }
+      "ratingsSeason": 2024,
+      "traction": 2,
+      "tyreStress": 3,
+      "asphaltGrip": 4,
+      "braking": 2,
+      "asphaltAbrasion": 2,
+      "lateral": 3,
+      "trackEvolution": 4,
+      "pastYear": false
+    },
+    "raceStart": "2024-03-09T17:00:00.000Z"
   },
   "racePreview": null,
   "startingGrids": [
