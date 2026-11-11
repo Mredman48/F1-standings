@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-11T00:45:22.081Z",
-  "count": 53,
+  "updatedAt": "2026-11-11T00:49:47.193Z",
+  "count": 54,
   "entries": [
     {
       "round": 1,
@@ -793,6 +793,29 @@
         "asphaltAbrasion": 3,
         "lateral": 5,
         "trackEvolution": 3
+      }
+    },
+    {
+      "compounds": {
+        "soft": "C4",
+        "medium": "C3",
+        "hard": "C2"
+      },
+      "round": 12,
+      "raceSlug": "great-britain",
+      "title": "British GP",
+      "season": 2025,
+      "country": "United Kingdom",
+      "flag": "gb",
+      "trackCharacteristics": {
+        "ratingsSeason": 2025,
+        "traction": 3,
+        "tyreStress": 5,
+        "asphaltGrip": 4,
+        "braking": 2,
+        "asphaltAbrasion": 2,
+        "lateral": 5,
+        "trackEvolution": 2
       }
     },
     {
