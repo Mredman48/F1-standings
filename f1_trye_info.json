@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-11T20:20:41.281Z",
-  "count": 95,
+  "updatedAt": "2026-11-11T20:21:57.525Z",
+  "count": 96,
   "entries": [
     {
       "round": 1,
@@ -671,6 +671,31 @@
         "braking": 3,
         "asphaltAbrasion": 2,
         "lateral": 3,
+        "trackEvolution": 5
+      }
+    },
+    {
+      "round": 6,
+      "raceSlug": "monaco",
+      "title": "Monaco GP",
+      "season": 2023,
+      "country": "Monaco",
+      "flag": "mc",
+      "raceStart": "2023-05-28T13:00:00.000Z",
+      "compounds": {
+        "soft": "C5",
+        "medium": "C4",
+        "hard": "C3"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2023,
+        "pastYear": null,
+        "traction": 5,
+        "tyreStress": 1,
+        "asphaltGrip": 1,
+        "braking": 2,
+        "asphaltAbrasion": 1,
+        "lateral": 1,
         "trackEvolution": 5
       }
     },
