@@ -143,20 +143,20 @@
     "flag": "be",
     "raceStart": "2023-07-30T13:00:00.000Z",
     "compounds": {
-      "soft": null,
-      "medium": null,
-      "hard": null
+      "soft": "C4",
+      "medium": "C3",
+      "hard": "C2"
     },
     "trackCharacteristics": {
-      "ratingsSeason": null,
+      "ratingsSeason": 2023,
       "pastYear": null,
-      "traction": null,
-      "tyreStress": null,
-      "asphaltGrip": null,
-      "braking": null,
-      "asphaltAbrasion": null,
-      "lateral": null,
-      "trackEvolution": null
+      "traction": 4,
+      "tyreStress": 5,
+      "asphaltGrip": 3,
+      "braking": 4,
+      "asphaltAbrasion": 4,
+      "lateral": 5,
+      "trackEvolution": 3
     }
   },
   "racePreview": null,
