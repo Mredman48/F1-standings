@@ -11,7 +11,7 @@
     "round": 15,
     "id": "netherlands",
     "type": "RACE_WEEKEND",
-    "title": "Dutch GP",
+    "title": "2024 Dutch Grand Prix",
     "shortTitle": "Dutch GP",
     "circuit": "Circuit Zandvoort",
     "season": "2024",
@@ -142,20 +142,20 @@
     "flag": "nl",
     "raceStart": "2024-08-25T13:00:00.000Z",
     "compounds": {
-      "soft": null,
-      "medium": null,
-      "hard": null
+      "soft": "C3",
+      "medium": "C2",
+      "hard": "C1"
     },
     "trackCharacteristics": {
-      "ratingsSeason": null,
-      "pastYear": null,
-      "traction": null,
-      "tyreStress": null,
-      "asphaltGrip": null,
-      "braking": null,
-      "asphaltAbrasion": null,
-      "lateral": null,
-      "trackEvolution": null
+      "ratingsSeason": 2024,
+      "pastYear": false,
+      "traction": 4,
+      "tyreStress": 5,
+      "asphaltGrip": 3,
+      "braking": 3,
+      "asphaltAbrasion": 3,
+      "lateral": 4,
+      "trackEvolution": 4
     }
   },
   "racePreview": null,
@@ -3782,7 +3782,11 @@
       ]
     }
   ],
-  "raceRecap": null,
+  "raceRecap": {
+    "result": {
+      "driverOfDay": "Norris"
+    }
+  },
   "locked": false,
   "lockedSections": [],
   "meta": {
