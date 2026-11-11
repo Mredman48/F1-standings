@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-11T06:43:07.461Z",
-  "count": 69,
+  "updatedAt": "2026-11-11T06:44:35.250Z",
+  "count": 70,
   "entries": [
     {
       "round": 1,
@@ -226,6 +226,31 @@
         "lateral": 5,
         "trackEvolution": 3
       }
+    },
+    {
+      "round": 3,
+      "raceSlug": "australia",
+      "title": "Australian GP",
+      "season": 2024,
+      "country": "Australia",
+      "flag": "au",
+      "compounds": {
+        "soft": "C5",
+        "medium": "C4",
+        "hard": "C3"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2024,
+        "traction": 2,
+        "tyreStress": 3,
+        "asphaltGrip": 3,
+        "braking": 2,
+        "asphaltAbrasion": 2,
+        "lateral": 3,
+        "trackEvolution": 4,
+        "pastYear": false
+      },
+      "raceStart": "2024-03-24T04:00:00.000Z"
     },
     {
       "round": 4,
