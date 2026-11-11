@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-11T07:22:59.757Z",
-  "count": 73,
+  "updatedAt": "2026-11-11T07:25:22.203Z",
+  "count": 74,
   "entries": [
     {
       "round": 1,
@@ -619,6 +619,31 @@
         "asphaltGrip": 2,
         "braking": 3,
         "asphaltAbrasion": 2,
+        "lateral": 3,
+        "trackEvolution": 2
+      }
+    },
+    {
+      "round": 7,
+      "raceSlug": "emilia-romagna",
+      "title": "Emilia Romagna GP",
+      "season": 2024,
+      "country": "Italy",
+      "flag": "it",
+      "raceStart": "2024-05-19T13:00:00.000Z",
+      "compounds": {
+        "soft": "C5",
+        "medium": "C4",
+        "hard": "C3"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2024,
+        "pastYear": null,
+        "traction": 2,
+        "tyreStress": 3,
+        "asphaltGrip": 2,
+        "braking": 3,
+        "asphaltAbrasion": 3,
         "lateral": 3,
         "trackEvolution": 2
       }
