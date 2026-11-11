@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-11T01:09:31.421Z",
-  "count": 58,
+  "updatedAt": "2026-11-11T01:12:56.608Z",
+  "count": 59,
   "entries": [
     {
       "round": 1,
@@ -1139,6 +1139,29 @@
         "trackEvolution": 5
       },
       "updatedAt": "2026-10-09T03:23:56.952Z"
+    },
+    {
+      "round": 17,
+      "raceSlug": "azerbaijan",
+      "title": "Azerbaijan GP",
+      "season": 2025,
+      "country": "Azerbaijan",
+      "flag": "az",
+      "compounds": {
+        "soft": "C6",
+        "medium": "C5",
+        "hard": "C4"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2025,
+        "traction": 5,
+        "tyreStress": 3,
+        "asphaltGrip": 2,
+        "braking": 4,
+        "asphaltAbrasion": 1,
+        "lateral": 1,
+        "trackEvolution": 5
+      }
     },
     {
       "round": 18,
