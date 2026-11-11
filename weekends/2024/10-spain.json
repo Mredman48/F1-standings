@@ -148,7 +148,7 @@
     },
     "trackCharacteristics": {
       "ratingsSeason": 2024,
-      "pastYear": null,
+      "pastYear": false,
       "traction": 3,
       "tyreStress": 5,
       "asphaltGrip": 3,
@@ -4140,7 +4140,7 @@
     }
   ],
   "raceRecap": null,
-  "locked": false,
+  "locked": true,
   "lockedSections": [],
   "meta": {
     "fia": {},
