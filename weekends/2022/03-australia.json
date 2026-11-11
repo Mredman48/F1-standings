@@ -1,0 +1,142 @@
+{
+  "header": "2022 Australian GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T23:30:19.411Z",
+  "season": 2022,
+  "round": 3,
+  "meetingKey": null,
+  "raceSlug": "australia",
+  "status": "upcoming",
+  "weekend": {
+    "round": 3,
+    "id": "australia",
+    "type": "RACE_WEEKEND",
+    "title": "Australian Grand Prix 2022",
+    "shortTitle": "Australian GP",
+    "circuit": "Albert Park Circuit",
+    "season": "2022",
+    "location": {
+      "city": "Melbourne",
+      "country": "Australia",
+      "flag": {
+        "iso2": "au",
+        "png": "https://flagcdn.com/w160/au.png",
+        "svg": "https://flagcdn.com/au.svg"
+      }
+    },
+    "racePage": {
+      "slug": "australia",
+      "url": "https://www.formula1.com/en/racing/2022/australia"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2022/australia",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmelbournedetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_australia_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "melbourne.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/melbourne.png"
+    },
+    "weekend": {
+      "startUtc": "2022-04-08T03:00:00.000Z",
+      "endUtc": "2022-04-10T07:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2022-04-08T03:00:00.000Z",
+        "endUtc": "2022-04-08T04:00:00.000Z",
+        "startLocalDateShort": "Thu, Apr 07",
+        "startLocalTimeShort": "21:00",
+        "startLocalDateTimeShort": "Thu, Apr 07 21:00"
+      },
+      {
+        "type": "FP2",
+        "startUtc": "2022-04-08T06:00:00.000Z",
+        "endUtc": "2022-04-08T07:00:00.000Z",
+        "startLocalDateShort": "Fri, Apr 08",
+        "startLocalTimeShort": "00:00",
+        "startLocalDateTimeShort": "Fri, Apr 08 00:00"
+      },
+      {
+        "type": "FP3",
+        "startUtc": "2022-04-09T03:00:00.000Z",
+        "endUtc": "2022-04-09T04:00:00.000Z",
+        "startLocalDateShort": "Fri, Apr 08",
+        "startLocalTimeShort": "21:00",
+        "startLocalDateTimeShort": "Fri, Apr 08 21:00"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2022-04-09T06:00:00.000Z",
+        "endUtc": "2022-04-09T07:00:00.000Z",
+        "startLocalDateShort": "Sat, Apr 09",
+        "startLocalTimeShort": "00:00",
+        "startLocalDateTimeShort": "Sat, Apr 09 00:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2022-04-10T05:00:00.000Z",
+        "endUtc": "2022-04-10T07:00:00.000Z",
+        "startLocalDateShort": "Sat, Apr 09",
+        "startLocalTimeShort": "23:00",
+        "startLocalDateTimeShort": "Sat, Apr 09 23:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Australian Grand Prix",
+    "dna": {
+      "cornerProfile": "Fast street-parkland",
+      "overtaking": "Medium",
+      "tireWear": "Medium",
+      "trackEvolution": "High",
+      "strategyBias": "Undercut",
+      "safetyCarRisk": "Medium"
+    },
+    "intelligence": [
+      "Track evolution is usually significant across the weekend.",
+      "Multiple straights can create passing chances with overtake mode.",
+      "Mistakes often carry consequences because walls are close.",
+      "Balance through medium-speed corners is important."
+    ],
+    "id": "australia",
+    "matchKeys": [
+      "australia",
+      "melbourne",
+      "albertpark"
+    ],
+    "specs": {
+      "turns": 14,
+      "longestStraightKm": 1.2,
+      "averageSpeed": "Medium",
+      "raceLaps": 58,
+      "trackLength": "5.807 km",
+      "raceDistance": "307.471 km"
+    },
+    "raceLapRecord": {
+      "time": "1:19.813",
+      "driver": "Charles Leclerc",
+      "constructor": "Ferrari",
+      "year": 2024,
+      "raceName": "Australian Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {},
+    "titlePending": "Australian Grand Prix 2022"
+  }
+}

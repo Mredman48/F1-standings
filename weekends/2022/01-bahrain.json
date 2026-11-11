@@ -1,0 +1,105 @@
+{
+  "header": "2022 Bahrain GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T23:30:19.408Z",
+  "season": 2022,
+  "round": 1,
+  "meetingKey": null,
+  "raceSlug": "bahrain",
+  "status": "upcoming",
+  "weekend": {
+    "round": 1,
+    "id": "bahrain",
+    "type": "RACE_WEEKEND",
+    "title": "Bahrain Grand Prix 2022",
+    "shortTitle": "Bahrain GP",
+    "circuit": "Bahrain International Circuit",
+    "season": "2022",
+    "location": {
+      "city": "Sakhir",
+      "country": "Bahrain",
+      "flag": {
+        "iso2": "bh",
+        "png": "https://flagcdn.com/w160/bh.png",
+        "svg": "https://flagcdn.com/bh.svg"
+      }
+    },
+    "racePage": {
+      "slug": "bahrain",
+      "url": "https://www.formula1.com/en/racing/2022/bahrain"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2022/bahrain",
+      "mediaUrl": null,
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_bahrain_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "bahrain.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/bahrain.png"
+    },
+    "weekend": {
+      "startUtc": "2022-03-18T12:00:00.000Z",
+      "endUtc": "2022-03-20T17:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2022-03-18T12:00:00.000Z",
+        "endUtc": "2022-03-18T13:00:00.000Z",
+        "startLocalDateShort": "Fri, Mar 18",
+        "startLocalTimeShort": "06:00",
+        "startLocalDateTimeShort": "Fri, Mar 18 06:00"
+      },
+      {
+        "type": "FP2",
+        "startUtc": "2022-03-18T15:00:00.000Z",
+        "endUtc": "2022-03-18T16:00:00.000Z",
+        "startLocalDateShort": "Fri, Mar 18",
+        "startLocalTimeShort": "09:00",
+        "startLocalDateTimeShort": "Fri, Mar 18 09:00"
+      },
+      {
+        "type": "FP3",
+        "startUtc": "2022-03-19T12:00:00.000Z",
+        "endUtc": "2022-03-19T13:00:00.000Z",
+        "startLocalDateShort": "Sat, Mar 19",
+        "startLocalTimeShort": "06:00",
+        "startLocalDateTimeShort": "Sat, Mar 19 06:00"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2022-03-19T15:00:00.000Z",
+        "endUtc": "2022-03-19T16:00:00.000Z",
+        "startLocalDateShort": "Sat, Mar 19",
+        "startLocalTimeShort": "09:00",
+        "startLocalDateTimeShort": "Sat, Mar 19 09:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2022-03-20T15:00:00.000Z",
+        "endUtc": "2022-03-20T17:00:00.000Z",
+        "startLocalDateShort": "Sun, Mar 20",
+        "startLocalTimeShort": "09:00",
+        "startLocalDateTimeShort": "Sun, Mar 20 09:00"
+      }
+    ]
+  },
+  "circuitIntelligence": null,
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {},
+    "titlePending": "Bahrain Grand Prix 2022"
+  }
+}

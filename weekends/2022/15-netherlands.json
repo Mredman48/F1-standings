@@ -1,0 +1,142 @@
+{
+  "header": "2022 Dutch GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T23:30:19.422Z",
+  "season": 2022,
+  "round": 15,
+  "meetingKey": null,
+  "raceSlug": "netherlands",
+  "status": "upcoming",
+  "weekend": {
+    "round": 15,
+    "id": "netherlands",
+    "type": "RACE_WEEKEND",
+    "title": "Dutch Grand Prix 2022",
+    "shortTitle": "Dutch GP",
+    "circuit": "Circuit Zandvoort",
+    "season": "2022",
+    "location": {
+      "city": "Zandvoort",
+      "country": "Netherlands",
+      "flag": {
+        "iso2": "nl",
+        "png": "https://flagcdn.com/w160/nl.png",
+        "svg": "https://flagcdn.com/nl.svg"
+      }
+    },
+    "racePage": {
+      "slug": "netherlands",
+      "url": "https://www.formula1.com/en/racing/2022/netherlands"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2022/netherlands",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackzandvoortdetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_netherlands_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "zandvoort.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/zandvoort.png"
+    },
+    "weekend": {
+      "startUtc": "2022-09-02T10:30:00.000Z",
+      "endUtc": "2022-09-04T15:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2022-09-02T10:30:00.000Z",
+        "endUtc": "2022-09-02T11:30:00.000Z",
+        "startLocalDateShort": "Fri, Sep 02",
+        "startLocalTimeShort": "04:30",
+        "startLocalDateTimeShort": "Fri, Sep 02 04:30"
+      },
+      {
+        "type": "FP2",
+        "startUtc": "2022-09-02T14:00:00.000Z",
+        "endUtc": "2022-09-02T15:00:00.000Z",
+        "startLocalDateShort": "Fri, Sep 02",
+        "startLocalTimeShort": "08:00",
+        "startLocalDateTimeShort": "Fri, Sep 02 08:00"
+      },
+      {
+        "type": "FP3",
+        "startUtc": "2022-09-03T10:00:00.000Z",
+        "endUtc": "2022-09-03T11:00:00.000Z",
+        "startLocalDateShort": "Sat, Sep 03",
+        "startLocalTimeShort": "04:00",
+        "startLocalDateTimeShort": "Sat, Sep 03 04:00"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2022-09-03T13:00:00.000Z",
+        "endUtc": "2022-09-03T14:00:00.000Z",
+        "startLocalDateShort": "Sat, Sep 03",
+        "startLocalTimeShort": "07:00",
+        "startLocalDateTimeShort": "Sat, Sep 03 07:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2022-09-04T13:00:00.000Z",
+        "endUtc": "2022-09-04T15:00:00.000Z",
+        "startLocalDateShort": "Sun, Sep 04",
+        "startLocalTimeShort": "07:00",
+        "startLocalDateTimeShort": "Sun, Sep 04 07:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Dutch Grand Prix",
+    "dna": {
+      "cornerProfile": "Banked flowing",
+      "overtaking": "Low",
+      "tireWear": "Medium",
+      "trackEvolution": "Medium",
+      "strategyBias": "Track Position",
+      "safetyCarRisk": "Low"
+    },
+    "intelligence": [
+      "Banked corners create unique racing lines.",
+      "Overtaking is difficult because the track is narrow.",
+      "Qualifying position is important.",
+      "Momentum through flowing sections is critical."
+    ],
+    "id": "netherlands",
+    "matchKeys": [
+      "netherlands",
+      "dutch",
+      "zandvoort"
+    ],
+    "specs": {
+      "turns": 14,
+      "longestStraightKm": 0.7,
+      "averageSpeed": "Medium",
+      "raceLaps": 72,
+      "trackLength": "4.259 km",
+      "raceDistance": "306.587 km"
+    },
+    "raceLapRecord": {
+      "time": "1:11.097",
+      "driver": "Lewis Hamilton",
+      "constructor": "Mercedes",
+      "year": 2021,
+      "raceName": "Dutch Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {},
+    "titlePending": "Dutch Grand Prix 2022"
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "header": "2022 Spanish GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T23:30:19.415Z",
+  "season": 2022,
+  "round": 6,
+  "meetingKey": null,
+  "raceSlug": "spain",
+  "status": "upcoming",
+  "weekend": {
+    "round": 6,
+    "id": "spain",
+    "type": "RACE_WEEKEND",
+    "title": "Spanish Grand Prix 2022",
+    "shortTitle": "Spanish GP",
+    "circuit": "Circuit de Barcelona-Catalunya",
+    "season": "2022",
+    "location": {
+      "city": "Barcelona",
+      "country": "Spain",
+      "flag": {
+        "iso2": "es",
+        "png": "https://flagcdn.com/w160/es.png",
+        "svg": "https://flagcdn.com/es.svg"
+      }
+    },
+    "racePage": {
+      "slug": "spain",
+      "url": "https://www.formula1.com/en/racing/2022/spain"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2022/spain",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackcatalunyadetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_barcelona-catalunya_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "barcelona.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/barcelona.png"
+    },
+    "weekend": {
+      "startUtc": "2022-05-20T12:00:00.000Z",
+      "endUtc": "2022-05-22T15:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2022-05-20T12:00:00.000Z",
+        "endUtc": "2022-05-20T13:00:00.000Z",
+        "startLocalDateShort": "Fri, May 20",
+        "startLocalTimeShort": "06:00",
+        "startLocalDateTimeShort": "Fri, May 20 06:00"
+      },
+      {
+        "type": "FP2",
+        "startUtc": "2022-05-20T15:00:00.000Z",
+        "endUtc": "2022-05-20T16:00:00.000Z",
+        "startLocalDateShort": "Fri, May 20",
+        "startLocalTimeShort": "09:00",
+        "startLocalDateTimeShort": "Fri, May 20 09:00"
+      },
+      {
+        "type": "FP3",
+        "startUtc": "2022-05-21T11:00:00.000Z",
+        "endUtc": "2022-05-21T12:00:00.000Z",
+        "startLocalDateShort": "Sat, May 21",
+        "startLocalTimeShort": "05:00",
+        "startLocalDateTimeShort": "Sat, May 21 05:00"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2022-05-21T14:00:00.000Z",
+        "endUtc": "2022-05-21T15:00:00.000Z",
+        "startLocalDateShort": "Sat, May 21",
+        "startLocalTimeShort": "08:00",
+        "startLocalDateTimeShort": "Sat, May 21 08:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2022-05-22T13:00:00.000Z",
+        "endUtc": "2022-05-22T15:00:00.000Z",
+        "startLocalDateShort": "Sun, May 22",
+        "startLocalTimeShort": "07:00",
+        "startLocalDateTimeShort": "Sun, May 22 07:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Barcelona-Catalunya Grand Prix",
+    "dna": {
+      "cornerProfile": "Aero balance test",
+      "overtaking": "Low",
+      "tireWear": "High",
+      "trackEvolution": "Medium",
+      "strategyBias": "Tire Management",
+      "safetyCarRisk": "Low"
+    },
+    "intelligence": [
+      "This circuit heavily rewards aerodynamic efficiency.",
+      "Tire degradation is usually a major factor.",
+      "Overtaking can be difficult despite the main straight.",
+      "Cars that are strong here often have balanced all-round performance."
+    ],
+    "id": "barcelona",
+    "matchKeys": [
+      "barcelona",
+      "catalunya",
+      "barcelonacatalunya"
+    ],
+    "specs": {
+      "turns": 16,
+      "longestStraightKm": 1,
+      "averageSpeed": "Medium",
+      "raceLaps": 66,
+      "trackLength": "4.657 km",
+      "raceDistance": "307.236 km"
+    },
+    "raceLapRecord": {
+      "time": "1:15.743",
+      "driver": "Oscar Piastri",
+      "constructor": "McLaren",
+      "year": 2025,
+      "raceName": "Barcelona-Catalunya Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {},
+    "titlePending": "Spanish Grand Prix 2022"
+  }
+}

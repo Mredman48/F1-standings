@@ -1,0 +1,140 @@
+{
+  "header": "2022 Saudi Arabian GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T23:30:19.410Z",
+  "season": 2022,
+  "round": 2,
+  "meetingKey": null,
+  "raceSlug": "saudi-arabia",
+  "status": "upcoming",
+  "weekend": {
+    "round": 2,
+    "id": "saudi-arabia",
+    "type": "RACE_WEEKEND",
+    "title": "Saudi Arabian Grand Prix 2022",
+    "shortTitle": "Saudi Arabian GP",
+    "circuit": "Jeddah Corniche Circuit",
+    "season": "2022",
+    "location": {
+      "city": "Jeddah",
+      "country": "Saudi Arabia",
+      "flag": {
+        "iso2": "sa",
+        "png": "https://flagcdn.com/w160/sa.png",
+        "svg": "https://flagcdn.com/sa.svg"
+      }
+    },
+    "racePage": {
+      "slug": "saudi-arabia",
+      "url": "https://www.formula1.com/en/racing/2022/saudi-arabia"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2022/saudi-arabia",
+      "mediaUrl": "https://www.formula1.com/en/racing/2027/saudi-arabia",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_saudi-arabia_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "jeddah.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/jeddah.png"
+    },
+    "weekend": {
+      "startUtc": "2022-03-25T14:00:00.000Z",
+      "endUtc": "2022-03-27T19:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2022-03-25T14:00:00.000Z",
+        "endUtc": "2022-03-25T15:00:00.000Z",
+        "startLocalDateShort": "Fri, Mar 25",
+        "startLocalTimeShort": "08:00",
+        "startLocalDateTimeShort": "Fri, Mar 25 08:00"
+      },
+      {
+        "type": "FP2",
+        "startUtc": "2022-03-25T17:00:00.000Z",
+        "endUtc": "2022-03-25T18:00:00.000Z",
+        "startLocalDateShort": "Fri, Mar 25",
+        "startLocalTimeShort": "11:00",
+        "startLocalDateTimeShort": "Fri, Mar 25 11:00"
+      },
+      {
+        "type": "FP3",
+        "startUtc": "2022-03-26T14:00:00.000Z",
+        "endUtc": "2022-03-26T15:00:00.000Z",
+        "startLocalDateShort": "Sat, Mar 26",
+        "startLocalTimeShort": "08:00",
+        "startLocalDateTimeShort": "Sat, Mar 26 08:00"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2022-03-26T17:00:00.000Z",
+        "endUtc": "2022-03-26T18:00:00.000Z",
+        "startLocalDateShort": "Sat, Mar 26",
+        "startLocalTimeShort": "11:00",
+        "startLocalDateTimeShort": "Sat, Mar 26 11:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2022-03-27T17:00:00.000Z",
+        "endUtc": "2022-03-27T19:00:00.000Z",
+        "startLocalDateShort": "Sun, Mar 27",
+        "startLocalTimeShort": "11:00",
+        "startLocalDateTimeShort": "Sun, Mar 27 11:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Saudi Arabian Grand Prix",
+    "dna": {
+      "cornerProfile": "High-speed street",
+      "overtaking": "Medium",
+      "tireWear": "Low",
+      "trackEvolution": "High",
+      "strategyBias": "Track Position",
+      "safetyCarRisk": "High"
+    },
+    "intelligence": [
+      "High-speed walls make mistakes costly.",
+      "Safety Cars can quickly reshape strategy.",
+      "Qualifying position matters because overtaking is risky.",
+      "Low degradation can limit strategic variation."
+    ],
+    "id": "saudi",
+    "matchKeys": [
+      "saudi",
+      "jeddah"
+    ],
+    "specs": {
+      "turns": 27,
+      "longestStraightKm": 0.9,
+      "averageSpeed": "High",
+      "raceLaps": 50,
+      "raceDistance": null
+    },
+    "raceLapRecord": {
+      "time": "1:30.734",
+      "driver": "Lewis Hamilton",
+      "constructor": "Mercedes",
+      "year": 2021,
+      "raceName": "Saudi Arabian Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {},
+    "titlePending": "Saudi Arabian Grand Prix 2022"
+  }
+}

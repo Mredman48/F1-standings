@@ -1,0 +1,143 @@
+{
+  "header": "2022 Belgian GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T23:30:19.421Z",
+  "season": 2022,
+  "round": 14,
+  "meetingKey": null,
+  "raceSlug": "belgium",
+  "status": "upcoming",
+  "weekend": {
+    "round": 14,
+    "id": "belgium",
+    "type": "RACE_WEEKEND",
+    "title": "Belgian Grand Prix 2022",
+    "shortTitle": "Belgian GP",
+    "circuit": "Circuit de Spa-Francorchamps",
+    "season": "2022",
+    "location": {
+      "city": "Spa-Francorchamps",
+      "country": "Belgium",
+      "flag": {
+        "iso2": "be",
+        "png": "https://flagcdn.com/w160/be.png",
+        "svg": "https://flagcdn.com/be.svg"
+      }
+    },
+    "racePage": {
+      "slug": "belgium",
+      "url": "https://www.formula1.com/en/racing/2022/belgium"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2022/belgium",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackspafrancorchampsdetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_belgium_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "spa.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/spa.png"
+    },
+    "weekend": {
+      "startUtc": "2022-08-26T12:00:00.000Z",
+      "endUtc": "2022-08-28T15:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2022-08-26T12:00:00.000Z",
+        "endUtc": "2022-08-26T13:00:00.000Z",
+        "startLocalDateShort": "Fri, Aug 26",
+        "startLocalTimeShort": "06:00",
+        "startLocalDateTimeShort": "Fri, Aug 26 06:00"
+      },
+      {
+        "type": "FP2",
+        "startUtc": "2022-08-26T15:00:00.000Z",
+        "endUtc": "2022-08-26T16:00:00.000Z",
+        "startLocalDateShort": "Fri, Aug 26",
+        "startLocalTimeShort": "09:00",
+        "startLocalDateTimeShort": "Fri, Aug 26 09:00"
+      },
+      {
+        "type": "FP3",
+        "startUtc": "2022-08-27T11:00:00.000Z",
+        "endUtc": "2022-08-27T12:00:00.000Z",
+        "startLocalDateShort": "Sat, Aug 27",
+        "startLocalTimeShort": "05:00",
+        "startLocalDateTimeShort": "Sat, Aug 27 05:00"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2022-08-27T14:00:00.000Z",
+        "endUtc": "2022-08-27T15:00:00.000Z",
+        "startLocalDateShort": "Sat, Aug 27",
+        "startLocalTimeShort": "08:00",
+        "startLocalDateTimeShort": "Sat, Aug 27 08:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2022-08-28T13:00:00.000Z",
+        "endUtc": "2022-08-28T15:00:00.000Z",
+        "startLocalDateShort": "Sun, Aug 28",
+        "startLocalTimeShort": "07:00",
+        "startLocalDateTimeShort": "Sun, Aug 28 07:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Belgian Grand Prix",
+    "dna": {
+      "cornerProfile": "High-speed elevation",
+      "overtaking": "High",
+      "tireWear": "Medium",
+      "trackEvolution": "Medium",
+      "strategyBias": "Weather",
+      "safetyCarRisk": "Medium"
+    },
+    "intelligence": [
+      "Weather can vary across different parts of the track.",
+      "Slipstream & overtake are powerful on long straights.",
+      "Setup is a compromise of sector speed and straight-line performance.",
+      "Elevation changes reward commitment and confidence."
+    ],
+    "id": "belgium",
+    "matchKeys": [
+      "belgium",
+      "belgian",
+      "spa",
+      "spafrancorchamps"
+    ],
+    "specs": {
+      "turns": 19,
+      "longestStraightKm": 1.9,
+      "averageSpeed": "High",
+      "raceLaps": 44,
+      "trackLength": "7.004 km",
+      "raceDistance": "308.052 km"
+    },
+    "raceLapRecord": {
+      "time": "1:44.701",
+      "driver": "Sergio Perez",
+      "constructor": "Red Bull",
+      "year": 2024,
+      "raceName": "Belgian Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {},
+    "titlePending": "Belgian Grand Prix 2022"
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "header": "2022 Sao Paulo GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T23:30:19.425Z",
+  "season": 2022,
+  "round": 21,
+  "meetingKey": null,
+  "raceSlug": "brazil",
+  "status": "upcoming",
+  "weekend": {
+    "round": 21,
+    "id": "brazil",
+    "type": "RACE_WEEKEND",
+    "title": "São Paulo Grand Prix 2022",
+    "shortTitle": "Sao Paulo GP",
+    "circuit": "Autódromo José Carlos Pace",
+    "season": "2022",
+    "location": {
+      "city": "Sao Paulo",
+      "country": "Brazil",
+      "flag": {
+        "iso2": "br",
+        "png": "https://flagcdn.com/w160/br.png",
+        "svg": "https://flagcdn.com/br.svg"
+      }
+    },
+    "racePage": {
+      "slug": "brazil",
+      "url": "https://www.formula1.com/en/racing/2022/brazil"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2022/brazil",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackinterlagosdetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_brazil_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "interlagos.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/interlagos.png"
+    },
+    "weekend": {
+      "startUtc": "2022-11-11T15:30:00.000Z",
+      "endUtc": "2022-11-13T20:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2022-11-11T15:30:00.000Z",
+        "endUtc": "2022-11-11T16:30:00.000Z",
+        "startLocalDateShort": "Fri, Nov 11",
+        "startLocalTimeShort": "08:30",
+        "startLocalDateTimeShort": "Fri, Nov 11 08:30"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2022-11-11T19:00:00.000Z",
+        "endUtc": "2022-11-11T20:00:00.000Z",
+        "startLocalDateShort": "Fri, Nov 11",
+        "startLocalTimeShort": "12:00",
+        "startLocalDateTimeShort": "Fri, Nov 11 12:00"
+      },
+      {
+        "type": "FP2",
+        "startUtc": "2022-11-12T15:30:00.000Z",
+        "endUtc": "2022-11-12T16:30:00.000Z",
+        "startLocalDateShort": "Sat, Nov 12",
+        "startLocalTimeShort": "08:30",
+        "startLocalDateTimeShort": "Sat, Nov 12 08:30"
+      },
+      {
+        "type": "Sprint",
+        "startUtc": "2022-11-12T19:30:00.000Z",
+        "endUtc": "2022-11-12T20:00:00.000Z",
+        "startLocalDateShort": "Sat, Nov 12",
+        "startLocalTimeShort": "12:30",
+        "startLocalDateTimeShort": "Sat, Nov 12 12:30"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2022-11-13T18:00:00.000Z",
+        "endUtc": "2022-11-13T20:00:00.000Z",
+        "startLocalDateShort": "Sun, Nov 13",
+        "startLocalTimeShort": "11:00",
+        "startLocalDateTimeShort": "Sun, Nov 13 11:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "São Paulo Grand Prix",
+    "dna": {
+      "cornerProfile": "Short flowing elevation",
+      "overtaking": "High",
+      "tireWear": "Medium",
+      "trackEvolution": "Medium",
+      "strategyBias": "Weather",
+      "safetyCarRisk": "Medium"
+    },
+    "intelligence": [
+      "Weather can quickly change strategy.",
+      "Short lap length keeps the field compressed.",
+      "Overtaking is possible into Turn 1 and Turn 4.",
+      "Traction through the final sector is important for straight-line attacks."
+    ],
+    "id": "brazil",
+    "matchKeys": [
+      "brazil",
+      "brazilian",
+      "saopaulo",
+      "interlagos"
+    ],
+    "specs": {
+      "turns": 15,
+      "longestStraightKm": 0.9,
+      "averageSpeed": "Medium",
+      "raceLaps": 71,
+      "trackLength": "4.309 km",
+      "raceDistance": "305.879 km"
+    },
+    "raceLapRecord": {
+      "time": "1:10.540",
+      "driver": "Valtteri Bottas",
+      "constructor": "Mercedes",
+      "year": 2018,
+      "raceName": "Sao Paulo Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {},
+    "titlePending": "São Paulo Grand Prix 2022"
+  }
+}

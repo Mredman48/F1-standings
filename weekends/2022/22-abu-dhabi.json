@@ -1,0 +1,141 @@
+{
+  "header": "2022 Abu Dhabi GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T23:30:19.426Z",
+  "season": 2022,
+  "round": 22,
+  "meetingKey": null,
+  "raceSlug": "abu-dhabi",
+  "status": "upcoming",
+  "weekend": {
+    "round": 22,
+    "id": "abu-dhabi",
+    "type": "RACE_WEEKEND",
+    "title": "Abu Dhabi Grand Prix 2022",
+    "shortTitle": "Abu Dhabi GP",
+    "circuit": "Yas Marina Circuit",
+    "season": "2022",
+    "location": {
+      "city": "Abu Dhabi",
+      "country": "United Arab Emirates",
+      "flag": {
+        "iso2": "ae",
+        "png": "https://flagcdn.com/w160/ae.png",
+        "svg": "https://flagcdn.com/ae.svg"
+      }
+    },
+    "racePage": {
+      "slug": "abu-dhabi",
+      "url": "https://www.formula1.com/en/racing/2022/united-arab-emirates"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2022/united-arab-emirates",
+      "mediaUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_abudhabi_detailed.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_abudhabi_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "yas-marina.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/yas-marina.png"
+    },
+    "weekend": {
+      "startUtc": "2022-11-18T10:00:00.000Z",
+      "endUtc": "2022-11-20T15:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2022-11-18T10:00:00.000Z",
+        "endUtc": "2022-11-18T11:00:00.000Z",
+        "startLocalDateShort": "Fri, Nov 18",
+        "startLocalTimeShort": "03:00",
+        "startLocalDateTimeShort": "Fri, Nov 18 03:00"
+      },
+      {
+        "type": "FP2",
+        "startUtc": "2022-11-18T13:00:00.000Z",
+        "endUtc": "2022-11-18T14:00:00.000Z",
+        "startLocalDateShort": "Fri, Nov 18",
+        "startLocalTimeShort": "06:00",
+        "startLocalDateTimeShort": "Fri, Nov 18 06:00"
+      },
+      {
+        "type": "FP3",
+        "startUtc": "2022-11-19T11:00:00.000Z",
+        "endUtc": "2022-11-19T12:00:00.000Z",
+        "startLocalDateShort": "Sat, Nov 19",
+        "startLocalTimeShort": "04:00",
+        "startLocalDateTimeShort": "Sat, Nov 19 04:00"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2022-11-19T14:00:00.000Z",
+        "endUtc": "2022-11-19T15:00:00.000Z",
+        "startLocalDateShort": "Sat, Nov 19",
+        "startLocalTimeShort": "07:00",
+        "startLocalDateTimeShort": "Sat, Nov 19 07:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2022-11-20T13:00:00.000Z",
+        "endUtc": "2022-11-20T15:00:00.000Z",
+        "startLocalDateShort": "Sun, Nov 20",
+        "startLocalTimeShort": "06:00",
+        "startLocalDateTimeShort": "Sun, Nov 20 06:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Abu Dhabi Grand Prix",
+    "dna": {
+      "cornerProfile": "Modern traction",
+      "overtaking": "Medium",
+      "tireWear": "Low",
+      "trackEvolution": "Medium",
+      "strategyBias": "Neutral",
+      "safetyCarRisk": "Low"
+    },
+    "intelligence": [
+      "Race conditions change as the event moves from daylight to night.",
+      "Traction out of slow corners is important.",
+      "Strategy is often straightforward without interruption.",
+      "Qualifying remains important because overtaking can be limited."
+    ],
+    "id": "abudhabi",
+    "matchKeys": [
+      "abudhabi",
+      "yasmarina"
+    ],
+    "specs": {
+      "turns": 16,
+      "longestStraightKm": 1.2,
+      "averageSpeed": "Medium",
+      "raceLaps": 58,
+      "trackLength": "5.281 km",
+      "raceDistance": "306.183 km"
+    },
+    "raceLapRecord": {
+      "time": "1:25.637",
+      "driver": "Kevin Magnussen",
+      "constructor": "Haas",
+      "year": 2024,
+      "raceName": "Abu Dhabi Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {},
+    "titlePending": "Abu Dhabi Grand Prix 2022"
+  }
+}

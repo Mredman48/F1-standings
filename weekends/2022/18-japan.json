@@ -1,0 +1,142 @@
+{
+  "header": "2022 Japanese GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T23:30:19.423Z",
+  "season": 2022,
+  "round": 18,
+  "meetingKey": null,
+  "raceSlug": "japan",
+  "status": "upcoming",
+  "weekend": {
+    "round": 18,
+    "id": "japan",
+    "type": "RACE_WEEKEND",
+    "title": "Japanese Grand Prix 2022",
+    "shortTitle": "Japanese GP",
+    "circuit": "Suzuka International Racing Course",
+    "season": "2022",
+    "location": {
+      "city": "Suzuka",
+      "country": "Japan",
+      "flag": {
+        "iso2": "jp",
+        "png": "https://flagcdn.com/w160/jp.png",
+        "svg": "https://flagcdn.com/jp.svg"
+      }
+    },
+    "racePage": {
+      "slug": "japan",
+      "url": "https://www.formula1.com/en/racing/2022/japan"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2022/japan",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026tracksuzukadetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_japan_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "suzuka.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/suzuka.png"
+    },
+    "weekend": {
+      "startUtc": "2022-10-07T03:00:00.000Z",
+      "endUtc": "2022-10-09T07:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2022-10-07T03:00:00.000Z",
+        "endUtc": "2022-10-07T04:00:00.000Z",
+        "startLocalDateShort": "Thu, Oct 06",
+        "startLocalTimeShort": "21:00",
+        "startLocalDateTimeShort": "Thu, Oct 06 21:00"
+      },
+      {
+        "type": "FP2",
+        "startUtc": "2022-10-07T06:00:00.000Z",
+        "endUtc": "2022-10-07T07:00:00.000Z",
+        "startLocalDateShort": "Fri, Oct 07",
+        "startLocalTimeShort": "00:00",
+        "startLocalDateTimeShort": "Fri, Oct 07 00:00"
+      },
+      {
+        "type": "FP3",
+        "startUtc": "2022-10-08T03:00:00.000Z",
+        "endUtc": "2022-10-08T04:00:00.000Z",
+        "startLocalDateShort": "Fri, Oct 07",
+        "startLocalTimeShort": "21:00",
+        "startLocalDateTimeShort": "Fri, Oct 07 21:00"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2022-10-08T06:00:00.000Z",
+        "endUtc": "2022-10-08T07:00:00.000Z",
+        "startLocalDateShort": "Sat, Oct 08",
+        "startLocalTimeShort": "00:00",
+        "startLocalDateTimeShort": "Sat, Oct 08 00:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2022-10-09T05:00:00.000Z",
+        "endUtc": "2022-10-09T07:00:00.000Z",
+        "startLocalDateShort": "Sat, Oct 08",
+        "startLocalTimeShort": "23:00",
+        "startLocalDateTimeShort": "Sat, Oct 08 23:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Japanese Grand Prix",
+    "dna": {
+      "cornerProfile": "High-speed flowing",
+      "overtaking": "Low",
+      "tireWear": "High",
+      "trackEvolution": "Medium",
+      "strategyBias": "Tire Management",
+      "safetyCarRisk": "Low"
+    },
+    "intelligence": [
+      "Sector 1 rewards aerodynamic stability and driver confidence.",
+      "Dirty air can make overtaking difficult.",
+      "Tire management is critical through long high-load corners.",
+      "Qualifying position is very important."
+    ],
+    "id": "japan",
+    "matchKeys": [
+      "japan",
+      "japanese",
+      "suzuka"
+    ],
+    "specs": {
+      "turns": 18,
+      "longestStraightKm": 1.2,
+      "averageSpeed": "High",
+      "raceLaps": 53,
+      "trackLength": "5.451 km",
+      "raceDistance": "305.066 km"
+    },
+    "raceLapRecord": {
+      "time": "1:30.965",
+      "driver": "Andrea Kimi Antonelli",
+      "constructor": "Mercedes",
+      "year": 2025,
+      "raceName": "Japanese Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {},
+    "titlePending": "Japanese Grand Prix 2022"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "header": "2022 Emilia Romagna GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T23:30:19.412Z",
+  "season": 2022,
+  "round": 4,
+  "meetingKey": null,
+  "raceSlug": "emilia-romagna",
+  "status": "upcoming",
+  "weekend": {
+    "round": 4,
+    "id": "emilia-romagna",
+    "type": "RACE_WEEKEND",
+    "title": "Emilia Romagna Grand Prix 2022",
+    "shortTitle": "Emilia Romagna GP",
+    "circuit": "Autodromo Enzo e Dino Ferrari",
+    "season": "2022",
+    "location": {
+      "city": "Imola",
+      "country": "Italy",
+      "flag": {
+        "iso2": "it",
+        "png": "https://flagcdn.com/w160/it.png",
+        "svg": "https://flagcdn.com/it.svg"
+      }
+    },
+    "racePage": {
+      "slug": "emilia-romagna",
+      "url": "https://www.formula1.com/en/racing/2022/emilia-romagna"
+    },
+    "trackMap": {
+      "found": false,
+      "pageUrl": "https://www.formula1.com/en/racing/2022/emilia-romagna",
+      "mediaUrl": null,
+      "pngUrl": null
+    },
+    "map": {
+      "found": false,
+      "filename": null,
+      "pngUrl": null
+    },
+    "weekend": {
+      "startUtc": "2022-04-22T11:30:00.000Z",
+      "endUtc": "2022-04-24T15:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2022-04-22T11:30:00.000Z",
+        "endUtc": "2022-04-22T12:30:00.000Z",
+        "startLocalDateShort": "Fri, Apr 22",
+        "startLocalTimeShort": "05:30",
+        "startLocalDateTimeShort": "Fri, Apr 22 05:30"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2022-04-22T15:00:00.000Z",
+        "endUtc": "2022-04-22T16:00:00.000Z",
+        "startLocalDateShort": "Fri, Apr 22",
+        "startLocalTimeShort": "09:00",
+        "startLocalDateTimeShort": "Fri, Apr 22 09:00"
+      },
+      {
+        "type": "FP2",
+        "startUtc": "2022-04-23T10:30:00.000Z",
+        "endUtc": "2022-04-23T11:30:00.000Z",
+        "startLocalDateShort": "Sat, Apr 23",
+        "startLocalTimeShort": "04:30",
+        "startLocalDateTimeShort": "Sat, Apr 23 04:30"
+      },
+      {
+        "type": "Sprint",
+        "startUtc": "2022-04-23T14:30:00.000Z",
+        "endUtc": "2022-04-23T15:00:00.000Z",
+        "startLocalDateShort": "Sat, Apr 23",
+        "startLocalTimeShort": "08:30",
+        "startLocalDateTimeShort": "Sat, Apr 23 08:30"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2022-04-24T13:00:00.000Z",
+        "endUtc": "2022-04-24T15:00:00.000Z",
+        "startLocalDateShort": "Sun, Apr 24",
+        "startLocalTimeShort": "07:00",
+        "startLocalDateTimeShort": "Sun, Apr 24 07:00"
+      }
+    ]
+  },
+  "circuitIntelligence": null,
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {},
+    "titlePending": "Emilia Romagna Grand Prix 2022"
+  }
+}

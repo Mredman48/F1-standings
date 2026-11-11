@@ -1,0 +1,143 @@
+{
+  "header": "2022 Canadian GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T23:30:19.417Z",
+  "season": 2022,
+  "round": 9,
+  "meetingKey": null,
+  "raceSlug": "canada",
+  "status": "upcoming",
+  "weekend": {
+    "round": 9,
+    "id": "canada",
+    "type": "RACE_WEEKEND",
+    "title": "Canadian Grand Prix 2022",
+    "shortTitle": "Canadian GP",
+    "circuit": "Circuit Gilles Villeneuve",
+    "season": "2022",
+    "location": {
+      "city": "Montreal",
+      "country": "Canada",
+      "flag": {
+        "iso2": "ca",
+        "png": "https://flagcdn.com/w160/ca.png",
+        "svg": "https://flagcdn.com/ca.svg"
+      }
+    },
+    "racePage": {
+      "slug": "canada",
+      "url": "https://www.formula1.com/en/racing/2022/canada"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2022/canada",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmontrealdetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_canada_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "montreal.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/montreal.png"
+    },
+    "weekend": {
+      "startUtc": "2022-06-17T18:00:00.000Z",
+      "endUtc": "2022-06-19T20:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2022-06-17T18:00:00.000Z",
+        "endUtc": "2022-06-17T19:00:00.000Z",
+        "startLocalDateShort": "Fri, Jun 17",
+        "startLocalTimeShort": "12:00",
+        "startLocalDateTimeShort": "Fri, Jun 17 12:00"
+      },
+      {
+        "type": "FP2",
+        "startUtc": "2022-06-17T21:00:00.000Z",
+        "endUtc": "2022-06-17T22:00:00.000Z",
+        "startLocalDateShort": "Fri, Jun 17",
+        "startLocalTimeShort": "15:00",
+        "startLocalDateTimeShort": "Fri, Jun 17 15:00"
+      },
+      {
+        "type": "FP3",
+        "startUtc": "2022-06-18T17:00:00.000Z",
+        "endUtc": "2022-06-18T18:00:00.000Z",
+        "startLocalDateShort": "Sat, Jun 18",
+        "startLocalTimeShort": "11:00",
+        "startLocalDateTimeShort": "Sat, Jun 18 11:00"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2022-06-18T20:00:00.000Z",
+        "endUtc": "2022-06-18T21:00:00.000Z",
+        "startLocalDateShort": "Sat, Jun 18",
+        "startLocalTimeShort": "14:00",
+        "startLocalDateTimeShort": "Sat, Jun 18 14:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2022-06-19T18:00:00.000Z",
+        "endUtc": "2022-06-19T20:00:00.000Z",
+        "startLocalDateShort": "Sun, Jun 19",
+        "startLocalTimeShort": "12:00",
+        "startLocalDateTimeShort": "Sun, Jun 19 12:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Canadian Grand Prix",
+    "dna": {
+      "cornerProfile": "Stop-start braking",
+      "overtaking": "High",
+      "tireWear": "Medium",
+      "trackEvolution": "Medium",
+      "strategyBias": "Undercut",
+      "safetyCarRisk": "High"
+    },
+    "intelligence": [
+      "Heavy braking zones create real passing opportunities.",
+      "Wall proximity increases Safety Car chances.",
+      "Traction out of slow corners is key.",
+      "Brake management can influence race pace."
+    ],
+    "id": "canada",
+    "matchKeys": [
+      "canada",
+      "canadian",
+      "montreal",
+      "gillesvilleneuve"
+    ],
+    "specs": {
+      "turns": 14,
+      "longestStraightKm": 1.2,
+      "averageSpeed": "Medium",
+      "raceLaps": 70,
+      "trackLength": "4.361 km",
+      "raceDistance": "305.27 km"
+    },
+    "raceLapRecord": {
+      "time": "1:13.078",
+      "driver": "Valtteri Bottas",
+      "constructor": "Mercedes",
+      "year": 2019,
+      "raceName": "Canadian Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {},
+    "titlePending": "Canadian Grand Prix 2022"
+  }
+}

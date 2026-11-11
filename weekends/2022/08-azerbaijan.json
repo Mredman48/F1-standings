@@ -1,0 +1,141 @@
+{
+  "header": "2022 Azerbaijan GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T23:30:19.416Z",
+  "season": 2022,
+  "round": 8,
+  "meetingKey": null,
+  "raceSlug": "azerbaijan",
+  "status": "upcoming",
+  "weekend": {
+    "round": 8,
+    "id": "azerbaijan",
+    "type": "RACE_WEEKEND",
+    "title": "Azerbaijan Grand Prix 2022",
+    "shortTitle": "Azerbaijan GP",
+    "circuit": "Baku City Circuit",
+    "season": "2022",
+    "location": {
+      "city": "Baku",
+      "country": "Azerbaijan",
+      "flag": {
+        "iso2": "az",
+        "png": "https://flagcdn.com/w160/az.png",
+        "svg": "https://flagcdn.com/az.svg"
+      }
+    },
+    "racePage": {
+      "slug": "azerbaijan",
+      "url": "https://www.formula1.com/en/racing/2022/azerbaijan"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2022/azerbaijan",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackbakudetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_azerbaijan_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "baku.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/baku.png"
+    },
+    "weekend": {
+      "startUtc": "2022-06-10T11:00:00.000Z",
+      "endUtc": "2022-06-12T13:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2022-06-10T11:00:00.000Z",
+        "endUtc": "2022-06-10T12:00:00.000Z",
+        "startLocalDateShort": "Fri, Jun 10",
+        "startLocalTimeShort": "05:00",
+        "startLocalDateTimeShort": "Fri, Jun 10 05:00"
+      },
+      {
+        "type": "FP2",
+        "startUtc": "2022-06-10T14:00:00.000Z",
+        "endUtc": "2022-06-10T15:00:00.000Z",
+        "startLocalDateShort": "Fri, Jun 10",
+        "startLocalTimeShort": "08:00",
+        "startLocalDateTimeShort": "Fri, Jun 10 08:00"
+      },
+      {
+        "type": "FP3",
+        "startUtc": "2022-06-11T11:00:00.000Z",
+        "endUtc": "2022-06-11T12:00:00.000Z",
+        "startLocalDateShort": "Sat, Jun 11",
+        "startLocalTimeShort": "05:00",
+        "startLocalDateTimeShort": "Sat, Jun 11 05:00"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2022-06-11T14:00:00.000Z",
+        "endUtc": "2022-06-11T15:00:00.000Z",
+        "startLocalDateShort": "Sat, Jun 11",
+        "startLocalTimeShort": "08:00",
+        "startLocalDateTimeShort": "Sat, Jun 11 08:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2022-06-12T11:00:00.000Z",
+        "endUtc": "2022-06-12T13:00:00.000Z",
+        "startLocalDateShort": "Sun, Jun 12",
+        "startLocalTimeShort": "05:00",
+        "startLocalDateTimeShort": "Sun, Jun 12 05:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Azerbaijan Grand Prix",
+    "dna": {
+      "cornerProfile": "Street with long straight",
+      "overtaking": "High",
+      "tireWear": "Low",
+      "trackEvolution": "High",
+      "strategyBias": "Safety Car",
+      "safetyCarRisk": "High"
+    },
+    "intelligence": [
+      "The long main straight creates major passing opportunities.",
+      "Safety Cars are a constant strategic threat.",
+      "Low-speed castle sections punish mistakes.",
+      "Top speed and braking confidence are both critical."
+    ],
+    "id": "azerbaijan",
+    "matchKeys": [
+      "azerbaijan",
+      "baku"
+    ],
+    "specs": {
+      "turns": 20,
+      "longestStraightKm": 2.2,
+      "averageSpeed": "High",
+      "raceLaps": 51,
+      "trackLength": "6.003 km",
+      "raceDistance": "306.049 km"
+    },
+    "raceLapRecord": {
+      "time": "1:43.009",
+      "driver": "Charles Leclerc",
+      "constructor": "Ferrari",
+      "year": 2019,
+      "raceName": "Azerbaijan Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {},
+    "titlePending": "Azerbaijan Grand Prix 2022"
+  }
+}
