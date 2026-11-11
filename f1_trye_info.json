@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-11T20:22:56.587Z",
-  "count": 97,
+  "updatedAt": "2026-11-11T20:24:05.297Z",
+  "count": 98,
   "entries": [
     {
       "round": 1,
@@ -920,6 +920,31 @@
         "asphaltAbrasion": 1,
         "lateral": 1,
         "trackEvolution": 5
+      }
+    },
+    {
+      "round": 8,
+      "raceSlug": "canada",
+      "title": "Canadian GP",
+      "season": 2023,
+      "country": "Canada",
+      "flag": "ca",
+      "raceStart": "2023-06-18T18:00:00.000Z",
+      "compounds": {
+        "soft": "C5",
+        "medium": "C4",
+        "hard": "C3"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2023,
+        "pastYear": null,
+        "traction": 5,
+        "tyreStress": 3,
+        "asphaltGrip": 1,
+        "braking": 5,
+        "asphaltAbrasion": 2,
+        "lateral": 1,
+        "trackEvolution": 3
       }
     },
     {
