@@ -1,7 +1,7 @@
 {
   "header": "2024 Monaco GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-11-11T06:30:37.336Z",
+  "generatedAtUtc": "2026-11-11T15:31:01.614Z",
   "season": 2024,
   "round": 8,
   "meetingKey": 1236,
@@ -2769,12 +2769,233 @@
       "sessionKey": 9523,
       "sessionName": "Race",
       "dateStartUtc": "2024-05-26T13:00:00+00:00",
-      "dhlEventId": null,
-      "stopTimesSource": null,
+      "dhlEventId": 1023,
+      "stopTimesSource": "dhl",
       "totalLaps": 78,
-      "fastestStop": null,
-      "fastestStops": [],
-      "bestStopPerTeam": [],
+      "fastestStop": {
+        "driverNumber": 1,
+        "driverName": "Max VERSTAPPEN",
+        "nameAcronym": "VER",
+        "teamName": "Red Bull Racing",
+        "teamColour": "#3671C6",
+        "lap": 52,
+        "stopDuration": 2.1,
+        "stopDurationLabel": "2.10s",
+        "laneDuration": 23.8,
+        "validStop": true,
+        "dateUtc": "2024-05-26T14:53:50.854000+00:00",
+        "stopSource": "dhl",
+        "dhlRank": 1,
+        "dhlPoints": 25
+      },
+      "fastestStops": [
+        {
+          "rank": 1,
+          "driverNumber": 1,
+          "driverName": "Max VERSTAPPEN",
+          "nameAcronym": "VER",
+          "teamName": "Red Bull Racing",
+          "teamColour": "#3671C6",
+          "lap": 52,
+          "stopDuration": 2.1,
+          "stopDurationLabel": "2.10s",
+          "laneDuration": 23.8,
+          "validStop": true,
+          "dateUtc": "2024-05-26T14:53:50.854000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 1,
+          "dhlPoints": 25
+        },
+        {
+          "rank": 2,
+          "driverNumber": 18,
+          "driverName": "Lance STROLL",
+          "nameAcronym": "STR",
+          "teamName": "Aston Martin",
+          "teamColour": "#229971",
+          "lap": 42,
+          "stopDuration": 2.37,
+          "stopDurationLabel": "2.37s",
+          "laneDuration": 24.1,
+          "validStop": true,
+          "dateUtc": "2024-05-26T14:41:30.599000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 2,
+          "dhlPoints": 18
+        },
+        {
+          "rank": 3,
+          "driverNumber": 24,
+          "driverName": "ZHOU Guanyu",
+          "nameAcronym": "ZHO",
+          "teamName": "Kick Sauber",
+          "teamColour": "#52e252",
+          "lap": 70,
+          "stopDuration": 2.51,
+          "stopDurationLabel": "2.51s",
+          "laneDuration": 24.3,
+          "validStop": true,
+          "dateUtc": "2024-05-26T15:19:29.604000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 3,
+          "dhlPoints": 15
+        },
+        {
+          "rank": 4,
+          "driverNumber": 44,
+          "driverName": "Lewis HAMILTON",
+          "nameAcronym": "HAM",
+          "teamName": "Mercedes",
+          "teamColour": "#27F4D2",
+          "lap": 51,
+          "stopDuration": 2.55,
+          "stopDurationLabel": "2.55s",
+          "laneDuration": 24.2,
+          "validStop": true,
+          "dateUtc": "2024-05-26T14:52:35.455000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 4,
+          "dhlPoints": 12
+        },
+        {
+          "rank": 5,
+          "driverNumber": 77,
+          "driverName": "Valtteri BOTTAS",
+          "nameAcronym": "BOT",
+          "teamName": "Kick Sauber",
+          "teamColour": "#52e252",
+          "lap": 15,
+          "stopDuration": 2.56,
+          "stopDurationLabel": "2.56s",
+          "laneDuration": 24.2,
+          "validStop": true,
+          "dateUtc": "2024-05-26T14:05:22.140000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 5,
+          "dhlPoints": 10
+        },
+        {
+          "rank": 6,
+          "driverNumber": 2,
+          "driverName": "Logan SARGEANT",
+          "nameAcronym": "SAR",
+          "teamName": "Williams",
+          "teamColour": "#64C4FF",
+          "lap": 57,
+          "stopDuration": 2.66,
+          "stopDurationLabel": "2.66s",
+          "laneDuration": 24.3,
+          "validStop": true,
+          "dateUtc": "2024-05-26T15:02:08.732000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 6,
+          "dhlPoints": 8
+        },
+        {
+          "rank": 7,
+          "driverNumber": 18,
+          "driverName": "Lance STROLL",
+          "nameAcronym": "STR",
+          "teamName": "Aston Martin",
+          "teamColour": "#229971",
+          "lap": 48,
+          "stopDuration": 5.37,
+          "stopDurationLabel": "5.37s",
+          "laneDuration": 28.2,
+          "validStop": true,
+          "dateUtc": "2024-05-26T14:49:56.313000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 7,
+          "dhlPoints": 0
+        }
+      ],
+      "bestStopPerTeam": [
+        {
+          "rank": 1,
+          "driverNumber": 1,
+          "driverName": "Max VERSTAPPEN",
+          "nameAcronym": "VER",
+          "teamName": "Red Bull Racing",
+          "teamColour": "#3671C6",
+          "lap": 52,
+          "stopDuration": 2.1,
+          "stopDurationLabel": "2.10s",
+          "laneDuration": 23.8,
+          "validStop": true,
+          "dateUtc": "2024-05-26T14:53:50.854000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 1,
+          "dhlPoints": 25
+        },
+        {
+          "rank": 2,
+          "driverNumber": 18,
+          "driverName": "Lance STROLL",
+          "nameAcronym": "STR",
+          "teamName": "Aston Martin",
+          "teamColour": "#229971",
+          "lap": 42,
+          "stopDuration": 2.37,
+          "stopDurationLabel": "2.37s",
+          "laneDuration": 24.1,
+          "validStop": true,
+          "dateUtc": "2024-05-26T14:41:30.599000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 2,
+          "dhlPoints": 18
+        },
+        {
+          "rank": 3,
+          "driverNumber": 24,
+          "driverName": "ZHOU Guanyu",
+          "nameAcronym": "ZHO",
+          "teamName": "Kick Sauber",
+          "teamColour": "#52e252",
+          "lap": 70,
+          "stopDuration": 2.51,
+          "stopDurationLabel": "2.51s",
+          "laneDuration": 24.3,
+          "validStop": true,
+          "dateUtc": "2024-05-26T15:19:29.604000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 3,
+          "dhlPoints": 15
+        },
+        {
+          "rank": 4,
+          "driverNumber": 44,
+          "driverName": "Lewis HAMILTON",
+          "nameAcronym": "HAM",
+          "teamName": "Mercedes",
+          "teamColour": "#27F4D2",
+          "lap": 51,
+          "stopDuration": 2.55,
+          "stopDurationLabel": "2.55s",
+          "laneDuration": 24.2,
+          "validStop": true,
+          "dateUtc": "2024-05-26T14:52:35.455000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 4,
+          "dhlPoints": 12
+        },
+        {
+          "rank": 5,
+          "driverNumber": 2,
+          "driverName": "Logan SARGEANT",
+          "nameAcronym": "SAR",
+          "teamName": "Williams",
+          "teamColour": "#64C4FF",
+          "lap": 57,
+          "stopDuration": 2.66,
+          "stopDurationLabel": "2.66s",
+          "laneDuration": 24.3,
+          "validStop": true,
+          "dateUtc": "2024-05-26T15:02:08.732000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 6,
+          "dhlPoints": 8
+        }
+      ],
       "pitStops": [
         {
           "driverNumber": 16,
@@ -2787,7 +3008,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2358,
           "validStop": false,
-          "dateUtc": "2024-05-26T13:44:08.648000+00:00"
+          "dateUtc": "2024-05-26T13:44:08.648000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 81,
@@ -2800,7 +3022,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2357.6,
           "validStop": false,
-          "dateUtc": "2024-05-26T13:44:10.929000+00:00"
+          "dateUtc": "2024-05-26T13:44:10.929000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 55,
@@ -2813,7 +3036,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2327,
           "validStop": false,
-          "dateUtc": "2024-05-26T13:44:15.005000+00:00"
+          "dateUtc": "2024-05-26T13:44:15.005000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 4,
@@ -2826,7 +3050,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2365.5,
           "validStop": false,
-          "dateUtc": "2024-05-26T13:44:20.326000+00:00"
+          "dateUtc": "2024-05-26T13:44:20.326000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 63,
@@ -2839,7 +3064,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2369.3,
           "validStop": false,
-          "dateUtc": "2024-05-26T13:44:26.200000+00:00"
+          "dateUtc": "2024-05-26T13:44:26.200000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 1,
@@ -2852,7 +3078,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2372.6,
           "validStop": false,
-          "dateUtc": "2024-05-26T13:44:31.202000+00:00"
+          "dateUtc": "2024-05-26T13:44:31.202000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 44,
@@ -2865,7 +3092,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2375.3,
           "validStop": false,
-          "dateUtc": "2024-05-26T13:44:36.048000+00:00"
+          "dateUtc": "2024-05-26T13:44:36.048000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 22,
@@ -2878,7 +3106,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2377.5,
           "validStop": false,
-          "dateUtc": "2024-05-26T13:44:40.843000+00:00"
+          "dateUtc": "2024-05-26T13:44:40.843000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 23,
@@ -2891,7 +3120,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2381.3,
           "validStop": false,
-          "dateUtc": "2024-05-26T13:44:47.191000+00:00"
+          "dateUtc": "2024-05-26T13:44:47.191000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 10,
@@ -2904,7 +3134,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2381.8,
           "validStop": false,
-          "dateUtc": "2024-05-26T13:44:50.012000+00:00"
+          "dateUtc": "2024-05-26T13:44:50.012000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 18,
@@ -2917,7 +3148,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2383.5,
           "validStop": false,
-          "dateUtc": "2024-05-26T13:44:55.032000+00:00"
+          "dateUtc": "2024-05-26T13:44:55.032000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 3,
@@ -2930,7 +3162,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2385.8,
           "validStop": false,
-          "dateUtc": "2024-05-26T13:45:00.056000+00:00"
+          "dateUtc": "2024-05-26T13:45:00.056000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 14,
@@ -2943,7 +3176,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2389.4,
           "validStop": false,
-          "dateUtc": "2024-05-26T13:45:05.469000+00:00"
+          "dateUtc": "2024-05-26T13:45:05.469000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 2,
@@ -2956,7 +3190,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2391.6,
           "validStop": false,
-          "dateUtc": "2024-05-26T13:45:09.110000+00:00"
+          "dateUtc": "2024-05-26T13:45:09.110000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 77,
@@ -2969,7 +3204,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2394,
           "validStop": false,
-          "dateUtc": "2024-05-26T13:45:13.910000+00:00"
+          "dateUtc": "2024-05-26T13:45:13.910000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 24,
@@ -2982,7 +3218,8 @@
           "stopDurationLabel": null,
           "laneDuration": 2386.4,
           "validStop": false,
-          "dateUtc": "2024-05-26T13:45:18.455000+00:00"
+          "dateUtc": "2024-05-26T13:45:18.455000+00:00",
+          "stopSource": null
         },
         {
           "driverNumber": 77,
@@ -2991,11 +3228,14 @@
           "teamName": "Kick Sauber",
           "teamColour": "#52e252",
           "lap": 15,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 2.56,
+          "stopDurationLabel": "2.56s",
           "laneDuration": 24.2,
-          "validStop": false,
-          "dateUtc": "2024-05-26T14:05:22.140000+00:00"
+          "validStop": true,
+          "dateUtc": "2024-05-26T14:05:22.140000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 5,
+          "dhlPoints": 10
         },
         {
           "driverNumber": 18,
@@ -3004,11 +3244,14 @@
           "teamName": "Aston Martin",
           "teamColour": "#229971",
           "lap": 42,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 2.37,
+          "stopDurationLabel": "2.37s",
           "laneDuration": 24.1,
-          "validStop": false,
-          "dateUtc": "2024-05-26T14:41:30.599000+00:00"
+          "validStop": true,
+          "dateUtc": "2024-05-26T14:41:30.599000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 2,
+          "dhlPoints": 18
         },
         {
           "driverNumber": 18,
@@ -3017,11 +3260,14 @@
           "teamName": "Aston Martin",
           "teamColour": "#229971",
           "lap": 48,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 5.37,
+          "stopDurationLabel": "5.37s",
           "laneDuration": 28.2,
-          "validStop": false,
-          "dateUtc": "2024-05-26T14:49:56.313000+00:00"
+          "validStop": true,
+          "dateUtc": "2024-05-26T14:49:56.313000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 7,
+          "dhlPoints": 0
         },
         {
           "driverNumber": 44,
@@ -3030,11 +3276,14 @@
           "teamName": "Mercedes",
           "teamColour": "#27F4D2",
           "lap": 51,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 2.55,
+          "stopDurationLabel": "2.55s",
           "laneDuration": 24.2,
-          "validStop": false,
-          "dateUtc": "2024-05-26T14:52:35.455000+00:00"
+          "validStop": true,
+          "dateUtc": "2024-05-26T14:52:35.455000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 4,
+          "dhlPoints": 12
         },
         {
           "driverNumber": 1,
@@ -3043,11 +3292,14 @@
           "teamName": "Red Bull Racing",
           "teamColour": "#3671C6",
           "lap": 52,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 2.1,
+          "stopDurationLabel": "2.10s",
           "laneDuration": 23.8,
-          "validStop": false,
-          "dateUtc": "2024-05-26T14:53:50.854000+00:00"
+          "validStop": true,
+          "dateUtc": "2024-05-26T14:53:50.854000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 1,
+          "dhlPoints": 25
         },
         {
           "driverNumber": 2,
@@ -3056,11 +3308,14 @@
           "teamName": "Williams",
           "teamColour": "#64C4FF",
           "lap": 57,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 2.66,
+          "stopDurationLabel": "2.66s",
           "laneDuration": 24.3,
-          "validStop": false,
-          "dateUtc": "2024-05-26T15:02:08.732000+00:00"
+          "validStop": true,
+          "dateUtc": "2024-05-26T15:02:08.732000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 6,
+          "dhlPoints": 8
         },
         {
           "driverNumber": 24,
@@ -3069,11 +3324,14 @@
           "teamName": "Kick Sauber",
           "teamColour": "#52e252",
           "lap": 70,
-          "stopDuration": null,
-          "stopDurationLabel": null,
+          "stopDuration": 2.51,
+          "stopDurationLabel": "2.51s",
           "laneDuration": 24.3,
-          "validStop": false,
-          "dateUtc": "2024-05-26T15:19:29.604000+00:00"
+          "validStop": true,
+          "dateUtc": "2024-05-26T15:19:29.604000+00:00",
+          "stopSource": "dhl",
+          "dhlRank": 3,
+          "dhlPoints": 15
         }
       ],
       "drivers": [
@@ -3208,17 +3466,17 @@
               "stint": 1,
               "compound": "MEDIUM",
               "lapStart": 1,
-              "lapEnd": 51,
-              "laps": 51,
+              "lapEnd": 52,
+              "laps": 52,
               "tyreAgeAtStart": 0,
               "newTyre": true
             },
             {
               "stint": 2,
               "compound": "HARD",
-              "lapStart": 52,
+              "lapStart": 53,
               "lapEnd": 78,
-              "laps": 27,
+              "laps": 26,
               "tyreAgeAtStart": 1,
               "newTyre": false
             }
@@ -3240,17 +3498,17 @@
               "stint": 1,
               "compound": "MEDIUM",
               "lapStart": 1,
-              "lapEnd": 50,
-              "laps": 50,
+              "lapEnd": 51,
+              "laps": 51,
               "tyreAgeAtStart": 0,
               "newTyre": true
             },
             {
               "stint": 2,
               "compound": "HARD",
-              "lapStart": 51,
+              "lapStart": 52,
               "lapEnd": 78,
-              "laps": 28,
+              "laps": 27,
               "tyreAgeAtStart": 1,
               "newTyre": false
             }
@@ -3387,17 +3645,17 @@
               "stint": 1,
               "compound": "MEDIUM",
               "lapStart": 1,
-              "lapEnd": 14,
-              "laps": 14,
+              "lapEnd": 15,
+              "laps": 15,
               "tyreAgeAtStart": 0,
               "newTyre": true
             },
             {
               "stint": 2,
               "compound": "HARD",
-              "lapStart": 15,
+              "lapStart": 16,
               "lapEnd": 76,
-              "laps": 62,
+              "laps": 61,
               "tyreAgeAtStart": 1,
               "newTyre": false
             }
@@ -3419,16 +3677,16 @@
               "stint": 1,
               "compound": "MEDIUM",
               "lapStart": 1,
-              "lapEnd": 41,
-              "laps": 41,
+              "lapEnd": 42,
+              "laps": 42,
               "tyreAgeAtStart": 1,
               "newTyre": false
             },
             {
               "stint": 2,
               "compound": "HARD",
-              "lapStart": 42,
-              "lapEnd": 47,
+              "lapStart": 43,
+              "lapEnd": 48,
               "laps": 6,
               "tyreAgeAtStart": 2,
               "newTyre": false
@@ -3436,9 +3694,9 @@
             {
               "stint": 3,
               "compound": "SOFT",
-              "lapStart": 48,
+              "lapStart": 49,
               "lapEnd": 76,
-              "laps": 29,
+              "laps": 28,
               "tyreAgeAtStart": 0,
               "newTyre": true
             }
@@ -3460,17 +3718,17 @@
               "stint": 1,
               "compound": "HARD",
               "lapStart": 1,
-              "lapEnd": 56,
-              "laps": 56,
+              "lapEnd": 57,
+              "laps": 57,
               "tyreAgeAtStart": 0,
               "newTyre": true
             },
             {
               "stint": 2,
               "compound": "MEDIUM",
-              "lapStart": 57,
+              "lapStart": 58,
               "lapEnd": 76,
-              "laps": 20,
+              "laps": 19,
               "tyreAgeAtStart": 0,
               "newTyre": true
             }
@@ -3492,17 +3750,17 @@
               "stint": 1,
               "compound": "HARD",
               "lapStart": 1,
-              "lapEnd": 69,
-              "laps": 69,
+              "lapEnd": 70,
+              "laps": 70,
               "tyreAgeAtStart": 0,
               "newTyre": true
             },
             {
               "stint": 2,
               "compound": "SOFT",
-              "lapStart": 70,
+              "lapStart": 71,
               "lapEnd": 76,
-              "laps": 7,
+              "laps": 6,
               "tyreAgeAtStart": 0,
               "newTyre": true
             }
