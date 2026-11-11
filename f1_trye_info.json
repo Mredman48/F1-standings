@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-11T14:15:55.842Z",
-  "count": 77,
+  "updatedAt": "2026-11-11T14:18:07.248Z",
+  "count": 78,
   "entries": [
     {
       "round": 1,
@@ -993,6 +993,32 @@
         "lateral": 3,
         "trackEvolution": 3
       }
+    },
+    {
+      "round": 11,
+      "raceSlug": "austria",
+      "title": "Austrian GP",
+      "season": 2024,
+      "country": "Austria",
+      "flag": "at",
+      "raceStart": "2024-06-30T13:00:00.000Z",
+      "compounds": {
+        "soft": "C5",
+        "medium": "C4",
+        "hard": "C3"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2024,
+        "pastYear": false,
+        "traction": 2,
+        "tyreStress": 3,
+        "asphaltGrip": 3,
+        "braking": 3,
+        "asphaltAbrasion": 4,
+        "lateral": 3,
+        "trackEvolution": 3
+      },
+      "updatedAt": ""
     },
     {
       "round": 12,
