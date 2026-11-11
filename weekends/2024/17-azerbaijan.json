@@ -11,7 +11,7 @@
     "round": 17,
     "id": "azerbaijan",
     "type": "RACE_WEEKEND",
-    "title": "Azerbaijan GP",
+    "title": "2024 Azerbaijan Grand Prix",
     "shortTitle": "Azerbaijan GP",
     "circuit": "Baku City Circuit",
     "season": "2024",
@@ -141,20 +141,20 @@
     "flag": "az",
     "raceStart": "2024-09-15T11:00:00.000Z",
     "compounds": {
-      "soft": null,
-      "medium": null,
-      "hard": null
+      "soft": "C5",
+      "medium": "C4",
+      "hard": "C3"
     },
     "trackCharacteristics": {
-      "ratingsSeason": null,
-      "pastYear": null,
-      "traction": null,
-      "tyreStress": null,
-      "asphaltGrip": null,
-      "braking": null,
-      "asphaltAbrasion": null,
-      "lateral": null,
-      "trackEvolution": null
+      "ratingsSeason": 2024,
+      "pastYear": false,
+      "traction": 5,
+      "tyreStress": 4,
+      "asphaltGrip": 2,
+      "braking": 4,
+      "asphaltAbrasion": 1,
+      "lateral": 1,
+      "trackEvolution": 5
     }
   },
   "racePreview": null,
@@ -3716,8 +3716,12 @@
       ]
     }
   ],
-  "raceRecap": null,
-  "locked": false,
+  "raceRecap": {
+    "result": {
+      "driverOfDay": "Piastri"
+    }
+  },
+  "locked": true,
   "lockedSections": [],
   "meta": {
     "fia": {},
