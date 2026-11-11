@@ -2333,7 +2333,7 @@
       "weekend": "2026-11-11T00:34:47.835Z"
     }
   },
-  "locked": false,
+  "locked": true,
   "lockedSections": [],
   "raceRecap": {
     "result": {
@@ -4834,10 +4834,10 @@
       "raceName": "Canadian Grand Prix"
     },
     "previousWinner": {
-      "driver": "George Russell",
-      "constructor": "Mercedes",
-      "season": 2025,
-      "date": "2025-06-15",
+      "driver": "Max Verstappen",
+      "constructor": "Red Bull",
+      "season": 2024,
+      "date": "2024-06-09",
       "raceName": "Canadian Grand Prix"
     }
   },
@@ -4849,5 +4849,28 @@
     "previousWinner": "Max Verstappen",
     "constructor": "Red Bull",
     "date": "2024-06-09"
+  },
+  "tyreInfo": {
+    "compounds": {
+      "hard": "C4",
+      "medium": "C5",
+      "soft": "C6"
+    },
+    "round": 10,
+    "raceSlug": "canada",
+    "title": "Canadian GP",
+    "season": 2025,
+    "country": "Canada",
+    "flag": "ca",
+    "trackCharacteristics": {
+      "ratingsSeason": 2025,
+      "traction": 4,
+      "tyreStress": 3,
+      "asphaltGrip": 2,
+      "braking": 5,
+      "asphaltAbrasion": 1,
+      "lateral": 1,
+      "trackEvolution": 5
+    }
   }
 }
