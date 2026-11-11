@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-11T01:02:12.353Z",
-  "count": 56,
+  "updatedAt": "2026-11-11T01:05:55.233Z",
+  "count": 57,
   "entries": [
     {
       "round": 1,
@@ -1015,6 +1015,29 @@
         "asphaltAbrasion": 2,
         "lateral": 4,
         "trackEvolution": 5
+      }
+    },
+    {
+      "round": 15,
+      "raceSlug": "netherlands",
+      "title": "Dutch GP",
+      "season": 2025,
+      "country": "Netherlands",
+      "flag": "nl",
+      "compounds": {
+        "soft": "C4",
+        "medium": "C3",
+        "hard": "C2"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2025,
+        "traction": 3,
+        "tyreStress": 5,
+        "asphaltGrip": 3,
+        "braking": 3,
+        "asphaltAbrasion": 3,
+        "lateral": 4,
+        "trackEvolution": 4
       }
     },
     {
