@@ -1,0 +1,266 @@
+{
+  "schemaVersion": 1,
+  "season": 2023,
+  "notes": [
+    "Lives at weekends/<season>/f1_teams_<season>.json.",
+    "FALLBACK: any field that is null, \"\" or missing falls back to the live season's value for the team with the same `key`. Reuse a 2026 key (e.g. \"audi\" for Sauber) to inherit; a key with no live match has nothing to fall back to.",
+    "key: stable lowercase id (letters/digits). name: display name that year. fullName: official entry name. shortName: 2-3 letter code.",
+    "aliases: every spelling of the team in that season's results/standings feeds (matched ignoring case, spaces and punctuation). Fills in only if non-empty.",
+    "base: HQ city, country: team nationality, powerUnit: engine supplier that year.",
+    "colors.primary / colors.secondary: the two team colours for constructors standings and the dot gradient. onPrimary: text colour on primary. primaryLight / secondaryLight: optional paper-mode overrides.",
+    "carUrl: direct link to the side-view car graphic (700:172). null = the app's bundled car art.",
+    "icon: bundled asset name. logoUrl / logoLightUrl: optional remote logos (light = for light mode)."
+  ],
+  "teams": [
+    {
+      "key": "mercedes",
+      "name": "Mercedes-AMG F1 Team",
+      "fullName": "Mercedes-AMG PETRONAS Formula One Team",
+      "shortName": "MER",
+      "aliases": [
+        "Mercedes",
+        "Mercedes-AMG Petronas F1 Team"
+      ],
+      "base": "Brackley, UK",
+      "country": "Germany",
+      "powerUnit": "Mercedes",
+      "colors": {
+        "primary": "#00A19B",
+        "secondary": "#C6C6C6",
+        "onPrimary": "#0A0C0F",
+        "primaryLight": null,
+        "secondaryLight": null
+      },
+      "icon": "mercedes-icon",
+      "logoUrl": null,
+      "logoLightUrl": null,
+      "carUrl": null
+    },
+    {
+      "key": "ferrari",
+      "name": "Scuderia Ferrari",
+      "fullName": "Scuderia Ferrari HP",
+      "shortName": "FER",
+      "aliases": [
+        "Ferrari",
+        "Scuderia Ferrari"
+      ],
+      "base": "Maranello, Italy",
+      "country": "Italy",
+      "powerUnit": "Ferrari",
+      "colors": {
+        "primary": "#F70D1A",
+        "secondary": "#F4D03F",
+        "onPrimary": "#0A0C0F",
+        "primaryLight": null,
+        "secondaryLight": null
+      },
+      "icon": "ferrari-icon",
+      "logoUrl": null,
+      "logoLightUrl": null,
+      "carUrl": null
+    },
+    {
+      "key": "mclaren",
+      "name": "McLaren Formula 1 Team",
+      "fullName": "McLaren Formula 1 Team",
+      "shortName": "MCL",
+      "aliases": [
+        "McLaren",
+        "McLaren F1 Team"
+      ],
+      "base": "Woking, UK",
+      "country": "United Kingdom",
+      "powerUnit": "Mercedes",
+      "colors": {
+        "primary": "#E56717",
+        "secondary": "#00535C",
+        "onPrimary": "#0A0C0F",
+        "primaryLight": null,
+        "secondaryLight": null
+      },
+      "icon": "mclaren-icon",
+      "logoUrl": null,
+      "logoLightUrl": null,
+      "carUrl": null
+    },
+    {
+      "key": "redbull",
+      "name": "Red Bull Racing",
+      "fullName": "Oracle Red Bull Racing",
+      "shortName": "RBR",
+      "aliases": [
+        "Red Bull",
+        "Red Bull Racing",
+        "Oracle Red Bull Racing"
+      ],
+      "base": "Milton Keynes, UK",
+      "country": "Austria",
+      "powerUnit": "Honda",
+      "colors": {
+        "primary": "#3671C6",
+        "secondary": "#C5323C",
+        "onPrimary": "#FFFFFF",
+        "primaryLight": null,
+        "secondaryLight": null
+      },
+      "icon": "red-bull-icon",
+      "logoUrl": null,
+      "logoLightUrl": null,
+      "carUrl": null
+    },
+    {
+      "key": "williams",
+      "name": "Williams F1 Team",
+      "fullName": "Atlassian Williams F1 Team",
+      "shortName": "WIL",
+      "aliases": [
+        "Williams",
+        "Williams Racing"
+      ],
+      "base": "Grove, UK",
+      "country": "United Kingdom",
+      "powerUnit": "Mercedes",
+      "colors": {
+        "primary": "#0231BD",
+        "secondary": "#009FDC",
+        "onPrimary": "#FFFFFF",
+        "primaryLight": null,
+        "secondaryLight": null
+      },
+      "icon": "williams-icon",
+      "logoUrl": null,
+      "logoLightUrl": null,
+      "carUrl": null
+    },
+    {
+      "key": "racingbulls",
+      "name": "Scuderia AlphaTauri",
+      "fullName": "Scuderia AlphaTauri",
+      "shortName": "RB",
+      "aliases": [
+        "Racing Bulls",
+        "RB F1 Team",
+        "Visa Cash App Racing Bulls F1 Team",
+        "VCARB",
+        "RB",
+        "AlphaTauri"
+      ],
+      "base": "Faenza, Italy",
+      "country": "Italy",
+      "powerUnit": "Honda",
+      "colors": {
+        "primary": "#20394C",
+        "secondary": "#FFFFFF",
+        "onPrimary": "#FFFFFF",
+        "primaryLight": null,
+        "secondaryLight": null
+      },
+      "icon": "vcarb-icon",
+      "logoUrl": null,
+      "logoLightUrl": null,
+      "carUrl": null
+    },
+    {
+      "key": "astonmartin",
+      "name": "Aston Martin F1 Team",
+      "fullName": "Aston Martin Aramco Formula One Team",
+      "shortName": "AMR",
+      "aliases": [
+        "Aston Martin",
+        "Aston Martin Aramco",
+        "Aston Martin Aramco F1 Team"
+      ],
+      "base": "Silverstone, UK",
+      "country": "United Kingdom",
+      "powerUnit": "Mercedes",
+      "colors": {
+        "primary": "#0A7968",
+        "secondary": "#CEDC00",
+        "onPrimary": "#FFFFFF",
+        "primaryLight": null,
+        "secondaryLight": null
+      },
+      "icon": "aston-martin-icon",
+      "logoUrl": null,
+      "logoLightUrl": null,
+      "carUrl": null
+    },
+    {
+      "key": "alpine",
+      "name": "Alpine F1 Team",
+      "fullName": "BWT Alpine Formula One Team",
+      "shortName": "ALP",
+      "aliases": [
+        "Alpine",
+        "Alpine F1 Team"
+      ],
+      "base": "Enstone, UK",
+      "country": "France",
+      "powerUnit": "Mercedes",
+      "colors": {
+        "primary": "#FF87BC",
+        "secondary": "#007AC1",
+        "onPrimary": "#0A0C0F",
+        "primaryLight": null,
+        "secondaryLight": null
+      },
+      "icon": "alpine-icon",
+      "logoUrl": null,
+      "logoLightUrl": null,
+      "carUrl": null
+    },
+    {
+      "key": "haas",
+      "name": "Haas F1 Team",
+      "fullName": "TGR Haas F1 Team",
+      "shortName": "HAA",
+      "aliases": [
+        "Haas",
+        "Haas F1 Team",
+        "MoneyGram Haas F1 Team"
+      ],
+      "base": "Kannapolis, USA",
+      "country": "USA",
+      "powerUnit": "Ferrari",
+      "colors": {
+        "primary": "#DA291C",
+        "secondary": "#AEAEAE",
+        "onPrimary": "#FFFFFF",
+        "primaryLight": null,
+        "secondaryLight": null
+      },
+      "icon": "haas-icon",
+      "logoUrl": null,
+      "logoLightUrl": null,
+      "carUrl": null
+    },
+    {
+      "key": "audi",
+      "name": "Alfa Romeo F1 Team",
+      "fullName": "Alfa Romeo F1 Team",
+      "shortName": "SAU",
+      "aliases": [
+        "Audi",
+        "Audi F1 Team",
+        "Kick Sauber",
+        "Stake F1 Team Kick Sauber",
+        "Sauber"
+      ],
+      "base": "Hinwil, Switzerland",
+      "country": "Switzerland",
+      "powerUnit": "Ferrari",
+      "colors": {
+        "primary": "#A42134",
+        "secondary": "#241F21",
+        "onPrimary": "#0A0C0F",
+        "primaryLight": "#A42134",
+        "secondaryLight": "#FFFFFF"
+      },
+      "icon": "kicksauber-icon",
+      "logoUrl": null,
+      "logoLightUrl": null,
+      "carUrl": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/liveries/sauber-car.webp"
+    }
+  ]
+}
