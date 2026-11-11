@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-11T06:50:16.451Z",
-  "count": 72,
+  "updatedAt": "2026-11-11T07:22:59.757Z",
+  "count": 73,
   "entries": [
     {
       "round": 1,
@@ -518,6 +518,31 @@
         "traction": 3,
         "tyreStress": 3,
         "asphaltGrip": 4,
+        "braking": 3,
+        "asphaltAbrasion": 2,
+        "lateral": 3,
+        "trackEvolution": 5
+      }
+    },
+    {
+      "round": 6,
+      "raceSlug": "miami",
+      "title": "Miami GP",
+      "season": 2024,
+      "country": "United States",
+      "flag": "us",
+      "raceStart": "2024-05-05T20:00:00.000Z",
+      "compounds": {
+        "soft": "C4",
+        "medium": "C3",
+        "hard": "C2"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2024,
+        "pastYear": null,
+        "traction": 3,
+        "tyreStress": 3,
+        "asphaltGrip": 3,
         "braking": 3,
         "asphaltAbrasion": 2,
         "lateral": 3,
