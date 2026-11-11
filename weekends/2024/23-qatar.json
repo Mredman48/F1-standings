@@ -11,7 +11,7 @@
     "round": 23,
     "id": "qatar",
     "type": "RACE_WEEKEND",
-    "title": "Qatar GP",
+    "title": "2024 Qatar Grand Prix",
     "shortTitle": "Qatar GP",
     "circuit": "Lusail International Circuit",
     "season": "2024",
@@ -142,20 +142,20 @@
     "flag": "qa",
     "raceStart": "2024-12-01T16:00:00.000Z",
     "compounds": {
-      "soft": null,
-      "medium": null,
-      "hard": null
+      "soft": "C3",
+      "medium": "C2",
+      "hard": "C1"
     },
     "trackCharacteristics": {
-      "ratingsSeason": null,
-      "pastYear": null,
-      "traction": null,
-      "tyreStress": null,
-      "asphaltGrip": null,
-      "braking": null,
-      "asphaltAbrasion": null,
-      "lateral": null,
-      "trackEvolution": null
+      "ratingsSeason": 2024,
+      "pastYear": false,
+      "traction": 3,
+      "tyreStress": 5,
+      "asphaltGrip": 3,
+      "braking": 3,
+      "asphaltAbrasion": 2,
+      "lateral": 5,
+      "trackEvolution": 4
     }
   },
   "racePreview": null,
@@ -5860,8 +5860,12 @@
       ]
     }
   ],
-  "raceRecap": null,
-  "locked": false,
+  "raceRecap": {
+    "result": {
+      "driverOfDay": "Guanyu"
+    }
+  },
+  "locked": true,
   "lockedSections": [],
   "meta": {
     "fia": {},
