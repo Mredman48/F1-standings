@@ -1,0 +1,147 @@
+{
+  "header": "2024 Abu Dhabi GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T06:03:04.432Z",
+  "season": 2024,
+  "round": 24,
+  "meetingKey": null,
+  "raceSlug": "abu-dhabi",
+  "status": "upcoming",
+  "weekend": {
+    "round": 24,
+    "id": "abu-dhabi",
+    "type": "RACE_WEEKEND",
+    "title": "Abu Dhabi GP",
+    "shortTitle": "Abu Dhabi GP",
+    "circuit": "Yas Marina Circuit",
+    "season": "2024",
+    "location": {
+      "city": "Abu Dhabi",
+      "country": "United Arab Emirates",
+      "flag": {
+        "iso2": "ae",
+        "png": "https://flagcdn.com/w160/ae.png",
+        "svg": "https://flagcdn.com/ae.svg"
+      }
+    },
+    "racePage": {
+      "slug": "abu-dhabi",
+      "url": "https://www.formula1.com/en/racing/2024/united-arab-emirates"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2024/united-arab-emirates",
+      "mediaUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_abudhabi_detailed.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_abudhabi_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "yas-marina.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/yas-marina.png"
+    },
+    "weekend": {
+      "startUtc": "2024-12-06T09:30:00.000Z",
+      "endUtc": "2024-12-08T15:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2024-12-06T09:30:00.000Z",
+        "endUtc": "2024-12-06T10:30:00.000Z",
+        "startLocalDateShort": "Fri, Dec 06",
+        "startLocalTimeShort": "02:30",
+        "startLocalDateTimeShort": "Fri, Dec 06 02:30"
+      },
+      {
+        "type": "FP2",
+        "startUtc": "2024-12-06T13:00:00.000Z",
+        "endUtc": "2024-12-06T14:00:00.000Z",
+        "startLocalDateShort": "Fri, Dec 06",
+        "startLocalTimeShort": "06:00",
+        "startLocalDateTimeShort": "Fri, Dec 06 06:00"
+      },
+      {
+        "type": "FP3",
+        "startUtc": "2024-12-07T10:30:00.000Z",
+        "endUtc": "2024-12-07T11:30:00.000Z",
+        "startLocalDateShort": "Sat, Dec 07",
+        "startLocalTimeShort": "03:30",
+        "startLocalDateTimeShort": "Sat, Dec 07 03:30"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2024-12-07T14:00:00.000Z",
+        "endUtc": "2024-12-07T15:00:00.000Z",
+        "startLocalDateShort": "Sat, Dec 07",
+        "startLocalTimeShort": "07:00",
+        "startLocalDateTimeShort": "Sat, Dec 07 07:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2024-12-08T13:00:00.000Z",
+        "endUtc": "2024-12-08T15:00:00.000Z",
+        "startLocalDateShort": "Sun, Dec 08",
+        "startLocalTimeShort": "06:00",
+        "startLocalDateTimeShort": "Sun, Dec 08 06:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Abu Dhabi Grand Prix",
+    "dna": {
+      "cornerProfile": "Modern traction",
+      "overtaking": "Medium",
+      "tireWear": "Low",
+      "trackEvolution": "Medium",
+      "strategyBias": "Neutral",
+      "safetyCarRisk": "Low"
+    },
+    "intelligence": [
+      "Race conditions change as the event moves from daylight to night.",
+      "Traction out of slow corners is important.",
+      "Strategy is often straightforward without interruption.",
+      "Qualifying remains important because overtaking can be limited."
+    ],
+    "id": "abudhabi",
+    "matchKeys": [
+      "abudhabi",
+      "yasmarina"
+    ],
+    "specs": {
+      "turns": 16,
+      "longestStraightKm": 1.2,
+      "averageSpeed": "Medium",
+      "raceLaps": 58,
+      "trackLength": "5.281 km",
+      "raceDistance": "306.183 km"
+    },
+    "raceLapRecord": {
+      "time": "1:25.637",
+      "driver": "Kevin Magnussen",
+      "constructor": "Haas",
+      "year": 2024,
+      "raceName": "Abu Dhabi Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "Max Verstappen",
+      "constructor": "Red Bull",
+      "season": 2025,
+      "date": "2025-12-07",
+      "raceName": "Abu Dhabi Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

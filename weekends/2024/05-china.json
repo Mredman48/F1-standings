@@ -1,0 +1,147 @@
+{
+  "header": "2024 Chinese GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T06:03:04.425Z",
+  "season": 2024,
+  "round": 5,
+  "meetingKey": null,
+  "raceSlug": "china",
+  "status": "upcoming",
+  "weekend": {
+    "round": 5,
+    "id": "china",
+    "type": "RACE_WEEKEND",
+    "title": "Chinese GP",
+    "shortTitle": "Chinese GP",
+    "circuit": "Shanghai International Circuit",
+    "season": "2024",
+    "location": {
+      "city": "Shanghai",
+      "country": "China",
+      "flag": {
+        "iso2": "cn",
+        "png": "https://flagcdn.com/w160/cn.png",
+        "svg": "https://flagcdn.com/cn.svg"
+      }
+    },
+    "racePage": {
+      "slug": "china",
+      "url": "https://www.formula1.com/en/racing/2024/china"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2024/china",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackshanghaidetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_china_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "shanghai.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/shanghai.png"
+    },
+    "weekend": {
+      "startUtc": "2024-04-19T03:30:00.000Z",
+      "endUtc": "2024-04-21T09:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2024-04-19T03:30:00.000Z",
+        "endUtc": "2024-04-19T04:30:00.000Z",
+        "startLocalDateShort": "Thu, Apr 18",
+        "startLocalTimeShort": "21:30",
+        "startLocalDateTimeShort": "Thu, Apr 18 21:30"
+      },
+      {
+        "type": "Sprint Quali",
+        "startUtc": "2024-04-19T07:30:00.000Z",
+        "endUtc": "2024-04-19T08:14:00.000Z",
+        "startLocalDateShort": "Fri, Apr 19",
+        "startLocalTimeShort": "01:30",
+        "startLocalDateTimeShort": "Fri, Apr 19 01:30"
+      },
+      {
+        "type": "Sprint",
+        "startUtc": "2024-04-20T03:00:00.000Z",
+        "endUtc": "2024-04-20T04:00:00.000Z",
+        "startLocalDateShort": "Fri, Apr 19",
+        "startLocalTimeShort": "21:00",
+        "startLocalDateTimeShort": "Fri, Apr 19 21:00"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2024-04-20T07:00:00.000Z",
+        "endUtc": "2024-04-20T08:00:00.000Z",
+        "startLocalDateShort": "Sat, Apr 20",
+        "startLocalTimeShort": "01:00",
+        "startLocalDateTimeShort": "Sat, Apr 20 01:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2024-04-21T07:00:00.000Z",
+        "endUtc": "2024-04-21T09:00:00.000Z",
+        "startLocalDateShort": "Sun, Apr 21",
+        "startLocalTimeShort": "01:00",
+        "startLocalDateTimeShort": "Sun, Apr 21 01:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Chinese Grand Prix",
+    "dna": {
+      "cornerProfile": "Technical with long straight",
+      "overtaking": "High",
+      "tireWear": "High",
+      "trackEvolution": "Medium",
+      "strategyBias": "Tire Management",
+      "safetyCarRisk": "Low"
+    },
+    "intelligence": [
+      "The long back straight creates strong overtaking opportunities.",
+      "Front tire wear can become a limiting factor.",
+      "Long-radius corners punish poor balance.",
+      "Strategy flexibility matters if degradation is high."
+    ],
+    "id": "china",
+    "matchKeys": [
+      "china",
+      "shanghai"
+    ],
+    "specs": {
+      "turns": 16,
+      "longestStraightKm": 1.2,
+      "averageSpeed": "Medium",
+      "raceLaps": 56,
+      "trackLength": "5.451 km",
+      "raceDistance": "305.066 km"
+    },
+    "raceLapRecord": {
+      "time": "1:32.238",
+      "driver": "Michael Schumacher",
+      "constructor": "Ferrari",
+      "year": 2004,
+      "raceName": "Chinese Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "Oscar Piastri",
+      "constructor": "McLaren",
+      "season": 2025,
+      "date": "2025-03-23",
+      "raceName": "Chinese Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

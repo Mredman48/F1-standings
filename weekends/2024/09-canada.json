@@ -1,0 +1,149 @@
+{
+  "header": "2024 Canadian GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T06:03:04.427Z",
+  "season": 2024,
+  "round": 9,
+  "meetingKey": null,
+  "raceSlug": "canada",
+  "status": "upcoming",
+  "weekend": {
+    "round": 9,
+    "id": "canada",
+    "type": "RACE_WEEKEND",
+    "title": "Canadian GP",
+    "shortTitle": "Canadian GP",
+    "circuit": "Circuit Gilles Villeneuve",
+    "season": "2024",
+    "location": {
+      "city": "Montreal",
+      "country": "Canada",
+      "flag": {
+        "iso2": "ca",
+        "png": "https://flagcdn.com/w160/ca.png",
+        "svg": "https://flagcdn.com/ca.svg"
+      }
+    },
+    "racePage": {
+      "slug": "canada",
+      "url": "https://www.formula1.com/en/racing/2024/canada"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2024/canada",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmontrealdetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_canada_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "montreal.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/montreal.png"
+    },
+    "weekend": {
+      "startUtc": "2024-06-07T17:30:00.000Z",
+      "endUtc": "2024-06-09T20:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2024-06-07T17:30:00.000Z",
+        "endUtc": "2024-06-07T18:30:00.000Z",
+        "startLocalDateShort": "Fri, Jun 07",
+        "startLocalTimeShort": "11:30",
+        "startLocalDateTimeShort": "Fri, Jun 07 11:30"
+      },
+      {
+        "type": "FP2",
+        "startUtc": "2024-06-07T21:00:00.000Z",
+        "endUtc": "2024-06-07T22:00:00.000Z",
+        "startLocalDateShort": "Fri, Jun 07",
+        "startLocalTimeShort": "15:00",
+        "startLocalDateTimeShort": "Fri, Jun 07 15:00"
+      },
+      {
+        "type": "FP3",
+        "startUtc": "2024-06-08T16:30:00.000Z",
+        "endUtc": "2024-06-08T17:30:00.000Z",
+        "startLocalDateShort": "Sat, Jun 08",
+        "startLocalTimeShort": "10:30",
+        "startLocalDateTimeShort": "Sat, Jun 08 10:30"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2024-06-08T20:00:00.000Z",
+        "endUtc": "2024-06-08T21:00:00.000Z",
+        "startLocalDateShort": "Sat, Jun 08",
+        "startLocalTimeShort": "14:00",
+        "startLocalDateTimeShort": "Sat, Jun 08 14:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2024-06-09T18:00:00.000Z",
+        "endUtc": "2024-06-09T20:00:00.000Z",
+        "startLocalDateShort": "Sun, Jun 09",
+        "startLocalTimeShort": "12:00",
+        "startLocalDateTimeShort": "Sun, Jun 09 12:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Canadian Grand Prix",
+    "dna": {
+      "cornerProfile": "Stop-start braking",
+      "overtaking": "High",
+      "tireWear": "Medium",
+      "trackEvolution": "Medium",
+      "strategyBias": "Undercut",
+      "safetyCarRisk": "High"
+    },
+    "intelligence": [
+      "Heavy braking zones create real passing opportunities.",
+      "Wall proximity increases Safety Car chances.",
+      "Traction out of slow corners is key.",
+      "Brake management can influence race pace."
+    ],
+    "id": "canada",
+    "matchKeys": [
+      "canada",
+      "canadian",
+      "montreal",
+      "gillesvilleneuve"
+    ],
+    "specs": {
+      "turns": 14,
+      "longestStraightKm": 1.2,
+      "averageSpeed": "Medium",
+      "raceLaps": 70,
+      "trackLength": "4.361 km",
+      "raceDistance": "305.27 km"
+    },
+    "raceLapRecord": {
+      "time": "1:13.078",
+      "driver": "Valtteri Bottas",
+      "constructor": "Mercedes",
+      "year": 2019,
+      "raceName": "Canadian Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "George Russell",
+      "constructor": "Mercedes",
+      "season": 2025,
+      "date": "2025-06-15",
+      "raceName": "Canadian Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

@@ -1,0 +1,147 @@
+{
+  "header": "2024 Singapore GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T06:03:04.430Z",
+  "season": 2024,
+  "round": 18,
+  "meetingKey": null,
+  "raceSlug": "singapore",
+  "status": "upcoming",
+  "weekend": {
+    "round": 18,
+    "id": "singapore",
+    "type": "RACE_WEEKEND",
+    "title": "Singapore GP",
+    "shortTitle": "Singapore GP",
+    "circuit": "Marina Bay Street Circuit",
+    "season": "2024",
+    "location": {
+      "city": "Singapore",
+      "country": "Singapore",
+      "flag": {
+        "iso2": "sg",
+        "png": "https://flagcdn.com/w160/sg.png",
+        "svg": "https://flagcdn.com/sg.svg"
+      }
+    },
+    "racePage": {
+      "slug": "singapore",
+      "url": "https://www.formula1.com/en/racing/2024/singapore"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2024/singapore",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026tracksingaporedetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_singapore_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "singapore.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/singapore.png"
+    },
+    "weekend": {
+      "startUtc": "2024-09-20T09:30:00.000Z",
+      "endUtc": "2024-09-22T14:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2024-09-20T09:30:00.000Z",
+        "endUtc": "2024-09-20T10:30:00.000Z",
+        "startLocalDateShort": "Fri, Sep 20",
+        "startLocalTimeShort": "03:30",
+        "startLocalDateTimeShort": "Fri, Sep 20 03:30"
+      },
+      {
+        "type": "FP2",
+        "startUtc": "2024-09-20T13:00:00.000Z",
+        "endUtc": "2024-09-20T14:00:00.000Z",
+        "startLocalDateShort": "Fri, Sep 20",
+        "startLocalTimeShort": "07:00",
+        "startLocalDateTimeShort": "Fri, Sep 20 07:00"
+      },
+      {
+        "type": "FP3",
+        "startUtc": "2024-09-21T09:30:00.000Z",
+        "endUtc": "2024-09-21T10:30:00.000Z",
+        "startLocalDateShort": "Sat, Sep 21",
+        "startLocalTimeShort": "03:30",
+        "startLocalDateTimeShort": "Sat, Sep 21 03:30"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2024-09-21T13:00:00.000Z",
+        "endUtc": "2024-09-21T14:00:00.000Z",
+        "startLocalDateShort": "Sat, Sep 21",
+        "startLocalTimeShort": "07:00",
+        "startLocalDateTimeShort": "Sat, Sep 21 07:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2024-09-22T12:00:00.000Z",
+        "endUtc": "2024-09-22T14:00:00.000Z",
+        "startLocalDateShort": "Sun, Sep 22",
+        "startLocalTimeShort": "06:00",
+        "startLocalDateTimeShort": "Sun, Sep 22 06:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Singapore Grand Prix",
+    "dna": {
+      "cornerProfile": "Technical street",
+      "overtaking": "Low",
+      "tireWear": "High",
+      "trackEvolution": "High",
+      "strategyBias": "Safety Car",
+      "safetyCarRisk": "Very High"
+    },
+    "intelligence": [
+      "Safety Cars frequently reshape the race.",
+      "Heat and humidity make this one of the most physical races.",
+      "Track position is very valuable.",
+      "Tire management and concentration are critical over a long race."
+    ],
+    "id": "singapore",
+    "matchKeys": [
+      "singapore",
+      "marinabay"
+    ],
+    "specs": {
+      "turns": 19,
+      "longestStraightKm": 0.8,
+      "averageSpeed": "Low",
+      "raceLaps": 62,
+      "trackLength": "4.927 km",
+      "raceDistance": "305.337 km"
+    },
+    "raceLapRecord": {
+      "time": "1:33.808",
+      "driver": "Lewis Hamilton",
+      "constructor": "Ferrari",
+      "year": 2025,
+      "raceName": "Singapore Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "George Russell",
+      "constructor": "Mercedes",
+      "season": 2025,
+      "date": "2025-10-05",
+      "raceName": "Singapore Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

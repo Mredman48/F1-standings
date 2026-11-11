@@ -1,0 +1,148 @@
+{
+  "header": "2024 Mexico City GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T06:03:04.431Z",
+  "season": 2024,
+  "round": 20,
+  "meetingKey": null,
+  "raceSlug": "mexico",
+  "status": "upcoming",
+  "weekend": {
+    "round": 20,
+    "id": "mexico",
+    "type": "RACE_WEEKEND",
+    "title": "Mexico City GP",
+    "shortTitle": "Mexico City GP",
+    "circuit": "Autódromo Hermanos Rodríguez",
+    "season": "2024",
+    "location": {
+      "city": "Mexico City",
+      "country": "Mexico",
+      "flag": {
+        "iso2": "mx",
+        "png": "https://flagcdn.com/w160/mx.png",
+        "svg": "https://flagcdn.com/mx.svg"
+      }
+    },
+    "racePage": {
+      "slug": "mexico",
+      "url": "https://www.formula1.com/en/racing/2024/mexico"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2024/mexico",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmexicocitydetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_mexico_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "mexico-city.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/mexico-city.png"
+    },
+    "weekend": {
+      "startUtc": "2024-10-25T18:30:00.000Z",
+      "endUtc": "2024-10-27T22:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2024-10-25T18:30:00.000Z",
+        "endUtc": "2024-10-25T19:30:00.000Z",
+        "startLocalDateShort": "Fri, Oct 25",
+        "startLocalTimeShort": "12:30",
+        "startLocalDateTimeShort": "Fri, Oct 25 12:30"
+      },
+      {
+        "type": "FP2",
+        "startUtc": "2024-10-25T22:00:00.000Z",
+        "endUtc": "2024-10-25T23:30:00.000Z",
+        "startLocalDateShort": "Fri, Oct 25",
+        "startLocalTimeShort": "16:00",
+        "startLocalDateTimeShort": "Fri, Oct 25 16:00"
+      },
+      {
+        "type": "FP3",
+        "startUtc": "2024-10-26T17:30:00.000Z",
+        "endUtc": "2024-10-26T18:30:00.000Z",
+        "startLocalDateShort": "Sat, Oct 26",
+        "startLocalTimeShort": "11:30",
+        "startLocalDateTimeShort": "Sat, Oct 26 11:30"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2024-10-26T21:00:00.000Z",
+        "endUtc": "2024-10-26T22:00:00.000Z",
+        "startLocalDateShort": "Sat, Oct 26",
+        "startLocalTimeShort": "15:00",
+        "startLocalDateTimeShort": "Sat, Oct 26 15:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2024-10-27T20:00:00.000Z",
+        "endUtc": "2024-10-27T22:00:00.000Z",
+        "startLocalDateShort": "Sun, Oct 27",
+        "startLocalTimeShort": "14:00",
+        "startLocalDateTimeShort": "Sun, Oct 27 14:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Mexico City Grand Prix",
+    "dna": {
+      "cornerProfile": "Altitude traction",
+      "overtaking": "High",
+      "tireWear": "Low",
+      "trackEvolution": "Medium",
+      "strategyBias": "Cooling",
+      "safetyCarRisk": "Low"
+    },
+    "intelligence": [
+      "High altitude reduces downforce and cooling efficiency.",
+      "Straight-line speed is influenced by thin air.",
+      "The long run to Turn 1 creates major opening-lap opportunity.",
+      "Power unit and brake cooling can be a major concern."
+    ],
+    "id": "mexico",
+    "matchKeys": [
+      "mexico",
+      "mexicocity",
+      "autodromohermanosrodriguez"
+    ],
+    "specs": {
+      "turns": 17,
+      "longestStraightKm": 1.2,
+      "averageSpeed": "Medium",
+      "raceLaps": 71,
+      "trackLength": "4.304 km",
+      "raceDistance": "305.354 km"
+    },
+    "raceLapRecord": {
+      "time": "1:17.774",
+      "driver": "Valtteri Bottas",
+      "constructor": "Mercedes",
+      "year": 2021,
+      "raceName": "Mexico City Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "Lando Norris",
+      "constructor": "McLaren",
+      "season": 2025,
+      "date": "2025-10-26",
+      "raceName": "Mexico City Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

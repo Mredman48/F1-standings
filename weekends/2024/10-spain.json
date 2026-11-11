@@ -1,0 +1,148 @@
+{
+  "header": "2024 Spanish GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T06:03:04.427Z",
+  "season": 2024,
+  "round": 10,
+  "meetingKey": null,
+  "raceSlug": "spain",
+  "status": "upcoming",
+  "weekend": {
+    "round": 10,
+    "id": "spain",
+    "type": "RACE_WEEKEND",
+    "title": "Spanish GP",
+    "shortTitle": "Spanish GP",
+    "circuit": "Circuit de Barcelona-Catalunya",
+    "season": "2024",
+    "location": {
+      "city": "Barcelona",
+      "country": "Spain",
+      "flag": {
+        "iso2": "es",
+        "png": "https://flagcdn.com/w160/es.png",
+        "svg": "https://flagcdn.com/es.svg"
+      }
+    },
+    "racePage": {
+      "slug": "spain",
+      "url": "https://www.formula1.com/en/racing/2024/spain"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2024/spain",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackcatalunyadetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_barcelona-catalunya_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "barcelona.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/barcelona.png"
+    },
+    "weekend": {
+      "startUtc": "2024-06-21T11:30:00.000Z",
+      "endUtc": "2024-06-23T15:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2024-06-21T11:30:00.000Z",
+        "endUtc": "2024-06-21T12:30:00.000Z",
+        "startLocalDateShort": "Fri, Jun 21",
+        "startLocalTimeShort": "05:30",
+        "startLocalDateTimeShort": "Fri, Jun 21 05:30"
+      },
+      {
+        "type": "FP2",
+        "startUtc": "2024-06-21T15:00:00.000Z",
+        "endUtc": "2024-06-21T16:00:00.000Z",
+        "startLocalDateShort": "Fri, Jun 21",
+        "startLocalTimeShort": "09:00",
+        "startLocalDateTimeShort": "Fri, Jun 21 09:00"
+      },
+      {
+        "type": "FP3",
+        "startUtc": "2024-06-22T10:30:00.000Z",
+        "endUtc": "2024-06-22T11:30:00.000Z",
+        "startLocalDateShort": "Sat, Jun 22",
+        "startLocalTimeShort": "04:30",
+        "startLocalDateTimeShort": "Sat, Jun 22 04:30"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2024-06-22T14:00:00.000Z",
+        "endUtc": "2024-06-22T15:00:00.000Z",
+        "startLocalDateShort": "Sat, Jun 22",
+        "startLocalTimeShort": "08:00",
+        "startLocalDateTimeShort": "Sat, Jun 22 08:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2024-06-23T13:00:00.000Z",
+        "endUtc": "2024-06-23T15:00:00.000Z",
+        "startLocalDateShort": "Sun, Jun 23",
+        "startLocalTimeShort": "07:00",
+        "startLocalDateTimeShort": "Sun, Jun 23 07:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Barcelona-Catalunya Grand Prix",
+    "dna": {
+      "cornerProfile": "Aero balance test",
+      "overtaking": "Low",
+      "tireWear": "High",
+      "trackEvolution": "Medium",
+      "strategyBias": "Tire Management",
+      "safetyCarRisk": "Low"
+    },
+    "intelligence": [
+      "This circuit heavily rewards aerodynamic efficiency.",
+      "Tire degradation is usually a major factor.",
+      "Overtaking can be difficult despite the main straight.",
+      "Cars that are strong here often have balanced all-round performance."
+    ],
+    "id": "barcelona",
+    "matchKeys": [
+      "barcelona",
+      "catalunya",
+      "barcelonacatalunya"
+    ],
+    "specs": {
+      "turns": 16,
+      "longestStraightKm": 1,
+      "averageSpeed": "Medium",
+      "raceLaps": 66,
+      "trackLength": "4.657 km",
+      "raceDistance": "307.236 km"
+    },
+    "raceLapRecord": {
+      "time": "1:15.743",
+      "driver": "Oscar Piastri",
+      "constructor": "McLaren",
+      "year": 2025,
+      "raceName": "Barcelona-Catalunya Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "Oscar Piastri",
+      "constructor": "McLaren",
+      "season": 2025,
+      "date": "2025-06-01",
+      "raceName": "Spanish Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

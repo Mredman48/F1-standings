@@ -1,0 +1,146 @@
+{
+  "header": "2024 Miami GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T06:03:04.425Z",
+  "season": 2024,
+  "round": 6,
+  "meetingKey": null,
+  "raceSlug": "miami",
+  "status": "upcoming",
+  "weekend": {
+    "round": 6,
+    "id": "miami",
+    "type": "RACE_WEEKEND",
+    "title": "Miami GP",
+    "shortTitle": "Miami GP",
+    "circuit": "Miami International Autodrome",
+    "season": "2024",
+    "location": {
+      "city": "Miami",
+      "country": "United States",
+      "flag": {
+        "iso2": "us",
+        "png": "https://flagcdn.com/w160/us.png",
+        "svg": "https://flagcdn.com/us.svg"
+      }
+    },
+    "racePage": {
+      "slug": "miami",
+      "url": "https://www.formula1.com/en/racing/2024/miami"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2024/miami",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmiamidetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_miami_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "miami.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/miami.png"
+    },
+    "weekend": {
+      "startUtc": "2024-05-03T16:30:00.000Z",
+      "endUtc": "2024-05-05T22:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2024-05-03T16:30:00.000Z",
+        "endUtc": "2024-05-03T17:30:00.000Z",
+        "startLocalDateShort": "Fri, May 03",
+        "startLocalTimeShort": "10:30",
+        "startLocalDateTimeShort": "Fri, May 03 10:30"
+      },
+      {
+        "type": "Sprint Quali",
+        "startUtc": "2024-05-03T20:30:00.000Z",
+        "endUtc": "2024-05-03T21:14:00.000Z",
+        "startLocalDateShort": "Fri, May 03",
+        "startLocalTimeShort": "14:30",
+        "startLocalDateTimeShort": "Fri, May 03 14:30"
+      },
+      {
+        "type": "Sprint",
+        "startUtc": "2024-05-04T16:00:00.000Z",
+        "endUtc": "2024-05-04T17:00:00.000Z",
+        "startLocalDateShort": "Sat, May 04",
+        "startLocalTimeShort": "10:00",
+        "startLocalDateTimeShort": "Sat, May 04 10:00"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2024-05-04T20:00:00.000Z",
+        "endUtc": "2024-05-04T21:00:00.000Z",
+        "startLocalDateShort": "Sat, May 04",
+        "startLocalTimeShort": "14:00",
+        "startLocalDateTimeShort": "Sat, May 04 14:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2024-05-05T20:00:00.000Z",
+        "endUtc": "2024-05-05T22:00:00.000Z",
+        "startLocalDateShort": "Sun, May 05",
+        "startLocalTimeShort": "14:00",
+        "startLocalDateTimeShort": "Sun, May 05 14:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Miami Grand Prix",
+    "dna": {
+      "cornerProfile": "Mixed street-style",
+      "overtaking": "Medium",
+      "tireWear": "Medium",
+      "trackEvolution": "High",
+      "strategyBias": "Neutral",
+      "safetyCarRisk": "Medium"
+    },
+    "intelligence": [
+      "Grip can vary across the lap.",
+      "The long straight creates the best overtaking chance.",
+      "Track evolution is usually noticeable.",
+      "Balance between traction and top speed matters."
+    ],
+    "id": "miami",
+    "matchKeys": [
+      "miami"
+    ],
+    "specs": {
+      "turns": 19,
+      "longestStraightKm": 1.2,
+      "averageSpeed": "Medium",
+      "raceLaps": 57,
+      "trackLength": "5.412 km",
+      "raceDistance": "308.326 km"
+    },
+    "raceLapRecord": {
+      "time": "1:29.708",
+      "driver": "Max Verstappen",
+      "constructor": "Red Bull",
+      "year": 2023,
+      "raceName": "Miami Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "Oscar Piastri",
+      "constructor": "McLaren",
+      "season": 2025,
+      "date": "2025-05-04",
+      "raceName": "Miami Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

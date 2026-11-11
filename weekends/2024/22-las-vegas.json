@@ -1,0 +1,147 @@
+{
+  "header": "2024 Las Vegas GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T06:03:04.431Z",
+  "season": 2024,
+  "round": 22,
+  "meetingKey": null,
+  "raceSlug": "las-vegas",
+  "status": "upcoming",
+  "weekend": {
+    "round": 22,
+    "id": "las-vegas",
+    "type": "RACE_WEEKEND",
+    "title": "Las Vegas GP",
+    "shortTitle": "Las Vegas GP",
+    "circuit": "Las Vegas Strip Circuit",
+    "season": "2024",
+    "location": {
+      "city": "Las Vegas",
+      "country": "United States",
+      "flag": {
+        "iso2": "us",
+        "png": "https://flagcdn.com/w160/us.png",
+        "svg": "https://flagcdn.com/us.svg"
+      }
+    },
+    "racePage": {
+      "slug": "las-vegas",
+      "url": "https://www.formula1.com/en/racing/2024/las-vegas"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2024/las-vegas",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026tracklasvegasdetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_las-vegas_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "las-vegas.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/las-vegas.png"
+    },
+    "weekend": {
+      "startUtc": "2024-11-22T02:30:00.000Z",
+      "endUtc": "2024-11-24T07:59:59.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2024-11-22T02:30:00.000Z",
+        "endUtc": "2024-11-22T03:30:00.000Z",
+        "startLocalDateShort": "Thu, Nov 21",
+        "startLocalTimeShort": "19:30",
+        "startLocalDateTimeShort": "Thu, Nov 21 19:30"
+      },
+      {
+        "type": "FP2",
+        "startUtc": "2024-11-22T06:00:00.000Z",
+        "endUtc": "2024-11-22T07:00:00.000Z",
+        "startLocalDateShort": "Thu, Nov 21",
+        "startLocalTimeShort": "23:00",
+        "startLocalDateTimeShort": "Thu, Nov 21 23:00"
+      },
+      {
+        "type": "FP3",
+        "startUtc": "2024-11-23T02:30:00.000Z",
+        "endUtc": "2024-11-23T03:30:00.000Z",
+        "startLocalDateShort": "Fri, Nov 22",
+        "startLocalTimeShort": "19:30",
+        "startLocalDateTimeShort": "Fri, Nov 22 19:30"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2024-11-23T06:00:00.000Z",
+        "endUtc": "2024-11-23T07:00:00.000Z",
+        "startLocalDateShort": "Fri, Nov 22",
+        "startLocalTimeShort": "23:00",
+        "startLocalDateTimeShort": "Fri, Nov 22 23:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2024-11-24T06:00:00.000Z",
+        "endUtc": "2024-11-24T07:59:59.000Z",
+        "startLocalDateShort": "Sat, Nov 23",
+        "startLocalTimeShort": "23:00",
+        "startLocalDateTimeShort": "Sat, Nov 23 23:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Las Vegas Grand Prix",
+    "dna": {
+      "cornerProfile": "Low-grip street",
+      "overtaking": "High",
+      "tireWear": "Low",
+      "trackEvolution": "High",
+      "strategyBias": "Tire Temperature",
+      "safetyCarRisk": "Medium"
+    },
+    "intelligence": [
+      "Cold track temperatures can make tire warm-up difficult.",
+      "The long straight creates strong overtaking chances.",
+      "Low grip makes braking stability important.",
+      "Track evolution can be significant across the weekend."
+    ],
+    "id": "lasvegas",
+    "matchKeys": [
+      "lasvegas",
+      "vegas"
+    ],
+    "specs": {
+      "turns": 17,
+      "longestStraightKm": 1.9,
+      "averageSpeed": "High",
+      "raceLaps": 50,
+      "trackLength": "6.201 km",
+      "raceDistance": "309.958 km"
+    },
+    "raceLapRecord": {
+      "time": "1:33.365",
+      "driver": "Max Verstappen",
+      "constructor": "Red Bull",
+      "year": 2025,
+      "raceName": "Las Vegas Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "Max Verstappen",
+      "constructor": "Red Bull",
+      "season": 2025,
+      "date": "2025-11-23",
+      "raceName": "Las Vegas Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

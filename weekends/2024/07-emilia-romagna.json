@@ -1,0 +1,104 @@
+{
+  "header": "2024 Emilia Romagna GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T06:03:04.426Z",
+  "season": 2024,
+  "round": 7,
+  "meetingKey": null,
+  "raceSlug": "emilia-romagna",
+  "status": "upcoming",
+  "weekend": {
+    "round": 7,
+    "id": "emilia-romagna",
+    "type": "RACE_WEEKEND",
+    "title": "Emilia Romagna GP",
+    "shortTitle": "Emilia Romagna GP",
+    "circuit": "Autodromo Enzo e Dino Ferrari",
+    "season": "2024",
+    "location": {
+      "city": "Imola",
+      "country": "Italy",
+      "flag": {
+        "iso2": "it",
+        "png": "https://flagcdn.com/w160/it.png",
+        "svg": "https://flagcdn.com/it.svg"
+      }
+    },
+    "racePage": {
+      "slug": "emilia-romagna",
+      "url": "https://www.formula1.com/en/racing/2024/emilia-romagna"
+    },
+    "trackMap": {
+      "found": false,
+      "pageUrl": "https://www.formula1.com/en/racing/2024/emilia-romagna",
+      "mediaUrl": null,
+      "pngUrl": null
+    },
+    "map": {
+      "found": false,
+      "filename": null,
+      "pngUrl": null
+    },
+    "weekend": {
+      "startUtc": "2024-05-17T11:30:00.000Z",
+      "endUtc": "2024-05-19T15:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2024-05-17T11:30:00.000Z",
+        "endUtc": "2024-05-17T12:30:00.000Z",
+        "startLocalDateShort": "Fri, May 17",
+        "startLocalTimeShort": "05:30",
+        "startLocalDateTimeShort": "Fri, May 17 05:30"
+      },
+      {
+        "type": "FP2",
+        "startUtc": "2024-05-17T15:00:00.000Z",
+        "endUtc": "2024-05-17T16:00:00.000Z",
+        "startLocalDateShort": "Fri, May 17",
+        "startLocalTimeShort": "09:00",
+        "startLocalDateTimeShort": "Fri, May 17 09:00"
+      },
+      {
+        "type": "FP3",
+        "startUtc": "2024-05-18T10:30:00.000Z",
+        "endUtc": "2024-05-18T11:30:00.000Z",
+        "startLocalDateShort": "Sat, May 18",
+        "startLocalTimeShort": "04:30",
+        "startLocalDateTimeShort": "Sat, May 18 04:30"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2024-05-18T14:00:00.000Z",
+        "endUtc": "2024-05-18T15:00:00.000Z",
+        "startLocalDateShort": "Sat, May 18",
+        "startLocalTimeShort": "08:00",
+        "startLocalDateTimeShort": "Sat, May 18 08:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2024-05-19T13:00:00.000Z",
+        "endUtc": "2024-05-19T15:00:00.000Z",
+        "startLocalDateShort": "Sun, May 19",
+        "startLocalTimeShort": "07:00",
+        "startLocalDateTimeShort": "Sun, May 19 07:00"
+      }
+    ]
+  },
+  "circuitIntelligence": null,
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "header": "2024 Qatar GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T06:03:04.431Z",
+  "season": 2024,
+  "round": 23,
+  "meetingKey": null,
+  "raceSlug": "qatar",
+  "status": "upcoming",
+  "weekend": {
+    "round": 23,
+    "id": "qatar",
+    "type": "RACE_WEEKEND",
+    "title": "Qatar GP",
+    "shortTitle": "Qatar GP",
+    "circuit": "Lusail International Circuit",
+    "season": "2024",
+    "location": {
+      "city": "Lusail",
+      "country": "Qatar",
+      "flag": {
+        "iso2": "qa",
+        "png": "https://flagcdn.com/w160/qa.png",
+        "svg": "https://flagcdn.com/qa.svg"
+      }
+    },
+    "racePage": {
+      "slug": "qatar",
+      "url": "https://www.formula1.com/en/racing/2024/qatar"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2024/qatar",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026tracklusaildetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_qatar_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "lusail.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/lusail.png"
+    },
+    "weekend": {
+      "startUtc": "2024-11-29T13:30:00.000Z",
+      "endUtc": "2024-12-01T18:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2024-11-29T13:30:00.000Z",
+        "endUtc": "2024-11-29T14:30:00.000Z",
+        "startLocalDateShort": "Fri, Nov 29",
+        "startLocalTimeShort": "06:30",
+        "startLocalDateTimeShort": "Fri, Nov 29 06:30"
+      },
+      {
+        "type": "Sprint Quali",
+        "startUtc": "2024-11-29T17:30:00.000Z",
+        "endUtc": "2024-11-29T18:14:00.000Z",
+        "startLocalDateShort": "Fri, Nov 29",
+        "startLocalTimeShort": "10:30",
+        "startLocalDateTimeShort": "Fri, Nov 29 10:30"
+      },
+      {
+        "type": "Sprint",
+        "startUtc": "2024-11-30T14:00:00.000Z",
+        "endUtc": "2024-11-30T15:00:00.000Z",
+        "startLocalDateShort": "Sat, Nov 30",
+        "startLocalTimeShort": "07:00",
+        "startLocalDateTimeShort": "Sat, Nov 30 07:00"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2024-11-30T18:00:00.000Z",
+        "endUtc": "2024-11-30T19:00:00.000Z",
+        "startLocalDateShort": "Sat, Nov 30",
+        "startLocalTimeShort": "11:00",
+        "startLocalDateTimeShort": "Sat, Nov 30 11:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2024-12-01T16:00:00.000Z",
+        "endUtc": "2024-12-01T18:00:00.000Z",
+        "startLocalDateShort": "Sun, Dec 01",
+        "startLocalTimeShort": "09:00",
+        "startLocalDateTimeShort": "Sun, Dec 01 09:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Qatar Grand Prix",
+    "dna": {
+      "cornerProfile": "Fast flowing",
+      "overtaking": "Medium",
+      "tireWear": "High",
+      "trackEvolution": "Low",
+      "strategyBias": "Tire Management",
+      "safetyCarRisk": "Low"
+    },
+    "intelligence": [
+      "High-speed corners place heavy sustained load on tires.",
+      "Track limits can become a major storyline.",
+      "Tire management is central to race execution.",
+      "Cars with stable aero balance are rewarded."
+    ],
+    "id": "qatar",
+    "matchKeys": [
+      "qatar",
+      "lusail",
+      "doha"
+    ],
+    "specs": {
+      "turns": 16,
+      "longestStraightKm": 1.1,
+      "averageSpeed": "High",
+      "raceLaps": 57,
+      "trackLength": "5.419 km",
+      "raceDistance": "308.611 km"
+    },
+    "raceLapRecord": {
+      "time": "1:22.384",
+      "driver": "Lando Norris",
+      "constructor": "McLaren",
+      "year": 2024,
+      "raceName": "Qatar Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "Max Verstappen",
+      "constructor": "Red Bull",
+      "season": 2025,
+      "date": "2025-11-30",
+      "raceName": "Qatar Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

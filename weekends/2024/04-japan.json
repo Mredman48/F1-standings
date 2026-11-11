@@ -1,0 +1,148 @@
+{
+  "header": "2024 Japanese GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T06:03:04.425Z",
+  "season": 2024,
+  "round": 4,
+  "meetingKey": null,
+  "raceSlug": "japan",
+  "status": "upcoming",
+  "weekend": {
+    "round": 4,
+    "id": "japan",
+    "type": "RACE_WEEKEND",
+    "title": "Japanese GP",
+    "shortTitle": "Japanese GP",
+    "circuit": "Suzuka International Racing Course",
+    "season": "2024",
+    "location": {
+      "city": "Suzuka",
+      "country": "Japan",
+      "flag": {
+        "iso2": "jp",
+        "png": "https://flagcdn.com/w160/jp.png",
+        "svg": "https://flagcdn.com/jp.svg"
+      }
+    },
+    "racePage": {
+      "slug": "japan",
+      "url": "https://www.formula1.com/en/racing/2024/japan"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2024/japan",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026tracksuzukadetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_japan_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "suzuka.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/suzuka.png"
+    },
+    "weekend": {
+      "startUtc": "2024-04-05T02:30:00.000Z",
+      "endUtc": "2024-04-07T07:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2024-04-05T02:30:00.000Z",
+        "endUtc": "2024-04-05T03:30:00.000Z",
+        "startLocalDateShort": "Thu, Apr 04",
+        "startLocalTimeShort": "20:30",
+        "startLocalDateTimeShort": "Thu, Apr 04 20:30"
+      },
+      {
+        "type": "FP2",
+        "startUtc": "2024-04-05T06:00:00.000Z",
+        "endUtc": "2024-04-05T07:00:00.000Z",
+        "startLocalDateShort": "Fri, Apr 05",
+        "startLocalTimeShort": "00:00",
+        "startLocalDateTimeShort": "Fri, Apr 05 00:00"
+      },
+      {
+        "type": "FP3",
+        "startUtc": "2024-04-06T02:30:00.000Z",
+        "endUtc": "2024-04-06T03:30:00.000Z",
+        "startLocalDateShort": "Fri, Apr 05",
+        "startLocalTimeShort": "20:30",
+        "startLocalDateTimeShort": "Fri, Apr 05 20:30"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2024-04-06T06:00:00.000Z",
+        "endUtc": "2024-04-06T07:00:00.000Z",
+        "startLocalDateShort": "Sat, Apr 06",
+        "startLocalTimeShort": "00:00",
+        "startLocalDateTimeShort": "Sat, Apr 06 00:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2024-04-07T05:00:00.000Z",
+        "endUtc": "2024-04-07T07:00:00.000Z",
+        "startLocalDateShort": "Sat, Apr 06",
+        "startLocalTimeShort": "23:00",
+        "startLocalDateTimeShort": "Sat, Apr 06 23:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Japanese Grand Prix",
+    "dna": {
+      "cornerProfile": "High-speed flowing",
+      "overtaking": "Low",
+      "tireWear": "High",
+      "trackEvolution": "Medium",
+      "strategyBias": "Tire Management",
+      "safetyCarRisk": "Low"
+    },
+    "intelligence": [
+      "Sector 1 rewards aerodynamic stability and driver confidence.",
+      "Dirty air can make overtaking difficult.",
+      "Tire management is critical through long high-load corners.",
+      "Qualifying position is very important."
+    ],
+    "id": "japan",
+    "matchKeys": [
+      "japan",
+      "japanese",
+      "suzuka"
+    ],
+    "specs": {
+      "turns": 18,
+      "longestStraightKm": 1.2,
+      "averageSpeed": "High",
+      "raceLaps": 53,
+      "trackLength": "5.451 km",
+      "raceDistance": "305.066 km"
+    },
+    "raceLapRecord": {
+      "time": "1:30.965",
+      "driver": "Andrea Kimi Antonelli",
+      "constructor": "Mercedes",
+      "year": 2025,
+      "raceName": "Japanese Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "Max Verstappen",
+      "constructor": "Red Bull",
+      "season": 2025,
+      "date": "2025-04-06",
+      "raceName": "Japanese Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

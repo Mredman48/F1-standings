@@ -1,0 +1,148 @@
+{
+  "header": "2024 Italian GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T06:03:04.430Z",
+  "season": 2024,
+  "round": 16,
+  "meetingKey": null,
+  "raceSlug": "italy",
+  "status": "upcoming",
+  "weekend": {
+    "round": 16,
+    "id": "italy",
+    "type": "RACE_WEEKEND",
+    "title": "Italian GP",
+    "shortTitle": "Italian GP",
+    "circuit": "Autodromo Nazionale Monza",
+    "season": "2024",
+    "location": {
+      "city": "Monza",
+      "country": "Italy",
+      "flag": {
+        "iso2": "it",
+        "png": "https://flagcdn.com/w160/it.png",
+        "svg": "https://flagcdn.com/it.svg"
+      }
+    },
+    "racePage": {
+      "slug": "italy",
+      "url": "https://www.formula1.com/en/racing/2024/italy"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2024/italy",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmonzadetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_italy_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "monza.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/monza.png"
+    },
+    "weekend": {
+      "startUtc": "2024-08-30T11:30:00.000Z",
+      "endUtc": "2024-09-01T15:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2024-08-30T11:30:00.000Z",
+        "endUtc": "2024-08-30T12:30:00.000Z",
+        "startLocalDateShort": "Fri, Aug 30",
+        "startLocalTimeShort": "05:30",
+        "startLocalDateTimeShort": "Fri, Aug 30 05:30"
+      },
+      {
+        "type": "FP2",
+        "startUtc": "2024-08-30T15:00:00.000Z",
+        "endUtc": "2024-08-30T16:00:00.000Z",
+        "startLocalDateShort": "Fri, Aug 30",
+        "startLocalTimeShort": "09:00",
+        "startLocalDateTimeShort": "Fri, Aug 30 09:00"
+      },
+      {
+        "type": "FP3",
+        "startUtc": "2024-08-31T10:30:00.000Z",
+        "endUtc": "2024-08-31T11:30:00.000Z",
+        "startLocalDateShort": "Sat, Aug 31",
+        "startLocalTimeShort": "04:30",
+        "startLocalDateTimeShort": "Sat, Aug 31 04:30"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2024-08-31T14:00:00.000Z",
+        "endUtc": "2024-08-31T15:00:00.000Z",
+        "startLocalDateShort": "Sat, Aug 31",
+        "startLocalTimeShort": "08:00",
+        "startLocalDateTimeShort": "Sat, Aug 31 08:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2024-09-01T13:00:00.000Z",
+        "endUtc": "2024-09-01T15:00:00.000Z",
+        "startLocalDateShort": "Sun, Sep 01",
+        "startLocalTimeShort": "07:00",
+        "startLocalDateTimeShort": "Sun, Sep 01 07:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Italian Grand Prix",
+    "dna": {
+      "cornerProfile": "Low-downforce power",
+      "overtaking": "High",
+      "tireWear": "Low",
+      "trackEvolution": "Low",
+      "strategyBias": "Straight-Line Speed",
+      "safetyCarRisk": "Medium"
+    },
+    "intelligence": [
+      "Straight-line speed is the dominant performance factor.",
+      "Slipstream battles are common.",
+      "Low-downforce setup choices define competitiveness.",
+      "Braking stability into chicanes is important."
+    ],
+    "id": "italy",
+    "matchKeys": [
+      "italy",
+      "italian",
+      "monza"
+    ],
+    "specs": {
+      "turns": 11,
+      "longestStraightKm": 1.1,
+      "averageSpeed": "Very High",
+      "raceLaps": 53,
+      "trackLength": "5.793 km",
+      "raceDistance": "306.72 km"
+    },
+    "raceLapRecord": {
+      "time": "1:20.901",
+      "driver": "Lando Norris",
+      "constructor": "McLaren",
+      "year": 2025,
+      "raceName": "Italian Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "Max Verstappen",
+      "constructor": "Red Bull",
+      "season": 2025,
+      "date": "2025-09-07",
+      "raceName": "Italian Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

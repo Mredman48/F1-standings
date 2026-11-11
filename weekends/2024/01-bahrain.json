@@ -1,0 +1,104 @@
+{
+  "header": "2024 Bahrain GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-11T06:03:04.418Z",
+  "season": 2024,
+  "round": 1,
+  "meetingKey": null,
+  "raceSlug": "bahrain",
+  "status": "upcoming",
+  "weekend": {
+    "round": 1,
+    "id": "bahrain",
+    "type": "RACE_WEEKEND",
+    "title": "Bahrain GP",
+    "shortTitle": "Bahrain GP",
+    "circuit": "Bahrain International Circuit",
+    "season": "2024",
+    "location": {
+      "city": "Sakhir",
+      "country": "Bahrain",
+      "flag": {
+        "iso2": "bh",
+        "png": "https://flagcdn.com/w160/bh.png",
+        "svg": "https://flagcdn.com/bh.svg"
+      }
+    },
+    "racePage": {
+      "slug": "bahrain",
+      "url": "https://www.formula1.com/en/racing/2024/bahrain"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2024/bahrain",
+      "mediaUrl": null,
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_bahrain_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "bahrain.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/bahrain.png"
+    },
+    "weekend": {
+      "startUtc": "2024-02-29T11:30:00.000Z",
+      "endUtc": "2024-03-02T17:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": "2024-02-29T11:30:00.000Z",
+        "endUtc": "2024-02-29T12:30:00.000Z",
+        "startLocalDateShort": "Thu, Feb 29",
+        "startLocalTimeShort": "04:30",
+        "startLocalDateTimeShort": "Thu, Feb 29 04:30"
+      },
+      {
+        "type": "FP2",
+        "startUtc": "2024-02-29T15:00:00.000Z",
+        "endUtc": "2024-02-29T16:00:00.000Z",
+        "startLocalDateShort": "Thu, Feb 29",
+        "startLocalTimeShort": "08:00",
+        "startLocalDateTimeShort": "Thu, Feb 29 08:00"
+      },
+      {
+        "type": "FP3",
+        "startUtc": "2024-03-01T12:30:00.000Z",
+        "endUtc": "2024-03-01T13:30:00.000Z",
+        "startLocalDateShort": "Fri, Mar 01",
+        "startLocalTimeShort": "05:30",
+        "startLocalDateTimeShort": "Fri, Mar 01 05:30"
+      },
+      {
+        "type": "Quali",
+        "startUtc": "2024-03-01T16:00:00.000Z",
+        "endUtc": "2024-03-01T17:00:00.000Z",
+        "startLocalDateShort": "Fri, Mar 01",
+        "startLocalTimeShort": "09:00",
+        "startLocalDateTimeShort": "Fri, Mar 01 09:00"
+      },
+      {
+        "type": "Race",
+        "startUtc": "2024-03-02T15:00:00.000Z",
+        "endUtc": "2024-03-02T17:00:00.000Z",
+        "startLocalDateShort": "Sat, Mar 02",
+        "startLocalTimeShort": "08:00",
+        "startLocalDateTimeShort": "Sat, Mar 02 08:00"
+      }
+    ]
+  },
+  "circuitIntelligence": null,
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}
