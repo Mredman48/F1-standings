@@ -5318,9 +5318,9 @@
       "turns": 20,
       "longestStraightKm": 1.2,
       "averageSpeed": "Medium",
-      "raceLaps": null,
+      "raceLaps": 56,
       "trackLength": "5.513 km",
-      "raceDistance": null
+      "raceDistance": "308.405 km"
     },
     "raceLapRecord": {
       "time": "1:36.169",
@@ -5330,10 +5330,10 @@
       "raceName": "United States Grand Prix"
     },
     "previousWinner": {
-      "driver": "Max Verstappen",
-      "constructor": "Red Bull",
-      "season": 2025,
-      "date": "2025-10-19",
+      "driver": "Charles Leclerc",
+      "constructor": "Ferrari",
+      "season": 2024,
+      "date": "2024-10-20",
       "raceName": "United States Grand Prix"
     }
   },
@@ -5345,5 +5345,28 @@
     "previousWinner": "Charles Leclerc",
     "constructor": "Ferrari",
     "date": "2024-10-20"
+  },
+  "tyreInfo": {
+    "raceSlug": "united-states",
+    "title": "United States GP",
+    "season": 2025,
+    "round": 19,
+    "country": "United States",
+    "flag": "us",
+    "compounds": {
+      "hard": "C1",
+      "medium": "C3",
+      "soft": "C4"
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2025,
+      "traction": 4,
+      "tyreStress": 4,
+      "asphaltGrip": 3,
+      "braking": 3,
+      "asphaltAbrasion": 3,
+      "lateral": 4,
+      "trackEvolution": 4
+    }
   }
 }
