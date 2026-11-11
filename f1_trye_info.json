@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-11T20:17:18.660Z",
-  "count": 92,
+  "updatedAt": "2026-11-11T20:18:22.496Z",
+  "count": 93,
   "entries": [
     {
       "round": 1,
@@ -301,6 +301,31 @@
         "pastYear": false
       },
       "raceStart": "2024-03-24T04:00:00.000Z"
+    },
+    {
+      "round": 3,
+      "raceSlug": "australia",
+      "title": "Australian GP",
+      "season": 2023,
+      "country": "Australia",
+      "flag": "au",
+      "raceStart": "2023-04-02T05:00:00.000Z",
+      "compounds": {
+        "soft": "C4",
+        "medium": "C3",
+        "hard": "C2"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2023,
+        "pastYear": null,
+        "traction": 4,
+        "tyreStress": 3,
+        "asphaltGrip": 3,
+        "braking": 2,
+        "asphaltAbrasion": 2,
+        "lateral": 3,
+        "trackEvolution": 4
+      }
     },
     {
       "round": 4,
