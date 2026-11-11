@@ -11,7 +11,7 @@
     "round": 11,
     "id": "austria",
     "type": "RACE_WEEKEND",
-    "title": "Austrian GP",
+    "title": "Austrian Grand Prix",
     "shortTitle": "Austrian GP",
     "circuit": "Red Bull Ring",
     "season": "2024",
@@ -143,21 +143,22 @@
     "flag": "at",
     "raceStart": "2024-06-30T13:00:00.000Z",
     "compounds": {
-      "soft": null,
-      "medium": null,
-      "hard": null
+      "soft": "C5",
+      "medium": "C4",
+      "hard": "C3"
     },
     "trackCharacteristics": {
-      "ratingsSeason": null,
-      "pastYear": null,
-      "traction": null,
-      "tyreStress": null,
-      "asphaltGrip": null,
-      "braking": null,
-      "asphaltAbrasion": null,
-      "lateral": null,
-      "trackEvolution": null
-    }
+      "ratingsSeason": 2024,
+      "pastYear": false,
+      "traction": 2,
+      "tyreStress": 3,
+      "asphaltGrip": 3,
+      "braking": 3,
+      "asphaltAbrasion": 4,
+      "lateral": 3,
+      "trackEvolution": 3
+    },
+    "updatedAt": ""
   },
   "racePreview": null,
   "startingGrids": [
@@ -5293,8 +5294,12 @@
       ]
     }
   ],
-  "raceRecap": null,
-  "locked": false,
+  "raceRecap": {
+    "result": {
+      "driverOfDay": "Norris"
+    }
+  },
+  "locked": true,
   "lockedSections": [],
   "meta": {
     "fia": {},
