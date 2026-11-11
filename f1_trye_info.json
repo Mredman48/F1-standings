@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-11T06:41:15.550Z",
-  "count": 68,
+  "updatedAt": "2026-11-11T06:42:42.219Z",
+  "count": 69,
   "entries": [
     {
       "round": 1,
@@ -127,6 +127,31 @@
         "lateral": 4,
         "trackEvolution": 5
       }
+    },
+    {
+      "round": 2,
+      "raceSlug": "saudi-arabia",
+      "title": "Saudi Arabian GP",
+      "season": 2024,
+      "country": "Saudi Arabia",
+      "flag": "sa",
+      "compounds": {
+        "soft": "C4",
+        "medium": "C3",
+        "hard": "C2"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2024,
+        "traction": 2,
+        "tyreStress": 3,
+        "asphaltGrip": 4,
+        "braking": 2,
+        "asphaltAbrasion": 2,
+        "lateral": 3,
+        "trackEvolution": 4,
+        "pastYear": false
+      },
+      "raceStart": "2024-03-09T17:00:00.000Z"
     },
     {
       "round": 3,
