@@ -2659,7 +2659,7 @@
       "weekend": "2026-11-11T01:25:15.877Z"
     }
   },
-  "locked": false,
+  "locked": true,
   "lockedSections": [],
   "raceRecap": {
     "result": {
@@ -5778,9 +5778,9 @@
       "turns": 15,
       "longestStraightKm": 0.9,
       "averageSpeed": "Medium",
-      "raceLaps": null,
+      "raceLaps": 71,
       "trackLength": "4.309 km",
-      "raceDistance": null
+      "raceDistance": "305.879 km"
     },
     "raceLapRecord": {
       "time": "1:10.540",
@@ -5790,10 +5790,10 @@
       "raceName": "Sao Paulo Grand Prix"
     },
     "previousWinner": {
-      "driver": "Lando Norris",
-      "constructor": "McLaren",
-      "season": 2025,
-      "date": "2025-11-09",
+      "driver": "Max Verstappen",
+      "constructor": "Red Bull",
+      "season": 2024,
+      "date": "2024-11-03",
       "raceName": "São Paulo Grand Prix"
     }
   },
@@ -5805,5 +5805,28 @@
     "previousWinner": "Max Verstappen",
     "constructor": "Red Bull",
     "date": "2024-11-03"
+  },
+  "tyreInfo": {
+    "round": 21,
+    "raceSlug": "brazil",
+    "title": "São Paulo GP",
+    "season": 2025,
+    "country": "Brazil",
+    "flag": "br",
+    "compounds": {
+      "soft": "C4",
+      "medium": "C3",
+      "hard": "C2"
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2025,
+      "traction": 3,
+      "tyreStress": 3,
+      "asphaltGrip": 3,
+      "braking": 3,
+      "asphaltAbrasion": 2,
+      "lateral": 3,
+      "trackEvolution": 5
+    }
   }
 }
