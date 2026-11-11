@@ -2351,7 +2351,7 @@
       "weekend": "2026-11-11T01:06:38.616Z"
     }
   },
-  "locked": false,
+  "locked": true,
   "lockedSections": [],
   "raceRecap": {
     "result": {
@@ -3930,9 +3930,9 @@
       "turns": 11,
       "longestStraightKm": 1.1,
       "averageSpeed": "Very High",
-      "raceLaps": null,
+      "raceLaps": 53,
       "trackLength": "5.793 km",
-      "raceDistance": null
+      "raceDistance": "306.720 km"
     },
     "raceLapRecord": {
       "time": "1:20.901",
@@ -3942,10 +3942,10 @@
       "raceName": "Italian Grand Prix"
     },
     "previousWinner": {
-      "driver": "Max Verstappen",
-      "constructor": "Red Bull",
-      "season": 2025,
-      "date": "2025-09-07",
+      "driver": "Charles Leclerc",
+      "constructor": "Ferrari",
+      "season": 2024,
+      "date": "2024-09-01",
       "raceName": "Italian Grand Prix"
     }
   },
@@ -3957,5 +3957,28 @@
     "previousWinner": "Charles Leclerc",
     "constructor": "Ferrari",
     "date": "2024-09-01"
+  },
+  "tyreInfo": {
+    "round": 16,
+    "raceSlug": "italy",
+    "title": "Italian GP",
+    "season": 2025,
+    "country": "Italy",
+    "flag": "it",
+    "compounds": {
+      "soft": "C5",
+      "medium": "C4",
+      "hard": "C3"
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2025,
+      "traction": 3,
+      "tyreStress": 3,
+      "asphaltGrip": 3,
+      "braking": 4,
+      "asphaltAbrasion": 2,
+      "lateral": 2,
+      "trackEvolution": 4
+    }
   }
 }
