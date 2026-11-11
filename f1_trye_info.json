@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-11T00:32:38.187Z",
-  "count": 51,
+  "updatedAt": "2026-11-11T00:37:19.636Z",
+  "count": 52,
   "entries": [
     {
       "round": 1,
@@ -645,6 +645,29 @@
         "asphaltAbrasion": 2,
         "lateral": 5,
         "trackEvolution": 2
+      }
+    },
+    {
+      "compounds": {
+        "hard": "C4",
+        "medium": "C5",
+        "soft": "C6"
+      },
+      "round": 10,
+      "raceSlug": "canada",
+      "title": "Canadian GP",
+      "season": 2025,
+      "country": "Canada",
+      "flag": "ca",
+      "trackCharacteristics": {
+        "ratingsSeason": 2025,
+        "traction": 4,
+        "tyreStress": 3,
+        "asphaltGrip": 2,
+        "braking": 5,
+        "asphaltAbrasion": 1,
+        "lateral": 1,
+        "trackEvolution": 5
       }
     },
     {
