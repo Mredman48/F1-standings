@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-11T14:30:09.599Z",
-  "count": 82,
+  "updatedAt": "2026-11-11T14:31:14.830Z",
+  "count": 83,
   "entries": [
     {
       "round": 1,
@@ -1484,6 +1484,31 @@
         "traction": 3,
         "tyreStress": 3,
         "asphaltGrip": 3,
+        "braking": 4,
+        "asphaltAbrasion": 2,
+        "lateral": 2,
+        "trackEvolution": 4
+      }
+    },
+    {
+      "round": 16,
+      "raceSlug": "italy",
+      "title": "2024 Italian Grand Prix",
+      "season": 2024,
+      "country": "Italy",
+      "flag": "it",
+      "raceStart": "2024-09-01T13:00:00.000Z",
+      "compounds": {
+        "soft": "C5",
+        "medium": "C4",
+        "hard": "C3"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2024,
+        "pastYear": false,
+        "traction": 3,
+        "tyreStress": 3,
+        "asphaltGrip": 4,
         "braking": 4,
         "asphaltAbrasion": 2,
         "lateral": 2,
