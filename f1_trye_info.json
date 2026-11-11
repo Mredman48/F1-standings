@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-10T19:54:07.740Z",
-  "count": 50,
+  "updatedAt": "2026-11-11T00:32:38.187Z",
+  "count": 51,
   "entries": [
     {
       "round": 1,
@@ -572,6 +572,29 @@
         "trackEvolution": 2
       },
       "updatedAt": "2026-10-09T04:23:18.550Z"
+    },
+    {
+      "compounds": {
+        "soft": "C3",
+        "medium": "C2",
+        "hard": "C1"
+      },
+      "round": 9,
+      "raceSlug": "barcelona",
+      "title": "Spanish GP",
+      "season": 2025,
+      "country": "Spain",
+      "flag": "es",
+      "trackCharacteristics": {
+        "traction": 3,
+        "tyreStress": 5,
+        "asphaltGrip": 3,
+        "braking": 3,
+        "asphaltAbrasion": 4,
+        "lateral": 5,
+        "trackEvolution": 3,
+        "ratingsSeason": 2025
+      }
     },
     {
       "round": 10,
