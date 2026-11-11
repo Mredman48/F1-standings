@@ -1,0 +1,110 @@
+{
+  "header": "Constructors standings",
+  "generatedAtUtc": "2026-11-11T23:48:18.996Z",
+  "meta": {
+    "seasonUsed": "2022",
+    "source": "weekends/2022 (sessionResults) + f1_driver_standings.json",
+    "tiebreaker": "wins, then name",
+    "skyRowsParsed": 0
+  },
+  "lastRace": {
+    "season": "2022",
+    "round": "22",
+    "raceName": "Abu Dhabi Grand Prix",
+    "date": "2022-11-20",
+    "circuit": {
+      "name": "Yas Marina Circuit",
+      "locality": "Abu Dhabi",
+      "country": "UAE"
+    },
+    "winner": {
+      "firstName": "Max",
+      "lastName": "Verstappen",
+      "fullName": "Max Verstappen",
+      "code": "VER",
+      "team": "Red Bull"
+    }
+  },
+  "constructors": [
+    {
+      "team": "Red Bull",
+      "position": "P1",
+      "points": 759,
+      "wins": 17,
+      "driverCount": 2,
+      "placeholder": false
+    },
+    {
+      "team": "Ferrari",
+      "position": "P2",
+      "points": 554,
+      "wins": 4,
+      "driverCount": 2,
+      "placeholder": false
+    },
+    {
+      "team": "Mercedes",
+      "position": "P3",
+      "points": 515,
+      "wins": 1,
+      "driverCount": 2,
+      "placeholder": false
+    },
+    {
+      "team": "Alpine",
+      "position": "P4",
+      "points": 173,
+      "wins": 0,
+      "driverCount": 2,
+      "placeholder": false
+    },
+    {
+      "team": "McLaren",
+      "position": "P5",
+      "points": 159,
+      "wins": 0,
+      "driverCount": 2,
+      "placeholder": false
+    },
+    {
+      "team": "Alfa Romeo",
+      "position": "P6",
+      "points": 55,
+      "wins": 0,
+      "driverCount": 2,
+      "placeholder": false
+    },
+    {
+      "team": "Aston Martin",
+      "position": "P7",
+      "points": 55,
+      "wins": 0,
+      "driverCount": 3,
+      "placeholder": false
+    },
+    {
+      "team": "Haas",
+      "position": "P8",
+      "points": 37,
+      "wins": 0,
+      "driverCount": 2,
+      "placeholder": false
+    },
+    {
+      "team": "AlphaTauri",
+      "position": "P9",
+      "points": 35,
+      "wins": 0,
+      "driverCount": 2,
+      "placeholder": false
+    },
+    {
+      "team": "Williams",
+      "position": "P10",
+      "points": 8,
+      "wins": 0,
+      "driverCount": 3,
+      "placeholder": false
+    }
+  ]
+}
