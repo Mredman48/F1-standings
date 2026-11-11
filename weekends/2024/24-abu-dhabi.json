@@ -11,7 +11,7 @@
     "round": 24,
     "id": "abu-dhabi",
     "type": "RACE_WEEKEND",
-    "title": "Abu Dhabi GP",
+    "title": "2024 Abu Dhabi Grand Prix",
     "shortTitle": "Abu Dhabi GP",
     "circuit": "Yas Marina Circuit",
     "season": "2024",
@@ -140,20 +140,20 @@
     "country": "Abu Dhabi",
     "flag": "ae",
     "compounds": {
-      "soft": "C3",
-      "medium": "C2",
-      "hard": "C1"
+      "soft": "C5",
+      "medium": "C4",
+      "hard": "C3"
     },
     "trackCharacteristics": {
-      "ratingsSeason": 2025,
+      "ratingsSeason": 2024,
       "traction": 4,
       "tyreStress": 3,
-      "asphaltGrip": 4,
+      "asphaltGrip": 3,
       "braking": 4,
-      "asphaltAbrasion": 5,
-      "lateral": 3,
+      "asphaltAbrasion": 3,
+      "lateral": 4,
       "trackEvolution": 4,
-      "pastYear": true
+      "pastYear": false
     },
     "raceStart": "2024-12-08T13:00:00.000Z"
   },
