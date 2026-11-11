@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-11T01:35:09.790Z",
-  "count": 65,
+  "updatedAt": "2026-11-11T01:38:24.855Z",
+  "count": 66,
   "entries": [
     {
       "round": 1,
@@ -1598,6 +1598,29 @@
       "trackCharacteristics": {
         "ratingsSeason": 2026,
         "pastYear": true,
+        "traction": 4,
+        "tyreStress": 3,
+        "asphaltGrip": 3,
+        "braking": 4,
+        "asphaltAbrasion": 3,
+        "lateral": 3,
+        "trackEvolution": 4
+      }
+    },
+    {
+      "round": 24,
+      "raceSlug": "abu-dhabi",
+      "title": "Abu Dhabi GP",
+      "season": 2025,
+      "country": "Abu Dhabi",
+      "flag": "ae",
+      "compounds": {
+        "soft": "C5",
+        "medium": "C4",
+        "hard": "C3"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2025,
         "traction": 4,
         "tyreStress": 3,
         "asphaltGrip": 3,
