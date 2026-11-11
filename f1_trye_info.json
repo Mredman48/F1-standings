@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-11T20:21:57.525Z",
-  "count": 96,
+  "updatedAt": "2026-11-11T20:22:56.587Z",
+  "count": 97,
   "entries": [
     {
       "round": 1,
@@ -796,6 +796,31 @@
         "asphaltAbrasion": 3,
         "lateral": 3,
         "trackEvolution": 2
+      }
+    },
+    {
+      "round": 7,
+      "raceSlug": "spain",
+      "title": "Spanish GP",
+      "season": 2023,
+      "country": "Spain",
+      "flag": "es",
+      "raceStart": "2023-06-04T13:00:00.000Z",
+      "compounds": {
+        "soft": "C3",
+        "medium": "C2",
+        "hard": "C1"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2023,
+        "pastYear": null,
+        "traction": 3,
+        "tyreStress": 5,
+        "asphaltGrip": 3,
+        "braking": 3,
+        "asphaltAbrasion": 4,
+        "lateral": 5,
+        "trackEvolution": 3
       }
     },
     {
