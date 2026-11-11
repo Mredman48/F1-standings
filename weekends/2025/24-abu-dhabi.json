@@ -2351,7 +2351,7 @@
       "weekend": "2026-11-11T01:36:02.864Z"
     }
   },
-  "locked": false,
+  "locked": true,
   "lockedSections": [],
   "raceRecap": {
     "result": {
@@ -4105,9 +4105,9 @@
       "turns": 16,
       "longestStraightKm": 1.2,
       "averageSpeed": "Medium",
-      "raceLaps": null,
+      "raceLaps": 58,
       "trackLength": "5.281 km",
-      "raceDistance": null
+      "raceDistance": "306.183 km "
     },
     "raceLapRecord": {
       "time": "1:25.637",
@@ -4117,10 +4117,10 @@
       "raceName": "Abu Dhabi Grand Prix"
     },
     "previousWinner": {
-      "driver": "Max Verstappen",
-      "constructor": "Red Bull",
-      "season": 2025,
-      "date": "2025-12-07",
+      "driver": "Lando Norris",
+      "constructor": "McLaren",
+      "season": 2024,
+      "date": "2024-12-08",
       "raceName": "Abu Dhabi Grand Prix"
     }
   },
@@ -4132,5 +4132,28 @@
     "previousWinner": "Lando Norris",
     "constructor": "McLaren",
     "date": "2024-12-08"
+  },
+  "tyreInfo": {
+    "round": 24,
+    "raceSlug": "abu-dhabi",
+    "title": "Abu Dhabi GP",
+    "season": 2025,
+    "country": "Abu Dhabi",
+    "flag": "ae",
+    "compounds": {
+      "soft": "C5",
+      "medium": "C4",
+      "hard": "C3"
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2025,
+      "traction": 4,
+      "tyreStress": 3,
+      "asphaltGrip": 3,
+      "braking": 4,
+      "asphaltAbrasion": 3,
+      "lateral": 3,
+      "trackEvolution": 4
+    }
   }
 }
