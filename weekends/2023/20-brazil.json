@@ -143,20 +143,20 @@
     "flag": "br",
     "raceStart": "2023-11-05T17:00:00.000Z",
     "compounds": {
-      "soft": null,
-      "medium": null,
-      "hard": null
+      "soft": "C4",
+      "medium": "C3",
+      "hard": "C2"
     },
     "trackCharacteristics": {
-      "ratingsSeason": null,
+      "ratingsSeason": 2023,
       "pastYear": null,
-      "traction": null,
-      "tyreStress": null,
-      "asphaltGrip": null,
-      "braking": null,
-      "asphaltAbrasion": null,
-      "lateral": null,
-      "trackEvolution": null
+      "traction": 3,
+      "tyreStress": 3,
+      "asphaltGrip": 3,
+      "braking": 3,
+      "asphaltAbrasion": 4,
+      "lateral": 3,
+      "trackEvolution": 4
     }
   },
   "racePreview": null,
@@ -5633,7 +5633,11 @@
       ]
     }
   ],
-  "raceRecap": null,
+  "raceRecap": {
+    "result": {
+      "driverOfDay": "Norris"
+    }
+  },
   "locked": true,
   "lockedSections": [],
   "meta": {
