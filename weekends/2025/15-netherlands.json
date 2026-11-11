@@ -2351,7 +2351,7 @@
       "weekend": "2026-11-11T01:03:18.243Z"
     }
   },
-  "locked": false,
+  "locked": true,
   "lockedSections": [],
   "raceRecap": {
     "result": {
@@ -4374,9 +4374,9 @@
       "turns": 14,
       "longestStraightKm": 0.7,
       "averageSpeed": "Medium",
-      "raceLaps": null,
+      "raceLaps": 72,
       "trackLength": "4.259 km",
-      "raceDistance": null
+      "raceDistance": "306.587 km"
     },
     "raceLapRecord": {
       "time": "1:11.097",
@@ -4386,10 +4386,10 @@
       "raceName": "Dutch Grand Prix"
     },
     "previousWinner": {
-      "driver": "Oscar Piastri",
+      "driver": "Lando Norris",
       "constructor": "McLaren",
-      "season": 2025,
-      "date": "2025-08-31",
+      "season": 2024,
+      "date": "2024-08-25",
       "raceName": "Dutch Grand Prix"
     }
   },
@@ -4401,5 +4401,28 @@
     "previousWinner": "Lando Norris",
     "constructor": "McLaren",
     "date": "2024-08-25"
+  },
+  "tyreInfo": {
+    "round": 15,
+    "raceSlug": "netherlands",
+    "title": "Dutch GP",
+    "season": 2025,
+    "country": "Netherlands",
+    "flag": "nl",
+    "compounds": {
+      "soft": "C4",
+      "medium": "C3",
+      "hard": "C2"
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2025,
+      "traction": 3,
+      "tyreStress": 5,
+      "asphaltGrip": 3,
+      "braking": 3,
+      "asphaltAbrasion": 3,
+      "lateral": 4,
+      "trackEvolution": 4
+    }
   }
 }
