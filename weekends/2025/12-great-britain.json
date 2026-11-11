@@ -2351,7 +2351,7 @@
       "weekend": "2026-11-11T00:46:27.527Z"
     }
   },
-  "locked": false,
+  "locked": true,
   "lockedSections": [],
   "raceRecap": {
     "result": {
@@ -4282,9 +4282,9 @@
       "turns": 18,
       "longestStraightKm": 0.8,
       "averageSpeed": "High",
-      "raceLaps": null,
+      "raceLaps": 52,
       "trackLength": "5.891 km",
-      "raceDistance": null
+      "raceDistance": "306.198 km"
     },
     "raceLapRecord": {
       "time": "1:27.097",
@@ -4294,10 +4294,10 @@
       "raceName": "British Grand Prix"
     },
     "previousWinner": {
-      "driver": "Lando Norris",
-      "constructor": "McLaren",
-      "season": 2025,
-      "date": "2025-07-06",
+      "driver": "Lewis Hamilton",
+      "constructor": "Mercedes",
+      "season": 2024,
+      "date": "2024-07-07",
       "raceName": "British Grand Prix"
     }
   },
@@ -4309,5 +4309,28 @@
     "previousWinner": "Lewis Hamilton",
     "constructor": "Mercedes",
     "date": "2024-07-07"
+  },
+  "tyreInfo": {
+    "compounds": {
+      "soft": "C4",
+      "medium": "C3",
+      "hard": "C2"
+    },
+    "round": 12,
+    "raceSlug": "great-britain",
+    "title": "British GP",
+    "season": 2025,
+    "country": "United Kingdom",
+    "flag": "gb",
+    "trackCharacteristics": {
+      "ratingsSeason": 2025,
+      "traction": 3,
+      "tyreStress": 5,
+      "asphaltGrip": 4,
+      "braking": 2,
+      "asphaltAbrasion": 2,
+      "lateral": 5,
+      "trackEvolution": 2
+    }
   }
 }
