@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-11T20:38:52.538Z",
-  "count": 109,
+  "updatedAt": "2026-11-11T20:39:57.599Z",
+  "count": 110,
   "entries": [
     {
       "round": 1,
@@ -2359,6 +2359,31 @@
         "asphaltAbrasion": 2,
         "lateral": 2,
         "trackEvolution": 5
+      }
+    },
+    {
+      "round": 20,
+      "raceSlug": "brazil",
+      "title": "Sao Paulo GP",
+      "season": 2023,
+      "country": "Brazil",
+      "flag": "br",
+      "raceStart": "2023-11-05T17:00:00.000Z",
+      "compounds": {
+        "soft": "C4",
+        "medium": "C3",
+        "hard": "C2"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2023,
+        "pastYear": null,
+        "traction": 3,
+        "tyreStress": 3,
+        "asphaltGrip": 3,
+        "braking": 3,
+        "asphaltAbrasion": 4,
+        "lateral": 3,
+        "trackEvolution": 4
       }
     },
     {
