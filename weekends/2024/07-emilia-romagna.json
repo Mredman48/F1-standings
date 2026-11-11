@@ -86,7 +86,43 @@
       }
     ]
   },
-  "circuitIntelligence": null,
+  "circuitIntelligence": {
+    "displayName": "Emilia Romagna Grand Prix",
+    "id": "emiliaromagna",
+    "dna": {
+      "cornerProfile": "Fast, flowing old-school",
+      "overtaking": "Low",
+      "tireWear": "Medium",
+      "trackEvolution": "Medium",
+      "strategyBias": "Track position",
+      "safetyCarRisk": "Medium"
+    },
+    "specs": {
+      "turns": 19,
+      "longestStraightKm": 1,
+      "averageSpeed": "High",
+      "raceLaps": 63,
+      "trackLength": "4.909",
+      "raceDistance": "309.049"
+    },
+    "raceLapRecord": {
+      "time": "1:15.484",
+      "driver": "Lewis Hamilton",
+      "constructor": "Mercedes",
+      "year": 2020,
+      "raceName": "Emilia Romagna Grand Prix"
+    },
+    "intelligence": [
+      "Narrow, old-school layout with gravel traps and little room for error.",
+      "Overtaking is difficult, so qualifying position and the start are critical.",
+      "The run into Tamburello is the main passing chance, with DRS on the main straight.",
+      "Kerb-riding through the chicanes and a stable car over the bumps matter."
+    ],
+    "matchKeys": [
+      "imola",
+      "emiliaromagna"
+    ]
+  },
   "previousWinner": null,
   "tyreInfo": {
     "round": 7,
@@ -97,20 +133,20 @@
     "flag": "it",
     "raceStart": "2024-05-19T13:00:00.000Z",
     "compounds": {
-      "soft": null,
-      "medium": null,
-      "hard": null
+      "soft": "C5",
+      "medium": "C4",
+      "hard": "C3"
     },
     "trackCharacteristics": {
-      "ratingsSeason": null,
+      "ratingsSeason": 2024,
       "pastYear": null,
-      "traction": null,
-      "tyreStress": null,
-      "asphaltGrip": null,
-      "braking": null,
-      "asphaltAbrasion": null,
-      "lateral": null,
-      "trackEvolution": null
+      "traction": 2,
+      "tyreStress": 3,
+      "asphaltGrip": 2,
+      "braking": 3,
+      "asphaltAbrasion": 3,
+      "lateral": 3,
+      "trackEvolution": 2
     }
   },
   "racePreview": null,
@@ -3773,8 +3809,12 @@
       ]
     }
   ],
-  "raceRecap": null,
-  "locked": false,
+  "raceRecap": {
+    "result": {
+      "driverOfDay": "Norris"
+    }
+  },
+  "locked": true,
   "lockedSections": [],
   "meta": {
     "fia": {},
