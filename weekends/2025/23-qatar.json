@@ -2691,7 +2691,7 @@
       "weekend": "2026-11-11T01:32:26.611Z"
     }
   },
-  "locked": false,
+  "locked": true,
   "lockedSections": [],
   "raceRecap": {
     "result": {
@@ -5814,9 +5814,9 @@
       "turns": 16,
       "longestStraightKm": 1.1,
       "averageSpeed": "High",
-      "raceLaps": null,
+      "raceLaps": 57,
       "trackLength": "5.419 km",
-      "raceDistance": null
+      "raceDistance": "308.611 km"
     },
     "raceLapRecord": {
       "time": "1:22.384",
@@ -5828,8 +5828,8 @@
     "previousWinner": {
       "driver": "Max Verstappen",
       "constructor": "Red Bull",
-      "season": 2025,
-      "date": "2025-11-30",
+      "season": 2024,
+      "date": "2024-12-01",
       "raceName": "Qatar Grand Prix"
     }
   },
@@ -5841,5 +5841,28 @@
     "previousWinner": "Max Verstappen",
     "constructor": "Red Bull",
     "date": "2024-12-01"
+  },
+  "tyreInfo": {
+    "round": 23,
+    "raceSlug": "qatar",
+    "title": "Qatar GP",
+    "season": 2025,
+    "country": "Qatar",
+    "flag": "qa",
+    "compounds": {
+      "soft": "C3",
+      "medium": "C2",
+      "hard": "C1"
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2025,
+      "traction": 3,
+      "tyreStress": 5,
+      "asphaltGrip": 4,
+      "braking": 3,
+      "asphaltAbrasion": 2,
+      "lateral": 5,
+      "trackEvolution": 4
+    }
   }
 }
