@@ -2351,7 +2351,7 @@
       "weekend": "2026-11-11T01:21:42.926Z"
     }
   },
-  "locked": false,
+  "locked": true,
   "lockedSections": [],
   "raceRecap": {
     "result": {
@@ -4088,9 +4088,9 @@
       "turns": 17,
       "longestStraightKm": 1.2,
       "averageSpeed": "Medium",
-      "raceLaps": null,
+      "raceLaps": 71,
       "trackLength": "4.304 km",
-      "raceDistance": null
+      "raceDistance": "305.354 km"
     },
     "raceLapRecord": {
       "time": "1:17.774",
@@ -4100,10 +4100,10 @@
       "raceName": "Mexico City Grand Prix"
     },
     "previousWinner": {
-      "driver": "Lando Norris",
-      "constructor": "McLaren",
-      "season": 2025,
-      "date": "2025-10-26",
+      "driver": "Carlos Sainz",
+      "constructor": "Ferrari",
+      "season": 2024,
+      "date": "2024-10-27",
       "raceName": "Mexico City Grand Prix"
     }
   },
@@ -4115,5 +4115,28 @@
     "previousWinner": "Carlos Sainz",
     "constructor": "Ferrari",
     "date": "2024-10-27"
+  },
+  "tyreInfo": {
+    "round": 20,
+    "raceSlug": "mexico",
+    "title": "Mexico City GP",
+    "season": 2025,
+    "country": "Mexico",
+    "flag": "mx",
+    "compounds": {
+      "hard": "C2",
+      "medium": "C4",
+      "soft": "C5"
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2025,
+      "traction": 3,
+      "tyreStress": 2,
+      "asphaltGrip": 2,
+      "braking": 3,
+      "asphaltAbrasion": 2,
+      "lateral": 2,
+      "trackEvolution": 5
+    }
   }
 }
