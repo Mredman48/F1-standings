@@ -1,0 +1,110 @@
+{
+  "header": "Constructors standings",
+  "generatedAtUtc": "2026-11-11T18:27:50.155Z",
+  "meta": {
+    "seasonUsed": "2023",
+    "source": "weekends/2023 (sessionResults) + f1_driver_standings.json",
+    "tiebreaker": "wins, then name",
+    "skyRowsParsed": 0
+  },
+  "lastRace": {
+    "season": "2023",
+    "round": "22",
+    "raceName": "Abu Dhabi Grand Prix",
+    "date": "2023-11-26",
+    "circuit": {
+      "name": "Yas Marina Circuit",
+      "locality": "Yas Island",
+      "country": "United Arab Emirates"
+    },
+    "winner": {
+      "firstName": "Max",
+      "lastName": "VERSTAPPEN",
+      "fullName": "Max VERSTAPPEN",
+      "code": "VER",
+      "team": "Red Bull"
+    }
+  },
+  "constructors": [
+    {
+      "team": "Red Bull",
+      "position": "P1",
+      "points": 860,
+      "wins": 21,
+      "driverCount": 2,
+      "placeholder": false
+    },
+    {
+      "team": "Mercedes",
+      "position": "P2",
+      "points": 409,
+      "wins": 0,
+      "driverCount": 2,
+      "placeholder": false
+    },
+    {
+      "team": "Ferrari",
+      "position": "P3",
+      "points": 406,
+      "wins": 1,
+      "driverCount": 2,
+      "placeholder": false
+    },
+    {
+      "team": "McLaren",
+      "position": "P4",
+      "points": 302,
+      "wins": 0,
+      "driverCount": 2,
+      "placeholder": false
+    },
+    {
+      "team": "Aston Martin",
+      "position": "P5",
+      "points": 280,
+      "wins": 0,
+      "driverCount": 2,
+      "placeholder": false
+    },
+    {
+      "team": "Alpine",
+      "position": "P6",
+      "points": 120,
+      "wins": 0,
+      "driverCount": 2,
+      "placeholder": false
+    },
+    {
+      "team": "Williams",
+      "position": "P7",
+      "points": 28,
+      "wins": 0,
+      "driverCount": 2,
+      "placeholder": false
+    },
+    {
+      "team": "AlphaTauri",
+      "position": "P8",
+      "points": 25,
+      "wins": 0,
+      "driverCount": 4,
+      "placeholder": false
+    },
+    {
+      "team": "Alfa Romeo",
+      "position": "P9",
+      "points": 16,
+      "wins": 0,
+      "driverCount": 2,
+      "placeholder": false
+    },
+    {
+      "team": "Haas",
+      "position": "P10",
+      "points": 12,
+      "wins": 0,
+      "driverCount": 2,
+      "placeholder": false
+    }
+  ]
+}
