@@ -11,7 +11,7 @@
     "round": 18,
     "id": "singapore",
     "type": "RACE_WEEKEND",
-    "title": "Singapore GP",
+    "title": "2024 Singapore Grand Prix",
     "shortTitle": "Singapore GP",
     "circuit": "Marina Bay Street Circuit",
     "season": "2024",
@@ -141,20 +141,20 @@
     "flag": "sg",
     "raceStart": "2024-09-22T12:00:00.000Z",
     "compounds": {
-      "soft": null,
-      "medium": null,
-      "hard": null
+      "soft": "C5",
+      "medium": "C4",
+      "hard": "C3"
     },
     "trackCharacteristics": {
-      "ratingsSeason": null,
-      "pastYear": null,
-      "traction": null,
-      "tyreStress": null,
-      "asphaltGrip": null,
-      "braking": null,
-      "asphaltAbrasion": null,
-      "lateral": null,
-      "trackEvolution": null
+      "ratingsSeason": 2024,
+      "pastYear": false,
+      "traction": 4,
+      "tyreStress": 2,
+      "asphaltGrip": 3,
+      "braking": 5,
+      "asphaltAbrasion": 3,
+      "lateral": 2,
+      "trackEvolution": 5
     }
   },
   "racePreview": null,
@@ -3738,8 +3738,12 @@
       ]
     }
   ],
-  "raceRecap": null,
-  "locked": false,
+  "raceRecap": {
+    "result": {
+      "driverOfDay": "Riccardo"
+    }
+  },
+  "locked": true,
   "lockedSections": [],
   "meta": {
     "fia": {},
