@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-11T14:28:37.523Z",
-  "count": 81,
+  "updatedAt": "2026-11-11T14:30:09.599Z",
+  "count": 82,
   "entries": [
     {
       "round": 1,
@@ -1383,6 +1383,31 @@
       "trackCharacteristics": {
         "ratingsSeason": 2025,
         "traction": 3,
+        "tyreStress": 5,
+        "asphaltGrip": 3,
+        "braking": 3,
+        "asphaltAbrasion": 3,
+        "lateral": 4,
+        "trackEvolution": 4
+      }
+    },
+    {
+      "round": 15,
+      "raceSlug": "netherlands",
+      "title": "Dutch GP",
+      "season": 2024,
+      "country": "Netherlands",
+      "flag": "nl",
+      "raceStart": "2024-08-25T13:00:00.000Z",
+      "compounds": {
+        "soft": "C3",
+        "medium": "C2",
+        "hard": "C1"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2024,
+        "pastYear": false,
+        "traction": 4,
         "tyreStress": 5,
         "asphaltGrip": 3,
         "braking": 3,
