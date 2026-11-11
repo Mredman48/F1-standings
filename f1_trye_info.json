@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-11T20:34:51.674Z",
-  "count": 106,
+  "updatedAt": "2026-11-11T20:35:51.942Z",
+  "count": 107,
   "entries": [
     {
       "round": 1,
@@ -1987,6 +1987,31 @@
         "asphaltAbrasion": 1,
         "lateral": 1,
         "trackEvolution": 5
+      }
+    },
+    {
+      "round": 17,
+      "raceSlug": "qatar",
+      "title": "Qatar GP",
+      "season": 2023,
+      "country": "Qatar",
+      "flag": "qa",
+      "raceStart": "2023-10-08T17:00:00.000Z",
+      "compounds": {
+        "soft": "C3",
+        "medium": "C2",
+        "hard": "C1"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2023,
+        "pastYear": null,
+        "traction": 3,
+        "tyreStress": 5,
+        "asphaltGrip": 3,
+        "braking": 3,
+        "asphaltAbrasion": 3,
+        "lateral": 5,
+        "trackEvolution": 4
       }
     },
     {
