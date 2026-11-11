@@ -2351,7 +2351,7 @@
       "weekend": "2026-11-11T01:14:05.073Z"
     }
   },
-  "locked": false,
+  "locked": true,
   "lockedSections": [],
   "raceRecap": {
     "result": {
@@ -4017,9 +4017,9 @@
       "turns": 19,
       "longestStraightKm": 0.8,
       "averageSpeed": "Low",
-      "raceLaps": null,
+      "raceLaps": 62,
       "trackLength": "4.927 km",
-      "raceDistance": null
+      "raceDistance": "305.337 km"
     },
     "raceLapRecord": {
       "time": "1:33.808",
@@ -4029,10 +4029,10 @@
       "raceName": "Singapore Grand Prix"
     },
     "previousWinner": {
-      "driver": "George Russell",
-      "constructor": "Mercedes",
-      "season": 2025,
-      "date": "2025-10-05",
+      "driver": "Lando Norris",
+      "constructor": "McLaren",
+      "season": 2024,
+      "date": "2024-09-22",
       "raceName": "Singapore Grand Prix"
     }
   },
@@ -4044,5 +4044,28 @@
     "previousWinner": "Lando Norris",
     "constructor": "McLaren",
     "date": "2024-09-22"
+  },
+  "tyreInfo": {
+    "round": 18,
+    "flag": "sg",
+    "raceSlug": "singapore",
+    "title": "Singapore GP",
+    "season": 2025,
+    "country": "Singapore",
+    "compounds": {
+      "soft": "C5",
+      "medium": "C4",
+      "hard": "C3"
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2025,
+      "traction": 4,
+      "tyreStress": 2,
+      "asphaltGrip": 3,
+      "braking": 5,
+      "asphaltAbrasion": 3,
+      "lateral": 2,
+      "trackEvolution": 5
+    }
   }
 }
