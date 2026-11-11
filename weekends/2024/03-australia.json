@@ -140,23 +140,23 @@
     "season": 2024,
     "country": "Australia",
     "flag": "au",
-    "raceStart": "2024-03-24T04:00:00.000Z",
     "compounds": {
-      "soft": null,
-      "medium": null,
-      "hard": null
+      "soft": "C5",
+      "medium": "C4",
+      "hard": "C3"
     },
     "trackCharacteristics": {
-      "ratingsSeason": null,
-      "pastYear": null,
-      "traction": null,
-      "tyreStress": null,
-      "asphaltGrip": null,
-      "braking": null,
-      "asphaltAbrasion": null,
-      "lateral": null,
-      "trackEvolution": null
-    }
+      "ratingsSeason": 2024,
+      "traction": 2,
+      "tyreStress": 3,
+      "asphaltGrip": 3,
+      "braking": 2,
+      "asphaltAbrasion": 2,
+      "lateral": 3,
+      "trackEvolution": 4,
+      "pastYear": false
+    },
+    "raceStart": "2024-03-24T04:00:00.000Z"
   },
   "racePreview": null,
   "startingGrids": [
