@@ -2351,7 +2351,7 @@
       "weekend": "2026-11-11T01:10:42.513Z"
     }
   },
-  "locked": false,
+  "locked": true,
   "lockedSections": [],
   "raceRecap": {
     "result": {
@@ -3973,9 +3973,9 @@
       "turns": 20,
       "longestStraightKm": 2.2,
       "averageSpeed": "High",
-      "raceLaps": null,
+      "raceLaps": 51,
       "trackLength": "6.003 km",
-      "raceDistance": null
+      "raceDistance": "306.049 km"
     },
     "raceLapRecord": {
       "time": "1:43.009",
@@ -3985,10 +3985,10 @@
       "raceName": "Azerbaijan Grand Prix"
     },
     "previousWinner": {
-      "driver": "Max Verstappen",
-      "constructor": "Red Bull",
-      "season": 2025,
-      "date": "2025-09-21",
+      "driver": "Oscar Piastri",
+      "constructor": "McLaren",
+      "season": 2024,
+      "date": "2024-09-15",
       "raceName": "Azerbaijan Grand Prix"
     }
   },
@@ -4000,5 +4000,28 @@
     "previousWinner": "Oscar Piastri",
     "constructor": "McLaren",
     "date": "2024-09-15"
+  },
+  "tyreInfo": {
+    "round": 17,
+    "raceSlug": "azerbaijan",
+    "title": "Azerbaijan GP",
+    "season": 2025,
+    "country": "Azerbaijan",
+    "flag": "az",
+    "compounds": {
+      "soft": "C6",
+      "medium": "C5",
+      "hard": "C4"
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2025,
+      "traction": 5,
+      "tyreStress": 3,
+      "asphaltGrip": 2,
+      "braking": 4,
+      "asphaltAbrasion": 1,
+      "lateral": 1,
+      "trackEvolution": 5
+    }
   }
 }
