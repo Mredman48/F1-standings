@@ -1,7 +1,7 @@
 {
   "header": "2025 Italian GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-11-10T14:01:23.000Z",
+  "generatedAtUtc": "2026-11-11T01:06:38.617Z",
   "season": 2025,
   "round": 16,
   "meetingKey": 1268,
@@ -1257,14 +1257,18 @@
           "dnf": false,
           "dns": false,
           "dsq": false,
-          "duration": 78.792,
+          "duration": null,
           "qualifyingTimes": {
             "q1": 79.455,
             "q2": 79.14,
             "q3": 78.792,
             "bestQualifyingTime": 78.792
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0.041,
+            0,
+            0
+          ],
           "laps": 18,
           "points": null,
           "sessionKey": 9908,
@@ -1280,14 +1284,18 @@
           "dnf": false,
           "dns": false,
           "dsq": false,
-          "duration": 78.869,
+          "duration": null,
           "qualifyingTimes": {
             "q1": 79.517,
             "q2": 79.293,
             "q3": 78.869,
             "bestQualifyingTime": 78.869
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0.103,
+            0.153,
+            0.077
+          ],
           "laps": 21,
           "points": null,
           "sessionKey": 9908,
@@ -1303,14 +1311,18 @@
           "dnf": false,
           "dns": false,
           "dsq": false,
-          "duration": 78.982,
+          "duration": null,
           "qualifyingTimes": {
             "q1": 79.711,
             "q2": 79.286,
             "q3": 78.982,
             "bestQualifyingTime": 78.982
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0.297,
+            0.146,
+            0.19
+          ],
           "laps": 19,
           "points": null,
           "sessionKey": 9908,
@@ -1326,14 +1338,18 @@
           "dnf": false,
           "dns": false,
           "dsq": false,
-          "duration": 79.007,
+          "duration": null,
           "qualifyingTimes": {
             "q1": 79.689,
             "q2": 79.31,
             "q3": 79.007,
             "bestQualifyingTime": 79.007
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0.275,
+            0.17,
+            0.215
+          ],
           "laps": 20,
           "points": null,
           "sessionKey": 9908,
@@ -1349,14 +1365,18 @@
           "dnf": false,
           "dns": false,
           "dsq": false,
-          "duration": 79.124,
+          "duration": null,
           "qualifyingTimes": {
             "q1": 79.765,
             "q2": 79.371,
             "q3": 79.124,
             "bestQualifyingTime": 79.124
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0.351,
+            0.231,
+            0.332
+          ],
           "laps": 20,
           "points": null,
           "sessionKey": 9908,
@@ -1372,14 +1392,18 @@
           "dnf": false,
           "dns": false,
           "dsq": false,
-          "duration": 79.157,
+          "duration": null,
           "qualifyingTimes": {
             "q1": 79.414,
             "q2": 79.287,
             "q3": 79.157,
             "bestQualifyingTime": 79.157
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0,
+            0.147,
+            0.365
+          ],
           "laps": 18,
           "points": null,
           "sessionKey": 9908,
@@ -1395,14 +1419,18 @@
           "dnf": false,
           "dns": false,
           "dsq": false,
-          "duration": 79.2,
+          "duration": null,
           "qualifyingTimes": {
             "q1": 79.747,
             "q2": 79.245,
             "q3": 79.2,
             "bestQualifyingTime": 79.2
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0.333,
+            0.105,
+            0.408
+          ],
           "laps": 22,
           "points": null,
           "sessionKey": 9908,
@@ -1418,14 +1446,18 @@
           "dnf": false,
           "dns": false,
           "dsq": false,
-          "duration": 79.323,
+          "duration": null,
           "qualifyingTimes": {
             "q1": 79.688,
             "q2": 79.323,
             "q3": 79.39,
             "bestQualifyingTime": 79.323
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0.274,
+            0.183,
+            0.598
+          ],
           "laps": 21,
           "points": null,
           "sessionKey": 9908,
@@ -1441,14 +1473,18 @@
           "dnf": false,
           "dns": false,
           "dsq": false,
-          "duration": 79.362,
+          "duration": null,
           "qualifyingTimes": {
             "q1": 79.658,
             "q2": 79.362,
             "q3": 79.424,
             "bestQualifyingTime": 79.362
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0.244,
+            0.222,
+            0.632
+          ],
           "laps": 20,
           "points": null,
           "sessionKey": 9908,
@@ -1464,14 +1500,18 @@
           "dnf": false,
           "dns": false,
           "dsq": false,
-          "duration": 79.433,
+          "duration": null,
           "qualifyingTimes": {
             "q1": 79.619,
             "q2": 79.433,
             "q3": 79.519,
             "bestQualifyingTime": 79.433
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0.205,
+            0.293,
+            0.727
+          ],
           "laps": 18,
           "points": null,
           "sessionKey": 9908,
@@ -1487,14 +1527,18 @@
           "dnf": false,
           "dns": false,
           "dsq": false,
-          "duration": 79.446,
+          "duration": null,
           "qualifyingTimes": {
             "q1": 79.688,
             "q2": 79.446,
             "q3": null,
             "bestQualifyingTime": 79.446
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0.274,
+            0.306,
+            null
+          ],
           "laps": 15,
           "points": null,
           "sessionKey": 9908,
@@ -1510,14 +1554,18 @@
           "dnf": false,
           "dns": false,
           "dsq": false,
-          "duration": 79.498,
+          "duration": null,
           "qualifyingTimes": {
             "q1": 79.777,
             "q2": 79.498,
             "q3": null,
             "bestQualifyingTime": 79.498
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0.363,
+            0.358,
+            null
+          ],
           "laps": 15,
           "points": null,
           "sessionKey": 9908,
@@ -1533,14 +1581,18 @@
           "dnf": false,
           "dns": false,
           "dsq": false,
-          "duration": 79.528,
+          "duration": null,
           "qualifyingTimes": {
             "q1": 79.644,
             "q2": 79.528,
             "q3": null,
             "bestQualifyingTime": 79.528
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0.23,
+            0.388,
+            null
+          ],
           "laps": 19,
           "points": null,
           "sessionKey": 9908,
@@ -1556,14 +1608,18 @@
           "dnf": false,
           "dns": false,
           "dsq": false,
-          "duration": 79.583,
+          "duration": null,
           "qualifyingTimes": {
             "q1": 79.837,
             "q2": 79.583,
             "q3": null,
             "bestQualifyingTime": 79.583
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0.423,
+            0.443,
+            null
+          ],
           "laps": 16,
           "points": null,
           "sessionKey": 9908,
@@ -1579,14 +1635,18 @@
           "dnf": false,
           "dns": false,
           "dsq": false,
-          "duration": 79.707,
+          "duration": null,
           "qualifyingTimes": {
             "q1": 79.816,
             "q2": 79.707,
             "q3": null,
             "bestQualifyingTime": 79.707
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0.402,
+            0.567,
+            null
+          ],
           "laps": 15,
           "points": null,
           "sessionKey": 9908,
@@ -1602,14 +1662,18 @@
           "dnf": false,
           "dns": false,
           "dsq": false,
-          "duration": 79.917,
+          "duration": null,
           "qualifyingTimes": {
             "q1": 79.917,
             "q2": null,
             "q3": null,
             "bestQualifyingTime": 79.917
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0.503,
+            null,
+            null
+          ],
           "laps": 6,
           "points": null,
           "sessionKey": 9908,
@@ -1625,14 +1689,18 @@
           "dnf": false,
           "dns": false,
           "dsq": false,
-          "duration": 79.948,
+          "duration": null,
           "qualifyingTimes": {
             "q1": 79.948,
             "q2": null,
             "q3": null,
             "bestQualifyingTime": 79.948
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0.534,
+            null,
+            null
+          ],
           "laps": 9,
           "points": null,
           "sessionKey": 9908,
@@ -1648,14 +1716,18 @@
           "dnf": false,
           "dns": false,
           "dsq": false,
-          "duration": 79.992,
+          "duration": null,
           "qualifyingTimes": {
             "q1": 79.992,
             "q2": null,
             "q3": null,
             "bestQualifyingTime": 79.992
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0.578,
+            null,
+            null
+          ],
           "laps": 9,
           "points": null,
           "sessionKey": 9908,
@@ -1671,14 +1743,18 @@
           "dnf": false,
           "dns": false,
           "dsq": false,
-          "duration": 80.103,
+          "duration": null,
           "qualifyingTimes": {
             "q1": 80.103,
             "q2": null,
             "q3": null,
             "bestQualifyingTime": 80.103
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0.689,
+            null,
+            null
+          ],
           "laps": 9,
           "points": null,
           "sessionKey": 9908,
@@ -1694,14 +1770,18 @@
           "dnf": false,
           "dns": false,
           "dsq": false,
-          "duration": 80.279,
+          "duration": null,
           "qualifyingTimes": {
             "q1": 80.279,
             "q2": null,
             "q3": null,
             "bestQualifyingTime": 80.279
           },
-          "gapToLeader": null,
+          "gapToLeader": [
+            0.865,
+            null,
+            null
+          ],
           "laps": 5,
           "points": null,
           "sessionKey": 9908,
@@ -1749,9 +1829,9 @@
           "points": 25,
           "sessionKey": 9912,
           "meetingKey": 1268,
-          "qualifyingLapTime": 78.792,
           "startPosition": "P1",
-          "startPositionRank": 1
+          "startPositionRank": 1,
+          "qualifyingLapTime": 78.792
         },
         {
           "driverNumber": 4,
@@ -1775,9 +1855,9 @@
           "points": 18,
           "sessionKey": 9912,
           "meetingKey": 1268,
-          "qualifyingLapTime": 78.869,
           "startPosition": "P2",
-          "startPositionRank": 2
+          "startPositionRank": 2,
+          "qualifyingLapTime": 78.869
         },
         {
           "driverNumber": 81,
@@ -1801,9 +1881,9 @@
           "points": 15,
           "sessionKey": 9912,
           "meetingKey": 1268,
-          "qualifyingLapTime": 78.982,
           "startPosition": "P3",
-          "startPositionRank": 3
+          "startPositionRank": 3,
+          "qualifyingLapTime": 78.982
         },
         {
           "driverNumber": 16,
@@ -1827,9 +1907,9 @@
           "points": 12,
           "sessionKey": 9912,
           "meetingKey": 1268,
-          "qualifyingLapTime": 79.007,
           "startPosition": "P4",
-          "startPositionRank": 4
+          "startPositionRank": 4,
+          "qualifyingLapTime": 79.007
         },
         {
           "driverNumber": 63,
@@ -1853,9 +1933,9 @@
           "points": 10,
           "sessionKey": 9912,
           "meetingKey": 1268,
-          "qualifyingLapTime": 79.157,
           "startPosition": "P5",
-          "startPositionRank": 5
+          "startPositionRank": 5,
+          "qualifyingLapTime": 79.157
         },
         {
           "driverNumber": 44,
@@ -1879,9 +1959,9 @@
           "points": 8,
           "sessionKey": 9912,
           "meetingKey": 1268,
-          "qualifyingLapTime": 79.124,
           "startPosition": "P10",
-          "startPositionRank": 10
+          "startPositionRank": 10,
+          "qualifyingLapTime": 79.124
         },
         {
           "driverNumber": 23,
@@ -1905,9 +1985,9 @@
           "points": 6,
           "sessionKey": 9912,
           "meetingKey": 1268,
-          "qualifyingLapTime": 79.583,
           "startPosition": "P14",
-          "startPositionRank": 14
+          "startPositionRank": 14,
+          "qualifyingLapTime": 79.583
         },
         {
           "driverNumber": 5,
@@ -1931,9 +2011,9 @@
           "points": 4,
           "sessionKey": 9912,
           "meetingKey": 1268,
-          "qualifyingLapTime": 79.323,
           "startPosition": "P7",
-          "startPositionRank": 7
+          "startPositionRank": 7,
+          "qualifyingLapTime": 79.323
         },
         {
           "driverNumber": 12,
@@ -1957,9 +2037,9 @@
           "points": 2,
           "sessionKey": 9912,
           "meetingKey": 1268,
-          "qualifyingLapTime": 79.2,
           "startPosition": "P6",
-          "startPositionRank": 6
+          "startPositionRank": 6,
+          "qualifyingLapTime": 79.2
         },
         {
           "driverNumber": 6,
@@ -1983,9 +2063,9 @@
           "points": 1,
           "sessionKey": 9912,
           "meetingKey": 1268,
-          "qualifyingLapTime": 79.917,
-          "startPosition": "P19",
-          "startPositionRank": 19
+          "startPosition": "P16",
+          "startPositionRank": 16,
+          "qualifyingLapTime": 79.917
         },
         {
           "driverNumber": 55,
@@ -2009,9 +2089,9 @@
           "points": 0,
           "sessionKey": 9912,
           "meetingKey": 1268,
-          "qualifyingLapTime": 79.528,
           "startPosition": "P13",
-          "startPositionRank": 13
+          "startPositionRank": 13,
+          "qualifyingLapTime": 79.528
         },
         {
           "driverNumber": 87,
@@ -2035,9 +2115,9 @@
           "points": 0,
           "sessionKey": 9912,
           "meetingKey": 1268,
-          "qualifyingLapTime": 79.446,
           "startPosition": "P11",
-          "startPositionRank": 11
+          "startPositionRank": 11,
+          "qualifyingLapTime": 79.446
         },
         {
           "driverNumber": 22,
@@ -2061,9 +2141,9 @@
           "points": 0,
           "sessionKey": 9912,
           "meetingKey": 1268,
-          "qualifyingLapTime": 79.433,
           "startPosition": "P9",
-          "startPositionRank": 9
+          "startPositionRank": 9,
+          "qualifyingLapTime": 79.433
         },
         {
           "driverNumber": 30,
@@ -2087,9 +2167,9 @@
           "points": 0,
           "sessionKey": 9912,
           "meetingKey": 1268,
-          "qualifyingLapTime": 80.279,
-          "startPosition": "P18",
-          "startPositionRank": 18
+          "startPosition": "P20",
+          "startPositionRank": 20,
+          "qualifyingLapTime": 80.279
         },
         {
           "driverNumber": 31,
@@ -2113,9 +2193,9 @@
           "points": 0,
           "sessionKey": 9912,
           "meetingKey": 1268,
-          "qualifyingLapTime": 79.707,
           "startPosition": "P15",
-          "startPositionRank": 15
+          "startPositionRank": 15,
+          "qualifyingLapTime": 79.707
         },
         {
           "driverNumber": 10,
@@ -2139,9 +2219,9 @@
           "points": 0,
           "sessionKey": 9912,
           "meetingKey": 1268,
-          "qualifyingLapTime": 80.103,
-          "startPosition": "P20",
-          "startPositionRank": 20
+          "startPosition": "P19",
+          "startPositionRank": 19,
+          "qualifyingLapTime": 80.103
         },
         {
           "driverNumber": 43,
@@ -2165,9 +2245,9 @@
           "points": 0,
           "sessionKey": 9912,
           "meetingKey": 1268,
-          "qualifyingLapTime": 79.992,
-          "startPosition": "P17",
-          "startPositionRank": 17
+          "startPosition": "P18",
+          "startPositionRank": 18,
+          "qualifyingLapTime": 79.992
         },
         {
           "driverNumber": 18,
@@ -2191,9 +2271,9 @@
           "points": 0,
           "sessionKey": 9912,
           "meetingKey": 1268,
-          "qualifyingLapTime": 79.948,
-          "startPosition": "P16",
-          "startPositionRank": 16
+          "startPosition": "P17",
+          "startPositionRank": 17,
+          "qualifyingLapTime": 79.948
         },
         {
           "driverNumber": 14,
@@ -2217,9 +2297,9 @@
           "points": 0,
           "sessionKey": 9912,
           "meetingKey": 1268,
-          "qualifyingLapTime": 79.362,
           "startPosition": "P8",
-          "startPositionRank": 8
+          "startPositionRank": 8,
+          "qualifyingLapTime": 79.362
         },
         {
           "driverNumber": 27,
@@ -2228,7 +2308,7 @@
           "position": "DNS",
           "positionRank": null,
           "classifiedPosition": null,
-          "dnf": false,
+          "dnf": true,
           "dns": true,
           "dsq": false,
           "duration": null,
@@ -2243,9 +2323,9 @@
           "points": 0,
           "sessionKey": 9912,
           "meetingKey": 1268,
-          "qualifyingLapTime": 79.498,
           "startPosition": "P12",
-          "startPositionRank": 12
+          "startPositionRank": 12,
+          "qualifyingLapTime": 79.498
         }
       ],
       "fastestLap": {
@@ -2260,17 +2340,16 @@
   "meta": {
     "source": "openf1+jolpica",
     "backfill": true,
-    "buildVersion": "2025-backfill.1",
+    "buildVersion": "2026-10-31.1",
     "omittedSections": [
-      "circuitIntelligence",
-      "previousWinner",
       "tyreInfo",
       "racePreview",
-      "raceRecap",
-      "startingGrids",
-      "penaltyDocs",
-      "raceStrategy"
-    ]
+      "penaltyDocs"
+    ],
+    "fia": {},
+    "final": {
+      "weekend": "2026-11-11T01:06:38.616Z"
+    }
   },
   "locked": false,
   "lockedSections": [],
@@ -2278,5 +2357,1605 @@
     "result": {
       "driverOfDay": "Verstappen"
     }
+  },
+  "penaltyDocs": {},
+  "startingGrids": [
+    {
+      "gridType": "race",
+      "provisional": false,
+      "round": 16,
+      "meetingKey": 1268,
+      "meetingName": "Italian Grand Prix",
+      "raceName": "Italian Grand Prix",
+      "circuit": "Monza",
+      "location": {
+        "locality": "Monza",
+        "country": "Italy"
+      },
+      "qualifyingSessionKey": 9908,
+      "qualifyingSessionName": "Qualifying",
+      "qualifyingDateStartUtc": "2025-09-06T14:00:00+00:00",
+      "raceSessionKey": 9912,
+      "raceDateStartUtc": "2025-09-07T13:00:00+00:00",
+      "raceCompleted": true,
+      "grid": [
+        {
+          "position": 1,
+          "positionLabel": "P1",
+          "driverNumber": 1,
+          "driverName": "Max VERSTAPPEN",
+          "nameAcronym": "VER",
+          "teamName": "Red Bull Racing",
+          "teamColour": "#4781D7",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/M/MAXVER01_Max_Verstappen/maxver01.png.transform/1col/image.png",
+          "qualifyingLapTime": 78.792,
+          "qualifyingPosition": 1,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 2,
+          "positionLabel": "P2",
+          "driverNumber": 4,
+          "driverName": "Lando NORRIS",
+          "nameAcronym": "NOR",
+          "teamName": "McLaren",
+          "teamColour": "#F47600",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LANNOR01_Lando_Norris/lannor01.png.transform/1col/image.png",
+          "qualifyingLapTime": 78.869,
+          "qualifyingPosition": 2,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 3,
+          "positionLabel": "P3",
+          "driverNumber": 81,
+          "driverName": "Oscar PIASTRI",
+          "nameAcronym": "PIA",
+          "teamName": "McLaren",
+          "teamColour": "#F47600",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/O/OSCPIA01_Oscar_Piastri/oscpia01.png.transform/1col/image.png",
+          "qualifyingLapTime": 78.982,
+          "qualifyingPosition": 3,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 4,
+          "positionLabel": "P4",
+          "driverNumber": 16,
+          "driverName": "Charles LECLERC",
+          "nameAcronym": "LEC",
+          "teamName": "Ferrari",
+          "teamColour": "#ED1131",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/C/CHALEC01_Charles_Leclerc/chalec01.png.transform/1col/image.png",
+          "qualifyingLapTime": 79.007,
+          "qualifyingPosition": 4,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 5,
+          "positionLabel": "P5",
+          "driverNumber": 63,
+          "driverName": "George RUSSELL",
+          "nameAcronym": "RUS",
+          "teamName": "Mercedes",
+          "teamColour": "#00D7B6",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/G/GEORUS01_George_Russell/georus01.png.transform/1col/image.png",
+          "qualifyingLapTime": 79.157,
+          "qualifyingPosition": 6,
+          "qualifyingDsq": false,
+          "placesVsQualifying": -1,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 6,
+          "positionLabel": "P6",
+          "driverNumber": 12,
+          "driverName": "Kimi ANTONELLI",
+          "nameAcronym": "ANT",
+          "teamName": "Mercedes",
+          "teamColour": "#00D7B6",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/A/ANDANT01_Andrea%20Kimi_Antonelli/andant01.png.transform/1col/image.png",
+          "qualifyingLapTime": 79.2,
+          "qualifyingPosition": 7,
+          "qualifyingDsq": false,
+          "placesVsQualifying": -1,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 7,
+          "positionLabel": "P7",
+          "driverNumber": 5,
+          "driverName": "Gabriel BORTOLETO",
+          "nameAcronym": "BOR",
+          "teamName": "Kick Sauber",
+          "teamColour": "#01C00E",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/G/GABBOR01_Gabriel_Bortoleto/gabbor01.png.transform/1col/image.png",
+          "qualifyingLapTime": 79.39,
+          "qualifyingPosition": 8,
+          "qualifyingDsq": false,
+          "placesVsQualifying": -1,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 8,
+          "positionLabel": "P8",
+          "driverNumber": 14,
+          "driverName": "Fernando ALONSO",
+          "nameAcronym": "ALO",
+          "teamName": "Aston Martin",
+          "teamColour": "#229971",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/F/FERALO01_Fernando_Alonso/feralo01.png.transform/1col/image.png",
+          "qualifyingLapTime": 79.424,
+          "qualifyingPosition": 9,
+          "qualifyingDsq": false,
+          "placesVsQualifying": -1,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 9,
+          "positionLabel": "P9",
+          "driverNumber": 22,
+          "driverName": "Yuki TSUNODA",
+          "nameAcronym": "TSU",
+          "teamName": "Red Bull Racing",
+          "teamColour": "#4781D7",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/Y/YUKTSU01_Yuki_Tsunoda/yuktsu01.png.transform/1col/image.png",
+          "qualifyingLapTime": 79.519,
+          "qualifyingPosition": 10,
+          "qualifyingDsq": false,
+          "placesVsQualifying": -1,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 10,
+          "positionLabel": "P10",
+          "driverNumber": 44,
+          "driverName": "Lewis HAMILTON",
+          "nameAcronym": "HAM",
+          "teamName": "Ferrari",
+          "teamColour": "#ED1131",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LEWHAM01_Lewis_Hamilton/lewham01.png.transform/1col/image.png",
+          "qualifyingLapTime": 79.124,
+          "qualifyingPosition": 5,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 5,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 11,
+          "positionLabel": "P11",
+          "driverNumber": 87,
+          "driverName": "Oliver BEARMAN",
+          "nameAcronym": "BEA",
+          "teamName": "Haas F1 Team",
+          "teamColour": "#9C9FA2",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/O/OLIBEA01_Oliver_Bearman/olibea01.png.transform/1col/image.png",
+          "qualifyingLapTime": 79.446,
+          "qualifyingPosition": 11,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 12,
+          "positionLabel": "P12",
+          "driverNumber": 27,
+          "driverName": "Nico HULKENBERG",
+          "nameAcronym": "HUL",
+          "teamName": "Kick Sauber",
+          "teamColour": "#01C00E",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/N/NICHUL01_Nico_Hulkenberg/nichul01.png.transform/1col/image.png",
+          "qualifyingLapTime": 79.498,
+          "qualifyingPosition": 12,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 13,
+          "positionLabel": "P13",
+          "driverNumber": 55,
+          "driverName": "Carlos SAINZ",
+          "nameAcronym": "SAI",
+          "teamName": "Williams",
+          "teamColour": "#1868DB",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/C/CARSAI01_Carlos_Sainz/carsai01.png.transform/1col/image.png",
+          "qualifyingLapTime": 79.528,
+          "qualifyingPosition": 13,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 14,
+          "positionLabel": "P14",
+          "driverNumber": 23,
+          "driverName": "Alexander ALBON",
+          "nameAcronym": "ALB",
+          "teamName": "Williams",
+          "teamColour": "#1868DB",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/A/ALEALB01_Alexander_Albon/alealb01.png.transform/1col/image.png",
+          "qualifyingLapTime": 79.583,
+          "qualifyingPosition": 14,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 15,
+          "positionLabel": "P15",
+          "driverNumber": 31,
+          "driverName": "Esteban OCON",
+          "nameAcronym": "OCO",
+          "teamName": "Haas F1 Team",
+          "teamColour": "#9C9FA2",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/E/ESTOCO01_Esteban_Ocon/estoco01.png.transform/1col/image.png",
+          "qualifyingLapTime": 79.707,
+          "qualifyingPosition": 15,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 16,
+          "positionLabel": "P16",
+          "driverNumber": 6,
+          "driverName": "Isack HADJAR",
+          "nameAcronym": "HAD",
+          "teamName": "Racing Bulls",
+          "teamColour": "#6C98FF",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/I/ISAHAD01_Isack_Hadjar/isahad01.png.transform/1col/image.png",
+          "qualifyingLapTime": 79.917,
+          "qualifyingPosition": 16,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 17,
+          "positionLabel": "P17",
+          "driverNumber": 18,
+          "driverName": "Lance STROLL",
+          "nameAcronym": "STR",
+          "teamName": "Aston Martin",
+          "teamColour": "#229971",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LANSTR01_Lance_Stroll/lanstr01.png.transform/1col/image.png",
+          "qualifyingLapTime": 79.948,
+          "qualifyingPosition": 17,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 18,
+          "positionLabel": "P18",
+          "driverNumber": 43,
+          "driverName": "Franco COLAPINTO",
+          "nameAcronym": "COL",
+          "teamName": "Alpine",
+          "teamColour": "#00A1E8",
+          "headshotUrl": null,
+          "qualifyingLapTime": 79.992,
+          "qualifyingPosition": 18,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 19,
+          "positionLabel": "P19",
+          "driverNumber": 10,
+          "driverName": "Pierre GASLY",
+          "nameAcronym": "GAS",
+          "teamName": "Alpine",
+          "teamColour": "#00A1E8",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/P/PIEGAS01_Pierre_Gasly/piegas01.png.transform/1col/image.png",
+          "qualifyingLapTime": 80.103,
+          "qualifyingPosition": 19,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        },
+        {
+          "position": 20,
+          "positionLabel": "P20",
+          "driverNumber": 30,
+          "driverName": "Liam LAWSON",
+          "nameAcronym": "LAW",
+          "teamName": "Racing Bulls",
+          "teamColour": "#6C98FF",
+          "headshotUrl": "https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LIALAW01_Liam_Lawson/lialaw01.png.transform/1col/image.png",
+          "qualifyingLapTime": 80.279,
+          "qualifyingPosition": 20,
+          "qualifyingDsq": false,
+          "placesVsQualifying": 0,
+          "penalty": null,
+          "note": null
+        }
+      ],
+      "gridPenaltiesChecked": false,
+      "penalties": []
+    }
+  ],
+  "raceStrategy": [
+    {
+      "sessionType": "race",
+      "final": true,
+      "round": 16,
+      "meetingKey": 1268,
+      "meetingName": "Italian Grand Prix",
+      "raceName": "Italian Grand Prix",
+      "circuit": "Monza",
+      "location": {
+        "locality": "Monza",
+        "country": "Italy"
+      },
+      "sessionKey": 9912,
+      "sessionName": "Race",
+      "dateStartUtc": "2025-09-07T13:00:00+00:00",
+      "dhlEventId": null,
+      "stopTimesSource": "openf1",
+      "totalLaps": 53,
+      "fastestStop": {
+        "driverNumber": 81,
+        "driverName": "Oscar PIASTRI",
+        "nameAcronym": "PIA",
+        "teamName": "McLaren",
+        "teamColour": "#F47600",
+        "lap": 45,
+        "stopDuration": 1.9,
+        "stopDurationLabel": "1.90s",
+        "laneDuration": 23.602,
+        "validStop": true,
+        "dateUtc": "2025-09-07T14:06:26.957000+00:00"
+      },
+      "fastestStops": [
+        {
+          "rank": 1,
+          "driverNumber": 81,
+          "driverName": "Oscar PIASTRI",
+          "nameAcronym": "PIA",
+          "teamName": "McLaren",
+          "teamColour": "#F47600",
+          "lap": 45,
+          "stopDuration": 1.9,
+          "stopDurationLabel": "1.90s",
+          "laneDuration": 23.602,
+          "validStop": true,
+          "dateUtc": "2025-09-07T14:06:26.957000+00:00"
+        },
+        {
+          "rank": 2,
+          "driverNumber": 16,
+          "driverName": "Charles LECLERC",
+          "nameAcronym": "LEC",
+          "teamName": "Ferrari",
+          "teamColour": "#ED1131",
+          "lap": 33,
+          "stopDuration": 2,
+          "stopDurationLabel": "2.00s",
+          "laneDuration": 24.235,
+          "validStop": true,
+          "dateUtc": "2025-09-07T13:50:04.888000+00:00"
+        },
+        {
+          "rank": 3,
+          "driverNumber": 44,
+          "driverName": "Lewis HAMILTON",
+          "nameAcronym": "HAM",
+          "teamName": "Ferrari",
+          "teamColour": "#ED1131",
+          "lap": 38,
+          "stopDuration": 2.1,
+          "stopDurationLabel": "2.10s",
+          "laneDuration": 23.971,
+          "validStop": true,
+          "dateUtc": "2025-09-07T13:57:08.320000+00:00"
+        },
+        {
+          "rank": 4,
+          "driverNumber": 30,
+          "driverName": "Liam LAWSON",
+          "nameAcronym": "LAW",
+          "teamName": "Racing Bulls",
+          "teamColour": "#6C98FF",
+          "lap": 9,
+          "stopDuration": 2.2,
+          "stopDurationLabel": "2.20s",
+          "laneDuration": 24.156,
+          "validStop": true,
+          "dateUtc": "2025-09-07T13:16:53.530000+00:00"
+        },
+        {
+          "rank": 5,
+          "driverNumber": 6,
+          "driverName": "Isack HADJAR",
+          "nameAcronym": "HAD",
+          "teamName": "Racing Bulls",
+          "teamColour": "#6C98FF",
+          "lap": 32,
+          "stopDuration": 2.2,
+          "stopDurationLabel": "2.20s",
+          "laneDuration": 24.326,
+          "validStop": true,
+          "dateUtc": "2025-09-07T13:49:09.846000+00:00"
+        },
+        {
+          "rank": 6,
+          "driverNumber": 22,
+          "driverName": "Yuki TSUNODA",
+          "nameAcronym": "TSU",
+          "teamName": "Red Bull Racing",
+          "teamColour": "#4781D7",
+          "lap": 19,
+          "stopDuration": 2.3,
+          "stopDurationLabel": "2.30s",
+          "laneDuration": 24.372,
+          "validStop": true,
+          "dateUtc": "2025-09-07T13:30:55.654000+00:00"
+        },
+        {
+          "rank": 7,
+          "driverNumber": 1,
+          "driverName": "Max VERSTAPPEN",
+          "nameAcronym": "VER",
+          "teamName": "Red Bull Racing",
+          "teamColour": "#4781D7",
+          "lap": 37,
+          "stopDuration": 2.3,
+          "stopDurationLabel": "2.30s",
+          "laneDuration": 24.545,
+          "validStop": true,
+          "dateUtc": "2025-09-07T13:55:17.647000+00:00"
+        },
+        {
+          "rank": 8,
+          "driverNumber": 43,
+          "driverName": "Franco COLAPINTO",
+          "nameAcronym": "COL",
+          "teamName": "Alpine",
+          "teamColour": "#00A1E8",
+          "lap": 33,
+          "stopDuration": 2.8,
+          "stopDurationLabel": "2.80s",
+          "laneDuration": 24.971,
+          "validStop": true,
+          "dateUtc": "2025-09-07T13:50:45.890000+00:00"
+        },
+        {
+          "rank": 9,
+          "driverNumber": 63,
+          "driverName": "George RUSSELL",
+          "nameAcronym": "RUS",
+          "teamName": "Mercedes",
+          "teamColour": "#00D7B6",
+          "lap": 27,
+          "stopDuration": 2.9,
+          "stopDurationLabel": "2.90s",
+          "laneDuration": 25.021,
+          "validStop": true,
+          "dateUtc": "2025-09-07T13:41:53.352000+00:00"
+        },
+        {
+          "rank": 10,
+          "driverNumber": 12,
+          "driverName": "Kimi ANTONELLI",
+          "nameAcronym": "ANT",
+          "teamName": "Mercedes",
+          "teamColour": "#00D7B6",
+          "lap": 28,
+          "stopDuration": 2.9,
+          "stopDurationLabel": "2.90s",
+          "laneDuration": 24.916,
+          "validStop": true,
+          "dateUtc": "2025-09-07T13:43:27.992000+00:00"
+        }
+      ],
+      "bestStopPerTeam": [
+        {
+          "rank": 1,
+          "driverNumber": 81,
+          "driverName": "Oscar PIASTRI",
+          "nameAcronym": "PIA",
+          "teamName": "McLaren",
+          "teamColour": "#F47600",
+          "lap": 45,
+          "stopDuration": 1.9,
+          "stopDurationLabel": "1.90s",
+          "laneDuration": 23.602,
+          "validStop": true,
+          "dateUtc": "2025-09-07T14:06:26.957000+00:00"
+        },
+        {
+          "rank": 2,
+          "driverNumber": 16,
+          "driverName": "Charles LECLERC",
+          "nameAcronym": "LEC",
+          "teamName": "Ferrari",
+          "teamColour": "#ED1131",
+          "lap": 33,
+          "stopDuration": 2,
+          "stopDurationLabel": "2.00s",
+          "laneDuration": 24.235,
+          "validStop": true,
+          "dateUtc": "2025-09-07T13:50:04.888000+00:00"
+        },
+        {
+          "rank": 3,
+          "driverNumber": 30,
+          "driverName": "Liam LAWSON",
+          "nameAcronym": "LAW",
+          "teamName": "Racing Bulls",
+          "teamColour": "#6C98FF",
+          "lap": 9,
+          "stopDuration": 2.2,
+          "stopDurationLabel": "2.20s",
+          "laneDuration": 24.156,
+          "validStop": true,
+          "dateUtc": "2025-09-07T13:16:53.530000+00:00"
+        },
+        {
+          "rank": 4,
+          "driverNumber": 22,
+          "driverName": "Yuki TSUNODA",
+          "nameAcronym": "TSU",
+          "teamName": "Red Bull Racing",
+          "teamColour": "#4781D7",
+          "lap": 19,
+          "stopDuration": 2.3,
+          "stopDurationLabel": "2.30s",
+          "laneDuration": 24.372,
+          "validStop": true,
+          "dateUtc": "2025-09-07T13:30:55.654000+00:00"
+        },
+        {
+          "rank": 5,
+          "driverNumber": 43,
+          "driverName": "Franco COLAPINTO",
+          "nameAcronym": "COL",
+          "teamName": "Alpine",
+          "teamColour": "#00A1E8",
+          "lap": 33,
+          "stopDuration": 2.8,
+          "stopDurationLabel": "2.80s",
+          "laneDuration": 24.971,
+          "validStop": true,
+          "dateUtc": "2025-09-07T13:50:45.890000+00:00"
+        },
+        {
+          "rank": 6,
+          "driverNumber": 63,
+          "driverName": "George RUSSELL",
+          "nameAcronym": "RUS",
+          "teamName": "Mercedes",
+          "teamColour": "#00D7B6",
+          "lap": 27,
+          "stopDuration": 2.9,
+          "stopDurationLabel": "2.90s",
+          "laneDuration": 25.021,
+          "validStop": true,
+          "dateUtc": "2025-09-07T13:41:53.352000+00:00"
+        },
+        {
+          "rank": 7,
+          "driverNumber": 55,
+          "driverName": "Carlos SAINZ",
+          "nameAcronym": "SAI",
+          "teamName": "Williams",
+          "teamColour": "#1868DB",
+          "lap": 30,
+          "stopDuration": 3,
+          "stopDurationLabel": "3.00s",
+          "laneDuration": 24.605,
+          "validStop": true,
+          "dateUtc": "2025-09-07T13:46:20.012000+00:00"
+        },
+        {
+          "rank": 8,
+          "driverNumber": 14,
+          "driverName": "Fernando ALONSO",
+          "nameAcronym": "ALO",
+          "teamName": "Aston Martin",
+          "teamColour": "#229971",
+          "lap": 20,
+          "stopDuration": 3.2,
+          "stopDurationLabel": "3.20s",
+          "laneDuration": 25.16,
+          "validStop": true,
+          "dateUtc": "2025-09-07T13:32:17.708000+00:00"
+        },
+        {
+          "rank": 9,
+          "driverNumber": 87,
+          "driverName": "Oliver BEARMAN",
+          "nameAcronym": "BEA",
+          "teamName": "Haas F1 Team",
+          "teamColour": "#9C9FA2",
+          "lap": 18,
+          "stopDuration": 3.3,
+          "stopDurationLabel": "3.30s",
+          "laneDuration": 25.372,
+          "validStop": true,
+          "dateUtc": "2025-09-07T13:29:32.907000+00:00"
+        },
+        {
+          "rank": 10,
+          "driverNumber": 5,
+          "driverName": "Gabriel BORTOLETO",
+          "nameAcronym": "BOR",
+          "teamName": "Kick Sauber",
+          "teamColour": "#01C00E",
+          "lap": 20,
+          "stopDuration": 4,
+          "stopDurationLabel": "4.00s",
+          "laneDuration": 26.143,
+          "validStop": true,
+          "dateUtc": "2025-09-07T13:32:18.150000+00:00"
+        }
+      ],
+      "pitStops": [
+        {
+          "driverNumber": 30,
+          "driverName": "Liam LAWSON",
+          "nameAcronym": "LAW",
+          "teamName": "Racing Bulls",
+          "teamColour": "#6C98FF",
+          "lap": 9,
+          "stopDuration": 2.2,
+          "stopDurationLabel": "2.20s",
+          "laneDuration": 24.156,
+          "validStop": true,
+          "dateUtc": "2025-09-07T13:16:53.530000+00:00"
+        },
+        {
+          "driverNumber": 87,
+          "driverName": "Oliver BEARMAN",
+          "nameAcronym": "BEA",
+          "teamName": "Haas F1 Team",
+          "teamColour": "#9C9FA2",
+          "lap": 18,
+          "stopDuration": 3.3,
+          "stopDurationLabel": "3.30s",
+          "laneDuration": 25.372,
+          "validStop": true,
+          "dateUtc": "2025-09-07T13:29:32.907000+00:00"
+        },
+        {
+          "driverNumber": 22,
+          "driverName": "Yuki TSUNODA",
+          "nameAcronym": "TSU",
+          "teamName": "Red Bull Racing",
+          "teamColour": "#4781D7",
+          "lap": 19,
+          "stopDuration": 2.3,
+          "stopDurationLabel": "2.30s",
+          "laneDuration": 24.372,
+          "validStop": true,
+          "dateUtc": "2025-09-07T13:30:55.654000+00:00"
+        },
+        {
+          "driverNumber": 14,
+          "driverName": "Fernando ALONSO",
+          "nameAcronym": "ALO",
+          "teamName": "Aston Martin",
+          "teamColour": "#229971",
+          "lap": 20,
+          "stopDuration": 3.2,
+          "stopDurationLabel": "3.20s",
+          "laneDuration": 25.16,
+          "validStop": true,
+          "dateUtc": "2025-09-07T13:32:17.708000+00:00"
+        },
+        {
+          "driverNumber": 5,
+          "driverName": "Gabriel BORTOLETO",
+          "nameAcronym": "BOR",
+          "teamName": "Kick Sauber",
+          "teamColour": "#01C00E",
+          "lap": 20,
+          "stopDuration": 4,
+          "stopDurationLabel": "4.00s",
+          "laneDuration": 26.143,
+          "validStop": true,
+          "dateUtc": "2025-09-07T13:32:18.150000+00:00"
+        },
+        {
+          "driverNumber": 63,
+          "driverName": "George RUSSELL",
+          "nameAcronym": "RUS",
+          "teamName": "Mercedes",
+          "teamColour": "#00D7B6",
+          "lap": 27,
+          "stopDuration": 2.9,
+          "stopDurationLabel": "2.90s",
+          "laneDuration": 25.021,
+          "validStop": true,
+          "dateUtc": "2025-09-07T13:41:53.352000+00:00"
+        },
+        {
+          "driverNumber": 12,
+          "driverName": "Kimi ANTONELLI",
+          "nameAcronym": "ANT",
+          "teamName": "Mercedes",
+          "teamColour": "#00D7B6",
+          "lap": 28,
+          "stopDuration": 2.9,
+          "stopDurationLabel": "2.90s",
+          "laneDuration": 24.916,
+          "validStop": true,
+          "dateUtc": "2025-09-07T13:43:27.992000+00:00"
+        },
+        {
+          "driverNumber": 55,
+          "driverName": "Carlos SAINZ",
+          "nameAcronym": "SAI",
+          "teamName": "Williams",
+          "teamColour": "#1868DB",
+          "lap": 30,
+          "stopDuration": 3,
+          "stopDurationLabel": "3.00s",
+          "laneDuration": 24.605,
+          "validStop": true,
+          "dateUtc": "2025-09-07T13:46:20.012000+00:00"
+        },
+        {
+          "driverNumber": 6,
+          "driverName": "Isack HADJAR",
+          "nameAcronym": "HAD",
+          "teamName": "Racing Bulls",
+          "teamColour": "#6C98FF",
+          "lap": 32,
+          "stopDuration": 2.2,
+          "stopDurationLabel": "2.20s",
+          "laneDuration": 24.326,
+          "validStop": true,
+          "dateUtc": "2025-09-07T13:49:09.846000+00:00"
+        },
+        {
+          "driverNumber": 16,
+          "driverName": "Charles LECLERC",
+          "nameAcronym": "LEC",
+          "teamName": "Ferrari",
+          "teamColour": "#ED1131",
+          "lap": 33,
+          "stopDuration": 2,
+          "stopDurationLabel": "2.00s",
+          "laneDuration": 24.235,
+          "validStop": true,
+          "dateUtc": "2025-09-07T13:50:04.888000+00:00"
+        },
+        {
+          "driverNumber": 43,
+          "driverName": "Franco COLAPINTO",
+          "nameAcronym": "COL",
+          "teamName": "Alpine",
+          "teamColour": "#00A1E8",
+          "lap": 33,
+          "stopDuration": 2.8,
+          "stopDurationLabel": "2.80s",
+          "laneDuration": 24.971,
+          "validStop": true,
+          "dateUtc": "2025-09-07T13:50:45.890000+00:00"
+        },
+        {
+          "driverNumber": 1,
+          "driverName": "Max VERSTAPPEN",
+          "nameAcronym": "VER",
+          "teamName": "Red Bull Racing",
+          "teamColour": "#4781D7",
+          "lap": 37,
+          "stopDuration": 2.3,
+          "stopDurationLabel": "2.30s",
+          "laneDuration": 24.545,
+          "validStop": true,
+          "dateUtc": "2025-09-07T13:55:17.647000+00:00"
+        },
+        {
+          "driverNumber": 44,
+          "driverName": "Lewis HAMILTON",
+          "nameAcronym": "HAM",
+          "teamName": "Ferrari",
+          "teamColour": "#ED1131",
+          "lap": 38,
+          "stopDuration": 2.1,
+          "stopDurationLabel": "2.10s",
+          "laneDuration": 23.971,
+          "validStop": true,
+          "dateUtc": "2025-09-07T13:57:08.320000+00:00"
+        },
+        {
+          "driverNumber": 23,
+          "driverName": "Alexander ALBON",
+          "nameAcronym": "ALB",
+          "teamName": "Williams",
+          "teamColour": "#1868DB",
+          "lap": 41,
+          "stopDuration": 3.1,
+          "stopDurationLabel": "3.10s",
+          "laneDuration": 24.717,
+          "validStop": true,
+          "dateUtc": "2025-09-07T14:01:27.096000+00:00"
+        },
+        {
+          "driverNumber": 81,
+          "driverName": "Oscar PIASTRI",
+          "nameAcronym": "PIA",
+          "teamName": "McLaren",
+          "teamColour": "#F47600",
+          "lap": 45,
+          "stopDuration": 1.9,
+          "stopDurationLabel": "1.90s",
+          "laneDuration": 23.602,
+          "validStop": true,
+          "dateUtc": "2025-09-07T14:06:26.957000+00:00"
+        },
+        {
+          "driverNumber": 4,
+          "driverName": "Lando NORRIS",
+          "nameAcronym": "NOR",
+          "teamName": "McLaren",
+          "teamColour": "#F47600",
+          "lap": 46,
+          "stopDuration": 5.9,
+          "stopDurationLabel": "5.90s",
+          "laneDuration": 27.498,
+          "validStop": true,
+          "dateUtc": "2025-09-07T14:07:50.629000+00:00"
+        },
+        {
+          "driverNumber": 10,
+          "driverName": "Pierre GASLY",
+          "nameAcronym": "GAS",
+          "teamName": "Alpine",
+          "teamColour": "#00A1E8",
+          "lap": 49,
+          "stopDuration": 2.9,
+          "stopDurationLabel": "2.90s",
+          "laneDuration": 25.012,
+          "validStop": true,
+          "dateUtc": "2025-09-07T14:12:58.481000+00:00"
+        },
+        {
+          "driverNumber": 18,
+          "driverName": "Lance STROLL",
+          "nameAcronym": "STR",
+          "teamName": "Aston Martin",
+          "teamColour": "#229971",
+          "lap": 49,
+          "stopDuration": 16.2,
+          "stopDurationLabel": "16.20s",
+          "laneDuration": 38.418,
+          "validStop": false,
+          "dateUtc": "2025-09-07T14:13:01.946000+00:00"
+        },
+        {
+          "driverNumber": 31,
+          "driverName": "Esteban OCON",
+          "nameAcronym": "OCO",
+          "teamName": "Haas F1 Team",
+          "teamColour": "#9C9FA2",
+          "lap": 51,
+          "stopDuration": 8.6,
+          "stopDurationLabel": "8.60s",
+          "laneDuration": 30.754,
+          "validStop": true,
+          "dateUtc": "2025-09-07T14:15:37.886000+00:00"
+        }
+      ],
+      "drivers": [
+        {
+          "position": 1,
+          "positionLabel": "P1",
+          "status": null,
+          "driverNumber": 1,
+          "driverName": "Max VERSTAPPEN",
+          "nameAcronym": "VER",
+          "teamName": "Red Bull Racing",
+          "teamColour": "#4781D7",
+          "lapsCompleted": 53,
+          "stops": 1,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "MEDIUM",
+              "lapStart": 1,
+              "lapEnd": 37,
+              "laps": 37,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "HARD",
+              "lapStart": 38,
+              "lapEnd": 53,
+              "laps": 16,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            }
+          ]
+        },
+        {
+          "position": 2,
+          "positionLabel": "P2",
+          "status": null,
+          "driverNumber": 4,
+          "driverName": "Lando NORRIS",
+          "nameAcronym": "NOR",
+          "teamName": "McLaren",
+          "teamColour": "#F47600",
+          "lapsCompleted": 53,
+          "stops": 1,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "MEDIUM",
+              "lapStart": 1,
+              "lapEnd": 46,
+              "laps": 46,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "SOFT",
+              "lapStart": 47,
+              "lapEnd": 53,
+              "laps": 7,
+              "tyreAgeAtStart": 2,
+              "newTyre": false
+            }
+          ]
+        },
+        {
+          "position": 3,
+          "positionLabel": "P3",
+          "status": null,
+          "driverNumber": 81,
+          "driverName": "Oscar PIASTRI",
+          "nameAcronym": "PIA",
+          "teamName": "McLaren",
+          "teamColour": "#F47600",
+          "lapsCompleted": 53,
+          "stops": 1,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "MEDIUM",
+              "lapStart": 1,
+              "lapEnd": 45,
+              "laps": 45,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "SOFT",
+              "lapStart": 46,
+              "lapEnd": 53,
+              "laps": 8,
+              "tyreAgeAtStart": 3,
+              "newTyre": false
+            }
+          ]
+        },
+        {
+          "position": 4,
+          "positionLabel": "P4",
+          "status": null,
+          "driverNumber": 16,
+          "driverName": "Charles LECLERC",
+          "nameAcronym": "LEC",
+          "teamName": "Ferrari",
+          "teamColour": "#ED1131",
+          "lapsCompleted": 53,
+          "stops": 1,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "MEDIUM",
+              "lapStart": 1,
+              "lapEnd": 33,
+              "laps": 33,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "HARD",
+              "lapStart": 34,
+              "lapEnd": 53,
+              "laps": 20,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            }
+          ]
+        },
+        {
+          "position": 5,
+          "positionLabel": "P5",
+          "status": null,
+          "driverNumber": 63,
+          "driverName": "George RUSSELL",
+          "nameAcronym": "RUS",
+          "teamName": "Mercedes",
+          "teamColour": "#00D7B6",
+          "lapsCompleted": 53,
+          "stops": 1,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "MEDIUM",
+              "lapStart": 1,
+              "lapEnd": 27,
+              "laps": 27,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "HARD",
+              "lapStart": 28,
+              "lapEnd": 53,
+              "laps": 26,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            }
+          ]
+        },
+        {
+          "position": 6,
+          "positionLabel": "P6",
+          "status": null,
+          "driverNumber": 44,
+          "driverName": "Lewis HAMILTON",
+          "nameAcronym": "HAM",
+          "teamName": "Ferrari",
+          "teamColour": "#ED1131",
+          "lapsCompleted": 53,
+          "stops": 1,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "MEDIUM",
+              "lapStart": 1,
+              "lapEnd": 38,
+              "laps": 38,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "HARD",
+              "lapStart": 39,
+              "lapEnd": 53,
+              "laps": 15,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            }
+          ]
+        },
+        {
+          "position": 7,
+          "positionLabel": "P7",
+          "status": null,
+          "driverNumber": 23,
+          "driverName": "Alexander ALBON",
+          "nameAcronym": "ALB",
+          "teamName": "Williams",
+          "teamColour": "#1868DB",
+          "lapsCompleted": 53,
+          "stops": 1,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "HARD",
+              "lapStart": 1,
+              "lapEnd": 41,
+              "laps": 41,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "MEDIUM",
+              "lapStart": 42,
+              "lapEnd": 53,
+              "laps": 12,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            }
+          ]
+        },
+        {
+          "position": 8,
+          "positionLabel": "P8",
+          "status": null,
+          "driverNumber": 5,
+          "driverName": "Gabriel BORTOLETO",
+          "nameAcronym": "BOR",
+          "teamName": "Kick Sauber",
+          "teamColour": "#01C00E",
+          "lapsCompleted": 53,
+          "stops": 1,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "MEDIUM",
+              "lapStart": 1,
+              "lapEnd": 20,
+              "laps": 20,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "HARD",
+              "lapStart": 21,
+              "lapEnd": 53,
+              "laps": 33,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            }
+          ]
+        },
+        {
+          "position": 9,
+          "positionLabel": "P9",
+          "status": null,
+          "driverNumber": 12,
+          "driverName": "Kimi ANTONELLI",
+          "nameAcronym": "ANT",
+          "teamName": "Mercedes",
+          "teamColour": "#00D7B6",
+          "lapsCompleted": 53,
+          "stops": 1,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "MEDIUM",
+              "lapStart": 1,
+              "lapEnd": 28,
+              "laps": 28,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "HARD",
+              "lapStart": 29,
+              "lapEnd": 53,
+              "laps": 25,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            }
+          ]
+        },
+        {
+          "position": 10,
+          "positionLabel": "P10",
+          "status": null,
+          "driverNumber": 6,
+          "driverName": "Isack HADJAR",
+          "nameAcronym": "HAD",
+          "teamName": "Racing Bulls",
+          "teamColour": "#6C98FF",
+          "lapsCompleted": 53,
+          "stops": 1,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "HARD",
+              "lapStart": 1,
+              "lapEnd": 32,
+              "laps": 32,
+              "tyreAgeAtStart": 1,
+              "newTyre": false
+            },
+            {
+              "stint": 2,
+              "compound": "MEDIUM",
+              "lapStart": 33,
+              "lapEnd": 53,
+              "laps": 21,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            }
+          ]
+        },
+        {
+          "position": 11,
+          "positionLabel": "P11",
+          "status": null,
+          "driverNumber": 55,
+          "driverName": "Carlos SAINZ",
+          "nameAcronym": "SAI",
+          "teamName": "Williams",
+          "teamColour": "#1868DB",
+          "lapsCompleted": 53,
+          "stops": 1,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "MEDIUM",
+              "lapStart": 1,
+              "lapEnd": 30,
+              "laps": 30,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "HARD",
+              "lapStart": 31,
+              "lapEnd": 53,
+              "laps": 23,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            }
+          ]
+        },
+        {
+          "position": 12,
+          "positionLabel": "P12",
+          "status": null,
+          "driverNumber": 87,
+          "driverName": "Oliver BEARMAN",
+          "nameAcronym": "BEA",
+          "teamName": "Haas F1 Team",
+          "teamColour": "#9C9FA2",
+          "lapsCompleted": 53,
+          "stops": 1,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "MEDIUM",
+              "lapStart": 1,
+              "lapEnd": 18,
+              "laps": 18,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "HARD",
+              "lapStart": 19,
+              "lapEnd": 53,
+              "laps": 35,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            }
+          ]
+        },
+        {
+          "position": 13,
+          "positionLabel": "P13",
+          "status": null,
+          "driverNumber": 22,
+          "driverName": "Yuki TSUNODA",
+          "nameAcronym": "TSU",
+          "teamName": "Red Bull Racing",
+          "teamColour": "#4781D7",
+          "lapsCompleted": 53,
+          "stops": 1,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "MEDIUM",
+              "lapStart": 1,
+              "lapEnd": 19,
+              "laps": 19,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "HARD",
+              "lapStart": 20,
+              "lapEnd": 53,
+              "laps": 34,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            }
+          ]
+        },
+        {
+          "position": 14,
+          "positionLabel": "P14",
+          "status": null,
+          "driverNumber": 30,
+          "driverName": "Liam LAWSON",
+          "nameAcronym": "LAW",
+          "teamName": "Racing Bulls",
+          "teamColour": "#6C98FF",
+          "lapsCompleted": 53,
+          "stops": 1,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "SOFT",
+              "lapStart": 1,
+              "lapEnd": 9,
+              "laps": 9,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "HARD",
+              "lapStart": 10,
+              "lapEnd": 53,
+              "laps": 44,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            }
+          ]
+        },
+        {
+          "position": 15,
+          "positionLabel": "P15",
+          "status": null,
+          "driverNumber": 31,
+          "driverName": "Esteban OCON",
+          "nameAcronym": "OCO",
+          "teamName": "Haas F1 Team",
+          "teamColour": "#9C9FA2",
+          "lapsCompleted": 52,
+          "stops": 1,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "HARD",
+              "lapStart": 1,
+              "lapEnd": 51,
+              "laps": 51,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "SOFT",
+              "lapStart": 52,
+              "lapEnd": 52,
+              "laps": 1,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            }
+          ]
+        },
+        {
+          "position": 16,
+          "positionLabel": "P16",
+          "status": null,
+          "driverNumber": 10,
+          "driverName": "Pierre GASLY",
+          "nameAcronym": "GAS",
+          "teamName": "Alpine",
+          "teamColour": "#00A1E8",
+          "lapsCompleted": 52,
+          "stops": 1,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "HARD",
+              "lapStart": 1,
+              "lapEnd": 49,
+              "laps": 49,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "SOFT",
+              "lapStart": 50,
+              "lapEnd": 52,
+              "laps": 3,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            }
+          ]
+        },
+        {
+          "position": 17,
+          "positionLabel": "P17",
+          "status": null,
+          "driverNumber": 43,
+          "driverName": "Franco COLAPINTO",
+          "nameAcronym": "COL",
+          "teamName": "Alpine",
+          "teamColour": "#00A1E8",
+          "lapsCompleted": 52,
+          "stops": 1,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "MEDIUM",
+              "lapStart": 1,
+              "lapEnd": 33,
+              "laps": 33,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            },
+            {
+              "stint": 2,
+              "compound": "HARD",
+              "lapStart": 34,
+              "lapEnd": 52,
+              "laps": 19,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            }
+          ]
+        },
+        {
+          "position": 18,
+          "positionLabel": "P18",
+          "status": null,
+          "driverNumber": 18,
+          "driverName": "Lance STROLL",
+          "nameAcronym": "STR",
+          "teamName": "Aston Martin",
+          "teamColour": "#229971",
+          "lapsCompleted": 52,
+          "stops": 1,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "HARD",
+              "lapStart": 1,
+              "lapEnd": 49,
+              "laps": 49,
+              "tyreAgeAtStart": 1,
+              "newTyre": false
+            },
+            {
+              "stint": 2,
+              "compound": "SOFT",
+              "lapStart": 50,
+              "lapEnd": 52,
+              "laps": 3,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            }
+          ]
+        },
+        {
+          "position": null,
+          "positionLabel": "DNF",
+          "status": "DNF",
+          "driverNumber": 14,
+          "driverName": "Fernando ALONSO",
+          "nameAcronym": "ALO",
+          "teamName": "Aston Martin",
+          "teamColour": "#229971",
+          "lapsCompleted": 24,
+          "stops": 1,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "MEDIUM",
+              "lapStart": 1,
+              "lapEnd": 20,
+              "laps": 20,
+              "tyreAgeAtStart": 1,
+              "newTyre": false
+            },
+            {
+              "stint": 2,
+              "compound": "HARD",
+              "lapStart": 21,
+              "lapEnd": 24,
+              "laps": 4,
+              "tyreAgeAtStart": 1,
+              "newTyre": false
+            }
+          ]
+        },
+        {
+          "position": null,
+          "positionLabel": "DNS",
+          "status": "DNS",
+          "driverNumber": 27,
+          "driverName": "Nico HULKENBERG",
+          "nameAcronym": "HUL",
+          "teamName": "Kick Sauber",
+          "teamColour": "#01C00E",
+          "lapsCompleted": 0,
+          "stops": 0,
+          "stints": [
+            {
+              "stint": 1,
+              "compound": "MEDIUM",
+              "lapStart": 1,
+              "lapEnd": 0,
+              "laps": 0,
+              "tyreAgeAtStart": 0,
+              "newTyre": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "circuitIntelligence": {
+    "displayName": "Italian Grand Prix",
+    "dna": {
+      "cornerProfile": "Low-downforce power",
+      "overtaking": "High",
+      "tireWear": "Low",
+      "trackEvolution": "Low",
+      "strategyBias": "Straight-Line Speed",
+      "safetyCarRisk": "Medium"
+    },
+    "intelligence": [
+      "Straight-line speed is the dominant performance factor.",
+      "Slipstream battles are common.",
+      "Low-downforce setup choices define competitiveness.",
+      "Braking stability into chicanes is important."
+    ],
+    "id": "italy",
+    "matchKeys": [
+      "italy",
+      "italian",
+      "monza"
+    ],
+    "specs": {
+      "turns": 11,
+      "longestStraightKm": 1.1,
+      "averageSpeed": "Very High",
+      "raceLaps": null,
+      "trackLength": "5.793 km",
+      "raceDistance": null
+    },
+    "raceLapRecord": {
+      "time": "1:20.901",
+      "driver": "Lando Norris",
+      "constructor": "McLaren",
+      "year": 2025,
+      "raceName": "Italian Grand Prix"
+    },
+    "previousWinner": {
+      "driver": "Max Verstappen",
+      "constructor": "Red Bull",
+      "season": 2025,
+      "date": "2025-09-07",
+      "raceName": "Italian Grand Prix"
+    }
+  },
+  "previousWinner": {
+    "round": 16,
+    "raceName": "Italian Grand Prix",
+    "city": "Monza",
+    "country": "Italy",
+    "previousWinner": "Charles Leclerc",
+    "constructor": "Ferrari",
+    "date": "2024-09-01"
   }
 }
