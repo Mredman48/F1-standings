@@ -142,20 +142,20 @@
     "flag": "au",
     "raceStart": "2023-04-02T05:00:00.000Z",
     "compounds": {
-      "soft": null,
-      "medium": null,
-      "hard": null
+      "soft": "C4",
+      "medium": "C3",
+      "hard": "C2"
     },
     "trackCharacteristics": {
-      "ratingsSeason": null,
+      "ratingsSeason": 2023,
       "pastYear": null,
-      "traction": null,
-      "tyreStress": null,
-      "asphaltGrip": null,
-      "braking": null,
-      "asphaltAbrasion": null,
-      "lateral": null,
-      "trackEvolution": null
+      "traction": 4,
+      "tyreStress": 3,
+      "asphaltGrip": 3,
+      "braking": 2,
+      "asphaltAbrasion": 2,
+      "lateral": 3,
+      "trackEvolution": 4
     }
   },
   "racePreview": null,
@@ -4180,7 +4180,11 @@
       ]
     }
   ],
-  "raceRecap": null,
+  "raceRecap": {
+    "result": {
+      "driverOfDay": "Perez"
+    }
+  },
   "locked": true,
   "lockedSections": [],
   "meta": {
