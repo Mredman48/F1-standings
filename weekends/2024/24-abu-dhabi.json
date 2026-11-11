@@ -137,25 +137,25 @@
     "raceSlug": "abu-dhabi",
     "title": "Abu Dhabi GP",
     "season": 2024,
-    "country": "United Arab Emirates",
+    "country": "Abu Dhabi",
     "flag": "ae",
-    "raceStart": "2024-12-08T13:00:00.000Z",
     "compounds": {
-      "soft": null,
-      "medium": null,
-      "hard": null
+      "soft": "C3",
+      "medium": "C2",
+      "hard": "C1"
     },
     "trackCharacteristics": {
-      "ratingsSeason": null,
-      "pastYear": null,
-      "traction": null,
-      "tyreStress": null,
-      "asphaltGrip": null,
-      "braking": null,
-      "asphaltAbrasion": null,
-      "lateral": null,
-      "trackEvolution": null
-    }
+      "ratingsSeason": 2025,
+      "traction": 4,
+      "tyreStress": 3,
+      "asphaltGrip": 4,
+      "braking": 4,
+      "asphaltAbrasion": 5,
+      "lateral": 3,
+      "trackEvolution": 4,
+      "pastYear": true
+    },
+    "raceStart": "2024-12-08T13:00:00.000Z"
   },
   "racePreview": null,
   "startingGrids": [
@@ -4151,7 +4151,11 @@
       ]
     }
   ],
-  "raceRecap": null,
+  "raceRecap": {
+    "result": {
+      "driverOfDay": "Leclerc"
+    }
+  },
   "locked": false,
   "lockedSections": [],
   "meta": {
