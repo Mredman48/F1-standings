@@ -123,31 +123,33 @@
       "raceName": "Chinese Grand Prix"
     }
   },
-  "previousWinner": null,
+  "previousWinner": {
+    "raceName": ""
+  },
   "tyreInfo": {
+    "compounds": {
+      "soft": "C4",
+      "medium": "C3",
+      "hard": "C2"
+    },
     "round": 5,
     "raceSlug": "china",
     "title": "Chinese GP",
     "season": 2024,
     "country": "China",
     "flag": "cn",
-    "raceStart": "2024-04-21T07:00:00.000Z",
-    "compounds": {
-      "soft": null,
-      "medium": null,
-      "hard": null
-    },
     "trackCharacteristics": {
-      "ratingsSeason": null,
-      "pastYear": null,
-      "traction": null,
-      "tyreStress": null,
-      "asphaltGrip": null,
-      "braking": null,
-      "asphaltAbrasion": null,
-      "lateral": null,
-      "trackEvolution": null
-    }
+      "ratingsSeason": 2024,
+      "traction": 3,
+      "tyreStress": 4,
+      "asphaltGrip": 2,
+      "braking": 4,
+      "asphaltAbrasion": 2,
+      "lateral": 4,
+      "trackEvolution": 5,
+      "pastYear": false
+    },
+    "raceStart": "2024-04-21T07:00:00.000Z"
   },
   "racePreview": null,
   "startingGrids": [
@@ -5196,8 +5198,12 @@
       ]
     }
   ],
-  "raceRecap": null,
-  "locked": false,
+  "raceRecap": {
+    "result": {
+      "driverOfDay": "Norris"
+    }
+  },
+  "locked": true,
   "lockedSections": [],
   "meta": {
     "fia": {},
