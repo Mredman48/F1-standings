@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-11T20:28:47.142Z",
-  "count": 101,
+  "updatedAt": "2026-11-11T20:30:00.890Z",
+  "count": 102,
   "entries": [
     {
       "round": 1,
@@ -1392,6 +1392,31 @@
         "asphaltAbrasion": 2,
         "lateral": 5,
         "trackEvolution": 2
+      }
+    },
+    {
+      "round": 12,
+      "raceSlug": "belgium",
+      "title": "Belgian GP",
+      "season": 2023,
+      "country": "Belgium",
+      "flag": "be",
+      "raceStart": "2023-07-30T13:00:00.000Z",
+      "compounds": {
+        "soft": "C4",
+        "medium": "C3",
+        "hard": "C2"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2023,
+        "pastYear": null,
+        "traction": 4,
+        "tyreStress": 5,
+        "asphaltGrip": 3,
+        "braking": 4,
+        "asphaltAbrasion": 4,
+        "lateral": 5,
+        "trackEvolution": 3
       }
     },
     {
