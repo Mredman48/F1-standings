@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-11T20:16:01.662Z",
-  "count": 91,
+  "updatedAt": "2026-11-11T20:17:18.660Z",
+  "count": 92,
   "entries": [
     {
       "round": 1,
@@ -177,6 +177,31 @@
         "pastYear": false
       },
       "raceStart": "2024-03-09T17:00:00.000Z"
+    },
+    {
+      "round": 2,
+      "raceSlug": "saudi-arabia",
+      "title": "Saudi Arabian GP",
+      "season": 2023,
+      "country": "Saudi Arabia",
+      "flag": "sa",
+      "raceStart": "2023-03-19T17:00:00.000Z",
+      "compounds": {
+        "soft": "C4",
+        "medium": "C3",
+        "hard": "C2"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2023,
+        "pastYear": null,
+        "traction": 2,
+        "tyreStress": 3,
+        "asphaltGrip": 3,
+        "braking": 2,
+        "asphaltAbrasion": 2,
+        "lateral": 3,
+        "trackEvolution": 4
+      }
     },
     {
       "round": 3,
