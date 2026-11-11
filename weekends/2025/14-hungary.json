@@ -2351,7 +2351,7 @@
       "weekend": "2026-11-11T00:59:41.210Z"
     }
   },
-  "locked": false,
+  "locked": true,
   "lockedSections": [],
   "raceRecap": {
     "result": {
@@ -4142,9 +4142,9 @@
       "turns": 14,
       "longestStraightKm": 0.8,
       "averageSpeed": "Low",
-      "raceLaps": null,
+      "raceLaps": 70,
       "trackLength": "4.381 km",
-      "raceDistance": null
+      "raceDistance": "306.630 km"
     },
     "raceLapRecord": {
       "time": "1:16.627",
@@ -4154,10 +4154,10 @@
       "raceName": "Hungarian Grand Prix"
     },
     "previousWinner": {
-      "driver": "Lando Norris",
+      "driver": "Oscar Piastri",
       "constructor": "McLaren",
-      "season": 2025,
-      "date": "2025-08-03",
+      "season": 2024,
+      "date": "2024-07-21",
       "raceName": "Hungarian Grand Prix"
     }
   },
@@ -4169,5 +4169,28 @@
     "previousWinner": "Oscar Piastri",
     "constructor": "McLaren",
     "date": "2024-07-21"
+  },
+  "tyreInfo": {
+    "round": 14,
+    "raceSlug": "hungary",
+    "title": "Hungarian GP",
+    "season": 2025,
+    "country": "Hungary",
+    "flag": "hu",
+    "compounds": {
+      "hard": "C3",
+      "medium": "C4",
+      "soft": "C5"
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2025,
+      "traction": 4,
+      "tyreStress": 3,
+      "asphaltGrip": 3,
+      "braking": 3,
+      "asphaltAbrasion": 3,
+      "lateral": 3,
+      "trackEvolution": 4
+    }
   }
 }
