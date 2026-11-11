@@ -1,7 +1,7 @@
 {
   "header": "2024 Emilia Romagna GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-11-11T06:03:04.426Z",
+  "generatedAtUtc": "2026-11-11T06:04:19.594Z",
   "season": 2024,
   "round": 7,
   "meetingKey": null,
@@ -88,7 +88,31 @@
   },
   "circuitIntelligence": null,
   "previousWinner": null,
-  "tyreInfo": null,
+  "tyreInfo": {
+    "round": 7,
+    "raceSlug": "emilia-romagna",
+    "title": "Emilia Romagna GP",
+    "season": 2024,
+    "country": "Italy",
+    "flag": "it",
+    "raceStart": "2024-05-19T13:00:00.000Z",
+    "compounds": {
+      "soft": null,
+      "medium": null,
+      "hard": null
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": null,
+      "pastYear": null,
+      "traction": null,
+      "tyreStress": null,
+      "asphaltGrip": null,
+      "braking": null,
+      "asphaltAbrasion": null,
+      "lateral": null,
+      "trackEvolution": null
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},

@@ -1,7 +1,7 @@
 {
   "header": "2024 Abu Dhabi GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-11-11T06:03:04.432Z",
+  "generatedAtUtc": "2026-11-11T06:04:19.599Z",
   "season": 2024,
   "round": 24,
   "meetingKey": null,
@@ -131,7 +131,31 @@
     }
   },
   "previousWinner": null,
-  "tyreInfo": null,
+  "tyreInfo": {
+    "round": 24,
+    "raceSlug": "abu-dhabi",
+    "title": "Abu Dhabi GP",
+    "season": 2024,
+    "country": "United Arab Emirates",
+    "flag": "ae",
+    "raceStart": "2024-12-08T13:00:00.000Z",
+    "compounds": {
+      "soft": null,
+      "medium": null,
+      "hard": null
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": null,
+      "pastYear": null,
+      "traction": null,
+      "tyreStress": null,
+      "asphaltGrip": null,
+      "braking": null,
+      "asphaltAbrasion": null,
+      "lateral": null,
+      "trackEvolution": null
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},

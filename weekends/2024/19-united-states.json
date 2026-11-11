@@ -1,7 +1,7 @@
 {
   "header": "2024 United States GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-11-11T06:03:04.430Z",
+  "generatedAtUtc": "2026-11-11T06:04:19.598Z",
   "season": 2024,
   "round": 19,
   "meetingKey": null,
@@ -134,7 +134,31 @@
     }
   },
   "previousWinner": null,
-  "tyreInfo": null,
+  "tyreInfo": {
+    "round": 19,
+    "raceSlug": "united-states",
+    "title": "United States GP",
+    "season": 2024,
+    "country": "United States",
+    "flag": "us",
+    "raceStart": "2024-10-20T19:00:00.000Z",
+    "compounds": {
+      "soft": null,
+      "medium": null,
+      "hard": null
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": null,
+      "pastYear": null,
+      "traction": null,
+      "tyreStress": null,
+      "asphaltGrip": null,
+      "braking": null,
+      "asphaltAbrasion": null,
+      "lateral": null,
+      "trackEvolution": null
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},

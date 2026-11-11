@@ -1,7 +1,7 @@
 {
   "header": "2024 Chinese GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-11-11T06:03:04.425Z",
+  "generatedAtUtc": "2026-11-11T06:04:19.593Z",
   "season": 2024,
   "round": 5,
   "meetingKey": null,
@@ -131,7 +131,31 @@
     }
   },
   "previousWinner": null,
-  "tyreInfo": null,
+  "tyreInfo": {
+    "round": 5,
+    "raceSlug": "china",
+    "title": "Chinese GP",
+    "season": 2024,
+    "country": "China",
+    "flag": "cn",
+    "raceStart": "2024-04-21T07:00:00.000Z",
+    "compounds": {
+      "soft": null,
+      "medium": null,
+      "hard": null
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": null,
+      "pastYear": null,
+      "traction": null,
+      "tyreStress": null,
+      "asphaltGrip": null,
+      "braking": null,
+      "asphaltAbrasion": null,
+      "lateral": null,
+      "trackEvolution": null
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},

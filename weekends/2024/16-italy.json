@@ -1,7 +1,7 @@
 {
   "header": "2024 Italian GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-11-11T06:03:04.430Z",
+  "generatedAtUtc": "2026-11-11T06:04:19.597Z",
   "season": 2024,
   "round": 16,
   "meetingKey": null,
@@ -132,7 +132,31 @@
     }
   },
   "previousWinner": null,
-  "tyreInfo": null,
+  "tyreInfo": {
+    "round": 16,
+    "raceSlug": "italy",
+    "title": "Italian GP",
+    "season": 2024,
+    "country": "Italy",
+    "flag": "it",
+    "raceStart": "2024-09-01T13:00:00.000Z",
+    "compounds": {
+      "soft": null,
+      "medium": null,
+      "hard": null
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": null,
+      "pastYear": null,
+      "traction": null,
+      "tyreStress": null,
+      "asphaltGrip": null,
+      "braking": null,
+      "asphaltAbrasion": null,
+      "lateral": null,
+      "trackEvolution": null
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},

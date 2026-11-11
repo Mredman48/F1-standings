@@ -1,7 +1,7 @@
 {
   "header": "2024 Miami GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-11-11T06:03:04.425Z",
+  "generatedAtUtc": "2026-11-11T06:04:19.594Z",
   "season": 2024,
   "round": 6,
   "meetingKey": null,
@@ -130,7 +130,31 @@
     }
   },
   "previousWinner": null,
-  "tyreInfo": null,
+  "tyreInfo": {
+    "round": 6,
+    "raceSlug": "miami",
+    "title": "Miami GP",
+    "season": 2024,
+    "country": "United States",
+    "flag": "us",
+    "raceStart": "2024-05-05T20:00:00.000Z",
+    "compounds": {
+      "soft": null,
+      "medium": null,
+      "hard": null
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": null,
+      "pastYear": null,
+      "traction": null,
+      "tyreStress": null,
+      "asphaltGrip": null,
+      "braking": null,
+      "asphaltAbrasion": null,
+      "lateral": null,
+      "trackEvolution": null
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},

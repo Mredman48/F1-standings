@@ -1,7 +1,7 @@
 {
   "header": "2024 Azerbaijan GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-11-11T06:03:04.430Z",
+  "generatedAtUtc": "2026-11-11T06:04:19.597Z",
   "season": 2024,
   "round": 17,
   "meetingKey": null,
@@ -131,7 +131,31 @@
     }
   },
   "previousWinner": null,
-  "tyreInfo": null,
+  "tyreInfo": {
+    "round": 17,
+    "raceSlug": "azerbaijan",
+    "title": "Azerbaijan GP",
+    "season": 2024,
+    "country": "Azerbaijan",
+    "flag": "az",
+    "raceStart": "2024-09-15T11:00:00.000Z",
+    "compounds": {
+      "soft": null,
+      "medium": null,
+      "hard": null
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": null,
+      "pastYear": null,
+      "traction": null,
+      "tyreStress": null,
+      "asphaltGrip": null,
+      "braking": null,
+      "asphaltAbrasion": null,
+      "lateral": null,
+      "trackEvolution": null
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},

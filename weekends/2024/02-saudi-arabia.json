@@ -1,7 +1,7 @@
 {
   "header": "2024 Saudi Arabian GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-11-11T06:03:04.423Z",
+  "generatedAtUtc": "2026-11-11T06:04:19.592Z",
   "season": 2024,
   "round": 2,
   "meetingKey": null,
@@ -130,7 +130,31 @@
     }
   },
   "previousWinner": null,
-  "tyreInfo": null,
+  "tyreInfo": {
+    "round": 2,
+    "raceSlug": "saudi-arabia",
+    "title": "Saudi Arabian GP",
+    "season": 2024,
+    "country": "Saudi Arabia",
+    "flag": "sa",
+    "raceStart": "2024-03-09T17:00:00.000Z",
+    "compounds": {
+      "soft": null,
+      "medium": null,
+      "hard": null
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": null,
+      "pastYear": null,
+      "traction": null,
+      "tyreStress": null,
+      "asphaltGrip": null,
+      "braking": null,
+      "asphaltAbrasion": null,
+      "lateral": null,
+      "trackEvolution": null
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},

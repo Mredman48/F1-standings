@@ -1,7 +1,7 @@
 {
   "header": "2024 Australian GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-11-11T06:03:04.424Z",
+  "generatedAtUtc": "2026-11-11T06:04:19.593Z",
   "season": 2024,
   "round": 3,
   "meetingKey": null,
@@ -132,7 +132,31 @@
     }
   },
   "previousWinner": null,
-  "tyreInfo": null,
+  "tyreInfo": {
+    "round": 3,
+    "raceSlug": "australia",
+    "title": "Australian GP",
+    "season": 2024,
+    "country": "Australia",
+    "flag": "au",
+    "raceStart": "2024-03-24T04:00:00.000Z",
+    "compounds": {
+      "soft": null,
+      "medium": null,
+      "hard": null
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": null,
+      "pastYear": null,
+      "traction": null,
+      "tyreStress": null,
+      "asphaltGrip": null,
+      "braking": null,
+      "asphaltAbrasion": null,
+      "lateral": null,
+      "trackEvolution": null
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},

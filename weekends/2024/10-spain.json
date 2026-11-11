@@ -1,7 +1,7 @@
 {
   "header": "2024 Spanish GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-11-11T06:03:04.427Z",
+  "generatedAtUtc": "2026-11-11T06:04:19.595Z",
   "season": 2024,
   "round": 10,
   "meetingKey": null,
@@ -132,7 +132,31 @@
     }
   },
   "previousWinner": null,
-  "tyreInfo": null,
+  "tyreInfo": {
+    "round": 10,
+    "raceSlug": "spain",
+    "title": "Spanish GP",
+    "season": 2024,
+    "country": "Spain",
+    "flag": "es",
+    "raceStart": "2024-06-23T13:00:00.000Z",
+    "compounds": {
+      "soft": null,
+      "medium": null,
+      "hard": null
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": null,
+      "pastYear": null,
+      "traction": null,
+      "tyreStress": null,
+      "asphaltGrip": null,
+      "braking": null,
+      "asphaltAbrasion": null,
+      "lateral": null,
+      "trackEvolution": null
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},

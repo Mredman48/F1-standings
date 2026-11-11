@@ -1,7 +1,7 @@
 {
   "header": "2024 Hungarian GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-11-11T06:03:04.428Z",
+  "generatedAtUtc": "2026-11-11T06:04:19.596Z",
   "season": 2024,
   "round": 13,
   "meetingKey": null,
@@ -133,7 +133,31 @@
     }
   },
   "previousWinner": null,
-  "tyreInfo": null,
+  "tyreInfo": {
+    "round": 13,
+    "raceSlug": "hungary",
+    "title": "Hungarian GP",
+    "season": 2024,
+    "country": "Hungary",
+    "flag": "hu",
+    "raceStart": "2024-07-21T13:00:00.000Z",
+    "compounds": {
+      "soft": null,
+      "medium": null,
+      "hard": null
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": null,
+      "pastYear": null,
+      "traction": null,
+      "tyreStress": null,
+      "asphaltGrip": null,
+      "braking": null,
+      "asphaltAbrasion": null,
+      "lateral": null,
+      "trackEvolution": null
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},

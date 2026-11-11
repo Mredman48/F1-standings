@@ -1,7 +1,7 @@
 {
   "header": "2024 Mexico City GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-11-11T06:03:04.431Z",
+  "generatedAtUtc": "2026-11-11T06:04:19.598Z",
   "season": 2024,
   "round": 20,
   "meetingKey": null,
@@ -132,7 +132,31 @@
     }
   },
   "previousWinner": null,
-  "tyreInfo": null,
+  "tyreInfo": {
+    "round": 20,
+    "raceSlug": "mexico",
+    "title": "Mexico City GP",
+    "season": 2024,
+    "country": "Mexico",
+    "flag": "mx",
+    "raceStart": "2024-10-27T20:00:00.000Z",
+    "compounds": {
+      "soft": null,
+      "medium": null,
+      "hard": null
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": null,
+      "pastYear": null,
+      "traction": null,
+      "tyreStress": null,
+      "asphaltGrip": null,
+      "braking": null,
+      "asphaltAbrasion": null,
+      "lateral": null,
+      "trackEvolution": null
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},

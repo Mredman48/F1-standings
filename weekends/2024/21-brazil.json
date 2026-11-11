@@ -1,7 +1,7 @@
 {
   "header": "2024 Sao Paulo GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-11-11T06:03:04.431Z",
+  "generatedAtUtc": "2026-11-11T06:04:19.598Z",
   "season": 2024,
   "round": 21,
   "meetingKey": null,
@@ -133,7 +133,31 @@
     }
   },
   "previousWinner": null,
-  "tyreInfo": null,
+  "tyreInfo": {
+    "round": 21,
+    "raceSlug": "brazil",
+    "title": "Sao Paulo GP",
+    "season": 2024,
+    "country": "Brazil",
+    "flag": "br",
+    "raceStart": "2024-11-03T15:30:00.000Z",
+    "compounds": {
+      "soft": null,
+      "medium": null,
+      "hard": null
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": null,
+      "pastYear": null,
+      "traction": null,
+      "tyreStress": null,
+      "asphaltGrip": null,
+      "braking": null,
+      "asphaltAbrasion": null,
+      "lateral": null,
+      "trackEvolution": null
+    }
+  },
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},
