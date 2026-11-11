@@ -142,20 +142,20 @@
     "flag": "bh",
     "raceStart": "2023-03-05T15:00:00.000Z",
     "compounds": {
-      "soft": null,
-      "medium": null,
-      "hard": null
+      "soft": "C3",
+      "medium": "C2",
+      "hard": "C1"
     },
     "trackCharacteristics": {
-      "ratingsSeason": null,
+      "ratingsSeason": 2023,
       "pastYear": null,
-      "traction": null,
-      "tyreStress": null,
-      "asphaltGrip": null,
-      "braking": null,
-      "asphaltAbrasion": null,
-      "lateral": null,
-      "trackEvolution": null
+      "traction": 4,
+      "tyreStress": 3,
+      "asphaltGrip": 3,
+      "braking": 4,
+      "asphaltAbrasion": 5,
+      "lateral": 3,
+      "trackEvolution": 4
     }
   },
   "racePreview": null,
@@ -4881,7 +4881,11 @@
       ]
     }
   ],
-  "raceRecap": null,
+  "raceRecap": {
+    "result": {
+      "driverOfDay": "Alonso"
+    }
+  },
   "locked": true,
   "lockedSections": [],
   "meta": {
