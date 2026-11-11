@@ -11,7 +11,7 @@
     "round": 14,
     "id": "belgium",
     "type": "RACE_WEEKEND",
-    "title": "Belgian GP",
+    "title": "2024 Belgian Grand Prix",
     "shortTitle": "Belgian GP",
     "circuit": "Circuit de Spa-Francorchamps",
     "season": "2024",
@@ -143,20 +143,20 @@
     "flag": "be",
     "raceStart": "2024-07-28T13:00:00.000Z",
     "compounds": {
-      "soft": null,
-      "medium": null,
-      "hard": null
+      "soft": "C4",
+      "medium": "C3",
+      "hard": "C2"
     },
     "trackCharacteristics": {
-      "ratingsSeason": null,
-      "pastYear": null,
-      "traction": null,
-      "tyreStress": null,
-      "asphaltGrip": null,
-      "braking": null,
-      "asphaltAbrasion": null,
-      "lateral": null,
-      "trackEvolution": null
+      "ratingsSeason": 2024,
+      "pastYear": false,
+      "traction": 4,
+      "tyreStress": 5,
+      "asphaltGrip": 4,
+      "braking": 4,
+      "asphaltAbrasion": 4,
+      "lateral": 5,
+      "trackEvolution": 3
     }
   },
   "racePreview": null,
@@ -3910,7 +3910,11 @@
       ]
     }
   ],
-  "raceRecap": null,
+  "raceRecap": {
+    "result": {
+      "driverOfDay": "Hamilton"
+    }
+  },
   "locked": false,
   "lockedSections": [],
   "meta": {
