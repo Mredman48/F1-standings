@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-11T06:44:35.250Z",
-  "count": 70,
+  "updatedAt": "2026-11-11T06:47:35.882Z",
+  "count": 71,
   "entries": [
     {
       "round": 1,
@@ -325,6 +325,31 @@
         "lateral": 3,
         "trackEvolution": 4
       }
+    },
+    {
+      "round": 4,
+      "raceSlug": "japan",
+      "title": "Japanese GP",
+      "season": 2024,
+      "country": "Japan",
+      "flag": "jp",
+      "compounds": {
+        "soft": "C3",
+        "medium": "C2",
+        "hard": "C1"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2024,
+        "traction": 3,
+        "tyreStress": 5,
+        "asphaltGrip": 3,
+        "braking": 2,
+        "asphaltAbrasion": 4,
+        "lateral": 5,
+        "trackEvolution": 3,
+        "pastYear": false
+      },
+      "raceStart": "2024-04-07T05:00:00.000Z"
     },
     {
       "round": 5,
