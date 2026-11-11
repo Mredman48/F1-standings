@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-11T00:49:47.193Z",
-  "count": 54,
+  "updatedAt": "2026-11-11T00:58:40.669Z",
+  "count": 55,
   "entries": [
     {
       "round": 1,
@@ -867,6 +867,29 @@
         "asphaltAbrasion": 3,
         "lateral": 3,
         "trackEvolution": 4
+      }
+    },
+    {
+      "flag": "be",
+      "round": 13,
+      "raceSlug": "belgium",
+      "title": "Belgian GP",
+      "season": 2025,
+      "country": "Belgium",
+      "compounds": {
+        "hard": "C1",
+        "medium": "C3",
+        "soft": "C4"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2025,
+        "traction": 4,
+        "tyreStress": 5,
+        "asphaltGrip": 3,
+        "braking": 4,
+        "asphaltAbrasion": 3,
+        "lateral": 5,
+        "trackEvolution": 3
       }
     },
     {
