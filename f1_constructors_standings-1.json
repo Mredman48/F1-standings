@@ -1,21 +1,21 @@
 {
   "header": "Constructors standings",
-  "generatedAtUtc": "2026-11-11T06:53:39.541Z",
+  "generatedAtUtc": "2026-11-11T06:54:53.478Z",
   "meta": {
-    "seasonUsed": "2024",
-    "source": "weekends/2024 (sessionResults) + f1_driver_standings-1.json",
+    "seasonUsed": "2026",
+    "source": "weekends/2026 (sessionResults) + f1_driver_standings-1.json",
     "tiebreaker": "https://www.skysports.com/f1/standings",
     "skyRowsParsed": 11
   },
   "lastRace": {
-    "season": "2024",
-    "round": "24",
-    "raceName": "Abu Dhabi Grand Prix",
-    "date": "2024-12-08",
+    "season": "2026",
+    "round": "20",
+    "raceName": "São Paulo Grand Prix",
+    "date": "2026-11-08",
     "circuit": {
-      "name": "Yas Marina Circuit",
-      "locality": "Yas Island",
-      "country": "United Arab Emirates"
+      "name": "Interlagos",
+      "locality": "São Paulo",
+      "country": "Brazil"
     },
     "winner": {
       "firstName": "Lando",
@@ -27,100 +27,92 @@
   },
   "constructors": [
     {
-      "team": "McLaren",
+      "team": "Mercedes",
       "position": "P1",
-      "points": 666,
-      "wins": 6,
+      "points": 652,
+      "wins": 12,
       "driverCount": 2,
       "placeholder": false
     },
     {
       "team": "Ferrari",
       "position": "P2",
-      "points": 652,
-      "wins": 5,
-      "driverCount": 3,
+      "points": 510,
+      "wins": 2,
+      "driverCount": 2,
       "placeholder": false
     },
     {
       "team": "Red Bull",
       "position": "P3",
-      "points": 589,
-      "wins": 9,
+      "points": 415,
+      "wins": 3,
       "driverCount": 2,
       "placeholder": false
     },
     {
-      "team": "Mercedes",
+      "team": "McLaren",
       "position": "P4",
-      "points": 468,
-      "wins": 4,
-      "driverCount": 2,
-      "placeholder": false
-    },
-    {
-      "team": "Aston Martin",
-      "position": "P5",
-      "points": 94,
-      "wins": 0,
-      "driverCount": 2,
-      "placeholder": false
-    },
-    {
-      "team": "Alpine",
-      "position": "P6",
-      "points": 65,
-      "wins": 0,
-      "driverCount": 3,
-      "placeholder": false
-    },
-    {
-      "team": "Haas",
-      "position": "P7",
-      "points": 58,
-      "wins": 0,
-      "driverCount": 3,
-      "placeholder": false
-    },
-    {
-      "team": "RB",
-      "position": "P8",
-      "points": 46,
-      "wins": 0,
-      "driverCount": 3,
-      "placeholder": false
-    },
-    {
-      "team": "Williams",
-      "position": "P9",
-      "points": 17,
-      "wins": 0,
-      "driverCount": 3,
-      "placeholder": false
-    },
-    {
-      "team": "Audi",
-      "position": "P10",
-      "points": 4,
-      "wins": 0,
+      "points": 398,
+      "wins": 3,
       "driverCount": 2,
       "placeholder": false
     },
     {
       "team": "VCARB",
-      "position": "P11",
-      "points": 0,
+      "position": "P5",
+      "points": 114,
       "wins": 0,
-      "driverCount": 0,
-      "placeholder": true
+      "driverCount": 3,
+      "placeholder": false
+    },
+    {
+      "team": "Alpine",
+      "position": "P6",
+      "points": 69,
+      "wins": 0,
+      "driverCount": 2,
+      "placeholder": false
+    },
+    {
+      "team": "Haas",
+      "position": "P7",
+      "points": 31,
+      "wins": 0,
+      "driverCount": 4,
+      "placeholder": false
+    },
+    {
+      "team": "Audi",
+      "position": "P8",
+      "points": 28,
+      "wins": 0,
+      "driverCount": 2,
+      "placeholder": false
+    },
+    {
+      "team": "Williams",
+      "position": "P9",
+      "points": 12,
+      "wins": 0,
+      "driverCount": 2,
+      "placeholder": false
+    },
+    {
+      "team": "Aston Martin",
+      "position": "P10",
+      "points": 7,
+      "wins": 0,
+      "driverCount": 2,
+      "placeholder": false
     },
     {
       "team": "Cadillac",
-      "position": "P12",
+      "position": "P11",
       "points": 0,
       "wins": 0,
-      "driverCount": 0,
-      "placeholder": true
+      "driverCount": 2,
+      "placeholder": false
     }
   ]
 }
