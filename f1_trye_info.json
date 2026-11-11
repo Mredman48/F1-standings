@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-11T06:39:47.596Z",
-  "count": 67,
+  "updatedAt": "2026-11-11T06:41:15.550Z",
+  "count": 68,
   "entries": [
     {
       "round": 1,
@@ -53,6 +53,31 @@
       },
       "raceStart": "2025-03-16T04:00:00.000Z",
       "updatedAt": "2025-11-10T06:00:00.000Z"
+    },
+    {
+      "round": 1,
+      "raceSlug": "bahrain",
+      "title": "Bahrain GP",
+      "season": 2024,
+      "country": "Bahrain",
+      "flag": "bh",
+      "compounds": {
+        "soft": "C3",
+        "medium": "C2",
+        "hard": "C1"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2025,
+        "traction": 4,
+        "tyreStress": 3,
+        "asphaltGrip": 4,
+        "braking": 4,
+        "asphaltAbrasion": 5,
+        "lateral": 3,
+        "trackEvolution": 4,
+        "pastYear": true
+      },
+      "raceStart": "2024-03-02T15:00:00.000Z"
     },
     {
       "round": 2,
