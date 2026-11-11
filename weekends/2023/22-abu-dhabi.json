@@ -141,20 +141,20 @@
     "flag": "ae",
     "raceStart": "2023-11-26T13:00:00.000Z",
     "compounds": {
-      "soft": null,
-      "medium": null,
-      "hard": null
+      "soft": "C5",
+      "medium": "C4",
+      "hard": "C3"
     },
     "trackCharacteristics": {
-      "ratingsSeason": null,
+      "ratingsSeason": 2023,
       "pastYear": null,
-      "traction": null,
-      "tyreStress": null,
-      "asphaltGrip": null,
-      "braking": null,
-      "asphaltAbrasion": null,
-      "lateral": null,
-      "trackEvolution": null
+      "traction": 4,
+      "tyreStress": 3,
+      "asphaltGrip": 4,
+      "braking": 4,
+      "asphaltAbrasion": 3,
+      "lateral": 3,
+      "trackEvolution": 4
     }
   },
   "racePreview": null,
@@ -4523,7 +4523,11 @@
       ]
     }
   ],
-  "raceRecap": null,
+  "raceRecap": {
+    "result": {
+      "driverOfDay": "Tsunoda"
+    }
+  },
   "locked": true,
   "lockedSections": [],
   "meta": {
