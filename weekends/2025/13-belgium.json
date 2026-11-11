@@ -2691,7 +2691,7 @@
       "weekend": "2026-11-11T00:54:55.505Z"
     }
   },
-  "locked": false,
+  "locked": true,
   "lockedSections": [],
   "raceRecap": {
     "result": {
@@ -5379,9 +5379,9 @@
       "turns": 19,
       "longestStraightKm": 1.9,
       "averageSpeed": "High",
-      "raceLaps": null,
+      "raceLaps": 44,
       "trackLength": "7.004 km",
-      "raceDistance": null
+      "raceDistance": "308.052 km"
     },
     "raceLapRecord": {
       "time": "1:44.701",
@@ -5391,10 +5391,10 @@
       "raceName": "Belgian Grand Prix"
     },
     "previousWinner": {
-      "driver": "Oscar Piastri",
-      "constructor": "McLaren",
-      "season": 2025,
-      "date": "2025-07-27",
+      "driver": "Lewis Hamilton",
+      "constructor": "Mercedes",
+      "season": 2024,
+      "date": "2024-07-28",
       "raceName": "Belgian Grand Prix"
     }
   },
@@ -5406,5 +5406,28 @@
     "previousWinner": "Lewis Hamilton",
     "constructor": "Mercedes",
     "date": "2024-07-28"
+  },
+  "tyreInfo": {
+    "flag": "be",
+    "round": 13,
+    "raceSlug": "belgium",
+    "title": "Belgian GP",
+    "season": 2025,
+    "country": "Belgium",
+    "compounds": {
+      "hard": "C1",
+      "medium": "C3",
+      "soft": "C4"
+    },
+    "trackCharacteristics": {
+      "ratingsSeason": 2025,
+      "traction": 4,
+      "tyreStress": 5,
+      "asphaltGrip": 3,
+      "braking": 4,
+      "asphaltAbrasion": 3,
+      "lateral": 5,
+      "trackEvolution": 3
+    }
   }
 }
