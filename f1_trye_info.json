@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-11T07:25:22.203Z",
-  "count": 74,
+  "updatedAt": "2026-11-11T07:27:00.456Z",
+  "count": 75,
   "entries": [
     {
       "round": 1,
@@ -716,6 +716,31 @@
         "traction": 5,
         "tyreStress": 1,
         "asphaltGrip": 2,
+        "braking": 2,
+        "asphaltAbrasion": 1,
+        "lateral": 1,
+        "trackEvolution": 5
+      }
+    },
+    {
+      "round": 8,
+      "raceSlug": "monaco",
+      "title": "Monaco GP",
+      "season": 2024,
+      "country": "Monaco",
+      "flag": "mc",
+      "raceStart": "2024-05-26T13:00:00.000Z",
+      "compounds": {
+        "soft": "C5",
+        "medium": "C4",
+        "hard": "C3"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2024,
+        "pastYear": null,
+        "traction": 5,
+        "tyreStress": 1,
+        "asphaltGrip": 1,
         "braking": 2,
         "asphaltAbrasion": 1,
         "lateral": 1,
