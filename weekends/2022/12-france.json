@@ -11,7 +11,7 @@
     "round": 12,
     "id": "france",
     "type": "RACE_WEEKEND",
-    "title": "French Grand Prix 2022",
+    "title": "Grand Prix de France 2022",
     "shortTitle": "French GP",
     "circuit": "Circuit Paul Ricard",
     "season": "2022",
@@ -4107,8 +4107,12 @@
       ]
     }
   ],
-  "raceRecap": null,
-  "locked": false,
+  "raceRecap": {
+    "result": {
+      "driverOfDay": "Sainz"
+    }
+  },
+  "locked": true,
   "lockedSections": [],
   "meta": {
     "fia": {},
