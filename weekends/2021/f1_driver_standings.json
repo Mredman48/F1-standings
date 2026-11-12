@@ -1,6 +1,6 @@
 {
   "header": "2021 Driver Standings",
-  "generatedAtUtc": "2026-11-12T02:51:22.130Z",
+  "generatedAtUtc": "2026-11-12T03:08:23.000Z",
   "season": 2021,
   "source": {
     "primary": "weekends/2021 (sessionResults)",
@@ -50,7 +50,7 @@
     {
       "position": "P2",
       "positionNumber": 2,
-      "points": 395.5,
+      "points": 387.5,
       "wins": 8,
       "driver": {
         "code": "HAM",
@@ -92,7 +92,7 @@
     {
       "position": "P4",
       "positionNumber": 4,
-      "points": 195,
+      "points": 190,
       "wins": 1,
       "driver": {
         "code": "PER",
@@ -113,49 +113,7 @@
     {
       "position": "P5",
       "positionNumber": 5,
-      "points": 172,
-      "wins": 0,
-      "driver": {
-        "code": "NOR",
-        "firstName": "Lando",
-        "lastName": "Norris",
-        "fullName": "Lando Norris",
-        "nationality": "GBR",
-        "driverNumber": 4,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lando-norris.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "McLaren",
-        "fullName": "McLaren",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P6",
-      "positionNumber": 6,
-      "points": 169,
-      "wins": 0,
-      "driver": {
-        "code": "LEC",
-        "firstName": "Charles",
-        "lastName": "Leclerc",
-        "fullName": "Charles Leclerc",
-        "nationality": "MON",
-        "driverNumber": 16,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/charles-leclerc.png",
-        "openf1HeadshotUrl": null
-      },
-      "constructor": {
-        "name": "Ferrari",
-        "fullName": "Ferrari",
-        "nationality": null
-      }
-    },
-    {
-      "position": "P7",
-      "positionNumber": 7,
-      "points": 166.5,
+      "points": 164.5,
       "wins": 0,
       "driver": {
         "code": "SAI",
@@ -174,9 +132,51 @@
       }
     },
     {
+      "position": "P6",
+      "positionNumber": 6,
+      "points": 160,
+      "wins": 0,
+      "driver": {
+        "code": "NOR",
+        "firstName": "Lando",
+        "lastName": "Norris",
+        "fullName": "Lando Norris",
+        "nationality": "GBR",
+        "driverNumber": 4,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/lando-norris.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "McLaren",
+        "fullName": "McLaren",
+        "nationality": null
+      }
+    },
+    {
+      "position": "P7",
+      "positionNumber": 7,
+      "points": 159,
+      "wins": 0,
+      "driver": {
+        "code": "LEC",
+        "firstName": "Charles",
+        "lastName": "Leclerc",
+        "fullName": "Charles Leclerc",
+        "nationality": "MON",
+        "driverNumber": 16,
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/charles-leclerc.png",
+        "openf1HeadshotUrl": null
+      },
+      "constructor": {
+        "name": "Ferrari",
+        "fullName": "Ferrari",
+        "nationality": null
+      }
+    },
+    {
       "position": "P8",
       "positionNumber": 8,
-      "points": 118,
+      "points": 115,
       "wins": 1,
       "driver": {
         "code": "RIC",
@@ -197,7 +197,7 @@
     {
       "position": "P9",
       "positionNumber": 9,
-      "points": 111,
+      "points": 110,
       "wins": 0,
       "driver": {
         "code": "GAS",
@@ -218,7 +218,7 @@
     {
       "position": "P10",
       "positionNumber": 10,
-      "points": 83,
+      "points": 81,
       "wins": 0,
       "driver": {
         "code": "ALO",
@@ -260,7 +260,7 @@
     {
       "position": "P12",
       "positionNumber": 12,
-      "points": 44,
+      "points": 43,
       "wins": 0,
       "driver": {
         "code": "VET",
@@ -386,7 +386,7 @@
     {
       "position": "P18",
       "positionNumber": 18,
-      "points": 4,
+      "points": 3,
       "wins": 0,
       "driver": {
         "code": "GIO",
