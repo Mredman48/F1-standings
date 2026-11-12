@@ -2,7 +2,7 @@
   "header": "2026 race weekends",
   "schemaVersion": 1,
   "season": 2026,
-  "generatedAtUtc": "2026-11-10T04:02:35.000Z",
+  "generatedAtUtc": "2026-11-12T06:12:49.356Z",
   "count": 23,
   "nextRound": 21,
   "latestCompletedRound": 20,
@@ -11,9 +11,14 @@
       "round": 1,
       "raceSlug": "australia",
       "title": "Australian GP",
-      "shortTitle": "Australian GP",
       "meetingKey": 1279,
       "status": "completed",
+      "weekendStartUtc": "2026-03-06T01:30:00.000Z",
+      "weekendEndUtc": "2026-03-08T06:00:00.000Z",
+      "file": "01-australia.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2026/01-australia.json",
+      "updatedAtUtc": "2026-10-30T19:33:49.798Z",
+      "shortTitle": "Australian GP",
       "circuit": "Albert Park Circuit",
       "location": {
         "city": "Melbourne",
@@ -38,12 +43,6 @@
         "found": true,
         "filename": "melbourne.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/melbourne.png"
-      },
-      "weekendStartUtc": "2026-03-06T01:30:00.000Z",
-      "weekendEndUtc": "2026-03-08T06:00:00.000Z",
-      "weekend": {
-        "startUtc": "2026-03-06T01:30:00.000Z",
-        "endUtc": "2026-03-08T06:00:00.000Z"
       },
       "sessions": [
         {
@@ -86,18 +85,20 @@
           "startLocalTimeShort": "21:00",
           "startLocalDateTimeShort": "Sat, Mar 07 21:00"
         }
-      ],
-      "file": "01-australia.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2026/01-australia.json",
-      "updatedAtUtc": "2026-10-30T19:33:49.798Z"
+      ]
     },
     {
       "round": 2,
       "raceSlug": "china",
       "title": "Chinese GP",
-      "shortTitle": "Chinese GP",
       "meetingKey": 1280,
       "status": "completed",
+      "weekendStartUtc": "2026-03-13T03:30:00.000Z",
+      "weekendEndUtc": "2026-03-15T09:00:00.000Z",
+      "file": "02-china.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2026/02-china.json",
+      "updatedAtUtc": "2026-10-30T19:33:56.206Z",
+      "shortTitle": "Chinese GP",
       "circuit": "Shanghai International Circuit",
       "location": {
         "city": "Shanghai",
@@ -122,12 +123,6 @@
         "found": true,
         "filename": "shanghai.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/shanghai.png"
-      },
-      "weekendStartUtc": "2026-03-13T03:30:00.000Z",
-      "weekendEndUtc": "2026-03-15T09:00:00.000Z",
-      "weekend": {
-        "startUtc": "2026-03-13T03:30:00.000Z",
-        "endUtc": "2026-03-15T09:00:00.000Z"
       },
       "sessions": [
         {
@@ -170,18 +165,20 @@
           "startLocalTimeShort": "01:00",
           "startLocalDateTimeShort": "Sun, Mar 15 01:00"
         }
-      ],
-      "file": "02-china.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2026/02-china.json",
-      "updatedAtUtc": "2026-10-30T19:33:56.206Z"
+      ]
     },
     {
       "round": 3,
       "raceSlug": "japan",
       "title": "Japanese GP",
-      "shortTitle": "Japanese GP",
       "meetingKey": 1281,
       "status": "completed",
+      "weekendStartUtc": "2026-03-27T02:30:00.000Z",
+      "weekendEndUtc": "2026-03-29T07:00:00.000Z",
+      "file": "03-japan.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2026/03-japan.json",
+      "updatedAtUtc": "2026-10-30T19:34:01.214Z",
+      "shortTitle": "Japanese GP",
       "circuit": "Suzuka International Racing Course",
       "location": {
         "city": "Suzuka",
@@ -206,12 +203,6 @@
         "found": true,
         "filename": "suzuka.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/suzuka.png"
-      },
-      "weekendStartUtc": "2026-03-27T02:30:00.000Z",
-      "weekendEndUtc": "2026-03-29T07:00:00.000Z",
-      "weekend": {
-        "startUtc": "2026-03-27T02:30:00.000Z",
-        "endUtc": "2026-03-29T07:00:00.000Z"
       },
       "sessions": [
         {
@@ -254,18 +245,20 @@
           "startLocalTimeShort": "23:00",
           "startLocalDateTimeShort": "Sat, Mar 28 23:00"
         }
-      ],
-      "file": "03-japan.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2026/03-japan.json",
-      "updatedAtUtc": "2026-10-30T19:34:01.214Z"
+      ]
     },
     {
       "round": 4,
       "raceSlug": "miami",
       "title": "Miami GP",
-      "shortTitle": "Miami GP",
       "meetingKey": 1284,
       "status": "completed",
+      "weekendStartUtc": "2026-05-01T16:30:00.000Z",
+      "weekendEndUtc": "2026-05-03T22:00:00.000Z",
+      "file": "04-miami.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2026/04-miami.json",
+      "updatedAtUtc": "2026-10-30T19:34:07.633Z",
+      "shortTitle": "Miami GP",
       "circuit": "Miami International Autodrome",
       "location": {
         "city": "Miami",
@@ -290,12 +283,6 @@
         "found": true,
         "filename": "miami.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/miami.png"
-      },
-      "weekendStartUtc": "2026-05-01T16:30:00.000Z",
-      "weekendEndUtc": "2026-05-03T22:00:00.000Z",
-      "weekend": {
-        "startUtc": "2026-05-01T16:30:00.000Z",
-        "endUtc": "2026-05-03T22:00:00.000Z"
       },
       "sessions": [
         {
@@ -338,18 +325,20 @@
           "startLocalTimeShort": "11:00",
           "startLocalDateTimeShort": "Sun, May 03 14:00"
         }
-      ],
-      "file": "04-miami.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2026/04-miami.json",
-      "updatedAtUtc": "2026-10-30T19:34:07.633Z"
+      ]
     },
     {
       "round": 5,
       "raceSlug": "canada",
       "title": "Canadian GP",
-      "shortTitle": "Canadian GP",
       "meetingKey": 1285,
       "status": "completed",
+      "weekendStartUtc": "2026-05-22T16:30:00.000Z",
+      "weekendEndUtc": "2026-05-24T22:00:00.000Z",
+      "file": "05-canada.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2026/05-canada.json",
+      "updatedAtUtc": "2026-10-30T19:34:14.550Z",
+      "shortTitle": "Canadian GP",
       "circuit": "Circuit Gilles Villeneuve",
       "location": {
         "city": "Montreal",
@@ -374,12 +363,6 @@
         "found": true,
         "filename": "montreal.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/montreal.png"
-      },
-      "weekendStartUtc": "2026-05-22T16:30:00.000Z",
-      "weekendEndUtc": "2026-05-24T22:00:00.000Z",
-      "weekend": {
-        "startUtc": "2026-05-22T16:30:00.000Z",
-        "endUtc": "2026-05-24T22:00:00.000Z"
       },
       "sessions": [
         {
@@ -422,18 +405,20 @@
           "startLocalTimeShort": "14:00",
           "startLocalDateTimeShort": "Sun, May 24 14:00"
         }
-      ],
-      "file": "05-canada.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2026/05-canada.json",
-      "updatedAtUtc": "2026-10-30T19:34:14.550Z"
+      ]
     },
     {
       "round": 6,
       "raceSlug": "monaco",
       "title": "Monaco GP",
-      "shortTitle": "Monaco GP",
       "meetingKey": 1286,
       "status": "completed",
+      "weekendStartUtc": "2026-06-05T11:30:00.000Z",
+      "weekendEndUtc": "2026-06-07T15:00:00.000Z",
+      "file": "06-monaco.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2026/06-monaco.json",
+      "updatedAtUtc": "2026-10-30T19:34:19.581Z",
+      "shortTitle": "Monaco GP",
       "circuit": "Circuit de Monaco",
       "location": {
         "city": "Monte Carlo",
@@ -458,12 +443,6 @@
         "found": true,
         "filename": "monaco.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/monaco.png"
-      },
-      "weekendStartUtc": "2026-06-05T11:30:00.000Z",
-      "weekendEndUtc": "2026-06-07T15:00:00.000Z",
-      "weekend": {
-        "startUtc": "2026-06-05T11:30:00.000Z",
-        "endUtc": "2026-06-07T15:00:00.000Z"
       },
       "sessions": [
         {
@@ -506,18 +485,20 @@
           "startLocalTimeShort": "07:00",
           "startLocalDateTimeShort": "Sun, Jun 07 07:00"
         }
-      ],
-      "file": "06-monaco.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2026/06-monaco.json",
-      "updatedAtUtc": "2026-10-30T19:34:19.581Z"
+      ]
     },
     {
       "round": 7,
       "raceSlug": "barcelona",
       "title": "Barcelona-Cataluyna GP",
-      "shortTitle": "Barcelona-Cataluyna GP",
       "meetingKey": 1287,
       "status": "completed",
+      "weekendStartUtc": "2026-06-12T11:30:00.000Z",
+      "weekendEndUtc": "2026-06-14T15:00:00.000Z",
+      "file": "07-barcelona.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2026/07-barcelona.json",
+      "updatedAtUtc": "2026-10-30T19:34:24.688Z",
+      "shortTitle": "Barcelona-Cataluyna GP",
       "circuit": "Circuit de Barcelona-Catalunya",
       "location": {
         "city": "Barcelona",
@@ -542,12 +523,6 @@
         "found": true,
         "filename": "barcelona.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/barcelona.png"
-      },
-      "weekendStartUtc": "2026-06-12T11:30:00.000Z",
-      "weekendEndUtc": "2026-06-14T15:00:00.000Z",
-      "weekend": {
-        "startUtc": "2026-06-12T11:30:00.000Z",
-        "endUtc": "2026-06-14T15:00:00.000Z"
       },
       "sessions": [
         {
@@ -590,18 +565,20 @@
           "startLocalTimeShort": "07:00",
           "startLocalDateTimeShort": "Sun, Jun 14 07:00"
         }
-      ],
-      "file": "07-barcelona.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2026/07-barcelona.json",
-      "updatedAtUtc": "2026-10-30T19:34:24.688Z"
+      ]
     },
     {
       "round": 8,
       "raceSlug": "austria",
       "title": "Austrian GP",
-      "shortTitle": "Austrian GP",
       "meetingKey": 1288,
       "status": "completed",
+      "weekendStartUtc": "2026-06-26T11:30:00.000Z",
+      "weekendEndUtc": "2026-06-28T15:00:00.000Z",
+      "file": "08-austria.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2026/08-austria.json",
+      "updatedAtUtc": "2026-10-30T19:34:29.858Z",
+      "shortTitle": "Austrian GP",
       "circuit": "Red Bull Ring",
       "location": {
         "city": "Spielberg",
@@ -626,12 +603,6 @@
         "found": true,
         "filename": "spielberg.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/spielberg.png"
-      },
-      "weekendStartUtc": "2026-06-26T11:30:00.000Z",
-      "weekendEndUtc": "2026-06-28T15:00:00.000Z",
-      "weekend": {
-        "startUtc": "2026-06-26T11:30:00.000Z",
-        "endUtc": "2026-06-28T15:00:00.000Z"
       },
       "sessions": [
         {
@@ -674,18 +645,20 @@
           "startLocalTimeShort": "07:00",
           "startLocalDateTimeShort": "Sun, Jun 28 07:00"
         }
-      ],
-      "file": "08-austria.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2026/08-austria.json",
-      "updatedAtUtc": "2026-10-30T19:34:29.858Z"
+      ]
     },
     {
       "round": 9,
       "raceSlug": "great-britain",
       "title": "British GP",
-      "shortTitle": "British GP",
       "meetingKey": 1289,
       "status": "completed",
+      "weekendStartUtc": "2026-07-03T11:30:00.000Z",
+      "weekendEndUtc": "2026-07-05T16:00:00.000Z",
+      "file": "09-great-britain.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2026/09-great-britain.json",
+      "updatedAtUtc": "2026-10-30T19:35:37.191Z",
+      "shortTitle": "British GP",
       "circuit": "Silverstone Circuit",
       "location": {
         "city": "Silverstone",
@@ -710,12 +683,6 @@
         "found": true,
         "filename": "silverstone.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/silverstone.png"
-      },
-      "weekendStartUtc": "2026-07-03T11:30:00.000Z",
-      "weekendEndUtc": "2026-07-05T16:00:00.000Z",
-      "weekend": {
-        "startUtc": "2026-07-03T11:30:00.000Z",
-        "endUtc": "2026-07-05T16:00:00.000Z"
       },
       "sessions": [
         {
@@ -758,18 +725,20 @@
           "startLocalTimeShort": "08:00",
           "startLocalDateTimeShort": "Sun, Jul 05 08:00"
         }
-      ],
-      "file": "09-great-britain.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2026/09-great-britain.json",
-      "updatedAtUtc": "2026-10-30T19:35:37.191Z"
+      ]
     },
     {
       "round": 10,
       "raceSlug": "belgium",
       "title": "Belgian GP",
-      "shortTitle": "Belgian GP",
       "meetingKey": 1290,
       "status": "completed",
+      "weekendStartUtc": "2026-07-17T11:30:00.000Z",
+      "weekendEndUtc": "2026-07-19T15:00:00.000Z",
+      "file": "10-belgium.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2026/10-belgium.json",
+      "updatedAtUtc": "2026-10-30T19:35:41.999Z",
+      "shortTitle": "Belgian GP",
       "circuit": "Circuit de Spa-Francorchamps",
       "location": {
         "city": "Spa-Francorchamps",
@@ -794,12 +763,6 @@
         "found": true,
         "filename": "spa.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/spa.png"
-      },
-      "weekendStartUtc": "2026-07-17T11:30:00.000Z",
-      "weekendEndUtc": "2026-07-19T15:00:00.000Z",
-      "weekend": {
-        "startUtc": "2026-07-17T11:30:00.000Z",
-        "endUtc": "2026-07-19T15:00:00.000Z"
       },
       "sessions": [
         {
@@ -842,18 +805,20 @@
           "startLocalTimeShort": "07:00",
           "startLocalDateTimeShort": "Sun, Jul 19 07:00"
         }
-      ],
-      "file": "10-belgium.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2026/10-belgium.json",
-      "updatedAtUtc": "2026-10-30T19:35:41.999Z"
+      ]
     },
     {
       "round": 11,
       "raceSlug": "hungary",
       "title": "Hungarian GP",
-      "shortTitle": "Hungarian GP",
       "meetingKey": 1291,
       "status": "completed",
+      "weekendStartUtc": "2026-07-24T11:30:00.000Z",
+      "weekendEndUtc": "2026-07-26T15:00:00.000Z",
+      "file": "11-hungary.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2026/11-hungary.json",
+      "updatedAtUtc": "2026-10-30T19:35:46.950Z",
+      "shortTitle": "Hungarian GP",
       "circuit": "Hungaroring",
       "location": {
         "city": "Budapest",
@@ -878,12 +843,6 @@
         "found": true,
         "filename": "hungaroring.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/hungaroring.png"
-      },
-      "weekendStartUtc": "2026-07-24T11:30:00.000Z",
-      "weekendEndUtc": "2026-07-26T15:00:00.000Z",
-      "weekend": {
-        "startUtc": "2026-07-24T11:30:00.000Z",
-        "endUtc": "2026-07-26T15:00:00.000Z"
       },
       "sessions": [
         {
@@ -926,18 +885,20 @@
           "startLocalTimeShort": "07:00",
           "startLocalDateTimeShort": "Sun, Jul 26 07:00"
         }
-      ],
-      "file": "11-hungary.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2026/11-hungary.json",
-      "updatedAtUtc": "2026-10-30T19:35:46.950Z"
+      ]
     },
     {
       "round": 12,
       "raceSlug": "netherlands",
       "title": "Dutch GP",
-      "shortTitle": "Dutch GP",
       "meetingKey": 1292,
       "status": "completed",
+      "weekendStartUtc": "2026-08-21T10:30:00.000Z",
+      "weekendEndUtc": "2026-08-23T15:00:00.000Z",
+      "file": "12-netherlands.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2026/12-netherlands.json",
+      "updatedAtUtc": "2026-10-30T19:35:53.407Z",
+      "shortTitle": "Dutch GP",
       "circuit": "Circuit Zandvoort",
       "location": {
         "city": "Zandvoort",
@@ -962,12 +923,6 @@
         "found": true,
         "filename": "zandvoort.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/zandvoort.png"
-      },
-      "weekendStartUtc": "2026-08-21T10:30:00.000Z",
-      "weekendEndUtc": "2026-08-23T15:00:00.000Z",
-      "weekend": {
-        "startUtc": "2026-08-21T10:30:00.000Z",
-        "endUtc": "2026-08-23T15:00:00.000Z"
       },
       "sessions": [
         {
@@ -1010,18 +965,20 @@
           "startLocalTimeShort": "07:00",
           "startLocalDateTimeShort": "Sun, Aug 23 07:00"
         }
-      ],
-      "file": "12-netherlands.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2026/12-netherlands.json",
-      "updatedAtUtc": "2026-10-30T19:35:53.407Z"
+      ]
     },
     {
       "round": 13,
       "raceSlug": "italy",
       "title": "Italian GP",
-      "shortTitle": "Italian GP",
       "meetingKey": 1293,
       "status": "completed",
+      "weekendStartUtc": "2026-09-04T10:30:00.000Z",
+      "weekendEndUtc": "2026-09-06T15:00:00.000Z",
+      "file": "13-italy.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2026/13-italy.json",
+      "updatedAtUtc": "2026-10-30T19:35:58.220Z",
+      "shortTitle": "Italian GP",
       "circuit": "Autodromo Nazionale Monza",
       "location": {
         "city": "Monza",
@@ -1046,12 +1003,6 @@
         "found": true,
         "filename": "monza.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/monza.png"
-      },
-      "weekendStartUtc": "2026-09-04T10:30:00.000Z",
-      "weekendEndUtc": "2026-09-06T15:00:00.000Z",
-      "weekend": {
-        "startUtc": "2026-09-04T10:30:00.000Z",
-        "endUtc": "2026-09-06T15:00:00.000Z"
       },
       "sessions": [
         {
@@ -1094,18 +1045,20 @@
           "startLocalTimeShort": "07:00",
           "startLocalDateTimeShort": "Sun, Sep 06 07:00"
         }
-      ],
-      "file": "13-italy.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2026/13-italy.json",
-      "updatedAtUtc": "2026-10-30T19:35:58.220Z"
+      ]
     },
     {
       "round": 14,
       "raceSlug": "madrid",
       "title": "Spanish GP",
-      "shortTitle": "Spanish GP",
       "meetingKey": 1294,
       "status": "completed",
+      "weekendStartUtc": "2026-09-11T11:30:00.000Z",
+      "weekendEndUtc": "2026-09-13T15:00:00.000Z",
+      "file": "14-madrid.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2026/14-madrid.json",
+      "updatedAtUtc": "2026-10-30T19:37:03.426Z",
+      "shortTitle": "Spanish GP",
       "circuit": "Circuito de Madring",
       "location": {
         "city": "Madrid",
@@ -1130,12 +1083,6 @@
         "found": true,
         "filename": "madrid.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/madrid.png"
-      },
-      "weekendStartUtc": "2026-09-11T11:30:00.000Z",
-      "weekendEndUtc": "2026-09-13T15:00:00.000Z",
-      "weekend": {
-        "startUtc": "2026-09-11T11:30:00.000Z",
-        "endUtc": "2026-09-13T15:00:00.000Z"
       },
       "sessions": [
         {
@@ -1178,18 +1125,20 @@
           "startLocalTimeShort": "07:00",
           "startLocalDateTimeShort": "Sun, Sep 13 07:00"
         }
-      ],
-      "file": "14-madrid.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2026/14-madrid.json",
-      "updatedAtUtc": "2026-10-30T19:37:03.426Z"
+      ]
     },
     {
       "round": 15,
       "raceSlug": "azerbaijan",
       "title": "Azerbaijan GP",
-      "shortTitle": "Azerbaijan GP",
       "meetingKey": 1295,
       "status": "completed",
+      "weekendStartUtc": "2026-09-24T08:30:00.000Z",
+      "weekendEndUtc": "2026-09-26T13:00:00.000Z",
+      "file": "15-azerbaijan.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2026/15-azerbaijan.json",
+      "updatedAtUtc": "2026-10-30T19:37:08.211Z",
+      "shortTitle": "Azerbaijan GP",
       "circuit": "Baku City Circuit",
       "location": {
         "city": "Baku",
@@ -1214,12 +1163,6 @@
         "found": true,
         "filename": "baku.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/baku.png"
-      },
-      "weekendStartUtc": "2026-09-24T08:30:00.000Z",
-      "weekendEndUtc": "2026-09-26T13:00:00.000Z",
-      "weekend": {
-        "startUtc": "2026-09-24T08:30:00.000Z",
-        "endUtc": "2026-09-26T13:00:00.000Z"
       },
       "sessions": [
         {
@@ -1262,18 +1205,20 @@
           "startLocalTimeShort": "05:00",
           "startLocalDateTimeShort": "Sat, Sep 26 05:00"
         }
-      ],
-      "file": "15-azerbaijan.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2026/15-azerbaijan.json",
-      "updatedAtUtc": "2026-10-30T19:37:08.211Z"
+      ]
     },
     {
       "round": 16,
       "raceSlug": "bahrain-in-malaysia",
       "title": "Bahrain GP in Malaysia",
-      "shortTitle": "Bahrain GP in Malaysia",
       "meetingKey": 1308,
       "status": "completed",
+      "weekendStartUtc": "2026-10-02T04:30:00.000Z",
+      "weekendEndUtc": "2026-10-04T09:00:00.000Z",
+      "file": "16-bahrain-in-malaysia.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2026/16-bahrain-in-malaysia.json",
+      "updatedAtUtc": "2026-10-30T19:37:12.451Z",
+      "shortTitle": "Bahrain GP in Malaysia",
       "circuit": "Sepang International Circuit",
       "location": {
         "city": "Sepang",
@@ -1292,18 +1237,12 @@
         "found": true,
         "pageUrl": "https://www.formula1.com/en/racing/2026/bahrain",
         "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackkualalumpurdetailed.webp",
-        "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_bahrainmalaysia_detailed.png"
+        "pngUrl": "https://github.com/Mredman48/F1-standings/blob/main/trackmaps/f1_2026_bahrainmalaysia_detailed.png?raw=true"
       },
       "map": {
-        "found": false,
+        "found": true,
         "filename": "malaysia.png",
-        "pngUrl": null
-      },
-      "weekendStartUtc": "2026-10-02T04:30:00.000Z",
-      "weekendEndUtc": "2026-10-04T09:00:00.000Z",
-      "weekend": {
-        "startUtc": "2026-10-02T04:30:00.000Z",
-        "endUtc": "2026-10-04T09:00:00.000Z"
+        "pngUrl": "https://mredman48.github.io/F1-standings/maps/malaysia.png"
       },
       "sessions": [
         {
@@ -1346,18 +1285,20 @@
           "startLocalTimeShort": "01:00",
           "startLocalDateTimeShort": "Sun, Oct 4 01:00"
         }
-      ],
-      "file": "16-bahrain-in-malaysia.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2026/16-bahrain-in-malaysia.json",
-      "updatedAtUtc": "2026-10-30T19:37:12.451Z"
+      ]
     },
     {
       "round": 17,
       "raceSlug": "singapore",
       "title": "Singapore GP",
-      "shortTitle": "Singapore GP",
       "meetingKey": 1296,
       "status": "completed",
+      "weekendStartUtc": "2026-10-09T08:30:00.000Z",
+      "weekendEndUtc": "2026-10-11T14:00:00.000Z",
+      "file": "17-singapore.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2026/17-singapore.json",
+      "updatedAtUtc": "2026-10-30T19:37:19.192Z",
+      "shortTitle": "Singapore GP",
       "circuit": "Marina Bay Street Circuit",
       "location": {
         "city": "Singapore",
@@ -1382,12 +1323,6 @@
         "found": true,
         "filename": "singapore.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/singapore.png"
-      },
-      "weekendStartUtc": "2026-10-09T08:30:00.000Z",
-      "weekendEndUtc": "2026-10-11T14:00:00.000Z",
-      "weekend": {
-        "startUtc": "2026-10-09T08:30:00.000Z",
-        "endUtc": "2026-10-11T14:00:00.000Z"
       },
       "sessions": [
         {
@@ -1430,18 +1365,20 @@
           "startLocalTimeShort": "06:00",
           "startLocalDateTimeShort": "Sun, Oct 11 06:00"
         }
-      ],
-      "file": "17-singapore.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2026/17-singapore.json",
-      "updatedAtUtc": "2026-10-30T19:37:19.192Z"
+      ]
     },
     {
       "round": 18,
       "raceSlug": "united-states",
       "title": "United States GP",
-      "shortTitle": "United States GP",
       "meetingKey": 1297,
       "status": "completed",
+      "weekendStartUtc": "2026-10-23T17:30:00.000Z",
+      "weekendEndUtc": "2026-10-25T22:00:00.000Z",
+      "file": "18-united-states.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2026/18-united-states.json",
+      "updatedAtUtc": "2026-10-30T19:37:24.461Z",
+      "shortTitle": "United States GP",
       "circuit": "Circuit of the Americas",
       "location": {
         "city": "Austin",
@@ -1466,12 +1403,6 @@
         "found": true,
         "filename": "austin.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/austin.png"
-      },
-      "weekendStartUtc": "2026-10-23T17:30:00.000Z",
-      "weekendEndUtc": "2026-10-25T22:00:00.000Z",
-      "weekend": {
-        "startUtc": "2026-10-23T17:30:00.000Z",
-        "endUtc": "2026-10-25T22:00:00.000Z"
       },
       "sessions": [
         {
@@ -1514,18 +1445,20 @@
           "startLocalTimeShort": "14:00",
           "startLocalDateTimeShort": "Sun, Oct 25 14:00"
         }
-      ],
-      "file": "18-united-states.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2026/18-united-states.json",
-      "updatedAtUtc": "2026-10-30T19:37:24.461Z"
+      ]
     },
     {
       "round": 19,
       "raceSlug": "mexico",
       "title": "Mexico City GP",
-      "shortTitle": "Mexico City GP",
       "meetingKey": 1298,
       "status": "completed",
+      "weekendStartUtc": "2026-10-30T18:30:00.000Z",
+      "weekendEndUtc": "2026-11-01T22:00:00.000Z",
+      "file": "19-mexico.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2026/19-mexico.json",
+      "updatedAtUtc": "2026-11-02T09:49:35.393Z",
+      "shortTitle": "Mexico City GP",
       "circuit": "Autódromo Hermanos Rodríguez",
       "location": {
         "city": "Mexico City",
@@ -1550,12 +1483,6 @@
         "found": true,
         "filename": "mexico-city.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/mexico-city.png"
-      },
-      "weekendStartUtc": "2026-10-30T18:30:00.000Z",
-      "weekendEndUtc": "2026-11-01T22:00:00.000Z",
-      "weekend": {
-        "startUtc": "2026-10-30T18:30:00.000Z",
-        "endUtc": "2026-11-01T22:00:00.000Z"
       },
       "sessions": [
         {
@@ -1598,18 +1525,20 @@
           "startLocalTimeShort": "13:00",
           "startLocalDateTimeShort": "Sun, Nov 01 13:00"
         }
-      ],
-      "file": "19-mexico.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2026/19-mexico.json",
-      "updatedAtUtc": "2026-11-02T09:49:35.393Z"
+      ]
     },
     {
       "round": 20,
       "raceSlug": "brazil",
       "title": "Sao Paulo GP",
-      "shortTitle": "Sao Paulo GP",
       "meetingKey": 1299,
       "status": "completed",
+      "weekendStartUtc": "2026-11-06T15:30:00.000Z",
+      "weekendEndUtc": "2026-11-08T19:00:00.000Z",
+      "file": "20-brazil.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2026/20-brazil.json",
+      "updatedAtUtc": "2026-11-09T07:42:50.457Z",
+      "shortTitle": "Sao Paulo GP",
       "circuit": "Autódromo José Carlos Pace",
       "location": {
         "city": "Sao Paulo",
@@ -1634,12 +1563,6 @@
         "found": true,
         "filename": "interlagos.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/interlagos.png"
-      },
-      "weekendStartUtc": "2026-11-06T15:30:00.000Z",
-      "weekendEndUtc": "2026-11-08T19:00:00.000Z",
-      "weekend": {
-        "startUtc": "2026-11-06T15:30:00.000Z",
-        "endUtc": "2026-11-08T19:00:00.000Z"
       },
       "sessions": [
         {
@@ -1682,18 +1605,20 @@
           "startLocalTimeShort": "11:00",
           "startLocalDateTimeShort": "Sun, Nov 08 11:00"
         }
-      ],
-      "file": "20-brazil.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2026/20-brazil.json",
-      "updatedAtUtc": "2026-11-09T07:42:50.457Z"
+      ]
     },
     {
       "round": 21,
       "raceSlug": "las-vegas",
       "title": "Las Vegas GP",
-      "shortTitle": "Las Vegas GP",
       "meetingKey": 1300,
       "status": "upcoming",
+      "weekendStartUtc": "2026-11-20T00:30:00.000Z",
+      "weekendEndUtc": "2026-11-22T06:00:00.000Z",
+      "file": "21-las-vegas.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2026/21-las-vegas.json",
+      "updatedAtUtc": "2026-11-12T06:12:48.069Z",
+      "shortTitle": "Las Vegas GP",
       "circuit": "Las Vegas Strip Circuit",
       "location": {
         "city": "Las Vegas",
@@ -1718,12 +1643,6 @@
         "found": true,
         "filename": "las-vegas.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/las-vegas.png"
-      },
-      "weekendStartUtc": "2026-11-20T00:30:00.000Z",
-      "weekendEndUtc": "2026-11-22T06:00:00.000Z",
-      "weekend": {
-        "startUtc": "2026-11-20T00:30:00.000Z",
-        "endUtc": "2026-11-22T06:00:00.000Z"
       },
       "sessions": [
         {
@@ -1766,18 +1685,20 @@
           "startLocalTimeShort": "22:00",
           "startLocalDateTimeShort": "Sat, Nov 21 22:00"
         }
-      ],
-      "file": "21-las-vegas.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2026/21-las-vegas.json",
-      "updatedAtUtc": "2026-10-30T21:11:36.007Z"
+      ]
     },
     {
       "round": 22,
       "raceSlug": "qatar",
       "title": "Qatar GP",
-      "shortTitle": "Qatar GP",
       "meetingKey": 1301,
       "status": "upcoming",
+      "weekendStartUtc": "2026-11-27T13:30:00.000Z",
+      "weekendEndUtc": "2026-11-29T18:00:00.000Z",
+      "file": "22-qatar.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2026/22-qatar.json",
+      "updatedAtUtc": "2026-11-12T06:12:48.070Z",
+      "shortTitle": "Qatar GP",
       "circuit": "Lusail International Circuit",
       "location": {
         "city": "Lusail",
@@ -1802,12 +1723,6 @@
         "found": true,
         "filename": "lusail.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/lusail.png"
-      },
-      "weekendStartUtc": "2026-11-27T13:30:00.000Z",
-      "weekendEndUtc": "2026-11-29T18:00:00.000Z",
-      "weekend": {
-        "startUtc": "2026-11-27T13:30:00.000Z",
-        "endUtc": "2026-11-29T18:00:00.000Z"
       },
       "sessions": [
         {
@@ -1850,18 +1765,20 @@
           "startLocalTimeShort": "10:00",
           "startLocalDateTimeShort": "Sun, Nov 29 10:00"
         }
-      ],
-      "file": "22-qatar.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2026/22-qatar.json",
-      "updatedAtUtc": "2026-10-30T21:11:36.009Z"
+      ]
     },
     {
       "round": 23,
       "raceSlug": "abu-dhabi",
       "title": "Abu Dhabi GP",
-      "shortTitle": "Abu Dhabi GP",
       "meetingKey": 1302,
       "status": "upcoming",
+      "weekendStartUtc": "2026-12-04T09:30:00.000Z",
+      "weekendEndUtc": "2026-12-06T15:00:00.000Z",
+      "file": "23-abu-dhabi.json",
+      "url": "https://mredman48.github.io/F1-standings/weekends/2026/23-abu-dhabi.json",
+      "updatedAtUtc": "2026-11-12T06:12:48.070Z",
+      "shortTitle": "Abu Dhabi GP",
       "circuit": "Yas Marina Circuit",
       "location": {
         "city": "Abu Dhabi",
@@ -1886,12 +1803,6 @@
         "found": true,
         "filename": "yas-marina.png",
         "pngUrl": "https://mredman48.github.io/F1-standings/maps/yas-marina.png"
-      },
-      "weekendStartUtc": "2026-12-04T09:30:00.000Z",
-      "weekendEndUtc": "2026-12-06T15:00:00.000Z",
-      "weekend": {
-        "startUtc": "2026-12-04T09:30:00.000Z",
-        "endUtc": "2026-12-06T15:00:00.000Z"
       },
       "sessions": [
         {
@@ -1934,10 +1845,7 @@
           "startLocalTimeShort": "07:00",
           "startLocalDateTimeShort": "Sun, Dec 06 07:00"
         }
-      ],
-      "file": "23-abu-dhabi.json",
-      "url": "https://mredman48.github.io/F1-standings/weekends/2026/23-abu-dhabi.json",
-      "updatedAtUtc": "2026-10-30T21:11:36.010Z"
+      ]
     }
   ],
   "bestByDriverNumber": {
