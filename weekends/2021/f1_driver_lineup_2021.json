@@ -1,26 +1,194 @@
 {
   "season": 2021,
   "drivers": [
-    { "name": "Lewis Hamilton", "shortName": "HAM", "team": "Mercedes", "seat": 1, "number": 44, "starts": 266, "seasons": 14 },
-    { "name": "Valtteri Bottas", "shortName": "BOT", "team": "Mercedes", "seat": 2, "number": 77, "starts": 156, "seasons": 8 },
-    { "name": "Max Verstappen", "shortName": "VER", "team": "Red Bull Racing", "seat": 1, "number": 33, "starts": 119, "seasons": 6 },
-    { "name": "Sergio Perez", "shortName": "PER", "team": "Red Bull Racing", "seat": 2, "number": 11, "starts": 191, "seasons": 10 },
-    { "name": "Lando Norris", "shortName": "NOR", "team": "McLaren", "seat": 1, "number": 4, "starts": 38, "seasons": 2 },
-    { "name": "Daniel Ricciardo", "shortName": "RIC", "team": "McLaren", "seat": 2, "number": 3, "starts": 188, "seasons": 10 },
-    { "name": "Sebastian Vettel", "shortName": "VET", "team": "Aston Martin", "seat": 1, "number": 5, "starts": 257, "seasons": 14 },
-    { "name": "Lance Stroll", "shortName": "STR", "team": "Aston Martin", "seat": 2, "number": 18, "starts": 78, "seasons": 4 },
-    { "name": "Fernando Alonso", "shortName": "ALO", "team": "Alpine", "seat": 1, "number": 14, "starts": 311, "seasons": 17 },
-    { "name": "Esteban Ocon", "shortName": "OCO", "team": "Alpine", "seat": 2, "number": 31, "starts": 67, "seasons": 4 },
-    { "name": "Charles Leclerc", "shortName": "LEC", "team": "Ferrari", "seat": 1, "number": 16, "starts": 59, "seasons": 3 },
-    { "name": "Carlos Sainz", "shortName": "SAI", "team": "Ferrari", "seat": 2, "number": 55, "starts": 118, "seasons": 6 },
-    { "name": "Pierre Gasly", "shortName": "GAS", "team": "Racing Bulls", "seat": 1, "number": 10, "starts": 64, "seasons": 4 },
-    { "name": "Yuki Tsunoda", "shortName": "TSU", "team": "Racing Bulls", "seat": 2, "number": 22, "starts": 0, "seasons": 0 },
-    { "name": "Kimi Raikkonen", "shortName": "RAI", "team": "Sauber", "seat": 1, "number": 7, "starts": 329, "seasons": 18 },
-    { "name": "Antonio Giovinazzi", "shortName": "GIO", "team": "Sauber", "seat": 2, "number": 99, "starts": 40, "seasons": 3 },
-    { "name": "Robert Kubica", "shortName": "KUB", "team": "Sauber", "seat": 3, "number": 88, "starts": 97, "seasons": 6 },
-    { "name": "Mick Schumacher", "shortName": "MSC", "team": "Haas", "seat": 1, "number": 47, "starts": 0, "seasons": 0 },
-    { "name": "Nikita Mazepin", "shortName": "MAZ", "team": "Haas", "seat": 2, "number": 9, "starts": 0, "seasons": 0 },
-    { "name": "George Russell", "shortName": "RUS", "team": "Williams", "seat": 1, "number": 63, "starts": 38, "seasons": 2 },
-    { "name": "Nicholas Latifi", "shortName": "LAT", "team": "Williams", "seat": 2, "number": 6, "starts": 17, "seasons": 1 }
+    {
+      "name": "Lewis Hamilton",
+      "shortName": "HAM",
+      "team": "Mercedes",
+      "seat": 1,
+      "number": 44,
+      "starts": 266,
+      "seasons": 14
+    },
+    {
+      "name": "Valtteri Bottas",
+      "shortName": "BOT",
+      "team": "Mercedes",
+      "seat": 2,
+      "number": 77,
+      "starts": 156,
+      "seasons": 8
+    },
+    {
+      "name": "Max Verstappen",
+      "shortName": "VER",
+      "team": "Red Bull Racing",
+      "seat": 1,
+      "number": 33,
+      "starts": 119,
+      "seasons": 6
+    },
+    {
+      "name": "Sergio Pérez",
+      "shortName": "PER",
+      "team": "Red Bull Racing",
+      "seat": 2,
+      "number": 11,
+      "starts": 191,
+      "seasons": 10
+    },
+    {
+      "name": "Lando Norris",
+      "shortName": "NOR",
+      "team": "McLaren",
+      "seat": 1,
+      "number": 4,
+      "starts": 38,
+      "seasons": 2
+    },
+    {
+      "name": "Daniel Ricciardo",
+      "shortName": "RIC",
+      "team": "McLaren",
+      "seat": 2,
+      "number": 3,
+      "starts": 188,
+      "seasons": 10
+    },
+    {
+      "name": "Sebastian Vettel",
+      "shortName": "VET",
+      "team": "Aston Martin",
+      "seat": 1,
+      "number": 5,
+      "starts": 257,
+      "seasons": 14
+    },
+    {
+      "name": "Lance Stroll",
+      "shortName": "STR",
+      "team": "Aston Martin",
+      "seat": 2,
+      "number": 18,
+      "starts": 78,
+      "seasons": 4
+    },
+    {
+      "name": "Fernando Alonso",
+      "shortName": "ALO",
+      "team": "Alpine",
+      "seat": 1,
+      "number": 14,
+      "starts": 311,
+      "seasons": 17
+    },
+    {
+      "name": "Esteban Ocon",
+      "shortName": "OCO",
+      "team": "Alpine",
+      "seat": 2,
+      "number": 31,
+      "starts": 67,
+      "seasons": 4
+    },
+    {
+      "name": "Charles Leclerc",
+      "shortName": "LEC",
+      "team": "Ferrari",
+      "seat": 1,
+      "number": 16,
+      "starts": 59,
+      "seasons": 3
+    },
+    {
+      "name": "Carlos Sainz",
+      "shortName": "SAI",
+      "team": "Ferrari",
+      "seat": 2,
+      "number": 55,
+      "starts": 118,
+      "seasons": 6
+    },
+    {
+      "name": "Pierre Gasly",
+      "shortName": "GAS",
+      "team": "AlphaTauri",
+      "seat": 1,
+      "number": 10,
+      "starts": 64,
+      "seasons": 4
+    },
+    {
+      "name": "Yuki Tsunoda",
+      "shortName": "TSU",
+      "team": "AlphaTauri",
+      "seat": 2,
+      "number": 22,
+      "starts": 0,
+      "seasons": 0
+    },
+    {
+      "name": "Kimi Räikkönen",
+      "shortName": "RAI",
+      "team": "Alfa Romeo",
+      "seat": 1,
+      "number": 7,
+      "starts": 329,
+      "seasons": 18
+    },
+    {
+      "name": "Antonio Giovinazzi",
+      "shortName": "GIO",
+      "team": "Alfa Romeo",
+      "seat": 2,
+      "number": 99,
+      "starts": 40,
+      "seasons": 3
+    },
+    {
+      "name": "Robert Kubica",
+      "shortName": "KUB",
+      "team": "Alfa Romeo",
+      "seat": 3,
+      "number": 88,
+      "starts": 97,
+      "seasons": 6
+    },
+    {
+      "name": "Mick Schumacher",
+      "shortName": "MSC",
+      "team": "Haas",
+      "seat": 1,
+      "number": 47,
+      "starts": 0,
+      "seasons": 0
+    },
+    {
+      "name": "Nikita Mazepin",
+      "shortName": "MAZ",
+      "team": "Haas",
+      "seat": 2,
+      "number": 9,
+      "starts": 0,
+      "seasons": 0
+    },
+    {
+      "name": "George Russell",
+      "shortName": "RUS",
+      "team": "Williams",
+      "seat": 1,
+      "number": 63,
+      "starts": 38,
+      "seasons": 2
+    },
+    {
+      "name": "Nicholas Latifi",
+      "shortName": "LAT",
+      "team": "Williams",
+      "seat": 2,
+      "number": 6,
+      "starts": 17,
+      "seasons": 1
+    }
   ]
 }
