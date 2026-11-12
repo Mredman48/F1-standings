@@ -11,7 +11,7 @@
     "round": 7,
     "id": "monaco",
     "type": "RACE_WEEKEND",
-    "title": "Monaco Grand Prix 2022",
+    "title": "Grand Prix de Monaco 2022",
     "shortTitle": "Monaco GP",
     "circuit": "Circuit de Monaco",
     "season": "2022",
@@ -4807,8 +4807,12 @@
       ]
     }
   ],
-  "raceRecap": null,
-  "locked": false,
+  "raceRecap": {
+    "result": {
+      "driverOfDay": "Perez"
+    }
+  },
+  "locked": true,
   "lockedSections": [],
   "meta": {
     "fia": {},
