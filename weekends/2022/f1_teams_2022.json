@@ -15,7 +15,7 @@
     {
       "key": "mercedes",
       "name": "Mercedes-AMG F1 Team",
-      "fullName": "Mercedes-AMG PETRONAS Formula One Team",
+      "fullName": "Mercedes-AMG PETRONAS F1 Team",
       "shortName": "MER",
       "aliases": [
         "Mercedes",
@@ -39,7 +39,7 @@
     {
       "key": "ferrari",
       "name": "Scuderia Ferrari",
-      "fullName": "Scuderia Ferrari HP",
+      "fullName": "Scuderia Ferrari",
       "shortName": "FER",
       "aliases": [
         "Ferrari",
@@ -62,8 +62,8 @@
     },
     {
       "key": "mclaren",
-      "name": "McLaren Formula 1 Team",
-      "fullName": "McLaren Formula 1 Team",
+      "name": "McLaren F1 Team",
+      "fullName": "McLaren F1 Team",
       "shortName": "MCL",
       "aliases": [
         "McLaren",
@@ -92,11 +92,12 @@
       "aliases": [
         "Red Bull",
         "Red Bull Racing",
-        "Oracle Red Bull Racing"
+        "Oracle Red Bull Racing",
+        "Red Bull Racing RBPT"
       ],
       "base": "Milton Keynes, UK",
       "country": "Austria",
-      "powerUnit": "Honda",
+      "powerUnit": "Honda RBPT",
       "colors": {
         "primary": "#3671C6",
         "secondary": "#C5323C",
@@ -111,12 +112,13 @@
     },
     {
       "key": "williams",
-      "name": "Williams F1 Team",
-      "fullName": "Atlassian Williams F1 Team",
+      "name": "Williams Racing",
+      "fullName": "Williams Racing",
       "shortName": "WIL",
       "aliases": [
         "Williams",
-        "Williams Racing"
+        "Williams Racing",
+        "Williams F1 Team"
       ],
       "base": "Grove, UK",
       "country": "United Kingdom",
@@ -137,21 +139,17 @@
       "key": "racingbulls",
       "name": "Scuderia AlphaTauri",
       "fullName": "Scuderia AlphaTauri",
-      "shortName": "RB",
+      "shortName": "AT",
       "aliases": [
-        "Racing Bulls",
-        "RB F1 Team",
-        "Visa Cash App Racing Bulls F1 Team",
-        "VCARB",
-        "RB",
-        "AlphaTauri", 
-        "Scuderia AlphaTauri", 
-        "Scuderia Alpha Tauri", 
-        "Alpha Tauri"
+        "AlphaTauri",
+        "Scuderia AlphaTauri",
+        "Scuderia Alpha Tauri",
+        "Alpha Tauri",
+        "AlphaTauri F1 Team"
       ],
       "base": "Faenza, Italy",
       "country": "Italy",
-      "powerUnit": "Honda",
+      "powerUnit": "Honda RBPT",
       "colors": {
         "primary": "#20394C",
         "secondary": "#FFFFFF",
@@ -167,12 +165,13 @@
     {
       "key": "astonmartin",
       "name": "Aston Martin F1 Team",
-      "fullName": "Aston Martin Aramco Formula One Team",
+      "fullName": "Aston Martin Aramco Cognizant F1 Team",
       "shortName": "AMR",
       "aliases": [
         "Aston Martin",
         "Aston Martin Aramco",
-        "Aston Martin Aramco F1 Team"
+        "Aston Martin Aramco F1 Team",
+        "Aston Martin Aramco Cognizant F1 Team"
       ],
       "base": "Silverstone, UK",
       "country": "United Kingdom",
@@ -192,7 +191,7 @@
     {
       "key": "alpine",
       "name": "Alpine F1 Team",
-      "fullName": "BWT Alpine Formula One Team",
+      "fullName": "BWT Alpine F1 Team",
       "shortName": "ALP",
       "aliases": [
         "Alpine",
@@ -202,9 +201,9 @@
       "country": "France",
       "powerUnit": "Renault",
       "colors": {
-        "primary": "#FF87BC",
-        "secondary": "#007AC1",
-        "onPrimary": "#0A0C0F",
+        "primary": "#2293D1",
+        "secondary": "#FF87BC",
+        "onPrimary": "#FFFFFF",
         "primaryLight": null,
         "secondaryLight": null
       },
@@ -216,7 +215,7 @@
     {
       "key": "haas",
       "name": "Haas F1 Team",
-      "fullName": "TGR Haas F1 Team",
+      "fullName": "MoneyGram Haas F1 Team",
       "shortName": "HAA",
       "aliases": [
         "Haas",
@@ -241,18 +240,13 @@
     {
       "key": "audi",
       "name": "Alfa Romeo F1 Team",
-      "fullName": "Alfa Romeo F1 Team",
+      "fullName": "Alfa Romeo F1 Team ORLEN",
       "shortName": "ALF",
       "aliases": [
-        "Audi",
-        "Audi F1 Team",
-        "Kick Sauber",
-        "Stake F1 Team Kick Sauber",
-        "Sauber",
         "Alfa Romeo",
-        "Alfa",
-        "Romeo",
-        "Alfa Romeo F1 Team Stake"
+        "Alfa Romeo F1 Team",
+        "Alfa Romeo F1 Team ORLEN",
+        "Alfa Romeo Racing"
       ],
       "base": "Hinwil, Switzerland",
       "country": "Switzerland",
@@ -264,7 +258,7 @@
         "primaryLight": "#A42134",
         "secondaryLight": "#FFFFFF"
       },
-      "icon": "kicksauber-icon",
+      "icon": "alpharomeo-icon",
       "logoUrl": null,
       "logoLightUrl": null,
       "carUrl": "https://raw.githubusercontent.com/Mredman48/F1-standings/refs/heads/main/liveries/alfaromeo-car.webp"
