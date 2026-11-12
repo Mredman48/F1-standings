@@ -11,7 +11,7 @@
     "round": 9,
     "id": "canada",
     "type": "RACE_WEEKEND",
-    "title": "Canadian Grand Prix 2022",
+    "title": "Grand Prix du Canada 2022",
     "shortTitle": "Canadian GP",
     "circuit": "Circuit Gilles Villeneuve",
     "season": "2022",
@@ -4286,7 +4286,11 @@
       ]
     }
   ],
-  "raceRecap": null,
+  "raceRecap": {
+    "result": {
+      "driverOfDay": "Leclerc"
+    }
+  },
   "locked": false,
   "lockedSections": [],
   "meta": {
