@@ -11,7 +11,7 @@
     "round": 6,
     "id": "spain",
     "type": "RACE_WEEKEND",
-    "title": "Spanish Grand Prix 2022",
+    "title": "Gran Premio de Espana 2022",
     "shortTitle": "Spanish GP",
     "circuit": "Circuit de Barcelona-Catalunya",
     "season": "2022",
@@ -4844,8 +4844,12 @@
       ]
     }
   ],
-  "raceRecap": null,
-  "locked": false,
+  "raceRecap": {
+    "result": {
+      "driverOfDay": "Hamilton"
+    }
+  },
+  "locked": true,
   "lockedSections": [],
   "meta": {
     "fia": {},
