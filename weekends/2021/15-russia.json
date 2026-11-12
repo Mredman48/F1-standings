@@ -1,0 +1,104 @@
+{
+  "header": "2021 Russian GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-12T01:29:32.077Z",
+  "season": 2021,
+  "round": 15,
+  "meetingKey": null,
+  "raceSlug": "russia",
+  "status": "upcoming",
+  "weekend": {
+    "round": 15,
+    "id": "russia",
+    "type": "RACE_WEEKEND",
+    "title": "Russian Grand Prix 2021",
+    "shortTitle": "Russian GP",
+    "circuit": "Sochi Autodrom",
+    "season": "2021",
+    "location": {
+      "city": "Sochi",
+      "country": "Russia",
+      "flag": {
+        "iso2": "ru",
+        "png": "https://flagcdn.com/w160/ru.png",
+        "svg": "https://flagcdn.com/ru.svg"
+      }
+    },
+    "racePage": {
+      "slug": "russia",
+      "url": "https://www.formula1.com/en/racing/2021/russia"
+    },
+    "trackMap": {
+      "found": false,
+      "pageUrl": "https://www.formula1.com/en/racing/2021/russia",
+      "mediaUrl": null,
+      "pngUrl": null
+    },
+    "map": {
+      "found": false,
+      "filename": null,
+      "pngUrl": null
+    },
+    "weekend": {
+      "startUtc": "2021-09-24T00:00:00.000Z",
+      "endUtc": "2021-09-26T14:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Sep 24",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP2",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Sep 24",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP3",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Sep 25",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Sep 25",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Race",
+        "startUtc": "2021-09-26T12:00:00.000Z",
+        "endUtc": "2021-09-26T14:00:00.000Z",
+        "startLocalDateShort": "Sun, Sep 26",
+        "startLocalTimeShort": "06:00",
+        "startLocalDateTimeShort": "Sun, Sep 26 06:00"
+      }
+    ]
+  },
+  "circuitIntelligence": null,
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "header": "2021 Azerbaijan GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-12T01:29:32.043Z",
+  "season": 2021,
+  "round": 6,
+  "meetingKey": null,
+  "raceSlug": "azerbaijan",
+  "status": "upcoming",
+  "weekend": {
+    "round": 6,
+    "id": "azerbaijan",
+    "type": "RACE_WEEKEND",
+    "title": "Azerbaijan Grand Prix 2021",
+    "shortTitle": "Azerbaijan GP",
+    "circuit": "Baku City Circuit",
+    "season": "2021",
+    "location": {
+      "city": "Baku",
+      "country": "Azerbaijan",
+      "flag": {
+        "iso2": "az",
+        "png": "https://flagcdn.com/w160/az.png",
+        "svg": "https://flagcdn.com/az.svg"
+      }
+    },
+    "racePage": {
+      "slug": "azerbaijan",
+      "url": "https://www.formula1.com/en/racing/2021/azerbaijan"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2021/azerbaijan",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackbakudetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_azerbaijan_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "baku.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/baku.png"
+    },
+    "weekend": {
+      "startUtc": "2021-06-04T00:00:00.000Z",
+      "endUtc": "2021-06-06T14:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Jun 04",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP2",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Jun 04",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP3",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Jun 05",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Jun 05",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Race",
+        "startUtc": "2021-06-06T12:00:00.000Z",
+        "endUtc": "2021-06-06T14:00:00.000Z",
+        "startLocalDateShort": "Sun, Jun 06",
+        "startLocalTimeShort": "06:00",
+        "startLocalDateTimeShort": "Sun, Jun 06 06:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Azerbaijan Grand Prix",
+    "dna": {
+      "cornerProfile": "Street with long straight",
+      "overtaking": "High",
+      "tireWear": "Low",
+      "trackEvolution": "High",
+      "strategyBias": "Safety Car",
+      "safetyCarRisk": "High"
+    },
+    "intelligence": [
+      "The long main straight creates major passing opportunities.",
+      "Safety Cars are a constant strategic threat.",
+      "Low-speed castle sections punish mistakes.",
+      "Top speed and braking confidence are both critical."
+    ],
+    "id": "azerbaijan",
+    "matchKeys": [
+      "azerbaijan",
+      "baku"
+    ],
+    "specs": {
+      "turns": 20,
+      "longestStraightKm": 2.2,
+      "averageSpeed": "High",
+      "raceLaps": 51,
+      "trackLength": "6.003 km",
+      "raceDistance": "306.049 km"
+    },
+    "raceLapRecord": {
+      "time": "1:43.009",
+      "driver": "Charles Leclerc",
+      "constructor": "Ferrari",
+      "year": 2019,
+      "raceName": "Azerbaijan Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

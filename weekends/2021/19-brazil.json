@@ -1,0 +1,142 @@
+{
+  "header": "2021 Sao Paulo GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-12T01:29:32.089Z",
+  "season": 2021,
+  "round": 19,
+  "meetingKey": null,
+  "raceSlug": "brazil",
+  "status": "upcoming",
+  "weekend": {
+    "round": 19,
+    "id": "brazil",
+    "type": "RACE_WEEKEND",
+    "title": "São Paulo Grand Prix 2021",
+    "shortTitle": "Sao Paulo GP",
+    "circuit": "Autódromo José Carlos Pace",
+    "season": "2021",
+    "location": {
+      "city": "Sao Paulo",
+      "country": "Brazil",
+      "flag": {
+        "iso2": "br",
+        "png": "https://flagcdn.com/w160/br.png",
+        "svg": "https://flagcdn.com/br.svg"
+      }
+    },
+    "racePage": {
+      "slug": "brazil",
+      "url": "https://www.formula1.com/en/racing/2021/brazil"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2021/brazil",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackinterlagosdetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_brazil_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "interlagos.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/interlagos.png"
+    },
+    "weekend": {
+      "startUtc": "2021-11-12T00:00:00.000Z",
+      "endUtc": "2021-11-14T19:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Nov 12",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Nov 12",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP2",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Nov 13",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Sprint",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Nov 13",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Race",
+        "startUtc": "2021-11-14T17:00:00.000Z",
+        "endUtc": "2021-11-14T19:00:00.000Z",
+        "startLocalDateShort": "Sun, Nov 14",
+        "startLocalTimeShort": "10:00",
+        "startLocalDateTimeShort": "Sun, Nov 14 10:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "São Paulo Grand Prix",
+    "dna": {
+      "cornerProfile": "Short flowing elevation",
+      "overtaking": "High",
+      "tireWear": "Medium",
+      "trackEvolution": "Medium",
+      "strategyBias": "Weather",
+      "safetyCarRisk": "Medium"
+    },
+    "intelligence": [
+      "Weather can quickly change strategy.",
+      "Short lap length keeps the field compressed.",
+      "Overtaking is possible into Turn 1 and Turn 4.",
+      "Traction through the final sector is important for straight-line attacks."
+    ],
+    "id": "brazil",
+    "matchKeys": [
+      "brazil",
+      "brazilian",
+      "saopaulo",
+      "interlagos"
+    ],
+    "specs": {
+      "turns": 15,
+      "longestStraightKm": 0.9,
+      "averageSpeed": "Medium",
+      "raceLaps": 71,
+      "trackLength": "4.309 km",
+      "raceDistance": "305.879 km"
+    },
+    "raceLapRecord": {
+      "time": "1:10.540",
+      "driver": "Valtteri Bottas",
+      "constructor": "Mercedes",
+      "year": 2018,
+      "raceName": "Sao Paulo Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

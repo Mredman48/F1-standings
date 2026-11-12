@@ -1,0 +1,142 @@
+{
+  "header": "2021 Hungarian GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-12T01:29:32.065Z",
+  "season": 2021,
+  "round": 11,
+  "meetingKey": null,
+  "raceSlug": "hungary",
+  "status": "upcoming",
+  "weekend": {
+    "round": 11,
+    "id": "hungary",
+    "type": "RACE_WEEKEND",
+    "title": "Hungarian Grand Prix 2021",
+    "shortTitle": "Hungarian GP",
+    "circuit": "Hungaroring",
+    "season": "2021",
+    "location": {
+      "city": "Budapest",
+      "country": "Hungary",
+      "flag": {
+        "iso2": "hu",
+        "png": "https://flagcdn.com/w160/hu.png",
+        "svg": "https://flagcdn.com/hu.svg"
+      }
+    },
+    "racePage": {
+      "slug": "hungary",
+      "url": "https://www.formula1.com/en/racing/2021/hungary"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2021/hungary",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackhungaroringdetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_hungary_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "hungaroring.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/hungaroring.png"
+    },
+    "weekend": {
+      "startUtc": "2021-07-30T00:00:00.000Z",
+      "endUtc": "2021-08-01T15:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Jul 30",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP2",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Jul 30",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP3",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Jul 31",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Jul 31",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Race",
+        "startUtc": "2021-08-01T13:00:00.000Z",
+        "endUtc": "2021-08-01T15:00:00.000Z",
+        "startLocalDateShort": "Sun, Aug 01",
+        "startLocalTimeShort": "07:00",
+        "startLocalDateTimeShort": "Sun, Aug 01 07:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Hungarian Grand Prix",
+    "dna": {
+      "cornerProfile": "Low-speed technical",
+      "overtaking": "Low",
+      "tireWear": "Medium",
+      "trackEvolution": "High",
+      "strategyBias": "Track Position",
+      "safetyCarRisk": "Low"
+    },
+    "intelligence": [
+      "Track position is extremely valuable.",
+      "Qualifying performance usually has a major impact.",
+      "The circuit rewards mechanical grip and rotation.",
+      "Traffic can heavily compromise race pace."
+    ],
+    "id": "hungary",
+    "matchKeys": [
+      "hungary",
+      "hungarian",
+      "hungaroring",
+      "budapest"
+    ],
+    "specs": {
+      "turns": 14,
+      "longestStraightKm": 0.8,
+      "averageSpeed": "Low",
+      "raceLaps": 70,
+      "trackLength": "4.381 km",
+      "raceDistance": "306.63 km"
+    },
+    "raceLapRecord": {
+      "time": "1:16.627",
+      "driver": "Lewis Hamilton",
+      "constructor": "Mercedes",
+      "year": 2020,
+      "raceName": "Hungarian Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

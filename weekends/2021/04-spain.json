@@ -1,0 +1,141 @@
+{
+  "header": "2021 Spanish GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-12T01:29:32.035Z",
+  "season": 2021,
+  "round": 4,
+  "meetingKey": null,
+  "raceSlug": "spain",
+  "status": "upcoming",
+  "weekend": {
+    "round": 4,
+    "id": "spain",
+    "type": "RACE_WEEKEND",
+    "title": "Spanish Grand Prix 2021",
+    "shortTitle": "Spanish GP",
+    "circuit": "Circuit de Barcelona-Catalunya",
+    "season": "2021",
+    "location": {
+      "city": "Barcelona",
+      "country": "Spain",
+      "flag": {
+        "iso2": "es",
+        "png": "https://flagcdn.com/w160/es.png",
+        "svg": "https://flagcdn.com/es.svg"
+      }
+    },
+    "racePage": {
+      "slug": "spain",
+      "url": "https://www.formula1.com/en/racing/2021/spain"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2021/spain",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackcatalunyadetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_barcelona-catalunya_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "barcelona.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/barcelona.png"
+    },
+    "weekend": {
+      "startUtc": "2021-05-07T00:00:00.000Z",
+      "endUtc": "2021-05-09T15:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, May 07",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP2",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, May 07",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP3",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, May 08",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, May 08",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Race",
+        "startUtc": "2021-05-09T13:00:00.000Z",
+        "endUtc": "2021-05-09T15:00:00.000Z",
+        "startLocalDateShort": "Sun, May 09",
+        "startLocalTimeShort": "07:00",
+        "startLocalDateTimeShort": "Sun, May 09 07:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Barcelona-Catalunya Grand Prix",
+    "dna": {
+      "cornerProfile": "Aero balance test",
+      "overtaking": "Low",
+      "tireWear": "High",
+      "trackEvolution": "Medium",
+      "strategyBias": "Tire Management",
+      "safetyCarRisk": "Low"
+    },
+    "intelligence": [
+      "This circuit heavily rewards aerodynamic efficiency.",
+      "Tire degradation is usually a major factor.",
+      "Overtaking can be difficult despite the main straight.",
+      "Cars that are strong here often have balanced all-round performance."
+    ],
+    "id": "barcelona",
+    "matchKeys": [
+      "barcelona",
+      "catalunya",
+      "barcelonacatalunya"
+    ],
+    "specs": {
+      "turns": 16,
+      "longestStraightKm": 1,
+      "averageSpeed": "Medium",
+      "raceLaps": 66,
+      "trackLength": "4.657 km",
+      "raceDistance": "307.236 km"
+    },
+    "raceLapRecord": {
+      "time": "1:15.743",
+      "driver": "Oscar Piastri",
+      "constructor": "McLaren",
+      "year": 2025,
+      "raceName": "Barcelona-Catalunya Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

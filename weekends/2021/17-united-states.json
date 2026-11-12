@@ -1,0 +1,143 @@
+{
+  "header": "2021 United States GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-12T01:29:32.084Z",
+  "season": 2021,
+  "round": 17,
+  "meetingKey": null,
+  "raceSlug": "united-states",
+  "status": "upcoming",
+  "weekend": {
+    "round": 17,
+    "id": "united-states",
+    "type": "RACE_WEEKEND",
+    "title": "United States Grand Prix 2021",
+    "shortTitle": "United States GP",
+    "circuit": "Circuit of the Americas",
+    "season": "2021",
+    "location": {
+      "city": "Austin",
+      "country": "United States",
+      "flag": {
+        "iso2": "us",
+        "png": "https://flagcdn.com/w160/us.png",
+        "svg": "https://flagcdn.com/us.svg"
+      }
+    },
+    "racePage": {
+      "slug": "united-states",
+      "url": "https://www.formula1.com/en/racing/2021/united-states"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2021/united-states",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackaustindetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_united-states_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "austin.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/austin.png"
+    },
+    "weekend": {
+      "startUtc": "2021-10-22T00:00:00.000Z",
+      "endUtc": "2021-10-24T21:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Oct 22",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP2",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Oct 22",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP3",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Oct 23",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Oct 23",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Race",
+        "startUtc": "2021-10-24T19:00:00.000Z",
+        "endUtc": "2021-10-24T21:00:00.000Z",
+        "startLocalDateShort": "Sun, Oct 24",
+        "startLocalTimeShort": "13:00",
+        "startLocalDateTimeShort": "Sun, Oct 24 13:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "United States Grand Prix",
+    "dna": {
+      "cornerProfile": "Mixed technical",
+      "overtaking": "High",
+      "tireWear": "Medium",
+      "trackEvolution": "Medium",
+      "strategyBias": "Balanced",
+      "safetyCarRisk": "Medium"
+    },
+    "intelligence": [
+      "Sector 1 rewards high-speed aero stability.",
+      "The long back straight creates strong overtaking chances.",
+      "Bumpy sections can affect balance and tire life.",
+      "This is a strong all-round car test."
+    ],
+    "id": "usa",
+    "matchKeys": [
+      "unitedstates",
+      "usa",
+      "austin",
+      "cota",
+      "circuitoftheamericas"
+    ],
+    "specs": {
+      "turns": 20,
+      "longestStraightKm": 1.2,
+      "averageSpeed": "Medium",
+      "raceLaps": 56,
+      "trackLength": "5.513 km",
+      "raceDistance": "308.405 km"
+    },
+    "raceLapRecord": {
+      "time": "1:36.169",
+      "driver": "Charles Leclerc",
+      "constructor": "Ferrari",
+      "year": 2019,
+      "raceName": "United States Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

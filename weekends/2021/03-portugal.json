@@ -1,0 +1,104 @@
+{
+  "header": "2021 Portuguese GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-12T01:29:32.034Z",
+  "season": 2021,
+  "round": 3,
+  "meetingKey": null,
+  "raceSlug": "portugal",
+  "status": "upcoming",
+  "weekend": {
+    "round": 3,
+    "id": "portugal",
+    "type": "RACE_WEEKEND",
+    "title": "Portuguese Grand Prix 2021",
+    "shortTitle": "Portuguese GP",
+    "circuit": "Autódromo Internacional do Algarve",
+    "season": "2021",
+    "location": {
+      "city": "Portimão",
+      "country": "Portugal",
+      "flag": {
+        "iso2": "pt",
+        "png": "https://flagcdn.com/w160/pt.png",
+        "svg": "https://flagcdn.com/pt.svg"
+      }
+    },
+    "racePage": {
+      "slug": "portugal",
+      "url": "https://www.formula1.com/en/racing/2021/portugal"
+    },
+    "trackMap": {
+      "found": false,
+      "pageUrl": "https://www.formula1.com/en/racing/2021/portugal",
+      "mediaUrl": null,
+      "pngUrl": null
+    },
+    "map": {
+      "found": false,
+      "filename": null,
+      "pngUrl": null
+    },
+    "weekend": {
+      "startUtc": "2021-04-30T00:00:00.000Z",
+      "endUtc": "2021-05-02T16:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Apr 30",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP2",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Apr 30",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP3",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, May 01",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, May 01",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Race",
+        "startUtc": "2021-05-02T14:00:00.000Z",
+        "endUtc": "2021-05-02T16:00:00.000Z",
+        "startLocalDateShort": "Sun, May 02",
+        "startLocalTimeShort": "08:00",
+        "startLocalDateTimeShort": "Sun, May 02 08:00"
+      }
+    ]
+  },
+  "circuitIntelligence": null,
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

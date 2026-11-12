@@ -1,0 +1,141 @@
+{
+  "header": "2021 Italian GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-12T01:29:32.075Z",
+  "season": 2021,
+  "round": 14,
+  "meetingKey": null,
+  "raceSlug": "italy",
+  "status": "upcoming",
+  "weekend": {
+    "round": 14,
+    "id": "italy",
+    "type": "RACE_WEEKEND",
+    "title": "Italian Grand Prix 2021",
+    "shortTitle": "Italian GP",
+    "circuit": "Autodromo Nazionale Monza",
+    "season": "2021",
+    "location": {
+      "city": "Monza",
+      "country": "Italy",
+      "flag": {
+        "iso2": "it",
+        "png": "https://flagcdn.com/w160/it.png",
+        "svg": "https://flagcdn.com/it.svg"
+      }
+    },
+    "racePage": {
+      "slug": "italy",
+      "url": "https://www.formula1.com/en/racing/2021/italy"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2021/italy",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmonzadetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_italy_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "monza.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/monza.png"
+    },
+    "weekend": {
+      "startUtc": "2021-09-10T00:00:00.000Z",
+      "endUtc": "2021-09-12T15:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Sep 10",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Sep 10",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP2",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Sep 11",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Sprint",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Sep 11",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Race",
+        "startUtc": "2021-09-12T13:00:00.000Z",
+        "endUtc": "2021-09-12T15:00:00.000Z",
+        "startLocalDateShort": "Sun, Sep 12",
+        "startLocalTimeShort": "07:00",
+        "startLocalDateTimeShort": "Sun, Sep 12 07:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Italian Grand Prix",
+    "dna": {
+      "cornerProfile": "Low-downforce power",
+      "overtaking": "High",
+      "tireWear": "Low",
+      "trackEvolution": "Low",
+      "strategyBias": "Straight-Line Speed",
+      "safetyCarRisk": "Medium"
+    },
+    "intelligence": [
+      "Straight-line speed is the dominant performance factor.",
+      "Slipstream battles are common.",
+      "Low-downforce setup choices define competitiveness.",
+      "Braking stability into chicanes is important."
+    ],
+    "id": "italy",
+    "matchKeys": [
+      "italy",
+      "italian",
+      "monza"
+    ],
+    "specs": {
+      "turns": 11,
+      "longestStraightKm": 1.1,
+      "averageSpeed": "Very High",
+      "raceLaps": 53,
+      "trackLength": "5.793 km",
+      "raceDistance": "306.72 km"
+    },
+    "raceLapRecord": {
+      "time": "1:20.901",
+      "driver": "Lando Norris",
+      "constructor": "McLaren",
+      "year": 2025,
+      "raceName": "Italian Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

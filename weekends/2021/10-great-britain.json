@@ -1,0 +1,141 @@
+{
+  "header": "2021 British GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-12T01:29:32.061Z",
+  "season": 2021,
+  "round": 10,
+  "meetingKey": null,
+  "raceSlug": "great-britain",
+  "status": "upcoming",
+  "weekend": {
+    "round": 10,
+    "id": "great-britain",
+    "type": "RACE_WEEKEND",
+    "title": "British Grand Prix 2021",
+    "shortTitle": "British GP",
+    "circuit": "Silverstone Circuit",
+    "season": "2021",
+    "location": {
+      "city": "Silverstone",
+      "country": "United Kingdom",
+      "flag": {
+        "iso2": "gb",
+        "png": "https://flagcdn.com/w160/gb.png",
+        "svg": "https://flagcdn.com/gb.svg"
+      }
+    },
+    "racePage": {
+      "slug": "great-britain",
+      "url": "https://www.formula1.com/en/racing/2021/great-britain"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2021/great-britain",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026tracksilverstonedetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_great-britain_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "silverstone.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/silverstone.png"
+    },
+    "weekend": {
+      "startUtc": "2021-07-16T00:00:00.000Z",
+      "endUtc": "2021-07-18T16:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Jul 16",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Jul 16",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP2",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Jul 17",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Sprint",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Jul 17",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Race",
+        "startUtc": "2021-07-18T14:00:00.000Z",
+        "endUtc": "2021-07-18T16:00:00.000Z",
+        "startLocalDateShort": "Sun, Jul 18",
+        "startLocalTimeShort": "08:00",
+        "startLocalDateTimeShort": "Sun, Jul 18 08:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "British Grand Prix",
+    "dna": {
+      "cornerProfile": "High-speed aero",
+      "overtaking": "Medium",
+      "tireWear": "High",
+      "trackEvolution": "Medium",
+      "strategyBias": "Tire Management",
+      "safetyCarRisk": "Low"
+    },
+    "intelligence": [
+      "High-speed corners place heavy load on tires.",
+      "Wind can noticeably change car balance.",
+      "Aerodynamic stability is critical.",
+      "Race pace often depends on tire life through long corners."
+    ],
+    "id": "greatbritain",
+    "matchKeys": [
+      "greatbritain",
+      "british",
+      "silverstone"
+    ],
+    "specs": {
+      "turns": 18,
+      "longestStraightKm": 0.8,
+      "averageSpeed": "High",
+      "raceLaps": 52,
+      "trackLength": "5.891 km",
+      "raceDistance": "306.198 km"
+    },
+    "raceLapRecord": {
+      "time": "1:27.097",
+      "driver": "Max Verstappen",
+      "constructor": "Red Bull",
+      "year": 2020,
+      "raceName": "British Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

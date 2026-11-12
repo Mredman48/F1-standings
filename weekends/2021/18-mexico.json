@@ -1,0 +1,141 @@
+{
+  "header": "2021 Mexico City GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-12T01:29:32.086Z",
+  "season": 2021,
+  "round": 18,
+  "meetingKey": null,
+  "raceSlug": "mexico",
+  "status": "upcoming",
+  "weekend": {
+    "round": 18,
+    "id": "mexico",
+    "type": "RACE_WEEKEND",
+    "title": "Mexico City Grand Prix 2021",
+    "shortTitle": "Mexico City GP",
+    "circuit": "Autódromo Hermanos Rodríguez",
+    "season": "2021",
+    "location": {
+      "city": "Mexico City",
+      "country": "Mexico",
+      "flag": {
+        "iso2": "mx",
+        "png": "https://flagcdn.com/w160/mx.png",
+        "svg": "https://flagcdn.com/mx.svg"
+      }
+    },
+    "racePage": {
+      "slug": "mexico",
+      "url": "https://www.formula1.com/en/racing/2021/mexico"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2021/mexico",
+      "mediaUrl": "https://media.formula1.com/image/upload/c_fit,h_704/q_auto/v1740000001/common/f1/2026/track/2026trackmexicocitydetailed.webp",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_mexico_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "mexico-city.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/mexico-city.png"
+    },
+    "weekend": {
+      "startUtc": "2021-11-05T00:00:00.000Z",
+      "endUtc": "2021-11-07T21:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Nov 05",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP2",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Nov 05",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP3",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Nov 06",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Nov 06",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Race",
+        "startUtc": "2021-11-07T19:00:00.000Z",
+        "endUtc": "2021-11-07T21:00:00.000Z",
+        "startLocalDateShort": "Sun, Nov 07",
+        "startLocalTimeShort": "12:00",
+        "startLocalDateTimeShort": "Sun, Nov 07 12:00"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Mexico City Grand Prix",
+    "dna": {
+      "cornerProfile": "Altitude traction",
+      "overtaking": "High",
+      "tireWear": "Low",
+      "trackEvolution": "Medium",
+      "strategyBias": "Cooling",
+      "safetyCarRisk": "Low"
+    },
+    "intelligence": [
+      "High altitude reduces downforce and cooling efficiency.",
+      "Straight-line speed is influenced by thin air.",
+      "The long run to Turn 1 creates major opening-lap opportunity.",
+      "Power unit and brake cooling can be a major concern."
+    ],
+    "id": "mexico",
+    "matchKeys": [
+      "mexico",
+      "mexicocity",
+      "autodromohermanosrodriguez"
+    ],
+    "specs": {
+      "turns": 17,
+      "longestStraightKm": 1.2,
+      "averageSpeed": "Medium",
+      "raceLaps": 71,
+      "trackLength": "4.304 km",
+      "raceDistance": "305.354 km"
+    },
+    "raceLapRecord": {
+      "time": "1:17.774",
+      "driver": "Valtteri Bottas",
+      "constructor": "Mercedes",
+      "year": 2021,
+      "raceName": "Mexico City Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

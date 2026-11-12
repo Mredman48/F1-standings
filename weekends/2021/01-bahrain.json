@@ -1,0 +1,104 @@
+{
+  "header": "2021 Bahrain GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-12T01:29:32.019Z",
+  "season": 2021,
+  "round": 1,
+  "meetingKey": null,
+  "raceSlug": "bahrain",
+  "status": "upcoming",
+  "weekend": {
+    "round": 1,
+    "id": "bahrain",
+    "type": "RACE_WEEKEND",
+    "title": "Bahrain Grand Prix 2021",
+    "shortTitle": "Bahrain GP",
+    "circuit": "Bahrain International Circuit",
+    "season": "2021",
+    "location": {
+      "city": "Sakhir",
+      "country": "Bahrain",
+      "flag": {
+        "iso2": "bh",
+        "png": "https://flagcdn.com/w160/bh.png",
+        "svg": "https://flagcdn.com/bh.svg"
+      }
+    },
+    "racePage": {
+      "slug": "bahrain",
+      "url": "https://www.formula1.com/en/racing/2021/bahrain"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2021/bahrain",
+      "mediaUrl": null,
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_bahrain_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "bahrain.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/bahrain.png"
+    },
+    "weekend": {
+      "startUtc": "2021-03-26T00:00:00.000Z",
+      "endUtc": "2021-03-28T17:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Mar 26",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP2",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Mar 26",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP3",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Mar 27",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Mar 27",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Race",
+        "startUtc": "2021-03-28T15:00:00.000Z",
+        "endUtc": "2021-03-28T17:00:00.000Z",
+        "startLocalDateShort": "Sun, Mar 28",
+        "startLocalTimeShort": "09:00",
+        "startLocalDateTimeShort": "Sun, Mar 28 09:00"
+      }
+    ]
+  },
+  "circuitIntelligence": null,
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "header": "2021 French GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-12T01:29:32.048Z",
+  "season": 2021,
+  "round": 7,
+  "meetingKey": null,
+  "raceSlug": "france",
+  "status": "upcoming",
+  "weekend": {
+    "round": 7,
+    "id": "france",
+    "type": "RACE_WEEKEND",
+    "title": "French Grand Prix 2021",
+    "shortTitle": "French GP",
+    "circuit": "Circuit Paul Ricard",
+    "season": "2021",
+    "location": {
+      "city": "Le Castellet",
+      "country": "France",
+      "flag": {
+        "iso2": "fr",
+        "png": "https://flagcdn.com/w160/fr.png",
+        "svg": "https://flagcdn.com/fr.svg"
+      }
+    },
+    "racePage": {
+      "slug": "france",
+      "url": "https://www.formula1.com/en/racing/2021/france"
+    },
+    "trackMap": {
+      "found": false,
+      "pageUrl": "https://www.formula1.com/en/racing/2021/france",
+      "mediaUrl": null,
+      "pngUrl": null
+    },
+    "map": {
+      "found": false,
+      "filename": null,
+      "pngUrl": null
+    },
+    "weekend": {
+      "startUtc": "2021-06-18T00:00:00.000Z",
+      "endUtc": "2021-06-20T15:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Jun 18",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP2",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Jun 18",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP3",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Jun 19",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Jun 19",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Race",
+        "startUtc": "2021-06-20T13:00:00.000Z",
+        "endUtc": "2021-06-20T15:00:00.000Z",
+        "startLocalDateShort": "Sun, Jun 20",
+        "startLocalTimeShort": "07:00",
+        "startLocalDateTimeShort": "Sun, Jun 20 07:00"
+      }
+    ]
+  },
+  "circuitIntelligence": null,
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

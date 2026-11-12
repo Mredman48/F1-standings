@@ -1,0 +1,104 @@
+{
+  "header": "2021 Emilia Romagna GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-12T01:29:32.029Z",
+  "season": 2021,
+  "round": 2,
+  "meetingKey": null,
+  "raceSlug": "emilia-romagna",
+  "status": "upcoming",
+  "weekend": {
+    "round": 2,
+    "id": "emilia-romagna",
+    "type": "RACE_WEEKEND",
+    "title": "Emilia Romagna Grand Prix 2021",
+    "shortTitle": "Emilia Romagna GP",
+    "circuit": "Autodromo Enzo e Dino Ferrari",
+    "season": "2021",
+    "location": {
+      "city": "Imola",
+      "country": "Italy",
+      "flag": {
+        "iso2": "it",
+        "png": "https://flagcdn.com/w160/it.png",
+        "svg": "https://flagcdn.com/it.svg"
+      }
+    },
+    "racePage": {
+      "slug": "emilia-romagna",
+      "url": "https://www.formula1.com/en/racing/2021/emilia-romagna"
+    },
+    "trackMap": {
+      "found": false,
+      "pageUrl": "https://www.formula1.com/en/racing/2021/emilia-romagna",
+      "mediaUrl": null,
+      "pngUrl": null
+    },
+    "map": {
+      "found": false,
+      "filename": null,
+      "pngUrl": null
+    },
+    "weekend": {
+      "startUtc": "2021-04-16T00:00:00.000Z",
+      "endUtc": "2021-04-18T15:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Apr 16",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP2",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Apr 16",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP3",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Apr 17",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Apr 17",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Race",
+        "startUtc": "2021-04-18T13:00:00.000Z",
+        "endUtc": "2021-04-18T15:00:00.000Z",
+        "startLocalDateShort": "Sun, Apr 18",
+        "startLocalTimeShort": "07:00",
+        "startLocalDateTimeShort": "Sun, Apr 18 07:00"
+      }
+    ]
+  },
+  "circuitIntelligence": null,
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

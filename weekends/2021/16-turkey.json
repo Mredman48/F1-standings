@@ -1,0 +1,104 @@
+{
+  "header": "2021 Turkish GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-12T01:29:32.080Z",
+  "season": 2021,
+  "round": 16,
+  "meetingKey": null,
+  "raceSlug": "turkey",
+  "status": "upcoming",
+  "weekend": {
+    "round": 16,
+    "id": "turkey",
+    "type": "RACE_WEEKEND",
+    "title": "Turkish Grand Prix 2021",
+    "shortTitle": "Turkish GP",
+    "circuit": "Istanbul Park",
+    "season": "2021",
+    "location": {
+      "city": "Istanbul",
+      "country": "Turkey",
+      "flag": {
+        "iso2": "tr",
+        "png": "https://flagcdn.com/w160/tr.png",
+        "svg": "https://flagcdn.com/tr.svg"
+      }
+    },
+    "racePage": {
+      "slug": "turkey",
+      "url": "https://www.formula1.com/en/racing/2021/turkey"
+    },
+    "trackMap": {
+      "found": false,
+      "pageUrl": "https://www.formula1.com/en/racing/2021/turkey",
+      "mediaUrl": null,
+      "pngUrl": null
+    },
+    "map": {
+      "found": false,
+      "filename": null,
+      "pngUrl": null
+    },
+    "weekend": {
+      "startUtc": "2021-10-08T00:00:00.000Z",
+      "endUtc": "2021-10-10T14:00:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Oct 08",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP2",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Oct 08",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP3",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Oct 09",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Oct 09",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Race",
+        "startUtc": "2021-10-10T12:00:00.000Z",
+        "endUtc": "2021-10-10T14:00:00.000Z",
+        "startLocalDateShort": "Sun, Oct 10",
+        "startLocalTimeShort": "06:00",
+        "startLocalDateTimeShort": "Sun, Oct 10 06:00"
+      }
+    ]
+  },
+  "circuitIntelligence": null,
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}

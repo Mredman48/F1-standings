@@ -1,0 +1,139 @@
+{
+  "header": "2021 Saudi Arabian GP weekend",
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-11-12T01:29:32.092Z",
+  "season": 2021,
+  "round": 21,
+  "meetingKey": null,
+  "raceSlug": "saudi-arabia",
+  "status": "upcoming",
+  "weekend": {
+    "round": 21,
+    "id": "saudi-arabia",
+    "type": "RACE_WEEKEND",
+    "title": "Saudi Arabian Grand Prix 2021",
+    "shortTitle": "Saudi Arabian GP",
+    "circuit": "Jeddah Corniche Circuit",
+    "season": "2021",
+    "location": {
+      "city": "Jeddah",
+      "country": "Saudi Arabia",
+      "flag": {
+        "iso2": "sa",
+        "png": "https://flagcdn.com/w160/sa.png",
+        "svg": "https://flagcdn.com/sa.svg"
+      }
+    },
+    "racePage": {
+      "slug": "saudi-arabia",
+      "url": "https://www.formula1.com/en/racing/2021/saudi-arabia"
+    },
+    "trackMap": {
+      "found": true,
+      "pageUrl": "https://www.formula1.com/en/racing/2021/saudi-arabia",
+      "mediaUrl": "https://www.formula1.com/en/racing/2027/saudi-arabia",
+      "pngUrl": "https://mredman48.github.io/F1-standings/trackmaps/f1_2026_saudi-arabia_detailed.png"
+    },
+    "map": {
+      "found": true,
+      "filename": "jeddah.png",
+      "pngUrl": "https://mredman48.github.io/F1-standings/maps/jeddah.png"
+    },
+    "weekend": {
+      "startUtc": "2021-12-03T00:00:00.000Z",
+      "endUtc": "2021-12-05T19:30:00.000Z"
+    },
+    "sessions": [
+      {
+        "type": "FP1",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Dec 03",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP2",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Fri, Dec 03",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "FP3",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Dec 04",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Quali",
+        "startUtc": null,
+        "endUtc": null,
+        "startLocalDateShort": "Sat, Dec 04",
+        "startLocalTimeShort": null,
+        "startLocalDateTimeShort": null
+      },
+      {
+        "type": "Race",
+        "startUtc": "2021-12-05T17:30:00.000Z",
+        "endUtc": "2021-12-05T19:30:00.000Z",
+        "startLocalDateShort": "Sun, Dec 05",
+        "startLocalTimeShort": "10:30",
+        "startLocalDateTimeShort": "Sun, Dec 05 10:30"
+      }
+    ]
+  },
+  "circuitIntelligence": {
+    "displayName": "Saudi Arabian Grand Prix",
+    "dna": {
+      "cornerProfile": "High-speed street",
+      "overtaking": "Medium",
+      "tireWear": "Low",
+      "trackEvolution": "High",
+      "strategyBias": "Track Position",
+      "safetyCarRisk": "High"
+    },
+    "intelligence": [
+      "High-speed walls make mistakes costly.",
+      "Safety Cars can quickly reshape strategy.",
+      "Qualifying position matters because overtaking is risky.",
+      "Low degradation can limit strategic variation."
+    ],
+    "id": "saudi",
+    "matchKeys": [
+      "saudi",
+      "jeddah"
+    ],
+    "specs": {
+      "turns": 27,
+      "longestStraightKm": 0.9,
+      "averageSpeed": "High",
+      "raceLaps": 50,
+      "raceDistance": null
+    },
+    "raceLapRecord": {
+      "time": "1:30.734",
+      "driver": "Lewis Hamilton",
+      "constructor": "Mercedes",
+      "year": 2021,
+      "raceName": "Saudi Arabian Grand Prix"
+    }
+  },
+  "previousWinner": null,
+  "tyreInfo": null,
+  "racePreview": null,
+  "startingGrids": [],
+  "penaltyDocs": {},
+  "sessionResults": [],
+  "raceStrategy": [],
+  "raceRecap": null,
+  "locked": false,
+  "lockedSections": [],
+  "meta": {
+    "fia": {},
+    "final": {}
+  }
+}
