@@ -11,7 +11,7 @@
     "round": 11,
     "id": "austria",
     "type": "RACE_WEEKEND",
-    "title": "Austrian Grand Prix 2022",
+    "title": "Grosser Preis Von Osterrich 2022",
     "shortTitle": "Austrian GP",
     "circuit": "Red Bull Ring",
     "season": "2022",
@@ -5073,8 +5073,12 @@
       ]
     }
   ],
-  "raceRecap": null,
-  "locked": false,
+  "raceRecap": {
+    "result": {
+      "driverOfDay": "Schumacher"
+    }
+  },
+  "locked": true,
   "lockedSections": [],
   "meta": {
     "fia": {},
