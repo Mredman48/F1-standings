@@ -11,7 +11,7 @@
     "round": 4,
     "id": "emilia-romagna",
     "type": "RACE_WEEKEND",
-    "title": "Emilia Romagna Grand Prix 2022",
+    "title": "Gran Premio Dell'Emilia-Romagna 2022",
     "shortTitle": "Emilia Romagna GP",
     "circuit": "Autodromo Enzo e Dino Ferrari",
     "season": "2022",
@@ -4590,8 +4590,12 @@
       ]
     }
   ],
-  "raceRecap": null,
-  "locked": false,
+  "raceRecap": {
+    "result": {
+      "driverOfDay": "Verstappen"
+    }
+  },
+  "locked": true,
   "lockedSections": [],
   "meta": {
     "fia": {},
