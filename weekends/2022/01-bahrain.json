@@ -86,7 +86,33 @@
       }
     ]
   },
-  "circuitIntelligence": null,
+  "circuitIntelligence": {
+    "displayName": "Bahrain Grand Prix",
+    "id": "bahrain",
+    "dna": {
+      "cornerProfile": "Stop-start, heavy breaking",
+      "overtaking": "High",
+      "tireWear": "High",
+      "trackEvolution": "Medium",
+      "strategyBias": "Tyre Management",
+      "safetyCarRisk": "High"
+    },
+    "specs": {
+      "turns": 15,
+      "longestStraightKm": 1.09,
+      "averageSpeed": "Medium",
+      "raceLaps": 57,
+      "trackLength": "5.412 km",
+      "raceDistance": "308.238 km"
+    },
+    "raceLapRecord": {
+      "time": "1:31.447",
+      "driver": "Pedro de la Rosa",
+      "constructor": "McLaren",
+      "year": 2005,
+      "raceName": "Bahrain Grand Prix"
+    }
+  },
   "previousWinner": {
     "round": 1,
     "raceName": "Bahrain Grand Prix",
@@ -4915,7 +4941,7 @@
     }
   ],
   "raceRecap": null,
-  "locked": false,
+  "locked": true,
   "lockedSections": [],
   "meta": {
     "fia": {},
