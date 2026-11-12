@@ -4219,8 +4219,12 @@
       ]
     }
   ],
-  "raceRecap": null,
-  "locked": false,
+  "raceRecap": {
+    "result": {
+      "driverOfDay": "De Vries"
+    }
+  },
+  "locked": true,
   "lockedSections": [],
   "meta": {
     "fia": {},
