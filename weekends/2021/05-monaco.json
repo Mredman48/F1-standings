@@ -123,7 +123,15 @@
       "raceName": "Monaco Grand Prix"
     }
   },
-  "previousWinner": null,
+  "previousWinner": {
+    "round": 6,
+    "date": "2019-05-26",
+    "raceName": "Monaco Grand Prix",
+    "city": "Monte Carlo",
+    "country": "Monaco",
+    "previousWinner": "Lewis Hamilton",
+    "constructor": "Mercedes"
+  },
   "tyreInfo": {
     "round": 5,
     "raceSlug": "monaco",
