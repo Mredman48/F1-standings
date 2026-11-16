@@ -86,7 +86,45 @@
       }
     ]
   },
-  "circuitIntelligence": null,
+  "circuitIntelligence": {
+    "displayName": "Russian Grand Prix",
+    "id": "russia",
+    "specs": {
+      "trackLength": "5.842 km",
+      "turns": 18,
+      "raceLaps": 53,
+      "raceDistance": "309.745 km",
+      "longestStraightKm": 0.9,
+      "averageSpeed": "Medium"
+    },
+    "raceLapRecord": {
+      "time": "1:35.761",
+      "driver": "Lewis Hamilton",
+      "constructor": "Mercedes",
+      "year": 2019,
+      "raceName": "Russian Grand Prix"
+    },
+    "dna": {
+      "cornerProfile": "Stop-start, 90-degree corners",
+      "overtaking": "Medium",
+      "tireWear": "Low",
+      "trackEvolution": "High",
+      "safetyCarRisk": "Medium",
+      "strategyBias": "Track Position"
+    },
+    "intelligence": [
+      "The near 900 m run to Turn 2 gives cars behind a tow, so pole is not always an advantage.",
+      "Turn 3 is a 750 m constant-radius left-hander that puts heavy load on the tyres.",
+      "Low tyre degradation has made Sochi a traditional one-stop race.",
+      "The park-road surface sees little use, so grip improves a lot over the weekend."
+    ],
+    "matchKeys": [
+      "russia",
+      "russian",
+      "Sochi",
+      "sochiautodrom"
+    ]
+  },
   "previousWinner": {
     "round": 10,
     "raceName": "Russian Grand Prix",
@@ -4077,8 +4115,12 @@
       ]
     }
   ],
-  "raceRecap": null,
-  "locked": false,
+  "raceRecap": {
+    "result": {
+      "driverOfDay": "Norris"
+    }
+  },
+  "locked": true,
   "lockedSections": [],
   "meta": {
     "fia": {},
