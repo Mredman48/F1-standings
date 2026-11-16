@@ -126,7 +126,14 @@
       "raceName": "United States Grand Prix"
     }
   },
-  "previousWinner": null,
+  "previousWinner": {
+    "raceName": "United States Grand Prix",
+    "city": "Austin",
+    "country": "United States",
+    "previousWinner": "Valtteri Bottas",
+    "constructor": "Mercedes",
+    "date": "2019-11-03"
+  },
   "tyreInfo": {
     "round": 17,
     "raceSlug": "united-states",
@@ -4538,8 +4545,12 @@
       ]
     }
   ],
-  "raceRecap": null,
-  "locked": false,
+  "raceRecap": {
+    "result": {
+      "driverOfDay": "Verstappen"
+    }
+  },
+  "locked": true,
   "lockedSections": [],
   "meta": {
     "fia": {},
