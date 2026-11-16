@@ -123,7 +123,15 @@
       "emiliaromagna"
     ]
   },
-  "previousWinner": null,
+  "previousWinner": {
+    "round": 7,
+    "raceName": "Emilia Romagna Grand Prix",
+    "city": "Imola",
+    "country": "Italy",
+    "previousWinner": "Max Verstappen",
+    "constructor": "Red Bull",
+    "date": "2022-04-24"
+  },
   "tyreInfo": {
     "round": 7,
     "raceSlug": "emilia-romagna",
