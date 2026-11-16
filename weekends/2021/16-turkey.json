@@ -86,7 +86,46 @@
       }
     ]
   },
-  "circuitIntelligence": null,
+  "circuitIntelligence": {
+    "displayName": "Turkish Grand Prix",
+    "id": "turkey",
+    "dna": {
+      "cornerProfile": "Fast multi-apex, elevation",
+      "overtaking": "Medium",
+      "tireWear": "High",
+      "trackEvolution": "High",
+      "strategyBias": "Tire Management",
+      "safetyCarRisk": "Medium"
+    },
+    "specs": {
+      "turns": 14,
+      "longestStraightKm": 0.72,
+      "averageSpeed": "High",
+      "trackLength": "5.338 km",
+      "raceDistance": "309.396 km",
+      "raceLaps": 58
+    },
+    "raceLapRecord": {
+      "time": "1:24.770",
+      "driver": "Juan Pablo Montoya",
+      "constructor": "McLaren",
+      "year": 2005,
+      "raceName": "Turkish Grand Prix"
+    },
+    "intelligence": [
+      "Turn 8 is a fast four-apex left-hander.",
+      "Turn 8’s heavy loads drive high tyre wear.",
+      "The downhill Turn 1 often causes incidents.",
+      "Surface grip is unknown after five years away."
+    ],
+    "matchKeys": [
+      "turkey",
+      "turkish",
+      "turkiye",
+      "istanbul",
+      "istanbulpark"
+    ]
+  },
   "previousWinner": {
     "round": 14,
     "raceName": "Turkish Grand Prix",
@@ -3982,8 +4021,12 @@
       ]
     }
   ],
-  "raceRecap": null,
-  "locked": false,
+  "raceRecap": {
+    "result": {
+      "driverOfDay": "Sainz"
+    }
+  },
+  "locked": true,
   "lockedSections": [],
   "meta": {
     "fia": {},
