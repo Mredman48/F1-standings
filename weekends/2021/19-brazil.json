@@ -125,7 +125,15 @@
       "raceName": "Sao Paulo Grand Prix"
     }
   },
-  "previousWinner": null,
+  "previousWinner": {
+    "round": 20,
+    "date": "2019-11-17",
+    "raceName": "São Paulo Grand Prix",
+    "city": "São Paulo",
+    "country": "Brazil",
+    "previousWinner": "Max Verstappen",
+    "constructor": "Red Bull"
+  },
   "tyreInfo": {
     "round": 19,
     "raceSlug": "brazil",
@@ -5906,8 +5914,12 @@
       ]
     }
   ],
-  "raceRecap": null,
-  "locked": false,
+  "raceRecap": {
+    "result": {
+      "driverOfDay": "Lewis Hamilton"
+    }
+  },
+  "locked": true,
   "lockedSections": [],
   "meta": {
     "fia": {},
