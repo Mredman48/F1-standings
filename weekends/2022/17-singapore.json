@@ -123,7 +123,15 @@
       "raceName": "Singapore Grand Prix"
     }
   },
-  "previousWinner": null,
+  "previousWinner": {
+    "round": 15,
+    "date": "2019-09-22",
+    "raceName": "Singapore Grand Prix",
+    "city": "Singapore",
+    "country": "Singapore",
+    "previousWinner": "Sebastian Vettel",
+    "constructor": "Ferrari"
+  },
   "tyreInfo": {
     "round": 17,
     "raceSlug": "singapore",
