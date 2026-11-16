@@ -4444,8 +4444,12 @@
       ]
     }
   ],
-  "raceRecap": null,
-  "locked": false,
+  "raceRecap": {
+    "result": {
+      "driverOfDay": "Lewis Hamilton"
+    }
+  },
+  "locked": true,
   "lockedSections": [],
   "meta": {
     "fia": {},
