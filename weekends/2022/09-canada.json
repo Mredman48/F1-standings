@@ -125,7 +125,15 @@
       "raceName": "Canadian Grand Prix"
     }
   },
-  "previousWinner": null,
+  "previousWinner": {
+    "round": 7,
+    "date": "2019-06-09",
+    "raceName": "Canadian Grand Prix",
+    "city": "Montreal",
+    "country": "Canada",
+    "previousWinner": "Lewis Hamilton",
+    "constructor": "Mercedes"
+  },
   "tyreInfo": {
     "round": 9,
     "raceSlug": "canada",
