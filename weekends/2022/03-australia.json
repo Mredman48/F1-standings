@@ -124,7 +124,15 @@
       "raceName": "Australian Grand Prix"
     }
   },
-  "previousWinner": null,
+  "previousWinner": {
+    "round": 1,
+    "date": "2019-03-17",
+    "raceName": "Australian Grand Prix",
+    "city": "Melbourne",
+    "country": "Australia",
+    "previousWinner": "Valtteri Bottas",
+    "constructor": "Mercedes"
+  },
   "tyreInfo": {
     "round": 3,
     "raceSlug": "australia",
