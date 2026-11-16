@@ -123,7 +123,15 @@
       "raceName": "Azerbaijan Grand Prix"
     }
   },
-  "previousWinner": null,
+  "previousWinner": {
+    "round": 4,
+    "date": "2019-04-28",
+    "raceName": "Azerbaijan Grand Prix",
+    "city": "Baku",
+    "country": "Azerbaijan",
+    "previousWinner": "Valtteri Bottas",
+    "constructor": "Mercedes"
+  },
   "tyreInfo": {
     "round": 6,
     "raceSlug": "azerbaijan",
