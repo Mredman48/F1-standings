@@ -124,7 +124,15 @@
       "raceName": "Japanese Grand Prix"
     }
   },
-  "previousWinner": null,
+  "previousWinner": {
+    "round": 17,
+    "date": "2019-10-13",
+    "raceName": "Japanese Grand Prix",
+    "city": "Suzuka",
+    "country": "Japan",
+    "previousWinner": "Valtteri Bottas",
+    "constructor": "Mercedes"
+  },
   "tyreInfo": {
     "round": 18,
     "raceSlug": "japan",
