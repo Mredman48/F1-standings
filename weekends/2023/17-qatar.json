@@ -124,7 +124,15 @@
       "raceName": "Qatar Grand Prix"
     }
   },
-  "previousWinner": null,
+  "previousWinner": {
+    "round": 17,
+    "raceName": "Qatar Grand Prix",
+    "city": "Lusail",
+    "country": "Qatar",
+    "previousWinner": "Lewis Hamilton",
+    "constructor": "Mercedes",
+    "date": "2021-11-21"
+  },
   "tyreInfo": {
     "round": 17,
     "raceSlug": "qatar",
