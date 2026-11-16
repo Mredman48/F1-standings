@@ -1,7 +1,7 @@
 {
  "schema": "apex-stat-tables",
  "version": 2,
- "generatedAt": "2026-11-09T20:16:42+00:00",
+ "generatedAt": "2026-11-16T01:37:02+00:00",
  "year": 2026,
  "latestRound": 20,
  "latestRace": "Brazilian Grand Prix",
@@ -1263,7 +1263,7 @@
      },
      {
       "rank": "5",
-      "value": "-0.279",
+      "value": "-0.289",
       "unit": "s",
       "note": "",
       "code": "LAW",
@@ -1849,16 +1849,6 @@
      },
      {
       "rank": "9",
-      "value": "9.2",
-      "unit": "",
-      "note": "",
-      "code": "LAW",
-      "text": "",
-      "team": "Racing Bulls",
-      "series": "12, 11, 9, 10, 8, 5"
-     },
-     {
-      "rank": "10",
       "value": "10.3",
       "unit": "",
       "note": "",
@@ -1866,6 +1856,16 @@
       "text": "",
       "team": "Alpine",
       "series": "7, 9, 8, 11, 9, 18"
+     },
+     {
+      "rank": "10",
+      "value": "11.5",
+      "unit": "",
+      "note": "",
+      "code": "LAW",
+      "text": "",
+      "team": "Racing Bulls",
+      "series": "12, 11, 9, 10, 22, 5"
      }
     ]
    },
@@ -3185,7 +3185,7 @@
       "code": "LAW",
       "text": "",
       "team": "Racing Bulls",
-      "fill": "10"
+      "fill": "9"
      }
     ]
    },
@@ -51320,15 +51320,6 @@
       },
       {
        "rank": "8",
-       "value": "0.515",
-       "unit": "s",
-       "note": "",
-       "code": "LAW",
-       "text": "",
-       "team": "Racing Bulls"
-      },
-      {
-       "rank": "9",
        "value": "0.603",
        "unit": "s",
        "note": "",
@@ -51337,13 +51328,22 @@
        "team": "Racing Bulls"
       },
       {
-       "rank": "10",
+       "rank": "9",
        "value": "0.639",
        "unit": "s",
        "note": "",
        "code": "GAS",
        "text": "",
        "team": "Alpine"
+      },
+      {
+       "rank": "10",
+       "value": "0.792",
+       "unit": "s",
+       "note": "",
+       "code": "HUL",
+       "text": "",
+       "team": "Audi"
       }
      ]
     },
@@ -52190,9 +52190,9 @@
        "value": "42",
        "unit": "%",
        "note": "",
-       "code": "LAW",
+       "code": "GAS",
        "text": "",
-       "team": "Racing Bulls"
+       "team": "Alpine"
       },
       {
        "rank": "6",
