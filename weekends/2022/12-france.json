@@ -86,7 +86,45 @@
       }
     ]
   },
-  "circuitIntelligence": null,
+  "circuitIntelligence": {
+    "displayName": "French Grand Prix",
+    "id": "france",
+    "intelligence": [
+      "The 1.8 km Mistral straight, split by a chicane, is the main overtaking zone.",
+      "Signes and the long double-right at Le Beausset put big lateral load through the tyres.",
+      "Smooth asphalt usually keeps degradation low, but summer heat can bring graining.",
+      "Vast run-off areas mean mistakes are rarely punished and Safety Cars are uncommon."
+    ],
+    "specs": {
+      "trackLength": "5.842 km",
+      "raceLaps": 53,
+      "longestStraightKm": 0.9,
+      "turns": 15,
+      "raceDistance": "309.690 km",
+      "averageSpeed": "Fast"
+    },
+    "raceLapRecord": {
+      "time": "1:32.740",
+      "driver": "Sebastian Vettel",
+      "constructor": "Ferrari",
+      "year": 2019,
+      "raceName": "French Grand Prix"
+    },
+    "dna": {
+      "cornerProfile": "Fast sweepers, long straight",
+      "overtaking": "Medium",
+      "tireWear": "Low",
+      "trackEvolution": "Medium",
+      "strategyBias": "Neutral",
+      "safetyCarRisk": "Low"
+    },
+    "matchKeys": [
+      "france",
+      "french",
+      "paulricard",
+      "lecastellet"
+    ]
+  },
   "previousWinner": {
     "round": 7,
     "raceName": "French Grand Prix",
