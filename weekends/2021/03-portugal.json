@@ -86,7 +86,39 @@
       }
     ]
   },
-  "circuitIntelligence": null,
+  "circuitIntelligence": {
+    "displayName": "Portuguese Grand Prix",
+    "id": "portugal",
+    "dna": {
+      "cornerProfile": "Rollercoaster, blind crests",
+      "overtaking": "Medium",
+      "tireWear": "Low",
+      "trackEvolution": "High",
+      "strategyBias": "Neutral",
+      "safetyCarRisk": "Low"
+    },
+    "specs": {
+      "turns": 15,
+      "longestStraightKm": 0.969,
+      "averageSpeed": "Medium",
+      "raceLaps": 66,
+      "raceDistance": "306.826 km",
+      "trackLength": "4.653 km"
+    },
+    "raceLapRecord": {
+      "time": "1:18.750",
+      "driver": "Lewis Hamilton",
+      "constructor": "Mercedes",
+      "year": 2020,
+      "raceName": "Portuguese Grand Prix"
+    },
+    "intelligence": [
+      "Big elevation changes and many blind corners.",
+      "Low wear made a one-stop work in 2020.",
+      "The wide track allows different racing lines.",
+      "Entertaining technical mix of slow & fast corners."
+    ]
+  },
   "previousWinner": {
     "round": 12,
     "raceName": "Portuguese Grand Prix",
@@ -4907,7 +4939,7 @@
     }
   ],
   "raceRecap": null,
-  "locked": false,
+  "locked": true,
   "lockedSections": [],
   "meta": {
     "fia": {},
