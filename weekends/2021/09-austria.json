@@ -4185,8 +4185,12 @@
       ]
     }
   ],
-  "raceRecap": null,
-  "locked": false,
+  "raceRecap": {
+    "result": {
+      "driverOfDay": "Norris"
+    }
+  },
+  "locked": true,
   "lockedSections": [],
   "meta": {
     "fia": {},
