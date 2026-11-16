@@ -124,7 +124,15 @@
       "raceName": "Mexico City Grand Prix"
     }
   },
-  "previousWinner": null,
+  "previousWinner": {
+    "round": 18,
+    "raceName": "Mexico City Grand Prix",
+    "city": "Mexico City",
+    "country": "Mexico",
+    "previousWinner": "Lewis Hamilton",
+    "constructor": "Mercedes",
+    "date": "2019-10-27"
+  },
   "tyreInfo": {
     "round": 18,
     "raceSlug": "mexico",
@@ -4116,8 +4124,12 @@
       ]
     }
   ],
-  "raceRecap": null,
-  "locked": false,
+  "raceRecap": {
+    "result": {
+      "driverOfDay": "Perez"
+    }
+  },
+  "locked": true,
   "lockedSections": [],
   "meta": {
     "fia": {},
