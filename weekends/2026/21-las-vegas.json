@@ -145,13 +145,13 @@
     "flag": "us",
     "raceStart": "2026-11-22T04:00:00.000Z",
     "compounds": {
-      "soft": null,
-      "medium": null,
-      "hard": null
+      "soft": "C5",
+      "medium": "C4",
+      "hard": "C3"
     },
     "trackCharacteristics": {
-      "ratingsSeason": 2025,
-      "pastYear": true,
+      "ratingsSeason": 2026,
+      "pastYear": false,
       "traction": 2,
       "tyreStress": 4,
       "asphaltGrip": 1,
