@@ -1,7 +1,7 @@
 {
   "header": "2026 Las Vegas GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-11-12T06:12:48.069Z",
+  "generatedAtUtc": "2026-11-19T06:24:22.778Z",
   "season": 2026,
   "round": 21,
   "meetingKey": 1300,
@@ -129,6 +129,7 @@
     }
   },
   "previousWinner": {
+    "round": 22,
     "raceName": "Las Vegas Grand Prix",
     "city": "Las Vegas",
     "country": "USA",
@@ -169,7 +170,14 @@
   "raceStrategy": [],
   "raceRecap": null,
   "meta": {
-    "fia": {},
-    "final": {}
-  }
+    "fia": {
+      "eventName": "Las Vegas Grand Prix"
+    },
+    "final": {
+      "weekend": null
+    },
+    "buildVersion": "2026-10-31.1"
+  },
+  "lockedSections": [],
+  "locked": false
 }
