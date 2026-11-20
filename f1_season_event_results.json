@@ -1,6 +1,6 @@
 {
   "header": "2026 F1 all session results",
-  "generatedAtUtc": "2026-11-20T04:58:40.356Z",
+  "generatedAtUtc": "2026-11-20T05:07:45.649Z",
   "season": 2026,
   "events": [
     {
@@ -47361,8 +47361,8 @@
         },
         {
           "driverNumber": 50,
-          "driverName": null,
-          "teamName": null,
+          "driverName": "Ryo HIRAKAWA",
+          "teamName": "Haas F1 Team",
           "position": "P19",
           "positionRank": 19,
           "classifiedPosition": 19,
@@ -47912,8 +47912,8 @@
         },
         {
           "driverNumber": 50,
-          "driverName": null,
-          "teamName": null,
+          "driverName": "Ryo HIRAKAWA",
+          "teamName": "Haas F1 Team",
           "position": "P18",
           "positionRank": 18,
           "classifiedPosition": 18,
@@ -48301,8 +48301,8 @@
         },
         {
           "driverNumber": 50,
-          "driverName": null,
-          "teamName": null,
+          "driverName": "Ryo HIRAKAWA",
+          "teamName": "Haas F1 Team",
           "position": "P10",
           "positionRank": 10,
           "classifiedPosition": 10,
@@ -51107,6 +51107,25 @@
         "country": "United States"
       },
       "drivers": []
+    },
+    {
+      "eventType": "fp2",
+      "sessionKey": 11414,
+      "meetingKey": 1300,
+      "meetingName": "Las Vegas Grand Prix",
+      "raceName": "Las Vegas Grand Prix",
+      "sessionName": "Practice 2",
+      "officialName": "Practice 2",
+      "round": 21,
+      "dateStartUtc": "2026-11-20T04:00:00+00:00",
+      "dateEndUtc": "2026-11-20T05:00:00+00:00",
+      "date": "2026-11-20",
+      "circuit": "Las Vegas",
+      "location": {
+        "locality": "Las Vegas",
+        "country": "United States"
+      },
+      "drivers": []
     }
   ],
   "bestByDriverNumber": {
@@ -51472,8 +51491,8 @@
     },
     "50": {
       "driverNumber": 50,
-      "driverName": null,
-      "teamName": null,
+      "driverName": "Ryo HIRAKAWA",
+      "teamName": "Haas F1 Team",
       "position": "P10",
       "eventType": "race",
       "meetingName": "Mexico City Grand Prix",
