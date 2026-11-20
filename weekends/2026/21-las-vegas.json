@@ -1,12 +1,12 @@
 {
   "header": "2026 Las Vegas GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-11-19T06:24:22.778Z",
+  "generatedAtUtc": "2026-11-20T03:56:34.490Z",
   "season": 2026,
   "round": 21,
   "meetingKey": 1300,
   "raceSlug": "las-vegas",
-  "status": "upcoming",
+  "status": "in_progress",
   "weekend": {
     "round": 21,
     "type": "RACE_WEEKEND",
@@ -166,7 +166,27 @@
   "racePreview": null,
   "startingGrids": [],
   "penaltyDocs": {},
-  "sessionResults": [],
+  "sessionResults": [
+    {
+      "eventType": "fp1",
+      "sessionKey": 11413,
+      "meetingKey": 1300,
+      "meetingName": "Las Vegas Grand Prix",
+      "raceName": "Las Vegas Grand Prix",
+      "sessionName": "Practice 1",
+      "officialName": "Practice 1",
+      "round": 21,
+      "dateStartUtc": "2026-11-20T00:30:00+00:00",
+      "dateEndUtc": "2026-11-20T01:30:00+00:00",
+      "date": "2026-11-20",
+      "circuit": "Las Vegas",
+      "location": {
+        "locality": "Las Vegas",
+        "country": "United States"
+      },
+      "drivers": []
+    }
+  ],
   "raceStrategy": [],
   "raceRecap": null,
   "meta": {
