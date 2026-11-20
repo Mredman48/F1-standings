@@ -1,6 +1,6 @@
 {
   "header": "Constructors standings",
-  "generatedAtUtc": "2026-11-20T01:22:54.751Z",
+  "generatedAtUtc": "2026-11-20T01:33:55.891Z",
   "meta": {
     "seasonUsed": "2026",
     "source": "f1_season_event_results.json + f1_driver_standings.json",
@@ -18,11 +18,11 @@
       "country": "Brazil"
     },
     "winner": {
-      "firstName": "Lando",
-      "lastName": "NORRIS",
-      "fullName": "Lando NORRIS",
+      "firstName": "-",
+      "lastName": "-",
+      "fullName": "-",
       "code": null,
-      "team": "McLaren"
+      "team": "-"
     }
   },
   "constructors": [
@@ -79,7 +79,7 @@
       "position": "P7",
       "points": 31,
       "wins": 0,
-      "driverCount": 4,
+      "driverCount": 3,
       "placeholder": false
     },
     {
@@ -112,6 +112,14 @@
       "points": 0,
       "wins": 0,
       "driverCount": 2,
+      "placeholder": false
+    },
+    {
+      "team": "-",
+      "position": "P12",
+      "points": 0,
+      "wins": 0,
+      "driverCount": 1,
       "placeholder": false
     }
   ]
