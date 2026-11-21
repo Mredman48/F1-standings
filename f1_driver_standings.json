@@ -1,6 +1,6 @@
 {
   "header": "2026 Driver Standings",
-  "generatedAtUtc": "2026-11-21T00:42:51.944Z",
+  "generatedAtUtc": "2026-11-21T01:08:25.130Z",
   "season": 2026,
   "source": {
     "primary": "f1_season_event_results.json",
@@ -19,11 +19,11 @@
       "country": "Brazil"
     },
     "winner": {
-      "firstName": "-",
-      "lastName": "-",
-      "fullName": "-",
+      "firstName": "Lando",
+      "lastName": "NORRIS",
+      "fullName": "Lando NORRIS",
       "code": null,
-      "team": "-"
+      "team": "McLaren"
     }
   },
   "drivers": [
@@ -538,17 +538,17 @@
       "wins": 0,
       "driver": {
         "code": "-",
-        "firstName": "Driver",
-        "lastName": "51",
-        "fullName": "Driver 51",
+        "firstName": "Rafael",
+        "lastName": "CAMARA",
+        "fullName": "Rafael CAMARA",
         "nationality": "-",
         "driverNumber": 51,
-        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/driver-51.png",
+        "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/rafael-camara.png",
         "openf1HeadshotUrl": null
       },
       "constructor": {
-        "name": "-",
-        "fullName": "-",
+        "name": "Haas",
+        "fullName": "Haas",
         "nationality": null
       }
     }
