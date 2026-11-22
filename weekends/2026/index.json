@@ -2,9 +2,9 @@
   "header": "2026 race weekends",
   "schemaVersion": 1,
   "season": 2026,
-  "generatedAtUtc": "2026-11-21T10:04:21.341Z",
+  "generatedAtUtc": "2026-11-22T07:36:17.525Z",
   "count": 23,
-  "nextRound": 21,
+  "nextRound": 22,
   "latestCompletedRound": 20,
   "weekends": [
     {
@@ -1617,7 +1617,7 @@
       "weekendEndUtc": "2026-11-22T06:00:00.000Z",
       "file": "21-las-vegas.json",
       "url": "https://mredman48.github.io/F1-standings/weekends/2026/21-las-vegas.json",
-      "updatedAtUtc": "2026-11-21T10:04:21.312Z",
+      "updatedAtUtc": "2026-11-22T07:36:17.497Z",
       "shortTitle": "Las Vegas GP",
       "circuit": "Las Vegas Strip Circuit",
       "location": {
@@ -1933,21 +1933,21 @@
       "driverNumber": 10,
       "driverName": "Pierre GASLY",
       "teamName": "Alpine",
-      "position": "P6",
+      "position": "P5",
       "eventType": "race",
-      "meetingName": "Chinese Grand Prix",
-      "raceName": "Chinese Grand Prix",
+      "meetingName": "Las Vegas Grand Prix",
+      "raceName": "Las Vegas Grand Prix",
       "sessionName": "Race",
-      "round": 2,
-      "date": "2026-03-15",
-      "dateStartUtc": "2026-03-15T07:00:00+00:00",
-      "circuit": "Shanghai",
+      "round": 21,
+      "date": "2026-11-22",
+      "dateStartUtc": "2026-11-22T04:00:00+00:00",
+      "circuit": "Las Vegas",
       "location": {
-        "locality": "Shanghai",
-        "country": "China"
+        "locality": "Las Vegas",
+        "country": "United States"
       },
-      "sessionKey": 11245,
-      "meetingKey": 1280
+      "sessionKey": 11420,
+      "meetingKey": 1300
     },
     "11": {
       "driverNumber": 11,
@@ -2233,41 +2233,41 @@
       "driverNumber": 51,
       "driverName": "Rafael CAMARA",
       "teamName": "Haas F1 Team",
-      "position": "P20",
+      "position": "P16",
       "eventType": "race",
-      "meetingName": "São Paulo Grand Prix",
-      "raceName": "São Paulo Grand Prix",
+      "meetingName": "Las Vegas Grand Prix",
+      "raceName": "Las Vegas Grand Prix",
       "sessionName": "Race",
-      "round": 20,
-      "date": "2026-11-08",
-      "dateStartUtc": "2026-11-08T17:00:00+00:00",
-      "circuit": "Interlagos",
+      "round": 21,
+      "date": "2026-11-22",
+      "dateStartUtc": "2026-11-22T04:00:00+00:00",
+      "circuit": "Las Vegas",
       "location": {
-        "locality": "São Paulo",
-        "country": "Brazil"
+        "locality": "Las Vegas",
+        "country": "United States"
       },
-      "sessionKey": 11412,
-      "meetingKey": 1299
+      "sessionKey": 11420,
+      "meetingKey": 1300
     },
     "55": {
       "driverNumber": 55,
       "driverName": "Carlos SAINZ",
       "teamName": "Williams",
-      "position": "P9",
+      "position": "P8",
       "eventType": "race",
-      "meetingName": "Chinese Grand Prix",
-      "raceName": "Chinese Grand Prix",
+      "meetingName": "Las Vegas Grand Prix",
+      "raceName": "Las Vegas Grand Prix",
       "sessionName": "Race",
-      "round": 2,
-      "date": "2026-03-15",
-      "dateStartUtc": "2026-03-15T07:00:00+00:00",
-      "circuit": "Shanghai",
+      "round": 21,
+      "date": "2026-11-22",
+      "dateStartUtc": "2026-11-22T04:00:00+00:00",
+      "circuit": "Las Vegas",
       "location": {
-        "locality": "Shanghai",
-        "country": "China"
+        "locality": "Las Vegas",
+        "country": "United States"
       },
-      "sessionKey": 11245,
-      "meetingKey": 1280
+      "sessionKey": 11420,
+      "meetingKey": 1300
     },
     "63": {
       "driverNumber": 63,
