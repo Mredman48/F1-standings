@@ -1,79 +1,41 @@
 {
   "schema": "apex-milestones",
   "version": 1,
-  "generatedAt": "2026-11-22T07:55:09.366Z",
+  "generatedAt": "2026-11-22T12:04:12.630Z",
   "year": 2026,
-  "throughRound": 18,
-  "latestRace": "Brazilian Grand Prix",
+  "throughRound": 19,
+  "latestRace": "Las Vegas Grand Prix",
   "nextRace": {
-    "round": 19,
-    "raceName": "Las Vegas Grand Prix",
-    "date": "2026-11-22"
+    "round": 20,
+    "raceName": "Qatar Grand Prix",
+    "date": "2026-11-29"
   },
-  "roundsLeft": 3,
+  "roundsLeft": 2,
   "hub": {
     "headline": {
-      "id": "sainz_starts_250",
-      "driverId": "sainz",
-      "code": "SAI",
-      "name": "Carlos Sainz",
-      "team": "Williams",
-      "stat": "starts",
-      "label": "Grand Prix starts",
-      "current": 249,
-      "target": 250,
-      "previousMilestone": 200,
+      "id": "norris_wins_15",
+      "driverId": "norris",
+      "code": "NOR",
+      "name": "Lando Norris",
+      "team": "McLaren",
+      "stat": "wins",
+      "label": "Race wins",
+      "current": 14,
+      "target": 15,
+      "previousMilestone": 10,
       "toGo": 1,
-      "toGoLabel": "THIS SUNDAY",
-      "progress": 0.98,
-      "status": "next_race"
+      "toGoLabel": "1 WIN",
+      "progress": 0.8,
+      "status": "within_reach"
     },
-    "moreCount": 13,
-    "totalCount": 16
+    "moreCount": 9,
+    "totalCount": 12
   },
   "groups": [
-    {
-      "id": "next_race",
-      "label": "LAS VEGAS GP · JUST NEEDS TO START",
-      "items": [
-        {
-          "id": "sainz_starts_250",
-          "driverId": "sainz",
-          "code": "SAI",
-          "name": "Carlos Sainz",
-          "team": "Williams",
-          "stat": "starts",
-          "label": "Grand Prix starts",
-          "current": 249,
-          "target": 250,
-          "previousMilestone": 200,
-          "toGo": 1,
-          "toGoLabel": "THIS SUNDAY",
-          "progress": 0.98,
-          "status": "next_race"
-        }
-      ]
-    },
     {
       "id": "within_reach",
       "label": "WITHIN REACH BEFORE ABU DHABI",
       "items": [
-        {
-          "id": "max_verstappen_wins_75",
-          "driverId": "max_verstappen",
-          "code": "VER",
-          "name": "Max Verstappen",
-          "team": "Red Bull",
-          "stat": "wins",
-          "label": "Race wins",
-          "current": 74,
-          "target": 75,
-          "previousMilestone": 50,
-          "toGo": 1,
-          "toGoLabel": "1 WIN",
-          "progress": 0.96,
-          "status": "within_reach"
-        },
         {
           "id": "norris_wins_15",
           "driverId": "norris",
@@ -139,11 +101,11 @@
           "status": "within_reach"
         },
         {
-          "id": "lawson_podiums_1",
-          "driverId": "lawson",
-          "code": "LAW",
-          "name": "Liam Lawson",
-          "team": "Racing Bulls",
+          "id": "bearman_podiums_1",
+          "driverId": "bearman",
+          "code": "BEA",
+          "name": "Oliver Bearman",
+          "team": "Haas",
           "stat": "podiums",
           "label": "Podiums",
           "current": 0,
@@ -155,11 +117,11 @@
           "status": "within_reach"
         },
         {
-          "id": "bearman_podiums_1",
-          "driverId": "bearman",
-          "code": "BEA",
-          "name": "Oliver Bearman",
-          "team": "Haas",
+          "id": "lawson_podiums_1",
+          "driverId": "lawson",
+          "code": "LAW",
+          "name": "Liam Lawson",
+          "team": "Racing Bulls",
           "stat": "podiums",
           "label": "Podiums",
           "current": 0,
@@ -203,22 +165,6 @@
           "status": "within_reach"
         },
         {
-          "id": "russell_poles_20",
-          "driverId": "russell",
-          "code": "RUS",
-          "name": "George Russell",
-          "team": "Mercedes",
-          "stat": "poles",
-          "label": "Pole positions",
-          "current": 17,
-          "target": 20,
-          "previousMilestone": 10,
-          "toGo": 3,
-          "toGoLabel": "3 POLES",
-          "progress": 0.7,
-          "status": "within_reach"
-        },
-        {
           "id": "gasly_starts_200",
           "driverId": "gasly",
           "code": "GAS",
@@ -226,28 +172,12 @@
           "team": "Alpine",
           "stat": "starts",
           "label": "Grand Prix starts",
-          "current": 197,
+          "current": 198,
           "target": 200,
           "previousMilestone": 150,
-          "toGo": 3,
-          "toGoLabel": "3 STARTS",
-          "progress": 0.94,
-          "status": "within_reach"
-        },
-        {
-          "id": "albon_starts_150",
-          "driverId": "albon",
-          "code": "ALB",
-          "name": "Alexander Albon",
-          "team": "Williams",
-          "stat": "starts",
-          "label": "Grand Prix starts",
-          "current": 147,
-          "target": 150,
-          "previousMilestone": 100,
-          "toGo": 3,
-          "toGoLabel": "3 STARTS",
-          "progress": 0.94,
+          "toGo": 2,
+          "toGoLabel": "2 STARTS",
+          "progress": 0.96,
           "status": "within_reach"
         },
         {
@@ -258,58 +188,58 @@
           "team": "Haas",
           "stat": "starts",
           "label": "Grand Prix starts",
-          "current": 47,
+          "current": 48,
           "target": 50,
           "previousMilestone": 0,
-          "toGo": 3,
-          "toGoLabel": "3 STARTS",
-          "progress": 0.94,
+          "toGo": 2,
+          "toGoLabel": "2 STARTS",
+          "progress": 0.96,
           "status": "within_reach"
         }
       ]
     },
     {
       "id": "just_reached",
-      "label": "JUST REACHED · BRAZILIAN",
+      "label": "JUST REACHED · LAS VEGAS",
       "items": [
         {
-          "id": "norris_podiums_50",
-          "driverId": "norris",
-          "code": "NOR",
-          "name": "Lando Norris",
-          "team": "McLaren",
-          "stat": "podiums",
-          "label": "Podiums",
-          "current": 50,
-          "target": 50,
-          "previousMilestone": 25,
+          "id": "max_verstappen_wins_75",
+          "driverId": "max_verstappen",
+          "code": "VER",
+          "name": "Max Verstappen",
+          "team": "Red Bull",
+          "stat": "wins",
+          "label": "Race wins",
+          "current": 75,
+          "target": 75,
+          "previousMilestone": 50,
           "toGo": 0,
           "toGoLabel": "REACHED",
           "progress": 1,
           "status": "reached",
           "reachedAt": {
-            "round": 18,
-            "raceName": "Brazilian Grand Prix"
+            "round": 19,
+            "raceName": "Las Vegas Grand Prix"
           }
         },
         {
-          "id": "hamilton_starts_400",
-          "driverId": "hamilton",
-          "code": "HAM",
-          "name": "Lewis Hamilton",
-          "team": "Ferrari",
+          "id": "sainz_starts_250",
+          "driverId": "sainz",
+          "code": "SAI",
+          "name": "Carlos Sainz",
+          "team": "Williams",
           "stat": "starts",
           "label": "Grand Prix starts",
-          "current": 400,
-          "target": 400,
-          "previousMilestone": 350,
+          "current": 250,
+          "target": 250,
+          "previousMilestone": 200,
           "toGo": 0,
           "toGoLabel": "REACHED",
           "progress": 1,
           "status": "reached",
           "reachedAt": {
-            "round": 18,
-            "raceName": "Brazilian Grand Prix"
+            "round": 19,
+            "raceName": "Las Vegas Grand Prix"
           }
         }
       ]
@@ -325,10 +255,10 @@
         "wins": 32,
         "poles": 23,
         "podiums": 106,
-        "starts": 445
+        "starts": 446
       },
       "season": {
-        "starts": 20,
+        "starts": 21,
         "wins": 0,
         "podiums": 0,
         "poles": 0
@@ -351,7 +281,7 @@
         },
         "starts": {
           "target": 450,
-          "toGo": 5,
+          "toGo": 4,
           "reachable": false
         }
       }
@@ -365,10 +295,10 @@
         "wins": 106,
         "poles": 118,
         "podiums": 209,
-        "starts": 400
+        "starts": 401
       },
       "season": {
-        "starts": 20,
+        "starts": 21,
         "wins": 1,
         "podiums": 7,
         "poles": 1
@@ -391,7 +321,7 @@
         },
         "starts": {
           "target": 450,
-          "toGo": 50,
+          "toGo": 49,
           "reachable": false
         }
       }
@@ -405,10 +335,10 @@
         "wins": 6,
         "poles": 4,
         "podiums": 39,
-        "starts": 301
+        "starts": 302
       },
       "season": {
-        "starts": 20,
+        "starts": 21,
         "wins": 0,
         "podiums": 0,
         "poles": 0
@@ -431,7 +361,7 @@
         },
         "starts": {
           "target": 350,
-          "toGo": 49,
+          "toGo": 48,
           "reachable": false
         }
       }
@@ -445,10 +375,10 @@
         "wins": 0,
         "poles": 1,
         "podiums": 1,
-        "starts": 269
+        "starts": 270
       },
       "season": {
-        "starts": 19,
+        "starts": 20,
         "wins": 0,
         "podiums": 0,
         "poles": 0
@@ -471,7 +401,7 @@
         },
         "starts": {
           "target": 300,
-          "toGo": 31,
+          "toGo": 30,
           "reachable": false
         }
       }
@@ -485,10 +415,10 @@
         "wins": 10,
         "poles": 19,
         "podiums": 67,
-        "starts": 265
+        "starts": 266
       },
       "season": {
-        "starts": 19,
+        "starts": 20,
         "wins": 0,
         "podiums": 0,
         "poles": 0
@@ -511,7 +441,7 @@
         },
         "starts": {
           "target": 300,
-          "toGo": 35,
+          "toGo": 34,
           "reachable": false
         }
       }
@@ -522,22 +452,22 @@
       "name": "Max Verstappen",
       "team": "Red Bull",
       "career": {
-        "wins": 74,
+        "wins": 75,
         "poles": 64,
-        "podiums": 139,
-        "starts": 253
+        "podiums": 140,
+        "starts": 254
       },
       "season": {
-        "starts": 20,
-        "wins": 3,
-        "podiums": 12,
+        "starts": 21,
+        "wins": 4,
+        "podiums": 13,
         "poles": 2
       },
       "next": {
         "wins": {
-          "target": 75,
-          "toGo": 1,
-          "reachable": true
+          "target": 100,
+          "toGo": 25,
+          "reachable": false
         },
         "poles": {
           "target": 75,
@@ -546,12 +476,12 @@
         },
         "podiums": {
           "target": 150,
-          "toGo": 11,
+          "toGo": 10,
           "reachable": false
         },
         "starts": {
           "target": 300,
-          "toGo": 47,
+          "toGo": 46,
           "reachable": false
         }
       }
@@ -565,10 +495,10 @@
         "wins": 4,
         "poles": 11,
         "podiums": 29,
-        "starts": 249
+        "starts": 250
       },
       "season": {
-        "starts": 20,
+        "starts": 21,
         "wins": 0,
         "podiums": 0,
         "poles": 0
@@ -590,9 +520,9 @@
           "reachable": false
         },
         "starts": {
-          "target": 250,
-          "toGo": 1,
-          "reachable": true
+          "target": 300,
+          "toGo": 50,
+          "reachable": false
         }
       }
     },
@@ -605,10 +535,10 @@
         "wins": 0,
         "poles": 1,
         "podiums": 3,
-        "starts": 209
+        "starts": 210
       },
       "season": {
-        "starts": 20,
+        "starts": 21,
         "wins": 0,
         "podiums": 0,
         "poles": 0
@@ -631,7 +561,7 @@
         },
         "starts": {
           "target": 250,
-          "toGo": 41,
+          "toGo": 40,
           "reachable": false
         }
       }
@@ -645,10 +575,10 @@
         "wins": 1,
         "poles": 1,
         "podiums": 5,
-        "starts": 197
+        "starts": 198
       },
       "season": {
-        "starts": 20,
+        "starts": 21,
         "wins": 0,
         "podiums": 0,
         "poles": 1
@@ -671,7 +601,7 @@
         },
         "starts": {
           "target": 200,
-          "toGo": 3,
+          "toGo": 2,
           "reachable": true
         }
       }
@@ -685,10 +615,10 @@
         "wins": 9,
         "poles": 31,
         "podiums": 56,
-        "starts": 191
+        "starts": 192
       },
       "season": {
-        "starts": 20,
+        "starts": 21,
         "wins": 1,
         "podiums": 6,
         "poles": 0
@@ -711,7 +641,7 @@
         },
         "starts": {
           "target": 200,
-          "toGo": 9,
+          "toGo": 8,
           "reachable": false
         }
       }
@@ -725,10 +655,10 @@
         "wins": 8,
         "poles": 17,
         "podiums": 32,
-        "starts": 172
+        "starts": 173
       },
       "season": {
-        "starts": 20,
+        "starts": 21,
         "wins": 3,
         "podiums": 8,
         "poles": 5
@@ -742,7 +672,7 @@
         "poles": {
           "target": 20,
           "toGo": 3,
-          "reachable": true
+          "reachable": false
         },
         "podiums": {
           "target": 50,
@@ -751,7 +681,7 @@
         },
         "starts": {
           "target": 200,
-          "toGo": 28,
+          "toGo": 27,
           "reachable": false
         }
       }
@@ -764,13 +694,13 @@
       "career": {
         "wins": 14,
         "poles": 33,
-        "podiums": 50,
-        "starts": 170
+        "podiums": 51,
+        "starts": 171
       },
       "season": {
-        "starts": 19,
+        "starts": 20,
         "wins": 3,
-        "podiums": 6,
+        "podiums": 7,
         "poles": 4
       },
       "next": {
@@ -786,12 +716,12 @@
         },
         "podiums": {
           "target": 75,
-          "toGo": 25,
+          "toGo": 24,
           "reachable": false
         },
         "starts": {
           "target": 200,
-          "toGo": 30,
+          "toGo": 29,
           "reachable": false
         }
       }
@@ -832,7 +762,7 @@
         "starts": {
           "target": 150,
           "toGo": 3,
-          "reachable": true
+          "reachable": false
         }
       }
     },
@@ -844,13 +774,13 @@
       "career": {
         "wins": 9,
         "poles": 14,
-        "podiums": 28,
-        "starts": 88
+        "podiums": 29,
+        "starts": 89
       },
       "season": {
-        "starts": 18,
+        "starts": 19,
         "wins": 0,
-        "podiums": 2,
+        "podiums": 3,
         "poles": 0
       },
       "next": {
@@ -866,12 +796,12 @@
         },
         "podiums": {
           "target": 50,
-          "toGo": 22,
+          "toGo": 21,
           "reachable": false
         },
         "starts": {
           "target": 100,
-          "toGo": 12,
+          "toGo": 11,
           "reachable": false
         }
       }
@@ -885,10 +815,10 @@
         "wins": 0,
         "poles": 0,
         "podiums": 0,
-        "starts": 55
+        "starts": 56
       },
       "season": {
-        "starts": 20,
+        "starts": 21,
         "wins": 0,
         "podiums": 0,
         "poles": 0
@@ -911,7 +841,7 @@
         },
         "starts": {
           "target": 100,
-          "toGo": 45,
+          "toGo": 44,
           "reachable": false
         }
       }
@@ -925,10 +855,10 @@
         "wins": 0,
         "poles": 0,
         "podiums": 0,
-        "starts": 47
+        "starts": 48
       },
       "season": {
-        "starts": 20,
+        "starts": 21,
         "wins": 0,
         "podiums": 0,
         "poles": 0
@@ -951,7 +881,7 @@
         },
         "starts": {
           "target": 50,
-          "toGo": 3,
+          "toGo": 2,
           "reachable": true
         }
       }
@@ -965,10 +895,10 @@
         "wins": 0,
         "poles": 0,
         "podiums": 0,
-        "starts": 46
+        "starts": 47
       },
       "season": {
-        "starts": 20,
+        "starts": 21,
         "wins": 0,
         "podiums": 0,
         "poles": 0
@@ -991,7 +921,7 @@
         },
         "starts": {
           "target": 50,
-          "toGo": 4,
+          "toGo": 3,
           "reachable": false
         }
       }
@@ -1005,10 +935,10 @@
         "wins": 9,
         "poles": 8,
         "podiums": 19,
-        "starts": 44
+        "starts": 45
       },
       "season": {
-        "starts": 20,
+        "starts": 21,
         "wins": 9,
         "podiums": 16,
         "poles": 8
@@ -1031,7 +961,7 @@
         },
         "starts": {
           "target": 50,
-          "toGo": 6,
+          "toGo": 5,
           "reachable": false
         }
       }
@@ -1045,10 +975,10 @@
         "wins": 0,
         "poles": 0,
         "podiums": 0,
-        "starts": 43
+        "starts": 44
       },
       "season": {
-        "starts": 19,
+        "starts": 20,
         "wins": 0,
         "podiums": 0,
         "poles": 0
@@ -1071,7 +1001,7 @@
         },
         "starts": {
           "target": 50,
-          "toGo": 7,
+          "toGo": 6,
           "reachable": false
         }
       }
@@ -1085,10 +1015,10 @@
         "wins": 0,
         "poles": 1,
         "podiums": 4,
-        "starts": 41
+        "starts": 42
       },
       "season": {
-        "starts": 17,
+        "starts": 18,
         "wins": 0,
         "podiums": 3,
         "poles": 0
@@ -1111,7 +1041,7 @@
         },
         "starts": {
           "target": 50,
-          "toGo": 9,
+          "toGo": 8,
           "reachable": false
         }
       }
@@ -1125,10 +1055,10 @@
         "wins": 0,
         "poles": 0,
         "podiums": 0,
-        "starts": 19
+        "starts": 20
       },
       "season": {
-        "starts": 19,
+        "starts": 20,
         "wins": 0,
         "podiums": 0,
         "poles": 0
@@ -1151,7 +1081,7 @@
         },
         "starts": {
           "target": 50,
-          "toGo": 31,
+          "toGo": 30,
           "reachable": false
         }
       }
@@ -1165,10 +1095,10 @@
         "wins": 0,
         "poles": 0,
         "podiums": 0,
-        "starts": 1
+        "starts": 2
       },
       "season": {
-        "starts": 1,
+        "starts": 2,
         "wins": 0,
         "podiums": 0,
         "poles": 0
@@ -1191,7 +1121,7 @@
         },
         "starts": {
           "target": 50,
-          "toGo": 49,
+          "toGo": 48,
           "reachable": false
         }
       }
@@ -1201,35 +1131,17 @@
     "season": 2026,
     "version": 2,
     "drivers": {
-      "norris": {
-        "starts": 151,
-        "wins": 11,
-        "podiums": 44,
-        "poles": 29
-      },
       "max_verstappen": {
         "starts": 233,
         "wins": 71,
         "podiums": 127,
         "poles": 62
       },
-      "hadjar": {
-        "starts": 24,
-        "wins": 0,
-        "podiums": 1,
-        "poles": 1
-      },
-      "russell": {
-        "starts": 152,
-        "wins": 5,
-        "podiums": 24,
-        "poles": 12
-      },
-      "antonelli": {
-        "starts": 24,
-        "wins": 0,
-        "podiums": 3,
-        "poles": 0
+      "norris": {
+        "starts": 151,
+        "wins": 11,
+        "podiums": 44,
+        "poles": 29
       },
       "piastri": {
         "starts": 70,
@@ -1237,46 +1149,10 @@
         "podiums": 26,
         "poles": 14
       },
-      "lawson": {
-        "starts": 35,
+      "antonelli": {
+        "starts": 24,
         "wins": 0,
-        "podiums": 0,
-        "poles": 0
-      },
-      "leclerc": {
-        "starts": 171,
-        "wins": 8,
-        "podiums": 50,
-        "poles": 31
-      },
-      "hamilton": {
-        "starts": 380,
-        "wins": 105,
-        "podiums": 202,
-        "poles": 117
-      },
-      "hulkenberg": {
-        "starts": 250,
-        "wins": 0,
-        "podiums": 1,
-        "poles": 1
-      },
-      "arvid_lindblad": {
-        "starts": 0,
-        "wins": 0,
-        "podiums": 0,
-        "poles": 0
-      },
-      "alonso": {
-        "starts": 425,
-        "wins": 32,
-        "podiums": 106,
-        "poles": 23
-      },
-      "colapinto": {
-        "starts": 26,
-        "wins": 0,
-        "podiums": 0,
+        "podiums": 3,
         "poles": 0
       },
       "gasly": {
@@ -1285,10 +1161,40 @@
         "podiums": 5,
         "poles": 0
       },
-      "albon": {
-        "starts": 128,
+      "colapinto": {
+        "starts": 26,
         "wins": 0,
-        "podiums": 2,
+        "podiums": 0,
+        "poles": 0
+      },
+      "hamilton": {
+        "starts": 380,
+        "wins": 105,
+        "podiums": 202,
+        "poles": 117
+      },
+      "sainz": {
+        "starts": 229,
+        "wins": 4,
+        "podiums": 29,
+        "poles": 11
+      },
+      "russell": {
+        "starts": 152,
+        "wins": 5,
+        "podiums": 24,
+        "poles": 12
+      },
+      "leclerc": {
+        "starts": 171,
+        "wins": 8,
+        "podiums": 50,
+        "poles": 31
+      },
+      "hulkenberg": {
+        "starts": 250,
+        "wins": 0,
+        "podiums": 1,
         "poles": 1
       },
       "bortoleto": {
@@ -1303,17 +1209,17 @@
         "podiums": 0,
         "poles": 0
       },
-      "perez": {
-        "starts": 281,
-        "wins": 6,
-        "podiums": 39,
-        "poles": 4
+      "lawson": {
+        "starts": 35,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0
       },
-      "sainz": {
-        "starts": 229,
-        "wins": 4,
-        "podiums": 29,
-        "poles": 11
+      "hadjar": {
+        "starts": 24,
+        "wins": 0,
+        "podiums": 1,
+        "poles": 1
       },
       "rafael_camara": {
         "starts": 0,
@@ -1332,6 +1238,30 @@
         "wins": 10,
         "podiums": 67,
         "poles": 19
+      },
+      "alonso": {
+        "starts": 425,
+        "wins": 32,
+        "podiums": 106,
+        "poles": 23
+      },
+      "arvid_lindblad": {
+        "starts": 0,
+        "wins": 0,
+        "podiums": 0,
+        "poles": 0
+      },
+      "perez": {
+        "starts": 281,
+        "wins": 6,
+        "podiums": 39,
+        "poles": 4
+      },
+      "albon": {
+        "starts": 128,
+        "wins": 0,
+        "podiums": 2,
+        "poles": 1
       }
     }
   }
