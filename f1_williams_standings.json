@@ -1,21 +1,21 @@
 {
   "header": "Williams standings",
-  "generatedAtUtc": "2026-11-22T05:52:49.708Z",
+  "generatedAtUtc": "2026-11-22T06:02:47.080Z",
   "williams": {
     "team": "Williams",
     "teamLogoPng": "https://mredman48.github.io/F1-standings/teamlogos/2025_williams_color_v2.png",
     "teamStanding": {
       "team": "Williams",
       "position": "P9",
-      "points": 12,
+      "points": 16,
       "wins": 0
     }
   },
   "lastRace": {
-    "raceName": "São Paulo Grand Prix",
-    "round": "20",
-    "date": "2026-11-08",
-    "circuit": "Interlagos",
+    "raceName": "Las Vegas Grand Prix",
+    "round": "21",
+    "date": "2026-11-22",
+    "circuit": "Las Vegas",
     "location": {
       "locality": "-",
       "country": "-"
@@ -34,8 +34,8 @@
       "numberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-55.png",
       "alternateNumberImageUrl": "https://mredman48.github.io/F1-standings/driver-numbers/driver-number-55-2.png",
       "headshotUrl": "https://mredman48.github.io/F1-standings/headshots/carlos-sainz.png",
-      "position": "P18",
-      "points": 7,
+      "position": "P16",
+      "points": 11,
       "wins": 0,
       "raceWins": 0,
       "racePodiums": 0,
@@ -43,15 +43,15 @@
       "sprintPodiums": 0,
       "team": "Williams",
       "bestResult": {
-        "position": "P9",
+        "position": "P8",
         "eventType": "race",
-        "raceName": "Canadian Grand Prix",
-        "round": "5",
-        "date": "2026-05-24",
-        "circuit": "Montreal",
+        "raceName": "Las Vegas Grand Prix",
+        "round": "21",
+        "date": "2026-11-22",
+        "circuit": "Las Vegas",
         "location": {
-          "locality": "Montréal",
-          "country": "Canada"
+          "locality": "Las Vegas",
+          "country": "United States"
         }
       }
     },
