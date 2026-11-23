@@ -1,12 +1,12 @@
 {
  "schema": "apex-stat-tables",
  "version": 2,
- "generatedAt": "2026-11-16T19:55:55+00:00",
+ "generatedAt": "2026-11-23T02:19:38+00:00",
  "year": 2026,
- "latestRound": 20,
- "latestRace": "Brazilian Grand Prix",
+ "latestRound": 21,
+ "latestRace": "Las Vegas Grand Prix",
  "season": {
-  "throughRound": 20,
+  "throughRound": 21,
   "stats": [
    {
     "id": "avg_pit_stop_season",
@@ -15,12 +15,12 @@
     "order": "low",
     "tag": "PIT STOPS",
     "headline": "AVERAGE PIT STOP",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: DHL",
     "teamRows": [
      {
       "rank": "1",
-      "value": "3.02",
+      "value": "3.03",
       "unit": "s",
       "note": "",
       "code": "team",
@@ -28,7 +28,7 @@
      },
      {
       "rank": "2",
-      "value": "3.03",
+      "value": "3.05",
       "unit": "s",
       "note": "",
       "code": "team",
@@ -36,7 +36,7 @@
      },
      {
       "rank": "3",
-      "value": "3.19",
+      "value": "3.20",
       "unit": "s",
       "note": "",
       "code": "team",
@@ -44,7 +44,7 @@
      },
      {
       "rank": "4",
-      "value": "3.28",
+      "value": "3.42",
       "unit": "s",
       "note": "",
       "code": "team",
@@ -52,7 +52,7 @@
      },
      {
       "rank": "5",
-      "value": "3.35",
+      "value": "3.48",
       "unit": "s",
       "note": "",
       "code": "team",
@@ -60,7 +60,7 @@
      },
      {
       "rank": "6",
-      "value": "3.58",
+      "value": "3.54",
       "unit": "s",
       "note": "",
       "code": "team",
@@ -68,7 +68,7 @@
      },
      {
       "rank": "7",
-      "value": "3.60",
+      "value": "3.58",
       "unit": "s",
       "note": "",
       "code": "team",
@@ -76,7 +76,7 @@
      },
      {
       "rank": "8",
-      "value": "3.84",
+      "value": "3.87",
       "unit": "s",
       "note": "",
       "code": "team",
@@ -84,7 +84,7 @@
      },
      {
       "rank": "9",
-      "value": "4.20",
+      "value": "4.25",
       "unit": "s",
       "note": "",
       "code": "team",
@@ -92,7 +92,7 @@
      },
      {
       "rank": "10",
-      "value": "4.34",
+      "value": "4.32",
       "unit": "s",
       "note": "",
       "code": "team",
@@ -100,7 +100,7 @@
      },
      {
       "rank": "11",
-      "value": "4.67",
+      "value": "4.61",
       "unit": "s",
       "note": "",
       "code": "team",
@@ -115,12 +115,12 @@
     "order": "high",
     "tag": "LAPS LED",
     "headline": "MOST LAPS LED",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: F1 live timing via OpenF1",
     "rows": [
      {
       "rank": "1",
-      "value": "453",
+      "value": "456",
       "unit": "laps",
       "note": "",
       "code": "ANT",
@@ -129,7 +129,7 @@
      },
      {
       "rank": "2",
-      "value": "235",
+      "value": "238",
       "unit": "laps",
       "note": "",
       "code": "RUS",
@@ -138,7 +138,7 @@
      },
      {
       "rank": "3",
-      "value": "152",
+      "value": "196",
       "unit": "laps",
       "note": "",
       "code": "VER",
@@ -217,12 +217,12 @@
     "order": "low",
     "tag": "FORM",
     "headline": "AVERAGE FINISH",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
       "rank": "1",
-      "value": "2.7",
+      "value": "2.8",
       "unit": "",
       "note": "",
       "code": "ANT",
@@ -231,7 +231,7 @@
      },
      {
       "rank": "2",
-      "value": "3.0",
+      "value": "2.9",
       "unit": "",
       "note": "",
       "code": "VER",
@@ -240,16 +240,7 @@
      },
      {
       "rank": "3",
-      "value": "4.1",
-      "unit": "",
-      "note": "",
-      "code": "LEC",
-      "text": "",
-      "team": "Ferrari"
-     },
-     {
-      "rank": "4",
-      "value": "4.1",
+      "value": "4.0",
       "unit": "",
       "note": "",
       "code": "NOR",
@@ -257,8 +248,8 @@
       "team": "McLaren"
      },
      {
-      "rank": "5",
-      "value": "4.3",
+      "rank": "4",
+      "value": "4.4",
       "unit": "",
       "note": "",
       "code": "HAM",
@@ -266,8 +257,17 @@
       "team": "Ferrari"
      },
      {
+      "rank": "5",
+      "value": "4.4",
+      "unit": "",
+      "note": "",
+      "code": "LEC",
+      "text": "",
+      "team": "Ferrari"
+     },
+     {
       "rank": "6",
-      "value": "4.3",
+      "value": "4.6",
       "unit": "",
       "note": "",
       "code": "RUS",
@@ -276,16 +276,7 @@
      },
      {
       "rank": "7",
-      "value": "6.2",
-      "unit": "",
-      "note": "",
-      "code": "HAD",
-      "text": "",
-      "team": "Red Bull"
-     },
-     {
-      "rank": "8",
-      "value": "6.7",
+      "value": "6.5",
       "unit": "",
       "note": "",
       "code": "PIA",
@@ -293,8 +284,17 @@
       "team": "McLaren"
      },
      {
+      "rank": "8",
+      "value": "6.8",
+      "unit": "",
+      "note": "",
+      "code": "HAD",
+      "text": "",
+      "team": "Red Bull"
+     },
+     {
       "rank": "9",
-      "value": "8.4",
+      "value": "8.7",
       "unit": "",
       "note": "",
       "code": "LAW",
@@ -319,13 +319,13 @@
     "order": "high",
     "tag": "LAPS LED",
     "headline": "MOST LAPS LED",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: F1 live timing via OpenF1",
     "heroTag": "LEADER",
     "rows": [
      {
       "rank": "1",
-      "value": "453",
+      "value": "456",
       "unit": "laps",
       "note": "",
       "code": "ANT",
@@ -334,7 +334,7 @@
      },
      {
       "rank": "2",
-      "value": "235",
+      "value": "238",
       "unit": "laps",
       "note": "",
       "code": "RUS",
@@ -343,7 +343,7 @@
      },
      {
       "rank": "3",
-      "value": "152",
+      "value": "196",
       "unit": "laps",
       "note": "",
       "code": "VER",
@@ -422,7 +422,7 @@
     "order": "high",
     "tag": "FORM",
     "headline": "POINTS, LAST 5 ROUNDS",
-    "sub": "Last 5 rounds · BHR, SIN, USA, MEX, BRA",
+    "sub": "Last 5 rounds · SIN, USA, MEX, BRA, LVG",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
@@ -436,7 +436,7 @@
      },
      {
       "rank": "2",
-      "value": "88",
+      "value": "82",
       "unit": "pts",
       "note": "",
       "code": "ANT",
@@ -445,25 +445,7 @@
      },
      {
       "rank": "3",
-      "value": "70",
-      "unit": "pts",
-      "note": "",
-      "code": "LEC",
-      "text": "",
-      "team": "Ferrari"
-     },
-     {
-      "rank": "4",
-      "value": "62",
-      "unit": "pts",
-      "note": "",
-      "code": "HAM",
-      "text": "",
-      "team": "Ferrari"
-     },
-     {
-      "rank": "5",
-      "value": "60",
+      "value": "76",
       "unit": "pts",
       "note": "",
       "code": "NOR",
@@ -471,17 +453,26 @@
       "team": "McLaren"
      },
      {
-      "rank": "6",
-      "value": "36",
+      "rank": "4",
+      "value": "59",
       "unit": "pts",
       "note": "",
-      "code": "HAD",
+      "code": "LEC",
       "text": "",
-      "team": "Red Bull"
+      "team": "Ferrari"
      },
      {
-      "rank": "7",
-      "value": "32",
+      "rank": "5",
+      "value": "53",
+      "unit": "pts",
+      "note": "",
+      "code": "HAM",
+      "text": "",
+      "team": "Ferrari"
+     },
+     {
+      "rank": "6",
+      "value": "39",
       "unit": "pts",
       "note": "",
       "code": "PIA",
@@ -489,13 +480,22 @@
       "team": "McLaren"
      },
      {
-      "rank": "8",
-      "value": "30",
+      "rank": "7",
+      "value": "28",
       "unit": "pts",
       "note": "",
-      "code": "LAW",
+      "code": "RUS",
       "text": "",
-      "team": "Racing Bulls"
+      "team": "Mercedes"
+     },
+     {
+      "rank": "8",
+      "value": "26",
+      "unit": "pts",
+      "note": "",
+      "code": "HAD",
+      "text": "",
+      "team": "Red Bull"
      }
     ]
    },
@@ -506,12 +506,12 @@
     "order": "high",
     "tag": "FORM",
     "headline": "POINTS, LAST 5 ROUNDS",
-    "sub": "Last 5 rounds · BHR, SIN, USA, MEX, BRA",
+    "sub": "Last 5 rounds · SIN, USA, MEX, BRA, LVG",
     "source": "Source: Jolpica / FIA results",
     "teamRows": [
      {
       "rank": "1",
-      "value": "152",
+      "value": "142",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -519,31 +519,31 @@
      },
      {
       "rank": "2",
-      "value": "132",
-      "unit": "pts",
-      "note": "",
-      "code": "team",
-      "team": "Ferrari"
-     },
-     {
-      "rank": "3",
-      "value": "114",
-      "unit": "pts",
-      "note": "",
-      "code": "team",
-      "team": "Mercedes"
-     },
-     {
-      "rank": "4",
-      "value": "92",
+      "value": "115",
       "unit": "pts",
       "note": "",
       "code": "team",
       "team": "McLaren"
      },
      {
+      "rank": "3",
+      "value": "112",
+      "unit": "pts",
+      "note": "",
+      "code": "team",
+      "team": "Ferrari"
+     },
+     {
+      "rank": "4",
+      "value": "110",
+      "unit": "pts",
+      "note": "",
+      "code": "team",
+      "team": "Mercedes"
+     },
+     {
       "rank": "5",
-      "value": "31",
+      "value": "24",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -551,6 +551,14 @@
      },
      {
       "rank": "6",
+      "value": "19",
+      "unit": "pts",
+      "note": "",
+      "code": "team",
+      "team": "Alpine"
+     },
+     {
+      "rank": "7",
       "value": "11",
       "unit": "pts",
       "note": "",
@@ -558,15 +566,7 @@
       "team": "Audi"
      },
      {
-      "rank": "7",
-      "value": "4",
-      "unit": "pts",
-      "note": "",
-      "code": "team",
-      "team": "Aston Martin"
-     },
-     {
-      "rank": "7",
+      "rank": "8",
       "value": "4",
       "unit": "pts",
       "note": "",
@@ -582,7 +582,7 @@
     "order": "high",
     "tag": "PODIUMS",
     "headline": "MOST PODIUMS",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
@@ -596,7 +596,7 @@
      },
      {
       "rank": "2",
-      "value": "12",
+      "value": "13",
       "unit": "",
       "note": "",
       "code": "VER",
@@ -622,7 +622,16 @@
       "team": "Ferrari"
      },
      {
-      "rank": "5",
+      "rank": "4",
+      "value": "7",
+      "unit": "",
+      "note": "",
+      "code": "NOR",
+      "text": "",
+      "team": "McLaren"
+     },
+     {
+      "rank": "6",
       "value": "6",
       "unit": "",
       "note": "",
@@ -631,11 +640,11 @@
       "team": "Ferrari"
      },
      {
-      "rank": "5",
-      "value": "6",
+      "rank": "7",
+      "value": "3",
       "unit": "",
       "note": "",
-      "code": "NOR",
+      "code": "PIA",
       "text": "",
       "team": "McLaren"
      },
@@ -647,15 +656,6 @@
       "code": "HAD",
       "text": "",
       "team": "Red Bull"
-     },
-     {
-      "rank": "8",
-      "value": "2",
-      "unit": "",
-      "note": "",
-      "code": "PIA",
-      "text": "",
-      "team": "McLaren"
      }
     ]
    },
@@ -666,7 +666,7 @@
     "order": "high",
     "tag": "PODIUMS",
     "headline": "MOST PODIUMS",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: Jolpica / FIA results",
     "teamRows": [
      {
@@ -679,7 +679,7 @@
      },
      {
       "rank": "2",
-      "value": "15",
+      "value": "16",
       "unit": "",
       "note": "",
       "code": "team",
@@ -695,7 +695,7 @@
      },
      {
       "rank": "4",
-      "value": "8",
+      "value": "10",
       "unit": "",
       "note": "",
       "code": "team",
@@ -710,12 +710,12 @@
     "order": "high",
     "tag": "QUALIFYING",
     "headline": "MOST POLE POSITIONS",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
       "rank": "1",
-      "value": "7",
+      "value": "8",
       "unit": "",
       "note": "",
       "code": "ANT",
@@ -776,7 +776,7 @@
     "order": "high",
     "tag": "RELIABILITY",
     "headline": "MOST DNFS",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
@@ -799,7 +799,7 @@
      },
      {
       "rank": "3",
-      "value": "7",
+      "value": "8",
       "unit": "",
       "note": "",
       "code": "ALO",
@@ -808,7 +808,7 @@
      },
      {
       "rank": "3",
-      "value": "7",
+      "value": "8",
       "unit": "",
       "note": "",
       "code": "ALB",
@@ -825,8 +825,8 @@
       "team": "Haas"
      },
      {
-      "rank": "6",
-      "value": "5",
+      "rank": "5",
+      "value": "6",
       "unit": "",
       "note": "",
       "code": "PER",
@@ -860,12 +860,12 @@
     "order": "high",
     "tag": "RELIABILITY",
     "headline": "MOST DNFS",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: Jolpica / FIA results",
     "teamRows": [
      {
       "rank": "1",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "team",
@@ -873,7 +873,7 @@
      },
      {
       "rank": "2",
-      "value": "16",
+      "value": "17",
       "unit": "",
       "note": "",
       "code": "team",
@@ -881,7 +881,7 @@
      },
      {
       "rank": "3",
-      "value": "10",
+      "value": "11",
       "unit": "",
       "note": "",
       "code": "team",
@@ -936,12 +936,12 @@
     "order": "high",
     "tag": "QUALIFYING",
     "headline": "Q3 APPEARANCES",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
       "rank": "1",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "RUS",
@@ -950,7 +950,7 @@
      },
      {
       "rank": "1",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "NOR",
@@ -959,7 +959,7 @@
      },
      {
       "rank": "3",
-      "value": "19",
+      "value": "20",
       "unit": "",
       "note": "",
       "code": "ANT",
@@ -967,7 +967,7 @@
       "team": "Mercedes"
      },
      {
-      "rank": "3",
+      "rank": "4",
       "value": "19",
       "unit": "",
       "note": "",
@@ -976,7 +976,16 @@
       "team": "Ferrari"
      },
      {
-      "rank": "3",
+      "rank": "4",
+      "value": "19",
+      "unit": "",
+      "note": "",
+      "code": "PIA",
+      "text": "",
+      "team": "McLaren"
+     },
+     {
+      "rank": "4",
       "value": "19",
       "unit": "",
       "note": "",
@@ -985,17 +994,8 @@
       "team": "Ferrari"
      },
      {
-      "rank": "6",
-      "value": "18",
-      "unit": "",
-      "note": "",
-      "code": "PIA",
-      "text": "",
-      "team": "McLaren"
-     },
-     {
       "rank": "7",
-      "value": "17",
+      "value": "18",
       "unit": "",
       "note": "",
       "code": "VER",
@@ -1004,7 +1004,7 @@
      },
      {
       "rank": "8",
-      "value": "14",
+      "value": "15",
       "unit": "",
       "note": "",
       "code": "HAD",
@@ -1020,7 +1020,7 @@
     "order": "low",
     "tag": "CHAMPIONSHIP",
     "headline": "GAP TO THE LEADER",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
@@ -1034,7 +1034,7 @@
      },
      {
       "rank": "2",
-      "value": "111",
+      "value": "98",
       "unit": "pts",
       "note": "",
       "code": "VER",
@@ -1043,16 +1043,7 @@
      },
      {
       "rank": "3",
-      "value": "128",
-      "unit": "pts",
-      "note": "",
-      "code": "RUS",
-      "text": "",
-      "team": "Mercedes"
-     },
-     {
-      "rank": "4",
-      "value": "129",
+      "value": "135",
       "unit": "pts",
       "note": "",
       "code": "HAM",
@@ -1060,17 +1051,8 @@
       "team": "Ferrari"
      },
      {
-      "rank": "5",
-      "value": "141",
-      "unit": "pts",
-      "note": "",
-      "code": "LEC",
-      "text": "",
-      "team": "Ferrari"
-     },
-     {
-      "rank": "6",
-      "value": "144",
+      "rank": "4",
+      "value": "138",
       "unit": "pts",
       "note": "",
       "code": "NOR",
@@ -1078,8 +1060,26 @@
       "team": "McLaren"
      },
      {
+      "rank": "4",
+      "value": "138",
+      "unit": "pts",
+      "note": "",
+      "code": "RUS",
+      "text": "",
+      "team": "Mercedes"
+     },
+     {
+      "rank": "6",
+      "value": "152",
+      "unit": "pts",
+      "note": "",
+      "code": "LEC",
+      "text": "",
+      "team": "Ferrari"
+     },
+     {
       "rank": "7",
-      "value": "238",
+      "value": "235",
       "unit": "pts",
       "note": "",
       "code": "PIA",
@@ -1088,7 +1088,7 @@
      },
      {
       "rank": "8",
-      "value": "268",
+      "value": "280",
       "unit": "pts",
       "note": "",
       "code": "HAD",
@@ -1097,7 +1097,7 @@
      },
      {
       "rank": "9",
-      "value": "301",
+      "value": "313",
       "unit": "pts",
       "note": "",
       "code": "LAW",
@@ -1106,7 +1106,7 @@
      },
      {
       "rank": "10",
-      "value": "348",
+      "value": "350",
       "unit": "pts",
       "note": "",
       "code": "GAS",
@@ -1122,7 +1122,7 @@
     "order": "low",
     "tag": "CHAMPIONSHIP",
     "headline": "GAP TO THE LEADER",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: Jolpica / FIA results",
     "teamRows": [
      {
@@ -1135,7 +1135,7 @@
      },
      {
       "rank": "2",
-      "value": "142",
+      "value": "149",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -1143,7 +1143,7 @@
      },
      {
       "rank": "3",
-      "value": "237",
+      "value": "226",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -1151,7 +1151,7 @@
      },
      {
       "rank": "4",
-      "value": "254",
+      "value": "235",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -1159,7 +1159,7 @@
      },
      {
       "rank": "5",
-      "value": "538",
+      "value": "552",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -1167,7 +1167,7 @@
      },
      {
       "rank": "6",
-      "value": "583",
+      "value": "579",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -1175,7 +1175,7 @@
      },
      {
       "rank": "7",
-      "value": "621",
+      "value": "635",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -1183,7 +1183,7 @@
      },
      {
       "rank": "8",
-      "value": "624",
+      "value": "638",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -1191,7 +1191,7 @@
      },
      {
       "rank": "9",
-      "value": "640",
+      "value": "650",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -1199,7 +1199,7 @@
      },
      {
       "rank": "10",
-      "value": "645",
+      "value": "659",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -1207,7 +1207,7 @@
      },
      {
       "rank": "11",
-      "value": "652",
+      "value": "666",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -1222,12 +1222,21 @@
     "order": "low",
     "tag": "TEAMMATES",
     "headline": "AVERAGE GAP TO TEAMMATE",
-    "sub": "2026 season · after Round 20 · minus = ahead",
+    "sub": "2026 season · after Round 21 · minus = ahead",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
       "rank": "1",
-      "value": "-0.728",
+      "value": "-4.700",
+      "unit": "s",
+      "note": "",
+      "code": "CAM",
+      "text": "",
+      "team": "Haas"
+     },
+     {
+      "rank": "2",
+      "value": "-0.718",
       "unit": "s",
       "note": "",
       "code": "HUL",
@@ -1235,8 +1244,8 @@
       "team": "Audi"
      },
      {
-      "rank": "2",
-      "value": "-0.443",
+      "rank": "3",
+      "value": "-0.427",
       "unit": "s",
       "note": "",
       "code": "ALO",
@@ -1244,17 +1253,8 @@
       "team": "Aston Martin"
      },
      {
-      "rank": "3",
-      "value": "-0.377",
-      "unit": "s",
-      "note": "",
-      "code": "BEA",
-      "text": "",
-      "team": "Haas"
-     },
-     {
       "rank": "4",
-      "value": "-0.336",
+      "value": "-0.330",
       "unit": "s",
       "note": "",
       "code": "GAS",
@@ -1263,7 +1263,7 @@
      },
      {
       "rank": "5",
-      "value": "-0.289",
+      "value": "-0.253",
       "unit": "s",
       "note": "",
       "code": "LAW",
@@ -1272,7 +1272,7 @@
      },
      {
       "rank": "6",
-      "value": "-0.187",
+      "value": "-0.188",
       "unit": "s",
       "note": "",
       "code": "PER",
@@ -1281,7 +1281,7 @@
      },
      {
       "rank": "7",
-      "value": "-0.164",
+      "value": "-0.180",
       "unit": "s",
       "note": "",
       "code": "SAI",
@@ -1290,7 +1290,7 @@
      },
      {
       "rank": "8",
-      "value": "-0.163",
+      "value": "-0.179",
       "unit": "s",
       "note": "",
       "code": "VER",
@@ -1299,7 +1299,7 @@
      },
      {
       "rank": "9",
-      "value": "-0.137",
+      "value": "-0.162",
       "unit": "s",
       "note": "",
       "code": "NOR",
@@ -1308,7 +1308,7 @@
      },
      {
       "rank": "10",
-      "value": "-0.127",
+      "value": "-0.124",
       "unit": "s",
       "note": "",
       "code": "LEC",
@@ -1324,7 +1324,7 @@
     "order": "high",
     "tag": "WINS",
     "headline": "SHARE OF WINS",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: Jolpica / FIA results",
     "teamRows": [
      {
@@ -1337,19 +1337,19 @@
      },
      {
       "rank": "2",
+      "value": "4",
+      "unit": "wins",
+      "note": "",
+      "code": "team",
+      "team": "Red Bull"
+     },
+     {
+      "rank": "3",
       "value": "3",
       "unit": "wins",
       "note": "",
       "code": "team",
       "team": "McLaren"
-     },
-     {
-      "rank": "2",
-      "value": "3",
-      "unit": "wins",
-      "note": "",
-      "code": "team",
-      "team": "Red Bull"
      },
      {
       "rank": "4",
@@ -1368,12 +1368,12 @@
     "order": "high",
     "tag": "LAPS LED",
     "headline": "SHARE OF LAPS LED",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: F1 live timing via OpenF1",
     "rows": [
      {
       "rank": "1",
-      "value": "453",
+      "value": "456",
       "unit": "laps",
       "note": "",
       "code": "ANT",
@@ -1382,7 +1382,7 @@
      },
      {
       "rank": "2",
-      "value": "235",
+      "value": "238",
       "unit": "laps",
       "note": "",
       "code": "RUS",
@@ -1391,7 +1391,7 @@
      },
      {
       "rank": "3",
-      "value": "152",
+      "value": "196",
       "unit": "laps",
       "note": "",
       "code": "VER",
@@ -1452,12 +1452,12 @@
     "order": "high",
     "tag": "LAPS LED",
     "headline": "SHARE OF LAPS LED",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: F1 live timing via OpenF1",
     "teamRows": [
      {
       "rank": "1",
-      "value": "688",
+      "value": "694",
       "unit": "laps",
       "note": "",
       "code": "team",
@@ -1465,6 +1465,14 @@
      },
      {
       "rank": "2",
+      "value": "198",
+      "unit": "laps",
+      "note": "",
+      "code": "team",
+      "team": "Red Bull"
+     },
+     {
+      "rank": "3",
       "value": "189",
       "unit": "laps",
       "note": "",
@@ -1472,20 +1480,12 @@
       "team": "Ferrari"
      },
      {
-      "rank": "3",
+      "rank": "4",
       "value": "187",
       "unit": "laps",
       "note": "",
       "code": "team",
       "team": "McLaren"
-     },
-     {
-      "rank": "4",
-      "value": "154",
-      "unit": "laps",
-      "note": "",
-      "code": "team",
-      "team": "Red Bull"
      },
      {
       "rank": "5",
@@ -1512,12 +1512,12 @@
     "order": "high",
     "tag": "POINTS",
     "headline": "SHARE OF POINTS",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: Jolpica / FIA results",
     "teamRows": [
      {
       "rank": "1",
-      "value": "652",
+      "value": "666",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -1525,7 +1525,7 @@
      },
      {
       "rank": "2",
-      "value": "510",
+      "value": "517",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -1533,7 +1533,7 @@
      },
      {
       "rank": "3",
-      "value": "415",
+      "value": "440",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -1541,7 +1541,7 @@
      },
      {
       "rank": "4",
-      "value": "398",
+      "value": "431",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -1557,7 +1557,7 @@
      },
      {
       "rank": "6",
-      "value": "69",
+      "value": "87",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -1581,7 +1581,7 @@
      },
      {
       "rank": "9",
-      "value": "12",
+      "value": "16",
       "unit": "pts",
       "note": "",
       "code": "team",
@@ -1604,7 +1604,7 @@
     "order": "high",
     "tag": "PODIUMS",
     "headline": "SHARE OF PODIUMS",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: Jolpica / FIA results",
     "teamRows": [
      {
@@ -1617,7 +1617,7 @@
      },
      {
       "rank": "2",
-      "value": "15",
+      "value": "16",
       "unit": "",
       "note": "",
       "code": "team",
@@ -1633,7 +1633,7 @@
      },
      {
       "rank": "4",
-      "value": "8",
+      "value": "10",
       "unit": "",
       "note": "",
       "code": "team",
@@ -1650,108 +1650,108 @@
     "headline": "RECENT RESULTS",
     "sub": "Last 6 rounds",
     "source": "Source: Jolpica / FIA results",
-    "rounds": "AZE, BHR, SIN, USA, MEX, BRA",
+    "rounds": "BHR, SIN, USA, MEX, BRA, LVG",
     "formKind": "pos",
     "rows": [
      {
       "rank": "1",
-      "value": "1.7",
+      "value": "1.5",
       "unit": "",
       "note": "",
       "code": "VER",
       "text": "",
       "team": "Red Bull",
-      "series": "2, 1, 1, 3, 1, 2"
+      "series": "1, 1, 3, 1, 2, 1"
      },
      {
       "rank": "2",
-      "value": "3.2",
+      "value": "3.0",
       "unit": "",
       "note": "",
       "code": "ANT",
       "text": "",
       "team": "Mercedes",
-      "series": "5, 2, 3, 1, 3, 5"
+      "series": "2, 3, 1, 3, 5, 4"
      },
      {
       "rank": "3",
-      "value": "4.0",
-      "unit": "",
-      "note": "",
-      "code": "LEC",
-      "text": "",
-      "team": "Ferrari",
-      "series": "4, 4, 2, 2, 4, 8"
-     },
-     {
-      "rank": "4",
-      "value": "4.8",
+      "value": "4.3",
       "unit": "",
       "note": "",
       "code": "NOR",
       "text": "",
       "team": "McLaren",
-      "series": "DNF, 9, 4, 5, 5, 1"
+      "series": "9, 4, 5, 5, 1, 2"
+     },
+     {
+      "rank": "4",
+      "value": "5.0",
+      "unit": "",
+      "note": "",
+      "code": "LEC",
+      "text": "",
+      "team": "Ferrari",
+      "series": "4, 2, 2, 4, 8, 10"
      },
      {
       "rank": "5",
-      "value": "5.0",
+      "value": "5.2",
       "unit": "",
       "note": "",
       "code": "HAM",
       "text": "",
       "team": "Ferrari",
-      "series": "6, 3, 6, 4, 2, 9"
+      "series": "3, 6, 4, 2, 9, 7"
      },
      {
       "rank": "6",
-      "value": "5.6",
-      "unit": "",
-      "note": "",
-      "code": "RUS",
-      "text": "",
-      "team": "Mercedes",
-      "series": "1, DNF, 9, 8, 6, 4"
-     },
-     {
-      "rank": "7",
-      "value": "6.0",
-      "unit": "",
-      "note": "",
-      "code": "HAD",
-      "text": "",
-      "team": "Red Bull",
-      "series": "3, 5, 10, 6, 9, 3"
-     },
-     {
-      "rank": "8",
-      "value": "8.2",
-      "unit": "",
-      "note": "",
-      "code": "LAW",
-      "text": "",
-      "team": "Racing Bulls",
-      "series": "12, 7, 7, 9, 7, 7"
-     },
-     {
-      "rank": "9",
-      "value": "8.3",
+      "value": "6.7",
       "unit": "",
       "note": "",
       "code": "PIA",
       "text": "",
       "team": "McLaren",
-      "series": "13, 6, 5, 7, 13, 6"
+      "series": "6, 5, 7, 13, 6, 3"
+     },
+     {
+      "rank": "7",
+      "value": "7.2",
+      "unit": "",
+      "note": "",
+      "code": "RUS",
+      "text": "",
+      "team": "Mercedes",
+      "series": "DNF, 9, 8, 6, 4, 9"
+     },
+     {
+      "rank": "8",
+      "value": "8.0",
+      "unit": "",
+      "note": "",
+      "code": "HAD",
+      "text": "",
+      "team": "Red Bull",
+      "series": "5, 10, 6, 9, 3, 15"
+     },
+     {
+      "rank": "9",
+      "value": "8.5",
+      "unit": "",
+      "note": "",
+      "code": "LAW",
+      "text": "",
+      "team": "Racing Bulls",
+      "series": "7, 7, 9, 7, 7, 14"
      },
      {
       "rank": "10",
-      "value": "13.6",
+      "value": "12.2",
       "unit": "",
       "note": "",
       "code": "GAS",
       "text": "",
       "team": "Alpine",
-      "series": "DNF, 16, 11, 10, 17, 14"
+      "series": "16, 11, 10, 17, 14, 5"
      }
     ]
    },
@@ -1764,108 +1764,108 @@
     "headline": "QUALIFYING FORM",
     "sub": "Last 6 rounds",
     "source": "Source: Jolpica / FIA results",
-    "rounds": "AZE, BHR, SIN, USA, MEX, BRA",
+    "rounds": "BHR, SIN, USA, MEX, BRA, LVG",
     "formKind": "pos",
     "rows": [
      {
       "rank": "1",
-      "value": "3.3",
-      "unit": "",
-      "note": "",
-      "code": "LEC",
-      "text": "",
-      "team": "Ferrari",
-      "series": "2, 5, 2, 4, 3, 4"
-     },
-     {
-      "rank": "2",
-      "value": "4.2",
-      "unit": "",
-      "note": "",
-      "code": "RUS",
-      "text": "",
-      "team": "Mercedes",
-      "series": "1, 8, 6, 6, 2, 2"
-     },
-     {
-      "rank": "3",
-      "value": "4.7",
-      "unit": "",
-      "note": "",
-      "code": "HAM",
-      "text": "",
-      "team": "Ferrari",
-      "series": "6, 2, 3, 5, 1, 11"
-     },
-     {
-      "rank": "4",
-      "value": "5.2",
-      "unit": "",
-      "note": "",
-      "code": "NOR",
-      "text": "",
-      "team": "McLaren",
-      "series": "5, 6, 5, 8, 6, 1"
-     },
-     {
-      "rank": "5",
-      "value": "5.3",
-      "unit": "",
-      "note": "",
-      "code": "VER",
-      "text": "",
-      "team": "Red Bull",
-      "series": "8, 1, 1, 2, 4, 16"
-     },
-     {
-      "rank": "6",
-      "value": "5.5",
+      "value": "3.0",
       "unit": "",
       "note": "",
       "code": "ANT",
       "text": "",
       "team": "Mercedes",
-      "series": "16, 4, 4, 1, 5, 3"
+      "series": "4, 4, 1, 5, 3, 1"
+     },
+     {
+      "rank": "2",
+      "value": "4.3",
+      "unit": "",
+      "note": "",
+      "code": "VER",
+      "text": "",
+      "team": "Red Bull",
+      "series": "1, 1, 2, 4, 16, 2"
+     },
+     {
+      "rank": "3",
+      "value": "4.5",
+      "unit": "",
+      "note": "",
+      "code": "RUS",
+      "text": "",
+      "team": "Mercedes",
+      "series": "8, 6, 6, 2, 2, 3"
+     },
+     {
+      "rank": "4",
+      "value": "4.8",
+      "unit": "",
+      "note": "",
+      "code": "LEC",
+      "text": "",
+      "team": "Ferrari",
+      "series": "5, 2, 4, 3, 4, 11"
+     },
+     {
+      "rank": "5",
+      "value": "5.0",
+      "unit": "",
+      "note": "",
+      "code": "NOR",
+      "text": "",
+      "team": "McLaren",
+      "series": "6, 5, 8, 6, 1, 4"
+     },
+     {
+      "rank": "6",
+      "value": "5.7",
+      "unit": "",
+      "note": "",
+      "code": "HAM",
+      "text": "",
+      "team": "Ferrari",
+      "series": "2, 3, 5, 1, 11, 12"
      },
      {
       "rank": "7",
-      "value": "7.7",
+      "value": "7.8",
       "unit": "",
       "note": "",
       "code": "HAD",
       "text": "",
       "team": "Red Bull",
-      "series": "4, 3, 22, 3, 7, 7"
+      "series": "3, 22, 3, 7, 7, 5"
      },
      {
       "rank": "8",
-      "value": "8.0",
+      "value": "8.7",
       "unit": "",
       "note": "",
       "code": "PIA",
       "text": "",
       "team": "McLaren",
-      "series": "3, 7, 7, 7, 12, 12"
+      "series": "7, 7, 7, 12, 12, 7"
      },
      {
       "rank": "9",
-      "value": "10.3",
+      "value": "10.7",
       "unit": "",
       "note": "",
       "code": "GAS",
       "text": "",
       "team": "Alpine",
-      "series": "7, 9, 8, 11, 9, 18"
+      "series": "9, 8, 11, 9, 18, 9"
      },
      {
       "rank": "10",
-      "value": "11.5",
+      "value": "10.8",
       "unit": "",
       "note": "",
       "code": "LAW",
       "text": "",
       "team": "Racing Bulls",
-      "series": "12, 11, 9, 10, 22, 5"
+      "series": "11, 9, 10, 22, 5, 8"
      }
     ]
    },
@@ -1878,108 +1878,108 @@
     "headline": "POINTS PER ROUND",
     "sub": "Last 6 rounds",
     "source": "Source: Jolpica / FIA results",
-    "rounds": "AZE, BHR, SIN, USA, MEX, BRA",
+    "rounds": "BHR, SIN, USA, MEX, BRA, LVG",
     "formKind": "points",
     "rows": [
      {
       "rank": "1",
-      "value": "134",
+      "value": "141",
       "unit": "pts",
       "note": "",
       "code": "VER",
       "text": "",
       "team": "Red Bull",
-      "series": "18, 25, 33, 15, 25, 18"
+      "series": "25, 33, 15, 25, 18, 25"
      },
      {
       "rank": "2",
-      "value": "98",
+      "value": "100",
       "unit": "pts",
       "note": "",
       "code": "ANT",
       "text": "",
       "team": "Mercedes",
-      "series": "10, 18, 20, 25, 15, 10"
+      "series": "18, 20, 25, 15, 10, 12"
      },
      {
       "rank": "3",
-      "value": "82",
-      "unit": "pts",
-      "note": "",
-      "code": "LEC",
-      "text": "",
-      "team": "Ferrari",
-      "series": "12, 12, 24, 18, 12, 4"
-     },
-     {
-      "rank": "4",
-      "value": "70",
-      "unit": "pts",
-      "note": "",
-      "code": "HAM",
-      "text": "",
-      "team": "Ferrari",
-      "series": "8, 15, 15, 12, 18, 2"
-     },
-     {
-      "rank": "5",
-      "value": "60",
+      "value": "78",
       "unit": "pts",
       "note": "",
       "code": "NOR",
       "text": "",
       "team": "McLaren",
-      "series": "0, 2, 13, 10, 10, 25"
+      "series": "2, 13, 10, 10, 25, 18"
+     },
+     {
+      "rank": "4",
+      "value": "71",
+      "unit": "pts",
+      "note": "",
+      "code": "LEC",
+      "text": "",
+      "team": "Ferrari",
+      "series": "12, 24, 18, 12, 4, 1"
+     },
+     {
+      "rank": "5",
+      "value": "68",
+      "unit": "pts",
+      "note": "",
+      "code": "HAM",
+      "text": "",
+      "team": "Ferrari",
+      "series": "15, 15, 12, 18, 2, 6"
      },
      {
       "rank": "6",
-      "value": "51",
-      "unit": "pts",
-      "note": "",
-      "code": "RUS",
-      "text": "",
-      "team": "Mercedes",
-      "series": "25, 0, 2, 4, 8, 12"
-     },
-     {
-      "rank": "6",
-      "value": "51",
-      "unit": "pts",
-      "note": "",
-      "code": "HAD",
-      "text": "",
-      "team": "Red Bull",
-      "series": "15, 10, 1, 8, 2, 15"
-     },
-     {
-      "rank": "8",
-      "value": "32",
+      "value": "47",
       "unit": "pts",
       "note": "",
       "code": "PIA",
       "text": "",
       "team": "McLaren",
-      "series": "0, 8, 10, 6, 0, 8"
+      "series": "8, 10, 6, 0, 8, 15"
      },
      {
-      "rank": "9",
+      "rank": "7",
+      "value": "36",
+      "unit": "pts",
+      "note": "",
+      "code": "HAD",
+      "text": "",
+      "team": "Red Bull",
+      "series": "10, 1, 8, 2, 15, 0"
+     },
+     {
+      "rank": "8",
       "value": "30",
       "unit": "pts",
       "note": "",
       "code": "LAW",
       "text": "",
       "team": "Racing Bulls",
-      "series": "0, 6, 10, 2, 6, 6"
+      "series": "6, 10, 2, 6, 6, 0"
+     },
+     {
+      "rank": "9",
+      "value": "28",
+      "unit": "pts",
+      "note": "",
+      "code": "RUS",
+      "text": "",
+      "team": "Mercedes",
+      "series": "0, 2, 4, 8, 12, 2"
      },
      {
       "rank": "10",
-      "value": "1",
+      "value": "11",
       "unit": "pts",
       "note": "",
       "code": "GAS",
       "text": "",
       "team": "Alpine",
-      "series": "0, 0, 0, 1, 0, 0"
+      "series": "0, 0, 1, 0, 0, 10"
      }
     ]
    },
@@ -1992,7 +1992,7 @@
     "headline": "BEAT THE TEAMMATE",
     "sub": "Race finish · last 6 rounds",
     "source": "Source: Jolpica / FIA results",
-    "rounds": "AZE, BHR, SIN, USA, MEX, BRA",
+    "rounds": "BHR, SIN, USA, MEX, BRA, LVG",
     "formKind": "wl",
     "rows": [
      {
@@ -2000,9 +2000,9 @@
       "value": "6",
       "unit": "W",
       "note": "",
-      "code": "PER",
+      "code": "LAW",
       "text": "",
-      "team": "Cadillac",
+      "team": "Racing Bulls",
       "series": "W, W, W, W, W, W"
      },
      {
@@ -2020,9 +2020,9 @@
       "value": "5",
       "unit": "W",
       "note": "",
-      "code": "HUL",
+      "code": "ANT",
       "text": "",
-      "team": "Audi",
+      "team": "Mercedes",
       "series": "W, W, W, W, L, W"
      },
      {
@@ -2030,70 +2030,70 @@
       "value": "5",
       "unit": "W",
       "note": "",
-      "code": "LAW",
+      "code": "HUL",
       "text": "",
-      "team": "Racing Bulls",
-      "series": "L, W, W, W, W, W"
+      "team": "Audi",
+      "series": "W, W, W, L, W, W"
      },
      {
-      "rank": "5",
-      "value": "4",
-      "unit": "W",
-      "note": "",
-      "code": "ALO",
-      "text": "",
-      "team": "Aston Martin",
-      "series": "W, W, W, L, L, W"
-     },
-     {
-      "rank": "5",
-      "value": "4",
-      "unit": "W",
-      "note": "",
-      "code": "ANT",
-      "text": "",
-      "team": "Mercedes",
-      "series": "L, W, W, W, W, L"
-     },
-     {
-      "rank": "5",
-      "value": "4",
-      "unit": "W",
-      "note": "",
-      "code": "COL",
-      "text": "",
-      "team": "Alpine",
-      "series": "W, W, L, L, W, W"
-     },
-     {
-      "rank": "5",
-      "value": "4",
-      "unit": "W",
-      "note": "",
-      "code": "LEC",
-      "text": "",
-      "team": "Ferrari",
-      "series": "W, L, W, W, L, W"
-     },
-     {
-      "rank": "5",
-      "value": "4",
+      "rank": "3",
+      "value": "5",
       "unit": "W",
       "note": "",
       "code": "NOR",
       "text": "",
       "team": "McLaren",
-      "series": "L, L, W, W, W, W"
+      "series": "L, W, W, W, W, W"
      },
      {
-      "rank": "10",
+      "rank": "3",
+      "value": "5",
+      "unit": "W",
+      "note": "",
+      "code": "PER",
+      "text": "",
+      "team": "Cadillac",
+      "series": "W, W, W, W, W, L"
+     },
+     {
+      "rank": "7",
+      "value": "4",
+      "unit": "W",
+      "note": "",
+      "code": "BEA",
+      "text": "",
+      "team": "Haas",
+      "series": "W, W, L, L, W, W"
+     },
+     {
+      "rank": "8",
       "value": "3",
       "unit": "W",
       "note": "",
       "code": "ALB",
       "text": "",
       "team": "Williams",
-      "series": "L, L, L, W, W, W"
+      "series": "L, L, W, W, W, L"
+     },
+     {
+      "rank": "8",
+      "value": "3",
+      "unit": "W",
+      "note": "",
+      "code": "ALO",
+      "text": "",
+      "team": "Aston Martin",
+      "series": "W, W, L, L, W, L"
+     },
+     {
+      "rank": "8",
+      "value": "3",
+      "unit": "W",
+      "note": "",
+      "code": "COL",
+      "text": "",
+      "team": "Alpine",
+      "series": "W, L, L, W, W, L"
      }
     ]
    },
@@ -2106,108 +2106,108 @@
     "headline": "PLACES GAINED PER ROUND",
     "sub": "Last 6 rounds",
     "source": "Source: Jolpica / FIA results",
-    "rounds": "AZE, BHR, SIN, USA, MEX, BRA",
+    "rounds": "BHR, SIN, USA, MEX, BRA, LVG",
     "formKind": "delta",
     "rows": [
      {
       "rank": "1",
-      "value": "28",
+      "value": "22",
       "unit": "places",
       "note": "",
       "code": "VER",
       "text": "",
       "team": "Red Bull",
-      "series": "+6, +0, +0, -1, +4, +19"
+      "series": "+0, +0, -1, +4, +19, +0"
      },
      {
       "rank": "2",
-      "value": "15",
+      "value": "18",
       "unit": "places",
       "note": "",
-      "code": "LAW",
+      "code": "PIA",
       "text": "",
-      "team": "Racing Bulls",
-      "series": "-1, +4, +1, +0, +15, -4"
+      "team": "McLaren",
+      "series": "+0, +1, +0, -1, +4, +14"
      },
      {
       "rank": "3",
-      "value": "13",
-      "unit": "places",
-      "note": "",
-      "code": "HAD",
-      "text": "",
-      "team": "Red Bull",
-      "series": "+1, +3, +12, -3, -2, +2"
-     },
-     {
-      "rank": "4",
       "value": "11",
-      "unit": "places",
-      "note": "",
-      "code": "ANT",
-      "text": "",
-      "team": "Mercedes",
-      "series": "+11, +1, +1, +0, +1, -3"
-     },
-     {
-      "rank": "5",
-      "value": "7",
-      "unit": "places",
-      "note": "",
-      "code": "RUS",
-      "text": "",
-      "team": "Mercedes",
-      "series": "+0, DNF, +10, -2, -4, +3"
-     },
-     {
-      "rank": "5",
-      "value": "7",
       "unit": "places",
       "note": "",
       "code": "HAM",
       "text": "",
       "team": "Ferrari",
-      "series": "+0, -1, -3, +1, -1, +11"
+      "series": "-1, -3, +1, -1, +11, +4"
      },
      {
-      "rank": "7",
-      "value": "5",
+      "rank": "4",
+      "value": "9",
+      "unit": "places",
+      "note": "",
+      "code": "LAW",
+      "text": "",
+      "team": "Racing Bulls",
+      "series": "+4, +1, +0, +15, -4, -7"
+     },
+     {
+      "rank": "5",
+      "value": "7",
       "unit": "places",
       "note": "",
       "code": "LEC",
       "text": "",
       "team": "Ferrari",
-      "series": "-2, +0, +0, +2, -1, +6"
+      "series": "+0, +0, +2, -1, +6, +0"
+     },
+     {
+      "rank": "6",
+      "value": "2",
+      "unit": "places",
+      "note": "",
+      "code": "ANT",
+      "text": "",
+      "team": "Mercedes",
+      "series": "+1, +1, +0, +1, -3, +2"
+     },
+     {
+      "rank": "6",
+      "value": "2",
+      "unit": "places",
+      "note": "",
+      "code": "NOR",
+      "text": "",
+      "team": "McLaren",
+      "series": "-4, +1, +3, +1, +0, +1"
      },
      {
       "rank": "8",
       "value": "1",
       "unit": "places",
       "note": "",
-      "code": "NOR",
+      "code": "HAD",
       "text": "",
-      "team": "McLaren",
-      "series": "DNF, -4, +1, +3, +1, +0"
+      "team": "Red Bull",
+      "series": "+3, +12, -3, -2, +2, -11"
      },
      {
       "rank": "9",
-      "value": "-6",
+      "value": "0",
       "unit": "places",
       "note": "",
-      "code": "PIA",
+      "code": "RUS",
       "text": "",
-      "team": "McLaren",
-      "series": "-10, +0, +1, +0, -1, +4"
+      "team": "Mercedes",
+      "series": "DNF, +10, -2, -4, +3, -7"
      },
      {
       "rank": "10",
-      "value": "-18",
+      "value": "-15",
       "unit": "places",
       "note": "",
       "code": "GAS",
       "text": "",
       "team": "Alpine",
-      "series": "DNF, -7, -4, +0, -8, +1"
+      "series": "-7, -4, +0, -8, +1, +3"
      }
     ]
    },
@@ -2218,70 +2218,70 @@
     "order": "high",
     "tag": "CHAMPIONSHIP",
     "headline": "THE TITLE FIGHT",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: Jolpica / FIA results",
-    "rounds": "AUS, CHN, JPN, MIA, CAN, MON, BAR, AUT, GBR, BEL, HUN, NED, ITA, ESP, AZE, BHR, SIN, USA, MEX, BRA",
+    "rounds": "AUS, CHN, JPN, MIA, CAN, MON, BAR, AUT, GBR, BEL, HUN, NED, ITA, ESP, AZE, BHR, SIN, USA, MEX, BRA, LVG",
     "cum2": true,
     "rows": [
      {
       "rank": "1",
-      "value": "390",
+      "value": "402",
       "unit": "pts",
       "note": "",
       "code": "ANT",
       "text": "",
       "team": "Mercedes",
-      "series": "18, 29, 25, 28, 31, 25, 0, 15, 8, 25, 15, 23, 25, 25, 10, 18, 20, 25, 15, 10"
+      "series": "18, 29, 25, 28, 31, 25, 0, 15, 8, 25, 15, 23, 25, 25, 10, 18, 20, 25, 15, 10, 12"
      },
      {
       "rank": "2",
-      "value": "279",
+      "value": "304",
       "unit": "pts",
       "note": "",
       "code": "VER",
       "text": "",
       "team": "Red Bull",
-      "series": "8, 0, 4, 14, 17, 0, 12, 18, 3, 15, 18, 3, 15, 18, 18, 25, 33, 15, 25, 18"
+      "series": "8, 0, 4, 14, 17, 0, 12, 18, 3, 15, 18, 3, 15, 18, 18, 25, 33, 15, 25, 18, 25"
      },
      {
       "rank": "3",
-      "value": "262",
-      "unit": "pts",
-      "note": "",
-      "code": "RUS",
-      "text": "",
-      "team": "Mercedes",
-      "series": "25, 26, 12, 17, 8, 0, 18, 25, 23, 0, 6, 23, 18, 10, 25, 0, 2, 4, 8, 12"
-     },
-     {
-      "rank": "4",
-      "value": "261",
+      "value": "267",
       "unit": "pts",
       "note": "",
       "code": "HAM",
       "text": "",
       "team": "Ferrari",
-      "series": "12, 21, 8, 10, 21, 18, 25, 10, 22, 12, 10, 14, 8, 0, 8, 15, 15, 12, 18, 2"
+      "series": "12, 21, 8, 10, 21, 18, 25, 10, 22, 12, 10, 14, 8, 0, 8, 15, 15, 12, 18, 2, 6"
      },
      {
-      "rank": "5",
-      "value": "249",
-      "unit": "pts",
-      "note": "",
-      "code": "LEC",
-      "text": "",
-      "team": "Ferrari",
-      "series": "15, 19, 15, 10, 16, 0, 0, 4, 29, 18, 12, 17, 0, 12, 12, 12, 24, 18, 12, 4"
-     },
-     {
-      "rank": "6",
-      "value": "246",
+      "rank": "4",
+      "value": "264",
       "unit": "pts",
       "note": "",
       "code": "NOR",
       "text": "",
       "team": "McLaren",
-      "series": "10, 5, 10, 26, 7, 0, 15, 6, 18, 6, 25, 31, 12, 15, 0, 2, 13, 10, 10, 25"
+      "series": "10, 5, 10, 26, 7, 0, 15, 6, 18, 6, 25, 31, 12, 15, 0, 2, 13, 10, 10, 25, 18"
+     },
+     {
+      "rank": "4",
+      "value": "264",
+      "unit": "pts",
+      "note": "",
+      "code": "RUS",
+      "text": "",
+      "team": "Mercedes",
+      "series": "25, 26, 12, 17, 8, 0, 18, 25, 23, 0, 6, 23, 18, 10, 25, 0, 2, 4, 8, 12, 2"
+     },
+     {
+      "rank": "6",
+      "value": "250",
+      "unit": "pts",
+      "note": "",
+      "code": "LEC",
+      "text": "",
+      "team": "Ferrari",
+      "series": "15, 19, 15, 10, 16, 0, 0, 4, 29, 18, 12, 17, 0, 12, 12, 12, 24, 18, 12, 4, 1"
      }
     ]
    },
@@ -2292,46 +2292,46 @@
     "order": "high",
     "tag": "CHAMPIONSHIP",
     "headline": "CONSTRUCTORS RACE",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: Jolpica / FIA results",
-    "rounds": "AUS, CHN, JPN, MIA, CAN, MON, BAR, AUT, GBR, BEL, HUN, NED, ITA, ESP, AZE, BHR, SIN, USA, MEX, BRA",
+    "rounds": "AUS, CHN, JPN, MIA, CAN, MON, BAR, AUT, GBR, BEL, HUN, NED, ITA, ESP, AZE, BHR, SIN, USA, MEX, BRA, LVG",
     "cum2": true,
     "teamRows": [
      {
       "rank": "1",
-      "value": "652",
+      "value": "666",
       "unit": "pts",
       "note": "",
       "code": "team",
       "team": "Mercedes",
-      "series": "43, 55, 37, 45, 39, 25, 18, 40, 31, 25, 21, 46, 43, 35, 35, 18, 22, 29, 23, 22"
+      "series": "43, 55, 37, 45, 39, 25, 18, 40, 31, 25, 21, 46, 43, 35, 35, 18, 22, 29, 23, 22, 14"
      },
      {
       "rank": "2",
-      "value": "510",
+      "value": "517",
       "unit": "pts",
       "note": "",
       "code": "team",
       "team": "Ferrari",
-      "series": "27, 40, 23, 20, 37, 18, 25, 14, 51, 30, 22, 31, 8, 12, 20, 27, 39, 30, 30, 6"
+      "series": "27, 40, 23, 20, 37, 18, 25, 14, 51, 30, 22, 31, 8, 12, 20, 27, 39, 30, 30, 6, 7"
      },
      {
       "rank": "3",
-      "value": "415",
+      "value": "440",
       "unit": "pts",
       "note": "",
       "code": "team",
       "team": "Red Bull",
-      "series": "8, 4, 4, 14, 27, 15, 20, 26, 13, 23, 26, 9, 15, 26, 33, 35, 34, 23, 27, 33"
+      "series": "8, 4, 4, 14, 27, 15, 20, 26, 13, 23, 26, 9, 15, 26, 33, 35, 34, 23, 27, 33, 25"
      },
      {
       "rank": "4",
-      "value": "398",
+      "value": "431",
       "unit": "pts",
       "note": "",
       "code": "team",
       "team": "McLaren",
-      "series": "10, 8, 28, 48, 12, 12, 25, 18, 20, 16, 25, 43, 22, 19, 0, 10, 23, 16, 10, 33"
+      "series": "10, 8, 28, 48, 12, 12, 25, 18, 20, 16, 25, 43, 22, 19, 0, 10, 23, 16, 10, 33, 33"
      },
      {
       "rank": "5",
@@ -2340,16 +2340,16 @@
       "note": "",
       "code": "team",
       "team": "Racing Bulls",
-      "series": "4, 8, 2, 0, 7, 18, 6, 3, 15, 2, 5, 0, 5, 2, 6, 7, 10, 2, 6, 6"
+      "series": "4, 8, 2, 0, 7, 18, 6, 3, 15, 2, 5, 0, 5, 2, 6, 7, 10, 2, 6, 6, 0"
      },
      {
       "rank": "6",
-      "value": "69",
+      "value": "87",
       "unit": "pts",
       "note": "",
       "code": "team",
       "team": "Alpine",
-      "series": "1, 9, 6, 7, 12, 6, 7, 0, 3, 1, 0, 2, 8, 6, 0, 0, 0, 1, 0, 0"
+      "series": "1, 9, 6, 7, 12, 6, 7, 0, 3, 1, 0, 2, 8, 6, 0, 0, 0, 1, 0, 0, 18"
      }
     ]
    },
@@ -2360,9 +2360,9 @@
     "order": "low",
     "tag": "CHAMPIONSHIP",
     "headline": "CHAMPIONSHIP POSITION",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: Jolpica / FIA results",
-    "rounds": "AUS, CHN, JPN, MIA, CAN, MON, BAR, AUT, GBR, BEL, HUN, NED, ITA, ESP, AZE, BHR, SIN, USA, MEX, BRA",
+    "rounds": "AUS, CHN, JPN, MIA, CAN, MON, BAR, AUT, GBR, BEL, HUN, NED, ITA, ESP, AZE, BHR, SIN, USA, MEX, BRA, LVG",
     "cum2": false,
     "rows": [
      {
@@ -2373,7 +2373,7 @@
       "code": "ANT",
       "text": "",
       "team": "Mercedes",
-      "series": "2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1"
+      "series": "2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1"
      },
      {
       "rank": "2",
@@ -2383,47 +2383,47 @@
       "code": "VER",
       "text": "",
       "team": "Red Bull",
-      "series": "6, 9, 9, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, 6, 4, 4, 2, 2"
+      "series": "6, 9, 9, 7, 7, 7, 7, 7, 7, 7, 6, 6, 6, 6, 6, 6, 4, 4, 2, 2, 2"
      },
      {
       "rank": "3",
       "value": "3",
       "unit": "",
       "note": "",
-      "code": "RUS",
+      "code": "HAM",
       "text": "",
-      "team": "Mercedes",
-      "series": "1, 1, 2, 2, 2, 3, 3, 2, 2, 3, 3, 2, 2, 2, 2, 2, 2, 2, 4, 3"
+      "team": "Ferrari",
+      "series": "4, 4, 4, 4, 4, 2, 2, 3, 3, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 4, 3"
      },
      {
       "rank": "4",
       "value": "4",
       "unit": "",
       "note": "",
-      "code": "HAM",
+      "code": "NOR",
       "text": "",
-      "team": "Ferrari",
-      "series": "4, 4, 4, 4, 4, 2, 2, 3, 3, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 4"
+      "team": "McLaren",
+      "series": "5, 6, 5, 5, 5, 6, 5, 6, 5, 5, 5, 4, 4, 4, 4, 5, 6, 6, 6, 6, 4"
      },
      {
       "rank": "5",
       "value": "5",
       "unit": "",
       "note": "",
-      "code": "LEC",
+      "code": "RUS",
       "text": "",
-      "team": "Ferrari",
-      "series": "3, 3, 3, 3, 3, 4, 4, 5, 4, 4, 4, 5, 5, 5, 5, 4, 5, 5, 5, 5"
+      "team": "Mercedes",
+      "series": "1, 1, 2, 2, 2, 3, 3, 2, 2, 3, 3, 2, 2, 2, 2, 2, 2, 2, 4, 3, 5"
      },
      {
       "rank": "6",
       "value": "6",
       "unit": "",
       "note": "",
-      "code": "NOR",
+      "code": "LEC",
       "text": "",
-      "team": "McLaren",
-      "series": "5, 6, 5, 5, 5, 6, 5, 6, 5, 5, 5, 4, 4, 4, 4, 5, 6, 6, 6, 6"
+      "team": "Ferrari",
+      "series": "3, 3, 3, 3, 3, 4, 4, 5, 4, 4, 4, 5, 5, 5, 5, 4, 5, 5, 5, 5, 6"
      },
      {
       "rank": "7",
@@ -2433,7 +2433,7 @@
       "code": "PIA",
       "text": "",
       "team": "McLaren",
-      "series": "22, 12, 6, 6, 6, 5, 6, 4, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7"
+      "series": "22, 12, 6, 6, 6, 5, 6, 4, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7"
      },
      {
       "rank": "8",
@@ -2443,7 +2443,7 @@
       "code": "HAD",
       "text": "",
       "team": "Red Bull",
-      "series": "16, 10, 11, 12, 12, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8"
+      "series": "16, 10, 11, 12, 12, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8"
      },
      {
       "rank": "9",
@@ -2453,7 +2453,7 @@
       "code": "LAW",
       "text": "",
       "team": "Racing Bulls",
-      "series": "19, 8, 10, 10, 10, 10, 10, 10, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9"
+      "series": "19, 8, 10, 10, 10, 10, 10, 10, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9"
      },
      {
       "rank": "10",
@@ -2463,7 +2463,7 @@
       "code": "GAS",
       "text": "",
       "team": "Alpine",
-      "series": "10, 7, 8, 9, 8, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10"
+      "series": "10, 7, 8, 9, 8, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10"
      },
      {
       "rank": "11",
@@ -2473,7 +2473,7 @@
       "code": "LIN",
       "text": "",
       "team": "Racing Bulls",
-      "series": "8, 11, 12, 13, 14, 13, 13, 13, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11"
+      "series": "8, 11, 12, 13, 14, 13, 13, 13, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11"
      },
      {
       "rank": "12",
@@ -2483,7 +2483,7 @@
       "code": "COL",
       "text": "",
       "team": "Alpine",
-      "series": "15, 15, 15, 11, 11, 12, 12, 12, 13, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12"
+      "series": "15, 15, 15, 11, 11, 12, 12, 12, 13, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12, 12"
      },
      {
       "rank": "13",
@@ -2493,7 +2493,7 @@
       "code": "BEA",
       "text": "",
       "team": "Haas",
-      "series": "7, 5, 7, 8, 9, 11, 11, 11, 12, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13"
+      "series": "7, 5, 7, 8, 9, 11, 11, 11, 12, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13"
      },
      {
       "rank": "14",
@@ -2503,7 +2503,7 @@
       "code": "BOR",
       "text": "",
       "team": "Audi",
-      "series": "9, 13, 13, 15, 15, 17, 17, 17, 14, 14, 14, 14, 14, 14, 14, 14, 15, 15, 14, 14"
+      "series": "9, 13, 13, 15, 15, 17, 17, 17, 14, 14, 14, 14, 14, 14, 14, 14, 15, 15, 14, 14, 14"
      },
      {
       "rank": "15",
@@ -2513,27 +2513,27 @@
       "code": "HUL",
       "text": "",
       "team": "Audi",
-      "series": "18, 21, 22, 22, 22, 22, 22, 22, 22, 22, 18, 15, 15, 15, 15, 16, 14, 14, 15, 15"
+      "series": "18, 21, 22, 22, 22, 22, 22, 22, 22, 22, 18, 15, 15, 15, 15, 16, 14, 14, 15, 15, 15"
      },
      {
       "rank": "16",
       "value": "16",
       "unit": "",
       "note": "",
-      "code": "ALO",
-      "text": "",
-      "team": "Aston Martin",
-      "series": "12, 17, 18, 18, 18, 18, 18, 18, 18, 18, 19, 18, 18, 18, 19, 15, 16, 16, 16, 16"
-     },
-     {
-      "rank": "17",
-      "value": "18",
-      "unit": "",
-      "note": "",
       "code": "SAI",
       "text": "",
       "team": "Williams",
-      "series": "23, 14, 14, 14, 13, 14, 14, 14, 15, 15, 15, 16, 16, 16, 17, 18, 18, 18, 18, 18"
+      "series": "23, 14, 14, 14, 13, 14, 14, 14, 15, 15, 15, 16, 16, 16, 17, 18, 18, 18, 18, 18, 16"
+     },
+     {
+      "rank": "17",
+      "value": "17",
+      "unit": "",
+      "note": "",
+      "code": "ALO",
+      "text": "",
+      "team": "Aston Martin",
+      "series": "12, 17, 18, 18, 18, 18, 18, 18, 18, 18, 19, 18, 18, 18, 19, 15, 16, 16, 16, 16, 17"
      },
      {
       "rank": "18",
@@ -2543,7 +2543,7 @@
       "code": "ALB",
       "text": "",
       "team": "Williams",
-      "series": "11, 16, 17, 16, 16, 15, 15, 15, 16, 16, 16, 17, 17, 17, 18, 19, 19, 19, 19, 19"
+      "series": "11, 16, 17, 16, 16, 15, 15, 15, 16, 16, 16, 17, 17, 17, 18, 19, 19, 19, 19, 19, 19"
      },
      {
       "rank": "19",
@@ -2553,7 +2553,7 @@
       "code": "BOT",
       "text": "",
       "team": "Cadillac",
-      "series": "13, 18, 19, 19, 19, 19, 19, 19, 19, 19, 20, 20, 21, 21, 21, 21, 21, 21, 22, 22"
+      "series": "13, 18, 19, 19, 19, 19, 19, 19, 19, 19, 20, 20, 21, 21, 21, 21, 21, 21, 22, 22, 22"
      },
      {
       "rank": "20",
@@ -2563,7 +2563,7 @@
       "code": "CAM",
       "text": "",
       "team": "Haas",
-      "series": "14, 19, 20, 20, 20, 20, 20, 20, 20, 20, 21, 21, 22, 22, 22, 22, 22, 22, 23, 23"
+      "series": "14, 19, 20, 20, 20, 20, 20, 20, 20, 20, 21, 21, 22, 22, 22, 22, 22, 22, 23, 23, 23"
      },
      {
       "rank": "21",
@@ -2573,7 +2573,7 @@
       "code": "PER",
       "text": "",
       "team": "Cadillac",
-      "series": "21, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 24, 24, 24, 24, 24, 24, 24, 24"
+      "series": "21, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 23, 24, 24, 24, 24, 24, 24, 24, 24, 24"
      },
      {
       "rank": "22",
@@ -2583,7 +2583,7 @@
       "code": "STR",
       "text": "",
       "team": "Aston Martin",
-      "series": "24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 25, 25, 25, 25, 25, 25, 25, 25"
+      "series": "24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 24, 25, 25, 25, 25, 25, 25, 25, 25, 25"
      }
     ]
    },
@@ -2594,70 +2594,70 @@
     "order": "low",
     "tag": "QUALIFYING",
     "headline": "GAP TO POLE BY ROUND",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: Jolpica / FIA results",
-    "rounds": "AUS, CHN, JPN, MIA, CAN, MON, BAR, AUT, GBR, BEL, HUN, NED, ITA, ESP, AZE, BHR, SIN, USA, MEX, BRA",
+    "rounds": "AUS, CHN, JPN, MIA, CAN, MON, BAR, AUT, GBR, BEL, HUN, NED, ITA, ESP, AZE, BHR, SIN, USA, MEX, BRA, LVG",
     "cum2": false,
     "rows": [
      {
       "rank": "1",
-      "value": "0.231",
+      "value": "0.236",
       "unit": "s",
       "note": "",
       "code": "RUS",
       "text": "",
       "team": "Mercedes",
-      "series": "0.000, 0.222, 0.298, 0.399, 0.000, 0.394, 0.000, 0.000, 0.370, 0.508, 0.553, 0.102, 0.060, 0.325, 0.000, 0.741, 0.374, 0.270, 0.009, 0.000"
+      "series": "0.000, 0.222, 0.298, 0.399, 0.000, 0.394, 0.000, 0.000, 0.370, 0.508, 0.553, 0.102, 0.060, 0.325, 0.000, 0.741, 0.374, 0.270, 0.009, 0.000, 0.331"
      },
      {
       "rank": "2",
-      "value": "0.335",
+      "value": "0.319",
       "unit": "s",
       "note": "",
       "code": "ANT",
       "text": "",
       "team": "Mercedes",
-      "series": "0.293, 0.000, 0.000, 0.000, 0.068, 0.000, 0.319, 0.301, 0.000, 0.000, 0.272, 0.133, 0.096, 0.011, 2.978, 0.501, 0.189, 0.000, 0.193, 1.350"
+      "series": "0.293, 0.000, 0.000, 0.000, 0.068, 0.000, 0.319, 0.301, 0.000, 0.000, 0.272, 0.133, 0.096, 0.011, 2.978, 0.501, 0.189, 0.000, 0.193, 1.350, 0.000"
      },
      {
       "rank": "3",
-      "value": "0.419",
-      "unit": "s",
-      "note": "",
-      "code": "LEC",
-      "text": "",
-      "team": "Ferrari",
-      "series": "0.809, 0.364, 0.525, 0.345, 0.398, 0.300, 0.602, 0.236, 0.175, 0.532, 0.238, 0.395, 0.218, 0.195, 0.837, 0.536, 0.054, 0.163, 0.119, 1.337"
-     },
-     {
-      "rank": "4",
-      "value": "0.457",
+      "value": "0.452",
       "unit": "s",
       "note": "",
       "code": "NOR",
       "text": "",
       "team": "McLaren",
-      "series": "0.957, 0.544, 0.631, 0.385, 0.151, 0.714, 0.322, 0.389, 0.766, 0.440, 0.000, 0.000, 0.281, 0.000, 1.146, 0.627, 0.339, 0.504, 0.214, 0.725"
+      "series": "0.957, 0.544, 0.631, 0.385, 0.151, 0.714, 0.322, 0.389, 0.766, 0.440, 0.000, 0.000, 0.281, 0.000, 1.146, 0.627, 0.339, 0.504, 0.214, 0.725, 0.351"
+     },
+     {
+      "rank": "4",
+      "value": "0.454",
+      "unit": "s",
+      "note": "",
+      "code": "LEC",
+      "text": "",
+      "team": "Ferrari",
+      "series": "0.809, 0.364, 0.525, 0.345, 0.398, 0.300, 0.602, 0.236, 0.175, 0.532, 0.238, 0.395, 0.218, 0.195, 0.837, 0.536, 0.054, 0.163, 0.119, 1.337, 1.147"
      },
      {
       "rank": "5",
-      "value": "0.521",
+      "value": "0.561",
       "unit": "s",
       "note": "",
       "code": "HAM",
       "text": "",
       "team": "Ferrari",
-      "series": "0.960, 0.351, 0.789, 0.521, 0.290, 0.228, 0.064, 0.295, 0.347, 0.534, 0.012, 0.331, 0.225, 0.189, 1.332, 0.298, 0.123, 0.276, 0.000, 3.256"
+      "series": "0.960, 0.351, 0.789, 0.521, 0.290, 0.228, 0.064, 0.295, 0.347, 0.534, 0.012, 0.331, 0.225, 0.189, 1.332, 0.298, 0.123, 0.276, 0.000, 3.256, 1.360"
      },
      {
       "rank": "6",
-      "value": "0.642",
+      "value": "0.622",
       "unit": "s",
       "note": "",
       "code": "VER",
       "text": "",
       "team": "Red Bull",
-      "series": ", 0.938, 1.484, 0.166, 0.329, 0.043, 0.342, 0.362, 0.782, 0.317, 0.518, 0.455, 0.284, 0.140, 1.180, 0.000, 0.000, 0.179, 0.178, 4.493"
+      "series": ", 0.938, 1.484, 0.166, 0.329, 0.043, 0.342, 0.362, 0.782, 0.317, 0.518, 0.455, 0.284, 0.140, 1.180, 0.000, 0.000, 0.179, 0.178, 4.493, 0.258"
      }
     ]
    },
@@ -2668,64 +2668,64 @@
     "order": "low",
     "tag": "PIT STOPS",
     "headline": "AVERAGE STOP BY ROUND",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: DHL",
-    "rounds": "AUS, CHN, JPN, MIA, CAN, MON, BAR, AUT, GBR, BEL, HUN, NED, ITA, ESP, AZE, BHR, SIN, USA, MEX, BRA",
+    "rounds": "AUS, CHN, JPN, MIA, CAN, MON, BAR, AUT, GBR, BEL, HUN, NED, ITA, ESP, AZE, BHR, SIN, USA, MEX, BRA, LVG",
     "cum2": false,
     "teamRows": [
      {
       "rank": "1",
-      "value": "3.02",
-      "unit": "s",
-      "note": "",
-      "code": "team",
-      "team": "Mercedes",
-      "series": "2.33, 3.06, 2.42, 2.17, 3.41, 3.55, 2.42, 2.35, 3.68, 2.39, 2.48, 3.23, 2.76, 2.43, 2.44, 2.51, 2.44, 5.50, 6.56, 2.68"
-     },
-     {
-      "rank": "2",
       "value": "3.03",
       "unit": "s",
       "note": "",
       "code": "team",
+      "team": "Mercedes",
+      "series": "2.33, 3.06, 2.42, 2.17, 3.41, 3.55, 2.42, 2.35, 3.68, 2.39, 2.48, 3.23, 2.76, 2.43, 2.44, 2.51, 2.44, 5.50, 6.56, 2.68, 3.44"
+     },
+     {
+      "rank": "2",
+      "value": "3.05",
+      "unit": "s",
+      "note": "",
+      "code": "team",
       "team": "Racing Bulls",
-      "series": "2.76, 2.60, 3.79, 2.08, 2.20, 7.52, 4.12, 2.34, 2.72, 3.53, 2.21, 2.57, , 2.71, 4.34, 2.95, 2.57, 2.62, 2.25, 2.55"
+      "series": "2.76, 2.60, 3.79, 2.08, 2.20, 7.52, 4.12, 2.34, 2.72, 3.53, 2.21, 2.57, , 2.71, 4.34, 2.95, 2.57, 2.62, 2.25, 2.55, 3.52"
      },
      {
       "rank": "3",
-      "value": "3.19",
+      "value": "3.20",
       "unit": "s",
       "note": "",
       "code": "team",
       "team": "Alpine",
-      "series": "6.16, 2.68, 3.29, 2.80, 3.96, 3.25, 3.12, 2.50, 3.96, 3.41, 2.65, 3.38, , 2.76, 2.46, 2.49, 3.16, 4.46, 2.61, 3.11"
+      "series": "6.16, 2.68, 3.29, 2.80, 3.96, 3.25, 3.12, 2.50, 3.96, 3.41, 2.65, 3.38, , 2.76, 2.46, 2.49, 3.16, 4.46, 2.61, 3.11, 3.33"
      },
      {
       "rank": "4",
-      "value": "3.28",
+      "value": "3.42",
       "unit": "s",
       "note": "",
       "code": "team",
       "team": "Ferrari",
-      "series": "2.24, 2.84, 2.06, 3.50, 3.77, 4.87, 2.69, 2.52, 4.04, 5.42, 2.49, 3.37, , 2.70, 3.04, 4.11, 2.77, 2.50, 4.79, 2.88"
+      "series": "2.24, 2.84, 2.06, 3.50, 3.77, 4.87, 2.69, 2.52, 4.04, 5.42, 2.49, 3.37, , 2.70, 3.04, 4.11, 2.77, 2.50, 4.79, 2.88, 8.22"
      },
      {
       "rank": "5",
-      "value": "3.35",
+      "value": "3.48",
       "unit": "s",
       "note": "",
       "code": "team",
       "team": "Red Bull",
-      "series": "2.32, 3.85, 3.08, 2.34, 8.10, 6.43, 2.90, 2.55, 4.50, 3.24, 2.52, 2.92, 2.64, 2.38, 2.93, 2.45, 2.63, 2.94, 2.75, 2.50"
+      "series": "2.32, 3.85, 3.08, 2.34, 8.10, 6.43, 2.90, 2.55, 4.50, 3.24, 2.52, 2.92, 2.64, 2.38, 2.93, 2.45, 2.63, 2.94, 2.75, 2.50, 6.27"
      },
      {
       "rank": "6",
-      "value": "3.58",
+      "value": "3.54",
       "unit": "s",
       "note": "",
       "code": "team",
       "team": "Audi",
-      "series": "4.48, , 2.54, 7.82, 4.24, 2.60, 3.38, 3.10, 2.85, 2.88, 2.58, 3.01, 2.44, 2.36, 2.43, 3.59, 3.42, 2.66, 6.32, 4.62"
+      "series": "4.48, , 2.54, 7.82, 4.24, 2.60, 3.38, 3.10, 2.85, 2.88, 2.58, 3.01, 2.44, 2.36, 2.43, 3.59, 3.42, 2.66, 6.32, 4.62, 2.56"
      }
     ]
    },
@@ -2736,12 +2736,12 @@
     "order": "high",
     "tag": "WINS",
     "headline": "RACE WINS",
-    "sub": "2026 season · after Round 20 · out of 20",
+    "sub": "2026 season · after Round 21 · out of 21",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
       "rank": "1",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "ANT",
@@ -2751,7 +2751,17 @@
      },
      {
       "rank": "2",
-      "value": "20",
+      "value": "21",
+      "unit": "",
+      "note": "",
+      "code": "VER",
+      "text": "",
+      "team": "Red Bull",
+      "fill": "4"
+     },
+     {
+      "rank": "3",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "RUS",
@@ -2760,8 +2770,8 @@
       "fill": "3"
      },
      {
-      "rank": "2",
-      "value": "20",
+      "rank": "3",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "NOR",
@@ -2770,18 +2780,8 @@
       "fill": "3"
      },
      {
-      "rank": "2",
-      "value": "20",
-      "unit": "",
-      "note": "",
-      "code": "VER",
-      "text": "",
-      "team": "Red Bull",
-      "fill": "3"
-     },
-     {
       "rank": "5",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "HAM",
@@ -2791,7 +2791,7 @@
      },
      {
       "rank": "5",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "LEC",
@@ -2808,12 +2808,12 @@
     "order": "high",
     "tag": "PODIUMS",
     "headline": "PODIUM FINISHES",
-    "sub": "2026 season · after Round 20 · out of 20",
+    "sub": "2026 season · after Round 21 · out of 21",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
       "rank": "1",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "ANT",
@@ -2823,17 +2823,17 @@
      },
      {
       "rank": "2",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "VER",
       "text": "",
       "team": "Red Bull",
-      "fill": "12"
+      "fill": "13"
      },
      {
       "rank": "3",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "RUS",
@@ -2843,7 +2843,7 @@
      },
      {
       "rank": "4",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "HAM",
@@ -2852,8 +2852,18 @@
       "fill": "7"
      },
      {
-      "rank": "5",
-      "value": "20",
+      "rank": "4",
+      "value": "21",
+      "unit": "",
+      "note": "",
+      "code": "NOR",
+      "text": "",
+      "team": "McLaren",
+      "fill": "7"
+     },
+     {
+      "rank": "6",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "LEC",
@@ -2862,34 +2872,24 @@
       "fill": "6"
      },
      {
-      "rank": "5",
-      "value": "20",
+      "rank": "7",
+      "value": "21",
       "unit": "",
       "note": "",
-      "code": "NOR",
+      "code": "PIA",
       "text": "",
       "team": "McLaren",
-      "fill": "6"
+      "fill": "3"
      },
      {
       "rank": "7",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "HAD",
       "text": "",
       "team": "Red Bull",
       "fill": "3"
-     },
-     {
-      "rank": "8",
-      "value": "20",
-      "unit": "",
-      "note": "",
-      "code": "PIA",
-      "text": "",
-      "team": "McLaren",
-      "fill": "2"
      }
     ]
    },
@@ -2900,72 +2900,72 @@
     "order": "high",
     "tag": "POINTS",
     "headline": "POINTS FINISHES",
-    "sub": "2026 season · after Round 20 · out of 20",
+    "sub": "2026 season · after Round 21 · out of 21",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
       "rank": "1",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "HAM",
       "text": "",
       "team": "Ferrari",
-      "fill": "19"
+      "fill": "20"
      },
      {
       "rank": "2",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "ANT",
       "text": "",
       "team": "Mercedes",
-      "fill": "18"
+      "fill": "19"
      },
      {
       "rank": "3",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "LEC",
       "text": "",
       "team": "Ferrari",
-      "fill": "17"
+      "fill": "18"
      },
      {
       "rank": "4",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "RUS",
       "text": "",
       "team": "Mercedes",
-      "fill": "16"
+      "fill": "17"
      },
      {
       "rank": "4",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "NOR",
       "text": "",
       "team": "McLaren",
-      "fill": "16"
+      "fill": "17"
      },
      {
       "rank": "4",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "VER",
       "text": "",
       "team": "Red Bull",
-      "fill": "16"
+      "fill": "17"
      },
      {
       "rank": "7",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "LAW",
@@ -2975,7 +2975,7 @@
      },
      {
       "rank": "8",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "HAD",
@@ -2984,18 +2984,18 @@
       "fill": "14"
      },
      {
-      "rank": "9",
-      "value": "20",
+      "rank": "8",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "PIA",
       "text": "",
       "team": "McLaren",
-      "fill": "13"
+      "fill": "14"
      },
      {
       "rank": "10",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "LIN",
@@ -3012,22 +3012,22 @@
     "order": "high",
     "tag": "QUALIFYING",
     "headline": "POLE POSITIONS",
-    "sub": "2026 season · after Round 20 · out of 20",
+    "sub": "2026 season · after Round 21 · out of 21",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
       "rank": "1",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "ANT",
       "text": "",
       "team": "Mercedes",
-      "fill": "7"
+      "fill": "8"
      },
      {
       "rank": "2",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "RUS",
@@ -3037,7 +3037,7 @@
      },
      {
       "rank": "3",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "NOR",
@@ -3047,7 +3047,7 @@
      },
      {
       "rank": "4",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "VER",
@@ -3057,7 +3057,7 @@
      },
      {
       "rank": "5",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "GAS",
@@ -3067,7 +3067,7 @@
      },
      {
       "rank": "5",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "HAM",
@@ -3084,42 +3084,42 @@
     "order": "high",
     "tag": "QUALIFYING",
     "headline": "Q3 APPEARANCES",
-    "sub": "2026 season · after Round 20 · out of 20",
+    "sub": "2026 season · after Round 21 · out of 21",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
       "rank": "1",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "RUS",
       "text": "",
       "team": "Mercedes",
-      "fill": "20"
+      "fill": "21"
      },
      {
       "rank": "1",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "NOR",
       "text": "",
       "team": "McLaren",
-      "fill": "20"
+      "fill": "21"
      },
      {
       "rank": "3",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "ANT",
       "text": "",
       "team": "Mercedes",
-      "fill": "19"
+      "fill": "20"
      },
      {
-      "rank": "3",
-      "value": "20",
+      "rank": "4",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "LEC",
@@ -3128,8 +3128,18 @@
       "fill": "19"
      },
      {
-      "rank": "3",
-      "value": "20",
+      "rank": "4",
+      "value": "21",
+      "unit": "",
+      "note": "",
+      "code": "PIA",
+      "text": "",
+      "team": "McLaren",
+      "fill": "19"
+     },
+     {
+      "rank": "4",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "HAM",
@@ -3138,54 +3148,44 @@
       "fill": "19"
      },
      {
-      "rank": "6",
-      "value": "20",
-      "unit": "",
-      "note": "",
-      "code": "PIA",
-      "text": "",
-      "team": "McLaren",
-      "fill": "18"
-     },
-     {
       "rank": "7",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "VER",
       "text": "",
       "team": "Red Bull",
-      "fill": "17"
+      "fill": "18"
      },
      {
       "rank": "8",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "HAD",
       "text": "",
       "team": "Red Bull",
-      "fill": "14"
+      "fill": "15"
      },
      {
       "rank": "9",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "LIN",
       "text": "",
       "team": "Racing Bulls",
-      "fill": "13"
+      "fill": "14"
      },
      {
       "rank": "10",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "LAW",
       "text": "",
       "team": "Racing Bulls",
-      "fill": "9"
+      "fill": "10"
      }
     ]
    },
@@ -3196,12 +3196,12 @@
     "order": "high",
     "tag": "FASTEST LAPS",
     "headline": "FASTEST LAPS",
-    "sub": "2026 season · after Round 20 · out of 20",
+    "sub": "2026 season · after Round 21 · out of 21",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
       "rank": "1",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "ANT",
@@ -3211,7 +3211,7 @@
      },
      {
       "rank": "2",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "LEC",
@@ -3221,7 +3221,7 @@
      },
      {
       "rank": "3",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "VER",
@@ -3231,7 +3231,7 @@
      },
      {
       "rank": "3",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "NOR",
@@ -3241,7 +3241,7 @@
      },
      {
       "rank": "3",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "HAM",
@@ -3251,13 +3251,23 @@
      },
      {
       "rank": "3",
-      "value": "20",
+      "value": "21",
       "unit": "",
       "note": "",
       "code": "RUS",
       "text": "",
       "team": "Mercedes",
       "fill": "2"
+     },
+     {
+      "rank": "7",
+      "value": "21",
+      "unit": "",
+      "note": "",
+      "code": "LAW",
+      "text": "",
+      "team": "Racing Bulls",
+      "fill": "1"
      }
     ]
    },
@@ -3268,14 +3278,14 @@
     "order": "high",
     "tag": "CHAMPIONSHIP",
     "headline": "POINTS SINCE MID-SEASON",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: Jolpica / FIA results",
     "shiftL": "R10",
-    "shiftR": "R20",
+    "shiftR": "R21",
     "rows": [
      {
       "rank": "1",
-      "value": "390",
+      "value": "402",
       "unit": "pts",
       "note": "",
       "code": "ANT",
@@ -3285,7 +3295,7 @@
      },
      {
       "rank": "2",
-      "value": "279",
+      "value": "304",
       "unit": "pts",
       "note": "",
       "code": "VER",
@@ -3295,17 +3305,7 @@
      },
      {
       "rank": "3",
-      "value": "262",
-      "unit": "pts",
-      "note": "",
-      "code": "RUS",
-      "text": "",
-      "team": "Mercedes",
-      "v2": "154"
-     },
-     {
-      "rank": "4",
-      "value": "261",
+      "value": "267",
       "unit": "pts",
       "note": "",
       "code": "HAM",
@@ -3314,18 +3314,8 @@
       "v2": "159"
      },
      {
-      "rank": "5",
-      "value": "249",
-      "unit": "pts",
-      "note": "",
-      "code": "LEC",
-      "text": "",
-      "team": "Ferrari",
-      "v2": "126"
-     },
-     {
-      "rank": "6",
-      "value": "246",
+      "rank": "4",
+      "value": "264",
       "unit": "pts",
       "note": "",
       "code": "NOR",
@@ -3334,8 +3324,28 @@
       "v2": "103"
      },
      {
+      "rank": "4",
+      "value": "264",
+      "unit": "pts",
+      "note": "",
+      "code": "RUS",
+      "text": "",
+      "team": "Mercedes",
+      "v2": "154"
+     },
+     {
+      "rank": "6",
+      "value": "250",
+      "unit": "pts",
+      "note": "",
+      "code": "LEC",
+      "text": "",
+      "team": "Ferrari",
+      "v2": "126"
+     },
+     {
       "rank": "7",
-      "value": "152",
+      "value": "167",
       "unit": "pts",
       "note": "",
       "code": "PIA",
@@ -3365,7 +3375,7 @@
      },
      {
       "rank": "10",
-      "value": "42",
+      "value": "52",
       "unit": "pts",
       "note": "",
       "code": "GAS",
@@ -3382,7 +3392,7 @@
     "order": "high",
     "tag": "CAREER",
     "headline": "CAREER WINS ON THE GRID",
-    "sub": "Current grid · up to Round 20",
+    "sub": "Current grid · up to Round 21",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
@@ -3396,7 +3406,7 @@
      },
      {
       "rank": "2",
-      "value": "74",
+      "value": "75",
       "unit": "wins",
       "note": "",
       "code": "VER",
@@ -3484,12 +3494,12 @@
     "order": "high",
     "tag": "LAPS LED",
     "headline": "MOST LAPS LED",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: F1 live timing via OpenF1",
     "rows": [
      {
       "rank": "1",
-      "value": "453",
+      "value": "456",
       "unit": "laps",
       "note": "",
       "code": "ANT",
@@ -3498,7 +3508,7 @@
      },
      {
       "rank": "2",
-      "value": "235",
+      "value": "238",
       "unit": "laps",
       "note": "",
       "code": "RUS",
@@ -3507,7 +3517,7 @@
      },
      {
       "rank": "3",
-      "value": "152",
+      "value": "196",
       "unit": "laps",
       "note": "",
       "code": "VER",
@@ -3586,12 +3596,12 @@
     "order": "high",
     "tag": "POINTS",
     "headline": "POINTS SCORED",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
       "rank": "1",
-      "value": "390",
+      "value": "402",
       "unit": "pts",
       "note": "",
       "code": "ANT",
@@ -3600,7 +3610,7 @@
      },
      {
       "rank": "2",
-      "value": "279",
+      "value": "304",
       "unit": "pts",
       "note": "",
       "code": "VER",
@@ -3609,16 +3619,7 @@
      },
      {
       "rank": "3",
-      "value": "262",
-      "unit": "pts",
-      "note": "",
-      "code": "RUS",
-      "text": "",
-      "team": "Mercedes"
-     },
-     {
-      "rank": "4",
-      "value": "261",
+      "value": "267",
       "unit": "pts",
       "note": "",
       "code": "HAM",
@@ -3626,17 +3627,8 @@
       "team": "Ferrari"
      },
      {
-      "rank": "5",
-      "value": "249",
-      "unit": "pts",
-      "note": "",
-      "code": "LEC",
-      "text": "",
-      "team": "Ferrari"
-     },
-     {
-      "rank": "6",
-      "value": "246",
+      "rank": "4",
+      "value": "264",
       "unit": "pts",
       "note": "",
       "code": "NOR",
@@ -3644,8 +3636,26 @@
       "team": "McLaren"
      },
      {
+      "rank": "4",
+      "value": "264",
+      "unit": "pts",
+      "note": "",
+      "code": "RUS",
+      "text": "",
+      "team": "Mercedes"
+     },
+     {
+      "rank": "6",
+      "value": "250",
+      "unit": "pts",
+      "note": "",
+      "code": "LEC",
+      "text": "",
+      "team": "Ferrari"
+     },
+     {
       "rank": "7",
-      "value": "152",
+      "value": "167",
       "unit": "pts",
       "note": "",
       "code": "PIA",
@@ -3672,7 +3682,7 @@
      },
      {
       "rank": "10",
-      "value": "42",
+      "value": "52",
       "unit": "pts",
       "note": "",
       "code": "GAS",
@@ -3688,12 +3698,12 @@
     "order": "high",
     "tag": "OVERTAKES",
     "headline": "MOST OVERTAKES",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: OpenF1",
     "rows": [
      {
       "rank": "1",
-      "value": "299",
+      "value": "317",
       "unit": "passes",
       "note": "",
       "code": "SAI",
@@ -3702,7 +3712,7 @@
      },
      {
       "rank": "2",
-      "value": "278",
+      "value": "295",
       "unit": "passes",
       "note": "",
       "code": "BOR",
@@ -3711,7 +3721,7 @@
      },
      {
       "rank": "3",
-      "value": "262",
+      "value": "282",
       "unit": "passes",
       "note": "",
       "code": "ALO",
@@ -3719,8 +3729,8 @@
       "team": "Aston Martin"
      },
      {
-      "rank": "3",
-      "value": "262",
+      "rank": "4",
+      "value": "278",
       "unit": "passes",
       "note": "",
       "code": "COL",
@@ -3728,8 +3738,17 @@
       "team": "Alpine"
      },
      {
-      "rank": "3",
-      "value": "262",
+      "rank": "5",
+      "value": "276",
+      "unit": "passes",
+      "note": "",
+      "code": "BEA",
+      "text": "",
+      "team": "Haas"
+     },
+     {
+      "rank": "6",
+      "value": "269",
       "unit": "passes",
       "note": "",
       "code": "LAW",
@@ -3737,7 +3756,25 @@
       "team": "Racing Bulls"
      },
      {
-      "rank": "6",
+      "rank": "7",
+      "value": "266",
+      "unit": "passes",
+      "note": "",
+      "code": "GAS",
+      "text": "",
+      "team": "Alpine"
+     },
+     {
+      "rank": "8",
+      "value": "264",
+      "unit": "passes",
+      "note": "",
+      "code": "HUL",
+      "text": "",
+      "team": "Audi"
+     },
+     {
+      "rank": "9",
       "value": "259",
       "unit": "passes",
       "note": "",
@@ -3746,40 +3783,13 @@
       "team": "Haas"
      },
      {
-      "rank": "7",
-      "value": "257",
-      "unit": "passes",
-      "note": "",
-      "code": "BEA",
-      "text": "",
-      "team": "Haas"
-     },
-     {
-      "rank": "8",
-      "value": "252",
-      "unit": "passes",
-      "note": "",
-      "code": "ALB",
-      "text": "",
-      "team": "Williams"
-     },
-     {
-      "rank": "9",
-      "value": "251",
+      "rank": "10",
+      "value": "255",
       "unit": "passes",
       "note": "",
       "code": "LIN",
       "text": "",
       "team": "Racing Bulls"
-     },
-     {
-      "rank": "9",
-      "value": "251",
-      "unit": "passes",
-      "note": "",
-      "code": "HUL",
-      "text": "",
-      "team": "Audi"
      }
     ]
    },
@@ -3795,7 +3805,7 @@
     "rows": [
      {
       "rank": "1",
-      "value": "445",
+      "value": "446",
       "unit": "starts",
       "note": "",
       "code": "ALO",
@@ -3804,7 +3814,7 @@
      },
      {
       "rank": "2",
-      "value": "400",
+      "value": "401",
       "unit": "starts",
       "note": "",
       "code": "HAM",
@@ -3813,7 +3823,7 @@
      },
      {
       "rank": "3",
-      "value": "301",
+      "value": "302",
       "unit": "starts",
       "note": "",
       "code": "PER",
@@ -3822,7 +3832,7 @@
      },
      {
       "rank": "4",
-      "value": "269",
+      "value": "270",
       "unit": "starts",
       "note": "",
       "code": "HUL",
@@ -3831,7 +3841,7 @@
      },
      {
       "rank": "5",
-      "value": "265",
+      "value": "266",
       "unit": "starts",
       "note": "",
       "code": "BOT",
@@ -3840,7 +3850,7 @@
      },
      {
       "rank": "6",
-      "value": "253",
+      "value": "254",
       "unit": "starts",
       "note": "",
       "code": "VER",
@@ -3849,7 +3859,7 @@
      },
      {
       "rank": "7",
-      "value": "249",
+      "value": "250",
       "unit": "starts",
       "note": "",
       "code": "SAI",
@@ -3858,7 +3868,7 @@
      },
      {
       "rank": "8",
-      "value": "209",
+      "value": "210",
       "unit": "starts",
       "note": "",
       "code": "STR",
@@ -3870,18 +3880,18 @@
       "value": "198",
       "unit": "starts",
       "note": "",
-      "code": "OCO",
-      "text": "",
-      "team": "Haas"
-     },
-     {
-      "rank": "10",
-      "value": "197",
-      "unit": "starts",
-      "note": "",
       "code": "GAS",
       "text": "",
       "team": "Alpine"
+     },
+     {
+      "rank": "9",
+      "value": "198",
+      "unit": "starts",
+      "note": "",
+      "code": "OCO",
+      "text": "",
+      "team": "Haas"
      }
     ]
    },
@@ -3892,7 +3902,7 @@
     "order": "high",
     "tag": "TEAMMATES",
     "headline": "QUALIFYING HEAD-TO-HEAD",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: Jolpica / FIA results",
     "gaugeMax": "100",
     "rows": [
@@ -3907,16 +3917,7 @@
      },
      {
       "rank": "2",
-      "value": "79",
-      "unit": "%",
-      "note": "",
-      "code": "BEA",
-      "text": "",
-      "team": "Haas"
-     },
-     {
-      "rank": "2",
-      "value": "79",
+      "value": "80",
       "unit": "%",
       "note": "",
       "code": "VER",
@@ -3925,7 +3926,7 @@
      },
      {
       "rank": "2",
-      "value": "79",
+      "value": "80",
       "unit": "%",
       "note": "",
       "code": "SAI",
@@ -3933,8 +3934,8 @@
       "team": "Williams"
      },
      {
-      "rank": "5",
-      "value": "75",
+      "rank": "4",
+      "value": "76",
       "unit": "%",
       "note": "",
       "code": "GAS",
@@ -3942,8 +3943,17 @@
       "team": "Alpine"
      },
      {
+      "rank": "5",
+      "value": "75",
+      "unit": "%",
+      "note": "",
+      "code": "BEA",
+      "text": "",
+      "team": "Haas"
+     },
+     {
       "rank": "6",
-      "value": "65",
+      "value": "67",
       "unit": "%",
       "note": "",
       "code": "NOR",
@@ -3952,7 +3962,7 @@
      },
      {
       "rank": "7",
-      "value": "55",
+      "value": "57",
       "unit": "%",
       "note": "",
       "code": "ANT",
@@ -3961,7 +3971,7 @@
      },
      {
       "rank": "7",
-      "value": "55",
+      "value": "57",
       "unit": "%",
       "note": "",
       "code": "LEC",
@@ -3970,7 +3980,7 @@
      },
      {
       "rank": "7",
-      "value": "55",
+      "value": "57",
       "unit": "%",
       "note": "",
       "code": "HUL",
@@ -3986,7 +3996,7 @@
     "order": "high",
     "tag": "CONSISTENCY",
     "headline": "POINTS-FINISH RATE",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: Jolpica / FIA results",
     "gaugeMax": "100",
     "rows": [
@@ -4019,7 +4029,7 @@
      },
      {
       "rank": "4",
-      "value": "85",
+      "value": "86",
       "unit": "%",
       "note": "",
       "code": "LEC",
@@ -4028,16 +4038,7 @@
      },
      {
       "rank": "5",
-      "value": "82",
-      "unit": "%",
-      "note": "",
-      "code": "HAD",
-      "text": "",
-      "team": "Red Bull"
-     },
-     {
-      "rank": "6",
-      "value": "80",
+      "value": "81",
       "unit": "%",
       "note": "",
       "code": "RUS",
@@ -4045,8 +4046,8 @@
       "team": "Mercedes"
      },
      {
-      "rank": "6",
-      "value": "80",
+      "rank": "5",
+      "value": "81",
       "unit": "%",
       "note": "",
       "code": "NOR",
@@ -4054,8 +4055,8 @@
       "team": "McLaren"
      },
      {
-      "rank": "6",
-      "value": "80",
+      "rank": "5",
+      "value": "81",
       "unit": "%",
       "note": "",
       "code": "VER",
@@ -4063,8 +4064,17 @@
       "team": "Red Bull"
      },
      {
+      "rank": "8",
+      "value": "78",
+      "unit": "%",
+      "note": "",
+      "code": "HAD",
+      "text": "",
+      "team": "Red Bull"
+     },
+     {
       "rank": "9",
-      "value": "75",
+      "value": "71",
       "unit": "%",
       "note": "",
       "code": "LAW",
@@ -4080,20 +4090,12 @@
     "order": "high",
     "tag": "RELIABILITY",
     "headline": "FINISH RATE",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: Jolpica / FIA results",
     "gaugeMax": "100",
     "teamRows": [
      {
       "rank": "1",
-      "value": "93",
-      "unit": "%",
-      "note": "",
-      "code": "team",
-      "team": "Racing Bulls"
-     },
-     {
-      "rank": "2",
       "value": "90",
       "unit": "%",
       "note": "",
@@ -4101,12 +4103,20 @@
       "team": "Mercedes"
      },
      {
-      "rank": "2",
+      "rank": "1",
       "value": "90",
       "unit": "%",
       "note": "",
       "code": "team",
       "team": "Ferrari"
+     },
+     {
+      "rank": "1",
+      "value": "90",
+      "unit": "%",
+      "note": "",
+      "code": "team",
+      "team": "Racing Bulls"
      },
      {
       "rank": "4",
@@ -4118,7 +4128,7 @@
      },
      {
       "rank": "5",
-      "value": "85",
+      "value": "86",
       "unit": "%",
       "note": "",
       "code": "team",
@@ -4126,7 +4136,7 @@
      },
      {
       "rank": "5",
-      "value": "85",
+      "value": "86",
       "unit": "%",
       "note": "",
       "code": "team",
@@ -4150,7 +4160,7 @@
      },
      {
       "rank": "9",
-      "value": "75",
+      "value": "74",
       "unit": "%",
       "note": "",
       "code": "team",
@@ -4181,12 +4191,12 @@
     "order": "high",
     "tag": "RELIABILITY",
     "headline": "LAPS COMPLETED",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
       "rank": "1",
-      "value": "1216",
+      "value": "1266",
       "unit": "laps",
       "note": "",
       "code": "ANT",
@@ -4195,7 +4205,7 @@
      },
      {
       "rank": "2",
-      "value": "1169",
+      "value": "1219",
       "unit": "laps",
       "note": "",
       "code": "HAM",
@@ -4204,7 +4214,7 @@
      },
      {
       "rank": "3",
-      "value": "1165",
+      "value": "1215",
       "unit": "laps",
       "note": "",
       "code": "LAW",
@@ -4213,7 +4223,7 @@
      },
      {
       "rank": "4",
-      "value": "1151",
+      "value": "1201",
       "unit": "laps",
       "note": "",
       "code": "LEC",
@@ -4222,7 +4232,7 @@
      },
      {
       "rank": "5",
-      "value": "1143",
+      "value": "1193",
       "unit": "laps",
       "note": "",
       "code": "GAS",
@@ -4231,7 +4241,7 @@
      },
      {
       "rank": "6",
-      "value": "1141",
+      "value": "1191",
       "unit": "laps",
       "note": "",
       "code": "COL",
@@ -4240,7 +4250,7 @@
      },
      {
       "rank": "7",
-      "value": "1136",
+      "value": "1186",
       "unit": "laps",
       "note": "",
       "code": "SAI",
@@ -4249,7 +4259,7 @@
      },
      {
       "rank": "8",
-      "value": "1132",
+      "value": "1182",
       "unit": "laps",
       "note": "",
       "code": "RUS",
@@ -4265,7 +4275,7 @@
     "order": "high",
     "tag": "WINNERS",
     "headline": "2026 RACE WINNERS",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
@@ -4279,6 +4289,15 @@
      },
      {
       "rank": "2",
+      "value": "4",
+      "unit": "wins",
+      "note": "",
+      "code": "VER",
+      "text": "",
+      "team": "Red Bull"
+     },
+     {
+      "rank": "3",
       "value": "3",
       "unit": "wins",
       "note": "",
@@ -4287,22 +4306,13 @@
       "team": "Mercedes"
      },
      {
-      "rank": "2",
+      "rank": "3",
       "value": "3",
       "unit": "wins",
       "note": "",
       "code": "NOR",
       "text": "",
       "team": "McLaren"
-     },
-     {
-      "rank": "2",
-      "value": "3",
-      "unit": "wins",
-      "note": "",
-      "code": "VER",
-      "text": "",
-      "team": "Red Bull"
      },
      {
       "rank": "5",
@@ -4331,12 +4341,12 @@
     "order": "high",
     "tag": "QUALIFYING",
     "headline": "2026 POLE SITTERS",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: Jolpica / FIA results",
     "rows": [
      {
       "rank": "1",
-      "value": "7",
+      "value": "8",
       "unit": "poles",
       "note": "",
       "code": "ANT",
@@ -4397,7 +4407,7 @@
     "order": "high",
     "tag": "FAN VOTE",
     "headline": "DRIVER OF THE DAY",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: F1.com (enter manually)",
     "rows": []
    },
@@ -4408,7 +4418,7 @@
     "order": "low",
     "tag": "PIT STOPS",
     "headline": "EACH TEAM'S FASTEST STOP",
-    "sub": "2026 season · after Round 20",
+    "sub": "2026 season · after Round 21",
     "source": "Source: DHL",
     "teamRows": [
      {
@@ -55165,6 +55175,2593 @@
        "code": "HUL",
        "text": "",
        "team": "Audi"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "round": 21,
+   "name": "Las Vegas Grand Prix",
+   "short": "LVG",
+   "date": "2026-11-22",
+   "stats": [
+    {
+     "id": "fastest_pit_stop",
+     "layout": "bars",
+     "mode": "teams",
+     "order": "low",
+     "tag": "PIT STOPS",
+     "headline": "FASTEST PIT STOPS",
+     "sub": "Round 21 · Las Vegas Grand Prix",
+     "source": "Source: DHL",
+     "teamRows": [
+      {
+       "rank": "1",
+       "value": "2.27",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "2",
+       "value": "2.28",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Audi"
+      },
+      {
+       "rank": "3",
+       "value": "2.31",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "4",
+       "value": "2.33",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Aston Martin"
+      },
+      {
+       "rank": "5",
+       "value": "2.81",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Cadillac"
+      },
+      {
+       "rank": "6",
+       "value": "2.87",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "7",
+       "value": "2.94",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "8",
+       "value": "3.01",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Williams"
+      },
+      {
+       "rank": "9",
+       "value": "3.15",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Alpine"
+      },
+      {
+       "rank": "10",
+       "value": "3.60",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "Haas"
+      },
+      {
+       "rank": "11",
+       "value": "4.12",
+       "unit": "s",
+       "note": "",
+       "code": "team",
+       "team": "McLaren"
+      }
+     ]
+    },
+    {
+     "id": "top_speed_drivers",
+     "layout": "bars",
+     "mode": "drivers",
+     "order": "high",
+     "tag": "SPEED TRAP",
+     "headline": "TOP SPEED",
+     "sub": "Round 21 · Las Vegas Grand Prix",
+     "source": "Source: F1 live timing via OpenF1",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "330",
+       "unit": "km/h",
+       "note": "",
+       "code": "LEC",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "2",
+       "value": "325",
+       "unit": "km/h",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "3",
+       "value": "323",
+       "unit": "km/h",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "4",
+       "value": "322",
+       "unit": "km/h",
+       "note": "",
+       "code": "BEA",
+       "text": "",
+       "team": "Haas"
+      },
+      {
+       "rank": "5",
+       "value": "320",
+       "unit": "km/h",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "5",
+       "value": "320",
+       "unit": "km/h",
+       "note": "",
+       "code": "COL",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "7",
+       "value": "317",
+       "unit": "km/h",
+       "note": "",
+       "code": "HUL",
+       "text": "",
+       "team": "Audi"
+      },
+      {
+       "rank": "7",
+       "value": "317",
+       "unit": "km/h",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "9",
+       "value": "316",
+       "unit": "km/h",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "9",
+       "value": "316",
+       "unit": "km/h",
+       "note": "",
+       "code": "SAI",
+       "text": "",
+       "team": "Williams"
+      }
+     ]
+    },
+    {
+     "id": "top_speed_teams",
+     "layout": "bars",
+     "mode": "teams",
+     "order": "high",
+     "tag": "SPEED TRAP",
+     "headline": "TOP SPEED BY TEAM",
+     "sub": "Round 21 · Las Vegas Grand Prix",
+     "source": "Source: F1 live timing via OpenF1",
+     "teamRows": [
+      {
+       "rank": "1",
+       "value": "330",
+       "unit": "km/h",
+       "note": "",
+       "code": "team",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "2",
+       "value": "325",
+       "unit": "km/h",
+       "note": "",
+       "code": "team",
+       "team": "McLaren"
+      },
+      {
+       "rank": "3",
+       "value": "322",
+       "unit": "km/h",
+       "note": "",
+       "code": "team",
+       "team": "Haas"
+      },
+      {
+       "rank": "4",
+       "value": "320",
+       "unit": "km/h",
+       "note": "",
+       "code": "team",
+       "team": "Alpine"
+      },
+      {
+       "rank": "4",
+       "value": "320",
+       "unit": "km/h",
+       "note": "",
+       "code": "team",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "6",
+       "value": "317",
+       "unit": "km/h",
+       "note": "",
+       "code": "team",
+       "team": "Audi"
+      },
+      {
+       "rank": "7",
+       "value": "316",
+       "unit": "km/h",
+       "note": "",
+       "code": "team",
+       "team": "Williams"
+      },
+      {
+       "rank": "8",
+       "value": "315",
+       "unit": "km/h",
+       "note": "",
+       "code": "team",
+       "team": "Cadillac"
+      },
+      {
+       "rank": "9",
+       "value": "314",
+       "unit": "km/h",
+       "note": "",
+       "code": "team",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "10",
+       "value": "306",
+       "unit": "km/h",
+       "note": "",
+       "code": "team",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "11",
+       "value": "303",
+       "unit": "km/h",
+       "note": "",
+       "code": "team",
+       "team": "Aston Martin"
+      }
+     ]
+    },
+    {
+     "id": "fastest_race_lap",
+     "layout": "bars",
+     "mode": "drivers",
+     "order": "low",
+     "tag": "FASTEST LAPS",
+     "headline": "FASTEST RACE LAPS",
+     "sub": "Round 21 · Las Vegas Grand Prix",
+     "source": "Source: F1 live timing via OpenF1",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "1:35.591",
+       "unit": "",
+       "note": "",
+       "code": "LAW",
+       "text": "",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "2",
+       "value": "1:35.944",
+       "unit": "",
+       "note": "",
+       "code": "HAD",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "3",
+       "value": "1:36.057",
+       "unit": "",
+       "note": "",
+       "code": "GAS",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "4",
+       "value": "1:36.182",
+       "unit": "",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "5",
+       "value": "1:36.207",
+       "unit": "",
+       "note": "",
+       "code": "COL",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "6",
+       "value": "1:36.235",
+       "unit": "",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "7",
+       "value": "1:36.331",
+       "unit": "",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "8",
+       "value": "1:36.334",
+       "unit": "",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "9",
+       "value": "1:36.450",
+       "unit": "",
+       "note": "",
+       "code": "VER",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "10",
+       "value": "1:36.452",
+       "unit": "",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari"
+      }
+     ]
+    },
+    {
+     "id": "positions_gained_race",
+     "layout": "bars",
+     "mode": "drivers",
+     "order": "high",
+     "tag": "RACE CRAFT",
+     "headline": "MOST POSITIONS GAINED",
+     "sub": "Round 21 · Las Vegas Grand Prix",
+     "source": "Source: Jolpica / FIA results",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "14",
+       "unit": "places",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "2",
+       "value": "12",
+       "unit": "places",
+       "note": "",
+       "code": "SAI",
+       "text": "",
+       "team": "Williams"
+      },
+      {
+       "rank": "3",
+       "value": "9",
+       "unit": "places",
+       "note": "",
+       "code": "BEA",
+       "text": "",
+       "team": "Haas"
+      },
+      {
+       "rank": "4",
+       "value": "4",
+       "unit": "places",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "4",
+       "value": "4",
+       "unit": "places",
+       "note": "",
+       "code": "STR",
+       "text": "",
+       "team": "Aston Martin"
+      },
+      {
+       "rank": "6",
+       "value": "3",
+       "unit": "places",
+       "note": "",
+       "code": "GAS",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "6",
+       "value": "3",
+       "unit": "places",
+       "note": "",
+       "code": "COL",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "8",
+       "value": "2",
+       "unit": "places",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "9",
+       "value": "1",
+       "unit": "places",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "9",
+       "value": "1",
+       "unit": "places",
+       "note": "",
+       "code": "HUL",
+       "text": "",
+       "team": "Audi"
+      }
+     ]
+    },
+    {
+     "id": "overtakes_race",
+     "layout": "bars",
+     "mode": "drivers",
+     "order": "high",
+     "tag": "OVERTAKES",
+     "headline": "MOST OVERTAKES",
+     "sub": "Round 21 · Las Vegas Grand Prix",
+     "source": "Source: OpenF1",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "29",
+       "unit": "passes",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "2",
+       "value": "28",
+       "unit": "passes",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "3",
+       "value": "25",
+       "unit": "passes",
+       "note": "",
+       "code": "STR",
+       "text": "",
+       "team": "Aston Martin"
+      },
+      {
+       "rank": "4",
+       "value": "22",
+       "unit": "passes",
+       "note": "",
+       "code": "BOT",
+       "text": "",
+       "team": "Cadillac"
+      },
+      {
+       "rank": "5",
+       "value": "21",
+       "unit": "passes",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "5",
+       "value": "21",
+       "unit": "passes",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "7",
+       "value": "20",
+       "unit": "passes",
+       "note": "",
+       "code": "ALO",
+       "text": "",
+       "team": "Aston Martin"
+      },
+      {
+       "rank": "7",
+       "value": "20",
+       "unit": "passes",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "9",
+       "value": "19",
+       "unit": "passes",
+       "note": "",
+       "code": "BEA",
+       "text": "",
+       "team": "Haas"
+      },
+      {
+       "rank": "10",
+       "value": "18",
+       "unit": "passes",
+       "note": "",
+       "code": "SAI",
+       "text": "",
+       "team": "Williams"
+      }
+     ]
+    },
+    {
+     "id": "hero_fastest_lap",
+     "layout": "hero",
+     "mode": "drivers",
+     "order": "low",
+     "tag": "FASTEST LAP",
+     "headline": "FASTEST LAP OF THE RACE",
+     "sub": "Round 21 · Las Vegas Grand Prix",
+     "source": "Source: F1 live timing via OpenF1",
+     "heroTag": "FASTEST",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "1:35.591",
+       "unit": "",
+       "note": "",
+       "code": "LAW",
+       "text": "",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "2",
+       "value": "1:35.944",
+       "unit": "",
+       "note": "",
+       "code": "HAD",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "3",
+       "value": "1:36.057",
+       "unit": "",
+       "note": "",
+       "code": "GAS",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "4",
+       "value": "1:36.182",
+       "unit": "",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "5",
+       "value": "1:36.207",
+       "unit": "",
+       "note": "",
+       "code": "COL",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "6",
+       "value": "1:36.235",
+       "unit": "",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "7",
+       "value": "1:36.331",
+       "unit": "",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "8",
+       "value": "1:36.334",
+       "unit": "",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "9",
+       "value": "1:36.450",
+       "unit": "",
+       "note": "",
+       "code": "VER",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "10",
+       "value": "1:36.452",
+       "unit": "",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari"
+      }
+     ]
+    },
+    {
+     "id": "hero_top_speed",
+     "layout": "hero",
+     "mode": "drivers",
+     "order": "high",
+     "tag": "SPEED TRAP",
+     "headline": "QUICKEST THROUGH THE TRAP",
+     "sub": "Round 21 · Las Vegas Grand Prix",
+     "source": "Source: F1 live timing via OpenF1",
+     "heroTag": "QUICKEST",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "330",
+       "unit": "km/h",
+       "note": "",
+       "code": "LEC",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "2",
+       "value": "325",
+       "unit": "km/h",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "3",
+       "value": "323",
+       "unit": "km/h",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "4",
+       "value": "322",
+       "unit": "km/h",
+       "note": "",
+       "code": "BEA",
+       "text": "",
+       "team": "Haas"
+      },
+      {
+       "rank": "5",
+       "value": "320",
+       "unit": "km/h",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "5",
+       "value": "320",
+       "unit": "km/h",
+       "note": "",
+       "code": "COL",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "7",
+       "value": "317",
+       "unit": "km/h",
+       "note": "",
+       "code": "HUL",
+       "text": "",
+       "team": "Audi"
+      },
+      {
+       "rank": "7",
+       "value": "317",
+       "unit": "km/h",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "9",
+       "value": "316",
+       "unit": "km/h",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "9",
+       "value": "316",
+       "unit": "km/h",
+       "note": "",
+       "code": "SAI",
+       "text": "",
+       "team": "Williams"
+      }
+     ]
+    },
+    {
+     "id": "hero_longest_stint",
+     "layout": "hero",
+     "mode": "drivers",
+     "order": "high",
+     "tag": "TYRES",
+     "headline": "LONGEST STINT",
+     "sub": "Round 21 · Las Vegas Grand Prix",
+     "source": "Source: F1 live timing via OpenF1",
+     "heroTag": "ENDURANCE",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "33",
+       "unit": "laps",
+       "note": "",
+       "code": "LAW",
+       "text": "",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "2",
+       "value": "31",
+       "unit": "laps",
+       "note": "",
+       "code": "VER",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "2",
+       "value": "31",
+       "unit": "laps",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "2",
+       "value": "31",
+       "unit": "laps",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "2",
+       "value": "31",
+       "unit": "laps",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "2",
+       "value": "31",
+       "unit": "laps",
+       "note": "",
+       "code": "GAS",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "2",
+       "value": "31",
+       "unit": "laps",
+       "note": "",
+       "code": "COL",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "2",
+       "value": "31",
+       "unit": "laps",
+       "note": "",
+       "code": "SAI",
+       "text": "",
+       "team": "Williams"
+      },
+      {
+       "rank": "2",
+       "value": "31",
+       "unit": "laps",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "2",
+       "value": "31",
+       "unit": "laps",
+       "note": "",
+       "code": "LEC",
+       "text": "",
+       "team": "Ferrari"
+      }
+     ]
+    },
+    {
+     "id": "hero_most_gained",
+     "layout": "hero",
+     "mode": "drivers",
+     "order": "high",
+     "tag": "RACE CRAFT",
+     "headline": "BIGGEST CHARGE",
+     "sub": "Round 21 · Las Vegas Grand Prix",
+     "source": "Source: Jolpica / FIA results",
+     "heroTag": "CHARGER",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "14",
+       "unit": "places",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "2",
+       "value": "12",
+       "unit": "places",
+       "note": "",
+       "code": "SAI",
+       "text": "",
+       "team": "Williams"
+      },
+      {
+       "rank": "3",
+       "value": "9",
+       "unit": "places",
+       "note": "",
+       "code": "BEA",
+       "text": "",
+       "team": "Haas"
+      },
+      {
+       "rank": "4",
+       "value": "4",
+       "unit": "places",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "4",
+       "value": "4",
+       "unit": "places",
+       "note": "",
+       "code": "STR",
+       "text": "",
+       "team": "Aston Martin"
+      },
+      {
+       "rank": "6",
+       "value": "3",
+       "unit": "places",
+       "note": "",
+       "code": "GAS",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "6",
+       "value": "3",
+       "unit": "places",
+       "note": "",
+       "code": "COL",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "8",
+       "value": "2",
+       "unit": "places",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "9",
+       "value": "1",
+       "unit": "places",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "9",
+       "value": "1",
+       "unit": "places",
+       "note": "",
+       "code": "HUL",
+       "text": "",
+       "team": "Audi"
+      }
+     ]
+    },
+    {
+     "id": "hero_weekend_points",
+     "layout": "hero",
+     "mode": "drivers",
+     "order": "high",
+     "tag": "POINTS",
+     "headline": "TOP SCORER THIS WEEKEND",
+     "sub": "Round 21 · Las Vegas Grand Prix",
+     "source": "Source: Jolpica / FIA results",
+     "heroTag": "TOP SCORER",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "25",
+       "unit": "pts",
+       "note": "",
+       "code": "VER",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "2",
+       "value": "18",
+       "unit": "pts",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "3",
+       "value": "15",
+       "unit": "pts",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "4",
+       "value": "12",
+       "unit": "pts",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "5",
+       "value": "10",
+       "unit": "pts",
+       "note": "",
+       "code": "GAS",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "6",
+       "value": "8",
+       "unit": "pts",
+       "note": "",
+       "code": "COL",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "7",
+       "value": "6",
+       "unit": "pts",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "8",
+       "value": "4",
+       "unit": "pts",
+       "note": "",
+       "code": "SAI",
+       "text": "",
+       "team": "Williams"
+      },
+      {
+       "rank": "9",
+       "value": "2",
+       "unit": "pts",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "10",
+       "value": "1",
+       "unit": "pts",
+       "note": "",
+       "code": "LEC",
+       "text": "",
+       "team": "Ferrari"
+      }
+     ]
+    },
+    {
+     "id": "pit_stops_made",
+     "layout": "columns",
+     "mode": "drivers",
+     "order": "high",
+     "tag": "PIT STOPS",
+     "headline": "PIT STOPS MADE",
+     "sub": "Round 21 · Las Vegas Grand Prix",
+     "source": "Source: F1 live timing via OpenF1",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "2",
+       "unit": "stops",
+       "note": "",
+       "code": "CAM",
+       "text": "",
+       "team": "Haas"
+      },
+      {
+       "rank": "1",
+       "value": "2",
+       "unit": "stops",
+       "note": "",
+       "code": "HAD",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "1",
+       "value": "2",
+       "unit": "stops",
+       "note": "",
+       "code": "BOT",
+       "text": "",
+       "team": "Cadillac"
+      },
+      {
+       "rank": "4",
+       "value": "1",
+       "unit": "stops",
+       "note": "",
+       "code": "LAW",
+       "text": "",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "4",
+       "value": "1",
+       "unit": "stops",
+       "note": "",
+       "code": "VER",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "4",
+       "value": "1",
+       "unit": "stops",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "4",
+       "value": "1",
+       "unit": "stops",
+       "note": "",
+       "code": "GAS",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "4",
+       "value": "1",
+       "unit": "stops",
+       "note": "",
+       "code": "LIN",
+       "text": "",
+       "team": "Racing Bulls"
+      }
+     ]
+    },
+    {
+     "id": "quali_gap_pole",
+     "layout": "ladder",
+     "mode": "drivers",
+     "order": "low",
+     "tag": "QUALIFYING",
+     "headline": "GAP TO POLE",
+     "sub": "Round 21 · Las Vegas Grand Prix",
+     "source": "Source: Jolpica / FIA results",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "0.000",
+       "unit": "s",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "2",
+       "value": "0.258",
+       "unit": "s",
+       "note": "",
+       "code": "VER",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "3",
+       "value": "0.331",
+       "unit": "s",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "4",
+       "value": "0.351",
+       "unit": "s",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "5",
+       "value": "0.666",
+       "unit": "s",
+       "note": "",
+       "code": "GAS",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "6",
+       "value": "0.699",
+       "unit": "s",
+       "note": "",
+       "code": "HAD",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "7",
+       "value": "0.775",
+       "unit": "s",
+       "note": "",
+       "code": "LIN",
+       "text": "",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "8",
+       "value": "0.870",
+       "unit": "s",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "9",
+       "value": "1.089",
+       "unit": "s",
+       "note": "",
+       "code": "COL",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "10",
+       "value": "1.147",
+       "unit": "s",
+       "note": "",
+       "code": "LEC",
+       "text": "",
+       "team": "Ferrari"
+      }
+     ]
+    },
+    {
+     "id": "race_gap_winner",
+     "layout": "ladder",
+     "mode": "drivers",
+     "order": "low",
+     "tag": "RACE",
+     "headline": "GAP TO THE WINNER",
+     "sub": "Round 21 · Las Vegas Grand Prix",
+     "source": "Source: Jolpica / FIA results",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "0.000",
+       "unit": "s",
+       "note": "",
+       "code": "VER",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "2",
+       "value": "0.639",
+       "unit": "s",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "3",
+       "value": "1.529",
+       "unit": "s",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "4",
+       "value": "2.574",
+       "unit": "s",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "5",
+       "value": "2.927",
+       "unit": "s",
+       "note": "",
+       "code": "GAS",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "6",
+       "value": "7.955",
+       "unit": "s",
+       "note": "",
+       "code": "COL",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "7",
+       "value": "12.795",
+       "unit": "s",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "8",
+       "value": "12.938",
+       "unit": "s",
+       "note": "",
+       "code": "SAI",
+       "text": "",
+       "team": "Williams"
+      },
+      {
+       "rank": "9",
+       "value": "13.192",
+       "unit": "s",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "10",
+       "value": "17.554",
+       "unit": "s",
+       "note": "",
+       "code": "LEC",
+       "text": "",
+       "team": "Ferrari"
+      }
+     ]
+    },
+    {
+     "id": "long_run_pace",
+     "layout": "ladder",
+     "mode": "drivers",
+     "order": "low",
+     "tag": "PRACTICE",
+     "headline": "LONG-RUN PACE",
+     "sub": "Las Vegas Grand Prix · Friday long runs",
+     "source": "Source: F1 live timing via OpenF1",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "0.000",
+       "unit": "s/lap",
+       "note": "",
+       "code": "GAS",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "2",
+       "value": "0.150",
+       "unit": "s/lap",
+       "note": "",
+       "code": "COL",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "3",
+       "value": "0.779",
+       "unit": "s/lap",
+       "note": "",
+       "code": "ALB",
+       "text": "",
+       "team": "Williams"
+      },
+      {
+       "rank": "4",
+       "value": "1.054",
+       "unit": "s/lap",
+       "note": "",
+       "code": "PER",
+       "text": "",
+       "team": "Cadillac"
+      },
+      {
+       "rank": "5",
+       "value": "1.340",
+       "unit": "s/lap",
+       "note": "",
+       "code": "STR",
+       "text": "",
+       "team": "Aston Martin"
+      },
+      {
+       "rank": "6",
+       "value": "2.210",
+       "unit": "s/lap",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "7",
+       "value": "2.527",
+       "unit": "s/lap",
+       "note": "",
+       "code": "LEC",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "8",
+       "value": "2.916",
+       "unit": "s/lap",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "9",
+       "value": "3.753",
+       "unit": "s/lap",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "10",
+       "value": "4.780",
+       "unit": "s/lap",
+       "note": "",
+       "code": "BOR",
+       "text": "",
+       "team": "Audi"
+      }
+     ]
+    },
+    {
+     "id": "ideal_lap_gap",
+     "layout": "ladder",
+     "mode": "drivers",
+     "order": "low",
+     "tag": "QUALIFYING",
+     "headline": "IDEAL LAP GAP",
+     "sub": "Round 21 · Las Vegas Grand Prix · best sectors combined",
+     "source": "Source: F1 live timing via OpenF1",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "0.000",
+       "unit": "s",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "2",
+       "value": "0.168",
+       "unit": "s",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "3",
+       "value": "0.236",
+       "unit": "s",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "4",
+       "value": "0.286",
+       "unit": "s",
+       "note": "",
+       "code": "VER",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "5",
+       "value": "0.561",
+       "unit": "s",
+       "note": "",
+       "code": "LIN",
+       "text": "",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "6",
+       "value": "0.701",
+       "unit": "s",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "7",
+       "value": "0.707",
+       "unit": "s",
+       "note": "",
+       "code": "GAS",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "8",
+       "value": "0.716",
+       "unit": "s",
+       "note": "",
+       "code": "HAD",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "9",
+       "value": "0.770",
+       "unit": "s",
+       "note": "",
+       "code": "LEC",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "10",
+       "value": "0.987",
+       "unit": "s",
+       "note": "",
+       "code": "LAW",
+       "text": "",
+       "team": "Racing Bulls"
+      }
+     ]
+    },
+    {
+     "id": "compound_usage",
+     "layout": "ring",
+     "mode": "drivers",
+     "order": "high",
+     "tag": "TYRES",
+     "headline": "TYRE USAGE",
+     "sub": "Round 21 · Las Vegas Grand Prix",
+     "source": "Source: F1 live timing via OpenF1",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "520",
+       "unit": "laps",
+       "note": "",
+       "code": "text",
+       "text": "Soft",
+       "team": ""
+      },
+      {
+       "rank": "2",
+       "value": "467",
+       "unit": "laps",
+       "note": "",
+       "code": "text",
+       "text": "Medium",
+       "team": ""
+      }
+     ]
+    },
+    {
+     "id": "champ_position_shift",
+     "layout": "shift",
+     "mode": "drivers",
+     "order": "low",
+     "tag": "CHAMPIONSHIP",
+     "headline": "CHAMPIONSHIP MOVERS",
+     "sub": "Round 21 · Las Vegas Grand Prix",
+     "source": "Source: Jolpica / FIA results",
+     "shiftL": "R20",
+     "shiftR": "R21",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "1",
+       "unit": "",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes",
+       "v2": "1"
+      },
+      {
+       "rank": "2",
+       "value": "2",
+       "unit": "",
+       "note": "",
+       "code": "VER",
+       "text": "",
+       "team": "Red Bull",
+       "v2": "2"
+      },
+      {
+       "rank": "3",
+       "value": "3",
+       "unit": "",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari",
+       "v2": "4"
+      },
+      {
+       "rank": "4",
+       "value": "4",
+       "unit": "",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren",
+       "v2": "6"
+      },
+      {
+       "rank": "5",
+       "value": "5",
+       "unit": "",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes",
+       "v2": "3"
+      },
+      {
+       "rank": "6",
+       "value": "6",
+       "unit": "",
+       "note": "",
+       "code": "LEC",
+       "text": "",
+       "team": "Ferrari",
+       "v2": "5"
+      },
+      {
+       "rank": "7",
+       "value": "7",
+       "unit": "",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren",
+       "v2": "7"
+      },
+      {
+       "rank": "8",
+       "value": "8",
+       "unit": "",
+       "note": "",
+       "code": "HAD",
+       "text": "",
+       "team": "Red Bull",
+       "v2": "8"
+      },
+      {
+       "rank": "9",
+       "value": "9",
+       "unit": "",
+       "note": "",
+       "code": "LAW",
+       "text": "",
+       "team": "Racing Bulls",
+       "v2": "9"
+      },
+      {
+       "rank": "10",
+       "value": "10",
+       "unit": "",
+       "note": "",
+       "code": "GAS",
+       "text": "",
+       "team": "Alpine",
+       "v2": "10"
+      }
+     ]
+    },
+    {
+     "id": "constructors_position_shift",
+     "layout": "shift",
+     "mode": "teams",
+     "order": "low",
+     "tag": "CHAMPIONSHIP",
+     "headline": "CONSTRUCTORS MOVERS",
+     "sub": "Round 21 · Las Vegas Grand Prix",
+     "source": "Source: Jolpica / FIA results",
+     "shiftL": "R20",
+     "shiftR": "R21",
+     "teamRows": [
+      {
+       "rank": "1",
+       "value": "1",
+       "unit": "",
+       "note": "",
+       "code": "team",
+       "team": "Mercedes",
+       "v2": "1"
+      },
+      {
+       "rank": "2",
+       "value": "2",
+       "unit": "",
+       "note": "",
+       "code": "team",
+       "team": "Ferrari",
+       "v2": "2"
+      },
+      {
+       "rank": "3",
+       "value": "3",
+       "unit": "",
+       "note": "",
+       "code": "team",
+       "team": "Red Bull",
+       "v2": "3"
+      },
+      {
+       "rank": "4",
+       "value": "4",
+       "unit": "",
+       "note": "",
+       "code": "team",
+       "team": "McLaren",
+       "v2": "4"
+      },
+      {
+       "rank": "5",
+       "value": "5",
+       "unit": "",
+       "note": "",
+       "code": "team",
+       "team": "Racing Bulls",
+       "v2": "5"
+      },
+      {
+       "rank": "6",
+       "value": "6",
+       "unit": "",
+       "note": "",
+       "code": "team",
+       "team": "Alpine",
+       "v2": "6"
+      },
+      {
+       "rank": "7",
+       "value": "7",
+       "unit": "",
+       "note": "",
+       "code": "team",
+       "team": "Haas",
+       "v2": "7"
+      },
+      {
+       "rank": "8",
+       "value": "8",
+       "unit": "",
+       "note": "",
+       "code": "team",
+       "team": "Audi",
+       "v2": "8"
+      },
+      {
+       "rank": "9",
+       "value": "9",
+       "unit": "",
+       "note": "",
+       "code": "team",
+       "team": "Williams",
+       "v2": "9"
+      },
+      {
+       "rank": "10",
+       "value": "10",
+       "unit": "",
+       "note": "",
+       "code": "team",
+       "team": "Aston Martin",
+       "v2": "10"
+      },
+      {
+       "rank": "11",
+       "value": "11",
+       "unit": "",
+       "note": "",
+       "code": "team",
+       "team": "Cadillac",
+       "v2": "11"
+      }
+     ]
+    },
+    {
+     "id": "grid_to_finish",
+     "layout": "shift",
+     "mode": "drivers",
+     "order": "low",
+     "tag": "RACE",
+     "headline": "GRID TO FLAG",
+     "sub": "Round 21 · Las Vegas Grand Prix",
+     "source": "Source: Jolpica / FIA results",
+     "shiftL": "GRID",
+     "shiftR": "FINISH",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "1",
+       "unit": "",
+       "note": "",
+       "code": "VER",
+       "text": "",
+       "team": "Red Bull",
+       "v2": "1"
+      },
+      {
+       "rank": "2",
+       "value": "2",
+       "unit": "",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren",
+       "v2": "3"
+      },
+      {
+       "rank": "3",
+       "value": "3",
+       "unit": "",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren",
+       "v2": "17"
+      },
+      {
+       "rank": "4",
+       "value": "4",
+       "unit": "",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes",
+       "v2": "6"
+      },
+      {
+       "rank": "5",
+       "value": "5",
+       "unit": "",
+       "note": "",
+       "code": "GAS",
+       "text": "",
+       "team": "Alpine",
+       "v2": "8"
+      },
+      {
+       "rank": "6",
+       "value": "6",
+       "unit": "",
+       "note": "",
+       "code": "COL",
+       "text": "",
+       "team": "Alpine",
+       "v2": "9"
+      },
+      {
+       "rank": "7",
+       "value": "7",
+       "unit": "",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari",
+       "v2": "11"
+      },
+      {
+       "rank": "8",
+       "value": "8",
+       "unit": "",
+       "note": "",
+       "code": "SAI",
+       "text": "",
+       "team": "Williams",
+       "v2": "20"
+      },
+      {
+       "rank": "9",
+       "value": "9",
+       "unit": "",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes",
+       "v2": "2"
+      },
+      {
+       "rank": "10",
+       "value": "10",
+       "unit": "",
+       "note": "",
+       "code": "LEC",
+       "text": "",
+       "team": "Ferrari",
+       "v2": "10"
+      }
+     ]
+    },
+    {
+     "id": "lap1_movers",
+     "layout": "shift",
+     "mode": "drivers",
+     "order": "low",
+     "tag": "RACE",
+     "headline": "LAP 1 MOVERS",
+     "sub": "Round 21 · Las Vegas Grand Prix",
+     "source": "Source: F1 live timing via OpenF1",
+     "shiftL": "GRID",
+     "shiftR": "LAP 1",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "4",
+       "unit": "",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren",
+       "v2": "3"
+      },
+      {
+       "rank": "2",
+       "value": "6",
+       "unit": "",
+       "note": "",
+       "code": "COL",
+       "text": "",
+       "team": "Alpine",
+       "v2": "9"
+      },
+      {
+       "rank": "3",
+       "value": "8",
+       "unit": "",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes",
+       "v2": "6"
+      },
+      {
+       "rank": "4",
+       "value": "9",
+       "unit": "",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari",
+       "v2": "11"
+      },
+      {
+       "rank": "5",
+       "value": "11",
+       "unit": "",
+       "note": "",
+       "code": "SAI",
+       "text": "",
+       "team": "Williams",
+       "v2": "20"
+      },
+      {
+       "rank": "6",
+       "value": "12",
+       "unit": "",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren",
+       "v2": "17"
+      },
+      {
+       "rank": "7",
+       "value": "16",
+       "unit": "",
+       "note": "",
+       "code": "BEA",
+       "text": "",
+       "team": "Haas",
+       "v2": "22"
+      },
+      {
+       "rank": "8",
+       "value": "18",
+       "unit": "",
+       "note": "",
+       "code": "CAM",
+       "text": "",
+       "team": "Haas",
+       "v2": "15"
+      },
+      {
+       "rank": "9",
+       "value": "19",
+       "unit": "",
+       "note": "",
+       "code": "STR",
+       "text": "",
+       "team": "Aston Martin",
+       "v2": "21"
+      },
+      {
+       "rank": "10",
+       "value": "21",
+       "unit": "",
+       "note": "",
+       "code": "LAW",
+       "text": "",
+       "team": "Racing Bulls",
+       "v2": "7"
+      }
+     ]
+    },
+    {
+     "id": "full_throttle",
+     "layout": "gauge",
+     "mode": "drivers",
+     "order": "high",
+     "tag": "QUALIFYING",
+     "headline": "FULL THROTTLE",
+     "sub": "Round 21 · Las Vegas Grand Prix · best qualifying lap",
+     "source": "Source: F1 live timing via OpenF1",
+     "gaugeMax": "100",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "69",
+       "unit": "%",
+       "note": "",
+       "code": "VER",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "2",
+       "value": "67",
+       "unit": "%",
+       "note": "",
+       "code": "GAS",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "3",
+       "value": "67",
+       "unit": "%",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "4",
+       "value": "67",
+       "unit": "%",
+       "note": "",
+       "code": "HAD",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "5",
+       "value": "66",
+       "unit": "%",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "6",
+       "value": "65",
+       "unit": "%",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "7",
+       "value": "63",
+       "unit": "%",
+       "note": "",
+       "code": "LAW",
+       "text": "",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "8",
+       "value": "63",
+       "unit": "%",
+       "note": "",
+       "code": "LIN",
+       "text": "",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "9",
+       "value": "63",
+       "unit": "%",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      }
+     ]
+    },
+    {
+     "id": "top_speed_gauge",
+     "layout": "gauge",
+     "mode": "drivers",
+     "order": "high",
+     "tag": "SPEED TRAP",
+     "headline": "TOP SPEED",
+     "sub": "Round 21 · Las Vegas Grand Prix",
+     "source": "Source: F1 live timing via OpenF1",
+     "gaugeMax": "330",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "330",
+       "unit": "km/h",
+       "note": "",
+       "code": "LEC",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "2",
+       "value": "325",
+       "unit": "km/h",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "3",
+       "value": "323",
+       "unit": "km/h",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "4",
+       "value": "322",
+       "unit": "km/h",
+       "note": "",
+       "code": "BEA",
+       "text": "",
+       "team": "Haas"
+      },
+      {
+       "rank": "5",
+       "value": "320",
+       "unit": "km/h",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "5",
+       "value": "320",
+       "unit": "km/h",
+       "note": "",
+       "code": "COL",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "7",
+       "value": "317",
+       "unit": "km/h",
+       "note": "",
+       "code": "HUL",
+       "text": "",
+       "team": "Audi"
+      },
+      {
+       "rank": "7",
+       "value": "317",
+       "unit": "km/h",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "9",
+       "value": "316",
+       "unit": "km/h",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari"
+      }
+     ]
+    },
+    {
+     "id": "laps_led_race",
+     "layout": "laps",
+     "mode": "drivers",
+     "order": "high",
+     "tag": "LAPS LED",
+     "headline": "LAPS LED",
+     "sub": "Round 21 · Las Vegas Grand Prix · 50 laps",
+     "source": "Source: F1 live timing via OpenF1",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "44",
+       "unit": "laps",
+       "note": "",
+       "code": "VER",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "2",
+       "value": "3",
+       "unit": "laps",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "2",
+       "value": "3",
+       "unit": "laps",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes"
+      }
+     ]
+    },
+    {
+     "id": "longest_stint_rings",
+     "layout": "laps",
+     "mode": "drivers",
+     "order": "high",
+     "tag": "TYRES",
+     "headline": "LONGEST STINT",
+     "sub": "Round 21 · Las Vegas Grand Prix · 50 laps",
+     "source": "Source: F1 live timing via OpenF1",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "33",
+       "unit": "laps",
+       "note": "",
+       "code": "LAW",
+       "text": "",
+       "team": "Racing Bulls"
+      },
+      {
+       "rank": "2",
+       "value": "31",
+       "unit": "laps",
+       "note": "",
+       "code": "VER",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "2",
+       "value": "31",
+       "unit": "laps",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "2",
+       "value": "31",
+       "unit": "laps",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "2",
+       "value": "31",
+       "unit": "laps",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "2",
+       "value": "31",
+       "unit": "laps",
+       "note": "",
+       "code": "GAS",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "2",
+       "value": "31",
+       "unit": "laps",
+       "note": "",
+       "code": "COL",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "2",
+       "value": "31",
+       "unit": "laps",
+       "note": "",
+       "code": "SAI",
+       "text": "",
+       "team": "Williams"
+      }
+     ]
+    },
+    {
+     "id": "laps_top3",
+     "layout": "laps",
+     "mode": "drivers",
+     "order": "high",
+     "tag": "RACE",
+     "headline": "LAPS IN THE TOP 3",
+     "sub": "Round 21 · Las Vegas Grand Prix · 50 laps",
+     "source": "Source: F1 live timing via OpenF1",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "50",
+       "unit": "laps",
+       "note": "",
+       "code": "VER",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "2",
+       "value": "44",
+       "unit": "laps",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "3",
+       "value": "22",
+       "unit": "laps",
+       "note": "",
+       "code": "HAD",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "4",
+       "value": "13",
+       "unit": "laps",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "5",
+       "value": "11",
+       "unit": "laps",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "6",
+       "value": "6",
+       "unit": "laps",
+       "note": "",
+       "code": "GAS",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "7",
+       "value": "3",
+       "unit": "laps",
+       "note": "",
+       "code": "PIA",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "8",
+       "value": "1",
+       "unit": "laps",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari"
+      }
+     ]
+    },
+    {
+     "id": "laps_in_points",
+     "layout": "laps",
+     "mode": "drivers",
+     "order": "high",
+     "tag": "RACE",
+     "headline": "LAPS IN THE POINTS",
+     "sub": "Round 21 · Las Vegas Grand Prix · 50 laps",
+     "source": "Source: F1 live timing via OpenF1",
+     "rows": [
+      {
+       "rank": "1",
+       "value": "50",
+       "unit": "laps",
+       "note": "",
+       "code": "VER",
+       "text": "",
+       "team": "Red Bull"
+      },
+      {
+       "rank": "1",
+       "value": "50",
+       "unit": "laps",
+       "note": "",
+       "code": "GAS",
+       "text": "",
+       "team": "Alpine"
+      },
+      {
+       "rank": "1",
+       "value": "50",
+       "unit": "laps",
+       "note": "",
+       "code": "ANT",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "1",
+       "value": "50",
+       "unit": "laps",
+       "note": "",
+       "code": "LEC",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "1",
+       "value": "50",
+       "unit": "laps",
+       "note": "",
+       "code": "RUS",
+       "text": "",
+       "team": "Mercedes"
+      },
+      {
+       "rank": "6",
+       "value": "47",
+       "unit": "laps",
+       "note": "",
+       "code": "NOR",
+       "text": "",
+       "team": "McLaren"
+      },
+      {
+       "rank": "7",
+       "value": "45",
+       "unit": "laps",
+       "note": "",
+       "code": "HAM",
+       "text": "",
+       "team": "Ferrari"
+      },
+      {
+       "rank": "8",
+       "value": "39",
+       "unit": "laps",
+       "note": "",
+       "code": "COL",
+       "text": "",
+       "team": "Alpine"
       }
      ]
     }
