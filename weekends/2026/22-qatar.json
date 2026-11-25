@@ -139,13 +139,13 @@
     "flag": "qa",
     "raceStart": "2026-11-29T16:00:00.000Z",
     "compounds": {
-      "soft": null,
-      "medium": null,
-      "hard": null
+      "soft": "C3",
+      "medium": "C2",
+      "hard": "C1"
     },
     "trackCharacteristics": {
-      "ratingsSeason": 2025,
-      "pastYear": true,
+      "ratingsSeason": 2026,
+      "pastYear": false,
       "traction": 3,
       "tyreStress": 5,
       "asphaltGrip": 4,
@@ -154,7 +154,7 @@
       "lateral": 5,
       "trackEvolution": 4
     },
-    "updatedAt": "2026-10-09T04:43:42.846Z"
+    "updatedAt": "2026-11-25T19:38:43.792Z"
   },
   "racePreview": null,
   "startingGrids": [],
