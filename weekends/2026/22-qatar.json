@@ -129,7 +129,15 @@
       "raceName": "Qatar Grand Prix"
     }
   },
-  "previousWinner": null,
+  "previousWinner": {
+    "round": 22,
+    "raceName": "Qatar Grand Prix",
+    "city": "Lusail",
+    "country": "Qatar",
+    "previousWinner": "Max Verstappen",
+    "constructor": "Red Bull Racing",
+    "date": "2025-11-30"
+  },
   "tyreInfo": {
     "round": 22,
     "raceSlug": "qatar",
