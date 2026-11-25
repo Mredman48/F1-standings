@@ -1,7 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-17T17:59:15.723Z",
-  "count": 109,
+  "updatedAt": "2026-11-25T19:38:43.797Z",
+  "count": 105,
   "entries": [
     {
       "round": 1,
@@ -1990,31 +1990,6 @@
       }
     },
     {
-      "round": 17,
-      "raceSlug": "qatar",
-      "title": "Qatar GP",
-      "season": 2023,
-      "country": "Qatar",
-      "flag": "qa",
-      "raceStart": "2023-10-08T17:00:00.000Z",
-      "compounds": {
-        "soft": "C3",
-        "medium": "C2",
-        "hard": "C1"
-      },
-      "trackCharacteristics": {
-        "ratingsSeason": 2023,
-        "pastYear": null,
-        "traction": 3,
-        "tyreStress": 5,
-        "asphaltGrip": 3,
-        "braking": 3,
-        "asphaltAbrasion": 3,
-        "lateral": 5,
-        "trackEvolution": 4
-      }
-    },
-    {
       "round": 18,
       "raceSlug": "united-states",
       "title": "United States GP",
@@ -2462,32 +2437,6 @@
     },
     {
       "round": 22,
-      "raceSlug": "qatar",
-      "title": "Qatar GP",
-      "season": 2026,
-      "country": "Qatar",
-      "flag": "qa",
-      "raceStart": "2026-11-29T16:00:00.000Z",
-      "compounds": {
-        "soft": null,
-        "medium": null,
-        "hard": null
-      },
-      "trackCharacteristics": {
-        "ratingsSeason": 2025,
-        "pastYear": true,
-        "traction": 3,
-        "tyreStress": 5,
-        "asphaltGrip": 4,
-        "braking": 3,
-        "asphaltAbrasion": 2,
-        "lateral": 5,
-        "trackEvolution": 4
-      },
-      "updatedAt": "2026-10-09T04:43:42.846Z"
-    },
-    {
-      "round": 22,
       "raceSlug": "las-vegan",
       "title": "Las Vegas GP",
       "season": 2025,
@@ -2535,6 +2484,32 @@
       }
     },
     {
+      "round": 22,
+      "raceSlug": "qatar",
+      "title": "Qatar GP",
+      "season": 2026,
+      "country": "Qatar",
+      "flag": "qa",
+      "raceStart": "2026-11-29T16:00:00.000Z",
+      "compounds": {
+        "soft": "C3",
+        "medium": "C2",
+        "hard": "C1"
+      },
+      "trackCharacteristics": {
+        "ratingsSeason": 2026,
+        "pastYear": false,
+        "traction": 3,
+        "tyreStress": 5,
+        "asphaltGrip": 4,
+        "braking": 3,
+        "asphaltAbrasion": 2,
+        "lateral": 5,
+        "trackEvolution": 4
+      },
+      "updatedAt": "2026-11-25T19:38:43.792Z"
+    },
+    {
       "round": 23,
       "raceSlug": "abu-dhabi",
       "title": "Abu Dhabi GP",
@@ -2559,79 +2534,6 @@
         "trackEvolution": 4
       },
       "updatedAt": "2026-10-09T04:44:26.643Z"
-    },
-    {
-      "round": 23,
-      "raceSlug": "qatar",
-      "title": "Qatar GP",
-      "season": 2027,
-      "country": "Qatar",
-      "flag": "qa",
-      "raceStart": "2027-12-05T11:00:00.000Z",
-      "compounds": {
-        "soft": "",
-        "medium": "",
-        "hard": ""
-      },
-      "trackCharacteristics": {
-        "ratingsSeason": 2025,
-        "pastYear": true,
-        "traction": 3,
-        "tyreStress": 5,
-        "asphaltGrip": 4,
-        "braking": 3,
-        "asphaltAbrasion": 2,
-        "lateral": 5,
-        "trackEvolution": 4
-      }
-    },
-    {
-      "round": 23,
-      "raceSlug": "qatar",
-      "title": "Qatar GP",
-      "season": 2025,
-      "country": "Qatar",
-      "flag": "qa",
-      "compounds": {
-        "soft": "C3",
-        "medium": "C2",
-        "hard": "C1"
-      },
-      "trackCharacteristics": {
-        "ratingsSeason": 2025,
-        "traction": 3,
-        "tyreStress": 5,
-        "asphaltGrip": 4,
-        "braking": 3,
-        "asphaltAbrasion": 2,
-        "lateral": 5,
-        "trackEvolution": 4
-      }
-    },
-    {
-      "round": 23,
-      "raceSlug": "qatar",
-      "title": "Qatar GP",
-      "season": 2024,
-      "country": "Qatar",
-      "flag": "qa",
-      "raceStart": "2024-12-01T16:00:00.000Z",
-      "compounds": {
-        "soft": "C3",
-        "medium": "C2",
-        "hard": "C1"
-      },
-      "trackCharacteristics": {
-        "ratingsSeason": 2024,
-        "pastYear": false,
-        "traction": 3,
-        "tyreStress": 5,
-        "asphaltGrip": 3,
-        "braking": 3,
-        "asphaltAbrasion": 2,
-        "lateral": 5,
-        "trackEvolution": 4
-      }
     },
     {
       "round": 24,
