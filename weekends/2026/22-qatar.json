@@ -1,7 +1,7 @@
 {
   "header": "2026 Qatar GP weekend",
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-11-12T06:12:48.070Z",
+  "generatedAtUtc": "2026-11-26T07:18:04.813Z",
   "season": 2026,
   "round": 22,
   "meetingKey": 1301,
@@ -130,12 +130,12 @@
     }
   },
   "previousWinner": {
-    "round": 22,
+    "round": 23,
     "raceName": "Qatar Grand Prix",
     "city": "Lusail",
     "country": "Qatar",
     "previousWinner": "Max Verstappen",
-    "constructor": "Red Bull Racing",
+    "constructor": "Red Bull",
     "date": "2025-11-30"
   },
   "tyreInfo": {
@@ -171,7 +171,14 @@
   "raceStrategy": [],
   "raceRecap": null,
   "meta": {
-    "fia": {},
-    "final": {}
-  }
+    "fia": {
+      "eventName": "Qatar Grand Prix"
+    },
+    "final": {
+      "weekend": null
+    },
+    "buildVersion": "2026-10-31.1"
+  },
+  "lockedSections": [],
+  "locked": false
 }
