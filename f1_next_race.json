@@ -1,18 +1,19 @@
 {
   "header": "Next F1 event",
-  "generatedAtUtc": "2026-11-22T12:03:50.056Z",
+  "generatedAtUtc": "2026-11-27T16:06:26.493Z",
   "displayTimeZone": "America/Edmonton",
   "source": {
-    "kind": "ics+formula1",
-    "url": "https://better-f1-calendar.vercel.app/api/calendar.ics",
+    "kind": "jolpica+formula1",
+    "url": "https://api.jolpi.ca/ergast/f1/2026/races/",
     "officialRacePage": "https://www.formula1.com/en/racing/2026/qatar"
   },
   "nextEvent": {
     "type": "RACE_WEEKEND",
     "title": "FORMULA 1 QATAR AIRWAYS QATAR GRAND PRIX 2026",
     "season": "2026",
+    "round": 22,
     "location": {
-      "raw": null,
+      "raw": "Lusail, Qatar",
       "city": "Lusail",
       "country": "Qatar",
       "flag": {
@@ -39,7 +40,7 @@
       "note": null
     },
     "countdowns": {
-      "startsInDays": 6
+      "startsInDays": 0
     },
     "weekend": {
       "startUtc": "2026-11-27T13:30:00.000Z",
