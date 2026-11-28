@@ -1,6 +1,6 @@
 {
   "header": "2026 F1 all session results",
-  "generatedAtUtc": "2026-11-28T15:24:40.808Z",
+  "generatedAtUtc": "2026-11-28T15:32:37.457Z",
   "season": 2026,
   "events": [
     {
@@ -53984,6 +53984,25 @@
           "meetingKey": 1301
         }
       ]
+    },
+    {
+      "eventType": "fp3",
+      "sessionKey": 11423,
+      "meetingKey": 1301,
+      "meetingName": "Qatar Grand Prix",
+      "raceName": "Qatar Grand Prix",
+      "sessionName": "Practice 3",
+      "officialName": "Practice 3",
+      "round": 22,
+      "dateStartUtc": "2026-11-28T14:30:00+00:00",
+      "dateEndUtc": "2026-11-28T15:30:00+00:00",
+      "date": "2026-11-28",
+      "circuit": "Lusail",
+      "location": {
+        "locality": "Lusail",
+        "country": "Qatar"
+      },
+      "drivers": []
     }
   ],
   "bestByDriverNumber": {
